@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Pretty Lady Cadres – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Pretty Lady Cadres
+——
+" />
+    <meta property="og:description" content="
+Pretty Lady Cadres
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Pretty Lady Cadres" />
+    <meta property="twitter:title" content="Pretty Lady Cadres" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Ffeatures%2Fpretty-lady-cadres-china" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/features/pretty-lady-cadres-china" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/features/pretty-lady-cadres-china&text=Pretty Lady Cadres&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/features/pretty-lady-cadres-china&title=Pretty Lady Cadres" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/features/pretty-lady-cadres-china&title=Pretty Lady Cadres" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Pretty Lady Cadres&body=
+Pretty Lady Cadres
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/features/pretty-lady-cadres-china" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/features/pretty-lady-cadres-china&title=Pretty Lady Cadres&caption=
+Pretty Lady Cadres
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Pretty Lady Cadres&url=https://www.chinafile.com/reporting-opinion/features/pretty-lady-cadres-china" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Pretty Lady Cadres</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-12-21
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Shen Lu</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/features/pretty-lady-cadres-china" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1608596880000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/features/pretty-lady-cadres-china">Pretty Lady Cadres</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-394e0be3c75f0d5abee1b0d570b64d0e">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/meinv_feature.jpg" title="Pretty Lady Cadres" class="colorbox" data-colorbox-gallery="gallery-node-52901-l3zv13kVMTU" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/meinv_feature.jpg?itok=DhIbuw02" width="1400" height="832" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Steven Weinberg for ChinaFile
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">In early February, at the beginning of the outbreak of the deadly COVID-19 virus in China, Wang Fang, a local Communist Party secretary, was working around the clock. As an official responsible for 19,000 residents of a neighborhood in the city of Deyang in Sichuan province, Wang spent her days answering questions from concerned citizens via WeChat and figuring out who needed to quarantine.</p>
+      <p>In a post she published on the Sichuan Provincial Women’s Federation’s official WeChat account, Wang <a href="https://mp.weixin.qq.com/s/TZ0dGds2WLB1_sx07WOYVA" target="_blank">outlined</a> a tightly scheduled 14-hour day. She said the responsibilities she shouldered as a female Party member at the local level outweighed the fears and worries of motherhood.</p>
+      <p>Across the country, the COVID outbreak that began spreading in January brought a spotlight to women like Wang. Chinese state media responded accordingly: eulogizing the bravery of female officials and healthcare workers. In Chongqing, the People’s Daily Online breathlessly profiled <a href="http://cq.people.com.cn/n2/2020/0129/c365401-33750088.html" target="_blank">Wang Jing</a>, who worked so much over the course of five days in late January that she spent only five hours with her husband. In Hunan province, the main provincial news portal, Rednet, wrote about cadre <a href="https://moment.rednet.cn/pc/content/2020/01/31/6664441.html" target="_blank">Liu Xiaohong</a>, who started her workday before dawn. In Shandong, a local news site reported on <a href="http://www.jiaodong.net/minsheng/system/2020/02/03/013996980.shtml" target="_blank">Da Man</a>, a neighborhood committee worker who took on the burdensome job of preventing the pandemic’s spread while also caring for her bed-ridden mother.</p>
+      <p>The pandemic <a href="https://www.wsj.com/articles/in-wuhan-chinas-residential-committees-fight-outbreak-on-front-line-11581717012" target="_blank">overwhelmed</a> Wuhan’s government. And given the demographics of healthcare workers and local officials, women were frequently on the front lines as the crisis unfolded. Their numbers were large: women <a href="http://www.nhc.gov.cn/xcs/s3574/202003/a54a40ae28764f3581f36cc31204433c.shtml" target="_blank">made up</a> two-thirds of the nearly 42,000 medical workers who fought the outbreak in Wuhan. Putting their sacrificial virtues on display helped bolster the narrative of a grand national fight against the epidemic, which officials deployed to soothe an unsettled public.</p>
+      <p>While legions of female healthcare workers and low-level officials across the country barricaded gates, delivered supplies, distributed facemasks, and took temperatures to prevent the spread of the virus, China’s highest-ranking female official was working on a different kind of front line. Sun Chunlan, a vice premier and the <a href="https://macropolo.org/digital-projects/the-committee/" target="_blank">only woman</a> in the country’s 25-member Politburo, was down in Wuhan steering a central government task force to direct the COVID-19 response: <a href="http://www.xinhuanet.com/2020-02/21/c_1125604972.htm" target="_blank">ordering</a> a city-wide lockdown, <a href="http://www.xinhuanet.com/english/2020-02/08/c_138766583.htm" target="_blank">visiting</a> hospitals, and meeting with local officials.</p>
+      <p></p>
+      <div class="pullquote">
+Chinese media frequently labels female officials “pretty lady cadres,” especially if they are young.         <div class="pullquote-share">
+<span class="st_facebook_large" st_title="Chinese media frequently labels female officials “pretty lady cadres,” especially if they are young." displaytext="Facebook"></span><span class="st_twitter_large" st_title="Chinese media frequently labels female officials “pretty lady cadres,” especially if they are young." st_via="chinafile" displaytext="Tweet"></span><span class="st_email_large" st_title="Chinese media frequently labels female officials “pretty lady cadres,” especially if they are young." displaytext="Email"></span>
+        </div>
+      </div>
+      <p></p>
+      <p>The prominence of women amid this national crisis represents an anomaly. According to the state-sponsored All-China Women’s Federation, women <a href="https://weibo.com/2738546443/IEbdfgOGB?refer_flag=1001030103_&amp;type=comment#_rnd1596484879860" target="_blank">comprise</a> 37.5 percent of the 4 million members of the Party’s neighborhood and village committees, which enforce Party mandates and maintain social order. But, the higher women move up the rungs of government hierarchy, the fewer their female peers. Less than 9 percent of Party secretaries and heads of local governments at the provincial, municipal, and county levels are women. At the county level, women make up 9.33 percent of leadership, 5.29 percent at the city-level, and 3.23 percent at the provincial level. ChinaFile calculated these numbers by aggregating biographical information on Chinese government personnel from a <a href="http://ldzl.people.com.cn/dfzlk/front/firstPage.htm" target="_blank">database</a> maintained by <em>The People’s Daily</em>. This data was last updated in 2017.</p>
+      <p>Though Chinese women today enjoy historically <a href="https://www.weforum.org/agenda/2017/11/chinese-women-are-closing-the-gender-gap-heres-how/" target="_blank">unprecedented access</a> to higher education, healthcare, and job opportunities, outmoded societal expectations and inadequate workplace support still tend to confine them to traditional gender roles. The country’s most recent <a href="http://www.china.com.cn/zhibo/zhuanti/ch-xinwen/2011-10/21/content_23687810.htm" target="_blank">national survey</a> on women’s status, conducted in 2010 by the All-China Women’s Federation and the National Bureau of Statistics, showed that 61.6 percent of men and 54.8 percent of women agreed that “men’s domain is in public and women’s domain is in the home.” Those figures had risen by 7.7 and 4.4 percentage points since a previous survey in <a href="http://www.stats.gov.cn/tjsj/tjgb/qttjgb/qgqttjgb/200203/t20020331_30606.html" target="_blank">2000</a>.</p>
+      <div class="visual-box vertical right">
+<img src="https://www.chinafile.com/sites/default/files/assets/images/article/vertical/bullet_points_2.png" alt="" referrerpolicy="no-referrer" />
+      </div>
+      <p>With so few women in leadership positions, it’s little wonder the government has failed to prioritize policies that would improve the options and opportunities for women. In gender studies, a <a href="https://tidsskrift.dk/scandinavian_political_studies/article/download/32616/30682" target="_blank">theory</a> of “critical mass” hypothesizes that deliberative bodies must be made up of at least <a href="https://www.un.org/womenwatch/daw/egm/eql-men/index.html#:~:text=Women%20have%20gained%20the%20right,States%20of%20the%20United%20Nations.&amp;text=The%20figure%20of%2030%20percent,content%20of%20political%20decision%2Dmaking." target="_blank">30 percent</a> women to impact policymaking. Since women make up just 9 percent of leadership in China, “You cannot assume that they’re going to work in the favor of women,” says Jude Howell, a political scientist at The London School of Economics and Political Science who researched Chinese women in politics in the 1990s and 2000s.</p>
+      <p>Women don’t enjoy equal representation in the Party’s rank and file, either. As of 2018, they <a href="http://www.scio.gov.cn/ztk/dtzt/39912/41772/41788/Document/1664903/1664903.htm#:~:text=2017%E5%B9%B4%EF%BC%8C%E4%B8%AD%E5%A4%AE%E6%9C%BA%E5%85%B3%E5%8F%8A,%E5%B9%B4%E6%8F%90%E9%AB%9816.7%E4%B8%AA%E7%99%BE%E5%88%86%E7%82%B9%E3%80%82" target="_blank">made up</a> 27 percent of China’s <a href="http://www.chinadaily.com.cn/a/201906/30/WS5d1825c6a3103dbf1432b08f.html" target="_blank">90 million</a> Chinese Communist Party (CCP) members.</p>
+      <p>“Particularly given China’s ideological commitment ostensibly to female emancipation,” says Howell, “it’s quite disappointing.”</p>
+      <p align="center">* * *</p>
+      <h2 id="equality-in-name-only">Equality in Name Only</h2>
+      <p class="dropcap">Nominally, the People’s Republic of China (PRC), which came to power in 1949, promised the elimination of traditional Chinese social and cultural hierarchies. The CCP has espoused the idea of gender equality and pledged to advance women’s participation in politics.</p>
+      <p>The CCP established the <a href="http://m.womenofchina.cn/womenofchina/xhtml1/about/1503/2333-1.htm" target="_blank">All-China Women’s Federation</a> in 1949 as a “mass organization” aimed at mobilizing women to participate in “building socialism.” The PRC’s first <a href="http://news.china.com.cn/txt/2010-03/08/content_19552842.htm" target="_blank">Electoral Law</a>, promulgated in 1953, expressly stipulated that women would enjoy the same rights to vote and stand for election as men. Even if elections hold scant meaning in a country where the National People’s Congress is little more than a rubber stamp for Party decisions, the provision of equal political rights for men and women seemed to signal the Party’s commitment to gender equality. The following year, women were given the <a href="http://www.npc.gov.cn/wxzl/wxzl/2000-12/26/content_4264.htm" target="_blank">constitutional</a> right to participate in politics. But while women, on paper, enjoyed rights equal to men, such laws rarely translated to actual power.</p>
+      <p></p>
+      <div class="pullquote">
+“But [is the CCP] truly motivated to have more women?” asks Zhou. “I doubt that. Because after all, I mean, the power is still in [the hands of] a very few male leaders who probably do not feel much about gender equality.”         <div class="pullquote-share">
+<span class="st_facebook_large" st_title="“But [is the CCP] truly motivated to have more women?” asks Zhou. “I doubt that. Because after all, I mean, the power is still in [the hands of] a very few male leaders who probably do not feel much about gender equality.”" displaytext="Facebook"></span><span class="st_twitter_large" st_title="“But [is the CCP] truly motivated to have more women?” asks Zhou. “I doubt that. Because after all, I mean, the power is still in [the hands of] a very few male leaders who probably do not feel much about gender equality.”" st_via="chinafile" displaytext="Tweet"></span><span class="st_email_large" st_title="“But [is the CCP] truly motivated to have more women?” asks Zhou. “I doubt that. Because after all, I mean, the power is still in [the hands of] a very few male leaders who probably do not feel much about gender equality.”" displaytext="Email"></span>
+        </div>
+      </div>
+      <p></p>
+      <p>Central and local governments have since enacted a series of laws and regulations to provide an institutional guarantee for women’s participation in politics. China made <a href="https://www.nottingham.ac.uk/iaps/documents/cpi/briefings/briefing-34-women-political-participation.pdf" target="_blank">substantial progress</a> in engaging women in politics after Beijing hosted the United Nations’ Fourth World Conference on Women in 1995, which resulted in a <a href="https://www.un.org/en/events/pastevents/pdfs/Beijing_Declaration_and_Platform_for_Action.pdf" target="_blank">declaration</a> signed by 189 member states <a href="https://www.unwomen.org/en/how-we-work/intergovernmental-support/world-conferences-on-women" target="_blank">making</a> gender balance in political participation an internationally agreed upon target.</p>
+      <p>In 2001, the Organization Department of the Central Committee, the CCP’s human resources organ, <a href="https://web.archive.org/web/20190519201949/http://www.wsic.ac.cn/download?guid=IM-7656&amp;id=181" target="_blank">set targets</a> for selecting officials and proposed that governments at the provincial, municipal, and county levels should have at least 10 percent, 15 percent, and 20 percent women, respectively, in their reserve cadre pools. <a href="https://www.cambridge.org/core/journals/china-quarterly/article/abs/partys-disciples-ccp-reserve-cadres-and-the-perpetuation-of-a-resilient-authoritarian-regime/555199D536D32E5B698933ACD5DFCB62" target="_blank">Reserve cadres</a> are young political elites groomed for future Party leadership. In 2009, the State Council, China’s cabinet, published the <a href="http://english1.english.gov.cn/official/2009-04/13/content_1284128.htm" target="_blank">National Human Rights Action Plan of China (2009-2010)</a>, which required that women account for at least 20 percent of <a href="https://www.cambridge.org/core/journals/china-quarterly/article/abs/partys-disciples-ccp-reserve-cadres-and-the-perpetuation-of-a-resilient-authoritarian-regime/555199D536D32E5B698933ACD5DFCB62" target="_blank">reserve cadres</a>.</p>
+      <p>A central government <a href="http://www.gov.cn/gongbao/content/2011/content_1927200.htm" target="_blank">policy paper</a> issued in 2011 set out a new tranche of targets for selecting female officials over the next 10 years. It stipulated that by 2020 there should be more than one female member in the leadership teams of the local government at or above the county level, an increase in the number of female officials across agencies and levels, gender parity on neighborhood committees, and women comprising at least 10 percent of village committee directors and 30 percent of village committee members. As of 2018, <a href="http://www.stats.gov.cn/tjsj/zxfb/201912/t20191206_1715998.html" target="_blank">data</a> compiled by the National Bureau of Statistics showed China’s central agencies and local governments had met all but the last of these goals.</p>
+      <p>But while Chinese women’s overall political representation has improved over the years, women still barely appear in positions of government and Party leadership, and seldom rise above the rank of deputy, <a href="http://finance.sina.com.cn/roll/2016-11-04/doc-ifxxmyuk5854898.shtml" target="_blank">according to data</a> from the All-China Women’s Federation and National Bureau of Statistics. Currently, out of China’s 31 provincial governors, only <a href="https://mp.weixin.qq.com/s/t4IKVf6Iyt8qK7IHwFxuvw?v_p=86&amp;WBAPIAnalysisOriUICodes=10000001_10000002&amp;launchid=10000365--x&amp;wm=3333_2001&amp;aid=01A7QdDJDernhhvRG7GsxI4GXg3yINeQnSkgAuaWq7UYTTmhc.&amp;from=10A9293010" target="_blank">two</a> are women. In November, Shen Yiqin was <a href="https://mp.weixin.qq.com/s/t4IKVf6Iyt8qK7IHwFxuvw?v_p=86&amp;WBAPIAnalysisOriUICodes=10000001_10000002&amp;launchid=10000365--x&amp;wm=3333_2001&amp;aid=01A7QdDJDernhhvRG7GsxI4GXg3yINeQnSkgAuaWq7UYTTmhc.&amp;from=10A9293010" target="_blank">promoted</a> to Party secretary of Guizhou province, becoming China’s sole female provincial Party secretary, a position that is “the most important stepping stone to a Politburo seat,” <a href="https://www.brookings.edu/opinions/status-of-chinas-women-leaders-on-the-eve-of-19th-party-congress/" target="_blank">according to</a> Cheng Li, director of The Brookings Institution’s China Center. The two female provincial governors and one Party secretary make 4.84 percent of all governors and secretaries, an improvement from just the two governors, or 3.23 percent, in 2017.</p>
+      <p></p>
+      <div class="node node-photo-gallery-slideshow cboxes photo_gallery_slideshow align-left grid-4 img-yes logo-no">
+        <div class="cboxes-inner">
+          <div class="cb-head">
+            <h3 id="photo-gallery"> <a href="https://www.chinafile.com/multimedia/photo-gallery">Photo Gallery</a></h3>
+ <span class="date">03.08.16</span> <span class="type-icon"></span>
+          </div>
+          <div class="cb-link">
+<a href="https://www.chinafile.com/multimedia/photo-gallery/finding-women-chinas-big-meetings"></a>
+          </div>
+          <div class="cb-img">
+<img src="https://www.chinafile.com/sites/default/files/styles/system/public/assets/images/gallery/system/07_hanmeng_partygender.jpg?itok=STE5WoB4" width="620" height="450" alt="" referrerpolicy="no-referrer" />
+          </div>
+          <div class="cb-cont">
+            <h2 id="finding-the-women-at-chinas-big-meetings"><a href="https://www.chinafile.com/multimedia/photo-gallery/finding-women-chinas-big-meetings" title="Finding the Women at China’s Big Meetings">Finding the Women at China’s Big Meetings</a></h2>
+ <span class="authors"> <span>Meng Han</span> </span>             <div class="inner-content">
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+Each March, some 5,000 delegates from across China gather in Beijing for the annual meetings of the National People’s Congress (NPC), China’s legislature, and the Chinese People’s Political Consultative Conference (CPPCC), an advisory body...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p>“[The quota system] is basically one of the most important reasons why women are in the leadership,” says Yunyun Zhou, a senior lecturer at the University of Oslo whose <a href="https://journals.openedition.org/chinaperspectives/9042" target="_blank">research</a> focuses on women’s political representation in China. “Without a quota, they might not even be deputies. They might just be normal low-ranking civil servants.”</p>
+      <p>Working to put more women in government is partly a matter of seeking legitimacy in the eyes of the world. China’s membership in a variety of international conventions, including the <a href="https://treaties.un.org/Pages/ViewDetails.aspx?src=TREATY&amp;mtdsg_no=IV-8&amp;chapter=4&amp;lang=en" target="_blank">Convention on the Elimination of all Forms of Discrimination against Women</a>, requires “the Chinese government to at least be seen to be doing the right thing,” says Tamara Jacka, an emeritus professor of the Australian National University.</p>
+      <p>Moreover, women’s participation may serve the regime’s interests in other ways. “Think about the annual Spring Festival Gala on CCTV. It’s not like you only see men on that. It’s showing the nation and the state in all of its dimensions and celebrating each element within it,” says Benjamin Read of the University of California, Santa Cruz, who researches contemporary Chinese politics and society. As was the case with the portrayal of coronavirus frontline workers, propaganda that draws on women in particular positions of power allows the authoritarian government to present a friendlier public face, he explains.</p>
+      <p>“But [is the CCP] truly motivated to have more women?” asks Zhou. “I doubt that. Because after all, I mean, the power is still in [the hands of] a very few male leaders who probably do not feel much about gender equality.”</p>
+      <p>At the top levels of Party leadership, female representation since 1949 has been <a href="https://www.brookings.edu/book/chinese-politics-in-the-xi-jinping-era/" target="_blank">minimal</a>. Throughout CCP history, only six women (half of them leaders’ wives) have made it into the Politburo. The only woman who currently holds a seat is Sun Chunlan, the vice premier who led China’s COVID-19 response. Only 10 women (4.9 percent) serve as full members on the current 19th Central Committee, the body of 376 of the country’s highest ranking Party members, which also nominally “elects” the members of the Politburo Standing Committee, the innermost circle of CCP power. A woman has <a href="https://www.brookings.edu/opinions/status-of-chinas-women-leaders-on-the-eve-of-19th-party-congress/" target="_blank">never</a> held a seat in that powerful body.</p>
+      <p>“There were always far more women at the lower levels,” says Howell. “The problem is less that and more getting women to go up the ladder.”</p>
+      <p align="center">* * *</p>
+      <h2 id="traditional-expectations">Traditional Expectations</h2>
+      <p class="dropcap">Despite improvements over the decades, female officials continue to face myriad institutional, cultural, and political barriers as they climb up the ranks. As a result, many women simply give up pursuing political ambitions.</p>
+      <p>Women still shoulder most of the childcare and housework burden of Chinese households. A 2019 National Bureau of Statistics <a href="https://cnlgbtdata.com/files/uploads/2020/01/%E4%B8%AD%E5%9B%BD%E7%A4%BE%E4%BC%9A%E4%B8%AD%E7%9A%84%E5%A5%B3%E4%BA%BA%E5%92%8C%E7%94%B7%E4%BA%BA2019EN-final.pdf" target="_blank">report</a> showed that women spent more than twice as much time as men on unpaid work that revolves around the household, and spent 70 percent as much time as men on paid work. Since Xi Jinping came to power in 2013, local officials, state media, and even Beijing’s government have <a href="https://www.hrw.org/news/2017/08/29/china-tells-women-go-home-and-live-well#" target="_blank">promoted</a> a return to traditional gender norms and labor divisions that threatens to push women further back into the home.</p>
+      <p>Xi himself and <a href="http://www.xinhuanet.com/politics/leaders/2018-10/30/c_1123636000.htm" target="_blank">other senior Party leaders</a> have <a href="http://www.xinhuanet.com//politics/2015-10/12/c_128308315.htm" target="_blank">publicly spoken about</a> how women are responsible for supporting their spouses and children, and inculcating key societal values. Local branches of the All-China Women’s Federation have <a href="https://www.thepaper.cn/newsDetail_forward_7640221" target="_blank">launched</a> campaigns that <a href="https://www.sohu.com/a/337303784_120207229" target="_blank">encourage</a> women to “bring love home and promote family virtues.” A 2016 Xinhua article on the introduction of the two-child policy quoted a sociologist who <a href="http://news.xinhuanet.com/politics/2016-02/24/c_1118142363.htm" target="_blank">pronounced</a> women’s return to the home “not only good for the growth of children and family stability, but also beneficial for the development of society.”</p>
+      <p>“Under the pressure of the government’s family-virtue-building propaganda and the universal two-child policy, many women cannot do their jobs and fulfill their traditional roles in the family at the same time,” says Rong Zhao, of Hunter College, a scholar of gender in China’s workforce. “Therefore, many have to quit their jobs and return to [the] home.”</p>
+      <p></p>
+      <div class="node node-article cboxes article align-left grid-4 img-yes logo-no">
+        <div class="cboxes-inner">
+          <div class="cb-head">
+            <h3 id="features"> <a href="https://www.chinafile.com/reporting-opinion/features">Features</a></h3>
+ <span class="date">10.30.20</span> <span class="type-icon"></span>
+          </div>
+          <div class="cb-link">
+<a href="https://www.chinafile.com/state-surveillance-china"></a>
+          </div>
+          <div class="cb-img">
+<img src="https://www.chinafile.com/sites/default/files/styles/system/public/assets/images/article/system/surveillance_camera_2010_system_photo_crop3.png?itok=3dEp5Ubp" width="620" height="450" alt="" referrerpolicy="no-referrer" />
+          </div>
+          <div class="cb-cont">
+            <h2 id="state-of-surveillance"><a href="https://www.chinafile.com/state-surveillance-china" title="State of Surveillance">State of Surveillance</a></h2>
+ <span class="authors"> <span>Jessica Batke &amp; Mareike Ohlberg</span> </span>             <div class="inner-content">
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+Across China, in its most crowded cities and tiniest hamlets, government officials are on an unprecedented surveillance shopping spree. The coordination of the resulting millions of cameras and other snooping technology spread across the country...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p>For those women who do stay in the workplace, the talented may be able to outperform men and advance to higher positions, but Zhao and other experts say that often comes at the cost of their personal lives or hinges on help from other female family members. Paradoxically, <a href="http://www.gov.cn/zwgk/2012-05/07/content_2131567.htm" target="_blank">workplace benefits</a> offered to new mothers, like a mandatory 98-day maternity leave and regular breastfeeding breaks, have entrenched the perception that women will lag behind their male counterparts during a key period that has a significant impact on their career trajectory, several female officials told me. That impact is even greater if they decide to have a second child.</p>
+      <p>Xu is an unmarried, 29-year-old entry-level civil servant at a district-level Agriculture and Rural Affairs Bureau in eastern China’s Zhejiang province. In her office, Xu says, she has seen this dynamic play out time and time again. Older female colleagues have warned her that her career will come to a functional end when she turns 30. Fearing repercussions for giving unauthorized interviews, Xu, like other government employees interviewed for this story, agreed to speak on the condition that only her surname be used. Organization Department officials have bluntly asked several of her female peers up for promotion if they had plans for marriage or pregnancy in the following year. Xu herself entered the civil service because she viewed it as a stable career for women, even though the pay can’t compete with many private-sector jobs. “If I get married and my family requires more time from me in the future, maybe I will not fight so hard in my career.”</p>
+      <p>After witnessing her direct boss, a woman who, in fear of getting passed over for promotion, worked extra hours throughout her entire pregnancy up until four hours before delivery, Xu concludes: “Female leaders have to work far harder than male leaders in their rank, and If you are a woman, you can only be promoted if you are overly competent. But men are treated as treasures as long as they do a bit better than others.”</p>
+      <p>Zhou, of the University of Oslo, says many female government employees willingly choose to stay in low- or middle-ranking positions to avoid devoting their entire lives to work; heading a government agency is an ultra-consuming, 24/7 job that they can’t afford to take on in addition to the undue childcare burden placed on mothers.</p>
+      <p>“They can be very assertive, very charismatic, very certain about what they want,” Zhou says of the four dozen female officials she has interviewed in the past two years. “Still, they cannot give up their family obligations entirely. They are still bearing that obligation much more than the men.”</p>
+      <p>Politically ambitious women are in a race with time. When they are young, they face being passed over for promotion because of their childcare responsibilities. Because they shoulder greater household responsibility than their male counterparts, they have less time and energy to build up networks and support that can help them with promotion. By the time children are grown, “you are on your way out,” says Howell.</p>
+      <p>The mandatory <a href="http://www.npc.gov.cn/wxzl/wxzl/2000-12/07/content_9548.htm" target="_blank">retirement age</a> for low-ranking Chinese female officials is 55, as opposed to 60 for all male officials. These mandates were established in 1978 based on standards first implemented in the 1950s. It was only in 2015 that China <a href="http://www.xinhuanet.com/politics/2015-03/28/c_127630662.htm" target="_blank">extended</a> the retirement age for middle-ranking female cadres and above to 60, a good change that took place too late and too slow to benefit many older women who had wanted it for years, Howell says.</p>
+      <p>Early retirement combined with pressures on younger women mean the gender quotas tend to become a ceiling rather than a floor, unless they are accompanied by supporting policies that ease women’s childcare burden.</p>
+      <p>“If there’s no support otherwise, she’s still left juggling all of these different commitments,” Howell says.</p>
+      <p align="center">* * *</p>
+      <h2 id="decorative-roles">Decorative Roles</h2>
+      <p class="dropcap">Since Yu, Party Secretary of a town in Zhejiang, started her political career in 1998, at the age of 20, she has witnessed a growing number of women moving into leadership positions. In 2006, when she was promoted to be deputy mayor of the township where she was working at the time, she was the only woman in the 14-person leadership. Now, women hold about 20 percent of the leadership positions of each town in her district. Female Party secretaries head three of the 21 towns. Out of the 31 province-level regions in China, Zhejiang has the sixth-highest percentage of women (11.39 percent, or 23 out of 202 positions) in the top two positions of province, municipal, and county governments.</p>
+      <p align="center">        <iframe style="overflow: hidden;" src="https://jessicachinafile.github.io/viz/meinv/meinv_heatmap3.html" frameborder="0" width="100%" height="646"></iframe>
+</p>
+      <p>However, Yu believes that it will be harder to get female representation higher than 20 percent. In her office—as elsewhere—higher-ups tend to give their female staffers work dealing with internal governmental and Party affairs, such as corruption fighting, propaganda, and Party building. Men, meanwhile, are assigned to positions involving economic development, urban construction, and public security; these are frequently the jobs that lead to promotion.</p>
+      <p>“Urban construction involves demolition, danger, and requires a lot of coordination work,” Yu says. She sees it as a masculine job better suited for men, and she believes this is what the Organization Department believes, too.</p>
+      <p>Up until her latest promotion to Party Secretary, since 2006 Yu had been a deputy mayor or deputy Party secretary in charge of work related to public health, education, or propaganda. “Thinking back, I wish I had worked on the urban construction line before because it benefits your career development,” she tells me.</p>
+      <p>Much <a href="https://www.jstor.org/stable/2761128" target="_blank">scholarship</a> has <a href="http://eprints.lse.ac.uk/9294/" target="_blank">noted</a> that Chinese women who do achieve positions of political power tend to be assigned tasks connected to a traditionally female-dominated area, such as welfare, health, or education, “where having a female face could facilitate policy,” says Howell, rather than areas that are considered more masculine, such as economics, security, and politics, which would better help bureaucrats build up a record that facilitates promotion. It is no wonder, then, that female officials were so visible on the frontlines of the COVID-19 response. Wu Yi, a former <a href="https://www.chinavitae.com/biography/Wu_Yi/summary" target="_blank">vice premier</a>, and one of only a tiny handful of women to achieve this rank, assumed the role of Minister of Health <a href="https://www.cnn.com/2003/WORLD/asiapcf/east/04/22/china.wu/index.html" target="_blank">during the SARS outbreak</a> in 2003 to direct China’s effort in tackling the pneumonia epidemic, after her predecessor, Zhang Wenkang, a man, lost the job after having <a href="https://www.smh.com.au/national/china-confesses-to-sars-cover-up-20030421-gdgmyx.html" target="_blank">concealed</a> the extent of the outbreak.</p>
+      <p>Indeed, <a href="https://journals.sagepub.com/doi/10.1177/0032329220908691" target="_blank">data</a> compiled by the international affairs scholars David Bulman and Kyle Jaros on the tenures and backgrounds of Provincial Party Standing Committee (PPSC) members between 1996 and 2017 show that female cadres disproportionately headed entities such as the All-China Federation of Trade Unions (41 percent) and United Front Work Department (26 percent). “These assignments imply that the Party perceives female cadre comparative advantage through traditionally gendered lenses: Female cadres are effective communicators and dialogue facilitators rather than leaders in their own right,” Bulman says. By contrast, women are underrepresented in functional departments where ultimate power resides. While 7.5 percent of all PPSC members were female, only 0.7 percent of Party secretaries and 6.2 percent of deputy Party secretaries were women, during those 21 years.</p>
+      <p>The discrimination starts in early appointments, according to Bulman, an Assistant Professor of International Affairs and China Studies at Johns Hopkins University. As officials work their way up the levels, fewer women are left in the candidate pool.</p>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-710aba77b5d4b326c09b494f4eec1c00 grid-8 photo-object">
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/gettyimages-1205876875.jpg" title="China Works to Contain Spread of Coronavirus II" class="colorbox" data-colorbox-gallery="gallery-node-52926-l3zv13kVMTU" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/gettyimages-1205876875.jpg" width="7771" height="5210" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Kevin Frayer—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>In advance of International Women’s Day, women volunteering for the non-profit organization Blue Sky Rescue pass out masks as they prepare to fumigate and disinfect an area of a local bus station in Beijing, March 7, 2020.</p>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p>“These women [on the PPSC] must follow alternative career paths based on promotions within functional units rather than within general leadership roles, which would help to explain the extremely low representation in provincial Party secretary, deputy Party secretary, and governor positions, and the higher representation in the functional departments,” Bulman says.</p>
+      <p>To be sure, gendered promotion is not unique to China. According to the United Nations, the two sectors <a href="https://www.unwomen.org/en/what-we-do/leadership-and-political-participation/facts-and-figures#notes" target="_blank">most commonly led</a> by female ministers across the world are social affairs and welfare of family/children/youth/elderly/disabled.</p>
+      <p>What’s unique in China is that one of women’s main routes for political advancement is through posts at the All-China Women’s Federation, says Jacka, of Australian National University. On the one hand, the organization represents women’s interests, and on the other, it promotes Party interests and relies financially on the Party. The Women’s Federation is embedded in every level of government, but it is not a formal part of the government or Party structure, and it is often <a href="https://journals.openedition.org/chinaperspectives/9042" target="_blank">marginalized and has little power</a>.</p>
+      <p>“The Women’s Federation is the area where women with any kind of political ambition are most likely to end up, or at least to start from,” says Jacka. “What that means is that you then have different kinds of training [from that of men].”</p>
+      <p>At the higher levels of government, there are so few women that work related to women’s and children’s interests disproportionately falls on them. This could be rectified simply by putting men into those positions, Howell argues.</p>
+      <p>Sun, for example, currently a vice premier in charge of health and education, also <a href="http://english.www.gov.cn/state_council/vice_premiers/2019/06/01/content_281476693558470.htm" target="_blank">heads</a> the State Council’s National Working Committee on Children and Women. She twice <a href="http://www.gov.cn/guoqing/2018-03/19/content_5275615.htm" target="_blank">chaired</a> local branches of the All-China Women’s Federation throughout her political career.</p>
+      <p>Sun is also the only woman to have served as a provincial Party secretary between 1996 and 2017.</p>
+      <p>“The best thing [the CCP] could do would be to have, say, 50 percent [women in the leadership], rather than 10 percent,” Howell says, “so women are occupying a whole range of positions.”</p>
+      <p align="center">* * *</p>
+      <h2 id="discrimination-from-the-bottom">Discrimination from the Bottom</h2>
+      <p class="dropcap">Over the past two decades, according to the State Council Information Office, both the central and local governments have <a href="http://www.scio.gov.cn/ztk/dtzt/39912/41772/41788/Document/1664903/1664903.htm#:~:text=2017%E5%B9%B4%EF%BC%8C%E4%B8%AD%E5%A4%AE%E6%9C%BA%E5%85%B3%E5%8F%8A,%E5%B9%B4%E6%8F%90%E9%AB%9816.7%E4%B8%AA%E7%99%BE%E5%88%86%E7%82%B9%E3%80%82" target="_blank">increased</a> their recruitment of women. In 2003, women <a href="http://www.scio.gov.cn/ztk/xwfb/46/11/Document/975923/975923_2.htm" target="_blank">made up</a> 28 percent of entry-level civil servants recruited that year, nationwide (38 percent in central government agencies). By 2017, women accounted for more than half of the newly recruited civil servants at central government agencies. The percentage <a href="http://www.scio.gov.cn/ztk/dtzt/39912/41772/41788/Document/1664903/1664903.htm#:~:text=2017%E5%B9%B4%EF%BC%8C%E4%B8%AD%E5%A4%AE%E6%9C%BA%E5%85%B3%E5%8F%8A,%E5%B9%B4%E6%8F%90%E9%AB%9816.7%E4%B8%AA%E7%99%BE%E5%88%86%E7%82%B9%E3%80%82" target="_blank">at local governments</a> was 44 percent.</p>
+      <p>But even as women reached or surpassed parity in these junior positions, gender discrimination has persisted.</p>
+      <p>According to Human Rights Watch, <a href="https://www.hrw.org/news/2020/04/29/china-gender-discrimination-hiring-persists" target="_blank">6 percent</a> of the nearly 14,000 <a href="http://www.chinagwy.org/html/kszc/gj/201910/42_321249.html" target="_blank">National Civil Service Positions</a> in 2020 spelled out a preference for male applicants and 5 percent specified a requirement for male applicants, though the percentage of posts with specific gender requirements had declined significantly. The reasons to exclude women? “Frequent overtime work,” “heavy workload,” and “frequent travel,” note some of the job postings for National Civil Service Positions open only to men. Less than 1 percent of postings required or preferred female applicants.</p>
+      <p>“If we are filling two positions that attracted one male applicant and four female applicants, as long as the man is not too disappointing, he is in,” says Liu, a low-ranking cadre working in a central government ministry. The perception, she explains, is that “women tend not to be willing to work overtime.”</p>
+      <p>According to Liu, there is no shortage of middle-ranking female cadres in her ministry. Many lead prominent offices that produce recognizable work. And yet the minister and his deputies are all men, and division heads are mostly male, too. The people on the fast track for promotion in her division, Liu has noticed, are staffers who write speeches for the minister—all of whom are men.</p>
+      <p>“They are totally overworked, never off work before 9:00 p.m. and often pulling all-nighters,” Liu marvels. “They used to have a female speechwriter, but she later transferred to a different office because she couldn’t stand the crazy schedule.”</p>
+      <p>The result is that men get promoted faster than women, Liu says. Liu herself has no interest in joining the speechwriting office that produces political stars. In a system that rewards people who can devote endless time to work and never take breaks, Liu believes that women can’t compete with men, “unless men are required to take paternity leaves.”</p>
+      <p>While the central government likes to tout the gender ratio of newly recruited civil servants in recent years, Zhou doubts that even if 50 percent of officials at the lower levels were women it would change the overall ratio of China’s male-dominated bureaucracy. In China’s vast bureaucracy of <a href="http://www.mohrss.gov.cn/SYrlzyhshbzb/zwgk/szrs/tjgb/201805/W020180521567132619037.pdf" target="_blank">7.19 million civil servants</a>, most barely move up the ranks. The odds of a civil servant’s rising to the rank of ministerial-level cadre are <a href="http://www.xinhuanet.com/politics/2016-05/10/c_128971965.htm" target="_blank">1 in 14,000</a>, according to Xinhua. Competition is so cut-throat for higher level jobs, says Zhou, that she believes many women will likely give up and go for positions in a lower-level government that are less prominent and of less political power.</p>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-9b8a1356dad4168da29649bfdd55766f grid-8 photo-object">
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/gettyimages-933981646.jpg" title="National People’s Congress Seventh Plenary Meeting" class="colorbox" data-colorbox-gallery="gallery-node-52916-l3zv13kVMTU" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/gettyimages-933981646.jpg" width="3000" height="2000" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Etienne Oliveau—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>Newly elected state councilors (left to right) Zhao Kezhi, Wang Yi, Wei Fenghe, Vice Premier Hu Chunhua, Sun Chunlan, and Liu He, and state councilors Wang Yong and Xiao Jie, led by Vice Premier Han Zheng (front center) swear an oath during the Seventh Plenary Session of First Session of the 13th National People’s Congress (NPC) at the Great Hall of the People in Beijing, March 19, 2018.</p>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p align="center">* * *</p>
+      <h2 id="the-boys-club">The Boys’ Club</h2>
+      <p class="dropcap">Beyond structural barriers and household burdens, female officials struggle to make connections in a male-dominated system that relies heavily on personal relationships.</p>
+      <p>I met Yu, the township-level Party secretary from Zhejiang, at a business event followed by a dinner function in the summer of 2019. When she arrived, she apologized for being late because she had to take her younger child to the dentist. Yu was of medium height, slender, and demurely dressed. Throughout the dinner, guests—mostly middle-aged men older than her—toasted her one after another while addressing her as “<em>meinü shuji</em>” (美女书记), or “pretty lady Party secretary.” She sipped her drink decorously, smiling.</p>
+      <p>Following the market-oriented reforms starting in the late 1970s, a <a href="https://drive.google.com/file/d/0B6mSCpkOCroWSmt3R3VIeUp6alJfQ2tWeGwxeDlPNy1VZmRV/view" target="_blank">renaissance</a> of Confucian virtues collided with Western consumerism in the 1980s, and the intellectual elite began to reject the Mao-era gender discourse that women and men are equal, explains Yige Dong, a sociologist at the University of Buffalo. As women’s bodies were <a href="https://drive.google.com/file/d/1gnwPCfvS4CfcwBx5BoUUgOUSNcLuoilp/view" target="_blank">reconfigured</a> as alluring and vulnerable, businesses started capitalizing on women’s appearance, and “beauty” became an <a href="https://www.journals.uchicago.edu/doi/pdfplus/10.1086/655913?casa_token=KFhVQNizXdYAAAAA%3A63pLlVnigZtKKvFLTGV1HKR7X6q7rn8qYOaYR7UKC3EXp8F7EPDgAMFUQ275MOmF3pjgIMqJSlj_&amp;" target="_blank">effective marketing tool</a>.</p>
+      <p>“<em>Meinü</em>,” as a sexualized appellation used as a form of address for professional and elite women, started trending in the 1990s, according to Dong, and it gradually trickled down to become a generic moniker for all women, regardless of their age or appearance. Yu called me “<em>meinü</em>,” too, when we met.</p>
+      <p>Chinese media frequently <a href="https://www.baidu.com/link?url=NJcHAfdIcv56VEtXbGjUslMwqGKtkJzYkmG2aLwUSd_BNVj3lQPB-yFfxyhKdIsRgaB4H2bgtQWp6XjeFlezBq&amp;wd=&amp;eqid=ab26a2370027eaa4000000065db06789" target="_blank">labels</a> female officials “pretty lady cadres,” especially if they are young. In late November, live-streaming videos of He Jiaolong, a local Xinjiang official, riding a horse in an elaborate costume trended on Chinese social media. The media lauded her effort to promote local tourism, <a href="http://www.sxxw.net/wl/627.jhtml" target="_blank">addressing her</a> as “Pretty Lady Deputy County Governor&lt;.” In spite of <em>meinü</em>’s ubiquity, women have mixed feelings regarding the term. After she became a social media star, He <a href="https://sichuan.scol.com.cn/sczh/202011/57967170.html" target="_blank">confessed</a> that the thing she “hated most” was being called “<em>meinü</em>.”</p>
+      <p>Sometimes the reference of “pretty lady cadre” is used to imply that the official slept her way up.</p>
+      <p>“Emphasizing a female cadre’s gender and appearance means that they don’t treat her as an equal colleague—that is, a professional and genderless politician—but as a gendered and sexualized subject who not only does all professional work but also serves as a source of social capital in network-building and, in some cases, a means in political bribery,” Dong says.</p>
+      <p>I later asked Yu how she felt about the label of “pretty lady Party secretary.” She says she had gotten used to it.</p>
+      <p></p>
+      <div class="node node-article cboxes article align-left grid-4 img-yes logo-no">
+        <div class="cboxes-inner">
+          <div class="cb-head">
+            <h3 id="features-1"> <a href="https://www.chinafile.com/reporting-opinion/features">Features</a></h3>
+ <span class="date">12.20.20</span> <span class="type-icon"></span>
+          </div>
+          <div class="cb-link">
+<a href="https://www.chinafile.com/reporting-opinion/features/message-control-china"></a>
+          </div>
+          <div class="cb-img">
+<img src="https://www.chinafile.com/sites/default/files/styles/system/public/assets/images/article/system/yuqing_feature.jpg?itok=dkCj5obb" width="620" height="450" alt="" referrerpolicy="no-referrer" />
+          </div>
+          <div class="cb-cont">
+            <h2 id="message-control"><a href="https://www.chinafile.com/reporting-opinion/features/message-control-china" title="Message Control">Message Control</a></h2>
+ <span class="authors"> <span>Jessica Batke &amp; Mareike Ohlberg</span> </span>             <div class="inner-content">
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+Li Wenliang’s death had only been announced a few hours earlier, but Warming High-Tech was already on the case. The company had been monitoring online mentions of the COVID-whistleblower’s name in the several days since police had detained and...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p>“I don’t feel comfortable about it, but I don’t feel uncomfortable, either,” she says diplomatically. “It’s pointless to care about how people address me in informal settings. What’s important is how I view myself.”</p>
+      <p>Yu says that when she was first promoted to a high-ranking position, she was in her late 20s, and there was plenty of private chatter about her getting the position through an inappropriate route. Her response to the rumors was to keep her head down and get her job done.</p>
+      <p>Several gender studies scholars and political scientists told me that in the past, female officials loathed socializing with their male counterparts because it trapped them in an impossible position: “If you smoke, if you drink, are you a bad woman? But if you don’t do it, are you not showing solidarity?” Howell describes. “And they couldn’t beat the men if they wanted to win the deal from the corporate partners,” Zhou says.</p>
+      <p>Apart from food and alcohol, lewd conversations were also a frequent component of those dinner functions. Cai Xia, a former professor at the Central Party School of the Chinese Communist Party, recalled an awkward experience in the early 2000s of being the only woman at a work dinner, where the men gossiped and cracked sex jokes.</p>
+      <p>“I found the off-color, alcohol-fueled conversation vulgar and would always slink out after a few bites of food,” Cai wrote in a recently published <a href="https://www.foreignaffairs.com/articles/china/2020-12-04/chinese-communist-party-failed" target="_blank">essay</a>.</p>
+      <p>However, things have improved under Xi Jinping, Zhou says. Female cadres she has talked to in recent years breathed a sigh of relief after the Central Committee rolled out <a href="https://cpcchina.chinadaily.com.cn/2012-12/05/content_15992256.htm" target="_blank">guidelines</a> in 2012 to cut back on bureaucratic extravagance. They now spend far less time at the banquet table.</p>
+      <p>No one gulped down liquor or pushed anyone else to drink at our dinner last year. But, still, I noticed that Yu drank as much as the men.</p>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-5068fafa143d815d30704aaafaf5d482 grid-8 photo-object">
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/gettyimages-1206419776.jpg" title="Wuhan Works to Contain Spread of Coronavirus" class="colorbox" data-colorbox-gallery="gallery-node-52921-l3zv13kVMTU" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/gettyimages-1206419776.jpg" width="3000" height="2000" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+(Getty Images)
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>Healthcare workers pose for photos as the last batch of COVID-19 patients are discharged from the Wuchang Fangcang makeshift hospital in Wuhan, Hubei province, March 10, 2020.</p>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p align="center">* * *</p>
+      <h2 id="ebbing-support">Ebbing Support</h2>
+      <p class="dropcap">As the coronavirus pandemic has waned in China, meanwhile, the front-line female fighters have faded from public view. In September, CCTV aired a television show about the outbreak that celebrated the men who took part in the fight, <a href="https://www.nytimes.com/2020/09/20/world/asia/china-tv-women-coronavirus.html?_ga=2.220682520.1211198684.1603756005-1332585421.1551879708" target="_blank">all but erasing</a> the contributions of women.</p>
+      <p>For the female neighborhood committee members who had worked nonstop in the months during and after the initial outbreak, the betrayal hit hard.</p>
+      <p>“There are six women in our office, three of whom are Party members, including the Party Secretary. The youngest is a 24-year-old who just started her job. The oldest is 43 years old. Her daughter just graduated from college. Between the third day of the Lunar New Year and June 1, no one took a day off, and we worked 12 hours every day during the outbreak,” one young woman from Hebei province who self-deprecatingly labels herself a “neighborhood committee auntie” complained on Weibo.</p>
+      <p>“Our grassroots women comrades! Women members of our Party!!! [We] all did a wonderful job! [We] held up against all odds! [We] defended our battleground and won this battle! We did not give up!!! How dare you insult us like that!”<span class="cube"></span></p>
+      <p><em><a href="https://www.chinafile.com/node/35316" target="_blank">Jessica Batke</a> provided research for this article.</em></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2021-01-11</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-11/Precarious-Progress/">
+          Precarious Progress
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-12-29</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-29/Because-There-Were-Cameras,-I-Didn-t-Ask-Any-Ques/">
+          ‘Because There Were Cameras, I Didn’t Ask Any Questions’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-12-20</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-20/Message-Control/">
+          Message Control
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-12-20</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-20/Message-Control/">
+          Message Control
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-12-21/Pretty-Lady-Cadres/">
+            前一篇：Pretty Lady Cadres
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-12-21/%E5%86%B7%E6%88%B0%E7%89%A9%E8%AA%9E-%E9%80%99%E4%B8%8D%E6%98%AF%E5%A3%93%E5%AF%B6-%E4%BD%86%E9%81%8B%E6%B0%A3%E5%AF%A6%E5%9C%A8%E5%A5%BD-%E6%8A%BD%E5%88%B0Ace%E5%95%A6-%E4%B8%8D%E9%81%8E%E5%A5%BD%E5%83%8F%E6%B2%92%E4%BB%80%E9%BA%BC%E7%94%A8/">
+            後一篇：[冷戰物語]這不是壓寶，但運氣實在好，抽到Ace啦——不過好像沒什麼用
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-12-21/Pretty-Lady-Cadres/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-12-21/%E5%86%B7%E6%88%B0%E7%89%A9%E8%AA%9E-%E9%80%99%E4%B8%8D%E6%98%AF%E5%A3%93%E5%AF%B6-%E4%BD%86%E9%81%8B%E6%B0%A3%E5%AF%A6%E5%9C%A8%E5%A5%BD-%E6%8A%BD%E5%88%B0Ace%E5%95%A6-%E4%B8%8D%E9%81%8E%E5%A5%BD%E5%83%8F%E6%B2%92%E4%BB%80%E9%BA%BC%E7%94%A8/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-12-29/Because-There-Were-Cameras,-I-Didn-t-Ask-Any-Ques/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-12-20/Message-Control/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-12-21/Pretty-Lady-Cadres/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-12-21/%E5%86%B7%E6%88%B0%E7%89%A9%E8%AA%9E-%E9%80%99%E4%B8%8D%E6%98%AF%E5%A3%93%E5%AF%B6-%E4%BD%86%E9%81%8B%E6%B0%A3%E5%AF%A6%E5%9C%A8%E5%A5%BD-%E6%8A%BD%E5%88%B0Ace%E5%95%A6-%E4%B8%8D%E9%81%8E%E5%A5%BD%E5%83%8F%E6%B2%92%E4%BB%80%E9%BA%BC%E7%94%A8/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-12-29/Because-There-Were-Cameras,-I-Didn-t-Ask-Any-Ques/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-12-20/Message-Control/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

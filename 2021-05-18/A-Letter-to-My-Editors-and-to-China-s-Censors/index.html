@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>A Letter to My Editors and to China’s Censors – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+A Letter to My Editors and to China’s Censors
+——
+" />
+    <meta property="og:description" content="
+A Letter to My Editors and to China’s Censors
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="A Letter to My Editors and to China’s Censors" />
+    <meta property="twitter:title" content="A Letter to My Editors and to China’s Censors" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fletter-my-editors-and-chinas-censors" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/letter-my-editors-and-chinas-censors" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/letter-my-editors-and-chinas-censors&text=A Letter to My Editors and to China’s Censors&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/letter-my-editors-and-chinas-censors&title=A Letter to My Editors and to China’s Censors" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/letter-my-editors-and-chinas-censors&title=A Letter to My Editors and to China’s Censors" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=A Letter to My Editors and to China’s Censors&body=
+A Letter to My Editors and to China’s Censors
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/letter-my-editors-and-chinas-censors" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/letter-my-editors-and-chinas-censors&title=A Letter to My Editors and to China’s Censors&caption=
+A Letter to My Editors and to China’s Censors
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=A Letter to My Editors and to China’s Censors&url=https://www.chinafile.com/reporting-opinion/viewpoint/letter-my-editors-and-chinas-censors" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>A Letter to My Editors and to China’s Censors</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-18
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Xu Zhangrun &#38; Geremie R. Barmé</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/letter-my-editors-and-chinas-censors" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1621333680000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/letter-my-editors-and-chinas-censors">A Letter to My Editors and to China’s Censors</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-b57e99cfc83a4b3fc6ba917a25bba0c1">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/53216_sm.jpg" title="A Letter to My Editors and to China’s Censors" class="colorbox" data-colorbox-gallery="gallery-node-53216-0wpYpsZUfAM" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/53216_sm.jpg?itok=-5HAYNN-" width="1400" height="933" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Wang Zhao—AFP/Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A Chinese Communist Party, flag displayed at the Beijing Exhibition Center, October 10, 2017.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <h3 id="translators-introduction">Translator’s Introduction</h3>
+      <p class="dropcap">Over the years, a number of writers have directly addressed China’s censors, a vast and lavishly funded system of disparate individuals and groups that ranges from high-level ideologues in Beijing like Politburo Standing Committee Member Wang Huning to lowly Internet invigilators in the provinces.</p>
+      <p>In January 2021, Xu Zhangrun, perhaps China’s most famous dissident legal scholar, released a letter addressed not only to China’s censors but also to the editors and publishers with whom he had worked for decades. That essay, translated below, is Letter Eight in his <em><a href="http://chinaheritage.net/journal/introducing-xu-zhangruns-ten-letters-from-a-year-of-plague/" target="_blank" rel="nofollow">Ten Letters from a Year of Plague</a></em> (庚子十劄), a collection that, read as a whole, is an account of the persecution he has suffered since he published a fierce point-by-point <a href="http://chinaheritage.net/journal/imminent-fears-immediate-hopes-a-beijing-jeremiad/" target="_blank" rel="nofollow">appraisal</a> of the Xi Jinping era and warned of the calamities that lay ahead. The letters also comprise an agonized farewell both to his former life and to China’s short-lived era of progressive reform.</p>
+      <p>In the weeks following the appearance of Xu’s jeremiad in late July 2018, all evidence of his existence was gradually and meticulously scrubbed from the Chinese Internet. In response to what amounted to an official act of <em>damnatio memoriae</em>, Xu issued another critique in which he <a href="http://chinaheritage.net/journal/and-teachers-then-they-just-do-their-thing/" target="_blank" rel="nofollow">asked</a>, “do you honestly believe you can simply make me evaporate and disappear entirely from the ranks of humanity?” Despite being reduced to the status of what in the Soviet Union was known as a “<a href="http://chinaheritage.net/journal/xu-zhangrun-chinas-former-people/" target="_blank" rel="nofollow">former person</a>,” Xu has continued to circulate his writings as best he can in China as well as in the international Chinese media. A bilingual archive of his “rebellion in writing” is also <a href="http://chinaheritage.net/xu-zhangrun-%E8%A8%B1%E7%AB%A0%E6%BD%A4/" target="_blank" rel="nofollow">available</a>.</p>
+      <p>As <a href="http://chinaheritage.net/journal/cyclopes-on-my-doorstep-by-xu-zhangrun/" target="_blank" rel="nofollow">a result</a> of his ongoing defiance, Xu Zhangrun was stripped of all of his professional duties and rights as well as repeatedly harassed by both the police and other state security organs. While detained by police for a week in July 2020, Tsinghua University, one of China’s most prestigious institutions where Xu had worked for nearly two decades, sacked him and confiscated his pension fund. Ever since, he has survived on his savings and a meagre unemployment benefit. Living in relative isolation and under constant surveillance, he is forbidden from receiving any support from friends or admirers.</p>
+      <p>The following letter was written after an encounter that Xu Zhangrun had with a number of his former editors in late December 2020. In a record of that occasion, he <a href="http://chinaheritage.net/journal/composed-of-eros-of-dust-xu-zhangrun-goes-shopping/" target="_blank" rel="nofollow">noted</a> that “my remaining friends are as few as the scattered stars at dusk” and that “here I was, an unemployed nobody who, having come into town to buy groceries, had happened to encounter a gathering of ‘somebodies’ celebrating their latest academic achievements.” It was a painful affair for all involved. At the end of the reverie that he composed that night, Xu mused: “In Heaven’s Will there is perhaps a sense of decency. Humankind, too, may boast some saving grace. Regardless, the tortuous beauty of this moonlit night leaves me feeling as though my soul has been rent asunder.”</p>
+      <p>Below, Xu invokes the philosopher Hannah Arendt, who wrote: “Truth, though powerless and always defeated in a head-on clash with the powers that be, possesses a strength of its own: whatever those in power may contrive, they are unable to discover or invent a viable substitute for it. Persuasion and violence can destroy truth, but they cannot replace it.”</p>
+      <p>Arendt also <a href="https://www.newyorker.com/magazine/1967/02/25/truth-and-politics" target="_blank" rel="nofollow">observed</a> that: “Where everybody lies about everything of importance, the truth-teller, whether he knows it or not, has begun to act; he, too, has engaged himself in political business, for, in the unlikely event that he survives, he has made a start toward changing the world.”</p>
+      <p>Xu Zhangrun is just such a truth-teller.</p>
+      <p><strong>A Note on the Translation</strong></p>
+      <p>This is an edited translation of “Letter Eight” in Xu Zhangrun’s <em>Ten Letters from a Year of Plague</em> (庚子十劄), the Chinese original of which will be published in New York in July 2021. Deletions and annotations have been made with the author’s permission.</p>
+      <p align="right">—<em>Geremie R. Barmé</em></p>
+      <h2 align="center" id="a-letter-to-my-editors-and-to-chinas-censors">A Letter to My Editors and to China’s Censors</h2>
+      <h3 id="the-lost-poetry-of-our-talk">‘The Lost Poetry of Our Talk’</h3>
+      <p class="dropcap">My Dear Former Editors,</p>
+      <p>I hope you’ll indulge me by finding time to read this letter. Apart from my fellow educators and students, those I had the most to do with over the years were you, my editors.</p>
+      <p>While for me the bond between teacher and student fostered a sense of “being at home,” publishing houses and editors were akin to a courtyard that was attached to the spacious main building of my true vocation. You have all been part of the intimate world of loved ones and friends that provided a haven from the outside world, although you also determined the outer limits of our self-imposed confinement.</p>
+      <p>My academic home offered me a contemplative environment in which to work, and the courtyard you provided was like an open space in which I could perambulate. The inner dwelling and your inviting courtyard were connected and air circulated freely between the two. When the skies were clear I could see the distant mountains or, when necessary, I might limit my gaze to the courtyard, occupying myself by following the twists and turns of its paths. At times, I might linger for a moment and contemplate the wisteria trailing along the walls as it was buffeted by a soft breeze or that glistened with drops of water from a recent shower. It’s hard to express the myriad of pleasures that I felt there.</p>
+      <p>Within the confines of that courtyard, I would also encounter beguiling individuals who found pleasure in the blossoms that they cultivated. Although they readily took fright when some petals fell without warning, they would soon adjust to the changed climate; henceforth, they would speak in a whisper and tread more carefully.</p>
+      <p>Educators like me devoted themselves to teaching as well as to writing—the latter is both a personal pleasure and a professional requirement. It was essential that we were published, and that our work appeared frequently. So it was inevitable that people like me had a lot to do with people like you; we needed you and so we were in constant contact. However, as you well know, due to the dramatic change in my circumstances we have recently drawn apart. In fact, I’ve lost contact with all of you, and the people with whom I’d been in constant communication have long since fallen completely silent. Given that I was all but drummed out of academia, it is hardly surprising that my former colleagues haven’t been in touch. Although, now that all of the editors with whom I’d previously worked so closely have also gone quiet, it really does feel as though the walls are closing in on me. To put it another way, it feels like dusk on a gloomy winter’s day. Now I wander aimlessly up and down the noisy streets of a northland that is cloaked in a suffocating smog-haze. I’m surrounded by flitting shadows and robbed of all human warmth.</p>
+      <p>Over the years, you inundated me with the academic books and journals you published, even if I hadn’t ordered or subscribed to them. Since 2018, that reliable tide gradually receded until it has now disappeared entirely. Of course, in the grander scheme of things it’s hardly worth mentioning even if, quite frankly, I’m left feeling abandoned and with a bitter taste in my mouth. It’s funny now to remember that I used to think those waves of books and journals were an annoyance; now I realize that they were as much a part of my life as the main sites of my work: my study at home, the library, and the lecture halls of Tsinghua University. Moving between those three places was the all-engrossing itinerary as well as being the rhythm of my daily round. Now I’m barred from the libraries and I’m not even allowed in a lecture hall; express deliveries of the latest publications no longer appear on my doorstep, and I’ve been reduced to relying entirely on my personal library. It’s stultifying.</p>
+      <p>When, upon occasion, I do venture into the city to browse the bookstores, although I’m relieved to see that both old friends and relatively recent acquaintances are still publishing lavishly produced tomes, I can’t help feeling resentful that my name is banned from appearing in print. It brings to mind that famous line by the great historian Chen Yinque, who said: “Though I’ll be dead soon enough, who knows when my work will ever appear?”</p>
+      <p>[<em>Note: </em><em>An internationally renowned scholar, <a href="http://chinaheritage.net/journal/the-two-scholars-who-haunt-tsinghua-university" target="_blank" rel="nofollow">Chen</a> had chosen to stay in China after 1949 and was courted by Mao, who offered him a leading role in the reconstituted Academia Sinica. Chen said he would only take the position if Mao promised that neither he nor his colleagues would be required to study Marxist-Leninist dogma. In 1962, Mao’s powerful secretary, Hu Qiaomu, visited Chen at his university in Guangzhou. During their conversation, Chen made the remark quoted here by Xu Zhangrun. In reply, Hu declared:“Your work will be published soon and you’ll be with us for years to come.” In reality, Chen remained an isolated independent academic and died a broken man at the height of the Cultural Revolution. His unpublished works only appeared well after Mao’</em><em>s demise</em><em>. By comparing himself to Chen Yinque, Xu Zhangrun is saying in effect that he will not be published again until Xi Jinping is dead and buried.</em>]</p>
+      <p>What’s to be done? At least I’ve finally been able to get another WeChat account, so I have access to a relatively wide range of material. I can even follow the goings on in academia; I suppose that’s something. Still, it’s somewhat like a window into a foreign land: there they all are, my former academic friends as well as the present intellectual stars, the businesspeople, and the retired bureaucrats. I follow their discussions and debates, as well as all the intellectual grandstanding; why, I can even learn all about their lavish recent trips around the country and their new ventures. Then there’s all the photos and the video clips that they post of themselves. All of it affords me a momentary escape from my sequestered courtyard; it’s as though I can take a stroll in the raucous streets outside. Thankfully, there are some decent types among them and, no matter how constrained the overall atmosphere is right now, I think to myself: surely some worthwhile things will still be produced that will leave a meaningful legacy for the future. After all, not everyone will be sentenced to social death like me! Frankly, the only things flourishing in my ongoing intellectual isolation are at best banal and mediocre. Or, to put it more plainly, once your academic life has been assassinated, as your mind atrophies, it is inevitable that your spirit will also wither. Those lines from “Temptation of the Poet” by the Welsh writer R.S. Thomas hold true:</p>
+      <p>“The temptation is to go back,<br />To make tryst with the pale ghost<br />[. . .]<br />. . . there to renew<br />The lost poetry of our talk<br />Over the embers of that world<br />We built together. . .”</p>
+      <p>They reflect both my present situation and my mental state.</p>
+      <p>To return, however, to the topic at hand, as editors and publishers I imagine that you now find yourselves in a harsh new era of “Qin Rule” [<em>of the kind praised by Mao Zedong, who <a href="http://chinaheritage.net/journal/chinas-heart-of-darkness-prince-han-fei-chairman-xi-jinping-prologue/" target="_blank" rel="nofollow">said of himself</a> that he was Marx plus a modern-day version of the first emperor of the Qin dynasty</em>]. You are in the sights of an odious regime that shores itself up by silencing dissenting voices. Although each publishing house is dealing with the situation in its own way, I know that you are all faced with an impossible dilemma and subject to all kinds of overt control as well as covert pressure.</p>
+      <p>China’s present totalitarian order has imposed a regime of censorship the likes of which has never been seen before. Under it, editing has become a particularly fraught occupation and shepherding anything through to publication a hazardous process. Everyone involved in the industry is hesitant. Authors feel that they are treading on thin ice. They still have to appeal to the good offices of publishers who may now respond in any number of ways. Those who contribute to what are presently deemed to be “core ideological publications” enjoy considerable state largesse, even if it means dealing with editors whose professionalism is a joke at best. The worst of them squeeze everything out of the system that they can while barring access to others. Such editors can constantly indulge themselves with well-lubricated banquets and frequent official trips to scenic spots. They cream money off the funds allocated for the various symposiums that they organize and rationalize it all by thinking they simply have to rip off the system to get by. Even though I’m no longer involved in the scene, I know that every law journal produced in China has such scumbags working for it. But those “core publications” are the worst.</p>
+      <p>Forgive my ranting: It’s been so long since I’ve seen any of you, and I have no one to share my outrage with so I get quite emotional whenever I think about what’s going on. So, here I am, blurting out far more than I should.</p>
+      <p>I would hasten to add, however, that I remain extremely grateful that, throughout my own publishing career, I rarely encountered any editors who were motivated by such personal avarice. For the most part, they were all pretty much down to earth and quite a few of them were themselves really decent bookish types. Only now can I truly appreciate how lucky I was to have enjoyed such amicable working relationships. Then again, publishing tends for the most part to attract good people even though, like teaching, it isn’t a particularly popular career path.</p>
+      <p>As I’m writing this late at night, the faces of all of you—the editors I’ve worked with over the years—appear in my mind’s eye. I think back to all the times we agonized over a particular word or expression and how, sometimes, we ended up in heated arguments. Since it’s not possible to share my reminiscences with you over a drink, I am forced to savor these agreeable memories alone; never again will we wrangle over the minutiae of producing and printing my work, though I do remember an observation made by one particular editor-in-chief:</p>
+      <p>“Oh, that Xu Zhangrun, he’s just a drain on our resources. Do your best to avoid getting mixed up with his projects.”</p>
+      <p>Since all that’s left to me is the freedom to commit my thoughts to paper, my mind roams like an untethered horse and I’m writing down as many details here for you so I don’t forget. . . As I embark upon my autumn years, my mind is often crowded with past memories, my heart sunk in the lost courtyard that I once shared with you all. I also increasingly recall details from my youth and, as my memory speaks, I’m doing my best to make sense of things and find thereby some meaning and solace. It’s a welcome respite from my present predicament; for a moment, the warm glow of the past dispels the encroaching chill of winter. I may well be alone, but I refuse to be lonely.</p>
+      <p>So, this is how you find me today, wandering around my virtual courtyard, chanting poems to myself and engaging with you in what Parisian leftists [<em>like Gilles Deleuze and Claire Parnet in </em>Dialogues] called a “conversation that is a double capture” [<em>that is, an “a-parallel evolution of two beings who have nothing whatsoever to do with one another”</em>]. It’s a form of mental exercise that keeps me from going completely stir-crazy. After all, a series of precipitous events suddenly thrust me into old age, the presumed summit of a person’s life. It’s rather knocked the wind out of me.</p>
+      <p>In a collection of enigmatic aphorisms titled <em>All Things Are Possible</em>, the Russian philosopher Lev Shestov <a href="https://www.gutenberg.org/files/57369/57369-h/57369-h.htm" target="_blank" rel="nofollow">wrote</a>:</p>
+      <p>“To be irremediably unhappy—this is shameful. An irremediably unhappy person is outside the laws of the earth. Any connection between him and society is severed finally. And since, sooner or later, every individual is doomed to irremediable unhappiness, <em>the last word of philosophy is loneliness</em>.”</p>
+      <p>Aristotle spoke of the world “beyond the <em>polis</em>,” one in which only beasts and god could exist. As I have been exiled from the “<em>polis</em>,” I have therefore become, to all intents and purposes, beast-like and a “<a href="http://chinaheritage.net/journal/xu-zhangrun-chinas-former-people/" target="_blank" rel="nofollow">former person</a>.”</p>
+      <p>Actually, this letter will be included in a <a href="http://chinaheritage.net/journal/introducing-xu-zhangruns-ten-letters-from-a-year-of-plague/" target="_blank" rel="nofollow">book</a> that I’ve been writing. It will be in a collection that is something of a psychological account of my recent travails. This effort, too, is part of my ongoing struggle to fend off loneliness. I fear, however, that even before my words have run their course, the well of my inspiration will run dry, my soul will freeze and my solitude increase as I’m reduced to abject solitude.</p>
+      <p>Perhaps countless others who have been “irredeemably unhappy” at other times and in other climes will one day open my account of solitude while reading by a window and join me in a spirit of understanding. Perhaps they will smile knowingly, lost in some inebriated state and, in that instant, they might be able to dispel for a moment the profound sense of isolation that all of us confront. Together, we can be like Shestov’s “unhappy ones.”</p>
+      <p>Now, as the <a href="https://www.thechinastory.org/yearbooks/yearbook-2020-crisis/introduction-the-year-of-crisis/2020-a-gengzi-%25E5%25BA%259A%25E5%25AD%2590-year/#:~:text=The%2520year%25202020%2520is%2520a,Eve)%2520to%252011%2520February%25202021." target="_blank" rel="nofollow">gengzi lunar year</a> [<em>of February 2020-February 2021</em>] draws to a close, I’m revealing myself to you here in an effort to express what I can only presume is a shared sense of misery and, by communicating with you in this way, also to seek some consolation in fellowship. . . These are, at best, self-absorbed musings, recorded as I contemplate the emptiness that has enveloped me. Even though I seek hereby your companionship, I can hardly force you to embrace me with bear hugs.</p>
+      <h3 id="an-editorial-education">An Editorial Education</h3>
+      <p class="dropcap">My Dear Readers,</p>
+      <p>Over the years, I’ve been something of a part-time editor myself. You probably don’t know that in my callow youth I was very much taken with editing. [<em>In the mid-1970s,</em>] I compiled and wrote out the school paper that we regularly posted [<em>written out in calligraphy on large sheets of paper and glued up on a dedicated wall</em>]. In the process of editing, I’d add my own crude illustrations, do curlicues around the titles of articles, and play around with formatting. I even became fairly adept at selecting different character fonts and colors. I didn’t have much of a clue and pretty much did whatever I pleased; my aspirations were only limited by the fact that paper itself was in short supply.</p>
+      <p>Working on the school paper was one of the ways that helped me get through the harsh years of my youth [<em>during the Cultural Revolution; the author was born in 1962</em>]: all that dedicated concentration and the long hours of selfless industry helped dispel the feeling of desolation outside; added to that was my determination to overcome the limits of my frail and easily exhausted body. . . Hah, you’ll laugh if I dare suggest that those activities fired a maturity beyond my years.</p>
+      <p>After a night of toil, I’d set off in the faint light of dawn only to be subjected to the daily round of derision, contempt, and isolation at school. In class, I’d be called out and shamed in front of everyone, my work held up as a “negative teaching example”. . . During those years, school was a daily stint in purgatory. It’s ironic, but that’s how my lifelong dedication to teaching really began—and also how it has ended, with me now having been stripped of the right to teach at all. Fate can play such cruel jokes.</p>
+      <p>I often wondered what my teachers were really trying to teach. As intellectuals, they had been classified as the lowest of the low and had been subjected to the thought reform campaigns of the Communists and forced to endure frequent humiliation. Yet, here they were, imposing the [<em>Mao-era politicized</em>] education system on us. To a greater or lesser extent, they were the willing accomplices of the power holders. That the oppressors were also oppressed, or that those who had been wronged did wrong in turn, was, of course, hardly unique to that time. It was a reflection of the human condition itself; yet another example of the tragic nature of our existence and further evidence of the slavish underbelly of so many human relationships.</p>
+      <p>So-called social and political progress—if, indeed, “progress” as a substantive and meaningful concept is still desirable—should surely be about reducing and eliminating all kinds of enslavement while in the pursuit of greater, albeit invariably unattainable, freedom. Human beings are inherently free, just as they are also born enslaved and bound in the shackles of master-slave relationships. Freedom demands the breaking of those bonds so that the individual can enjoy autonomy and seek self-realization. It allows for the fullest expression of the self: our lusts, our enthusiasms and dynamism. Our innate sense of freedom is the closest thing we have to divinity. Our sense of transcendence is the means by which the world can truly be a place where human potential can be realized.</p>
+      <p>In the time of Jesus, this was the kind of salvation offered to people who were living in an irredeemable age; it is the same spirit that motivated the classical Confucians to pursue a positive role in the world. Without such possibilities, all of us are but adrift in an unprincipled realm of opportunism. If that is all there is, then people may just as well indulge in boundless hedonism and all kinds of craven behavior. Such individuals may like to think that they have broken free of convention and from their subjugation to others. In reality, however, they have only managed to enslave themselves in another way: they have sacrificed meaningful free will on the altar of mindlessness.</p>
+      <p>Maybe that’s why, as a university lecturer, I was always more interested in teaching my students how to think than in just expecting them to regurgitate the cut-and-dry formulas in the textbooks. I wanted to introduce them to the whole gamut of ideas and opinions regarding whatever the topic was under discussion. I was confident that was the best way for them to pursue the ideas in their own way and reach their own conclusions. Naturally, in the process, I’d share my views and <em>idées fixes</em> with them, but I was always keenly aware of the need not to hinder their intellectual curiosity. That’s why I never presented my take on things as being some kind of <em>ex cathedra</em> truth.</p>
+      <p>I suppose you could say that my pedagogical philosophy was typical of someone with a liberal mindset. After all, pronouncements like “the only possible conclusion is that. . .” are suited to law courts; monolithic approaches have no place in a university environment. Perhaps this is the basic difference between the kingdom of free thought and the mindset of the engineers, and from them come two completely different approaches, both in regard to social and political issues. You may well respond by claiming that society itself is a university and, in the “real world,” you’ll find yourself so embroiled in practicalities that you’ll soon forget most of what you’ve previously learned.</p>
+      <p>Of course, I acknowledge that school doesn’t result in a “finished product” as such, and that it is the life you have after your school years that really teaches you about how the world works. But a person’s school years have a crucial impact on their world view and the meaning of life. In particular, as it was in my case, you learn a great deal about good and evil. You learn how to respond to failure. Most of all, you realize how you will react to inequality and injustice. You also learn how to deal with the peers who betray you and how people in positions of power can make life hard for you. School tempers you in ways that help you better cope with the abuses that you might suffer, say, at the hands of a malicious police force, or the insults hurled at you by strangers. Among other things, it taught me how to deal with the fact that, in a society like ours, you’re completely powerless. Of course, on top of all of that is the inescapable reality that our political system denigrates you and discriminates against you at every turn.</p>
+      <p>It’s during your school years that you learn a whole set of social and political responses so that you can deal with all of these things, although it also encourages you to blame everything on an unjust fate or your lack of awareness. But, then again, learning how to make excuses for yourself is also part of your education. Once you’re out of school, regardless of whether things go your way, or even when you end up suffering one disaster after another, the manner in which you respond to whatever hand you’re dealt is very much determined by the things you have learned actively or passively during your early years.</p>
+      <p>Forgive me: I’ve let myself get carried away again. Maybe I should illustrate my point by saying a little more about my own experience. You see, I was tainted from birth because I grew up in a reactionary family [<em>according to the strict Maoist era </em><em>class</em><em> system. Xu’s</em> <em>father was classified as unredeemable because he had been a member of the Nationalist Party’s Youth Corps before the Communist conquest of 1949</em>]. Being congenitally politically suspect, I was shunned by society and so I sought a refuge in art and drawing. That’s how I ended up editing the paper at school. Although I was regarded officially as being little better than social detritus, my school was quite happy to exploit my talents—I proved to be useful, like recycled trash. Even though they pretty much left me alone and despite my ongoing sense of displacement, despite a sense of hopelessness, I somehow harbored a vague hope for the future. I was determined at the same time as being all but paralyzed by indecision. I dreamed of getting into art school, but after having repeatedly flunked the entrance exams, I realized that my future lay elsewhere. Eventually, I got into university [<em>where I studied law</em>] and, despite my continued impoverished circumstances, I also did my best to keep up my interest in art. Gradually, time whittled away my old motivation and I gave up on it entirely.</p>
+      <p>It was only when I became a university lecturer that I realized that some of my old interests were also relevant to my new. That’s how I got back into editing. I initiated a series of books and became involved in setting up new academic journals. I particularly enjoyed commissioning articles and putting together thematic issues of my journals. For six years, I edited <em>Tsinghua Legal Studies</em>, confident that I could use it to elucidate some key legal principles [<em>that were a feature of contemporary debates</em>]. I also established <em>Historical Jurisprudence</em>, a book series that ran for over 10 years [<em>and which is described in Letter Seven, addressed to my former students</em>], in the hope that it would make a contribution to legal reform in China. As both an author and an editor, I came to appreciate the laborious yet exciting processes involved in editing and publishing. That’s why I can well understand the situation that now confronts you. I long ago learned that it doesn’t matter how enthusiastic you might be about something; I also learned that frustration and outrage are useless. Initially, you might feel generally hopeful about things but, over time, you come to realize that it’s best to be cautious even as you do your best to nurture a fragile sense of possibility, even as you strain to keep that deep-seated sense of despair at bay.</p>
+      <h3 id="a-censoring-regime">A Censoring Regime</h3>
+      <p class="dropcap">All that means that I’ve had a lifelong involvement in editing and publishing; it also means that I’ve also been subject to constant censorship. Ah, the censoring eye: it’s a painstakingly cultivated form of vision, a kind of tireless invigilation trained to penetrate obfuscating skeins of words and divine dangerous intent lurking in the minutiae of ideas. As it sifts through mountainous haystacks in search of tell-tale needles, the censoring eye is always in a state of alert trepidation. Nothing escapes its scrutiny.</p>
+      <p>The fact of the matter is that, in China, one way or the other just about everyone works for the censorate—there’s the Party leaders, of course, but the regime also enlists the services of the broad masses and readers themselves. As you know all too well in your professional activities, there’s the kind of censorship that kicks in before something even gets published as well as post-production censorship. These are two aspects of a highly developed system that features such things as special-purpose censorship, routine censorship, emergency censorship, run-of-the-mill censorship, and task-focused censorship. Before any of that even comes into play, however, there’s a crucial internal, individual mechanism of self-censorship. [<em>As the classic </em>Tao Te Ching <em>puts it</em>:] “The myriad things are born from being and being is born from non-being.” Authors are so afraid of being “off message” from the get-go that, by and large, they are generally quite neurotic.</p>
+      <p>That’s why, if you want to identify the defining feature of the regime that has held sway in China for over 70 years, without a doubt it would be censorship, the tireless and boundless desire to shut people up and cripple their minds.</p>
+      <p>Why? Ours is a political system that was founded on lies and violence, and it can only maintain itself by telling more lies and pursuing ever greater violence. It is so afraid of the truth that it suppresses information, perverts people’s souls, and does everything it can to eliminate independent and free thought. To keep people safely cordoned off from the truth, it must plaster over every single crack in its edifice of falsehood. This is the <em>modus operandi</em> of all totalitarian and authoritarian regimes, be they in the East or in the West.</p>
+      <p></p>
+      <div class="pullquote">
+Being from a “reactionary family” I was, of course, congenitally tainted. That meant that, when I did something that didn’t measure up, it was never regarded as being due to a lack of ability, rather it was because my “bad attitude” had been bred in the bone. A “bad attitude” reflected a flawed “ideological orientation” that, it only stood to reason, meant that I had, and was, a “political problem.”         <div class="pullquote-share">
+<span class="st_facebook_large" st_title="Being from a “reactionary family” I was, of course, congenitally tainted. That meant that, when I did something that didn’t measure up, it was never regarded as being due to a lack of ability, rather it was because my “bad attitude” had been bred in the bone. A “bad attitude” reflected a flawed “ideological orientation” that, it only stood to reason, meant that I had, and was, a “political problem.”" displaytext="Facebook"></span><span class="st_twitter_large" st_title="Being from a “reactionary family” I was, of course, congenitally tainted. That meant that, when I did something that didn’t measure up, it was never regarded as being due to a lack of ability, rather it was because my “bad attitude” had been bred in the bone. A “bad attitude” reflected a flawed “ideological orientation” that, it only stood to reason, meant that I had, and was, a “political problem.”" st_via="chinafile" displaytext="Tweet"></span><span class="st_email_large" st_title="Being from a “reactionary family” I was, of course, congenitally tainted. That meant that, when I did something that didn’t measure up, it was never regarded as being due to a lack of ability, rather it was because my “bad attitude” had been bred in the bone. A “bad attitude” reflected a flawed “ideological orientation” that, it only stood to reason, meant that I had, and was, a “political problem.”" displaytext="Email"></span>
+        </div>
+      </div>
+      <p>You didn’t need very much talent or skill to put together a high-school paper. My job was pretty formulaic. The devil was quite literally in the detail. Policing the contents of each issue of the newspaper demanded a very particular skill set. In the first instance, your class monitor and the head of your year’s study committee had to approve every item that might appear in the paper even before it was formally screened by the year’s student propaganda cadre and your own teacher. After they had all had a say, the head class monitor would have to make doubly sure that not even the slightest “potential problem” had eluded the various layers of vigilance. Sometimes, they’d call on the class committee to participate in the discussion and maybe even invite some relevant classmates, in particular the hyper-active Party types, so that they too could cast an eye over things. What kind of “potential problems” were they looking for? Something, anything, that might be construed as being sensitive or politically questionable, of course.</p>
+      <p>China’s “Red Dynasty” is a brilliant self-promoter, and over the years it has evolved numerous ways to celebrate itself. When you boil it all down, however, ultimately all the overblown rhetoric is really just about the “great, glorious, and infallible” leader. So, the real art of avoiding political problems was about, first and foremost, making sure that you had the correct political perspective on things and, secondly, honing your abilities so you could identify and uncover enemies of the revolution. You had to do so with unwavering conviction and resolute application; there was no room for prevarication or fuzzy thinking. The Party-state was by nature flawless and must not be undermined in any way. That’s why the censors at my school were on the lookout for sly insinuations and underhanded remarks, while scanning everything in search of negative political messages that might have been hidden between the lines or expressed via rogue discordant notes. Even if they failed to detect such covert criticisms, they still had to be alert to the slightest hint of sarcasm or, perhaps, some oblique reference that constituted a cunning attack on the Party. When they had finally ascertained beyond the shadow of a doubt that there was no evidence of sarcastic intent or content, the possibility still remained that a coded hint in the text might in some way throw shade on the authorities. You see, sarcasm and snide allusions were powerful poisonous arrows, ones that could only ever be aimed at the enemy.</p>
+      <p>Even when The Leader was celebrated in the most fawning prose there was still a possibility that a phrase might be out of place or that the rote formulas of adulation had been ill-expressed. On top of that, you had to be particularly careful that the illustrative material you’d chosen to accompany the hosannahs or the design motifs were absolutely message-appropriate. To get something like that wrong would be seen as further proof that you “had a bad attitude” and simply weren’t up to the job.</p>
+      <p>Being from a “reactionary family” I was, of course, congenitally tainted. That meant that, when I did something that didn’t measure up, it was never regarded as being due to a lack of ability, rather it was because my “bad attitude” had been bred in the bone. A “bad attitude” reflected a flawed “ideological orientation” that, it only stood to reason, meant that I had, and was, a “political problem.”</p>
+      <p>If you happened to get caught up in the vicious cycle of their logic, you’d inevitably be punished if for no reason other than that you simply weren’t “people like us.” Instead, you were part of what they dubbed “the ongoing struggle with the enemy.” According to the rhetoric of the time, that meant you had to be “denounced, cast out, and stamped underfoot into eternal submission.” Such hyperbolic overkill inevitably meant that anything you did, no matter how trivial, could become a major political problem, one that also demanded punishment for anyone else associated with the transgression. In fact, this remains the default mode of Communist rulership today and it can be deployed at a moment’s notice and in every case, just as it can be modified to suit all contingencies. In practical terms, this means that a Party functionary at any level in the system can accuse you of a political crime, frame you, and have you jailed or even eliminated. Over the decades, countless lives have been destroyed by local cadres who have simply exaggerated minor misdemeanors and turned them into major cases of “premeditated political rebellion.” Who knows how many brilliant minds or devoted hearts have been undone by the nebulous requirement that “revolution must erupt in the depths of your soul like a spiritual atom bomb” [<em>as Mao</em><em>’s fawning courtier Lin Biao declared of Mao Zedong Thought in the early stage of the Cultural Revolution</em>]?</p>
+      <p>Over the past 40 years [<em>since the dawn of the era of economic reform in 1978</em>], although China has enjoyed periods of relative liberalization, these have been matched by equally harsh political clampdowns. In the case of 1989, it resulted in tanks being sent into the streets of Beijing and the People’s Liberation Army firing on student protesters. Since then, politically things have been on a generally downward trend with the result that, today, we find ourselves in a suffocating iron cage, one that looks increasingly similar to that of the Mao era. That is why the nerves of publishers and editors like you are shot and why you find yourselves frozen in crippled hesitation. Today, the state of censorship in China is the worst it’s been since 1978. From the moment an idea takes shape in the mind of a writer right up to the time that, after a long and drawn out gestation, a book or article actually appears in print, it is more likely than not that it has been completely eviscerated, or distorted beyond recognition.</p>
+      <p>If we put the issue of self-censorship to one side for the moment, you as editors know all too well that when a manuscript is finally accepted for publication an author will have to deal with the following:</p>
+      <ul>
+        <li>An initial stage of pruning at the hands of the designated editor, something that invariably results in a slew of cuts and changes; following which</li>
+        <li>The head of the editorial department will review the manuscript along with the suggested alterations, adding another round of nitpicking in the process; after which</li>
+        <li>An external editor will go over it all again with the equivalent of an ideological magnifying glass; before,</li>
+        <li>A final round of oversight and editing takes place at the hands of the editor-in-chief and the head of the publishing house, both of whom will examine the text with their acute, microscopic vision.</li>
+      </ul>
+      <p>At any point in the process, the General Administration of Press and Publication may call the manuscript in for a “spot check.” Then there’s the Ministry of Education to think of. It has oversight over all of the academic publications produced by the universities in its bailiwick. The ministry has its own dedicated censorship committees empowered to carry out further “spot checks” relating to any topic, theme, or work that falls within its particular purview. Its paraphernalia is not limited to the editorial magnifying glasses and microscopes mentioned above, for it is able to marshal the equivalent of radio telescopes and night-vision goggles.</p>
+      <p>It’s said that these new dedicated censorship committees are made up of veteran propaganda cadres who have been invited out of retirement so that they can bring their long years of experience as cultural assassins to the task of keeping today’s academics in line. It is also observed that these revivified hacks pursue their duties with the ruthless energy of voracious ideological zombies. Are these the new “Experts”? Or should they be seen as rank “Outsiders”? [<em>Note: Xi Jinping has <a href="https://thediplomat.com/2017/05/why-did-china-just-hear-one-more-mao-era-phrase/" target="_blank" rel="nofollow">revived</a> the Mao-era requirement that academics, scientists, and professionals of all kinds be “Both Red and Expert” (</em>又紅又專)<em>, that is, first and foremost they must study and internalize Party ideology so they can become “Red,” while constantly striving to excel in their particular fields of expertise, that is to be “Expert.” In the 1950s, academics and intellectuals decried these political invigilators as unqualified “Outsiders.”</em>] There are numerous stories about the absurdity of this situation, and things are said to be in quite a mess. Of course, I can’t help feeling some sympathy for editors who are constantly being dragged over the coals and for all the stressed-out authors. However, the real victims of this renewed cultural hooliganism are the Chinese people and our nation as a whole.</p>
+      <p>Political interference of the kind I’ve described here both reflects and licenses an unlimited expansion of power as well as constant new rounds of wasteful “ideological rent-setting.” The thought-police enjoy extraordinary latitude and the most powerful of them all are the heads of what are known as the “Departments of Periodical Publication” [<em>which are constituted under the Party’s central and local Publicity Departments and have oversight over all academic journal publication</em>]. These people have a bloated sense of entitlement as well as extraordinary power. They chair virtually every meeting related to publishing and feel free to pontificate on whatever the subject under discussion happens to be, no matter how clueless they are. Although they merely mouth the latest Party nostrums in their frequent key-note addresses, they are nonetheless invited to attend every event and occasion and they are showered with gifts. They travel hither and yon on the public purse and enjoy the scenic spots of the nation, all in the guise of undertaking official duties. They also put the squeeze on their underlings and rake in the ill-gotten rewards of cloaked corruption. So, let me ask you this: Would any of them ever miss a banquet? How can they get away with all of this? How in Heaven’s name can this be happening? But, of course, the answer is simple: they are both wholesalers and retailers who enjoy a monopoly right over “The Truth.”</p>
+      <p>As you all know, editors-in-chief have a habit of treating both aspiring young writers as well as established authors anxious for their patronage with particular hauteur. Now witness how these same editors fawn over and cower before the all-powerful propaganda bureaucrats. They are little better than lap dogs and submissive curs. The relationship between these empowered ideological bosses and the editors disgusts me. They perform for each other in a way that reflects an unspoken complicity and a kind of self-serving magnanimity. It’s people like this who prosper in particular under a regime of systemic censorship.</p>
+      <p>Even though everyone in the publishing industry is a victim of the system as a whole, most of them also collaborate with and profit from censorship itself. Ultimately, no one is an innocent bystander.</p>
+      <ul>
+        <li>First, as for the victims of the system: every publisher, including those who only produce academic journals, relies for their continued existence on the propaganda organs of the Party-state.</li>
+        <li>Then, it is all but impossible to start a new publishing enterprise or publish a new journal outside the state system, including academia, which itself is dominated by the Communist Party.</li>
+        <li>Also, it is now forbidden for anyone to set up a non-official newspaper or magazine. Even those that still manage to survive are subject to annual reviews during which their content is scanned and sample material is scrutinized.</li>
+        <li>Editorial inspections are followed up by rounds of awareness training, formal interviews with editors, as well as exacting ways to ensure compliance, which include the imposition of miscellaneous levies and taxes. The upshot is that it’s all but impossible for quasi-independent operators to survive.</li>
+      </ul>
+      <p>Editors and employees alike, regardless of their rank, age, or gender, now live in constant trepidation for they never know what might cause offense. When something does go wrong, at the very least they’ll be subjected to a damning formal reprimand circulated throughout the industry, along with a hefty fine. At worst, a publishing license will be revoked — the equivalent of a death sentence for the journal in question will be banned and all of its employees will lose their jobs and benefits. The mere possibility of this scares everyone into compliance.</p>
+      <p>This kind of top-down pressure means that individual writers end up bearing the brunt of it all, the result of which is that they end up as the best censors of their own work. A system that keeps people in check like this guarantees that only the most irredeemably mediocre works gets published.</p>
+      <p>Friends, you’ve seen the results for yourselves and you know that the stuff being churned out by academic journals these days is second-rate at best. The smart operators who have given up their editorial independence and act as the handmaidens within the heavily policed publishing industry are also willing to exploit writers for profit. Since the government controls the certification of all publications, publishers avail themselves of their near-monopoly-control over an industry which enjoys constant and high demand. The censors and publishers benefit from artificial shortages created by the system that they control. So what they do produce is like food during a famine year, drinking water in the desert, or a vaccine during the plague. For their part, academics have to deal with a system based on the principle of publish or perish, one that is even more onerous in the case of younger scholars. That’s why publishers like you now find yourselves in a highly advantageous position.</p>
+      <p>Of course, there’s no dearth of stuff being published: such-and-such a bureau chief or director, no matter how artless their poetry or risible their prose, can always get their underlings to ghostwrite reams of material that appears regardless of quality. Some characters with impressive official titles actually have the wherewithal to instruct publishing houses to produce their books; the key to the whole operation is the magical word “power.” Others allocate state subsidies so they can be published, enabling the publisher to make a killing no matter how the book sells. Here, the key to the whole operation is that other magical word, “money.” Why, they might even celebrate some provincial prison governor for churning out a veritable library of “academic works,” even though the fellow is a renowned booze-soaked bureaucrat. Nowadays “productivity” of this kind is commonplace. In an environment in which systemic corruption is the leading ideology, those who benefit the most are the same people who are also victims of the system.</p>
+      <h3 id="censoring-the-self">Censoring the Self</h3>
+      <p class="dropcap">As a systemic form of coercion underwritten by a pervasive propaganda apparatus, censorship is embedded in every aspect of China’s cultural, educational, and public life. It is ever-vigilant and primed to pounce on, sequester, and eliminate aberrant information. The censoring system alone can truly represent The Truth; it holds sway over The Truth and it monopolizes The Truth. It is a system that has, in fact, become The Truth against which all else is measured. Nothing escapes its universal purview, be it thoughts lurking in the unique complexities of the human mind or the gossamer potential for our souls to delight in beauty or respond to sorrow. Why, even the scale of the sun and the brightness of the moon, the fluid movements of fish, the transformation of silkworms into moths, the irrepressible energy of children—all can and must be gauged and evaluated according to its Truth.</p>
+      <p>The system doesn’t stop with imposing its will from the outside, for it has long since inveigled its way into every heart, mind, and relationship. It penetrates your being in such a fashion that you are no longer aware of its discreet operations. It generates anxiety and excites terror in such subtle ways that you can never feel truly alone or be entirely at peace. It can do so because it inculcates an awareness of the danger of transgressing its “red lines.” Even when you just want to get on with life, it makes you hesitate before you dare take a step.</p>
+      <p>This is how all of you to whom I am addressing this letter—be you an editor or an author, or even one of the slavish intellectual courtiers riding high for the moment—are enmeshed in the system. Only someone like the jailer I mentioned above can really feel at ease. He’s a true player for he knows full well that all the books he’s “published” are just for show. He doesn’t even have to bother reading them.</p>
+      <p>The system reaches its apogee when the repression previously imposed externally has been completely internalized. By then, it has transformed our anxieties and fear of error into our most effective policemen. It’s what that familiar old expression “revolution erupting in the depths of the soul like a spiritual atom bomb” means in China today.</p>
+      <p></p>
+      <div class="pullquote">
+Aware that under no circumstances should we transgress the invisible barrier around us, we gag ourselves, deceive ourselves, repress ourselves so much that the habit of self-repression turns into a physiological addiction, an unconscious reflex in our everyday life.         <div class="pullquote-share">
+<span class="st_facebook_large" st_title="Aware that under no circumstances should we transgress the invisible barrier around us, we gag ourselves, deceive ourselves, repress ourselves so much that the habit of self-repression turns into a physiological addiction, an unconscious reflex in our everyday life." displaytext="Facebook"></span><span class="st_twitter_large" st_title="Aware that under no circumstances should we transgress the invisible barrier around us, we gag ourselves, deceive ourselves, repress ourselves so much that the habit of self-repression turns into a physiological addiction, an unconscious reflex in our everyday life." st_via="chinafile" displaytext="Tweet"></span><span class="st_email_large" st_title="Aware that under no circumstances should we transgress the invisible barrier around us, we gag ourselves, deceive ourselves, repress ourselves so much that the habit of self-repression turns into a physiological addiction, an unconscious reflex in our everyday life." displaytext="Email"></span>
+        </div>
+      </div>
+      <p>The system knows all too well that people are hard-wired to want to try new things and question the world around them. It also knows that individual inspiration can be like gusts of wind under our pinions, raising our spirits to ever-new heights of human endeavor. That’s precisely why it focuses its attention on our innermost inspirations. When you open your heart and mind to its Truth, your soul must forswear all other possibilities and extirpate doubt. You need to banish independent hope and give up on the idea that you can truly think for yourself. As for all that talk about human potential or intellectual and cultural diversity—it can all go to hell! Under a regime such as this we are expected to live unremarkable lives, merely to survive and to shrink the rich array of life itself. They deny and forbid; they want to staunch and suffocate; they would rather throttle you than let you sing your song of freedom. To them, all swans are black and threatening. [<em>Xi Jinping is <a href="https://jamestown.org/program/china-brief-early-warning-xi-jinping-warns-against-the-black-swans-and-gray-rhinos-of-a-possible-color-revolution/" target="_blank" rel="nofollow">obsessed with</a> “black swan” events.</em>] Over time, their invasive regime becomes second nature, or what the émigré Russian political philosopher Ivan Ilyin called a process by which “self-imposed compunction” (самопoнуждение) ends up as “psychological compunction” (психическое понуждение).</p>
+      <p>A soul thus imprisoned, a will thus perverted, leaves the heart open to an all-encompassing anxiety that can actually induce illness. It is as though we are always afraid of a police raid in the dead of night and fearful that some nameless punishment is awaiting us at dawn. Aware that under no circumstances should we transgress the invisible barrier around us, we gag ourselves, deceive ourselves, repress ourselves so much that the habit of self-repression turns into a physiological addiction, an unconscious reflex in our everyday life. The internalized coercion domesticates and disciplines us; their sadism becomes our masochism. We see the results all around us:</p>
+      <ul>
+        <li>The most daring will offer a pathetic gesture of resistance, though they’d never dare to confront the system;</li>
+        <li>The vast majority of people become canny operators. They ignore the realities of the Party-state and let off steam by decrying the backward nature of the Chinese national character. They offer feeble excuses about things and blame it on the overall state of the civilization. At best, these people add a pinch of MSG to this Chicken Soup for the Soul; and,</li>
+        <li>The most deplorable are the people who simper and hang around the entrance of the Ministry of Truth in the hope of being thrown some scraps.</li>
+      </ul>
+      <p>This all-embracing culture of censorship dominates the country in two ways:</p>
+      <ul>
+        <li>First, there’s the brainwashing—a constant stream of distorting propaganda, brazen lies as well as the relentless banning of knowledge—starting at birth. It’s extraordinarily effective in darkening the windows of the soul; and,</li>
+        <li>Secondly, and perhaps more importantly, is the salutary effect on the public of the harsh punishments meted out to anyone who dares transgress. Absurd charges are leveled at free-thinking people and, since the laws of the Party-state are based on a presumption of guilt, and because there’s a strict demarcation between “friend and enemy,” everyone is scared into compliance. After all, they know how merciless the system can be and they are further intimidated by the ever-present threat of guilt by association. As a result, the spirit surrenders and the mind shuts down.</li>
+      </ul>
+      <p>. . . To survive you must submit, and submission is rewarded. Resistance, however, is futile and it leads to penury, or worse.</p>
+      <p>That’s why people readily chose to identify with the Leader, to go along with his peerless instructions and to applaud his sense of historical destiny. It’s also why people end up identifying with their oppressors and the thicket of rules and regulation that they impose. They learn to ingratiate themselves with the Great Storehouse of Truth and wait for the next clearance sale of discounted reality; it’s how people have grown accustomed to their straightjackets. In China, everyone is “a man in an iron mask”—though the catch is that each of us learns to forge the iron for our own mask.</p>
+      <p>What’s more, after people have internalized the self-censorship, the “victims” may all too readily repackage their ideas in the guise of patriotism or political realism so they can hawk them to the official media; they may even end up defending the official line or celebrating the leadership. Such illusory “self-realization” is like a <em>pas de deux</em> between the power holders and their subjects. The Internet age allows for an empire of illusion in which a welter of mindless entertainment distracts everyone from matters of substance.</p>
+      <p>Everywhere we see the kinds of “cultural courtiers” that the Hungarian dissident writer Miklós Haraszti <a href="https://www.bloomsbury.com/uk/the-velvet-prison-9781850430889/" target="_blank" rel="nofollow">described</a> [<em>in his 1988 book</em> The Velvet Prison: Artists Under State Socialism] when talking about Bertolt Brecht [<em>a renowned leftist playwright who had worked in Hollywood; remained silent about the Soviet purges, was awarded the Stalin Prize in 1954, and ended up in East Germany</em>]. We all adjust and become ideological minions. As Haraszti says, “The state need not enforce obedience when everyone has learned to police himself.” We adapt and become executive engineers in the system or, worse, mere filing clerks. The huge machine spins on regardless like a whirligig. It doesn’t require real authors or editors; in fact, both the author and the editor are dead, and the only books produced are little better than user’s manuals. Meanwhile, the thought police continue to prowl with handcuffs and shackles at the ready. The only individual with real volition is those few men and women like that Dopey Doughy Autocrat. Although in reality, they too, my friends, are brain-dead creatures in this stark ideological age.</p>
+      <p>In our Velvet Prison<em>,</em> Alexander Solzhenitsyn could have been appointed president of the Writers Union. [<em>And, as Haraszti goes on to say in </em><a href="http://chinaheritage.net/journal/less-velvet-more-prison/" target="_blank" rel="nofollow">The Velvet Prison</a><em>: “. . . given time. And then no one would have written </em>The Gulag Archipelago<em>; and if someone had, Solzhenitsyn would have voted for his expulsion.”</em>]</p>
+      <p>So this is what they mean when people talk about this being the Promised Land!</p>
+      <p>Before, I had been a P.O.W. in China’s Velvet Prison, nowadays I’m just a common criminal.</p>
+      <h3 id="intoxicated-together-at-the-cup-of-tyranny">Intoxicated Together at the Cup of Tyranny</h3>
+      <p class="dropcap">Hasn’t the present situation come about in part because for far too long we have grown accustomed to accepting the outrageous fortune meted out to us? Have we not chosen to make intellectual eunuchs of ourselves and drunk deep of the cup of humiliation? Through our compliance haven’t we encouraged the errant behavior of our oppressors? Are we not conjoined in a mutually reinforcing cycle that encourages their belief that “all things are lawful for me” [<em>a line from <a href="https://www.kingjamesbibleonline.org/1-Corinthians-6-12/" target="_blank" rel="nofollow">1 Corinthians 6: 12</a></em>]?</p>
+      <p>My friends, it is a truism to say that, in certain respects, all tyrannies and all tyrants are empowered by the slavishness of their subjects. Although Agamemnon famously declared [in that eponymous tragedy by Aeschylus]: “no one freely takes the yoke of slavery.” The blindness, weakness, and cupidity of people, in particular the cunning of the so-called elites, all too often permits authoritarian behavior. [As the Marquis de Custine observed of Russian autocracy:] “Sovereigns and subjects become intoxicated together at the cup of tyranny . . . Tyranny is the handiwork of nations, not the masterpiece of a single man.”</p>
+      <p>Also, as Ivan Ilyin observed, a person does not do evil in isolation, or merely because they are themselves thugs. Their victims have failed to resist the humiliations heaped upon them; indeed, they grow accustomed to thinking that repression is the natural order of things. Both the repressor and the repressed are corrupted by tyranny and, in turn, this leaves them both open to ever more extreme abuse. Only a greater good may possibly be able to resist the force of evil. Although by its very nature, when faced with implacable wickedness good all too often proves to be impotent. That is why some argue that evil can only be overcome by an even greater evil.</p>
+      <p>As I have said, tyranny maintains its sway by demanding the intellectual and spiritual castration of its subjects; by the ongoing and insidious corruption of people’s will to resist. The history of spiritual and intellectual independence, however, is not just a story about a few isolated individuals, for it also reflects a more general spirit of the age. Of course, there are always exceptionally independent people who appear in the world and their advent often encourages others to emulate them, to aim for a kind of transcendent sense of self. It is thereby that the few may have an impact on society as a whole. Those isolated individuals may thus inspire countless others who, through their support, further encourage more independent-minded individuals.</p>
+      <p>The crucially important link between such starkly independent individuals and those that they would inspire is the freedom of expression and a publishing industry that is its outlet. For these two encourage conversations and the evolution of public sociality; they allow for a form of resistance that shatters the silence imposed by autocracy. Freedom of expression and publishing are the very things that can bolster independence of the spirit; the republic of letters they foster nurtures in turn what can well flourish as a republic of ideas. But freedom exists only insofar as a space for public participation in politics exists in reality. In the process of participating in public power and the right to do so, citizens evolve, not merely as private individuals cloistered in solitary freedom, but as people who are both at home in their society and also part of the broader world. Their existence offers practical resistance to the kind of politics that is dominated by one family, one party, one faction, as well as all those things that would deny our commonality.</p>
+      <p>As Hannah Arendt has <a href="https://www.jstor.org/stable/25733551?seq=1" target="_blank" rel="nofollow">observed</a>, “the raison d'<em>ê</em>tre of politics is freedom, and its field of experience is action.” The key is that the individual self can find expression in the political arena, a place where the polis and the unique individual are at one. Private life, the retreat into an inward space, may allow for an inner freedom that lets people escape from external coercion and feel free, but Arendt was of the view that the individual can only truly find expression in the public sphere. Only when the individual is engaged with social organization in such a way that reflects both political ideals and model aspiration can a meaningful and positive modern political environment become possible. That is, [to quote a scholar of Arendt<em>’</em>s work,] that “politics is a vehicle for people’s self-expression and collective endeavors within the framework of civic life.” It is through society, then, that the individual can embark on something new: the joy of beginning something with one’s peers by means of debate, discussion, and the creation of “happiness.” These make it possible to share a stable world in common, one comprised of those public experiences in which all present can partake.</p>
+      <p>Thus, rather than the abstract dictum “I think therefore I am,” one’s existence is expressed through engagement with and action within the public arena. This allows for “my thinking” to be part of everyone else’s possibility. . . What then of the perpendicular pronoun “I”? According to my understanding, friends, that is existence itself. It is the “human spirit” that is truly imperishable. It is from this perspective that we can best appreciate what Arendt said about “rational truth” and “factual truth,” the roundedness of the former allowing it to outlast the latter.</p>
+      <p>Taking it a step further, I affirm that freedom can only truly be realized when equality is a universal value. Equality in turn proscribes excessive freedom—the dangers inherent in excessive equality can indirectly undermine freedom. The two are inextricably bound together.</p>
+      <p>China is still in the throws of monumental changes that require a great deal from all of us, in particular a collective refusal to be slaves. The situation brings to mind the Japanese novelist Kawabata Yasunari’s view that a true artist doesn’t simply appear out of nowhere, “they are a blossom that unfolds in the wake of generations of cultural ancestors.” What counts most is to remain steadfast in protecting every advance that has been made; what matters is allowing every work we produce to be available to all. Only through accumulated effort and wisdom can our joint endeavors over time irrigate the flowers of freedom so they may burst into boisterous blooms.</p>
+      <p>It’s been so long since any of us met. I wonder if you share these hopeful sentiments?</p>
+      <p class="dropcap">It’s been a long day and I’m coming to the end of what I wanted to say to you. Rising from my desk, I turn away from the window: I’m afraid that the setting sun will only serve to make my heartache all the more unbearable. Of late, I’ve suddenly really started to feel my age; it’s as though I’ve become an old man who has witnessed the passing cavalcade. But, then again, I’m nearly 60 and the season of decline is upon me.</p>
+      <p>The years ahead may pass peaceably enough. I may, as the old poem says, well enjoy “a dwelling with a hibiscus fence, plum trees growing by the stone steps on which to welcome the distant mountains and listen to the orioles.” But the rush of blood in my veins still denies me such placid vistas; my heart races yet and my mind is ill at ease. No matter how much I commune with the past, I still dwell constantly in present-day realities. My mood may exalt the lyrical, but it is a poetry that speaks of the awe of engaging with the prosaic. As the past swirls around me, my burning concerns are for the here and now. What does the future hold in store?—the unknown, sober resignation, and melancholy.</p>
+      <p>What, then, is to be done? Let us sing and dance:</p>
+      <p>“The support for the aging sage is<br />Not philosophical inquiry, but a walking stick from an ancient tribe<br />Encrusted with patterns that blur as he waves it in the air</p>
+      <p>“You can hear the phoenix’s call long after that tribe disappeared and<br />Joined the civilized world, busy directing his disciples and pointing out the faults of society<br />Still capable of changing shape, suddenly one day dissolving in the flowing water”</p>
+      <p>[<em>— from the poem “Walking Stick for a Different Age” (“異代手杖記”), by Wang Ao (王敖)</em>]</p>
+      <p>But I am no sage. I am a solitary old man and but part of the vast stream of becoming. All I have is my collection of poems in hand; they are my crutch. In the darkness beyond, there is sure to be a tribe whose numbers will swell; there, too, the phoenix will sing and the golden snake dance. Perhaps one may find that idyllic scene described in the ancient Book of Songs:</p>
+      <p>“There is a young lady like a gem<br />how well the black robes will befit her;<br />There too is a young lady with thoughts natural to the spring<br />a fine gentleman would lead her astray.”</p>
+      <p>Where might that be? Far from here, of that I am sure. How might one get there? By traveling the course and by forging the way. This brings to mind those <a href="https://www.kingjamesbibleonline.org/Acts-20-22" target="_blank" rel="nofollow">verses</a> in The Bible:</p>
+      <p>“And now, behold, I go bound in the spirit unto Jerusalem, not knowing the things that shall befall me there:<br />“Save that the Holy Ghost witnesseth in every city, saying that bonds and afflictions abide me.<br />“But none of these things move me, neither count I my life dear unto myself, so that I might finish my course with joy.”</p>
+      <p>My collected poems are banned, so, for the moment, there is no way that I can “finish my course with joy.”</p>
+      <p align="right">“<em><a href="http://www.xinhuanet.com/english/2018-01/05/c_136874686.htm" target="_blank" rel="nofollow">The Minor Cold</a>,” The Gengzi Lunar Year</em><br /><em>January 5, 2021, at dusk by the Old River Bed</em></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-01/China-Russia-Relations-at-the-Dawn-of-the-Biden-Er/">
+          China-Russia Relations at the Dawn of the Biden Era
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-22</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-22/How-Should-the-U.S.-Respond-to-China-s-Military-Ci/">
+          How Should the U.S. Respond to China’s Military-Civil Fusion Strategy?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-14</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-14/Ahead-of-Its-Centennial,-the-Chinese-Communist-Par/">
+          Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-13</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-13/Police-Issue-Administrative-Warning-to-Australian/">
+          Police Issue Administrative Warning to Australian NGO, Global Times Reports
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-18/%E4%B8%AD%E5%9B%BD%E6%AD%A6%E4%BE%A0%E5%85%A8%E7%90%83%E4%BC%A0%E6%92%AD%E5%8F%B2-%E5%A4%96%E5%9B%BD%E4%BA%BA%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%AD%A6%E5%8A%9F-%E8%8B%B1%E9%9B%84-%E4%BE%A0%E4%B9%89%E5%92%8C%E6%B1%9F%E6%B9%96/">
+            前一篇：中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-18/%E6%88%98%E7%81%AB%E4%B8%AD%E6%9C%B1%E5%88%A9%E5%AE%89-%E5%B7%B4%E6%81%A9%E6%96%AF%E8%8E%B7%E9%A2%81%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7%E6%96%87%E5%AD%A6%E5%A5%96-%E7%A7%B0%E5%B8%8C%E6%9C%9B%E6%98%8E%E5%B9%B4%E8%83%BD%E4%BA%B2%E8%B5%B4%E9%A2%86%E5%A5%96/">
+            後一篇：战火中朱利安·巴恩斯获颁耶路撒冷文学奖，称希望明年能亲赴领奖
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-18/%E4%B8%AD%E5%9B%BD%E6%AD%A6%E4%BE%A0%E5%85%A8%E7%90%83%E4%BC%A0%E6%92%AD%E5%8F%B2-%E5%A4%96%E5%9B%BD%E4%BA%BA%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%AD%A6%E5%8A%9F-%E8%8B%B1%E9%9B%84-%E4%BE%A0%E4%B9%89%E5%92%8C%E6%B1%9F%E6%B9%96/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-18/%E6%88%98%E7%81%AB%E4%B8%AD%E6%9C%B1%E5%88%A9%E5%AE%89-%E5%B7%B4%E6%81%A9%E6%96%AF%E8%8E%B7%E9%A2%81%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7%E6%96%87%E5%AD%A6%E5%A5%96-%E7%A7%B0%E5%B8%8C%E6%9C%9B%E6%98%8E%E5%B9%B4%E8%83%BD%E4%BA%B2%E8%B5%B4%E9%A2%86%E5%A5%96/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-22/How-Should-the-U.S.-Respond-to-China-s-Military-Ci/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-14/Ahead-of-Its-Centennial,-the-Chinese-Communist-Par/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-18/%E4%B8%AD%E5%9B%BD%E6%AD%A6%E4%BE%A0%E5%85%A8%E7%90%83%E4%BC%A0%E6%92%AD%E5%8F%B2-%E5%A4%96%E5%9B%BD%E4%BA%BA%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%AD%A6%E5%8A%9F-%E8%8B%B1%E9%9B%84-%E4%BE%A0%E4%B9%89%E5%92%8C%E6%B1%9F%E6%B9%96/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-18/%E6%88%98%E7%81%AB%E4%B8%AD%E6%9C%B1%E5%88%A9%E5%AE%89-%E5%B7%B4%E6%81%A9%E6%96%AF%E8%8E%B7%E9%A2%81%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7%E6%96%87%E5%AD%A6%E5%A5%96-%E7%A7%B0%E5%B8%8C%E6%9C%9B%E6%98%8E%E5%B9%B4%E8%83%BD%E4%BA%B2%E8%B5%B4%E9%A2%86%E5%A5%96/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-22/How-Should-the-U.S.-Respond-to-China-s-Military-Ci/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-14/Ahead-of-Its-Centennial,-the-Chinese-Communist-Par/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

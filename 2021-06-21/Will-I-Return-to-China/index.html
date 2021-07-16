@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Will I Return to China? – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Will I Return to China?
+——
+" />
+    <meta property="og:description" content="
+Will I Return to China?
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Will I Return to China?" />
+    <meta property="twitter:title" content="Will I Return to China?" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Fwill-i-return-china" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/will-i-return-china" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/will-i-return-china&text=Will I Return to China?&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/will-i-return-china&title=Will I Return to China?" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/will-i-return-china&title=Will I Return to China?" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Will I Return to China?&body=
+Will I Return to China?
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/will-i-return-china" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/will-i-return-china&title=Will I Return to China?&caption=
+Will I Return to China?
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Will I Return to China?&url=https://www.chinafile.com/conversation/will-i-return-china" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Will I Return to China?</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-21
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Scott Kennedy, Tracy Wen Liu &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/will-i-return-china" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1624275180000-->
+<p><a href="https://www.chinafile.com/conversation/will-i-return-china">Will I Return to China?</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-921e8865b2cddc3614638d906da9edc5">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1220877205.jpg" title="Will I Return to China? " class="colorbox" data-colorbox-gallery="gallery-node-53186-VE2eVVgsIg0" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1220877205.jpg?itok=A5X-T9Jq" width="1280" height="853" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+GREG BAKER/AFP via Getty Images)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">In April, ChinaFile sent a short questionnaire to several hundred ChinaFile contributors to get a sense of their feelings about traveling to China once COVID-19 restrictions begin to ease. Media reports at the time had <a href="https://www.cnn.com/2021/03/09/china/china-travel-foreigners-arbitrary-detention-hnk-dst-intl/index.html" target="_blank">suggested</a>, anecdotally, that foreigners with longstanding professional ties to China felt reluctant to visit, in part owing to the passage of Hong Kong’s National Security Law, fear of detention, the recent <a href="https://www.bbc.com/news/world-asia-china-56480219" target="_blank">trials for espionage</a> of Canadians Michael Kovrig (himself an occasional <a href="https://www.chinafile.com/contributors/michael-kovrig" target="_blank">contributor</a> to ChinaFile) and Michael Spavor, as well as the <a href="https://www.bbc.com/news/world-asia-china-56586655" target="_blank">harassment</a> of BBC correspondent John Sudworth.</p>
+      <p>We asked respondents how likely they were to travel to China once COVID restrictions were lifted. We provided five choices: “Definitely Will Visit,” “Probably Will Visit,” “Unsure,” “Probably Won’t Visit,” and “Definitely Won’t Visit” and asked them to choose one response and then to elaborate on their choice if they wished. We received 121 responses, and while they do not constitute a scientific survey, they nevertheless suggest a significant shift in attitudes among a group of prominent figures in the China field.</p>
+      <p>        <iframe style="overflow: hidden;" src="https://jessicachinafile.github.io/viz/survey/survey_pie3.html" frameborder="0" width="390" height="370"></iframe>
+</p>
+      <p>The majority of responses we received came from scholars, journalists, former diplomats, and civil society workers, many of them senior figures in their respective fields. A handful of Chinese nationals working and living abroad also responded. Just a year or two ago, most of the people in this pool of respondents would almost certainly have planned to travel to China as part of their professional routines. In response to our questionnaire, only 44 percent said they planned to travel—27 percent definitely and 17 percent only probably. Another 16 percent were unsure, 18 percent said they probably would not visit, and 22 percent that they definitely would not.</p>
+      <p>Moreover, even many of those who said they would definitely or probably return qualified their responses in their comments. A Chinese reporter for a major U.S. newspaper said she would return with “all the digital security prep I can get.” Others, including several senior former diplomats, said they would only return on official passports, as part of delegations affiliated with prominent institutions, or at the invitation of a Chinese government-affiliated institution, as one former senior U.S. official put it, “adding a (thin) layer of protection.”</p>
+      <p>Among those who replied they would probably or definitely not visit, reasons ranged from previous visa rejections to outright fear of detention for themselves and for the Chinese people they work with or interview, and concerns that restrictions on movement, research, or reporting would compromise the professional value of spending time in China. Some Chinese nationals, meanwhile, shared dual concerns for both their safety in China and the possibility that geopolitical tensions could see them barred from re-entering the U.S.</p>
+      <p>A small minority of respondents said explicitly that they found such concerns overblown, while others said they would definitely return because of familial obligations or because the need to conduct research on the ground would outweigh the risks, even if those risks were growing.</p>
+      <p>A selection of the more representative longer responses we received follows below. —<em><a href="https://www.chinafile.com/contributors/susan-jakes" target="_blank">Susan Jakes</a></em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-9026" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/scott-kennedy"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/scott_kennedy_updated_sm.png?itok=8eBy3IMT" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="scott-kennedy"><a href="https://www.chinafile.com/contributors/scott-kennedy" title="Scott Kennedy">Scott Kennedy</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Just as my emotions have bounced up and down throughout the pandemic, my feelings about traveling to China are constantly flip-flopping. On some days, I feel like I’ve already made my last trip to the People’s Republic. It’s not at all clear Chinese officials want me, or any other genuinely inquisitive foreign scholars, to visit.</p>
+        <p>Although there are distinctive circumstances around the detention of the International Crisis Group’s Michael Kovrig (he had been a Canadian diplomat), his detention—now at over 900 days—means that think tank scholars are fair game if circumstances, such as the need to retaliate, warrant. With the adoption of the Hong Kong National Security Law and other measures, China now has ample legal cover to detain just about anyone for any reason for any length of time. When I explained to a senior Chinese Communist Party official that the detention of the two Michaels would hurt China’s reputation and damage scholarly exchange, he said scholars shouldn’t be worried as long as they abide by Chinese law—a statement that couldn’t be less reassuring given the nature of Chinese law. And then, in an effort to turn the tables on me, he rhetorically asked why Americans don’t worry about the U.S.’s reputation in the wake of its visa restrictions, Meng Wanzhou’s detention, and the trade war.</p>
+        <p>Even if arrest is unlikely, China’s government is likely using the pandemic interlude to make fieldwork even more challenging for international scholars: placing more constraints on visas, limiting domestic travel, strengthening surveillance tools, and warning potential interlocutors about divulging information. If the result would be a much more superficial and Potemkin-like experience, then one could ask, why bother going?</p>
+        <p>On other days, I have a clear answer and tell myself that I’ll apply for a visa and buy a plane ticket as soon as the pandemic-related restrictions have been lifted. Although I’ve adapted to holding meetings and events online, I still long for jetlag and the attendant benefits. There is simply no replacement for certain kinds of face-to-face interactions, such as interviews with people you’ve never met before or when you need genuine privacy. I’m also a true believer in learning by accident and osmosis: observing people while in line at Starbucks or on the subway, smelling the air, coming across an unexpected statistical yearbook or memoir in the bookstore, eating a real <em>jianbing</em> from a street vendor, debating with a taxi driver. Being on the ground provides context, which provides meaning, which creates opportunities for surprises and “ah ha!” moments, which are harder to come by when watching China from in front of my computer screen. And China to me is not an amorphous country but real people—friends, acquaintances, strangers, interviewees, interlocutors, and, unfortunately, gatekeepers. They may make my job harder, but damn if I’m going to be the one to close the gate.</p>
+        <p>Like a pendulum, I go back and forth on a daily basis between these two extremes. Should I be guided by my fears or my purpose? Which would honor Michael Kovrig or my colleagues at MERICS more, staying away or pressing on? When word goes out that we can get in line again, I have absolutely no idea what I’ll do.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9031" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/tracy-wen-liu"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/tracy_wen_liu_sm.jpg?itok=WFjZMA5b" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="tracy-wen-liu"><a href="https://www.chinafile.com/contributors/tracy-wen-liu" title="Tracy Wen Liu">Tracy Wen Liu</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Despite the fact that I really miss my grandmother, and that there are a lot of China-related stories I want to cover and investigate, I probably will not visit China in the near future.</p>
+        <p>On one hand, I worry about not being able to return to the U.S. after visiting China. In the past few years, as tensions between the U.S. and China have worsened, the U.S. has tightened visa rules for Chinese citizens. My friend, a researcher who works for a pharmaceutical company in Boston, was to be visited earlier this year by her parents, who had both obtained 10-year tourist visas years ago. When they landed in the U.S., they were refused entry and U.S. customs officers demanded they forfeit their still-valid 10-year tourist visas before putting them on a flight back to China. In July 2020, the U.S. Consulate General in Chengdu <a href="https://www.bbc.com/news/world-asia-china-53549155" target="_blank" rel="nofollow">was closed</a>, making it more difficult to book a visa appointment in China. More and more, Chinese students have seen their <a href="https://www.chinafile.com/reporting-opinion/viewpoint/right-way-bring-chinese-stem-talent-back-us" target="_blank" rel="nofollow">visa applications denied</a> after the Trump administration put heavy restrictions on Chinese STEM students. I would be reluctant to visit China before the tightened visa policies are reversed.</p>
+        <p>On the other hand, I am worried about being detained if I visit China. Lately, a wave of censorship has grown. China’s “wolf warrior diplomacy” has been working really well domestically. You only hear one type of voice in Chinese media outlets. And on China’s social media platforms like Weibo, patriotic nationalists report posts that they consider to be unpatriotic. A number of people I know or have interviewed have been monitored by the security apparatus. When they travel or book a hotel, they have received phone calls from the police or have been forced to visit police stations. A doctor in Wuhan who I interviewed through WeChat was forced to visit a police station. Among the evidence police officers showed him to prove him “guilty” was a printout of his WeChat conversation with me. It feels scary knowing that the government has been monitoring my WeChat, and feels even scarier since I don’t know where the line is: Which word could cause me trouble? What kind of behavior would result in more serious consequences like detention? A lot of the people closely monitored by the security services are hard-working people (like the <a href="http://www.sixthtone.com/news/1006914/can-delivery-drivers-break-their-silence" target="_blank" rel="nofollow">organizer</a> of a food delivery drivers’ alliance (外卖骑士联盟盟主)) who just wanted to speak up for the most vulnerable people.</p>
+        <p>It is emotionally hard that I have not visited my hometown and my family in China for years, and that I might not any time soon. I do hope there will be more room for free speech and independent journalism in the future, and that people will be able to express different opinions while seeking common ground.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9036" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/edith-terry"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/edith-terry.jpeg?itok=Oj3zgCI5" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="edith-terry"><a href="https://www.chinafile.com/contributors/edith-terry" title="Edith Terry">Edith Terry</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Prior to the recent unbundling of Hong Kong’s legal separations under the one country, two systems rubric, I had no concerns about visiting mainland China other than interest and anticipation. My consulting work required regular visits. Post-COVID, and more particularly post-National Security Law, I do have concerns, on the order of having to think twice. Michael Kovrig is a friend, and I am very conscious of the privations he has endured. And while his background is complex and possibly included intelligence gathering for the Canadian government during his diplomatic career, he was very open about his research interests and contacts.</p>
+        <p>I feel that basically anyone with a Facebook account and even semi-public criticism of China is now at risk. But there are degrees of risk, and my view is that I am very low-visibility and therefore low risk, especially compared to Kovrig and Michael Spavor. The fact that I even have to think about it is a sign of the times, and I hope the momentum toward greater confrontation between the U.S. and China, and Hong Kong as a proxy for their conflict, is reversed, making it easier to see the way forward.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9041" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/james-mann"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/mann_sm.png?itok=F14AUBaS" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="james-mann"><a href="https://www.chinafile.com/contributors/james-mann" title="James Mann">James Mann</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">On the surface, you’d think I’m the sort of person that the Chinese Communist Party’s propaganda apparatus would be eager to welcome back to China, because I haven’t seen the country in its modernized form. I lived in Beijing in the 1980s and visited China off and on in the 1990s, but I haven’t set foot in China at all for many years now.</p>
+        <p>If I were to visit, I would undoubtedly find that the China I’ve written three books about has all but vanished. I wrote my first book, <a href="https://www.routledge.com/Beijing-Jeep-A-Case-Study-Of-Western-Business-In-China/Mann/p/book/9780813333274" target="_blank" rel="nofollow"><em>Beijing Jeep</em></a>, about what it was like to do business in China in the 1980s, when an American car company began to produce a small number of cars there; now, General Motors sells more cars in China than in the United States. My next book, the history <a href="https://www.penguinrandomhouse.com/books/107241/about-face-by-james-mann/" target="_blank" rel="nofollow"><em>About Face</em></a>, covered America’s relationship with China during the two decades before and the decade after the end of the Cold War with the Soviet Union. Now, Americans are debating whether the phrase “cold war” should apply to our relationship with China itself. My third book, <a href="https://link.springer.com/article/10.1007/s12115-008-9139-8" target="_blank" rel="nofollow"><em>The China Fantasy</em></a>, was published 14 years ago, at a time when it was still possible for misguided Americans to imagine that trade and investment would inevitably open up China’s political system; now, to the extent that any such notion still exists, its dwindling number of die-hard believers have set their time-frame for liberalization back a few more decades.</p>
+        <p>I’ve long been a critic of China’s political system, and if I were to return to China the odds are overwhelmingly high that I would remain so. If I were to be allowed to talk to Chinese officials, I would no doubt ask impertinent questions that the officials don’t want to be asked and seek to look at things the officials don’t want to be seen.</p>
+        <p>And yet, and yet—in some circumscribed way, related only to China’s physical development, I think that if I were to return to China, I think I would probably be overwhelmed, blown away by its transformation. And that sense of gee-whiz-ness would probably creep into whatever I would write. In this limited sense, however critical I might otherwise be, China’s propaganda apparatus might be pleased a little bit at my descriptions of the physical changes.</p>
+        <p>But it’s not going to happen. I’m not going to visit China under current conditions, when I can never be sure whether I’d be suddenly imprisoned. It’s bad enough to have to worry you’ll be jailed in retaliation for whatever critical comments you made even years ago. It’s much more unsettling to think you could be thrown in jail as a hostage simply because you hold an American passport, the way Michael Kovrig and Michael Spavor were thrown in jail as Canadian hostages, in retaliation for something my government did that the Chinese regime didn’t like.</p>
+        <p>Right now, China is still expelling foreign correspondents. At some point, its leaders may realize that the observations about China made from abroad often tend to be harsher, and the generalizations about it from outside more sweeping, than those made by correspondents who live there from day to day.</p>
+        <p>As for me, given current political conditions there, I’m not sure I’ll ever get back to China.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9046" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/j-michael-cole"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/jmichaelcole.jpg?itok=PUnvVc5g" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="j-michael-cole"><a href="https://www.chinafile.com/contributors/j-michael-cole" title="J. Michael Cole">J. Michael Cole</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">As a Canadian national based in Taiwan, my reluctance to travel to mainland China, as well as to Hong Kong, actually precedes passage of the Hong Kong National Security Law. This is for two reasons. The first is the state of cross-Strait relations since 2016, whose deterioration has made it dangerous for many Taiwanese nationals <a href="https://thediplomat.com/2019/09/taiwan-warns-against-travel-to-china-hong-kong-after-detention-of-taiwanese-nationals/" target="_blank" rel="nofollow">to travel</a> to mainland China and Hong Kong. The kidnappings and sentencing of <a href="https://www.chinafile.com/reporting-opinion/viewpoint/taiwanese-mans-detention-guangdong-threatens-key-pillar-of-cross-straits" target="_blank" rel="nofollow">Lee Ming-che</a>, and that of several others, underscore the risks of traveling to China. This, in turn, has compelled the Taiwanese government to issue a directive to all employees in the Tsai Ing-wen administration to avoid travel to—or even transit through—mainland China or Hong Kong. As someone who was once employed by a foundation created by Tsai Ing-wen, and who in recent years has worked closely with her administration, it was clear that travel to China and Hong Kong would entail certain risks. Not to mention that, in my writing over the years, I have been highly critical of the Chinese Communist Party.</p>
+        <p>My apprehensions were in turn exacerbated by the detention of Canadian nationals Michael Kovrig and Michael Spavor. Prior to moving to Taiwan in 2005, I was an intelligence officer with the Canadian Security Intelligence Service in Ottawa, a fact which Beijing could have used to support any claim that I was engaging in espionage while in China. Having no intention of becoming the “third Canadian Michael” to be kidnapped in China, at a time of rapidly souring relations between Canada and China, I concluded that it would be safer to stay away from China and Hong Kong for the time being.</p>
+        <p>The second explanation for my reluctance to travel to China and Hong Kong stemmed from a lawsuit, filed against me in Taiwan court, by Patrick Ho Chi Ping and the China Energy Fund Committee (CEFC). From 2016 on, when I was first threatened with legal action by the Hong Kong-based subsidiary of Ye Jianming’s CEFC China Energy, headquartered in Shanghai, it had become clear that, due to CEFC’s suspected ties to the Chinese intelligence apparatus, travel to Hong Kong, let alone to mainland China, would be risky. This led me to turn down an invitation by the Canadian government to speak at a closed-door forum in Hong Kong.</p>
+        <p>The powerlessness of the Taiwanese and Canadian governments in their attempts to secure the release of their nationals from China’s clutches, and the fact that the two countries have entered a period of high tensions with China, made it perfectly clear that travel to China and Hong Kong wasn’t worth the risk. Even “pan-blue” (i.e., “pro-Kuomintang”) academics who, until recently, had encountered no difficulties traveling to China and Hong Kong, have since 2016 realized that they, too, are being surveilled and treated with suspicion whenever they travel to China. Many have even been denied entry.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9051" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/donald-clarke"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/donald-clarke_1_0.jpg?itok=ZXE9cmfF" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="donald-clarke"><a href="https://www.chinafile.com/contributors/donald-clarke" title="Donald Clarke">Donald Clarke</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">I would think about the issue of visiting China as follows. Assuming you can get in, the question is whether you can then get out. I see three different scenarios in which you could be prevented from leaving.</p>
+        <p>First, there is random hostage-taking à la Michael Kovrig and Michael Spavor. This would have nothing to do with you personally, and would happen simply because you were for some reason a convenient target at a time when China wanted to put pressure on your government. The probability of this happening is not zero but is very, very low.</p>
+        <p>Second, there is detention by the authorities for investigation and possibly punishment because of something you actually did (for example, you said mean things about the Chinese government on Twitter), even though the justification offered might be pretextual. The probability of this happening depends on how seriously you have offended the government.</p>
+        <p>Third, there is the imposition of an exit ban because of civil litigation on some pretext, ostensibly by a non-government plaintiff but instigated by the government, again as punishment for offending the government in some way. The <a href="https://www.reuters.com/article/us-china-xinjiang-lawsuit/xinjiang-firms-seek-damages-from-foreign-researcher-over-forced-labour-reports-media-idUSKBN2B10R9" target="_blank" rel="nofollow">lawsuit against Adrian Zenz</a> shows that such lawsuits are indeed possible, and <a href="https://www.lawfareblog.com/no-exit-chinas-growing-use-exit-bans-violates-international-law" target="_blank" rel="nofollow">exit bans</a> are a popular tool in <a href="https://harrisbricken.com/chinalawblog/china-product-defects-lawsuits-hostage-taking-and-sinosure-please-please-please-read-this/" target="_blank" rel="nofollow">civil litigation against foreigners</a>. Thus, we have precedents for both civil lawsuits against critics and exit bans for defendants in civil lawsuits. What’s the probability in this case? Again, it depends on the degree to which one has offended the government, but this is the scenario I would worry most about. It is not as shocking as imprisonment—one is simply barred from leaving China—and can be fobbed off by officialdom with a remark that it’s a private entity suing and “you wouldn’t want the government to interfere in the legal process, would you?”</p>
+        <p>Having thought about the probability of all three scenarios, add them up. Then think about the burden of being detained in China—extremely high—and discount it by the sum of the probabilities. (Obviously, the burden of detention in the first two scenarios is much greater than the burden of detention in the third.) Finally, weigh the discounted burden against the benefit you get from the contemplated trip to China.</p>
+        <p>The last step is of course the key one. I think for most China scholars who have said anything critical about the government, the burden even after appropriate discounting is still going to be clearly higher than any benefit they might get from a trip. People in the field generally love being in China—that’s why they got into the field and stayed in it—but once the risk of detention goes above the trivial, they will be thinking twice about it.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9056" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/margaret-lewis"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/lewis_sm.png?itok=Si_umQPK" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="margaret-lewis"><a href="https://www.chinafile.com/contributors/margaret-lewis" title="Margaret Lewis">Margaret Lewis</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">I took some stupid risks when I first visited China in the mid-1990s, from posing for perilous photos at the <a href="https://www.lonelyplanet.com/china/the-great-wall/attractions/simatai/a/poi-sig/1106439/356115" target="_blank" rel="nofollow">Simatai</a> section of the Great Wall to plummeting around Beijing’s third-ring road in a tin-can <em><a href="http://en.people.cn/90778/8299039.html" target="_blank" rel="nofollow">miandi</a></em> van without a seatbelt in sight. Yet, when watching the flag-raising in Tiananmen Square after staying up all night to celebrate my 20th birthday, even I knew that unfurling a pro-democracy banner or similar bold maneuver would provoke a severe response. The math of what would risk detention, or worse, was quite simple.</p>
+        <p>We are well past straightforward risk calculations into the realm of complex algebraic equations. In addition to the individual factors such as the areas of studies and people with whom you engage, there are now palpable geopolitical forces. When I was in Beijing <a href="https://twitter.com/CrisisGroup/status/1405299165664514048" target="_blank" rel="nofollow">925 days ago</a> and news broke of Canadians <a href="https://www.crisisgroup.org/who-we-are/people/michael-kovrig" target="_blank" rel="nofollow">Michael Kovring</a>’s and <a href="https://www.bbc.com/news/world-asia-china-56452981" target="_blank" rel="nofollow">Michael Spavor</a>’s detentions, deep concern for their wellbeing was coupled with a sense of collective vulnerability that they might not be the last bargaining chips in response to <a href="https://www.washingtonpost.com/world/the_americas/canada-meng-huawei-extradition-trump-trudeau/2021/02/28/3ba7e146-72fe-11eb-a4eb-44012a612cf9_story.html" target="_blank" rel="nofollow">Meng Wanzhou’s arrest</a> in Canada at the request of the U.S. government.</p>
+        <p>As someone who openly and frequently criticizes the People’s Republic of China (PRC) Party-state’s positions on <a href="https://www.transnat.org/post/why-china-should-unsign-the-international-covenant-on-civil-political-rights" target="_blank" rel="nofollow">human rights</a>, <a href="https://www.npr.org/2021/03/22/979897780/china-puts-2nd-canadian-on-trial-for-espionage-and-bars-spectators" target="_blank" rel="nofollow">criminal justice</a>, <a href="https://www.theglobeandmail.com/world/article-chinas-new-demands-for-national-unity-take-the-state-deeper-into/" target="_blank" rel="nofollow">Xinjiang</a>, <a href="https://www.globalasia.org/v16no1/cover/what-does-taiwan-want-it-wants-to-be-taiwan_margaret-k-lewis" target="_blank" rel="nofollow">Taiwan</a>, and other “sensitive” topics, I am extremely doubtful, though still a bit uncertain, whether I would get on a plane for China even if given an unexpected green light to do so.</p>
+        <p>But I do feel certain about a few things:</p>
+        <p>First, that I will continue to seek out opportunities to interface remotely with my PRC counterparts and friends but only to the extent that they feel comfortable, because they are far more vulnerable than I.</p>
+        <p>Second, that I will support foreign colleagues in the China studies field who decide to visit China again, as well as those who decide not to, because it is a complicated personal decision and we need solidarity not squabbling in the field.</p>
+        <p>Third, that I will advocate for the revival of the <a href="https://supchina.com/2020/11/11/biden-should-bring-back-the-china-fulbright-program/" target="_blank" rel="nofollow">Fulbright China Program</a> and the existence of other in-country opportunities because there is no substitute for on-the-ground experience when nurturing the next generation of non-PRC citizens whose work will inform their countries’ engagement with China.</p>
+        <p>And, finally, that I will not jeopardize my ability to be there for my kids. In my personal risk assessment, the value of reading bedtime stories is not a variable but rather the largest number dominating the equation.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9061" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/kyle-hutzler"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/hutzler_sm.png?itok=rO5DHHA_" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="kyle-hutzler"><a href="https://www.chinafile.com/contributors/kyle-hutzler" title="Kyle Hutzler">Kyle Hutzler</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Each extended visit I have made to China has been intensely associated with song.</p>
+        <p>In 2012, my first, The Killers’ anthem that “from here on out, friends are gonna be hard to come by” braced me for the self-alienation of culture shock. Within weeks of my arrival, popular <a href="https://www.bbc.com/news/world-asia-19312226" target="_blank" rel="nofollow">displays of anger</a> over the Senkaku dispute broke out and, with it, my self-centered concerns broadened to encompass those of my Japanese American and even Chinese American classmates with less than perfect Mandarin who feared what lurked behind each charged interrogation of their origin.</p>
+        <p>By 2016, on my return, it was Frank Ocean’s voice that accompanied me on walks through Tsinghua’s campus, his reminder that “summer’s not as long as it used to be” mirroring the twilight of my own young adulthood. Youth wasted on the young is a lament that applies just as well for China too.</p>
+        <p>Later, during that breathless 2019 Hong Kong summer, while the protestors <a href="https://www.businessinsider.com/video-hong-kong-protesters-sing-les-miserables-airport-protest-2019-8" target="_blank" rel="nofollow">sang</a> from <em>Les Miserables</em>, and eventually their own anthem, in my head it was the subdued baritone of The National’s Matt Berninger that served as my soundtrack and unconscious assessment: “What are we going through, wait and see / Days of brutalism and hairpin turns.”</p>
+        <p>As I contemplate a return to China, fear is not what comes to mind. Indeed, apart from a brush or two with fake alcohol, I have never felt unsafe in China. That is, regrettably, something which I cannot say about my own country. In China, I found myself grateful for the privilege of being seen principally as an American instead of ceaselessly aware of my own Blackness as I am at home.</p>
+        <p>Who I do worry about is the Shanghai friend whose recent withdrawal from my life I can only see as an act of self-preservation against the consequences of some of my work. The Killers’ invitation to “wonder what the trouble costs” is clearer now than it was a decade ago.</p>
+        <p>Upon my return, the worst I am likely to encounter is the snarled disdain of a nationalistic taxi driver, pleased to try out attack lines gleaned from the radio in his own hot seat. It’s the kind of thing I’ve long since learned to disarm with a “perhaps you are right”—or a feigned, ignorant smile.</p>
+        <p>But that will be nothing like the sadness of returning to old haunts and experiencing Frank Ocean’s prophecy that “we’ll never be those kids again.” The China I will have returned to won’t be the one I remembered nor the one I once hoped it would become; if I’m being honest, can’t the same be said about ourselves too?</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9066" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/kyle-hutzler"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/hutzler_sm.png?itok=rO5DHHA_" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="kyle-hutzler-1"><a href="https://www.chinafile.com/contributors/kyle-hutzler" title="Kyle Hutzler">Kyle Hutzler</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p>TK</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9071" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/thorsten-benner"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/benner_sm.jpg?itok=e8zZ3LPI" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="thorsten-benner"><a href="https://www.chinafile.com/contributors/thorsten-benner" title="Thorsten Benner">Thorsten Benner</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">On December 10, 2018, I was in Beijing as part of a <a href="https://www.koerber-stiftung.de/bergedorfer-gespraechskreis/gespraechskreise/169-gespraechskreis" target="_blank" rel="nofollow">conference</a> organized by the Körber Foundation and <a href="https://www.idcpc.org.cn/english/news/201812/t20181212_99062.html" target="_blank" rel="nofollow">co-hosted</a> by the International Department of the Chinese Communist Party Central Committee. Participants included <a href="https://www.koerber-stiftung.de/bergedorfer-gespraechskreis/gespraechskreise/169-gespraechskreis/teilnehmer" target="_blank" rel="nofollow">policymakers and think tankers</a> from Europe, China, and a few other countries, with German President Frank-Walter Steinmeier attending parts of the gathering.</p>
+        <p>This was and will remain my last trip to China for the foreseeable future. That is not because the conference wasn’t productive. To the contrary: The trip was very much worth it. We had frank discussions precisely because the conference brought together a wide range of perspectives from outside China and very articulate voices from within the Chinese system. There were no taboo subjects. I spoke about Xinjiang on a panel about anti-terrorism. What followed was an open exchange that went beyond standard talking points.</p>
+        <p>It will remain my last trip because of something else that happened that day about which I learned only after returning to Berlin. December 10, 2018 was the day Beijing took Canadian diplomat and International Crisis Group researcher Michael Kovrig hostage. For me, this was a game-changer, making it clear that as a think-tanker, a foreign passport cannot protect you from being thrown into a Chinese prison for years. I decided that risk isn’t worth it. Not to set foot in China as long as the likes of Xi bend the law is also something my boyfriend made me promise, since he deeply cares for my safety. It’s a comparatively easy call for me. Yes, I very much miss the trips to China, meeting academics at Beida and Tsinghua with whom we cooperated very trustfully in joint research projects and programs such as <a href="http://www.ggfutures.net/" target="_blank" rel="nofollow">Global Governance Futures</a> and Chinese-German <a href="https://www.zukunftsbruecke.com/" target="_blank" rel="nofollow">Zukunftsbrücke</a>. But I’m an International Relations generalist. Access to China is useful but not essential for me.</p>
+        <p>Fear isn’t a good guiding star for dealing with authoritarian regimes. There are many good reasons for China specialists to make a different risk calculus. But it’s clear that also those who are still comfortable traveling to China are in for darker days. March 22, 2021 marks another turning point. That day, Beijing imposed <a href="https://www.fmprc.gov.cn/mfa_eng/xwfw_665399/s2510_665401/t1863106.shtml" target="_blank" rel="nofollow">sanctions</a> not just on politicians such as European Parliament member Reinhard Bütikofer (also present at the 2018 workshop) but also researchers such as Björn Jerdén and Adrian Zenz as well as think tanks such as MERICS. Beijing’s goal is clear: cripple those sanctioned, reduce their influence, and instill fear in the rest of the field about meeting the same fate unless they self-censor and “tell China’s stories well.” Researchers, foundations, associations, media, businesses, and governments need a <a href="https://twitter.com/thorstenbenner/status/1374994490801332224?s=20" target="_blank" rel="nofollow">determined agenda</a> to counteract Beijing’s intentions. Two solidarity statements, signed by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVfAIPteAVw45newLwTxaWGEaZydE6GPgO_ZyKh0F8-ZrbsQ/viewform" target="_blank" rel="nofollow">1,300 researchers</a> and <a href="https://statement-china-sanctions.vercel.app/" target="_blank" rel="nofollow">more than 30 European think tank directors</a>, are a good first step. But we need to do more and invest in independent and diverse research on China under more difficult conditions, dialogue with Chinese counterparts, as well exchange and coordination on China policy, especially among like-minded democracies. Let’s get to work.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9076" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/maura-cunningham"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/maura_cunningham_1_0.jpg?itok=56pxMbO8" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="maura-cunningham"><a href="https://www.chinafile.com/contributors/maura-cunningham" title="Maura Cunningham">Maura Cunningham</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">I chose “probably won’t visit,” but I’d say that “probably” is 95 percent or greater. While I’m not, on the face of it, in a high-risk group—I don’t study Xinjiang or work in human rights, for example—I worry that these days any academic studying China can find themselves at risk of detention for reasons that go far beyond their own research. The most obvious reason for me, personally, is the tension in U.S.-China relations that might make researchers targets for political purposes. In Hong Kong, the National Security Law puts me at risk for what I’ve published and said back here in the States.</p>
+        <p>Rationally, I know my personal risk is low—but it’s not zero. And the potential consequences are more dire than in years past, when it seemed the worst an academic might suffer would be getting denied a visa or, in a few extreme cases, being refused entry and turned back upon arrival in China. Both would be annoying, but not devastating. Now, though, the potential for indefinite detention has completely changed my thinking. There is no conference, no archival visit, no public talk that would ever be worth putting my family through the ordeal of seeing me detained.</p>
+        <p>Living and working in China have been a huge part of my adult life, and acknowledging that I no longer feel safe going there has been one more difficult emotional process in a year filled with anxiety and grief. But at the end of the day, I know that I can still find a way to continue my career without direct access to the mainland.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9081" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/william-nee"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/nee_sm.jpg?itok=XAV2vLke" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="william-nee"><a href="https://www.chinafile.com/contributors/william-nee" title="William Nee">William Nee</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Like many, the detention of Michael Kovrig shook me.</p>
+        <p>We both lived in Hong Kong. I was a researcher at Amnesty International, and so I had seen him at various social gatherings. We sometimes chatted, and I had also followed his work at the Crisis Group.</p>
+        <p>So, naturally, when Michael Kovrig, along with Michael Spavor, was detained in December 2018, right after the detention of Meng Wanzhou in Canada, I was deeply disturbed. I thought the detention might have been a rash decision. Perhaps Meng would soon be released, and so would the Michaels.</p>
+        <p>But, as the Meng case kept dragging on, it became clear that it would be inconceivable for China to unilaterally release the Michaels.</p>
+        <p>It also became clear that China was now willing to detain foreigners as collateral in its disputes with Western countries.</p>
+        <p>I had gone to China as recently as 2018 for a conference on cobalt. I had personally witnessed impressive economic development of a small city in Zhejiang that I’d never heard of before. I saw that the Chinese government and some companies were at least trying to address, albeit in a very limited way, human rights due diligence issues in their supply chains. There’s no doubt in my mind that travel to China can facilitate a more nuanced and subtle understanding of developments in China.</p>
+        <p>But from the detention of Spavor and Kovrig onwards, I noticed that many people I talked to from NGOs, think tanks, and academia expressed reluctance about traveling to the mainland, even if they had frequently done so before.</p>
+        <p>There was something unsettling about how one’s risk profile no longer reflected one’s own actions, but was also affected by broader geopolitical tension between Western countries and China. As China matched Trump’s toxic rhetoric and Pompeo’s accusations on Twitter with its own cartoonishly outlandish and brash communication style, the risks that one could get embroiled as a pawn in a sudden geopolitical spat only increased.</p>
+        <p>Later, I explained to CNN my thoughts on traveling to China, highlighting that the detention of the Michaels seemed to be a turning point for many people that I knew. A few weeks later, the <em>Global Times</em> ran an <a href="https://www.globaltimes.cn/page/202103/1218032.shtml" target="_blank" rel="nofollow">article</a> and <a href="https://twitter.com/globaltimesnews/status/1372519875969568774?s=20" target="_blank" rel="nofollow">video</a> attacking me, noting that only NGO types, academics, and media professionals with “ulterior motives” and who were “suspected of breaking China’s laws” would be afraid of traveling to China.</p>
+        <p>This is an unfortunate development, of course, but not just for me. An underappreciated point may be that just a decade ago, many NGOs with programs in China and academics with frequent travel were some of the strongest proponents of “engagement.” Many of these people were also well connected in Washington, D.C. and European capitals.</p>
+        <p>But increasingly, as Chinese authorities wield the law in a more arbitrary manner and constrict the space for civil society and academic inquiry, people in these fields will think twice. China’s relations with the outside world will suffer as a result.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9096" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/rosie-levine"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/rl-photo_cropped.png?itok=0uwKEYyL" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="rosie-levine"><a href="https://www.chinafile.com/contributors/rosie-levine" title="Rosie Levine">Rosie Levine</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Despite the risks and challenges, at least for now, I would continue to travel to China when it is possible to do so, as there is still no substitute for being on the ground. It’s hard to know how to balance fears about personal safety, solidarity for scholars who have been sanctioned, and risks for partners/counterparts in China with the knowledge that the field will suffer greatly if those who work on China are not able to go there to conduct research. I think some in the field feel that all meetings in China are too constrained to be effective. This has not been my experience, and I still believe hearing from people on the ground, in their own words, has made my understanding of China much, much better (despite the constraints). Accurately representing the thinking of those in China seems like the only way to combat the increasingly widespread narrative in the U.S. that the country is a monolith and has successfully brainwashed its citizens into mindless drones or tools of the State.</p>
+        <p>Despite this, it is clear that risk (in some form or another) is going to be an increasingly prevalent part of the conversation about future travel. When travel to China becomes possible again, part of my determination process will be coming up with a calculus for what productive and principled engagement looks like in the current context: When meetings in China have diminishing returns, the risks are growing from holding such meetings, more topics are not open for discussion, and set on the backdrop of China’s abhorrent actions domestically and abroad . . . at what point is it “not worth it” to travel and how can we assess that on an individual level, and as a field? Hearing from others on what this risk calculus looks like would be very informative. Others have likely determined it already isn’t worth it, but I do think that there is a way to hold onto one’s principles and continue to engage China.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2021-07-10</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-10/Why-China-Is-Going-After-Its-Tech-Giants/">
+          Why China Is Going After Its Tech Giants
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-24</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-24/How-Will-the-EU-Navigate-U.S.-China-Tensions/">
+          How Will the EU Navigate U.S.-China Tensions?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-03</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-03/How-Has-the-U.S.-China-Relationship-Changed-under/">
+          How Has the U.S.-China Relationship Changed under Biden?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-01/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+          Visually Understanding the Data on Foreign NGO Representative Offices and Temporary Activities
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-21/%E6%AD%A3%E5%9C%A8%E6%94%B9%E5%86%99%E7%9A%84%E5%8F%8D%E7%8A%B9%E5%8F%B2-%E5%9C%A8%E7%BA%B3%E7%B2%B9%E5%8D%A0%E9%A2%86%E6%97%B6%E6%9C%9F-%E6%B3%A2%E5%85%B0%E6%98%AF%E6%96%BD%E5%AE%B3%E8%80%85%E8%BF%98%E6%98%AF%E5%8F%97%E5%AE%B3%E8%80%85/">
+            前一篇：正在改写的反犹史：在纳粹占领时期，波兰是施害者还是受害者？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-21/%E8%84%91%E6%8E%A7%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BA%89%E8%AE%AE-iYouPort/">
+            後一篇：脑控技术的争议 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-21/%E6%AD%A3%E5%9C%A8%E6%94%B9%E5%86%99%E7%9A%84%E5%8F%8D%E7%8A%B9%E5%8F%B2-%E5%9C%A8%E7%BA%B3%E7%B2%B9%E5%8D%A0%E9%A2%86%E6%97%B6%E6%9C%9F-%E6%B3%A2%E5%85%B0%E6%98%AF%E6%96%BD%E5%AE%B3%E8%80%85%E8%BF%98%E6%98%AF%E5%8F%97%E5%AE%B3%E8%80%85/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-21/%E8%84%91%E6%8E%A7%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BA%89%E8%AE%AE-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-24/How-Will-the-EU-Navigate-U.S.-China-Tensions/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-03/How-Has-the-U.S.-China-Relationship-Changed-under/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-21/%E6%AD%A3%E5%9C%A8%E6%94%B9%E5%86%99%E7%9A%84%E5%8F%8D%E7%8A%B9%E5%8F%B2-%E5%9C%A8%E7%BA%B3%E7%B2%B9%E5%8D%A0%E9%A2%86%E6%97%B6%E6%9C%9F-%E6%B3%A2%E5%85%B0%E6%98%AF%E6%96%BD%E5%AE%B3%E8%80%85%E8%BF%98%E6%98%AF%E5%8F%97%E5%AE%B3%E8%80%85/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-21/%E8%84%91%E6%8E%A7%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BA%89%E8%AE%AE-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-24/How-Will-the-EU-Navigate-U.S.-China-Tensions/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-03/How-Has-the-U.S.-China-Relationship-Changed-under/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

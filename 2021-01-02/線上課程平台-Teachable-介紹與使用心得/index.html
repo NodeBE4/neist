@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>線上課程平台 Teachable 介紹與使用心得 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+線上課程平台 Teachable 介紹與使用心得
+——
+" />
+    <meta property="og:description" content="
+線上課程平台 Teachable 介紹與使用心得
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="線上課程平台 Teachable 介紹與使用心得" />
+    <meta property="twitter:title" content="線上課程平台 Teachable 介紹與使用心得" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40hulitw%2Fteachable-introduction-and-review-ca3946e9a1e1%3Fsource%3Drss-f1fb3e40dc37------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@hulitw/teachable-introduction-and-review-ca3946e9a1e1?source=rss-f1fb3e40dc37------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@hulitw/teachable-introduction-and-review-ca3946e9a1e1?source=rss-f1fb3e40dc37------2&text=線上課程平台 Teachable 介紹與使用心得&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@hulitw/teachable-introduction-and-review-ca3946e9a1e1?source=rss-f1fb3e40dc37------2&title=線上課程平台 Teachable 介紹與使用心得" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@hulitw/teachable-introduction-and-review-ca3946e9a1e1?source=rss-f1fb3e40dc37------2&title=線上課程平台 Teachable 介紹與使用心得" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=線上課程平台 Teachable 介紹與使用心得&body=
+線上課程平台 Teachable 介紹與使用心得
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@hulitw/teachable-introduction-and-review-ca3946e9a1e1?source=rss-f1fb3e40dc37------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@hulitw/teachable-introduction-and-review-ca3946e9a1e1?source=rss-f1fb3e40dc37------2&title=線上課程平台 Teachable 介紹與使用心得&caption=
+線上課程平台 Teachable 介紹與使用心得
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=線上課程平台 Teachable 介紹與使用心得&url=https://medium.com/@hulitw/teachable-introduction-and-review-ca3946e9a1e1?source=rss-f1fb3e40dc37------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>線上課程平台 Teachable 介紹與使用心得</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-01-02
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Huli</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@hulitw/teachable-introduction-and-review-ca3946e9a1e1?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1609647368000-->
+<p><a href="https://medium.com/@hulitw/teachable-introduction-and-review-ca3946e9a1e1?source=rss-f1fb3e40dc37------2">線上課程平台 Teachable 介紹與使用心得</a>
+——</p>
+
+<div>
+  <p>最近幾年線上課程滿夯的，除了那些主流的課程平台之外，也有些人會想選擇自己弄一個自己的平台，少了一些限制，也能夠免除掉跟平台的分成，一些優缺點我在<a href="https://hulitw.medium.com/hahow-and-lidemy-2dab35919bb8">《把 Hahow 的課程下架之後，我的下一步是什麼？》</a>都有提過了。</p>
+  <p>而如果想要自己弄一個平台的話，最多人選的大概就是 <a href="https://www.thinkific.com/">Thinkific</a> 跟 <a href="https://teachable.com/">Teachable</a> 了。因為我自己的整個平台 <a href="http://lidemy.com/">Lidemy 鋰學院</a>都是用 Teachable 建的，所以偶爾會收到一些信件來問我使用狀況跟心得，想說每次都個別回答的話有點沒效率，索性就寫了這篇。</p>
+  <p>底下就來談談各個 Teachable 的功能以及我個人的使用心得。</p>
+  <h3 id="section">費用</h3>
+  <p>我剛使用 Teachable 的時候它其實有四個方案，Free、Basic、Pro、Business，現在只剩下後三個。</p>
+  <p>原本的免費方案我記得沒什麼限制，就功能比較少（但很夠用），然後抽成手續費比較高，但後來這方案沒了，改成 14 天的 Pro 試用。</p>
+  <p>總之呢，我免費方案試用一段期間之後，就改成了 Basic 方案，年繳的話一個月是 29 元美金，整年下來 348 USD 將近 10000 塊台幣。</p>
+  <p>前陣子則是因為黑色星期五的特價買了將近半價的 Pro 方案，改了之後其實沒有太大的區別。除了金流的手續費少了 5% 以外，多的功能就是：</p>
+  <ol>
+    <li>可以看到每一個學生跟每一堂課的進度，例如說每個單元完成率有多少</li>
+    <li>課程中可以出題目</li>
+    <li>可以去除 Teachable 的 brand</li>
+  </ol>
+  <p>但上面這些功能我本來就用不到，所以真的是沒什麼差。</p>
+  <p>金流的部份我們待會再談，先幫費用這邊做個總結。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*_kHLgKPLPQoxDozXvdHQBQ.png" />    <figcaption>
+現在有的三個方案
+    </figcaption>
+  </figure>
+  <p>我覺得其實 Basic 就很夠用了，除非你用一段時間真的覺得你想要的功能只有 Pro 有，那再換 Pro 就好。或者是你精算過課程的收入，比如說 Pro 比 Basic 一個月多了 70 塊美金，然後升級的話每一筆交易可以少 5% 手續費，所以 70 * (100/5) = 1400 美金，一個月的課程收入如果有超過 1400 美金，那轉成 Pro 方案就會是比較划算的。</p>
+  <h3 id="section-1">金流</h3>
+  <p>再來談談大家最關心的問題，金流。</p>
+  <p>Teachable 處理金流的方式其實分三種：</p>
+  <ol>
+    <li>Teachable Payments</li>
+    <li>Monthly Payment Gateway</li>
+    <li>Custom Payment Gateways</li>
+  </ol>
+  <p>第一種限制只有居住在美國、加拿大、英國跟德國的使用者可以用，所以你跟我一樣在台灣的話只有後兩者可以選擇。</p>
+  <p>再來我們先講第三種，這最簡單，你必須先準備一個 Stripe 帳號，然後你網站上的付款都會直接進去這個 Stripe 帳號，中間不會過 Teachable，所以手續費是 0 元。</p>
+  <p>但別忘記這是「Teachable 不收手續費」，但任何的金流處理一定都需要費用，所以 Stripe 本身也會收手續費，費用應該是每筆 2.9% + 0.3 USD。所以總共的金流成本就是這樣。</p>
+  <p>不過有一些缺點，那就是退款的話沒辦法在 Teachable 後台處理，你要自己去 Stripe 上面處理退款。然後還有一個更大的問題，那就是你必須要有 Stripe 帳號。Stripe 目前不開放台灣申請，所以你必須找其他方法去辦到一個帳號。</p>
+  <p>所以綜合以上，我也不推薦使用第三種。</p>
+  <p>我自己跟我推薦使用的都是第二種：Monthly Payment Gateway（簡稱 MPG）。</p>
+  <p>MPG 的概念很簡單，就是金流會先過 Teachable 那邊，然後以月結的形式再轉到你的 PayPal 帳戶。因為金流有過那邊所以需要處理的費用，這就是我上面講的，Basic 是 5%，Pro 是 0%。</p>
+  <p>不過再次強調，這是「Teachble 幫你處理金流的手續費」，還要再加上金流本身的處理費用，基本上就是 2.9% + 0.3 USD（請見下圖），這是無論用哪個金流都一定會需要的錢。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*66Q9GNp8dkDT7WuGHSBkzA.png" />    <figcaption>
+<a href="https://support.teachable.com/hc/en-us/articles/360001365311">https://support.teachable.com/hc/en-us/articles/360001365311</a>
+    </figcaption>
+  </figure>
+  <p>所以如果你選擇 MPG 外加 Pro 方案，一筆交易的總成本就是 2.9% + 0.3 USD，跟選擇 custom payment gateway 是一樣的。</p>
+  <p>但 MPG 因為金流有過 Teachable，所以有一些好處，例如說退款可以直接在平台上進行處理，滿方便的。但如果你不想等一個月的話，就只能用 custom payment gateway 了。</p>
+  <p>另外還有一點要注意，如果你的課程價格是台幣，在交易時都會先轉成美金再來做計算，最後匯到你 PayPal 帳戶時也會用美金，如下圖所示：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/941/1*unOwgCVkedDtVSVL_8EENQ.png" />    <figcaption>
+後台的交易明細
+    </figcaption>
+  </figure>
+  <p>再來，有些人可能有聽過，台灣的 PayPal 帳號不能收同樣來自台灣的款項，而 Teachable 預設就正好是用 PayPal，所以擔心是不是沒辦法收錢。</p>
+  <p>還記得我上面所說的嗎？MPG 金流會先過 Teachable 那邊，所以其實是：</p>
+  <ol>
+    <li>消費者在網站上透過信用卡付錢</li>
+    <li>錢先進到 Teachable 那裡（進到他們的 Stripe 或是 PayPal）</li>
+    <li>Teachable 再把錢轉到你的 PayPal</li>
+  </ol>
+  <p>所以我們並不會直接跟消費者收款，因此不會有「收台灣的款項」這件事，也就不會有上面的限制。</p>
+  <p>總而言之呢，無論你用的是哪一個，收台灣的信用卡都是完全 ok 的，不需要擔心這個問題。但如果考量到成本跟費用的話，除了每筆交易一定都有的一個 2.9% + 0.3 USD 以外，還需要考量到「從 PayPal 轉到台灣銀行帳戶」這件事。</p>
+  <p>畢竟上面所說的，錢都是以美金進到你的 PayPal 帳戶，如果你沒有要直接從那邊花掉，那想必是要再轉進台灣的戶頭。這邊會需要透過<a href="https://www.paypal.com/tw/webapps/mpp/withdrawal-process">玉山全球通</a>把款項轉進來，然後會再收一筆 2.5% 的手續費。</p>
+  <p>而且如果你是想收到台幣而不是美金，那從買課一直到拿錢，中間就會經過兩次的匯差：</p>
+  <ol>
+    <li>使用者購買台幣 100 塊的課程</li>
+    <li>Teachable 把它轉為美金（請見上面交易明細）</li>
+    <li>扣除金流處理費 2.9% + 0.3 USD</li>
+    <li>扣除服務費（Basic 5%，Pro 以上 0%）</li>
+    <li>存入你的 PayPal</li>
+    <li>從 PayPal 提領（美金）</li>
+    <li>扣除 2.5% 手續費</li>
+    <li>轉回台幣</li>
+  </ol>
+  <p>這些金流成本是在計算成本時也需要一併考慮的部分。</p>
+  <p>但總之呢，如果規模小的話應該差不了多少，要接收台灣使用者的付款是絕對沒問題的。</p>
+  <h3 id="section-2">平台核心功能</h3>
+  <p>前面金流的部分講了滿多的，再來我們來講一下平台的各個功能，首先先來講課程的部分。</p>
+  <p>在課程上我覺得基本功能都有了，像是：</p>
+  <ol>
+    <li>課程除了影片還可以有其他檔案或是有格式的文字</li>
+    <li>可以開放試看、開放下載</li>
+    <li>課程底下可以開放留言</li>
+  </ol>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*pxqCC-yDgkwNYnbtJFpg8g.png" />    <figcaption>
+課程後台介面
+    </figcaption>
+  </figure>
+  <p>然後還有個功能我超喜歡，那就是右上角的那個 Bulk Upload。上傳課程是一件很煩的事，尤其是你一次要上傳十幾支或更多影片的時候。Teachable 在上傳影片時有支援 Google Drive 或是 Dropbox 的同步，根據我自己使用過的經驗，你先把影片上傳到 Google Drive，再從 Google Drive 同步過去，會比自己電腦直接上傳到 Teachable 還要快。</p>
+  <p>而且 Bulk Upload 這功能很方便，你可以一次選很多支 Google Drive 的影片，然後它會一起全部同步過來，每一個影片會開一個新的 lecture，接下來就只要編輯 lecture 就好。</p>
+  <p>在上傳課程這方面我覺得 Teachable 做得真的滿不錯的，至少速度很 ok。</p>
+  <p>然後定價方案也很彈性，可以設定成一次性的付費或是訂閱制都行，要把多個課程打包一起賣也可以，coupon 的使用也可以設定成是要固定折價還是比例折扣，然後有哪些課程適用。</p>
+  <p>總而言之呢，我覺得課程的模組做的滿 ok 的，基本功能都有。</p>
+  <h4 id="dashboard">Dashboard</h4>
+  <p>在首頁會有一些圖表讓你看：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*3qOx6QRhRcnQyo--y0O1nw.png" />    <figcaption>
+首頁的圖表
+    </figcaption>
+  </figure>
+  <p>例如說最近的收益啦，新註冊的人數啦等等，右側還會有一欄是最近的活動，但礙於個資問題就不截圖給大家看了，內容大概就是誰誰誰剛剛買了什麼課之類的。</p>
+  <h4 id="section-3">全站設定</h4>
+  <p>平台在設定部分也提供不少選項，你要改名稱一定是可以的，要設定 Facebook pixel 或是 GA 也沒問題，再來大家會關心的中文化也沒問題，但這邊 Teachable 的手段比較特別一點。</p>
+  <p>Teachable 本身應該是完全不做多國語系，而是把這個彈性交給管理員自己，所以提供這樣的一個介面：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*-FrOQSz6ruhGOFwhEulAXQ.png" />    <figcaption>
+自訂文字介面
+    </figcaption>
+  </figure>
+  <p>可以讓你去設定網站上出現的各個文字要顯示成什麼。所以就要在這邊自己中文化。</p>
+  <p>而且這種做法其實就斬斷了 i18n 的彈性，例如說網站如果同時要給英文使用者跟中文使用者，就沒辦法針對前者顯示英文，後者顯示中文，好像一定只能統一一個。</p>
+  <p>不過如果像我一樣只服務中文使用者的話，這功能其實就滿實用的，可以自己決定顯示的文字長什麼樣子。</p>
+  <p>其他自訂設定像是導覽列、custom domain 之類的我就不提了。</p>
+  <p>Teachable 的功能其實不少，但老實說有很大一部分我平常可能都不會使用到。例如說它的強項之一其實是銷售方面的，所以提供了很多跟 affiliates 相關的功能，例如說透過某個 affiliates 賣的課程要分給他多少，也會透過 MPG 自動把錢幫你算好然後轉進去。</p>
+  <p>但這部分的功能我完全用不到，所以也沒什麼可以分享的。</p>
+  <p>總之我覺得以一個線上課程網站來說，功能算是很夠用的了。</p>
+  <h3 id="section-4">其他附加功能</h3>
+  <p>有兩個附加功能我覺得值得一提，第一個是 Email，可以在後台寄 Email 給使用者，還會統計開信率之類的：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*y4Vfc67y5j5h8zAZaCXKiA.png" />    <figcaption>
+後台
+    </figcaption>
+  </figure>
+  <p>不過根據我之前使用過的經驗，不知道為什麼有時候信發不出去，所以如果需要比較嚴謹的功能，還是串接 mailchimp 然後自己做可能會比較好。</p>
+  <p>另一個值得提的功能是部落格，一個很陽春的部落格，只有提供發表文章的功能而已，甚至連分類都沒有：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*O5ti6EM6sdswIt-EpIa3pw.png" />    <figcaption>
+部落格文章介面
+    </figcaption>
+  </figure>
+  <p>因為功能實在太陽春了，原本想把它當放學生心得的地方，後來想想還是算了。所以這功能我後來也沒在用。</p>
+  <h3 id="section-5">總結</h3>
+  <p>差不多該做個總結了。</p>
+  <p>在方案選擇部分，建議大家先使用 Basic，因為升級到 Pro 之後也沒多太多功能，我自己覺得 Basic 就很夠用了。</p>
+  <p>在金流方面，收取台灣使用者的信用卡是絕對沒問題的，所以在台灣賣課程是 ok 的，但每一筆會收金流手續費 2.9% + 0.3 USD（金流提供商 Stripe 或是 PayPal 收的），外加 Basic 方案的 5% 手續費（Teachable 收的），把錢轉回來帳戶時也會再收一筆 2.5% 的手續費（PayPal 收的）。</p>
+  <p>許多人擔心的「台灣 PayPal 不能收台灣的款項」也不會發生，因為付的款項不會直接到你帳戶，而是會透過 Teachable 轉一手，因此不會有這問題。</p>
+  <p>在功能方面，有關於課程的基本功能我覺得都有了，雖然私心想要再加兩個功能就是了：</p>
+  <ol>
+    <li>課程評價功能，這個目前完全沒有，學生無法在購買課程後留下評價</li>
+    <li>討論區功能，希望每個課程或是整個 school 有一個共同的討論區，但目前也沒有</li>
+  </ol>
+  <p>在賣課的部分也提供了彈性的 coupon 跟定價方案，銷售的頁面也可以自訂，想要找其他人幫你賣課分成也沒有問題。</p>
+  <p>其他全站設定的部分，中文化 ok，自訂網址或是串 GA 也完全沒有問題。</p>
+  <p>如果你想要有一個自己的課程平台，以我個人的使用經驗而已，我覺得 Teachable 是一個不錯的入門選擇。</p>
+  <p>以上就是針對 Teachable 的使用心得，希望能幫助到大家。</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=ca3946e9a1e1" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2021-02-12</time>
+        <a href="https://nodebe4.github.io/oped2/2021-02-12/%E5%8F%AA%E6%98%AF%E6%83%B3%E5%AF%AB%E4%B8%80%E4%B8%8B/">
+          只是想寫一下
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-01-26</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-26/%E6%9C%83%E5%96%94-%E8%A9%B3%E7%B4%B0%E6%99%82%E9%96%93%E5%8F%AF%E4%BB%A5%E5%8F%83%E8%80%83-lidemy-%E7%B2%89%E7%B5%B2%E5%B0%88%E9%A0%81-%E6%9C%80%E6%96%B0%E8%A8%8A%E6%81%AF%E9%83%BD%E6%9C%83%E5%9C%A8%E4%B8%8A%E9%9D%A2%E5%85%AC%E5%91%8A/">
+          會喔，詳細時間可以參考 lidemy 粉絲專頁，最新訊息都會在上面公告
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-12-08</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-08/%E9%87%91%E8%9E%8D%E4%BF%9D%E9%9A%AA%E7%A7%91%E6%8A%80%E5%85%AC%E5%8F%B8-OneDegree-%E5%B7%A5%E4%BD%9C%E5%8D%8A%E5%B9%B4%E5%BF%83%E5%BE%97/">
+          金融保險科技公司 OneDegree 工作半年心得
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-11-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-14/%E6%88%91%E5%BF%83%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%90%86%E6%83%B3%E5%BE%B5%E6%89%8D%E6%96%87/">
+          我心目中的理想徵才文
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-12-30/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E8%87%BA%E7%81%A3%E4%BA%BA%E6%84%9B%E8%AA%AA-%E6%94%BF%E6%B2%BB%E6%AD%B8%E6%94%BF%E6%B2%BB-%E9%AB%94%E8%82%B2%E6%AD%B8%E9%AB%94%E8%82%B2-%E5%85%B6%E5%AF%A6%E9%AB%94%E8%82%B2%E4%B8%80%E7%9B%B4%E9%83%BD%E9%9B%A2%E4%B8%8D%E9%96%8B%E6%94%BF%E6%B2%BB%E7%9A%84/">
+            前一篇：[外交雜聞]臺灣人愛說「政治歸政治、體育歸體育」，其實體育一直都離不開政治的
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-01-03/%E5%85%A9%E5%B2%B8%E7%AB%B6%E9%80%90-%E6%AC%B8%E4%B8%8D%E6%98%AF-%E4%BA%BA%E5%AE%B6%E6%98%AF%E5%95%8F%E4%BD%A0%E6%9C%9D%E9%AE%AE%E5%95%8F%E9%A1%8C-%E4%BD%A0%E5%B9%B9%E5%98%9B%E5%81%B7%E6%B8%A1%E8%87%BA%E7%81%A3%E5%95%8F%E9%A1%8C%E5%95%A6/">
+            後一篇：[兩岸競逐]欸不是，人家是問你朝鮮問題，你幹嘛偷渡臺灣問題啦
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-12-30/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E8%87%BA%E7%81%A3%E4%BA%BA%E6%84%9B%E8%AA%AA-%E6%94%BF%E6%B2%BB%E6%AD%B8%E6%94%BF%E6%B2%BB-%E9%AB%94%E8%82%B2%E6%AD%B8%E9%AB%94%E8%82%B2-%E5%85%B6%E5%AF%A6%E9%AB%94%E8%82%B2%E4%B8%80%E7%9B%B4%E9%83%BD%E9%9B%A2%E4%B8%8D%E9%96%8B%E6%94%BF%E6%B2%BB%E7%9A%84/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-01-03/%E5%85%A9%E5%B2%B8%E7%AB%B6%E9%80%90-%E6%AC%B8%E4%B8%8D%E6%98%AF-%E4%BA%BA%E5%AE%B6%E6%98%AF%E5%95%8F%E4%BD%A0%E6%9C%9D%E9%AE%AE%E5%95%8F%E9%A1%8C-%E4%BD%A0%E5%B9%B9%E5%98%9B%E5%81%B7%E6%B8%A1%E8%87%BA%E7%81%A3%E5%95%8F%E9%A1%8C%E5%95%A6/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-01-26/%E6%9C%83%E5%96%94-%E8%A9%B3%E7%B4%B0%E6%99%82%E9%96%93%E5%8F%AF%E4%BB%A5%E5%8F%83%E8%80%83-lidemy-%E7%B2%89%E7%B5%B2%E5%B0%88%E9%A0%81-%E6%9C%80%E6%96%B0%E8%A8%8A%E6%81%AF%E9%83%BD%E6%9C%83%E5%9C%A8%E4%B8%8A%E9%9D%A2%E5%85%AC%E5%91%8A/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-12-08/%E9%87%91%E8%9E%8D%E4%BF%9D%E9%9A%AA%E7%A7%91%E6%8A%80%E5%85%AC%E5%8F%B8-OneDegree-%E5%B7%A5%E4%BD%9C%E5%8D%8A%E5%B9%B4%E5%BF%83%E5%BE%97/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-12-30/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E8%87%BA%E7%81%A3%E4%BA%BA%E6%84%9B%E8%AA%AA-%E6%94%BF%E6%B2%BB%E6%AD%B8%E6%94%BF%E6%B2%BB-%E9%AB%94%E8%82%B2%E6%AD%B8%E9%AB%94%E8%82%B2-%E5%85%B6%E5%AF%A6%E9%AB%94%E8%82%B2%E4%B8%80%E7%9B%B4%E9%83%BD%E9%9B%A2%E4%B8%8D%E9%96%8B%E6%94%BF%E6%B2%BB%E7%9A%84/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-01-03/%E5%85%A9%E5%B2%B8%E7%AB%B6%E9%80%90-%E6%AC%B8%E4%B8%8D%E6%98%AF-%E4%BA%BA%E5%AE%B6%E6%98%AF%E5%95%8F%E4%BD%A0%E6%9C%9D%E9%AE%AE%E5%95%8F%E9%A1%8C-%E4%BD%A0%E5%B9%B9%E5%98%9B%E5%81%B7%E6%B8%A1%E8%87%BA%E7%81%A3%E5%95%8F%E9%A1%8C%E5%95%A6/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-01-26/%E6%9C%83%E5%96%94-%E8%A9%B3%E7%B4%B0%E6%99%82%E9%96%93%E5%8F%AF%E4%BB%A5%E5%8F%83%E8%80%83-lidemy-%E7%B2%89%E7%B5%B2%E5%B0%88%E9%A0%81-%E6%9C%80%E6%96%B0%E8%A8%8A%E6%81%AF%E9%83%BD%E6%9C%83%E5%9C%A8%E4%B8%8A%E9%9D%A2%E5%85%AC%E5%91%8A/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-12-08/%E9%87%91%E8%9E%8D%E4%BF%9D%E9%9A%AA%E7%A7%91%E6%8A%80%E5%85%AC%E5%8F%B8-OneDegree-%E5%B7%A5%E4%BD%9C%E5%8D%8A%E5%B9%B4%E5%BF%83%E5%BE%97/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

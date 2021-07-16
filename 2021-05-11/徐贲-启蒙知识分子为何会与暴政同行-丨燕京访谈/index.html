@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈
+——
+" />
+    <meta property="og:description" content="
+徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈" />
+    <meta property="twitter:title" content="徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F609b428ddd09510ee2cb08c9" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/609b428ddd09510ee2cb08c9" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/609b428ddd09510ee2cb08c9&text=徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/609b428ddd09510ee2cb08c9&title=徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/609b428ddd09510ee2cb08c9&title=徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈&body=
+徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/609b428ddd09510ee2cb08c9" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/609b428ddd09510ee2cb08c9&title=徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈&caption=
+徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈&url=https://www.allnow.com/post/609b428ddd09510ee2cb08c9" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-11
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 张弘</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/609b428ddd09510ee2cb08c9" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/609b428ddd09510ee2cb08c9">徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈</a>
+——</p>
+
+<div>
+  <p>采写︱张弘</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609b430a4e878e0826621e46" src="https://img.allhistory.com/now/2021-05-12/609b43089c232e04ae3f161f+L.png" alt="法国先贤祠，启蒙哲人卢梭、伏尔泰等人的灵柩都在其中。（来自视觉中国）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+法国先贤祠，启蒙哲人卢梭、伏尔泰等人的灵柩都在其中。（来自视觉中国）
+    </figcaption>
+  </figure>
+  <p>在专制传统深厚且时间悠久的国家（例如18世纪的俄罗斯），启蒙更为艰难。俄罗斯十二月党人的经历显示，启蒙不仅包括会面临权力的无情打压，言说受到种种限制，而且对启蒙者本身也是恒心和耐心的持久考验，因为在很长时间可能看不到希望和结果，而相当一部分民众也对此很陌生——他们更关注的往往是最急迫的经济问题。《与时俱进的启蒙》显示，18世纪法国绝大多数启蒙哲人即是如此：一方面，某些听众可能会觉得，启蒙者老讲这些不能实现的东西离现实太远；另一方面，甚至同一阵营的人也可能觉得启蒙者总是重复着自由、民主等词汇，因为不新鲜而觉得厌倦。</p>
+  <p> </p>
+  <p>另一方面，《与时俱进的启蒙》显示，法国的启蒙哲人对于君主专制态度暧昧。俄罗斯女王叶卡捷琳娜二世与多位启蒙哲人交往甚久，且曾经在经济上予以资助；但是，她并没有把启蒙理念贯彻于执政之中，而是继续维护自己的君主专制。</p>
+  <p> </p>
+  <p>启蒙的局限在哪里？启蒙的作用究竟有多大？一些知识分子为何会摒弃自由民主的启蒙理念？就相关问题，《燕京书评》采访了徐贲教授。因为篇幅较长，全文分三篇刊出。第一篇主要谈论启蒙的历史；第二篇主要谈论启蒙的观念，第三篇则谈论中国的启蒙。今天刊出的是第二篇。第一篇已于昨日刊发，第三篇将于明天刊出，读者可在《燕京书评》（ID：Pekingbooks）公号查看。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609b43454e878e0826621e47" src="https://img.allhistory.com/now/2021-05-12/609b43434cd55d1f8948d291+L.png" alt="徐贲 美国加州圣玛丽学院英文系教授，复旦大学社科高研院兼职教授。1950年生，苏州人，美国马萨诸塞大学英语文学博士。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+徐贲 美国加州圣玛丽学院英文系教授，复旦大学社科高研院兼职教授。1950年生，苏州人，美国马萨诸塞大学英语文学博士。
+    </figcaption>
+  </figure>
+  <h2 id="section">叙拉古的诱惑：知识分子为何与暴政同行？</h2>
+  <p> </p>
+  <p><strong>燕京书评：法国启蒙和德国启蒙证明，启蒙者寄望开明专制，只能巩固王权及其统治基础，普鲁士国王腓特烈二世、俄罗斯女王叶卡捷琳娜二世与法国启蒙哲人伏尔泰、狄德罗、让·勒朗·达朗贝尔都有交往；但是，他们并没有改变自己的专制统治。柏拉图三赴叙拉古、启蒙哲人与专制统治者关系暧昧……知识人为何前赴后继地投身于与自己理念相悖且没有成功过的事业？</strong></p>
+  <p> </p>
+  <p><strong>徐贲：</strong>我们很难为这样复杂的现象找到一个单一的理由，然而，这个现象本身却是充满了讽刺和悲剧性。它之所以值得我们高度重视，是因为这并不只是一个古代的现象，而且也是20世纪知识分子的普遍现象。乔治·奥威尔在他的《阿瑟·凯斯特勒》一文中对这种现象有深刻的剖析。阿瑟·凯斯特勒是著名小说《正午的黑暗》一书的作者。我在《暴政史》一书里对这部小说有详细的分析。凯斯特勒早年因厌恶自己的资产阶级出身，参加左翼运动，最后因幻灭而退党。英国政治家和作家理查德·克鲁斯曼编过一本包括凯斯特勒在内的六位左派文人回忆录《修炼不成的神》（The God that Failed），他们各自谈回忆了为什么参加与自己人道主义理念不合的政治事业，原因不尽相同。</p>
+  <p> </p>
+  <p>挪威社会和政治学家乔恩·埃尔斯特（Jon Elster）在《政治心理学》（吉林出版集团有限责任公司2010年4月版）一书里试图分析左派知识分子有共性的选择理性。在这一心理机制中，“愿望根据实现愿望的手段（或可能）而进行调整。……由于有时候，我们想得到我们不能拥有的东西，只是因为我们不能够拥有它。如果我们考虑到极权政体中公民的行为，我们就会发现，那些谴责西方自由和强调西方社会罪恶的人非常像拉·封登寓言里的狐狸。”因为得不到自己想要的东西，就把不如它的东西当做自己的选择，不是将之视为“次好”的选择，而是将之当做“特好”的选择，甚至是唯一有价值，人人必须接受的选择。20世纪初，许多西方知识分子，由于对西方民主和自由失望，而把苏联当做了“特好”，甚至是唯一的选择。</p>
+  <p> </p>
+  <p>在20世纪初的政治选择项中，如果一个知识分子摒弃了自由民主（当时的民主状况确实非常糟糕），那么剩下来的有效选择便似乎只有共产主义和法西斯主义了。美国心理学家沃尔特·米歇尔（Walter Michel）有一个著名的心理发现：人在不同的环境中，行为的连贯性往往相当薄弱。一个人在工作人事关系中可以是好斗的，但在家里却可以是温和的；在一种环境中自私，在另一种环境中可以利他。对此，可以做两种不同的理解：一种理解是，环境是心理机制的激发因素；另一种理解是，个体中本来就存在两个或多个不同的自我。知识分子虽然青睐人道主义，但却又愿意为专制统治者服务，至少从行为上来说，连贯性薄弱和道德原则自相矛盾应该说是一个原因。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609b440e4e878e0826621e48" src="https://img.allhistory.com/now/2021-05-12/609b440c4cd55d1f8948d294+L.png" alt="《暴政史：二十世纪的权力与民众》，徐贲著， 牛津大学出版社2020年7月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《暴政史：二十世纪的权力与民众》，徐贲著， 牛津大学出版社2020年7月版
+    </figcaption>
+  </figure>
+  <h2 id="section-1">在民众与统治者之间：不自由的启蒙知识传播</h2>
+  <p> </p>
+  <p><strong>燕京书评： 《与时俱进的启蒙》显示，法国启蒙注重理性，英国启蒙把社会美德放在哲学思考和社会政策的首位，社会美德成为公共之善的充足条件，而美国启蒙把自由放在首位（222页）。埃里克·方纳教授更是以自由为主线，写作美国通史《给我自由！》（商务印书馆2011年1月版）。你在书中分析了美国启蒙的独特性，我感觉美国没有英国、法国绝对君主制的历史包袱，这也是它的一个有利条件吧？</strong></p>
+  <p> </p>
+  <p><strong>徐贲：</strong>没有国王天天骑在你头上，确实是一个有利的条件；但是，美洲殖民地人民长期是认同英国君主制的，他们自视为英王的臣民，所以不能说他们完全没有君主制的历史包袱。在美国脱离英国的君主立宪政体、创立自己的独立政体之前，美洲殖民地人民都不会把自己看成是共和公民。</p>
+  <p> </p>
+  <p>“美国人”的观念，是随着“美国”的概念而形成与变化的。尽管人们习惯地把美国独立之前的美国人称为“公民”，但是，这是一个时代错误或误导的说法。这是因为与公民相一致的共和在美洲大陆尚未建立起来，美洲人民还只是英国国王的“臣民”。当美国革命者确立了一种新的共和性质，拒绝接受世袭君主和贵族的合法性，让共和的所有基本公民在国家主权中获得了他们平等的那一份，这时候，“公民”才获得了它那必不可少而激动人心的身份地位。同样重要的是，一旦每个人都用“革命”的语言来表述自己的政治要求，国王和臣民便成了对立的两极。</p>
+  <p> </p>
+  <p>所以，革命对于美国启蒙的独特意义是怎么强调也不过分的。正如潘恩在《常识》这本小册子里宣传革命时所说的那样，王位的存在本身就是一个对人民自由的威胁，“任何政体越接近共和，需要国王做的事情就越少”。人民不能像靠撞大运那样期待明君贤主，潘恩写道：“如果这种制度能保证提供一群善良而贤明的人士，那倒还可以算是获得神权的特许，但事实上它只是为愚人、恶人和下流人大开方便之门，因此它就带有苦难的性质。那些自视为天生的统治者和视人为天生奴才的人，不久便横行霸道起来。由于他们是从其余的人类中挑选出来的，他们的心理早就为妄自尊大所毒害。”</p>
+  <p> </p>
+  <p>虽然美洲殖民地人民没有他们自己的国王，但却一直在心理和思想难以摆脱统治他们的英国国王。潘恩的小册子对他们传播的启蒙认知是，要推翻和摆脱国王，人民首先要摆脱他们自己依赖国王的习惯心理。启蒙的艰巨在于，人民的这种习惯是根深蒂固的，革命前的北美人如此，今天世界上有的国家里的人民因为当惯了奴隶或奴才，仍然是如此。这也是为什么我们今天阅读《常识》，仍然能感知它那种炽热的革命激情。</p>
+  <p> </p>
+  <p><strong>燕京书评： 如你在书中所述，在欧洲国家君主专制没有改变的情况下，启蒙哲人的变革主张有助于其国家强大，有助于维护其专制统治，这些欧洲君主就采纳。但是，只要不利于其专制统治的改革，如言论自由、出版自由等，就会被统治者拒绝。而欧洲国家的历史也说明，只有推翻了君主专制或其他形式的专制，启蒙价值才能真正体现，这里面有着怎样的逻辑机理？</strong></p>
+  <p> </p>
+  <p><strong>徐贲：</strong>任何专制独裁的改革都是功利主义的，都是为了增强而不是削弱它自己的统治，换言之，是一种“后果”论（consequential）的逻辑机制，即工具理性。但启蒙的价值诉求——自由、理性、宽容、人道主义——服从的是康德所说的纯粹理性的逻辑，是一种批判理性。它有一种“非后果论”（non-consequential）的逻辑机制，争取自由、理性、宽容、人道主义，不是因为这些价值能粉饰专制的形象，装点它的门面，从而达到更能掩人耳目的效果，而是因为它们的本质是善的，道德的。在18世纪，这种本质之善是用“自然法”来表述的：只有这样的道德价值，才与人的自然天性和宇宙自然秩序相一致。</p>
+  <p> </p>
+  <p>启蒙的道德批判与专制的统治目的注定必有矛盾，不可能同轨运行；只不过，启蒙哲人出于斗争策略的需要，不会让这种矛盾随时随地都暴露出来。由于现实政治环境的限制，18世纪启蒙哲人不得不在后果论的功利主义和非后果论的自然法之间摇摆。正如盖伊在《启蒙时代》一书里指出的那样，他们试图把“自然法律建立在经验的基础上”，“他们的认识论、社会学和历史学业已颠覆了自然法的逻辑，但他们却继续用自然法的语言来支撑他们的社会批判，指导他们的改革纲领。在他们的著作中，自然法犹如司空见惯之事，仿佛它是所有受过教育的人都了然于胸、没有受过教育的人大多也认识的某种简写符号。”一直到今天，我们在不自由的启蒙知识传播中仍然可以看到这样的无奈和困扰。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609b444c4e878e0826621e49" src="https://img.allhistory.com/now/2021-05-12/609b44469c232e04ae3f1621+L.png" alt="《与时俱进的启蒙》，徐贲著，上海三联书店2021年1月版。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《与时俱进的启蒙》，徐贲著，上海三联书店2021年1月版。
+    </figcaption>
+  </figure>
+  <h2 id="section-2">21世纪的公民启蒙：除了“敢于求知”，还需“善于求知”</h2>
+  <p> </p>
+  <p><strong>燕京书评： 我感觉，在专制传统深厚且时间悠久的国家（例如18世纪的俄罗斯）启蒙更为艰难，其中不仅包括会面临权力的无情打压，言说受到种种限制，且对启蒙者本身也是恒心和耐心的持久考验，因为在很长时间可能看不到希望和结果。《与时俱进的启蒙》显示，18世纪法国绝大多数启蒙哲人即是如此。一方面，某些听众可能会觉得老讲这些不能实现的东西离现实太远；另一方面，甚至同一阵营的人也会觉得启蒙者总是重复着自由、民主等词汇，因为不新鲜而觉得厌倦。你怎么看待这个问题？</strong></p>
+  <p> </p>
+  <p><strong>徐贲：</strong>我在书里提到一位中国学人对启蒙表示蔑视，他认为启蒙已经不再可能有什么新鲜事可以告诉我们了，似乎启蒙不过是令人乏味地不断重复“理性”“自由”“进步”这一类宏大概念而已。还有一位学者断言，“所谓‘启蒙’所要做的，恐怕只是为大家提供一套道德和伦理底线，解决一个低层的问题，即什么事情是不能做的。而更高阶的困境，即人应该做什么？人活着的意义是什么？这些问题需要由一些高级的宗教或者文明来解决。启蒙只能解决世俗层面的问题，而那些心灵深处的终极性问题，则需要依靠一场古典的复兴，到轴心时代的基督教、佛教、儒家、道家和古希腊文明中去寻求答案。”</p>
+  <p> </p>
+  <p>启蒙真的已经没有新东西或者关于人心灵深处的东西可以教我们了吗？任何一个对启蒙有所了解的人都是不会这么以为的。从1950-1960年代彼得·盖伊的《人道的同仁》（The Party of Humanity）、《启蒙时代》到2018年平克的《当下的启蒙》，这大半个世纪里这么多西方大学者积极评价启蒙运动，阐述其与当代思想观念的重要联系，少说也有几十位，难道他们都是“文化白痴”或“无事忙”吗？</p>
+  <p> </p>
+  <p>天底下没有专门的，对所有人都有启蒙作用的知识，你觉得它对你产生了启蒙的作用，它对你来说就是启蒙的知识。今天，我们回顾18世纪启蒙，会特别关注一些权威性启蒙思想家的著作：伏尔泰、狄德罗、卢梭、休谟、斯密、康德等，因为我们觉得他们表述了新的思想观念，我们甚至认为，这些新思想观念塑造了我们的现代意识和现代世界。他们成为我们心目中的现代性的倡导者，因为现代的本质就是它处于持续的变化之中，总是在变得更加现代。</p>
+  <p> </p>
+  <p>然而，在这些启蒙思想家活着的时候，他们的书是写给普通人阅读的，不是我们今天放在大学研究生班上阅读，或供专家学者写专著的“经典著作”。正如阅读史研究揭示的那样，18世纪读者阅读庞杂，并无特别的关注点，所谓的“启蒙思想”并不如我们今天想象的那样，天然地处于凌驾于其他思想之上的领导地位。和任何一个时代的阅读一样，读者们的阅读过程（选择性地关注读物、话题和讨论内容）都是非常多样的。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609b44b0b9c34444a4624ad8" src="https://img.allhistory.com/now/2021-05-12/609b44af4cd55d1f8948d296+L.png" alt="《当下的启蒙：为理性、科学、人文主义和进步辩护》，[美]史蒂芬·平克著，侯新智、欧阳明亮、魏薇译，湛庐文化丨浙江人民出版社2018年12月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《当下的启蒙：为理性、科学、人文主义和进步辩护》，[美]史蒂芬·平克著，侯新智、欧阳明亮、魏薇译，湛庐文化丨浙江人民出版社2018年12月版
+    </figcaption>
+  </figure>
+  <p>对此，美国历史学家蒂莫西·塔克特（Timothy Tackett） 在《法国革命的恐怖来临》（The Coming of the Terror in the French Revolution，中译本《暴力与反暴力：法国大革命中的恐怖政治》已由汉唐阳光引进出版）一书里写道：“读者在阅读过程中接触到的内容不等于其接受和认可的内容。实际上，（18世纪）种类繁多的作品之间时常在行文方式和基本的政治哲学观点上相互矛盾。一些作者强调写作风格应当理性严肃，并以科学严谨的态度对待知识，而另一些作者则盛赞直觉与情绪是当代作品中稀缺而珍贵的特质；一些作者认可从王室和统治阶层发起的自上而下的变革，而另一些作者则强调必须以舆论和公意为先。一些作者大力抨击天主教廷和宗教本身，而另一些作者则宣扬将人文理性、自决意识与天主教教义结合在一起（‘天主教启蒙思想’）；一些作品由文学和哲学思维贯穿始终，而另一些作品则主要关注政治经济学议题；一些作者拥护‘公意’为新权威，而另一些作者则始终对是否存在一个整体的‘公众’概念存疑。”用哪一种知识，以哪一种方式传递的知识具有启蒙的意义，是需要每一个读者自己来决定的。</p>
+  <p> </p>
+  <p>如果谁想知道人应该做什么？人活着的意义是什么，他完全可以不需要祷告或神启，也不需要高级的宗教；对他来说，世俗的人文教育就可以是不错的启蒙。如果谁需要知道为何和如何公共说理，那么，像“罗伯特议事规则”这样的说理知识，就可以成为对他有用的启蒙课题，这就是一个新课题，因为18世纪启蒙并没有专门讨论这个课题。如果谁先是以为逻辑或科学思维可以解决公共说理的问题，但后来又发现，学过逻辑或科学的人照样会上当受骗或者自欺欺人，那么，兼顾认知、伦理、情感因素的批判性思维就可以成为对他有用的启蒙课题。如果谁感觉到网络上各种各样的偏执意见在严重阻碍公民共识的形成，又想知道为什么，那么，主观或文化相对论与宽容的关系就可能成为一个启蒙的新课题。</p>
+  <p> </p>
+  <p>甚至，连人们以为是启蒙代言人的康德，也可以成为一个启蒙的新课题。康德所定义的“启蒙”今天已经不能令我们满意，因为它不再适应变化至今的更为复杂的启蒙环境。他所说的“敢于求知”，只是指求知者本人的意愿——告别愚昧、排除迷信、克服自欺或轻信、打破各种自我禁锢。今天，我们知道，光有这样的意愿是达不到这些启蒙目标的；除了这样的目标，我们还需要有相应的求知方式。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609b45044e878e0826621e4c" src="https://img.allhistory.com/now/2021-05-12/609b45024cd55d1f8948d297+L.png" alt="《暴力与反暴力：法国大革命中的恐怖政治》，[美]谭旋著，黄丹璐译，汉唐阳光丨山西人民出版社2019年3月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《暴力与反暴力：法国大革命中的恐怖政治》，[美]谭旋著，黄丹璐译，汉唐阳光丨山西人民出版社2019年3月版
+    </figcaption>
+  </figure>
+  <p>按照康德的“敢于求知”，知识的传播本身似乎不是一个问题，问题在于“敢不敢”。以今天知识的生产和传播来看，事情可没那么简单。今天，真实的知识和虚假的知识混杂在一起，还有半真不假的知识。而且，虚假知识比真实知识的传播要快得多。你要敢于求知，难道不是先需要知道该追求怎样的知识吗？</p>
+  <p> </p>
+  <p>马克·吐温说，真话还刚穿上鞋，谎言已经跑遍了半个世界；互联网时代，岂不更是如此？世界顶尖科技杂志《科学》2018年3月9日刊登一篇题为《虚假新闻在推特上的传播速度是真实新闻的六倍》（“False News Travel 6 Times Faster on Twitter than Truthful News”）的论文，有研究发现，虚假新闻比真相接触到的人更多，前1％的虚假新闻扩散到1000到10万人之间，而真相很少扩散到1000人以上。人们以前相信，公民有知情权，新闻媒体是独立的第四权力，只要有新闻自由，人民就能得到真实的知识信息。今天我们知道，这是与现实不尽相符的“文化神话”，因此，我们在康德的“敢于求知”之外，必须加上“善于求知”，这才是一个更周全，更有实际用途的“启蒙”。这不又是一个启蒙的新课题吗？</p>
+  <p> </p>
+  <p>说启蒙已经无新事可说，或者只能是一些“低层次”的东西，专家、学者、教授这么告诉我们，我们就能相信吗？要是没有启蒙，我们还真就会因为误听误信而上当受骗。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609b452d4e878e0826621e4d" src="https://img.allhistory.com/now/2021-05-12/609b452b9c232e04ae3f162a+L.png" alt="《批判性思维的认知与伦理》，徐贲著，北京大学出版社2021年2月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《批判性思维的认知与伦理》，徐贲著，北京大学出版社2021年2月版
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：《与时俱进的启蒙》现实，法国理性主义认为，个人可以通过理性看清楚、明确知道如何去改造社会的各种制度和传统。如果人民不能接受用理性涉及出来的的新生事物，那就必须教育他们（对他们进行启蒙），若无成效，就强迫他们改变，这就是改造社会，塑造新人。顾准主张的从理想主义到经验主义，正是对于这一问题的深刻反思。你在书中区分了纯粹理性、实践理性和理论理性。美国的政治制度制度，一定程度上也是美国国父们理性设计的结果，同时也吸收了英国经验主义（顾准也强调了这一点）。那么，在启蒙过程中，应该如何对待理性主义和经验主义？</strong></p>
+  <p> </p>
+  <p><strong>徐贲：</strong>这首先需要知道18世纪的时候，什么是当时人们所理解的“理性主义”和“经验主义”，他们的理解与我们今天的理解不尽相同。18世纪启蒙哲人所理解的“理性主义”，是指笛卡尔那样的先验理性主义；伏尔泰在《英国书简》里明确表示对这种理性主义的厌恶，他赞赏培根和牛顿所代表的经验主义。伏尔泰在《英国书简》里写道，“英格兰是这么一块士地：……它不是笛卡儿（‘他传播的错误比他消除的多得多’）、马勒伯朗士（‘他的幻觉完全是崇高的’）、愤世嫉俗的拉罗什富科和怀疑论者蒙田的故乡，而是培根（‘伟大的经验主义者’）、洛克（‘最睿智的人’）、牛顿（‘最伟大的人’）的出生地”。伏尔泰对英国的理想化描述虽不无偏见，但并没有减弱其影响力。它宣传了一种对当时法国人具有启蒙意义的观点：现代英格兰体现了商业、科学、军事力量、宗教宽容、自由与一个稳定良好的政府之间的关联。</p>
+  <p> </p>
+  <p>今天，对18世纪启蒙缺乏了解的人，总是在把所谓法国启蒙的“理性主义”与苏格兰启蒙的“经验主义”对立起来；其实，法国启蒙思想里最可贵的正是它用来抵抗先验理性主义的批判理性观，这种批判理性经常被后人扭曲为“工具理性”，因此我也称此为“被抹黑的理性”。法国启蒙哲人倡导的理性是清除愚昧、迷信和压制的思考力量。康德所说的理性，指的是克服人加于自己的不成熟，他说，“我们这个时代可以被称为批判的时代，没有什么东西能够逃避这批判的，宗教企图躲在神圣的后边，法律企图躲在尊严的后边，而结果正引起了人们对他们的杯疑，并失去人们对它们真诚崇敬的地位，因为只有经得起理性的自由、公开检查的东西才能博得理性的尊敬。”（《纯粹理性批判》第1版序言）我在《与时俱进的启蒙》一书里对此有专门讨论，这里就不多说了。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609b4567ee4d864c459d5aac" src="https://img.allhistory.com/now/2021-05-12/609b45669c232e04ae3f162c+L.png" alt="英国启蒙运动代表人物亚当·斯密。（来自视觉中国）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+英国启蒙运动代表人物亚当·斯密。（来自视觉中国）
+    </figcaption>
+  </figure>
+  <h2 id="section-3">启蒙运动：向未来要自由的正当性</h2>
+  <p> </p>
+  <p><strong>燕京书评： 启蒙运动让自由、平等等价值被人们广泛接受，纵观美国的历史，就是一部自由和平等逐步扩大的历史。但是，政治学者丛日云指出了这种现象的另一面，即自由和平等已经造成了许多问题，他就此质疑，“自由越多越好吗？平等越多越好吗？”当然，丛日云教授赞成自由民主，他所强调的只是一个“度”的问题。对于后发国家来说，这个问题可能比较遥远，因为既没有自由，也没有平等，争取这两者才是最重要的使命。但我想知道，你怎么看待这个问题？</strong></p>
+  <p> </p>
+  <p><strong>徐贲</strong>：启蒙运动的思想核心是自由，不是平等。狄德罗说：“每一个时代都有其典型精神，而我们这个时代的精神就是自由的精神。”从本质上说，启蒙理性体现的是人的自由认知。文艺复兴是向过去要自由的正当性，启蒙运动则是向未来要自由的正当性。在启蒙哲人中，卢梭是个异类。他不是自由主义者，而是民主主义者，所以他倡导平等。</p>
+  <p> </p>
+  <p>卢梭强调民主不能徒具形式，它的运转离不开特定的社会环境，其中包括道德平等、法律平等以及相对的经济平等。其他的启蒙哲人，包括霍尔巴赫、休谟，还有其他人也都看到了实质性平等的社会功能，但卢梭把平等纳入到自己的理论体系之中。按照他的观点，不应当有人因为贫穷而卖身给别人，也不应当有人富得可以买下别人。因此，自由与平等完全不是对立的或彼此不相容的，在卢梭看来，两者其实是缺一不可、相辅相成的盟友。法国法学家勒内·卡森（René Cassin）说，法国革命四大价值支柱是“尊严、自由、平等、博爱”。卡森是1948年联合国《世界人权宣言》的主要起草人之一，曾担任联合国人权委员会主席和欧洲人权法院院长（欧洲人权法院设在法国的斯特拉斯堡），1968年因对起草人权宣言的贡献，获得诺贝尔和平奖。在卡森的表述中，自由和平等是并列的。</p>
+  <p> </p>
+  <p>在美国《独立宣言》里，自由和平等也是并列的，只是自由意味着人与生俱来的天赋权利，“我们认为下面这些真理是不证自明的：人人生而平等，造物者赋子他们若千不可夺的权利，其中包括生命权、自由权和追求幸福的权利。”自由不是抽象的，美国宪法第一修正案里明确规定。言论和信仰这两项自由都不是放纵的，而是有序的自由；自由选择必须是负责的选择，负责的选择不能侵犯其他公民同等的权利。</p>
+  <p> </p>
+  <p>这里的“同等”，就包含着平等。美国是伴随着对平等的梦想诞生的。“人人生而平等”，恐怕没有任何其他的话能如此引起美国人心灵的共鸣。美国的开国者信奉平等的政治原则，认为无人生来就注定凌驾于他人之上。政府的统治，仅仅来源于被统治者的授权。政治平等最初表现为形式平等，就是在法律上的平等。1789年，第一届国会将此承诺写入人权法案，保证在新设的联邦政府治理下，法律平等保护所有的美国人。美国内战始自对上述平等原则的理解分歧，是美国立国以来最血腥的战争。内战之后的1866年，国会提出第14修正案，1868通过，因其重要性被称为“第二次制宪”，其第一款明确规定“不得拒绝给予任何人以平等法律保护”。美国革命，从此不只是一场政治革命，而且还是一场社会革命。</p>
+  <p> </p>
+  <p>托克维尔在《论美国的民主》里多次谈到美国民主中的自由与平等的关系。托克维尔希望看到自由与平等能同时体现于民主政治中，但他特别关心的是，作为一种社会价值或意识形态的平等有可能会在现实中威胁到自由，因此民主社会必须设法预防身分平等所带来的政治隐患，如多数人的暴政、民粹政治、野心家蛊惑、中央集权等。这些政治隐患，都程度不等地出现在美国2020年大选中，是当今美国民主政治面临的严重现实问题。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609b459eb9c34444a4624ad9" src="https://img.allhistory.com/now/2021-05-12/609b459c9c232e04ae3f162d+L.png" alt="狄德罗主编的《百科全书》实验室插图。（来自视觉中国）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+狄德罗主编的《百科全书》实验室插图。（来自视觉中国）
+    </figcaption>
+  </figure>
+  <h2 id="section-4">历史与故事：传播启蒙的重要渠道</h2>
+  <p> </p>
+  <p><strong>燕京书评：近年来，学界崇尚改良，反对暴力性的法国大革命。但是，英国在克服专制的过程中，贵族和国王也有过很长时间的战争。正如你在书中所说，英法两国的启蒙都有克服专制，驯服王权的现实需求。你在书中强调，不能夸大启蒙运动和现实政治的关系，那么，我们如何做到客观看待真实的历史，同时又能真正做到古为今用？</strong></p>
+  <p> </p>
+  <p><strong>徐贲：</strong>历史写作在启蒙知识传播中起到非常重要的作用：历史里有故事，又是在用科学的方法“发现”过去的“真实”。因此，即使在思想讨论万马齐喑的时代，历史还照样能在思想审查的夹缝里兴致勃勃地讲它的故事。眼下，历史是国内人文学科里最红火、最有人气的，与此原因有关。休谟说，历史“适合每一种才能”，也就是说，并非专业的历史学家才有资格从事历史写作。一个法学家、文学研究者或政治哲学研究者，要对自己研究的对象有深入的了解，第一件需要做的事情就是弄清楚有关的历史。所以，对18世纪的启蒙哲人来说，对历史有兴趣是自然而然的事情。虽非专门历史学家的作家们对历史伟人或事迹饶有兴趣，也会坚持不懈地收集材料，以求写出丰富翔实、另有所指的“故事”。</p>
+  <p> </p>
+  <p>当然，历史追求真相，这个说法是一个古老的老生常谈，不断被人重申，却鲜有人做到。伏尔泰的历史里有许多谈不上是真实的东西，但这不妨碍他说， “我们在最小的事情上都需要真相”。1750年，他在写给一位友人的信里说，“在这异国他乡，我应该再一次搜捕我喜爱的猎物：真相。我像波里比阿一样走访各个古战场。我不仅向朋友，也向对头请教……历史既非讽刺诗，亦非颂词。”</p>
+  <p> </p>
+  <p>然而，对于一般历史的阅读者来说，他们并没有检验历史学家是否忠实于自己“客观追求历史真相”誓言的能力；每个医生在行医之前，都要参加希波克拉底医德宣誓，但失德的医生并没有因此减少。所以，我在阅读历史时，倾向于把核查真实放到一边，而是更加在意历史家是否能有意识地帮助我们“古为今用”。托克维尔就是一个能做到这一点的历史学家。他会把历史观察与人性观察联系起来，人性不变，古今之间便有了联系。</p>
+  <p> </p>
+  <p>例如，他在《旧制度与大革命》中写道：“革命的发生并非总因为人们的处境越来越坏。最经常的情况是，一向毫无怨言，仿佛若无其事地忍受着最难以忍受的法律的人民，一旦法律的压力减轻，他们就将它猛力抛弃。被革命摧毁的政权几乎总是比它前面的那个政权更好，而且经验告诉我们，对于一个坏政府来说，最危险的时刻通常就是它开始改革的时刻。”托克维尔对民众不满和反抗心理的分析是非常精准的。生活在习惯了的专制压迫下，人们耐心忍受着苦难，以为这是不可避免的，但一旦有人出主意想消除苦难时，它就变得无法忍受了。痛苦的确已经减轻，但感觉却更加敏锐。托克维尔借古说今的结论是，“封建制度在盛期并不比行将灭亡时更激起法国人心中的仇恨。路易十六最轻微的专横举动似乎都比路易十四的整个专制制度更难以忍受。”（215-216）</p>
+  <p> </p>
+  <p>又例如，吉本的《罗马帝国衰亡史》也被专家批评有不实的地方，但这并不妨碍我对这部著作的兴趣，因为在他的历史里我能不断发现对古今联系的提醒。在第38章之中，他写道，“罗马的没落，是无限扩张之自然、必然的结果。繁荣化成了衰朽的因素，毁灭的缘由随着征服的幅度而扩大，时间或意外一旦消除了人为的支撑，这个巨大的建筑便屈服于其本身的沉重压力了。”有意思的是，他说，“我们不问罗马帝国何以灭亡，而是讶异它为何支撑得那么久”，接着就说，“那些无往不胜的军团，在远方的战争中感染了异邦人和外国雇佣兵的毛病，首先压制共和国的自由，而后破坏皇帝的威严……军事政府的力量逐渐松弛……一股野蛮人的洪流淹没了罗马的世界。”在我看来，这样的历史，才称得上是传播启蒙知识的历史。</p>
+  <p> </p>
+  <p> </p>
+  <p>———</p>
+  <p>微信搜索“燕京书评”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-13</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-13/%E5%BE%90%E8%B4%B2-%E8%AD%A6%E6%83%95%E4%B8%AD%E5%9B%BD%E7%9A%84-%E6%9F%8F%E5%85%8B%E7%83%AD-%E5%92%8C-%E4%BF%9D%E5%AE%88%E4%B8%BB%E4%B9%89%E7%83%AD-%E9%80%A0%E6%88%90%E9%9B%86%E4%BD%93%E6%80%9D%E6%83%B3%E8%BF%B7%E6%80%9D-%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E8%AF%84/">
+          徐贲③：警惕中国的“柏克热”和“保守主义热”造成集体思想迷思 丨燕京书评
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-11</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-11/%E7%AA%81%E7%A0%B4%E4%B8%8E%E9%87%8D%E6%9E%84-%E5%8E%86%E5%8F%B2%E7%A4%BE%E4%BC%9A%E5%AD%A6%E7%9A%84%E4%B8%89%E6%B3%A2%E6%B5%AA%E6%BD%AE%E5%8F%8A%E5%85%B6%E6%9C%AA%E6%9D%A5/">
+          突破与重构：历史社会学的三波浪潮及其未来
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-11</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-11/%E4%BC%8A%E8%97%A4%E5%8D%9A%E6%96%87-%E6%98%AF%E6%97%A5%E6%9C%AC%E5%AE%AA%E6%94%BF%E7%9A%84%E5%BC%80%E5%88%9B%E8%80%85-%E8%BF%98%E6%98%AF%E6%9C%BA%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%9A%84%E5%AF%A1%E5%A4%B4%E5%85%83%E8%80%81/">
+          伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-11</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-11/%E4%BB%8E%E9%AD%8F%E7%8E%9B%E5%BE%B7%E5%9B%BD%E5%88%B0%E9%AD%8F%E7%8E%9B%E7%BE%8E%E5%9B%BD-%E9%AD%8F%E7%8E%9B%E6%B0%91%E4%B8%BB%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%BB%99%E6%88%91%E4%BB%AC%E6%97%B6%E4%BB%A3%E7%95%99%E4%B8%8B%E6%80%8E%E6%A0%B7%E7%9A%84%E5%90%AF%E7%A4%BA/">
+          从魏玛德国到魏玛美国：魏玛民主的失败给我们时代留下怎样的启示？
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-11/%E4%BC%8A%E8%97%A4%E5%8D%9A%E6%96%87-%E6%98%AF%E6%97%A5%E6%9C%AC%E5%AE%AA%E6%94%BF%E7%9A%84%E5%BC%80%E5%88%9B%E8%80%85-%E8%BF%98%E6%98%AF%E6%9C%BA%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%9A%84%E5%AF%A1%E5%A4%B4%E5%85%83%E8%80%81/">
+            前一篇：伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-11/%E7%AA%81%E7%A0%B4%E4%B8%8E%E9%87%8D%E6%9E%84-%E5%8E%86%E5%8F%B2%E7%A4%BE%E4%BC%9A%E5%AD%A6%E7%9A%84%E4%B8%89%E6%B3%A2%E6%B5%AA%E6%BD%AE%E5%8F%8A%E5%85%B6%E6%9C%AA%E6%9D%A5/">
+            後一篇：突破与重构：历史社会学的三波浪潮及其未来
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-11/%E4%BC%8A%E8%97%A4%E5%8D%9A%E6%96%87-%E6%98%AF%E6%97%A5%E6%9C%AC%E5%AE%AA%E6%94%BF%E7%9A%84%E5%BC%80%E5%88%9B%E8%80%85-%E8%BF%98%E6%98%AF%E6%9C%BA%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%9A%84%E5%AF%A1%E5%A4%B4%E5%85%83%E8%80%81/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-11/%E7%AA%81%E7%A0%B4%E4%B8%8E%E9%87%8D%E6%9E%84-%E5%8E%86%E5%8F%B2%E7%A4%BE%E4%BC%9A%E5%AD%A6%E7%9A%84%E4%B8%89%E6%B3%A2%E6%B5%AA%E6%BD%AE%E5%8F%8A%E5%85%B6%E6%9C%AA%E6%9D%A5/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-11/%E7%AA%81%E7%A0%B4%E4%B8%8E%E9%87%8D%E6%9E%84-%E5%8E%86%E5%8F%B2%E7%A4%BE%E4%BC%9A%E5%AD%A6%E7%9A%84%E4%B8%89%E6%B3%A2%E6%B5%AA%E6%BD%AE%E5%8F%8A%E5%85%B6%E6%9C%AA%E6%9D%A5/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-11/%E4%BC%8A%E8%97%A4%E5%8D%9A%E6%96%87-%E6%98%AF%E6%97%A5%E6%9C%AC%E5%AE%AA%E6%94%BF%E7%9A%84%E5%BC%80%E5%88%9B%E8%80%85-%E8%BF%98%E6%98%AF%E6%9C%BA%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%9A%84%E5%AF%A1%E5%A4%B4%E5%85%83%E8%80%81/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-11/%E4%BC%8A%E8%97%A4%E5%8D%9A%E6%96%87-%E6%98%AF%E6%97%A5%E6%9C%AC%E5%AE%AA%E6%94%BF%E7%9A%84%E5%BC%80%E5%88%9B%E8%80%85-%E8%BF%98%E6%98%AF%E6%9C%BA%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%9A%84%E5%AF%A1%E5%A4%B4%E5%85%83%E8%80%81/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-11/%E7%AA%81%E7%A0%B4%E4%B8%8E%E9%87%8D%E6%9E%84-%E5%8E%86%E5%8F%B2%E7%A4%BE%E4%BC%9A%E5%AD%A6%E7%9A%84%E4%B8%89%E6%B3%A2%E6%B5%AA%E6%BD%AE%E5%8F%8A%E5%85%B6%E6%9C%AA%E6%9D%A5/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-11/%E7%AA%81%E7%A0%B4%E4%B8%8E%E9%87%8D%E6%9E%84-%E5%8E%86%E5%8F%B2%E7%A4%BE%E4%BC%9A%E5%AD%A6%E7%9A%84%E4%B8%89%E6%B3%A2%E6%B5%AA%E6%BD%AE%E5%8F%8A%E5%85%B6%E6%9C%AA%E6%9D%A5/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-11/%E4%BC%8A%E8%97%A4%E5%8D%9A%E6%96%87-%E6%98%AF%E6%97%A5%E6%9C%AC%E5%AE%AA%E6%94%BF%E7%9A%84%E5%BC%80%E5%88%9B%E8%80%85-%E8%BF%98%E6%98%AF%E6%9C%BA%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%9A%84%E5%AF%A1%E5%A4%B4%E5%85%83%E8%80%81/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

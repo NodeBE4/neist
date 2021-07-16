@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Is There a Future for Values-Based Engagement with China? – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Is There a Future for Values-Based Engagement with China?
+——
+" />
+    <meta property="og:description" content="
+Is There a Future for Values-Based Engagement with China?
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Is There a Future for Values-Based Engagement with China?" />
+    <meta property="twitter:title" content="Is There a Future for Values-Based Engagement with China?" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Fthere-future-values-based-engagement-china" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/there-future-values-based-engagement-china" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/there-future-values-based-engagement-china&text=Is There a Future for Values-Based Engagement with China?&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/there-future-values-based-engagement-china&title=Is There a Future for Values-Based Engagement with China?" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/there-future-values-based-engagement-china&title=Is There a Future for Values-Based Engagement with China?" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Is There a Future for Values-Based Engagement with China?&body=
+Is There a Future for Values-Based Engagement with China?
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/there-future-values-based-engagement-china" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/there-future-values-based-engagement-china&title=Is There a Future for Values-Based Engagement with China?&caption=
+Is There a Future for Values-Based Engagement with China?
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Is There a Future for Values-Based Engagement with China?&url=https://www.chinafile.com/conversation/there-future-values-based-engagement-china" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Is There a Future for Values-Based Engagement with China?</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-07-20
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Neysun  A. Mahboubi, Mary Gallagher &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/there-future-values-based-engagement-china" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1595296020000-->
+<p><a href="https://www.chinafile.com/conversation/there-future-values-based-engagement-china">Is There a Future for Values-Based Engagement with China?</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-28573e458203fe8697e4d7742e208aae">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-169541419.jpg" title="Is There a Future for Values-Based Engagement with China?" class="colorbox" data-colorbox-gallery="gallery-node-52431-n1-cnlLAAak" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-169541419.jpg?itok=YrGzHGkZ" width="1200" height="800" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Alexander F. Yuan—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>Workers iron a Chinese national flag, placed next to a United States flag, before a meeting of then U.S. National Security Advisor Tom Donilon and Chinese State Councilor Yang Jiechi at Diaoyutai State Guesthouse in Beijing, May 27, 2013.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">A key feature of current debates over U.S.-China relations is the proposition that “<a href="https://www.thewirechina.com/2020/06/07/the-birth-life-and-death-of-engagement/" target="_blank" rel="nofollow">engagement failed</a>,” in light of the Chinese government’s increasingly aggressive posture towards liberal values at home and on the world stage. Already on the defensive, proponents of engagement have had to reckon, most recently, with the heavy-handed passage of a new <a href="http://www.xinhuanet.com/english/2020-07/01/c_139178753.htm" target="_blank" rel="nofollow">National Security Law for Hong Kong</a>, as well as the arrest and subsequent firing of Tsinghua University law professor <a href="https://www.nytimes.com/2020/07/06/world/asia/china-detains-xu-zhangrun-critic.html" target="_blank" rel="nofollow">Xu Zhangrun</a> (who has been one of Xi Jinping’s most vocal critics amongst Chinese intellectuals). But in an essay published in ChinaFile earlier this month, Chinese political scientist and democracy advocate Li Fan <a href="https://www.chinafile.com/reporting-opinion/viewpoint/its-true-democracy-china-retreat-dont-give-it-now" target="_blank" rel="nofollow">argues</a> that the seeds of political reform nurtured by values-based engagement continue to develop in China, notwithstanding adverse conditions, and that the benefits of such work by scholars and civil society groups are underappreciated by proponents of “decoupling.”</p>
+      <p>As the U.S. government takes steps to reduce interaction with China—including through enhanced <a href="https://www.nytimes.com/2020/05/28/us/politics/china-hong-kong-trump-student-visas.html" target="_blank" rel="nofollow">scrutiny</a> of Chinese students in the United States, and <a href="https://www.wsj.com/articles/white-house-weighs-scaling-back-rules-on-foreign-students-studying-online-11594746772" target="_blank" rel="nofollow">possible</a> new limitations on their ability to even reach or stay in the country—does there remain space, on either side, for academic and civil-society engagement between the U.S. and China to continue to operate? And if so, what form should it take, and to what possible end(s)? —<em><a href="https://www.chinafile.com/contributors/neysun-mahboubi" target="_blank" rel="nofollow">Neysun Mahboubi</a></em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-8651" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/mary-gallagher"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/director_mary_gallagher.jpg?itok=qhJVmKql" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="mary-gallagher"><a href="https://www.chinafile.com/contributors/mary-gallagher" title="Mary Gallagher">Mary Gallagher</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">In 1991, political scientist Michel Oksenberg published an article in <em>Foreign Affairs</em>, “<a href="https://www.foreignaffairs.com/articles/asia/1991-06-01/china-problem" target="_blank" rel="nofollow">The China Problem</a>.” Writing in the aftermath of the 1989 student movement and its violent suppression, Oksenberg was clear-eyed about the limits of engagement. It bears repeating what this early advocate of engagement wrote:</p>
+        <blockquote>
+          <p>Finally, America has only limited influence on China’s internal affairs. . . Yet, for reasons that have fascinated successive generations of historians, America has periodically sought to produce a China more to its liking. The efforts have always ended in massive failure. . . The United States still seems trapped in the cycle of a “love-hate” relationship with China. It seems reluctant to acknowledge the obvious: China represents a distinct and proud civilization whose search for modernity will continue to be punctuated by calamity and tragedy and whose necessary incorporation into world affairs will require years of effort.</p>
+        </blockquote>
+        <p>He and many others advocated engagement because it was in the national interest of the United States to do so. Rather than state that engagement has failed, it is more useful to ask whether this policy still serves the U.S. now. Given that China has become much more closed and politically repressive, it is also useful to ask how engagement can be sustained and where engagement should be limited. There are certainly issue areas in which engagement is now less effective than trenchant criticisms and even sanctions, which are currently warranted against the People’s Republic of China and its leaders in handling Hong Kong, Xinjiang, and the domestic critics of the regime who constantly face harassment and imprisonment. Given the growing restrictions on civil society, activists, and academics, it is also increasingly difficult to be engaged while physically in China, and now also in Hong Kong, after the passage of the National Security Law there.</p>
+        <p>One important area for continued engagement is with the Chinese people who choose to come to the United States for education and often stay on for further graduate education and employment. Recent moves by the Trump Administration to restrict <a href="https://thehill.com/opinion/immigration/507622-foreign-students-still-in-danger-of-losing-visas-despite-settlement" target="_blank" rel="nofollow">students</a>’ and highly trained <a href="https://www.nature.com/articles/d41586-020-01885-6" target="_blank" rel="nofollow">workers</a>’ visas hurt our universities and companies by disengaging from the very sectors of Chinese society seeking to benefit from the institutions that best represent the American values of openness, freedom of expression and inquiry, hard work, and competition. In 2019, over 350,000 Chinese high school students opted out of China’s higher education to <a href="https://www.iie.org/Why-IIE/Announcements/2019/11/Number-of-International-Students-in-the-United-States-Hits-All-Time-High" target="_blank" rel="nofollow">pursue education</a> here, as do more than one million students globally. For some American states, these higher education “exports” make up a large proportion of their overall service trade with China. It’s a perfect example of exploiting our comparative advantage in the freedom of speech. As an opportunity for engagement, what could be better than educating the next generation of Chinese leaders, entrepreneurs, scientists, and creative artists?</p>
+        <p>The mishandling of COVID-19 in many U.S. states and related travel restrictions will surely mean that the numbers of international students in the U.S. will be much lower in 2020-2021. Policies that further repel the best and brightest from around the world, including from China, won’t make the U.S. safer, stronger, or respected. It will make us isolated. It will make us more closed, just as China is also closing. With these new policies, we alienate and reject the people in China who most value and admire the United States. And that’s not in our national interest.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8656" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/jie-dalei"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/jie_dalei_2.jpeg?itok=220xusNz" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="jie-dalei"><a href="https://www.chinafile.com/contributors/jie-dalei" title="Jie Dalei">Jie Dalei</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The debate on the success/failure of the engagement policy in the U.S. actually hinges on whether the engagement policy is values-based or, for the lack of a better word, values-free. To the <a href="https://www.foreignaffairs.com/articles/china/2018-02-13/china-reckoning" target="_blank" rel="nofollow">critics</a>, China’s political development in recent years has defied the expectations of the engagement policy and thus debunked the policy’s false promise. They argue this explains China’s unsettling external behavior and that, even worse, through engagement, China has taken advantage of the openness of the U.S. polity to wield <a href="https://www.hoover.org/research/chinas-influence-american-interests-promoting-constructive-vigilance" target="_blank" rel="nofollow">“sharp power”</a> to undermine the latter’s own most-cherished values. However, if one believes the premise of engagement was not values, the policy is clearly an enormous success in terms of countering the common Soviet threat, reaping economic benefits, tackling global economic and security issues, as well as managing areas of contention.</p>
+        <p>Critics of engagement in the U.S. need to answer two questions. The first is a counterfactual question about the past: Would it have served U.S. national interests better had an alternative policy (isolation and containment) been adopted vis-à-vis China? The second is a hypothetical question about the future: If engagement is a fool’s errand, is there a better alternative? It may not be too difficult to point fingers at some of engagement’s perceived defects, but to use a familiar line about politics, we often have to choose between the unpalatable and the disastrous. Meanwhile, engagement is fully compatible with strategic competition if one does not believe that freewheeling and unmanaged competition plays to one’s own advantage.</p>
+        <p>On the other hand, even if one accepts that both China and the U.S. have benefited from engagement, and that they have to continue to engage with each other, if only out of necessity, the value (aka ideology) question lingers and cannot be crossed off the bilateral equation. Thus, several suggestions:</p>
+        <p>First of all, both sides should try to avoid Cold War style conflicts of values/ideologies/systems because that could easily turn competition into a win-or-lose/life-or-death conflict. In this sense, it does not help that the Trump administration’s senior officials <a href="https://www.cnbc.com/2020/05/21/white-house-report-criticizes-china-policies.html" target="_blank" rel="nofollow">frame</a> the China-U.S. relationship <a href="https://www.nytimes.com/2020/07/14/world/asia/cold-war-china-us.html" target="_blank" rel="nofollow">increasingly</a> in starkly <a href="https://www.whitehouse.gov/briefings-statements/chinese-communist-partys-ideology-global-ambitions/" target="_blank" rel="nofollow">ideological terms</a>. It may be of some use for domestic mobilization or rallying allies, but the <a href="https://www.foreignaffairs.com/articles/china/2019-12-06/new-china-scare" target="_blank" rel="nofollow">Truman-Acheson kind of</a> “scare the hell out of the country” and “clearer than truth” threat inflation will bring long-lasting and irreparable damage to the bilateral relationship.</p>
+        <p>Second, both sides should practice some ideological humility. One does not have to change/become the other to be able to coexist. In fact, the existence of multiple competitive ideologies is the normal state of affairs throughout most of human history. The domination of one ideology in the global marketplace of ideas is the exception rather than the rule. Moreover, as political scientist Francis Fukuyama <a href="https://www.amazon.com/Political-Order-Decay-Industrial-Globalization-ebook/dp/B00IQOFS7M" target="_blank" rel="nofollow">noted</a>, state capacity, rule of law, and democratic accountability can be combined in a variety of different ways in practice, with varying degrees of virtues and vices.</p>
+        <p>Third, as much as both sides shall practice some humility, they should also be more confident in the resilience of their own systems. Engagement does not necessarily lead to “peaceful evolution” or the spread of “sharp power.” To cut off engagement on the basis of its overblown corrosive effects is, in Chinese idiom, “giving up eating for fear of choking.”</p>
+        <p>Finally, one has to think long-term. The U.S. Constitution is often lauded for its longevity, but its 27 amendments testify to the continuous change and reform of the U.S. political system. It is also fair to say that the People’s Republic of China has come a long way in terms of political development since its establishment in 1949. Ultimately, it is the persistent pursuit of perfecting one’s own system to better improve the people’s welfare that is the most fundamental shared value between China and the U.S.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8661" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/margaret-lewis"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/lewis_sm.png?itok=Si_umQPK" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="margaret-lewis"><a href="https://www.chinafile.com/contributors/margaret-lewis" title="Margaret Lewis">Margaret Lewis</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Months of pandemic parenting have exposed me to multiple iterations of Power Rangers. From <em><a href="https://powerrangers.fandom.com/wiki/Power_Rangers_Megaforce" target="_blank" rel="nofollow">Megaforce</a></em> to <em><a href="https://powerrangers.fandom.com/wiki/Power_Rangers_Beast_Morphers" target="_blank" rel="nofollow">Beast Morphers</a></em>, the clarity of good triumphing over an evil, often-multi-armed alien is satisfying. Responding to challenges posed by the People’s Republic of China (PRC) Party-state is not so straightforward.</p>
+        <p>Despite interspersed <a href="https://www.fbi.gov/news/speeches/the-threat-posed-by-the-chinese-government-and-the-chinese-communist-party-to-the-economic-and-national-security-of-the-united-states" target="_blank" rel="nofollow">references</a> to the “Chinese Government” and “Chinese Communist Party,” “China” as used in the Department of Justice’s “<a href="https://www.justice.gov/opa/speech/file/1107256/download" target="_blank" rel="nofollow">China Initiative</a>” conflates government, party, national origin, and ethnicity into <a href="https://ssrn.com/abstract=3600580" target="_blank" rel="nofollow">an amorphous threat</a>. “China” itself is anthropomorphized into a villain that <a href="https://www.fbi.gov/news/stories/wray-addresses-china-threat-at-doj-conference-020620" target="_blank" rel="nofollow">steals</a> and <a href="https://www.fbi.gov/news/speeches/the-threat-posed-by-the-chinese-government-and-the-chinese-communist-party-to-the-economic-and-national-security-of-the-united-states" target="_blank" rel="nofollow">cheats</a>.</p>
+        <p>In a <a href="https://www.fbi.gov/news/speeches/the-threat-posed-by-the-chinese-government-and-the-chinese-communist-party-to-the-economic-and-national-security-of-the-united-states" target="_blank" rel="nofollow">July 7 speech</a>, FBI Director Christopher Wray emphasized “the Chinese threat” to the U.S.’s information and intellectual property. He warned of “malign foreign influence efforts” that “undermine confidence in our democratic processes and values.”</p>
+        <p>As someone who engaged with actors within the PRC on criminal justice reforms, I believe those efforts upheld values rooted in international human rights and had a positive impact on people’s lives.</p>
+        <p>But my point here is not to relitigate whether <em>past</em> “engagement failed.” Rather, I want to look forward: If the U.S. government fails to deepen engagement with various communities within the United States when “<a href="https://www.fbi.gov/news/stories/wray-addresses-china-threat-at-doj-conference-020620" target="_blank" rel="nofollow">Confronting the China Threat</a>,” we risk self-inflicted wounds to our values.</p>
+        <p>Enhanced collaboration is needed with the:</p>
+        <ul>
+          <li><strong>scientific community</strong> to (1) clarify the line between <a href="https://www.nsf.gov/news/special_reports/jasonsecurity/JSR-19-2IFundamentalResearchSecurity_12062019FINAL.pdf" target="_blank" rel="nofollow">open science</a> and intellectual property that is a <a href="https://www.judiciary.senate.gov/imo/media/doc/12-12-18%20Demers%20Testimony.pdf" target="_blank" rel="nofollow">national security concern</a>, (2) strengthen grant reporting and auditing in a country-neutral manner so as to protect against threats wherever they might emanate from, and (3) create alternative deterrent measures to criminal sanctions;</li>
+          <li><strong>academic community</strong> to wrestle with charting a path that upholds academic freedom while protecting against entities seeking to exploit that freedom;</li>
+          <li><strong>community of criminal justice scholars</strong> to explore tempering the view of prosecutors as “<a href="https://www.justice.gov/opa/speech/deputy-assistant-attorney-general-adam-s-hickey-national-security-division-delivers-0" target="_blank" rel="nofollow">risk managers</a>,” which tends to “<a href="http://www.otheringandbelonging.org/object-subject-three-scholars-race-othering-bearing-witness/" target="_blank" rel="nofollow">other</a>” certain populations as <a href="http://www.antoniocasella.eu/nume/Feeley_Simon_New_Penology_1992.pdf" target="_blank" rel="nofollow">risky bets</a> that need to be controlled rather than viewing people as individuals who can contribute to the collective good;</li>
+          <li><strong>community of scholars specializing in the PRC</strong> to augment knowledge of PRC politics, history, and society that is needed along with the national security focus of the China Initiative’s leadership;</li>
+          <li><strong>legal community building diversity, equity, and inclusion</strong> to continue <a href="https://www.justice.gov/opa/pr/department-justice-announces-new-department-wide-implicit-bias-training-personnel" target="_blank" rel="nofollow">trainings</a> introduced under President Obama on <a href="https://www.americanbar.org/groups/judicial/committees/fighting_implicit_bias/" target="_blank" rel="nofollow">implicit bias</a> because all humans have biases—the questions are what kind and how strong; and</li>
+          <li><strong>communities of people of Chinese ethnicity and/or PRC nationality</strong> to confront directly the challenge of reconciling two real phenomena: the <a href="https://www.advancingjustice-aajc.org/press-release/advancing-justice-aajc-and-aclu-seeks-records-federal-investigations-prosecutions-and" target="_blank" rel="nofollow">threat by association</a> attaching to these communities and the threats from the PRC Party-state that go far beyond traditional spying.</li>
+        </ul>
+        <p>The conversations should not, however, end there. Director Wray’s invocation of our values points to the need for allyship: supporting values in which all Americans have a stake. Push back on the U.S. government’s framing of a “Chinese threat” should not rest on the shoulders of directly affected communities alone.</p>
+        <p>Director Wray has <a href="https://www.fbi.gov/news/speeches/the-threat-posed-by-the-chinese-government-and-the-chinese-communist-party-to-the-economic-and-national-security-of-the-united-states" target="_blank" rel="nofollow">stressed</a> that “we need a whole-of-society response” to protect national security. A precondition for a principled response is a whole-of-society <em>and</em> whole-of-U.S.-government rethink of how we collectively address the U.S.-PRC relationship.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8666" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/taisu-zhang"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/img_3181_0.jpg?itok=hU2jiSs1" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="taisu-zhang"><a href="https://www.chinafile.com/contributors/taisu-zhang" title="Taisu Zhang">Taisu Zhang</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">If America’s vision of “engaging” China meant converting it to liberalism through “engagement,” then it was likely doomed to fail from the beginning. This isn’t because China was destined to become an autocracy with ever-greater limits on civil liberties, nor does it imply “engagement” was somehow the reason China has slipped into deeper autocracy. To state the painfully obvious, China’s political problems are predominantly domestic. Nonetheless, regardless of which political direction China took, such “engagement” was never likely to have the effect of liberalizing China.</p>
+        <p>While foreign soft power was a powerful force in Chinese politics throughout the modern era, overt attempts by foreign regimes, whether American, Japanese, or Soviet, to engineer political and social change in mainland China generally had the opposite effect. Over the long term, political and intellectual elites have tended to <a href="http://www.php.isn.ethz.ch/lory1.ethz.ch/publications/areastudies/documents/sinosov/Kuisong.pdf" target="_blank" rel="nofollow">react</a> poorly to foreign attempts at “reeducating” them, their deeply embedded nationalism eventually producing a large backlash against perceived foreign intrusion and arrogance. From this perspective, the current situation has a lot in common with the Sino-Soviet Split after 1956.</p>
+        <p>Chinese elites may have aspired to foreign examples—especially to the American example in the late 20th Century—but aspiration is very different from being on the receiving end of politically charged, proselytizing “engagement” efforts. The first can be compatible with rising domestic nationalism, the latter generally cannot. Yes, most Chinese elites wanted to emulate the West for much of the century, and many still do, but many of them were also very keen on maintaining a sense of self-respect, <a href="https://academic.oup.com/icon/article-abstract/18/1/130/5841486?redirectedFrom=fulltext" target="_blank" rel="nofollow">keen on</a> Schmittian “us versus them” divisions, and therefore highly sensitive to overt displays of foreign intellectual or political “superiority.” These attitudes may be, at some abstract level, mutually conflicting, but then the Chinese elite psyche has long been a bundle of contradictions.</p>
+        <p>Against this ideological background, the effective exercise of foreign “soft power” in China required, pun intended, a soft touch: leading by example, perhaps, rather than directly attempting to convert; demonstrating rather than attempting to engineer. (And needless to say, since at least 2016, and probably since the early 2000s, the United States has done a very poor job of demonstrating the virtues of liberal democracy.)</p>
+        <p>The kind of American “engagement” aimed at conversion to liberalism was, from the very beginning, premised on an assumption of cultural, political, and material superiority, and therefore almost guaranteed to eventually produce a nationalist backlash once Chinese “self-confidence,” for lack of a better word, had recovered from its post-Cultural Revolution nadir. I have no doubt that such engagement was, to a large extent, driven by benign intentions. Nonetheless, my personal experience and the experiences of many, many others, makes it hard to escape the impression that many, maybe even most, Americans who came to China were talking down to us, trying to get us to “see the light.” The Chinese educated population may have been in a relatively accommodating mood in the 1980s, and even in the 1990s, but as the economy grew and younger generations less steeped in the 1980s discourse of cultural self-loathing came to age, a harsher response to American cultural and political lecturing was largely inevitable.</p>
+        <p>What does this mean for Sino-American interactions today? It may not provide much in the way of positive lessons, but it certainly offers some negative ones. For starters, given nationalism’s current social ascendancy in China, further American “engagement” with the overt goal of liberalizing Chinese politics is not only guaranteed to fail, but will almost certainly trigger a large backlash in the opposite direction. This doesn't mean, of course, that the two sides should stop talking to each other, or that there shouldn't be ongoing intellectual and cultural interaction: I personally cannot really imagine why it would ever be a good thing for the two most powerful countries on earth to cease intellectual interaction, if only because so much—geopolitically, economically, environmentally—hinges on their being able to accurately understand the other side’s behavior, intentions, and fundamental commitments. No foreign scholar should be forced to study China or interact with Chinese intellectuals, and no Chinese scholar should be forced to interact with foreign ones, but both governments should make an effort to encourage mutually consensual intellectual exchange.</p>
+        <p>I’ve never truly understood the argument that, by studying China and intellectually engaging with Chinese scholars, American scholars are somehow “legitimizing” Chinese violations of civil rights and freedoms, or that informed, carefully considered, and voluntary compliance with Chinese censorship laws means complicity in the Chinese government’s campaign against free speech. Certain kinds of political and economic engagement may have this effect, but intellectual interaction for the sake of truth-seeking and information sharing plainly does not—unless it is premised on normatively charged assumptions of “moving China in the right direction.” The lessons of the past clearly suggest that American attempts to intellectually “engage” China should be less ideologically heavy-handed, meant to learn and inform rather than to convert. Even though China’s domestic politics are headed in the wrong direction, foreign, especially American, attempts to change its course will almost certainly not have the intended effect.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8671" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/peidong-sun"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/sun_peidong_sm.jpg?itok=u6ZJM6rr" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="peidong-sun"><a href="https://www.chinafile.com/contributors/peidong-sun" title="Peidong Sun">Peidong Sun</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Education has been such a significant area of Sino-foreign exchange that the classroom is relevant to engagement policy. Therefore, I would like to focus on the social settings of “Western values” in everyday engagement practices in People’s Republic of China (PRC) history classrooms at Chinese universities and beyond since 2013 by offering some examples on book publication, lectures, panel discussions, and teaching materials related to Western scholars.</p>
+        <p>The General Administration of Press and Publication of China has enforced strict control over the translation and publication of Western books in mainland China in recent years. And books on what are known as “sensitive” topics, such as religion, Tibet, Xinjiang, the Cultural Revolution, the Great Famine, Tiananmen, etc., have been so heavily censored that there is no way for a book project about one of these subjects to be brought up in a topic-selection meeting at a Chinese press. Since 2016, editors have also rejected translation proposals for books on PRC history more broadly.</p>
+        <p>External reviews of PRC history books, by organs including the Party Literature Research Center and the Party History Research Center of the Chinese Communist Party Central Committee, before publication are another way to sentence a translated book to death. First, such reviews, which have been mandatory since the early days of the PRC, take time; two to three years is the norm. Second, the result of such reviews is often a decision to prohibit publication. Third, only one or two prestigious publishing houses dare to risk publishing a Western book on PRC history to begin with. Based on my own experiences, a translation can avoid external review only if the editor-in-chief and director of the press promise to take a full responsibility for its publication, which is very rare. Historian Gail Hershatter’s 2011 <a href="https://www.chinafile.com/library/books/Gender-Memory" target="_blank" rel="nofollow"><em>The Gender of Memory: Rural Women and China’s Collective Past</em></a> was the only foreign work of contemporary Chinese history translated and published in mainland China in 2017. The Chinese version cut more than 10,000 words from its English version. I introduced this book to the editor and used its two versions in my teaching for several years.</p>
+        <p>The titles and content of talks delivered by Western scholars increasingly have been highly controlled, too. In recent years at Fudan University, where I was a professor, securing permission for a talk by a Western scholar required that an online application be completed 15 days before the event, and that its audience be limited to no more than 20. The application would need five formal approvals, from the department’s Party Secretary, the department head, the Office of Foreign Affairs, the Office of Research, and the Office of Propaganda—each of which could also impose its own conditions on the talk’s format and content. A talk given by German historian Klaus Mühlhahn on “the Rise of China from historical perspectives,” which I organized in Fudan’s History department in August 2019, was approved with written instructions to “keep a firm hold on the question of how the U.S. and other countries deal with the rise of China. The speaker can talk about how those countries should face China’s rise squarely,” the instructions continued, “but must not preach about how they should counter it.”</p>
+        <p>For a syllabus to be greenlit by the university’s Advisory Committee on Teaching, reading lists and teaching materials have to include standard texts voicing the CCP’s officially sanctioned narratives. When foreign teaching materials are approved, the instructor and students are expected to adopt a critical stance toward them and an instructor must never validate the position of the author of such texts. Is academic decoupling between China and the democratic world coming soon? I am pessimist on this point. The door is closing rapidly.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8676" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/rory-truex"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/truex_sm.png?itok=J4V4Aqc8" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="rory-truex"><a href="https://www.chinafile.com/contributors/rory-truex" title="Rory Truex">Rory Truex</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">It’s worth saying, over and over again, that we have no idea whether engagement with China “worked” or not. China has not become democratic, but it is undoubtedly better governed today than it was during the isolated Mao era. And we have no idea what China would look like today had the U.S. and other countries not engaged with China, diplomatically and economically. In social science lingo, we can <a href="https://www.tandfonline.com/doi/full/10.1080/0163660X.2019.1626688?casa_token=JWov4LeRstYAAAAA:UgFaq8jLZ8mnGRtDt0ucL5yplP3PIFcHf-tJPbGpqULlAKp3fT0fsHUsERt15Esk_7kX-KW1A5tP" target="_blank" rel="nofollow">never observe the counterfactual</a>. Could the U.S. be better off if we had tried to constrain and isolate China for the last 40 years? Sure, possibly. But we can also envision an isolated, bellicose China emerging in that scenario.</p>
+        <p>Similarly, should the fact that the Chinese Communist Party (CCP) is <a href="https://www.washingtonpost.com/opinions/global-opinions/a-spreadsheet-of-those-in-hell-how-china-corralled-uighurs-into-concentration-camps/2020/02/28/4daeca4a-58c8-11ea-ab68-101ecfec2532_story.html" target="_blank" rel="nofollow">detaining Uighurs</a> in concentration camps in Xinjiang and <a href="https://www.justsecurity.org/69936/can-we-finally-admit-that-one-country-two-systems-is-dead-in-hong-kong/" target="_blank" rel="nofollow">scrapped</a> one country two systems in Hong Kong be held against proponents of decoupling? After all, these events occurred under the watch of the Trump administration and engagement’s sharpest critics—Peter Navarro, Mike Pompeo, Matthew Pottinger, et al. Our answer should also be no—we do not know if a less hard line approach could have prevented these events. Evaluating the success of our China policy is exceedingly difficult.</p>
+        <p>The U.S. government <a href="https://www.washingtonpost.com/opinions/2019/07/09/why-united-states-doesnt-need-return-gentler-china-policy/" target="_blank" rel="nofollow">overestimates</a> its ability to influence political events in China. The CCP determines China’s course, and whether the U.S. chooses engagement or decoupling/containing approaches might not shift the regime’s domestic political incentives all that much. While we may continue to root for regime change or liberalizing political reform in China, it should not be a stated or implicit goal of United States, nor a metric through which China policy should be judged.</p>
+        <p>The space for engagement does appear to be shrinking, primarily because both governments are seeing political benefits in putting up barriers. After having its international student visa restriction defeated in court, the Trump administration is now <a href="https://www.nytimes.com/2020/07/15/us/politics/china-travel-ban.html" rel="nofollow">mulling a policy</a> to ban all members of the Chinese Communist Party and their families. And the Chinese government <a href="https://www.bbc.com/news/world-asia-china-52765838" target="_blank" rel="nofollow">passed</a> the National Security Law, which criminalizes speech about China outside of its borders and might jeopardize the ability of critical observers to travel to the mainland and Hong Kong.</p>
+        <p>Engagement is not solely a government decision. Governments set the contours for what is possible, but in the end, the U.S.-China relationship is just as governed by the interactions of universities, firms, nonprofits, and millions of common citizens as it is by heads of state. I think that fact is important to remember during this fracture in the government-to-government relationship. Engagement and collaboration among Americans and Chinese must continue, not with the goal of remaking each other’s societies but with the goal of pursuing our <a href="https://www.usip.org/publications/2011/04/need-pursue-mutual-interests-us-prc-relations" target="_blank" rel="nofollow">shared interests</a> as global citizens. The two governments might get in the way—they certainly are at the moment—but if American and Chinese citizens do not work together on pressing issues like global health, poverty, and climate change, we will all be worse off for it.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8681" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/shen-kui"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/shen_kui_sm.jpg?itok=W-ndmKOs" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="shen-kui"><a href="https://www.chinafile.com/contributors/shen-kui" title="Shen Kui">Shen Kui</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">A majority of Chinese intellectuals and scholars may strongly hope the academic and civil society engagement on both sides of China and the United States will continue, even though the mutual relationship has been deteriorating. But it is not easy to give a satisfactory answer to the question of what goals are acceptable and what the operable spaces are. Given the current circumstances in China, I fully understand the confusions and entanglements of American colleagues when they think about possible collaborations. Maintaining some form of engagement may need to entail adhering to certain shared principles.</p>
+        <p>First among these shared principles should be full respect for academic freedom. Academic freedom is definitely the top priority that should be kept in the partners’ minds. Any cooperation in the academic area should not be at the cost of this scholarly privilege. Since academic freedom is subject to vastly different constitutions and laws in China and the United States, if partners on either side, especially American partners, think their freedom of speech, research, teaching, and publishing would succumb to undue requirements on a specific joint program or project, they should certainly feel free to withdraw and give up.</p>
+        <p>Second, humility in communication and collaboration. Values-based engagement needs to be free of gestures of self-complacency or of standing on moral high ground. Outside competition, pressure, friendly advice, and criticism have pushed China forward on a hard, doomed-to-be-tortuous process to a state of rule of law and welfare. I personally very much appreciated one American scholar for saying at a conference a couple of years ago, to which she had invited American judges and scholars, that the U.S. and China have different problems and experiences and we can learn from each other.</p>
+        <p>Third, a constructive approach to help, support, and benefit one another. In my view, there are many international and domestic issues that academic and civil society engagement can help to tackle. Global warming, nuclear threats, biotech, green energy, pandemics, poverty, the gap between the rich and poor, the rights of women, the elderly, children, minorities and labor, anti-discrimination, anti-domestic violence, anti-terrorism, and even national security, among others, are all issues on which cooperation could be forged. The pivotal thing is that we need to take a more constructive approach, particularly more open to what a diversity of people want, to find solutions to these issues, whether on the international stage or in domestic contexts. To me, openness and reflection are two important virtues, not only for a human being, but also for a good regime, effective global governance, and mechanism for collaboration.</p>
+        <p>Fourth, perseverance with the right things. Rome was not built in a day. To take a longer view toward the future requires more patience, more tolerance, and more perseverance. The harder the engagement and collaboration are, the more we need to stick to the right direction and course. Only by persistence can we work together effectively, successfully, and fruitfully toward a more civilized and humanistic world with shared values such as democracy, rule of law, human rights, and general welfare. No single country or nation can cope with domestic and international problems only by themselves. Decoupling even in the academic and civil society areas will only cause more hostile and radical nationalism and isolationism rather than cooperation and co-development.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8686" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/amy-e-gadsden"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/gadsden_sm.png?itok=lAQO4vFJ" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="amy-e-gadsden"><a href="https://www.chinafile.com/contributors/amy-e-gadsden" title="Amy E. Gadsden">Amy E. Gadsden</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">China’s human rights situation is increasingly bleak. What has long been a bad situation has gotten only worse in the last year. The <a href="https://www.chinafile.com/reporting-opinion/viewpoint/why-arent-more-countries-confronting-china-over-xinjiang" target="_blank" rel="nofollow">unchecked assault</a> against Uighur families and culture continues. The incursion into Hong Kong’s rule of law has cast a menacing chill over that once vital port city. And the <a href="https://chinadigitaltimes.net/2020/07/xi-critic-xu-zhangrun-released-from-detention-fired-from-tsinghua-university/" target="_blank" rel="nofollow">detention and dismissal</a> of public intellectual Xu Zhangrun earlier this month is another reminder that critics of the Communist Party need to be prepared to pay for that criticism with their lives and livelihoods.</p>
+        <p>The response to these developments, however, should not be a debate about whether the U.S.’ policy of “engagement” failed or succeeded. Contrary to how some would portray it, engagement was not about whitewashing China’s human rights abuses in favor of securing trading advantages. With regard to human rights and democracy, engagement was about walking and chewing gum at the same time: Could we continue to speak out against human rights abuses while at the same time encourage the positive reforms taking place? In other words, could the U.S. government demand the release of political prisoners one day while sitting down with Chinese authorities to discuss rights of the accused the next? In the 1990s and 2000s, this was how the U.S. approached engagement on human rights, and it is how we should continue to pursue these interests in China today.</p>
+        <p>If we work on multiple fronts—using bilateral pressure to seek change, urging Congressional action to punish human rights violators and spotlight abuses, using multilateral mechanisms to highlight where Chinese actions diverge from international norms, and promoting positive developments within the country by working with the small sliver of civil society and academia that continue to push for greater openness and respect for rule of law—we are using all available tools to push for an agenda that respects the rights of all Chinese people.</p>
+        <p>But there is one additional tool that we have neglected. For the last two decades, Chinese people have been hedging their futures at home by coming to the United States by the tens and now hundreds of thousands to study and work here. The Trump Administration has <a href="https://www.insidehighered.com/news/2018/02/15/fbi-director-testifies-chinese-students-and-intelligence-threats" target="_blank" rel="nofollow">raised</a> concerns that these students are part of a “whole of society” threat to U.S. national security, and taken multiple steps to discourage them from coming. We should develop a robust policy to welcome Chinese students to the United States and encourage them to become legal permanent residents and, eventually, citizens. With the passage of the new <a href="https://www.chinafile.com/conversation/how-should-democracies-respond-chinas-new-national-security-law-hong-kong" target="_blank" rel="nofollow">National Security Law</a>, we should focus on opening up a path for Hong Kong citizens to immigrate to the United States, as well. In the 1930s, thousands of Germans relocated to the U.K., U.S., and other countries to escape increasingly oppressive treatment and violations of human rights under Nazi rule. The <a href="https://www.nytimes.com/1997/10/11/style/IHT-exiles-and-emigresartists-who-fled.html" target="_blank" rel="nofollow">contributions</a> of those immigrants, including hundreds of academics, artists, and scientists, have been well-documented. The benefits of that historical lesson could be applied to China and Hong Kong today.</p>
+        <p>When President Carter pushed Deng Xiaoping to lift a ban on Chinese traveling abroad, Deng <a href="https://books.google.com/books?id=3r0HkiNoqAMC&amp;pg=PA3&amp;lpg=PA3&amp;dq=carter+deng+%E2%80%9CHow+many+Chinese+nationals+do+you+want?++Ten+Million?+Twenty+Million?+Thirty+Million?%E2%80%9D&amp;source=bl&amp;ots=junXOX02QG&amp;sig=ACfU3U0UlT0TazC5AHhJFppnJAmFlI8uYg&amp;hl=en&amp;sa=X&amp;ved=2ahUKEwiw1fq1kNzqAhUrUt8KHZOXCmgQ6AEwBnoECAoQAQ#v=onepage&amp;q=carter%20deng%20%E2%80%9CHow%20many%20Chinese%20nationals%20do%20you%20want%3F%20%20Ten%20Million%3F%20Twenty%20Million%3F%20Thirty%20Million%3F%E2%80%9D&amp;f=false" target="_blank" rel="nofollow">replied</a>, “How many Chinese nationals do you want? Ten Million? Twenty Million? Thirty Million?” Carter quickly backed away from this deliverable. The U.S. needs to set aside its historical racist fear of Chinese immigration and send a message that it welcomes Chinese coming to America, while that message still resonates.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-07-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-07-27/Pandemic-Responses-Suffer-from-Common-Ailments/">
+          Pandemic Responses Suffer from Common Ailments
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-07-26</time>
+        <a href="https://nodebe4.github.io/oped2/2020-07-26/Pandemic-Responses-Suffer-from-Common-Ailments/">
+          Pandemic Responses Suffer from Common Ailments
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-07-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-07-02/It-s-True-That-Democracy-in-China-Is-in-Retreat,-B/">
+          It’s True That Democracy in China Is in Retreat, But Don’t Give up on It Now
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-30</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-30/How-Should-Democracies-Respond-to-China-s-New-Nati/">
+          How Should Democracies Respond to China’s New National Security Law for Hong Kong?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-07-20/%E5%9C%A8%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E7%85%A7%E7%89%87%E7%9A%84%E8%83%8C%E6%99%AF%E4%B8%AD%E5%8F%91%E7%8E%B0%E5%BE%AE%E5%A6%99%E7%9A%84%E4%BF%A1%E6%81%AF-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%94%BB%E9%98%B2%E6%8A%80%E5%B7%A7-iYouPort/">
+            前一篇：在社交媒体照片的背景中发现微妙的信息 - 开源情报攻防技巧 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-07-21/%E6%9B%BE%E5%9B%BD%E5%B9%B3-%E6%9E%B6%E5%9C%A8%E9%A6%99%E6%B8%AF%E5%A4%B4%E4%B8%8A%E7%9A%84%E4%B8%A4%E6%8A%8A%E5%88%80/">
+            後一篇：曾国平：架在香港头上的两把刀
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-07-20/%E5%9C%A8%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E7%85%A7%E7%89%87%E7%9A%84%E8%83%8C%E6%99%AF%E4%B8%AD%E5%8F%91%E7%8E%B0%E5%BE%AE%E5%A6%99%E7%9A%84%E4%BF%A1%E6%81%AF-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%94%BB%E9%98%B2%E6%8A%80%E5%B7%A7-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-07-21/%E6%9B%BE%E5%9B%BD%E5%B9%B3-%E6%9E%B6%E5%9C%A8%E9%A6%99%E6%B8%AF%E5%A4%B4%E4%B8%8A%E7%9A%84%E4%B8%A4%E6%8A%8A%E5%88%80/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-07-26/Pandemic-Responses-Suffer-from-Common-Ailments/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-07-02/It-s-True-That-Democracy-in-China-Is-in-Retreat,-B/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-07-20/%E5%9C%A8%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E7%85%A7%E7%89%87%E7%9A%84%E8%83%8C%E6%99%AF%E4%B8%AD%E5%8F%91%E7%8E%B0%E5%BE%AE%E5%A6%99%E7%9A%84%E4%BF%A1%E6%81%AF-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%94%BB%E9%98%B2%E6%8A%80%E5%B7%A7-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-07-21/%E6%9B%BE%E5%9B%BD%E5%B9%B3-%E6%9E%B6%E5%9C%A8%E9%A6%99%E6%B8%AF%E5%A4%B4%E4%B8%8A%E7%9A%84%E4%B8%A4%E6%8A%8A%E5%88%80/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-07-26/Pandemic-Responses-Suffer-from-Common-Ailments/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-07-02/It-s-True-That-Democracy-in-China-Is-in-Retreat,-B/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

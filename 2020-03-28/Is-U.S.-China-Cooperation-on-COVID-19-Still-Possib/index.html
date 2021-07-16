@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Is U.S.-China Cooperation on COVID-19 Still Possible? – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Is U.S.-China Cooperation on COVID-19 Still Possible?
+——
+" />
+    <meta property="og:description" content="
+Is U.S.-China Cooperation on COVID-19 Still Possible?
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Is U.S.-China Cooperation on COVID-19 Still Possible?" />
+    <meta property="twitter:title" content="Is U.S.-China Cooperation on COVID-19 Still Possible?" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Fus-china-cooperation-covid-19-still-possible" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/us-china-cooperation-covid-19-still-possible" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/us-china-cooperation-covid-19-still-possible&text=Is U.S.-China Cooperation on COVID-19 Still Possible?&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/us-china-cooperation-covid-19-still-possible&title=Is U.S.-China Cooperation on COVID-19 Still Possible?" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/us-china-cooperation-covid-19-still-possible&title=Is U.S.-China Cooperation on COVID-19 Still Possible?" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Is U.S.-China Cooperation on COVID-19 Still Possible?&body=
+Is U.S.-China Cooperation on COVID-19 Still Possible?
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/us-china-cooperation-covid-19-still-possible" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/us-china-cooperation-covid-19-still-possible&title=Is U.S.-China Cooperation on COVID-19 Still Possible?&caption=
+Is U.S.-China Cooperation on COVID-19 Still Possible?
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Is U.S.-China Cooperation on COVID-19 Still Possible?&url=https://www.chinafile.com/conversation/us-china-cooperation-covid-19-still-possible" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Is U.S.-China Cooperation on COVID-19 Still Possible?</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-03-28
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Julian B. Gewirtz, Deborah Seligsohn &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/us-china-cooperation-covid-19-still-possible" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1585378620000-->
+<p><a href="https://www.chinafile.com/conversation/us-china-cooperation-covid-19-still-possible">Is U.S.-China Cooperation on COVID-19 Still Possible?</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-23e62a388c9c700a692bd85e0dc36b5a">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1205108073.jpg" title="Is U.S.-China Cooperation on COVID-19 Still Possible?" class="colorbox" data-colorbox-gallery="gallery-node-52066-TUC8Ki19Hho" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1205108073.jpg?itok=NOmhDAk8" width="1024" height="683" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Spencer Platt—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>Children wave U.S. and Chinese flags at at the annual Lunar New Year parade in Manhattan’s Chinatown on February 9, 2020. Some two weeks after the lockdown of the city of Wuhan amid the outbreak of COVID-19, banners beside them read, “Go, Wuhan!” and “Go, China!”</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">Over the past two weeks, as the outbreak of the virus known has COVID-19 has accelerated its deadly spread around the world, an already collapsing U.S.-China relationship appears to be entering a period of free fall. This is happening at a moment when the U.S. desperately needs China’s help stemming the tide of infection and when other countries might benefit from the world’s leading powers acting in coordination to fight the pandemic and the global economic disaster following in its wake. That seems unlikely to occur given the current state of hostility and mutual recrimination over the origin of the virus. On March 26, President Donald Trump <a href="https://www.npr.org/sections/coronavirus-live-updates/2020/03/27/822380853/in-phone-call-trump-xi-discuss-coronavirus-pandemic" target="_blank" rel="nofollow">spoke by phone</a> with his Chinese counterpart, Xi Jinping, to discuss a response to the outbreak. What concrete steps should U.S. policymakers take in the near term to create opportunities for coordination in responding to the global crisis? Is there reason to hope cooperation with China is still possible, or does the current rupture in the relationship represent an irreconcilable shift in the global order? —<em>The Editors</em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-8251" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/julian-b-gewirtz"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/julian_gewirtz.png?itok=xJEGKaEz" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="julian-b-gewirtz"><a href="https://www.chinafile.com/contributors/julian-b-gewirtz" title="Julian B. Gewirtz">Julian B. Gewirtz</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Over the past decade, transnational threats like climate change and pandemic disease frequently appeared in commentaries on U.S.-China relations as a rationale for cooperation, but these threats were often characterized as long-term and subtle, not bracing and urgent. COVID-19 is different. The visceral, swift-moving, and mortal threat of this virus must jolt policymakers into realizing that cooperation with China will remain an essential element of any strategy designed to maximize American strength and security—even if we might wish otherwise.</p>
+        <p>The U.S.-China relationship has rapidly deteriorated over the last several years, and, thus far, COVID-19 has made things even worse. The Trump administration’s insistence on calling COVID-19 the “Chinese” or “Wuhan” virus is offensive and unproductive, and the Chinese Foreign Ministry spokesman’s groundless <a href="https://www.nytimes.com/2020/03/13/world/asia/coronavirus-china-conspiracy-theory.html" target="_blank" rel="nofollow">assertion</a> that the U.S. Army might have brought the disease to Wuhan is outrageous.</p>
+        <p>This is not a moment for casting blame but for practical, problem-solving cooperation. As competition between America and China intensifies, arguments for any form of cooperation with China are sometimes portrayed as dovish, naïve, or even duplicitous, as if cooperation were a form of appeasement. But to overcome the current crises, practical cooperation with China is necessary and in our national interest, not goody-two-shoes generosity or bonhomie. As the world’s two largest economies and major medical research hubs, the United States and China have <a href="https://www.foreignaffairs.com/articles/china/2020-03-24/us-and-china-could-cooperate-defeat-pandemic" target="_blank" rel="nofollow">unique capacities</a> to develop an affirmative bilateral and global agenda on COVID-19. Cooperation is needed to raise the odds of developing more effective treatments and a vaccine, to obtain medical supplies Americans need, and to address the emerging economic crisis—coordinating the world’s key finance ministries, central banks, and other officials to manage unprecedented shocks and restore confidence in global markets.</p>
+        <p>One dramatic risk in the period ahead is that China or the United States might develop a vaccine first and then refuse to share it, or share it only on coercive terms—outrageous, but <a href="https://www.nytimes.com/2020/03/19/us/politics/coronavirus-vaccine-competition.html" target="_blank" rel="nofollow">not unthinkable</a>. The two countries should put acrimony aside and work together in multilateral groups, such as the G-7 and G-20, to launch open research collaboration and pledge to quickly make available any vaccine on an equitable basis to all affected countries.</p>
+        <p>Cooperation within a relationship that is sharply competitive must be handled carefully, but managing the risks should be possible. And cooperation is only one piece of the picture. After the worst has passed, COVID-19 must spur U.S. policymakers to undertake an ambitious reassessment of the American industrial base and of managing the risks of interdependence—with China in particular, but also more broadly. The crisis has laid bare <a href="https://www.nytimes.com/2020/03/11/business/economy/coronavirus-china-trump-drugs.html" target="_blank" rel="nofollow">serious dependencies</a> on Chinese and other foreign suppliers of essential medicines and medical equipment, but it’s not only our competitors who impose nationalist protections in times of crisis. While a full assessment of why the United States’ response to COVID-19 has gone so badly awry will be essential, American leaders must also better prepare for other foreseeable transnational threats; this cannot be another area where we only train to “fight the last war.”</p>
+        <p>The current moment is one of powerful nationalist impulses around the world in ever-higher tension with the inescapable reality of globalization. Nationalist leaders in the United States and China want to pretend that they do not need the other. But any effective strategy must face the reality that crises spawned by transnational threats will require the ability to work together.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8256" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/deborah-seligsohn"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/deborah_seligsohn_0.jpg?itok=8jGUZs15" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="deborah-seligsohn"><a href="https://www.chinafile.com/contributors/deborah-seligsohn" title="Deborah Seligsohn">Deborah Seligsohn</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The U.S.-China relationship is in a parlous state. Most of the cause until this month was connected to trade and security. The public health relationship appeared to be collateral damage, declining because of Trump administration indifference, as evidenced by the <a href="https://foreignpolicy.com/2020/01/31/coronavirus-china-trump-united-states-public-health-emergency-response/" target="_blank" rel="nofollow">elimination</a> of the National Security Council’s pandemic team, <a href="https://thehill.com/policy/finance/486817-trump-budget-chief-holds-firm-on-cdc-cuts-amid-virus-outbreak" target="_blank" rel="nofollow">multiple proposals</a> to cut the Center for Disease Control (CDC) budget, and <a href="https://forensicnews.net/2020/03/10/trumps-botched-coronavirus-response-has-been-3-years-in-the-making/" target="_blank" rel="nofollow">failure to fill</a> CDC vacancies, as well as Washington’s <a href="https://www.sciencemag.org/news/2019/07/china-s-scientists-alarmed-bewildered-growing-anti-chinese-sentiment-united-states" target="_blank" rel="nofollow">growing skepticism</a> that science cooperation with China benefits America. In a <a href="https://www.washingtonpost.com/opinions/2020/02/28/us-china-collaboration-health-collapsed-under-trump-this-is-cost/" target="_blank" rel="nofollow">unilateral withdrawal</a>, U.S. government public health personnel in China <a href="https://www.reuters.com/article/us-health-coronavirus-china-cdc-exclusiv/exclusive-u-s-slashed-cdc-staff-inside-china-prior-to-coronavirus-outbreak-idUSKBN21C3N5" target="_blank" rel="nofollow">declined</a> from some 10-12 direct hire assignees and 40 local specialists, to one or two assignees and a handful of local staff. China wasn’t the only country thus <a href="https://www.washingtonpost.com/news/to-your-health/wp/2018/02/01/cdc-to-cut-by-80-percent-efforts-to-prevent-global-disease-outbreak/" target="_blank" rel="nofollow">affected</a>, but it carried great risks given the danger of a pandemic originating in the country that had experienced SARS and multiple avian influenza outbreaks.</p>
+        <p>Given the state of the relationship and the President’s <a href="https://www.politico.com/news/2020/03/26/trump-china-coronavirus-148806" target="_blank" rel="nofollow">blaming China</a> for the COVID-19 pandemic, now with some <a href="https://www.nbcnews.com/news/asian-america/house-members-introduce-resolution-pin-coronavirus-blame-china-n1169051" target="_blank" rel="nofollow">congressional help</a>, this might not seem the best time to suggest hope for improving the relationship. But there is. China <a href="https://www.washingtonpost.com/national-security/us-intelligence-reports-from-january-and-february-warned-about-a-likely-pandemic/2020/03/20/299d8cda-6ad5-11ea-b5f1-a5a804158597_story.html" target="_blank" rel="nofollow">informed</a> U.S. CDC Director Robert Redfield about this new coronavirus January 3. The message was explicit and alarming enough that Redfield notified Secretary of Health and Human Services Alex Azar, who then tried to alert the President. The ensuing failure to respond is now well documented. But lost in this discussion is that China’s CDC informed the U.S. just weeks after being informed itself. Yes, there was a cover-up in Wuhan in December, but even given the poor state of U.S.-China relations, the U.S. CDC was one of China’s first calls.</p>
+        <p>We need to build on this. Disease knows no borders. The only way to keep Americans safe is to work to keep the world safe from disease. Our relationship was built to allow the U.S. to offer expertise on diseases in China we wanted to understand and help address. But now China has <a href="https://www.statnews.com/2020/03/24/covid-19-answers-doctors-turn-to-china/" target="_blank" rel="nofollow">considerable expertise</a> on treating this disease and <a href="https://www.nejm.org/doi/full/10.1056/NEJMp2006141" target="_blank" rel="nofollow">produces</a> much of the medical equipment the U.S. desperately needs.</p>
+        <p>We have bases for partnership, including our successful collaboration, led by the current head of China’s CDC, <a href="http://www.caspmi.cn/gaog/" target="_blank" rel="nofollow">Dr. George Gao</a>, in Africa during the ebola crisis. But our credibility is diminished. We’ve squandered a relationship nurtured with bipartisan support for decades, drastically slashing collaboration over the past three years. Failures at home diminish America’s most important calling card, our expertise. During SARS, the U.S. CDC—the gold standard in epidemiology—worked with Chinese partners on testing, record-keeping, and contact-tracing. Just as the great recession diminished Chinese respect for U.S. economic expertise, rising U.S. case numbers may now make Chinese scientists wonder how America, with its great public health tradition, let this happen.</p>
+        <p>America shouldn’t shut the door. We should rebuild cooperation with the view that we have much to learn as well as much to share. I have had the great honor to work with extraordinary CDC and National Institutes of Health scientists. They work in this spirit. If they are freed to pursue cooperation, it could become the model for a relationship of shared learning.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8261" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/mira-rapp-hooper"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/mira_rapp_hooper.jpg?itok=4ddp5vAl" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="mira-rapp-hooper"><a href="https://www.chinafile.com/contributors/mira-rapp-hooper" title="Mira Rapp-Hooper">Mira Rapp-Hooper</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The United States must attempt some crisis coordination with China, if for no other reason than that Washington hopes to forestall an irretrievable shift in the global order. As China brings its own health crisis under control, it has sought to step into a <a href="https://www.foreignaffairs.com/articles/china/2020-03-18/coronavirus-could-reshape-global-order" target="_blank" rel="nofollow">global leadership role</a>, providing medical aid and crisis coordination. The world will not forget the Chinese Communist Party’s grievous mishandling of the initial outbreak, but if Beijing emerges from the crisis looking more capable, it will be by way of comparison due to the calamitous domestic and international <a href="https://warontherocks.com/2020/03/china-america-and-the-international-order-after-the-pandemic/" target="_blank" rel="nofollow">responses</a> by the United States. With the country buckling under the weight of COVID-19, it is far too late for Washington to be a global health model, but by exercising some desperately needed leadership that includes coordination with Beijing, it can reduce the risk the international order changes by default.</p>
+        <p>Weeks into this epochal pandemic, the absence of international coordination is stunning. The UN Security Council is <a href="https://foreignpolicy.com/2020/03/27/un-security-council-unsc-coronavirus-pandemic/" target="_blank" rel="nofollow">inert</a>, and the G7 has reportedly been <a href="https://www.cnn.com/2020/03/25/politics/g7-coronavirus-statement/index.html" target="_blank" rel="nofollow">thwarted</a> by Washington itself. With multilateralism foundering, small wonder stricken countries have accepted China’s aid. So little genuine global health governance exists at present, moreover, that continued American absenteeism will leave Beijing to write new rules and norms according to its preferences. In recent days, Chinese government statements have applied the “<a href="https://www.fmprc.gov.cn/mfa_eng/xwfw_665399/s2510_665401/2511_665403/t1758235.shtml" target="_blank" rel="nofollow">community of shared future</a>” global governance concept to the pandemic, and Chinese officials floated a “<a href="http://eng.chinamil.com.cn/view/2020-03/17/content_9771104.htm" target="_blank" rel="nofollow">Health Silk Road</a>” to Italian counterparts. Even if these are opportunistic branding efforts, they may have some staying power when coupled with life-saving medical supplies. For even the most committed China skeptics, the risks to Washington from spurning coordination should be clear.</p>
+        <p>Through <a href="https://www.theguardian.com/world/2020/mar/26/g20-leaders-issue-pledge-to-do-whatever-it-takes-on-coronavirus" target="_blank" rel="nofollow">the G20</a>, bilaterally, and perhaps via an <a href="https://www.foreignaffairs.com/articles/2020-03-25/how-lead-time-pandemic" target="_blank" rel="nofollow">emergency task force</a> of world leaders, Washington and Beijing can coordinate on the basis of comparative advantage. At the height of its COVID paroxysm, America is in no position to offer medical supplies to others, and its coronavirus “best practices” may have little appeal. Still, it has vast experience coordinating other substantial international aid efforts, and while the State Department and USAID should have been given leading roles much sooner, they can still advise on pandemic relief. China, for its part, has medical supply overcapacity and recent domestic experience, but little history of large-scale aid. Longer-term pandemic management is another area for coordination, as the virus is likely to return. The U.S. and China should work with other partners to stand up established mechanisms for sharing information on virus control and resurgence, on advances in testing, and on vaccine development. U.S.-China competition will outlive COVID-19, but the nature of a pandemic is that no country is safe so long as the virus is loose in another. Going forward, any sound American strategy will prepare for military, technological, and economic competition with China, while facing down transnational threats (pandemics and climate change). If the U.S. is to preserve its role as a leader of the international order, it must start by leading amidst chaos—including in coordination with China.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8266" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/ryan-hass"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/ryanhass.jpg?itok=E-0-MAlD" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="ryan-hass"><a href="https://www.chinafile.com/contributors/ryan-hass" title="Ryan Hass">Ryan Hass</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The March 26 phone conversation between Donald Trump and Xi Jinping provided a faint glimmer of hope it may yet be possible for the world’s two most capable countries to work together to arrest the global spread of COVID-19 and ameliorate its economic aftershocks. Following the call, Trump declared on <a href="https://twitter.com/realDonaldTrump/status/1243407157321560071?s=20" target="_blank" rel="nofollow">Twitter</a>, “We are working closely together. Much respect!” For its part, China’s official media outlet, <em>Xinhua,</em> <a href="http://www.xinhuanet.com/english/2020-03/27/c_138923470.htm" target="_blank" rel="nofollow">reported</a> that Xi stressed to Trump that “both [the U.S. and China] will benefit from cooperation and lose from confrontation,” and Trump responded that he would “make personal efforts to ensure the U.S. and China can ward off distractions and concentrate on cooperation.”</p>
+        <p>There are good reasons for both sides to cooperate, and much they could do together. Washington and Beijing could <a href="https://www.brookings.edu/blog/order-from-chaos/2020/03/19/the-us-and-china-need-to-relearn-how-to-coordinate-in-crises/" target="_blank" rel="nofollow">agree</a> to pool capabilities to accelerate vaccine research and clinical trials; coordinate a surge in industrial production of life-saving equipment like masks, ventilators, and personal protective equipment; synchronize economic policy actions to inject stimulus into the global economy; and jointly accelerate the delivery of life-saving medical assistance to populations most in need. Both countries would benefit from such efforts, and their leaders’ images would be burnished in the process.</p>
+        <p>Sadly, though, such an optimistic scenario is unlikely to materialize. Here’s why:</p>
+        <ul>
+          <li>Many Trump administration officials below the president view outreach to Beijing as less than useless, and actually harmful, lest it confer legitimacy on a Chinese leadership that they believe is unworthy of it.</li>
+          <li>Chinese officials below Xi have provided little cause for confidence that elevating U.S.-China coordination on COVID-19 would lead to materially better outcomes.</li>
+          <li>Chinese officials and propagandists appear invested in spreading <a href="https://www.cnn.com/2020/03/13/asia/china-coronavirus-us-lijian-zhao-intl-hnk/index.html" target="_blank" rel="nofollow">fringe conspiracy theories</a> about the virus’ originating outside of China, and in arguing that Beijing’s response to the outbreak demonstrates the <a href="https://www.globaltimes.cn/content/1182074.shtml" target="_blank" rel="nofollow">superiority</a> of its governance system.</li>
+          <li>Pressure is rising in Washington to find ways to hold China accountable for the costs and consequences of the spread of the virus. Momentum has been mounting for a public investigation into how China’s scandalously slow initial response to the outbreak in Wuhan contributed to its global spread. There also have been <a href="https://warontherocks.com/2020/03/china-is-legally-responsible-for-covid-19-damage-and-claims-could-be-in-the-trillions/" target="_blank" rel="nofollow">calls in some quarters</a> for China to be forced to pay reparations to the rest of the world for the damage that COVID-19 has unleashed.</li>
+          <li>Efforts will likely resume to link the origin of the virus to a bioweapons lab in Wuhan. Senator Tom Cotton and others already have sought to <a href="https://www.forbes.com/sites/brucelee/2020/03/17/covid-19-coronavirus-did-not-come-from-a-lab-study-shows-natural-origins/#6e3a72a23728" target="_blank" rel="nofollow">establish</a> such a link, thus far without presenting evidence to substantiate such claims.</li>
+          <li>Secretary of State Mike Pompeo likely will use all available diplomatic opportunities to tie China’s initial response to the manifold problems the world now confronts.</li>
+          <li>And if that were not enough, other issues outside of COVID-19 will continue to cloud the bilateral relationship: questions over export controls and Huawei; a tit-for-tat battle over journalists in both countries; Taiwan; and trade issues, including implementation of the phase-1 trade deal, just to name a few.</li>
+        </ul>
+        <p>For these reasons, as well as the record of U.S.-China relations over the past several years, there is little to justify optimism that Washington and Beijing soon will break the downward spiral in relations. The consequences of this failure to coordinate in a moment of crisis will be measured in lives.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8271" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/ali-wyne"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/wyne_sm.jpg?itok=oVIqDTrG" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="ali-wyne"><a href="https://www.chinafile.com/contributors/ali-wyne" title="Ali Wyne">Ali Wyne</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">That a crisis whose global consequences have been so swift, so visceral, and so devastating has failed to produce a modicum of emergency collaboration between the United States and China—to the contrary, it has <a href="https://www.nytimes.com/2020/03/22/us/politics/coronavirus-us-china.html" target="_blank" rel="nofollow">accelerated</a> the deterioration in their relationship—portends an ominous future, one in which the world’s two most powerful countries treat transnational challenges as instruments of strategic competition rather than opportunities for shared leadership.</p>
+        <p>The good news is that that future is not preordained; observers including <a href="https://www.foreignaffairs.com/articles/china/2020-03-24/us-and-china-could-cooperate-defeat-pandemic" target="_blank" rel="nofollow">Yanzhong Huang</a>, <a href="https://carnegieendowment.org/2020/03/24/u.s.-china-cooperation-on-coronavirus-hampered-by-propaganda-war-pub-81347" target="_blank" rel="nofollow">Paul Haenle and Lucas Tcheyan</a>, and <a href="https://www.washingtonpost.com/opinions/2020/03/26/its-imperative-us-china-work-together-coronavirus-pandemic/" target="_blank" rel="nofollow">Michael McFaul</a> have proposed steps that Washington and Beijing could take to fight the pandemic together. In addition, the two countries have demonstrated the ability to preserve cooperative dynamics amid intensifying strategic distrust. While hopes for an informal G2 did not materialize during the Obama administration—the United States was reluctant to suggest that it regarded China as a peer, and China, though agitating for greater sway in prominent international fora, did not want to imply that it bore as much responsibility for maintaining the postwar order as the United States—the two countries did register a number of cooperative achievements: partnering to prevent the 2008-2009 recession from turning into a depression, establishing a clean energy research center, and signing a landmark climate change agreement.</p>
+        <p>The bad news is that Washington and Beijing presently seem more focused on assigning blame for the pandemic than on preventing its further advance. They are not engaged in zero-sum competition, but in negative-sum competition: The further the coronavirus spreads, the more long-term health, economic, and reputational damage each will suffer.</p>
+        <p>The United States now <a href="https://coronavirus.jhu.edu/map.html" target="_blank" rel="nofollow">has</a> more than 100,000 cases, more than any other country, and some medical professionals <a href="https://www.buzzfeednews.com/article/nidhiprakash/coronavirus-update-dead-covid19-doctors-hospitals" target="_blank" rel="nofollow">believe</a> that recorded fatalities have been significantly understated. 3.28 million Americans <a href="https://www.wsj.com/articles/the-long-run-of-american-job-growth-has-ended-11585215000" target="_blank" rel="nofollow">filed</a> for unemployment benefits during the week that ended March 21st, almost <a href="https://www.npr.org/2020/03/26/821580191/unemployment-claims-expected-to-shatter-records" target="_blank" rel="nofollow">five times</a> the previous high, recorded in October 1982. <em>The Atlantic</em>’s Annie Lowrey <a href="https://www.theatlantic.com/ideas/archive/2020/03/quantifying-coming-recession/608443/" target="_blank" rel="nofollow">warns</a> that “[a]bsent a strong governmental response, the unemployment rate seems certain to reach heights not seen since the Great Depression.” The coronavirus has undercut America’s reputation for competently managing crises at home and mobilizing collective action abroad.</p>
+        <p>China has the second-highest number of cases in the world, and, despite its claim to have turned the tide, interviews with epidemiologists in Hubei <a href="https://www.ft.com/content/4aa35288-3979-44f7-b204-b881f473fca0" target="_blank" rel="nofollow">suggest</a> that its official tally does not include “unreported cases” and a “large number of asymptomatic cases.” Government data published in mid-March <a href="https://www.nytimes.com/2020/03/16/business/coronavirus-china-economy.html" target="_blank" rel="nofollow">indicate</a>, moreover, that the economy may have shrunk in the first quarter of this year, for the first time since 1976. The coronavirus has spotlighted China’s efforts to punish those who initially sounded the alarm, including the late physician Li Wenliang, and to peddle conspiracy theories about the origins of the virus.</p>
+        <p>One can only hope that the recent phone call between Presidents Trump and Xi will compel the United States and China to postpone their strategic competition at a time of urgent global need, lest the two countries be remembered as irresponsible stakeholders.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-04-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-03/We-re-Hardly-Heroic/">
+          ‘We’re Hardly Heroic’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-04-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-02/We-re-Hardly-Heroic/">
+          ‘We’re Hardly Heroic’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-25</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-25/The-Flowers-Blooming-in-the-Dark/">
+          The Flowers Blooming in the Dark
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-24</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-24/Vernacular-Industrialism-in-China/">
+          Vernacular Industrialism in China
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-28/%E5%B9%BF%E4%B8%9C-%E4%BB%A5%E9%9D%9E%E5%85%B8%E6%89%93%E6%96%B0%E5%86%A0/">
+            前一篇：广东：以非典打新冠
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-28/%E6%84%8F%E5%A4%A7%E5%88%A9%E8%B5%B0%E4%B8%8A%E7%81%BE%E9%9A%BE%E4%B9%8B%E8%B7%AF/">
+            後一篇：意大利走上灾难之路
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-03-28/%E5%B9%BF%E4%B8%9C-%E4%BB%A5%E9%9D%9E%E5%85%B8%E6%89%93%E6%96%B0%E5%86%A0/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-03-28/%E6%84%8F%E5%A4%A7%E5%88%A9%E8%B5%B0%E4%B8%8A%E7%81%BE%E9%9A%BE%E4%B9%8B%E8%B7%AF/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-04-02/We-re-Hardly-Heroic/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-03-25/The-Flowers-Blooming-in-the-Dark/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-03-28/%E5%B9%BF%E4%B8%9C-%E4%BB%A5%E9%9D%9E%E5%85%B8%E6%89%93%E6%96%B0%E5%86%A0/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-03-28/%E6%84%8F%E5%A4%A7%E5%88%A9%E8%B5%B0%E4%B8%8A%E7%81%BE%E9%9A%BE%E4%B9%8B%E8%B7%AF/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-04-02/We-re-Hardly-Heroic/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-03-25/The-Flowers-Blooming-in-the-Dark/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

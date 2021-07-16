@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Seeing the CCP Clearly – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Seeing the CCP Clearly
+——
+" />
+    <meta property="og:description" content="
+Seeing the CCP Clearly
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Seeing the CCP Clearly" />
+    <meta property="twitter:title" content="Seeing the CCP Clearly" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Flibrary%2Fnyrb-china-archive%2Fseeing-ccp-clearly" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly&text=Seeing the CCP Clearly&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly&title=Seeing the CCP Clearly" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly&title=Seeing the CCP Clearly" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Seeing the CCP Clearly&body=
+Seeing the CCP Clearly
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly&title=Seeing the CCP Clearly&caption=
+Seeing the CCP Clearly
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Seeing the CCP Clearly&url=https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Seeing the CCP Clearly</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-01-13
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Perry Link</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1610524800000-->
+<p><a href="https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly">Seeing the CCP Clearly</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-32b69cd2005e170f881f017c6e8c5010">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1268944510.jpg" title="Seeing the CCP Clearly" class="colorbox" data-colorbox-gallery="gallery-node-53026-ZPQJ6UKvCJQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1268944510.jpg?itok=lY6dAHGr" width="1200" height="654" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+(Courtesy of the Committee on Arrangements for the 2020 Republican National Committee via Getty Images)
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>Chen Guangcheng addresses the virtual Republican National Convention, in a screenshot from the livestream, August 26, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">In a speech at the Republican National Convention last August, Chen Guangcheng, a blind, iron-willed human rights lawyer and dissident from China whom the Obama administration brought to the United States in 2012, said:</p>
+      <blockquote>
+        <p>Standing up to tyranny is not easy. I know. When I spoke out against China’s One Child Policy and other injustices, I was persecuted, beaten, sent to prison, and put under house arrest. . .</p>
+        <p>The CCP [Chinese Communist Party] is an enemy of humanity. It is terrorizing its own people and it is threatening the well-being of the world. . . The United States must use its values of freedom, democracy, and the rule of law to gather a coalition of other democracies to stop CCP’s aggression. President Trump has led on this, and we need the other countries to join him in this fight—a fight for our future.</p>
+      </blockquote>
+      <p>Within hours, Teng Biao, an old friend of Chen’s who is also a Chinese human rights lawyer based in the U.S., tweeted, “I completely oppose what he is doing.” Teng, too, is a veteran of persecution, beating, and imprisonment at the hands of the CCP, and he would not disagree with what Chen said about the CCP. What he opposed was Chen’s bow to Donald Trump. “For Chinese human rights defenders, there is zero logical consistency to supporting Trump,” Teng tweeted.</p>
+      <p>The split between the two friends is a small example of a wider disagreement between “Trump boosters” and “Trump critics” in the Chinese dissident community. The rift is plainly visible both inside and outside China and is likely to persist in one form or another into the Biden years.</p>
+      <p>Its causes have little to do with basic value judgments. Neither side approves of putting Uighurs into concentration camps in Xinjiang, of crushing democracy in Hong Kong, of installing hundreds of millions of surveillance cameras across China, or of any other of the many symptoms of the CCP’s obsession with power. And neither side sees much to distinguish in the political instincts of Trump and Xi Jinping. Xi controls the press in his country and Trump would if he could; each labels his critics “enemies of the people”; both imagine (and Xi succeeds in) locking up opponents; each contemplates (and Xi achieves) setting aside term limits for himself; both demand loyalty from subordinates; and both surround themselves with yes-men. One online wit in China, using indirection that is common on the Chinese Internet, noted that Trump had, however barely, been voted into office in the U.S. while Xi, in China, had not, and then offered the arch observation that the most crucial similarity between the two men is that neither is the elected representative of China.</p>
+      <p>Trump critics in China include the distinguished legal scholars He Weifang and Zhang Qianfan, who have a sophisticated grasp of why much of his behavior is intrinsically antidemocratic and how it damages both U.S. democracy and prospects for democracy elsewhere in the world. But among dissidents generally, both inside and outside China, Trump supporters outnumber Trump critics, and it is important to understand why. It is not because they are a far-right fringe. In ideological terms, they are closer to classic liberals on a U.S. political spectrum.</p>
+      <p>They are “pro-Trump” because they feel that for decades U.S. administrations have been naive about the CCP, and they see Trump as the first U.S. president to stand up to it. His tariffs on Chinese goods, imposed in mid-2018 in retaliation for what he saw as unfair trade practices, appear to have sprung from a blunt “America first” impulse, not from an intention to weaken the CCP domestically, as dissidents would have preferred. Still, he imposed them, which marks a clear contrast to George H.W. Bush’s tolerance of the Tiananmen massacre of June 4, 1989, for the sake of “the relationship”; Bill Clinton’s about-face in separating trade from human rights; George W. Bush’s ushering China into the World Trade Organization; Barack Obama’s launch of his China policy with the assurance that human rights would not “interfere” with trade, climate change, or security; and other examples of U.S. government indulgence of the CCP. Standing up to the Chinese government for any reason seemed to dissidents a long-awaited turn of events, and enough to outweigh all the drawbacks of Trump’s character and other policies.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">In late October, Yu Jie, a well-known Chinese dissident who now lives in the U.S., published the names of 97 critics of the CCP from China, Hong Kong, Taiwan, and overseas whom he judged, by what they had said publicly, to be either critics or boosters of Trump. In supplementing Yu’s list with some inquiries of my own, I was surprised to find how many Chinese freethinkers were pro-Trump.</p>
+      <p>In addition to Chen Guangcheng and Yu Jie himself, they include some remarkable figures. Cai Xia is a retired professor of CCP ideology at the Central Party School in Beijing who, because of her criticisms of Xi Jinping, left the upper levels of the CCP and now lives in exile in the U.S. She told an online chat group that she found ordinary Americans ingenuously truthful, and “that, of course, is a good thing. But it also has its negative side: Americans are simple and just don’t grasp the evil of the CCP regime.” Wang Dan, a prominent student leader of the 1989 Tiananmen demonstrations, has noted that the recent imprisonment of the dissident publishing magnate Jimmy Lai and other CCP resisters in Hong Kong is likely a test of the Biden administration: a lack of response will be a sign of a return to pre-Trump appeasement policies.</p>
+      <p>He Qinglian, whose first book on the Chinese economy Liu Binyan and I reviewed in these pages,<sup id="fnr1"><a href="https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly#fn1" rel="nofollow">1</a></sup> and Liao Yiwu, who has also been reviewed, published, and interviewed here, are both Trump supporters. So are Li Jianglin, author of the splendid book <em>Tibet in Agony</em>; Liu Junning, a major figure in the <a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-charter-08" target="_blank" rel="nofollow">Charter 08</a> movement; Liu Suli, manager of All Saints Book Grove, Beijing’s beloved (and precariously surviving) bookstore; Hu Ping and Su Xiaokang, distinguished critics who have lived in U.S. exile for decades; and Shi Tao, a poet from Hunan who in 2004 had forwarded to friends in New York a government order to make no public mention of the 15th anniversary of the Tiananmen massacre. He was charged with “revealing state secrets” and sent to prison for eight and a half years after Yahoo revealed his identity to the CCP.</p>
+      <p>In short, it would be a mistake to write off dissident Chinese Trump boosters as poorly educated or ill informed. They are not, and their views on the reluctance of Western democracies to stand up to dictatorships have roots that go much deeper than the Trump presidency.</p>
+      <p>Fifteen years ago, Liu Xiaobo, the winner of the 2010 Nobel Peace Prize, wrote a set of articles that he called “The Four Big Mistakes of the Free Countries in the Twentieth Century.” How, asked Liu, who died a prisoner in 2017, could Western intellectuals in the 1930s have been enamored of Stalin? Why did Britain and France compromise so easily with dictators in Germany and Italy? After World War II, why did America and Britain concede so much to the Soviet Union? In the 1960s and 1970s, how could leading European intellectuals have caught “Mao Zedong fever,” and how could that fever have lasted so long?</p>
+      <p>Especially galling to Liu was the claim of Western intellectuals to be speaking, through Mao, for ordinary people—the downtrodden, the underdogs, “the masses.” In fact, they were doing the very opposite: they were siding with the oppressors. In 1989, when the Soviet empire collapsed, the West heaved a sigh that “the cold war is over.” Over? What about China, North Korea, Vietnam, Cuba? Why does the West not see some parts of the world?</p>
+      <p>U.S. policy has not just overlooked dictatorship in China; it has aided the growth of CCP power. Within days of the Tiananmen massacre, despite international sanctions on Beijing, President Bush secretly sent emissaries to assure CCP leaders that he wanted to maintain good relations. While Congress was extracting its annual human rights concessions from Beijing in return for “most favored nation” trade terms in the early 1990s, President Clinton, under pressure from Wall Street, abruptly “de-linked” trade and human rights in 1994. U.S. capital and technology (some of it purloined) began to drive a boom in Chinese manufacturing for export.</p>
+      <p>With U.S. support, China joined the World Trade Organization in 2001 and secured billions in World Bank loans, helping its economy to take another leap. In 2005, Robert Zoellick, a U.S. deputy secretary of state, gave a widely reported speech in which he said that the CCP might become a “responsible stakeholder” in the world system. To Chinese dissidents, the speech revealed more about American naiveté than about what could be expected of the CCP.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">Unfortunately, Zoellick was not unusual among Westerners. In capitals on both sides of the Atlantic, a faith grew that “they will come to be like us.” At the spectacular Beijing Olympics in 2008, Joshua Ramo of the consulting firm Kissinger Associates, which was long a proponent of “engagement” with the CCP, predicted that China was “a nation about to put a match to the fuse of a rocket.” He made no mention of the hundreds of thousands of ordinary people who had been forced from their homes to assure that the great Olympic salute to the CCP looked as perfect as possible. Barack Obama, whose image among Chinese dissidents was generally good, said publicly in 2015 that the CCP’s antipoverty program was “one of the most remarkable achievements in human history.” He did not acknowledge that the Great Leap agricultural disaster of 1959-1962, which thrust hundreds of millions of people into dire poverty (and killed at least 30 million), was a direct result of CCP policies as well as the most direct cause of the poverty that later needed to be alleviated.</p>
+      <p>For decades, the work of managing the U.S. relationship with China fell on the U.S. side to a small group of specialists in government and academia, whose approach was remarkably consistent across both Democratic and Republican administrations. Their first principle was that “the relationship” must survive, and “the other side” in the relationship was limited to their formal interlocutors, who were duty-bound representatives of the CCP. These experts gave speeches in which terms like “China” or “the Chinese view” referred exclusively to a very few people at the top of the regime. The Americans were indeed expert in the study of that elite but not well versed in Chinese language, culture, and society more broadly. Beijing knew how to use these Americans to impose its view that the U.S. must respect the “core interests of China” (that is, interests that directly or indirectly affected the CCP’s power), failing which the relationship would be in jeopardy. Only the U.S., not the CCP, could endanger it.</p>
+      <p>Trump’s demotion of this China policy elite is one reason why Chinese dissidents have come to favor him. Under Trump, with China advisers like Miles Yu at the State Department and Matthew Pottinger at the White House, it seemed that people in the U.S. government were finally beginning to understand the CCP. Pottinger, who is from Boston, learned Chinese unusually well in the mid-1990s and, as a China correspondent for Reuters and <em>The Wall Street Journal</em> from 1998 to 2005, was a quick study in how the CCP goes about things. In 2005, he joined the marines for five years and was deployed to Iraq and Afghanistan; in 2017, he joined the National Security staff at the White House, where his intelligence showed not only in China policy but in his ability to get things done without getting fired (he resigned on January 7, in response to the attack on the Capitol).</p>
+      <p>Yu left China in 1985 at age 23 to study at Swarthmore and then got a Ph.D. in history at Berkeley. After the 1989 massacre, he began editing a newsletter called China Forum that exposed the methods of the CCP as trenchantly as any publication I have seen before or since. He is a professor of history at the Naval Academy, from which he took leave to serve in the State Department.</p>
+      <p>In an interview with Voice of America on November 16, 2020, Yu pointed out three departures in China policy that the Trump State Department had launched. One was to stop using “CCP” and “China” as synonyms. The point was not to stick fingers in Beijing’s eyes at a linguistic level; it was to wean Americans from the bad habit of thinking of China and the CCP as the same thing. Only when the distinction is clear can one begin to understand the damage that the CCP has done to China. A second change concerned “engagement,” the name of a strategy that the China-expert group had long promoted. According to the engagement theory, exchange in commerce, education, tourism, and other areas would induce the CCP to adopt international norms, but the result was that considerable influence began flowing in the opposite direction. The CCP has made inroads in Western media, industry, finance, research, education, personal data collection, and other areas, and that sort of engagement had to be opposed.</p>
+      <p>Third, agreements with the CCP needed to be “results oriented.” For many years, the CCP had been using the negotiating tactic of shelving urgent questions, like North Korean denuclearization or Iran sanctions, by saying they needed more study, more consultation, and more time—until the U.S. finally grew tired of waiting and just accepted the result that there would be no result. We don’t do that anymore, Yu said.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">Puzzled Chinese democrats have wondered why U.S. policymakers have indulged the CCP to the extent that they have over the years. For the business community, the reasons are not hard to understand. A large, inexpensive, and captive labor force was naturally attractive to American manufacturers, as was the lure of potentially huge markets. Cross the CCP and these prizes might disappear. But why, Chinese democrats ask, is it so easy to set political ideals aside? Is there something that prevents Westerners from seeing that the CCP resembles their own mafias more than it does their governments? Why should Western liberals show respect for a thuggish regime? Do the pretty labels “socialist” and “People’s” fool them?</p>
+      <p>About a decade ago, the word <em>baizuo</em> appeared on the Chinese Internet. Highly derogatory, it means literally “white people on the left” who unwittingly betray the ideals of Western civilization. Jean-Paul Sartre, who visited China in the 1950s, was an early example. Sartre excoriated Western imperialism and wrote about the beauty he perceived in Mao’s China even as Mao was tyrannizing millions. Does <em>baizuo</em> thinking, some have wondered, help to explain why Westerners still can’t see the CCP for what it is? Why do Americans, who are eloquent when they denounce human rights abuses in their own country, apply different standards when abuses happen in countries that call themselves “socialist”?</p>
+      <p>Chinese critics of <em>baizuo</em> are not uniformly harsh. Louisa Chiang, an American from Taiwan who has worked closely with mainland dissidents for decades, wrote to me:</p>
+      <blockquote>
+        <p>A lot [of <em>baizuo</em> thinking] is well-intentioned, and liberals are just as entitled to the kind interpretation and allowances that all should receive. But this is to remind them that their power can do even more good, and that they could gain even more insights, if they were to truly heed third-world voices. Open their hearts and listen hard. It might advance their domestic agenda and make unexpected international accomplishments in their fight against any and all imperialism.<sup id="fnr2"><a href="https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly#fn2" rel="nofollow">2</a></sup></p>
+      </blockquote>
+      <p>Chiang and others are annoyed when they see Western liberals condescend to Chinese victims, whom they assume are less qualified to make political judgments than they themselves are.</p>
+      <p>Chen Guangcheng came to the U.S. in 2012 with the help of both the law program at New York University and a Christian group in Texas called ChinaAid. He brought with him a formidable record of making his own political decisions, and yet somehow people in both his host groups expected him to accept their tutelage in how to behave politically in the U.S. Later, when Chen turned out to be a Trump booster, some observers became even more confident that what he most needed was political guidance: Chinese people have grown up in a repressive society, after all, where awareness of rights is weak, so it is understandable that they are easy prey for charlatans like Trump. But in viewing matters this way, Americans in effect attribute greater powers of judgment to CCP leaders than to CCP critics. While the critics apparently need advice in choosing between Democrats and Republicans, CCP bosses like Hu Jintao and Xi Jinping, when given the choice to join the world as “responsible stakeholders,” can be trusted to make the right decision (until, it turns out, they do not).</p>
+      <p>Up to a point, dissidents can accept this sort of criticism from Western liberals; struggles with the toxin of authoritarian thinking have often been part of their own experience. Liu Xiaobo wrote in 2003 that “it may take me a lifetime to rid myself of the poison.” After they survive the ordeal, however, they emerge with an understanding that is deeper than that of the leisured bystanders who mean them well. They need no pity. They find it strange that veteran dissidents like Liu Binyan, Fang Lizhi, Hu Ping, and Su Xiaokang, who could have been of immense help to Washington in understanding the CCP, lived in the U.S. for decades without ever being consulted.</p>
+      <p>Many have told me they find it hard to understand how the price their nation has paid, and continues to pay, goes largely unnoticed in the West. Why are the lessons the West has learned opposing dictators like Hitler, Mussolini, and Stalin so difficult to apply to China? Will things be different now that the CCP is shifting its power grabs outward? Will the West be ready? Or is the West already trending in an authoritarian direction? A friend inside China asked me—jokingly, but with a serious point—if the censors working for Twitter were Chinese immigrants. “They have the expertise,” she quipped, and added, “When a person in the U.S. says something not politically correct, the response to him seems to be not only to reject it automatically but to begin examining his motive. How Maoist!”</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">Freedom of expression has been a major issue between supporters and critics of Trump. Xiao Shu, a journalist who has long struggled, mostly in vain, for media freedom in China, cringes to hear a U.S. president refer to the press as the “enemy of the people.” Does he know how those words have been used elsewhere in the world—or care? Wang Tiancheng, the author of a book on how China can transition to democracy, writes that China’s Trump boosters present “a huge problem: they put passing policy advantages ahead of principles of democratic constitutionalism.”</p>
+      <p>Pro-Trumpers can concede some of these points and still say that things must be kept in perspective. New, perhaps short-lived improvements in Washington’s China policy are better than no improvements at all, which is what we have been living with for decades, and a U.S.-style democracy, even if damaged, is immeasurably better than what China has. Take the question of lying. Does Trump lie? Yes. Does the CCP’s Department of Propaganda (later renamed the Department of Publicity) lie? Su Xiaokang gently told me that the question is naive. The CCP system, he explained, has an entirely different way of measuring the value of statements. Truth and falsity are incidental. A statement is valuable if its “social effects” are “good,” and the effects count as good if they support the power interests of the CCP. (For politically innocuous matters like weather reports or basketball scores, support of the Party does not apply, but avoidance of harm to the Party still does.) Hence a “good” statement might be true, half-true, or untrue—that is beside the point.</p>
+      <p>A tendency toward including truth does become relevant when someone judges that a statement will influence people more effectively if a bit of verisimilitude is supplied. But truth is never the first criterion, and in that sense neither is lying. American democracy’s headache with a president who lies is a fundamentally different problem from China’s living under the CCP’s propaganda apparatus, whose roots date from the 1940s and whose experts by now are very good at what they do.</p>
+      <p>Readers of the Western press, whether aware of it or not, have seen examples of that expertise. In the run-up to the 2008 Beijing Olympics, the international wing of the Xinhua News Agency instituted frequent use of the phrase “lifted from poverty.” This was what “China” (meaning the CCP) had done for hundreds of millions of Chinese people. The world’s media—<em>The New York Times</em>, <em>The Wall Street Journal</em>, Reuters, Al Jazeera, Kyodo News, the BBC, and many others—picked up the phrase, as did Western politicians on both the left and the right. The World Bank used it in official reports. Those words were, in short, highly successful in achieving the intended effect: the world came to believe that the CCP was doing great good.</p>
+      <p>A more transparent account of what it had done, beginning in the 1980s and 1990s, is that it released its controls on the Chinese people so that, for the first time in decades, they could make money for themselves; hundreds of millions responded by working long hours at low wages without the protection of labor unions, workers’ compensation insurance, a free press, or independent courts; and, yes, they made great amounts of money, escaping poverty for themselves and simultaneously catapulting the CCP elite, who still rode high above them, to truly spectacular wealth.</p>
+      <p>In short, the word “lifted” begs analysis of who lifted whom. That question did not normally occur to people around the world who read the words “China lifted.” The grammar of such sentences, combined with the formula China = CCP, left no need for a question. Was this word-engineering deliberate? Anyone who doubts that it was should note that CCP media used the “China lifted” phrase in publications in English, French, German, and other foreign languages but not in Chinese-language media at home. That made good sense. What would happen if the CCP started telling the Chinese people that “we lifted you”? The people would know better. Both sides know better. To make such an assertion might generate unfortunate “social effects,” such as a greater number of demonstrations, strikes, sit-ins, roadblocks, and other examples of what the Ministry of Public Security labels “masses incidents” and counts in the tens of thousands per year.</p>
+      <p>When debate between Chinese Trump critics and Trump boosters heats up, attention sometimes shifts (although not really more than in political debates elsewhere) away from issues and toward personal attacks. The boosters say the critics are too close to Western liberals, from whom they have learned their anti-Trump talking points, and that this shows an inappropriate subordination of China’s struggles to the political battles in America. They further claim that the Trump critics exert a gentle form of moral blackmail that says, essentially, “If you people don’t denounce Trump you must be racist, fascist, and misogynist.” That pressure, they say, again conjures the Mao era, when people were asked to search their souls and examine their thoughts until they arrived at public expression of “correct” views.</p>
+      <p>As Trump leaves the scene and Biden forms his foreign policy team, how realistic will its grasp of the CCP be? It would be not just a gesture of bipartisanship but a brilliant inoculation against backsliding into naiveté if Biden were to recall Yu or Pottinger or both to service in his administration. Yet it’s hard to see that happening. At stake is not just the question of U.S. policy toward China but the logically prior question of whether the CCP is accurately seen for what it is.<span class="cube"></span></p>
+      <hr />
+      <ol id="footnotes">
+        <li id="fn1">“<a href="https://www.nybooks.com/articles/1998/10/08/a-great-leap-backward/" target="_blank" rel="nofollow">A Great Leap Backward?</a>,” October 8, 1998.<a title="Jump back to footnote 1 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly#fnr1" rel="nofollow">↩</a></li>
+        <li id="fn2">I am grateful to Louisa Chiang for helping me construct other aspects of this essay.<a title="Jump back to footnote 2 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly#fnr2" rel="nofollow">↩</a></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2021-01-19</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-19/List-of-De-Registered-Representative-Offices/">
+          List of De-Registered Representative Offices
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-01-19</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-19/List-of-De-Registered-Representative-Offices/">
+          List of De-Registered Representative Offices
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-01-12</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-12/Four-Principles-to-Guide-U.S.-Policy-Toward-China/">
+          Four Principles to Guide U.S. Policy Toward China
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-01-12</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-12/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+          Visually Understanding the Data on Foreign NGO Representative Offices and Temporary Activities
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-01-12/Four-Principles-to-Guide-U.S.-Policy-Toward-China/">
+            前一篇：Four Principles to Guide U.S. Policy Toward China
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-01-14/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E8%BF%91%E4%BE%86%E8%87%BA%E7%81%A3%E6%9C%89%E5%A4%A0%E5%86%B7-%E4%BE%86%E5%80%8B%E5%92%8C%E9%80%99%E6%99%82%E4%BA%8B%E6%9C%89%E9%97%9C%E7%9A%84%E6%87%89%E6%99%AF%E5%B0%8F%E6%95%85%E4%BA%8B%E5%90%A7/">
+            後一篇：[經濟與外交]近來臺灣有夠冷，來個和這時事有關的應景小故事吧
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-01-12/Four-Principles-to-Guide-U.S.-Policy-Toward-China/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-01-14/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E8%BF%91%E4%BE%86%E8%87%BA%E7%81%A3%E6%9C%89%E5%A4%A0%E5%86%B7-%E4%BE%86%E5%80%8B%E5%92%8C%E9%80%99%E6%99%82%E4%BA%8B%E6%9C%89%E9%97%9C%E7%9A%84%E6%87%89%E6%99%AF%E5%B0%8F%E6%95%85%E4%BA%8B%E5%90%A7/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-01-19/List-of-De-Registered-Representative-Offices/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-01-12/Four-Principles-to-Guide-U.S.-Policy-Toward-China/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-01-12/Four-Principles-to-Guide-U.S.-Policy-Toward-China/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-01-14/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E8%BF%91%E4%BE%86%E8%87%BA%E7%81%A3%E6%9C%89%E5%A4%A0%E5%86%B7-%E4%BE%86%E5%80%8B%E5%92%8C%E9%80%99%E6%99%82%E4%BA%8B%E6%9C%89%E9%97%9C%E7%9A%84%E6%87%89%E6%99%AF%E5%B0%8F%E6%95%85%E4%BA%8B%E5%90%A7/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-01-19/List-of-De-Registered-Representative-Offices/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-01-12/Four-Principles-to-Guide-U.S.-Policy-Toward-China/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

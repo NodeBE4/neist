@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>香港社運相關 Telegram 頻道集合 2.0 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+香港社運相關 Telegram 頻道集合 2.0
+——
+" />
+    <meta property="og:description" content="
+香港社運相關 Telegram 頻道集合 2.0
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="香港社運相關 Telegram 頻道集合 2.0" />
+    <meta property="twitter:title" content="香港社運相關 Telegram 頻道集合 2.0" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40Luterngun%2F%2525E9%2525A6%252599%2525E6%2525B8%2525AF%2525E7%2525A4%2525BE%2525E9%252581%25258B%2525E7%25259B%2525B8%2525E9%252597%25259C-telegram-%2525E9%2525A0%2525BB%2525E9%252581%252593%2525E9%25259B%252586%2525E5%252590%252588-2-0-bafyreigeldfyymfmewiwtocrpxkyezwg5ekdugt7fndwjoljuhfwrdn4bi" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@Luterngun/%25E9%25A6%2599%25E6%25B8%25AF%25E7%25A4%25BE%25E9%2581%258B%25E7%259B%25B8%25E9%2597%259C-telegram-%25E9%25A0%25BB%25E9%2581%2593%25E9%259B%2586%25E5%2590%2588-2-0-bafyreigeldfyymfmewiwtocrpxkyezwg5ekdugt7fndwjoljuhfwrdn4bi" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@Luterngun/%25E9%25A6%2599%25E6%25B8%25AF%25E7%25A4%25BE%25E9%2581%258B%25E7%259B%25B8%25E9%2597%259C-telegram-%25E9%25A0%25BB%25E9%2581%2593%25E9%259B%2586%25E5%2590%2588-2-0-bafyreigeldfyymfmewiwtocrpxkyezwg5ekdugt7fndwjoljuhfwrdn4bi&text=香港社運相關 Telegram 頻道集合 2.0&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@Luterngun/%25E9%25A6%2599%25E6%25B8%25AF%25E7%25A4%25BE%25E9%2581%258B%25E7%259B%25B8%25E9%2597%259C-telegram-%25E9%25A0%25BB%25E9%2581%2593%25E9%259B%2586%25E5%2590%2588-2-0-bafyreigeldfyymfmewiwtocrpxkyezwg5ekdugt7fndwjoljuhfwrdn4bi&title=香港社運相關 Telegram 頻道集合 2.0" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@Luterngun/%25E9%25A6%2599%25E6%25B8%25AF%25E7%25A4%25BE%25E9%2581%258B%25E7%259B%25B8%25E9%2597%259C-telegram-%25E9%25A0%25BB%25E9%2581%2593%25E9%259B%2586%25E5%2590%2588-2-0-bafyreigeldfyymfmewiwtocrpxkyezwg5ekdugt7fndwjoljuhfwrdn4bi&title=香港社運相關 Telegram 頻道集合 2.0" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=香港社運相關 Telegram 頻道集合 2.0&body=
+香港社運相關 Telegram 頻道集合 2.0
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@Luterngun/%25E9%25A6%2599%25E6%25B8%25AF%25E7%25A4%25BE%25E9%2581%258B%25E7%259B%25B8%25E9%2597%259C-telegram-%25E9%25A0%25BB%25E9%2581%2593%25E9%259B%2586%25E5%2590%2588-2-0-bafyreigeldfyymfmewiwtocrpxkyezwg5ekdugt7fndwjoljuhfwrdn4bi" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@Luterngun/%25E9%25A6%2599%25E6%25B8%25AF%25E7%25A4%25BE%25E9%2581%258B%25E7%259B%25B8%25E9%2597%259C-telegram-%25E9%25A0%25BB%25E9%2581%2593%25E9%259B%2586%25E5%2590%2588-2-0-bafyreigeldfyymfmewiwtocrpxkyezwg5ekdugt7fndwjoljuhfwrdn4bi&title=香港社運相關 Telegram 頻道集合 2.0&caption=
+香港社運相關 Telegram 頻道集合 2.0
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=香港社運相關 Telegram 頻道集合 2.0&url=https://matters.news/@Luterngun/%25E9%25A6%2599%25E6%25B8%25AF%25E7%25A4%25BE%25E9%2581%258B%25E7%259B%25B8%25E9%2597%259C-telegram-%25E9%25A0%25BB%25E9%2581%2593%25E9%259B%2586%25E5%2590%2588-2-0-bafyreigeldfyymfmewiwtocrpxkyezwg5ekdugt7fndwjoljuhfwrdn4bi" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>香港社運相關 Telegram 頻道集合 2.0</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-02-12
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Luterngun</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@Luterngun/%25E9%25A6%2599%25E6%25B8%25AF%25E7%25A4%25BE%25E9%2581%258B%25E7%259B%25B8%25E9%2597%259C-telegram-%25E9%25A0%25BB%25E9%2581%2593%25E9%259B%2586%25E5%2590%2588-2-0-bafyreigeldfyymfmewiwtocrpxkyezwg5ekdugt7fndwjoljuhfwrdn4bi" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1581522485000-->
+<p><a href="https://matters.news/@Luterngun/%25E9%25A6%2599%25E6%25B8%25AF%25E7%25A4%25BE%25E9%2581%258B%25E7%259B%25B8%25E9%2597%259C-telegram-%25E9%25A0%25BB%25E9%2581%2593%25E9%259B%2586%25E5%2590%2588-2-0-bafyreigeldfyymfmewiwtocrpxkyezwg5ekdugt7fndwjoljuhfwrdn4bi">香港社運相關 Telegram 頻道集合 2.0</a>
+——</p>
+
+<div>
+  <p>在 612 過去整整八個月之際，我再次整理了香港反送中運動及抗疫相關的 Telegram 頻道，作為對前文<a href="https://matters.news/@Luterngun/%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E7%9B%B8%E5%85%B3-telegram-%E9%A0%BB%E9%81%93%E9%9B%86%E5%90%88-zdpuAuX5HTooXExeYikEWZ4yK9XNCVuEDAs2xu25qsNZ5qpM6" target="_blank">《反送中運動相关 Telegram 頻道集合》</a>的更新。新版的變化在於增加了醫療援助、法律援助、分區情報、黃色經濟圈等新類別，刪除了已經不存在或停止更新的頻道。本集合僅有限列舉了部分頻道，更多信息請查看<a href="https://t.me/hongkongindex" target="_blank">香港民主自由資訊目錄</a>。</p>
+  <p></p>
+  <h2 id="section"><strong>黃頁</strong></h2>
+  <p><a href="https://t.me/hongkongindex" target="_blank">香港民主自由資訊目錄</a> @hongkongindex</p>
+  <p></p>
+  <p><br /></p>
+  <h2 id="section-1"><strong>日程</strong></h2>
+  <p><a href="https://t.me/hongkongertimetable" target="_blank">香港人日程表整合頻道</a> @hongkongertimetable<a href="https://t.me/s/silverhair717" target="_blank"><br />銀髮族。老而不廢</a> @silverhair717</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="fact-check"><strong>Fact Check</strong></h2>
+  <p><a href="https://t.me/antiextraditionverifiednews" target="_blank">反送中已核實資訊頻道</a> @antiextraditionverifiednews</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-2">實況</h2>
+  <p><a href="https://t.me/reminder612" target="_blank">612 reminder</a> @reminder612<a href="https://t.me/scottscout" target="_blank"><br />Scott Scout 認證哨兵消息主頻道</a> @scottscout<a href="https://t.me/realtimenewsbroadcasts" target="_blank"><br />前線實時新聞直播（及 獨家實時消息）</a> @realtimenewsbroadcasts<a href="https://t.me/weatherjj" target="_blank"><br />氣象巴打⛑高登連登氣象台聯合頻道</a> @weatherjj<a href="https://t.me/canigosomeplacefun" target="_blank"><br />寶寶CHANNEL</a> @canigosomeplacefun</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-3">交通｜地圖</h2>
+  <p><a href="https://t.me/HK_Traffic_News" target="_blank">全港交通消息</a> @HK<em>Traffic</em>News<a href="https://t.me/islandalliance" target="_blank"><br />港島交通台 Island Traffic Channel</a> @islandalliance<a href="https://t.me/Hongkongmyfuture" target="_blank"><br />無天理 有地理</a> @Hongkongmyfuture<a href="https://t.me/juneforstfuneral" target="_blank"><br />《背水一戰馬拉松路面目測》</a> @juneforstfuneral<a href="https://t.me/hkmaplive" target="_blank"><br />HKmap.live 頻道</a> @hkmaplive<a href="https://t.me/RealTimeMapHK" target="_blank"><br />📌103.hk 實時地圖</a> @RealTimeMapHK<a href="https://t.me/hktpg" target="_blank"><br />香港公共交通資訊頻道</a> @hktpg<a href="https://t.me/hkuber" target="_blank"><br />Uber救護車</a> @hkuber</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-4">物资</h2>
+  <p><a href="https://t.me/bignewsmaterial" target="_blank">大消物 (物資•車手•實況•失物)</a> @bignewsmaterial<a href="https://t.me/gwok3naan6ng5gam1" target="_blank"><br />落難五金</a> @gwok3naan6ng5gam1 （國難五金）<a href="https://t.me/buyppe" target="_blank"><br />PPE倉助養計劃</a> @buyppe</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-5">醫療援助</h2>
+  <p><a href="https://t.me/healthcarehk" target="_blank">🏥我揾病人🏥</a> @healthcarehk<a href="https://t.me/DreamersHospital" target="_blank"><br />發夢醫療🏥</a> @DreamersHospital （非緊急）<a href="https://t.me/hidden_clinic_plus" target="_blank"><br />隱世醫療頻道 Hidden Clinic Channel</a> @hidden<em>clinic</em>plus<a href="https://t.me/findcmed" target="_blank"><br />忠醫Channel (原名：國難忠醫）</a> @findcmed</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-6">心理支援</h2>
+  <p><a href="https://t.me/hearforyouhk" target="_blank">心聆樹窿</a> @hearforyouhk<a href="https://t.me/hongkonger_treehole" target="_blank"><br />香港樹洞</a> @hongkonger_treehole</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-7">法律援助｜被捕人士關注</h2>
+  <p><a href="https://t.me/sparkalliancehk" target="_blank">星火同盟 抗爭支援</a> @sparkalliancehk<a href="https://t.me/youarenotalonehk" target="_blank"><br />被捕人士關注組</a> @youarenotalonehk<a href="https://t.me/youarenotalonehk_live" target="_blank"><br />法庭文字直播台</a> @youarenotalonehk_live<a href="https://t.me/youarenotalonehk_info" target="_blank"><br />被捕人士資訊部</a> @youarenotalonehk_info<a href="https://t.me/youarenotalonehk_evidence" target="_blank"><br />被捕人士搜證部</a> @youarenotalonehk_evidence<a href="https://t.me/youarenotalonehk_mailbox" target="_blank"><br />被捕人士收信部</a> @youarenotalonehk_mailbox</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-8">分區情報</h2>
+  <p><a href="https://t.me/easternhawkeye" target="_blank">港島東•鷹眼🦅</a> @easternhawkeye<a href="https://t.me/islandwest84" target="_blank"><br />港島西。channel</a> @islandwest84<a href="https://t.me/southern_scout" target="_blank"><br />南區哨兵及資訊頻道🔭</a> @southern_scout<a href="https://t.me/protectwhampoaaaa2" target="_blank"><br />黃埔公開資訊發放站Channel2.0</a> @protectwhampoaaaa2<a href="https://t.me/chaisiuhanginfo" target="_blank"><br />聯合資訊 - 柴小杏</a> @chaisiuhanginfo<a href="https://t.me/s/STunionn/" target="_blank"><br />沙田哨兵及FC資訊頻道</a> @STunionn<a href="https://t.me/smrec" target="_blank"><br />沙田大圍河東抗爭頻道</a> @smrec<a href="https://t.me/northstation" target="_blank"><br />【哨】北區驗證資訊站</a> @northstation<a href="https://t.me/tsw8907" target="_blank"><br />天水圍哨站🛰️</a> @tsw8907<a href="https://t.me/TMSafeArma" target="_blank"><br />屯門安全哨兵</a> @TMSafeArma<a href="https://t.me/yuenlongox" target="_blank"><br />元朗牛哨兵</a> @yuenlongox<a href="https://t.me/NWemptyR" target="_blank"><br />屯元天黨鐵情報channel</a> @NWemptyR<a href="https://t.me/tko84" target="_blank"><br />將軍傳令 • 榮光烽火台</a> @tko84<a href="https://t.me/tungchung" target="_blank"><br />📌東涌區公告版📡</a> @tungchung<a href="https://t.me/SaiKung_DistrictCouncillor" target="_blank"><br />💛西貢區議員資訊頻道</a> @SaiKung_DistrictCouncillor</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-9">聚合信息</h2>
+  <p><a href="https://t.me/HKAllinOne" target="_blank">All-In-One 資訊集合平台</a> @HKAllinOne<a href="https://t.me/s/UnitedHK18" target="_blank"><br />-18區聯合群組-聯合頻道</a> @UnitedHK18</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-10">傳媒</h2>
+  <p><a href="https://t.me/rthk_new_c" target="_blank">RTHK即時新聞</a> @rthk<em>new</em>c<a href="https://t.me/rthk_news" target="_blank"><br />香港電台 RTHK</a> @rthk_news<a href="https://t.me/nowtv_news" target="_blank"><br />Now 新聞 ALERT</a> @nowtv_news<a href="https://t.me/the_InitiumMedia" target="_blank"><br />端傳媒 Initium Media</a> @the_InitiumMedia<a href="https://t.me/thestandnews" target="_blank"><br />Stand News 立場新聞</a> @thestandnews<a href="https://t.me/appledailyhk" target="_blank"><br />香港蘋果日報</a> @appledailyhk<a href="https://t.me/Nextplushk" target="_blank"><br />壹週刊 Next</a> @Nextplushk<a href="https://t.me/inmediahknet" target="_blank"><br />香港獨立媒體網</a> @inmediahknet<a href="https://t.me/hk01official" target="_blank"><br />香港01 官方頻道</a> @hk01official<a href="https://t.me/cabletv_news" target="_blank"><br />有線新聞</a> @cabletv_news<a href="https://t.me/hkgetv" target="_blank"><br />HKGETV 香城教育電視</a> @hkgetv<a href="https://t.me/citizenspresscon" target="_blank"><br />民間記者會頻道 Citizens' PC</a> @citizenspresscon<a href="https://t.me/kwankungpress" target="_blank"><br />關公廟 Kwan Kung Temple</a> @kwankungpress（民間新聞處 Hongkongers Press Room）<a href="https://t.me/bugbugnewsclip" target="_blank"><br />電蟲剪報小組</a> @bugbugnewsclip</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-11">大专院校</h2>
+  <p><a href="https://t.me/cuhkofficialnews" target="_blank">香港中文大學</a> @cuhkofficialnews （官方頻道）<a href="https://t.me/cusunews" target="_blank"><br />中大學生會消息發佈</a> @cusunews<a href="https://t.me/CuSecureEntrance" target="_blank"><br />暴大保安組</a> @CuSecureEntrance<a href="https://t.me/hkuinfo" target="_blank"><br />HKU Info Channel</a> @hkuinfo<a href="https://t.me/standuphkuer" target="_blank"><br />守護港大聯署小組頻道</a> @standuphkuer<a href="https://t.me/cityuchannel" target="_blank"><br />城大人最新消息發佈</a> @cityuchannel<a href="https://t.me/eduhknews" target="_blank"><br />教大前線最新狀況</a> @eduhknews</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-12">政黨｜政治團體</h2>
+  <p><a href="https://t.me/CivilHumanRightsFront" target="_blank">民間人權陣線資訊頻道</a> @CivilHumanRightsFront<a href="https://t.me/DemosistoOfficial" target="_blank"><br />香港眾志 Demosistō 頻道</a> @DemosistoOfficial<a href="https://t.me/Demosisto_Int" target="_blank"><br />🌏 眾志國際頻道 Demosistō International Channel</a> @Demosisto_Int<a href="https://t.me/forltkelectionsoffice" target="_blank"><br />本土民主前線公告頻道</a> @forltkelectionsoffice<a href="https://t.me/youngspiration" target="_blank"><br />青年新政 Youngspiration</a> @youngspiration<a href="https://t.me/HKNFChannel" target="_blank"><br />香港民族陣綫 陣地廣播</a> @HKNFChannel</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-13">工會</h2>
+  <p><a href="https://t.me/unionsforHK" target="_blank">職工盟資訊頻道</a> @unionsforHK<a href="https://t.me/hkonstrike" target="_blank"><br />二百萬三罷聯合陣線</a> @hkonstrike<a href="https://t.me/ha_employalliance" target="_blank"><br />醫管局員工陣線 Hospital Authority Employees Alliance</a> @ha_employalliance<a href="https://t.me/hkiunion" target="_blank"><br />香港保險㒰人職工會Channel</a> @hkiunion<a href="https://t.me/uncs_uncs" target="_blank"><br />UNCS 新公務員工會</a> @uncs_uncs</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-14">黃色經濟圈</h2>
+  <p><a href="https://t.me/yellowbuyredbluebye" target="_blank">良心經濟圈 - 米豬連盟</a> @yellowbuyredbluebye<a href="https://t.me/yellowshoppromotion" target="_blank"><br />乂終極黃藍地圖-黃店推介乂</a> @yellowshoppromotion<a href="https://t.me/leungsumfangyun" target="_blank"><br />寶寶食飯 我地埋單！良心食店互助計劃</a> @leungsumfangyun<a href="https://t.me/projectr4hky" target="_blank"><br />Project R</a> @projectr4hky<a href="https://t.me/UnitedHK18_help" target="_blank"><br />18區聯合群組－手足互助計劃</a> @UnitedHK18_help</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-15">文宣</h2>
+  <p><a href="https://t.me/hkstandstrong_promo" target="_blank">⚠️反送中 文宣谷 Channel⚠️</a> @hkstandstrong_promo<a href="https://t.me/hkstandstrong_promo_int" target="_blank"><br />⚠️Anti-Extradition Promo Channel⚠️</a> @hkstandstrong<em>promo</em>int<a href="https://t.me/hkposter777" target="_blank"><br />777文宣傳播稿件大合集</a> @hkposter777<a href="https://t.me/guardiansofhongkong" target="_blank"><br />📡Guardians of Hong Kong</a> @guardiansofhongkong</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-16">起底</h2>
+  <p><a href="https://t.me/Dadfindboy" target="_blank">老豆搵仔</a> @Dadfindboy<a href="https://t.me/JaiFinddadmumtwo" target="_blank"><br />阿囝搵老豆老母</a> @JaiFinddadmumtwo</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-17">警暴記錄</h2>
+  <p><a href="https://t.me/HKAntiBlack" target="_blank">香港反黑組🧟‍♀🧟‍♂</a>  @HKAntiBlack<a href="https://t.me/popooverviolence" target="_blank"><br />警甴罪證資料庫</a>  @popooverviolence</p>
+  <p><br /></p>
+  <p></p>
+  <h2 id="section-18">知識分享</h2>
+  <p><a href="https://t.me/hkplg" target="_blank">⚖️ 法政匯思 PLG ⚖️</a> @hkplg<a href="https://t.me/hkitfellow" target="_blank"><br />香港資訊科技同路人頻道</a> @hkitfellow<a href="https://t.me/securehk" target="_blank"><br />香港人資訊安全情報👨🏻‍💻👩🏻‍💻💻📱</a> @securehk</p>
+  <p><br /></p>
+  <p></p>
+  <p><strong>附：</strong></p>
+  <p><a href="https://n-cov.info/" target="_blank">武漢肺炎實時資料庫</a>（香港）（未完成）資料來自香港政府開放數據和本地媒體資訊。</p>
+  <p><a href="https://goo.gl/maps/NPYFzo1P4zpyQ8Vm9" target="_blank">【終極整合】黃藍商戶地圖 (新)</a>，獲授權使用該地圖數據的 App：和你Eat、和你Pay、Whatsgap、香城online (暫時ios未批）</p>
+  <p><br /></p>
+  <p></p>
+  <p>建議 Telegram 用家避免重複訂閱同類的頻道，同時利用好「<strong>Mute</strong>」靜音和「<strong>Archive</strong>」存檔功能，以防信息過載帶來困擾。</p>
+  <p><br /></p>
+  <p></p>
+  <blockquote>
+康復香港，時代抗疫  </blockquote>
+  <blockquote>
+光復香港，時代革命  </blockquote>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-02-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-02-19/%E5%AF%AB%E5%9C%A8%E6%B4%AA%E6%B0%B4%E8%88%87%E5%85%89%E5%BE%A9%E4%B9%8B%E5%89%8D-%E4%B8%AD%E5%9C%8B%E4%BA%BA%E5%90%91%E4%BD%95%E8%99%95%E5%8E%BB/">
+          寫在洪水與光復之前：中國人向何處去？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-02-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-02-13/%E7%97%85%E6%AF%92-%E6%A5%B5%E6%AC%8A%E8%88%87%E7%84%A1%E6%AC%8A%E8%80%85%E7%9A%84%E6%AC%8A%E5%8A%9B/">
+          病毒、極權與無權者的權力
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-02-10</time>
+        <a href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-2.0-%E7%89%88-%E5%89%8D%E8%A8%80%E5%8F%8A%E7%9B%AE%E9%8C%84/">
+          《數字極權時代生存手記》2.0 版 前言及目錄
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-02-10</time>
+        <a href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-1.%E4%B8%8D%E8%AE%B0%E5%90%8D%E8%99%9F%E7%A2%BC%E7%9A%84%E9%81%B8%E6%93%87/">
+          《數字極權時代生存手記》1.不记名號碼的選擇
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-02-11/%E8%84%B1%E6%AC%A7%E4%B9%8B%E5%90%8E/">
+            前一篇：脱欧之后
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-02-12/%E4%B8%AD%E5%9B%BD%E5%9B%A0%E6%8A%97%E7%96%AB%E4%B8%8D%E5%8A%9B%E7%BD%A2%E5%85%8D%E8%BF%84%E4%BB%8A%E7%BA%A7%E5%88%AB%E6%9C%80%E9%AB%98%E7%9A%84%E4%B8%A4%E5%90%8D%E5%AE%98%E5%91%98/">
+            後一篇：中国因抗疫不力罢免迄今级别最高的两名官员
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-02-11/%E8%84%B1%E6%AC%A7%E4%B9%8B%E5%90%8E/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-02-12/%E4%B8%AD%E5%9B%BD%E5%9B%A0%E6%8A%97%E7%96%AB%E4%B8%8D%E5%8A%9B%E7%BD%A2%E5%85%8D%E8%BF%84%E4%BB%8A%E7%BA%A7%E5%88%AB%E6%9C%80%E9%AB%98%E7%9A%84%E4%B8%A4%E5%90%8D%E5%AE%98%E5%91%98/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-02-13/%E7%97%85%E6%AF%92-%E6%A5%B5%E6%AC%8A%E8%88%87%E7%84%A1%E6%AC%8A%E8%80%85%E7%9A%84%E6%AC%8A%E5%8A%9B/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-2.0-%E7%89%88-%E5%89%8D%E8%A8%80%E5%8F%8A%E7%9B%AE%E9%8C%84/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-02-11/%E8%84%B1%E6%AC%A7%E4%B9%8B%E5%90%8E/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-02-12/%E4%B8%AD%E5%9B%BD%E5%9B%A0%E6%8A%97%E7%96%AB%E4%B8%8D%E5%8A%9B%E7%BD%A2%E5%85%8D%E8%BF%84%E4%BB%8A%E7%BA%A7%E5%88%AB%E6%9C%80%E9%AB%98%E7%9A%84%E4%B8%A4%E5%90%8D%E5%AE%98%E5%91%98/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-02-13/%E7%97%85%E6%AF%92-%E6%A5%B5%E6%AC%8A%E8%88%87%E7%84%A1%E6%AC%8A%E8%80%85%E7%9A%84%E6%AC%8A%E5%8A%9B/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-2.0-%E7%89%88-%E5%89%8D%E8%A8%80%E5%8F%8A%E7%9B%AE%E9%8C%84/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

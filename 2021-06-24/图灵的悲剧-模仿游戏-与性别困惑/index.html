@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>图灵的悲剧：“模仿游戏”与性别困惑 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+图灵的悲剧：“模仿游戏”与性别困惑
+——
+" />
+    <meta property="og:description" content="
+图灵的悲剧：“模仿游戏”与性别困惑
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="图灵的悲剧：“模仿游戏”与性别困惑" />
+    <meta property="twitter:title" content="图灵的悲剧：“模仿游戏”与性别困惑" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60d4323db050f4377694c8d2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60d4323db050f4377694c8d2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60d4323db050f4377694c8d2&text=图灵的悲剧：“模仿游戏”与性别困惑&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60d4323db050f4377694c8d2&title=图灵的悲剧：“模仿游戏”与性别困惑" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60d4323db050f4377694c8d2&title=图灵的悲剧：“模仿游戏”与性别困惑" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=图灵的悲剧：“模仿游戏”与性别困惑&body=
+图灵的悲剧：“模仿游戏”与性别困惑
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60d4323db050f4377694c8d2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60d4323db050f4377694c8d2&title=图灵的悲剧：“模仿游戏”与性别困惑&caption=
+图灵的悲剧：“模仿游戏”与性别困惑
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=图灵的悲剧：“模仿游戏”与性别困惑&url=https://www.allnow.com/post/60d4323db050f4377694c8d2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>图灵的悲剧：“模仿游戏”与性别困惑</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-24
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 元十雨</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60d4323db050f4377694c8d2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60d4323db050f4377694c8d2">图灵的悲剧：“模仿游戏”与性别困惑</a>
+——</p>
+
+<div>
+  <p>6月23日，在阿兰·麦席森·图灵（Alan Mathison Turing）109周年诞辰，印有其肖像的新版50英镑纸币正式发行，以纪念这位曾在计算机和人工智能领域做出杰出贡献，投身破译纳粹密码工作，却因同性恋被判罪而自杀的数学家。样币发行日，英格兰银行升起彩虹旗，表达对恐同历史的反思。</p>
+  <p>1912年6月23日，图灵在英国伦敦出生了。同样是在6月，1954年，管家在图灵床边发现一只咬开的苹果，以及一旁已然变凉的图灵。化验结果和警方勘察表明，与苹果一起下肚的，还有剧毒的氰化物。警方认定图灵死于自杀。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-24/60d432a49c232e01c17d1eb2+L.jpg" data-id="60d432a72114416715c3d719" alt="在阿兰·麦席森·图灵109周年诞辰，印有其肖像的新版50英镑纸币正式发行" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+在阿兰·麦席森·图灵109周年诞辰，印有其肖像的新版50英镑纸币正式发行
+    </figcaption>
+  </figure>
+  <p>以数学才能著称的阿兰·图灵，同样为人所知的还有其生前最后两年所经历的暴力与创伤。1952年1月，图灵家中被盗，而其结识不久的同性伴侣阿诺德·莫里（Arnold Murray）告诉图灵自己认识窃贼。图灵因失窃向警方报案，提及了莫里提供的信息，也说明了自己与莫里的关系。然而，在五十年代的英国，同性恋还未去罪，警方接到盗窃的报案，却把图灵与莫里的同性关系视为更加严重的罪行。两人因此被逮捕，以“严重猥亵”（Gross Indedency）的罪名被起诉。在入狱与激素治疗两个选项中，为了避免前者，图灵接受了后者，在长达一年的雌激素注射“治疗”下，眼睁睁地面对不符合自身认同的身体变化。</p>
+  <p>1934年，图灵从剑桥大学国王学院数学系毕业；1936年，在论文中首次提出“图灵机”的设想，后人将其视为现代计算机的原型。1936-1938年，在普林斯顿大学继续研究纯数学的同时，图灵也开始在密码学领域摸索，并在毕业论文中提出了预言机与图灵机的结合。冯·诺伊曼希望雇用图灵留在普林斯顿做博士后研究，但他返回了剑桥，去路德维希·维特根斯坦的课堂上听有关数学基础的哲学课程，与维特根斯坦在课上讨论和辩论。二战期间，图灵受雇于英国政府，负责破解纳粹德国的密码；战后，则继续计算机和人工智能领域的研究。他认为，与其让机器模拟成人，不如模拟孩童，由此启发了影响深远的人工神经网络和机器学习的思路。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-24/60d433764cd55d54dd5db503+L.jpg" data-id="60d4337a9b2d825085c25f8b" alt="1951年，阿兰·图灵（站立者）和同事在费伦蒂马克一号（Ferranti Mark I）电脑前工作。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1951年，阿兰·图灵（站立者）和同事在费伦蒂马克一号（Ferranti Mark I）电脑前工作。
+    </figcaption>
+  </figure>
+  <h2 id="section"><strong>“模仿游戏”：广泛流传的图灵测试</strong></h2>
+  <p>在今天，图灵的闻名在很大程度上是由于“图灵测试”概念在大众媒体中的传播。“图灵测试”时常被简化为如下版本： 一台机器在另一个房间通过打字机与人类测试者进行问答交流，如果房间外的测试者无法判断与自己交流的是人还是机器，那么就可以判定这台机器具有智能。有时，我们也会看见另一个稍微复杂的版本：测试者与两个在其他房间的对象进行文字交流，这两个对象中一个是人，一个是机器。如果测试者无法分辨哪个是人，哪个是机器，就可以说机器通过了图灵测试。这一思路将机器的“智能”定位于借助人类外部视角的判定，巧妙地避开了“机器是否有意识”的难题。它在人工智能的发展中影响如此深远，以至于在图灵身后半个多世纪后，很长一段时期内被当做检测人工智能发展水平的标准；故而，很多年前我们便会不时看到某个程序“通过图灵测试”的新闻，接着又会看到“尚未完全通过”的评论。</p>
+  <p>如今，当我们接到的广告推销电话、点开的在线客服的另一端都有可能是一个AI，通过图灵测试似乎早已不再像当年那么令人激动或诧异。人们开始关注到以通过图灵测试作为人工智能发展方向的问题，比如，机器擅长的事情有很多是人类所不擅长的，像是强大的数据储存与检索能力，远为人脑所不能及，那么机器智能的标准为什么要一味向人脑靠拢？而借助人类视角，以机器与人的相似度判定机器智能的思路，是否滑入人类中心主义的陷阱？</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-24/60d434959c232e01c17d1eb3+L.jpeg" data-id="60d43499904b8c02a16a333a" alt="图灵" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+图灵
+    </figcaption>
+  </figure>
+  <p>亚马逊人工智能机器人Alexa的首席科学家罗赫特·普拉萨德（Rohit Prasad）认为，图灵测试的原始版本只是一个思想实验，不应视为对人工智能的终极测试。现在，人工智能的发展已经到了抛弃图灵测试的那一步，我们应该看到图灵所能够带来的更广阔的启发。</p>
+  <p>的确，耳熟能详的“图灵测试”，其实是后人赋予的名称和用途，图灵本人在论文中所提出的，其实是“模仿游戏”。它最初是作为思想实验出现，而非为人工智能所设置的“考试”。倘若回溯图灵提出“模仿游戏”的历史背景，会发现当时更加盛行，现在也不罕见的是这样的观点：认为人和机器有着本质不同，机器没有感情，没有有机的身体，没有语言能力，只能鹦鹉学舌，而无法像人一样思考。相比这一思路，“模仿游戏”通过把机器和人隔离在测试者的视野范围外，再通过文字交流避免以声音的生物学特征作弊，让机器避免了不公平的比较，反而是更不那么人类中心主义的一种。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-24/60d434be4cd55d54dd5db504+L.jpg" data-id="60d434c39b2d825085c25f8e" alt="以图灵为原型的电影《模仿游戏》（2014）剧照" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+以图灵为原型的电影《模仿游戏》（2014）剧照
+    </figcaption>
+  </figure>
+  <h2 id="section-1"><strong>令人困惑的性别信息：“模仿游戏”中的女人、男人和机器</strong></h2>
+  <p>一个常常被忽略的维度是，在图灵最初提出的版本中，并不只有“人”与“机器”的物种差异，还有“男人”和“女人”的性别维度。在1950年的论文中，图灵这样提出后来被人称为“图灵测试”的“模仿游戏”：</p>
+  <blockquote>
+    <p>新的问题形式可以用“模仿游戏”（imitation game）来描述。三个人来玩这个游戏，一个男人（A），一个女人（B），一个不限性别的提问者（interrogator，C）。提问者和另外两个人待在不同的房间。提问者的游戏目标，是辨别出另外两个人中谁是男人，谁是女人。他把两个人分别标记为X和Y，游戏最后，他要么猜“X是A，Y是B”，要么猜“X是B，Y是A”。而我们现在要问：“要是把这个游戏中的A换成一台机器会怎样呢？”提问者猜错的概率会比在刚才那个辨别男女的游戏中猜错的概率更高吗？我们可以用这些问题来置换一开始那个“机器会不会思考”的问题。</p>
+  </blockquote>
+  <p>虽然偶有媒体提及这个版本，但往往一笔带过，很快滑入“机器模仿人”的简化版本，而忽略其中令人疑惑的性别信息。然而，仔细考量图灵的最初设定，会发现这里有两重模仿游戏：一层是模仿女人的男人，一层是模仿女人的机器。在这个游戏中，机器要模仿的不仅是人，而且是特定性别的人。</p>
+  <p>图灵测试，从一开始就是一个思想实验。图灵的表述其实是，相比男人模仿女人的游戏，在机器模仿女人的游戏中，提问者猜错的概率会更高吗？我们或许还能注意到，这个问题指向的也是游戏中的提问者，而不仅仅是男人或机器的表现。不过，假设两个游戏中的提问者是同一个，或者有着相同的理解能力，图灵的问题看上去也无法转化为“机器能够模仿人类吗？”。更准确的转化似乎是——“男人比机器更擅长模仿女人吗？”，或者“机器不如男人会模仿女人吗？”</p>
+  <p>这个分析带来的结论似乎令人诧异，它与人们印象中的图灵测试相去甚远。图灵在论文中甚至还有更加细节的例子，例如提问者也许会问头发的长度。如果注意到这个游戏中的性别信息，而且没有选择性地无视这一点，那么图灵测试恐怕不会像一直以来那样被当做人工智能发展的某种终极测试。试想，如果人工智能的发展目标是“比男人更会模仿女人”，听上去会多么有趣。但在历史上，图灵模仿游戏中所隐含的性别意涵，恐怕令许多人工智能和心灵哲学领域的研究者感到不安。这些信息往往被有意无意地忽视，他们选择将原版设想中，女人、男人、机器的三者关系，简化为人与机器的二元关系。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-24/60d435534cd55d54dd5db505+L.jpeg" data-id="60d43556904b8c02a16a333b" alt="图灵雕塑" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+图灵雕塑
+    </figcaption>
+  </figure>
+  <h2 id="section-2"><strong>去性别化的图灵测试：性别信息何时被忽略和隐藏？</strong></h2>
+  <p>那么，是从何时开始，被简化的图灵测试开始流传？</p>
+  <p>在今年新发表的一份研究中，巴西IBM和圣保罗大学（University of São Paulo）的研究者博纳尔多·贡萨尔维斯（Bernardo Goncalves），分析了性别在图灵模仿游戏中所扮演的角色。根据他的梳理，在1995年人工智能国际联合研讨会上，帕特里克·哈斯（Patrick Hayes）和肯尼斯·福德（Kenneth Ford）发表意见，认为科学界应当放弃图灵测试，理由是按照图灵的思路，会造出“机器异装癖”（mechanical transvestite）。在他们看来，从实验设计的角度来说，图灵原本的模仿游戏是不精确且糟糕的，他们认为图灵没有想清楚自己要做什么。如果想要进行这个实验，结果只能令人失望。</p>
+  <p>很难想象，直至如此晚近的年代，科学界和哲学界还会恐慌于如“异装癖”这样模糊二元性别边界的实践，甚至将担忧蔓延至机器身上，蔓延至人工智能领域的理论建构和实验方向，以及心灵哲学的思想实验设计上。在更多时候，这种排斥不会以如此明显的方式显示出来，而是往往以论证的形式将性别边缘化为不重要的维度，正如随后几个研究所表现的。</p>
+  <p>随后几年里，高蒂埃罗·皮奇尼尼（Gaultiero Piccinini）、詹姆斯·摩尔（James Moor）、杰克·科普兰（Jack Copeland）等人，分别在2000年、2001年和2004年的一系列文章中，将图灵的模仿游戏诠释为机器能否具有与人类相匹敌的智能，也就是我们今天所熟知的图灵测试版本。这一版本被贡萨尔维斯称为“物种测试”，它关心的是人与机器这两个物种之间的比较。在贡萨尔维斯看来，图灵设计的原始版本中，包含物种测试与性别测试两个维度，然而这些诠释者不承认图灵原文中的性别测试。他们所依据的是图灵论文中出现的另一个版本的“模仿游戏”，这个版本比“男人模仿女人”和“机器模仿女人”出现得更靠后。图灵写道：</p>
+  <blockquote>
+    <p>让我们注意一台特定的数字计算机。......通过调整这台计算机的存储空间，合理增加运行速度，配置合适的程序，它可以胜任模仿游戏里的A角，而B角由一个<em>人/男人（man）</em>充当。</p>
+  </blockquote>
+  <p>我们知道，在英文中，“man”一词大多数时候特指“男人”，但也有时会泛指“人”。如果脱离语境，的确很难判断这里的“man”一词是特指还是泛指。乍看起来，这里未出现特指性别的信息，与机器并举，理解为泛指的“人”似乎也很合理。皮奇尼尼等人正是如此解读。然而，这几位研究者不太可能没有读到前文。考虑到前文出现过的“男人模仿女人”和“机器模仿女人”的设计，这里出现的“man”还能如此不假思索地理解为不指定性别的“人”吗？贡萨尔维斯问道，如果作此理解，如何保持图灵文本上下文的连贯和逻辑的通畅呢？</p>
+  <p>斯坦福哲学百科中“图灵测试”词条2020年冬季更新的最新版中，作者在这一问题上也支持摩尔等人所诠释的“标准版本”，认为图灵提出的模仿游戏虽然可能限定了性别，但是没有理由认为限定性别的图灵测试是更好的。他们认为无论图灵测试中机器所模仿的是男人还是女人，对于测试机器智能的效力来说没有什么区别。然而，这一看法本身已经预设了图灵测试的唯一目的或最重要目的是对机器模仿人类能力的测试。基于这一预设来进行论证，毋宁说有循环论证之嫌。对于这一预设，我们可以质疑：为什么“物种模仿”的重要性，大于“性别模仿”的重要性呢？</p>
+  <p>无论如何，经由这些研究者重新诠释和构建的去性别化版本，几乎已成为如今提到“图灵测试”时人们首先想到的版本，不但流行于大众媒体，在人工智能和心灵哲学界也是如此，渐渐成为关于图灵测试的主流看法。而其中的性别意涵，甚少受到研究者的认真对待，甚至不时遭受贬低。2014年，度鲁·麦克德默特（Drew McDermott）在文章中认为：“考虑到图灵的模仿游戏过去半个世纪在心灵哲学界的重要性，很遗憾他不太清楚这个游戏是在干什么。”贡萨尔维斯反问道：“图灵测试中的性别角色问题，影响到其作为一个实验的价值。图灵是否在机器智能的设计中提出了性别模仿？既然是的话，性别模仿和智能的关系是什么？这仅仅是一个玩笑，还是一个值得严肃对待的经验问题？”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-24/60d4386f4cd55d54dd5db506+L.jpeg" data-id="60d438742114416715c3d71d" alt="图灵雕塑前的彩虹色键盘" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+图灵雕塑前的彩虹色键盘
+    </figcaption>
+  </figure>
+  <h2 id="section-3"><strong>图灵-杰斐逊之争：写诗和性激素是人与机器的关键区别吗？</strong></h2>
+  <p>在发表那篇有关模仿游戏的论文半年以前，图灵和同在曼彻斯特大学的神经外科教授杰弗里·杰斐逊（Geoffrey Jefferson）曾在媒体上有过一场争论。贡萨尔维斯梳理后认为，图灵发表于1950年的模仿游戏，其实在某种程度上是对杰弗森的隔空回应。如果读者看到两人的论证内容，或许更容易发现模仿游戏中性别设置的潜在意涵。</p>
+  <p>二战之后，图灵就职于英国国家物理实验室，成为数字计算机的带头开发者之一，之后又成为曼彻斯特大学数学系的准教授。1946年年底，图灵以机器专家的身份接受《每日电讯报》<em>（Daily Telegraph）</em>的采访，就此为公众所知。</p>
+  <p>1949年6月9日，同在曼彻斯特大学的神经外科教授杰弗里·杰斐逊（Geoffrey Jefferson）在一次演讲<em>（Lister Oration）</em>中表达了自己对于数字计算机的现状与前景的看法。这场演讲以“机器人的心灵”（The mind of mechanical man）为题，评论了包括图灵参与的项目在内的几个数字计算机项目。杰斐逊以人类为参照，为机器智能设立了极高的标准，表示“机器人不可能有心灵”。在演讲中，他这样说道：</p>
+  <blockquote>
+    <p>除非机器能够出于思绪和情感的流露，写出十四行诗或者协奏曲，而且不是随机地落下音符，那才能说机器能够媲美大脑——也就是说，它不但会写，而且知道自己在写。没有什么机械装置能够感受到成功的喜悦、阀门熔断时的悲伤、被赞美的温暖、犯错后的痛苦、性的吸引、求而不得时的气恼或难过。</p>
+  </blockquote>
+  <p>面对这番评论，图灵第二天通过《泰晤士报》<em>（Times）</em>回应道：</p>
+  <blockquote>
+    <p>我不觉得你能写出一行十四行诗，不过和机器的比较还是有点不太公平，因为机器写的十四行诗恐怕只有另一台机器才更懂得欣赏。</p>
+  </blockquote>
+  <p>图灵的回应或许显得幽默而尖刻，但“机器欣赏机器写的诗”这种说法，哪怕放在现在，听上去也颇有去人类中心主义和后人类时代的前瞻性。两周以后，杰斐逊的演讲稿在《英国医学期刊》<em>（British Medical Journal）</em>发表，在期刊的开头，编辑还不忘讥讽图灵的异想天开：</p>
+  <blockquote>
+    <p>曼彻斯特“机器脑”的负责人之一图灵先生，6月11日接受《泰晤士报》的采访说，他不排除机器写十四行诗的可能，尽管也许只有另一台机器才能欣赏。他的话也许不是认真的吧。</p>
+  </blockquote>
+  <p>有趣的是，在1950年的论文中，图灵真的举了一个十四行诗的例子。在这个例子中，提问者和回答者来回就诗的用词问题来回问答。图灵想以此说明，如果通过了这个测试，那么就说明其对诗有所理解，而非只是鹦鹉学舌。这个例子是这样设想的：</p>
+  <blockquote>
+    <p>提问者：你在十四行诗的第一行写道：“我是否该将你比于夏日”，为什么不是“春天”，难道不会一样好，甚至更好吗？</p>
+    <p>回答者：那样不合格律。</p>
+    <p>提问者：那“冬日”呢？这个合律。</p>
+    <p>回答者：不错，可是没人想和冬日作比。</p>
+    <p>提问者：你会觉得匹克威克先生让你想起圣诞吗？</p>
+    <p>回答者：有点。</p>
+    <p>提问者：圣诞也是冬日嘛，我看匹克威克先生不会介意与之相类。</p>
+    <p>回答者：你不是认真的吧。提起冬天，人们想起的是普通的冬天，而不是圣诞节这种特殊日子呀。</p>
+  </blockquote>
+  <p>直到前几年，当会写诗的人工智能在现实中出现时，还曾引发人们的惊诧、否认和讨论，更不用说七十年前人们的反应。例如，人们会说AI小冰写的诗“没有感情”，所以不具有诗歌的价值，这与当年杰斐逊说机器没有情感，所以无法媲美人脑的说法何其相似。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-24/60d43b424cd55d54dd5db50b+L.jpg" data-id="60d43b462114416715c3d720" alt ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture"></figcaption>
+  </figure>
+  <p>根据贡萨尔维斯的考证，除了这一点，在与图灵的分歧中，杰斐逊还提出两个主要论点：一是借用笛卡尔区分人与动物的思路，为人与机器的区分划下一道本体论的边界，认为机器只能鹦鹉学舌而不能进行逻辑推理，没有进行概念化思考的语言功能，而后者正是杰斐逊认为“灵魂，至高的智能器官”所在之处，是“从最高级动物到人那神秘而突然的一跃”。这番以理性区分人与非人的本质主义观念，如今看来，弥漫着令人尴尬的人类中心主义和逻各斯中心主义气息。</p>
+  <p>不过，更富有意味的还是他提出的第二个论点。杰斐逊构造了一个电动陆龟的例子：</p>
+  <blockquote>
+    <p>应该有可能造出一只简单的小动物，例如一只陆龟（就像Grey Walter巧妙的构想），可以爬动，不喜欢光亮和湿冷的环境，会被噪音惊到，在它的感受器能够感应的范围内，它会爬向或避开刺激源。在合适的条件下，这个玩具可以做得栩栩如生，以至于轻信的人们会叫出声：“这真是一只乌龟！”然而，我想象了一下，如果另一只陆龟走近来，它会很快发现这真是一位令龟困惑的伙伴、令龟失望的伴侣。</p>
+  </blockquote>
+  <p>杰斐逊认为，“性激素”是人与动物所特有，区别于机器人的本质特征。电动陆龟没有性激素的驱动，所以无论如何逼真，对于动物陆龟来说，只能是令其“失望的伴侣”。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-24/60d43b699c232e01c17d1eb7+L.jpg" data-id="60d43b729b2d825085c25f95" alt="《机器人总动员》里的WALL·E（Waste Allocation Loa d Lifters – Earth，地球废品分装员），经历了漫长的岁月，它开始拥有了自己的意识。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《机器人总动员》里的WALL·E（Waste Allocation Loa d Lifters – Earth，地球废品分装员），经历了漫长的岁月，它开始拥有了自己的意识。
+    </figcaption>
+  </figure>
+  <h2 id="section-4"><strong>图灵测试的性别意涵：对性激素决定论的戏谑？</strong></h2>
+  <p>杰斐逊的看法，似乎建基于一套可疑的生物本质论与生理本质论的话语体系。雄性和雌性，依照体内性激素的分泌，表现出符合各自性别的行为，感到来自异性的性吸引并与之交配，从而延续物种基因的传递。</p>
+  <p>如果说在理解动物行为时参考这一体系尚未使人明显地察觉问题所在，当这套知识与话语体系用于解释男性和女性的性别表现、性倾向与性别气质的表达，并且固化二元性别界线与异性恋规范，或许能使人更清醒地意识到其中的问题所在。实际上，在那个年代，性激素也被认为是解释两性与同性性行为的生理基础。异性恋框架以生理学与生物学的名义，设定了“正常”的生理标准，只有顺性别、异性恋被视为正常。例如，男同性恋被视为体内雄性激素含量过高所导致的病态，“治疗”的办法则是注射雌性激素。</p>
+  <p>这正是1952年的图灵最终所面对的悲剧。当图灵向警察袒露自己的性倾向时，他天真地以为同性恋马上就要去罪化，说出来也无妨。以此推测，当他在1949、1950年间与杰斐逊论争，提出性别模仿游戏时，恐怕也未曾料到自己的结局。依据现有的材料，我们很难推测图灵在一个恐同时代的经历如何影响了其对性别议题的认知、感知与思考，也无法得知性别模仿游戏的提出与其具身经验之间有何关联。然而，图灵本人在那个年代以肉身所经历的性别暴力，与他在模仿游戏中以幽默反对的性别本质主义，以及身后图灵测试在科学界与哲学界经历的去性别化重构，却仿佛彼此呼应，旋出一个悲剧而复杂的漩涡。</p>
+  <p>在同性恋尚未去罪化和去病理化的1950年，图灵的性别模仿游戏，会否是在以幽默而隐晦的方式，表达对生物决定论的戏谑和不满？然而在科学界和哲学界，能够对其反讽趣味感到会心者却寥寥无几，以至于大多选择无视或抹除其中的性别信息，甚至讥其为“机器异装癖”。</p>
+  <p>重新看待图灵测试中的性别维度，意味着关注人工智能和机器学习中的文化因素。1994年，几乎是最早从性别视角对图灵测试进行挖掘的学者朱迪斯·格诺娃（Judith Genova）写道：</p>
+  <blockquote>
+    <p>性别是一种知识。对于图灵来说，思考和存在都是话语和文化现象，而非生理性的。</p>
+  </blockquote>
+  <p><strong>参考文献：</strong></p>
+  <p>Genova, J. (1994). Turing’s sexual guessing game. Social Epistemology, 8(4), 13–26. doi: 10.1080/02691729408578758.</p>
+  <p>Gonçalves, B. (2021). What’s in a thought experiment: the role of gender in Alan Turing’s progressive imitation game.</p>
+  <p>Oppy, Graham and David Dowe, "The Turing Test", The Stanford Encyclopedia of Philosophy (Winter 2020 Edition), Edward N. Zalta (ed.), URL = &lt;https://plato.stanford.edu/archives/win2020/entries/turing-test/&gt;.</p>
+  <p>Rachel Treisman. New U.K. Currency Honors Alan Turing, Pioneering Computer Scientist And Code-Breaker. <a href="https://www.npr.org/2021/03/25/981242121/new-u-k-currency-honors-alan-turing-pioneering-computer-scientist-and-code-break">https://www.npr.org/2021/03/25/981242121/new-u-k-currency-honors-alan-turing-pioneering-computer-scientist-and-code-break</a></p>
+  <p>ROHIT PRASAD. The Turing Test is obsolete. It’s time to build a new barometer for AI. <a href="https://www.fastcompany.com/90590042/turing-test-obsolete-ai-benchmark-amazon-alexa">https://www.fastcompany.com/90590042/turing-test-obsolete-ai-benchmark-amazon-alexa</a></p>
+  <p>Turing, A. M. (1950). Computing machinery and intelligence. Mind, LIX(236), 433–60. doi: 10.1093/mind/LIX.236.433.</p>
+  <p>Wikipedia. Alan Turing. <a href="https://en.m.wikipedia.org/wiki/Alan_Turing">https://en.m.wikipedia.org/wiki/Alan_Turing</a></p>
+  <p>Wikipedia. Turing Test. <a href="https://en.m.wikipedia.org/wiki/Turing_test">https://en.m.wikipedia.org/wiki/Turing_test</a></p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-25</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-25/%E6%9D%A8%E6%BD%87%E8%B0%88%E9%87%8D%E8%B5%B0%E8%A5%BF%E5%8D%97%E8%81%94%E5%A4%A7%E4%B9%8B%E8%B7%AF-%E5%9C%A8%E6%88%91%E4%BB%AC%E6%97%B6%E4%BB%A3-%E5%90%8C%E6%A0%B7%E9%9C%80%E8%A6%81%E4%B8%80%E4%B8%AA%E5%A4%A7%E5%90%8E%E6%96%B9%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          杨潇谈重走西南联大之路：在我们时代，同样需要一个大后方丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-24</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-24/%E5%B7%A6%E4%BA%A6%E9%B2%81-%E5%81%87%E6%96%B0%E9%97%BB-%E5%90%8E%E7%9C%9F%E7%9B%B8%E6%97%B6%E4%BB%A3%E4%B8%8E-%E5%B0%B4%E5%B0%AC-%E7%9A%84%E8%A5%BF%E6%96%B9%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E7%90%86%E8%AE%BA/">
+          左亦鲁：假新闻、后真相时代与“尴尬”的西方言论自由理论
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-23</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-23/%E8%A2%ABC%E7%BD%97%E5%AB%8C%E5%BC%83%E7%9A%84%E5%8F%AF%E5%8F%A3%E5%8F%AF%E4%B9%90-%E4%BB%8E%E5%9B%9E%E6%98%A5%E7%A5%9E%E8%8D%AF%E5%88%B0%E8%82%A5%E5%AE%85%E5%BF%AB%E4%B9%90%E6%B0%B4/">
+          被C罗嫌弃的可口可乐：从回春神药到肥宅快乐水
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-22</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-22/%E4%BD%95%E5%85%86%E6%AD%A6%E7%9A%84%E6%80%9D%E6%83%B3%E4%B8%96%E7%95%8C-%E5%A4%8D%E6%9D%82%E7%94%9F%E5%91%BD%E4%B8%8E%E5%A4%9A%E9%9D%A2%E5%8E%86%E5%8F%B2%E7%9A%84%E4%BA%92%E5%8A%A8%E4%BA%92%E5%B5%8C/">
+          何兆武的思想世界：复杂生命与多面历史的互动互嵌
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-23/%E6%82%A8%E5%91%A8%E5%9B%B4%E5%88%B0%E5%A4%84%E9%83%BD%E6%98%AF%E9%9A%90%E8%97%8F%E7%9A%84Wi-Fi%E7%BD%91%E7%BB%9C-%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84%E6%94%BB%E5%87%BB%E5%B0%B1%E5%8F%AF%E4%BB%A5%E6%89%BE%E5%88%B0%E5%AE%83%E4%BB%AC-iYouPort/">
+            前一篇：您周围到处都是隐藏的Wi-Fi网络 - 一些简单的攻击就可以找到它们 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-24/%E7%BE%8E%E5%9B%BD%E7%A7%91%E6%8A%80%E5%85%AC%E5%8F%B8%E4%BB%8D%E6%83%B3%E4%B8%8E%E4%B8%AD%E5%9B%BD%E6%9B%B4%E5%A4%9A%E5%90%88%E4%BD%9C-iYouPort/">
+            後一篇：美国科技公司仍想与中国更多合作 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-23/%E6%82%A8%E5%91%A8%E5%9B%B4%E5%88%B0%E5%A4%84%E9%83%BD%E6%98%AF%E9%9A%90%E8%97%8F%E7%9A%84Wi-Fi%E7%BD%91%E7%BB%9C-%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84%E6%94%BB%E5%87%BB%E5%B0%B1%E5%8F%AF%E4%BB%A5%E6%89%BE%E5%88%B0%E5%AE%83%E4%BB%AC-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-24/%E7%BE%8E%E5%9B%BD%E7%A7%91%E6%8A%80%E5%85%AC%E5%8F%B8%E4%BB%8D%E6%83%B3%E4%B8%8E%E4%B8%AD%E5%9B%BD%E6%9B%B4%E5%A4%9A%E5%90%88%E4%BD%9C-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-24/%E5%B7%A6%E4%BA%A6%E9%B2%81-%E5%81%87%E6%96%B0%E9%97%BB-%E5%90%8E%E7%9C%9F%E7%9B%B8%E6%97%B6%E4%BB%A3%E4%B8%8E-%E5%B0%B4%E5%B0%AC-%E7%9A%84%E8%A5%BF%E6%96%B9%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E7%90%86%E8%AE%BA/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-23/%E8%A2%ABC%E7%BD%97%E5%AB%8C%E5%BC%83%E7%9A%84%E5%8F%AF%E5%8F%A3%E5%8F%AF%E4%B9%90-%E4%BB%8E%E5%9B%9E%E6%98%A5%E7%A5%9E%E8%8D%AF%E5%88%B0%E8%82%A5%E5%AE%85%E5%BF%AB%E4%B9%90%E6%B0%B4/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-23/%E6%82%A8%E5%91%A8%E5%9B%B4%E5%88%B0%E5%A4%84%E9%83%BD%E6%98%AF%E9%9A%90%E8%97%8F%E7%9A%84Wi-Fi%E7%BD%91%E7%BB%9C-%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84%E6%94%BB%E5%87%BB%E5%B0%B1%E5%8F%AF%E4%BB%A5%E6%89%BE%E5%88%B0%E5%AE%83%E4%BB%AC-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-24/%E7%BE%8E%E5%9B%BD%E7%A7%91%E6%8A%80%E5%85%AC%E5%8F%B8%E4%BB%8D%E6%83%B3%E4%B8%8E%E4%B8%AD%E5%9B%BD%E6%9B%B4%E5%A4%9A%E5%90%88%E4%BD%9C-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-24/%E5%B7%A6%E4%BA%A6%E9%B2%81-%E5%81%87%E6%96%B0%E9%97%BB-%E5%90%8E%E7%9C%9F%E7%9B%B8%E6%97%B6%E4%BB%A3%E4%B8%8E-%E5%B0%B4%E5%B0%AC-%E7%9A%84%E8%A5%BF%E6%96%B9%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E7%90%86%E8%AE%BA/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-23/%E8%A2%ABC%E7%BD%97%E5%AB%8C%E5%BC%83%E7%9A%84%E5%8F%AF%E5%8F%A3%E5%8F%AF%E4%B9%90-%E4%BB%8E%E5%9B%9E%E6%98%A5%E7%A5%9E%E8%8D%AF%E5%88%B0%E8%82%A5%E5%AE%85%E5%BF%AB%E4%B9%90%E6%B0%B4/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

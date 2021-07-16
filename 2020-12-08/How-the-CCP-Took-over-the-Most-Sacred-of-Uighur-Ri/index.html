@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>How the CCP Took over the Most Sacred of Uighur Rituals – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+How the CCP Took over the Most Sacred of Uighur Rituals
+——
+" />
+    <meta property="og:description" content="
+How the CCP Took over the Most Sacred of Uighur Rituals
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="How the CCP Took over the Most Sacred of Uighur Rituals" />
+    <meta property="twitter:title" content="How the CCP Took over the Most Sacred of Uighur Rituals" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fhow-ccp-took-over-most-sacred-of-uighur-rituals" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/how-ccp-took-over-most-sacred-of-uighur-rituals" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/how-ccp-took-over-most-sacred-of-uighur-rituals&text=How the CCP Took over the Most Sacred of Uighur Rituals&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/how-ccp-took-over-most-sacred-of-uighur-rituals&title=How the CCP Took over the Most Sacred of Uighur Rituals" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/how-ccp-took-over-most-sacred-of-uighur-rituals&title=How the CCP Took over the Most Sacred of Uighur Rituals" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=How the CCP Took over the Most Sacred of Uighur Rituals&body=
+How the CCP Took over the Most Sacred of Uighur Rituals
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/how-ccp-took-over-most-sacred-of-uighur-rituals" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/how-ccp-took-over-most-sacred-of-uighur-rituals&title=How the CCP Took over the Most Sacred of Uighur Rituals&caption=
+How the CCP Took over the Most Sacred of Uighur Rituals
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=How the CCP Took over the Most Sacred of Uighur Rituals&url=https://www.chinafile.com/reporting-opinion/viewpoint/how-ccp-took-over-most-sacred-of-uighur-rituals" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>How the CCP Took over the Most Sacred of Uighur Rituals</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-12-08
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Timothy Grose</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/how-ccp-took-over-most-sacred-of-uighur-rituals" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1607482680000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/how-ccp-took-over-most-sacred-of-uighur-rituals">How the CCP Took over the Most Sacred of Uighur Rituals</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-1b75eb54248c8d5070e5666d33a9c6f2">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-453195140.jpg" title="How the CCP Took over the Most Sacred of Uighur Rituals" class="colorbox" data-colorbox-gallery="gallery-node-52861-b60T_u2PwUc" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-453195140.jpg?itok=eKgI-aMv" width="1200" height="816" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Kevin Frayer—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A Uighur couple have their first dance at their wedding celebration in Kashgar, Xinjiang Uighur Autonomous Region, August 2, 2014.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">The rooster hadn’t even stopped his crowing when the police arrived at my Uighur host’s courtyard in rural Turpan one early spring morning in 2008. Although they spoke calmly, almost apologetically, the uniformed Uighur officers demanded that the foreign guest return on the next bus to Urumqi. Not wanting to invite more trouble for my friends, I scrambled to pack my bags and headed toward the village bus station.</p>
+      <p>Two years later, I received a wedding invitation from the same family. The eldest son and groom-to-be followed up with a phone call to personally ask that I attend. After some hesitation, I agreed to make the cross-country trip from Beijing. This time, however, I would stay two hours away from his village in hopes of preventing another visit from the cops. Stepping off the crowded van at the same dusty Turpan bus station from which I had made my hasty departure, my anxiety must have shown on my face. “<em>Änsirmä!</em> [Don’t worry!],” the groom’s friend confidently reassured me. “<em>They</em> don’t bother <em>us</em> at weddings and funerals. You’re fine being here.”</p>
+      <p>My presence spoke to the precariousness of <a href="https://supchina.com/2020/07/24/hosting-the-hostage-looking-beneath-chinas-policy-to-infiltrate-uyghur-homes/" target="_blank" rel="nofollow">Uighur hospitality</a>. I was a citizen from a far-away country who was affiliated with a university in Beijing, and so I possessed the potential to raise the profile of the celebration. But as an American researcher examining Uighur ethno-national identity, visiting my friends risked attracting state authorities. Still, my Uighur hosts had finalized their guest list on their own. In 2010, China’s government had yet to “<a href="https://www.cornellpress.cornell.edu/book/9780801478321/taming-tibet/#bookTabs=1" target="_blank" rel="nofollow">territorialize</a>,” or claim, sacred Uigher rites by making them seem as though they are and always have been part of China.</p>
+      <p>Since 2015, however, Uighurs have had little choice but to host certain guests at their intimate gatherings. The Chinese Communist Party (CCP) no longer stays in the background; rather, officials insist on being physically present. This further limits the ways Uighurs negotiate and express their identity in public. In its quest to secularize Uighur identity and customs, the CCP insists on peppering them with human and non-human symbols of the state, uprooting events from Uighur-organized spaces, and even muzzling sacred sounds ranging from the call to prayer to the names given to children.</p>
+      <p>Important lifecycle rituals—baby-namings, circumcision, funerals, and weddings—provide opportunities for devout and casually religious families alike to strengthen connections. These ceremonies recommit the community to a religious path while forging and reinforcing kinship bonds between relatives (<em>oruq-tughan</em>), neighbors (<em>qoshna</em>), and friends.</p>
+      <p>Currently, however, these rites—known generically in official Chinese sources as the “four activities” (<em>si xiang huodong</em>, 四项活动)—demand the overbearing presence of the state in a <a href="http://xjiegroup.com/index/newsInfo?pageActive=2&amp;id=2566" target="_blank" rel="nofollow">formalized process</a> referred to as the four applications, four delegations, and four receipts. According to this policy, families intending to hold naming ceremonies, circumcisions, funerals, and weddings must first file an official application. Then an official from the village Party branch will accompany religious clerics to the event, which the Party branch documents in a receipt.</p>
+      <p>Officials reward such mandatory invitations with monetary gifts. Work teams in one village <a href="https://web.archive.org/web/20200908025611/http:/xjiegroup.com/index/newsInfo?pageActive=2&amp;id=2566" target="_blank" rel="nofollow">dole out</a> 200 renminbi for each naming ceremony, 100 renminbi per circumcision, 200 renminbi per wedding (second marriages are <a href="https://web.archive.org/web/20200908145117/http:/www.xjhj.gov.cn/Government/PublicInfoShow.aspx?ID=23708" target="_blank" rel="nofollow">not eligible</a>), and 500 renminbi per funeral. If the deceased was a Party member, officials increase the condolence payment to 1,000 renminbi. Families become ineligible for monetary gifts if they are deemed to have engaged in “extremism” or have a family member labeled as “<a href="https://www.chinafile.com/reporting-opinion/viewpoint/once-their-mental-state-healthy-they-will-be-able-live-happily-society#:~:text=Title-,'Once%20Their%20Mental%20State%20Is%20Healthy%2C%20They%20Will%20Be%20Able,to%20Live%20Happily%20in%20Society'" target="_blank" rel="nofollow">targeted population</a>.” If family members exhibit a bad attitude or perform poorly at work, or a Party member does not play a role in the ceremony, they are given <a href="https://web.archive.org/web/20200908145117/http:/www.xjhj.gov.cn/Government/PublicInfoShow.aspx?ID=23708" target="_blank" rel="nofollow">reduced gifts</a>. Although the modest financial support may be welcomed by some families, these payments act as what political communications expert Jennifer Pan has <a href="https://books.google.com/books/about/Welfare_for_Autocrats.html?id=qOveDwAAQBAJ" target="_blank" rel="nofollow">termed</a> “repressive assistance,” that is, benefits that increase contact between the state and targeted groups and serve as a starting point for ideological transformation.</p>
+      <p>The new rules surrounding the “four activities” put CCP officials right at the center of key Uighur ceremonies. The Central Party Committee in the city of Balghuntai (Baluntai) <a href="https://web.archive.org/web/20200908145117/http:/www.xjhj.gov.cn/Government/PublicInfoShow.aspx?ID=23708" target="_blank" rel="nofollow">issued</a> detailed regulations of these events with the ultimate goal of “transferring the management of these rites from religious officials to Party leaders.” The village Party branch representative, or, if unavailable, the highest ranking official in attendance, supervises the entire event. That official also chooses a patriotic religious cleric, if one is needed, to preside over the ceremony. In other words, the Party’s policy around the “four activities” places authority in the hands of Party officials. Religious clerics can only officiate over or recite prayers during these ceremonies if they have been appointed by local officials. Meanwhile, appointed clerics must follow a prescribed formula for conducting each ceremony. For instance, the CCP has <a href="https://iupress.org/9780253050205/soundscapes-of-uyghur-islam/" target="_blank" rel="nofollow">forbidden</a> female religious specialists (<em>büwi</em>), who conduct rites such as washing corpses, from engaging in any religious activity that “exceeds traditional rituals.” However, Balghuntai’s regulations are clear: “corpse washing is an act meant to accumulate virtue; it is not a religious activity.”</p>
+      <p>In some cases, Party officials even assume the role of officiant. In a village located in Bay (Baicheng) county, cadres <a href="http://www.xjmsw.cn/xxzl/20170928/2017092843534.html" target="_blank" rel="nofollow">named</a> a newborn boy and an official remarked that he hoped the child would grow up to be “filial, patriotic, and useful to society.”</p>
+      <p>Meanwhile, officials have uprooted such ceremonies from their customary setting in the <a href="https://www.tandfonline.com/doi/abs/10.1080/01419870.2020.1789686" target="_blank" rel="nofollow">sacred spaces</a> of Uighur homes and transplanted them to concrete government-built containers called Villager Service Centers. A social media page promoting a newly-opened service center in Khotan (Hotan) <a href="https://www.weibo.com/1977841101/FDUmrmUp0?type=comment#_rnd1600045702350" target="_blank" rel="nofollow">advertised</a>, “From now on, residents can hold their [‘four activities’] here!!! It’s convenient, thrifty, and an upgrade!!!” In fact, an <a href="https://xinjiang.sppga.ubc.ca/cadre-handbooks/" target="_blank" rel="nofollow">instruction manual</a> for Chinese civil servants participating in a government program that <a href="https://www.chinafile.com/reporting-opinion/postcard/million-citizens-occupy-uighur-homes-xinjiang" target="_blank" rel="nofollow">deploys</a> them to live alongside Uighurs in their homes notes that families can hold a “four activities” event at the Service Center free of charge. According to the manual: “Villager Service Centers will become the bridge connecting the hearts of Party cadres with the masses.”</p>
+      <p>Held within spaces curated by the state, the events <a href="https://www.sohu.com/a/191349557_99909621" target="_blank" rel="nofollow">become opportunities</a> to promulgate CCP policies. In 2017, Khotan officials <a href="https://web.archive.org/web/20200908154832/http:/www.360doc.com/content/17/0629/15/15549792_667478686.shtml" target="_blank" rel="nofollow">convened</a> to “weaken the religious fervor” of the “four activities” in which any of them participated. The Party made clear its intention to diminish the religious aspects of events for civilian participants, as well. A February 2018 report from Aksu noted that since the opening of a Villager Service Center in Towänki Chanaq (Towanke Qiaonake), locals had been using these facilities for namings, circumcisions, weddings, and funerals, a trend, the report added, that would <a href="https://freewechat.com/a/MzA4NTI4MDQ2OA==/2653109121/2" target="_blank" rel="nofollow">lead the masses</a> “to enjoy secularism and a modern lifestyle.”</p>
+      <p>Whether aimed at Uighur Party officials, or at the larger population, these efforts seek to erase the religious underpinning of Uighur ceremonies.</p>
+      <p>A Uighur woman who grew up in Ghulja (Yining) in the 1990s considers the Party’s new restrictions to be a gradual but unmistaken attempt to stamp religion out of Uighur cultural expression.</p>
+      <p>“Many Uighurs may not realize that their right to express religious beliefs at ceremonies is being stripped from them piece by piece,” she told me. She asked not to be quoted by name given her fear of government retribution.</p>
+      <p>Commonly, during a naming ceremony (<em>at qoyush</em>), an imam whispers the call to prayer or <em>äzan</em> into the infant’s left ear and the <em>täkbir</em>, “<em>Allahu Akbar</em>” (“God is the Greatest”), into the right ear while facing in the direction of Mecca. To conclude the ceremony, all in attendance announce the infant’s name and offer a <em>du’a</em> (prayer of supplication). This collective prayer welcomes the infant into the Muslim community. However, local governments now <a href="https://web.archive.org/web/20200908154832/http:/www.360doc.com/content/17/0629/15/15549792_667478686.shtml" target="_blank" rel="nofollow">forbid</a> Party officials from inviting clerics to preside over the naming ceremonies of their children and grandchildren. Furthermore, per Khotan’s regulations, they can only use “traditional Uighur names” and must avoid “religious” ones.</p>
+      <p>For boys, circumcision (<em>sunnät toy</em>) is both a <a href="https://www.d.umn.edu/cla/faculty/troufs/anth1604/carites.html" target="_blank" rel="nofollow">rite</a> of passage into adolescence and a rite of intensification as a Muslim. This ritual is normally conducted at the boy’s home, preferably when he is between seven and 10 years old. During the procedure, a religious official <a href="https://brill.com/view/title/15037" target="_blank" rel="nofollow">recites</a> the <em>täkbir</em> three times before making the incision, when he repeats the utterance one more time. Under the 2016 Balghuntai guidelines, Party officials are no longer permitted to invite religious specialists to perform the ritual and are instead encouraged to conduct the procedure in a hospital.</p>
+      <p>Similarly, funerals require full participation of the local Muslim community. According to Islamic <a href="https://brill.com/view/title/15037" target="_blank" rel="nofollow">funerary practices</a>, the deceased should be buried within a day—and absolutely no later than three days—after death. The corpse is washed and wrapped in three layers of cloth called <em>kepän</em> for men and five layers for women, and a prayer rug, and is carried in a bier (<em>täwut</em>) to a cemetery. While ordinary Uighur citizens may still carry out this custom, Uighur Party officials must use funeral homes to make arrangements for their deceased loved ones.</p>
+      <p>Finally, the nikah, or sacred matrimony, is a sounded covenant sealed by the new couple, their families, and God. At minimum, an imam will recite relevant <em>ayat</em>, or verses, of the Quran and Hadith. Previously, this was an occasion celebrated by virtually all Uighur families. Since 2017, however, the CCP has strictly forbidden Party members or their children to hold a nikah. Although Party membership is rarely broken down by ethnicity in public forums, Chinese state-affiliated media announced in 2018 that <a href="https://www.globaltimes.cn/content/1156547.shtml" target="_blank" rel="nofollow">622,500 Party members</a> in Xinjiang are ethnic minorities.</p>
+      <p>The woman from Ghulja explained to me how the nikah restrictions strip away the fundamental religious underpinning of Uighur marriages.</p>
+      <p>“When I was a child, couples were able to hold the nikah before applying for a marriage certificate. Then, the policy changed and required all Uighur couples to receive the marriage certificate first; otherwise, the mullah was not permitted to preside over the nikah. . . The government’s ‘guidance’ [on these ceremonies] became ‘interference,’ and now it has declared these rituals illegal. It is apparent that the government—not Allah—decides the legality of marriage.”</p>
+      <p>The pressure to abandon Islamic elements of key ceremonies is especially onerous for members of the Chinese Communist Party. “Party members are the vanguards of secularization,” a Uighur county-level official wrote in a now-deleted October 2018 <a href="https://mp.weixin.qq.com/s/b7ypaFSqxqXOjs1TZKiIWA" target="_blank" rel="nofollow">post</a> on the official WeChat account of Maralbeshi county. He urged his comrades to maintain Marxist-Leninist purity, demanding, “if we aren’t Muslims and we are atheists, why must we invite clerics to engage in religious rituals at name-giving ceremonies, circumcisions, weddings, and funerals? Why do you wish to eat halal?”</p>
+      <p>But the Party expects Uighur officials and civilians alike to express their identity solely in secular ways. “Uighurs are Uighurs,” the county-level official argued. “They aren’t Muslim, and we must make this concept clear.” As is the case with <a href="https://hkupress.hku.hk/pro/1747.php" target="_blank" rel="nofollow">Uighur boarding school students</a> in eastern China, the CCP is discouraging adult Uighurs from claiming a Muslim identity. One Uighur couple who was forbidden from holding a nikah <a href="https://www.voanews.com/east-asia-pacific/voa-news-china/uighur-couple-officials-article-confirm-chinas-ban-islamic" target="_blank" rel="nofollow">explained</a> to VOA reporters that “Having that [religious vow] in weddings nowadays here [in Xinjiang] equals to being a religious extremist. . .”</p>
+      <p>These remarks suggest that in the eyes of the CCP, Uighurs can not shape their own ethno-national identities. The state, which was once largely abstract and absent from lifecycle rituals, has intruded into Uighurs’ private lives as well as their most sacred ceremonies. The CCP’s physical and symbolic presence bears down on Uighur identities and attempts to deaden the divine.<span class="cube"></span></p>
+      <p><em>Tianyu Fang provided translation assistance for this article.</em></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-12-20</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-20/Message-Control/">
+          Message Control
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-12-20</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-20/Message-Control/">
+          Message Control
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-11-23</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-23/A-Border-Town-s-Second-Gamble/">
+          A Border Town’s Second Gamble
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-11-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-19/China-s-Clampdown-on-Hong-Kong/">
+          China’s Clampdown on Hong Kong
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-12-08/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E6%99%82%E6%A9%9F%E8%8B%A5%E5%B0%8D-%E6%88%91%E7%AC%AC%E4%B8%80%E5%80%8B%E6%94%AF%E6%8C%81%E4%BD%A0-%E4%BD%86%E7%8F%BE%E5%9C%A8%E7%9A%84%E6%99%82%E6%A9%9F-%E5%97%AF/">
+            前一篇：[外交雜聞]時機若對，我第一個支持你！但現在的時機，嗯……
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-12-09/%E9%92%88%E5%AF%B9%E5%82%AC%E6%B3%AA%E7%93%A6%E6%96%AF%E8%A2%AD%E5%87%BB%E6%8A%97%E8%AE%AE%E8%80%85%E5%8F%8A%E5%85%B6%E4%BB%96%E4%BE%B5%E7%8A%AF%E4%BA%BA%E6%9D%83%E8%A1%8C%E4%B8%BA%E7%9A%84%E8%B0%83%E6%9F%A5%E6%A1%86%E6%9E%B6-%E7%BB%99%E5%85%AC%E6%B0%91%E8%B0%83%E6%9F%A5%E4%BA%BA%E5%91%98%E7%9A%84%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F-2-iYouPort/">
+            後一篇：针对催泪瓦斯袭击抗议者及其他侵犯人权行为的调查框架：给公民调查人员的思考方式（2） - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-12-08/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E6%99%82%E6%A9%9F%E8%8B%A5%E5%B0%8D-%E6%88%91%E7%AC%AC%E4%B8%80%E5%80%8B%E6%94%AF%E6%8C%81%E4%BD%A0-%E4%BD%86%E7%8F%BE%E5%9C%A8%E7%9A%84%E6%99%82%E6%A9%9F-%E5%97%AF/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-12-09/%E9%92%88%E5%AF%B9%E5%82%AC%E6%B3%AA%E7%93%A6%E6%96%AF%E8%A2%AD%E5%87%BB%E6%8A%97%E8%AE%AE%E8%80%85%E5%8F%8A%E5%85%B6%E4%BB%96%E4%BE%B5%E7%8A%AF%E4%BA%BA%E6%9D%83%E8%A1%8C%E4%B8%BA%E7%9A%84%E8%B0%83%E6%9F%A5%E6%A1%86%E6%9E%B6-%E7%BB%99%E5%85%AC%E6%B0%91%E8%B0%83%E6%9F%A5%E4%BA%BA%E5%91%98%E7%9A%84%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F-2-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-12-20/Message-Control/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-11-23/A-Border-Town-s-Second-Gamble/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-12-08/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E6%99%82%E6%A9%9F%E8%8B%A5%E5%B0%8D-%E6%88%91%E7%AC%AC%E4%B8%80%E5%80%8B%E6%94%AF%E6%8C%81%E4%BD%A0-%E4%BD%86%E7%8F%BE%E5%9C%A8%E7%9A%84%E6%99%82%E6%A9%9F-%E5%97%AF/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-12-09/%E9%92%88%E5%AF%B9%E5%82%AC%E6%B3%AA%E7%93%A6%E6%96%AF%E8%A2%AD%E5%87%BB%E6%8A%97%E8%AE%AE%E8%80%85%E5%8F%8A%E5%85%B6%E4%BB%96%E4%BE%B5%E7%8A%AF%E4%BA%BA%E6%9D%83%E8%A1%8C%E4%B8%BA%E7%9A%84%E8%B0%83%E6%9F%A5%E6%A1%86%E6%9E%B6-%E7%BB%99%E5%85%AC%E6%B0%91%E8%B0%83%E6%9F%A5%E4%BA%BA%E5%91%98%E7%9A%84%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F-2-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-12-20/Message-Control/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-11-23/A-Border-Town-s-Second-Gamble/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

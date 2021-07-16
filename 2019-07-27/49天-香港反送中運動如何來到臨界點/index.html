@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>49天，香港反送中運動如何來到臨界點？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+49天，香港反送中運動如何來到臨界點？
+——
+" />
+    <meta property="og:description" content="
+49天，香港反送中運動如何來到臨界點？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="49天，香港反送中運動如何來到臨界點？" />
+    <meta property="twitter:title" content="49天，香港反送中運動如何來到臨界點？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40az%2F49%25E5%25A4%25A9-%25E9%25A6%2599%25E6%25B8%25AF%25E5%258F%258D%25E9%2580%2581%25E4%25B8%25AD%25E9%2581%258B%25E5%258B%2595%25E5%25A6%2582%25E4%25BD%2595%25E4%25BE%2586%25E5%2588%25B0%25E8%2587%25A8%25E7%2595%258C%25E9%25BB%259E-zdpuB2ZHV88bmbfSc6eK8MLBppUC31RwxVLDZbLpt2QMhwZKT" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@az/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E-zdpuB2ZHV88bmbfSc6eK8MLBppUC31RwxVLDZbLpt2QMhwZKT" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@az/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E-zdpuB2ZHV88bmbfSc6eK8MLBppUC31RwxVLDZbLpt2QMhwZKT&text=49天，香港反送中運動如何來到臨界點？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@az/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E-zdpuB2ZHV88bmbfSc6eK8MLBppUC31RwxVLDZbLpt2QMhwZKT&title=49天，香港反送中運動如何來到臨界點？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@az/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E-zdpuB2ZHV88bmbfSc6eK8MLBppUC31RwxVLDZbLpt2QMhwZKT&title=49天，香港反送中運動如何來到臨界點？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=49天，香港反送中運動如何來到臨界點？&body=
+49天，香港反送中運動如何來到臨界點？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@az/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E-zdpuB2ZHV88bmbfSc6eK8MLBppUC31RwxVLDZbLpt2QMhwZKT" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@az/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E-zdpuB2ZHV88bmbfSc6eK8MLBppUC31RwxVLDZbLpt2QMhwZKT&title=49天，香港反送中運動如何來到臨界點？&caption=
+49天，香港反送中運動如何來到臨界點？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=49天，香港反送中運動如何來到臨界點？&url=https://matters.news/@az/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E-zdpuB2ZHV88bmbfSc6eK8MLBppUC31RwxVLDZbLpt2QMhwZKT" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>49天，香港反送中運動如何來到臨界點？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2019-07-27
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 張潔平</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@az/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E-zdpuB2ZHV88bmbfSc6eK8MLBppUC31RwxVLDZbLpt2QMhwZKT" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1564240256000-->
+<p><a href="https://matters.news/@az/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E-zdpuB2ZHV88bmbfSc6eK8MLBppUC31RwxVLDZbLpt2QMhwZKT">49天，香港反送中運動如何來到臨界點？</a>
+——</p>
+
+<div>
+  <p>寫在前面：</p>
+  <p>這篇文章可能回答不了「為什麼黑衣人打白衣人媒體不報道」「機場打人真相是什麼」「何君堯祖墳被挖為什麼媒體不譴責示威者」「警察執法有錯嗎」這些問題。我知道這些問題在大陸網絡傳播非常熱烈。此前我一直沒辦法面對和回答這些問題，但梳理完這篇，好像獲得了一點能量，可以繼續寫一篇QA，專門針對中國語境里的香港，寫寫我的回答。但這篇文，就讓我先回到香港，回到運動本身，從我自己認為特別令人印象深刻與值得記錄的點，做一次全局梳理。</p>
+  <p>運動的民意支持從何而來？<a href="https://matters.news/@az/%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E7%AD%86%E8%A8%98-%E9%80%99%E4%B8%8D%E6%98%AF%E5%8F%88%E4%B8%80%E5%A0%B4%E9%9B%A8%E5%82%98%E9%81%8B%E5%8B%95-zdpuAt4i3QGMtErPqxc8cBX9wLJ7xZ8M7zy4QUozxwGYJtzBu" target="_blank">上一篇文章</a>寫過。這篇裏，我會從六句抗爭口號的演變，和當權者的五次策略變化，梳理這場運動如何一路走來。一場去中心化的運動，口號是無名抗爭者自己提出來的，它的演變正是集體抗爭狀態的體現；而當權者的策略變化，則能看到鎮壓劇本的逐漸演變。這場運動，每個經歷者都可以有自己的記憶與沉澱方式，希望更多人一起寫寫自己的這個夏天。</p>
+  <h2 id="section">正文：</h2>
+  <p>「這是意志的對決。」7月27日前幾天，兩個香港人不約而同對我說了同樣的話。</p>
+  <p>6月到7月，他們幾乎每週都出來遊行。白天，與動輒十萬百萬人一起，在烈日下走幾公里路，到了晚上，黑衣口罩，潛入夜色，佔馬路，圍政府，站在素不相識的陌生黑衣人旁，與全副武裝的警察對峙。</p>
+  <p>這兩個朋友，以往並不是遊行常客，行動理念是香港人常說的「和理非」（和平理性非暴力）。這一次，他們吃過幾次催淚煙，但從沒有與警方衝撞過，離前線很遠，也沒有經歷元朗黑夜，沒有遭遇黑社會的暴力。他們一般在地鐵停運的12點就會離開現場回家，晚上盡量留久一點，只是擔心最前線那些戴著頭盔、口罩、保鮮膜，拿著水瓶和雨傘就站在第一排的年輕人。</p>
+  <p>他們是這場運動裏很普遍的面孔：無名，中產，生活安穩，凡事求個公道，愛惜香港。</p>
+  <p>和其他人一樣，他們沒有想到，自己這個夏天，沒時間出去度假，魂魄仿佛被困在西環到灣仔的這三公里路上，在政府總部、警察總部、立法會大樓、中聯辦之間遊走。就算度假，也是在風景如畫的地方，一路刷著臉書、連登，刷現場直播，焦慮不已。他們也沒想到，在這個夏天，會學習這麼多武器、急救、法律、隱私、抗爭手語這些和平年代不曾想過的奇特知識——橡膠子彈、布袋彈、海綿彈的區別和傷害是什麼？telegram怎樣設置不會被追溯？膠紙、束帶、保鮮膜的手勢分別是什麼？陷入抑鬱有自殺傾向的抗爭者失蹤了，怎麼救？</p>
+  <p>從6月9日到7月27日，整整49天，香港從百萬人上街和平遊行、反對逃犯條例修訂，發展到運動如水一般全城蔓延。由於修例事件，及其後政府回應抗議的方式，觸發了長久以來香港人對自由、法治核心價值受損的擔憂，運動獲主流民意支持，民氣源源不絕。同時運動沒有中心領袖，呈現「無大台」狀態，每個參與者都以自組織方式參加，參與感與歸屬感極強，人人自己尋找角色，在自己的位置上「盡做」。這兩點關鍵因素，令運動持續爆發出前所未有的豐富層次與能量。</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/a40ebee4-eb71-4877-be02-4e44d82014b7/o-r8ia-nc.png" data-asset-id="a40ebee4-eb71-4877-be02-4e44d82014b7" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p>於是，在整個運動中，你看到行動的光譜不斷拓寬：從最溫和的把各區域墻壁公共化為表達意見場所的<a href="https://zh.wikipedia.org/wiki/%E9%80%A3%E5%84%82%E7%89%86_(%E9%A6%99%E6%B8%AF)" target="_blank">「連儂墻」</a>，到和平非暴力模式——經警方允許的遊行集會、未申請但打個擦邊球的唱聖歌式集會、購物團式集會，再到公民抗命模式——佔領、堵路、包圍，一直延伸至「勇武」模式——破壞標誌性公物（如立法會大門、有主權象征的國徽）、與警察衝突時不排斥使用武力。</p>
+  <p>香港主流社會一向和平理性，以往對示威中使用武力（主要指警察丟水瓶、破壞公物一類的行為）的接受度極低，過去十數年的大型遊行示威中，只要有人這樣做，往往會被身邊的同行者譴責。但這些年，隨著港人對政府管治體系的信任和接受度逐漸降低，主流社會對抗爭不同光譜的接受度越來越高。這一次運動中，許多人就算從不參與前線，也對激進抗爭者心懷同情。</p>
+  <p>在運動中，你還可以看到運動的空間與時間一起蔓延。除了港人熟悉的港島區維多利亞公園到中環這條常規遊行路線，以及5年前雨傘運動曾佔領過的金鐘夏慤道，這次運動的無中心特性，還令集會、遊行乃至衝突的畫面，蔓延到港島區的灣仔、上環、西環，九龍的尖沙咀、旺角，新界的上水、沙田、元朗、大嶼山，從街道空間蔓延到大型商場、地鐵站、機場。表達意見的連儂墻，更是在十八區遍地開花，把市民常常經過的交通、消費與居住社區空間，隨時轉化為公共空間。</p>
+  <p>我們看到一場形態上非常離散、內核極為團結的運動，而它所面對的，是形態上極為堅固、內部結構如骨牌般鬆動的執政方。隨著運動延續，兩邊的博弈與張力，不斷升級。到了第49天的現在，不論身在其中、還是置身事外的人，都能從來自中國的大量威脅性謠言（解放軍已進城）、輿論戰的拉開帷幕和中間派的急切表態感覺到，運動的終局近了。</p>
+  <p>沒有人知道終點是什麼樣子。</p>
+  <p>但我們知道，正如抗爭不是劇本寫就，終點也不是宿命。回顧這場運動，梳理雙方如何一步一步令局勢翻天覆地，又會沉澱下什麼給未來的香港，這些，才是終局之後，香港會如何走下去的關鍵。</p>
+  <p>本文提供一個角度，從六句抗爭口號的演變，和當權者的五次策略變化，梳理過去49天，香港因何走到此處。</p>
+  <h2 id="section-1">一、「不撤不散」</h2>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/cde5d4bd-e2ec-47cd-9a4f-4f99572a3992/d9-fy-hd-f-u4-ae-q6-p.jpg" data-asset-id="cde5d4bd-e2ec-47cd-9a4f-4f99572a3992" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p>你不撤，我不散。這是貫穿運動全場最主流的口號。它集中出現在6月16日，第二次過百萬人的遊行集會中。它所針對的，是特首林鄭月娥6月15日下午三點在記者會上，宣佈修訂逃犯條例「暫緩」。</p>
+  <p>6月9日，因為反對逃犯條例修訂，香港爆發百萬人遊行。這次遊行的規模，打破主權移交以來的歷史記錄，遠超2003年的五十萬人上街反對23條立法，規模直逼1989年百萬港人上街，支持北京天安門學生運動。而在當晚，正在經過了整個白天的群情激蕩，人群還大量聚集在遊行終點附近的金鐘、中環一帶，並未散去之時，政府回應了一則非常簡短的聲明，大意是：很多人遊行，我們看到了，恩，「條例草案於本月12日在立法會恢復二讀辯論」。緊接著，防暴警察出動，以警棍與胡椒噴霧為主近距離對在立法會附近示威區和平聚集、還未散去的年輕人武力清場。</p>
+  <p>面對沸騰民意，政府的輕簡處理和強硬壓制，令抗爭者感到憤怒。民意在三天後又一次大規模湧出，6月12日，金鐘重現了5年前雨傘運動時的畫面，心臟地帶的夏慤道被佔領。但這一次，政府顯然不打算讓持續佔領發生，當天下午3點，警方就出動了空前的武力密集壓制：2小時之內，發出了150發催淚彈、20發布袋彈、數發橡膠子彈，有示威者眼部中彈，重傷接近失明；這比起5年前雨傘運動初期的壓制，密度與強度高出了好幾倍。警方又迅速將612的和平佔領口頭定性為「暴動」（其後又改口），並在醫院搜捕示威者。強硬手段，令事態一發不可收拾：憤怒民眾的訴求不再只局限於條例撤回本身，還要求調查、追究警隊濫權。這也令運動再也難以結束。</p>
+  <p>6月15日，林鄭月娥為安撫民情，做出讓步，「暫緩」條例。但此時已經不是6月9日。經過了612的激烈武力，這個時候，這個用詞，已經無法令示威者止步。</p>
+  <p>「不撤不散」，人們在街頭喊出這句口號，延續至今。</p>
+  <h2 id="section-2">二、「不受傷、不流血、不被捕 / 不割席、不篤灰、不指責」</h2>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/7cc104c3-fe82-44e9-a1a8-8a337399f0de/skypost17072019a019.jpeg" data-asset-id="7cc104c3-fe82-44e9-a1a8-8a337399f0de" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p>這是運動前半場最重要的一句口號，大規模出現，正是在6月12日佔領及武力清場之後。</p>
+  <p>這一天，人們意識到，不會遊行完就算了，這是一場會持續下去的運動了。但它的形式是什麼？繼續遊行嗎？佔領嗎？公民抗命嗎？衝擊嗎？誰說了算呢？當時還沒有人知道。但6月12日前後，無數人自發開始在網絡、現場討論，運動「無大台」的狀態已經初步形成。沒有領袖，怎麼團結？沒有中心，怎樣凝聚？所有人幾乎是自發地意識到了這個問題，當沒有領袖告訴你該怎麼做時，每個人都開始為運動的種種難題自己找解決方法。這六個詞的並列使用，就在人們的磨合與討論中，以逐漸迭代的方式生成了。</p>
+  <p>前三個詞，「不受傷、不流血、不被捕」是對前線示威者說。這三個不包含了對「勇武抗爭」路線的理解與寬容，意思是年輕人在前線，運動無人指揮，必須自己照顧好自己，盡量不要被警棍打中，不要被子彈打中，不要死守不退，不要戀戰，不要被捕，來日方長。後三個詞，則是對不在前線的抗爭者說，他們可能在現場遠距離地看，可能在家中看直播，「不割席、不篤灰、不指責」——不要跟前線抗爭者切割，不要懷疑自己人是「內鬼」，不要只顧指責前線太衝。</p>
+  <p>這六個詞的出現，一方面源自本次運動沒有中心指揮，各個參與者需要在各個位置照顧好自己，團結彼此的內在訴求；一方面，也來自雨傘運動之後五年，香港公民社會大撕裂，本土派與民主派相互攻擊，非暴力路線與武力抗爭路線相互攻擊的慘痛教訓。</p>
+  <p>這句口號的出現和大量使用，奠定了整個運動的基本氣氛：不強占，不硬衝，被驅散了就退，回頭再來，前線不要指責後方毫不付出坐享其成，後方也不要指責前線衝擊太過授人口實，大家在各自的位置各自配合，前線體現運動的意志，後方爭取社會大眾的支持。正是這種很早出現的運動自覺，讓整場運動幾乎奇跡般地渡過許多陷阱與危機，依然團結，創意百出。</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/f6b35d20-b28d-476c-9822-9e5a72f05583/sp-yn-j-fp.png" data-asset-id="f6b35d20-b28d-476c-9822-9e5a72f05583" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <h2 id="section-3">三、兄弟爬山，各自努力</h2>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/63bbf6e8-3713-4fa6-aeac-8f83ebfd31f2/e4-b8-83-e4-b8-80-e8-a1-9-d-e6-93-8-a-e7-ab-8-b-e6-b3-95-e6-9-c-83-e9-80-83-e7-8-a-af-e6-a2-9-d-e4-be-8-b-e5-85-84-e5-bc-9-f-e7-88-ac-e5-b1-b1-e5-90-84-e8-87-aa-e5-8-a-aa-e5-8-a-9-b-20190703040822-2604.png" data-asset-id="63bbf6e8-3713-4fa6-aeac-8f83ebfd31f2" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p>這不是抗爭現場的口號，卻是網絡中最流行的一句，也在612之後開始大量出現。</p>
+  <p>「六不」是對運動現場說，這一句就是更廣泛地對所有抗爭者講。在沒有指揮的時候，凝聚抗爭者的只有「山」——也就是共同的目標。這目標包括了運動的核心訴求，也包括訴求背後的核心價值。「兄弟爬山，各自努力」呼籲的是，只要有這個最大公約數，人們各自在自己的位置努力就可以。不論是在運動中，還是日常生活里，你在平時的職業崗位、社會角色，盡小小的力氣，踐行運動相信的價值觀——守護自由，就夠了。</p>
+  <p>如果說「六不」口號在現場最大程度地團結了抗爭者，那「兄弟爬山」，就意味著人們把運動帶回日常生活，讓運動的界限徹底模糊。去中心化，因而處處都是中心，沒有廣場，結果處處都是廣場。能做到這樣，恰恰是無數普通人在自己的專業崗位——醫療、消防、社工、學術、法律、金融、市場營銷、國際事務、語言翻譯、視覺設計、新聞、音樂、工程施工等努力「盡做」的結果，我們才會看到，在無人領導的情況下，短短49天，湧現出諸如超大規模遊行、多次游擊式佔領、數百萬眾籌廣告、G20 Campaign、大大小小的創作項目、自發救援隊、物資組、心理救援小組等無數有條不紊，由無名者發起的，創意、效率和執行力均世界一流的項目。</p>
+  <h2 id="be-water">四、Be Water</h2>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/292b89cc-74e6-4b92-a03c-811aaef06732/bruce-lee-be-water-my-friend.jpg" data-asset-id="292b89cc-74e6-4b92-a03c-811aaef06732" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p>洛杉磯時報最早將香港反送中運動比喻為是一個會自我學習的超級AI，如蟻群或蜂群一樣，靠所有人開放的自我學習彼此協作。香港人自己，則選擇了李小龍的講法：be water。</p>
+  <p>作為武術明星的李小龍，是念哲學出身，在1971年接受美國脫口秀節目訪問時，他曾講過這樣一段東方魅力十足的話："Empty your mind, be formless, shapeless, like water. Put water into a cup. Becomes the cup. Put water into a teapot. Becomes the teapot. Water can flow or creep or drip or crash. Be water my friend.”</p>
+  <p>6月21日，運動關鍵性的一幕轉折，是抗爭者包圍了警察總部。這一天開始，be water 這句原本在網絡論壇偶爾被人提及的話，被拿到現場自我提醒，事後，也被更多香港人作為口號、hashtag，形容運動。</p>
+  <p>這一天，為表達對警察使用過度武力、涉嫌濫權的不滿，數萬示威者在當天包圍了位於灣仔的警察總部。這是香港有史以來，第一次有人包圍警察總部。警方高度戒備，示威者神經也高度緊張，民主派議員、社工、牧師都竭力居中調停，所有人都害怕出現流血衝突——畢竟，一旦衝擊警察總部，換來的就不只是催淚彈或者橡膠子彈這麼簡單了。而奇跡一般地，儘管現場憤怒情緒高漲，但所有戴口罩的年輕示威者口耳相傳：「可以留，可以走，但一定不可以衝」，「Be Water」。人群擁擠，為避免信息偏差，他們發明了各種手勢來傳遞信息：前方需要口罩、眼罩、需要水，後方坐下、休息，往後退，不要衝……。到了深夜，衝突最容易激化的時刻，示威者在現場提議，以投票方式決定去留。雖然投票最終未能成行，但人群依舊遵循 Be Water 的原則，如水散去。7月1日佔領立法會，這一畫面再現：蒙面示威者花了五六個小時砸開立法會大門，卻可以在12點警方清場之前，水一樣和平散去。不願出來的四名「死士」還被場外支持者冒險衝入「搶走」，這一切是怎麼發生的？不僅在現場懸心在喉的人驚歎不已，連看畫面的世界各地的觀察者，也為這種靈活性感到驚訝。</p>
+  <p>按照李小龍的說法，什麼情況下，你可以不在乎杯子或壺的形狀，只在乎水？是你要對水有充分的自信，你知道水不會離你而去。回到運動裏，be water可以成為口號，前提是運動者相信，民心在我這裡。</p>
+  <p>事實上，反送中議程一直以來都有6成以上的民意支持度，這是運動可以be water的前提，也才反襯得政府一方，回應起來顯得笨重、緩慢，格外無力。</p>
+  <h2 id="section-4">五、齊上齊落 / 一個都不能少</h2>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/19539119-78d1-477c-bc99-235f12ecb600/2019-07-07-202207.jpg" data-asset-id="19539119-78d1-477c-bc99-235f12ecb600" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p>6月16日，兩百萬人的遊行多了一個口號：「一個都不能少」。示威者也首次從白衣轉換為黑衣。</p>
+  <p>因為前一天夜晚，有示威者在金鐘自殺身亡。</p>
+  <p>35歲的梁凌杰，身穿象征民主訴求的黃衣外套，在金鐘一個約10層樓高的停車場平台棚架邊緣，站了整整五個小時。他身邊掛著「反送中No Extradition To China」的橫額，上面寫有「全面撤回送中，我們不是暴動，釋放學生傷者，林鄭下台，Help Hong Kong」的訴求標語。在現場的警方、消防、立法會議員均勸告不果時，他跳下平台，不治身亡。</p>
+  <p>這是第一個在這場運動中，清晰表達政治訴求後自殺的人。其後，隨著運動情勢緊張，前後共有至少4位運動的參與者，在社交網絡公佈與運動訴求相關的遺書後自殺，另有1名參與者，在抗爭歸家後與家人發生意見爭執，懷疑醉酒從高樓墜落身亡，難以判斷是否自殺。</p>
+  <p>5名示威者離世，給運動蒙上厚重的陰影。它一方面激起悲觀，另一方面激起憤怒。</p>
+  <p>社交網絡的擴散效應，令自殺事件在傳播與討論時，無法限定在傳統新聞倫理守則的框架內，6月下旬，悲觀絕望情緒在網絡蔓延，各大機構的心理救援熱線都出現一天20-30個求助案例的爆發期，而各區都發現提前寫下在網絡上寫遺書、宣告要自殺的人，專業社工與網友組成大大小小的救援隊，疲於奔命，去到各區可能的地點找人、勸說、救援。「一個都不能少」，每個人都在線下、線上對同行者喊話。</p>
+  <p>另一方面，人命的代價也給前線抗爭者，注入更為決絕的憤怒。不只一位前線抗爭者在未公開的採訪中，表露了死志：已經有戰友犧牲，我不會再退讓，子彈也好，暴動罪也好，我不會再退讓。運動的前線衝突，因此也越來越激烈。警方驅退示威者的難度越來越高，胡椒噴霧不退，警棍不退，催淚彈不退，橡膠子彈出動也會僵持很久。整個運動的張力在這一階段推倒了極致。</p>
+  <p>正是在這種情況下，後方示威者喊出了「齊上齊落」的口號。如71立法會發生的那一幕，在少數「死士」不肯走的時候，多數人會把他們搶行架走。「齊上齊落，一個也不能少」，七月之後，這種前有沉重死志，後有戰友情誼的團結意志，成了運動的主旋律。</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/4ed3c3e0-12ac-4a51-adc8-43757ca53318/ckeditor-5d3c44e8104af.png" data-asset-id="4ed3c3e0-12ac-4a51-adc8-43757ca53318" referrerpolicy="no-referrer" />    <figcaption>
+<span>6月15日晚，第一個身亡的抗爭者梁凌杰</span>
+    </figcaption>
+  </figure>
+  <h2 id="section-5">六、光復香港，時代革命</h2>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/8fdfbadf-3d3f-4fc9-8b56-14854dbcdfe4/67220906-1388772184595056-4439616468769832960-n.jpg" data-asset-id="8fdfbadf-3d3f-4fc9-8b56-14854dbcdfe4" referrerpolicy="no-referrer" />    <figcaption>
+<span>7月21日夜，上環街頭。Credit：蕭雲</span>
+    </figcaption>
+  </figure>
+  <p>時間來到7月末，運動的情勢也前所未有地緊張。</p>
+  <p>7月中旬，我在新界大埔的連儂隧道，第一次看到「光復香港，時代革命」這八個字，心裏咯噔一聲。到了7月21日晚上的上環，就是示威者包圍中聯辦、投擲雞蛋和向中國國徽潑墨的那一晚，也是警察打出55顆催淚彈，24枚海綿彈，5枚橡膠子彈的那一晚，在現場，黑衣年輕人大聲喊的口號，正是「光復香港，時代革命」。</p>
+  <p>這是5年前，梁天琦在旺角騷亂事件後，喊出的口號。這也是24歲的他參選議員的競選口號之一。當時，倡導「武力抗暴」、「光復香港」的他，同時挑動了香港主流社會最敏感、當局也最戒備反感的兩條神經，一是提倡武力，二是港獨傾向。這兩點，同樣也被香港民主派主體所排斥，傳統民主派呼籲的抗爭，一向是非暴力，且不隔絕於中國，甚至要參與建設民主中國。梁天琦沒有勝選，但獲得了6萬6千張選票，多半來自年輕人。</p>
+  <p>他和他所代表的香港激進本土力量，年輕支持者眾多，但在其後幾年，在政治空間上遭遇了嚴厲打壓，議員被DQ、社團資格被取消，2018年6月，他本人被香港最高法院，判處在旺角騷亂期間「<a href="https://zh.wikipedia.org/wiki/%E8%A5%B2%E8%AD%A6%E7%BD%AA" target="_blank">襲警罪</a>」與「參與暴動罪」罪成，獲刑6年，即時收押，這一年，他27歲。</p>
+  <p>7月中下旬，隨著反送中運動深入到各個社區，行動光譜越來越闊，主流社會對「武力」的寬容度也提升。越來越多的年輕人，開始想起梁天琦，這個轉瞬即逝的年輕政治領袖。「光復香港，時代革命」作為標語，開始在沙田、大埔的連儂墻出現，有時旁邊還會寫「感謝梁天琦」，直至在運動最激烈的現場，被大喊出來。</p>
+  <p>這八個字的複雜含義，已經很難用梁天琦當年使用它的語境來解釋。喊出這口號，更像是在運動無果幾十天之後，仍在最前線堅持的抗爭者，召喚一種強烈的行動升級與革命願望：這一代人，要讓香港，成為香港人的香港。有一個更通俗的粵語說法「攬炒」，也在同一個時期流行，或可以作為「光復香港，時代革命」的註腳來理解。「攬炒」的意思是玉石俱焚，連儂墻上一句英文標語解釋的簡單明了：“If we burn, you burn with us.”</p>
+  <p>運動進行到後半場，當抗爭者這些口號逐漸壓過、甚至替代了前面的be water、不流血、不割席，人人都能感到，運動的臨界點近了。</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/beb4880b-2462-4fa3-9fbf-d219a6d15e1e/67740906-10157416481057463-496949375667273728-n.jpg" data-asset-id="beb4880b-2462-4fa3-9fbf-d219a6d15e1e" referrerpolicy="no-referrer" />    <figcaption>
+<span>立法會門口的連儂墻，credit：Clark Ho</span>
+    </figcaption>
+  </figure>
+  <p>臨界點的另一個信號，來自中國官方。</p>
+  <h2 id="section-6">官方策略演變的五個階段</h2>
+  <p>7月中下旬開始，中國宣傳機器啟動，從此前通過審查機制把香港消息隔絕得毫不透風，到這時釋放經過歪曲、造假的片段回大陸，煽動民意仇視香港，迅速在大陸網絡營造了「解放軍怎麼還不出手管一管」的民意氛圍。新華社、外交部、國防部對香港局勢均有不同程度的強硬定性和威脅。同時在香港，有不明勢力開始催化暴力事件。中聯辦國徽被潑墨挑動14億中國人情緒，元朗黑社會無差別襲擊令社會人心惶惶，均發生在7月21日深夜。運動前方，彷彿開啟了一條黑暗通道。</p>
+  <p>官方的這一動作，同樣不是沒有脈絡。從6月到7月，無領袖的抗爭者發展出了一流的自我成長、演化機制，與之相嵌套的，則是當權一方的劇本演變。這裡的當權一方，當然不只是香港政府，從6月事變一開始，港府就不可能獨立決策，北京一方面在追究從港府、建制派到整個港澳系統情報失責、毫無預警的問題，一方面必定在林鄭月娥背後直接督戰，制訂策略。</p>
+  <p>從結果來看，策略演變大致可以分為五個階段：</p>
+  <p><strong>第一階段：</strong>6月9日-6月12日，林鄭政府試圖把抗爭在萌芽中就強壓下去，將法例強行推進，但徹底錯估了民意，和運動不同以往的組織方式。結果策略失敗，引發更大、更堅決的民意反彈。</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/a1a80438-cbc4-4fd5-9a29-8652c7a41b68/gov-43-ha-hx-y-1200x0.png" data-asset-id="a1a80438-cbc4-4fd5-9a29-8652c7a41b68" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p><strong>第二階段：</strong>6月15日，林鄭月娥第一次讓步，宣佈「暫緩」修例。但這時已錯過了第一次讓步的關鍵時機，不但未能抒緩民意，反而帶來更大爆發。再次失敗。</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/8570f02c-fc24-4e1b-90e8-c68613578be8/masa-2-5255.jpg" data-asset-id="8570f02c-fc24-4e1b-90e8-c68613578be8" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p><strong>第三階段：</strong>6月16日-7月9日，冷處理。有報道稱北京正在多方收集情報，制定對港新策略，而在運動層面，則通過不回應、不理睬、避免衝突，甚至放任運動失控的方式，等待民意反轉，積蓄鎮壓的正當性。621包圍警總、71衝擊立法會，都發生在這個階段。但除了留下砸壞玻璃門的影像之外，因為前文所說的「如水」特性，並沒有爆發任何激烈衝突，也沒有引起民意明顯反轉。</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/9f4c1f09-a9c4-4008-9d79-af56c3fbb415/zq7-brd-z1-mg-r2pvn-ov-c-iwx2e-oz-vu-ynp-vqql-x8k-e-c1-i.Zq7BRDZ1MgR2pvnOvCIwx2eOzVu_YnpVQQLX8kEC1_I" data-asset-id="9f4c1f09-a9c4-4008-9d79-af56c3fbb415" referrerpolicy="no-referrer" />    <figcaption>
+<span>《香港01》引述消息指，北京zhegn檢討整個對港工作系統，包括青年工作、愛國愛港陣營未夠團結、以及香港傳媒等。</span>
+    </figcaption>
+  </figure>
+  <p><strong>第四階段：</strong>7月9日，在71衝擊立法會事件之後，彷彿為了阻止更大傷害，林鄭月娥做出第二次讓步，宣佈修例「壽終正寢」。然而到了這個時間點，積累了警民對峙的怨氣，積累了自殺潮的悲怒，對「撤回條例」做修辭上的處理，已經無法滿足抗爭者。運動無法收場。</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/5333cb0d-b96a-409d-979c-e62ca2d5e268/lam-thumb-20190709-s-v2-1024.jpg" data-asset-id="5333cb0d-b96a-409d-979c-e62ca2d5e268" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p><strong>第五階段：</strong>7月中下旬，如前文所說，中國宣傳機器啟動，煽動民意仇視香港，同時在香港，有不明勢力開始催化暴力事件。7月21日，元朗黑夜彷彿開啟了運動的黑暗通道，7月27日，大批示威者到元朗表達對警黑合流的憤慨，遇到警方強力清場。</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/bb0fb60d-73b8-4a83-8c68-c6e6bbd278ab/0-y0z6-umq-d0whxww-rdizq-et-iq-e7-rs-l1-kw-gr-hw-c-rqx8-ak.0Y0z6UmqD0whxwwRdizqEtIQE7RSL1KWGrHwCRqx8Ak" data-asset-id="bb0fb60d-73b8-4a83-8c68-c6e6bbd278ab" referrerpolicy="no-referrer" />    <figcaption>
+<span>何君堯祖墳被毀事件，在真相完全不明朗的情況下，上了微博熱搜，且人民日報下屬自媒體點名</span>
+    </figcaption>
+  </figure>
+  <p>熟悉極權管治機器的人，對上述階段的發展，充滿擔憂。這一劇本往後推展，似乎很容易朝「運動失控、香港管治失效、中共以某方式接手」的趨勢前行，至少，鷹派力量越來越容易兜售這一套解決方案。這也是目前，運動處於臨界點時，無數社會中間派別、各個領域中堅力量出來大聲喊話，試圖促成和解的原因。</p>
+  <p>不過，劇本是劇本，歷史是歷史。歷史所有超越性的可能，都會回到人身上。我們每個人都是歷史的一份子，從來都還有萬千種辦法，不是聽從它，還是創造它。</p>
+  <p>（完）</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2019-08-06</time>
+        <a href="https://nodebe4.github.io/oped2/2019-08-06/86%E6%B8%AF%E6%BE%B3%E8%BE%A6%E9%A6%99%E6%B8%AF%E5%95%8F%E9%A1%8C%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%A8%98%E8%80%85%E6%9C%83-%E8%A6%81%E9%BB%9E%E9%80%9F%E8%A8%98/">
+          86港澳辦香港問題第二次記者會，要點速記
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-07-29</time>
+        <a href="https://nodebe4.github.io/oped2/2019-07-29/729%E5%9C%8B%E5%8B%99%E9%99%A2%E6%B8%AF%E6%BE%B3%E8%BE%A6%E8%A8%98%E8%80%85%E6%9C%83-%E8%A6%81%E9%BB%9E%E9%80%9F%E8%A8%98/">
+          729國務院港澳辦記者會，要點速記
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-07-24</time>
+        <a href="https://nodebe4.github.io/oped2/2019-07-24/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC/">
+          元朗黑夜，發生了什麼？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-07-21</time>
+        <a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">
+          一齣罪惡劇本背後，是回不了頭的墮落
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2019-07-26/%E6%8C%91%E6%88%98-%E9%98%BF%E6%B3%A2%E7%BD%97-%E8%8B%8F%E8%81%94%E7%9A%84%E6%9C%88%E7%90%83%E5%BE%81%E7%A8%8B/">
+            前一篇：挑战「阿波罗」：苏联的月球征程
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2019-07-28/%E5%A4%AA%E7%A9%BA%E6%9C%AA%E6%9D%A5-50-%E5%B9%B4/">
+            後一篇：太空未来 50 年
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2019-07-26/%E6%8C%91%E6%88%98-%E9%98%BF%E6%B3%A2%E7%BD%97-%E8%8B%8F%E8%81%94%E7%9A%84%E6%9C%88%E7%90%83%E5%BE%81%E7%A8%8B/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2019-07-28/%E5%A4%AA%E7%A9%BA%E6%9C%AA%E6%9D%A5-50-%E5%B9%B4/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2019-07-29/729%E5%9C%8B%E5%8B%99%E9%99%A2%E6%B8%AF%E6%BE%B3%E8%BE%A6%E8%A8%98%E8%80%85%E6%9C%83-%E8%A6%81%E9%BB%9E%E9%80%9F%E8%A8%98/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2019-07-24/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2019-07-26/%E6%8C%91%E6%88%98-%E9%98%BF%E6%B3%A2%E7%BD%97-%E8%8B%8F%E8%81%94%E7%9A%84%E6%9C%88%E7%90%83%E5%BE%81%E7%A8%8B/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2019-07-28/%E5%A4%AA%E7%A9%BA%E6%9C%AA%E6%9D%A5-50-%E5%B9%B4/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2019-07-29/729%E5%9C%8B%E5%8B%99%E9%99%A2%E6%B8%AF%E6%BE%B3%E8%BE%A6%E8%A8%98%E8%80%85%E6%9C%83-%E8%A6%81%E9%BB%9E%E9%80%9F%E8%A8%98/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2019-07-24/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

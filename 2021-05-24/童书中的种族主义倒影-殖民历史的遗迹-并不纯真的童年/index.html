@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年
+——
+" />
+    <meta property="og:description" content="
+童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年" />
+    <meta property="twitter:title" content="童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60ab53bdac95bf78e1cba31c" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60ab53bdac95bf78e1cba31c" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60ab53bdac95bf78e1cba31c&text=童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60ab53bdac95bf78e1cba31c&title=童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60ab53bdac95bf78e1cba31c&title=童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年&body=
+童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60ab53bdac95bf78e1cba31c" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60ab53bdac95bf78e1cba31c&title=童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年&caption=
+童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年&url=https://www.allnow.com/post/60ab53bdac95bf78e1cba31c" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-24
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 元十雨</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60ab53bdac95bf78e1cba31c" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60ab53bdac95bf78e1cba31c">童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年</a>
+——</p>
+
+<div>
+  <p>去年年底以来，英语世界中发生多起与儿童文学或儿童绘本相关的种族问题争议。</p>
+  <p> </p>
+  <p>先是2020年末，《查理和巧克力工厂》原著作者罗尔德·达尔的家属，就其作品中的反犹主义向公众致歉；此外，《查理和巧克力工厂》更被批评带有种植园时期黑奴贩卖的殖民色彩。今年3月2日，时值苏斯博士诞辰，苏斯博士企业（Dr. Seuss Enterprise）又在一则简短的官网声明中宣布停止继续出版他的六册作品，以“支持所有社群和家庭”，间接回应其受到的种族主义批评。</p>
+  <p> </p>
+  <p>这两位儿童文学作者，几可谓是全世界最畅销的儿童文学作家，都没能逃脱身后人们对其遗留在世的种族主义印记的重新检视。</p>
+  <p> </p>
+  <p>苏斯博士一生出版童书五十余册，大多著作至今仍在发行。此次停止出版的六册图书，包括《想想我在蒙伯瑞大街看到了它》（<em>And to Think That I Saw It on Mulberry Street</em>）、《如果我来经营动物园》（<em>If I Ran the Zoo</em>）及《猫的测试者》（<em>The Cat’s Quizzer</em>）等作品。苏斯的继女对《纽约邮报》表示，苏斯“骨子里不是一个种族主义者“，但她仍然认为停止继续出版这六册图书是一个明智的决定。对于想看到这些书的人来说，仍可以在图书馆、二手书店和曾经大量发行的旧版书中看到。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab5468afa7517017e4d670" src="https://img.allhistory.com/now/2021-05-24/60ab54669c232e04ae3f1db0+L.png" alt="苏斯博士（Dr Seuss），原名西奥多·苏斯·盖泽尔（Theodor Seuss Geisel），1904-1991年。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+苏斯博士（Dr Seuss），原名西奥多·苏斯·盖泽尔（Theodor Seuss Geisel），1904-1991年。
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>自上世纪五十年代以来，苏斯博士创作的约五十部儿童图画书已畅销大半个世纪，全球销量高达7亿册之多。围绕其作品中的种族呈现，始终不乏争议，被批评带有种族主义色彩的远不止这次停止出版的六册。</p>
+  <p> </p>
+  <p>被媒体频繁提及的两篇研究，详实地分析了苏斯博士作品与成长环境中的种族因素。儿童文学学者、堪萨斯州立大学杰出英文系教授菲利普·奈尔（Philip Nel）发表于2014年的一篇论文《戴帽子的猫是黑人吗？》（<em>Was the Cat in the Hat Black？</em>），以苏斯名作《帽子里的猫》为切入点分析了其作品中的种族主义。在论文中，奈尔追溯了苏斯博士作品中人物形象的种族主义来源，梳理出苏斯博士生平年代中的美国种族主义与反种族主义的风气变化，也呈现出苏斯博士本人在此期间对待种族问题既试图反思又自相矛盾的复杂心态。意识儿童图书馆（The Conscious Kid Library）的凯蒂·石冢（Katie Ishizuka）与加州大学圣迭戈分校的拉蒙·史蒂芬斯（Ramon Stephens）合作的研究论文《猫从袋子里出来了》（<em>The Cat is Out of the Bag</em>），则更为全面地检视了苏斯博士50册儿童图书中两千余位人物的种族呈现，对苏斯博士提出了更多质疑。</p>
+  <p> </p>
+  <p>美国历史学家罗宾·伯恩斯坦（Robin Beinstein）指出，在看似天真无邪的儿童文化中，实际始终有种族主义的阴影徘徊。甚至“纯真童年”的概念本身，一开始也只是白人儿童的专属标签，有着一段种族化的历史。以苏斯博士为例，我们或许可以一窥种族主义幽灵如何蛰伏在儿童图书和卡通作品的欢笑声中。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab54cb8717253efd7e29bd" src="https://img.allhistory.com/now/2021-05-24/60ab54c84cd55d1f8948da6d+L.png" alt="《戴帽子的猫》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《戴帽子的猫》
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p> </p>
+  <h2 id="section">种族隔离年代成长的白人漫画家：从种族歧视到反种族歧视</h2>
+  <p> </p>
+  <p>苏斯博士出生于1904年，本名西奥多·苏斯·盖泽尔（Theodor Seuss Geisel），“苏斯博士”是其为自己所取的笔名。彼时，美国还处于种族隔离年代，不但不允许黑人学生在白人学校就读，就连日常生活中从餐厅用餐、公厕使用到火车等公共交通或戏院等公共空间的座椅都有明确划分，甚至连饮水机也会标识出哪台为有色人种可用。</p>
+  <p> </p>
+  <p>时代的种族偏见，也浸染着儿童读物。苏斯博士晚年仍琅琅在口的一首童谣，出自其童年时代流行的一册配图儿童读物；那本书将黑人刻画成有着过分夸张的厚嘴唇和鹌鹑蛋般椭圆眼睛的滑稽形象，且以嘲弄的口吻模仿刻板印象中的黑人口音；将黑人和西瓜联系在一起，也是一种常见的刻板印象。图中的黑人妈妈指着一个破了洞的西瓜，对几个孩子说：“我要是知道了谁干的，一定把他打得哇哇叫。”正确的英文拼写推测可能是“I'd spank the child that did the trick / If I could learn his name”，然而配文却有意讹写成“I'd spank de chile dat done dat trick / Ef I could learn his name”，以讥讽其口音。而这首童谣的“乐趣”，正是基于对黑人样貌的丑化和对黑人口音的夸张模仿。</p>
+  <p> </p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab54f4ab4ffd0cef1c471e" src="https://img.allhistory.com/now/2021-05-24/60ab54f39c232e04ae3f1db5+L.png" alt="插图出自Peter Newell, <em>The Hole Book,</em> New York: Harper &amp; Brothers, 1908." ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+插图出自Peter Newell, <em>The Hole Book,</em> New York: Harper &amp; Brothers, 1908.
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>童年读到这样的作品，并非苏斯博士之过，而是弥漫于时代的种族歧视风气使然。然而，苏斯博士笔下对于种族形象的呈现，亦因应着时代而改变。在其20世纪29年代的早期作品中，不乏类似那首童年歌谣中的刻板形象，甚至更为直接的种族歧视。奈尔提及，20年代初，不到二十岁的苏斯写下剧本《惊讶的奇果毕》（<em>Chicopee Surprised</em>），并通过涂黑脸（blackface）的方式在斯普林菲尔德中学（Springfield High School）亲自出演过这出戏剧。涂黑脸的演出形式，在十九世纪与二十世纪初的美国颇为流行，大多数时候由白人演员出演，通常用深色颜料将脸部涂黑，并涂出夸张的厚嘴唇，也常戴羊毛假发与白手套，往往迎合当时的白人对于黑人的刻板印象，把他们展现为愚钝、懒惰、迷信、乐呵呵的形象。</p>
+  <p> </p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab550cab4ffd0cef1c471f" src="https://img.allhistory.com/now/2021-05-24/60ab550b9c232e04ae3f1db7+L.png" alt="1900年的一场黑脸（blackface）演出海报，右为左侧白人演员黑脸扮相。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1900年的一场黑脸（blackface）演出海报，右为左侧白人演员黑脸扮相。
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>1923年，苏斯在自己编辑的一本幽默杂志中发表了一份卡通漫画。在漫画中，两个厚嘴唇的黑人拳击手面对面，其中一个比另一个肤色稍浅。图中写道：“高球·汤普森以一色度之差险胜小孩·黑仔”（Highball Thompson wins from Kid Sambo by a shade），如此不加掩饰地以肤色深浅作嘲。1929年，25岁的苏斯发表作品《世界最有前途的百货商店代表》（<em>Cross-section of the Worlds's Most Properous Department Store</em>），漫画中一个白人售货员让白人顾客从二十多个黑人中挑选一个，图中黑人被画成猴脸，而一旁的标语写道：“给你家的柴堆买个高级黑鬼吧！包你满意”（Take Home a High-Grade N*gger for Your Woodpile! Satisfaction Guaranteed）。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab5567afa7517017e4d671" src="https://img.allhistory.com/now/2021-05-24/60ab55659c232e04ae3f1db9+L.png" alt="苏斯博士早期漫画《世界最有前途的百货商店代表》（<em>Cross-section of the Worlds's Most Properous Department Store</em>）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+苏斯博士早期漫画《世界最有前途的百货商店代表》（<em>Cross-section of the Worlds's Most Properous Department Store</em>）
+    </figcaption>
+  </figure>
+  <p>这些如今看来明目张胆的种族歧视，在20世纪二三十年代的讽刺漫画中，其实十分常见。当年的苏斯，既受其影响，亦参与其间。然而，随着时间的推移，四十年代的苏斯似乎开始对种族偏见有所反思。1942年，苏斯重新创作了一幅关于柴堆的漫画。在这幅重新创作的漫画中，大量堆积的木材上写“战时工作有待完成”，而一个美国白人站在柴堆上，正在钉一块写着“不要有色人种”的标语牌。两个黑人站在柴堆下远远地看着，说道：“柴堆上好像有个白人！”奈尔认为，在这幅漫画中，苏斯笔尖的矛头已经从对黑人的嘲弄转变为对就业种族歧视的批判。但在笔者看来，联想到1929年的前作，这幅漫画对待种族的态度似乎仍然值得玩味：画中木材大量堆积，是否在暗示少了非裔劳动者则搬运木材的工作乏人来做？其间透露的意味，究竟是为非裔遭受的就业歧视感到不平，还是认为在有大量工作需要完成的战时状态下，美国需要非裔劳动力？</p>
+  <p> </p>
+  <p>随着时代风气的变化，苏斯在种族问题的态度上毕竟在渐渐改观。二战期间，苏斯笔下的漫画开始批评反犹主义，讽刺对非裔美国人的偏见。但一个人的反思和转变需要时间，苏斯并非很快就意识到自己在种族方面各个角度的偏见。如奈尔所指出，苏斯一边讽刺着反犹主义和某些对非裔美国人的偏见，一边又在同时期的画作中常常对日裔美国人加以刻板化的呈现。但有趣的是，1945年，当苏斯在美国军队的信息教育部门任职时，他编写的军队培训影片《你在日本的工作》（<em>Your Job in Japan</em>）却被将军麦克阿瑟认为对日本人过于同情，因而禁止了影片的放映。二战后，苏斯和当时的妻子海伦共同编写了纪录片《设计好的死亡》（<em>Design for Death</em>，1947年），将日本人呈现为独裁统治下的牺牲者。不过，拉蒙·史蒂芬斯与凯蒂·石冢的文章认为，苏斯的作品仍然传达出“落后的日本渴望被先进的美国人征服”的殖民主义想象。</p>
+  <p> </p>
+  <p>五十年代的苏斯，不但在画作中有意识地舍弃早年对非裔的刻板化呈现，而且开始公开反对种族刻板印象。1952年，他撰写文章批评种族主义笑话，认为基于对种族、族裔、国籍等的嘲弄而产生的笑声是“不健康”的，听上去会很尖细难听，这种笑话听多了，就会盖过健康友善的傻笑。尽管这套基于“健康”话语的幽默理论听上去有些古怪，但明确指出了这类笑话对特定族群的不友善之处，在那个年代不失为一种有益的倡导。</p>
+  <p> </p>
+  <h2 id="section-1">苏斯童书中的种族歧视：裸体非洲人与长辫中国佬</h2>
+  <p> </p>
+  <p>也是从五十年代开始，苏斯博士一系列畅销至今的儿童图画书作品开始诞生，包括《戴帽子的猫》（<em>The Cat in the Hat</em>，1957）等深入人心的经典形象。然而，伴随着苏斯反种族歧视意识的萌发，其作品中的刻板呈现并未一洗而尽。种族偏见未止步于其早期讽刺漫画，而是以更隐性的方式延续在其后创作的儿童图画书中。例如，在其1950年创作的《如果我来经营动物园》（<em>If I Ran the Zoo</em>）中，当主角前往非洲寻找一种金丝雀，画面中将金丝雀从树上捉下来的两个非洲人几乎赤身裸体，鼻上坠有鼻环，头上的毛与鸟毛近似，令人联想起将非洲人视作野蛮兽类和异域他者的殖民历史。</p>
+  <p> </p>
+  <p>2019年，凯蒂·石冢（Katie Ishizuka）与拉蒙·史蒂芬斯（Ramon Stephens）进行的一项研究，更为全面地检视了苏斯儿童图书的种族呈现。结果显示，苏斯博士作品中的非白人形象只占2%，而且这些形象常常带有种族刻板偏见的印记，对女性的表现也明显少于男性角色。这一研究将苏斯博士书中的种族主义分为三类：一类是东方主义式的表现，一类是对黑人的歧视，还有一类是白人至上主义。</p>
+  <p> </p>
+  <p>石冢与史蒂芬斯的研究，细致地分析了苏斯博士五十册儿童图书中的2240个人类角色，发现其中只有45位是有色人种，白人角色占了超过98%的比例。即使在这45位非白人角色中，有43位在研究者看来都涉嫌东方主义式的呈现。在这43个角色中，有14位是对东亚人的刻板呈现，还有29位包着头巾，只有2个有色人种角色中能从语境中看出他们是非洲人。东方主义的一个特点，是一边将某个种族放进一种刻板印象的模板中去，一边又常常无法分辨他们的族裔，比如中国文化和日本文化在其笔下常常被混为一谈。另一方面，这45个有色人种角色几乎都是处于从属地位的角色，在书中没有说过话，而且全部为男性。有色人种女性的存在，在苏斯博士的图画书世界中仿佛凭空蒸发了。石冢与史蒂芬斯的研究，如此定义东方主义：</p>
+  <blockquote>
+    <p>东方主义是一种观看方式，想象、强调、夸张和扭曲了中东人、东南亚人、南亚人和东亚人［与白人之间］的差异。这些文化往往被视作有异域风情的、落后的、未开化的，有时甚至是危险的，被放在欧洲与白人的坐标系中。</p>
+  </blockquote>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab55e9ab4ffd0cef1c4720" src="https://img.allhistory.com/now/2021-05-24/60ab55e64cd55d1f8948da70+L.png" alt="《想想我在蒙伯瑞大街看到了它》（<em>And to Think That I saw it on Mulberry Street</em>）初版内页" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《想想我在蒙伯瑞大街看到了它》（<em>And to Think That I saw it on Mulberry Street</em>）初版内页
+    </figcaption>
+  </figure>
+  <p>在14个东亚人的形象中，有12个无法清晰地看出国籍与族裔。这些角色全程没有说话，主要出现在为白人主角捕猎、搬运异国动物的场景中。而两个能够分辨出国籍的角色，也迎合着白人的偏见。在《想想我在蒙伯瑞大街看到了它》（<em>And to Think That I saw it on Mulberry Street</em>）中，一个手里拿着筷子、端着米饭的中国人，在初版中有着明黄色皮肤、歪斜的小眼和长长的发辫，戴着锥形帽，脚上混搭着日式木屐，配文写道“一个用小棍吃饭的中国佬”（a Chinaman who eats with sticks），在一群白人中间，他黄澄澄的皮肤与画面中的乐器相同。也许是时代风气对于种族歧视的容忍度越来越低。在1978年的再版中，发辫和明黄色的皮肤被改去了，配文中的“中国佬”也改成了“中国人”（Chinese man）。</p>
+  <p> </p>
+  <p>而在另一本儿童图书《猫的测试者：你比帽子里的猫聪明吗？》（<em>The Cat's Quizzer: Are You Smarter Than the Cat in the Hat?</em>） 中，一个日本人同样有着黄澄澄的皮肤。在《如果我来经营动物园》（<em>If I Ran the Zoo</em>）中，仅有的三个没戴锥形帽的亚洲人角色，在头顶抬着一个带着枪发号施令的白人，配文形容他们“都斜眯着眼睛”，来自“拼不出名字的国家”。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab564eab4ffd0cef1c4721" src="https://img.allhistory.com/now/2021-05-24/60ab564c9c232e04ae3f1dbe+L.png" alt="《如果我来经营动物园》（<em>If I Ran the Zoo</em>）内页" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《如果我来经营动物园》（<em>If I Ran the Zoo</em>）内页
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>即使是书中的动物角色，也可能隐藏着种族主义的线索。根据奈尔的分析，在《戴帽子的猫》中，主角黑猫的装束几乎延续了早期涂黑脸表演形式中黑人的刻板形象。奈尔认为，戴帽子的猫形像中的各种元素几乎都能从黑脸演出中找到原型：当作手杖用的伞和怪怪的时尚感，几乎是著名的黑脸演出形象泽普·科恩（Zip Coon）的卡通翻版；红色领结和红白相间的帽子，则让人想起白人黑脸演员弗雷德·阿斯泰尔（Fred Astaire）和米基·鲁尼（Mickey Rooney），以及早期默剧《去布鲁明戴尔疯人院》（<em>Off to Bloomingdale Asylum</em>，1901）中的黑脸小丑；至于白手套，更是黑脸演出的标配。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab566f8717253efd7e29be" src="https://img.allhistory.com/now/2021-05-24/60ab566c4cd55d1f8948da75+L.png" alt="Zip Coon" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+Zip Coon
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>故事里的黑猫进入白人家庭，在白人家长不在的情况下，搅动了家中的原本稳定的秩序，刺激着沉闷的中产文明秩序中的孩子，扮演着一个外来者和他者的角色。奈尔认为，黑猫引人发笑的点恰恰在于其试图“伪装”成中产白人，然而总是通过言行、身体姿态和情绪表情露出马脚。种族的概念，正是通过身体化的刻板印象植入人们的意识之中，使种族区隔显得仿佛天然如此，读者才会觉得黑猫的言行举止并不“真正”属于这个白人家庭。与其说戴帽子的猫是一个拟人化的动物形象，或许不如说他是一个动物化了的黑人形象，反映了种族隔离时期白人对黑人的他者化想象。</p>
+  <p> </p>
+  <p>然而，黑猫的出现又使人遗忘那段历史，使读者常常意识不到它所植根的种族主义来源。石冢和史蒂芬斯提醒我们注意《戴帽子的猫回来了》（<em>The Cat in the Hat Comes Back</em>）中的的肤色隐喻。这一册乍看欢快有趣的绘本，讲述了黑猫因为吃粉色蛋糕而在白色浴缸中留下印记，后来他找来一群小猫来清理，结果印记却在这个白人家庭中越留越多，想擦也擦不掉。的的肤色隐喻。这一册乍看欢快有趣的绘本，讲述了黑猫因为吃粉色蛋糕而在白色浴缸中留下印记，后来他找来一群小猫来清理，结果印记却在这个白人家庭中越留越多，想擦也擦不掉。</p>
+  <p> </p>
+  <p>研究者提示，在二十世纪早期的种族主义故事中，就有黑人肤色来自饮墨的传说。在1916年的一份杂志广告中，一个黑人婴儿喝着墨水，配文写着“黑鬼牛奶”（N*gger Milk）。少时的苏斯有可能接收到这样的信息，并进入他后来创作的素材库。带着这样的背景，解读这个故事的可能方向之一，便可以是黑人对白人世界的“污染”。尽管这样或许有过度解读之嫌，我们也很难说苏斯有意传达种族主义隐喻，但正如奈尔所提示的，当苏斯在创作中进入自由幻想的世界，这些碎片所对应的种族等信息便被打散了。如果这些看似自由组合的素材碎片，来自于一段深深浸染着种族主义的历史，而且夹藏于素材中的阴翳未经识别和处理，那么也就不难预料种族主义的信息会在作品中如影随形。它的隐形，甚至会使读者和作者难以察觉。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab56a0afa7517017e4d672" src="https://img.allhistory.com/now/2021-05-24/60ab569e9c232e04ae3f1dbf+L.png" alt="早期种族主义插画，画中黑人婴儿以墨水为牛奶" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+早期种族主义插画，画中黑人婴儿以墨水为牛奶
+    </figcaption>
+  </figure>
+  <p> </p>
+  <h2 id="section-2">纯洁的无知：“纯真童年”背后的种族歧视</h2>
+  <p> </p>
+  <p>在哈佛大学文化历史学家罗宾·伯恩斯坦（Robin Bernstein）看来，儿童图书、玩具、卡通等看似纯真的光滑表面下，恰恰是种族主义意识形态易于藏身之地。在《种族纯真：从奴隶制到民权运动，美国童年与种族的展演》（<em>Racial innocence: Performing American childhood and race from slavery to civil rights</em>，2011）一书中，她指出：</p>
+  <p> </p>
+  <blockquote>
+    <p>“儿童文化有种特殊能力，可以保存（即使是变形地保存）和传播（即使是碎片化地传播）黑脸脸谱（balckface mask）和动作风格，它不仅保存在蓬发安（Raggedy Ann，美国著名卡通形象）和稻草人（Scarecrow）的形象中，也保存在米老鼠和兔八哥的面容和白手套中。”</p>
+  </blockquote>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab56d2ab4ffd0cef1c4722" src="https://img.allhistory.com/now/2021-05-24/60ab56d04cd55d1f8948da7a+L.png" alt="罗宾·伯恩斯坦（Robin Bernstein）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+罗宾·伯恩斯坦（Robin Bernstein）
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>经典动画《猫和老鼠》《米老鼠和唐老鸭》《兔八哥》的早期版本，皆不乏种族主义的画面。例如，在米老鼠1935年的一集《米奇的鲁滨逊漂流记》（<em>Mickey's Man Friday</em>）中，米老鼠乘船来到一个热带岛屿，在那里遇到一群角色，画面对其动作与样貌的呈现，甚至让人难以分辨那究竟是一群猴子还是殖民者眼中带有猎奇色彩的非洲食人族。其中一个角色被同类绑住即将被煮，这时米老鼠英勇而轻松地赶走其他角色，把他救了下来。被“拯救”者当即对米老鼠跪地叩头，米老鼠居高临下地指着他的头说：“你就是我的人了，你叫星期五。你，星期五。我，米奇。”姿态俨如白人奴隶主对黑奴宣告自己的主人身份，理所当然地认为自己享有命名权，通过命名的方式，宣告对方是自己的所有物和附属品。</p>
+  <p> </p>
+  <p>一段劫掠与剥夺、殖民与奴役的历史，竟在看似天真欢快的动画中摇身一变，美化为殖民者对黑奴的拯救，殖民者成了正义的裁决者和主持者，被剥夺的非洲人反而承担了野蛮残忍、愚蠢无能的负面标签。“星期五”的名字，显然借用了《鲁滨逊漂流记》中的情节，也召唤出这本被经典化的文学作品中蛰伏的种族主义幽灵。命名，常常被与文明的开端联系在一起。化身为米奇的殖民者没有想到去了解当地人的感受与想法，甚至没有想到问一问那人的名字。命名的独断过程，仿佛一个将非洲人带入文明世界的傲慢隐喻。在这样的逻辑下，非洲人与黑人仿佛野蛮未开化的动物，经由殖民者的启蒙才进入文明世界，开始笨拙地学习殖民者的语言和技能。他们的名字、语言与文化，在这个殖民主义与种族主义的卡通世界中被统统取消，仿佛只是作为白人世界中笨拙的模仿者而存在，作为白人的他者、人与动物之间的次等人而存在。</p>
+  <p> </p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab57168717253efd7e29c0" src="https://img.allhistory.com/now/2021-05-24/60ab57149c232e04ae3f1dc2+L.png" alt="《米奇的鲁滨逊漂流记》（<em>Mickey's Man Friday </em>，1935）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《米奇的鲁滨逊漂流记》（<em>Mickey's Man Friday </em>，1935）
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>在今天的文化想象中，儿童的世界常常与天真无邪联系在一起。伯恩斯坦的美国史研究则指出，西方世界中“童年纯真”（childhood innocence）的概念其实与种族主义的叙事息息相关。儿童被视作纯真的化身其实是非常晚近的事情，在伯恩斯坦研究的美国，这一概念的成型正与十九世纪中期以来的种族主义历史相一致。“纯真”的概念，一开始几乎只与白人儿童相关联，黑人儿童被排斥在这一概念的建构之外，甚至被视作对立面，其他肤色的儿童则在这一黑白对立的建构中被抹除。从奴隶制到废奴运动，再到反对针对黑人的暴力，以及民权运动时期，在美国的种族议程演变中，儿童的身份与形象一直扮演着关键的角色。在民权运动之前，“纯真”是独属于白人儿童的标签，种族隔离不仅仅体现在公共空间的物理区隔中，也体现在概念的想象和界定中。</p>
+  <p> </p>
+  <p>民权运动的成果也延伸到了概念的领域。今天，当我们想到纯真的儿童，或许不会再将深肤色的儿童排除在外。然而，“纯真童年”概念形成历史中的种族主义印记，在今天仍然不时浮现，甚至浮现在远隔重洋的中国。今年三月，当美国含金量甚高的绘本奖凯迪克奖与儿童文学奖纽伯瑞奖公布时，因为获奖作品中族裔与性别的多元分布，一些国内媒体与绘本机构认为这是“文学艺术被政治正确绑架”的一届。文学奖的颁布，的确与政治气候相关，国内的儿童图书可以有更为本土化的关注点，种族议程在国内的儿童文学中或许不似美国那样紧迫。然而，令人困惑的是，如果一册以白人为主角的童书获奖时被认为是因其艺术性和文学性而获奖，为何一册有着相似艺术成就，只是以黑人为主角的作品会被认为是因其符合“政治正确”而获奖？我们是否早已习得了一些种族偏见而不觉？</p>
+  <p> </p>
+  <p>在今年的凯迪克奖获奖作品中，就有这样一册绘本《我和妈妈》（<em>Me&amp;Mama</em>），以颇具艺术性和风格化的笔调，敏锐地捕捉日常细节，绘出了一对亲密母女的温馨日常。然而，在一篇国内的文章中，对其却如此介绍：“虽然故事反映的是日常生活中妈妈和女儿之间的爱，但主人公全部是黑人角色，隐约透露着，黑人也应该拥有这样平凡温馨的日子。”简单的一句话介绍，把这本书的艺术价值一笔略过。黑人母女当然可以拥有这样平凡温馨的日子，不需要“隐约透露”，但更令人惊诧的是这里所使用的“虽然……但是……”句式。如果主角是白人，她们是否还会被格外点出白人的身份？</p>
+  <p> </p>
+  <p>国内引进的大量欧美绘本，大多都以白人为主角，却不会被特别指出肤色。一对白人母女往往被描述为“一对母女”，一个白人男孩往往被描述为“一个男孩”，但一对黑人母女会被称为“黑人母女”，甚至以转折句式进行强调。在“日常生活中妈妈和女儿的爱”与“主人公全部是黑人角色”之间，究竟是哪一点形成了转折，二者有何对比或冲突？是否预设着日常生活中的母女之爱通常不属于黑人，平凡温馨的日子对于黑人来说是例外状态？问题不仅在于说话者脑海中浮现的是怎样一幅关于黑人的刻板图景，更值得追问的是，这样的刻板印象是在怎样的媒体报道、出版环境和教育体系中形成的？</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab57528717253efd7e29c1" src="https://img.allhistory.com/now/2021-05-24/60ab57514cd55d1f8948da7d+L.png" alt="《我和妈妈》（<em>Me&amp;Mama</em>）内页" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《我和妈妈》（<em>Me&amp;Mama</em>）内页
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>在大多数情况下，白人的肤色仿佛是透明的，被默认为标准设置，偏离这一设定的肤色才会被额外留意。在《种族纯真》的序章中，伯恩斯坦写道：</p>
+  <p> </p>
+  <blockquote>
+    <p>“正如理查德·戴尔（Richard Dyer）和许多其他学者所论证的，白人的权力正是来自其不被标记（unmarked）的状态。乔治·利浦斯茨（George Lipsitz）注意到：‘白人从不说出它的名字，从来不需要表明它在社会文化关系中作为组织原则的角色。’在安·杜丝勒（Ann DuCille）看来，‘自身的沉默是白人身份的首要特权，是其宏大骨架和深层掩饰。’我在本书中论证，童年是这一掩饰的历史构造的首要素材。‘童年纯真’本身便是白人化的，它通过维持种族意涵被刻画，却将种族意涵隐藏在纯洁的浑然不觉（holy obliviousness）中。从十九世纪到二十世纪初，它确保了白人身份不被标记的状态，也确保了这一状态所衍生的权力。”</p>
+  </blockquote>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab5792ab4ffd0cef1c4724" src="https://img.allhistory.com/now/2021-05-24/60ab57914cd55d1f8948da7f+L.png" alt="Bernstein, Robin. <em>Racial innocence: Performing American childhood and race from slavery to civil rights</em>. Vol. 16. nyu Press, 2011." ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+Bernstein, Robin. <em>Racial innocence: Performing American childhood and race from slavery to civil rights</em>. Vol. 16. nyu Press, 2011.
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>在国内童书市场中，因为大量日韩绘本的引进和越来越多国内原创绘本的涌现，我们的视野中并不缺乏那些与我们相似的面孔。这样的情况，与欧美童书市场中作为少数的亚裔儿童只能从占比寥寥的展现亚裔儿童形象的绘本中窥见与自己相似的面孔的处境有所不同。我们的绘本市场，同样不缺乏白人角色，却少有黑人面孔。当记者随机点开当当绘本馆的欧美畅销绘本榜（http://category.dangdang.com/cp01.41.70.01.03.00.html），在页面展示的前100种译介为简体中文的欧美绘本中，以白人儿童为主角的有五十余种，竟无一册以黑人儿童为主角（其他则多以动物为主角或没有明确主角），只有《致我独一无二的的宝贝》和《大多数人》两册群像式地展现了各种肤色的儿童，把这一榜单从深肤色差点完全缺位的悬崖上勉强拉住。</p>
+  <p> </p>
+  <p>这样的展现比例，会给在国内长大的孩子心中留下关于世界的何种印记？基于这样的描绘，儿童心目中想象出的会是一幅怎样的关于肤色和种族的世界图景？</p>
+  <p> </p>
+  <p>当被歧视的对象是中国人或亚洲人，中国读者可以轻易识别出其中的冒犯；但当被歧视者是黑人或其它族裔，读者却常常被引向白人视角。甚至在涉及历史场景时，叙事方式会引导读者代入殖民者的视角。一个典型例证是市面上大量关于哥伦布的儿童读物，几乎皆从殖民者角度将将哥伦布塑造为发现新大陆、探索新世界的英雄人物，而鲜少从原住民的角度展现这段历史中他们所经历的劫掠和暴力。另一方面，儿童读物中的哥伦布叙事，又常常抽离殖民历史的具体语境，将其浪漫化为探索未知、“征服”世界的象征，如同荷马史诗中的虚构英雄。许多此类图书的营销点，无非是“培养孩子不怕困难、勇于探索的品质”等诸如此类的老生常谈，却对自己所采取的殖民话语底色浑然不觉。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60ab5988afa7517017e4d674" src="https://img.allhistory.com/now/2021-05-24/60ab59874cd55d1f8948da82+L.png" alt="中文图书市场上以哥伦布为主角的儿童读物举例" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+中文图书市场上以哥伦布为主角的儿童读物举例
+    </figcaption>
+  </figure>
+  <p> </p>
+  <h2 id="section-3">如何评价苏斯博士：种族主义的成长环境可以为其辩护吗？</h2>
+  <p> </p>
+  <p>回到苏斯博士，这样一位作品中包含大量或显或隐的种族歧视信息的作者，可以因其所处的时代，或其曾经做出的反种族歧视的努力而得到辩护吗？</p>
+  <p> </p>
+  <p>成长于充满歧视与刻板偏见的文化之中，加之一直处于种族、性别、阶层的优势地位，一个人或许很难充分意识到自己的偏见。辨识自身的偏见，是一个长期而困难的过程，我们无法复原苏斯的内心活动；但从一份作品的修订过程来看，五十年代的苏斯对自己作品中的种族偏见，似乎已然有所警惕。1953年，《史尼奇》（<em>The Sneetches</em>）的初稿发表。由于过于担心作品有种族偏见，他修改了这个故事，而当时修改后的版本，据奈尔说几乎无法构成完整的故事。当一个朋友认为这个故事有反犹主义之嫌，苏斯干脆放弃了这个故事。最终是兰登书屋的经理说服他这个故事有反歧视的效果，他这才受到鼓舞完成了创作，在1961年终于出版。然而，这本书至今仍有争议。在研究者石冢与史蒂芬斯看来，这本常常被用作儿童反种族歧视教育的图书，其实仍然浸染着白人至上主义的色彩，他们批评书中呈现的压迫与被压迫的二元叙事，为被压迫者提供的思路不是摆脱压迫，而是成为新的压迫者，暗示着边缘化族群希望摆脱族群身份成为白人的自我厌恶。</p>
+  <p> </p>
+  <p>我们可以将同情心分给这位作品中带有种族主义印记，但曾试图反思种族歧视的创作者吗？同情未必意味着珍视其种族主义遗产，而是将个体责任放到历史背景中看待，看到环境中种族歧视的阴影如何遮翳着一个人的视野，影响着一个人的偏见，也看到一个人的反思过程需要何种契机的开启，又会面对来自自身历史的何种限制。</p>
+  <p> </p>
+  <p>但在石冢与史蒂芬斯看来，以往的许多研究者将苏斯博士视作“反种族主义者”或“改过自新的种族主义者”（reformed racist），其实忽略了苏斯博士作品中种族偏见的普遍性，以及与反种族歧视姿态不相匹配的行动。我们或许希望把苏斯塑造为一个对种族主义有所反思和警惕，只是受困于时代的人，然而事实上，苏斯博士在自己漫长的一生中，从未为自己早年赤裸裸的种族主义漫画而道歉，对于自己后来畅销的儿童图书中白人男性中心的偏见也甚少修改。</p>
+  <p> </p>
+  <p>晚年的苏斯，为准备其“文学传奇”的形象而回看自己的作品时，他仅仅撤回出版其中一本自己不喜欢的《我能写！》（<em>I Can Write!</em>），而这本书是他全集中罕有的以女性人物为主角的作品。恰如两位研究者的分析所发现的，非白人角色在其一生的作品中少且刻板，女性角色也大大少于男性角色，而且多是台词很少的从属性角色；至于处在种族与性别双重歧视下的非白人女性，甚至完全消失了。这样的倾向，延续其五十余册图书的创作历程，在数十年的再版中有无数补救机会，但直到晚年他也不曾做出改变。</p>
+  <p> </p>
+  <p>我们也很难分辨，苏斯博士曾在一定程度上表现出的对于种族歧视的警惕，在多大程度上出于良知和自省，又在多大程度上出于社会风向的压力与声誉利益的考量；二者或许并非泾渭分明，而是相互牵拉。在黑脸演出仍然流行的二三十年代，苏斯的早期漫画毫无顾忌地嘲讽着黑人；在对反犹主义十分警惕的二战之后，苏斯博士也对作品中的反犹主义格外担忧；而在对种族主义容忍度更低的七十年代，他改掉了中国人和日本人黄澄澄的皮肤。单纯寄望于个人的反思意识未免单薄，在以文化环境中的偏见对人的影响为其辩护的同时，或许也应看到试图改变这一文化生态的声音能够带来的积极效果——它既影响着文化产品的呈现结果，也重新界定着一个人在言行表达中对于何者可以接受，何者不可接受的理解和判断。</p>
+  <p> </p>
+  <p>毕竟，五十年代以来的儿童图画书创作，为苏斯博士带来巨大的声望与利益，甚至至今都在为苏斯博士企业带来源源不断的收益。与其将苏斯博士企业做出的停止出版决定视作受到近年来“取消文化”的影响，不如看到数十年来文化环境中的种族主义与反种族主义，一直与图书出版及内容表达相互影响。在其几十种图书仍畅行于世的今天，其间偏见与歧视的印记，持续着影响信息的接收者，自然也将受到持续的重新检视。</p>
+  <p> </p>
+  <blockquote>
+    <p><strong>参考文献</strong></p>
+    <p>Bernstein, Robin. <em>Racial innocence: Performing American childhood and race from slavery to civil rights</em>. Vol. 16. nyu Press, 2011.</p>
+    <p>Helmore, Edward. ‘<em>It’s a moral decision’: Dr Seuss books are being ‘recalled’ not cancelled, expert says</em>. https://www.theguardian.com/books/2021/mar/07/dr-seuss-books-product-recall-cancel-culture</p>
+    <p>Ishizuka, Katie and Stephens*, Ramón （2019） <em>“The Cat is Out of the Bag: Orientalism, Anti-Blackness, and White Supremacy in Dr. Seuss's Children's Books,“</em> Research on Diversity in Youth Literature: Vol. 1 : Iss. 2 , Article 4. </p>
+    <p>Nel, Philip. <em>Was the Cat in the Hat Black?: The hidden racism of children's literature, and the need for diverse books.</em> Oxford University Press, 2017.</p>
+    <p>Manskar, Noah. <em>Dr. Seuss didn’t have ‘a racist bone’ in his body, stepdaughter says.</em> https://nypost.com/2021/03/02/dr-seuss-didnt-have-a-racist-bone-in-his-body-stepdaughter/</p>
+    <p>封面图作者：Kim Ryu，来源：https://www.nytimes.com/2021/03/19/well/family/Talking-to-children-anti-Asian-bias.html</p>
+  </blockquote>
+  <p> </p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-26</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-26/%E5%BC%A0%E7%AC%91%E5%AE%87-%E6%8A%80%E6%9C%AF%E8%83%BD%E5%90%A6%E6%94%B9%E5%8F%98%E6%94%BF%E6%B2%BB%E7%9A%84%E5%8F%91%E7%94%9F%E5%AD%A6%E6%9C%BA%E5%88%B6%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          张笑宇：技术能否改变政治的发生学机制丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-25</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-25/%E5%AD%A4%E7%8B%AC%E7%9A%84%E6%8E%A5%E9%AA%A8%E6%9C%A8-%E9%99%AA%E7%9D%80%E6%97%A0%E5%AE%B6%E5%8F%AF%E5%BD%92%E7%9A%84%E6%9C%88%E4%BA%AE-%E5%94%B1%E7%9D%80%E4%B8%8D%E5%90%88%E6%97%B6%E5%AE%9C%E7%9A%84%E6%AD%8C%E6%9B%B2%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E5%9D%8A/">
+          “孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-23</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-23/%E4%BA%8E%E5%9D%9A-%E7%98%9F%E7%96%AB%E4%BB%8E%E6%9D%A5%E6%B2%A1%E6%9C%89%E5%83%8F%E4%BB%8A%E5%A4%A9%E8%BF%99%E6%A0%B7-%E4%BB%A4%E4%BA%BA%E8%99%9A%E6%97%A0-%E6%A3%95%E7%9A%AE%E6%89%8B%E8%AE%B0/">
+          于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-22</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-22/%E5%8D%B0%E5%BA%A6%E7%9F%A5%E5%90%8D%E4%BD%9C%E5%AE%B6%E5%91%BC%E5%90%81%E6%8A%B5%E5%88%B6%E6%80%BB%E7%90%86%E8%8E%AB%E8%BF%AA%E6%96%B0%E4%B9%A6-%E7%96%AB%E6%83%85%E5%A4%B1%E6%8E%A7%E4%B8%8B%E5%87%BA%E7%89%88%E6%84%8F%E5%91%B3%E7%9D%80%E7%B2%89%E9%A5%B0%E5%A4%AA%E5%B9%B3/">
+          印度知名作家呼吁抵制总理莫迪新书，疫情失控下出版意味着粉饰太平
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-23/%E4%BA%8E%E5%9D%9A-%E7%98%9F%E7%96%AB%E4%BB%8E%E6%9D%A5%E6%B2%A1%E6%9C%89%E5%83%8F%E4%BB%8A%E5%A4%A9%E8%BF%99%E6%A0%B7-%E4%BB%A4%E4%BA%BA%E8%99%9A%E6%97%A0-%E6%A3%95%E7%9A%AE%E6%89%8B%E8%AE%B0/">
+            前一篇：于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-24/%E5%8D%B0%E9%92%9E%E6%9C%BA-iYouPort/">
+            後一篇：印钞机 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-23/%E4%BA%8E%E5%9D%9A-%E7%98%9F%E7%96%AB%E4%BB%8E%E6%9D%A5%E6%B2%A1%E6%9C%89%E5%83%8F%E4%BB%8A%E5%A4%A9%E8%BF%99%E6%A0%B7-%E4%BB%A4%E4%BA%BA%E8%99%9A%E6%97%A0-%E6%A3%95%E7%9A%AE%E6%89%8B%E8%AE%B0/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-24/%E5%8D%B0%E9%92%9E%E6%9C%BA-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-25/%E5%AD%A4%E7%8B%AC%E7%9A%84%E6%8E%A5%E9%AA%A8%E6%9C%A8-%E9%99%AA%E7%9D%80%E6%97%A0%E5%AE%B6%E5%8F%AF%E5%BD%92%E7%9A%84%E6%9C%88%E4%BA%AE-%E5%94%B1%E7%9D%80%E4%B8%8D%E5%90%88%E6%97%B6%E5%AE%9C%E7%9A%84%E6%AD%8C%E6%9B%B2%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E5%9D%8A/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-23/%E4%BA%8E%E5%9D%9A-%E7%98%9F%E7%96%AB%E4%BB%8E%E6%9D%A5%E6%B2%A1%E6%9C%89%E5%83%8F%E4%BB%8A%E5%A4%A9%E8%BF%99%E6%A0%B7-%E4%BB%A4%E4%BA%BA%E8%99%9A%E6%97%A0-%E6%A3%95%E7%9A%AE%E6%89%8B%E8%AE%B0/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-23/%E4%BA%8E%E5%9D%9A-%E7%98%9F%E7%96%AB%E4%BB%8E%E6%9D%A5%E6%B2%A1%E6%9C%89%E5%83%8F%E4%BB%8A%E5%A4%A9%E8%BF%99%E6%A0%B7-%E4%BB%A4%E4%BA%BA%E8%99%9A%E6%97%A0-%E6%A3%95%E7%9A%AE%E6%89%8B%E8%AE%B0/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-24/%E5%8D%B0%E9%92%9E%E6%9C%BA-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-25/%E5%AD%A4%E7%8B%AC%E7%9A%84%E6%8E%A5%E9%AA%A8%E6%9C%A8-%E9%99%AA%E7%9D%80%E6%97%A0%E5%AE%B6%E5%8F%AF%E5%BD%92%E7%9A%84%E6%9C%88%E4%BA%AE-%E5%94%B1%E7%9D%80%E4%B8%8D%E5%90%88%E6%97%B6%E5%AE%9C%E7%9A%84%E6%AD%8C%E6%9B%B2%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E5%9D%8A/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-23/%E4%BA%8E%E5%9D%9A-%E7%98%9F%E7%96%AB%E4%BB%8E%E6%9D%A5%E6%B2%A1%E6%9C%89%E5%83%8F%E4%BB%8A%E5%A4%A9%E8%BF%99%E6%A0%B7-%E4%BB%A4%E4%BA%BA%E8%99%9A%E6%97%A0-%E6%A3%95%E7%9A%AE%E6%89%8B%E8%AE%B0/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

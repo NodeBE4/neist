@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>「任何仁」行銷案例研究－為何在現身後3個月才走紅？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+「任何仁」行銷案例研究－為何在現身後3個月才走紅？
+——
+" />
+    <meta property="og:description" content="
+「任何仁」行銷案例研究－為何在現身後3個月才走紅？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="「任何仁」行銷案例研究－為何在現身後3個月才走紅？" />
+    <meta property="twitter:title" content="「任何仁」行銷案例研究－為何在現身後3個月才走紅？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fverbalflystep.com%2F%25E4%25BB%25BB%25E4%25BD%2595%25E4%25BB%2581-%25E6%25AD%258C%25E8%25A9%259E-%25E6%2583%25A1%25E6%2590%259E-%25E5%25B7%25A6%25E6%2589%258B-%25E5%258F%25B3%25E6%2589%258B-%25E5%25AE%25A3%25E5%2582%25B3%25E7%2589%2587-%25E6%25B6%2588%25E9%2598%25B2%25E8%2599%2595-%25E5%2585%25A7%25E5%25AE%25B9-%25E8%25A1%258C%25E9%258A%25B7-%25E6%25A1%2588%25E4%25BE%258B-8fafdd6ebeda%3Fsource%3Drss-7e0de79fece------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://verbalflystep.com/%E4%BB%BB%E4%BD%95%E4%BB%81-%E6%AD%8C%E8%A9%9E-%E6%83%A1%E6%90%9E-%E5%B7%A6%E6%89%8B-%E5%8F%B3%E6%89%8B-%E5%AE%A3%E5%82%B3%E7%89%87-%E6%B6%88%E9%98%B2%E8%99%95-%E5%85%A7%E5%AE%B9-%E8%A1%8C%E9%8A%B7-%E6%A1%88%E4%BE%8B-8fafdd6ebeda?source=rss-7e0de79fece------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://verbalflystep.com/%E4%BB%BB%E4%BD%95%E4%BB%81-%E6%AD%8C%E8%A9%9E-%E6%83%A1%E6%90%9E-%E5%B7%A6%E6%89%8B-%E5%8F%B3%E6%89%8B-%E5%AE%A3%E5%82%B3%E7%89%87-%E6%B6%88%E9%98%B2%E8%99%95-%E5%85%A7%E5%AE%B9-%E8%A1%8C%E9%8A%B7-%E6%A1%88%E4%BE%8B-8fafdd6ebeda?source=rss-7e0de79fece------2&text=「任何仁」行銷案例研究－為何在現身後3個月才走紅？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://verbalflystep.com/%E4%BB%BB%E4%BD%95%E4%BB%81-%E6%AD%8C%E8%A9%9E-%E6%83%A1%E6%90%9E-%E5%B7%A6%E6%89%8B-%E5%8F%B3%E6%89%8B-%E5%AE%A3%E5%82%B3%E7%89%87-%E6%B6%88%E9%98%B2%E8%99%95-%E5%85%A7%E5%AE%B9-%E8%A1%8C%E9%8A%B7-%E6%A1%88%E4%BE%8B-8fafdd6ebeda?source=rss-7e0de79fece------2&title=「任何仁」行銷案例研究－為何在現身後3個月才走紅？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://verbalflystep.com/%E4%BB%BB%E4%BD%95%E4%BB%81-%E6%AD%8C%E8%A9%9E-%E6%83%A1%E6%90%9E-%E5%B7%A6%E6%89%8B-%E5%8F%B3%E6%89%8B-%E5%AE%A3%E5%82%B3%E7%89%87-%E6%B6%88%E9%98%B2%E8%99%95-%E5%85%A7%E5%AE%B9-%E8%A1%8C%E9%8A%B7-%E6%A1%88%E4%BE%8B-8fafdd6ebeda?source=rss-7e0de79fece------2&title=「任何仁」行銷案例研究－為何在現身後3個月才走紅？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=「任何仁」行銷案例研究－為何在現身後3個月才走紅？&body=
+「任何仁」行銷案例研究－為何在現身後3個月才走紅？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://verbalflystep.com/%E4%BB%BB%E4%BD%95%E4%BB%81-%E6%AD%8C%E8%A9%9E-%E6%83%A1%E6%90%9E-%E5%B7%A6%E6%89%8B-%E5%8F%B3%E6%89%8B-%E5%AE%A3%E5%82%B3%E7%89%87-%E6%B6%88%E9%98%B2%E8%99%95-%E5%85%A7%E5%AE%B9-%E8%A1%8C%E9%8A%B7-%E6%A1%88%E4%BE%8B-8fafdd6ebeda?source=rss-7e0de79fece------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://verbalflystep.com/%E4%BB%BB%E4%BD%95%E4%BB%81-%E6%AD%8C%E8%A9%9E-%E6%83%A1%E6%90%9E-%E5%B7%A6%E6%89%8B-%E5%8F%B3%E6%89%8B-%E5%AE%A3%E5%82%B3%E7%89%87-%E6%B6%88%E9%98%B2%E8%99%95-%E5%85%A7%E5%AE%B9-%E8%A1%8C%E9%8A%B7-%E6%A1%88%E4%BE%8B-8fafdd6ebeda?source=rss-7e0de79fece------2&title=「任何仁」行銷案例研究－為何在現身後3個月才走紅？&caption=
+「任何仁」行銷案例研究－為何在現身後3個月才走紅？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=「任何仁」行銷案例研究－為何在現身後3個月才走紅？&url=https://verbalflystep.com/%E4%BB%BB%E4%BD%95%E4%BB%81-%E6%AD%8C%E8%A9%9E-%E6%83%A1%E6%90%9E-%E5%B7%A6%E6%89%8B-%E5%8F%B3%E6%89%8B-%E5%AE%A3%E5%82%B3%E7%89%87-%E6%B6%88%E9%98%B2%E8%99%95-%E5%85%A7%E5%AE%B9-%E8%A1%8C%E9%8A%B7-%E6%A1%88%E4%BE%8B-8fafdd6ebeda?source=rss-7e0de79fece------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>「任何仁」行銷案例研究－為何在現身後3個月才走紅？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2018-12-30
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 李飛步</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://verbalflystep.com/%E4%BB%BB%E4%BD%95%E4%BB%81-%E6%AD%8C%E8%A9%9E-%E6%83%A1%E6%90%9E-%E5%B7%A6%E6%89%8B-%E5%8F%B3%E6%89%8B-%E5%AE%A3%E5%82%B3%E7%89%87-%E6%B6%88%E9%98%B2%E8%99%95-%E5%85%A7%E5%AE%B9-%E8%A1%8C%E9%8A%B7-%E6%A1%88%E4%BE%8B-8fafdd6ebeda?source=rss-7e0de79fece------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1546151833000-->
+<p><a href="https://verbalflystep.com/%E4%BB%BB%E4%BD%95%E4%BB%81-%E6%AD%8C%E8%A9%9E-%E6%83%A1%E6%90%9E-%E5%B7%A6%E6%89%8B-%E5%8F%B3%E6%89%8B-%E5%AE%A3%E5%82%B3%E7%89%87-%E6%B6%88%E9%98%B2%E8%99%95-%E5%85%A7%E5%AE%B9-%E8%A1%8C%E9%8A%B7-%E6%A1%88%E4%BE%8B-8fafdd6ebeda?source=rss-7e0de79fece------2">「任何仁」行銷案例研究－為何在現身後3個月才走紅？</a>
+——</p>
+
+<div>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*kwV9QRu0Ond865t7GTIvig.jpeg" />    <figcaption>
+「任何仁」<a href="https://knowyourmeme.com/memes/feels-good">feels good</a>
+    </figcaption>
+  </figure>
+  <h3 id="section">「任何仁」擊醒廣告人</h3>
+  <h4 id="section-1">「任何仁」的行銷心肺復甦術令他在出世後 3 個月復活，為 2019 年的廣告界和內容產業帶來啟示。</h4>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>去年寫過不少文章，例如有《不按牌理的一條》，所以年尾推出五篇精選文章回顧，但今年少寫，只得一篇，就是這篇。</code></pre></div>  </div>
+  <p>香港消防處的吉祥物「任何仁」在年尾突然冒起，是 2018 年 Google 香港熱門搜尋榜第 5 位，以及 Yahoo 全年搜尋十大熱搜話題網紅榜第 1 位，風頭一時無兩。乍眼一看他是天之驕子，但其實仕途並非一帆風順。翻看歷史，「任何仁」真人版早在今年 8 月在互聯網現身，只是未能找到槓桿點，直至 11 月 5 日的記者會才衝破樽頸，藍色的身影像洪水一樣掩蓋表層網路 (Surface Web)。探討「任何仁」案例之前，我們不妨先回顧 2012 年南韓大叔 Psy 的名作〈Gangnam Style〉是如何統治地球的聽眾。</p>
+  <p>〈Gangnam Style〉是 YouTube 史上首條觀看次數破 10 億的影片，Psy 更因此而入選 2012 年美國《時代》年度風雲人物。事實上，〈Gangnam Style〉與「任何仁」相似，不是一出街即迅速走紅，而是隔了一段時間才爆發。</p>
+  <p>〈Gangnam Style〉MV 於 2012 年 7 月 15 日在 YouTube 發佈，但在 8 月才進入彈道。同年 8 月 7 日，<a href="http://youtube-trends.blogspot.com/2012/08/gangnam-style-is-your-international-hit.html">YouTube 官方博客 YouTube Trends 挑選了〈Gangnam Style〉為當月的國際熱門影片</a>，隨後成為了焦點，<a href="https://blog.appvirality.com/gangnam-style-go-viral-made-8-million-psy/">更引到 Katy Perry、Britney Spears 和 Tom Cruise 等世界巨星轉發</a>，然後網民將此惡搞(Parodies)成不同版本，一步步進入各個市場，累積人氣席捲全球。病毒式行銷不一定是曇花一現，也可以是滾雪球式增長(Compounding Effects)。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*WGGbsxow2hKwMDRCvdw8Og.jpeg" />
+  </figure>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1000/1*dChOaLR6yy1i2YBc_a1mkQ.jpeg" />    <figcaption>
+當年〈Gangnam Style〉是在發佈後一兩個月，才正式爆發，而且是持續爆發。獲選為 YouTube 月度國際熱門影片後，連天后 Katy Perry 也轉發
+    </figcaption>
+  </figure>
+  <h4 id="section-2">線上線下綜合將成槓桿關鍵</h4>
+  <p>「任何仁」擊活人心系列首集宣傳片於<a href="https://www.youtube.com/watch?v=P9mWj-QMc10">農厝 7 月發佈至 YouTube (確實日期為 8 月 19 日)</a>，主題是靈異外賣事件，所以特意找來鬼后羅蘭姐客串，可見心思所在。片中「任何仁」的緊身衣 (Zentai) 造型古怪核突，與消防處的英雄形象呈現強烈反差；劇情搞鬼，口訣<a href="https://youtu.be/P9mWj-QMc10?t=100">「左手 右手 直手 擺喺心口」</a>和<a href="https://youtu.be/P9mWj-QMc10?t=118">「深度 深度 5cm 嘅深度」</a>等簡單易記，相當洗腦，經已具備瘋傳的要素 (Viralability)，唯獨表現平平，只有少數媒體報道。一出閘就脫腳，明顯是因為影片無法有效傳遞出去，與創意無關，但消防處今次預算有限，不可能像其他廣告客戶燒錢買花戴。「任何仁」此時此刻的麝香和汗臭仍處於封閉狀態。</p>
+  <p>消防處於 11 月 5 日舉行記者會，宣傳新開設的 Facebook 專頁，以及公佈「任何仁」為宣傳角色。由於造型騎呢，而且緊身衣完美地展現了 Cosplayer 的身形和若隱若現的搞怪表情，記者會的照片經媒體網站發佈後，隨即在網上瘋傳，網民富聯想力的留言，將這個佈置簡單的線下活動，推舉成線上群體活動。</p>
+  <p>線下變成了線上的槓桿點，「任何仁」是線上線下綜合行銷的範例，與<a href="https://www.fastcompany.com/90276531/how-instagram-is-giving-billboards-a-second-life">外國現時流行的 Instagramming Billboard 有異曲同工之妙</a>，以線下實體佈置提高線上曝光率。據救護監督吳宛茵說，「任何仁」登場後，「擊活人心」課程多了人報名，甚至爆棚，可見「任何仁」的宣傳成效顯著，叫好叫座。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*IwtdojZWw8cjOpIo50-ECQ.jpeg" />
+  </figure>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*N2X-UKKS_brJLxYauP2-EQ.jpeg" />    <figcaption>
+「任何仁」真正爆發是發佈後三個月。你再看看「任何仁」的性感肚腩仔，你說擊不擊醒？
+    </figcaption>
+  </figure>
+  <h4 id="section-3">觸發病毒機制</h4>
+  <p>病毒式行銷背後都有一套隱藏的增長機制，可以預先盤算，也可以無心插柳，而〈Gangnam Style〉和「任何仁」都是後者，策劃者未項目推出前無刻意計算，嘩眾取寵製造爆點，非他們原意。去年 Psy 接受 Billboard 訪問，便說自己也<a href="https://www.billboard.com/articles/columns/pop/7865990/psy-gangnam-style-anniversary-youtube-interview">搞不清楚騎馬舞的特別之處</a>；「任何仁」之父署理救護監督周詠賢也說，「任何仁」是技術所限而生成的產物，公眾如此大反應是意料之外的事，擊醒不少廣告大師。</p>
+  <p>簡而言之，神推鬼㧬之下，他們取得觸發機制的骨牌 (Domino Effect)，牽一髮動全身，<a href="https://www.youtube.com/watch?v=auIlGqEyTm8">像 Joseph’s Machine 設計的 Rube Goldberg 式機關玩意</a>，搞一完大輪才擊碎傳播的樽頸，令病毒洩漏到密封的實驗室以外，便引來其他人抽水惡搞推波助瀾。數碼年代下的內容不再是安全套，不再是一用即棄的產品，一個創意概念的成敗不應在一星期內定斷，所以策劃者有責任為它度身訂造一套增長方案，逐步尋求突破點，減少投資風險和浪費。</p>
+  <iframe src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fgiphy.com%2Fembed%2FEtOPyNV23eZ3i%2Ftwitter%2Fiframe&amp;url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fpants-contraption-EtOPyNV23eZ3i&amp;image=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FEtOPyNV23eZ3i%2Fgiphy-downsized-large.gif&amp;key=a19fcc184b9711e1b4764040d3dc5c07&amp;type=text%2Fhtml&amp;schema=giphy" width="435" height="275" frameborder="0" scrolling="no">
+<a href="https://medium.com/media/555cc665a9cad57ddf70b96b0a5035cc/href">https://medium.com/media/555cc665a9cad57ddf70b96b0a5035cc/href</a>
+  </iframe>
+  <p>正如一套電影配有一個檔期，檔期內便要竭力宣傳，檔期以外也如是，例如經典電影<a href="https://www.nme.com/photos/13-box-office-flops-that-became-hugely-successful-on-dvd-1420911">《Fight Club》起初票房慘淡，但後來影碟銷量和網上串流量急增</a>，才造就它成為了一部超級成功的作品。電影如此，廣告亦如此。換句話說，要減低運氣決定勝負的機率，內容需要一個路線圖 (Roadmap)，即預先設計增長機制，配合數據和用戶反饋調整策略，令它能在一段時間持續發揮作用。再精緻的產品也設法推廣，即使是永不過時的 ET 66 Calculator (1987) 也非一夜成名。</p>
+  <h4 id="section-4">內容即產品，產品需要路線圖</h4>
+  <p>路線圖的概念取自產品開發，提醒開發者要有遠見，不要過於迷信閉門造車(Pre-launch) 的作用，當產品成功後，根本無人理會產品版本 1.0 時是怎樣，就如你不知道 Google 創辦人 Sergey Brin 設計的初代商標有多求其，<a href="http://bit.ly/2CEKbJR">比我的電子報 The Punch 更頹</a>。發財立品，賺到錢聘請頂級公司重新設計商標，保持市容整潔也未遲。<a href="https://verbalflystep.com/written-vs-video-920d5e0999c4">有頭髮有誰想做癩痢呢，更何況現實世界不是烏托邦</a>。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/570/1*vNpiH_HqaXfPxWlkmsOOsQ.jpeg" />
+  </figure>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/548/1*z64Ky7fevawfQ-M37fB5TQ.jpeg" />    <figcaption>
+左邊是第一代 Google 的商標 (1997年)，右邊是 Google 前身 BackRub 標誌(1996年)
+    </figcaption>
+  </figure>
+  <p>近年不少數碼產品開發者在推出正式產品前，皆會將最小可行產品 (Minimum Viable Product) 立入考量，以低成本推出產品粗製版本，測試市場反應，發現產品與市場對口 (Product Market Fit) ，再大量投入資金開發，減低盲信自身創意的風險。</p>
+  <p>著名球評家 Bill Simmons 離開 ESPN 後自立門戶創辦網站 The Ringer，一開始無視客製化的限制，<a href="https://verbalflystep.com/medium-audio-ringer-2d19a6b060ce">將網站架設在第三方博客平台 Medium 上作為最小可行產品</a>，從而減少投入大量成本聘請技術人員砌網，把資源都預留到內容創作。<a href="https://www.recode.net/2017/2/3/14493370/bill-simmons-interview-ringer-hbo">2017 年他接受網站 Recode 訪問說，網站推出時他只花了美金 5000 元購買</a> <a href="https://goo.gl/6IpqBH">theringer.com</a>，Medium 無收他一分一毫。上軌道後，<a href="https://getchorus.voxmedia.com/">The Ringer 網站搬到 Vox 媒體的內容管理系統 Chrous</a> 繼續大展拳腿。驟眼睇產品和內容風馬牛不相及，但其實只需稍為比較兩者，便可以發現共通點，即管以「任何仁」為例解釋一下。</p>
+  <p>製作質素一般的「任何仁」正是消防處的最小可行產品，推出市場後得到市民的認同，即進行產品升級。天氣轉涼了，「任何人」發帖提醒大家要<a href="https://www.facebook.com/hkfsd.gov.hk/posts/2475587585846769?__tn__=-R">注意暖爐安全</a>，以及<a href="https://www.facebook.com/hkfsd.gov.hk/posts/2483942148344646?__xts__%5B0%5D=68.ARDCGM0_bg0F3QEiusTmdrpr8vRFDJOGbRElmgrGzM9u_ot37eQQk9xK2-5vEwtz0WctFnmG7_R-1ZbfhnqfRRloR7txjcLNk1nblJjlAwHeFtZgigtaCKY4wc5KE9iRlZyhqu8sNDrNnb3XMAUm_s4PbJhWCXQxVEd__F1kHMGLb55zj_5uL39Z-AKz5oX8vHnOE6jOJAidaVOuBDXVqciOxN597mDymDZpdTfMItbYauJ-u2uwlhVkMij_OQoWDEzT2aBsTtaiUyaxQCqg-KTFUElriHWHTnJlS5cOrwTGC0YOHF8Cy5KzFbMfoBRyb-vb2ToV0pdDxQqxS7Oi86W1Y4UO&amp;__tn__=-R">帶備氣管擴張噴劑以備不時之需</a>，兩輯照片都拍得挺專業，還有為相片調色，彷如穿了衣服的波多野結衣，令一班粉絲略為感到不習慣。據香港經濟日報向消防處查詢，<a href="https://wealth.hket.com/article/2204073/%E3%80%8C%E4%BB%BB%E4%BD%95%E4%BB%81%E3%80%8D%E7%99%BB%E5%A0%B4%20%E6%B6%88%E9%98%B2%E7%A4%BE%E5%8D%80%E5%AE%A3%E5%82%B3%E9%A0%90%E7%AE%97%E5%A2%9E%E8%BF%914%E6%88%90">處方更將宣傳及教育預算增加至 655 萬元</a>，較上年多近 40%。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*jua0pQhHxZhiWSOSmj_Urw.png" />    <figcaption>
+「任何仁」幾乎是消防處的收視保證，十二月兩帖相簿帖文皆獲好收視
+    </figcaption>
+  </figure>
+  <h4 id="section-5">產品升級的古與今</h4>
+  <p>依我推測，若然再次升級，或會有「任何仁」動畫版，與其他當紅政府吉祥物睇齊。此轉換內容形式也是 21 世紀內容行銷的常見操作 — Content Repurposing，中文即「內容重用」。</p>
+  <p>內容重用是指，一個內容主題以某個形式表達而獲得好表現，轉換成另一個形式表達，表現也不會太差，「我大聲講嘢唔代表我無禮貌」，最簡單易見的例子是電影電視對白截圖，由有聲影片轉換成無聲圖片同樣大受歡迎。回到「任何仁」案例，自從他走紅之後，便有網民自發製作其 WhatsApp 及 Telegram 貼紙，令他以貼紙形式接觸更多人。這種操作不一定由第三者發起，操盤手可先下手，避免鵲巢鳩占。事實上，內容重用並非新事物，前人早已活用此法，只是當年未有一個明確的術語，且看金庸小說作品路線圖。</p>
+  <p>金庸一生寫過 15 部武俠小說，最初以報紙連載小說形式刊載，低成本測試市場水溫，成氣候後再輯錄成書、拍成電視電影和製作成遊戲等等。15 部作品足以傳世，文本只是其中一個內容載體。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*nm38Km-eSQMm4ZrOpp_GLw.jpeg" />    <figcaption>
+金庸作品路線圖：報紙連載小說 &gt; 小說 &gt; 電影 &gt; 電視劇。當然，這只是我的解讀，藍色的窗簾。
+    </figcaption>
+  </figure>
+  <p>此外，金庸會升級產品。他曾大幅編輯小說，修改情節、字句和人物關係，令小說更加自然，而不會過於戲劇化。因此，「射雕英雄傳」、「神雕俠侶」、「天龍八部」等都有三個不同的版本在市面流通，不同年代的讀者有不同記憶，令人誤以為「曼德拉效應」作怪。銷量和讀者回信是金庸當年所得的數據和用戶反饋。</p>
+  <p>與其投放心機和時間構思新物，倒不如埋首雕琢舊物，這是行銷通識：留存舊客，提升其價值，比不停獲取新客更能提升表現。撻著內容生產機器，日啤夜啤，再射落<a href="https://www.blueoceanstrategy.com/">紅海 (Red Ocean)</a> 的運作方式理應被淘汰，新世代的廣告應講求科學，迭代(Iteration) 是最基本的遊戲規則。</p>
+  <p>廣告公司常以燒錢建立品牌作為廣告無助銷情的理由，這是百份百無錯的講法，但受惠者是廣告公司，豐富了公司履歷，廣告客戶得不償失，賓主有別。未來一年香港經濟將步入衰退，不求回報只求過癮的廣告會被剎停。摩登行銷不應以廣告為主導，增長 (Growth) 和客戶關係管理 (CRM)等版塊也無比重要，高留存率 (Retention) 和高客戶價值 (Customer Value)是優秀的銷量驅動器，一視同仁，新舊客等同待遇是愚昧無知的行為。</p>
+  <p><a href="https://www.hko.gov.hk/gts/time/clock_uc.html">A.D 2019 就不要用上世紀的方式做 Ad 了</a>。廣告公司必須揉合左腦和右腦，不再應用創意作為低投資回報率 (ROI) 的擋箭牌。況且，創意根本不存在：</p>
+  <p>「我不容許他們（員工）用 “Creative” 這字眼來描述他們在我們公司裡所從事的工作。“Creativity” 這個更為時髦的名詞在厚厚的第12版牛津大辭典裏是找不到的…埃德‧考克（Ed Cox）認為文案之間並沒有甚麼創意或無創意的差別；只有創作好廣告的人和創作壞廣告的人的差別 … 20 年前，創作這個詞被收進廣告詞典以前，我們的日子又是怎麼過的呢？我很慚愧，我自己不時也用這個詞。就在寫這本書的時候，我也用了這個詞。」節錄自 David Ogilvy《一個廣告人的自白》，這位廣告狂人還有一句：</p>
+  <p>“If it doesn’t sell, it isn’t creative.”</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*gbDBP9FxBaoRstFW0GrP3A.jpeg" />
+  </figure>
+  <h4 id="section-6">延伸閱讀</h4>
+  <p><a href="https://verbalflystep.com/yitiao-32ba57d9fcbd">《一條》三度停用 Facebook，如何不按牌理起死回生？</a></p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*gbDBP9FxBaoRstFW0GrP3A.jpeg" />
+  </figure>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1901020101AM&gt; 更正錯字及修改文句&gt; 新增「任何仁」貼紙為內容重用例子&gt; 補充不應燒錢行銷的理由</code></pre></div>  </div>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*gbDBP9FxBaoRstFW0GrP3A.jpeg" />
+  </figure>
+  <p>特別鳴謝: <a href="https://medium.com/u/9f3e6f7c9a94">Terry Chan</a></p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=8fafdd6ebeda" width="1" height="1" alt="" />  <hr />
+  <p><a href="https://verbalflystep.com/%E4%BB%BB%E4%BD%95%E4%BB%81-%E6%AD%8C%E8%A9%9E-%E6%83%A1%E6%90%9E-%E5%B7%A6%E6%89%8B-%E5%8F%B3%E6%89%8B-%E5%AE%A3%E5%82%B3%E7%89%87-%E6%B6%88%E9%98%B2%E8%99%95-%E5%85%A7%E5%AE%B9-%E8%A1%8C%E9%8A%B7-%E6%A1%88%E4%BE%8B-8fafdd6ebeda">「任何仁」行銷案例研究－為何在現身後3個月才走紅？</a> was originally published in <a href="https://verbalflystep.com">飛步出品</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2018-12-30</time>
+        <a href="https://nodebe4.github.io/oped2/2018-12-30/%E6%BD%9B%E6%B0%B4%E5%8E%BB%E6%90%9E%E6%88%91%E5%8F%A6%E4%B8%80%E5%80%8B-project-www.thepunch.email/">
+          潛水去搞我另一個 project www.thepunch.email
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2018-12-30</time>
+        <a href="https://nodebe4.github.io/oped2/2018-12-30/2019%E5%B9%B4%E6%88%91%E9%83%BD%E6%9C%83%E6%9B%B4%E6%96%B0%E8%BF%94%E6%88%91%E5%BC%B5%E4%BD%9C%E8%80%85%E5%90%8D%E5%96%AE/">
+          2019年我都會更新返我張作者名單！
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2018-12-16</time>
+        <a href="https://nodebe4.github.io/oped2/2018-12-16/%E4%B8%8D%E5%8F%AF%E5%AF%AB%E7%9A%84%E8%A1%8C%E9%8A%B7%E6%A1%88%E4%BE%8B-%E5%A4%A9%E9%99%8D%E6%A9%AB%E8%B2%A1%E6%A1%88/">
+          不可寫的行銷案例－天降橫財案
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2018-12-13</time>
+        <a href="https://nodebe4.github.io/oped2/2018-12-13/%E8%B1%A1%E8%88%87%E9%A8%8E%E8%B1%A1%E4%BA%BA-%E4%BA%86%E8%A7%A3%E4%BB%80%E9%BA%BC%E5%8F%AB%E5%B9%B8%E7%A6%8F/">
+          象與騎象人：了解什麼叫幸福
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2018-12-20/%E7%9B%91%E7%9D%A3%E8%AD%A6%E5%AF%9F%E6%98%AF%E5%85%AC%E6%B0%91%E7%9A%84%E6%9D%83%E5%88%A9-%E4%BD%86%E5%A6%82%E4%BB%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E4%BB%AC%E4%B8%8D%E6%95%A2%E8%AE%B0%E5%BD%95%E8%AD%A6%E5%AF%9F%E8%A1%8C%E4%B8%BA-iYouPort/">
+            前一篇：监督警察是公民的权利，但如今为什么人们不敢记录警察行为？ - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2018-12-30/2019%E5%B9%B4%E6%88%91%E9%83%BD%E6%9C%83%E6%9B%B4%E6%96%B0%E8%BF%94%E6%88%91%E5%BC%B5%E4%BD%9C%E8%80%85%E5%90%8D%E5%96%AE/">
+            後一篇：2019年我都會更新返我張作者名單！
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2018-12-20/%E7%9B%91%E7%9D%A3%E8%AD%A6%E5%AF%9F%E6%98%AF%E5%85%AC%E6%B0%91%E7%9A%84%E6%9D%83%E5%88%A9-%E4%BD%86%E5%A6%82%E4%BB%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E4%BB%AC%E4%B8%8D%E6%95%A2%E8%AE%B0%E5%BD%95%E8%AD%A6%E5%AF%9F%E8%A1%8C%E4%B8%BA-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2018-12-30/2019%E5%B9%B4%E6%88%91%E9%83%BD%E6%9C%83%E6%9B%B4%E6%96%B0%E8%BF%94%E6%88%91%E5%BC%B5%E4%BD%9C%E8%80%85%E5%90%8D%E5%96%AE/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2018-12-30/2019%E5%B9%B4%E6%88%91%E9%83%BD%E6%9C%83%E6%9B%B4%E6%96%B0%E8%BF%94%E6%88%91%E5%BC%B5%E4%BD%9C%E8%80%85%E5%90%8D%E5%96%AE/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2018-12-16/%E4%B8%8D%E5%8F%AF%E5%AF%AB%E7%9A%84%E8%A1%8C%E9%8A%B7%E6%A1%88%E4%BE%8B-%E5%A4%A9%E9%99%8D%E6%A9%AB%E8%B2%A1%E6%A1%88/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2018-12-20/%E7%9B%91%E7%9D%A3%E8%AD%A6%E5%AF%9F%E6%98%AF%E5%85%AC%E6%B0%91%E7%9A%84%E6%9D%83%E5%88%A9-%E4%BD%86%E5%A6%82%E4%BB%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E4%BB%AC%E4%B8%8D%E6%95%A2%E8%AE%B0%E5%BD%95%E8%AD%A6%E5%AF%9F%E8%A1%8C%E4%B8%BA-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2018-12-30/2019%E5%B9%B4%E6%88%91%E9%83%BD%E6%9C%83%E6%9B%B4%E6%96%B0%E8%BF%94%E6%88%91%E5%BC%B5%E4%BD%9C%E8%80%85%E5%90%8D%E5%96%AE/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2018-12-30/2019%E5%B9%B4%E6%88%91%E9%83%BD%E6%9C%83%E6%9B%B4%E6%96%B0%E8%BF%94%E6%88%91%E5%BC%B5%E4%BD%9C%E8%80%85%E5%90%8D%E5%96%AE/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2018-12-16/%E4%B8%8D%E5%8F%AF%E5%AF%AB%E7%9A%84%E8%A1%8C%E9%8A%B7%E6%A1%88%E4%BE%8B-%E5%A4%A9%E9%99%8D%E6%A9%AB%E8%B2%A1%E6%A1%88/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

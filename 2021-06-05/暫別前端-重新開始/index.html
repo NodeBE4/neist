@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>暫別前端，重新開始 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+暫別前端，重新開始
+——
+" />
+    <meta property="og:description" content="
+暫別前端，重新開始
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="暫別前端，重新開始" />
+    <meta property="twitter:title" content="暫別前端，重新開始" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fhulitw.medium.com%2Fbyebye-front-end-hi-security-fda6be0cb7ce%3Fsource%3Drss-f1fb3e40dc37------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://hulitw.medium.com/byebye-front-end-hi-security-fda6be0cb7ce?source=rss-f1fb3e40dc37------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://hulitw.medium.com/byebye-front-end-hi-security-fda6be0cb7ce?source=rss-f1fb3e40dc37------2&text=暫別前端，重新開始&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://hulitw.medium.com/byebye-front-end-hi-security-fda6be0cb7ce?source=rss-f1fb3e40dc37------2&title=暫別前端，重新開始" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://hulitw.medium.com/byebye-front-end-hi-security-fda6be0cb7ce?source=rss-f1fb3e40dc37------2&title=暫別前端，重新開始" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=暫別前端，重新開始&body=
+暫別前端，重新開始
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://hulitw.medium.com/byebye-front-end-hi-security-fda6be0cb7ce?source=rss-f1fb3e40dc37------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://hulitw.medium.com/byebye-front-end-hi-security-fda6be0cb7ce?source=rss-f1fb3e40dc37------2&title=暫別前端，重新開始&caption=
+暫別前端，重新開始
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=暫別前端，重新開始&url=https://hulitw.medium.com/byebye-front-end-hi-security-fda6be0cb7ce?source=rss-f1fb3e40dc37------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>暫別前端，重新開始</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-05
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Huli</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://hulitw.medium.com/byebye-front-end-hi-security-fda6be0cb7ce?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1622886364000-->
+<p><a href="https://hulitw.medium.com/byebye-front-end-hi-security-fda6be0cb7ce?source=rss-f1fb3e40dc37------2">暫別前端，重新開始</a>
+——</p>
+
+<div>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*qHHqO1gwybwHZq2V" />    <figcaption>
+Photo by <a href="https://unsplash.com/@seoulinspired?utm_source=medium&amp;utm_medium=referral">Ethan Brooke</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a>，圖文不符，附圖為用首爾當關鍵字搜尋的結果，純粹只是因為想去韓國了
+    </figcaption>
+  </figure>
+  <p>現在是 2021-03-03，剛做完決定的一週後。雖然說要到五月才會正式轉職，但想說在這個時刻先把當下的心情寫下來，否則再等兩個月心得感想就都從海馬迴消失了。</p>
+  <blockquote>
+從五月開始，我暫時不寫前端了，我要內轉去公司做資安的部門當資安研究員。  </blockquote>
+  <p>我是做完這個決定之後，才突然意識到這其實是職涯上的一個滿大的轉變。在前端的經歷其實對於這個新的領域來說幾乎完全不適用，我可能就是一張白紙，一張，還很菜的白紙。</p>
+  <p>如果我哪天想回去做前端怎麼辦？會不會到時候怎麼寫都忘記了，自斷前端職涯，到時候回去又要從頭再來？如果我資安做出興趣來了，可是沒辦法留在原公司要到新公司，那是不是整個經歷重算？資安菜雞的重啟人生。</p>
+  <p>但這些其實都是我做完決定之後才想到的事，是我跟新部門主管表達意願，談好之後的工作內容，再跟原主管以及大主管確認完可行性跟時間，等一切都塵埃落定之後，我才想到的事。</p>
+  <p>對於職涯，我本來就沒有想這麼多，我抱持的信念是有能力的人自然能找到出路，如果找不到，是我能力不足。</p>
+  <p>會想轉去資安部門的原因有幾個，其中一個原因是，這本來就是我很想補齊的一塊拼圖，而另外一塊是演算法。</p>
+  <p>為什麼會是這兩塊？因為這兩塊是我曾經有機會學好，有機會做好，但我卻沒有做到的事情。我接觸這兩個領域的時間其實都很早，但自己沒有把握住，所以成了心中的一個小小遺憾，更詳細的故事可以參考：<a href="https://medium.com/hulis-blog/the-programming-journey-1-b9b19c0ef05b">自學、哲學、講學：我的程式之路</a>。</p>
+  <p>再來就是對這個領域是真的有興趣，一直都滿有興趣的，不過我的時間大多數都拿來上班跟下班後的教學了，所以有興趣歸有興趣，不一定會付諸行動。真的比較接觸這領域是來這間公司之後，有同事跟我分享他正在修的資安相關課程，我就跟著他加減看一下，看一看解了課程的題目，發現真的很有趣。</p>
+  <p>後來參加了一兩場線上的 CTF（Capture The Flag，一種駭客解題的比賽），因為對網頁最熟所以只打 web 題，覺得有些題目出得真的很巧妙。我已經很久沒有因為什麼事情而熬夜了，但某一個我覺得我應該可以解出來的題目，讓我熬夜到快凌晨四點，拿到 flag 解出來之後才安心入睡。</p>
+  <p>而就是發現了（與其說發現，其實不如說是想起）這種對題目的執著、興趣以及熱情，讓我決定轉到資安團隊去。</p>
+  <p>這是 2021–06–05，寫了上面那段以後已經過了三個月，也在前陣子正式加入了公司的資安團隊。上面原本應該要寫更多的，但那天晚上寫那一段之後好像就有點晚了，就跑去洗澡睡覺了，於是後面都沒有寫到。</p>
+  <p>總之呢，就是在打 CTF 的時候讓我想起了解題的快樂跟對攻擊的熱情，再加上剛好有這個機會，沒有想太多就直接轉過去了。我並沒有先想好我的職涯發展要怎麼走，是要把自己定義成比較懂資安的前端工程師呢，還是專門研究前端相關的資安研究員，這些我都不知道，但就先試一陣子吧，看看狀況怎麼樣再來決定。</p>
+  <p>我知道真正轉去做資安其實跟 CTF 滿不一樣的，例如說 CTF 可能頂多就是兩三天，然後問題一定會有解答，通常方向也比較單一，說是 web 就一定是 web。可是在真實世界找漏洞的時候並不是這樣，是不一定有解答的，有可能走的那一條路是死路，也有可能會有需要的知識超出 web 的時候。</p>
+  <p>再者，資安也不是只有找漏洞，例如說有人往合規走，有人往偏向防禦的藍隊走，也有人轉成資安顧問。其實還有很多分得比較細的職缺，都屬於資訊安全的領域。而我喜歡的，可能只是這麼多裡面其中的一種。</p>
+  <p>目前為止轉 team 大概過了快一個月，剛開始在支援 team 裡面的一個暫時的系統的開發，能用熟悉的前端來幫助團隊達成目標，感覺還是挺不錯的。後來就是研究一些自己有興趣的題目，還有去試著找一些網站來打（有 bug bounty 的那種）。</p>
+  <p>這段期間時不時都會有種眼界大開的感覺，而且我覺得厲害的是，這並不是因為「知道了一個不知道的東西」而感到驚訝，而是「知道了以為自己知道的東西」。寫了幾年前端，看過的東西其實不少，比較沒有什麼會讓我「哇！」出來的東西，或者換個角度講，應該是我對那些東西也沒有太大的興趣。</p>
+  <p>比如說一些新的架構、新的框架或是語法，看到之後頂多就是「嗯嗯」，不會有太多的情緒起伏，而熟悉的 JavaScript 除了偶爾會碰到一些 edge case 讓我感興趣以外，其他狀況我都自認跟它很熟了。</p>
+  <p>但在資訊安全的領域就完全是另外一回事了，我從我自以為熟悉的前端領域中，得到了很多新的知識。這感覺就像是別人如果跟我說飛機的知識，我會覺得哇好酷，以前都不知道，但如果別人跟我說 JavaScript 其實可以這樣運用來達成攻擊，我就會覺得「哇操勒，居然可以這樣嗎！！太屌了吧！！我寫這麼久怎麼完全沒想過！」</p>
+  <p>像我前陣子看到的這一篇：</p>
+  <p><a href="https://whitton.io/articles/xss-on-facebook-via-png-content-types/">An XSS on Facebook via PNGs &amp; Wonky Content Types</a></p>
+  <p>這篇真的很讚，先發現了一個可以把 PNG 當 HTML 來 render 的 bug，然後在 PNG 裡面塞入資訊，讓它用文字顯示時可以順利轉成 script tag，就得到了一個 CDN domain 的 XSS。</p>
+  <p>但在 CDN 可以 XSS 沒什麼用，於是就找了有哪些 subdomain 有指到 CDN 去，成功找到一個，再來利用 document.domain 以及 Page Plugin 讓兩個網址變得同源，就可以偷到 CSRF token，然後對主站做操作。</p>
+  <p>就是這些小漏洞一步步串起來然後變成最後這個樣子。</p>
+  <p>還有這篇：</p>
+  <p><a href="https://devco.re/blog/2019/09/02/attacking-ssl-vpn-part-3-the-golden-Pulse-Secure-ssl-vpn-rce-chain-with-Twitter-as-case-study/">Attacking SSL VPN - Part 3: The Golden Pulse Secure SSL VPN RCE Chain, with Twitter as Case Study! | DEVCORE 戴夫寇爾</a></p>
+  <p>原本以為繞不過的限制，換個角度去思考，把錯誤訊息當作程式碼來執行，就能順利繞過，真的很強！</p>
+  <p>上面這些 writeup 都是我看到的時候會不自覺地驚嘆的那種，因為這些都突破了我對現有知識以及領域的想像。</p>
+  <p>在前端的世界中，<a href="https://xsleaks.com/">XS-Leaks wiki </a>也是突破了我的眼界，讓我吸收了很多新的知識，而且也開始對這類型的攻擊方式產生興趣。</p>
+  <p>講到 writeup，這也是我很喜歡這個領域的一點，那就是通常漏洞的發現者都會把發現的過程寫成 writeup，而寫得好的文章，真的會讓讀者很享受在那個過程，感覺好像就是自己在解問題一樣。對於一個本來就愛寫的人來說，這確實也是很吸引我的一點。</p>
+  <p>今年對我來說是個「放下」的一年，要放下一些陪伴了自己好一段時光的事物，前端是第一個。</p>
+  <p>雖然說暫時離開了前端相關的工作，但其實平時常關注的漏洞還是跟 web 有關，我也希望能把這些前端資訊安全相關的概念，再帶回去給前端工程師們，讓他們也體驗一下我當初的那種驚奇之感。</p>
+  <p>前端掰，資安嗨！</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=fda6be0cb7ce" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-17/%E6%B7%BA%E8%AB%87-XSS-%E6%94%BB%E6%93%8A%E8%88%87%E9%98%B2%E7%A6%A6%E7%9A%84%E5%90%84%E5%80%8B%E7%92%B0%E7%AF%80/">
+          淺談 XSS 攻擊與防禦的各個環節
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-07</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-07/Intigriti-s-0521-XSS-%E6%8C%91%E6%88%B0%E8%A7%A3%E6%B3%95-%E9%99%90%E5%AE%9A%E5%AD%97%E5%85%83%E7%B5%84%E5%90%88%E7%A8%8B%E5%BC%8F%E7%A2%BC/">
+          Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-15</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-15/%E9%98%B2%E6%AD%A2-XSS-%E5%8F%AF%E8%83%BD%E6%AF%94%E6%83%B3%E5%83%8F%E4%B8%AD%E5%9B%B0%E9%9B%A3/">
+          防止 XSS 可能比想像中困難
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-04-02</time>
+        <a href="https://nodebe4.github.io/oped2/2021-04-02/%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%BA%9D%E9%80%9A/">
+          非同步溝通
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/">
+            前一篇：想象新式亲密关系：男性如何摆脱内心隐藏的厌女情绪？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-06/%E4%B8%8B%E6%B2%89%E5%B9%B4%E4%BB%A3-%E5%90%8E%E5%86%B7%E6%88%98%E6%97%B6%E4%BB%A3%E7%9A%84-%E7%BE%8E%E5%9B%BD%E6%A2%A6-%E6%98%AF%E5%A6%82%E4%BD%95%E8%B5%B0%E5%90%91%E7%A0%B4%E7%A2%8E%E7%9A%84/">
+            後一篇：下沉年代：后冷战时代的“美国梦”是如何走向破碎的？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-06/%E4%B8%8B%E6%B2%89%E5%B9%B4%E4%BB%A3-%E5%90%8E%E5%86%B7%E6%88%98%E6%97%B6%E4%BB%A3%E7%9A%84-%E7%BE%8E%E5%9B%BD%E6%A2%A6-%E6%98%AF%E5%A6%82%E4%BD%95%E8%B5%B0%E5%90%91%E7%A0%B4%E7%A2%8E%E7%9A%84/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-07/Intigriti-s-0521-XSS-%E6%8C%91%E6%88%B0%E8%A7%A3%E6%B3%95-%E9%99%90%E5%AE%9A%E5%AD%97%E5%85%83%E7%B5%84%E5%90%88%E7%A8%8B%E5%BC%8F%E7%A2%BC/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-15/%E9%98%B2%E6%AD%A2-XSS-%E5%8F%AF%E8%83%BD%E6%AF%94%E6%83%B3%E5%83%8F%E4%B8%AD%E5%9B%B0%E9%9B%A3/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-06/%E4%B8%8B%E6%B2%89%E5%B9%B4%E4%BB%A3-%E5%90%8E%E5%86%B7%E6%88%98%E6%97%B6%E4%BB%A3%E7%9A%84-%E7%BE%8E%E5%9B%BD%E6%A2%A6-%E6%98%AF%E5%A6%82%E4%BD%95%E8%B5%B0%E5%90%91%E7%A0%B4%E7%A2%8E%E7%9A%84/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-07/Intigriti-s-0521-XSS-%E6%8C%91%E6%88%B0%E8%A7%A3%E6%B3%95-%E9%99%90%E5%AE%9A%E5%AD%97%E5%85%83%E7%B5%84%E5%90%88%E7%A8%8B%E5%BC%8F%E7%A2%BC/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-15/%E9%98%B2%E6%AD%A2-XSS-%E5%8F%AF%E8%83%BD%E6%AF%94%E6%83%B3%E5%83%8F%E4%B8%AD%E5%9B%B0%E9%9B%A3/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

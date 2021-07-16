@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>女权运动中的社群暴力：为什么女权运动的内部会走向分化？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+女权运动中的社群暴力：为什么女权运动的内部会走向分化？
+——
+" />
+    <meta property="og:description" content="
+女权运动中的社群暴力：为什么女权运动的内部会走向分化？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="女权运动中的社群暴力：为什么女权运动的内部会走向分化？" />
+    <meta property="twitter:title" content="女权运动中的社群暴力：为什么女权运动的内部会走向分化？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60dfdc4e52082c7fe8b3d05c" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60dfdc4e52082c7fe8b3d05c" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60dfdc4e52082c7fe8b3d05c&text=女权运动中的社群暴力：为什么女权运动的内部会走向分化？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60dfdc4e52082c7fe8b3d05c&title=女权运动中的社群暴力：为什么女权运动的内部会走向分化？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60dfdc4e52082c7fe8b3d05c&title=女权运动中的社群暴力：为什么女权运动的内部会走向分化？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=女权运动中的社群暴力：为什么女权运动的内部会走向分化？&body=
+女权运动中的社群暴力：为什么女权运动的内部会走向分化？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60dfdc4e52082c7fe8b3d05c" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60dfdc4e52082c7fe8b3d05c&title=女权运动中的社群暴力：为什么女权运动的内部会走向分化？&caption=
+女权运动中的社群暴力：为什么女权运动的内部会走向分化？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=女权运动中的社群暴力：为什么女权运动的内部会走向分化？&url=https://www.allnow.com/post/60dfdc4e52082c7fe8b3d05c" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>女权运动中的社群暴力：为什么女权运动的内部会走向分化？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-07-02
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 乔·弗里曼</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60dfdc4e52082c7fe8b3d05c" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60dfdc4e52082c7fe8b3d05c">女权运动中的社群暴力：为什么女权运动的内部会走向分化？</a>
+——</p>
+
+<div>
+  <p><strong>作者丨乔·弗里曼；翻译丨浩菊；校对丨三三 &amp; 方禾</strong></p>
+  <p>乔·弗里曼（Jo Freeman）是上个世纪六七十年代激进的女权主义者、社会运动参与者、作家、政治学者。这是她继《婊子宣言》（<em>The BITCH Manifesto</em>，1969）、《无架构的暴政》（<em>The Tyranny of Structurelessness</em>，1970）后第三篇以社运名字Joreen发表的女权主义运动相关文章。延续《无架构的暴政》对“无架构”组织隐秘权力运作的反思，下文《女权运动中的“清理”：姐妹情谊的暗面》讲述了她被女权社群排斥的创伤经历，并以此剖析女权运动如何假借“激进平等主义”的名义来清理身边的姐妹。</p>
+  <p>“姐妹情谊”是60年代女权运动的重要口号，内蕴鲜明的政治色彩，女性要像姐妹一样对待彼此，团结一致对抗日常生活中的不平等。乔·弗里曼以被“清理者”的身份直接指出进步口号下掩盖的社群暴力：以政见冲突、意见分歧为外衣对社群中有才华的、甘愿付出的姐妹进行整个自我的毁灭。</p>
+  <p>“清理行动”甚少在当下行动者社群中大规模地进行，但它所运用的手段、方式却在不同社群中不同程度地出现过：当下中国，网络上关于性别问题的分裂和撕逼时有发生；社会公共领域中的争论时常以人身攻击、人格毁灭的方式进行。这当然不局限于女权社群，乔·弗里曼谈及的社群暴力，在各种行动者组织中也并不鲜见，只不过在更多的时候被搁置、被忽视。这篇写于45年前的文章，如今读来依旧掷地有声。如果我们重视这些行动者组织的实践和探索，那么警惕以进步的口号施行的暴力，重新反思如何平等民主地行动，将会是重要的挑战。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-03/60dfdcaf9c232e01c17d21bb+L.png" data-id="60dfdcb2904b8c02a16a35bd" alt ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture"></figcaption>
+  </figure>
+  <p><strong>女权运动中的“清理”：姐妹情谊的暗面</strong></p>
+  <p>我被女权圈扫地出门的事情，已经过去很久了。我可能是整个美国，至少是整个芝加哥市，第一个遭受这么严重攻击的人：我的人格，我为女权事业所做的奉献，甚至是整个自我，都被“社会运动姐妹”（Movement women）撕裂得体无完肤，以至于我无法正常工作、生活。我花了数年才逐步从创伤中走出，但直到现在也没有完全恢复。我一直徘徊于女权运动的边缘地带，我离不开它，因为我需要依赖它过活，从中汲取能量，但又恐惧再一次陷落其中。我甚至都不清楚自己到底在恐惧什么。我不断告诉自己，只要我足够谨慎，这样的事情就不会再次发生。然而，有种超越理性的执念，总是萦绕于我脑海中，它不停地说：一旦我站出来，我又要成为所有愤怒与敌意的靶子。这些年里，我以社会运动参与者和关注者当成假想的听众，把这件事以演讲的形式在我脑海里翻来覆去地梳理了好多遍，但我从未想过要公开表达这些看法，因为我一直坚信社会运动者之间的“家丑不可外扬”。现在，我的想法开始有了变化。</p>
+  <p>首先，已经有太多女权圈的“家丑”被曝光，我不认为我所揭露的事情算什么。很多女权运动中的积极分子对一些事情，早已心知肚明。另外，对运动持续多年的观察，我愈感失望。它在自觉地摧毁任何崭露头角的女性。过去，我一直怀抱着这样的期许：随着时间和经验的积累，运动中自我毁灭的趋势，最终得以被终结。因此，我并没有公开讲述自身的经历，而只是默默地同情并支持着那些在运动中被摧毁的女性，她们试图在女权运动中施展自身的才华，却屡屡遭受敌意。直到1975年，我与来自波士顿、洛杉矶和伯克利的几位女权运动姐妹进行了多次交谈，她们也曾被社群“清理”出去，这些交谈让我确信女权运动从未检验自身的经验，也从未从中吸取教训；相反，社群内部的“清洗”行动开始变得泛滥，且愈演愈烈。我才觉得，也许公开讲述社群里的隐秘事件，才有可能拨开云雾，让事实得以重见天日。</p>
+  <p>什么是“清理”？这个口语化的词语，似乎意涵丰富，但又好像什么也没说。“清理”并不是政见分歧、意见冲突或彼此对立的结果；事实上，在组织运行的过程中，分歧是再普通不过的家常便饭了，甚至可以说，一个组织要保持动态、良好与持续活跃的运行状态，内部成员之间发生分歧或冲突是必不可少的过程，前提是这些都是基于双方真诚态度下试图解决问题的合理尝试，而不因偏离轨道而失控。但社群清理，是操控式的、虚伪的、偏激的，它是一场极端恐怖的人格谋杀（character assassination），几近于精神强暴。“清理”行动的邪恶性常常被遮蔽，或者伪装成一种不可避免的政见冲突；或者是干脆通过拒绝承认意见分歧、拒绝反对者声音来回避问题。可见，“清理”行动不是为了暴露问题或解决分歧，而是通过人身攻击来摧毁他人。</p>
+  <p>清理的方式不尽相同：可以发生在私人情境或群体情景中；可以当面指责，也可以是背后中伤；可以暗中排挤，也可以公开谴责。发动清理的人，可能会伪造别人对你的恶意言论；在你朋友面前说三道四，挑拨你们的关系；恶意揣度你的言行举止；把不切实际的期望投射到你身上，当你无法满足这些期待时，她们就可以名正言顺地表达愤怒；否认你对现实的感知，或者就干脆假装你是个透明人。甚至，一些新兴的团体组织技巧，也毫不掩饰地被用于帮助“清理”：例如，批评与自我批评、内部调解，或者是某种疗法。但无论使用哪种方式或以什么样的面目呈现，清理往往涉及以下内容：侵犯个体的完整性、宣示他人的无能、抨击某人动机不明，“清理”要攻击指责的并不是具体的行为、观念，而是整个完整自我。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-03/60dfdcf34cd55d54dd5db7b5+L.jpeg" data-id="60dfdcf72114416715c3d97d" alt="1970 年 8 月 26 日，美国华盛顿妇女解放运动" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1970 年 8 月 26 日，美国华盛顿妇女解放运动
+    </figcaption>
+  </figure>
+  <p>这些攻击手段，最终让你意识到：你的存在本身就对女权运动不利。做任何事情都无法改变现状，除非你自我毁灭。这些感受，会因为朋友的疏离而不断加重：你周围的朋友渐渐会相信，如果跟你站在一起，就是与组织为敌，与整个运动为敌，自己也不会有什么好下场。对你的一丁点支持，都会连累到她们自己。最终，所有你曾经的“同志”，都会参与到这场不再噤声的“批斗会”，而你的心态会不断崩溃陷落，以至于再也找不回原本的自我。</p>
+  <p>经历三次“被清理”之后，我才终于下定决心退出女权组织。1969年年末，我的精神状况已经被蹂躏到无法继续待下去的地步了。在这之前，我一直天真地将自身遭遇归咎于性格冲突、政治分歧，我以为只要多花些时间，多花些精力，最终是可以扭转局面的。但我越努力，处境却越糟糕；最终，我不得不逼迫自己面对这荒谬的事实：问题不在于我做的事情，而在于我这个人本身。</p>
+  <p><strong>离开女权圈之后，仍被“清理”</strong></p>
+  <p>事情发生得很微妙，我从来都没有机会跟任何人谈起。社群中发生的，都不过是一些微小的摩擦，没有任何搬上台面的冲突或对质。这些琐屑的事情本身无足挂齿，但所有事情堆积到一起，对我而言简直就是千刀万剐。我就这样一步步被排斥出女权圈外：我参与集体创作，但我的贡献却一直被无视；如果我独立创作了一篇文章，没有人有兴趣阅读；我在会议中发言，每个人都保持礼貌地聆听，讨论环节却对我的内容只字不提，好像我压根没说过什么；聚会日期调整，我不会收到任何消息；轮到我协调工作项目时，没有人愿意提供帮助；我没有收到邮件，他们的说法是留错了地址，事实上，我的名字压根就不在发送列表里。有一次，女权社群计划众筹资助伙伴去参会，当我提出我也想去参会，这项众筹计划就被取消了。（之后，有一位社群伙伴打电话给我，说愿意支持我5美金，前提是我不告诉任何人。几年之后，她也被清理了。）</p>
+  <p>面对这些遭遇，我深感困惑，感觉自己像是被蒙住了双眼，在一片旷野中踽踽独行，周围荆棘遍布，却还要不断自我安慰，我可以看清周遭，我正身处一片绿草如茵的田园。不知不觉，我进入了一个陌生的领地；它的运行规则，我无从知晓，也无法知晓。而当我试图跟社群伙伴分享我的经验和感受时，他们或者否认我对现实的感知，不断告诉我一切正常；或者是认为这些私人的小事无足挂齿（从个体层面而言，你确实可以称它们为“只是小事”）。一位女性朋友曾私下打电话给我，她也认为，我确实是被恶意对待了，但她从来不会公开支持我，因为她很害怕失去团队其他人的支持。后来，她在另一个团队里也被“清理”了。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-03/60dfdd1e4cd55d54dd5db7b6+L.jpeg" data-id="60dfdd269b2d825085c26224" alt="1975 年，一群男性工围观举着“姐妹情谊大”标语的妇女权益游行" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1975 年，一群男性工围观举着“姐妹情谊大”标语的妇女权益游行
+    </figcaption>
+  </figure>
+  <p>连续好几个月，各种各样事情都在反复释放信号：滚开！这场只针对我的“运动”，在不断嘶叫：滚开！滚开！（滚出女权运动！）某一天，我跟我室友谈心，我说我现在已经无法感知自己的存在，我只是一个自己臆想出来的人吧。那一刻，我知道该离开女权圈了。我的离开，悄无声息。我只告知过两个人，之后就再也不去女性中心/妇女中心了（ Women’s Centre）。 随后，女权圈的反应，让我更加确信我的感知和判断是正确的：没有人电联我，没有任何邮件，没有任何小道消息。我的生命黯然失色，但除了我，没有任何人知晓。三个月后，我被芝加哥妇女解放联盟（Chicago Women's Liberation Union）谴责：说我未经过她们的许可，私自允许别人在报道中引用我的论述。但这个组织建立于我离开女权圈之后，她们仍然在“清理”我。这就是我经历的一切。</p>
+  <p>最可怕的事情是，我没想到我居然会被这件事情伤得如此之深。我成长于一个相当保守、传统、男权至上的城市郊区，从小到大，我的身份认同一直遭受攻击，我需要不断为自己存在的合理性辩护，这些经历都没有毁掉我，反而让我更加坚强。后来，我又在其他政治团体、社会运动中经受磨砺，变得更加强大。正是因为这些经历，我了解到政治斗争是如何以修辞、话语论述为武器，我知道怎么快速辨别出那些将个人纷争伪装为政治斗争的行径。这些斗争，在攻击某个人的思想观念时，总是强调与私人恩怨无关，强调这是非个人的事件。这样的行径当然不值得提倡，但这些攻击带来的后果，并没有如同我后来在女权运动中所见识的那般可怖。当一个人的观点被指摘时，我们更容易反思被批驳的观点本身，而不是否定自身的人格。在这些团体的政治斗争中，偶尔会进行人身攻击，但它往往不具备道义上的合理性，因此在效用和程度上都是非常有限的。正是因为人们更看重对行为的评判，而不是人身攻击，这些攻击并不会导致被攻击者陷入孤绝的境地。即使真的发生，这些攻击也不会真正中伤你。</p>
+  <p>但女权运动中的斗争，却刺穿了我坚硬的外壳。我生平第一次，发现自己竟然相信那些可怖的流言蜚语。当我自己被当成一坨屎时，我真心觉得自己就是一坨屎。我的反应令我相当不安，这种不安的程度不亚于我被攻击时的情绪。经历这么多攻击，我都能幸免于难，为什么我现在却被压垮了呢？这个问题，我花了很多年才想通。对我个人而言，这是一次重大的创伤，因为我以为自己早已无坚不摧，但现在我必须承认自身的脆弱性。我能从早年成长经历中幸存下来，在于我从未赋予任何人或者任何团体审判我的权力——只有我可以审判自己。但是，女权运动以姐妹情谊的甜蜜承诺来引诱我，它宣扬将会提供一个免于被男权社会蹂躏的避难所；一个大家彼此可以互相理解的空间。正是因为我对女权运动、女权主义者的强烈渴求和信任，才使得我变得非常脆弱。我将审判自我的权力让渡给了女权运动，因为我信任它。当女权运动认为我一文不值的时候，我接受它对我的审判。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-03/60dfdd439c232e01c17d21bc+L.png" data-id="60dfdd482114416715c3d97f" alt="美国女权运动" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+美国女权运动
+    </figcaption>
+  </figure>
+  <p><strong>“女权难民”：被清理的姐妹</strong></p>
+  <p>至少半年的时间里，我一直陷于近乎麻木的绝望，将失败彻底内化为个人的问题。1970年6月，我发现我在纽约的经历和其他来自四个不同城市的女性如此相似。我们相约某天晚上碰头，原本计划是泛泛地聊聊女权运动的现状，最后发现我们都在讨论自己的遭遇。在场的女权主义者有两个共同点：一是我们都曾经在女权运动领域中小有名声；二是我们都被清理了。安塞尔玛·戴尔·奥利奥（Anselma Dell’Olio）给我们朗读了一篇她最近在团结妇女大会上发表的演讲《女权运动中的分裂和自我毁灭》，这篇讲稿讲述了她自己被清理的经历。</p>
+  <p>“多年前，我就意识到，女性之间总是彼此分裂、自我毁灭，并且充满空洞的愤怒。我以为女权运动将会改变这一切。我做梦都没想到，我等来的是这样的时刻：这种空洞的愤怒，乔装打扮为伪平等的激进主义（pseudo-egalitarian radicalism），用来击垮那些被挑中的女权姐妹。”</p>
+  <p>“我指的是……人身攻击，公开的或者是非公开的，被攻击的姐妹， 这些攻击使运动中勉强取得一些成就的姐妹们被迫屈从。人身攻击有很多不同的形式，最常见、最普遍的是人格谋杀（character assassination）：通过人身攻击来削弱，并摧毁自我信念；另一种是“清除异己”，最极端的策略是孤立她……”</p>
+  <p>“她们会攻击谁呢？一般包括两类人……（一种是）任何成就或者才能，都会被视最可怕的罪行：在任一方面，可能其他女性也曾公开/非公开地表示过她也能做的，你只不过是恰好做了……如果你又非常自信，也就是所谓“强势的”人……还有另一种情况是，你被定义为不符合传统女性形象，就是这两种。”</p>
+  <p>“如果你属于第一种类型（即成就者），你很快就会被贴上’投机分子’的标签，一个唯利是图、冷血的人，踩在其他奉献于运动的姐妹的尸体（她们为了女权主义更宏伟的革命理想，不惜牺牲自身的能力和才华），来获取个人的名誉和声望；创造力强、效率太高似乎是主要的罪过——如果很不幸，你又非常直言不讳、口齿伶俐，你会被指控为——迷恋权力、精英主义的、法西斯主义的，还有最恐怖的指控是：一个男权认同者。呕！！”</p>
+  <p>我听着这些，一种解脱感包围了我。她所描述的，正是我的经历。如果我疯了，我肯定不是唯一的一个。那天，我们聊到很晚。散场的时候，我们都自嘲为“女权难民”，还相约之后再见面。但最终，我们没有再相见。相反，我们都“不约而同”地返回各自孤独的处境，仅仅在个人层面应对这个问题。后来的结果就是，那次聚会的女性，大多数都跟我一样离开了女权运动。两位因为精神崩溃被送进了医院。尽管我们仍然关注并参与女权运动，但没有一个人真正拥有过允许其倾力奉献才华的空间。我们再没有见过彼此，但运动“自我毁灭”的趋势越来越明显，被清理的人越来越多。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-03/60dfdd794cd55d54dd5db7b7+L.png" data-id="60dfdd862114416715c3d981" alt="女权运动标语" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+女权运动标语
+    </figcaption>
+  </figure>
+  <p>这几年来，我跟很多被“清理”的女性交谈过。攻击，就像是癌细胞扩散，已从有名气的人扩散到仅仅是性格强势的人，从积极行动者扩散到仅仅是特立独行的人，从脱颖而出的姐妹到仅仅无法快速适应运动风向的人。每一个新的故事，都让我更加确信，“清理”绝不是个人行为所造成的个人问题，也不是观念分歧带来的政治斗争，这是一个社会性痼疾。</p>
+  <p>长久以来，这个痼疾一直被忽视，因为它总是挪用姐妹情谊的说辞来掩饰。在我的经历里，在姐妹情谊道德外衣的庇护下，我被排斥的事实一直不被承认。女权运动宣扬的理念是：每一位妇女都是姐妹，每一女性都应该被接纳的。但很显然，这并不包括我。没有人愿意承认我被恶意孤立的事实，因为这将意味着她们所宣称的姐妹情谊理念是虚情假意。相比而言，直接否认会更容易些。在其他被清理的案例里，姐妹情谊不止是掩盖事实的工具，更是杀人的匕首。匿名的审判者建立起模糊标准来界定姐妹行为，谴责那些无法满足标准的人。只要标准是含糊的、过分理想化的，就永远可以通过操演这些标准来审判他人是否达标。标准还可以依据情境不断调整，将那些不再被需要的姐妹驱逐出去。女权主义者阿特金森（Ti-Grace Atkinson’s）的经典格言，一次次得到应验：“姐妹情谊有力量：它杀死了姐妹。”</p>
+  <p><strong>“可抛弃的人”：容易被清理的两种姐妹</strong></p>
+  <p>清理，不仅仅是对个人的毁灭，同时也强有力的社会控制方式。被攻击者所具备的个性、行事风格都将成为其他女性的反面教材，其他人纷纷划清界限，否则将会遭遇相同的命运。这不是女权运动特有的方式，也不是女性独有的。通过社会压力来要求服从性、排斥差异性个体的手段，一直根植于美国社会。<strong>关键问题不在于，为什么女权运动要对行动者施加如此强大的压力，逼迫她们遵守一个狭隘的行为标准；而在于，它迫使行动者服从的是什么样的行为规范。</strong></p>
+  <p>这些标准往往披上革命、女权主义的外衣，但实质上是非常传统的女性角色规训。据我观察，有两种类型的女性会被清理出女权圈。第一种就是安塞尔玛·戴尔·奥利奥（Anselma Dell’Olio）所说的成就者或者坚定自信的女性，她们往往会被贴上“男权认同者”（male-identified）的标签。这一类型的女性长期遭受社会污名化，被诟病为“不够女性化”、“被阉割的荡妇”（castrating bitch）。男权社会所认可的 “伟大的女性”一直很稀少，不仅仅由于女性优秀的品质无法施展、不被认可，还因为正在发挥才华潜能的女性既要被男人惩罚，还要被女性姐妹惩罚。如果连女性自己都认为获得成就会招来恶意攻击，而不是赢得荣耀，“女性恐惧成功”这件事情就变得很可以理解了。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-03/60dfddac4cd55d54dd5db7b8+L.png" data-id="60dfddb9904b8c02a16a35be" alt="纽约女权运动" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+纽约女权运动
+    </figcaption>
+  </figure>
+  <p>女权运动，不但没有挑战传统的社会规训，甚至将这种压制推向一个新的极端。在女权社群中，做进步的事情、被承认、获得成就，就意味着她正在逃离其他女性无法逃离的压迫，或者是自认为自己比其他女性更优秀。尽管这样恶意揣测的并不多，但当某些人将魔爪伸向优秀的同伴时，大多数女性都选择了沉默。女权运动，一直引以为傲地宣称追求一种“去领导化”的组织；事实上，“去领导化”更经常被用来摧毁那些有领导潜力的姐妹，而不是帮助领导力匮乏的姐妹发展能力。很多尝试分享技能的姐妹，都被清理了，仅仅因为她们显示出来一种进步性——自己懂的比别人多。女权运动对平等主义的追求如此强烈，以至将平等与同质混同。那些让社群觉察到“她们并不一样”的姐妹统统被清理了，因为她们展现的独特性被解读为是不平等的表现。</p>
+  <p>最终，女权运动对获得成就的行动者提出错误的要求。它要求她们应该内疚、应该赎罪，而不是承认她们的才华，也没有赋予她们责任感。那些从女权运动中获益的女性，确实不应止于感激，而是有责任反哺女权运动的。社群清理显然斩断了这种反哺的可能性。“清理”只会阻碍女性试图从传统束缚中挣脱出来，打击其行动的积极性，因为它昭示的不是解放，而是另一种形式的权力束缚。</p>
+  <p>另一种被清理的类型，是我从未预想过的。女权运动更青睐那些默默支持、不出风头的女性；那些总是忙于照料别人的女性；还有特别适合承担“母职”的女性。但是，令我惊讶的是，大多数这样的女性也被清理出女权圈。</p>
+  <p>讽刺的是，正是她们擅长扮演“母职”角色的能力，最后却惹怒了女权组织，因为其出色的能力建立起一个有力量的形象，让她们的社群伙伴感受到威胁。其中，一些有资历、年长的女性，一直被期待承担“母职”角色，仅仅因为她们看起来非常适合。但她们常常更有先见之明，所以会倾向于拒绝扮演母亲的角色，当她们明确表达拒绝的时候，“清理”行动就开始了。另外一些愿意扮演母亲角色的行动者，最终发现期待永远无法满足，没有人能够“为所有人包办一切”。所以，当这些女性拒绝社群要求，以保留一丁点自己的时间和能量，或者想要转向社群的政治事务时，她们却引发社群愤怒，被当做“可抛弃的人”。</p>
+  <p>真正的母亲当然可以承受孩子的愤怒，因为她们对于孩子的物质以及财务层面仍有一定的掌控权。即使职业上承担“母职代理”的女性，也依然拥有资源来制衡“客户”的愤怒。但如果一个人成为伙伴的“母亲”，她是无力应对对方的愤怒的。一旦对方的要求变得不切实际，她只能主动离开社群，或者是被抛弃。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-03/60dfddd74cd55d54dd5db7b9+L.png" data-id="60dfdddf2114416715c3d983" alt="女权运动时的大巴车" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+女权运动时的大巴车
+    </figcaption>
+  </figure>
+  <p>这两种被“清理”的女性类型，与传统性别结构中对女性角色的期待和规训是同根同源的。长久以来，只有两种女性角色是被允许的：援助者和被援助者。大多数女性在不同的人生阶段，被要求成为援助者，或是成为被援助者。尽管性别批判意识在增强，个人社会化过程也得到更严密的反思，大多数女性依旧没有从这两种角色中获得解放，也没有放弃以这两种期待要求其他女性。那些偏离这两种角色的人——即有所成就的女性，以及无法满足社群期待的女性，都受到了惩罚。</p>
+  <p>事实上，发起“清理”行动的人往往只是少数几位，但清理是否能持续进行下去，关键在于周围所有人的反应。清理行动一旦开始，被攻击的姐妹根本不能为自己辩护，因为她被认定为是“错误”本身，无论做什么都是错的。相比而言，周围的人可以有很多方法来避免让她陷入孤绝境地或是被彻底摧毁。“清理”的实质在于孤立受害者，将社群的问题归咎于她个人。因此只有当受害者陷入孤独境地时，清理才开始真正发挥效果。周遭伙伴的支持可以为清理行动的高歌猛进打开一个缺口，也使得清理运动失去观众。于是，局势转变了，彻底的打击行动将被扭转为一场抗争。社群伙伴往往会因为害怕自己会是下一个受害者而保持沉默。很多清理运动，就因为周遭伙伴拒绝这种恐惧的恫吓，在刚有“苗头”的时候就被及时制止了。或者是，有的攻击者被要求重新阐释清楚她们“批斗”的内容，从而可以理性地处理这些事情。</p>
+  <p><strong>没有谁是获益者：清理运动对个人、集体和运动的重创</strong></p>
+  <p>当然，“清理”行为与政治争论之间，人格谋杀（character assassination）与合理反对不良行为之间的界限并不清晰。分辨这些行为需要一些功夫，下面提供一些可参考的依据。清理行为会大量使用动词“to be”（是……），很少使用动词“to do”（做……）；前者往往指涉被攻击的人是什么样，而不是她做了什么。而且，攻击的内容，往往很少用具体不合理行为表达出来；攻击者倾向于使用含糊的、笼统的形容词和名词来表达他们对某个人的批评。这些词汇总是携带着消极否定的意涵，甚少真正传达到底做错了什么事情，剩下的内容就只能靠自己想象了。被攻击者做什么都是错的。因为她们是恶人，因为她们动机不良，所以她们做什么都是错的。而且，过去的错误行为也不可能被重新修正、被弥补，因为这些会被定义成是被清理者身上的人格劣迹或是顽疾，而不是某种行为本身。</p>
+  <p>敢于为被攻击者辩护的人将会面临严峻的考验，特别是受害者本人不在场的情况下。如果能认真去对待这些辩护者的意见，认真聆听她们表达的忧虑，并且要求详尽取证、听取多方声音，清理行为很可能就不会发生。但当你的辩护总是被立即驳回，还附带着惯常的指控——“你怎么可以为她辩护呢？”；或者因为辩护，你也被社群伙伴怀疑；或者说你发现很难从事实角度进行辩护，你就应该警惕那些提出指控的人——这一定不是单纯的意见不合，背后必定有更复杂的暗流涌动。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-03/60dfddfa9c232e01c17d21bd+L.jpeg" data-id="60dfddfe2114416715c3d984" alt="乔·弗里曼" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+乔·弗里曼
+    </figcaption>
+  </figure>
+  <p>后来清理行为越来越普遍，我愈发无法理解为什么这些会发生。女权运动支持甚至鼓励行动者互相毁灭，这究竟意味着什么？我们怎么可以一方面鼓励女性发展个人潜能，另一方面摧毁那些崭露头角的姐妹呢？怎么可以既谴责男权社会对女性的伤害，又谴责那些不以受害者形象出现的女性呢？为什么女权意识逐渐增强的我们，对清理却毫无察觉？</p>
+  <p>我们可以轻易将此归因于：女性成长历程中一直被灌输“女人不重要”的观念，由此逐渐形成集体性的压抑与自我厌恶。但这样的答案，未免有些草率，它遮蔽了另一面事实：清理的现象并非随机发生的。并非所有的女权组织或者女性组织会进行清理，至少不会达到如此暴烈的程度。清理在那些自称激进的组织更为普遍；在强调个人变化高于集体进步的组织里更容易发生；在那些只把革命的胜利当成胜利的而从未认可微小成功的团体更容易发生；目标模糊的团体比目标明确的团体里更容易发生。</p>
+  <p>我不认为可以为清理提供唯一明确的阐释，它源于多重情境的组合，即使是处于被清理过程中的亲历者也很难自知。从我所听说的经历和观察来看，我深刻地感知到，它的内核是如此的老旧。通过精神操控来阻止女性僭越权力划定的边界，这早已不是什么新鲜事。这是一个用来压制女性的古老方式；人们期待女权主义可以带领女性从中获得解放。然而，女权主义并没有创造另一种文化、另一种价值，而不过是为传统价值观创造一套新的“外衣”，简直是换汤不换药。</p>
+  <p>尽管策略老旧，但是杀伤力却强很多。我从未看过，像女权运动这样，女性之间如此互相仇恨。部分原因是，我们对其他女权主义者和女权运动的期待总是太高，这些期待很难实现。我们还未学会用一种现实的眼光去审视自我，以及对待我们的女权伙伴，因此“他者”就容易成为“自我”发泄愤怒的靶子。</p>
+  <p>压迫总是理所当然地引发愤怒，而愤怒需要寻找出口。在现实生活中，女性深知自己身处一个男权环绕包围的社会，直接攻击男性并不是一个聪明的选择，于是，生活中的愤怒经常被压抑和内化。女权运动尝试教育女性不应该压抑愤怒，但它并没有提供可供选择的靶子。女权社群与男性总是有一定距离，父权制又过于庞大和宽泛，而同志姐妹则近在咫尺。相比攻击难以把握的社会结构，攻击其他女权主义者更简单，也更容易看到行动的结果——受伤的女性，很快就离开运动。这样，攻击者可以从好似“已经做了什么事情”中享受权力的快感。相比而言，社会变革是一个非常缓慢的、反复受挫的过程，需要依靠一点点的累积，回报相当漫长，但受挫却是经常性的。因此，这样的女权主义者最经常会在社群里发起敌意满满的清理行动：她们轻视微小、非自我的变化，又无力直接对抗明确的体制。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-03/60dfde224cd55d54dd5db7ba+L.png" data-id="60dfde299b2d825085c26226" alt="乔·弗里曼的《婊子宣言》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+乔·弗里曼的《婊子宣言》
+    </figcaption>
+  </figure>
+  <p>女权运动强调“个人即政治”，这一理念为“清理”的蔓延推波助澜。我们的性别政治观念往往来源于对个人日常生活的批判。于是，社会运动可以名正言顺地告知我们：我们应该成为什么样的人，或者我们应该拥有什么样的品性气质。这些要求没有明确的界限，很容易被滥用。很多女权团体试图重塑行动者的所有生活和观念，而那些拒绝被重塑的姐妹，则被清理出去。</p>
+  <p>清理也是社会竞争意识的另一种展演方式，只不过，这场竞争展现的是“清理”发起者的无能感。在这里，人们证明谁更差劲，而不是证明谁更优秀。这样，发起清理的人，既可以享受传统竞争模式同等的优越感，又无须付出任何代价：若清理相当成功，被攻击的人立马蒙羞；即使清理失败，在正义的外衣之下，泄愤者也非常安全。坦诚而言，如果在社会运动中，竞争是不可避免的，我会更倾向于传统的竞争模式。尽管这种竞争模式需要付出代价，优胜者获益对集体还是有好处的，因为我们所有的人都在互相超越。而清理运动对个人、集体和整个运动来说都是一场重创，没有谁是获益者。</p>
+  <p>声援那些被指控为颠覆、瓦解女权运动的女性，需要很强的勇气，因为我们一旦挺身而出，立刻会成为“出头鸟”。然而，如今清理行动波及的范围如此之广、程度如此之深，已经造成巨大的集体性创伤。我们已经失去太多有创造力的思考者、太多致力于改变社会的行动者。更糟糕的是，很多女权主义者的积极性备受打击，由于害怕自己也会被清理而如履薄冰。我们没能为想要发展自身潜力的女性提供支持，也无法为那些与日常生活的男性霸权作斗争的女性提供能量。这场曾经充满能量、热情和创造力的社会运动已陷落为一场卑微的生存之战，身处其中的人努力从彼此的厮杀中存活下来。</p>
+  <p>现在，我们是时候停止在内部寻找敌人，开始同仇敌忾，对准外部真正的敌人了吧？</p>
+  <blockquote>
+    <p>本文原载于1976年4月 <i>Ms. </i>杂志第49-51页与第92-98页。文章发表后收到很多读者来信，远超过此前<i> Ms. </i>杂志任何一篇文章，读者们纷纷讲述她们自身被“清理”的经历。这些来信也一并被刊登出来。由乔·弗里曼授权翻译刊发，原标题为“女权运动中的‘清理’：姐妹情谊的暗面”，小标题为编辑添加。</p>
+  </blockquote>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-07-04</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-04/%E9%87%8D%E8%BF%94%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB%E7%9A%84%E5%8F%98%E9%9D%A9-%E5%A5%B3%E6%80%A7-%E7%94%B7%E6%80%A7%E4%B8%8E%E5%84%BF%E7%AB%A5%E7%9A%84%E6%96%B0%E5%8D%B1%E6%9C%BA/">
+          重返日常生活的变革：女性、男性与儿童的新危机
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-03</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/">
+          北岛获日本大伴家持文学赏，受奖致辞：写作是我最后的防线
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-02</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-02/%E6%9D%8E%E5%B0%8F%E9%BE%99-%E5%A5%BD%E8%8E%B1%E5%9D%9E-%E6%AD%A6%E6%89%93%E7%89%87%E5%92%8C%E4%BA%9A%E8%A3%94%E7%9A%84%E5%BD%A2%E8%B1%A1%E5%8F%98%E8%BF%81/">
+          李小龙：好莱坞、武打片和亚裔的形象变迁
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-01/%E9%98%BF%E7%91%9F-%E5%85%8B%E6%8B%89%E5%85%8B%E5%A5%96%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%9F%AD%E5%90%8D%E5%8D%95-%E4%B8%AD%E5%9B%BD%E4%BD%9C%E5%AE%B6%E9%83%9D%E6%99%AF%E8%8A%B3-%E6%B5%81%E6%B5%AA%E8%8B%8D%E7%A9%B9-%E5%85%A5%E5%9B%B4/">
+          阿瑟·克拉克奖公布2021年短名单，中国作家郝景芳《流浪苍穹》入围
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-02/%E6%9D%8E%E5%B0%8F%E9%BE%99-%E5%A5%BD%E8%8E%B1%E5%9D%9E-%E6%AD%A6%E6%89%93%E7%89%87%E5%92%8C%E4%BA%9A%E8%A3%94%E7%9A%84%E5%BD%A2%E8%B1%A1%E5%8F%98%E8%BF%81/">
+            前一篇：李小龙：好莱坞、武打片和亚裔的形象变迁
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/">
+            後一篇：北岛获日本大伴家持文学赏，受奖致辞：写作是我最后的防线
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-07-02/%E6%9D%8E%E5%B0%8F%E9%BE%99-%E5%A5%BD%E8%8E%B1%E5%9D%9E-%E6%AD%A6%E6%89%93%E7%89%87%E5%92%8C%E4%BA%9A%E8%A3%94%E7%9A%84%E5%BD%A2%E8%B1%A1%E5%8F%98%E8%BF%81/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-07-02/%E6%9D%8E%E5%B0%8F%E9%BE%99-%E5%A5%BD%E8%8E%B1%E5%9D%9E-%E6%AD%A6%E6%89%93%E7%89%87%E5%92%8C%E4%BA%9A%E8%A3%94%E7%9A%84%E5%BD%A2%E8%B1%A1%E5%8F%98%E8%BF%81/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-07-02/%E6%9D%8E%E5%B0%8F%E9%BE%99-%E5%A5%BD%E8%8E%B1%E5%9D%9E-%E6%AD%A6%E6%89%93%E7%89%87%E5%92%8C%E4%BA%9A%E8%A3%94%E7%9A%84%E5%BD%A2%E8%B1%A1%E5%8F%98%E8%BF%81/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-07-02/%E6%9D%8E%E5%B0%8F%E9%BE%99-%E5%A5%BD%E8%8E%B1%E5%9D%9E-%E6%AD%A6%E6%89%93%E7%89%87%E5%92%8C%E4%BA%9A%E8%A3%94%E7%9A%84%E5%BD%A2%E8%B1%A1%E5%8F%98%E8%BF%81/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

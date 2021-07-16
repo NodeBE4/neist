@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="高頻版 git.io/JUJZT">
+    <meta property="og:description" content="高頻版 git.io/JUJZT" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fnodebe4.github.io%2Foped2%2Fpage8%2F" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://nodebe4.github.io/oped2/page8/" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://nodebe4.github.io/oped2/page8/&text=觀點2-高頻版 git.io/JUJZT&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://nodebe4.github.io/oped2/page8/&title=觀點2-高頻版 git.io/JUJZT" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://nodebe4.github.io/oped2/page8/&title=觀點2-高頻版 git.io/JUJZT" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=觀點2-高頻版 git.io/JUJZT&body=" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://nodebe4.github.io/oped2/page8/" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://nodebe4.github.io/oped2/page8/&title=觀點2-高頻版 git.io/JUJZT&caption=&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=觀點2-高頻版 git.io/JUJZT&url=https://nodebe4.github.io/oped2/page8/" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+<ul class="archive">
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-03-16/%E7%A7%98%E5%AF%86%E5%8D%8F%E8%AE%AE-%E4%B8%AD%E5%9B%BD%E7%89%B9%E5%B7%A5%E4%B8%80%E7%9B%B4%E8%83%BD%E5%A4%9F%E5%9C%A8%E7%91%9E%E5%A3%AB%E8%87%AA%E7%94%B1%E6%B4%BB%E5%8A%A8-iYouPort/">
+      
+        秘密协议：中国特工一直能够在瑞士自由活动 - iYouPort
+      </a>
+      <time>2021-03-16</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e7%a7%98%e5%af%86%e5%8d%8f%e8%ae%ae%ef%bc%9a%e4%b8%ad%e5%9b%bd%e7%89%b9%e5%b7%a5%e4%b8%80%e7%9b%b4%e8%83%bd%e5%a4%9f%e5%9c%a8%e7%91%9e%e5%a3%ab%e8%87%aa%e7%94%b1%e6%b4%bb%e5%8a%a8/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-03-16/%E5%9C%A8%E4%B8%AD%E5%9B%BD%E5%81%9A%E7%94%9F%E6%84%8F%E7%9A%84%E7%AC%AC%E4%B8%80%E8%AF%BE-iYouPort/">
+      
+        在中国做生意的第一课 - iYouPort
+      </a>
+      <time>2021-03-16</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%9c%a8%e4%b8%ad%e5%9b%bd%e5%81%9a%e7%94%9f%e6%84%8f%e7%9a%84%e7%ac%ac%e4%b8%80%e8%af%be/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-03-16/%E5%B0%91%E8%AF%B4%E8%AF%9D-%E5%A4%9A%E5%8A%9E%E4%BA%8B-%E5%BD%93%E5%9D%8F%E8%9B%8B%E6%89%8B%E6%8C%81%E5%AE%AA%E6%B3%95-iYouPort/">
+      
+        少说话，多办事 …… 当坏蛋手持宪法 - iYouPort
+      </a>
+      <time>2021-03-16</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%b0%91%e8%af%b4%e8%af%9d%ef%bc%8c%e5%a4%9a%e5%8a%9e%e4%ba%8b-%e5%bd%93%e5%9d%8f%e8%9b%8b%e6%89%8b%e6%8c%81%e5%ae%aa%e6%b3%95/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-03-15/%E4%BF%A1%E6%81%AF%E5%B0%B1%E6%98%AF%E6%88%91%E4%BB%AC%E7%9A%84%E8%B4%A7%E5%B8%81-%E8%A7%A3%E7%A0%81%E7%A7%98%E5%AF%86-5-%E5%85%AC%E6%B0%91%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF%E6%9D%83%E5%88%A9%E8%BF%90%E5%8A%A8-iYouPort/">
+      
+        信息就是我们的货币：解码秘密（5）- 公民获取信息权利运动 - iYouPort
+      </a>
+      <time>2021-03-15</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%bf%a1%e6%81%af%e5%b0%b1%e6%98%af%e6%88%91%e4%bb%ac%e7%9a%84%e8%b4%a7%e5%b8%81%ef%bc%9a%e8%a7%a3%e7%a0%81%e7%a7%98%e5%af%86%ef%bc%885%ef%bc%89-%e5%85%ac%e6%b0%91%e8%8e%b7%e5%8f%96%e4%bf%a1/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-03-15/%E5%AE%89%E5%85%A8%E6%98%AF%E8%BF%BD%E6%B1%82-%E8%80%8C%E4%B8%8D%E6%98%AF%E4%BB%BB%E5%8A%A1-%E6%95%B4%E4%BD%93%E5%AE%89%E5%85%A8-8-%E5%87%86%E5%A4%87%E5%A5%BD%E8%BF%9B%E5%85%A5%E8%A1%8C%E5%8A%A8-iYouPort/">
+      
+        安全是追求，而不是任务：整体安全（8）- 准备好进入行动 - iYouPort
+      </a>
+      <time>2021-03-15</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%ae%89%e5%85%a8%e6%98%af%e8%bf%bd%e6%b1%82%ef%bc%8c%e8%80%8c%e4%b8%8d%e6%98%af%e4%bb%bb%e5%8a%a1%ef%bc%9a%e6%95%b4%e4%bd%93%e5%ae%89%e5%85%a8%ef%bc%888%ef%bc%89-%e5%87%86%e5%a4%87%e5%a5%bd/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-03-15/%E7%96%BE%E7%97%85-%E6%AD%BB%E4%BA%A1%E5%92%8C%E6%B2%BB%E7%90%86-%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E9%98%B2%E7%96%AB%E4%B8%8E%E6%94%BF%E6%B2%BB%E5%88%B6%E5%BA%A6%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E6%9C%89%E5%A4%9A%E5%A4%A7-iYouPort/">
+      
+        疾病、死亡和治理：冠状病毒防疫与政治制度之间的关系有多大？ - iYouPort
+      </a>
+      <time>2021-03-15</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e7%96%be%e7%97%85%e3%80%81%e6%ad%bb%e4%ba%a1%e5%92%8c%e6%b2%bb%e7%90%86%ef%bc%9a%e5%86%a0%e7%8a%b6%e7%97%85%e6%af%92%e9%98%b2%e7%96%ab%e4%b8%8e%e6%94%bf%e6%b2%bb%e5%88%b6%e5%ba%a6%e4%b9%8b%e9%97%b4/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-03-15/%E4%BC%AF%E5%B0%BC%E7%9A%84%E6%89%8B%E5%A5%97-%E7%B2%BE%E8%8B%B1%E5%85%B1%E8%AF%86%E4%B9%8B%E5%A4%96%E7%9A%84%E5%9B%A2%E7%BB%93-iYouPort/">
+      
+        伯尼的手套：精英共识之外的团结 - iYouPort
+      </a>
+      <time>2021-03-15</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%bc%af%e5%b0%bc%e7%9a%84%e6%89%8b%e5%a5%97%ef%bc%9a%e7%b2%be%e8%8b%b1%e5%85%b1%e8%af%86%e4%b9%8b%e5%a4%96%e7%9a%84%e5%9b%a2%e7%bb%93/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-03-11/Hong-Kong-s-Economic-Future/">
+      
+        Hong Kong’s Economic Future
+      </a>
+      <time>2021-03-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Ho-fung Hung, Flora Huang &#38; more</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/conversation/hong-kongs-economic-future" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-03-01/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+      
+        Visually Understanding the Data on Foreign NGO Representative Offices and Temporary Activities
+      </a>
+      <time>2021-03-01</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Jessica Batke &#38; Shen Lu</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/ngo/analysis/visually-understanding-data-foreign-ngo-representative-offices-and-temporary-activities" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+      <h2>2021年02月</h2>
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-02-27/IYP%E4%BC%98%E7%A7%80%E4%B9%A6%E7%B1%8D%E6%B1%87%E6%80%BB2021-01-02-%E6%9C%88%E7%89%88-%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD-iYouPort/">
+      
+        IYP优秀书籍汇总2021（01～02 月版） - 完全免费下载 - iYouPort
+      </a>
+      <time>2021-02-27</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/iyp%e4%bc%98%e7%a7%80%e4%b9%a6%e7%b1%8d%e6%b1%87%e6%80%bb2021%ef%bc%8801%ef%bd%9e02-%e6%9c%88%e7%89%88%ef%bc%89%e2%80%8a-%e2%80%8a%e5%ae%8c%e5%85%a8%e5%85%8d%e8%b4%b9%e4%b8%8b%e8%bd%bd/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-02-26/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-3.0-%E7%89%88-%E7%B0%A1%E4%BB%8B%E5%8F%8A%E7%9B%AE%E9%8C%84/">
+      
+        《數字極權時代生存手記》 3.0 版 簡介及目錄
+      </a>
+      <time>2021-02-26</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Luterngun</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Luterngun/%25E6%2595%25B8%25E5%25AD%2597%25E6%25A5%25B5%25E6%25AC%258A%25E6%2599%2582%25E4%25BB%25A3%25E7%2594%259F%25E5%25AD%2598%25E6%2589%258B%25E8%25A8%2598-3-0-%25E7%2589%2588-%25E7%25B0%25A1%25E4%25BB%258B%25E5%258F%258A%25E7%259B%25AE%25E9%258C%2584-bafyreib43hdxmrgax256pbo54l7n6pvyquqs6eq3v5vuym3ylcrwcytluu" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-02-24/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E4%BA%94%E6%9C%9F%E9%96%8B%E5%A7%8B%E5%95%A6/">
+      
+        程式導師實驗計畫第五期開始啦！
+      </a>
+      <time>2021-02-24</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Huli</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@hulitw/mentor-program-5th-start-c7da09311272?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-02-22/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E5%9B%9B%E6%9C%9F%E6%AA%A2%E8%A8%8E%E8%88%87%E5%BF%83%E5%BE%97/">
+      
+        程式導師實驗計畫第四期檢討與心得
+      </a>
+      <time>2021-02-22</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Huli</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@hulitw/mentor-program-4th-review-f8e8de92eea2?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-02-12/%E5%8F%AA%E6%98%AF%E6%83%B3%E5%AF%AB%E4%B8%80%E4%B8%8B/">
+      
+        只是想寫一下
+      </a>
+      <time>2021-02-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Huli</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@hulitw/happy-new-year-moo-e0e0ac5130e2?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-02-12/Will-China-Be-a-Global-Vaccine-Leader/">
+      
+        Will China Be a Global Vaccine Leader?
+      </a>
+      <time>2021-02-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Deborah Seligsohn, Jenny Lei Ravelo &#38; more</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/conversation/will-china-be-global-vaccine-leader" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-02-06/%E9%80%9A%E8%BF%87-ClubHouse-%E7%9C%8B%E5%88%B0%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E8%88%86%E8%AE%BA%E5%9C%BA%E6%9C%89%E5%A4%9A%E4%B9%88%E5%AE%B9%E6%98%93%E8%A2%AB%E6%93%8D%E7%BA%B5-iYouPort/">
+      
+        通过 ClubHouse 看到社交网络舆论场有多么容易被操纵 - iYouPort
+      </a>
+      <time>2021-02-06</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e9%80%9a%e8%bf%87-clubhouse-%e7%9c%8b%e5%88%b0%e7%a4%be%e4%ba%a4%e7%bd%91%e7%bb%9c%e8%88%86%e8%ae%ba%e5%9c%ba%e6%9c%89%e5%a4%9a%e4%b9%88%e5%ae%b9%e6%98%93%e8%a2%ab%e6%93%8d%e7%ba%b5/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-02-04/Running-on-Empty/">
+      
+        Running on Empty
+      </a>
+      <time>2021-02-04</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Dong Lin &#38; Summer Sun</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/multimedia/photo-gallery/running-empty" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-02-01/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+      
+        Visually Understanding the Data on Foreign NGO Representative Offices and Temporary Activities
+      </a>
+      <time>2021-02-01</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Jessica Batke &#38; Shen Lu</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/ngo/analysis/visually-understanding-data-foreign-ngo-representative-offices-and-temporary-activities" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+      <h2>2021年01月</h2>
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-31/Hong-Kong-s-National-Security-Law/">
+      
+        Hong Kong’s National Security Law
+      </a>
+      <time>2021-01-31</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Lydia Wong &#38; Thomas Kellogg</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/library/reports/hong-kongs-national-security-law" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-26/%E6%9C%83%E5%96%94-%E8%A9%B3%E7%B4%B0%E6%99%82%E9%96%93%E5%8F%AF%E4%BB%A5%E5%8F%83%E8%80%83-lidemy-%E7%B2%89%E7%B5%B2%E5%B0%88%E9%A0%81-%E6%9C%80%E6%96%B0%E8%A8%8A%E6%81%AF%E9%83%BD%E6%9C%83%E5%9C%A8%E4%B8%8A%E9%9D%A2%E5%85%AC%E5%91%8A/">
+      
+        會喔，詳細時間可以參考 lidemy 粉絲專頁，最新訊息都會在上面公告
+      </a>
+      <time>2021-01-26</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Huli</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@hulitw/%E6%9C%83%E5%96%94-%E8%A9%B3%E7%B4%B0%E6%99%82%E9%96%93%E5%8F%AF%E4%BB%A5%E5%8F%83%E8%80%83-lidemy-%E7%B2%89%E7%B5%B2%E5%B0%88%E9%A0%81-%E6%9C%80%E6%96%B0%E8%A8%8A%E6%81%AF%E9%83%BD%E6%9C%83%E5%9C%A8%E4%B8%8A%E9%9D%A2%E5%85%AC%E5%91%8A-1376a9aa4699?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-25/A-Look-Back-at-Foreign-NGOs-in-China-in-2020/">
+      
+        A Look Back at Foreign NGOs in China in 2020
+      </a>
+      <time>2021-01-25</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/ngo/latest/look-back-foreign-ngos-china-2020" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-22/In-Xinjiang,-Rare-Protests-Came-Amid-Lockdown/">
+      
+        In Xinjiang, Rare Protests Came Amid Lockdown
+      </a>
+      <time>2021-01-22</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Tracy Wen Liu</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/reporting-opinion/viewpoint/xinjiang-rare-protests-came-amid-lockdown" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-19/List-of-De-Registered-Representative-Offices/">
+      
+        List of De-Registered Representative Offices
+      </a>
+      <time>2021-01-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/ngo/latest/list-of-de-registered-representative-offices" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-19/List-of-De-Registered-Representative-Offices/">
+      
+        List of De-Registered Representative Offices
+      </a>
+      <time>2021-01-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/ngo/latest/list-of-de-registered-representative-offices" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-17/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%AD%E5%9C%8B%E6%9B%BE%E5%B0%8D%E6%97%A5%E6%9C%AC-%E9%9F%93%E5%9C%8B%E5%92%8C%E8%B6%8A%E5%8D%97%E7%9A%84%E5%8F%A4%E7%89%A9%E6%89%93%E9%81%8E%E4%B8%BB%E6%84%8F%E5%97%8E/">
+      
+        [外交雜聞]中國曾對日本、韓國和越南的古物打過主意嗎？
+      </a>
+      <time>2021-01-17</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E5%25A4%2596%25E4%25BA%25A4%25E9%259B%259C%25E8%2581%259E-%25E4%25B8%25AD%25E5%259C%258B%25E6%259B%25BE%25E5%25B0%258D%25E6%2597%25A5%25E6%259C%25AC-%25E9%259F%2593%25E5%259C%258B%25E5%2592%258C%25E8%25B6%258A%25E5%258D%2597%25E7%259A%2584%25E5%258F%25A4%25E7%2589%25A9%25E6%2589%2593%25E9%2581%258E%25E4%25B8%25BB%25E6%2584%258F%25E5%2597%258E-bafyreiddot3n56fjzeaiprdgm5pwaqdbbet6bfbmnjcte6d36kxa76hs6y" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-16/%E5%83%91%E5%8B%99%E4%BA%A6%E5%A4%96%E4%BA%A4-%E6%8B%BF%E7%9D%A3%E5%96%9D%E9%86%89%E9%83%BD%E5%8F%AF%E4%BB%A5%E6%89%93%E4%BA%BA%E4%BA%86-%E5%A4%9A%E9%BB%9E%E5%8C%AA%E5%BE%92%E7%A0%B4%E5%A3%9E%E6%B2%BB%E5%AE%89%E4%B9%9F%E4%B8%8D%E6%98%AF%E4%BB%80%E9%BA%BC%E5%A5%87%E6%80%AA%E7%9A%84%E4%BA%8B%E6%83%85%E5%95%A6/">
+      
+        [僑務亦外交]拿督喝醉都可以打人了，多點匪徒破壞治安也不是什麼奇怪的事情啦
+      </a>
+      <time>2021-01-16</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E5%2583%2591%25E5%258B%2599%25E4%25BA%25A6%25E5%25A4%2596%25E4%25BA%25A4-%25E6%258B%25BF%25E7%259D%25A3%25E5%2596%259D%25E9%2586%2589%25E9%2583%25BD%25E5%258F%25AF%25E4%25BB%25A5%25E6%2589%2593%25E4%25BA%25BA%25E4%25BA%2586-%25E5%25A4%259A%25E9%25BB%259E%25E5%258C%25AA%25E5%25BE%2592%25E7%25A0%25B4%25E5%25A3%259E%25E6%25B2%25BB%25E5%25AE%2589%25E4%25B9%259F%25E4%25B8%258D%25E6%2598%25AF%25E4%25BB%2580%25E9%25BA%25BC%25E5%25A5%2587%25E6%2580%25AA%25E7%259A%2584%25E4%25BA%258B%25E6%2583%2585%25E5%2595%25A6-bafyreiaglf242lq7qfhavjxyr6s6cfymzx76qmzh2b5cim7wgyfat3g4da" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-15/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E6%9C%89%E4%BA%9B%E4%BA%BA%E7%9C%9F%E7%9A%84%E6%98%AF%E5%A4%A9%E7%94%9F%E7%9A%84%E5%A4%96%E4%BA%A4%E5%AE%B6-%E9%80%A3-%E7%A7%98%E5%AF%86%E5%A4%96%E4%BA%A4-%E7%9A%84%E8%97%A9%E7%B1%AC%E9%83%BD%E8%83%BD%E7%A0%B4%E9%99%A4/">
+      
+        [外交雜聞]有些人真的是天生的外交家，連「秘密外交」的藩籬都能破除
+      </a>
+      <time>2021-01-15</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E5%25A4%2596%25E4%25BA%25A4%25E9%259B%259C%25E8%2581%259E-%25E6%259C%2589%25E4%25BA%259B%25E4%25BA%25BA%25E7%259C%259F%25E7%259A%2584%25E6%2598%25AF%25E5%25A4%25A9%25E7%2594%259F%25E7%259A%2584%25E5%25A4%2596%25E4%25BA%25A4%25E5%25AE%25B6-%25E9%2580%25A3-%25E7%25A7%2598%25E5%25AF%2586%25E5%25A4%2596%25E4%25BA%25A4-%25E7%259A%2584%25E8%2597%25A9%25E7%25B1%25AC%25E9%2583%25BD%25E8%2583%25BD%25E7%25A0%25B4%25E9%2599%25A4-bafyreief5rjqisz3hkipn5q2d22ska2oc2qvslhyl36b6zcosigwbwtazi" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-14/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E8%BF%91%E4%BE%86%E8%87%BA%E7%81%A3%E6%9C%89%E5%A4%A0%E5%86%B7-%E4%BE%86%E5%80%8B%E5%92%8C%E9%80%99%E6%99%82%E4%BA%8B%E6%9C%89%E9%97%9C%E7%9A%84%E6%87%89%E6%99%AF%E5%B0%8F%E6%95%85%E4%BA%8B%E5%90%A7/">
+      
+        [經濟與外交]近來臺灣有夠冷，來個和這時事有關的應景小故事吧
+      </a>
+      <time>2021-01-14</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E7%25B6%2593%25E6%25BF%259F%25E8%2588%2587%25E5%25A4%2596%25E4%25BA%25A4-%25E8%25BF%2591%25E4%25BE%2586%25E8%2587%25BA%25E7%2581%25A3%25E6%259C%2589%25E5%25A4%25A0%25E5%2586%25B7-%25E4%25BE%2586%25E5%2580%258B%25E5%2592%258C%25E9%2580%2599%25E6%2599%2582%25E4%25BA%258B%25E6%259C%2589%25E9%2597%259C%25E7%259A%2584%25E6%2587%2589%25E6%2599%25AF%25E5%25B0%258F%25E6%2595%2585%25E4%25BA%258B%25E5%2590%25A7-bafyreihfdlsyvbib5hwzfdncdmy2qts4ft3xhtaaefyprdzom7rpkitsfe" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-13/Seeing-the-CCP-Clearly/">
+      
+        Seeing the CCP Clearly
+      </a>
+      <time>2021-01-13</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Perry Link</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/library/nyrb-china-archive/seeing-ccp-clearly" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-12/Four-Principles-to-Guide-U.S.-Policy-Toward-China/">
+      
+        Four Principles to Guide U.S. Policy Toward China
+      </a>
+      <time>2021-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Paul Haenle &#38; Ali Wyne</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/library/china-world-podcast/four-principles-guide-us-policy-toward-china" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-12/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E6%AF%9B%E5%85%AC%E9%BC%8E%E5%9B%9E%E4%BE%86%E5%9B%89-%E9%96%8B%E5%BF%83/">
+      
+        [臺灣小事]毛公鼎回來囉，開心～
+      </a>
+      <time>2021-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E8%2587%25BA%25E7%2581%25A3%25E5%25B0%258F%25E4%25BA%258B-%25E6%25AF%259B%25E5%2585%25AC%25E9%25BC%258E%25E5%259B%259E%25E4%25BE%2586%25E5%259B%2589-%25E9%2596%258B%25E5%25BF%2583-bafyreia4c5f6gbpdqz5dmm5tgzseyw725aov4i6w7bcw2attrjshc6gmwm" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-12/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+      
+        Visually Understanding the Data on Foreign NGO Representative Offices and Temporary Activities
+      </a>
+      <time>2021-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Jessica Batke &#38; Shen Lu</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/ngo/analysis/visually-understanding-data-foreign-ngo-representative-offices-and-temporary-activities" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-12/China-s-First-Big-MeToo-Case-Tests-the-Party/">
+      
+        China’s First Big #MeToo Case Tests the Party
+      </a>
+      <time>2021-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Lavender Au</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-first-big-metoo-case-tests-party" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-11/Precarious-Progress/">
+      
+        Precarious Progress
+      </a>
+      <time>2021-01-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Darius Longarino</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/library/reports/precarious-progress" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-10/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E8%B3%A3%E5%80%8B%E6%9D%B1%E8%A5%BF%E4%B9%9F%E5%BE%97%E9%A1%A7%E5%BF%8C%E4%B8%80%E5%A0%86-%E5%A4%BE%E5%9C%A8%E5%85%A9%E5%B2%B8%E4%B9%8B%E9%96%93%E7%9A%84%E6%97%A5%E6%9C%AC%E7%9C%9F%E6%98%AF%E8%BE%9B%E8%8B%A6%E4%BA%86/">
+      
+        [經濟與外交]賣個東西也得顧忌一堆，夾在兩岸之間的日本真是辛苦了
+      </a>
+      <time>2021-01-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E7%25B6%2593%25E6%25BF%259F%25E8%2588%2587%25E5%25A4%2596%25E4%25BA%25A4-%25E8%25B3%25A3%25E5%2580%258B%25E6%259D%25B1%25E8%25A5%25BF%25E4%25B9%259F%25E5%25BE%2597%25E9%25A1%25A7%25E5%25BF%258C%25E4%25B8%2580%25E5%25A0%2586-%25E5%25A4%25BE%25E5%259C%25A8%25E5%2585%25A9%25E5%25B2%25B8%25E4%25B9%258B%25E9%2596%2593%25E7%259A%2584%25E6%2597%25A5%25E6%259C%25AC%25E7%259C%259F%25E6%2598%25AF%25E8%25BE%259B%25E8%258B%25A6%25E4%25BA%2586-bafyreigsc2d4mxszbjm5zb47aucduesrttwtrklzezx7xrds7fyzhacpza" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-09/%E6%9E%81%E5%B0%91%E6%95%B0%E4%BA%BA%E5%AF%B9%E5%A4%9A%E6%95%B0%E4%BA%BA%E7%9A%84%E5%98%B4%E5%B7%B4%E6%89%80%E5%81%9A%E7%9A%84%E4%BA%8B,-%E4%B8%8D%E4%BC%9A%E8%AE%A9%E6%82%A8%E8%8E%B7%E5%BE%97%E5%B9%B8%E5%85%8D-iYouPort/">
+      
+        极少数人对多数人的嘴巴所做的事, 不会让您获得幸免 - iYouPort
+      </a>
+      <time>2021-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e6%9e%81%e5%b0%91%e6%95%b0%e4%ba%ba%e5%af%b9%e5%a4%9a%e6%95%b0%e4%ba%ba%e7%9a%84%e5%98%b4%e5%b7%b4%e6%89%80%e5%81%9a%e7%9a%84%e4%ba%8b-%e4%b8%8d%e4%bc%9a%e8%ae%a9%e6%82%a8%e8%8e%b7%e5%be%97%e5%b9%b8/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-07/0108-%E6%9C%AC%E4%BE%86%E6%95%B5%E8%A6%96%E5%9C%8B%E6%B0%91%E9%BB%A8%E6%94%BF%E6%AC%8A%E7%9A%84%E8%97%8F%E4%BA%BA-%E6%80%8E%E9%BA%BC%E7%AA%81%E7%84%B6%E4%B8%8D%E8%A8%8E%E5%8E%AD%E5%9C%8B%E6%B0%91%E9%BB%A8%E4%BA%86-%E9%80%99%E4%B9%9F%E6%98%AF%E7%A8%AE-%E7%B5%B1%E4%B8%80%E6%88%B0%E7%B7%9A-%E5%97%8E/">
+      
+        （0108）本來敵視國民黨政權的藏人，怎麼突然不討厭國民黨了，這也是種「統一戰線」嗎？？
+      </a>
+      <time>2021-01-07</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/0108-%25E6%259C%25AC%25E4%25BE%2586%25E6%2595%25B5%25E8%25A6%2596%25E5%259C%258B%25E6%25B0%2591%25E9%25BB%25A8%25E6%2594%25BF%25E6%25AC%258A%25E7%259A%2584%25E8%2597%258F%25E4%25BA%25BA-%25E6%2580%258E%25E9%25BA%25BC%25E7%25AA%2581%25E7%2584%25B6%25E4%25B8%258D%25E8%25A8%258E%25E5%258E%25AD%25E5%259C%258B%25E6%25B0%2591%25E9%25BB%25A8%25E4%25BA%2586-%25E9%2580%2599%25E4%25B9%259F%25E6%2598%25AF%25E7%25A8%25AE-%25E7%25B5%25B1%25E4%25B8%2580%25E6%2588%25B0%25E7%25B7%259A-%25E5%2597%258E-bafyreidrpius46brvpjpgywobcqcecrfghfpy7pgihysejd3zxry6m5q7a" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-05/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E5%9C%A8%E7%95%B6%E5%B9%B4-%E6%94%BF%E5%BA%9C%E7%9B%B4%E6%8E%A5%E5%B9%B2%E6%B6%89%E5%AA%92%E9%AB%94%E4%B8%8D%E5%8F%AA%E5%8F%B8%E7%A9%BA%E8%A6%8B%E6%85%A3-%E8%80%8C%E4%B8%94%E5%8F%AF%E8%83%BD%E9%82%84%E5%BE%88%E6%9C%89%E6%95%88XD/">
+      
+        [外交雜聞]在當年，政府直接干涉媒體不只司空見慣，而且可能還很有效XD
+      </a>
+      <time>2021-01-05</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E5%25A4%2596%25E4%25BA%25A4%25E9%259B%259C%25E8%2581%259E-%25E5%259C%25A8%25E7%2595%25B6%25E5%25B9%25B4-%25E6%2594%25BF%25E5%25BA%259C%25E7%259B%25B4%25E6%258E%25A5%25E5%25B9%25B2%25E6%25B6%2589%25E5%25AA%2592%25E9%25AB%2594%25E4%25B8%258D%25E5%258F%25AA%25E5%258F%25B8%25E7%25A9%25BA%25E8%25A6%258B%25E6%2585%25A3-%25E8%2580%258C%25E4%25B8%2594%25E5%258F%25AF%25E8%2583%25BD%25E9%2582%2584%25E5%25BE%2588%25E6%259C%2589%25E6%2595%2588xd-bafyreifbqnd3sdqmo2ktsa4flvctqkvgrcnp4gzy32vqkbus2mzgtntfry" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-03/%E5%85%A9%E5%B2%B8%E7%AB%B6%E9%80%90-%E6%AC%B8%E4%B8%8D%E6%98%AF-%E4%BA%BA%E5%AE%B6%E6%98%AF%E5%95%8F%E4%BD%A0%E6%9C%9D%E9%AE%AE%E5%95%8F%E9%A1%8C-%E4%BD%A0%E5%B9%B9%E5%98%9B%E5%81%B7%E6%B8%A1%E8%87%BA%E7%81%A3%E5%95%8F%E9%A1%8C%E5%95%A6/">
+      
+        [兩岸競逐]欸不是，人家是問你朝鮮問題，你幹嘛偷渡臺灣問題啦
+      </a>
+      <time>2021-01-03</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E5%2585%25A9%25E5%25B2%25B8%25E7%25AB%25B6%25E9%2580%2590-%25E6%25AC%25B8%25E4%25B8%258D%25E6%2598%25AF-%25E4%25BA%25BA%25E5%25AE%25B6%25E6%2598%25AF%25E5%2595%258F%25E4%25BD%25A0%25E6%259C%259D%25E9%25AE%25AE%25E5%2595%258F%25E9%25A1%258C-%25E4%25BD%25A0%25E5%25B9%25B9%25E5%2598%259B%25E5%2581%25B7%25E6%25B8%25A1%25E8%2587%25BA%25E7%2581%25A3%25E5%2595%258F%25E9%25A1%258C%25E5%2595%25A6-bafyreiaufsqeqhayjwa7ve35o44adhtczoede2gxo5a65exfkcykujdhqe" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2021-01-02/%E7%B7%9A%E4%B8%8A%E8%AA%B2%E7%A8%8B%E5%B9%B3%E5%8F%B0-Teachable-%E4%BB%8B%E7%B4%B9%E8%88%87%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/">
+      
+        線上課程平台 Teachable 介紹與使用心得
+      </a>
+      <time>2021-01-02</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Huli</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@hulitw/teachable-introduction-and-review-ca3946e9a1e1?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+      <h2>2020年12月</h2>
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-12-30/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E8%87%BA%E7%81%A3%E4%BA%BA%E6%84%9B%E8%AA%AA-%E6%94%BF%E6%B2%BB%E6%AD%B8%E6%94%BF%E6%B2%BB-%E9%AB%94%E8%82%B2%E6%AD%B8%E9%AB%94%E8%82%B2-%E5%85%B6%E5%AF%A6%E9%AB%94%E8%82%B2%E4%B8%80%E7%9B%B4%E9%83%BD%E9%9B%A2%E4%B8%8D%E9%96%8B%E6%94%BF%E6%B2%BB%E7%9A%84/">
+      
+        [外交雜聞]臺灣人愛說「政治歸政治、體育歸體育」，其實體育一直都離不開政治的
+      </a>
+      <time>2020-12-30</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E5%25A4%2596%25E4%25BA%25A4%25E9%259B%259C%25E8%2581%259E-%25E8%2587%25BA%25E7%2581%25A3%25E4%25BA%25BA%25E6%2584%259B%25E8%25AA%25AA-%25E6%2594%25BF%25E6%25B2%25BB%25E6%25AD%25B8%25E6%2594%25BF%25E6%25B2%25BB-%25E9%25AB%2594%25E8%2582%25B2%25E6%25AD%25B8%25E9%25AB%2594%25E8%2582%25B2-%25E5%2585%25B6%25E5%25AF%25A6%25E9%25AB%2594%25E8%2582%25B2%25E4%25B8%2580%25E7%259B%25B4%25E9%2583%25BD%25E9%259B%25A2%25E4%25B8%258D%25E9%2596%258B%25E6%2594%25BF%25E6%25B2%25BB%25E7%259A%2584-bafyreiftjl7rsgcgiwov5eh4yzxip7i3m4g7jpvn2d5etryetlotkrkjce" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-12-29/Because-There-Were-Cameras,-I-Didn-t-Ask-Any-Ques/">
+      
+        ‘Because There Were Cameras, I Didn’t Ask Any Questions’
+      </a>
+      <time>2020-12-29</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Darren Byler</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/extensive-surveillance-china" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-12-29/%E5%86%B7%E6%88%B0%E7%89%A9%E8%AA%9E-%E5%AB%A6%E5%A8%A5%E4%BA%94%E8%99%9F%E5%9B%9E%E4%BE%86%E4%BA%86-%E8%AE%93%E6%88%91%E5%80%91%E6%B9%8A%E5%80%8B%E7%86%B1%E9%AC%A7-%E7%9C%8B%E7%9C%8B%E5%86%B7%E6%88%B0%E6%99%82%E6%9C%9F%E8%A3%A1%E7%9A%84%E5%A4%AA%E7%A9%BA%E6%8E%A2%E5%8B%98%E7%8B%80%E6%B3%81%E5%90%A7/">
+      
+        [冷戰物語]嫦娥五號回來了，讓我們湊個熱鬧，看看冷戰時期裡的太空探勘狀況吧
+      </a>
+      <time>2020-12-29</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E5%2586%25B7%25E6%2588%25B0%25E7%2589%25A9%25E8%25AA%259E-%25E5%25AB%25A6%25E5%25A8%25A5%25E4%25BA%2594%25E8%2599%259F%25E5%259B%259E%25E4%25BE%2586%25E4%25BA%2586-%25E8%25AE%2593%25E6%2588%2591%25E5%2580%2591%25E6%25B9%258A%25E5%2580%258B%25E7%2586%25B1%25E9%25AC%25A7-%25E7%259C%258B%25E7%259C%258B%25E5%2586%25B7%25E6%2588%25B0%25E6%2599%2582%25E6%259C%259F%25E8%25A3%25A1%25E7%259A%2584%25E5%25A4%25AA%25E7%25A9%25BA%25E6%258E%25A2%25E5%258B%2598%25E7%258B%2580%25E6%25B3%2581%25E5%2590%25A7-bafyreieb7q62brrspwlug4sorhlu5gpvci6n577mb6z5oxnyojmeg57cum" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-12-28/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E9%82%A3%E5%80%8B%E5%A4%A7%E5%AE%B6%E8%AA%AA%E6%98%AF-%E5%8F%9B%E5%9C%8B%E8%B3%8A-%E7%9A%84%E4%BA%BA%E5%A5%BD%E5%83%8F%E8%A6%81%E4%BE%86%E6%88%91%E9%80%99%E5%85%92%E8%80%B6-%E8%80%81%E5%A4%A7%E5%BF%AB%E5%91%8A%E8%A8%B4%E6%88%91%E8%A9%B2%E6%80%8E%E9%BA%BC%E8%BE%A6%E5%95%8A/">
+      
+        [外交雜聞]那個大家說是「叛國賊」的人好像要來我這兒耶，老大快告訴我該怎麼辦啊
+      </a>
+      <time>2020-12-28</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E5%25A4%2596%25E4%25BA%25A4%25E9%259B%259C%25E8%2581%259E-%25E9%2582%25A3%25E5%2580%258B%25E5%25A4%25A7%25E5%25AE%25B6%25E8%25AA%25AA%25E6%2598%25AF-%25E5%258F%259B%25E5%259C%258B%25E8%25B3%258A-%25E7%259A%2584%25E4%25BA%25BA%25E5%25A5%25BD%25E5%2583%258F%25E8%25A6%2581%25E4%25BE%2586%25E6%2588%2591%25E9%2580%2599%25E5%2585%2592%25E8%2580%25B6-%25E8%2580%2581%25E5%25A4%25A7%25E5%25BF%25AB%25E5%2591%258A%25E8%25A8%25B4%25E6%2588%2591%25E8%25A9%25B2%25E6%2580%258E%25E9%25BA%25BC%25E8%25BE%25A6%25E5%2595%258A-bafyreid7agoqkfx3vcwrvr5c6afhfhlbrpdu2hwonomcj7c6zl5aibufxq" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-12-22/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E7%89%B9%E5%88%A5%E7%9A%84%E6%97%A5%E5%AD%90-%E4%BE%86%E7%9C%8B%E7%9C%8B%E4%B8%80%E4%BD%8D%E7%89%B9%E5%88%A5%E7%9A%84%E6%AD%B7%E5%8F%B2%E4%BA%BA%E7%89%A9%E7%9A%84%E6%89%8B%E6%9B%B8/">
+      
+        [外交雜聞]特別的日子，來看看一位特別的歷史人物的手書
+      </a>
+      <time>2020-12-22</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E5%25A4%2596%25E4%25BA%25A4%25E9%259B%259C%25E8%2581%259E-%25E7%2589%25B9%25E5%2588%25A5%25E7%259A%2584%25E6%2597%25A5%25E5%25AD%2590-%25E4%25BE%2586%25E7%259C%258B%25E7%259C%258B%25E4%25B8%2580%25E4%25BD%258D%25E7%2589%25B9%25E5%2588%25A5%25E7%259A%2584%25E6%25AD%25B7%25E5%258F%25B2%25E4%25BA%25BA%25E7%2589%25A9%25E7%259A%2584%25E6%2589%258B%25E6%259B%25B8-bafyreif6zrju2wzote4h6davxh2qp5cnat7v7nbgjslnfjiq67c52uvha4" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-12-21/%E5%86%B7%E6%88%B0%E7%89%A9%E8%AA%9E-%E9%80%99%E4%B8%8D%E6%98%AF%E5%A3%93%E5%AF%B6-%E4%BD%86%E9%81%8B%E6%B0%A3%E5%AF%A6%E5%9C%A8%E5%A5%BD-%E6%8A%BD%E5%88%B0Ace%E5%95%A6-%E4%B8%8D%E9%81%8E%E5%A5%BD%E5%83%8F%E6%B2%92%E4%BB%80%E9%BA%BC%E7%94%A8/">
+      
+        [冷戰物語]這不是壓寶，但運氣實在好，抽到Ace啦——不過好像沒什麼用
+      </a>
+      <time>2020-12-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 學界野武士</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Amazing_MrsJen/%25E5%2586%25B7%25E6%2588%25B0%25E7%2589%25A9%25E8%25AA%259E-%25E9%2580%2599%25E4%25B8%258D%25E6%2598%25AF%25E5%25A3%2593%25E5%25AF%25B6-%25E4%25BD%2586%25E9%2581%258B%25E6%25B0%25A3%25E5%25AF%25A6%25E5%259C%25A8%25E5%25A5%25BD-%25E6%258A%25BD%25E5%2588%25B0ace%25E5%2595%25A6-%25E4%25B8%258D%25E9%2581%258E%25E5%25A5%25BD%25E5%2583%258F%25E6%25B2%2592%25E4%25BB%2580%25E9%25BA%25BC%25E7%2594%25A8-bafyreibvzztysrtitkp7l2hr4zy4q427kscmg5frp7ukefvjhca4e44j7e" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-12-21/Pretty-Lady-Cadres/">
+      
+        Pretty Lady Cadres
+      </a>
+      <time>2020-12-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Shen Lu</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/reporting-opinion/features/pretty-lady-cadres-china" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-12-21/Pretty-Lady-Cadres/">
+      
+        Pretty Lady Cadres
+      </a>
+      <time>2020-12-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Shen Lu</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/reporting-opinion/features/pretty-lady-cadres-china" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-12-20/Message-Control/">
+      
+        Message Control
+      </a>
+      <time>2020-12-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Jessica Batke &#38; Mareike Ohlberg</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/reporting-opinion/features/message-control-china" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-12-20/Message-Control/">
+      
+        Message Control
+      </a>
+      <time>2020-12-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Jessica Batke &#38; Mareike Ohlberg</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/reporting-opinion/features/message-control-china" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+
+</ul>
+
+<div class="pagination">
+  
+    <span class="prev">
+      <a href="/oped2/page7/" class="prev">
+        上一页
+      </a>
+    </span>
+  
+  
+    <span class="next">
+      <a href="/oped2/page9/" class="next">
+        下一页
+      </a>
+    </span>
+  
+
+  <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    <a class="fab-action fab-action-1" title="上一页(热键 &#8594;)" href="/oped2/page7/">
+      <i>上</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一页(热键 &#8592;)" href="/oped2/page9/">
+      <i>下</i>
+    </a>
+    
+    
+    
+    
+    
+  </div>
+</div>
+
+
+  <script>
+  /* post pagination keyboard shortcuts */
+  document.body.onkeyup = function(e){
+    if (e.keyCode == '37') { window.location = '/oped2/page7/'; } // left arrow key
+    if (e.keyCode == '39') { window.location = '/oped2/page9/'; } // right arrow key
+  };
+  </script>
+
+</div>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

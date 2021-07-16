@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>程式導師實驗計畫第五期開始啦！ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+程式導師實驗計畫第五期開始啦！
+——
+" />
+    <meta property="og:description" content="
+程式導師實驗計畫第五期開始啦！
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="程式導師實驗計畫第五期開始啦！" />
+    <meta property="twitter:title" content="程式導師實驗計畫第五期開始啦！" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40hulitw%2Fmentor-program-5th-start-c7da09311272%3Fsource%3Drss-f1fb3e40dc37------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@hulitw/mentor-program-5th-start-c7da09311272?source=rss-f1fb3e40dc37------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@hulitw/mentor-program-5th-start-c7da09311272?source=rss-f1fb3e40dc37------2&text=程式導師實驗計畫第五期開始啦！&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@hulitw/mentor-program-5th-start-c7da09311272?source=rss-f1fb3e40dc37------2&title=程式導師實驗計畫第五期開始啦！" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@hulitw/mentor-program-5th-start-c7da09311272?source=rss-f1fb3e40dc37------2&title=程式導師實驗計畫第五期開始啦！" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=程式導師實驗計畫第五期開始啦！&body=
+程式導師實驗計畫第五期開始啦！
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@hulitw/mentor-program-5th-start-c7da09311272?source=rss-f1fb3e40dc37------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@hulitw/mentor-program-5th-start-c7da09311272?source=rss-f1fb3e40dc37------2&title=程式導師實驗計畫第五期開始啦！&caption=
+程式導師實驗計畫第五期開始啦！
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=程式導師實驗計畫第五期開始啦！&url=https://medium.com/@hulitw/mentor-program-5th-start-c7da09311272?source=rss-f1fb3e40dc37------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>程式導師實驗計畫第五期開始啦！</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-02-24
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Huli</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@hulitw/mentor-program-5th-start-c7da09311272?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1614171002000-->
+<p><a href="https://medium.com/@hulitw/mentor-program-5th-start-c7da09311272?source=rss-f1fb3e40dc37------2">程式導師實驗計畫第五期開始啦！</a>
+——</p>
+
+<div>
+  <p>沒錯，又到了程式導師實驗計畫開始招生的時候了。</p>
+  <p>這一期一樣有把資訊更新到網站上面，如果想要看比較完整的資訊的話建議到底下的網站觀看：</p>
+  <p><a href="https://bootcamp.lidemy.com/">Lidemy 程式導師實驗計畫第五期</a></p>
+  <p>如果嫌網站資訊量太多（？）的，也可以參考這篇，我會大概講一下這在幹嘛以及跟上一期的差異。</p>
+  <h3 id="section">計畫詳情</h3>
+  <p>這個計畫的目標是：</p>
+  <blockquote>
+六個月內，把你培養成一個找得到工作的網頁工程師（前端或後端）  </blockquote>
+  <p>教的東西很多，想看課綱可以參考：<a href="https://bootcamp.lidemy.com/syllabus.html">簡化版的課綱</a>（適合外行人觀看），詳細版的可以去 GitHub 上面看：<a href="https://github.com/Lidemy/mentor-program-5th">https://github.com/Lidemy/mentor-program-5th</a>。由於這一期課綱應該會跟前一期差不多，所以目前第五期課綱是直接完全複製第四期的，在第五期開始之前還會再做調整，大方向會是一致的，只是課程的安排會再想一下，這點請大家注意。</p>
+  <p>課程的強度其實很高，上一期如果要報名 A 求職方案的話，是寫說至少一週能付出 30 小時，但事實證明我低估了課程的強度。因此這一期直接調整成 50 個小時，如果你是毫無基礎的人的話，我們估計一週要能付出 50 個小時才能跟上課程。</p>
+  <p>所以毫無基礎的人如果不是全職學習又想參加的話，可以考慮另外一個 B 買斷方案，就是花錢上課的意思，跟課跟起來會比較沒有壓力一點。</p>
+  <h3 id="section-1">教學方式</h3>
+  <p>課程一共 26 週，前 24 週上課，最後 2 週做 final project，如果發現兩週做不完會再延長。進度的部分會按照 26 週來切，每週都會有我錄好的線上課程影片還有作業，基本上就是看影片然後做作業，然後我或是助教會批改並且給予意見。進度主要是讓六個月後想轉職的人參考的，如果沒有想轉職，按照自己的步調來就行了。</p>
+  <p>有些週的課程可能不會有影片，就會提供一些參考資源或是讓大家自己找資料，培養查資料的能力。我也會不定期開直播幫大家解惑，有什麼疑難雜症都可以提問。</p>
+  <p>課程會有一個學生專屬的學習系統，每天都可以看見其他同學做了什麼，讓你學習起來不孤單。</p>
+  <p>如果你覺得只看課程影片就好了，可以自己跟著學，其他這些學習社群、導師、批改作業跟直播你都不太需要，那可以直接上 <a href="https://lidemy.com/">Lidemy</a> 購買課程並且搭配課程大綱來學習，或是也可以直接去 Udemy 買，或去看免費的開放式課程，這樣也很不錯，而且經濟上划算許多。</p>
+  <h3 id="section-2">收費方式</h3>
+  <p>這次一樣有兩個方案，「A 求職方案」與「 B 買斷方案」。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*G8JwXtCQOyQGu-GNWfZtUA.png" />    <figcaption>
+更多資訊請參考官網：<a href="https://bootcamp.lidemy.com/course-info.html">https://bootcamp.lidemy.com/course-info.html</a>
+    </figcaption>
+  </figure>
+  <p>A 求職方案是這個計畫的亮點之一：</p>
+  <blockquote>
+<em>在結業後兩個月內找到工作的話，學費總額是 12% 的年薪；沒找到工作的話費用全免。</em>  </blockquote>
+  <p>但想參與的人有條件限制，必須要：</p>
+  <ol>
+    <li>有求職意願，願意在結業後去找軟體工程師相關工作</li>
+    <li>一週要能付出 50 小時以上在這個計畫</li>
+  </ol>
+  <p>如果不符合以上條件，只能選擇 B 買斷方案，基本上就是花錢買課程，學費總額是 55000 元，在課程進行二個月時要付保證金 5000 + 第一期款項 12500 = 17500，接著每個月分期付款 12500 元付三期，中途不想繼續付的話可以選擇退出課程，後續的學費就不會再收，但請注意退出課程之後就會<strong>回歸到還沒加入課程前的狀態</strong>，也就是學習系統、群組跟課程的觀看權限都會被移除，之前繳的錢也不會退回，課程影片也會看不到，這點請特別注意。會建議真的想要把課程走完的人才報名 B 買斷方案，不然會滿虧的。</p>
+  <p>然後我要再次強調一點，那就是我知道很多想轉職的人在金錢上可能不是那麼有餘裕，所以收費方式很彈性。</p>
+  <p>第一，被選進來的話前兩個月都免費上課，在兩個月後可以決定是否要留下，不留的話就珍重再見期待再相逢，要留的話就付 5000 元保證金，並選擇你是要走 A 求職方案還是要 B 買斷方案（選擇 B 買斷方案的話同日要再繳交第一期金額 12500 元，或你要一次全付完也可以）。</p>
+  <p>第二，A 求職方案的學費會在你工作以後才分期付款，大家基本上都是分六期，一期一萬之類的。如果你經濟上有些問題，等試用期三個月過了以後再分期付款也可以，或想要分更多期都可以再討論。</p>
+  <p>第三，B 買斷方案基本上是每個月付一次錢，這樣經濟壓力應該不會這麼大，但因為仍然不是筆小數目，如果想要分更多期都可以再討論，真的很彈性。</p>
+  <p>我希望大家都是開心地繳學費，而且是真的認為這個課程有幫助所以付錢，因此才有了兩個月試用期、就業成功後才繳錢等等這些規則。</p>
+  <h3 id="section-3">跟上一期有哪些不同</h3>
+  <ol>
+    <li>收費方式不一樣了！以前一直都是 1.5 倍月薪，現在改成用年薪來計算，會是年薪的 12%。例如說拿到的 offer 是 40k*12，年薪就是 48 萬，12% 就是 57600 元，就是你的學費總額。詳細計算方式可以參考官網。</li>
+    <li>A 求職方案的時間要求增加了，從 30 小時變成 50 小時，因為 30 小時滿低估課程強度，再加上 50 小時並不代表真的 50 小時都在寫 code，實際在寫 code 的時間可能只有 80% = 40 小時。根據以往的經驗，能夠付出一定的時間是跟完課程的必備要素。</li>
+    <li>以往的報名表都是我一個人審，這一期的會跟助教們一起審核，所以你的報名表不只我會看到，助教們也會看到。</li>
+    <li>其餘調整都是課綱上的調整以及學習系統上的調整，計畫本身沒有太大改變</li>
+  </ol>
+  <h3 id="section-4">計畫時程表</h3>
+  <p>報名日期：即日起至 2021/03/29 晚上 11:59 分（一）<br />報名結果公告：2021/04/05（一）<br />開課日期：2021/04/12（一）<br />繳交保證金新台幣 5000 元（兩個月）：2021/06/12（六）<br />選擇「B 買斷方案」的同學開始分期付款：2021/06/12（六）<br />結業日期：2021/10/12（二）<br />求職截止日（在這時間點前找到工作都必須付學費）：2021/12/12（日）</p>
+  <h3 id="section-5">報名方式</h3>
+  <p>會需要你去 <a href="https://forms.gle/J3s1GFqJP6YFSLTk8">Google 表單</a>填寫一些基本資訊，然後去研究 Scratch 做一個小作品出來，接著自學一點程式，去 <a href="https://github.com/Lidemy/mentor-program/blob/master/codewar.md">codewar</a> 上面解出三題題目並且寫一下解題心得。</p>
+  <p>做完之後寫信到 huli@lidemy.com</p>
+  <p>標題請打：[報名] 程式導師實驗計畫第五期 — huli<br />（請把 huli 換成你自己的暱稱）</p>
+  <p>信件內容請附上：</p>
+  <ol>
+    <li>自我介紹（讓我更瞭解你）</li>
+    <li>報名這個計畫的理由</li>
+    <li>若成功錄取之後，你的時間安排為何（例如說目前待業，每天都有 8 小時可以寫程式；或是目前在職，但是晚上七點到十點會自學等等，如果選 A 求職計畫的請詳細說明時間安排）</li>
+    <li>你未來想做什麼？（純粹好奇而已）</li>
+    <li>平時有寫東西的習慣嗎？（像是部落格、讀書心得、電影心得或者是旅遊日記都可以，有的話可以多談談這部分或附上網址，沒有的話也沒關係）</li>
+    <li>Scratch 作品連結（請給線上可觀看連結並確認有開放觀看權限） &amp; 做完 Scratch 作品的心得</li>
+    <li>Codewar 帳號 &amp; 解 Codewar 題目的心得</li>
+    <li>任何你想跟我分享的東西（例如說你寫的小說、你畫的圖、你的一篇廢文等等。）</li>
+    <li>其他（其他任何你想補充的東西）</li>
+  </ol>
+  <p>更多資訊請參考：<a href="https://bootcamp.lidemy.com/course-info.html#anchor-registration">https://bootcamp.lidemy.com/course-info.html#anchor-registration</a></p>
+  <h3 id="section-6">總結</h3>
+  <p>還有一點要先公告一下，第五期應該會是現有制度的最後一期，如果還有下一期的話，可能不會叫這個名稱了，然後整個課程的機制應該也會全部砍掉重練。</p>
+  <p>不過還是要強調一次，這個還沒定案，只是先提出來讓大家有個心理準備，到時候真的全部改動大家才不會太驚訝。到時候如果還是維持現有機制，那可能就是新的系統還沒規劃好，或者是有什麼嚴重的缺陷導致沒有辦法開始新的機制，不然我其實滿期待新的機制的。</p>
+  <p>總之，大概就是這樣啦！除非 A 求職方案的收費方式有些微調整以及學習時數要求變高以外，其他基本上都跟第四期差不多，會想維持差不多也是因為第四期課綱我覺得跟以前相比較的話相對完整，不要動太多應該會對學習比較有幫助。</p>
+  <p>如果有什麼不清楚的可以透過 Lidemy 粉專私訊，期待你的報名，感謝！</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=c7da09311272" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2021-03-30</time>
+        <a href="https://nodebe4.github.io/oped2/2021-03-30/%E5%AF%A6%E8%B8%90%E9%AB%98%E6%95%88%E9%96%B1%E8%AE%80%E7%9A%84%E5%9B%9B%E5%80%8B%E6%AD%A5%E9%A9%9F/">
+          實踐高效閱讀的四個步驟
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-03-23</time>
+        <a href="https://nodebe4.github.io/oped2/2021-03-23/%E5%80%AB%E6%95%A6%E5%BF%85%E5%90%83%E7%BE%8E%E9%A3%9F/">
+          倫敦必吃美食
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-02-22</time>
+        <a href="https://nodebe4.github.io/oped2/2021-02-22/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E5%9B%9B%E6%9C%9F%E6%AA%A2%E8%A8%8E%E8%88%87%E5%BF%83%E5%BE%97/">
+          程式導師實驗計畫第四期檢討與心得
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-02-12</time>
+        <a href="https://nodebe4.github.io/oped2/2021-02-12/%E5%8F%AA%E6%98%AF%E6%83%B3%E5%AF%AB%E4%B8%80%E4%B8%8B/">
+          只是想寫一下
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-02-22/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E5%9B%9B%E6%9C%9F%E6%AA%A2%E8%A8%8E%E8%88%87%E5%BF%83%E5%BE%97/">
+            前一篇：程式導師實驗計畫第四期檢討與心得
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-02-26/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-3.0-%E7%89%88-%E7%B0%A1%E4%BB%8B%E5%8F%8A%E7%9B%AE%E9%8C%84/">
+            後一篇：《數字極權時代生存手記》 3.0 版 簡介及目錄
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-02-22/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E5%9B%9B%E6%9C%9F%E6%AA%A2%E8%A8%8E%E8%88%87%E5%BF%83%E5%BE%97/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-02-26/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-3.0-%E7%89%88-%E7%B0%A1%E4%BB%8B%E5%8F%8A%E7%9B%AE%E9%8C%84/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-03-23/%E5%80%AB%E6%95%A6%E5%BF%85%E5%90%83%E7%BE%8E%E9%A3%9F/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-02-22/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E5%9B%9B%E6%9C%9F%E6%AA%A2%E8%A8%8E%E8%88%87%E5%BF%83%E5%BE%97/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-02-22/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E5%9B%9B%E6%9C%9F%E6%AA%A2%E8%A8%8E%E8%88%87%E5%BF%83%E5%BE%97/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-02-26/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-3.0-%E7%89%88-%E7%B0%A1%E4%BB%8B%E5%8F%8A%E7%9B%AE%E9%8C%84/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-03-23/%E5%80%AB%E6%95%A6%E5%BF%85%E5%90%83%E7%BE%8E%E9%A3%9F/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-02-22/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E5%9B%9B%E6%9C%9F%E6%AA%A2%E8%A8%8E%E8%88%87%E5%BF%83%E5%BE%97/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

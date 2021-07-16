@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力
+——
+" />
+    <meta property="og:description" content="
+脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力" />
+    <meta property="twitter:title" content="脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60b9bcae3c49f83f005e50e2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60b9bcae3c49f83f005e50e2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60b9bcae3c49f83f005e50e2&text=脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60b9bcae3c49f83f005e50e2&title=脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60b9bcae3c49f83f005e50e2&title=脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力&body=
+脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60b9bcae3c49f83f005e50e2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60b9bcae3c49f83f005e50e2&title=脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力&caption=
+脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力&url=https://www.allnow.com/post/60b9bcae3c49f83f005e50e2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-04
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 元十雨</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60b9bcae3c49f83f005e50e2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60b9bcae3c49f83f005e50e2">脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力</a>
+——</p>
+
+<div>
+  <p>近来，脱口秀在中国日渐流行，也随着一些热播综艺节目进入更多观众的视野。脱口秀引发的不仅有笑声，更不乏争议；在笑声与争论中，显示着社会情绪与观念变迁。</p>
+  <p>在今年的牛津中国论坛喜剧板块上，四位来自不同文化背景而都有英语脱口秀表演经验的表演者，分享了各自的经历、感受与思考。作为一门与现实接壤的艺术形式，脱口秀的台上台下充溢着来自现实的偏见与对偏见的反拨；不同性别、不同文化背景的表演者，也更容易察觉到来自种族、性别等维度的歧视。</p>
+  <p>华裔脱口秀演员黄西，出生于吉林一个朝鲜族家庭，1994-1999年赴美国莱斯大学取得生物化学博士学位。2000年起，在麻省一家制药企业从事科研工作之余，他开始穿梭于脱口秀俱乐部，自己也开始尝试脱口秀表演。2010年，他受邀在白宫表演脱口秀，用带着口音的英文调侃自己作为第一代亚裔移民的经历，博得满堂笑声。2013年，黄西回国发展脱口秀生涯，见证了近年来中国脱口秀的飞速发展。在此次论坛中，他也针对亚裔在美国遭受的歧视与种族主义，讲述了自己作为脱口秀演员的经历与回应。</p>
+  <p>同样带着口音在异国用非母语表演脱口秀的，还有日本脱口秀演员Yuriko Kotani。她在日本出生长大，直到去了英国才接触到脱口秀这种演出形式。亚裔身份与女性身份的交叠，加上语言的阻碍，使她在生活与表达中感到格外的困难，但她仍义无反顾地走上脱口秀之路。通过这种形式，她可以表达自己的感受与看法，并将生活中遭受的歧视转化为笑话，在公开讲述与共同大笑中得到释怀。</p>
+  <p>俄罗斯裔脱口秀演员Olga Koch在俄罗斯出生长大，在十几岁的少年时代来到英国，感受到西方文化的剧烈冲击，处于青春期的她在性与性别观念等方面也经历了重塑的历程。她说虽然自己表面上仿佛洗去了厌女症，但生活在深度厌女的社会中，也许在自己的观念底层内化了自己也尚未意识到的厌女症候，需要更深层的觉察与解码。她也提到，作为女性表演者，在脱口秀舞台上更容易受到贬低，许多观众不信任女人的幽默，自嘲的边界也因此似乎更难把握。</p>
+  <p>还有一位分享者Ben Target，他祖籍欧洲，有着法国异教徒与爱尔兰旅行者的基因，但从小在新加坡长大，后来又在印度尼西亚、荷兰、美国生活过，如今居住在伦敦。成长在不断迁移的文化中，他对不同人、不同文化非常敏感，也十分注意察觉自己在不同境况中的感受。他认为，脱口秀不仅在于讲述自己的故事，更在于聆听他人的故事；不仅在于讲笑话，更在于与自己对话。他也提到，身为一个白人男性，如果不加反思，很容易陷入优越感，因此察觉自己的感受、倾听他人的声音，也可以防止自己享有结构性不平等所带来的特权而不自知。</p>
+  <p>“脱口秀”对译的英文，曾经是“talk show”。但如今，中文里大家提到的“脱口秀”，其实是指“stand-up comedy”，也被译为“单口喜剧”或“站立喜剧”，这也正是本场论坛的主题。由于“脱口秀”一词比“单口喜剧”使用更普遍，因此在大部分情况下记者选择“脱口秀”作为讨论过程中“stand-up comedy”的翻译。“喜剧”（comedy）是一个范围更广的用词，但在本场讨论中，很多时候也在特指单口喜剧，因此在“comedy”的翻译上，记者有时也根据语境翻译为“脱口秀”。</p>
+  <p>整场讨论以英文进行，经2021年牛津中国论坛授权，《燕京书评》记者对论坛内容进行了节选、翻译与整理。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-04/60b9be354cd55d54dd5dae46+L.png" data-id="60b9be358717253efd7e2d0b" alt ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture"></figcaption>
+  </figure>
+  <p><strong>黄西：美国脱口秀不敢出现N-word, 讽刺亚洲人却可以引人发笑</strong></p>
+  <p>我去美国读博之前，曾经把牛津词典来回背了八遍。这是真的。我还记得在北京地铁上背牛津词典的情景，当时努力想要记住词典上的每一个单词。刚去美国的时候，我还以为那儿的所有人都认识词典上的每一个单词，结果我和人家说话时，人家压根不知道我在说什么。虽然我学英语学得很努力，到了美国课堂上听到教授点名时却连“到”都不会说。我想起北京地铁到站时的播音会说“arriving”，我于是就说“arriving”，实际上这句话的意思是“我还在路上”。在文化上，在语言上，在美国生活真的会遇到很多困难。</p>
+  <p>在聊脱口秀的话题之前，我想先说一说从去年到现在，美国针对亚裔的种族歧视。如今，很多亚裔女性甚至连出门购物或者在家门口散步都害怕。如今在美国，对亚裔的恐惧是个流行话题，在这样一场喜剧论坛谈人权问题好像有些跑题，不过我还是想带出这个话题。最近亚裔经历的事情太糟糕了，但我对此并不感到意外，因为我在美国表演脱口秀时，就一直能够感受到种族歧视。在美国的脱口秀舞台上，你能听见歧视中国人的用语，观众也能笑出声来。他们不敢说歧视黑人的N-word，他们知道那是错的；但讽刺亚洲人，却是可以接受的。</p>
+  <p>你要是想用喜剧反对种族主义，他们会被激怒。我第一次在美国提出种族问题时，一些白人喜剧演员甚至向我泼水。他们很生气。在他们眼里，只有白人对非裔和犹太人的歧视才是种族主义，亚裔歧视好像不存在一样。所以一开始很痛苦，但大多数人其实注意不到这个问题。</p>
+  <p>后来，情况甚至越来越糟糕。到了2019、2020年，再去喜剧公园的时候，我花了三分之一的时间和他们吵架，因为他们会使用歧视亚洲人的用语，或者是讲吃狗肉之类的刻板印象。我觉得很难受，我去那儿本来是想讲讲笑话，和大家轻松一下，结果听到这种东西。我可以假装没有听到，但我如果放过这些，他们可能会和其他人讲同样的话。所以，我必须讲出来。可是我一旦讲这些，就不再是喜剧了。他们会觉得，都是言论自由之类之类的。情况就变得很艰难。我赞同言论自由，我的偶像是乔治·卡林（George Carlin），但有时这种精神被用反了。人们说出很多针对亚裔或亚洲人的种族主义言论，还觉得这没什么。我想把这个问题提出来，这是美国喜剧表演中一个很大的问题。</p>
+  <p>甚至，当我取得了一点成功去到好莱坞，他们也当着我的面说对制作亚洲家庭节目毫无兴趣。我问为什么，他们说：“噢，我们30年前有个这种节目遭到市场冷遇。”他们不会对白人说，我们不要白人演员，因为某个白人男演员的节目被取消了。</p>
+  <p>所以，2013年我回国了，然后见证了中国脱口秀演出的迅速发展。2013年我在北京时，只有一个脱口秀俱乐部，一周甚至一个月才有一次演出。现在至少有10个俱乐部了，差不多每晚都有演出，真的很让人惊喜。在美国时，我感觉自己只是一个脱口秀表演者；在中国，我却感觉自己仿佛身处一波浪潮之中，因为就在八九年前，单口喜剧在中国还完全没起来。我还记得七年前，我讲完一场开放麦以后，六七个国内的脱口秀演员在垃圾桶旁边围着我问，美国的脱口秀是什么情况，开放麦是什么样的，专业演出是什么样的。（开放麦：open mic，一种脱口秀演出形式，通常在俱乐部或酒吧等空间，新人或非专业演员也可以上场尝试，也可能有专业演员在此打磨表演。）</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-04/60b9bed24cd55d54dd5dae47+L.jpg" data-id="60b9bed6afa7517017e4d965" alt="2015年在北京民族文化宫举办个人专场脱口秀演出的黄西。图片来源 ：视觉中国。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+2015年在北京民族文化宫举办个人专场脱口秀演出的黄西。图片来源 ：视觉中国。
+    </figcaption>
+  </figure>
+  <p>现在则非常不同了，中国有二三十个城市有脱口秀俱乐部，非常喜人。中国现在的脱口秀非常多样，有中文的、英文的，上海还有日语脱口秀。观众也很多元，随便一晚上，你能看见观众席上美国人挨着伊朗人，这是在联合国会议上也看不到的景象。喜剧形式也非常多样，有脱口秀，有相声，有日本漫才，当然还有小品。中国的机会也很多，如果一个年轻人想要开始自己的脱口秀生涯，我会说现在中国是最好的地方。我在美国的脱口秀舞台上待了很多年，在美国如果想在电视上表演一个五分钟的脱口秀，可能需要八到十年的经验才有机会。但在中国，脱口秀太新了，有的年轻人只做了一两年甚至半年就成了明星。对于中国的脱口秀来说，这真是一个激动人心的时期。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-04/60b9beff9c232e01c17d17c6+L.jpg" data-id="60b9bf02ab4ffd0cef1c4a02" alt ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture"></figcaption>
+  </figure>
+  <p><strong>Ben Target：身为白人喜剧演员，时刻警惕自身的优越感与特权</strong></p>
+  <p>黄西的分享，让我们看到了亚洲脱口秀表演者在美国白人表演者中间面临的挑战。他分享自己的真实经历，而这些真实经历不仅仅关于他自己，他把这些我们早就看到、知道的问题带到了脱口秀舞台上，直接抛向观众。这种公开对话有巨大的能量，相比之下，比如在工作场合，很多亲眼所见的真实问题总是被遮遮掩掩。</p>
+  <p>这也是我做喜剧教学的起点。在我看来，艺术就是分享自己对人类处境的体察。很难有其他时机能让别人通过你的眼睛来看世界。不管是谁，一个人能够站上舞台，说出自己眼中的世界，真的是非常难得的机会。这是教单口喜剧最吸引我的一点。这不仅仅关乎对讲故事的热爱，更关乎对听故事的热爱，关乎对他人的兴趣与爱。每次我看单口喜剧，都能通过讲者的讲述进入一个我从未经历的视角。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-04/60b9bf1b4cd55d54dd5dae48+L.jpg" data-id="60b9bf1fab4ffd0cef1c4a03" alt="Ben Target" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+Ben Target
+    </figcaption>
+  </figure>
+  <p>作为老师，我只是不断地鼓励他们与自己密切交谈，每天走来走去，观察周围的世界，听听自己在每个处境中在想什么、感受到什么。喜剧是一种普遍存在、本所具有的东西，只要你试着寻找，会发现到处都是。喜剧不仅仅是笑话，在更深的层面，它是一种自传。这也是我鼓励学生沉潜的方向，它会引向生命的长期探察，而不仅仅是在短期内写个段子，抖个包袱博人一笑。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-04/60b9bf3d4cd55d54dd5dae49+L.jpg" data-id="60b9bf41ab4ffd0cef1c4a04" alt="Ben Target剧照" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+Ben Target剧照
+    </figcaption>
+  </figure>
+  <p>脱口秀还有特别棒的一点，就是不设门槛阻碍（accessibility）。很多社会活动的入场资格是不公平的，有的人能站在台上，有的人没有资格站到台上。但在脱口秀开放麦这种艺术形式里，上场不看学历，不需要工作室，也不需要昂贵的音乐设备。你只需要径直走上台去，就可以对着观众说话，然后带着新的点子改天再来，来来回回地测试观众的反应。这就是脱口秀舞台上人的经历与表达的宽度。</p>
+  <p>表演者和观众的关系是很神圣的，在舞台上建立和维护这种关系是真正的能力。说到同理心，我会把自己当成一位练习者，我很愿意分享自己的故事，同时也会注意觉察和倾听观众的需要，调动我所有的技能，和他们更好地互动。</p>
+  <p>我不知道自己来自哪种文化，也许不断迁移就是我的文化。我的祖先是一群因为宗教原因被驱逐的法国人和爱尔兰旅行者。它带给我好奇心，让我身处人群之中，品尝事物，去到不同地方，学习不同语言。</p>
+  <p>我需要不断省察自己，当我觉得自己应该得到某些东西时，或者当我觉得自己比别人好时，我需要检查这些是不是自己的身份所带来的优越感或特权。毕竟，这是欧洲帝国主义和殖民主义的文化背景所可能带来的偏见。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-04/60b9bf569c232e01c17d17c7+L.jpg" data-id="60b9bf59ab4ffd0cef1c4a05" alt ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture"></figcaption>
+  </figure>
+  <p><strong>Olga Koch：社会对女性脱口秀演员会有更多的不信任</strong></p>
+  <p>我在俄罗斯出生长大，十三四岁时来到英国读国际学校，后来去了美国，又回到英国。在十三四岁的年纪，我经历了古怪又野蛮的觉醒，西方文化的冲击就像一辆巴士那样迎面撞来。像是关于性，关于性别角色，我要洗刷掉我在俄罗斯习得的种种观念，才能在新的环境融入同龄人的生活。</p>
+  <p>在我的印象中，喜剧似乎是我改变观念、打开视野的唯一方式。我来自一个非常传统的家庭，但我不是想把自己的保守归咎于父母。我只想说，我的观念发生了改变，不是因为有人坐下来告诉我这些，也不是通过阅读严肃书籍，而是通过看喜剧，尤其是美国情景喜剧而渐渐改变的。我们好像很容易看轻喜剧，但我觉得这低估了喜剧传递信息和知识的作用。前几天，我还看到一篇学术论文，讲到看新闻脱口秀中和看新闻一样能获取信息。</p>
+  <p>把信息包装在笑声里，这就是我做脱口秀的驱动力。我写的第一个喜剧是关于俄罗斯经济私有化，第二个是关于计算机科学，第三个是关于移民问题。喜剧传递信息可以非常有效，因为首先人们不会因为无聊而放弃。其次，这种传递信息的方式，不容易被压缩或异化。在学院里，很多时候知识不好接近，因为精巧的用词和专业人士的严肃态度让人感到门槛太高，以至于不敢接近，喜剧的姿态则随意得多。再次，表演者的笑话可以通过类比把生活中相似的事情联系起来，教授讲课时则很难带出自己的日常经验。我希望人们看完了我的演出，会有兴趣搜索一下俄罗斯经济私有化，那就是对我的表演的肯定。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-04/60b9bf6d4cd55d54dd5dae4a+L.jpg" data-id="60b9bf70ab4ffd0cef1c4a06" alt="Olga Koch, 图片来源：Evening Standard" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+Olga Koch, 图片来源：Evening Standard
+    </figcaption>
+  </figure>
+  <p>有时会想，我在多大程度上会把自己身上一些东西归因于俄式文化，在多大程度上会归因于我的家族背景。比如我觉得自己很固执，也许是遗传自我爷爷，一个俄罗斯老头。再比如我做知识型的喜剧演出，也许和我的俄式实用主义有关。观众听完要是没有获得任何新知识的话，那岂不是白白浪费了这一个小时。</p>
+  <p>同时，一些负面的文化观念也在影响着我，比如哪怕我在表面上仿佛能够抹除厌女症，也许仍然内化了它的影响，需要持续地解码。</p>
+  <p>作为女性表演者站在台上，会有一重额外的挑战，就是如果我表现得过分自谦，一些年龄比我大的男性观众会觉得，这个女人什么都不懂，不知道自己站在这里干什么，她失控了。实际上我很会自控，我知道自己在说什么。那你还得加上一句：“我只是在拿我自己开玩笑，别担心，我知道我在做什么。”我想举一个真实的例子，有一次我说了一个笑话：我不带手表，因为我有生物钟。结果报纸上的一篇评论说，我的脱口秀讲得毫无条理，因为我没看手表。很多时候，人们对女性讲笑话会有更多的不信任。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-04/60b9bf914cd55d54dd5dae4b+L.jpg" data-id="60b9bf958717253efd7e2d0e" alt ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture"></figcaption>
+  </figure>
+  <p><strong>Yuriko Kotani：通过脱口秀的方式讲述种族主义和性别歧视</strong></p>
+  <p>我来自日本，现居英国。我讲英语已经很多年了，但还是只能讲成这个水平。之前我差点放弃，因为一开始我觉得英语要说得很完美才能交流，但现在，我觉得用自己现有的英语水平和人建立联结、表达出自己的意思才是最重要的。</p>
+  <p>英语是我的第二语言，用非母语讲脱口秀真的很难。甚至现在在论坛上发言，我都紧张得出汗。但我就是热爱脱口秀。通过这种方式，我可以表达自己的感受。比如遇到种族主义或者性别歧视时，我就把歧视者写进剧本里，在舞台上说出来，和大家一起放声大笑。这真是太美妙了。尽管很难，但一旦我写的笑话响了，大家哄堂大笑，我就获得了做下去的动力。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-04/60b9bfa34cd55d54dd5dae4c+L.jpg" data-id="60b9bfa5ab4ffd0cef1c4a08" alt="Yuriko Kotani，图片来自其个人网站" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+Yuriko Kotani，图片来自其个人网站
+    </figcaption>
+  </figure>
+  <p>难处不仅在于语言，也在于文化差异。比如，我从小在日本观看的喜剧形式是刚才黄西提到的“漫才”（manzai），是一种双人对口喜剧，台上两人一个表现得很滑稽，另一个表现得更像正常人。所以一开始，我很难理解怎么能做到一个人在台上妙语连珠。但后来，我在英国的脱口秀俱乐部接触到了这种艺术形式，就在脑海里留下了印象。</p>
+  <p>不过在日本，我们也有一个人讲故事的传统喜剧形式，叫“落语”（Rakugo）。讲笑话的表演者（“落语家”）跪坐在舞台上，讲的可能是原创故事，也可能是流传了很多很多年的故事。但在脱口秀舞台上，讲的必须是原创。还有一个区别，英国有很多“脱口秀之夜”，如果想要尝试上台，可以预定当地的开放麦，但在日本没有这种文化。英国的观众经常喝酒，这也和日本喜剧的观众很不一样，也许是文化差异。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-04/60b9bfcd9c232e01c17d17c8+L.jpg" data-id="60b9bfd08717253efd7e2d0f" alt="英语落语家立川志之春，图片来源：https://matcha-jp.com/cn/1919" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+英语落语家立川志之春，图片来源：https://matcha-jp.com/cn/1919
+    </figcaption>
+  </figure>
+  <p>在国外表演脱口秀的日本人还是很少的。在日本有一句俗话，大意是你要是做一些不同的事情，人们不会喜欢。但我决定忽略这些声音，只是去做我想做的事情。用非母语讲笑话很难，但很多时候，让人发笑的东西是相通的。像是一些没有对话的动物视频或者宝宝视频。虽然我们讲不同语言，但很多时候会有相似的笑点。</p>
+  <p>我获得BBC新喜剧奖（BBC New Comedy Award）时，意识到原来我也可以在英语世界获得这样的奖项。它打破的也是我自己的偏见，我之前总觉得人们不会接受我，会觉得我的口音很难听，等等。但我发现我想错了。</p>
+  <p>最近一段时间，在新闻里看到厌女症、种族主义、性别歧视，都已经感到情绪疲惫了。这些东西戳到我，但其实不是什么新东西，实际上一直以来到处都是。我希望通过脱口秀的方式，能够讲出这些故事，让人们看到这些。其实现在有越来越多的女性脱口秀演员，我们可以多多去看她们的演出。现在是行业转变的好时候，新的变化不断发生，正是激动人心的时期。</p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-06</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-06/%E4%B8%8B%E6%B2%89%E5%B9%B4%E4%BB%A3-%E5%90%8E%E5%86%B7%E6%88%98%E6%97%B6%E4%BB%A3%E7%9A%84-%E7%BE%8E%E5%9B%BD%E6%A2%A6-%E6%98%AF%E5%A6%82%E4%BD%95%E8%B5%B0%E5%90%91%E7%A0%B4%E7%A2%8E%E7%9A%84/">
+          下沉年代：后冷战时代的“美国梦”是如何走向破碎的？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-05</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/">
+          想象新式亲密关系：男性如何摆脱内心隐藏的厌女情绪？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-03</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-03/%E5%A4%A7%E5%8D%AB-%E8%BF%AA%E5%A5%A5%E6%99%AE%E5%87%AD-%E7%81%B5%E9%AD%82%E5%85%84%E5%BC%9F-%E8%8E%B7%E5%BE%97%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E5%88%9B%E9%80%A0%E4%BA%86%E5%92%92%E8%AF%AD%E5%BC%8F%E6%9C%89%E5%90%B8%E5%BC%95%E5%8A%9B%E7%9A%84%E8%AF%AD%E8%A8%80/">
+          大卫·迪奥普凭《灵魂兄弟》获得国际布克奖：“创造了咒语式有吸引力的语言”
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-02</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-02/%E5%88%98%E6%93%8E-%E5%85%A8%E7%90%83%E5%8C%96-996%E5%92%8C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          刘擎：全球化、996和人工智能丨燕京访谈
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-03/%E6%82%A8%E9%9C%80%E8%A6%81%E7%9C%9F%E6%AD%A3%E7%9A%84%E8%87%AA%E5%B7%B1%E4%BA%BA-%E5%A6%82%E4%BD%95%E7%BB%84%E6%88%90%E4%B8%80%E4%B8%AA%E4%BA%B2%E5%AF%86%E5%9B%A2%E9%98%9F-%E7%A4%BA%E5%A8%81%E5%8F%82%E4%B8%8E%E8%80%85%E6%8C%87%E5%8D%97-9-iYouPort/">
+            前一篇：您需要真正的自己人 - 如何组成一个亲密团队：示威参与者指南（9） - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/">
+            後一篇：想象新式亲密关系：男性如何摆脱内心隐藏的厌女情绪？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-03/%E6%82%A8%E9%9C%80%E8%A6%81%E7%9C%9F%E6%AD%A3%E7%9A%84%E8%87%AA%E5%B7%B1%E4%BA%BA-%E5%A6%82%E4%BD%95%E7%BB%84%E6%88%90%E4%B8%80%E4%B8%AA%E4%BA%B2%E5%AF%86%E5%9B%A2%E9%98%9F-%E7%A4%BA%E5%A8%81%E5%8F%82%E4%B8%8E%E8%80%85%E6%8C%87%E5%8D%97-9-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-03/%E5%A4%A7%E5%8D%AB-%E8%BF%AA%E5%A5%A5%E6%99%AE%E5%87%AD-%E7%81%B5%E9%AD%82%E5%85%84%E5%BC%9F-%E8%8E%B7%E5%BE%97%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E5%88%9B%E9%80%A0%E4%BA%86%E5%92%92%E8%AF%AD%E5%BC%8F%E6%9C%89%E5%90%B8%E5%BC%95%E5%8A%9B%E7%9A%84%E8%AF%AD%E8%A8%80/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-03/%E6%82%A8%E9%9C%80%E8%A6%81%E7%9C%9F%E6%AD%A3%E7%9A%84%E8%87%AA%E5%B7%B1%E4%BA%BA-%E5%A6%82%E4%BD%95%E7%BB%84%E6%88%90%E4%B8%80%E4%B8%AA%E4%BA%B2%E5%AF%86%E5%9B%A2%E9%98%9F-%E7%A4%BA%E5%A8%81%E5%8F%82%E4%B8%8E%E8%80%85%E6%8C%87%E5%8D%97-9-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-03/%E5%A4%A7%E5%8D%AB-%E8%BF%AA%E5%A5%A5%E6%99%AE%E5%87%AD-%E7%81%B5%E9%AD%82%E5%85%84%E5%BC%9F-%E8%8E%B7%E5%BE%97%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E5%88%9B%E9%80%A0%E4%BA%86%E5%92%92%E8%AF%AD%E5%BC%8F%E6%9C%89%E5%90%B8%E5%BC%95%E5%8A%9B%E7%9A%84%E8%AF%AD%E8%A8%80/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

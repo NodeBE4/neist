@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈
+——
+" />
+    <meta property="og:description" content="
+郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈" />
+    <meta property="twitter:title" content="郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60c9bca157458315bc2eda34" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60c9bca157458315bc2eda34" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60c9bca157458315bc2eda34&text=郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60c9bca157458315bc2eda34&title=郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60c9bca157458315bc2eda34&title=郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈&body=
+郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60c9bca157458315bc2eda34" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60c9bca157458315bc2eda34&title=郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈&caption=
+郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈&url=https://www.allnow.com/post/60c9bca157458315bc2eda34" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-16
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60c9bca157458315bc2eda34" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60c9bca157458315bc2eda34">郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈</a>
+——</p>
+
+<div>
+  <p>近年随着内娱真人同人兴起，作者与受众不断扩张，圈层林立。“圈地自萌”，是不断变动的、暧昧而难以概括的话语。郑熙青见证了同人作者在各大小论坛、晋江、百度贴吧、LOFTER、AO3等平台的迁徙，并试图以圈规历时性摩擦、收紧的角度切入，观照中国同人变迁史。</p>
+  <p>以耽美同人文本为研究对象后，郑熙青用了几年时间将耽美的定义缩减到一句话：女性作者写作、女性读者为对象、女性欲望为旨归的男性同性恋爱小说。郑熙青是中国社科院文学研究所助理研究员，美国西雅图华盛顿大学比较文学博士，混迹同人圈十多年，主要研究领域是文化研究和新媒体等，译有《文本盗猎者：电视粉丝与参与式文化》，合著有《破壁书：网络文化关键词》。</p>
+  <p>郑熙青初识耽美同人是因为《魔戒》。2004年，电影《指环王》三部曲完结，对中土世界念念不忘的她被指路到BBS看了一篇名为《只是当时》的同人文，作者蓝莲花精巧地勾连现实——那些片场花絮、首映礼上两位演员额头相抵的合照，都作为可印证的碎片嵌入文本，想象式又有说服力地呈现了阿拉贡与精灵王子的扮演者维果·莫滕森和奥兰多·布鲁姆，在拍摄《指环王》期间若即若离的情感。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9bd334cd55d54dd5db217+L.jpeg" data-id="60c9bd379b2d825085c25cdd" alt="2002年电影《指环王2：双塔奇兵》洛杉矶首映礼上，演员维果·莫腾森与奥兰多·布鲁姆合影" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+2002年电影《指环王2：双塔奇兵》洛杉矶首映礼上，演员维果·莫腾森与奥兰多·布鲁姆合影
+    </figcaption>
+  </figure>
+  <p>读完，郑熙青震了，还能这么写？戏里两人不过是护戒小队的同伴，其中一人甚至有官配女友，但入戏到RPS里，竟也说得通。后知后觉装上“gay达”（gaydar，同志雷达/同性恋雷达，指敏锐如雷达、能够迅速辨别出同志的能力），看什么都不对，如她所说“腐是一扇门，打开就关不上”。</p>
+  <p>需要解释的是，RPS是Real Person Slash的首字母缩写，可译为“真人耽美同人”（男性同性配对），或“真人百合同人”（女性同性配对）。在当代中文网络社群中，“同人”通常意为建立在已经成型的文本（一般是流行文化文本）基础上，借用原文本已有的人物形象、人物关系、基本故事情节和世界观设定所做的二次虚构叙事创作。在当下中国的同人创作中，同性、尤其是男性同性配对的同人小说占大部分。</p>
+  <p>至今有据可查的是，国内网络上出现的同人圈可追溯至 1998年桑桑学院网站的开办。郑熙青在《想象“耽美”》一文中写道：在中国耽美文化肇始之初，具有严格准入制度的露西弗论坛曾经有一句耳熟能详的口号：“同人女有义务比别人更有文化。”</p>
+  <p>这和中国耽美文化起源于网络和跨文化语境的背景有关：20世纪末到21世纪初，耽美发展的最初几年，有能力和财力接触到耽美文化的人多是受过较高教育的女性，也有足够财力担负当时还并不普及的电脑和高昂的网络费用。</p>
+  <p>如果不是有校园网，郑熙青不会在21世纪初就泡在网上。那时宽带贵，大多数人家用的都是和电话一条线的拨号上网，她总是上网开十几个窗口，加载完后关网再一篇篇看，看完存TXT。“饥渴太久了，周围没有人一起萌同样的东西，突然发现网上那么多人一起萌，太高兴了。”郑熙青真正接受RPS，还是因为日本小说家田中芳树的太空歌剧式小说《银河英雄传说》。2005年，她在大学校内BBS入坑，发现这个同人圈子百无禁忌，她嗑上CP，成为“不看同人会死”的同人女，直到现在。她依旧喜欢看两个人“开开心心谈恋爱”，嗑的是互相交付信任的平等战友关系、健康的爱情。</p>
+  <p>“同人女退散”，是当年银英同人圈广为流传的一句话。“同人女做一些暗搓搓嗑CP的事情，良识男（良识，早先指无配对和异性恋配对的同人，现更偏向指无配对的同人）写一些看起来更上得了台面的。很明显讨论民主和专制话题的地方，你上来就恋爱脑，在他们看来不太好。”</p>
+  <p>虽然在郑熙青眼里，《银河英雄传说》同人中许多优秀良识文也出自女性作者，而且《银英》对于政治的讨论也相对比较简单化，“这种鄙视链也没有很高级”。但总之，同人女开始在良识男占一定比例的论坛不会舞得过分，一些“绝对不可能往外发的甜肉文”，就在乐趣园和西陆等网站上申请小论坛发布。论坛里大家匿名发言，版主有权设置自己的圈规。“那时的生态是这样的，你不服我，就去你自己的论坛说话。”</p>
+  <p>晋江文学网起步晚于上述论坛，很快成为中文网络上最重要的耽美同人写作集散地。2008年之后，网民人数剧增，百度贴吧成为主流的同人集散地。2014年净网之后，晋江耽美原创和同人论坛暂时关闭（后来重开），保留耽美闲情等论坛；同时，文库区的“耽美”，也改名为“纯爱”。</p>
+  <p>看欧美圈同人，郑熙青还是上“随缘居”论坛居多。大规模用AO3（英文同人小说写作网站Archive of Our Own，意为“我们自己的档案馆”，是非营利性开源网站，由非营利非商业组织，二次创作协会Organization for Transformative Works拥有并管理）是2012年，郑熙青想找《霍比特人》里的良识同人，国内无粮，只好去AO3老实排号注册，排了两个多月。这里Tag（标签）细致分明，搜索方便，无私信功能，有分级警告，无门户之见，在国内逐水草而居的国内同人环境里待了多年，她认AO3为“衣食父母”。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9bd524cd55d54dd5db218+L.png" data-id="60c9bd609b2d825085c25cde" alt="同人写作网站AO3首页" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+同人写作网站AO3首页
+    </figcaption>
+  </figure>
+  <p>乔安娜·拉斯的《带着爱，女人为女人创作色情》（1985）和詹金斯的《文本盗猎者》（1992）中混杂着学者和粉丝身份和立场的研究视角，给了日后的同人文化研究者以启示。郑熙青就是“学术粉丝”，她这些年从文本角度研究同人文化，自己也画同人图、剪同人视频，最多的还是翻译同人文。</p>
+  <p>2018年耽改红利出现后，RPS急剧增多，郑熙青发现身边总有新人开始嗑CP。很多学者对耽美的存在原因提出过假设，最常见的观点有：喜爱耽美的同人女对性别刻板印象不满和颠覆，传统性别观念对女性性欲的压抑和曲折，从马斯洛需求理论而来的对审美的高需求，独生子女一代的特殊社会境遇。（《想象“耽美”》）</p>
+  <p>“戴锦华老师这么说过，划分出来的能被人看到的耽改剧越来越主流化了，客观上促使受抑制的耽美被越来越多的人看到。”郑熙青猜想，可能很多原本缺乏渠道接触耽美的人现在看到了嗑男男CP的可能性。</p>
+  <p>在一定程度上，受众的扩大让耽美同人蒙受误解，但没有真正进入这个圈深层讨论的人，“大多数还在纠结这一个点——为什么女人要看男人谈恋爱。我天，这个题目讲了二三十年了我们能不能换一个题目？”她笑着讲。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9bd794cd55d54dd5db219+L.jpeg" data-id="60c9bd7d2114416715c3d46c" alt="电视剧《皓衣行》官微图。以耽美小说《二哈和他的白猫师尊》为原型改编的《皓衣行》是2021年“耽改101”潮流中备受瞩目的一部。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+电视剧《皓衣行》官微图。以耽美小说《二哈和他的白猫师尊》为原型改编的《皓衣行》是2021年“耽改101”潮流中备受瞩目的一部。
+    </figcaption>
+  </figure>
+  <h2 id="rps">同人和RPS：社会现象和思潮的折射点</h2>
+  <p><strong>燕京书评：缘何决定研究耽美同人？</strong></p>
+  <p><strong>郑熙青：</strong>契机蛮巧的，我曾经也是想搞五四文学的现当代文学研究者，第一年用现代文学的题目申请博士没成功，和一个做前现代中国女性写作的师姐讲起耽美，她说这是非常有潜力的题目。就是那学期，我在一门文化研究课上写了一篇关于耽美同人的论文，要求五到七页，我写了十五六页，停不下来。后来，毕业论文换题了，也带题进了博士项目。我发现，粉丝和同人实际上是社会各个平面的一个折射点，很多社会现象、社会思潮都通过这个点折射，很多人没有意识到它其实是一个非常多产的话题。</p>
+  <p><strong>燕京书评：在这么多面向里，你是如何切入耽美同人研究的？</strong></p>
+  <p><strong>郑熙青：</strong>在最早的研究里，最难的是怎么定义和描述这个现象，不然大部分时间都会纠缠在定义和范畴上，根本没法提切入角度。我大概用几年时间终于把定义从一长段慢慢缩减到了一句话：耽美就是女性作者写作、女性读者为对象、女性欲望为旨归的男性同性恋爱小说。</p>
+  <p>耽美是一个太复杂太多元的现象，给一个定义或者是其中一部分的文章定义，可能都会失掉部分其他面向的东西。对耽美的讨论，承载了当下社会的一些焦虑情绪，它虽然折射社会的面向，但社会上表现出来的很多问题和焦虑，最后不能什么都怪到耽美头上。</p>
+  <p><strong>燕京书评：国内写RPS，有什么界限和特征？</strong></p>
+  <p><strong>郑熙青：</strong>其实就是“圈地自萌”。在内容上，耽美圈、同人圈固定住了一些不能碰的主题，恋童、违法犯罪不能写，我好像没有见到更多题材上的其他限制。最近，嫂子文学和小妈文学（将CP一方在文中塑造成另一方的小妈、嫂子角色，让两人产生感情）很火：一方面，它似乎继承了非常陈腐的民间闲言碎语，背后是大家对扒灰文学的热爱，或者是伦理梗，要说它低俗也很容易；另一方面，它也继承了耽美的一些传统。</p>
+  <p>现在小妈文、嫂子文，代入性别维度的话，已经没有弒父的意味了。弒父娶母是人类文学史永恒的母题，但小妈文学给我一种已经驯化过了的弒父情结的感觉。在我见过的例子里，父亲都是不在场的，是儿子和独自在家的小妈之间的关系。在不少文章里，它不是真正讨论怎样反抗父权的。但是，我也不是说大家都应该在小妈文学里反对父权，只是想说，和以前直接的父子文相比，这样写好像是温顺化了。</p>
+  <p><strong>燕京书评：内娱近两年流行泥塑偶像是为什么？（泥塑即逆向玛丽苏，代表粉丝欣赏偶像身上与生理性别不相符的性别特征。）</strong></p>
+  <p><strong>郑熙青：</strong>有一部分，我觉得它就是一个风气，一阵子特别流行的梗，不断生发、传播，所有人都写都看。另一部分，我没有想好这是不是和整个社会对于性别议题越来越注重了有关。现在男明星一旦红了，就有人叫他老婆、女儿。</p>
+  <p>前几年，女友粉、老婆粉搞得挺轰轰烈烈的，很多人就会觉得女粉丝很疯狂——这个男人跟你没有任何关系，你就把他想象成你老公。是不是转而去把明星喊成“老婆”，就是想扭转外界的这种想法呢？</p>
+  <p>以前听朋友说过一个趣闻，国内有个展子，苍井空来了，一群宅男围了一大圈，远远地站着看她，没人敢上去。实际上就是这样，这种欲望好像不是三次元的欲望。（回到女粉丝）杨丽娟毕竟是极少数，粉丝管明星叫老公，是一种想象，喊老婆更是一种想象，并不是真的想娶他，有更加口嗨的感觉，女儿就更是了；但这样喊，别人反而不会觉得你是一个脑残，好像要把他据为己有，形成一对一的单配偶制关系。“老婆”看起来比较假，这种假可能更带来安全感。但话说回来，叫“老公”其实理论上大家也不应该觉得是个问题。</p>
+  <p><strong>燕京书评：怎么看待内娱对CP攻受站位的强调？</strong></p>
+  <p><strong>郑熙青：</strong>我因为从欧美圈入手，所以顺序不是问题。国内这套是从日本学的，日本在前现代确实有这么个现象，受处在相对弱势的地位。最早森茉莉（日本唯美主义文学作家，被耽美作品追认为始祖）写的就是美少年和父亲式的角色；后来从24年组（几位出生于昭和24年、1970年代为少女漫开创耽美画风的漫画家）开始的作品里你也很容易看到，攻受完全就是一套符号体系。</p>
+  <p>即使是“欧美圈”，在国内也要受这套符号体系制约。比如在“随缘居”网站上发文，规矩是要把CP先标出来，不能标反了；没有发生性关系的话，你要写无差。读者在点开前就要从标题里知道这一点。我翻译同人作品时，经常就得一路疯狂往下搜，知道了攻受以后文前标上，才敢发翻译。</p>
+  <p>但我就觉得，在一个没有符号系统的环境下生产出来的文，翻译时要把攻受的符号系统套上去，有点奇怪，因为他俩上下难道不是作者一念之间的事情吗？当然，我有朋友就觉得攻受很重要，但她没有办法说服我，我也没有办法说服她。</p>
+  <p><strong>燕京书评：几乎每个偶像在LOFTER上都有属于自己All向Tag，怎么理解内娱RPS里较为普遍的All向同人、受腐唯的“拉瓜”行为？（All向：不存在固定的CP配对，某一真实人物在CP配对中始终担任受，而攻可以替换为不同的人物。All向RPS爱好者又称“受腐唯”。在内娱秀粉圈，攻、受又被称为瓜、花。）</strong></p>
+  <p><strong>郑熙青：</strong>本质上是给他好的性生活和爱情生活，“爱他就让他做受”起码是十几年前的说法。《阅读浪漫小说》里就讲到，理想的爱情关系实际是一种前俄狄浦斯关系。很多女性看的言情小说里，男女之间就是养育的关系，女人想要的不是性的关系，而是母性的认同，孩子完全与母亲认同的情感关系。用这个观点来理解受腐唯的现象，攻其实是一个母亲的角色，不仅是爱，而且是一种母性的、养育的、抚慰的爱。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9bec39c232e01c17d1bba+L.jpeg" data-id="60c9bef19b2d825085c25ce2" alt="《阅读浪漫小说》，[美]珍妮斯·A·拉德威著，胡淑陈译，译林出版社2020年7月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《阅读浪漫小说》，[美]珍妮斯·A·拉德威著，胡淑陈译，译林出版社2020年7月版
+    </figcaption>
+  </figure>
+  <h2 id="cp">嗑CP和耽改：“嗑的不是爱情”，是最安全、冠冕堂皇的说法</h2>
+  <p><strong>燕京书评：这两年全民嗑CP，除了耽改剧和偶像选秀节目影响外，还有什么别的原因？</strong></p>
+  <p><strong>郑熙青：</strong>我也不知道怎么CP这个概念就越来越浮到水面来了，先得说明，这绝对不是耽美社群自己内部的选择，但某种意义上也不是什么坏事。美国有一个电影学者，叫艾利克斯·多提（Alex Doty），是同性恋者，他说小时候看《绿野仙踪》，别人都没有看到，但他在片中就看到了酷儿的一面。其实，迪士尼电影里有一些点，是完全可以理解成性少数元素的。</p>
+  <p>原来很多人看不到某些剧里男男互动有变成爱情的可能性的，现在如果男男成为爱情的一个选项，看到也是很正常的吧？可能，越来越多的人有了“gay达”。有了“gay达”，很多小时候看过的东西就不能直视了。尤其好莱坞以前有《海斯法典》，有些东西不能直接写出来，但暗戳戳表达，就有可能藏着一些信息。就像我们小时候看《红楼梦》，谁会知道“扒灰”是什么意思呢。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9bf3b9c232e01c17d1bbb+L.jpeg" data-id="60c9bf3e904b8c02a16a30b7" alt="新《水浒传》（2011）播出后，剧中108好汉被同人女花式拉郎嗑CP，郑熙青也嗑新《水浒传》。图中的林冲与鲁智深是众多CP之一。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+新《水浒传》（2011）播出后，剧中108好汉被同人女花式拉郎嗑CP，郑熙青也嗑新《水浒传》。图中的林冲与鲁智深是众多CP之一。
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：很多新人因为选秀、耽改剧嗑CP而开始写同人文。新手的涌入对于同人圈有怎样的影响？</strong></p>
+  <p><strong>郑熙青：</strong>同人圈的生存和发展实际上是看人的，他们开心就好。很多历史和传统新人进来是看不到的，也不知道一些规矩背后有什么样的渊源。</p>
+  <p>我最近发现一些相对有社会话语权的大龄新手进场后，会在不够了解社群时就发表很多言论，那些话直接进入媒体、进入期刊。每一个在权力上位者的人，可能意识不到他讲的话有多大的影响力。比如说，有时候他们并不知道有一些粉圈话语实际上只是说说而已，并不是当真的。</p>
+  <p><strong>燕京书评：CP粉常见的一个说法是，把CP感情说成爱情是玷污“一种灵魂伴侣的感情”。为什么会形成这样一套似乎在贬抑爱情的说法？</strong></p>
+  <p><strong>郑熙青：</strong>这就是话术。如果社会文化氛围认定女人就是喜欢看小情小爱，男人才喜欢大格局，喜欢高山流水和矢志不渝的博爱情感，那女性就肯定要把CP说成这样。这是最安全、最冠冕堂皇的说法。这个事情非常复杂，肯定有人是这么嗑CP的，但把这种嗑法视为最高大上的嗑法，本质上是外界主流社会的文化偏好决定的。</p>
+  <p><strong>燕京书评：为什么会有推崇男性所谓柏拉图式的精神情感、贬低小情小爱的现象？</strong></p>
+  <p><strong>郑熙青：</strong>本质就是贬低女人喜欢的东西。先说中国文学，要考虑到中国的言情传统并不是女人传统，现代文学往前拉到曹雪芹，到清末的爱情小说，哪一个不是男人写的？我们现代意义上的爱情是一种社会构建，古代很多爱情小说对于爱的理解，跟我们是不一样的。有很多学术著作谈论“爱”这个概念是怎么进入中国的，比如李海燕的《心灵革命》，你会发现现在有关“情”的话语确实是从晚清、五四才开始的。但要到一九四九年以后，甚至可能要到琼瑶、席绢之类的港台言情传过来之后，言情才变成了纯女性文学。主流“浪漫主义”的至情和“小情小爱”的区分，有一部分的分野就落在这里。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9bfa49c232e01c17d1bbc+L.jpeg" data-id="60c9bfa62114416715c3d470" alt="《心灵革命：现代中国爱情的谱系》，[美]李海燕著，修佳明译，北京大学出版社2018年7 月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《心灵革命：现代中国爱情的谱系》，[美]李海燕著，修佳明译，北京大学出版社2018年7 月版
+    </figcaption>
+  </figure>
+  <p>当然，鄙视“小情小爱”，其实在历史上很早就有了，只不过可能现代人以为是新的。这其中的行为，包含贬斥女性写作、贬斥“爱情”，以及宣扬女性对道德污染的易感性。简·奥斯汀说过，我才不会像我同时代的一些女作者一样，把笔下的女主角写成一本小说都不看的正经样子。哥特小说时代，作者、读者很多是女人。而那时候，对女人看小说就有污名，认为她们看了小说以后就会受到道德的侵蚀，就会模仿小说里的女主人公，动不动晕倒、私奔。</p>
+  <p>说回“嗑的不是爱情”。这一整套话术不是很久，要整天说两个纸片人我嗑的不是他们的爱情，那嗑什么？（笑）还是跟整个社会对同性恋不能接受有关。只要不是爱情就行了，不是爱情他就不是同性恋。我觉得，要发明一个范畴来把各种各样非肉体吸引力的感情概括进去也没问题，但现在并没有到非要跟爱情这个词说再见不可的时候。不要把爱情神圣化，也不要污名化。</p>
+  <p><strong>燕京书评：你身边有男性嗑百合CP之类的吗？这跟女性嗑耽美CP有什么样的区别？</strong></p>
+  <p><strong>郑熙青：</strong>有，见过很多嗑纸片人百合的男人。个人感觉，男人是视觉动物，女人不是。我认为中国宅男比腐女总体上晚出现七八年左右，是因为网速太慢，这是我的理论。土豆、优酷是2005年左右才出来，而且当时像素很低。B站兴起的最初原因，是因为它像素高。所以，之前宅男其实没有一个幻想的附着点，他们需要图像，需要视觉。但对女人来说，图像很好，但文字也足够了。腐女在地下靠写文已经活了七八年之后，宅男这个群体才在网络上浮出水面。所以，网上一开始出现的是良识男，而不是宅男。</p>
+  <p><strong>燕京书评：耽美和LGBTQ平权能否共存，这几年学界的讨论如何？</strong></p>
+  <p><strong>郑熙青：</strong>英文学界认为耽美、尤其现在耽改的走向，已经跟平权越来越远，没有什么关系了。早期写得好的同志文学，跟耽美其实不分家，耽美圈也是看的。《北京故事》（后被改编为电影《蓝宇》）到底是同志文学还是耽美文学？它是一个女人写的纯想象的文学。到现在为止，一些分野也不是很明显。如果在一个边界上，很难分清楚它究竟是一部写实的耽美，还是小糖水的同志。比如《请以你的名字呼唤我》，还有《断背山》。不少英语世界的电影学者，是通过《断背山》意识到耽美在LGBTQ相关文艺作品中的作用的——他们认为，《断背山》的成功跟女性观众之间的联系非常紧密。原著是糙大叔的故事，电影找小鲜肉演；2005年，第一部纯80后的主演团队，多么年轻，多么美丽。不少研究者看到，电影院里有很多女性在看。它是一个后现代的对于美国西部牛仔神话的颠覆、重写。以前西部片的套路：家就是堡垒，女人站在篱笆后面看男人走出去，目的是保卫小家庭。但《断背山》不一样，男人从小家庭走出去，在野地里进行亲密接触。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9bfde9c232e01c17d1bbd+L.jpeg" data-id="60c9bfe19b2d825085c25ce6" alt="关锦鹏导演电影《蓝宇》（2001）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+关锦鹏导演电影《蓝宇》（2001）
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：现在耽改剧、选秀中越来越多的女性对于男性的欲望观看，跟现实中男性对于女性的欲望观看，有区别吗？需要有所区别吗？</strong></p>
+  <p><strong>郑熙青：</strong>很多时候，男性对女性的观察是有规训意味的；但是，女性对男性的消费、规训意味比较少。整体的大环境不一样，女性的权益还不能够得到保障，女性对男性的观看可能实质上并不会造成男性权益的降低。还是看语境的吧。我看过一部英剧，男主那肉卖得呀，摄影机跟着女主视角，在山崖上面看着男人全裸在海里游泳。我就看到有英文的讨论，这是不是女性对男性的Female Gaze（女性凝视），可能还真的有一点，它很明显就是服务女性观众。</p>
+  <p><strong>燕京书评：现在学界对于“女性凝视”这个说法有争议吗？</strong></p>
+  <p><strong>郑熙青：</strong>有争议的，女性凝视跟男性凝视完全不是一回事。现在有很多关于女性凝视的讨论，但没有像男性凝视一样已有一个比较成系统的、得到公认的理论。需要搞清楚的是，凝视有两种：一种是福柯式的凝视，一种是拉康式的凝视——弗洛伊德精神分析那一系的，很多是关于力比多、窥视癖的，类似男性因为窥视癖好去观看女性。在弗洛伊德式的主体想象中，女性天生是缺位的。</p>
+  <p>至于福柯式的凝视，“看”是一种权力。福柯最有名的比喻就是“全景监狱”，社会结构决定了看和被看的关系，决定了你即使不是直接被压迫的状态，也是结构性的被压迫者。处于被看的人是权力的弱势方，这里面其实没有太多的性别色彩。用福柯的理论来理解男性的话，男性本来就是社会上的优势方；当然，若直接把性别转换过来，也不合适。</p>
+  <p>女性凝视要加上非常多的前提和语境，才能讨论女性凝视是不是一种赋权，或者在什么意义上是一种赋权；这个权力究竟能不能像男性凝视一样施加到被观看者身上？结构性问题在这里，女性在全社会的结构中不是权力的上位者。酷儿凝视（Queer Gaze），又还不太一样，很多时候其实是男同性恋观看男性的视角，女性还是缺位的。</p>
+  <p>耽美是一种女性凝视吗？在阅读过程中，权力关系确实是反的，是女人在欣赏男人、想象男人，她们服务的也是自己的欲望，虽然耽美满足的欲望和男性凝视（Male Gaze）的欲望完成不太一样。这种差异可以类比一下东方主义和西方主义：大家都知道东方主义是什么，但大家对西方主义不太了解究竟指的是什么。简而言之，“女性凝视”这个说法不能乱用，需要的前提太多。</p>
+  <p>如今，“女性凝视”这个理论太过于下沉了，很多人直接就拿来用于批评。但是，能不能直接说女性在凝视，所以女性就有权力了？不一定。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9c0084cd55d54dd5db21f+L.jpeg" data-id="60c9c00b2114416715c3d473" alt="李安导演电影《断背山》（2005）剧照" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+李安导演电影《断背山》（2005）剧照
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：已经被一些人用做批判话语，说“腐女对男性进行女性凝视”……</strong></p>
+  <p><strong>郑熙青：</strong>整个社会对女性的结构性凝视，是会对女性身体造成规训的。你无时无刻不在被人看着，所以你一定会照着有人在看着你这一点去活动。但是，女性对于男性的凝视，对于男性能造成规训吗？我不相信这一点。男性不处在这个结构性的位置上，或者说即使明星有时处在这个位置上，也是因为他是明星，而不是因为他是男人。而且，跟女性比起来，现在对于男明星的要求已经很低了。</p>
+  <h2 id="section">耽美文学意义和价值：想象一种理想的爱情关系，女性内心的觉醒</h2>
+  <p><strong>燕京书评：为什么国内耽美同人ABO设定特别常见？（ABO是中文地区对“Alpha Beta Omega Dynamic”这一短语的缩写。它是同人写作中的一种特殊设定，假设人类除了男女的性别区分之外，还有副性别，分为Alpha、Beta和Omega三种，两种性别联合决定了个体的性别和性相。）</strong></p>
+  <p><strong>郑熙青：</strong>在我看来，ABO是天生携带强戏剧冲突的，所以一定会是很受欢迎的设定，因为书写时不用考虑情节，可以直接套进去。但是，ABO这么一个强设定，乐趣就在于挑战它、搞坏它，所以才会有“O权运动”（想象Omega在压迫性社会中是如何奋斗获得权利的）。我特别不喜欢看那些所谓的灵魂伴侣设定，就是写两个人一生下来身上某处就带着对方的名字之类。写ABO文为什么还要包办婚姻呢？这样的设定，不就该写两个人互相没有对方名字才叫真爱吗？</p>
+  <p>我比较喜欢的ABO文，就是以破坏设定为目标的，比如《金色牢笼》（一篇基于BBC剧集《神探夏洛克》的衍生CP文，文中作为Omega的夏洛克·福尔摩斯一直试图冲破身份局限，用强大的意志克服Omega生理和心理上对Alpha的臣服、依赖 ），整个社会运转设定得很完整、严密，但人物并不屈从于生理欲望，而是竭力抵抗生物本能，并反抗建立于其上的社会制度。它的设定，让整个故事有逻辑性和现实可能性，有真实感，可以让你感同身受。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9c0379c232e01c17d1bbe+L.jpeg" data-id="60c9c03a9b2d825085c25ce7" alt="英剧《神探夏洛克》第一季（2010）剧照" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+英剧《神探夏洛克》第一季（2010）剧照
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：国内对于“欧美圈三大设定”中BDSM的接受度，似乎比ABO和哨向设定要低？（哨兵向导设定中，哨兵是拥有超强五感的一类人，其感官在生活中会自觉收集大量繁杂琐碎的信息，使他们情绪波动大且易患特殊疾病。向导拥有情感共鸣能力，可平复哨兵情绪。哨兵和向导，通过一种叫做“结合”的方式而绑到一起。）</strong></p>
+  <p><strong>郑熙青：</strong>BDSM实际指的是三个不一样的设定，BD是捆绑，DS是控制者和服从者，SM是虐恋。其中，DS是上位者和下位者的关系，接近ABO和哨向，但这个关系天生比ABO、哨向缺少细节。哨向和ABO是生理上固定的、没有办法逃脱的一个人对另一个人的控制；但是，DS是带有选择性的。DS的核心本质在于信任，在DS关系中间更难做的是D，上位者必须要控制住自己，下位者才能全身心交付自己，完全信任对方，包括设置安全范围，其实是关于控制而不是释放。对此，没有了解的作者可能不能想明白这点，我个人没怎么看到能写好这个的中文作者，DS也并不是一个国内作者很喜欢的设定。但至于SM，很多渣攻贱受，其实就有点像SM了。当然，这是开玩笑。我对SM圈也不是很了解。国内的耽美和同人圈不是很擅长写健康的性关系和恋人关系，文里很少看到有两个人正常地谈恋爱。</p>
+  <p><strong>燕京书评：那是因为大家现实生活中缺少正常的亲密关系？</strong></p>
+  <p><strong>郑熙青：</strong>我觉得是。在不少人那里，父母对你的爱，甚至恋人对你的爱，都是控制性的，是很爹的环境里出来的比较扭曲的亲密关系：我为你好，我一切为你包办。这样的关系，可能使得很多人没办法想象在相互尊重的环境下人和人之间是怎么交往的。现在很多耽美同人，其实就是一个救赎的故事：一个一塌糊涂的人被另一个人救赎了。他们的关系不是纯粹的爱情关系，很多时候有点像亲情。英语作者很会写也很喜欢写的一个场景是，恋人坐下来谈他们的关系，想要什么样的关系或者关系出了什么样的问题、哪里需要改进；国内的文里也有，但不多。</p>
+  <p><strong>燕京书评：外界对于女性为什么读、写耽美的一种解释是，她们对现实世界中的异性恋失望或者对主流异性恋言情写作失望。那在耽美里继续写不健康的关系，不是背离了投入写作的动机？</strong></p>
+  <p><strong>郑熙青：</strong>代偿吧，看到别人跟你受一样的苦，走出来了，会不会高兴一点？关于能不能写non-con（非自愿性行为）有这样一个观点，很多non-con的写手和喜欢看它的读者，本人就是性侵的幸存者，通过看文来补偿现实中受的创伤，所以不能一味指责别人看或者写non-con。但是，这又到了一个问题：是不是每次写这种文作者都要先跳出来说，我是性侵的幸存者？这在国外也是一个大问题，没有讨论清楚。</p>
+  <p>当然，也有一些文化上的差异。尤其是一些英语作者认为的暴力和黑暗，在我看来都没有很过分。我最大的一个观感，就是他们不会写反乌托邦，对于一个社会究竟可以糟糕到什么样子没有想象力。可能写同人的不少人，真的是没有经历过什么人间疾苦，对世界的历史现实也不够了解。国内原耽应该会比较多反乌托邦题材，有一些末世文、废土文，但现在也不可能写太过分。</p>
+  <p><strong>燕京书评：国内独生子女一代的特殊社会境遇，对他们的耽美同人写作是否有影响？</strong></p>
+  <p><strong>郑熙青：</strong>戴锦华老师也说过，现在的耽美作者不会写兄弟之间的感情，这是独生子女一代的特点。因为没有见过这种情感，所以没法想象，写出来非常假。有段时间，楼诚圈（基于剧集《伪装者》的明楼和明诚这对CP）的一大掐点，就是大姐对明家三兄弟是否偏心，她们没有办法理解一些人面对不同的孩子，爱是不一样的。</p>
+  <p>戴老师说，Priest（晋江文学城作者）很多文就写人与人之间怎么产生连接，怎样修复这种连接；在孤立的状态下，想跟另一个人产生关系，应该怎样产生一种健康的关系？戴老师认为，这是耽美的一个很好的社会功能。</p>
+  <p>比较有趣的是，主流言情很多时候不会想到这一面。我在国外去同人展、漫展，亚裔浓度非常高，所以不知道嗑CP是独生子女多的结果，还是因为亚洲人普遍鸡娃造成的结果。（笑）当然，这个感受是眼界决定的，大家都只能看到自己能看到的那些东西。我有基友说他看到的一些言情作者已经超越耽美了，所以我对言情的观感也有可能是错的。</p>
+  <p><strong>燕京书评：耽美和同人写作对女性、对于社会环境有怎样的意义？</strong></p>
+  <p><strong>郑熙青：</strong>耽美同人写作圈层性比较强，写什么样的文取决于你看到的是什么。但实际上，我们在同人里都是在想象一种理想的爱情关系，应该怎样维持好的亲密关系。在写的途中，也像是谈了一场恋爱。这时候，自己单身又有什么关系呢？看到了这么好的恋爱，为什么要去伺候一个你其实并不爱的人？我觉得这挺好的，像艾米莉·勃朗特一辈子没结婚，但写了《呼啸山庄》那样荡气回肠的爱情故事，也是一种女性内心的觉醒吧。</p>
+  <p><strong>燕京书评：在学界早期观察中，耽美作为进步性反叛的叙事出现；现在对于耽美，学界有怎样的观察？</strong></p>
+  <p><strong>郑熙青：</strong>反叛叙事，讲好听一点，就是大家在社群内部找进步的可能性；说难听一点，就是我喜欢什么，什么就是反叛的。这已经成为文化研究界的套路了。确实，大多数东西都有反叛的可能性，但这个可能性会不会被当真，会不会被读者看到，看到以后有什么样的意义，那又不一样了。比如现在在一些父子文里，有人能看到对于父权的反抗，那从小妈文里又看到什么了呢？设想一个年轻、漂亮的男人成为姨太太，进行不伦之恋，这个想法在某些层面的呈现也挺糟粕的。当然，没有雷梗，只有雷作者，不能按照一个梗或者按照类型来限制人。</p>
+  <p>我有一个朋友写的文里面没有父亲，她说故事里有皇帝，主角已经有一个结构上的爹了，为什么还要给他一个真实的爹？所以，有人是有这种自觉的。但我相信，很多人是没有的，或者会考虑情节上的问题；但在社会结构之类层面，不会有特别的想法。</p>
+  <h2 id="section-1">社群和写作平台：成文的圈规难以持续，很多人维持想象中的边界</h2>
+  <p><strong>燕京书评：国内没有一个像AO3一样稳定且非营利性的平台，平台的动荡对同人写作有什么影响？</strong></p>
+  <p><strong>郑熙青：</strong>在AO3之前，英语世界最大的同人平台叫LiveJournal，大概1990年代末到2010年之前，欧美的同人圈都在上面。它是一个博客圈，每个人在博客写自己的东西，可以适当地开放、拉小圈，也有匿名选项。它有一个传统，你有什么想写的kink，就征集，很多人匿名来写。ABO就是这么来的：有人在《邪恶力量》网上征集一个kink meme（kink，一般指不同寻常的性癖；kink meme，指英语同人圈中包含此类内容的短小写作提纲）。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9c0784cd55d54dd5db220+L.png" data-id="60c9c07c904b8c02a16a30bc" alt="英语同人写作网站LiveJournal首页" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+英语同人写作网站LiveJournal首页
+    </figcaption>
+  </figure>
+  <p>LiveJournal曾经经历过审查和大量删文。现在去LiveJournal 你还能看到一些遗迹——有一些文章上面有一条删除线，就知道是网站删的。这造成了LiveJournal的作者出走。一些粉丝说，我们需要一个自己的服务器，不能听凭商业网站对我们做这些事情。</p>
+  <p>OTW，就是在这种考虑下成立的；AO3，实际上是粉丝社群在对抗外界的商业模式。但AO3的问题是，没有任何社交，没有私信，所有往复都在评论区。如果你没写过东西，你只能给别人留评论，别人不能给你评论。所以，现在欧美常见的同人圈玩法是在AO3发文，把链接放在Twitter或者Tumblr上。</p>
+  <p>AO3现在在拯救早期的同人网站，把别的网站的数据导进来，之前还导了一个中文的数据库。只要谁有数据库，联系AO3，AO3就可以提供支持，这点挺好。因为早年大家还分散着，没有一个统一的、特别大的中心平台，如果哪个站子的拥有者不想玩了，那站子就没了，同时消失的也是大量的同人写作，蛮可惜的。</p>
+  <p>但中文同人圈就一次一次的，很多东西真的没了。前几年桑桑学院还活着，还有九几年发的帖子。但如果发的网站不是桑桑这种，往前找一些老的同人文，经常就真的找不到了。银英圈有一些非常有名的文，网上根本找不着。再一讲起来，大家也没有听过这些文了。</p>
+  <p>难以持续的也包括各种各样的规矩。在LOFTER上，关于如何打Tag的礼节性问题吵了很多很多架。这事情如果放在以前的红晋江、贴吧上，是不会出现的，因为十几年玩法都熟了。LOFTER界面对于同人圈是不太友好的，因为它没有一个可以管理的人。你如果打了Tag但从来不去Tag里看的话，Tag里发生了什么事情都和你没有任何关系，就会出现比较奇怪的屠Tag现象，说某某圈要管一管啊。怎么管？以前在论坛，可以删帖、禁言、给警告。但在LOFTER没法管，如果一个纯粹不知道情况的人进来发了一个帖就走，拿他没有任何办法。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9c0939c232e01c17d1bbf+L.png" data-id="60c9c0a89b2d825085c25ce9" alt="LOFTER创作热门影视榜（2021.6.15数据）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+LOFTER创作热门影视榜（2021.6.15数据）
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：你觉得需要管吗？一些同人文作者反而觉得LOFTER相对自由，他们能从中获得比较多的关于社群、关于写作的乐趣。</strong></p>
+  <p><strong>郑熙青：</strong>问题就在于，想管别人的人太多了。每个人都觉得自己说的是正常的道理，但成文的圈规是没有的。在LOFTER不可能有成文的圈规，因为你跟另一个同圈人的关系只在于你俩写的文都处于同一个Tag下，这实际上会造成很多混乱。</p>
+  <p>以前圈规里面都写清楚了，同一个论坛上什么样的行为是一定会被踢出去的，这是经过大家讨论出来的。比如你上来就掐人，别人打了警告你还进来骂人、逆CP、挑事儿，是不行的。大家可以不用每天花一些时间在乌烟瘴气的事上。</p>
+  <p><strong>燕京书评：那之前讨论出来的圈规随着一些平台的凋零而作废？</strong></p>
+  <p><strong>郑熙青：</strong>没法再实现了，因为太依赖于平台自身的限制。比如说吧，LOFTER有个现象叫“Tag警察”，我就看到过，比如有人骂人说，你一个互攻文，为什么AB、BA的Tag都要打？你应该只打互攻。我特别震惊，什么时候分这么清楚了？不光是互攻问题了，很多问题上，类似出警几乎天天能看到。写一篇文章，究竟是想看人撕呢，还是想看人正常的讨论？有一阵子打开一个Tag里面整天在吵，后来有人说，你们能不能不要用这个Tag吵架了，再建一个新的去。</p>
+  <p><strong>燕京书评：近年同人群体的扩张带来什么样的影响？</strong></p>
+  <p><strong>郑熙青：</strong>林子大了，什么鸟都有，有好事有坏事。群体扩大就有更多人来创作，但也就必然有人来“边境巡查”，讨伐他们认为越界的事情，有时会带来网络暴力。但是，国内同人圈太大了，会对社群内部的人带来一定的危险。同人没有自己的领地，是很麻烦的事情。如果没有界限，很多人会臆想一条界限出来，维持他想象中的边界，但这条边界是否合理，又很难说。比如说微博RPS有条不成文规矩叫不能带大名嗑CP，但不说大名，正主就不知道吗？外人就不知道吗？有些CP粉觉得在超话内部嗑就是安全的，出去“舞”就是进了公众场合，必须讨伐，但超话也是开放的啊？</p>
+  <h2 id="section-2">耽美同人研究：尽量扭转外界的偏见，尽量为群体争取福利和话语权</h2>
+  <p><strong>燕京书评：欧美同人圈对RPS现在是什么态度？</strong></p>
+  <p><strong>郑熙青：</strong>现在没态度。（笑）AO3上有各种各样奇怪的文，前一阵子，苏伊士运河和长赐号的同人文有上百篇了（2021年3月23日长赐轮在埃及苏伊士运河搁浅，阻塞了运河，造成超过300艘船只排队等候）。我看有几篇写得还不错，这种时候我就会觉得，同人你可以把它变得很游戏，也可以变得很真诚。尽管是在写苏伊士运河和船的故事，我还挺感动的。（笑）怎么说呢，可能文学就是有这种能力，还挺纯粹的。</p>
+  <p><strong>燕京书评：英语学界对同人研究有什么局限？</strong></p>
+  <p><strong>郑熙青：</strong>比如他们很早就注意到他们做的是欧美中心主义的研究，已经“白”透了。他们非常想加入非白人中心的视角和研究，但往往不知道从何下手，很多时候陷于互相批评对方太白的境地，但并不会太接受一篇关于非西方国家粉丝研究的论文。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-16/60c9bcf44cd55d54dd5db216+L.jpg" data-id="60c9bcf72114416715c3d46a" alt="《破壁书 : 网络文化关键词》，邵燕君主编、王玉玊副主编，生活·读书·新知三联书店2018年5月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《破壁书 : 网络文化关键词》，邵燕君主编、王玉玊副主编，生活·读书·新知三联书店2018年5月版
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：你本身是长期的同人迷，也是学者，做同人研究的意义是什么？</strong></p>
+  <p><strong>郑熙青：</strong>我觉得，一方面要尽量扭转外界对这个群体的偏见，另一方面也尽量为这个群体争取福利和话语权，这是很重要的。见过一些作者为了文章好发，会把同人社群讲得一钱不值，但很明显对同人圈又是很了解的，这就很不堪了。</p>
+  <p><strong>燕京书评：学界对耽美对同人的研究，对受众群体有什么样的影响？对他们的认知会产生影响吗？</strong></p>
+  <p><strong>郑熙青：</strong>肯定是有的，但现在一些机制不太合理。很多真正了解社群内部的人，还没有到说话能被大众当真的程度，大家都还比较年轻。很多已经功成名就、能被看到听到的人，可能并不是很了解这个社群。因为从外界看这些社群的话，壁垒实在太高了。</p>
+  <p><strong>燕京书评：学者常将粉丝群中的很多人是中产阶级的职业女性作为例证，来反对社会上对粉丝形象的刻板偏见。对于其他不被讨论的粉丝群体（尤其是耽美同人作者），你是否有过观察和了解？</strong></p>
+  <p><strong>郑熙青：</strong>是很可以理解的，因为女性同人社群的写作，的确是直接针对女性欲望，所以不管是什么阶层的人都会找到这儿，这是理所应当的事情。我没有真的了解和接触过这些人，但读过相关的报道。如果有机会的话，我很愿意去实际了解一下，天一同人本事件太惨了。</p>
+  <p>感谢宫宇凡整理录音。部分注释参考《破壁书：网络文化关键词》和郑熙青论文。</p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-17/%E5%8D%95%E8%BA%AB%E6%97%B6%E4%BB%A3-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B9%B4%E8%BD%BB%E4%BA%BA%E4%B8%8D%E5%86%8D%E6%86%A7%E6%86%AC%E5%A9%9A%E5%A7%BB/">
+          单身时代：为什么年轻人不再憧憬婚姻？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-17/%E7%89%B9%E6%9C%97%E6%99%AE%E5%AE%A3%E7%A7%B0%E5%8D%B3%E5%B0%86%E5%87%BA%E7%89%88%E5%9B%9E%E5%BF%86%E5%BD%95-%E5%87%BA%E7%89%88%E5%95%86%E5%88%99%E8%AF%B4%E6%B2%A1%E4%BA%BA%E6%84%BF%E6%84%8F%E6%83%B9%E8%BF%99%E9%BA%BB%E7%83%A6/">
+          特朗普宣称即将出版回忆录，出版商则说没人愿意惹这麻烦
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-15</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-15/%E6%B5%81%E5%8A%A8%E7%9A%84%E5%BC%82%E4%B9%A1-%E4%B8%AD%E5%9B%BD%E7%BC%96%E7%BB%87%E8%A2%8B-%E8%B7%A8%E5%9B%BD%E6%B5%81%E5%8A%A8%E4%B8%8E%E5%85%A8%E7%90%83%E5%8D%97%E6%96%B9/">
+          流动的异乡：中国编织袋、跨国流动与全球南方
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-14</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-14/%E9%9F%A9%E6%B5%81%E5%88%AE%E4%BA%86%E8%BF%99%E4%B9%88%E4%B9%85-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9F%A9%E5%9B%BD%E6%96%87%E5%AD%A6%E7%9B%B4%E5%88%B0-%E9%87%91%E6%99%BA%E8%8B%B1-%E6%89%8D%E8%A2%AB%E5%85%B3%E6%B3%A8/">
+          韩流刮了这么久，为什么韩国文学直到“金智英”才被关注？
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-15/%E6%B5%81%E5%8A%A8%E7%9A%84%E5%BC%82%E4%B9%A1-%E4%B8%AD%E5%9B%BD%E7%BC%96%E7%BB%87%E8%A2%8B-%E8%B7%A8%E5%9B%BD%E6%B5%81%E5%8A%A8%E4%B8%8E%E5%85%A8%E7%90%83%E5%8D%97%E6%96%B9/">
+            前一篇：流动的异乡：中国编织袋、跨国流动与全球南方
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-17/%E7%89%B9%E6%9C%97%E6%99%AE%E5%AE%A3%E7%A7%B0%E5%8D%B3%E5%B0%86%E5%87%BA%E7%89%88%E5%9B%9E%E5%BF%86%E5%BD%95-%E5%87%BA%E7%89%88%E5%95%86%E5%88%99%E8%AF%B4%E6%B2%A1%E4%BA%BA%E6%84%BF%E6%84%8F%E6%83%B9%E8%BF%99%E9%BA%BB%E7%83%A6/">
+            後一篇：特朗普宣称即将出版回忆录，出版商则说没人愿意惹这麻烦
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-15/%E6%B5%81%E5%8A%A8%E7%9A%84%E5%BC%82%E4%B9%A1-%E4%B8%AD%E5%9B%BD%E7%BC%96%E7%BB%87%E8%A2%8B-%E8%B7%A8%E5%9B%BD%E6%B5%81%E5%8A%A8%E4%B8%8E%E5%85%A8%E7%90%83%E5%8D%97%E6%96%B9/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-17/%E7%89%B9%E6%9C%97%E6%99%AE%E5%AE%A3%E7%A7%B0%E5%8D%B3%E5%B0%86%E5%87%BA%E7%89%88%E5%9B%9E%E5%BF%86%E5%BD%95-%E5%87%BA%E7%89%88%E5%95%86%E5%88%99%E8%AF%B4%E6%B2%A1%E4%BA%BA%E6%84%BF%E6%84%8F%E6%83%B9%E8%BF%99%E9%BA%BB%E7%83%A6/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-17/%E7%89%B9%E6%9C%97%E6%99%AE%E5%AE%A3%E7%A7%B0%E5%8D%B3%E5%B0%86%E5%87%BA%E7%89%88%E5%9B%9E%E5%BF%86%E5%BD%95-%E5%87%BA%E7%89%88%E5%95%86%E5%88%99%E8%AF%B4%E6%B2%A1%E4%BA%BA%E6%84%BF%E6%84%8F%E6%83%B9%E8%BF%99%E9%BA%BB%E7%83%A6/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-15/%E6%B5%81%E5%8A%A8%E7%9A%84%E5%BC%82%E4%B9%A1-%E4%B8%AD%E5%9B%BD%E7%BC%96%E7%BB%87%E8%A2%8B-%E8%B7%A8%E5%9B%BD%E6%B5%81%E5%8A%A8%E4%B8%8E%E5%85%A8%E7%90%83%E5%8D%97%E6%96%B9/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-15/%E6%B5%81%E5%8A%A8%E7%9A%84%E5%BC%82%E4%B9%A1-%E4%B8%AD%E5%9B%BD%E7%BC%96%E7%BB%87%E8%A2%8B-%E8%B7%A8%E5%9B%BD%E6%B5%81%E5%8A%A8%E4%B8%8E%E5%85%A8%E7%90%83%E5%8D%97%E6%96%B9/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-17/%E7%89%B9%E6%9C%97%E6%99%AE%E5%AE%A3%E7%A7%B0%E5%8D%B3%E5%B0%86%E5%87%BA%E7%89%88%E5%9B%9E%E5%BF%86%E5%BD%95-%E5%87%BA%E7%89%88%E5%95%86%E5%88%99%E8%AF%B4%E6%B2%A1%E4%BA%BA%E6%84%BF%E6%84%8F%E6%83%B9%E8%BF%99%E9%BA%BB%E7%83%A6/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-17/%E7%89%B9%E6%9C%97%E6%99%AE%E5%AE%A3%E7%A7%B0%E5%8D%B3%E5%B0%86%E5%87%BA%E7%89%88%E5%9B%9E%E5%BF%86%E5%BD%95-%E5%87%BA%E7%89%88%E5%95%86%E5%88%99%E8%AF%B4%E6%B2%A1%E4%BA%BA%E6%84%BF%E6%84%8F%E6%83%B9%E8%BF%99%E9%BA%BB%E7%83%A6/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-15/%E6%B5%81%E5%8A%A8%E7%9A%84%E5%BC%82%E4%B9%A1-%E4%B8%AD%E5%9B%BD%E7%BC%96%E7%BB%87%E8%A2%8B-%E8%B7%A8%E5%9B%BD%E6%B5%81%E5%8A%A8%E4%B8%8E%E5%85%A8%E7%90%83%E5%8D%97%E6%96%B9/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

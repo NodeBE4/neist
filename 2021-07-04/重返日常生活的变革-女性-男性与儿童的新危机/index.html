@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>重返日常生活的变革：女性、男性与儿童的新危机 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+重返日常生活的变革：女性、男性与儿童的新危机
+——
+" />
+    <meta property="og:description" content="
+重返日常生活的变革：女性、男性与儿童的新危机
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="重返日常生活的变革：女性、男性与儿童的新危机" />
+    <meta property="twitter:title" content="重返日常生活的变革：女性、男性与儿童的新危机" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60e13f9d4b18725bbb496173" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60e13f9d4b18725bbb496173" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60e13f9d4b18725bbb496173&text=重返日常生活的变革：女性、男性与儿童的新危机&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60e13f9d4b18725bbb496173&title=重返日常生活的变革：女性、男性与儿童的新危机" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60e13f9d4b18725bbb496173&title=重返日常生活的变革：女性、男性与儿童的新危机" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=重返日常生活的变革：女性、男性与儿童的新危机&body=
+重返日常生活的变革：女性、男性与儿童的新危机
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60e13f9d4b18725bbb496173" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60e13f9d4b18725bbb496173&title=重返日常生活的变革：女性、男性与儿童的新危机&caption=
+重返日常生活的变革：女性、男性与儿童的新危机
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=重返日常生活的变革：女性、男性与儿童的新危机&url=https://www.allnow.com/post/60e13f9d4b18725bbb496173" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>重返日常生活的变革：女性、男性与儿童的新危机</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-07-04
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 西尔维亚·费德里奇</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60e13f9d4b18725bbb496173" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60e13f9d4b18725bbb496173">重返日常生活的变革：女性、男性与儿童的新危机</a>
+——</p>
+
+<div>
+  <p><strong>撰稿丨西尔维亚·费德里奇；翻译丨它们</strong></p>
+  <p>日常生活是社会变革的首要场域，我们可以在其中看到历史悠久的对制度和政治的正统观念的批判。早在《德意志意识形态》（1847）中，马克思就将对我们存在的物质条件研究与新黑格尔主义者的思辨相对照。一个世纪后，法国社会学家亨利·列斐伏尔和情境主义者呼吁将“日常生活”（everyday life）作为彼时法国官僚马克思主义的解药。列斐伏尔挑战了左翼将工厂抗争作为社会变革动力的焦点，认为社会理论必须考虑“整体工人”（whole worker）的生活，并开始研究“日常生活”是如何构成的，又为何不断被哲学家所贬低。在这个过程中，他启发并开启了从情境主义者以来的新一代激进人士，他对“消费主义”和技术异化的讨论，以及对资本主义社会的工作的批评，为新左翼的很多作品奠定了基础。</p>
+  <p>不过，是随着女权运动的兴起，对“日常生活”的批判才成为列斐伏尔在其作品中所希望探讨的全面理解社会的关键点。通过反抗将女性囿于再生产工作和性别分工构建起来的等级制度，妇女的运动为日常生活批判提供了物质基础，揭示了在多样的日常行为和事件之下将它们联结起来的“深层结构”和“始基”（arche），列斐伏尔一直寻求却并未真正把握的事物。</p>
+  <p>女权主义视角使我们得以认识到，“日常生活”不是寻求某一秩序的事件、态度和经验的通用集合体。它是一种结构化的现实，围绕着一个特定的生产过程而组织起来，这个生产即是人的生产，如马克思和恩格斯所指出，这是“第一个历史行为”和“所有历史的基础条件”。这一发现所带来的理论和实践革命，改变了我们对工作、政治、“女性特质”和社会科学方法论的观念，使我们能够超越对我们经历的个体化、以及将心理问题同社会问题相分离的传统心理学视角。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-04/60e140644cd55d54dd5db806+L.jpeg" data-id="60e1406e2114416715c3d9ca" alt="干家务活的女性" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+干家务活的女性
+    </figcaption>
+  </figure>
+  <p>在女权主义革命的核心里，有认识到我们不能从抽象、普遍、无性别的社会主体的角度来看待社会生活，因为种族和性别的等级化显著地决定了资本主义的社会劳动分工，尤其是有偿劳动和无偿劳动的人群的分化。这样的等级化，产生的不只是不平等的权力关系，还有对世界的经验和视角在本质上的不同。</p>
+  <p>其次，虽然所有经验都为社会建构，但特别重要的是，在资本主义社会，日常生活的再生产已被纳入劳动力的再生产中，且被建构为无偿劳动和“妇女的工作”。在没有工资的情况下，家务工作已如此自然化，女性很难与之抗争而不经历巨大的愧疚感，并让自己处于可能受虐待的险境。因为如果女性成为母亲和家庭主妇是自然的，那么那些拒绝承担这些角色的人就不会被视为是罢工的工人，而是“坏女人”。</p>
+  <p>再次，如果家务劳动被纳入劳动力市场的需求，那么家庭、性和性别关系便成为“生产关系”，这其中充斥的矛盾和对欲望的无法满足，不应使我们感到惊讶。这一意识对女性是解放的经验，我们可以说它提供了日常生活“进入历史和政治生活”的方式。它揭示出，<strong>不仅个人的即是政治的，而且私人/公共的分离也是一种计谋，将女性的无偿工作神秘化为“爱的劳动”。</strong></p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-04/60e140b59c232e01c17d2212+L.jpg" data-id="60e140ba9b2d825085c2626b" alt="《看不见的女人：家庭事务社会学》，[英]安·奥克利著，汪丽译，南京大学出版社2020年9月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《看不见的女人：家庭事务社会学》，[英]安·奥克利著，汪丽译，南京大学出版社2020年9月版
+    </figcaption>
+  </figure>
+  <p>需要强调的是，女权主义对日常生活的批判，不仅有理论性，也有实践性和政治性，其引发的民主化进程改变了我们生活的方方面面。因为这一批判，家庭内的殴打和强奸第一次被视为对女性的犯罪，而传统上将其当做家务劳动的条件而纵容。丈夫控制妻子身体和违背妻子意愿要求性服务的权利被剥夺。在一些国家，女权运动带来了离婚和堕胎权的合法化。更广泛地说，女性改变了她们与世界的日常互动，在语言、知识、与男性的关系以及她们的欲望表达上获得了新的力量。甚至，性行为也被置于更平等的基点上，许多女性开始拒绝婚姻生活中典型的“快速性交”，主张她们的性探索权和进行更契合她们身体的快感点构造的性交权利。最重要的是，女权运动已经确立，女性将不再接受一个从属的社会地位和一个只能通过男性达成的与国家和资本的关系。</p>
+  <p>这本身就产生了一场社会革命，推动了重大的制度变革，例如审查许多基于性别的歧视做法和政策。因此，从列斐伏尔的问题来看，我们可以说女权运动“已夺回”并重新重视了日常生活，激烈地批评了构成日常生活的一些最重要的制度。但运动无法将其对家庭和我所称的“工资父权制”（the patriarchy of the wage）的批判转化为对其他形式的剥削的批判，并将“解放”等同于“平等权利”和获得有偿劳动，它也同样无法逃避出政府与联合国的合作。到1970年代中期时，它们已准备好接受修订版的女权主义作为世界经济重组的关键要素。</p>
+  <p>如我在其他地方所论述，有三个考虑似乎促使了联合国决定干预女权政治的领域，并自命为负责对其下国际权力结构去男权化的机构。首先，意识到女性、资本和国家之间的关系不能再通过男性/有偿工人为中介来组织，因为妇女解放运动表达了对此的大规模拒绝和不再可能被压制的独立于男性自主的要求。其次，需要驯化一个具有巨大颠覆潜力、高度自主（直至那时）、致力于对日常生活进行彻底变革且对政治代表制持怀疑态度的运动。当时，在1970 年代中期棘手的“劳工危机”后，一场全球资本主义的反攻正在进行，以图重新建立资产阶级对工作纪律的控制权并解散负责工人抵抗剥削的组织，于是驯服妇女运动便变得尤为迫切。我们必须将妇女十年（Decade of Women）的启动和 1975 年在墨西哥城举行的第一次国际会议置于这样的背景下，而这标志着女权运动被制度化和妇女融入全球化世界经济的开始。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-04/60e141194cd55d54dd5db807+L.png" data-id="60e141259b2d825085c2626c" alt="为争取家务工资的女性游行，1977年" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+为争取家务工资的女性游行，1977年
+    </figcaption>
+  </figure>
+  <p>众所周知，在这十年的时间里，女性大量涌入了有偿劳动力市场，但随之而来的是日常生活的女权革命的结束。再生产作为女权抗争的场域被抛弃了，很快女权运动本身便被解散，也无法抵抗自二战以来劳工和资本之间最关键的社会契约——福利计划的解体。更成问题的是，女权运动在争取平等机会和有偿工作时，助长了对衰微的工作伦理的重新合法化，违背了 1960 年代和 1970 年代在工业世界的工作场所中显著的拒绝工作（refusal of work）。</p>
+  <p>我们在这个过程中学到的教训是，如果不改变日常生活的直接制度和组织日常生活的政治经济体系，我们就无法改变日常生活。不然的话，我们革新“日常生活”的抗争很容易被消解，并助长着将更难挑战的关系合理化。这就是我们目前在美国经历的情况，面临着巨大的“再生产危机”，也有不断涌现的反抗，为创造更多合作的社会再生产形式来回应危机开辟了可能性。但那还没有发生。下面我将讨论共同体社会得以出现的条件。不过，首先来看目前的再生产危机，特别是美国的情况，这是我最熟悉的，也最能展现我提到的事态发展。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-04/60e141f74cd55d54dd5db808+L.jpeg" data-id="60e141fb2114416715c3d9cc" alt ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture"></figcaption>
+  </figure>
+  <p><strong>持续危机的日常生活</strong></p>
+  <p>虽然一些女权主义者将 1970 年代以来美国妇女生活的变化视为进步的案例，但在许多方面，今天的女性和男性都处于比女权运动开始时更困难的经济和社会地位。甚至，更平等关系的证据也时好时坏。劳动力的女性化，增加了女性独立于男性的自主。此外，如南希·麦克莱恩（Nancy MacLean）所指出，争取进入男性主导的工作岗位的抗争，促成了“我们这个时代对性别、种族和阶级的社会建构和不稳定性的高度意识”。</p>
+  <p>女性进入有偿劳动力的时刻，正是在有偿工作被剥夺了以前提供的福利和保障的时刻，这使得工人不再可能商议工作和工作周的安排，而那能使她们协调家庭以外的工作与家庭和社群照护。很少有工作提供育儿或适配家务的时间表，即使是家务已共享。至于家政工作的商业化，即家务被组织为可购买的服务，这一备受赞誉的发展，已被证明具有严重的局限性，首先是提供的服务成本高、质量低。例如，我们知道许多工人依赖的快餐是导致肥胖的主要原因之一，如今已影响到了许多儿童。对那些有稳定收入的人来说，雇佣家务劳动是一个选择，但有偿家务工作的现状，以及受雇者大多是由于原国经济条件恶劣而找这类工作的移民女性这样的事实，排除了雇佣家务劳动是种理想的解决方案。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-04/60e1420e9c232e01c17d2213+L.jpeg" data-id="60e1421e9b2d825085c2626d" alt="看不见的家庭事务" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+看不见的家庭事务
+    </figcaption>
+  </figure>
+  <p>此外，教育、医疗保健、医院护理的削减，使得大量家务劳动回到了家庭，特别是在照顾儿童、老人以及生病或残疾的家人方面。进入有偿工作所承诺的经济独立由是被证明为一种幻觉，至少对大多数女性来说如此，乃至即使在那些职业向的女性中，最近也开始回归家庭和重新重视家务。许多女性，至少在中产家庭中的许多女性，厌倦了挣扎于已不再试图关怀工人的再生产、还仍假设工人在家有主妇的工作场所，已经“认命”并致力于为她们的家庭提供“高质量”的再生产：烤面包、种植蔬菜、购买营养食品、在家教育孩子等。</p>
+  <p>如艾米丽·马查（Emily Matchar）在《向着家庭》（<em>Homeward Bound</em>, 2013）中指出，新的家庭生活也出于生态问题和希望了解食物的来源，这导致人们普遍拒绝方便食品和工业生产的商品。许多选择回归家庭生活的女性也受到 DIY（自己动手）运动的影响，也不像她们的母亲那样封闭地将生活局限于家里，甚至成为了传播和获取信息的博主。但这些是个别解决方案，并不能解决大多数女性面临的问题，且只会加深她们之间的社会距离。它们是追求“美好生活”的新个人主义兴起的一种表现，而不是为“共同福祉”而进行的社会抗争。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-04/60e1425c4cd55d54dd5db809+L.png" data-id="60e142679b2d825085c2626f" alt="Homeward Bound，Emily Matchar，Simon &amp; Schuster2015年3月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+Homeward Bound，Emily Matchar，Simon &amp; Schuster2015年3月版
+    </figcaption>
+  </figure>
+  <p>由于许多女性面临着双重负担，长时间的工作、低工资以及基本再生产服务的削减，对大多数女性而言，日常生活已成为持续的危机。在美国，无产阶级女性平均每周工作约 50 小时，在家外工作 35 小时以上，每天在家工作约 3 小时。如果我们加上（变长的）交通时间和准备上班所花费的时间，会发现几乎没有时间用于放松或其他活动。而且，女性所从事的很多工作是情绪/情感劳动（emotional/affective labor）——取悦、助兴、慰藉和安抚他人——这是非常耗费精力的任务；尤其是在为市场而作时，且随着时间的推移会导致深刻的人格解体感和无法知道自己真正想要什么。再加上经济衰退和生活的不稳定，这也解释了为什么女性患临床抑郁症和焦虑症的可能性是男性的两倍。数据是惊人的：在美国受抑郁症影响的 1500 万成年人中，女性占大多数；每天约有四千万妇女遭受焦虑之苦；五分之一的女性会在一生的某个阶段患上抑郁症。其他国家也有类似的统计数据，而且这一数字还在上升。在美国，指标还显示过去十年女性的幸福感下降，最显著的是预期寿命下降，这对于工薪阶层女性尤其明显，她们在 1990 年至 2008 年间与她们母亲一辈相比失去了五年的预期寿命。</p>
+  <p>日常生活的危机，不仅限于女性。过度工作、就业和规划未来的不确定，如今成为影响所有社会群体和年龄段的普遍问题。社会团结和家庭关系也出现破裂。在缺乏稳定工资的情况下，家庭正在瓦解，与此同时，最迟从1960 年代以来的工人阶级社区特有的组织形式也正在瓦解，无法抵抗经济重组、士绅化和强制流动的冲击。显然，世界经济的新自由主义重组，是造成这种局面的主要原因。但正如利奥波丁娜·弗尔图纳蒂（Leopoldina Fortunati）在《通信欧洲》（<em>Telecomunicando in Europa</em>）——一份关于传播技术对欧洲日常生活再生产的影响的研究——在引言中所指出，我们也正在目睹造成的各种社会主体的无力，他们组织日常生活来达成他们的利益，并找到组织形式来抵御全球化破坏性的后果。例如，男性拒绝接受女性的自主权，体现在男性对女性越来越多的暴力行为，这导致了社会纽带的削弱。</p>
+  <p>在这些情形下，作为人际交往主要领域的日常生活被允许沉没；它已成为许多人逃离的领域，无法维持看上去过于费力和难以处理的人际关系。这意味着由家人或朋友进行的照护工作不被关注，其后果在儿童和老人中尤为严重。看看欧洲正在发展的新趋势，是将年老的亲属，特别是患有阿兹海默症的老人送到国外照顾。无论在成人之间还是在成人与儿童之间，人际面对面的交流，我们再生产的一个关键部分也在衰落。交流数量和内容都在减少，被简化为纯工具性的交流，且被互联网、脸书和推特逐渐取代。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-04/60e1428b4cd55d54dd5db80a+L.png" data-id="60e142979b2d825085c26270" alt="传播技术对日常生活再生产造成了巨大的影响" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+传播技术对日常生活再生产造成了巨大的影响
+    </figcaption>
+  </figure>
+  <p>简言之，当前日常生活最突出的一个事实是“再生产危机”，即用于再生产的资源急剧减少，照护他人的工作，首先是照护家庭成员的工作，也在减少，而新的通信技术使得日常生活被进一步贬值，尽管这不是首要原因。在这里，统计数据也能说明问题。如我们所见，预期寿命正在下降，生活质量也在下降，因为日常体验表现为深刻的疏离感、焦虑感和恐惧感。精神障碍很普遍，因为许多人担心下一刻便可能会被剥夺生活资料、无家可归，会经历缺乏目标的动荡。</p>
+  <p>最令人担忧的是，现在这些病症甚至影响到儿童，这可能是因为家庭和学校曾经提供的照护工作的崩溃。还很难说这些精神障碍在多大程度上是真实存在的，还是由医生和制药公司在父母和老师的默许下建构出来，为了治疗在家里和在学校都被剥夺了时间、空间和创造性活动的一代不快乐的儿童。但可以肯定的是，从来没有这么多、这么小的儿童被诊断出患有这么多精神疾病。到 2007 年，美国患精神病的儿童人数已上升到 1990 年的 35 倍。据疾病控制中心称，包括幼儿在内的五分之一的儿童，都可能患有精神障碍，包括抑郁症、多动症和注意力缺陷障碍。对他们所有人来说，“治疗”是学校和家庭大胆地使用各类精神药物，于是有些十岁的孩子每天服用多达七种药丸，尽管这些药物对他们心理发展的负面影响也为人所知。</p>
+  <p>现实情况是，在当今社会，儿童是最大的输家。在一个金钱积累即是一切而我们的所有时间都必须投入“生产”的世界里，满足儿童的需求是次要的，必须减少到最低限度。这至少是来自资产阶级的信息，对他们来说，今天的儿童本质上是一个消费市场。人们几乎希望抹除童年本身的非生产性状态，例如，如一些经济学家建议的，教幼儿如何管理金钱，成为明智的消费者，并早在四岁时就让他们接受“态度测试”，好使他们在经济竞争的赛道上有一个好的开端。在工人阶级家庭中，对童年的抹除也在快速发生，因为父母日渐不在家且面临严重的经济危机，这成为绝望和愤怒的源泉。成年人，无论是父母还是老师，都没有时间、精力和资源来投入给孩子。如弗尔图纳蒂在《通信欧洲》中所论，他们可能会教他们说话，但不会教他们交流。从虐待儿童的蔓延情况来看，他们显然将儿童视为一种阻碍。2001 年至 2011 年间，有两万多名儿童（其中 75% 不到 4 岁）被家人杀害，这是同样的年间在伊拉克和阿富汗阵亡士兵人数的四倍，我们现在在美国所经历的亲子关系严重危机的一个令人担忧的迹象。难怪，即使是进入学校屠杀儿童的枪手——极端地反映了儿童生活贬值和社会关系瓦解的近期事件——也只引起了不温不火的反应，并没有真正试图结束这类事件的努力。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-04/60e142bc4cd55d54dd5db80b+L.png" data-id="60e1431a2114416715c3d9d0" alt="我们时代的儿童危机，表现之一便是对童年的抹除。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+我们时代的儿童危机，表现之一便是对童年的抹除。
+    </figcaption>
+  </figure>
+  <p><strong>“Riprendiamoci la vita”——“让我们重新掌控生活”</strong></p>
+  <p>如何阻止从日常关系和再生产场域的逃离？如何重建我们生活的社会结构，将家庭和邻里转变为抵抗和政治重建的地方？这些，即是当下人类议程上最重要的一些问题。它们无疑是对日益增长的创建“共同体”（实践的和哲学的）的兴趣背后的推动力；也即，创建建立在团结、共享财富、合作工作和决策的基础上的社会关系和空间。</p>
+  <p>这一目标时常受原住民抗争的启发，如今共享在各类运动中（女权主义、无政府主义、绿色运动、马克思主义），回应了各种需求。首先，需要在国家和市场提供越来越少再生产手段的环境中生存。在拉丁美洲，如拉乌·兹贝奇（Raúl Zibechi）在《抵抗的领地》（<em>Territories in Resistance</em>）中所记录，在1980 年代和 1990 年代，在严厉的紧缩措施使社区赤贫或依赖移民出去的人汇款生活的情形下，人们，尤其是女人，集中资源来支撑她们的家庭。在利马，女性成立了数以千计的委员会——购物和烹饪委员会、城市花园委员会、一杯牛奶（给儿童）委员会等——来提供不同形式的对很多人生死攸关的援助。</p>
+  <p>类似的组织形式，也出现在 1973 年皮诺切特政变之后的智利，面对毁灭性的贫困和政治压迫，大众厨房“从未停止过”。在 2002 年的危机中，阿根廷也出现了再生产的“集体化”或社会化现象，女人们将她们的炊具带到了抗议现场。在 1990 年代初的哥伦比亚，无产阶级女性自发组织成“社区母亲”（madres comunitarias）来照顾流落街头的儿童。作为一项自愿倡议，在经过长期的抗争后，社区母亲的项目如今正变得正规化，到2014 年，大约七万名母亲将从国家福利部门领取到少量的工资。但她们的工作仍落脚在社群团结，获得的薪水几乎无法让她们生存并照料孩子。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-04/60e143344cd55d54dd5db80c+L.jpeg" data-id="60e1433e904b8c02a16a360d" alt="Territories in Resistance: A Cartography of Latin American Social Movements ，by Raúl Zibechi (Author), Ramor Ryan (Translator)，AK Press, 2012 August 7" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+Territories in Resistance: A Cartography of Latin American Social Movements ，by Raúl Zibechi (Author), Ramor Ryan (Translator)，AK Press, 2012 August 7
+    </figcaption>
+  </figure>
+  <p>无论是在美国还是在欧洲，我们都没有看到上面这样集体化的再生产工作，但在“发达”世界中还是开始出现了更多公共和自我管理的再生产工作形式。在美国和欧洲，城市花园和社区支持的农业如今已在许多城镇得到了很好的实践，不仅为厨房提供了蔬菜，还提供了各种形式的尤其是对孩子们的教导，他们能参与种植和保存食物以及如何种植的课程。时间银行曾经是一个激进的项目，目前却正在美国主流中传播，成为一种无需货币兑换即可获得服务的方式，最重要的是，获得新的支持网络和友谊。</p>
+  <p>面对我们所面临的巨大灾难，无论是社会的还是生态的，所有这些举措可能显得微不足道。但面对日益贫困和日常生活的军事化及其导致的瘫痪、退缩和邻里间的不信任，这些合作意愿的迹象令人鼓舞。它们标志着人们越来越意识到，独自面对危机是一条失败之路。因为在一个奉行贬低我们生活的社会制度中，经济和心理生存的唯一可能性在于我们将日常实践转变为集体抗争的土壤。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-04/60e143574cd55d54dd5db80d+L.png" data-id="60e1436f904b8c02a16a360e" alt="艺术家Philippe Lucchese重现的“自由引导人民”，2016年" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+艺术家Philippe Lucchese重现的“自由引导人民”，2016年
+    </figcaption>
+  </figure>
+  <p>我们在日常生活的再生产中创造新的社会联结和合作形式至关重要，还有另一个原因。家务工作，包括照护工作和情感工作，是极其孤立的，以一种将我们彼此分开、将我们的问题个体化并隐藏我们的需求和痛苦的方式进行。它也非常费力，要求做多种且常常同时进行的无法被机械化的活动，主要作为无偿劳动，由女性来完成，时常在她们全职有偿工作之外。技术——尤其是通信技术——无疑在家务工作的组织中发挥着作用，如今是我们日常生活的重要组成部分。</p>
+  <p>但是，如弗尔图纳蒂所说，它主要是为了取代而不是加强人际间的交流，让每个家庭成员通过躲进机器里来逃避交流的危机。同样，日本和美国的公司将我们的再生产机器人化——引入了为满足我们的欲望而定制的护士机器人和爱情机器人——这与其说是替代方案，不如说是越来越孤独和失去支持关系的表征，而且未来它们是否会进入许多家庭是值得怀疑的。这是为什么女性首先努力使我们的日常生活去私有化、创造再生产的合作形式如此重要。这不仅是在为一个关心他人可以成为一项创造性任务而非负担的世界铺路，还打破了我们再生产过程中的孤立，创造了团结的纽带；没有这些纽带，我们的生活就是情感沙漠，我们也会丧失社会力量。</p>
+  <p>在这样的情境下，共同体是我们日常生活和抗争的目标和条件。它们还处于胚胎期，却代表了我们希望实现的社会关系和构建它们的手段。它们不是单独的抗争，而是我们带入我们参与的每场抗争和每场社会运动的视角。如萨帕塔社区的一名成员所说：“抵抗不仅仅是拒绝支持一个糟糕的政府，或者不纳税或缴电费。抵抗是建造维持我们人民的生活所需要的一切。”</p>
+  <blockquote>
+    <p>西尔维亚·费德里奇（Silvia Federici, 1942 – ）：马克思主义女性主义学者，意大利自治主义（autonomism）运动参与人，移居美国后在理论写作和大学教学之外长期活动在基层的女性组织。其代表作《卡利班和女巫：女性、身体和原始积累》（<em>Caliban and the Witch: Women, the Body and Primitive Accumulation,</em> 2004）从猎巫运动看早期现代资本主义的原始积累是如何建立在对女性的暴力驯化和对女性劳动力的无偿侵用上，影响深远。费德里奇是有偿家务劳动（Wages for housework）运动的主要理论和活动推动者，曾任教于尼日利亚多年，是非洲学术自由委员会（Committee for Academic Freedom in Africa）的创立人之一。本文选自费德里奇文集《重魅世界：女性主义和共同体的政治》（<i>Re-enchanting the World: Feminism and the Politics of the Commons, </i>PM Press, 2019）中的篇目“From Crisis to Commons: Reproductive Work, Affective Labor and Technology, and the Transformation of Everyday Life”，初载于《日常生活的心理与行为》（<em>Psychology and the Conduct of Everyday Life</em>, eds. Ernst Schraube and Charlotte Højolt, Routledge, 2015）一书。</p>
+  </blockquote>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-07-05</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-05/%E6%99%8F%E7%BB%8D%E7%A5%A5-%E5%BD%93%E4%B8%8B%E4%B8%AD%E5%9B%BD%E5%AF%B9%E4%B8%96%E7%95%8C%E5%8E%86%E5%8F%B2%E7%9A%84%E9%9C%80%E6%B1%82%E5%BE%88%E5%A4%A7-%E4%BD%86%E7%A0%94%E7%A9%B6%E6%B0%B4%E5%B9%B3%E4%BB%8D%E5%BE%88%E4%BD%8E%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          晏绍祥：当下中国对世界历史的需求很大，但研究水平仍很低丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-04</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-04/%E9%B2%8D%E9%87%8C%E6%96%AF-%E7%BA%A6%E7%BF%B0%E9%80%8A%E9%87%8D%E9%87%91%E6%B1%82-%E4%BB%A3%E7%AC%94-%E5%9B%A0%E6%8B%96%E5%BB%B6%E5%A4%AA%E6%97%A7-%E6%97%A0%E6%B3%95%E5%AE%8C%E6%88%90%E7%AD%BE%E7%BA%A6%E8%91%97%E4%BD%9C/">
+          鲍里斯·约翰逊重金求“代笔”：因拖延太旧，无法完成签约著作
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-03</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/">
+          北岛获日本大伴家持文学赏，受奖致辞：写作是我最后的防线
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-02</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-02/%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E4%B8%AD%E7%9A%84%E7%A4%BE%E7%BE%A4%E6%9A%B4%E5%8A%9B-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E7%9A%84%E5%86%85%E9%83%A8%E4%BC%9A%E8%B5%B0%E5%90%91%E5%88%86%E5%8C%96/">
+          女权运动中的社群暴力：为什么女权运动的内部会走向分化？
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">
+            前一篇：食農與鄉愁 她們不一樣的台港連結
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-04/%E9%B2%8D%E9%87%8C%E6%96%AF-%E7%BA%A6%E7%BF%B0%E9%80%8A%E9%87%8D%E9%87%91%E6%B1%82-%E4%BB%A3%E7%AC%94-%E5%9B%A0%E6%8B%96%E5%BB%B6%E5%A4%AA%E6%97%A7-%E6%97%A0%E6%B3%95%E5%AE%8C%E6%88%90%E7%AD%BE%E7%BA%A6%E8%91%97%E4%BD%9C/">
+            後一篇：鲍里斯·约翰逊重金求“代笔”：因拖延太旧，无法完成签约著作
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-07-04/%E9%B2%8D%E9%87%8C%E6%96%AF-%E7%BA%A6%E7%BF%B0%E9%80%8A%E9%87%8D%E9%87%91%E6%B1%82-%E4%BB%A3%E7%AC%94-%E5%9B%A0%E6%8B%96%E5%BB%B6%E5%A4%AA%E6%97%A7-%E6%97%A0%E6%B3%95%E5%AE%8C%E6%88%90%E7%AD%BE%E7%BA%A6%E8%91%97%E4%BD%9C/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-07-04/%E9%B2%8D%E9%87%8C%E6%96%AF-%E7%BA%A6%E7%BF%B0%E9%80%8A%E9%87%8D%E9%87%91%E6%B1%82-%E4%BB%A3%E7%AC%94-%E5%9B%A0%E6%8B%96%E5%BB%B6%E5%A4%AA%E6%97%A7-%E6%97%A0%E6%B3%95%E5%AE%8C%E6%88%90%E7%AD%BE%E7%BA%A6%E8%91%97%E4%BD%9C/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-07-04/%E9%B2%8D%E9%87%8C%E6%96%AF-%E7%BA%A6%E7%BF%B0%E9%80%8A%E9%87%8D%E9%87%91%E6%B1%82-%E4%BB%A3%E7%AC%94-%E5%9B%A0%E6%8B%96%E5%BB%B6%E5%A4%AA%E6%97%A7-%E6%97%A0%E6%B3%95%E5%AE%8C%E6%88%90%E7%AD%BE%E7%BA%A6%E8%91%97%E4%BD%9C/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-07-04/%E9%B2%8D%E9%87%8C%E6%96%AF-%E7%BA%A6%E7%BF%B0%E9%80%8A%E9%87%8D%E9%87%91%E6%B1%82-%E4%BB%A3%E7%AC%94-%E5%9B%A0%E6%8B%96%E5%BB%B6%E5%A4%AA%E6%97%A7-%E6%97%A0%E6%B3%95%E5%AE%8C%E6%88%90%E7%AD%BE%E7%BA%A6%E8%91%97%E4%BD%9C/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

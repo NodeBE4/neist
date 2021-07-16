@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>後重慶大廈時代 麥高登的非裔廣州 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+後重慶大廈時代 麥高登的非裔廣州
+——
+" />
+    <meta property="og:description" content="
+後重慶大廈時代 麥高登的非裔廣州
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="後重慶大廈時代 麥高登的非裔廣州" />
+    <meta property="twitter:title" content="後重慶大廈時代 麥高登的非裔廣州" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40islander%2F%25E5%25BE%258C%25E9%2587%258D%25E6%2585%25B6%25E5%25A4%25A7%25E5%25BB%2588%25E6%2599%2582%25E4%25BB%25A3-%25E9%25BA%25A5%25E9%25AB%2598%25E7%2599%25BB%25E7%259A%2584%25E9%259D%259E%25E8%25A3%2594%25E5%25BB%25A3%25E5%25B7%259E-bafyreia2aejivheofkgrknfcydhzhuu6tsw5sr4b72772ek5aj6kbmrgdm" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@islander/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E-bafyreia2aejivheofkgrknfcydhzhuu6tsw5sr4b72772ek5aj6kbmrgdm" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@islander/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E-bafyreia2aejivheofkgrknfcydhzhuu6tsw5sr4b72772ek5aj6kbmrgdm&text=後重慶大廈時代 麥高登的非裔廣州&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@islander/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E-bafyreia2aejivheofkgrknfcydhzhuu6tsw5sr4b72772ek5aj6kbmrgdm&title=後重慶大廈時代 麥高登的非裔廣州" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@islander/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E-bafyreia2aejivheofkgrknfcydhzhuu6tsw5sr4b72772ek5aj6kbmrgdm&title=後重慶大廈時代 麥高登的非裔廣州" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=後重慶大廈時代 麥高登的非裔廣州&body=
+後重慶大廈時代 麥高登的非裔廣州
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@islander/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E-bafyreia2aejivheofkgrknfcydhzhuu6tsw5sr4b72772ek5aj6kbmrgdm" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@islander/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E-bafyreia2aejivheofkgrknfcydhzhuu6tsw5sr4b72772ek5aj6kbmrgdm&title=後重慶大廈時代 麥高登的非裔廣州&caption=
+後重慶大廈時代 麥高登的非裔廣州
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=後重慶大廈時代 麥高登的非裔廣州&url=https://matters.news/@islander/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E-bafyreia2aejivheofkgrknfcydhzhuu6tsw5sr4b72772ek5aj6kbmrgdm" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>後重慶大廈時代 麥高登的非裔廣州</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-05-02
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 島民</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@islander/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E-bafyreia2aejivheofkgrknfcydhzhuu6tsw5sr4b72772ek5aj6kbmrgdm" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1588406909000-->
+<p><a href="https://matters.news/@islander/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E-bafyreia2aejivheofkgrknfcydhzhuu6tsw5sr4b72772ek5aj6kbmrgdm">後重慶大廈時代 麥高登的非裔廣州</a>
+——</p>
+
+<div>
+  <h2 id="section">後重慶大廈時代 麥高登的非裔廣州</h2>
+  <hr />
+  <figure class="image">
+<img src="https://assets.matters.news/embed/d9c9170e-0255-470c-a4e0-d21a4feb2923.jpeg" data-asset-id="d9c9170e-0255-470c-a4e0-d21a4feb2923" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p>許多人類學研究都有點像長期的調查報導，人類學家麥高登（Gordon Mathews）說。但大部分記者時間有限，只能短暫接觸報導人，讓他覺得十分可惜。然而這一次，他發現自己遇到了相似的困境：「許多出現在我書裡的人，我後來再也沒見過。」</p>
+  <p>他說的是他去年出版的新書《The World in Guangzhou: Africans and Other Foreigners in South China’s Global Marketplace》（記者譯：《世界在廣州：南中國全球貿易之都的非洲人與其他外國人》），全書的重點是廣州的1到2萬非洲人。這本書的田野調查在2014年完成，3年多過去，他當時訪談的許多在廣州經商的非洲商人，尤其是尼日利亞人，已經在幾年間被遣返回母國，或乾脆不知所蹤。</p>
+  <p>「當然，」他解釋道，「商人本就來來去去。」但這種情況和他在香港重慶大廈遇到的實在不同。</p>
+  <p>出生於美國的麥高登在1994年來港定居，現於香港中文大學人類學系擔任系主任。12年前，他開始在香港尖沙咀的重慶大廈做田野調查，2011年出版的《世界中心的貧民窟：香港重慶大廈》讓他在人類學領域內外都名聲大噪。重慶大廈也承載大量的跨國商人和逾期滯留者，比廣州更早，許多南亞裔商人早在二戰前就生活於此。</p>
+  <p>「我十年前在重慶大廈認識的好多人到現在都還在那，沒什麼變化。」麥高登說，「但廣州不是。」</p>
+  <p>在全書最沉重的第五章「合法與非法」中，他寫道：「截至2015年12月，廣園西路60%的逾期滯留者都被抓了。」這解釋了他與這些報導人失去聯絡的真正原因：中國政府開始大規模的抓捕與驅逐這些來自非洲的逾期滯留者。這些逾期滯留者大多數是來自尼日利亞的伊格博人，廣州的廣園西路是他們經營小本生意的主要地區。同屬一區的小北路，則聚集著人數較少的、來自中非和東非的商人。當然，不是所有在廣州生活的非洲商人都是逾期滯留者，麥高登說。</p>
+  <p>要還原一個這樣的生活圖景無疑是複雜的。在廣州，這些故事裡有流離的命運，至上的利益，虛假的婚姻，還有各式各樣的傲慢、偏見與夢想。他花了一本書的篇幅，嘗試以人類學的方式，講述一個被主流華人社會排斥在外的，非裔的廣州。</p>
+  <h2 id="section-1">低端全球化：從重慶大廈到廣州</h2>
+  <p>不論是寫廣州還是重慶大廈，麥高登的書寫都圍繞著一個詞：低端全球化（low-end globalization）。與高端全球化相比，低端全球化才是全球七成人口置身其中的、更廣泛和貼地的全球化。研究重慶大廈時，低端全球化是他目睹的那些被運往非洲的廉價山寨手機。十年過去了，這種全球化的模式沒有變，但交易發生的地點，卻幾乎完全挪到了廣州。</p>
+  <p>「重慶大廈早就已經不是我寫它時的那個重慶大廈了。」麥高登說，「這也是我寫現在這本書的原因。因為低端全球化的中心從重慶大廈移到了廣州。」</p>
+  <p>這是一個拿來做標題一定能吸引香港人眼球的論述。但麥高登說，不要驚訝，「若是熟讀重慶大廈那本書的人，就會注意到我在那本書的結尾已經提出，低端全球化正在逐漸移往中國。」</p>
+  <p>他仍與重慶大廈的商人們保持聯絡，有一段時間，會每週六去給大廈裡的難民上課。變化如他所料，重慶大廈大部分的手機外貿商都已經搬到廣州。可為什麼重慶大廈看起來景況還不錯？那是因為旅館和餐廳的生意還不錯，他說。</p>
+  <p>和跨國大企業相比，低端全球化涉及的金錢和交易信息都比較少，幾個家庭成員，乃至於一個小商人就能處理。「違法或半違法、山寨、假貨、廉價、賄賂海關、偷稅漏稅、路邊攤、小販、發展中國家。」這是麥高登給出的低端全球化關鍵詞，也描繪出非洲商人們在外國進貨，然後走私商品回國，再在路邊和露天市集販賣給本國人的路徑。</p>
+  <p>而他在廣州看到的，則像是一個放大、鋪平、伸展了好多倍的重慶大廈，包含廣州市越秀區的小北路、環市中路、天秀大廈、廣園西路、珠江新城在內，組成一個新的低端全球化中心。</p>
+  <p>麥高登生活在香港，之所以注意到廣州，是因為他在重慶大廈認識的一些商人要去廣州做生意，他就跟著去了幾次。2013年開始，他工作日在沙田的中文大學上課，週末則幾乎全部在廣州的旅館度過。和調查重慶大廈時的方法一樣，他住遍了廣州小北路附近各種價位的旅館，從天秀大廈裡不到200元人民幣一晚的房間，到珠江新城裡1000元人民幣一晚的房間。搭訕的地點是酒店大堂、電梯，時間是早餐時間、晚餐時間。他也和兩個合作夥伴楊瑒、林丹一起，在小商店、餐廳、咖啡館、酒吧中尋找報導人。</p>
+  <p>他發現這裡生活著1萬到2萬非洲人。他問商人們為何去廣州，得到的答案是：「很多重慶大廈的商品是在中國大陸生產的，那為什麼不直接去生產它們的地方呢？」和重慶大廈不同，廣州不僅是轉運中心，更直接是廉價商品的製造中心。</p>
+  <p>「對這些發展中國家的商人來說，廣州是他們在全世界能找到的、最好的進貨城市。」麥高登說。</p>
+  <p>有經驗的非洲商人告訴他，在1990年代和21世紀初，扮演這種角色的城市曾是印度尼西亞首都雅加達，以及泰國首都曼谷。現在它們已失去吸引力，因為品質上升，仿冒貨品減少，「曼谷製造」在非洲已經成了優質衣物的代名詞，不再是多數人買得起的貨物。</p>
+  <p>在雅加達和曼谷褪色的同一時期，非洲人正慢慢進入廣州。麥高登發現，在1990年代末，廣州就已經有一個尼日利亞教堂了，而他調查的一個重要地點天秀大廈，也在21世紀初就有了固定的外國社群。許多商人對他說，在那之前，要進入中國並不容易。但一旦大門敞開，聰明的生意人總是會湧向最少轉運成本的地方，直撲商品的生產源頭 – —工廠。</p>
+  <p>那麼香港呢？麥高登半開玩笑地說：「現在可能進入香港倒變得困難了，因為香港越來越擔心難民問題。」</p>
+  <p>不過，他認識的那些從重慶大廈去廣州的非洲商人，大部分還是對他說更喜歡香港。「因為廣州用 gmail、Facebook 都不方便，而且信息不流通。」不過他們都認同，「那邊才是世界的未來」。</p>
+  <h2 id="section-2">滯留者：像老鼠一樣活著</h2>
+  <p>商機、未來、成功故事，廣州以全球廉價商品製造中心的身份吸引著非洲商人，但麥高登的田野調查發現，很少人能真的功成名就、衣錦還鄉，許多人甚至無法全身而退。</p>
+  <p>這些沉重的故事在各國商人身上都有發生，但人數最多的就是生活在廣園西路的尼日利亞人。「小心使用『非洲人』這個概念。」麥高登提醒，「換成『亞洲人』來想，這個概念完全無法表達香港人、日本人和巴基斯坦人的不同。」</p>
+  <p>那麼要使用什麼概念呢？他在書的第二章講述了八個外國人的中國夢，八個人中，有貧窮的歐洲男性、有錢的非洲女性，有跨國大企業駐華的日本僱員，也有散盡家財的尼日利亞滯留者。他想說的是：「貧富之分、第一世界與第三世界之分，不僅體現在國與國之間。即使是同一塊非洲大陸，中非、西非、東非，乃至同一個國家內部，也能看到同樣的分野。」</p>
+  <p>其中最弱勢的莫過於滯留者。尼日利亞滯留者 Kingsley 對麥高登形容，自己就像是「Discovery 頻道那些在水潭喝水的羚羊，隨時都會被水裡潛伏的鱷魚吃掉」。對滯留者來說，鱷魚就是查證件、抓捕他們的中國警察。</p>
+  <p>「世界上沒有哪國政府會對這麼多逾期滯留者放任不管。」麥高登說。他也這樣告訴這些滯留者。但不論是滯留者們，還是經過研究的他，都覺得這並不是中國政府大規模抓捕的唯一原因。政府官方宣稱的行動理由，是有「非洲犯罪分子」在廣州販毒。但麥高登認為，政府只是拿這一小部分的毒販作為藉口，以此遣返所有的逾期滯留者。「許多廣州市民也不喜歡城市裡有這麼多非洲人。他們會說，中國是中國人的。」</p>
+  <p>為躲避警察的抓捕，大量滯留者躲藏著生活，在警察下班後才敢出來做生意。被抓的下場，則是「不知被關在哪裡，也不知道關多久，也沒有人通知你的家人朋友」，「就像消失了一樣」。但警察會允許滯留者對外要求保釋金。麥高登打聽到的保釋金數額，是1萬到1萬2千人民幣，這對絕大多數滯留者來說都是一筆巨款。交完保釋金，滯留者會被遣返回母國，並且五年之內不得入境中國。而許多滯留者已經有了中國女友或是事實婚姻的妻子，更有人生下了孩子，怎麼辦？「他們通常會以分手為結局。」麥高登說。</p>
+  <p>既然滯留被抓的後果如此不堪，為何還有這麼多尼日利亞人要在廣州非法滯留？原因很多，麥高登發現，尼日利亞是最不受中國海關歡迎的國家之一，一名滯留者曾告訴他，海關要他付兩萬人民幣來續六個月的簽證。「他當然付不起。」而另一個原因則更為複雜，關乎低端全球化的本質。「高端全球化以合約為基礎，但低端全球化靠的是信任。所以你必須親身在那裡，盯著每一步。」麥高登說，這也是為什麼非洲商人非得要跑到中國、住在中國才能進貨的原因，畢竟這在電商發達的年代聽起來有些麻煩。「但你不太能相信他們。」幾乎每個他採訪過的非洲商人都抱怨中國的廠商會騙人，但他能證實的例子不多。在書中，一名擁有英國居留權的西非商人則形容，中國人對待合約就像是對待廁紙。</p>
+  <p>即便如此，還是有許多尼日利亞人寧願非法滯留在廣州也不願空手回家。麥高登採訪的數名滯留者都開出不同的「成功價碼」，「我賺到5萬美金就回去」、「我賺到1萬5美金就回去」，因為他們想證明自己在海外賺到了錢。也有人說自己的要求不高，「別人開林寶堅尼，我起碼也要開個得勝吧」。</p>
+  <p>然而事實是，麥高登聽過太多這樣的暢想與目標，但卻沒見過幾個真的做到的人。唯一比較接近的版本是，一個尼日利亞滯留者終於賺到了足夠的錢，去警察局自願交了高昂的罰金，然後自費買機票回到尼日利亞，但卻迅速在老家被騙光了錢。</p>
+  <p>這些慘淡的人生經驗混雜著他們對發財和出人頭地的憧憬，然而麥高登說，中國並不歡迎他們。他的田野調查告訴他，中國人確實想要一個更加國際化的國家，但卻免不了是一種「嫌貧愛富、帶有種族觀點的國際化」。廣州，作為珠江三角洲最重要的製造業中心，想要吸引的是發達國家的白人。</p>
+  <p>但麥高登看到的是，「真正在國際化這座城市的人，可能偏偏是那些沒錢的外國人，而不是有錢的外國人。」一個例子是，他訪談到的為跨國大企業服務的歐美和日本人，都在自己的中產社區裡封閉地生活，不與中國社會有真正的接觸。反而是非洲與中東的小商人，才會在街道、商場、工廠裡和中國人直接打交道，用英文和中國人交談。</p>
+  <p>但看起來，中國政府正把這些廣州國際化的推動者一波一波地遣返回非洲大陸，漏網之魚則繼續不甘心地活在陰暗的角落，夜幕降臨時才伺機而動。一名尼日利亞滯留者對麥高登說，他們就像老鼠一樣活著。</p>
+  <h2 id="blackchinese">不存在的 ”Black Chinese”</h2>
+  <p>在最暗黑的滯留者故事之後，麥高登還是不願放棄他最初開啟這項研究時的假設。他本以為，非洲人與其他外國人在廣州的大量出現，會把中國由單一的漢民族至上，變得更加多元、國際化，令廣州成為世界的城市。他問每一個報導人：你覺得會出現「中國的奧巴馬」嗎？</p>
+  <p>「中國的奧巴馬」，指的是非裔中國人（black Chinese）。有些人回答，會。但更多的人說，不會。麥高登發現，大部分非洲人對中國只有經濟層面上的興趣。「因為他們只是商人啊。」絕大多數商人都沒有移民到中國的計劃，他們只是來來去去，一次停留二三十天，一年三五次。簽證過期的滯留者則更不可能移民到中國，一旦有過期記錄，被遣返後就更難再次獲批簽證。</p>
+  <p>來自中非國家剛果的一名中間商對麥高登說：「我在廣州是謀生（make a living），不是在此生活（make my life here）。我不想變成中國人。」</p>
+  <p>他們不想成為非裔中國人。為什麼？這個他問了多次的問題，最終令他反問：「他們為什麼要呢？不需要啊。」</p>
+  <p>他慢慢意識到，即使拋開政府的態度不談，廣州對許多非洲商人來講，也不是一個能自然而然吸引他們留下來生活的地方。太多隔閡，例如語言、宗教、大漢族主義。很少有非洲商人不是基督徒或穆斯林，但反過來，大部分他們接觸的中國人都沒有宗教信仰。一位西非商人對麥高登說：「我信仰上帝，而他們信仰金錢。（I believe in god while they believe in gold.」</p>
+  <p>一位在廣州小北路混得相當不錯的中非商人 Cam 則說，當中國人叫他「外國朋友」的時候，他們強調的是「外國」，而不是「朋友」。他們即使愛中國，也不會被接納，中國永遠不會成為他們的家。</p>
+  <p>不過，麥高登也遇見過不少會保護非洲滯留者的中國人，通常是商場的管理員和房東。但這並不是出自友誼或善心。有個中國女人告訴他：「要是我的非洲客人沒了，生意做不成，我可賠不起，我當然要幫他們逃跑了！他又不是我朋友，我也不特別喜歡他，但他還欠我一個月房租呢！」</p>
+  <p>拋開所有這些，麥高登也在廣州遇到過真心愛上了中國女性而在中國結婚生子的非洲人。不過幸福的案例並不太多，大部分面臨女方家庭的阻力。麥高登的分析並不浪漫，這些婚姻看起來更像是沒有城市戶口的中國農村女性為提高經濟地位而做出的選擇。而對許多非洲男性來說，一個中國女友或妻子可以幫助他們更好地和廣州的廠商做生意。</p>
+  <p>而他們的混血後代，會成為「中國的奧巴馬」嗎？麥高登並不樂觀。他在書的最後一章寫道：「我懷疑，在20年內，我在這本書裡提到的所有非洲人和他們的後代將全部離開廣州。」</p>
+  <p>離開廣州之後，去哪裡？和重慶大廈的褪色一樣，麥高登覺得，廣州的褪色甚至不用20年，「可能未來10到15年，或者更快」。廣州，乃至於中國，在他看來，作為低端全球化中心的地位都是暫時的。褪色的原因都是相似的，工資上漲、貨品價格上漲、法律更嚴、山寨貨更難生存等等。許多非洲商人曾告訴他，他們考慮之後離開中國去東南亞做生意。「越南的胡志明市？或是孟加拉的達卡？還沒有人知道。」</p>
+  <p>儘管問題重重，但他肯定廣州為世界帶來的價值。低端全球化所倚賴的山寨貨、逾期滯留、走私、腐敗等問題，雖然非法，但在他看來，卻並非不道德。「他們給世界帶來的裨益終究還是多過損害。」他也並不把這本書的基調定位為暗黑與苦難。「我的書像是在說，嘿！這裡有一群人正為尋求更美好的生活而努力著呢！」</p>
+  <h2 id="section-3">後記</h2>
+  <p>和重慶大廈的研究一樣，麥高登這本關於廣州的書也不是典型的學術書籍。一個很有趣的概念是，他希望「將人類學民主化」，寫大眾能讀得懂的人類學。「因為讓人類型被更多人讀到，是很重要的事。」這相信也很符合麥高登給香港人留下的一貫印象。</p>
+  <p>他知道重慶大廈一書大部分的讀者都不是人類學家，正中下懷，希望這本書也能如此。香港中文大學出版社將在今年4月出版《The World in Guangzhou: Africans and Other Foreigners in South China’s Global Marketplace》一書的繁體中文版。上海的華東師範大學出版社也已經決定出版該書的簡體中文版，但麥高登坦言，審查會是他擔心的事。記者在全書中讀到太多關於中國海關、警察怎樣受賄，乃至於非洲基督教與天主教通過小北路社區進入中國的細節，相信會有不可避免的刪節。不過，麥高登引用了《鄧小平傳》的作者 Ezra Vogel 對他說的話，「如果你想要書寫的主要訊息能被傳達，某些程度的審查也是可以接受的」。對他來說，也許刪掉一本書的四頁可以換來更多讀者，那又何妨一試？</p>
+  <p>他正在進行中的研究已經和低端全球化無關，而是探討死後的人生。但人類學家總不排除任何的可能性。「如果有一天我在廣州認識的商人朋友給我打電話說，『嘿，我們要去胡志明市了，這兒有一個超級大市場！』那我有什麼理由不去呢？」</p>
+  <p>（原文刊於01週報，此為初版，與刊出版略有不同）</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-05-05</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-05/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C/">
+          像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-03/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B/">
+          在傷痛和懵懂中，看見女工的性與愛
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-02/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC/">
+          明清老宅的「飛屋環遊記」：在中國，古建築都能批發
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-02/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/">
+          非主流香港：九龍城 泰國城
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-02/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC/">
+            前一篇：明清老宅的「飛屋環遊記」：在中國，古建築都能批發
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-02/%E5%B0%B1%E4%B8%9A%E5%86%B2%E5%87%BB%E4%BD%95%E8%A7%A3/">
+            後一篇：就业冲击何解
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-05-02/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-05-02/%E5%B0%B1%E4%B8%9A%E5%86%B2%E5%87%BB%E4%BD%95%E8%A7%A3/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-05-03/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-05-02/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-05-02/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-05-02/%E5%B0%B1%E4%B8%9A%E5%86%B2%E5%87%BB%E4%BD%95%E8%A7%A3/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-05-03/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-05-02/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

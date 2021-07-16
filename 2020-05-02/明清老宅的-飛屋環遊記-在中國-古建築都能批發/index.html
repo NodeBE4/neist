@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>明清老宅的「飛屋環遊記」：在中國，古建築都能批發 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+明清老宅的「飛屋環遊記」：在中國，古建築都能批發
+——
+" />
+    <meta property="og:description" content="
+明清老宅的「飛屋環遊記」：在中國，古建築都能批發
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="明清老宅的「飛屋環遊記」：在中國，古建築都能批發" />
+    <meta property="twitter:title" content="明清老宅的「飛屋環遊記」：在中國，古建築都能批發" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40islander%2F%25E6%2598%258E%25E6%25B8%2585%25E8%2580%2581%25E5%25AE%2585%25E7%259A%2584-%25E9%25A3%259B%25E5%25B1%258B%25E7%2592%25B0%25E9%2581%258A%25E8%25A8%2598-%25E5%259C%25A8%25E4%25B8%25AD%25E5%259C%258B-%25E5%258F%25A4%25E5%25BB%25BA%25E7%25AF%2589%25E9%2583%25BD%25E8%2583%25BD%25E6%2589%25B9%25E7%2599%25BC-bafyreie4n6db4dx33ei3urdcmshts5wcyufymtg4wm4mhzp55obwq3xkk4" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@islander/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC-bafyreie4n6db4dx33ei3urdcmshts5wcyufymtg4wm4mhzp55obwq3xkk4" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@islander/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC-bafyreie4n6db4dx33ei3urdcmshts5wcyufymtg4wm4mhzp55obwq3xkk4&text=明清老宅的「飛屋環遊記」：在中國，古建築都能批發&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@islander/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC-bafyreie4n6db4dx33ei3urdcmshts5wcyufymtg4wm4mhzp55obwq3xkk4&title=明清老宅的「飛屋環遊記」：在中國，古建築都能批發" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@islander/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC-bafyreie4n6db4dx33ei3urdcmshts5wcyufymtg4wm4mhzp55obwq3xkk4&title=明清老宅的「飛屋環遊記」：在中國，古建築都能批發" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=明清老宅的「飛屋環遊記」：在中國，古建築都能批發&body=
+明清老宅的「飛屋環遊記」：在中國，古建築都能批發
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@islander/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC-bafyreie4n6db4dx33ei3urdcmshts5wcyufymtg4wm4mhzp55obwq3xkk4" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@islander/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC-bafyreie4n6db4dx33ei3urdcmshts5wcyufymtg4wm4mhzp55obwq3xkk4&title=明清老宅的「飛屋環遊記」：在中國，古建築都能批發&caption=
+明清老宅的「飛屋環遊記」：在中國，古建築都能批發
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=明清老宅的「飛屋環遊記」：在中國，古建築都能批發&url=https://matters.news/@islander/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC-bafyreie4n6db4dx33ei3urdcmshts5wcyufymtg4wm4mhzp55obwq3xkk4" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>明清老宅的「飛屋環遊記」：在中國，古建築都能批發</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-05-02
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 島民</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@islander/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC-bafyreie4n6db4dx33ei3urdcmshts5wcyufymtg4wm4mhzp55obwq3xkk4" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1588406840000-->
+<p><a href="https://matters.news/@islander/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC-bafyreie4n6db4dx33ei3urdcmshts5wcyufymtg4wm4mhzp55obwq3xkk4">明清老宅的「飛屋環遊記」：在中國，古建築都能批發</a>
+——</p>
+
+<div>
+  <p>江南，自古富庶之地，古時向皇家奉上魚米、絲綢、龍井；到現代，則擁有一年批量產出227部電視劇的橫店影視城，每天批發超過百萬種小商品的義烏市場。但鮮有人知的是，從二十多年前起，與橫店、義烏同樣轄屬於浙江省金華市的縣城東陽，興起了一種充滿爭議的批發產業：明清古宅批發。</p>
+  <blockquote>
+（原文：《明清老宅的「飛屋環遊記」：在中國，古建築都能批發》 <a href="https://theinitium.com/article/20180618-mainland-historic-building-business/%EF%BC%89%C2%A9" target="_blank">https://theinitium.com/article/20180618-mainland-historic-building-business/）©</a> 端傳媒 Initium Media  </blockquote>
+  <p>東陽木雕，居於中國四大木雕之首，作品收入北京故宮與人民大會堂。巧手的工匠形成世家，代代精於木結構榫卯工藝，也為古建築的拆除、變賣和遷移，提供了足夠的人手。以東陽所在的浙江省為中心，周邊的安徽、江西、福建、上海、江蘇，乃至於黃河以北的山西，都在過去二十年裏輸出了大量的明清古宅。而聚集了能工巧匠的東陽，就順理成章地成為了這些古宅尋找賣家的中轉地與批發市場。</p>
+  <p>古建築都能批發，因為「在中國，這樣的老房子實在太多了。」中國收藏最多古建築的企業之一秦森企業告訴端傳媒記者。僅浙江一省，木結構、粉磚黛瓦的江南古建築，列入全國重點文物保護單位的就有122處，省級重點文物保護單位則有501處。儘管國有文物不能買賣，但還有大量被文物部門認為做工不夠精細、歷史價值不夠高、或是藏於偏鄉深谷而未被發掘的明清古宅，根本沒有被納入文物評級，數量巨大，難以統計。</p>
+  <p>但房子不是古玩字畫、花瓶，要怎麼搬到東陽，買家付了錢，又怎麼帶走？巧匠能搭，就一樣能拆。「古人也許知道我們會拆會搬，所以做了活動的榫卯結構，就像樂高（LEGO）一樣。」收藏古宅13年的商人柯海廷笑言，「所以我叫它『可移動房產』。」但古鎮保育界泰斗、學者阮儀三說，這與傳統古建築保護的原則已經大相徑庭。</p>
+  <h2 id="section">買下600座明清古宅的中國商人</h2>
+  <p>紹興會稽山，是王羲之寫下《蘭亭集序》的地方。如今，這座山中最多人光顧的地方，是一座名為「蘭亭安麓」的高級酒店。佔地9.2公頃，88間客房及別墅藏在山谷之中，配以雪茄吧、泳池、太極館、水療等奢侈享受，大部分客房都配備十萬元一張的歐式大床，住一晚的價格在1900到5800元人民幣之間。但這些都不是這間高級酒店的最大賣點，它的噱頭在於，酒店的每一棟建築都是由安徽的徽州移建過來的明清徽派古宅。</p>
+  <p>這些古宅的主人，是「蘭亭安麓」的業主方秦森企業總裁，秦同千。30年前，在幾萬塊錢就能買到一棟老房子的年代，他就開始買下全國各地的古宅，至今收入600多座，拆成「樂高」之後，擺放在上萬平米的倉庫之中。</p>
+  <p>除了蘭亭安麓之外，秦森企業和酒店管理企業安麓合作的另一間上海朱家角安麓，也大量使用了秦同千的個人收藏。即使這樣，這也只用去了他600多座收藏中的不到一百座。</p>
+  <p>他手中的這些古宅，最早建於明代，一些古宅的石製構件則可以追溯到宋元。秦森企業的副總裁郁萍回憶，自己當年陪著秦同千跟隨「踩地皮」的人，開車好幾個小時到安徽、江西的偏鄉去看古宅。「當時這種事情是非常多的，我們一天可以看到非常多的房子，幾十棟。當地有那種踩地皮的人，他就跟你匯報，有多少多少可以看，要拆了，你們要來看嗎？」</p>
+  <p>二三十年前，許多村落的對外交通狀況還非常差。「很難到達的，都是那種很窄的路，拐拐拐，你根本就不知道是什麼村。」郁萍說，「如果不是有人帶著去，你是絕對到不了那個地方的，我都不敢相信那地方還住著人啊。」</p>
+  <p>最初的時候，他們常常從東陽帶幾個懂建築的木雕師傅一起去看。房子值不值錢，要看雕刻，然後看木材的種類，是不是銀杏木、香樟木？再來看尺寸，越是大戶人家留下的老房子，尺寸就越大。看多了，他們自己也懂了，一眼就能看出房子品相好不好。「一般品相有60%完整度的，我們就買了。」郁萍說。</p>
+  <p>踩地皮的負責報價，如果是村民集體擁有產權的老房子，那就要開村民大會，所有村民都簽好字，同意賣。買賣完畢，隨行的師傅就在古宅的每一個構件做上標記，畫下測繪圖，然後動手，拆。</p>
+  <p>大件的柱、梁、枋、斗栱，小件的椽头、椽望、雀替、牛腿，還有阶条石、垂带、踏跺、下碱，乃至於殘存的瓦片，全部拆下，裝上大卡車，運到秦同千自己的倉庫。到了以後，哪幾個師傅拆的，就由哪幾個師傅來修，修好了所有的零部件，秦同千再找到合適的土地，讓師傅們把房子給重新搭起來。</p>
+  <p>在他與安麓合作的第一間酒店「上海朱家角安麓」，就有一座安徽拆來的大型明代宗祠，名為「五鳳樓」，相傳是「江南第一官廳」，也就是朝廷官員在家鄉修建，用來回鄉休假或辦公的場所。歇山式屋簷，五對狀似鳳凰的翼角豎在頂上，三進，兩天井，前面五個開間，後面七個開間，木材是銀杏、柏木、椿木、榧木。這間古宅由安徽買回，在秦同千的紹興倉庫裡修了整整五年，然後才運到上海朱家角，異地重建，作為這間安麓酒店的大堂和前廳。每天早上十點，酒店人員會帶領客人在這裡打太極，也常租給不同品牌做新品發布會，或是承辦中式婚禮。</p>
+  <p>擁有建築學博士學位的丁艷麗是秦森企業的古宅修復專家，她向端傳媒記者指出位於正中的一根直立冬瓜樑，上面用黑筆寫著：中進東二列後今柱向前今，還有一個數字72。她解釋說，這就是老房子拆下的時候，師傅們做的標記，意思就是，這根樑柱是中進的院子裡東邊第二列的後金柱，方向是朝前的，在所有169根冬瓜樑中，是第72根。這樣，再搭建的時候，師傅們就知道每一根樑應該放在哪裏了。</p>
+  <p>秦同千的倉庫裏，最高峰時曾招攬了200多名工匠，現在仍有幾十位。工匠的工作，除了拆和搭之外，還要為缺斤少兩的建築補上腐爛破碎的構件，比如一對雕花壞了其中一個，那就要照模樣雕刻一個新的，補上去。「我們也想以舊補舊，盡量用老木頭來做。」郁萍說，「但是大多數情況下都找不到，爛光了。」</p>
+  <p>當年幾萬塊就能買到的古建築，三十年間市價大漲，曾有人出千萬人民幣來買秦同千的一棟古宅。但秦森企業堅稱，秦同千從來只是買入，一棟也沒有賣出過。「秦總這三十年光是花在修復這些老房子上的錢，肯定已經過億了，絕對已經超過了這些老房子本身買入的價格。」郁萍說，「我們賺錢是靠周邊的房地產項目，做收藏和做酒店都是不賺錢的。」所謂周邊的房地產項目，是指環繞著這些古建築重建的地塊，成片成片的仿古新中式豪宅別墅。</p>
+  <p>中國收藏界人數眾多，古建築雖然是其中一個門檻較高的類別，但達到秦同千這種規模的，據郁萍說，也有四五個。當然，600多座的數量，還是讓他多年來穩居第一。</p>
+  <p>和他們合作開酒店的安麓，則是國際豪華連鎖酒店安縵（Aman）在中國的子公司，子母兩間公司都熱衷於用古宅建造酒店，上海的「養雲安縵」，移建古宅規模更勝過秦同千參與的安麓酒店，要價達到四千至三萬餘人民幣一晚，更有網絡紅人試住過的私人宅院，8萬一晚，在網上引起激烈爭議，但也成功拉高了品牌熱度。</p>
+  <p>而不管是秦同千，還是安縵官網的宣傳，都有意識地強調自己並不是炒賣古建築的暴利商人，而是將自己定位為保護瀕危古建築，守護中國傳統文化的企業。「我們不是做古董販子的。」郁萍說，「秦總說他一旦賣了，哪怕賣個零件，他的行為就跟那些給他踩地皮的人一樣了，就是倒買倒賣。我們不做這種事。」</p>
+  <h2 id="section-1">「踩地皮」致富的村莊</h2>
+  <p>若將秦同千這樣的商人視為古建築產業鏈頂端的人，那他口中「踩地皮」的人，就是連接產業鏈兩端的重要角色。什麼是踩地皮？就是由熟悉村子狀況的當地人擔當的古建築買賣中介。</p>
+  <p>一位不願透露姓名的東陽收藏界人士告訴端傳媒，在東陽，有的村子整條村都是做踩地皮發家的，可謂是踩地皮致富的村莊。古鎮保育界泰斗阮儀三證實了這種現象。今年已經84歲的阮儀三是同濟大學建築與城市規劃學院教授，國家歷史文化名城研究中心主任，從三十多歲起奔走各地古鎮，反對盲目追求城市化，呼籲「刀下留城」，曾經保下平遙古鎮、周莊古鎮、烏鎮、西塘等上百個古鎮。</p>
+  <p>阮儀三說，炒買炒賣地皮的、拆下零件倒賣的，甚至是火燒古宅的，都大有人在。村民這麼做的原因，是一些老房子年久失修，而一代一代人口增長，住不下了，土地政策又不允許擴建，就有村民偷偷拆了老房子賣掉。「有些賣不掉的，就乾脆放把火燒了，說『我不當心失火啦』，那就可以在燒完的土地上蓋個四五層樓的新房子了。」</p>
+  <p>這一點和郁萍的說法也很一致，她說自己曾對村民感歎：「這麼好的房子，為什麼要賣啊？」對方說：「要不你住住看？看舒不舒服？」年久失修、沒有廁所，這樣的老房子，當然是不舒服的。「所以他們都想住磚房，乾乾淨淨的，就跟我們說，趕緊把這房子拉走吧。」</p>
+  <p>村民之中，總有那有生意頭腦的，知道有錢人喜歡收藏老房子，又有村民想賣，中介生意就這樣做起來了。郁萍回憶自己接觸過的踩地皮的人，形容對方十分刁鑽，發現有房子可以賣之後，就先把一些牛腿、窗花等零件拆下來，賣給另外一批人。牛腿，指的是用來支撐屋簷的一種木雕構件。「等你去看房子的時候，就剩架子了，就剩柱子了，剩墩兒了。然後我們買完房子，還得配，還得去找另外那堆專門賣牛腿窗花的人，這個價格就是這樣翻上去了。」</p>
+  <p>她記得當年在東陽、安徽、江蘇都見到過賣老房子零件的鋪子，如今都已經沒有了。「踩地皮的人會有專門的點，把所有這些東西集中，放在一個院子裡，然後介紹你去看。」20年前，一個牛腿可以賣到兩萬。「所以他們早就發了。」她搖著頭說，「他們比我們賺得多啊。」</p>
+  <p>踩地皮行業的興盛，到了2005年，陡然轉衰。這一年，《中華人民共和國文物保護法》在安徽省實行時，修正了其中關於不可移動文物的內容，即使是還沒有核定為文物保護單位的不可移動文物，也要由文物部門登記和保護，要拆或者移建，也必須經過政府審批。</p>
+  <p>新的地方修正法擋住了踩地皮行業的財路，大量踩地皮的人失業轉行，用賺到的錢做其他投資買賣。如今，也鮮少有人承認自己幹過這一行。</p>
+  <p>不過，踩地皮的沒有了，買賣卻還在繼續。一些早已被收藏界人士買下，已經拆了卻還沒來得及異地重建的古建築，仍然在市場上流通著。秦同千倉庫裡那500多棟，就是這個類型，雖然他堅稱不賣。</p>
+  <p>但總有人沉不住氣，要轉手。古建收藏界有一些行話，比如價格，「一百」就是一百萬的意思，轉賣也不叫轉賣，叫「調劑」，意思是，大家都是收這個的，只不過是從我的手上調劑到了你的手上。</p>
+  <p>學國畫出身的商人柯海廷，就「調劑」過一些古建築。他是浙江寧波人，2005年，一位收藏石雕的朋友突然拿出一百多張古建築的照片，問他要不要，全都是浙江、福建、江西和安徽的明清古建築。那時候只要幾萬塊錢就可以買下一棟，後來慢慢漲價到幾十萬、幾百萬。至今，他手上流通進出，還有四十多棟，很可能會再賣掉一些。其中有民居、祠堂、官邸，在江西景德鎮、浙江東陽、上海寶山都有倉庫。其中的二十棟，他要拿來在杭州靈山的大嶺村，做一個園林茶室和民宿，再留一間做自己私人度假的會所。</p>
+  <p>和純收藏的人不一樣，柯海廷早年曾經承包過上海租界區的一些洋房修復工程，懂建築，有自己的團隊。今年，他就接下了阿里巴巴在杭州湖畔大學的一個工程，要用一些古建築零件來修復出幾個亭子，作為園景。他以自己拆建移建古建築的經歷為樣本，大推「活態建築」、「可移動房產」的概念，希望能從買賣古建築的商人轉型，也許，是走向秦同千那樣的路。</p>
+  <h2 id="section-2">對商人持觀望態度的古建築學者</h2>
+  <p>和秦同千一樣，柯海廷也有許多和村民打交道的小故事。他說，一次在浙北一個村落，村長和村支書通過朋友找到他，請他去看一個明清的戲台，他看了之後覺得拆了可惜，建議對方原地保留，哪知道兩個月後，戲台就被賣給別的商人了。</p>
+  <p>「我坦白講，我還真是不希望有這麼多哪裡房子要拆要賣的消息，原地保護多好。」柯海廷說。郁萍也是這個說法。「沒有文物評級的老房子太多了！根本就沒有人來修。」朱家角安麓酒店的一個清代大戲台，就是江西修高速公路時被拆下來的，因為沒有文物評級，當地沒有人能留著它。</p>
+  <p>郁萍列出了許多秦森企業是真的在保育古建築的證據。例如，「我們很認真地去修復和經營，哪怕再慢，五年也修好一個。」相反的，她認為那些「永遠立在那兒的」，就是在標價、開價，是為了轉賣，跟他們不一樣。</p>
+  <p>再例如，她請她的博士員工丁艷麗利用學界的聯繫，和上海交通大學、南京林業大學、北京林業大學都建立了合作研究關係，開放秦森企業的古建築收藏倉庫給學生做調研，成立聯合實驗室，用大學的儀器來鑒定古建築的年齡。</p>
+  <p>這究竟是真的用民間力量在做古建築保育呢，還是如阮儀三所說，只是一種商業上的巧辯呢？阮儀三很早就接到過秦森企業的邀請，去看過秦同千的古建築倉庫。他說，向他伸出橄欖枝，想要他幫忙背書的這些古建修復項目，是非常多的。但他德高望重，八十幾歲的年紀，沒什麼批評不敢當面講。</p>
+  <p>阮儀三記得，安徽就曾經有一個市，政府出錢和企業家一起，移建了江西一整個村子的古建築，還請藝術家加盟改建，做成旅遊一條街，收門票賺錢。「我說，你這是贛式的街巷，和周圍徽派的建築不融合的，這就失去地方特色了。」對方一聽就不歡迎他了，他還繼續說：「江西是江西，安徽是安徽，每個地方都有地方特色，這是張冠李戴。」</p>
+  <p>他畢生都堅持古建築保護要遵循「五原」，原材料、原工藝、原式樣、原結構，還有所有這些移建的古宅都犯了大忌的最後一點：原址。秦森企業在他看來已經是相對好的，起碼做到了「四原」。但是拆建、移建古建築，就「遮蓋住了歷史」，讓古建築喪失了「可讀性」。</p>
+  <p>「生搬過來，就是商業行為，不是保護。」阮儀三說，說白了，他覺得這是「掛羊頭賣狗肉」。</p>
+  <p>再進一步說，「國家有法例法規，你把老房子拆遷，是違章違法的，文物保護法也不允許你去重建，所以嚴格來講，這是違法行為」。不過，法律上的難題在於，許多被拆建的古建築，並不是文物，而各地例如徽州、蘇州雖有地方性的古建築保護條例，但全國範圍內卻沒有通行的版本，還是留下了可乘之機。</p>
+  <p>話沒有說絕，阮儀三還是對這些商人抱持觀望的態度，「從他們的角度來講，這些房子你本來都要拆掉了，那把它保留起來，花很多錢去修，不是比較好嗎？這點我還是很佩服的。」收費昂貴的高級酒店，在他看來也有兩面，從好的方面來講，「也弘揚了民族文化，把深藏在古村落裡的風光帶到了大城市，呈現出來」。但是，這種方法是「為了你自己的環境而破壞了當地的環境」，「從歷史遺產保護角度來講，不應該提倡。」</p>
+  <p>他自己曾在幾百個古鎮做過完整的原址保護，最出名的山西平遙，是中國至今保留最完整的古鎮。他回憶八九十年代，地方政府都急於發展，要現代化建設，要革故鼎新，拆了一批又一批的老房子。房地產的興起，也讓許多老城區成為地產商爭奪的地盤，原本的老房子就被毫不猶豫地拆掉了。</p>
+  <p>2003年的《護城紀實》中記載，阮儀三在1985年到浙江黎里古鎮呼籲保留古建築的時候，當地鎮長不僅推他出去，還對食堂大喊：「這幾個上海來的老師，食堂裡不要賣飯票給他們，不留飯。」在那個年代，沒有飯票根本買不到東西吃，他只好餓著肚子趕到下一個鄉鎮去。他氣憤地寫道：「鎮上許多最好的東西，都給這些敗家子們弄光了。」</p>
+  <p>今天，已經沒有人敢這樣對待成名的阮儀三，但是不少村落的地方官員為發展而推倒古建築的事，仍在發生，這也仍然是古建築原址保護面對的最大問題。秦森企業曾經打算聽從阮儀三的勸說，把拆建和修復古建築的錢用到當地去，做地域整體開發。「如果能把那個村變成日本的什麼合掌村，那不變旅遊勝地了？這個經濟效益不得了啊。」郁萍說。</p>
+  <p>但是看過幾個這樣的村子之後，她還是覺得風險太大。「這種事全看村官和村民的個人素質。作為企業還是要小心為好。」她說。這當中關乎土地產權問題，和拆建古建築不同，若在當地做修復項目，房子連著土地，而土地的產權屬於村子裡集體的，企業只能租，不能買。「萬一我們給修好了，過幾年他們把我們攆走了呢？」她很擔心，「或者說，他就是看眼前，你給了一筆錢，等弄好了以後他又覺得，哎呀你搞這個這麼賺錢，我當初給你便宜了，我不肯，我不平衡，我要毀約。」</p>
+  <p>對於這種看法，阮儀三的回應是：「這些人確實是很聰明的。」他舉出的所有古建築保存較完整的例子，都是政府出資進行的直接保護，例如平遙、麗江、寧波的前童古鎮，四川的昭化古鎮。這也確實是他走了這麼多年，而行之有效的路。</p>
+  <h2 id="section-3">做酒店，做旅遊，古建築還有什麼出路？</h2>
+  <p>「建築是人類一切造形創造中最龐大、最複雜、也最耐久的一類。」這是梁思成在1953年的《古建序論》中說的話。</p>
+  <p>也正是因為這龐大、複雜和耐久的特性，古建築在現代市場上，既不隸屬於普通的文物收藏拍賣界，也不是現代房地產界的商品。若按阮儀三的觀點，古建築根本就不應該成為商品，不應該被買賣，應該和博物館、學校、醫院這些公共建設一樣，依靠政府的出資來進行全面保護。</p>
+  <p>不過，政府推出的新法例，似乎並不能如阮儀三的願。2017年1月，中國國家文物局公布了《古建築開放導則（征求意見稿）》，寫明古建築應該「盡可能對公眾開放」，開放的方式包括「遊賞紀念、科研展陳、社區服務和經營服務」等，其中的「經營服務」，明確寫出了可以作為「小型賓館、客棧、民宿、店鋪、茶室」等等。也就是說，秦同千和柯海廷把古建築做成高級酒店和茶室民宿的行為，一下子得到了政府法例的支持。</p>
+  <p>郁萍感到很振奮，她解讀，這是因為政府多年來花下成本做保護，卻總是有遺漏，希望今後可以藉助民間資本的力量。他們在紹興會稽山的「蘭亭安麓」酒店，其實早已經成了紹興市政府旅遊局網站的招牌。</p>
+  <p>這份《古建築開放導則（征求意見稿》還列出了博物館、美術館、小型表演場所、景觀、社區書屋、文化站、辦公樓等多種古建築的用途。</p>
+  <p>對上海澱山湖社區的策展人陳文玉來說，這也是一個好消息。她在七年前從柯海廷手上買下一棟已經移建完成的東陽古宅，就在澱山湖。本身是潮州客家人的她，當年就帶著女兒搬到了澱山湖的村子，用七年的時間，利用這棟古宅來做社區營造。</p>
+  <p>「我覺得有點像日本吧，中國我沒看到過這樣的。」澱山湖是上海的水源保護地，周邊沒有任何大型項目和建設，保留了300多戶當地的原居民，種菜、打漁、划搖櫓船。陳文玉的到來，帶來了以那棟本不應該在這裡的古宅為中心的藝術展和小劇場演出，歐洲的藝術家每年來此，給村民帶來收入。「雖然這棟古宅是移過來的，但它既然已經在這裡了，我們就嘗試用合法的途徑，讓它跟當地的村民產生文化和經濟上的連結，建立一種新的土地倫理關係。」</p>
+  <p>村子裡的每件事，她都要跟村民商量，「不是說我已經畫好一個圖紙，然後給村民看，是村民要參與設計」。這似乎就是阮儀三所說的「原址保護」最需要的東西。他的一大遺憾，就是經他手上保留下來的古鎮，有許多都已經被外來的經商人口所佔據，本地原居民早就不知所蹤，「這就失去了古鎮的意義。」</p>
+  <p>陳文玉似乎做到了阮儀三希望的事，唯一的分別是，她的古宅並不是本地的。她把這棟古宅和澱山湖社區都視為一個借來的空間，「首先要解決村民自己的生存問題，我們只是過客，村民才是土地的真正主人，我們應該共建。」用藝術的方式，七年來，一個互助、原生的社區已經十分成熟。</p>
+  <p>「我今年40歲，我在這個地方至少還要做三十年。」陳文玉說。她又補充：「有生之年。」</p>
+  <p>阮儀三要做的事，也是「有生之年」。84歲，他還到處演講、走訪，給年輕人開古建築保護培訓班。</p>
+  <p>至於商人們，柯海廷的20座古建築正在一座座立起來。「你一個月後再來看，就完全不一樣了。」秦森企業做了酒店還不夠，下一步要做藝術館、茶室、酒吧、餐廳，要慢慢用盡秦同千倉庫裡的600座古建築。「做成經營場所，好好用起來，才能永遠傳下去。」郁萍說，「這是一輩子要跟著的事。」</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-05-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-03/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B/">
+          在傷痛和懵懂中，看見女工的性與愛
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-02/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E/">
+          後重慶大廈時代 麥高登的非裔廣州
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-02/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/">
+          非主流香港：九龍城 泰國城
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-02/%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E5%B0%88%E9%A1%8C-%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E7%B6%93%E6%BF%9F%E5%AD%B8-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%AF%B8%E9%87%91%E5%B0%BA%E5%9C%9F%E7%9A%84%E4%B8%AD%E7%92%B0%E6%B4%BB36%E5%B9%B4/">
+          [環球大廈專題]環球大廈經濟學：如何在寸金尺土的中環活36年？
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-02/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/">
+            前一篇：非主流香港：九龍城 泰國城
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-02/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E/">
+            後一篇：後重慶大廈時代 麥高登的非裔廣州
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-05-02/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-05-02/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-05-02/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-05-02/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-05-02/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-05-02/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-05-02/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-05-02/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

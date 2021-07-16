@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作
+——
+" />
+    <meta property="og:description" content="
+像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作" />
+    <meta property="twitter:title" content="像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40islander%2F%25E5%2583%258F%25E9%259D%2592%25E8%258B%2594%25E4%25B8%2580%25E6%25A8%25A3%25E7%2594%259F%25E9%2595%25B7-%25E8%25A8%25AA%25E9%259F%2593%25E9%25BA%2597%25E7%258F%25A0-%25E8%25AB%2587%25E5%25A4%25B1%25E5%25BA%258F%25E9%25A6%2599%25E6%25B8%25AF%25E4%25B8%258B%25E7%259A%2584%25E7%2598%259F%25E7%2596%25AB%25E5%25AF%25AB%25E4%25BD%259C-bafyreifxknfwxx5khbw2n374wsit4wma7bl7ui7xgbp6qc3yh6xcolfpm4" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@islander/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C-bafyreifxknfwxx5khbw2n374wsit4wma7bl7ui7xgbp6qc3yh6xcolfpm4" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@islander/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C-bafyreifxknfwxx5khbw2n374wsit4wma7bl7ui7xgbp6qc3yh6xcolfpm4&text=像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@islander/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C-bafyreifxknfwxx5khbw2n374wsit4wma7bl7ui7xgbp6qc3yh6xcolfpm4&title=像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@islander/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C-bafyreifxknfwxx5khbw2n374wsit4wma7bl7ui7xgbp6qc3yh6xcolfpm4&title=像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作&body=
+像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@islander/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C-bafyreifxknfwxx5khbw2n374wsit4wma7bl7ui7xgbp6qc3yh6xcolfpm4" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@islander/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C-bafyreifxknfwxx5khbw2n374wsit4wma7bl7ui7xgbp6qc3yh6xcolfpm4&title=像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作&caption=
+像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作&url=https://matters.news/@islander/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C-bafyreifxknfwxx5khbw2n374wsit4wma7bl7ui7xgbp6qc3yh6xcolfpm4" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-05-05
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 島民</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@islander/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C-bafyreifxknfwxx5khbw2n374wsit4wma7bl7ui7xgbp6qc3yh6xcolfpm4" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1588685668000-->
+<p><a href="https://matters.news/@islander/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C-bafyreifxknfwxx5khbw2n374wsit4wma7bl7ui7xgbp6qc3yh6xcolfpm4">像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作</a>
+——</p>
+
+<div>
+  <p>對寫作者韓麗珠來說，過去八個月改變了她許多。她的小說《風箏家族》曾獲2008年台灣開卷好書獎中文創作獎，她形容自己身體裡，寫小說的肌肉是最發達的。但因為過去八個月香港經歷的社會運動浪潮，她剛剛以很少使用的書寫方式──日記體──出版了散文集《<a href="https://www.books.com.tw/products/0010846688?sloc=main" data-href="https://www.books.com.tw/products/0010846688?sloc=main" target="_blank">黑日</a>》。</p>
+  <p>她從前不愛笑，不願配合社會對人的「表情管制」，但過去八個月，她開始對樓下茶餐廳的侍應、超市的收銀微笑。她曾經只愛身邊認識的朋友與她十歲的貓咪白果，但過去八個月的經歷，讓她開始關心遙遠的人類歷史中，曾被壓迫的人群。日記、微笑、歷史，是她所找到的，在失序香港中，關心他人與世界的方式。</p>
+  <p>這八個月的最新進度，是武漢肺炎的病毒，將街上抗爭的香港人突然鎖進了自己的屋子，韓麗珠也是。自2019年6月反送中運動爆發以來，韓麗珠就在臉書上寫作日記、散文，一直延續至今，直到1月24日大年三十，一種新元素──瘟疫中的穴居生活──開始進入她的日常寫作。</p>
+  <p>社運高峰時，她曾去現場經歷、感受，回到家中才能開始書寫。然而瘟疫來襲，她發現受困家中的自己，她的房間，窗外望見的街道，都成了現場。「生活就是現場。整個世界變成了一個瘟疫的現場。」</p>
+  <p>截至2020年2月29日，香港已累計確診94例武漢肺炎，其中已治癒30例，死亡2例。</p>
+  <p>「樓下超市賣廁紙和米的位置是空的。我望向街道，街上無人。買不到口罩。去茶餐廳吃飯，發現廚師侍應都戴著手套，嚴陣以待，有的餐廳不再提供免費紙巾，有的只提供即棄餐具。回到家，要想怎麼消毒自己的外套，要想自己沒洗手就不可以摸貓。」她感到這城市的失序自去年6月開始，一直延續，變本加厲。</p>
+  <p>然而生活仍在繼續。她不搶購口罩與大米，不太慌亂。「誰都知道，現在，人們需要的其實不是口罩或衛生紙，而是生存的安全感。」2月6日，她在臉書上寫道。她的寫作也在繼續，寫下這座城市長久積累的傷口，寫下未完的社會運動與瘟疫如何交纏，文字仍然溫柔平靜。</p>
+  <p>◎</p>
+  <p>韓麗珠說，由去年6月開始的這一系列寫作，初心是為醫治人們的傷口。</p>
+  <p>反送中運動令香港人很連結，又很分裂，人們與不同政治立場的家人朋友爭吵，抗爭者犧牲許多，有人遭受性暴力，許多人身體受傷，甚至失蹤、神秘死亡。瘟疫蔓延，抗爭者沒有足夠口罩，不能大規模上街聚集，警察卻擁有比醫護人員更好的防護裝備，暴力從未停止。「所以運動沒有完。大量被捕者、受傷的人，他們的傷口，身上背負的官司，都還在。這個城市的傷口還在。」</p>
+  <p>在兩三年前，運動還未發生，她曾用文字醫治過自己。那時她人生遭逢變故，心中充滿恨意，甚至有一段時間「鬼剃頭」，在一個月間大量脫髮。她大量讀書，學到一個寫秘密日記的方法。每天早上起床，她什麼都還沒做之前，都要先寫15到20分鐘的秘密日記。規則是不要鋪排，不要多想，想寫什麼就寫什麼。寫完就蓋上，不給人看，甚至自己也不回去看。她把那些文字寫下來，放在了心裡，然後就可以開始一日的生活。</p>
+  <p>那時她看清楚，憤怒的底層是極深的傷心與絕望，是不被愛。而一座城市的憤怒，源於歷史。</p>
+  <p>1997年香港回歸後，她說自己這一代在英殖民地年代成長的人，還沒有意識到自己需要關心社會。但是，2003年的一場瘟疫SARS，由一河之隔的中國大陸傳到香港，之後經濟重挫，開放大陸遊客自由行提振經濟。此後的十多年，香港社會發生太多變化，大大小小的社會運動興起，直到17年後，又一場瘟疫，同樣自中國大陸傳來。</p>
+  <p>而此時的香港與中港關係，早已不能與當年相提並論。香港政府遲遲不封關，引發醫護罷工，採購口罩也失敗，瘟疫中的城市陷入恐慌不安。「香港人的憤怒壓抑了很久，到這次武漢肺炎，我們又看到香港政府多麼虛弱，什麼也做不到。我們從來都是被建立，但民間的力量，其實可以建立很多好的東西。」她說。</p>
+  <p>反送中開始後，她就將運動看成是她掉頭髮事件的2.0版，這一次不是她一個人，而是整個社會都經歷好多殘忍。「我見到身邊很多人受傷，甚至有許多事比死亡更殘忍。我覺得非常的悲傷與憂愁，但我不想被浪捲走。」她說，「我只想做些事，令他們舒服一點，醫治好他們的傷口，這傷口是這城市裡好多人共同的傷口。」這就是她寫作的初心與意圖。</p>
+  <p>也因此，她的文字不是聲嘶力竭的口號與吶喊，不是憤怒的控訴，不是將流血衝突的畫面掰開了、揉碎了給人看，因為她不是為了要讓人更加悲憤與痛苦而寫的。</p>
+  <p>她為被警察開槍射爆一隻眼的少女而寫。</p>
+  <p><strong>「多年之後，如果我仍活在這世上，反修例抗爭的殘忍的許多天，必定已離我很遠，卻也仍然常在我身邊，即使在我不察覺的時候。的確有兩個，失去了右眼的人，藏在我意識的深處。我只希望自己心裡有足夠的善意和寬恕的能力，可以迴向他們，讓他們的眼睛得到奇蹟的康復，也讓那些受傷的人可以痊癒。」</strong></p>
+  <p>她為癱瘓香港國際機場的抗爭者而寫。</p>
+  <p><strong>「那天，許多人湧到機場，不是為了離家出走，而是因為他們不願離開這個城巿。只有在機場，他們才可以安全地對外來者訴說一個關於這城巿的，家不成家，同時走投無路的故事。」</strong></p>
+  <p>她也為每一個努力生活的人而寫。</p>
+  <p><strong>「上周和做書的團隊開會，會後閒談，談到這兩個月以來的生活，大家笑著說，忙著學習許多新知識：自衛術、法律知識、急救知識和公民權利，或許還有香港的街道路線、照顧身心健康知識、身體和土地的關係和自己身體的極限。其中一個設計師說，那麼，以後我們將會成為更強壯的人了。」</strong></p>
+  <p>她也寫她去維園集會的路上靜靜等巴士的時刻，寫貓咪阻攔她去抗爭現場的撒嬌與「訴求」，寫自己要安撫心裡憤怒的獸，也寫她希望每個肉身都能平安，不論信仰。</p>
+  <p>◎</p>
+  <p>寫字的人，透過文字與他人和世界產生關聯。可是，文學並不在坐下書寫的那一刻才產生。「我的整個生活都可以是文學。現在因為瘟疫關在家裡，我做瑜伽、散步、喝一杯水的時候，都在醞釀自己寫一些事，也醞釀自己寫作的意圖。」</p>
+  <p>同樣的，她在日常生活中不寫字的時刻，面對自己與他人、世界、貓咪的關係時，也在醞釀這種善的意圖。「去年6月以來，我愛香港、世界、他人多了好多，以前我只是愛我認識的朋友，愛我的貓。但現在我也會愛香港一些我不認識的人，或者人類。」</p>
+  <p>對在瘟疫中受苦的人類，她也感同身受，但卻幫不到對方。「我覺得我們只是剛巧不是出生在武漢，如果是的話，可能本來很安定的生活，突然有一日就感染了，又沒有醫院肯收我，我又不知道可以去哪，就這樣死去。」她說，「因為我通過香港的苦難，明白了其他地方的苦難。我沒有辦法忽略他人的苦難。」她明白城市的傷口難以癒合，但有一件事是我們可以做的。「就是對身邊的人好一點。對整個世界，對其他動物、植物，都好一點。」所以她開始對茶餐廳的阿姐微笑，安慰她寫作課的學生，更加珍惜與得了腎病的貓咪白果在一起的每一天。</p>
+  <p>受疫情影響，她本來每年1、2月在香港中文大學的短期寫作課，也變成了視像上課。剛開始她很抗拒，但第一次這樣上課後，她發現同學們都因為悶在家中太久，不捨得下課，一直在線上和她聊天。「被迫閉關會令刺激我們，更加想同人有連結。」</p>
+  <p>這樣的生活，醞釀出她的寫作意圖，也醞釀出她自醫醫人的文學。她也用文字對抗。她要對抗的是這種被恐懼和失序包圍的生活，要尋回和重新建立一種新的、與自己和他人乃至世界的關係。她在2月7日的明報專欄中寫：</p>
+  <p><strong>「任何人都是潛在帶毒者，每個人都不知道自己是否是帶毒者。最初，人們害怕的可能只是病毒，慢慢地，害怕成了害怕的核心。人們害怕接觸所有的物件，害怕被別人碰到，也害怕觸碰自己的任何部份。」</strong></p>
+  <p>◎</p>
+  <p>2月9日晚上，韓麗珠去逛超市。「但，昨夜的超巿，就像村上春樹小說《襲擊麵包店》裡被䧳雄大盗洗劫的麵包店那樣，香蕉的架子是空蕩蕩的（香蕉可以抗病毒嗎）、米的架子理所當然地空了、牛奶只剩下幾包我不會喝的品牌、衛生紙抹手紙和紙巾也順理成章地一無所有、所有雞蛋都消失了影蹤……」</p>
+  <p>回家後，她寫下日記。她沒有買這些「生活物資」，而是買了每天要喝的紅茶和巧克力。</p>
+  <p>她家中還有半包米，覺得自己一個人住，不需要搶購。她也不擔心沒什麼口罩，「如果沒口罩，我就少出門吧。」紅茶是每天都要喝的，而巧克力則是關在家中很悶，需要快樂與安慰的多巴胺食物。「如常生活很重要。就算世界多亂，你也要找一個角落給自己，做回自己平時愛做的事。」心也會影響健康，她說。自去年6月以來，失序成為香港的「正常」，但她也是如常生活，就像《黑日》序言中所說，仍有暴政拿不走的溫柔。</p>
+  <p>2月29日，她的日記寫道：「我總是不好意思告訴別人，中午12時之前，如果沒有約定的工作，我總是在花很多時間在照顧各種生命，順序是：照顧白果貓、照顧植物、照顧房子，最後是照顧自己。早上八時或之前起來，給貓預備早餐換水清理貓砂；為植物澆水，細看它們的狀況；然後，拖地拭抹灰塵整理床鋪和房子，洗衣服晾衣服和疊摺衣服。最後，打坐和做瑜珈。11時半左右，才吃當天的第一餐。早餐後，才開始當天的寫作和各種工作。」她把這樣的照顧稱為給自己和四周梳毛。</p>
+  <p>她把關在家中的日子稱為「穴居」、「繭居」，也看一些以前沒時間看的書。她喜歡讀榮格和弗洛伊德的精神分析，還喜歡讀賽斯書，講些夢境、催眠、身心靈，乃至於探索前世，自稱「很怪、很雜」。前陣子她重看了《愛在瘟疫蔓延時》的英文版，接下來的閱讀計劃，是讀完神話研究學者Joseph Campbell的系列書，包括《神話的智慧：時空變遷中的神話 》。這本書用說故事的手法探究神話與心理分析的關係，「看他寫神話，就像看他重新寫一部小說那樣。」書的中譯本有台灣已故人類學家李亦園的序言：「在神話中接觸永恆，發現自我，參悟生死，體觀神性。」</p>
+  <p>不直接與疾病相關的書籍，卻關乎對生命的思考。去年夏天，她也閱讀了許多分析暴力、暴政、猶太人歷史苦難的書籍。不直接與香港相關，卻有她關心的問題。在家中很少出門，也沒辦法跟朋友和家人吃飯，她就看日劇《深夜食堂》，覺得看到很多人在一起吃飯很療癒，也給自己一些煮食的靈感。她開始自己煮早餐，吃本地小農種植的蔬菜，煮一顆溏心蛋。</p>
+  <p>她與貓咪白果作伴，猜度貓咪的心思，並像未來某部小說的一些時刻一樣，記錄下來。當香港政府面對疫情而堅持不封關的時候，她寫貓咪白果的話：「當我感受到人類朋友的挫折感時，我就把自己封關。」她則回答：「我們把自己全面封關吧。把整個世界封在外面，就不會讓難過互相感染了。」在她不安而忙碌的時候，她也寫貓咪白果踡在她腿上的話：「我需要的是，完全放鬆的大腿，不是寫作中的大腿，也不是回電郵的大腿。沒有什麼好擔心的，隨遇而安就可以。」</p>
+  <p><strong>「如果瘟疫是一份可怕的禮物，它所帶來的是對日常的終止和停擺。在擔憂感染、懷疑感染、已經感染、等待康復或迎向死亡的過程裡，人得到的是赤祼地面對此刻和自己。」</strong></p>
+  <p>2月13日，她在《明周》專欄中這樣寫道。瘟疫時期，她希望認識自己，找到自己內在的力量，「希望有一日我們不用再閉關的時候，可以有一個更好的自己出來。」</p>
+  <p>◎</p>
+  <p>貼近生活的日常記錄，像是日記，又像是散文，和韓麗珠從前醉心的小說很不一樣。她在家中也思考自己跟小說的關係，文學與生活的關係。十年前，她寫小說《縫身》的時候，因為太投入寫作，晚上失眠，也不在意運動、食物，覺得只有小說是最重要的。寫完之後，她大病了一場，終於明白文學不是要榨乾自己，而是，生活即文學，生活就是文學本身。</p>
+  <p>她說寫瘟疫時期的記錄，就像青苔與野草，與她寫小說不同。</p>
+  <p>「小說是要種的，像蘋果樹，時機未到，果實未成熟是不能摘的。」但青苔和野草就不一樣了，「隨性、野生，隨時都可以生出來。」但青苔也是重要的東西，因為環境所限而不可替代。例如，大年三十的香港已被疫情籠罩，她寫下：</p>
+  <p><strong>「除夕，很多人無法團圓，留在醫院的，抽了生死簽照顧隔離病人的醫護人員、清潔工、在城巿各個角落卻像隱形那樣的基層人員，都不一定可以跟家人團圓。有幸聚在一起的人，圍著取暖，卻早已失去新年。新年還沒有來，但已在運送的途中丟失了。」</strong></p>
+  <p>又例如，各種各樣的離奇搶劫案在香港發生，搶劫對象有口罩、廁紙。她寫下：</p>
+  <p><strong>「不同形式的口罩劫案出現了，有人把口罩放在車子內，車窗被爆破，口罩不知所終，有人訂購了的口罩在運送途中被人搶掠。在平靜的日子，人們忙碌地上班，為了對金錢的匱乏感在一天的大部分時間把自己出售；在患難的日子，人們焦慮地網購或四出尋找口罩的貨源，歸根結柢，都是源於對生命欠缺安全感，於是，鈔票或口罩才能輕易折磨脆弱的神經。」</strong></p>
+  <p>瘟疫時期，許多人都寫日常記錄，韓麗珠覺得，這並不意味著文學的門檻變低。「環境對青苔很重要，包括溫度、濕度。」她曾經有朋友去爬山，想把郊外的青苔帶回家種，卻怎麼也種不出來。日記就和青苔一樣。「你經歷怎樣的生活，就會產出怎樣的日記，因為日記和散文很接近生活。」</p>
+  <p>日記不僅很貼近作者自己，也貼近讀者。她形容這是一種很透明的文學形態。「對人的心靈太透明，會令寫作者不記得怎樣去鋪排。」相比之下，小說有距離，但也就不會那麼透明地反映作者的心。這就很像是她曾用來醫治自己的秘密日記，「自動書寫」，是青苔的力量。</p>
+  <p>在瘟疫蔓延的時代，不能上街的人們長出各自的青苔，在荒山中宣告，此處仍有生命。不論是韓麗珠，還是網路上許許多多普通人的瘟疫日記，是否都可視為無權勢者的青苔呢？</p>
+  <p>2月14日，韓麗珠已寫過：「人們在失去體制保護的自由時期，得到的考驗是在慌亂的浪裡如何守住自己的身體和心，依仗一己的力量，創造較理想的生活，為無權的自己充權。」</p>
+  <p>原文刊於《新活水》：<a href="https://www.fountain.org.tw/r/post/hon-lai-chu" data-href="https://www.fountain.org.tw/r/post/hon-lai-chu" target="_blank">https://www.fountain.org.tw/r/post/hon-lai-chu</a></p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-05-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-14/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C/">
+          學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-13/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA/">
+          異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-03/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B/">
+          在傷痛和懵懂中，看見女工的性與愛
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-02/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E/">
+          後重慶大廈時代 麥高登的非裔廣州
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-04/%E9%92%88%E5%AF%B9%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9C%A8%E7%BA%BF%E7%A4%BE%E5%8C%BA%E7%9A%84%E8%B0%83%E6%9F%A5-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F-2-iYouPort/">
+            前一篇：针对社交网络和在线社区的调查：开源情报思考方式（2） - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-05/%E7%94%B5%E5%BD%B1%E5%83%8F%E6%81%8B%E7%88%B1-%E4%BD%A0%E4%BC%9A%E6%83%B3%E5%83%8F%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%83%85%E4%BA%BA%E7%9A%84%E6%A8%A1%E6%A0%B7/">
+            後一篇：电影像恋爱，你会想像下一个情人的模样
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-05-04/%E9%92%88%E5%AF%B9%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9C%A8%E7%BA%BF%E7%A4%BE%E5%8C%BA%E7%9A%84%E8%B0%83%E6%9F%A5-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F-2-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-05-05/%E7%94%B5%E5%BD%B1%E5%83%8F%E6%81%8B%E7%88%B1-%E4%BD%A0%E4%BC%9A%E6%83%B3%E5%83%8F%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%83%85%E4%BA%BA%E7%9A%84%E6%A8%A1%E6%A0%B7/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-05-13/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-05-03/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-05-04/%E9%92%88%E5%AF%B9%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%92%8C%E5%9C%A8%E7%BA%BF%E7%A4%BE%E5%8C%BA%E7%9A%84%E8%B0%83%E6%9F%A5-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F-2-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-05-05/%E7%94%B5%E5%BD%B1%E5%83%8F%E6%81%8B%E7%88%B1-%E4%BD%A0%E4%BC%9A%E6%83%B3%E5%83%8F%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%83%85%E4%BA%BA%E7%9A%84%E6%A8%A1%E6%A0%B7/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-05-13/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-05-03/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

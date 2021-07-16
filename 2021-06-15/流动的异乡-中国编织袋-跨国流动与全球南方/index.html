@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>流动的异乡：中国编织袋、跨国流动与全球南方 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+流动的异乡：中国编织袋、跨国流动与全球南方
+——
+" />
+    <meta property="og:description" content="
+流动的异乡：中国编织袋、跨国流动与全球南方
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="流动的异乡：中国编织袋、跨国流动与全球南方" />
+    <meta property="twitter:title" content="流动的异乡：中国编织袋、跨国流动与全球南方" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60c860f4b5526a550dee64d2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60c860f4b5526a550dee64d2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60c860f4b5526a550dee64d2&text=流动的异乡：中国编织袋、跨国流动与全球南方&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60c860f4b5526a550dee64d2&title=流动的异乡：中国编织袋、跨国流动与全球南方" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60c860f4b5526a550dee64d2&title=流动的异乡：中国编织袋、跨国流动与全球南方" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=流动的异乡：中国编织袋、跨国流动与全球南方&body=
+流动的异乡：中国编织袋、跨国流动与全球南方
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60c860f4b5526a550dee64d2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60c860f4b5526a550dee64d2&title=流动的异乡：中国编织袋、跨国流动与全球南方&caption=
+流动的异乡：中国编织袋、跨国流动与全球南方
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=流动的异乡：中国编织袋、跨国流动与全球南方&url=https://www.allnow.com/post/60c860f4b5526a550dee64d2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>流动的异乡：中国编织袋、跨国流动与全球南方</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-15
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 程莹</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60c860f4b5526a550dee64d2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60c860f4b5526a550dee64d2">流动的异乡：中国编织袋、跨国流动与全球南方</a>
+——</p>
+
+<div>
+  <p><strong>撰稿丨程莹；翻译丨金茜</strong></p>
+  <p>当代非洲视觉文化和非洲艺术家的艺术实践中，有一“中国制造”的元素颇引人注目。在诸如诺布科·恩卡巴（Nobukhho Nqaba）、丹‧霍特（Dan Halter）和杰拉尔德·马科纳（Gerald Machona）等非洲艺术家的艺术作品中，我们可以看到一种来自中国的彩印塑料编织袋占据突出地位。这种一般由红色、蓝色和白色聚丙烯纤维制成的编织袋在非洲通常被称为“中国袋”（China bag）或“中国手提袋”（Chinese tote）。因其轻便、结实、价格实惠，经常被跨境流动的移民和商贩用以包装和储存行李。以“中国袋”为主要元素的非洲当代艺术作品，利用摄影、装置、视频和表演等不同形式，参与或干预画廊、博物馆和街道等公共空间。这些艺术作品在不同层面上有助于我们介入“全球南方”（Global South）背景下学界有关移民、关系和身份的辩论。在此，“南方”不再被视作一种稳定的地缘政治秩序，而是一个关乎流动、过渡和转换的概念。 “中国袋”从一种日常物件转变为带有社会政治意涵的艺术作品，体现出一种变化与抵抗的意涵；这个转变过程所暗示的“南方”，并不指向一个固定的目的地。</p>
+  <p>在这些日常艺术实践中，“中国袋”作为一种颇具象征色彩的潜台词出现。它不再仅仅是一种旅行用品，更在个人表达、身份塑造和文化协商层面发挥作用。这类编织袋体现出一种永恒的流动属性，是当今非洲大陆不可或缺的一种生活面向。此外，正如“中国袋”这一名称所明示的，在这些揭示令人困惑的迁移和流动模式的艺术项目中，不可忽视的背景是中国过去几十年来在非洲不断增强的“存在感”（presence）。伴随着移民经验和流通理论与日俱增，这些关于“中国袋”的艺术作品的生产和流动，不仅展示出对跨国历史和非洲真实日常生活的微妙洞察，更为重新思考“全球南方”话语下为人熟知的流动范式开辟了新的可能性。</p>
+  <p>作为一个处于流动中的“普通物件”，“中国袋”是一个意涵颇为丰富的譬喻，表达出非洲日常生活空间中的多层“流动”含义。最近学术界对诸如“流动性转向”或“新的流动范式”等流动性研究的兴趣，已经表明我们的主体性、叙述方式和意识形态，不仅与“我们住在哪儿”有关，更被“我们如何移动”所影响。克雷斯韦尔（Cresswell）认为，“流动”不仅在现代世界中无处不在，更对我们如何理解世界极其重要。“它在关于身体和社会的讨论中发挥着核心作用，贯穿了当代的城市理论。”在这个流动的时代，生存本身就是一种“归属感和流动的复杂交叠”。许多人，不管他们是否正处于流动之中，都会发现他们自己生活在“在家庭和流动的交叉点上” 。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c861729c232e01c17d1b4a+L.png" data-id="60c8618e2114416715c3d401" alt="肯尼亚基贝拉贫民窟中，用回收的聚丙烯袋子制作的货摊和房子。基贝拉贫民窟是非洲最大和最贫困的地方，这里因人口增长迅速和建筑极度密集而闻名。在这里，并不是所有人都能够回收垃圾和塑料制品。图源/视觉中国。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+肯尼亚基贝拉贫民窟中，用回收的聚丙烯袋子制作的货摊和房子。基贝拉贫民窟是非洲最大和最贫困的地方，这里因人口增长迅速和建筑极度密集而闻名。在这里，并不是所有人都能够回收垃圾和塑料制品。图源/视觉中国。
+    </figcaption>
+  </figure>
+  <p>虽然“流动”在现代世界中具有公认的重要性，“全球南方”背景下对流动性动态变化的讨论仍是一个被忽视的话题。“流动”通常被认为是现代性的一项基本原则，或是西方世界全球化的一个显著特征，但“全球南方”的人口流动却常被认为是受限的、被动的、经常和创伤经历捆绑在一起的。然而，与国际主流媒体所大肆宣扬的印象相反，大多数全球性移动是在区域内进行的，发生在诸如前苏联、南亚和西非国家内部。尽管“南南流动”现象及其对跨国流动的影响显著，今天学界关于移民和流动的讨论，却依然主要集中在发达国家的内部，或者是从发展中国家到发达国家的单向流动。</p>
+  <p>在这篇文章中，笔者将挑战这种已为人熟知的流动范式，并证明流动性和流通从过去到现在一直是“全球南方”历史和当代经验的一部分。我们不妨借用南非艺术家恩卡巴的比喻：“此（编织）袋是吾乡”，来探索非洲大陆内外流动的复杂经验：非洲大陆内外日益丰富的流动路径和模式是什么？人们如何通过文化、图像和物件的交叉流动来确定个人归属?这种“居住在移动中”的生存经验如何帮助我们理解“全球南方”是一个不断流转的空间？</p>
+  <p>这些问题，反过来又引发了其他问题。“中国编制袋”这个寻常物件及其命名模式，如何阐明日常空间和他们流通的各种轨迹？年轻的非洲艺术家们，如何通过回收这些物件并将其转化为艺术作品，来对非洲流动人口在非洲社会的挣扎体验发表评论？一些艺术家使用“中国袋”来反映当前全球社会经济的新变化，以及这些新变化是如何被编织进关于日益密切的中非交往话语的？解决这些问题，可以更细致地反映非洲内外流通和移动的多种轨迹，包括艺术作品作为商品的流通。将此置于最近关于跨越非洲大陆的人口迁移问题的讨论背景下，对非洲日常物件及其空间轨迹的研究可以从更加细微的视角丰富我们对全球迁移和流动范式的理解。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c861b34cd55d54dd5db1b8+L.jpeg" data-id="60c861b8904b8c02a16a3059" alt="霍特的作品：“Plenty Sits Still, Hunger is a Wanderer”" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+霍特的作品：“Plenty Sits Still, Hunger is a Wanderer”
+    </figcaption>
+  </figure>
+  <p><strong>“为物立传”：流动性、物质文化和物件的能动性</strong></p>
+  <p>为了探索“全球南方”话语背景下关于流动性和非流动性的政治，我们不仅需要观察人类的流动，还必须追寻物件的流通。最近，关于人与物关系的研究对物与商品的社会语境比较关注。马莱维茨（Malewitz）写道：“这种社会学类比最引人注目的地方是，物件像人一样，受制于持续历史的偶然性而非起源逻辑的决定论。” 研究物件的理论家认为，物质文化同样是通过物件的社会意义和使用价值的变化来实现构建和重建的。在方法上，本文强调的是象征性文化物件所处的语境——Thomas将这种方法称之为“再语境化”，以期由此观察非洲大陆内外不同地方之间复杂的联系和不断变化的边界。正如阿普杜莱（Appadurai）所建议的：“只有通过对这些路径的分析，我们才能解释人类的交易和计算如何’活化’物件...…正是流通中的物件阐明了他们所处的人类社会语境。” 这样看来，作為流通中的物件，对“中国编织袋”的研究有助于我们理解它所处的空间和文化实践，以及非洲大陆人民流转迁徙的日常生活轨迹。</p>
+  <p>物件处于不断的变化之中，这是阿普杜莱呼吁开展针对物件 “生活史”研究的原因。值得注意的是，物件的日常运动不仅是物质的，也是“艺术的和美学的”。艺术作品在理解流动性方面有潜在的生产力。在《艺术的能动性》（Art and Agency，1998）中，阿尔弗莱德·盖尔（Alfred Gell）提醒我们注意物件（包括艺术品）的能动性是“一个社会行动的系统”。他认为，物件不仅具有诸如如财富或商品等不同的身份，还可能与注视、使用和拥有它的人形成“互动”。盖尔断言，艺术生产是为了影响他人的思想和行为——艺术家们创作艺术作品，是为了以物件的形式来传播他们自己的人格或观念。而这些物件具有能动作用，因为它们能够产生效果，并唤起观众的情感回应。阿普杜莱向我们展示了一种研究物件的新方法——他的方法强调了物件商品化和失去个性的过程，而盖尔关注的是物件被赋予个性并可能产生影响的过程。这些阐释的不同面向，可以帮助我们更全面地接近和理解从日常材料到艺术作品的转变过程。</p>
+  <p>追踪物件的社会生活，“为物立传”，包括物件如何转化为艺术作品，提供了一种理解物件的独特方式，即物件如何在特定的流通环境中展现出变化的空间结构和复杂的权力关系。基于阿普杜莱、盖尔和厄里的观点，本文认为对物品流通的研究，包括日常物品如何转化为具有集体价值和批判能动性的艺术作品，可以帮助我们洞察流动的复杂范式、快速变化的社会关系以及当代非洲身份错位的政治；在非洲，促进社会文化变革的动力“如此难以控制、不可预测、混杂交错，但却充满了令人讶异的可能性”。</p>
+  <p><strong>为编织袋命名：“想要生活在此处，而此处往往是他乡”</strong></p>
+  <p>“中国袋”在世界各地拥有许多不同的名字，例如在英国叫“孟加拉袋”、在德国叫“土耳其袋”或“土耳其棺材”、在美国叫“墨西哥袋”、加勒比海的“新秀丽”等。这些命名模式，总是与迁移的主题和轨迹相关联，反映出人、物件和观念是如何跨越国界的。某种程度上，它们已经成为世界人民迁徙的象征。编织袋不仅仅是跨越国界的，在国家内部也同样存在。编织袋的命名所呈现的地理文化差异，表现出当前经济和社会发展进程中的空间安置逻辑，以及当今世界复杂的流动和迁移网络。</p>
+  <p>值得注意的是，这些袋子大部分是中国制造的，但在中国不会被叫做“中国袋子”，而叫做“民工包”。“民工包”是以边缘流动阶层的名字命名的，农村和城市之间穿梭的农民工经常使用这种廉价的编织袋。这些农民工构成了中国劳动力的重要组成部分。根据《中国劳工公报》，中国估计有2.77亿农民工，占总劳动人口的三分之一以上。在春节期间，数百万农民工返乡，这些袋子在全国各地的火车站和汽车站随处可见。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c861ee9c232e01c17d1b4b+L.jpg" data-id="60c861f42114416715c3d402" alt="2008春节，农民工返乡潮，摄于南京火车站。图片来源：张耘，CNS" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+2008春节，农民工返乡潮，摄于南京火车站。图片来源：张耘，CNS
+    </figcaption>
+  </figure>
+  <p>另一个将这种袋子与特定人群联系在一起的命名模式，是尼日利亚境内比较流行的“加纳人必须离开”袋（“Ghana Must Go” bag）。这个名字，与尼日利亚政府在20世纪80年代驱逐加纳人的历史政策有关。20世纪70年代，大量原油资源使得尼日利亚经济上行，与此同时，加纳经历着严重的经济衰退。西非国家的许多公民，特别是加纳人，相继涌入尼日利亚。但好景不长，尼日利亚经济在20世纪80年代初因油价降低陷入低迷，就业机会变得稀缺。1983年1月，尼日利亚联邦政府向加纳人和其他非洲国家移民发出驱逐令，要求他们返回本国。据估计，超过100万加纳人被迫将他们的个人物品打包，离开尼日利亚。因为许多加纳人用这种编织袋运输他们的物品，尼日利亚人把它们命名为“加纳人必须走”袋。尽管这个词源于三十多年前的一次政治事件，但它沿用至今，并在西非的社会文化讨论中一再呈现。例如，加纳裔作家黛叶·塞拉西（Taiye Selasi）于2013年出版的第一部小说和尼日利亚电影制作人弗兰克·拉贾·阿拉斯（Frank Rajah Arase）于2016年首播的“诺莱坞”喜剧《加纳必须走》，都是以编织袋为题引，讲述加纳与尼日利亚家庭和移民的故事。</p>
+  <p>在南非，这些袋子通常被称为“中国袋”和“津巴布韦袋”，此外还有一些基于使用者地缘身份的名称。例如，“马桑加尼袋”（Mashangani）这种命名自林波波省东部的尚加尼人（Shangani）。祖鲁人将这类袋子命名为“Khonza ekhaya”，意为“再见，家”。由此可见，这些命名模式，总是暗示着人类移动和相遇的不同轨迹。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c8621a4cd55d54dd5db1b9+L.jpg" data-id="60c86221904b8c02a16a305b" alt="“中国袋”，摄于约翰内斯堡新中国批发市场。图片来源：程莹" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+“中国袋”，摄于约翰内斯堡新中国批发市场。图片来源：程莹
+    </figcaption>
+  </figure>
+  <p>地理学家认为流动性是一种重要的日常生活实践，它产生了意义和文化，是现代社会的一个重要方面。然而，这些袋子的命名模式提醒我们，流动性和非流动性是辩证发生的。如果不注意观察形成和引发流动的那些必要的静止空间、基础设施和体制结构，就无法描述移动性。根据汉南（Hannam）、谢尔（Sheller）和厄里（Urry）的说法:</p>
+  <blockquote>
+    <p>没有广泛的“停滞”（非流动性）系统，就没有线性增长的流动性，与此同时，更灵活多元的变动、空间形式的多态性和重叠的监管制度是不断增加的。考虑到“流动性”作为不平等权力关系的一个重要面向，我们可以称之为实现不同程度的流动性所必须付出的代价。</p>
+  </blockquote>
+  <p>为一部分人提供流动性的新技术和平台，必然会增加另一部分人的停滞性。因此，重要的是要注意到不同层级和方向的流动性反映甚至巩固了权力和地位的结构等级。“中国袋”的命名模式，意味着“这里”和“那里”之间具有不同空间的关系性，在很大程度上，这种命名指向南方和北方之间的关联。</p>
+  <p>作为自愿或非自愿的、长途或本土移民的象征，“中国袋”质疑了我们对流动性的既有认识，这种物件的意涵也揭示出流动性并不总是和“现代”与“进步”的概念相关。在“全球南方”的语境中，流动性是一个非常矛盾和暂时的概念：流动性的增长并不总是代表着进步或解放，相反，无论是在中国、西非还是南部非洲，这类编织袋的命名都带有一种天然的疏离感与陌生感。它经常指向“此处”和“别处”的悖论——想要生活在此处，而此处往往是他乡。编织袋的材质，具有高度的象征性和深刻的日常性，代表了流动人群矛盾、复杂的生命体验，因而这些以编织袋为材质的艺术作品，也显得平易近人又意涵丰富。</p>
+  <p><strong>为移动中的大陆绘图：艺术家对“中国编制袋”的回收利用</strong></p>
+  <p>几位非洲艺术家最近的艺术项目中，“中国袋”被呈现为一种核心的视觉符号，如恩卡巴的《此袋即吾乡》（“Umakhenkethe Likhaya Lam”, 2012）、多顿·马坤（Dotun Makun）的“加纳人必须走”系列肖像（<em>Ghana-must-go portraits，</em>2012）、丹‧霍特的《空间入侵者》（<em>Space Invader 2010，</em>2015）等。作为常常与流动人口相联系的一种标识性物件，艺术作品中的编织袋成为一种颇具挑衅性的视觉符号，精准地捕捉到一些非洲城市生活的景观，以及日常生活中那些令人费解和不安的经历。</p>
+  <p>恩卡巴的作品《此袋即吾乡》（<em>Umaskhhenketch Likaya Lam</em>，2012 )，可直译为“这个编织袋就是我的家”。“Unommgcana”或“umaskhenketha”指的是科萨语中的“编制袋”， “unumcana”的意思是“条纹状的”，“umaskhenketch”的意思是“旅行者”。这一系列摄影作品，也被称为“中国编织袋项目”，艺术家通过这个项目探索其在南非生活和迁徙的个体经历。</p>
+  <p>恩卡巴于1992年出生在东开普省的巴特沃斯（Butterworth），后来搬到格拉鲍（Grabouw），她在那儿的农场学校待了三年。2012年，恩卡巴从开普敦大学米切里斯美术学院毕业，目前居住在开普敦。这个项目重温了艺术家与编织袋共同成长的记忆，也反映了她在南非的移民生涯。对于恩卡巴来说，这个平凡的物件代表着过去的记忆，和在迁徙中挣扎的童年经验:</p>
+  <blockquote>
+    <p>我经历了许多迁徙的挑战，花了很长时间才适应新生活。我的成长环境中似乎总是伴随着编织袋。我记得当我的母亲(在格拉鲍工作)在淡季回家时，会带一些“慰问品”回来，诸如一只塞满了洋葱的半生不熟的烤鸡，很多苹果和一些衣服。在学校放假期间，我会去格拉鲍，我父亲就用编织袋打包我的行李。这种袋子是许多从东开普省到开普敦的旅人的必备。在朗加（Langa）公共汽车总站，大量的编织袋子堆叠在一起，上面写着人们的名字，以避免弄错或丢失。</p>
+  </blockquote>
+  <p>恩卡巴在工作室里重建了一个被这些“中国袋”填满的内部空间。她在新的语境下通过重塑空间再现了自己的生活——这个空间里到处都是显眼的、纵横交错的十字网格图案。由于她经常不得不把自己所有的东西都装进这样一个袋子里，于是渐渐地就把袋子看做了一个家。在一系列画面中，观众可以看到鞋子、枕头、被子、书籍和红蓝白线织就的围裙。这些由“中国袋”制成的物品构成了一个“流动”的家园，挑战了传统观念中人们将“家”作为一个更稳定的空间的看法。“中国袋”在此代表了南非流动居民不断迁移的普遍经验。正如恩卡巴所说：“这个问题动摇了社区的概念，给迁徙的人和目的地人群带来了恐惧、沮丧和不适。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c862754cd55d54dd5db1ba+L.png" data-id="60c86280904b8c02a16a305c" alt="诺布科·恩卡巴，《此袋是吾乡》 ，29 cm x 21 cm，2012。图片来源：Nobukho Nqaba 及其代理画廊" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+诺布科·恩卡巴，《此袋是吾乡》 ，29 cm x 21 cm，2012。图片来源：Nobukho Nqaba 及其代理画廊
+    </figcaption>
+  </figure>
+  <p>恩卡巴的作品探索了南非境内的人口迁移，而艺术家霍特则用这些袋子来比喻逃往南非的津巴布韦人的生活经历。这位艺术家以20世纪80年代的街机游戏《空间入侵者》命名他的作品。霍特挪用了西角友宏（Tomohiro Nishikado）设计的外星战斗人员的图像，将填充得鼓鼓囊囊的“津巴布韦袋子”与非洲其他国家移民在南非面临的敌意和遭遇的种族排外事件联系起来。这个项目展示了“外星人”（“alien”）这个词的双关含义：在这个充斥着边界竞争的世界中，这个术语已经成为一种圆滑委婉地描述移民的说法，并被赋予了一种极端的他者性。</p>
+  <p>这些袋子，也出现在一些列有关车站和码头的短片中。这些车站在南非就类似于“入境口岸”，例如，约翰内斯堡的一个主要出租车站，在这些地方，大量的编织袋行李成为难民身份的一种标识——在排外主义者狭隘的目光中，“人沦落为’空间入侵者’”。艺术家对特定地点的选择和袋子的特殊陈列形式，让人很容易就想到南非某些地区强烈的排外情绪，以及整个南部非洲都很普遍的迁移模式。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c862ac4cd55d54dd5db1bb+L.jpg" data-id="60c862b32114416715c3d406" alt="丹·霍特《空间入侵者》，约300个填充塑料编织袋，2008。图片来源：Dan Halter。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+丹·霍特《空间入侵者》，约300个填充塑料编织袋，2008。图片来源：Dan Halter。
+    </figcaption>
+  </figure>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c862c39c232e01c17d1b4c+L.jpg" data-id="60c862c69b2d825085c25c7d" alt="丹·霍特《空间入侵者》，约翰内斯堡的出租车站入口，2009。图片来源：Dan Halter。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+丹·霍特《空间入侵者》，约翰内斯堡的出租车站入口，2009。图片来源：Dan Halter。
+    </figcaption>
+  </figure>
+  <p>在尼日利亚艺术家多顿·马坤策划的“加纳人必须离开”系列肖像展中，“中国袋”勾画了非洲大陆的另一条流动路线——西非和南非之间的迁移。马坤在南非生活和学习期间创作了这个系列。他在“表面上描绘了一些尼日利亚人”，而实际上这些人是来自非洲不同国家、目前生活在南非格拉罕镇的移民。在南非种族排外的语境中，尼日利亚人总被认为具有一些独特的面部特征，而遭到排斥。艺术家不满于人们人们的这种刻板印象，他以“加纳必须走”的蓝白相间的编织袋为背景，提醒观众铭记1983年被强行驱逐的加纳难民的历史。这些作品批判了一些盲目排外的南非人，他们对涌入南非的外国移民的观点轻率且武断——“尼日利亚人”成了外国人的通称，“尼日利亚人”的面部特征成为了外国人的标志。</p>
+  <p>马坤的作品也反映了社会语境会影响观众对艺术作品的解读。作为2011年马坤策划的“ALIEN-Nation”展览的一部分，“加纳必须走”系列肖像和这些肖像中反复出现的编织袋图案的意涵进一步复杂化了。除了指涉20世纪80年代的历史事件，它还提醒人们注意南非当下的社会环境——尼日利亚人正受到各种形式的误解和诽谤。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c862e24cd55d54dd5db1bc+L.jpg" data-id="60c862e69b2d825085c25c7f" alt="多顿·马坤《加纳必须走》系列肖像，帆布油画，110 cm x 100cm ，2012。图片来源：Dotun Makun。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+多顿·马坤《加纳必须走》系列肖像，帆布油画，110 cm x 100cm ，2012。图片来源：Dotun Makun。
+    </figcaption>
+  </figure>
+  <p>三位艺术家通过编织袋符号，探讨了“异乡人”和“陌生人”的含义，以及这种符号如何成为当代南非身份政治中“非本地身份”的象征。霍特的作品，处理了“错位的民族身份观念和南部非洲黑色幽默般的社会现实，这在很大程度上是说明种族压迫的历史今天仍在上演。”</p>
+  <p>这些艺术作品围绕“中国编织袋”进行创作，通过表达普通非洲人——比如，一位生活在开普敦但来自于东开普省的南非人，一位居住在约翰内斯堡的津巴布韦人，或是一位工作在格拉罕镇的尼日利亚人——的挣扎闯荡经验，对不断变化的人口流动进行深刻的洞察和反思。对他们来说，“中国袋”已经成为一种流离失所记忆的表征。恩卡巴在《此袋即吾乡》的展览导言中说：</p>
+  <blockquote>
+    <p>我和这个袋子有一种爱恨交织的关系，对我来说，它是挣扎的象征……与此同时，它提醒着我来自哪里，赋予我更多动力去成就生活。在我的童年生活和人生旅途中，编织袋一直是我的伴侣，也是我的慰藉与家园。</p>
+  </blockquote>
+  <p>从这个意义上来说，“中国袋”隐喻了非洲大陆普通移民群体面临的悖论。一方面，编织袋象征移民颠沛流离的痛苦经历；另一方面，也象征了一种在不同空间和文化环境中的迁移与流动的能力。值得一提的是，这些作品拒绝将非洲的迁徙简化为一种创伤经验。例如，在恩卡巴的作品中，“中国袋”变成了一种具有能动性的材料。对恩卡巴来说，“中国袋”使她想起母亲，母亲是她生活中的关键人物，同时也是家庭的支柱。在这个系列中，“中国袋”建构起一种移动的空间：观众看到艺术家用编织袋制成的物品行走、睡觉、阅读和烹饪，借此直面和重新反思材质的固有价值。通过这种方式，物件通过与观众互动而具有了能动性。“中国编织袋”所内含的“转瞬即逝”的意味，暗示着非洲大陆的流动性状态。这也从一种层面上印证了姆边贝（Mbembe）的观点，他将非洲阐释为“一种过渡与流通的哲学场域”。他曾断言，“黑格尔及其信徒暗示非洲是一个封闭的大陆，这完全不对。非洲始终是一个不断移动的大陆。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c863099c232e01c17d1b4d+L.png" data-id="60c863112114416715c3d407" alt="霍特《走出去/走向全球》，手工编织材料加喷墨打印，64 cm x 90 cm，2016。图片来源：Dan Halter。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+霍特《走出去/走向全球》，手工编织材料加喷墨打印，64 cm x 90 cm，2016。图片来源：Dan Halter。
+    </figcaption>
+  </figure>
+  <p><strong>编织袋与“fong kong”：从物质文化的视角解读中非关系</strong></p>
+  <p>在这一部分中，笔者将研究非洲艺术家如何借用“中国编织袋”来评论当前非洲的社会语境，特别是中国在非洲的存在感这一问题。随着中国在非洲对外贸易中占据越来越大的市场份额，中国作为投资者和进出口商进入非洲，成为一个颇具争议的话题。与其他经济和政治领域对中非关系的讨论不同，笔者讨论的艺术项目主要关注的是中非交往所带来的社会和文化后果。</p>
+  <p>“中国袋”在格拉罕镇国家艺术节的“开路：来自南非和中国的当代艺术”（2012）展览中占据了显著位置。该展览旨在不断变化的“全球南方”语境中，就文化多样性展开新的对话。策展人露丝·辛宝（Ruth Simbao）称，“making way”一词引用了中国的概念“开路”（“开辟新的道路”）和科萨短语“打开道路”（uku-vul’indlela）的说法，汇集了一系列有关迁移、旅行和流动的作品。除了将编织袋解读为迁徙征途中的一个重要视觉符号之外， 霍特和马克纳（Machona）等艺术家还借此指涉了袋子的制造商——中国，并提醒人们注意中国在当今非洲不断变化的位置。</p>
+  <p>这些以“中国袋”为特色的艺术作品可以被解释为“一种工具性的行动方式”，有可能对观众产生影响，促使他们思考中非交往中的权力关系。物件的可塑性与意义多元性，都与盖尔所说的艺术作品的“能动性”相关联。这些艺术家利用“中国袋”来引发一些有关中非议题的辩论，并以这种方式赋予普通物体和日常活动以一定的政治意涵。</p>
+  <p>一些艺术家将“中国袋”阐释为“fong kong”或“zhi zhong”，来强调进口廉价中国产品对当地经济的影响。南非的“fong kong”一词（以及津巴布韦的“zhi zhong”一词），经常用以指称廉价、假冒和质量低劣的中国制造商品。1998年，在中国和非洲大陆关系日益密切的背景下，饥饿男孩乐队（“Hunger Boys”）的歌曲《Fong Kong》在南非走红。类似地，在津巴布韦音乐家华莱士·奇里莫（Wallace Chirimuko）的《中国制造》中，这位歌手用“zhi zhong”——对缺乏原创性和耐用性的中国产品的贬义指称——作为隐喻表达津巴布韦普通民众对中国在非经济活动的看法。作为“中国制造”的俚语代称，“fong kong”和“zhi zhong”已经成为南部非洲日常话语的一部分。根据朴正允（Yoon Jung Park）的研究，“fong kong”已经被广泛接受，当地说唱歌曲、记者和营销公司经常使用这个词。她补充道，“尽管中国继续被批评向非洲市场 ‘倾销’这些过时、廉价、假冒伪劣的商品，非洲人也越来越多地参与到进口中国商品的进程中。”“zhi zhong”和“fong kong”通常指涉被装在“中国编织袋”里、由中国商人携带入境的产品，常常招致威胁非洲当地制造业的严厉批评。</p>
+  <p>津巴布韦艺术家马克纳在他受“开路”展览委托制作的《“中国制造，与爱同行”》（“Made in China, With Love”）项目中，用编织袋来展示材质的价值和敏感性。辛宝的文章记录了他在“开路”展览中的表演过程：</p>
+  <blockquote>
+    <p>马克纳小心翼翼地将一些三维物件缝合在一起，比如用已作废的津巴布韦美元制成的钱包、手表、一副太阳镜和袋子，并在上面缝上一个标签，写着 ‘中国制造’。然后，他试图让观众参与到一个有趣的交易过程中，比如如果他们唱国歌，就可以获得一件他制作精美的物品......马克纳在表演中与赞比亚学生奇燕塔·姆文雅（Chiyanta Mwenya）合作，姆文雅首先将马克纳藏在一个编织袋里，并将他推到画廊中。姆文雅是一名曾作为留学生在中国待了很长时间，学会了普通话。在表演中，他随意地对着观众说中文，好像期待观众能听明白他的发言……</p>
+  </blockquote>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c863419c232e01c17d1b4e+L.jpg" data-id="60c86344904b8c02a16a305f" alt="马克纳《来自中国，与爱同行》，罗德斯大学校友画廊的表演，2012。照片来源：Mark Wilby。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+马克纳《来自中国，与爱同行》，罗德斯大学校友画廊的表演，2012。照片来源：Mark Wilby。
+    </figcaption>
+  </figure>
+  <p>艺术家回收已被淘汰、不再流通的津巴布韦美元，小心翼翼地将它们缝合成三维艺术品。他将具有“艺术品”价值的手工制品与大规模生产的中国产品（“zhong zhong”或“fong kong”）进行对比，在当地，有人认为这些中国产品“正在扼杀津巴布韦民间工艺品行业”。</p>
+  <p>马克纳经常借用不同的纸币来参与当前关于全球贸易和人口流动的辩论。他在实践中反复采用已淘汰的津巴布韦纸币作为艺术媒介，将本国历史和当下的社会议题联系起来。2000至2009年，津巴布韦经历了惨痛的经济崩溃，并印制了有史以来最大面值的纸币——100万亿津巴布韦币。在一次采访中，马克纳指出：“恶性通货膨胀导致货币功能失调，于是，我很快发现自己有了大量的艺术创作素材。”他的作品《中国制造，与爱同行》反映了中国与津巴布韦和其他非洲国家日益密切的经济系联。使用几乎贬值到分文不值的津巴布韦纸币，作为表现中国制造——“zhi zhong”的材料，艺术家将他对津巴布韦政府的批判与他对中国对非贸易的批判性思考交织在一起，让人联想到津巴布韦前总统穆加贝的“向东看”（Look East）的政策。这位艺术家似乎认为，津巴布韦政府对本国事务表现出的腐败无能，赋予了中国制品更大的渗透力。</p>
+  <p>霍特最近的作品《走出去/走向全球》（<em>Go Out/Go Global</em>）以更直接的方式回应了中非交往。霍特在编织袋上打印了三个巨大的中国汉字——“走出去”。在对这幅作品的介绍中，霍特指出，“大多数国家倾向于积极吸引外来投资，而且只会被动支持对外投资。然而，中国政府则同时重视外来投资和对外投资。”这项艺术作品，呈现了中国政府的“走出去”政策——鼓励自己的企业到海外投资，在非洲大陆探索新的机遇。值得注意的是，和前面提到的艺术家马克纳的作品类似，霍特的作品也彰显出大规模生产和定制作品间的对立关系。他用古玩工艺品针砭津巴布韦货币的恶性通货膨胀，重新诠释劳动和价值的概念。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c863694cd55d54dd5db1be+L.jpg" data-id="60c8636d904b8c02a16a3061" alt="霍特《走出去/走向全球》，手工编织材料加喷墨打印，64 cm x 90 cm，2016。图片来源：Dan Halter。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+霍特《走出去/走向全球》，手工编织材料加喷墨打印，64 cm x 90 cm，2016。图片来源：Dan Halter。
+    </figcaption>
+  </figure>
+  <p>笔者注意到，近年来越来越多的非洲艺术家开始通过在他们的艺术项目中回收日常用品，反思中国在非洲的存在。尼日利亚艺术家阿尤·阿金汪德（Ayo Akinwande）的作品《赢得-Win》系列（2017年）提供了另一个例子，通过对日常事物的改造利用来将讲中非关系的议题物质化。</p>
+  <p>阿金汪德作品的主要材料是尼日利亚最大的水泥制造商Dangote公司的废弃水泥袋。艺术家从建筑工地上找来这些袋子，将它们制作成“阿巴达”（“Agbada”）——尼日利亚西南部和贝宁共和国约鲁巴人穿的一种传统服装。阿金汪德的装置包括一件巨大的的外袍（awosoke），一件背心（awotele）和一顶帽子（fila）。外袍包含一条铝带，上面刻有“CCECC”字样，这几个字母是中国土木工程建筑公司的首字母缩写，这家公司承担了许多中国在非洲的基础设施和建筑项目。蓝色是公司常使用的颜色，此外，这条腰带是仿照摔跤和拳击比赛用的那种腰带来设计的，它象征着中国人、黎巴嫩人、印度人、欧洲人和美国人对非洲资源的一种竞争性的持续关注。</p>
+  <p>根据我对这位艺术家的采访，“腰带上的 ‘CCECC’字样表明中国可能在这场持续的比赛中是赢家，但同时也凸显了中国如何控制非洲。”值得注意的是，阿金汪德的外袍有两个口袋，每个口袋里有27张面值5奈拉的钞票。根据这位艺术家的说法，5奈拉钞票的使用与中国产品的“物美廉价”概念有关。</p>
+  <p>同样，在南非艺术家马库斯·诺伊施泰特（Marcus Neustetter）的《中国廉价品：一个电池寿命有限的装置》（诺伊施泰特“走进光中”展览的一部分）中，这位艺术家回收了一次性材料，并将其转化为经常被认为代表着“中国性”的物品——废弃的荧光棒；他把這些荧光棒缝合在一起，建造出中国长城的模样，或者熔化后制作成幸运青蛙、鲨鱼鳍和龙的形状。据这位艺术家说，这些物品象征着在南非的日常生活中，人们想象与感知中国和中国文化的方式。诺伊施泰特的项目强调中国材料的重要性。制作这些作品所用的材料是艺术家特意从中国当地市场采购來的，这些市场通常储存着大量而廉价的轻型玩具和小玩意。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c863884cd55d54dd5db1bf+L.jpg" data-id="60c8638c904b8c02a16a3063" alt="阿金汪德《三件套》（Awosoke），二手和机器缝制麻袋、铝制品和5奈拉纸币，118.9 cm x 147.3 cm，2017。图片来源：Ayo Akinwande。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+阿金汪德《三件套》（Awosoke），二手和机器缝制麻袋、铝制品和5奈拉纸币，118.9 cm x 147.3 cm，2017。图片来源：Ayo Akinwande。
+    </figcaption>
+  </figure>
+  <p>通过这种编织术——将某种物体或材料编织在一起制作成其他物品——日常用品和材料就被转化成为艺术作品。这种艺术手法体现了塑料编织袋的一种隐喻意义。它代表着一个交换和过渡的过程（这个过程有时是不平衡的），也代表了全球南方不同流动路径的交叉。这种技术被马克纳、霍特、阿金汪德和诺伊施泰特等艺术家不断采用，以反映非洲和中国之间日益强化的经济联系与互动。霍特的作品《世界难民地图》（Rifugiato Mappa del Mondo，2011）就在制作时大致参考了移民信息统计，将红色、蓝色和白色的塑料网袋编织在一起，松散地描绘了整个世界的流动趋向。</p>
+  <p>在当今世界，流动性通常意味着在不同的地方和文化之间移动与居住的能力，但霍特的地图显示了全球化时代有关流动性的矛盾愈演愈烈：旧的袋子被用来绘制移民出境的国家和路线（多为南方国家），而新的袋子则描绘了更有吸引力的目的地（多为北方国家）。这项工作是由目前居住在南非的津巴布韦难民西邦尼·奇琼乔（Sibongile Chijonjo）亲手缝制成的。编织袋的破损代表着流离失所的移民所经历的精神和情感创伤。从编织袋到世界地图，艺术家通过这一过程提醒观众在当前全球社会经济变化的背景下，思考有关劳动和消费主义的问题。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c863c69c232e01c17d1b50+L.jpg" data-id="60c863cb9b2d825085c25c82" alt="丹·霍特《世界难民地图》，新旧塑料编织袋，183 cm × 380 cm，2011。图片来源：Dan Halter。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+丹·霍特《世界难民地图》，新旧塑料编织袋，183 cm × 380 cm，2011。图片来源：Dan Halter。
+    </figcaption>
+  </figure>
+  <p>这些艺术家还利用这种编织术来评论非洲与中国的相遇，特别是用其指代中国在非洲的“物质性”。诺伊施泰特将荧光棒和彩色塑料条被编织在一起，以此来复现解读中国古代地图和非洲贸易路线，促使人们反思非洲在国际贸易关系中的地位。诺伊施泰特表示，他计划将这些艺术品带到中国展览，制作这些艺术品的原材料都是中国产的：“因此，这个看似临时的艺术装置是由成千上万的废弃发光棒、破损发光二极管、塑料外壳和包装材料等永久性副产品组成的，这些副产品被组装成新的艺术品，以一种仪式交换的形式送回中国。”南非艺术家通过将这些评论中国进口材料的艺术作品再“出口”到中国，促使人们反思这两个金砖国家之间的力量平衡。</p>
+  <p>这些作品，并不一定能反映出非洲大陆大多数人对中国的广泛看法。相反，它们是个人艺术家的尝试，旨在反思那些容易被认为是理所当然的问题，例如，中非交往官方话语中的“双赢”修辞。换句话说，这些艺术项目并不是有关“中国在非洲”的调查，也未能提供一个结论性的陈述，但它们确实敦促人们关注那些仍没有明确答案的棘手问题。正如南非艺术家威廉‧肯特里奇在北京的展览开幕式上所问：“中国就像一艘飞艇盘旋在我们上空。它的规模，它对资源的渴求……今天的中国在非洲，是一系列尚无解答的问题。我们呢，是对老虎而言、唾手可得的山羊吗？”借“fong kong”材料来探讨社会生活的艺术家们，例如马克纳、霍特和诺伊施泰特，有着类似的疑虑和不确定性，他们的作品不断引发有关中非交往和“全球南方”的批判性对话。</p>
+  <p><strong>永不到达：流通的悖论</strong></p>
+  <p>“中国袋”的“移动”性质，使得它成为理解非洲大陆上流动现象的一个丰富的隐喻。本文的分析表明，编织袋在非洲大陆内外的流通不是单向的。这些以编织网袋为审美材料的艺术作品，至少体现了三个不同层次的流动——非洲人的迁徙、非洲“中国制造”产品的流动以及非洲大陆内外艺术作品的流通和消费。编织袋的关系性质，说明了识别“反向流散”和多向流动的重要性。对这些多方向和多层次移动网络的研究，揭示了非洲复杂的关系和身份地缘政治，要求我们对“全球南方”有一个更加全面的理解，而不是停留在一种对地方的刻板印象层面上。根据阿普杜莱和盖尔的理论，我们得以思考这些作品作为艺术和商品的双重性质，以及它们如何成为流动性悖论的象征。“中国袋”制作的艺术品，象征并加剧了移民社区和东道主社会之间的动态紧张关系；此外，商业化艺术作品中所体现的包容和排斥的政治，某种程度上也是流动性悖论的缩影。</p>
+  <p>用“中国袋”作为“zhi zhong”或“fong kong”的象征，代表了艺术家们“向内”（inward-looking）的社会政治批评态度。与此同时，用“fong kong”来形容中国人在非洲的存在似乎过于简单，因为这些强硬的概括与分类，又带来和加剧了另一种层面的排斥。因此，其中一些艺术项目再次重复了他们所批评的关键问题，例如在南非这样的社会中如何处理种族多样性的问题。一些作品只是单纯强调“东方的食物”或“中国冒牌货”（“fong kong”），并没有充分关注到中国人和中国文化的多样性，也没有讨论中国人在非洲的漫长历史、中国和不同非洲国家之间的不同历史联系或者中国在非洲的“混合形式”。此外，这些作品大多没有考虑其他的流动方向——例如，在中国的非洲移民，这些作品也没能意识到，“中国袋”在非洲的突显是全球经济和政治进程的一部分，对中非交往的理解不能脱离更广泛的全球地缘政治背景。</p>
+  <p>正如多顿·马坤的《加纳人必须走》系列作品所示，“中国袋”的编织图案其实代表了一种标签化的刻板印象。这些艺术作品，可能没有涉及种族隔离时代之前或隔离期间被经常误解或忽视的华人社区的复杂历史。很少有艺术作品认识到中国在非洲的存在，始于成千上万的人被迫离开家园。就南非而言，来这里的中国人可能有奴隶、契约劳工和独立商人等不同身份。此外，只专注于批评“fong kong”质量低下的作品，往往没有认识到中国编织袋的一些其他品质——它们轻巧、结实、用途广泛，对于处于劣势经济地位的人来说更加实惠。有学者指出，“fong kong”产品在非洲大陆的流行，比“中国商人倾销中国制造的假货”这一简单论断更为复杂。“尽管‘fong kong’产品带有一种负面形象，招致社会批评和政府对它们的限制，但这些产品仍然在当地市场上流行”，并且“为贫困者的生活做出了贡献，激发了创造力，也给当地社群成员带来了便利”。笔者注意到当有些艺术家试图处理日常话语中有观中国人的观念时，他们本来试图干预问题化的、刻板印象式的简单再现，却在无意中加剧了当地人的“恐中”（sinophobia）情绪。从这个意义上来说，“中国编织袋”也成为一种“外来”的象征物，重复了排外主义的逻辑。</p>
+  <p>这些艺术作品作为商品的流通，也丰富了这篇文章中的流动性主题。阿普杜莱的商品化概念，提醒我们关注视觉艺术领域中的不平等性，这种不平等根植于一个更广泛的政治经济背景中。阿普杜莱提醒我们注意物体在商品化和去商品化过程中的流通方式。他认为，资本主义的计算精神在物件身份转变过程中始终在场，物件在这一转变过程中历经不同的极端价值体系。这篇文章中涉及的这些关于“中国编织袋”的特定作品，主要是为画廊观众制作的。尽管一些艺术项目试图抵制商业化经济的收编，拒绝将痛苦的遭遇进行文化商品化，但在大多数情况下，开普敦、约翰内斯堡、纽约和伦敦画廊白净的墙上贴着的昂贵的价签，在某种程度上使这些艺术品与最初激发艺术家创作的日常环境和人类生活经验再次脱节。</p>
+  <p>当非洲以外的广大观众为非洲大陆新兴视觉或表演艺术的日常创造力欢呼时，这些带有挑衅色彩的作品的流通和消费再次引发我们思考一些深层次的问题：我们如何以“变革的方式”使用日常物品来干预空间、关系和身份认同的政治？更具体地说，应该使用什么元素来“代表”中国、非洲和中国在非洲的存在？这些材料怎样提示我们，中国和非洲在“全球南方”中各自的定位是什么？我们为谁设计和制作这些艺术项目？当非洲艺术作品跨越文化和国际边界时，我们又应该如何理解它们的意义和价值？</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-15/60c864199c232e01c17d1b51+L.jpeg" data-id="60c86449904b8c02a16a3065" alt="霍特作品：The ears of the hippo" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+霍特作品：The ears of the hippo
+    </figcaption>
+  </figure>
+  <p><strong>结论</strong></p>
+  <p>非洲著名导演希萨克（Abderrahmane Sissako）在他2002年执导的电影《赫里马科诺：等待幸福》（Heremakono: En atten- dant de bonheur，2002）中，讲述了人们如何寻求幸福，以及这种幸福与流动性的关联。影片中有个令人难以忘怀的场景——一个名叫楚（Tchu）的、在街上卖“fong kong”制品的中国小商贩，在当地的小歌厅里唱歌。他唱的这首忧郁的歌曲，是一首曾经在中国家喻户晓的《铁窗泪》。这首关于监狱生活的歌曲的歌词在影片中悲伤而美丽：“铁门啊铁窗啊铁锁链 / 手扶着铁窗望外边 / 外边的生活是多么美好啊 / 何日重返我的家园 / 何日能重返我的家园……”就像电影中的许多耐人寻味的角色一样，在这个毛里塔尼亚的交通枢纽、小镇努瓦迪布（Nouadhibou），中国小贩实际上已经丧失了对自我迁徙与流动的控制。他永恒的等待和揪心的呼唤，与南非艺术家恩卡巴艺术项目的标题遥相呼应——“此袋是吾乡”（Umaskhhenketch Likaya Lam）。</p>
+  <p>“中国袋”为理解非洲复杂的人口流动模式提供一种生动而精准的隐喻。作为一种经常出现在公交车站和国家边界的视觉元素，编织袋已经成为“穿越”和“异乡”的终极表达——一种总是在流动、却从未到达的紧张状态，一种归属于世界、又被世界拒斥的矛盾经验。这是一种令人不安的经历，对我们理解当代非洲错位的身份政治尤为重要。从以上分析的艺术作品中可以明显看出，在非洲大陆生活和迁徙的居民——无论他们是尼日利亚人、津巴布韦人还是中国人——都处于一种“暂时”和“中间”的阈限状态。</p>
+  <p>从“加纳必须走”到“孟加拉袋”，从“津巴布韦袋”到“中国袋”，这些名字的关系集中体现了“全球南方”流动现象的复杂性与矛盾性。围绕编织袋创作的视觉文化开拓了一种有关“南方”的理解：这是一个拒绝固定定义的多层过渡空间；在这个空间里，移动、转瞬即逝和越轨似乎成了常态：在不可预测的日常现实和艺术创造之间的碰撞交融中，新的包容和适应模式不断涌现，并与不断演变的拒斥机制交互纠缠。</p>
+  <blockquote>
+    <p>程莹是北京大学外国语学院亚非系助理教授、非洲研究中心副秘书长，研究兴趣包括非洲文化、非洲文学与艺术、非洲青年与城市化问题。原文标题为“‘此袋是吾乡’——当代非洲艺术中的‘中国编制袋’意象”，文章注释省略，小标题有略微改动，原文载于大陆版《人间思想》第十辑（2019年10月），有兴趣者可查阅。</p>
+  </blockquote>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-17/%E7%89%B9%E6%9C%97%E6%99%AE%E5%AE%A3%E7%A7%B0%E5%8D%B3%E5%B0%86%E5%87%BA%E7%89%88%E5%9B%9E%E5%BF%86%E5%BD%95-%E5%87%BA%E7%89%88%E5%95%86%E5%88%99%E8%AF%B4%E6%B2%A1%E4%BA%BA%E6%84%BF%E6%84%8F%E6%83%B9%E8%BF%99%E9%BA%BB%E7%83%A6/">
+          特朗普宣称即将出版回忆录，出版商则说没人愿意惹这麻烦
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-16</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-16/%E9%83%91%E7%86%99%E9%9D%92-%E7%A3%95CP-%E8%80%BD%E6%94%B9%E5%89%A7-%E4%B8%8E%E5%8A%A8%E8%8D%A1%E4%B8%8D%E5%AE%89%E7%9A%84%E4%B8%AD%E6%96%87%E5%90%8C%E4%BA%BA%E5%86%99%E4%BD%9C%E5%9C%BA-%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-14</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-14/%E9%9F%A9%E6%B5%81%E5%88%AE%E4%BA%86%E8%BF%99%E4%B9%88%E4%B9%85-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9F%A9%E5%9B%BD%E6%96%87%E5%AD%A6%E7%9B%B4%E5%88%B0-%E9%87%91%E6%99%BA%E8%8B%B1-%E6%89%8D%E8%A2%AB%E5%85%B3%E6%B3%A8/">
+          韩流刮了这么久，为什么韩国文学直到“金智英”才被关注？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-12</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-12/%E8%B0%A6%E9%80%8A%E4%BC%98%E9%9B%85%E7%9A%84%E9%98%BF%E5%A7%86%E6%96%AF%E7%89%B9%E4%B8%B9%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%A7%E5%A4%B1%E4%BA%86%E8%87%AA%E8%B1%AA%E6%84%9F/">
+          谦逊优雅的阿姆斯特丹人为什么丧失了自豪感？
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-14/%E9%9F%A9%E6%B5%81%E5%88%AE%E4%BA%86%E8%BF%99%E4%B9%88%E4%B9%85-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9F%A9%E5%9B%BD%E6%96%87%E5%AD%A6%E7%9B%B4%E5%88%B0-%E9%87%91%E6%99%BA%E8%8B%B1-%E6%89%8D%E8%A2%AB%E5%85%B3%E6%B3%A8/">
+            前一篇：韩流刮了这么久，为什么韩国文学直到“金智英”才被关注？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-16/%E9%83%91%E7%86%99%E9%9D%92-%E7%A3%95CP-%E8%80%BD%E6%94%B9%E5%89%A7-%E4%B8%8E%E5%8A%A8%E8%8D%A1%E4%B8%8D%E5%AE%89%E7%9A%84%E4%B8%AD%E6%96%87%E5%90%8C%E4%BA%BA%E5%86%99%E4%BD%9C%E5%9C%BA-%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+            後一篇：郑熙青：磕CP、耽改剧，与动荡不安的中文同人写作场 | 燕京访谈
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-14/%E9%9F%A9%E6%B5%81%E5%88%AE%E4%BA%86%E8%BF%99%E4%B9%88%E4%B9%85-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9F%A9%E5%9B%BD%E6%96%87%E5%AD%A6%E7%9B%B4%E5%88%B0-%E9%87%91%E6%99%BA%E8%8B%B1-%E6%89%8D%E8%A2%AB%E5%85%B3%E6%B3%A8/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-16/%E9%83%91%E7%86%99%E9%9D%92-%E7%A3%95CP-%E8%80%BD%E6%94%B9%E5%89%A7-%E4%B8%8E%E5%8A%A8%E8%8D%A1%E4%B8%8D%E5%AE%89%E7%9A%84%E4%B8%AD%E6%96%87%E5%90%8C%E4%BA%BA%E5%86%99%E4%BD%9C%E5%9C%BA-%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-16/%E9%83%91%E7%86%99%E9%9D%92-%E7%A3%95CP-%E8%80%BD%E6%94%B9%E5%89%A7-%E4%B8%8E%E5%8A%A8%E8%8D%A1%E4%B8%8D%E5%AE%89%E7%9A%84%E4%B8%AD%E6%96%87%E5%90%8C%E4%BA%BA%E5%86%99%E4%BD%9C%E5%9C%BA-%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-14/%E9%9F%A9%E6%B5%81%E5%88%AE%E4%BA%86%E8%BF%99%E4%B9%88%E4%B9%85-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9F%A9%E5%9B%BD%E6%96%87%E5%AD%A6%E7%9B%B4%E5%88%B0-%E9%87%91%E6%99%BA%E8%8B%B1-%E6%89%8D%E8%A2%AB%E5%85%B3%E6%B3%A8/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-14/%E9%9F%A9%E6%B5%81%E5%88%AE%E4%BA%86%E8%BF%99%E4%B9%88%E4%B9%85-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9F%A9%E5%9B%BD%E6%96%87%E5%AD%A6%E7%9B%B4%E5%88%B0-%E9%87%91%E6%99%BA%E8%8B%B1-%E6%89%8D%E8%A2%AB%E5%85%B3%E6%B3%A8/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-16/%E9%83%91%E7%86%99%E9%9D%92-%E7%A3%95CP-%E8%80%BD%E6%94%B9%E5%89%A7-%E4%B8%8E%E5%8A%A8%E8%8D%A1%E4%B8%8D%E5%AE%89%E7%9A%84%E4%B8%AD%E6%96%87%E5%90%8C%E4%BA%BA%E5%86%99%E4%BD%9C%E5%9C%BA-%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-16/%E9%83%91%E7%86%99%E9%9D%92-%E7%A3%95CP-%E8%80%BD%E6%94%B9%E5%89%A7-%E4%B8%8E%E5%8A%A8%E8%8D%A1%E4%B8%8D%E5%AE%89%E7%9A%84%E4%B8%AD%E6%96%87%E5%90%8C%E4%BA%BA%E5%86%99%E4%BD%9C%E5%9C%BA-%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-14/%E9%9F%A9%E6%B5%81%E5%88%AE%E4%BA%86%E8%BF%99%E4%B9%88%E4%B9%85-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9F%A9%E5%9B%BD%E6%96%87%E5%AD%A6%E7%9B%B4%E5%88%B0-%E9%87%91%E6%99%BA%E8%8B%B1-%E6%89%8D%E8%A2%AB%E5%85%B3%E6%B3%A8/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

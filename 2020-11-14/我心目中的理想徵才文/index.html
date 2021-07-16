@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>我心目中的理想徵才文 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+我心目中的理想徵才文
+——
+" />
+    <meta property="og:description" content="
+我心目中的理想徵才文
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="我心目中的理想徵才文" />
+    <meta property="twitter:title" content="我心目中的理想徵才文" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40hulitw%2Fmy-ideal-job-description-d72ec9cf5d0e%3Fsource%3Drss-f1fb3e40dc37------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@hulitw/my-ideal-job-description-d72ec9cf5d0e?source=rss-f1fb3e40dc37------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@hulitw/my-ideal-job-description-d72ec9cf5d0e?source=rss-f1fb3e40dc37------2&text=我心目中的理想徵才文&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@hulitw/my-ideal-job-description-d72ec9cf5d0e?source=rss-f1fb3e40dc37------2&title=我心目中的理想徵才文" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@hulitw/my-ideal-job-description-d72ec9cf5d0e?source=rss-f1fb3e40dc37------2&title=我心目中的理想徵才文" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=我心目中的理想徵才文&body=
+我心目中的理想徵才文
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@hulitw/my-ideal-job-description-d72ec9cf5d0e?source=rss-f1fb3e40dc37------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@hulitw/my-ideal-job-description-d72ec9cf5d0e?source=rss-f1fb3e40dc37------2&title=我心目中的理想徵才文&caption=
+我心目中的理想徵才文
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=我心目中的理想徵才文&url=https://medium.com/@hulitw/my-ideal-job-description-d72ec9cf5d0e?source=rss-f1fb3e40dc37------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>我心目中的理想徵才文</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-11-14
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Huli</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@hulitw/my-ideal-job-description-d72ec9cf5d0e?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1605408352000-->
+<p><a href="https://medium.com/@hulitw/my-ideal-job-description-d72ec9cf5d0e?source=rss-f1fb3e40dc37------2">我心目中的理想徵才文</a>
+——</p>
+
+<div>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*aqE3XXl4KOSOvyf1" />    <figcaption>
+Photo by <a href="https://unsplash.com/@martenbjork?utm_source=medium&amp;utm_medium=referral">Marten Bjork</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a>，放這張只是因為我最近很想出國
+    </figcaption>
+  </figure>
+  <p>四年前是我人生中第一次求職，抱持著「之後應該不會海投了」的心態，一口氣面試了快要二十間公司，在求職的時候也有了許多心得，因此那時候寫了一篇：<a href="https://blog.huli.tw/2016/01/19/my-ideal-interview-process/">我心目中的理想面試流程</a>。</p>
+  <p>而<a href="https://hulitw.medium.com/2020-senior-front-end-engineer-interview-249c719c1a97">前陣子</a>也進行了人生中第二次大規模求職，對於面試流程的想法跟四年前一樣，所以也沒什麼好寫的，不過這次倒是多了一些有關於徵才文的感想。剛好之前有給了我們公司 HR 一些徵才文的建議，寫了一封落落長的信，想說那不如直接寫成一篇文章好了。</p>
+  <p>一直以來我都覺得有許多公司太低估徵才這件事情了，他們在看這件事情時只有想到「要找到人」這個目標而已，可是真實情況是可能有十個人來面試，卻只有一個錄取，那沒有錄取的那九個怎麼辦？許多公司就不管了，管他的，沒有錄取就沒有錄取。</p>
+  <p>但我覺得沒有錄取的那九個人也十分重要，因為他們會影響潛在求職者，增加或是減少他們想來面試的意願。</p>
+  <p>除了這個以外，對外徵才的重點除了找到符合資格，你想招進來的人以外，對方必須也想加入這間公司。</p>
+  <p>講個小故事，我之前在新加坡的時候有當過一陣子的面試官，在剛開始的時候我在面試時抱持的心態是：「這個人有沒有符合資格，是不是能夠勝任這份工作」，我關注的點只有這個而已。</p>
+  <p>但直到有一個面試者我覺得 ok，但他拿到 offer 以後選擇不來，去了其他公司，我才突然意識到我忽略一件很重要的事，一件我在當面試者的時候從來沒忘記過的事。</p>
+  <p>那就是面試是雙向的，公司在面試我，我也在面試公司。所以身為一個面試官，除了你在考核對方是否能夠勝任工作以外，對方也在考核你，考核這間公司，也在評估這間公司是不是讓他想要進去工作。</p>
+  <p>但我之前在當面試官時忽略了這點。我以前都是簡單介紹公司在幹嘛，然後就開始問對方問題，問完之後就問對方說還想知道什麼，就照著對方問的回答。</p>
+  <p>但自從認知到這點以後，我在問完對方問題之後，會開始介紹我們公司，像是這樣：</p>
+  <blockquote>
+<em>我想問的問題差不多了，那接下來我來介紹一下我們公司，我們公司主要是做餐廳訂位的服務，但跟其他服務不一樣的地方在於，只要在我們網站上面訂位，就可以享有折扣！而且不用買任何餐券，也不用在我們網站上付錢，你要做的就只有在網站訂位，去吃飯，結帳的時候就會自動有折扣，最多可以折到 50%。</em>  </blockquote>
+  <blockquote>
+<em>所以根據我們在做的事情，有幾個系統要開發，例如說給一般消費者用的訂位網站，還有給餐廳用的網站，讓他們看到今天有哪些訂位。還需要一個公司內部自己使用的後台，這些就是我們主要負責的產品。</em>  </blockquote>
+  <blockquote>
+<em>我們的前端都是用 React + Redux 在開發的，後端則是用 Go，部署的話則是包成 docker 丟到 AWS 上面去，有一個 SRE 專門在負責這一塊。後端的部分目前大概是 XX 人，前端包含我有 YY 人，而 PM 跟設計師各有 XX 人，因為團隊比較小，所以很常會直接跟他們溝通到。</em>  </blockquote>
+  <blockquote>
+<em>而這次你面試的這個缺，開缺主要是因為要做的東西變多了，業務擴張所以需要補更多人來，我們下半年有個計畫是想要巴拉巴拉巴拉，所以需要找更多人進來，因此你進來之後會一起負責新產品的開發，還有一些現有產品的維護。</em>  </blockquote>
+  <blockquote>
+<em>而這邊的工作流程是走 scrum，兩週一次的 sprint，每天都會有 standup meeting，彼此同步一下工作狀況。內部是用 JIRA 在管理 ticket 的，程式碼則是放在 GitHub 上面，每次完成一個任務就會需要發 PR，會有其他同事幫忙做 code review，review 過了之後才能 merge，然後交給 QA 去測試。</em>  </blockquote>
+  <blockquote>
+<em>差不多就是這樣，那你有什麼想要問我的嗎？</em>  </blockquote>
+  <p>我會把公司關於產品面跟技術面的東西都稍微介紹一遍，讓對方能夠理解我們 team 在做的事情，還有他進來之後會需要做的事。</p>
+  <p>有時候我這樣介紹完，差不多就把他們原本想提的問題也都回答完了。改成這樣之後根據獵人頭的說法（不知道是不是場面話就是了），面試者的回饋都滿不錯的。</p>
+  <p>但其實上面這些東西，並不需要在面試的時候才講，其實在徵才文上面就可以先寫出來了，這樣不是很好嗎？（如果不是公司機密的話啦，但這些工作流程許多公司其實都大同小異，會需要是公司機密嗎？）</p>
+  <p>我認為很多徵才文都有改善的空間，很多基本的東西都沒有寫清楚，或是傾向用口頭告知，但我覺得寫清楚才是最好的，就算是一些你可能以為不需要寫的小細節，有時候都是關鍵。</p>
+  <p>徵才文寫得好，就能收到更多履歷，如果面試流程也做得好，那僅管對方沒有錄取，依然會對公司留下正面的印象，甚至是推薦朋友過去面試。相反地，如果徵才文寫得差或者是面試流程做得差，你損失的不只是一個面試者，而是更多潛在的面試者，一旦公司的名聲差了，可能就連面試都不想來面試了。</p>
+  <p>徵才是長期關係的培養，不是一次的買賣。</p>
+  <p>接下來我們就從兩篇我很喜歡的徵才文開始，一步步來看我心目中理想的徵才文應該要有哪些元素。</p>
+  <h3 id="section">我心目中的徵才文範本</h3>
+  <p>先分享兩個我對徵才文的啟蒙導師：</p>
+  <ol>
+    <li><a href="https://medium.com/statementdog-engineering/how-we-get-10x-resumes-by-good-job-description-bb45ad5e94e0">財報狗的徵才文</a></li>
+    <li><a href="https://github.com/golangtw/jobs/issues/1">書亞集成的徵才文</a></li>
+  </ol>
+  <p>我是看到這兩篇之後，才驚覺原來徵才文可以寫得這麼好。</p>
+  <p>而這兩篇的優點我認為是一致的，那就是講得又清楚又詳細，就會讓人覺得誠意十足。除了一般常見的徵才文元素以外，還多了：</p>
+  <ol>
+    <li>面試流程</li>
+    <li>優缺點</li>
+    <li>技術分享簡報</li>
+    <li>履歷注意事項</li>
+  </ol>
+  <p>我相信上面有些點，有許多公司也有做到，但差別是他們不會主動提起，例如說財報狗文章中所提到的：</p>
+  <blockquote>
+<em>- 我們尊重您的隱私，個人資訊僅需提供姓名、email、電話即可，不需附照片或地址。若確定您的 email 不會漏收信，在約面試前不提供電話也沒關係</em>  </blockquote>
+  <blockquote>
+<em>- 不需附長篇自傳，我們重視的是能夠展示您的專業能力、學習能力、協作能力的資訊或過往作品</em>  </blockquote>
+  <p>以及書亞集成文中所提到的：</p>
+  <blockquote>
+<em>▐ 我們尊重任何人的個資、隱私及性向，所以履歷不需包括您的年齡、身高、體重、地址等資料。也請不要寄送 104 制式履歷給我們，因為它會洩露您的隱私。</em>  </blockquote>
+  <blockquote>
+<em>▐ 為保護每位面試者隱私，公司未額外保留個人資料及聯絡方式，所以無法也不能主動聯繫先前面試的優秀人選。然您可能因我們當下職缺有限，或我們當時不足以提供您滿意的薪資，或公司發展不適合面試者職涯考量。以上原因也許時至今日已解決，所以我們隨時歡迎二次以上的面談機會，也感謝您願意再給我們一次機會。</em>  </blockquote>
+  <p>我認為徵才文可以寫多，但不能寫少。有些事情你沒有寫出來，求職者是不會知道的。把這些履歷的注意事項寫清楚，對我來說就是個加分項目，因為這樣的徵才文很清楚明白，而且是站在求職者的角度而去思考的。</p>
+  <p>看完這兩篇徵才文之後，接下來就一個一個來看徵才文裡面會吸引我的元素，重要性從高到低排序。</p>
+  <h3 id="section-1">一、基本要素</h3>
+  <p>這個太基本了就集中在一點了，包括：</p>
+  <ol>
+    <li>公司介紹</li>
+    <li>工作內容</li>
+    <li>職缺要求</li>
+    <li>公司福利</li>
+    <li>薪資範圍</li>
+  </ol>
+  <p>但儘管它基本，卻不是每間公司都能寫得好。有些是礙於公司內部規則而沒有辦法寫，例如說薪水，有些公司就真的只能寫「面議」，那面試者看到就是扣分，這也沒辦法。</p>
+  <p>公司福利不要亂寫，有勞健保不是公司福利，有配電腦也不是公司福利。</p>
+  <p>工作內容建議寫的詳細一點，會讓求職者對於日後在公司要做的事情更明確一點，職缺要求也是，不過這兩點要寫清楚其實也滿難的。</p>
+  <p>公司介紹如果能夠附上公司網站是最好的，因為通常網站上面都會有公司介紹，可以讓有興趣的求職者更加了解，若是工作內容與特定產品有關，最好也附上產品的網頁，一樣能讓求職者更加了解狀況。</p>
+  <p>總之這五點是基本功，也是幾乎所有徵才文都會有的東西。</p>
+  <h3 id="section-2">二、面試流程</h3>
+  <p>這其實求職者的必問問題之一，那既然這麼多人都會問，而且最後都一定要回答，那何不把它寫在徵才文上面呢？而且現在的狀況是很多公司不會寫，所以你寫了就是加分，因為你的徵才文就是比其他人的清楚。</p>
+  <p>以我自己來說，面試流程我會想知道的事情有：</p>
+  <ol>
+    <li>有幾關</li>
+    <li>每一關是面誰（例如說是跟技術主管面，還是跟台灣負責人面之類的）</li>
+    <li>每一關的面試地點（線上還是公司）</li>
+    <li>每一關的面試內容（第一關技術，第二關人格特質之類的）</li>
+    <li>沒有錄取會不會收到通知信？還是是無聲卡？</li>
+    <li>面試完預計多久會有聯絡？</li>
+  </ol>
+  <p>有些如果礙於公司內部政策沒辦法寫或是沒辦法給個保證，可以先不寫上去但至少已經確定的可以寫。雖然不鼓勵發無聲卡，但就算要發也可以寫一下，讓大家先有個心理準備。</p>
+  <p>寫起來會像這樣：</p>
+  <blockquote>
+<em># 電話面試</em>  </blockquote>
+  <blockquote>
+<em>當我們收到履歷以後，會由 HR 跟您約時間，跟用人的單位主管進行簡單的電話聊天，大約 15~30 分鐘左右。</em>  </blockquote>
+  <blockquote>
+<em>我們希望透過這次的電話面試更進一步地認識你，在這一關也會有一些技術上的問答，除此之外也會讓您更加了解這個職缺的工作內容以及我們公司的狀況。</em>  </blockquote>
+  <blockquote>
+<em>無論通過與否，在結束後的一週內會收到後續通知。</em>  </blockquote>
+  <blockquote>
+<em># 面試第一階段</em>  </blockquote>
+  <blockquote>
+<em>面試的第一階段會在我們位於信義區的辦公室（接近捷運台北 101 站），面試官為部門的技術主管。在這關裡面會先讓您進行簡單的自我介紹，接著就是一些技術相關的問題，最後則是部門的技術主管會跟您簡單介紹我們公司以及部門的一些狀況。</em>  </blockquote>
+  <blockquote>
+<em>這一次面試的主軸會是技術。</em>  </blockquote>
+  <blockquote>
+<em>無論通過與否，面試完以後大約一至兩週會收到通知。</em>  </blockquote>
+  <blockquote>
+<em># 面試第二階段</em>  </blockquote>
+  <blockquote>
+<em>若是有通過第一階段，第二階段會與公司的 CEO 以及 HR 面試。這一階段不會有技術相關的測驗，面試內容是與人格特質有關，也會在這一階段談到公司的福利待遇，薪水也是在這一關會談。</em>  </blockquote>
+  <blockquote>
+<em>這是面試流程的最後一關，在面試的兩週內會通知結果。由於面試人選眾多，恕我們不一一通知結果。若是兩週內沒有收到結果，就代表很遺憾在這個階段沒有合作的機會，希望未來仍有機會能夠再合作。</em>  </blockquote>
+  <h3 id="section-3">三、技術分享簡報</h3>
+  <p>有些公司內部都會有一些技術的討論，無論是社團也好讀書會也好，或者是找外面的講師來也好，這些其實對於工程師來說都是加分的。</p>
+  <p>不過這不是每間公司都會有，但如果有的話請特別寫出來。而且光講說有社團或是讀書會是不夠的，因為很多公司也都只是徵才文上面會寫，但其實停辦了很久，所以若是能附上證明，會更有說服力一點。</p>
+  <p>如果公司內部分享的簡報能夠對外公開那就更棒了。</p>
+  <p>寫起來會像是這樣：</p>
+  <blockquote>
+<em># 技術分享</em>  </blockquote>
+  <blockquote>
+<em>公司內部有前端與後端技術交流社團，每兩週會舉辦一次活動，由同仁自主分享前後端相關議題，彼此互相交流成長，並由公司補助社團營運相關經費。</em>  </blockquote>
+  <blockquote>
+<em>前端最近三次的分享主題為：</em>  </blockquote>
+  <blockquote>
+<em>1. Web Security With Real World Example<br />2. 一個有趣的 styled component bug<br />3. How to do API mocking</em>  </blockquote>
+  <blockquote>
+<em>後端最近三次則是：</em>  </blockquote>
+  <blockquote>
+<em>1. ACID 的深入研究<br />2. Memory leak case study<br />3. ZeroMQ 介紹</em>  </blockquote>
+  <blockquote>
+<em>未來也可能會有 DevOps 或是 Security 相關的技術分享。</em>  </blockquote>
+  <h3 id="section-4">四、產品開發流程</h3>
+  <p>這點其實根據公司內部流程可以決定要不要寫，因為有些公司寫出來就是扣分，有些則是加分。假設某公司內部都是隕石式開發，那怎麼敢寫出來？</p>
+  <p>但如果內部產品開發流程還算 ok，至少相對上完整的話，我覺得就可以寫出來，因為有滿多工程師都希望能進入到一間開發流程比較完整的公司，所以會是加分項目。</p>
+  <p>寫起來大概像是：</p>
+  <blockquote>
+<em>我們內部分成幾個不同的 scrum team，進行每兩週一次的 sprint，在 sprint 開始時會開大約一小時的 planning meeting，決定這個 sprint 要做的事，在結束時也會開 retrospective 討論這次 sprint 做得好以及可以進步的事項。</em>  </blockquote>
+  <blockquote>
+<em>當一個新的需求出來時，大概會經歷以下流程：</em>  </blockquote>
+  <blockquote>
+<em>1. 由 PM 與 stakeholders 討論並整理出需求<br />2. 交由 UX 設計師思考使用者體驗<br />3. 與 PM、UI 設計師以及工程師一起討論有沒有執行上的困難<br />4. UI 設計師開始製作 mockup<br />5. 前端工程師拿到設計稿，開始開發<br />6. 開發完成，部署到內部測試環境給 QA 跑 E2E 測試以及手動測試<br />7. QA 測試完畢，讓 stakeholders 進行 User acceptance testing<br />8. 測試通過，部署到 production 環境</em>  </blockquote>
+  <h3 id="section-5">五、技術開發流程</h3>
+  <p>大家除了想知道一個需求是怎麼產生的以外，還會想知道工程師在技術上的開發流程，例如說有沒有 code review？用什麼協作平台？部署到哪邊？之類的這些問題。</p>
+  <p>寫起來會像是：</p>
+  <blockquote>
+<em>公司內部使用的程式碼協作平台為 GitHub，內部溝通為 Slack，開發上採用 Trunk Based Development。</em>  </blockquote>
+  <blockquote>
+<em>每開發一個新功能，就切一條 branch 出去，完成以後在 GitHub 上面開一個 Pull Request，並且 tag 兩名同事進行 code review，，拿到 approved 以後才能 merge。</em>  </blockquote>
+  <blockquote>
+<em>Merge 時會採用 squash + rebase 的方式來 merge，每一個 PR 只會保留一個 commit。</em>  </blockquote>
+  <blockquote>
+<em>在每次 sprint 結束的時候會針對技術的部分開一個會議，讓大家提出這兩週一些技術上需要討論的地方，例如說某個 PR 的寫法好不好之類的，進行大概半小時到一小時的技術討論。</em>  </blockquote>
+  <h3 id="section-6">六、其他細節</h3>
+  <p>這些東西不知道該怎麼分類，所以就都寫在一起了。</p>
+  <p>許多人沒有注意到的小細節，我覺得才是關鍵的差異。像是我在開頭中所說的徵才文裡面就寫著：</p>
+  <blockquote>
+<em>您之前所寄的履歷我們會印出來，所以您無需攜帶。</em>  </blockquote>
+  <blockquote>
+<em>但若是有任何您覺得可以加分、或是證明自己能力的文件或成果，歡迎攜帶相關資料</em>  </blockquote>
+  <p>看了這邊之後我就知道我去面試時不用自己印履歷，因為公司會準備，貼心，加分。</p>
+  <p>把前往公司的流程講得很詳細，對我來說也是加分（這個在開頭給的那篇面試流程裡有提到）：</p>
+  <blockquote>
+<em>公司地點在台北市信義區信義路四段 XX 號 7 樓，AA 大樓。請在一樓跟警衛說你要去七樓 DDD 公司面試並且換證，由於正值防疫期間，請記得配戴口罩進入大樓。抵達 7樓之後在門口右側有門鈴，按下之後請稍等一會，會有 HR 前往接待。</em>  </blockquote>
+  <p>在公司的設備方面也可以寫清楚，例如說：</p>
+  <blockquote>
+<em>公司目前配給工程師的設備為：</em>  </blockquote>
+  <blockquote>
+<em>1. 16-inch MacBook Pro(2.6 GHz i7 + 16GB RAM + 512GB SSD)<br />2. 32 吋 4K 螢幕</em>  </blockquote>
+  <p>如果公司對於參加技術研討會或是課程有補助也可以寫上去，開頭提到的那些履歷注意事項也可以寫，這些對我來說都是加分的事項。</p>
+  <p>在徵才文的排版上，如果能遵照<a href="https://github.com/sparanoid/chinese-copywriting-guidelines">中文排版指北</a>，在中英文之間加個空格，那就再好不過了。</p>
+  <h3 id="section-7">總結</h3>
+  <p>說實在的，我覺得其實就是將心比心四個字，你在求職的時候想知道什麼事，就在徵才文上面把那些事情都寫清楚。</p>
+  <p>徵才文其實某種程度上也反映了這間公司的文化，所以說穿了，這篇除了是「我理想中的徵才文」以外，也是「我理想中的公司文化」，開放、透明，並且在意細節。</p>
+  <p>寫了這一長篇，大家看了不一定會有感覺，那不如直接看範例吧！我跟兩位學生 <a href="https://github.com/Lauviah0622">Lauviah0622</a> 以及 <a href="https://github.com/krebikshaw">krebikshaw</a> 合作，由他們負責開發範例網站，我負責填寫內容，做出了一個範例的徵才網站（參考自財報狗），還有一個擬真的 Gmail 來模擬收到面試通知信的情況。</p>
+  <p>連結在這邊：<a href="https://lidemy.github.io/jd-example/jd/">https://lidemy.github.io/jd-example/jd/</a></p>
+  <p>網站原始碼：<a href="https://github.com/Lidemy/jd-example">https://github.com/Lidemy/jd-example</a></p>
+  <p>點下去之後就會看到假的徵才文，拉到最下面，按下「Apply to position」，就會進入到 Gmail 的畫面，點下面試通知信就能看到內容，就把整個我理想中的流程走完了。</p>
+  <p>最後，寫完這篇的心得其實跟之前寫完<a href="https://hulitw.medium.com/about-head-hunter-27fe1c28648f">獵人頭觀察報告</a>時一樣，我都只是從一個「客人」的角色去觀察怎樣可以做得更好，但我從來都不是「主人」。</p>
+  <p>我沒做過獵頭，也沒做過 HR，說不定我在徵才文上想看到的某些資訊，其實對大部分求職者是扣分的；說不定有些地方寫不清楚，反而能招來更多人；說不定有些東西僅管 HR 也想放，但礙於公司政策或是法規而無能為力。</p>
+  <p>也說不定這世界上只有一小撮人在意這些細節，對其他人來說都無關緊要。</p>
+  <p>但總之呢，這篇就是我目前對徵才文的看法，以後如果哪天換我寫徵才文，我會盡量朝這個方向去寫，若是碰到哪些窒礙難行或是想得太天真的地方，也會再來寫一篇文章更新一下實際狀況。</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=d72ec9cf5d0e" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2021-01-02</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-02/%E7%B7%9A%E4%B8%8A%E8%AA%B2%E7%A8%8B%E5%B9%B3%E5%8F%B0-Teachable-%E4%BB%8B%E7%B4%B9%E8%88%87%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/">
+          線上課程平台 Teachable 介紹與使用心得
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-12-08</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-08/%E9%87%91%E8%9E%8D%E4%BF%9D%E9%9A%AA%E7%A7%91%E6%8A%80%E5%85%AC%E5%8F%B8-OneDegree-%E5%B7%A5%E4%BD%9C%E5%8D%8A%E5%B9%B4%E5%BF%83%E5%BE%97/">
+          金融保險科技公司 OneDegree 工作半年心得
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-29</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-29/%E9%9D%A0%E8%BF%91%E9%86%AB%E9%99%A2-%E9%9B%99%E8%85%BF%E5%B0%B1%E6%AD%A2%E4%B8%8D%E4%BD%8F%E9%A1%AB%E6%8A%96-%E4%B8%AD%E5%9C%8B%E9%86%AB%E8%AD%B7%E7%96%AB%E6%83%85%E5%BE%8C%E5%BF%83%E7%90%86%E5%8F%97%E5%89%B5%E8%AA%BF%E6%9F%A5/">
+          靠近醫院，雙腿就止不住顫抖：中國醫護疫情後心理受創調查
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-09-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-14/%E8%88%87%E9%9B%AA%E8%B1%B9%E5%85%B1%E8%88%9E%E7%9A%84%E4%BA%BA/">
+          與雪豹共舞的人
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-11-13/%E7%BE%8E%E5%9B%BD%E7%9A%84%E9%80%89%E4%B8%BE%E4%B8%BA%E4%BB%80%E4%B9%88%E6%92%95%E8%A3%82%E4%BA%86%E5%8D%8E%E4%BA%BA%E7%BE%A4%E4%BD%93-%E8%AE%A9%E6%88%91%E4%BB%AC%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8-%E5%B7%9D%E7%B2%89-%E8%BF%99%E4%B8%AA%E8%AF%8D-iYouPort/">
+            前一篇：美国的选举为什么撕裂了华人群体：让我们避免使用“川粉”这个词 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-11-15/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E8%8F%AF%E5%83%91%E6%94%BF%E7%AD%96%E8%B2%8C%E4%BC%BC%E4%BD%8F%E6%B5%B7%E9%82%8A-%E7%AE%A1%E5%BE%97%E7%9C%9F%E7%9A%84%E5%BE%88%E5%AF%AC%E8%80%B6/">
+            後一篇：[外交雜聞]中華民國華僑政策貌似住海邊，管得真的很寬耶
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-11-13/%E7%BE%8E%E5%9B%BD%E7%9A%84%E9%80%89%E4%B8%BE%E4%B8%BA%E4%BB%80%E4%B9%88%E6%92%95%E8%A3%82%E4%BA%86%E5%8D%8E%E4%BA%BA%E7%BE%A4%E4%BD%93-%E8%AE%A9%E6%88%91%E4%BB%AC%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8-%E5%B7%9D%E7%B2%89-%E8%BF%99%E4%B8%AA%E8%AF%8D-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-11-15/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E8%8F%AF%E5%83%91%E6%94%BF%E7%AD%96%E8%B2%8C%E4%BC%BC%E4%BD%8F%E6%B5%B7%E9%82%8A-%E7%AE%A1%E5%BE%97%E7%9C%9F%E7%9A%84%E5%BE%88%E5%AF%AC%E8%80%B6/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-12-08/%E9%87%91%E8%9E%8D%E4%BF%9D%E9%9A%AA%E7%A7%91%E6%8A%80%E5%85%AC%E5%8F%B8-OneDegree-%E5%B7%A5%E4%BD%9C%E5%8D%8A%E5%B9%B4%E5%BF%83%E5%BE%97/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-10-29/%E9%9D%A0%E8%BF%91%E9%86%AB%E9%99%A2-%E9%9B%99%E8%85%BF%E5%B0%B1%E6%AD%A2%E4%B8%8D%E4%BD%8F%E9%A1%AB%E6%8A%96-%E4%B8%AD%E5%9C%8B%E9%86%AB%E8%AD%B7%E7%96%AB%E6%83%85%E5%BE%8C%E5%BF%83%E7%90%86%E5%8F%97%E5%89%B5%E8%AA%BF%E6%9F%A5/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-11-13/%E7%BE%8E%E5%9B%BD%E7%9A%84%E9%80%89%E4%B8%BE%E4%B8%BA%E4%BB%80%E4%B9%88%E6%92%95%E8%A3%82%E4%BA%86%E5%8D%8E%E4%BA%BA%E7%BE%A4%E4%BD%93-%E8%AE%A9%E6%88%91%E4%BB%AC%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8-%E5%B7%9D%E7%B2%89-%E8%BF%99%E4%B8%AA%E8%AF%8D-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-11-15/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E8%8F%AF%E5%83%91%E6%94%BF%E7%AD%96%E8%B2%8C%E4%BC%BC%E4%BD%8F%E6%B5%B7%E9%82%8A-%E7%AE%A1%E5%BE%97%E7%9C%9F%E7%9A%84%E5%BE%88%E5%AF%AC%E8%80%B6/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-12-08/%E9%87%91%E8%9E%8D%E4%BF%9D%E9%9A%AA%E7%A7%91%E6%8A%80%E5%85%AC%E5%8F%B8-OneDegree-%E5%B7%A5%E4%BD%9C%E5%8D%8A%E5%B9%B4%E5%BF%83%E5%BE%97/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-10-29/%E9%9D%A0%E8%BF%91%E9%86%AB%E9%99%A2-%E9%9B%99%E8%85%BF%E5%B0%B1%E6%AD%A2%E4%B8%8D%E4%BD%8F%E9%A1%AB%E6%8A%96-%E4%B8%AD%E5%9C%8B%E9%86%AB%E8%AD%B7%E7%96%AB%E6%83%85%E5%BE%8C%E5%BF%83%E7%90%86%E5%8F%97%E5%89%B5%E8%AA%BF%E6%9F%A5/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

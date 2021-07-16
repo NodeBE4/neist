@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？
+——
+" />
+    <meta property="og:description" content="
+爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？" />
+    <meta property="twitter:title" content="爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60a1f2d5f32c8269a3c52a94" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60a1f2d5f32c8269a3c52a94" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60a1f2d5f32c8269a3c52a94&text=爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60a1f2d5f32c8269a3c52a94&title=爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60a1f2d5f32c8269a3c52a94&title=爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？&body=
+爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60a1f2d5f32c8269a3c52a94" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60a1f2d5f32c8269a3c52a94&title=爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？&caption=
+爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？&url=https://www.allnow.com/post/60a1f2d5f32c8269a3c52a94" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-17
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 梁伊琪</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60a1f2d5f32c8269a3c52a94" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60a1f2d5f32c8269a3c52a94">爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？</a>
+——</p>
+
+<div>
+  <p>在日新月异的信息时代，互联网、大数据、人工智能这些概念，渐渐侵入我们生活的不同层面，人类通过文学从新时代的巨大变化中寻找启示。</p>
+  <p> </p>
+  <p>从菲利普·迪克于1968年出版的《仿生人会梦见电子羊吗？》起，科幻小说开始讨论人工智能的自主性问题。虽然如今机器人能够通过算法自主学习和决策，但离具备个人意识还很遥远。尽管如此，作家们仍不断发问：人工智能在多大程度上具有个人意识？拥有自主性的人工智能，会威胁人类吗？ 与担忧人工智能自主性不同，石黑一雄写《克拉拉与太阳》时，非常清楚这本书不会变成“人工智能统治世界”类型的小说。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a1fa97b9c34444a4624bd2" src="https://img.allhistory.com/now/2021-05-17/60a1fa959c232e04ae3f18a0+L.png" alt="《克拉拉与太阳》，[英]石黑一雄著，宋佥译，上海译文出版社2021年3月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《克拉拉与太阳》，[英]石黑一雄著，宋佥译，上海译文出版社2021年3月版
+    </figcaption>
+  </figure>
+  <p>《克拉拉与太阳》，是石黑一雄获得2017年诺贝尔文学奖后的第一篇小说。当年瑞典文学院的颁奖词称： “他的小说拥有强大的情感力量，在我们与世界连为一体的幻觉下，他揭露了一道深渊。”无论小说题材如何变化，石黑一雄关注的命题始终围绕着人类自身。</p>
+  <p> </p>
+  <p>于是，我们可以在《克拉拉与太阳》中看到，一个被设计来陪伴儿童的人工智能机器人克拉拉，和一个进行基因编辑后饱受疾病折磨的女孩乔西，向我们讲述着关于爱、死亡和机器人的故事。而石黑一雄，通过克拉拉和乔西的故事，向我们抛来一个个问题：爱是什么？人有灵魂吗？人类与机器的区别是什么？</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a1fab6ee4d864c459d5bb1" src="https://img.allhistory.com/now/2021-05-17/60a1fab59c232e04ae3f18a2+L.png" alt="《爱，死亡和机器人》概念海报" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《爱，死亡和机器人》概念海报
+    </figcaption>
+  </figure>
+  <p><strong>想象人工智能时代的爱和死亡</strong></p>
+  <p> </p>
+  <p>机器人取代人类，早已不是一种仅存于科幻小说的想象。机器技术不仅抢了流水线和办公室工人的饭碗，还渗入我们的日常生活。随着大数据和人工智能的发展，算法能够预测人类的喜好，精准地向我们推荐商品、餐厅、音乐和约会对象。人们无从选择地把选择权交给算法，已成常态，甚至无法分辨，到底是我们选择了算法，还是算法塑造了我们。</p>
+  <p> </p>
+  <p>于是，对自我的怀疑成为了人工智能时代的一层底色，这也是《克拉拉与太阳》的母题之一。石黑一雄在采访中提到：“既然人工智能都比我们自己更了解自己，人的存在还是独一无二的吗？”这种对人类存在的反思不仅限于自我，石黑一雄还将思考延伸至我们与他人的关系——对于我们的家人朋友而言，人工智能可以轻而易举地提供一个我们的数据化副本吗？人工智能是否会重新阐释“爱”的定义？ </p>
+  <p> </p>
+  <p>这些疑问，被写到《克拉拉与太阳》中来。因为基因编辑技术带来的后遗症，母亲已经失去一个女儿。看着二女儿乔西的身体每况愈下，母亲不仅担心和心疼女儿，还怕自己承受不了失去孩子的悲痛而崩溃。她企图将自己对女儿的“爱”，寄托在克拉拉上。于是，购买机器人克拉拉成为一场无意为之的精心策划。母亲恳求克拉拉彻底学习乔西的举止和内心，不是为了乔西，而是为了那些“爱”乔西的人。</p>
+  <p> </p>
+  <p>灵魂、爱和死亡，在《克拉拉与太阳》里紧紧缠绕。人工智能是否能复制和取代人类的灵魂？若能，那爱在人类肉体死亡后能否得以延续？石黑一雄并没有在小说里给出一个正面回答，而是通过不同角色的想法来引导读者思考。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a1fad4b9c34444a4624bd3" src="https://img.allhistory.com/now/2021-05-17/60a1fad24cd55d1f8948d549+L.png" alt="《克拉拉与太阳》场景概念图" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《克拉拉与太阳》场景概念图
+    </figcaption>
+  </figure>
+  <p>卡帕尔迪先生是制作人工智能版本乔西的负责人，他认为，“乔西的内核中没什么是克拉拉所无法延续的”。被卡尔帕迪先生和母亲寄予厚望的克拉拉也觉得，复制乔西是一个虽艰难但终有尽头的任务。只要用心观察乔西，就能演好乔西的角色。因为人心无论多么复杂，也一定有限。</p>
+  <p> </p>
+  <p>这些想法遭到乔西父亲的极度厌恶，但在父亲内心深处，他也害怕地怀疑卡帕尔迪先生和克拉拉是对的，“怀疑如今科学已经无可置疑地证明了女儿身上没有任何独一无二的东西”，而人们爱着彼此都是基于自我欺骗，此生最珍视的东西都是基于一种固守的对独一无二的迷信。</p>
+  <p> </p>
+  <p>人工智能影响了人类的生存方式，是小说，也是现实。通过父亲的不安，石黑一雄说出了自己的担心——人们在漫漫生命中，将独特性当做存在价值的证明，也将其定做与他人相爱的锚点。那当人工智能向我们造成冲击之时，我们如何重新认识以往固守的生存信条？人类将如何为自己找寻存在的价值？</p>
+  <p> </p>
+  <p>石黑一雄也通过克拉拉的转变，给出对独特性的另一番解读。父亲的愤怒让克拉拉发现，每个人心也许都是独特的，都有克拉拉不能触及的部分，乔西的也一样。但克拉拉无法彻底学习的那部分，不在乔西心里，而是在那些爱她的人心里。克拉拉可能真的无法替代乔西，不仅因为模仿能力不足，还因为他人对乔西无可替代的坚定迷信。</p>
+  <p> </p>
+  <p>事实上，克拉拉能否成功替代乔西，人工智能能否完全替代人类？我们无从得知，因为石黑一雄给了这个故事一个温暖的结局，乔西奇迹般地痊愈了，爱乔西的人们也无需在人工智能问题上再费神和痛苦。</p>
+  <p> </p>
+  <p>故事里的人们逃过一劫，却留给故事外的我们无尽思考。赋予爱人无可替代的独特性，是一针无法自抑的安慰剂，还是明知故犯的决定？不过，无论否认独特性，还是对其重新肯定，都将是我们在人工智能时代，对自己和他人的重新认识。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a1faef4e878e0826621f60" src="https://img.allhistory.com/now/2021-05-17/60a1faed4cd55d1f8948d54b+L.png" alt="《克拉拉与太阳》场景概念图" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《克拉拉与太阳》场景概念图
+    </figcaption>
+  </figure>
+  <p><strong>没有自我的机器人</strong></p>
+  <p> </p>
+  <p>与在科幻小说中统治人类的邪恶人工智能相反，克拉拉是一个体现“善”的人工智能形象。石黑一雄将《克拉拉与太阳》献给已经过世的母亲静子，他形容，克拉拉就像他的母亲一样，做的每件事都为了孩子能得到最好的照顾，且从不放弃希望。</p>
+  <p> </p>
+  <p>克拉拉迷信太阳，深信太阳拥有特殊的滋养能力，可以令人类起死回生，所以克拉拉一次次寻求机会向太阳祈祷，卑微地恳求太阳对病重的乔西格外开恩。石黑一雄希望通过克拉拉表达对人性的赞美：“父母为了孩子，总是不惜付出巨大的自我牺牲，这种发自本能的冲动就跟程序没什么区别。”除了像保护孩子的母亲，克拉拉有时像乔西的兄弟姐妹，有时像朋友。</p>
+  <p> </p>
+  <p>完全利他的克拉拉，却容易遭受观者的另一番怀疑——克拉拉拥有自我吗？《克拉拉与太阳》的译者宋佥看来，自私是自我里的重要元素：“没有了自私那下坠的中立，一切崇高、向上的人性也就虚无缥缈得失去了分量”。而这正是克拉拉匮乏的。克拉拉从不违背指令，甚至鲜少产生消极情绪。只在有可能被乔西抛弃时，克拉拉才产生为数不多的恐惧。女孩乔西在与同龄朋友聚会时，会忍不住地在小伙伴面前攀比逞强，像主人一样指挥着克拉拉。“去吧，克拉拉，”乔西说，“去跟那几个男孩问声好。”克拉拉没有动弹，因为乔西的声音让克拉拉吃了一惊，“不像是此前她对我使用过的任何一种声音”。毫无反应的克拉拉让乔西感到尴尬，她只好开玩笑地补充，“是时候要考虑换一个更新型号的人工智能了”。在这些时刻，克拉拉也只是机器人克拉拉，一个害怕被孩子抛弃的人工智能。</p>
+  <p> </p>
+  <p>自私和自我的问题，在美剧《黑镜》中也出现过。因为无法忘记车祸去世的丈夫，妻子使用人工智能让死去的伴侣复活。人工智能成为逝者的延续，甚至比原本的爱人更完美——从不对妻子说不，从未与妻子吵架。然而，妻子渐渐觉得不对劲，顺从指令的人工智能丈夫完美得不真实；她渐渐意识到，它只是一个抚慰丧亲之痛的玩偶。最后，妻子从自己编织的梦中醒来，接受人工智能无法代替爱人，而爱人无法回来。</p>
+  <p> </p>
+  <p>如果以自私作为衡量自我的标准，我们很难说克拉拉或者《黑镜》中的人工智能丈夫拥有自我。将机器人人性化，也许只是人类的一厢情愿。但我们可以清楚地看到，人类总是矛盾的。当人工智能被设置为完全利他的存在、全心全意为人类服务，人类开始嫌弃人工智能没有自我。而当人工智能拥有自主意识了，人类便无比恐惧其不受控制、威胁自己。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a1fb0e4e878e0826621f61" src="https://img.allhistory.com/now/2021-05-17/60a1fb0b9c232e04ae3f18a3+L.png" alt="《克拉拉与太阳》英文版封面" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《克拉拉与太阳》英文版封面
+    </figcaption>
+  </figure>
+  <p><strong>当我们谈论同情机器人时，我们在谈论什么？</strong></p>
+  <p> </p>
+  <p>作为一个AF（Artificial Friend），克拉拉被设计者赋予的首要任务，是保护和陪伴孩子，而克拉拉也一直尽忠职守，从未做出任何越轨行为。纵使如此，无害设定的克拉拉仍会经常受到人类的怀疑。母亲经常眯着眼睛看克拉拉，像是想把她看穿。管家在克拉拉初次进入家庭时就充满敌意，即使克拉拉试图做一些小事来取悦她，但管家除了发号施令，就是斥责克拉拉。当女孩乔西病得很重时，母亲和管家只有困得支撑不住了，才会去休息，尽管大家认为，观察力极强的人工智能克拉拉可能比任何人都更早发现危险的迹象，但出于“某种原因”，却又认为仅有克拉拉在场是不够的。</p>
+  <p> </p>
+  <p>面对人类的防备，克拉拉很快对自身处境作出判断，并做出行为反应。厨房角落的冰箱和卧室边缘的沙发，都是克拉拉在这个家庭的常驻地点。克拉拉隐没在没有太阳的阴影里，按照吩咐背对着人类，与冰箱和沙发作伴，一同识相地成为摆设。</p>
+  <p> </p>
+  <p>在书中许多人物看来，克拉拉不过是一件物品。人们对克拉拉工具属性的认定，渗透在表情、语言和行为中，随着情节展开而逐渐升级。当母亲恳求机器人克拉拉扮演女儿乔西，配合自己完成一场畸形的自我欺骗表演时，克拉拉的工具性到达了一个高峰。</p>
+  <p> </p>
+  <p>即使女孩乔西奇迹般地从疾病中痊愈、从孩子长大成人之后，克拉拉不需要充当乔西的精神副本，但还没耗尽自己在人类心中的工具性。当初为母亲制作人工智能乔西外壳的卡帕尔迪先生前来拜访，请求克拉拉参与“逆向工程”项目。他对人工智能怀有强烈兴趣，想让那些一直质疑人工智能的人瞧瞧克拉拉盖子下面是什么，来证明人类对人工智能的恐惧和偏见是杞人忧天。虽然卡帕尔迪的请求遭到母亲的拒绝，母亲说：“克拉拉理应得到善始善终，慢慢凋零。”但故事的最后，克拉拉仍然像一块垃圾，被弃置在垃圾堆场中。</p>
+  <p> </p>
+  <p>无论是面对人们高度戒备的敌意，还是一次次明目张胆的谋杀请求，克拉拉很少表达出消极感受。然而，读者以第一人称视角经历克拉拉的遭遇时会感受到一种反差，一边是人们向机器人克拉拉提出令人脊背发凉的要求，另一边是克拉拉面对这些可怕请求的冷静反应。尽管克拉拉没有用表情和语言表达情绪，但读者也能体会到一种失落感在蔓延。</p>
+  <p> </p>
+  <p>从这些看似合理但又形成巨大落差的情景中，石黑一雄向读者抛出道德议题：即便机器人没有任何感知，你会残忍地对待他们吗？你会对受虐待的机器人产生同情吗？</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a1fb514e878e0826621f62" src="https://img.allhistory.com/now/2021-05-17/60a1fb4e9c232e04ae3f18a5+L.png" alt="《克拉拉与太阳》场景概念图" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《克拉拉与太阳》场景概念图
+    </figcaption>
+  </figure>
+  <p>这些问题也让麻省理工学院媒体实验室的研究人员凯特·达灵（Kate Darling）很感兴趣。在人机关系领域拥有超过十年研究经验的达灵曾经做过一个实验，将五个恐龙宝宝机器人分发给五组受试者。这种机器人装备了触摸感应器和倾斜感应器，当人们倒过来抓住它时，它会发出哭声。达灵让受试者给恐龙宝宝机器人起名字，和它们一起互动约一个小时，然后拿出锤子和斧头，要求受试者杀死全部机器人。</p>
+  <p> </p>
+  <p>实验结果让比达灵惊讶，因为一些受试者甚至不忍敲打这些恐龙宝宝机器人。为了使受试者完成实验任务，达灵不得不威胁他们：“如果没人动手，所有机器人都会被摧毁。”其中一个受试者拿起了斧头，而当他砍中机器人的脖子时，整个房间的空气都仿佛凝固了，达灵形容这是一个幽默又严肃的时刻。</p>
+  <p> </p>
+  <p>“人们不忍伤害机器人”，不只是达灵在实验环境中得出的结果。2007年，美国军方正在测试一种用于拆除地雷的机器人。它的形状类似于竹节虫，会用自己的“腿”在雷区附近移动。每一次踩到地雷，它都会被炸掉一只“腿”，然后它会用其他“腿”继续移动，引爆更多地雷。用机器人排雷明显有利于保存兵力，然而负责测试的上校最终取消了这个项目。他说，看着这些伤痕累累的机器人在雷区挣扎前行，实在是惨无人道。</p>
+  <p> </p>
+  <p>现实生活中，机器人不存在“生命力”，没有痛苦感受和自主意识。那为什么会有人同情机器人？达灵分析，人们不想看到残忍的行为，不仅在于被虐者的感受，也在于人类自己的情绪。所以尽管机器人只是机器，但一旦虐待行为超过某个临界点，人们就会难以忍受。</p>
+  <p> </p>
+  <p>人们对待玩具、机器和动物的方式反映了人性的一面，在某种程度上也说明了人们会如何对待同类。如果我们习惯残忍地对待机器人，那可能会增长我们人性的暴戾一面。所以，当达灵谈论同情机器人时，谈论的并不只是“我们会对机器人产生同情吗？”，而且还是“机器人是否会改变我们的同情心？”</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a1fb72b9c34444a4624bd4" src="https://img.allhistory.com/now/2021-05-17/60a1fb704cd55d1f8948d54e+L.png" alt="机器人与人" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+机器人与人
+    </figcaption>
+  </figure>
+  <p><strong>克拉拉与太阳：爱，死亡和机器人</strong></p>
+  <p> </p>
+  <p>透过克拉拉的眼睛，我们重新认识和适应人工智能时代下的人类社会。在被切为十个方格的视野空间中，克拉拉看着街道墙上的“卡通文字”，看着人们盯着“矩形板”来来去去，看着被人工智能取代的失业者燃烧愤怒与暴力，看着没有经过基因编辑“提升”过的孩子被孤立，看着街上疲惫跟随的男孩AF和一个巴不得他走开的孩子，看着自己照顾的乔西渐渐长大离家而去，看着自己独自在垃圾堆场里整理一生的回忆。</p>
+  <p> </p>
+  <p>在科幻外壳包裹之下，《克拉拉与太阳》更多想讨论爱和人性。你相信有“人心”这回事吗？某种让我们每个人成为独特个体、爱上某个人、甚至同情机器人的东西。</p>
+  <p> </p>
+  <blockquote>
+    <p>参考文献</p>
+    <p>1. 石黑一雄-《克拉拉与太阳》https://book.douban.com/subject/35315153/</p>
+    <p>2. GQ报道-专访石黑一雄：谁生，谁死，谁讲述故事？https://www.thepaper.cn/newsDetail_forward_12215154</p>
+    <p>3. 澎湃新闻-专访｜诺贝尔文学奖得主石黑一雄：人工智能与人性https://www.thepaper.cn/newsDetail_forward_11518393</p>
+    <p>4. BBC-机器人应该享受“机器人权”吗？https://www.bbc.com/ukchina/simp/vert_fut/2015/08/150817_vert_fut_would-you-murder-a-robot</p>
+  </blockquote>
+  <p> </p>
+  <blockquote>
+    <p>梁伊琪，曾留学香港攻读传播学，关注科技对人类生活的影响、性别、劳工等议题。</p>
+  </blockquote>
+  <p> </p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-18</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-18/%E6%88%98%E7%81%AB%E4%B8%AD%E6%9C%B1%E5%88%A9%E5%AE%89-%E5%B7%B4%E6%81%A9%E6%96%AF%E8%8E%B7%E9%A2%81%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7%E6%96%87%E5%AD%A6%E5%A5%96-%E7%A7%B0%E5%B8%8C%E6%9C%9B%E6%98%8E%E5%B9%B4%E8%83%BD%E4%BA%B2%E8%B5%B4%E9%A2%86%E5%A5%96/">
+          战火中朱利安·巴恩斯获颁耶路撒冷文学奖，称希望明年能亲赴领奖
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-18</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-18/%E4%B8%AD%E5%9B%BD%E6%AD%A6%E4%BE%A0%E5%85%A8%E7%90%83%E4%BC%A0%E6%92%AD%E5%8F%B2-%E5%A4%96%E5%9B%BD%E4%BA%BA%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%AD%A6%E5%8A%9F-%E8%8B%B1%E9%9B%84-%E4%BE%A0%E4%B9%89%E5%92%8C%E6%B1%9F%E6%B9%96/">
+          中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/">
+          马克·吐温在美国课堂：因朗读时出现歧视性词汇，教授被举报解雇
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-16</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-16/%E6%88%98%E4%BA%89%E4%B8%8E%E9%9D%A9%E5%91%BD%E6%97%B6%E6%9C%9F%E7%9A%84%E8%A5%BF%E5%8D%97%E8%81%94%E5%A4%A7-%E5%9C%A8%E8%87%AA%E7%94%B1%E6%B0%91%E4%B8%BB%E4%B8%8E%E6%B0%91%E6%97%8F%E5%A4%A7%E4%B9%89%E4%B9%8B%E9%97%B4/">
+          战争与革命时期的西南联大：在自由民主与民族大义之间
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/">
+            前一篇：马克·吐温在美国课堂：因朗读时出现歧视性词汇，教授被举报解雇
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-17/%E4%BB%A5%E8%89%B2%E5%88%97%E8%A2%AD%E5%87%BB%E5%8A%A0%E6%B2%99%E4%BA%8B%E4%BB%B6%E4%B8%AD%E5%93%AA%E4%BA%9B%E8%99%9A%E5%81%87%E6%B6%88%E6%81%AF%E5%9C%A8%E6%B5%81%E4%BC%A0-%E4%BB%A5%E5%8F%8A%E7%BE%8E%E5%9B%BD%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%94%AF%E6%8C%81%E4%BB%A5%E8%89%B2%E5%88%97-iYouPort/">
+            後一篇：以色列袭击加沙事件中哪些虚假消息在流传，以及美国为什么要支持以色列 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-17/%E4%BB%A5%E8%89%B2%E5%88%97%E8%A2%AD%E5%87%BB%E5%8A%A0%E6%B2%99%E4%BA%8B%E4%BB%B6%E4%B8%AD%E5%93%AA%E4%BA%9B%E8%99%9A%E5%81%87%E6%B6%88%E6%81%AF%E5%9C%A8%E6%B5%81%E4%BC%A0-%E4%BB%A5%E5%8F%8A%E7%BE%8E%E5%9B%BD%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%94%AF%E6%8C%81%E4%BB%A5%E8%89%B2%E5%88%97-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-18/%E4%B8%AD%E5%9B%BD%E6%AD%A6%E4%BE%A0%E5%85%A8%E7%90%83%E4%BC%A0%E6%92%AD%E5%8F%B2-%E5%A4%96%E5%9B%BD%E4%BA%BA%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%AD%A6%E5%8A%9F-%E8%8B%B1%E9%9B%84-%E4%BE%A0%E4%B9%89%E5%92%8C%E6%B1%9F%E6%B9%96/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-17/%E4%BB%A5%E8%89%B2%E5%88%97%E8%A2%AD%E5%87%BB%E5%8A%A0%E6%B2%99%E4%BA%8B%E4%BB%B6%E4%B8%AD%E5%93%AA%E4%BA%9B%E8%99%9A%E5%81%87%E6%B6%88%E6%81%AF%E5%9C%A8%E6%B5%81%E4%BC%A0-%E4%BB%A5%E5%8F%8A%E7%BE%8E%E5%9B%BD%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%94%AF%E6%8C%81%E4%BB%A5%E8%89%B2%E5%88%97-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-18/%E4%B8%AD%E5%9B%BD%E6%AD%A6%E4%BE%A0%E5%85%A8%E7%90%83%E4%BC%A0%E6%92%AD%E5%8F%B2-%E5%A4%96%E5%9B%BD%E4%BA%BA%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%AD%A6%E5%8A%9F-%E8%8B%B1%E9%9B%84-%E4%BE%A0%E4%B9%89%E5%92%8C%E6%B1%9F%E6%B9%96/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

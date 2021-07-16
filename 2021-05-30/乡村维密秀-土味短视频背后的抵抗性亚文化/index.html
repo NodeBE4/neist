@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>“乡村维密秀”：土味短视频背后的抵抗性亚文化 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+“乡村维密秀”：土味短视频背后的抵抗性亚文化
+——
+" />
+    <meta property="og:description" content="
+“乡村维密秀”：土味短视频背后的抵抗性亚文化
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="“乡村维密秀”：土味短视频背后的抵抗性亚文化" />
+    <meta property="twitter:title" content="“乡村维密秀”：土味短视频背后的抵抗性亚文化" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60b32582ac95bf78e1cbadd3" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60b32582ac95bf78e1cbadd3" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60b32582ac95bf78e1cbadd3&text=“乡村维密秀”：土味短视频背后的抵抗性亚文化&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60b32582ac95bf78e1cbadd3&title=“乡村维密秀”：土味短视频背后的抵抗性亚文化" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60b32582ac95bf78e1cbadd3&title=“乡村维密秀”：土味短视频背后的抵抗性亚文化" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=“乡村维密秀”：土味短视频背后的抵抗性亚文化&body=
+“乡村维密秀”：土味短视频背后的抵抗性亚文化
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60b32582ac95bf78e1cbadd3" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60b32582ac95bf78e1cbadd3&title=“乡村维密秀”：土味短视频背后的抵抗性亚文化&caption=
+“乡村维密秀”：土味短视频背后的抵抗性亚文化
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=“乡村维密秀”：土味短视频背后的抵抗性亚文化&url=https://www.allnow.com/post/60b32582ac95bf78e1cbadd3" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>“乡村维密秀”：土味短视频背后的抵抗性亚文化</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-30
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60b32582ac95bf78e1cbadd3" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60b32582ac95bf78e1cbadd3">“乡村维密秀”：土味短视频背后的抵抗性亚文化</a>
+——</p>
+
+<div>
+  <p>在当下的语境中，“亚文化”早已不是什么新鲜的视角，然而亚文化以何种方式干预主流文化，并以何种形式呈现，不同的干预方式背后会带来何种不同的效果和文化意涵，则少有人谈论。</p>
+  <p>在一线城市青年人眼中，由更“下沉”的短视频创作者生产的短视频们成为了一种消遣和消费的对象，点亮了无数个996归家后疲累不堪的手机屏幕。在B站，经常可以见到“土味挑战”一类的视频，主要形式则为一个新潮的年轻人观看“土味视频”集锦，进而选择出哪一个视频是最“土”的。</p>
+  <p>而在诸如“郭老师”、“giegie”、“麦的垛朱尼尔”等短视频创作者或博主已经成为当下年轻人口中的“顶流”的背后，除了分析观看过程中“土味视频”生产者处于被观看地位，主体性遭到剥夺的权力视角外，这些视频也成为了当下“亚文化”的组成部分，并以特殊且具有破坏性的方式重构着当下的文化话语权力和生成方式。</p>
+  <p>在社会科学文献出版社2020年12月出版的《话语与赋权：中国乡村影像研究》一书中，武汉大学新闻与传播学院教授刘娜则在这一视角下重新审视“土味视频”，并提出戏仿、反讽、表白、拼贴、重构五种“土味视频”对主流文化的挑战方式，并一一加以诠释。下文选自《话语与赋权》，由社会科学文献出版社授权刊发。</p>
+  <p><strong>乡村网络短视频的亚文化特性与抵抗</strong></p>
+  <p>“亚文化”（subculture）是通过风格化的方式挑战正统或主导文化以建立集体认同的附属性文化形态。与主流文化相对照，其群体与风格属性都相对较为多元。主流文化，符合世界大众的普适价值观，在大部分时间、空间当中，是在无形中规范人们语言、行为、思想的标准轨道。当某一行为脱离标准轨道时，即很有可能触犯大众的道德敏感点，遭到大众鄙夷。最终，不触碰法律的偏支轨道逐渐形成亚文化，并有一大群人顺此路而行，与主流标准轨道并存。</p>
+  <p>亚文化是通过风格来呈现的，亚文化群体的抵抗行为是通过风格来进行诠释的。风格是对不同事物类型与审美的分类。风格既囊括了、亚文化所创造的一系列文化文本、亚文化所制造出的各种独特的表现方式，即动漫、符号、语言文字、衣着风格等，还意指亚文化最核心的文化体系结构方式，即他们是依据什么逻辑解释这种亚文化的。</p>
+  <p>收编是主流文化对亚文化的抵抗做出的回应。意识形态作为权威，为了消解亚文化的抵抗性、异常性，会对亚文化的文化产品、符号元素等进行重新界定，在给予其合法性的同时，消解其对抗性，将其纳入主流话语体系之下进行管控。商业手段是消费社会最有效的收编方式，把代表亚文化的元素、文字、音乐、物件转换成商品出售，通过利益诱惑进行逻辑覆盖。</p>
+  <p>快手因其独特的用户下沉发展定位，吸引了大量三四线城镇居民用户，其中乡村居民占比最大，受教育程度和收入水平相对较低、生活物质条件不高是大部分用户的典型特征。快手将散落在各地的同类人在线上连接在了一起，在赛博空间形成了一个网络聚落，展现着被定义为底层人的生存现实，并逐渐在内部形成具有亚文化特征的表达文本与风格，重塑了群体文化行为习惯与精神归宿。</p>
+  <p>网络短视频是快手亚文化圈的直接文化产品，这些短视频内容主题丰富，如具有一定剧情发展和叙事逻辑的短视频、背景音乐搭配人物行为活动的场景、纯粹的碎片化生活记录、聊天式的自拍自录、个人才艺展示等，体现着快手用户群体的创造意识，涵盖多种现实投射与象征隐喻。本文将此类快手短视频当作亚文化文本进行观察，从主题内容到其所形成的抵抗风格、内涵的价值审美试做解读；也将从文化间性角度讨论两种文化的勾连脉络。风格是亚文化学派区分彼此的标志。本文结合乡村网络短视频试做其风格的分析，探寻乡村网络短视频的抵抗性仪式。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-30/60b3287c4cd55d54dd5dac98+L.jpg" data-id="60b328808717253efd7e2b91" alt="《话语与赋权：中国乡村影像研究》，刘娜著，社会科学文献出版社2020年12月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《话语与赋权：中国乡村影像研究》，刘娜著，社会科学文献出版社2020年12月版
+    </figcaption>
+  </figure>
+  <h2 id="section"><strong>戏仿：我们为什么不能有同样的话语权力？</strong></h2>
+  <p>戏仿一词来源于“parody”，在《牛津英语大词典》中有两个层面的含义，一方面指起到滑稽效果的模仿，另一方面指拙劣的模仿。</p>
+  <p>在戏仿中存在升格和降格两种手法，前者描述平凡的事物，表现风格崇高、宏伟；后者内容描述庄重的事物，表现风格却是贬低、嘲弄、粗鄙的。降格的手法在快手文化中最为明显。戏仿往往有调侃、戏谑被模仿者的意味，且热衷于对主流文化中传统、权威、具有艺术价值、获得大家肯定评价的经典符号、元素、文本、物件等进行模仿。</p>
+  <p>翻拍影视剧情是快手短剧中的一大主题，大多以比较经典的电视剧为剧本，快手制作者重新扮演其中的角色，仿照剧中人物的衣着打扮、发型妆容，重新演绎其中的情节。他们往往选取矛盾突出、情感强烈的片段，仅仅是不完整的、代表性展现，不会根据剧情走向连续拍摄多部短剧，如《回家的诱惑》、《情深深雨濛濛》。</p>
+  <p>快手用户对热门古装剧尤为青睐，如《花千骨》、《三生三世十里桃花》、《新白娘子传奇》等就是热门界面最常见到的翻拍视频。大多演员并没有戏服和道具，而是通过日常生活中的物料进行幽默、戏谑的再创造，白色被单和窗帘都可以用来当做宽大的古装衣袍，将卫生纸戴在头上当做白娘子的发饰，把锅盖当做依萍在大上海卖唱表演时的话筒，甚至擀面杖都被赋予了刀剑的意义……</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-30/60b32ac79c232e01c17d1627+L.jpg" data-id="60b32acbafa7517017e4d810" alt="乡村F5" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+乡村F5
+    </figcaption>
+  </figure>
+  <p>流行音乐、明星亦是快手用户戏仿的对象，音乐MV里的豪车被乡间生产用车替代，炫目的舞台场景被田地、砖瓦房和贴有小广告的水泥墙替代，茄子、黄瓜、拖鞋都可以被当作话筒，与歌手明星同样的姿势、表情被重新镶嵌在新的背景中，土味“飞轮海”、“乡村F4”就此诞生。除此之外，代表潮流最前沿的“维多利亚的秘密”秀场也被快手用户戏仿，几位乡村青年利用乡野植物、简单的物料也举行了一场乡村维密秀。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-30/60b32af29c232e01c17d1628+L.gif" data-id="60b32af78717253efd7e2b9c" alt="<strong>乡村维密秀</strong>" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+<strong>乡村维密秀</strong>
+    </figcaption>
+  </figure>
+  <p>随着城市掀起一阵“抖音舞”的热潮，这种配着音乐做出舞蹈动作的表达形式也成为快手争相戏仿的对象。不论是“海草舞”“俄舞”，还是各种“手指舞”，通过快手乡村用户的演绎又呈现出不同的审美意味，原本在城市语境中的时尚动作转移到乡土的生产生活环境中，仿佛又传达着乡村对大众文化的解构性理解，具有滑稽的反抗意味。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-30/60b32a879c232e01c17d1625+L.jpg" data-id="60b32a8a8717253efd7e2b99" alt="乡村维密秀" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+乡村维密秀
+    </figcaption>
+  </figure>
+  <p>这些“演员”口音浓重，讲起台词来生涩生硬，观众一眼就可以看出背台词的痕迹。但恰恰是非专业、戏谑的“尬演”和拙劣的场景、服饰为短剧增添了滑稽色彩，成为观众调侃打趣的笑料。</p>
+  <p>对于拍摄者、表演者来说，惟妙惟肖的演技并非他们所追求的目标，他们的模仿更多地带有破坏性意味，这种对城市时尚文化的降格呈现作为一种自我满足、自我娱乐、自我欣赏的方式，是乡村网络短视频用户强烈表达欲的体现。他们希望通过一系列的搞笑剧集，质问为何他们这个亚文化群体不能享有同样的待遇与话语权力，试图通过对主流文化的戏剧性模仿，将其作为讽刺与表达自身不满的工具，试图消解主流文化的权威与不可侵犯性，将其拉下“神坛”。</p>
+  <h2 id="section-1"><strong>反讽：歇斯底里的呐喊和毅然离去的背影</strong></h2>
+  <p>反讽（irony）在古希腊的戏剧中是指假装无知的人，常常说着与本来意义相反的话，为了表扬而贬低，抑或是为了批判而表扬，达到歪曲、戏弄和嘲讽的戏剧效果。到了18世纪末德国浪漫主义运动开始时，反讽被新批评、解构主义、美学、叙事学等领域进行了新的解读。最初的反讽研究大多集中于对语言、文字的分析，随着反讽艺术更广泛地应用到文学艺术、日常生活、文化发展等各个方面，图像、视频等媒介符号都可以上升为一种特殊的反讽艺术载体。青年亚文化群体往往对主流文化充满抵触与抗拒心理，为彰显独特个性的价值审美，更趋向于使用反讽等反抗手法宣扬存在感，在快手乡村网络短视频中反讽的手法亦是非常突出的乡村表达。</p>
+  <p>反讽的本质特征是存在表面意义和实在意义两种意义，核心思想大多是对社会不公的投射。乡村网络短视频中有很多因女朋友嫌弃男朋友没钱而发生的爱情悲剧，表面意义是反映了一段故事发展，反映了当代青年的爱情观，其实在意义是通过男主角声嘶力竭的呐喊和女主角毅然离去的对比，揭露拜金主义的社会现象。在故事主人公被欺负时，突然出现的社会小弟为主人公壮大气势，最后反而成了欺负别人的一方。短视频往往通过在末尾设置揭露主人公帮派老大的身份来实现反转，虽然通过这种方式传达出不要欺软怕硬的观念，但最后仍旧通过黑色幽默的结局讽刺了以大欺小的社会生存法则。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-30/60b32d179c232e01c17d162c+L.gif" data-id="60b32d23afa7517017e4d816" alt ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture"></figcaption>
+  </figure>
+  <p>在网络短视频中，“高、大、全”的人物形象出现了解构与颠覆，许多代表正义善良的英雄人物也有了不一样的身份，英雄不再那么完美，更多的是从小人物的视角展现，灰头土脸、衣衫褴褛的乞丐可以给正在筹钱救命的路人捐钱，地痞路见不平也会拔刀相助，反而是衣着光鲜，被定义成“上层人士”的人在视频作品中显露出各种缺陷。不论是“草根”阶层，还是边缘群体，都可以在乡村网络短视频中变成人生主角。这种对比、反差意义实则是一种宣泄和反抗，现实世界的弱势并不能否认他们的存在价值，他们用身份反转的方式进行自嘲，蔑视主流文化，反对崇高，在这种调侃中对意识形态中心化的价值进行祛魅。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-30/60b329064cd55d54dd5dac9b+L.jpg" data-id="60b329098717253efd7e2b95" alt="小剧场" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+小剧场
+    </figcaption>
+  </figure>
+  <p>不论是戏仿还是反讽，都具有颠覆原有意义和概念的作用，达到消解视频内容的效果，但同时也面临着反讽意义被误解的危险。快手短视频中的反讽本意是刺痛社会不公的现实，抑或是对金钱权势、社会话语的鞭挞，但是由于理解能力不同，尤其是快手大部分用户的教育水平不高，在受众解码的传播环节中较难感知到视频作品深层次的反讽意义，以至于反讽变成了反映社会现实，视频所展现的社会习气、审美畸形、拜金主义等都成了受众深以为然的价值选择，尤其是青少年、儿童心智不成熟，极易受到影响。如受到侮辱然后通过扇巴掌、泼矿泉水等激烈手段解决冲突的故事情节在快手短视频中屡有出现，视频的本身价值在于引发受众对矛盾和暴力的反思，却因这些元素备受欢迎，让受众感到“解气”“爽”“打得好”“有牌面”，如果反讽没有精神向度的思考，就会流于叙事。</p>
+  <p>用户再次制作视频时更倾向于诉诸刺激，受众会再次受到影响，在乡村短视频的亚文化圈中渐渐潜移默化地塑造了扭曲的判断，渲染了对金钱、暴力情绪和权势的盲目崇拜，不恰当的方式成了对各种矛盾的想象性解决方式。长此以往，通过网络短视频展现出来的乡村形象也被贴上了非理性、庸俗化等标签，这与反讽的艺术意义大相径庭，为了引导社会的良性运转，主流意识形态必须在必要时期加以干涉。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-30/60b32caa4cd55d54dd5daca4+L.gif" data-id="60b32cc68717253efd7e2b9d" alt ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture"></figcaption>
+  </figure>
+  <h2 id="section-2"><strong>表白：释放情绪的所言即所指</strong></h2>
+  <p>如果说所言非所指是反讽的首要特征，所言即所指就是表白手法的判断标准了。和其他手法相比，表白是最直接的一种抵抗风格，乡村短视频中主人公往往通过讲述经历、分享感受、发表评论等方式袒露情绪、表明立场。</p>
+  <p>乡村短视频中的表白很大一部分是出现在展现乡村人辛苦劳作的场景中。上山采摘野菜、砍柴、摸鱼都是乡村人热衷记录的生活题材，他们也常常在画面中感叹“生活不容易”“山里人就是累”“13岁就撑起了这个家”，在倾诉农村孩子太辛苦的同时，也以此鼓励乡村继续奋斗的乐观态度。他们的视频中有抱怨，但是更爱表现他们坚强的体魄与态度，所以在标签中常常见到“懂事的孩子”“给山区孩子点个赞”“再苦也要坚持”等话语。</p>
+  <p>不同于日常生活的纪录，在许多有故事情节的小短剧中表白则表现为对社会现实的不满。当快手短剧网红阿伟遇到有人嘲讽他老婆身材不好时，他说“她胖怎么了？她胖就不该有真爱吗？老婆胖不丢人，心美自然美”；当有人瞧不起街边的乞丐时，阿伟说“尊重是相互的，尊重别人也是尊重自己”；当面对女朋友的嫌弃时，他说“爱情本来就很卑微，爱得越深输的越多”。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-30/60b3295c4cd55d54dd5dac9e+L.jpg" data-id="60b3295fab4ffd0cef1c489d" alt="giao哥" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+giao哥
+    </figcaption>
+  </figure>
+  <p>这些表白和观点的抒发不仅仅是剧情需要，其实也在向受众传递一种价值观。世界嘈杂纷乱，面对生存与社会的压力时，人们内心常常充满焦虑、压抑、冲突等负面情绪，而乡村短视频以“无厘头”、短剧抑或是纯粹聊天的形式提供了一个可供释放情绪的通道。人们从轻松愉快的调侃中获得新的力量，或者被某些话语鼓励得到心灵的解放，或在正能量的短视频中找到坚定的方向。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-30/60b32a104cd55d54dd5daca0+L.png" data-id="60b32a17afa7517017e4d80f" alt="乡村西游记" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+乡村西游记
+    </figcaption>
+  </figure>
+  <p>表白大多时候充满视频制作者强烈的个人情绪，因此也常常最能打动人心从而影响受众认知。尤其在一种亚文化圈中，这种明确的表白与精神传达对一个群体的自我认同尤为重要，会激发群体内的受众开始思考“我是谁”以及“我们是谁”的核心问题。许多村民在其视频作品中会毫不掩饰自己的乡村身份，直接点明“我们农村人”“我是个村里娃”“我没什么文化”等，甚至在对许多电视剧的戏仿中会取“农村至尊宝”“西游记乡村版”类似的名字。</p>
+  <p>弗洛伊德曾提出，人有意识和潜意识，潜意识被压抑在人的心灵深处，以期获得解放，人为这种本能的作用反复寻求释放压抑的途径，道德的约束成为一种障碍，本能便寻求各种各样的隐秘、迂回的途径，以逃避意识形态部门的检查。乡村短视频中的诸多话语、标签和姿态等都折射出乡村人的生存状态，以及乡村和城市之间的鸿沟，在这种乡村被孤立与歧视的困境下，乡村短视频中的表白增强了群体的凝聚力，也使整个群体的活动上升到亚文化的意义层面，使受众在这个线上空间获得某种程度的情感与心理补偿。</p>
+  <h2 id="section-3"><strong>拼贴：对物品的挪用和意义的篡改</strong></h2>
+  <p>拼贴作为一种生产手法，在绘画、布艺、影像等方面都有运用，以“多元、并存、随意、借用”为理念，具有自动构想性、主题非理性和变形可能性等特点。拼贴就是把不同的事物、不同的意象堆放在一起，没有固定的逻辑和架构，如毕加索把报纸、商品标签、不同材质的物料拼贴在画布上，创造出新的视觉空间。在文化研究领域，亚文化群体打破已有符号意义系统，通过重组进行新的风格和所指的创造的过程就是“拼贴”（bricolage）的方式。“青年亚文化的风格是一种社会符号式的隐喻，它不是凭空创造或想象出来的，它要借助于已有的物品体系和意义系统，通过对这些物品的挪用和对意义的篡改来实现。”</p>
+  <p>在快手短视频中，用户并不是毫无逻辑地去创造虚无的意义，而是把现实生活中的各种材料重新理解，借用到另一个场域中，赋予其新的内涵。拼贴体现为对多种文化层次符号的创意拼接，并将快手文化的核心渗透其中，用蒙太奇的剪辑手法通过隐喻、象征讲述自己的观点和故事。快手短视频的拼贴有对现有表达元素的挪用、对语言原本意义的篡改，重新定义了所指，在属于快手文化的语境中构成新的视听文本。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-30/60b32d6e9c232e01c17d162d+L.png" data-id="60b32d758717253efd7e2b9f" alt="3锅儿" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+3锅儿
+    </figcaption>
+  </figure>
+  <p>如快手“网红”“3锅儿”装扮成韩国女团After School拍摄MV，“3锅儿”在乡村田地中出场崴脚摔了跤发出一声惨叫，之后的镜头中都是破旧拖鞋，道具高跟鞋和乡土风光的拼贴组合象征着消费社会和乡土社会审美趋向的差异，城市以美丽为主导，而乡村则是以舒适、实用为选择依据；接着是三个人从垃圾桶中站起来，学着女团的舞姿摆动身体，在饲养牲畜的窝棚里跳舞，光鲜亮丽和混乱拼贴在一起，被当作时尚前沿的动作与垃圾桶、乡村生产场景的奇异结合象征着不同层次文化之间的对抗和交流，表达着他们对流行文化的自我解读与诠释。</p>
+  <p>在具有恶搞意味的乡村短视频中，制作者将各不相干的事件、流行的段子、行为言谈剪辑在一起，形成了错综复杂的时空场景。在影视剧的模仿秀中，常常可以看到多部电视剧融合在同一个短视频中，内容从玄幻、武侠再到城市言情等，每个影视元素并无直接关联，仅仅通过移植与拼贴突破了上下语境的限制而产生了新的上下文语境，并以一种无休止的方式和态度发展下去。</p>
+  <p>拼贴的手法于此并不强调叙事意义，而是打破了线性的叙事，企图营造意识流小说般的体验，进一步增强了视频作品的立体感和交叉感，同时通过对主流文化符号系统的挪用与再造，模糊了主流与非主流之间的界限，消解了规范、权威的严肃性。对某些完整作品的拆分则破坏了其整体性，快手乡村亚文化就在这种拆解、重组的创造过程中体验颠覆性快感。</p>
+  <h2 id="section-4"><strong>同构：打破原有形态后的再次创造</strong></h2>
+  <p>罗兰·巴特于《符号学原理》一书中，将“语言结构以不可察觉、不可分离的方式胶合在一起的现象称为同构”。区别于拼贴的模式，同构是把内容与性质都差异很大的元素融合在一起。</p>
+  <p>网络短视频作为一种新的影像表达形式，其内容又涉及多种元素和内涵，而亚文化是一种群体性文化形态，二者在属性上并不能直接产生关联，而是通过同构融合成为互为表里、互相支撑的复杂综合体。同构成为影像和文化之间沟通、化合的桥梁。单纯就网络短视频的媒介特质来看，其时长较短，这就要求表达的故事、情节更具矛盾性和强节奏性以尽快吸引受众的“眼球”，导致网络短视频在不断发展中具备了反传统、突破陈规的性质。同时用户大部分是年轻群体，网络短视频以无门槛的视频制作为重要支撑，具备了欢迎“草根”、崇尚个性、鼓励自由的独特风格。而正是这些属性契合了亚文化的反叛、打破权威、创新的精神，网络短视频和亚文化之间就产生了同构关系。</p>
+  <p>在符号学中，同构的规则有同质异构和异质同构两种，而在乡村网络短视频中以前者居多。“同质异构是用一种元素的形，通过对形的巧妙变化来打破原有的形态，重组成多种新的表现符号，用以表达多种意识形态和语言形态。一般来讲，形、意并存是同质异构的基本特征。”“质”是指网络视频内涵的意义与意识形态等，而“构”则理解为各种影像表达元素、形式与规则等。在乡村网络短视频中，许多拍客故意穿着破旧的衣服，以灰头土脸的形象出现，有的讲着地方方言，还有的突出牛羊牲畜、农田、砖瓦房等乡土元素。这些不同性质的表达形式其实都彰显出乡村的自我身份界定，传达着乡村群体发声的需要。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-30/60b32c074cd55d54dd5daca3+L.gif" data-id="60b32c23ab4ffd0cef1c48a6" alt="手工耿" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+手工耿
+    </figcaption>
+  </figure>
+  <p>当我们讨论一种文化、规则伦理、观念时，我们往往会发现其内部的同构性不仅仅起着将各种琐碎元素黏合在一起的作用，还对这种文化进行规制。乡村文化之所以能成为一种区别于主流、大众而存在的亚文化，是因为其存在独具特色、具有标志性、不可随意更改的理念与文化符号，其通过一系列象征自身群体精神的符号进行意义建构，并以此来实现内部的相互交流与凝聚。这种文化习惯逐渐通过同构的手法固定下来。固定则意味着拒绝了多元发展的可能性，文化自由发展的生命力也被限制了，能指和所指的关系也被确定下来，具有唯一性。也就是说，统一性和规制性是同构对文化发展同时存在的两种趋向。</p>
+  <p>比如钻石在最初只是作为贵族的饰品，随着各种罗曼蒂克传说的流传，钻戒成为忠贞爱情的象征，互戴钻戒也成为人们追求婚姻仪式感的既定习惯。人们享受着意义的乐趣，拥有共同认定的传统，这是同构带来的美好，即使这种逻辑背后很可能隐藏着商业行为。当人们因为钻戒而产生过度的喜怒哀乐，强行把爱情附加在饰品上时，就陷入了文化的软暴力中，这也是同构给人们带来的一种苦恼。</p>
+  <p>在乡村网络短视频中，非常流行在视频中贴上这样的标签——“如果不嫌弃的话”，这句话其实是在主流文化对乡村“非主流”文化的强烈批判之后开始大规模传播的，用来表达对外界的不满、反抗，同时也增强了群体自我认同的向心力，成为乡村亚文化群体心照不宣的暗号。但这种同构其实暗含了被城市所审视的乡村的自卑与无奈，乡村在主动使用这种意义符号时也在和城市划清界限，对城市的价值标准默默臣服，失去了积极反抗的力量，这也是同构所带来的限制。</p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-01/%E4%BD%9C%E4%B8%BA%E7%A4%BE%E4%BC%9A%E5%BB%BA%E6%9E%84%E7%9A%84-%E5%84%BF%E7%AB%A5-%E4%B8%8E%E4%BD%9C%E4%B8%BA%E7%A4%BE%E4%BC%9A%E9%97%AE%E9%A2%98%E7%9A%84-%E7%AB%A5%E5%B9%B4-%E5%84%BF%E7%AB%A5%E8%8A%82%E8%8D%90%E4%B9%A6/">
+          作为社会建构的“儿童”与作为社会问题的“童年” | 儿童节荐书
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-31</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-31/%E8%BA%AB%E4%BB%BD%E5%88%B6%E9%80%A0-%E5%B7%B4%E5%8B%92%E6%96%AF%E5%9D%A6%E4%BA%BA%E6%98%AF%E5%A6%82%E4%BD%95%E4%BB%8E%E5%8F%97%E5%AE%B3%E8%80%85%E5%8F%98%E6%88%90%E6%81%90%E6%80%96%E5%88%86%E5%AD%90%E7%9A%84/">
+          身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-29</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-29/%E9%A9%AC%E6%8B%89%E6%9D%BE%E6%82%B2%E5%89%A7%E8%83%8C%E5%90%8E%E7%9A%84%E5%81%A5%E8%BA%AB%E6%97%B6%E4%BB%A3-%E8%BA%AB%E4%BD%93%E5%BD%A2%E5%A1%91-%E4%B8%AD%E4%BA%A7%E7%84%A6%E8%99%91%E4%B8%8E%E6%9C%8B%E5%85%8B%E5%85%BB%E7%94%9F/">
+          马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-28</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-28/%E4%B8%96%E4%BA%8B%E6%B4%9E%E6%98%8E%E4%BD%95%E5%85%86%E6%AD%A6-%E9%AB%98%E9%A3%8E%E4%BA%AE%E8%8A%82%E7%AB%A0%E5%BC%80%E6%B2%85/">
+          世事洞明何兆武，高风亮节章开沅
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-29/%E9%A9%AC%E6%8B%89%E6%9D%BE%E6%82%B2%E5%89%A7%E8%83%8C%E5%90%8E%E7%9A%84%E5%81%A5%E8%BA%AB%E6%97%B6%E4%BB%A3-%E8%BA%AB%E4%BD%93%E5%BD%A2%E5%A1%91-%E4%B8%AD%E4%BA%A7%E7%84%A6%E8%99%91%E4%B8%8E%E6%9C%8B%E5%85%8B%E5%85%BB%E7%94%9F/">
+            前一篇：马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-31/%E8%BA%AB%E4%BB%BD%E5%88%B6%E9%80%A0-%E5%B7%B4%E5%8B%92%E6%96%AF%E5%9D%A6%E4%BA%BA%E6%98%AF%E5%A6%82%E4%BD%95%E4%BB%8E%E5%8F%97%E5%AE%B3%E8%80%85%E5%8F%98%E6%88%90%E6%81%90%E6%80%96%E5%88%86%E5%AD%90%E7%9A%84/">
+            後一篇：身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-29/%E9%A9%AC%E6%8B%89%E6%9D%BE%E6%82%B2%E5%89%A7%E8%83%8C%E5%90%8E%E7%9A%84%E5%81%A5%E8%BA%AB%E6%97%B6%E4%BB%A3-%E8%BA%AB%E4%BD%93%E5%BD%A2%E5%A1%91-%E4%B8%AD%E4%BA%A7%E7%84%A6%E8%99%91%E4%B8%8E%E6%9C%8B%E5%85%8B%E5%85%BB%E7%94%9F/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-31/%E8%BA%AB%E4%BB%BD%E5%88%B6%E9%80%A0-%E5%B7%B4%E5%8B%92%E6%96%AF%E5%9D%A6%E4%BA%BA%E6%98%AF%E5%A6%82%E4%BD%95%E4%BB%8E%E5%8F%97%E5%AE%B3%E8%80%85%E5%8F%98%E6%88%90%E6%81%90%E6%80%96%E5%88%86%E5%AD%90%E7%9A%84/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-31/%E8%BA%AB%E4%BB%BD%E5%88%B6%E9%80%A0-%E5%B7%B4%E5%8B%92%E6%96%AF%E5%9D%A6%E4%BA%BA%E6%98%AF%E5%A6%82%E4%BD%95%E4%BB%8E%E5%8F%97%E5%AE%B3%E8%80%85%E5%8F%98%E6%88%90%E6%81%90%E6%80%96%E5%88%86%E5%AD%90%E7%9A%84/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-29/%E9%A9%AC%E6%8B%89%E6%9D%BE%E6%82%B2%E5%89%A7%E8%83%8C%E5%90%8E%E7%9A%84%E5%81%A5%E8%BA%AB%E6%97%B6%E4%BB%A3-%E8%BA%AB%E4%BD%93%E5%BD%A2%E5%A1%91-%E4%B8%AD%E4%BA%A7%E7%84%A6%E8%99%91%E4%B8%8E%E6%9C%8B%E5%85%8B%E5%85%BB%E7%94%9F/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-29/%E9%A9%AC%E6%8B%89%E6%9D%BE%E6%82%B2%E5%89%A7%E8%83%8C%E5%90%8E%E7%9A%84%E5%81%A5%E8%BA%AB%E6%97%B6%E4%BB%A3-%E8%BA%AB%E4%BD%93%E5%BD%A2%E5%A1%91-%E4%B8%AD%E4%BA%A7%E7%84%A6%E8%99%91%E4%B8%8E%E6%9C%8B%E5%85%8B%E5%85%BB%E7%94%9F/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-31/%E8%BA%AB%E4%BB%BD%E5%88%B6%E9%80%A0-%E5%B7%B4%E5%8B%92%E6%96%AF%E5%9D%A6%E4%BA%BA%E6%98%AF%E5%A6%82%E4%BD%95%E4%BB%8E%E5%8F%97%E5%AE%B3%E8%80%85%E5%8F%98%E6%88%90%E6%81%90%E6%80%96%E5%88%86%E5%AD%90%E7%9A%84/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-31/%E8%BA%AB%E4%BB%BD%E5%88%B6%E9%80%A0-%E5%B7%B4%E5%8B%92%E6%96%AF%E5%9D%A6%E4%BA%BA%E6%98%AF%E5%A6%82%E4%BD%95%E4%BB%8E%E5%8F%97%E5%AE%B3%E8%80%85%E5%8F%98%E6%88%90%E6%81%90%E6%80%96%E5%88%86%E5%AD%90%E7%9A%84/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-29/%E9%A9%AC%E6%8B%89%E6%9D%BE%E6%82%B2%E5%89%A7%E8%83%8C%E5%90%8E%E7%9A%84%E5%81%A5%E8%BA%AB%E6%97%B6%E4%BB%A3-%E8%BA%AB%E4%BD%93%E5%BD%A2%E5%A1%91-%E4%B8%AD%E4%BA%A7%E7%84%A6%E8%99%91%E4%B8%8E%E6%9C%8B%E5%85%8B%E5%85%BB%E7%94%9F/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

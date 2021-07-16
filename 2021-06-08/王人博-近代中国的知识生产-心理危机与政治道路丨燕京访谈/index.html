@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈
+——
+" />
+    <meta property="og:description" content="
+王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈" />
+    <meta property="twitter:title" content="王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60c026733d923e4bb0117de9" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60c026733d923e4bb0117de9" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60c026733d923e4bb0117de9&text=王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60c026733d923e4bb0117de9&title=王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60c026733d923e4bb0117de9&title=王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈&body=
+王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60c026733d923e4bb0117de9" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60c026733d923e4bb0117de9&title=王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈&caption=
+王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈&url=https://www.allnow.com/post/60c026733d923e4bb0117de9" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-08
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 张弘</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60c026733d923e4bb0117de9" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60c026733d923e4bb0117de9">王人博：近代中国的知识生产、心理危机与政治道路丨燕京访谈</a>
+——</p>
+
+<div>
+  <p>采写︱张弘</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-09/60c0271f9c232e01c17d193c+L.jpg" data-id="60c027229b2d825085c25ab7" alt="1840年6月28日：第一次鸦片战争爆发。图源/视觉中国。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1840年6月28日：第一次鸦片战争爆发。图源/视觉中国。
+    </figcaption>
+  </figure>
+  <p>从鸦片战争开始，中国人就一直不停地追赶西方，脚步至今未挺。从魏源提出的“师夷长技以制夷”，到洋务运动坚持的原则“中学为体，西学为用”；从王韬、郑观应等人“以古证新”，革新政治，到严复、谭嗣同批评秦制……正如王人博《1840年以来的中国》所说，“维新人士盗来西方宪制之火，试图用它照亮中国兴旺的前程”。然而，中西迥然不同的文化范式和语境，必然导致翻译和引进的西方思想之时，产生一定的语义变迁。而中国的知识人在盗火之时，因为现实的工具理性需求，往往会做出某些“创造性诠释”。</p>
+  <p>作为法律学者，王人博综合了法学、史学和语言学等学科，追溯了1840年以来中国的立宪史。《1840年以来的中国》以宪制为主要脉络，梳理中国近代史的关键节点。对这诸多“立宪”事件的分析和陈述，中国近代转型的曲折和艰难得到了清晰呈现。</p>
+  <p>迄今为止，中国仍处于现代转型之中，前人走过的道路，在历史情境中国的选择……这些经验和教训不仅具有借鉴意义，而且有助于今天的读者更好地理解前人，认清当下。而王人博的书写，在专业的近代史学者之外，提供了宪制的视野。</p>
+  <p>就《1840年以来的中国》涉及的相关问题，《燕京书评》采访了王人博。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-09/60c027409c232e01c17d193d+L.jpg" data-id="60c0274e2114416715c3d235" alt="王人博，1958年生于山东莱西，1979年西南政法学院，毕业后留校任教。2002年至今任教于中国政法大学，兼任政法论坛主编，享受国务院政府特殊津贴。著有《法治论》《宪政文化与近代中国》《法的中国性》等。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+王人博，1958年生于山东莱西，1979年西南政法学院，毕业后留校任教。2002年至今任教于中国政法大学，兼任政法论坛主编，享受国务院政府特殊津贴。著有《法治论》《宪政文化与近代中国》《法的中国性》等。
+    </figcaption>
+  </figure>
+  <h2 id="section"><strong>近代中国通过翻译西方概念来组织自己的精神思想</strong></h2>
+  <p><strong>燕京书评：近代史学者马勇在不同场合和著作中一再强调，要摆脱近代史叙事中的悲情意识，他有本书的书名就叫做《坦然面对历史的伤》。那么，你怎么看待这种悲情意识？你在写作《1840年以来的中国》时是否有悲情意识？</strong></p>
+  <p><strong>王人博：</strong>很遗憾，我没有读到马勇先生这本书，所以不清楚作者是如何叙述这种“悲情意识”的。对于中国近代乃至整个中国历史，我本人没有“悲情意识”，也不会为某个人物或事件扼腕叹息。这并不是说跳脱在历史之外看历史，不投放心身和感情的阅读，就是一种恰当的态度。</p>
+  <p>历史从来不会遂人所愿，它有自己的活法和存在方式。历史并不是“应然之物”，“应验之物”也不是将来会必然出现之物。对待历史，我选择的则是“内在立场”，即走进历史，带着自身所有的主观因素去感知、触摸，竖起耳朵倾听历史的每一次心跳；研究历史是重访，即重回过去的场景，贴近事实，同情地理解每一个人物和事件，这样的态度会使过去的一堆死物死而复生，充盈着烟火气。</p>
+  <p><strong>燕京书评：维特根斯坦有一句名言：“凡是能够说的事情，都能够说清楚，而凡是不能说的事情，就应该沉默”，《1840年以来的中国》作为一本法律史著作，使用了语言哲学、文化批评、诠释学等理论，尤其语言哲学的分析，语言学的溯源在书中极其明显。这是出于法律学者对表达精确性的追求还是其他原因？</strong></p>
+  <p><strong>王人博：</strong>其实，那本书也没有这么高深。这主要还是源于中国近代的客观现实。近代中国通过继受西方的概念、语词、观点、理论来组织自己的近代精神、思想生活，传统儒家提供的那些术语、观念虽然还有作用，但应付艰难的时局已远远不够了。这就带来了一个问题：来自于西方的语汇，必须通过汉语的“翻译”，才能进入中国的世界，并被中国人所理解。而这些有关法政的概念、词汇所表达的问题在传统中国既没有遇到过，也不存在。即，对在中国传统政制里不存在的东西，又必须用汉字汉语进行表达。这样，“翻译”就变成了“创造”。</p>
+  <p>为了不屈原意，翻译者开始时多是采用音译，如德谟克拉西（民主）、伯理玺天德（总统）、巴力门（国会）等。汉字是表意文字，音译的最大问题是音节过多又无法从字词中通晓意思，所以不久就被弃用了，意译是必然的趋势。问题是汉语本有的词汇并不能准确地传达外来的东西，因为传统里既没有这样的词，也没有这样的物。这就是我说的“语境问题”，这不是个小事。比如，“法官”这个汉语翻译词汇。无论怎样说，汉语的“法官”并不当然地与英语的Judge相等同。汉语的“法官”，实际上是对英语Judge的创造性使用。这样说，并不是为了回避制度问题，也不是对制度问题的有意疏略，而是任何制度都依赖概念进行表达，而概念的语境、语义是最基本的问题。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-09/60c027824cd55d54dd5dafb2+L.jpg" data-id="60c027869b2d825085c25ab9" alt="《1840年以来的中国》，王人博著，一页文化丨九州出版社2020年6月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《1840年以来的中国》，王人博著，一页文化丨九州出版社2020年6月版
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：《1840年以来的中国》写作时间从1995年到2020年，其间经过了多次修订和增补。我感觉，这似乎与这二十几年来中国发展现状的变化密切相关，或许也和你本人近十年来的一些思想变化有关，实情是否如此？</strong></p>
+  <p><strong>王人博：</strong>每一个写作者的写作都离不开它的时代，对历史的书写也一样。历史研究可能依赖于“考古”，但它又不同于考古。在很多情形下，历史研究是站在自己的时代转过身去面朝过往的一种方法。每个人都有他的前世今生，现实也不例外。对历史的兴趣往往是基于对现实的观照，甚至连同研究者本人也会把自己的境况有意识或无意识地带入进去。我不太相信研究者能作为一个纯粹的理性主体把自己的历史兴趣隔在自己或自己所处的现实境况之外。人既是理性的，也是感性的，纯粹的理性人压根就不存在。当然，这样说，并不意味着为用现实剪裁历史的实用主义做法背书，而是强调现实与历史之间的张力关系。</p>
+  <p>就我本人而言，对该书的补充修订，既是现实时代的，更是作者本身的：随着年龄的增大，人从青年变成老年，大脑纹理的变化也是自然的。用我自己的话说，因为上了年纪的缘故，对历史与世事的观看，习惯了不用眼睛，而学会了用心。用心去想，反复在心里倒腾，这种情形可以用“回心”这个词加以表达。</p>
+  <p><strong>燕京书评：从语言学角度出发，有些词语在汉语中发生了根本性转变，例如，英语中的“宣传”本来有强行传播之意，是一个贬义词；但汉语中的“宣传”，至少是中性的。你在书中还提到，“司法”本来和立法、行政相关，有分权的意味，但中国语境下就没有这个意思。那么，你怎么看代这种名同实异的现象？</strong></p>
+  <p><strong>王人博：</strong>在法政领域，来自字母文字的很多概念词汇，是通过日语汉字而得以汉语化的。现代汉语的有关法政词汇、概念多是来自日语的汉字翻译，这是事实，如宪法、民法、刑法、刑事讼诉法、民事诉讼法、法律、法学等。在我们的汉语中，事物的全称通常是褒义，至少是中性的表达，而简称往往隐含着贬义。如，“公共知识分子”这个词是描述性的，并不包含贬义，但被简称为“公知”以后则明显带有贬斥的意味了。与此相类似，“分子”这个词语用在群体的划分中通常也或多或少地具有某种意味。工农大众被称为“工人”、“农民”，通常不会被称为“工人分子”、“农民分子”。</p>
+  <p>在英语世界的法政制度中，有一个重要概念是Judicial（Judicature, Judiciary）或Administration of Justice，汉语统一地将其翻译为“司法”。从英语的词形就能看出，这个词与Judge（法官）有内在的关联性。它的核心语义是有关Judge的，即与法官如何处理案件相关的一种制度设定，也暗含着它与立法、行政机构的关系。Judicial意味着与立法、行政机构的分离，权力分立是Judicial存在的基本语境，没有权力分立就没有Judicial。汉语的“司法”一词，虽然保持住了它的基本语义，但它存在的语境则无法翻译。这也是上面所说的语境问题。</p>
+  <p><strong>燕京书评：你提出，在观念上，先把普遍主义价值与它的传播方式、途径区别对待，不能把西方的殖民扩张、征服、霸凌行为与普遍主义价值混同，一起否定。这里涉及到两个问题：第一，不能以狭隘的地方主义、民族主义等否定普遍主义价值；第二，人们需要的是忠实的“翻译”，而不是有意无意的“漏译”和歪曲。但是，“漏译”和歪曲至今仍普遍存在，这两个问题应如何应对？</strong></p>
+  <p><strong>王人博：</strong>你所说的两个问题，在这里有必要再啰嗦几句。第一，所谓的普遍价值不单是指生产者，接受者才是关键。正如书中所言，普遍价值的生产依赖于中心—边缘这个空间结构，中心是它的生产者和提供者；提供的方式很重要，接受的方式同样重要。这自然引出第二个问题，即接受的方式。这里的“翻译”一词，强调的不是“忠实”。两种完全不同东西之间的“翻译”做到完全“忠实”是不可能的，翻译都包含改编、创造的意涵，存在着再语境化过程。这里的关键是普遍价值与具体价值的协调问题，没有凌驾于具体价值之上的普遍价值，接受饮食的“现代卫生”价值不意味着人都必须用刀叉进食。相反，普遍价值只有与具体价值磋商、协调才能成为真正“普遍”的东西。事实上，人既需要普遍价值的指引，也渴求活出自己。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-09/60c027ea9c232e01c17d193e+L.jpg" data-id="60c027ed904b8c02a16a2e5c" alt="魏源的著作《海国图志》在日本产生过很大影响。图源/视觉中国。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+魏源的著作《海国图志》在日本产生过很大影响。图源/视觉中国。
+    </figcaption>
+  </figure>
+  <h2 id="section-1"><strong>中国近代三次深刻的心理危机，让人们把宪法政治当成了一根救命稻草</strong></h2>
+  <p><strong>燕京书评：《1840年以来的中国》涉及到一个根本性的问题，就是制度能否移植。以日本为例，二战结束以后，麦克·阿瑟占领日本，以外力</strong>（武力）<strong>强制日本建立了民主宪制，并且获得了成功。澳大利亚移植了英国的民主宪制，同样获得了成功。区别在于，麦克·阿瑟以美军强大的武力为后盾，他提出的强制性的制度变革方案，尽管因为日本人的交涉有一些微调，但没有遇到多大的阻力，因此确立了民主宪制制度，并在此后得到了巩固；而澳大利亚等国家则是主动建立了英国式的民主宪制。而中国1840年之后的情形，与这两者都不相同。那么，你怎么看制度移植？</strong></p>
+  <p><strong>王人博：</strong>对澳大利亚这类国家的转型过程我并不清楚，也没做过这方面的阅读思考和研究。对日本的情况多少了解一些。那就结合日本谈一点自己的看法。与日本相比，中国制度转型的困难大得多，远不是日本可比的。你知道，中国是另一套政治文明的发源地。自从汉武帝结合了儒家思想和秦朝的官僚制，形成了外儒内法的政治构造，中国就发展出了一种“超稳定”的政治结构。两千年里，这套体制一直被中国人反复运用，还影响了日本、朝鲜、越南这些国家，从来没遇到过什么大的挑战。这就决定了中国的制度变革之路，若没有重大冲击，是不可能开始的。</p>
+  <p>事实上，中国确实在近代经历了三次深刻的心理危机。第一次是鸦片战争，这个事件的本质是西方文明爆发出强大的能量，把势力范围扩展到东方。在交战中，中国发现自己远不是对手，超稳定就一下子变成了超不稳定。一个很自信的国家遭遇这么大的挫折，会陷入比小国要深得多的消沉。李鸿章在1872年说，现在中国面临一个“三千年未有之大变局”，这基本上可以概括当时人的感受。第二次是甲午战争。这次不是输给西方，而是一个从未瞧得上的邻居小国——日本。输给这样一个对手，其震惊程度是可想而知的。这时候的中国人才意识到，国家积贫积弱不是因为缺少坚船利炮，而是政治制度从根本上出了问题。第三次是日俄战争。日本人战胜俄国人，被看做立宪国对专制国的胜利，是宪法新体制对皇权旧体制的胜利。面对亡国灭种的危机，面对一个迅速强大起来的近邻，对传统政制彻底失去信心的中国自然就把宪法政治当成了一根救命稻草。</p>
+  <p>事实上，清政府对宪法政治这件事并不是真正理解，内心也还是过去的那一套，就一直犹豫和拖延，而当时的情形已经容不得这样的拖延了。这一点无法与日本相比，日本的《明治宪法》虽然离现代宪法有一段距离，但它是适应当时日本社会需求的产物。而当时中国现实比日本还要落后得多，糟糕得多。人们当然也更希望依靠立宪的制度改革，让中国快速摆脱困境。而这种焦躁的心态，也更容易把事情搞砸。困难大得无法想象，现实无比复杂，心态上又想一步到位，中国近代立宪改革之路的痛苦与曲折大都源于此。</p>
+  <p>制度的变革，是很讲究窗口期的。在当时已经火烧眉毛的情况下，当权者的这一犹豫，迅速就丧失了政治主导权。盟友立宪派疏远了清政府，敌人革命派获得了社会巨大同情。中国政坛急速地分割化了。</p>
+  <p>清政府、立宪派和革命党人，各有一套制度变革方案。宪法原本应该是朝野上下一致认定的救国药方，但到这个时候药方演化出不同的版本，每一派政治力量都抓着自己的版本，彼此间形成了恶性内耗。这些版本似乎都不错，但每一种又都不尽如人意。选择恐惧症的实质，就是对目标的三心二意，缺乏执著和认真精神。在制度变革问题上，近代以来的中国走马灯似地展开实验，但没有一场实验是实心实意、善始善终的。每一回的改革实验都像雷雨过境，仅仅润湿了薄薄的一层地皮。在这仓促的新制度实践中，近代的中国人把宪法玩坏了。各派之间博弈得那么激烈，就顾不上遵守什么规则了。在这样的博弈里，熟悉政治权谋的中国人，很快就悟出了一套新的秘诀。他们一方面高呼宪法口号，另一方面却把贿赂、暗杀、军事打击等老套路都搬了出来。台面上是制宪和护法，背地里却是计谋与刀枪。</p>
+  <p>总的来讲，近代中国的立宪制度改革实践，挫折远远大于成就。有相当一段时间，“宪法”这两个字几乎带上了不详的色彩。这段失败的实践史，使宪法政治在中国的信誉大大的受损了。在当时的中国，人们在内心里也不再把规则当回事。他们更相信实力、计谋和子弹。中国政制的转型，由此变得更加坎坷了。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-09/60c028244cd55d54dd5dafb3+L.jpg" data-id="60c028289b2d825085c25aba" alt="苏州甪直古镇王韬纪念馆。图源/视觉中国。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+苏州甪直古镇王韬纪念馆。图源/视觉中国。
+    </figcaption>
+  </figure>
+  <h2 id="section-2"><strong>晚清民国外借的文化离实际的中国民众很远</strong></h2>
+  <p><strong>燕京书评：你认为，中国现代历史的衍变有许多相互关联的因素，把这些因素强行掰开，做成一个分析框架并不恰当。</strong>（79页）<strong>你还强调，把解决“经济权”看做中国问题的钥匙成了许多中国知识分子的共识。我感觉，这实际上是强调经济平等。而“打土豪，分田地”就是最响亮的口号，是否可以说，这顺应并且吸引了很多人追求经济平等的心理？</strong></p>
+  <p><strong>王人博：</strong>这是书中在分析上个世纪80年代研究中国近现代历史的一个著名范式时提出的问题。这个范式就是“启蒙与救亡的双重变奏”，或叫“救亡压倒启蒙”。我注意到这个范式里的启蒙概念及其与新文化运动的关系。对那个运动，我更愿意称呼它为“文化外借运动”。这个表达，可能因为它过于直白而容易被人忽略。而这种大白话的表述更能准确地说明事物的性质，“外借”就是外借，而且外借的东西在自己的土地上不容易扎根也属正常，没有什么不好意思的。“外借运动”言明了这样一种事实——大学校园和书房里的那些中国职业知识分子，他们对西方文化的外借是基于这样一种状况：因为熟悉曾经留学的国度以及自己所读到的外国书籍，他们很容易把异国他乡以及书本里的“人”等同于自己，而对来自西方有关“人”的许多东西，如理性、人权、民主、自由、法治、解放等，自然会认为那也是自己应该拥有的。结果，“人”被抽象化了，“人的东西”也随之被普遍化。</p>
+  <p>而事实上，除了大学墙内的他们以及自己的学生与此有些相似之外，墙外占人口绝大多数的中国普通民众并不急求这些东西，或者更悲观地说，他们对此不感兴趣。说到底，人的启蒙、个人价值这类东西——在中国——也只是中国大学校园书房里的生成物而已，它们离实际的中国民众很远。而对那些“被唤醒”了的大学校园学生而言，他们不会止于“被唤醒的状态”，必定会把自己的激情付诸行动。这些青年学生有的离弃了传统家庭，寻取自由的爱情和婚姻，有的建立起“工读互助团”、“新村运动”等带有乌托邦性质的组织和行动，以践行自己“被唤醒”的那些东西。由文化外借所激发的这类行动是否行得通，却始终是个问题。这绝不是“救亡压倒了启蒙”，而是“文化外借”本身带来的困境。</p>
+  <p>作为“启蒙者”的鲁迅，很早就敏锐地提出了“娜拉走后怎样”这种忧虑，他说：“在目下的社会里，经济权就见得最要紧了。第一，在家庭应该获得男女平均的分配；第二，在社会应该获得男女相等的势力。可惜我不知道这权柄如何获得，单知道仍然要战斗；或者也许比要求参政权更要用剧烈的战斗。”他还有著名的一句话：“梦是好的；否则，钱是要紧的”。“钱是要紧的”这是在梦之后的醒语。在一个等级森严的社会里，要求经济上的平等这是很自然的事情。这是一切平等价值的基础。从这个意义上说，“打土豪，分田地”恰恰是这种要求经济平等的一种心理折射。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-09/60c028604cd55d54dd5dafb4+L.jpg" data-id="60c02863904b8c02a16a2e5d" alt="张之洞提出了“中学为体，西学为用。图源/视觉中国。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+张之洞提出了“中学为体，西学为用。图源/视觉中国。
+    </figcaption>
+  </figure>
+  <h2 id="section-3"><strong>对晚清知识分子的言论不能轻易用“粗浅”、“误读”来评价</strong></h2>
+  <p><strong>燕京书评：洋务派主张中体西用，试图维护旧有的统治秩序</strong>（95页）<strong>，改良主义王韬、郑观应、薛福成超越了他们，薛福成认为英国政治是“夏商周三代之隆”。郭嵩焘去英国议会目睹议员们的争议，他对英国政治也有类似的看法。你提到，郑观应等人“对西方文化是隔膜的，对西学的议会知识的理解是粗浅的”</strong>（102页）<strong>，“中国宪制思想从萌生开始就并非完全服膺西方，而是有中国自己的选择”。我感觉，虽然知识人有自己的不足，但这里的选择主体主要还是清政府，因为统治集团贪图权力和既得利益而错失了立宪机会。你怎么看？</strong></p>
+  <p><strong>王人博：</strong>这个问题，在回答有关“制度移植”时已经谈到了。这里，我想对书中一些表述方式做个修正，比如你所提到的关于“对西学的议会知识的理解粗浅”问题。晚清知识分子在表达问题时通常喜欢用“内”“外”范畴构造自己的文本世界。如，与郑观应同时代的王韬就著有《弢园文录内编》与《弢园文录外编》。很可惜，《内编》已遗失，不存于世；今日我们能见到是《外编》。又如，张之洞所著的《劝学篇》也是用“内外”构造起来的。用他自己的话说就是：“内篇务本，以正人心，外篇务通，以开风气”。张之洞的这几句话也可以用来界定王韬的文本。“内”通常可以理解为“内在”，多是有关修治心身的言说，而“外”通常表达的是对外部客观世界的观点和看法，带有公开性、建议性的特点，即面对的读者对象，既是普通的识字阶层，也包括了统治者。</p>
+  <p>所以，在传统世界里，特别是在满清统治之下的中国知识分子有关“外”的表达就格外谨慎，更讲究修辞策略。对一个满族政权而言，汉族知识分子任何一句不适当的言论都可能被看做冒犯，“出言谨慎”当是汉族知识精英恪守的戒条。就拿“议会知识”来讲，说议会具有沟通君民上下意见，凝聚君民之间的团结的价值和功能总比说议会是用来限制君权更容易被统治者接受，也能降低政治风险。我的意思是说，对晚清知识分子的言论、观点不能轻易用“粗浅”、“误读”这样词语进行评价，应当进入文本的具体语境。</p>
+  <p><strong>燕京书评：近代史学者马勇认为，真正让中国人感受到亡国灭种的时代情绪，是在1895年《马关条约》签订之后，外国资本大规模进入中国，开启了中国的工业化和城市化，真正引发了“中国数千年未有之变局”，中国当时的知识精英如康有为、谭嗣同和严复等才认为中国要亡国灭种了。1895年，严复在《国闻报》上发表了一系列评论。在马勇看来，当时的问题在如今回顾之时，显得更像是一种假问题。想象中的亡国、想象中的危机造成激进的气氛，导致一系列的冲突，把历史一而再地改写。当然，所有的想象是假的，但后来成为历史的起点，都成为事实发生的起点。我之前读过唐启华教授的著作，林长民在晨报夸大其词，“胶州亡矣！山东亡矣！国不国矣！”，随后，五四运动爆发。那么，你怎么看当时知识分子的这种恐慌想象？</strong></p>
+  <p><strong>王人博：</strong>我不知道对19世纪90年代后期中国所处的境况以及中国知识分子内在的、情绪性的反应能否用“恐慌”一词加以表述。正如上面所谈到的，对待历史我持守“内在立场”。打个比方，同样对二战史的研究，一个二战结束多年之后出生的人与一个亲历二战的老兵相比，无论视角、感受和结论肯定是不同的。对一个老兵而言，他的研究不一定多么深刻、正确，但一定是带着硝烟味的，而且是叮当作响的。从这个意义上讲，“内在立场”就是一个老兵的立场。</p>
+  <p>对历史做到“同情理解”并不难，设身处地将心比心就行了，关键是愿不愿意。对当时中国的那种境况以及知识分子的整体性反应，可能用“忧患意识”表述更为恰当。忧患意识是中国知识分子一个比较好的传统，孔子说“安不忘危，存不忘亡”；孟子的话大家更是熟知：“生于忧患，死于安乐。”而当时的局面并不是“安不忘危”，而是客观上的“不安”和“危”。甲午战争的结果所导致的局面，的确让知识分子忧心忡忡：清政府本来就财政拮据，巨额的赔款使得日本有了现代化腾飞的本钱。别忘了，那场战争让日本从中国攫取了相当于日本整个国家五年的财政收入，而清政府则越来越不堪重负，国家大厦咯咯作响。割让台湾，完整的主权受到严重损伤，本来还割了辽东半岛的，后来日本受到各方压力，不得不归还中国，但清政府为此又支付了高昂的“赎辽费”。</p>
+  <p>“危机”并不是假的，知识分子也不是那个喊着“狼来了”的孩子，而是“生于”忧患的一群人。甲午战争之后，中国的形势急转直下，变得越来越糟糕。1897年德国强占胶州湾（青岛），俄、法、英、日本先后提出了自己的要求，清政府的压力是空前的，这种危局用一个词表达是恰当的：瓜分豆剖。这不是危言耸听，是事实。面对这种局面，统治者高层又显得束手无策。知识分子对此的忧愤之情，可从刘光第的一封私信中看出：“……事到于今，然后我军机处、总理大臣等，始皆面面相觑，束手无策，坐待分裂而已。…….总之，此时下手功夫，总在皇帝一人为要，必须力除谄谀蒙蔽，另行换一班人，从新整顿，始有起色转机。然识者以为此决无可望之理。然则为之奈何耶？惟有发长叹已耳，积肝气已耳，吞泪珠切齿握爪而已耳，如兄之不肖无似，有何补哉，有何补哉，有何补哉！”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-09/60c028de4cd55d54dd5dafb5+L.jpg" data-id="60c028e32114416715c3d239" alt="立宪派代表张謇的铜像。图源/视觉中国。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+立宪派代表张謇的铜像。图源/视觉中国。
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：《1840年以来的中国》似乎显示，清末民初的中国，受困于内忧外患，实施民主宪制的条件不成熟。但是，雷颐著作《帝国的覆没》一书显示，一旦清政府表现出立宪的诚意，革命的呼声就降低了，民众甚至张灯结彩，以示庆祝。1911年5月8日皇族内阁出来之后，清政府就彻底丧失民众的信任，连立宪派也转而支持革命。这似乎表明，清政府本来有和平变革的机会，但没有抓住。你怎么看？</strong></p>
+  <p><strong>王人博：</strong>这就是前面说到的立宪改革的“窗口期”。这里，我想简单谈一下满清政府。慈禧太后和光绪皇帝健在的时候，局势虽然很糟，但控制局势的能力还是有的。各地的封疆大吏虽然攫取了与中央相匹敌的地方权力，但他们还是听招呼的，前辈曾国藩则不必说，像李鸿章、刘坤一、张之洞等汉臣大员对朝廷的忠诚也是事实。即便发生了义和团运动以及八国联军入侵等重大事件，这些汉族重臣还是守住了大清的江山，他们没有分裂国家搞独立。这说明以慈禧太后为首的朝廷对国家的统御能力还是存在的。若把清王朝与同时期的日本天皇政权做个简单比较就会一目了然。日本作为“大和民族”，具有很大的单一性，其天皇政体一姓相传，千年未变。明治天皇在幕藩体制的崩溃中，受到“王政复古”形式的拥戴，从登基之日起而在一批维新人士推动下锐意进取，国内政务因此显露出一种犹如新朝开国的勃勃生机，维新事业的拓展与统治秩序的稳定相互促进。</p>
+  <p>然而，清政府就没这么幸运。中国境内民族众多，传统的君主政权虽多次换“姓”，但主要是在占人口绝大多数的汉民族中“变来换去”。清王朝是满族贵族入主中原后所建立起来的全国政权，“依满治汉”的方针基本为其两百多年的统治一以贯之。而到了王朝末年，满族统治者的腐败无能导致外患加深，国内民族矛盾激化。它为了自救不得不进行改革。然而，其困难就在于：它既想改革，又不愿意开放本属于自己专利的政权；既想立宪以自救，又不想失掉“君上大权”；既想安抚汉族士大夫官员，又不想丢弃自己的特权。不管它新定什么政策，下多大决心改制变法，在汉民族人口数量、文明程度和政治能力都占绝对优势的情形下，势必要暗设防线，以确保满清王朝的统治不致因立宪而大权旁落。它要走出困境实在太难，这不是“应不应该”的问题，而是人性使然。不是到了山穷水尽的地步，它就不可能主动去寻取新路。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-09/60c029054cd55d54dd5dafb6+L.jpg" data-id="60c029092114416715c3d23a" alt="孙中山。图源/视觉中国。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+孙中山。图源/视觉中国。
+    </figcaption>
+  </figure>
+  <h2 id="section-4"><strong>《临时约法》的最大缺陷，在于把合作导向了斗争</strong></h2>
+  <p><strong>燕京书评：孙中山就任临时大总统之时，宋教仁要实施内阁制，但孙中山坚持总统制；待孙中山临时大总统期满，袁世凯当总统时，又改成内阁制</strong>（1912年颁布的《临时约法》）<strong>。这种“因人设法”似乎不符合法治精神，你怎么看？</strong></p>
+  <p><strong>王人博：</strong>一个新制度能不能引领国家，有一个前提条件，就是有没有统一稳定的政治环境。而当时的中华民国，两种势力在政治上的明争暗斗，这就让《临时约法》成了一部斗争的宪法，而不是治国的宪法。一旦斗争失败，宪法当然就成了一纸空文。这两种势力，一方以孙中山、宋教仁为代表的革命党人，另一方是袁世凯掌控的北洋系。辛亥革命成功后，孙中山出任中华民国临时大总统。但革命的影响力，还只是集中在长江以南。在北方，皇帝还没退位，还有一支袁世凯统领的北洋军虎视眈眈。为了避免发生内战，团结袁世凯，孙中山就说，谁能敦促清帝退位，谁就当大总统。袁世凯做到了。</p>
+  <p>眼看革命的果实要落入他人之手，于是，革命党人就想了一个办法：军事上打不过你，我可以用宪法来和你斗争。《临时约法》最急切的目标，就是防止袁世凯搞独裁。所以，宋教仁在起草时特别小心地埋了伏笔，一方面在法律上架空袁世凯，另一方面就是要为自己将来竞选总理铺好台阶。当时，南京临时政府实行的是美国式的总统制，孙中山就是一个实权大总统。他要让给袁世凯的，本来也是这个位置。但宋教仁在宪法里做文章，把实权大总统改成了虚位大总统，增加了实权总理这个职位。宋教仁不光这么设计的，也是这么做的。</p>
+  <p>起草完宪法之后，他马上开始整顿同盟会，成立了国民党，掌握了党的组织大权。与袁世凯的谈判一成功，他就到全国各地游说、演讲，为国民党在下一届国会大选中造势。他的愿景很简单，就是在宪法层面打败袁世凯。武斗打不过长江，文斗却有希望在全国获胜。他是以一支笔和一张嘴去匹敌袁世凯的千军万马。宋教仁凭着这种英武潇洒的气度，硬是把《临时约法》搞成了一个机关重重的斗争工具。然而，历史是残酷的。宋教仁武斗拿不到的东西，文斗也没拿到。</p>
+  <p>袁世凯和宋教仁遵循的完全是两种玩法。你要是觉得宋教仁设定的机关，袁世凯会往里跳，那就太低估他了。袁世凯不是读书人，他是在军队里成长起来的。他很早就熟悉了中国官场的套路：粗野的军人，他有制服的办法；文人雅士，他也有笼络的手段。他身上还有一种极度进取务实的精神，但终究还是个清朝的官僚。对于共和、约法、国会这些东西，他持一种实用主义态度，对他有利的，就采用；反之，就可以抛弃。</p>
+  <p>对于《临时约法》，刚开始袁世凯也没有什么办法，后来有个叫有贺长雄的日本法学家一点拨，袁世凯的胆子马上开始大了起来。有贺长雄说，南方革命党人制定的《临时约法》根本不足为惧。袁世凯既然是在北京就任大总统，那北京共和政府的权力就不是来自南方的国民政府，而是来自清政府的主权让渡。所以，《临时约法》对袁世凯和北方国民政府在法理上没有约束力。这样，他就放心大胆地宣布国民党非法，关闭了国会，然后重新搞了个《中华民国约法》，自己提拔自己为终身大总统，然后一意孤行地按照自己的私心走上了称帝的不归路。</p>
+  <p>其实，出现这样的结果几乎是不可避免的。作为民国初年最大的两股政治力量，革命党和北洋集团似乎是活在不同的时代。革命党人受西方影响，满脑子的原则和道理，而北洋派是从清王朝内部发展出来的，观念和经验基本上还都是古代的。就是这两派的人，在武昌起义之后，他们合作开创了共和政治的局面。这场合作固然有很多的权谋、诈术，但其中也不乏真挚、耐心与妥协。正因为有这些积极因素，国体转换才基本平稳，没有发生大面积的流血牺牲。</p>
+  <p>然而，让人惋惜的是，最初的耐心和妥协没有维持多久。袁世凯的权谋、上不得台面地暗杀宋教仁自不待言，那革命党人又如何呢？宋教仁当年三十出头，他对自己过分信任，又对对方过分不信任。他主持制定《临时约法》时，专门为袁世凯设套。从某种意义上说，这本身就是对北洋集团的一种傲慢。这太高看了自己，小看了对手。民国初年最根本的宪法问题，和任何国家都不一样，不是限制王权，也不是加强各省的凝聚力，而是如何把革命党与北洋系这两大势力团结在一起。《临时约法》的最大缺陷，不在于编写上的具体法条，而在于它逃避了这个根本问题，反而把合作导向了斗争这条路。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-09/60c029869c232e01c17d193f+L.jpg" data-id="60c029899b2d825085c25abe" alt="康有为是保皇派。图源/视觉中国。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+康有为是保皇派。图源/视觉中国。
+    </figcaption>
+  </figure>
+  <h2 id="section-5"><strong>严复：将隐匿的“原理”进行“改编”，以满足国家的需求</strong></h2>
+  <p><strong>燕京书评：如你所述，康有为虽然倡导民主宪制，但主要是强调上下无隔和分权制衡的代议制运行机制的功能效率，而民主宪制的内在价值如个体的自由、平等和人权则被被放逐在大同境界之外。梁启超、严复、孙中山、陈独秀等人对于个人自由和宪制民主的认识都有偏差。这种认识上的偏差，主要是出于知识和学术上的不足，还是因为改变现实的迫切需求使他们在思想上“折中”？</strong></p>
+  <p><strong>王人博：</strong>任何学术活动，都离不开学术主体身在的语境。不同的语境，决定了学术的取向和价值。打个比方，对于一个以筷子作为主要取食、进食工具的民族而言，筷子的基本价值和功用就是餐具；而对于一个以刀叉作为主要取食、进食工具的民族来讲，筷子的价值和功用就会发生变化，它可能作为审美对象被欣赏或被收藏，甚至偶尔也会在中餐馆把筷子作为进食的工具，但其功能和价值已经被改写了。筷子还是原来的筷子，在不同的语境下其意义就会被置换。在另一本书里，我把近代中国对西方宪制民主的接受概括为“富强为体，宪制民主为用”这样一个范式。这个范式的形成，主要是受史华兹教授名著《寻求富强：严复与西方》的影响。该书于上个世纪90年代被引入中国，我把他研究严复的范式扩展到对整个中国近代主要思想人物的思考与书写。时至今日，我仍然认为这个研究范式还是有效的。</p>
+  <p>中国近代是一个学习西方的过程，即把西方的字母文字所组织的原理、思想从原有的语境中拖出来，重置于中国的现实与历史的语境中。“学习”，就是语境的转换与生成。一个成功的经验总是主体的历史性，包括精神、心理、情感和经历，而“学习”就是把经验中那些无法复制的东西剔除，把剩下有关原理、“教诲”的部分植入另一个过程之中，在新的语境下变成自己的东西。</p>
+  <p>这里，还是举严复的例子。大家知道，近代以来，“自由”能在汉语世界成为一个流播广远的语词是与严复分不开的，它得之于严复对约翰﹒密尔（John Mill，或译为约翰﹒穆勒）《On Liberty》（现通译为“论自由”）一书的阅读与翻译。英国是自由主义的故乡，《On Liberty》能成为自由主义的代表性作品，既与这一思想传统有关，也与作者写作的那个时代密不可分。文本的成功，首先取决于作者清楚地知道时代需要什么：一个受到束缚的个人，既不符合资本主义的人性要求，也与一个急剧扩张有着庞大海外殖民体系的海外帝国不符。而且，作者本人也有长期在海外殖民地东印度公司履职的经验。他曾公开声明，书中的观点并不适用于印度，因为印度人即使不在种族上，也在文明程度上低英国人一等。而作为翻译者的严复，对这个英语文本的“情景语境”，既可能了解，也可能不了解，这都不是最重要的。重要的是，作为中国人的严复需要这个文本，他认为他的祖国也需要这个文本。严复可以不顾作者对印度不友善的警告，也不愿意把中国与印度放在一起来思考。他明白一点，他和他的人民应该听到作者这种声音，读懂这个文本。译者与作者横跨的，不止语言文化的鸿沟，更是两个国家所处地位的不同。对作者来讲，《论自由》是对世界上一个最强大繁荣的国家的成功现实所做的辩护和论证；对于译者而言，《群己权界论》则是为自己贫弱落后的国家寻找出路。</p>
+  <p>文本的作者情景语境，会随着作者的离去而消失；作者写下的文字和句子，则能作为一种“真理性”符号，从生产它的情景现场中抽身出来“被反复阅读”，而且也能通过“翻译”这种再语境化的工作，转嫁到译体语的“语链之上”。换言之，严复的翻译，不仅对文本作者的“情景语境”进行了翻译者的再语境化，而且对文本的“真理性”内容也实现了语境的重置。译者感兴趣的，未必就是作者的文本意图。而作为一个中国的翻译家，严复的工作性质是将隐匿在文本中的“原理”进行“改编”，以满足自己以及自己国家的需求。对于严复这种具体的“改编工作”，大家可以从谈论的我这本书中找到。</p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-10</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-10/%E7%8E%8B%E4%BA%BA%E5%8D%9A-%E8%BF%91%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%9A%84%E5%9B%BD%E5%AE%B6%E5%BB%BA%E6%9E%84-%E4%BC%A0%E7%BB%9F%E5%8C%85%E8%A2%B1%E4%B8%8E%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E7%9A%84%E5%BF%83%E7%81%B5%E5%88%9B%E4%BC%A4%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          王人博：近代中国的国家建构、传统包袱与知识分子的心灵创伤丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-10</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-10/%E5%9C%A8%E7%A5%9E%E7%81%B5%E7%9A%84%E6%8A%A4%E4%BD%91%E4%B8%8B-%E9%AB%98%E8%80%83%E5%88%B6%E5%BA%A6-%E4%B8%AD%E5%9B%BD%E5%AE%B6%E9%95%BF%E4%B8%8E%E5%91%BD%E8%BF%90%E7%9A%84%E7%AB%9E%E8%B5%9B/">
+          在神灵的护佑下：高考制度、中国家长与命运的竞赛
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-08</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-08/%E4%BD%9C%E5%AE%B6%E4%B9%8B%E5%A4%96%E7%9A%84%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9-%E7%96%AF%E7%8B%82%E6%8A%95%E8%B5%84%E4%BA%BA-%E5%95%86%E4%B8%9A%E5%B8%9D%E5%9B%BD%E6%A2%A6%E4%B8%8E%E5%B7%A1%E6%BC%94%E8%BA%B2%E5%80%BA%E7%9A%84%E5%B2%81%E6%9C%88/">
+          作家之外的马克·吐温：疯狂投资人、商业帝国梦与巡演躲债的岁月
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-07</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-07/%E5%9C%A8%E6%AF%92%E5%93%81%E5%92%8C%E9%BB%91%E5%B8%AE%E4%B9%8B%E5%A4%96-%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E9%AD%94%E5%B9%BB%E5%8F%B2/">
+          在毒品和黑帮之外，拉丁美洲还有哪些魔幻史？
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-08/%E6%8C%91%E6%88%98%E5%BD%93%E6%9D%83%E8%80%85%E7%9A%84%E5%8F%99%E4%BA%8B-%E4%BF%A1%E6%81%AF%E8%A1%8C%E5%8A%A8%E4%B8%BB%E4%B9%89-8-%E8%AE%B2%E8%BF%B0%E6%95%85%E4%BA%8B%E6%98%AF%E4%B8%80%E4%BB%B6%E6%AD%A6%E5%99%A8-iYouPort/">
+            前一篇：挑战当权者的叙事：信息行动主义（8）- 讲述故事是一件武器 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-09/%E5%AF%B9%E6%8A%97%E7%9B%91%E8%A7%86%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%9A%84%E6%96%97%E4%BA%89%E5%8F%AF%E4%BB%A5%E4%BB%8E%E7%BE%8E%E5%9B%BD%E5%BC%80%E5%A7%8B%E5%90%97-%E5%9C%A8%E5%9B%BD%E4%BC%9A%E6%9A%B4%E5%8A%A8%E5%90%8E%E9%87%8D%E8%AF%BB%E7%88%B1%E5%BE%B7%E5%8D%8E-%E8%90%A8%E4%B9%89%E5%BE%B7%E7%9A%84-%E4%B8%9C%E6%96%B9%E4%B8%BB%E4%B9%89-iYouPort/">
+            後一篇：对抗监视资本主义的斗争可以从美国开始吗？- 在国会暴动后重读爱德华·萨义德的 东方主义 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-08/%E6%8C%91%E6%88%98%E5%BD%93%E6%9D%83%E8%80%85%E7%9A%84%E5%8F%99%E4%BA%8B-%E4%BF%A1%E6%81%AF%E8%A1%8C%E5%8A%A8%E4%B8%BB%E4%B9%89-8-%E8%AE%B2%E8%BF%B0%E6%95%85%E4%BA%8B%E6%98%AF%E4%B8%80%E4%BB%B6%E6%AD%A6%E5%99%A8-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-09/%E5%AF%B9%E6%8A%97%E7%9B%91%E8%A7%86%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%9A%84%E6%96%97%E4%BA%89%E5%8F%AF%E4%BB%A5%E4%BB%8E%E7%BE%8E%E5%9B%BD%E5%BC%80%E5%A7%8B%E5%90%97-%E5%9C%A8%E5%9B%BD%E4%BC%9A%E6%9A%B4%E5%8A%A8%E5%90%8E%E9%87%8D%E8%AF%BB%E7%88%B1%E5%BE%B7%E5%8D%8E-%E8%90%A8%E4%B9%89%E5%BE%B7%E7%9A%84-%E4%B8%9C%E6%96%B9%E4%B8%BB%E4%B9%89-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-10/%E5%9C%A8%E7%A5%9E%E7%81%B5%E7%9A%84%E6%8A%A4%E4%BD%91%E4%B8%8B-%E9%AB%98%E8%80%83%E5%88%B6%E5%BA%A6-%E4%B8%AD%E5%9B%BD%E5%AE%B6%E9%95%BF%E4%B8%8E%E5%91%BD%E8%BF%90%E7%9A%84%E7%AB%9E%E8%B5%9B/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-08/%E4%BD%9C%E5%AE%B6%E4%B9%8B%E5%A4%96%E7%9A%84%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9-%E7%96%AF%E7%8B%82%E6%8A%95%E8%B5%84%E4%BA%BA-%E5%95%86%E4%B8%9A%E5%B8%9D%E5%9B%BD%E6%A2%A6%E4%B8%8E%E5%B7%A1%E6%BC%94%E8%BA%B2%E5%80%BA%E7%9A%84%E5%B2%81%E6%9C%88/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-08/%E6%8C%91%E6%88%98%E5%BD%93%E6%9D%83%E8%80%85%E7%9A%84%E5%8F%99%E4%BA%8B-%E4%BF%A1%E6%81%AF%E8%A1%8C%E5%8A%A8%E4%B8%BB%E4%B9%89-8-%E8%AE%B2%E8%BF%B0%E6%95%85%E4%BA%8B%E6%98%AF%E4%B8%80%E4%BB%B6%E6%AD%A6%E5%99%A8-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-09/%E5%AF%B9%E6%8A%97%E7%9B%91%E8%A7%86%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%9A%84%E6%96%97%E4%BA%89%E5%8F%AF%E4%BB%A5%E4%BB%8E%E7%BE%8E%E5%9B%BD%E5%BC%80%E5%A7%8B%E5%90%97-%E5%9C%A8%E5%9B%BD%E4%BC%9A%E6%9A%B4%E5%8A%A8%E5%90%8E%E9%87%8D%E8%AF%BB%E7%88%B1%E5%BE%B7%E5%8D%8E-%E8%90%A8%E4%B9%89%E5%BE%B7%E7%9A%84-%E4%B8%9C%E6%96%B9%E4%B8%BB%E4%B9%89-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-10/%E5%9C%A8%E7%A5%9E%E7%81%B5%E7%9A%84%E6%8A%A4%E4%BD%91%E4%B8%8B-%E9%AB%98%E8%80%83%E5%88%B6%E5%BA%A6-%E4%B8%AD%E5%9B%BD%E5%AE%B6%E9%95%BF%E4%B8%8E%E5%91%BD%E8%BF%90%E7%9A%84%E7%AB%9E%E8%B5%9B/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-08/%E4%BD%9C%E5%AE%B6%E4%B9%8B%E5%A4%96%E7%9A%84%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9-%E7%96%AF%E7%8B%82%E6%8A%95%E8%B5%84%E4%BA%BA-%E5%95%86%E4%B8%9A%E5%B8%9D%E5%9B%BD%E6%A2%A6%E4%B8%8E%E5%B7%A1%E6%BC%94%E8%BA%B2%E5%80%BA%E7%9A%84%E5%B2%81%E6%9C%88/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

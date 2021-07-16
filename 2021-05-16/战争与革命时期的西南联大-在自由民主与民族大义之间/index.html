@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>战争与革命时期的西南联大：在自由民主与民族大义之间 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+战争与革命时期的西南联大：在自由民主与民族大义之间
+——
+" />
+    <meta property="og:description" content="
+战争与革命时期的西南联大：在自由民主与民族大义之间
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="战争与革命时期的西南联大：在自由民主与民族大义之间" />
+    <meta property="twitter:title" content="战争与革命时期的西南联大：在自由民主与民族大义之间" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60a0bff36e321171ad04c85c" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60a0bff36e321171ad04c85c" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60a0bff36e321171ad04c85c&text=战争与革命时期的西南联大：在自由民主与民族大义之间&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60a0bff36e321171ad04c85c&title=战争与革命时期的西南联大：在自由民主与民族大义之间" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60a0bff36e321171ad04c85c&title=战争与革命时期的西南联大：在自由民主与民族大义之间" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=战争与革命时期的西南联大：在自由民主与民族大义之间&body=
+战争与革命时期的西南联大：在自由民主与民族大义之间
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60a0bff36e321171ad04c85c" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60a0bff36e321171ad04c85c&title=战争与革命时期的西南联大：在自由民主与民族大义之间&caption=
+战争与革命时期的西南联大：在自由民主与民族大义之间
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=战争与革命时期的西南联大：在自由民主与民族大义之间&url=https://www.allnow.com/post/60a0bff36e321171ad04c85c" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>战争与革命时期的西南联大：在自由民主与民族大义之间</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-16
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 张弘</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60a0bff36e321171ad04c85c" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60a0bff36e321171ad04c85c">战争与革命时期的西南联大：在自由民主与民族大义之间</a>
+——</p>
+
+<div>
+  <p>作者︱张弘</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a0c12c4e878e0826621ef7" src="https://img.allhistory.com/now/2021-05-16/60a0c12b4cd55d1f8948d4a0+L.png" alt="西南联大在人类奋斗史上已经留下辉煌篇章。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+西南联大在人类奋斗史上已经留下辉煌篇章。
+    </figcaption>
+  </figure>
+  <h2 id="section">多重维度下的西南联大观察</h2>
+  <p> </p>
+  <p>近日参加了纪录片电影《九零后》的首映式。本片挖掘了很多的历史细节，导演徐蓓倾注了女性的温情，并以精美的制作向西南联大的前贤致敬。在情感上，本片引发了西南联大师生后辈的认同。</p>
+  <p> </p>
+  <p>在《九零后》中，唐代文学家李华的《吊古战场文》频频出现：“浩浩乎，平沙无垠，夐不见人。河水萦带，群山纠纷。黯兮惨悴，风悲日曛。蓬断草枯，凛若霜晨。鸟飞不下，兽铤亡群。” 正如论者所说，《吊古战场文》 是李华“极思研搉”的力作，以凭吊古战场起兴，中心是主张实行王道，以仁德礼义悦服远人，达到天下一统。在对待战争的观点上，主张兴仁义之师，有征无战，肯定反侵略战争，反对侵略战争。李华将战争描绘得十分残酷凄惨，旨在唤起各阶层人士的反战情绪，以求做到“守在四夷”，安定边防，具有强烈的针对性。它构成了《九零后》的国家主义主题：在国难当头的情况下，一所大学的师生忍受着物质上的极度贫乏，在学术报国的同时，前后有一千多人参军，抵御日寇。无疑，这样的精神令人感佩。</p>
+  <p> </p>
+  <p>徐蓓执导五集250分钟的电视纪录片《西南联大》则更加完整。详实的背景资料，一手的西南联大学生采访，众多的后人追忆，研究者的评述，以及日记、回忆录的运用……使得这部纪录片内容充实，细节丰富。在影像方面，它超过了所有的前作。</p>
+  <p> </p>
+  <p>从两部纪录片可以看出，徐蓓力图调和西南联大的成功与国家主义之间的复杂关系，并成功展示出两者融合的一面。从操作实践而言，《西南联大》遵循了符合主流意识形态的价值观，并严格遵循当下言说的话语界限。作为一部面对公众，需要广泛传播的纪录片，徐蓓已经尽力而为。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a0c17eee4d864c459d5b5e" src="https://img.allhistory.com/now/2021-05-16/60a0c17a4cd55d1f8948d4a1+L.png" alt=" 5月8日晚，徐蓓（右）在《九零后》北京首映式上。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+ 5月8日晚，徐蓓（右）在《九零后》北京首映式上。
+    </figcaption>
+  </figure>
+  <p>另一方面，西南联大是一座丰富的历史宝藏；人们对它的观察，可以有多个维度和多重视角。最常见的是，在国难当头的情况下，它在学术研究上硕果累累，且为国家培养了大量人才。西南联大校友（含附中附小校友）中，共有174人当选为“两院”院士。其中，中国科学院163人，中国工程院13人，朱光亚、郑哲敏为双院士，徐匡迪曾任中国工程院院长。此外，在1948年中央研究院首届院士评选出来的全部81位院士中，有27人出自西南联大。中国科学院院士哲学社会科学学部中，入选的有王力、向达、吴晗、金岳霖、陈寅恪、汤用彤、冯友兰、冯至、魏建功、罗常培、丁声树。此外，西南联大还培养出了诺贝尔物理学奖获得者杨振宁、李政道，“国家最高科学技术奖”获得者黄昆、刘东生、叶笃正、吴征镒、郑哲敏，“两弹一星”功勋奖章获得者赵九章、郭永怀、陈芳允、屠守锷、杨嘉墀、王希季、朱光亚、邓稼先。</p>
+  <p> </p>
+  <p>或许，有人更注重西南联大师生的爱国情怀。众所周知，西南联大在抗日战争中成立，前后存在了八年多。当中国人民以重大牺牲投入抗战之时，西南联大弦歌不辍，与全国民众一起同赴国难，共克时艰。一些学子投身战事，或以翻译、发明等为抗战服务。</p>
+  <p> </p>
+  <p>另有人更注重联大作为民主堡垒，与国民党政府的斗争。例如，1941年马识途将高中毕业证书上的马千木添一笔，改名马千禾，遵照中国共产党指示考入西南联合大学，先后在外文系、中文系学习4年，担任西南联大党支部书记，从事学生运动。在西南联大求学期间，马识途以学生身份与罗常培、楚图南、李广田、吴晗等教授往来，以党员身份与闻一多先生联系，并得到闻一多的积极支持。1945年，袁永熙、马识途等人还创建了共产党外围组织民主青年联盟。同样，王汉斌也是接受地下党的指示后，考入西南联大。</p>
+  <p> </p>
+  <p>此外，还有人关注联大教授和学生个人风采和特立独行的风范。联大校园的各种趣闻轶事，以及“跑警报”等生活细节。</p>
+  <p> </p>
+  <p>然而，西南联大之所以成为西南联大，它成功背后的教育背景和历史背景往往被人们所忽视。就外在来说，西南联大作为一所大学，与政治权力保持怎样的关系，是它能否让大学制度顺利运行，并贯彻自身教育理念的关键；就内在而言，它思想自由、兼容并包的核心原则如何体现，则是其成败的重要原因。而这两者，尤其需要重视。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a0c1a44e878e0826621ef8" src="https://img.allhistory.com/now/2021-05-16/60a0c1a24cd55d1f8948d4a2+L.png" alt="游客参观西南联大蒙自分校纪念馆。（来自视觉中国）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+游客参观西南联大蒙自分校纪念馆。（来自视觉中国）
+    </figcaption>
+  </figure>
+  <h2 id="section-1">若非龙云的刻意庇护，西南联大难以自由办学</h2>
+  <p> </p>
+  <p>西南联大的成功，首先奠基于民国高等教育成功的基础之上。</p>
+  <p> </p>
+  <p>中国的大学教育，开始于19世纪末期。与欧美相比，中国大学出现虽晚，起点却高。从一开始，它就充分现代化，与世界接轨。1917年，蔡元培执掌北京大学，此前他曾到德国留学，考察过多个国家的大学制度。梅贻琦从1909-1914年留学美国，回国后一直在清华任教。张伯苓曾在日本留学，且在1917年秋天进入美国哥伦比亚大学研究教育，与严修遍游美国，考察私立大学的组织和实施。而一些教会大学如圣约翰大学、燕京大学、东吴大学等，都借鉴了欧美大学的成功经验，并有针对性的本土化。可以说，中国的大学教育一开始就是高屋建瓴，并且在1937年之前蓬勃发展。</p>
+  <p> </p>
+  <p>众所周知，西南联大由清华、北大和南开大学三校组成。在1937年之前，这三所大学都已经各有所长，蔡元培先生在北大主张“思想自由，兼容并包”，它一直被视为北大精神，并且被今人津津乐道。正是在这种精神的熏陶之下，北大成为了新文化运动的发源地。梅贻琦长期在清华任教，1931年出任校长，他的名言是：“所谓大学者，非谓有大楼之谓也，为大师之谓也”。他执掌清华之后，重视通才教育，提倡“五育”，即德、智、体、美、群——这是对蔡元培教育思想的继承和发展。在西南联大成立之前，就有国外学者称清华为世界一流大学。民办的南开大学1937年，在校学生虽然仅有429人，但师资力量较强。</p>
+  <p> </p>
+  <p>可以说，三校组成的西南联大，是强强联合，它能够取得巨大的成就，培养众多的人才，那也是集中顶尖师资，集天下英才而育之的结果。可以想见，如果抗战没有全面爆发，让清华、北大、南开各自独立发展，在优秀的大学制度和良好的办学理念之下，三校仍然会孕育出优秀人才。</p>
+  <p> </p>
+  <p>除此之外，云南省政府主席龙云的刻意庇护，是西南联大成功不可或缺的外因。龙云对蒋介石政府控制西南联大的命令虚与委蛇，又和他作为地方大员维护自身权力，雄踞一方的政治、经济利益密切相关。龙云是彝族人，1884年生于云南昭通，辛亥革命爆发不久便投身滇军，随部队入川支援川军。回滇后，被保送到云南陆军讲武堂第四期学习，毕业后被推荐为第一代“云南王”唐继尧的副官。1927年，龙云在“二六政变”之后崛起，俨然第二代“云南王”，与南京中央政府之间处于半独立的状况。</p>
+  <p> </p>
+  <p>据《中国抗日战争史》第三卷记载，1937年抗战全面爆发之后，中国的政治、军事中心逐渐向西南转移，云南的重要性日渐突出。龙云一方面命令滇军出省作战，并且在省内动员，支持抗战，一方面“对中央军人入滇借词推脱延后”，以控制云南的政治权力和经济利益。蒋介石在国民政府退居并控制四川之后，试图进一步控制云南。但是，龙云在云南权力稳固，并牢牢控制了省政府，国民政府鞭长莫及。正因于此，国民党政府和龙云的关系颇为复杂。双方似乎上下分际，互相尊重，但实际上又互有戒心。蒋介石以监视的态度对待龙云，力求他不溢出一定的范围和底线。龙云则利用自己在地方上的特殊环境与蒋介石抗衡，并派兵出征，支持抗战。双方虽然积怨很深，但外部大体平和。但是，蒋介石希望中央政府控制云南，龙云则希望维持云南的半独立，两方的利益诉求存在明显冲突。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a0c1d0b9c34444a4624b96" src="https://img.allhistory.com/now/2021-05-16/60a0c1cf9c232e04ae3f1803+L.png" alt="龙云。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+龙云。
+    </figcaption>
+  </figure>
+  <p>抗战全面爆发后，中共加强了对龙云的统战工作，“在昆明派代表联络龙云；通过交换密码，沟通龙云与延安的电台联系；设立《新华日报》昆明营业处，组织学生运动；等等。”所有这些活动，都得到了龙云的首肯。对此，蒋介石在日记中写道，“对陕北中共与滇龙应加注意”。（步平、王建朗 《中国抗日战争史》第三卷223页）1941年，中央军进驻昆明。1943和1944年，中国远征军司令部和陆军总司令部在昆明先后成立，数十万精锐部队云集云南。从抗战中后期开始，龙云感到自身统治地位受到威胁，于是对西南联大学生和教工，以及民主同盟等参与的民主运动有意纵容，使得昆明成为“民主堡垒”。</p>
+  <p> </p>
+  <p>此外，龙云还加强了与中共的联系。这使得他与蒋介石的关系进一步恶化。1945年3月20日，蒋介石到昆明。龙云和蒋介石见面时没有谦恭执礼，反而提出中央军撤出昆明和滇西的问题，这让蒋介石下决心撤换他。当年9月底，蒋介石命令云南将领、第一方面军司令卢汉率领部队去越南接收，在事实上夺走了龙云的兵权。10月2日，又免去了龙云云南省政府主席职务。10月2日晚上到3日凌晨，昆明防守司令杜聿明奉蒋介石之令发动政变，迫使龙云交出政权。龙云被挟持到重庆，失去了对云南的控制。1946年7月11日，李公朴在昆明市遭国民党特务开枪暗杀（闻黎明《闻一多传》增订版593页）；1946年7月15日下午，闻一多被国民党特务暗杀（闻黎明《闻一多传》增订版605页），都发生在龙云被免职之后。</p>
+  <p> </p>
+  <p>1938年3月20日，联大负责人张伯苓、蒋梦麟专程拜会龙云。龙云当场写下手谕：“现临大迁滇，在该校舍未建筑完成之前，准由省教育厅将省立农、师、工三校校舍，暂行酌借一部，以应急需，至借用时期，应并由该厅与联大商定可也”，并下令各校“奉文后三日内腾空”；同时，责成省教育厅厅长龚自知与昆明市长裴存藩一道，积极配合联大解决校舍、师生食宿等问题。此外，龙云还带头将自己常住的威远街“龙公馆”隔出一院，给联大作为总办公处。后来联大办公处迁走，龙云仍将该房借给联大作为北京大学的办事处。龙云还将自己的深蓝色福特牌轿车，赠送给北大校长蒋梦麟使用。1938年9月1日，联大校舍委员会完成全部校舍分配。（云南省博物馆编《档案中的西南联大》）</p>
+  <p> </p>
+  <p>此外，龙云曾拨款给西南联大作为救济基金。1940年5月，龙云又设立了奖励清寒大学生的龙氏奖学金，入选者每年奖励120元。首期获奖的500名学生中，西南联大就占了210人。（闻黎明《龙云与西南联大》）</p>
+  <p> </p>
+  <p>但是，龙云对西南联大的支持，却没有获得私人利益上的“回报”。1938年年9月，龙云的女儿报考西南联合大学附中落榜。龙云让秘书长去找校长梅贻琦疏通。但秘书长告诉他，梅贻琦的女儿梅祖芬也没有被录取。龙云马上气消，让女儿上了一所普通中学。</p>
+  <p> </p>
+  <p>1941年3月上旬，蒋介石派三青团组织处长康泽到昆明，要抓拥护共产党的左派学生，遭到龙云抵制。1942年1月7日，西南联大学生发起讨孔游行（即地下党党员浦熙修在《新民报》发表的 “孔二小姐飞机运洋狗”新闻，按照杨天石先生的研究考证，这是不实报道），各校同学参加的两三千人，地处四川和贵州的武汉大学和浙江大学的学生也以不同方式予以声援。在整个大后方引起震动，也引起蒋介石震惊，蒋一再密令龙云“负责取缔，严予禁止”。接着又派康泽来昆明抓人，龙云又一次以“等因奉此”的公文旅行来应付，不采取实际行动。（黎勤、李凌《龙云与民主堡垒西南联大》）</p>
+  <p> </p>
+  <p>可以说，西南联大在云南一直受到龙云的保护和帮助，这既包括经济和物质上的支持，更重要的是抵制了国民党政府对大学的控制。正是因为龙云充当了“保护伞”，使得国民党中央政府的权力难以在西南联大渗透，政令大打折扣，西南联大才得以保持思想自由、兼容并包的原则。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a0c1f94e878e0826621ef9" src="https://img.allhistory.com/now/2021-05-16/60a0c1f79c232e04ae3f1804+L.png" alt="昆明一二一运动纪念广场梅贻琦校长的塑像。（来自视觉中国）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+昆明一二一运动纪念广场梅贻琦校长的塑像。（来自视觉中国）
+    </figcaption>
+  </figure>
+  <p> </p>
+  <h2 id="section-2">一方面支持抗战，一方面坚守自由</h2>
+  <p> </p>
+  <p>照美国学者易社强在《战争与革命中的西南联大》所述，说西南联大是自由的，包括下面几重含义：联大是通才教育的重镇，思想开放，兼容并包，发扬了大不列颠和美利坚的民主传统———英美两国是该校大部分资深教授负笈深造之所。</p>
+  <p> </p>
+  <p>在《联大八年》一书中，关于教授的部分有一个统计：联大179教授当中，97位留美，38位留欧陆，18位留英，3位留日，23位未留学。三位常委，两位留美，一位未留学。5位院长，全为美国博士。26位系主任，除中国文学系及两位留欧陆，3位留英外，皆为留美。（西南联大《除夕副刊》主编《联大八年》192页）学者谢泳认为：“这个统计充分说明西南联大带有极强的西方色彩，特别是它的教育方针和课程设计，主要受美国自由教育思想的影响。在西南联大，教授治校、思想自由、学术自由、兼容并包，已经成为公认的价值标准。”费正清1942年访问西南联大后说，这些在美国接受训练的中国知识分子，其思想、言行、讲学都采取和我们一致的方式和内容……（谢泳《逝去的年代》236页）</p>
+  <p> </p>
+  <p>正如费正清描述的那样，西南联大的自由教育完全与西方接轨。所以，西南联大学子杨振宁、李政道留美之后，很快就融入美国学术界，并且在科学研究上取得了杰出成就。杨振宁离开联大后到美国留学，他说，自己到美国普林斯顿等一流大学，根本就没有感到我们有什么落后，我们在美国都是最杰出的学生。</p>
+  <p> </p>
+  <p>正因为深受美国自由教育思想的影响，西南联大师生反对专制，对于打着国家旗号的“一个政党、一个领袖、一个主义”有一种本能的厌恶和排斥，对于意识形态的强行灌输和洗脑深恶痛绝。教育部规定，党义课是必修课。西南联大曾采用讲座的方式，确定10个讲题，由三民主义教学委员会成员轮流主讲；后来改用读书报告代替，有些学生从未听课，也从未交读书报告，但所有学生成绩单上，这门课程都列为及格。（西南联合大学北京校友会《国立西南联合大学校史》34页）姚从吾在西南联大组织了国民党支部和三青团组织，但没有任何领导权——而西南联大从来没有搞过党委领导。张世英先生生前回忆，在西南联大，一般的学者不大看得起国民党党员和三青团团员。</p>
+  <p> </p>
+  <p>面对强敌入侵或国家遭遇灾难时，往往会产生国家主义、专制主义或威权主义，政府很可能会以国家和爱国的名义来剥夺个人自由和基本权利。在日军铁蹄蹂躏中国之时，西南联大的知识分子一致坚持抗日，但学者和学生们又保持着自己独特的个性；既没有因为抗战和统一而走向国家主义，又没有因为坚守自由民主而无视民族大义。他们一方面潜心学术，成果不断；一方面保持知识分子的独立性，批评政府。在国家与个人的关系上，西南联大这些受到西方教育的自由主义知识分子做出了完美的示范。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a0c2334e878e0826621efa" src="https://img.allhistory.com/now/2021-05-16/60a0c2324cd55d1f8948d4a5+L.png" alt="殷海光。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+殷海光。
+    </figcaption>
+  </figure>
+  <p>在西南联大，师生对国民党的宣传不以为意。当时，国民党骂共产党是“游而不击”。殷海光也骂共产党：“躲在延安，摆出一副超然的姿态。”像他这样赤裸裸地骂左翼力量的，在联大极为罕见。有一次，同学们在一起骂社会的黑暗、国民党的腐败，殷海光很不满：“现在抗战了。虽然很困难，可是，关键时候蒋介石总是有扭转乾坤之力的。你看以前多少次不是如此？和蒋介石比，日本鬼子、××、×××，都是小人物！”因此，一些人对他的话很反感。（刘超《从“另类青年”到“启蒙导师”》）但是，西南联大既有像殷海光这样的国民党拥趸和姚从吾这样的国民党党员，也有马识途、王汉斌这样的中共地下党员，还有一批左翼青年在西南联大民主墙的壁报上长期批评政府，校园里也就分出了左派和右派。（张曼菱《西南联大行思录》286页）由此可见，思想自由的原则，得到了鲜明的体现。</p>
+  <p> </p>
+  <p>清华大学教授何兆武先生在西南联大读大学和研究生共七年，先后读过四个系。他到年老时仍然坚持认为，虽然那时生活艰苦，但因为有自由。所以，西南联大那七年，是自己一生中最幸福的时光。北大教授张世英、武大教授刘绪贻等人，都对西南联大的思想自由、学术自由念念不忘。</p>
+  <p> </p>
+  <p>正如易社强所说， “联大有太多遗产值得跟世人分享。在艰苦的环境下，坚持高尚的思想品质和独立精神；在战争与革命的年代，坚守通才教育的宗旨和方针，西南联大在人类的奋斗史上已经留下了辉煌的篇章。”作为美国自由教育思想孕育的杰作，西南联大已经成为一座历史丰碑。</p>
+  <p> </p>
+  <p>“为什么我们的学校总是培养不出杰出人才？”这就是著名的“钱学森之问”。对此，何兆武先生的一番话，或许是最好的回答：“我认为，一个所谓好的体制应该是最大限度地允许人的自由。没有求知的自由，没有思想的自由，没有个性的发展，就没有个人的创造力，而个人的独创能力实际上才是真正的第一生产力。如果大家都只会念经、背经，开口都说一样的话，那是不可能出任何成果的。”</p>
+  <p> </p>
+  <p>———</p>
+  <p>微信搜索“燕京书评”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-17/%E7%88%B1-%E6%AD%BB%E4%BA%A1%E5%92%8C%E6%9C%BA%E5%99%A8%E4%BA%BA-%E5%A4%AA%E9%98%B3%E7%85%A7%E4%B8%8D%E5%88%B0%E7%9A%84%E5%9C%B0%E6%96%B9-%E4%BD%A0%E7%9B%B8%E4%BF%A1%E6%9C%89-%E4%BA%BA%E5%BF%83-%E8%BF%99%E5%9B%9E%E4%BA%8B%E5%90%97/">
+          爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/">
+          马克·吐温在美国课堂：因朗读时出现歧视性词汇，教授被举报解雇
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-15</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-15/%E5%93%88%E8%B4%9D%E9%A9%AC%E6%96%AF%E6%8B%92%E7%BB%9D%E9%98%BF%E8%81%94%E9%85%8B%E5%9B%BE%E4%B9%A6%E5%A5%96-%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9A%84%E8%89%AF%E7%9F%A5%E8%A1%A8%E7%8E%B0-%E8%BF%98%E6%98%AF%E8%A5%BF%E6%96%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%82%B2%E6%85%A2/">
+          哈贝马斯拒绝阿联酋图书奖：哲学家的良知表现，还是西方世界的傲慢？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-14</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-14/%E6%96%87%E5%AD%A6%E7%95%8C%E7%9A%84%E5%8E%8C%E5%A5%B3%E4%BC%A0%E7%BB%9F-%E5%A5%B3%E6%80%A7%E6%98%AF%E5%A6%82%E4%BD%95%E8%A2%AB%E9%98%BB%E6%8C%A1%E5%9C%A8%E5%86%99%E4%BD%9C%E4%B9%8B%E5%A4%96%E7%9A%84/">
+          文学界的厌女传统：女性是如何被阻挡在写作之外的？
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-15/%E9%98%B2%E6%AD%A2-XSS-%E5%8F%AF%E8%83%BD%E6%AF%94%E6%83%B3%E5%83%8F%E4%B8%AD%E5%9B%B0%E9%9B%A3/">
+            前一篇：防止 XSS 可能比想像中困難
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/">
+            後一篇：马克·吐温在美国课堂：因朗读时出现歧视性词汇，教授被举报解雇
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-15/%E9%98%B2%E6%AD%A2-XSS-%E5%8F%AF%E8%83%BD%E6%AF%94%E6%83%B3%E5%83%8F%E4%B8%AD%E5%9B%B0%E9%9B%A3/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-15/%E5%93%88%E8%B4%9D%E9%A9%AC%E6%96%AF%E6%8B%92%E7%BB%9D%E9%98%BF%E8%81%94%E9%85%8B%E5%9B%BE%E4%B9%A6%E5%A5%96-%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9A%84%E8%89%AF%E7%9F%A5%E8%A1%A8%E7%8E%B0-%E8%BF%98%E6%98%AF%E8%A5%BF%E6%96%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%82%B2%E6%85%A2/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-15/%E9%98%B2%E6%AD%A2-XSS-%E5%8F%AF%E8%83%BD%E6%AF%94%E6%83%B3%E5%83%8F%E4%B8%AD%E5%9B%B0%E9%9B%A3/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-15/%E5%93%88%E8%B4%9D%E9%A9%AC%E6%96%AF%E6%8B%92%E7%BB%9D%E9%98%BF%E8%81%94%E9%85%8B%E5%9B%BE%E4%B9%A6%E5%A5%96-%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9A%84%E8%89%AF%E7%9F%A5%E8%A1%A8%E7%8E%B0-%E8%BF%98%E6%98%AF%E8%A5%BF%E6%96%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%82%B2%E6%85%A2/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

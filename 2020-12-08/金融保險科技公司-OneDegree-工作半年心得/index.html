@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>金融保險科技公司 OneDegree 工作半年心得 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+金融保險科技公司 OneDegree 工作半年心得
+——
+" />
+    <meta property="og:description" content="
+金融保險科技公司 OneDegree 工作半年心得
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="金融保險科技公司 OneDegree 工作半年心得" />
+    <meta property="twitter:title" content="金融保險科技公司 OneDegree 工作半年心得" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40hulitw%2Fworking-at-onedegree-378a0401130e%3Fsource%3Drss-f1fb3e40dc37------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@hulitw/working-at-onedegree-378a0401130e?source=rss-f1fb3e40dc37------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@hulitw/working-at-onedegree-378a0401130e?source=rss-f1fb3e40dc37------2&text=金融保險科技公司 OneDegree 工作半年心得&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@hulitw/working-at-onedegree-378a0401130e?source=rss-f1fb3e40dc37------2&title=金融保險科技公司 OneDegree 工作半年心得" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@hulitw/working-at-onedegree-378a0401130e?source=rss-f1fb3e40dc37------2&title=金融保險科技公司 OneDegree 工作半年心得" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=金融保險科技公司 OneDegree 工作半年心得&body=
+金融保險科技公司 OneDegree 工作半年心得
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@hulitw/working-at-onedegree-378a0401130e?source=rss-f1fb3e40dc37------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@hulitw/working-at-onedegree-378a0401130e?source=rss-f1fb3e40dc37------2&title=金融保險科技公司 OneDegree 工作半年心得&caption=
+金融保險科技公司 OneDegree 工作半年心得
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=金融保險科技公司 OneDegree 工作半年心得&url=https://medium.com/@hulitw/working-at-onedegree-378a0401130e?source=rss-f1fb3e40dc37------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>金融保險科技公司 OneDegree 工作半年心得</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-12-08
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Huli</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@hulitw/working-at-onedegree-378a0401130e?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1607431078000-->
+<p><a href="https://medium.com/@hulitw/working-at-onedegree-378a0401130e?source=rss-f1fb3e40dc37------2">金融保險科技公司 OneDegree 工作半年心得</a>
+——</p>
+
+<div>
+  <p>如果有看過我之前寫的《<a href="https://hulitw.medium.com/2020-senior-front-end-engineer-interview-249c719c1a97">2020 資深前端工程師面試心得（4y, 100k+）</a>》，應該會知道我後來去了一間叫做 OneDegree 的公司，我是 5 月11 號進去的，到現在大概半年多了，是個很適合寫心得的時間點。</p>
+  <p>不過這篇心得不是普通的心得，因為除了個人心得之外還會有一些公司介紹的部分，所以嚴格來說就是半公司介紹半工作心得，一來想說這樣可以讓大家閱讀文章時更融入（？），二來也是我會在文章尾巴順便幫公司工商一下，如果看完公司介紹跟這篇心得之後對 OneDegree 有興趣然後剛好有適合的職缺，歡迎來投履歷，希望未來有機會能當同事。</p>
+  <p>就讓我先來介紹一下我們公司到底在做什麼好了。</p>
+  <h3 id="onedegree-">OneDegree 在幹嘛？</h3>
+  <p>先用簡單一句話來講，可以把我們公司想成：</p>
+  <blockquote>
+拿到了香港純網路保險執照的科技公司  </blockquote>
+  <p>上面這一句就兩個重點，一是保險，二是科技公司。</p>
+  <p>在產品面上公司在做的事情有三塊，分別是：</p>
+  <ol>
+    <li>開發保險科技平台（B2B，可以跟其他保險業者合作）</li>
+    <li>公司自己賣的保險產品（B2C，目前以寵物險為主）</li>
+    <li>資安檢測 SaaS 平台（還沒正式上線）</li>
+  </ol>
+  <p>先來講第一塊好了，總而言之就是一個保險系統，有後台前台也有 API 可以自行串接，假設今天有保險公司找我們合作，我們就可以利用這個系統幫他快速建立出一個新的保險產品，然後提供給他們一個後台可以看到各個保單的狀況，也有一個前台可以讓使用者購買保險，也可以透過 API 跟保險公司內部的系統做整合。</p>
+  <p>這個平台叫作 IXT Core，想看更詳細的說明可以到官網：<a href="https://www.onedegree.global/zh-hk/product/core">https://www.onedegree.global/zh-hk/product/core</a></p>
+  <p>然後公司自己在香港是有純網路保險牌照的，所以我們可以在香港自己賣保險，這就是第二塊在做的事情。而第二塊這邊，背後用的也是 IXT Core 這個保險系統。所以簡單來說，我們既是生產者又是消費者，我覺得有點像是 iCHEF 那樣，最早的時候是為了自家餐廳做了餐廳管理系統，後來發現也可以給其他人用，所以擴展成一個更大的系統，既是開發系統的人，也是使用系統的人。</p>
+  <p>總之我們公司在香港有販賣寵物險，既然有賣保險那就一定會有兩個東西，第一個是買保險的網站，第二個是買了以後觀看個人資料、表單以及申請理賠的 dashboard，而我目前在公司負責的就是相關產品的開發。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*LwhzE3tHEbZqBjsex86f8Q.png" />    <figcaption>
+購買寵物險的前端頁面
+    </figcaption>
+  </figure>
+  <p>最後第三塊看起來跟前兩塊差異可能有點大，但我覺得這其實凸顯了我前面所說的，我們是一間「有保險執照的科技公司」，而不是「懂科技的保險公司」，所以以科技公司的角度來看，有個完全不同的產品似乎比較合理一些（不過長遠來看其實還是跟保險有關啦）。</p>
+  <p>第三個產品是一個 SaaS（Software as a Service）叫做 Cymetrics，簡單來說就是提供資安掃描的一個服務啦。我們發現許多中小企業他們可能沒有錢也沒有人力來做資安這一塊，因此想提供一個簡單方便的服務，只要把網址提供給我們，我們就會定時針對網站自動去做弱點掃描，掃完之後提供一份報告給客戶，讓客戶知道他們網站哪些地方有問題。</p>
+  <p>這產品目前還沒正式上線，但已經有找到一些客戶了，可以期待一下未來的發展。</p>
+  <p>對應到第三塊，公司有一個 cyber security 的 team 專門在做這些事情，例如說這個產品的前後端開發以及背後的掃描服務的改善，也有幾個在研究資安的同事，我覺得這對新創來說是很難能可貴的一件事，因為很少新創會有專門負責這個的 team。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*8BmOIaSCM3tbYcyszJFIFQ.png" />    <figcaption>
+Cymetrics 的 dashboard，感謝設計師跟前端
+    </figcaption>
+  </figure>
+  <p>以上差不多就是我們公司在做的事情，知道產品面以後，再來講技術面的東西就會比較好講。</p>
+  <h3 id="section">那工程師們都在幹嘛？</h3>
+  <p>既然是要開發保險系統，那就一定會有一群後端工程師在努力著，我覺得這邊對於後端一個可能吸引人的地方是資料滿複雜的，畢竟是保險嘛，我進來半年我還是沒有完全搞懂那些錯綜複雜的關係，像是保險人、受益人、被保人、保險標的等等的各種名詞。</p>
+  <p>還有「保單」本身以消費者的角度看似普通，但以系統設計的層面去看，你要考量的東西有很多，例如說一年期的保單在到期續約之後其實會變另外一張，或者是到期的保單也有可能可以申請理賠等等，而核保、繳費或是申請理賠，這些流程也都滿複雜的。而這些錯綜複雜的關係有可能會造成多次的 table join，所以在設計時 performance 也是個需要考量的點。</p>
+  <p>再加上前面有講過這個 IXT Core 的目標是可以給不同的保險公司使用，但每個公司一定都會有一些不同的需求，要怎麼同中求異，異中求同，這也是個問題。</p>
+  <p>除此之外，cyber security 那邊也有後端工程師，那邊的系統架構一樣需要 scalable，因為你必須要應付的是更多的客戶，更多需要被掃瞄的網址，要如何兼顧可用性跟效率以及成本上的考量，這也是個值得被解決的問題。</p>
+  <p>掃描網站這一塊也是。大多數的解決方案都是拿現有工具來用，可是如果現有工具沒有辦法符合我們的需求，那該怎麼辦？這時候只好參考現有工具自己改良或者是自己從頭開發一套，這些也都是有趣的題目。</p>
+  <p>前端的部分也是一樣的，IXT core 那邊的前端一樣會有客製化的挑戰，要怎麼用一個專案來容納不同客製化的需求？如果一個專案不行，那拆分成不同專案的話要怎麼重用相同的部分，又要怎麼做版本控制？除了客製化的挑戰以外，專案本身其實複雜度就很夠了，畢竟要做的是後台，然後功能又多，除了基本的 CRUD 以外一定還有很多其他不同的流程要做。</p>
+  <p>而我所在的 team，是負責自有的保險產品，購買流程其實也是個需要花許多時間去做的事，從外面看起來好像還好，但因為後端 API 有著一定的複雜度，所以前端在串接上也需要去配合；再者，如果想要把產品做到完整，就需要去處理一些 edge case，例如說結帳的時候突然斷線怎麼辦？或是如果註冊成功可是保單沒買成功，又要怎麼處理？</p>
+  <p>在前端技術的部份我們都是用 React + Next.js，其他細節不同 team 會不同，例如說有的寫 TypeScript，有的寫 XState，有的用 redux-observable 有的直接用 react-query，在版本更新上其實跟得算緊，早早就幾乎全部改用 hooks 了，有新版推出也會等一陣子，大概穩定之後就跟著升上去。</p>
+  <p>在同事的協作上也會根據各個 team 不同，有的 team 偏向 Git flow，有的走 Trunk Based development，不過做 code review 這是基本的，有 CI + CD 這也是基本的。</p>
+  <p>以我們 team 為例，發 PR 之後會自動跑幾個東西：</p>
+  <ol>
+    <li>資訊安全相關的靜態掃描</li>
+    <li>unit test + integration test</li>
+    <li>bundle size check</li>
+    <li>lighthouse score</li>
+  </ol>
+  <p>如果有需要的話可以額外去跑 snapshot testing（是真的對畫面做截圖的那種，不是 component 的 snapshot），跟線上的環境比對畫面是否相同，這拿來測一些頁面的完整性挺有用的。</p>
+  <p>比較重要的流程基本上都有 test 在保護，會寫 react-testing-library 跟 cypress，API mocking 的部分最近在嘗試我之前研究的 <a href="https://miragejs.com/">Mirage</a>。</p>
+  <p>除了這些之外，公司也有一個 QA team，以自動化測試為主，手動為輔，幫助我們做好品質控管，每次上版到測試環境的時候都會跑一遍自動化測試。我以前待過的公司基本上都是以手動測試為主，甚至可能連自動化測試都沒有…</p>
+  <p>然後公司有兩三位 SRE，負責處理各種環境建置的大小事，所以這部分不需要工程師自己擔心，我們基本上就是簡單按個按鈕而已，其他那些 deployment 的 script 或是 dockerfile 會由 SRE 協助。</p>
+  <p>整體而言我覺得 tech team 的編制滿完整的，人數也不少，當初在選公司的時候人數就是我的考量之一，只要比我之前待的（前端含我 4 人）多就好了，現在有達成這個目標。</p>
+  <p>然後公司內部有自發性的技術分享活動，每兩週一次，前後端都有，cyber team 也有自己內部的分享，每次大概半小時到一個小時，由同事互相推坑成為講者，之前我自己也有分享過幾次，也聽同事分享過 XState、Recoil、Immer、TypeScript、Cypress 或是 SEO 等等相關的主題，風氣我覺得滿不錯的。</p>
+  <h3 id="section-1">產品開發流程</h3>
+  <p>技術的部分差不多講完了，來講講產品相關的部分。</p>
+  <p>首先身為工程師，大家應該很在意合作的 PM 如何，我第一份工作的時候基本上沒有什麼 PM，第二份在佛心公司的時候其實 PM 很菜，大部分都是由我通靈或是口頭詢問 PM 才得到詳細的規格（不過團隊很小就是了，有些產品開發的流程沒有這麼完整我或多或少可以理解），第三份在前公司的時候會跟一個比較菜的 PM 還有一個產品長合作，後者很專業，但前者就也不怎麼樣，而且有時候寫出來的 spec 很奇怪。</p>
+  <p>到了 OneDegree 之後呢，同事們是我目前合作過比較專業的 PM。其實對於許多工程師來說，只要 PM 不會要求工程師通靈、不會開奇怪的需求、會記得寫 spec，工程師就謝天謝地了，不過這邊的 PM 們當然是比這個還要專業啦，畢竟我覺得上面那幾點是基本中的基本就是了。</p>
+  <p>這邊的 PM 在做一些東西前會先找工程師討論一下可行性，不會硬要塞給你一個很無理的需求，基本上都是由工程師給出建議讓 PM 去參考。然後 spec 這是基本的，都有，JIRA ticket 也有好好管理，按時更新狀態，在訊息的同步上則是我覺得做得最好的一點。</p>
+  <p>在 standup meeting 上面 PM 都會即時跟我們同步一些最新的資訊，例如說保單銷售狀況啦，或是某個需求怎樣怎樣了，然後有新的案子正在洽談了等等，也會解釋要做某個需求背後的原因。</p>
+  <p>公司內是跑兩週一次的 sprint，該有的 meeting 都有，sprint 中間不太會出現插單或者是抽換的情況，比較穩定，雖然說有時候還是會有突然其來的需求，但只要頻率不要太長，並且大家都知道背後的商業利益為何，應該都不會覺得怎麼樣，目前待這半年來說我覺得這種需求的頻率是可以接受的。</p>
+  <p>除了 PM（Product Manager）以外還有另外一個角色叫做 Program Manager，比較是偏技術端這邊的，會在確定需求之後跟前後端溝通，幫忙畫出流程圖，例如說這頁面要打哪一支 API，要做哪一些檢查等等，透過流程圖來溝通的話就滿方便的，而且重點是日後要找資料的時候比較容易，不需要去看 code 也能知道大概的流程長什麼樣子，這個角色也是我之前待過的公司都沒有的。</p>
+  <p>然後有一點我一定要講，因為這是我進公司之後感到最驚訝的一點，那就是 design team！或許對其他見多識廣的人來說沒什麼，但對於幾乎都是待在新創的我來說，這是我進的第一間，有把 UI designer 跟 UX designer 分開的公司！</p>
+  <p>在新的需求從 PM 那邊整理並且產生之後，會先交由 UX designer 去研究相關的事項，確定流程都是順暢的之後再讓 UI designer 去畫 mockup，最後交給工程師。</p>
+  <p>除了這個以外，每週會有兩次 design 相關的會議，這也是工程師可以參與而且鼓勵參與的，鼓勵工程師在正式的 mockup 還沒出現前就看出潛在的問題，就可以及早修改，而不是等到工程師在 sprint grooming 或是 planning 看到 mockup 才跟 PM 反映說：「嗯…你確定要照這個做嗎？」或是「這好像做不出來，不支援」。</p>
+  <p>在設計的部分也有跟前端這邊合作，努力把一些共用的元件規格化，並由 PM 開出 spec 讓規格更完整並且記錄下來，做成通用的 component，形成一個內部的 UI library，這種東西真的是要從 design team 開始做才有可能達成，不然就會變成說雖然有 UI libary，但是每個地方都客製化，那就跟沒有一樣了，但這邊目前是沒有這種狀況發生。</p>
+  <p>做 UI library 也是滿有挑戰性的，光是 component 命名就是一門學問，然後 component 的各個狀態、參數名稱、彈性要多大，這些都是個別需要解決的問題。</p>
+  <p>雖然說有些 component 設計之後的確會需要反覆修改，但大多數的狀況我覺得都算合理，畢竟這還在早期的階段，很難在開頭就想到後續的發展（除非很有經驗），所以修改的部分只要合理就 ok。</p>
+  <h3 id="section-2">公司氛圍</h3>
+  <p>把技術以及產品相關的東西講完了，接下來講一點與「人」相關的部分。公司氛圍跟我之前待過的新創差不多，就是滿歡樂的，跟預期中的差不多，甚至有可能更歡樂一點。</p>
+  <p>公司內部除了前面講的那兩個技術分享的社團以外，也有其他各種社團，例如說運動相關社團，籃球社、羽球社、桌球社等等的，下班時間都會約出去一起運動一下。也有一個一直在出去玩，有著各種活動的社團，什麼密室逃脫啦，一起做料理啦之類的。</p>
+  <p>也有一些比較靜態的，像是桌遊社，會在每週五下午有空的時候一起聚在會議室打桌遊，還有一個我有在參與的不過不是正式社團的群體，叫做美食摘星團，平日中午會一起去吃厲害的餐廳，有些中式餐廳其實你很難一個人去吃，例如說頤宮、天香樓等等，揪同事吃就不會有這種困擾了。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*Z0z7Rhq6pFl_pkQeUsaE0g.jpeg" />    <figcaption>
+某一次的 A Cut 團，吃到賺到，那時候還沒摘星比較便宜
+    </figcaption>
+  </figure>
+  <p>公司的 HR 也是很認真地在舉辦各種有趣的活動增進同事情誼，每個月的慶生會這個就不多說了，很多公司都有，逢年過節則是會有限定版活動出現，例如說之前中秋節的剝柚子大賽，三人一組一共五組報名，在 15 分鐘內用手剝完最多的柚子即為獲勝，而後來那些柚子就被我們這些吃瓜群眾瓜分掉了，好吃。</p>
+  <p>然後大約每兩三個月左右會有一次針對 co-founder 之一的 AMA（Ask Me Anything） session，大家都是問公司相關的問題居多，可以聊公司的策略方向或是未來發展之類的，不過其實他就坐在辦公室的一角，想要找他聊天隨時都可以過去。</p>
+  <p>講到這邊突然想起來我好像有一點忘記說了，那就是我們其實是港商，總部在香港，不過工程師幾乎都在台灣就是了，香港比較多是 marketing 還有幾個 PM 在那邊，不過不是我所待的 team 就是了。</p>
+  <p>因為工作上與那邊沒有太多交流，所以平常也沒什麼機會跟那邊接觸，大概只有 townhall 的時候會透過視訊鏡頭看到而已，畢竟礙於疫情關係，他們想要來台灣出差也滿困難的，可能等疫情好轉之後溝通頻率會更頻繁一點。</p>
+  <h3 id="section-3">硬體設備與公司福利</h3>
+  <p>公司福利可以特別提一下的是特休，在我進來的時候原本是 10 天，明年（2021 年）要變成 15 天了！以台灣新創來說 15 天應該也算是高標了，值得提一下。</p>
+  <p>零食櫃這也是新創標配了，所以也不多提了。</p>
+  <p>硬體設備上就是配個 32 吋的螢幕外加 MacBook Pro，是有 ESC 鍵的版本，很讚！工作的位子我也覺得滿大的，整體而言我覺得挺舒適的。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*py1lcuIa31Pvz9X6JGUkBQ.jpeg" />    <figcaption>
+我在辦公室的位子
+    </figcaption>
+  </figure>
+  <p>公司地點在信義路基隆路口，雖然聽到信義區感覺中午吃飯就貴鬆鬆，但其實不然，因為我們公司那個點離吳興街很近，所以中午吃一餐大概也就 80~100 上下而已，是個十分合理的價格，並沒有特別貴，而且選擇其實算多，再往遠一點走到北醫那邊的話還有更多吃的。</p>
+  <p>另外，我們這棟大樓我覺得人好像沒有到很多，因為很少有需要等電梯等很久的狀況，大多情況都滿快就來了。有些人可能好奇我為什麼特別提這個，因為這一點對有些人來說很重要啊！不誇張，有些人多的辦公大樓光是上班時間等電梯就要花你個五分鐘，這邊完全不會，我沒看過幾次電梯排隊。</p>
+  <h3 id="section-4">不足的地方</h3>
+  <p>雖然說我覺得上面也沒有都在講好話，只是平實地描述一下事實而已，但還是特別講幾個我覺得美中不足的地方好了，避免有人誤以為這是葉佩雯。</p>
+  <p>第一點是公司在工具的選擇上是走微軟體系，所以內部溝通是用 Teams，雖然說他的功能很完整沒錯，但我個人還是比較喜歡 Slack，雖然說 Slack 好像沒有跟 calendar 或是視訊會議做整合，但以聊天溝通來說我覺得 Slack 還是比較好用一些。</p>
+  <p>第二點是我們用的是 GitLab 而不是 GitHub，以跟其他第三方服務整合來看，GitHub 支援性應該是最好的，點幾個按鈕就好了，但 GitLab 有些功能可能就要自己做，我還是比較喜歡 GitHub。</p>
+  <p>第三點是公司內部的文件雖然多，例如說 product requirement 啦，處理錯誤狀態的 guide book 啦，諸如此類的，但目前在資訊的取得上還是有一定的難度，有些散落各地，你很難在一個相同的地方找到它。</p>
+  <p>我是這樣評估這個問題的：「如果我今天剛加入公司，想知道公司產品有哪些功能，我有多容易找到答案？」，以目前來說，我覺得是有困難的，不過這點公司內部有在做改進就是了，有在慢慢 build 一個公司內部的 wiki。</p>
+  <p>每個角色看到的問題都會不太一樣，以我的角色（工程師）來說，並沒有看到什麼太大的問題。</p>
+  <h3 id="section-5">整體心得</h3>
+  <p>OneDegree 其實是我目前待過，無論在組織的編制或是開發流程上都是最完整的一間公司（有人可能會問說我在佛心公司的時候不是應該更完整嗎？抱歉沒有，我待的 team 很小），技術討論的風氣還不錯，工作氣氛也很歡樂，目前是都待的滿舒適的。</p>
+  <p>在工作內容上也是有著一定的挑戰性，而目前在這邊我覺得技術上收穫最多的是測試相關的東西，以前在其他公司工作的時候也都想往測試這塊去精進，但沒有同事一起做的話容易怠惰，這邊的話剛好同事們也想補強測試這塊，所以陸陸續續加了很多東西進去，每次跑測試看到一片綠綠的就很開心，一直想玩的 Cypress 也終於在這邊做得比較完整了一點。</p>
+  <p>喔對了忘記講工時，基本上就是滿彈性的啦，大部分人應該都是十點左右進辦公室，六點半到七點左右走，而我通常都是九點到，六點走，真的有其他重要的事的話時間也是可以調配的。</p>
+  <p>公司目前也是屬於一個還在擴張的階段，同事越來越多，我五月才進去的，結果到現在十二月就多了應該有十幾個同事吧，年底跟明年初也會再補一批人進來。</p>
+  <p>總之，整體而言我目前在這間公司待得不錯。合作的同事們，無論是工程師、設計師或是 PM，都是我工作到目前為止專業程度最高的。在開發流程上也是我待過最完整的一間。</p>
+  <p>不過這邊也要平衡報導一下，我的比較基準是來自於前幾間公司，而前幾間公司又偏新創偏小，OneDegree 的 tech team 是我合作過最大的一個，所以會專業一點好像滿正常的（？），因此搞不好對一些待過制度較完整公司的人來說，這邊其實沒那麼完整，或者是普普通通，畢竟標準是會因人而異的，我只是想強調我的比較基準是什麼。</p>
+  <p>從不同的角色去看公司，應該也會得到不同的心得，以我的角色看出去我看到的就是這篇這樣，工作內容上著墨比較多在於技術方面的事情，也有可能其他角色會看到不一樣的風景，但這我就無從得知了。</p>
+  <h3 id="section-6">總結</h3>
+  <p>好了該來做個總結了。</p>
+  <p>如果你想要一個量化的分數的話，第一間公司我給 80 分，第二間 70 分，第三間 75 分，而現在這間 OneDegree 我可以給到 85 分（如果你好奇我前幾間都在幹嘛，請參考<a href="https://medium.com/hulis-blog/4-years-review-7fb7edc52687">《成為前端工程師的四週年回顧》</a>）。</p>
+  <p>如果你剛好有在找工作，而且看了介紹覺得感興趣，也歡迎來投遞履歷，我目前會推薦 OneDegree 的原因有幾個：</p>
+  <ol>
+    <li>工作氛圍愉快</li>
+    <li>技術能力是有的（可以找到比你更強的同事討論東西）</li>
+    <li>做的事情有挑戰性（資料夠複雜）</li>
+  </ol>
+  <p>目前有開放的職缺可以直接參考 OneDegree 在 Yourator 上的徵才頁面：<a href="https://www.yourator.co/companies/AIFinancialTechnology">https://www.yourator.co/companies/AIFinancialTechnology</a></p>
+  <p>另外，我滿好奇有多少潛在的面試者會看到這篇文，所以如果方便的話，可以在投履歷或者是面試時跟我們家 HR 說一下是看到這篇文才來投的，我才能有個資料當作參考。</p>
+  <p>大概就是這樣啦，以上就是在 OneDegree 工作半年左右的心得，沒意外的話可能工作滿一年或是一年半會再來 po 一篇，更新一下近況，也可以跟這篇文章做一下對比。</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=378a0401130e" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2021-01-26</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-26/%E6%9C%83%E5%96%94-%E8%A9%B3%E7%B4%B0%E6%99%82%E9%96%93%E5%8F%AF%E4%BB%A5%E5%8F%83%E8%80%83-lidemy-%E7%B2%89%E7%B5%B2%E5%B0%88%E9%A0%81-%E6%9C%80%E6%96%B0%E8%A8%8A%E6%81%AF%E9%83%BD%E6%9C%83%E5%9C%A8%E4%B8%8A%E9%9D%A2%E5%85%AC%E5%91%8A/">
+          會喔，詳細時間可以參考 lidemy 粉絲專頁，最新訊息都會在上面公告
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-01-02</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-02/%E7%B7%9A%E4%B8%8A%E8%AA%B2%E7%A8%8B%E5%B9%B3%E5%8F%B0-Teachable-%E4%BB%8B%E7%B4%B9%E8%88%87%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/">
+          線上課程平台 Teachable 介紹與使用心得
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-11-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-14/%E6%88%91%E5%BF%83%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%90%86%E6%83%B3%E5%BE%B5%E6%89%8D%E6%96%87/">
+          我心目中的理想徵才文
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-29</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-29/%E9%9D%A0%E8%BF%91%E9%86%AB%E9%99%A2-%E9%9B%99%E8%85%BF%E5%B0%B1%E6%AD%A2%E4%B8%8D%E4%BD%8F%E9%A1%AB%E6%8A%96-%E4%B8%AD%E5%9C%8B%E9%86%AB%E8%AD%B7%E7%96%AB%E6%83%85%E5%BE%8C%E5%BF%83%E7%90%86%E5%8F%97%E5%89%B5%E8%AA%BF%E6%9F%A5/">
+          靠近醫院，雙腿就止不住顫抖：中國醫護疫情後心理受創調查
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-12-07/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E5%8E%9F%E4%BE%86%E5%9C%A8-WTO%E6%A8%A1%E5%BC%8F-%E4%B9%8B%E5%89%8D-%E8%87%BA%E6%BE%8E%E9%87%91%E9%A6%AC-%E7%9A%84%E8%BA%AB%E5%88%86%E5%B7%B2%E7%B6%93%E8%A2%AB%E7%94%A8%E5%9C%A8%E6%9F%90%E4%BA%9B%E5%9C%8B%E9%9A%9B%E7%B5%84%E7%B9%94%E4%B8%AD%E4%BA%86/">
+            前一篇：[臺灣小事]原來在「WTO模式」之前，「臺澎金馬」的身分已經被用在某些國際組織中了
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-12-08/%E4%B8%AD%E5%9B%BD%E5%90%B9%E7%9A%84%E7%89%9B%E7%9A%AE%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%8A%A0%E5%89%A7%E4%B8%AD%E8%A5%BF%E6%96%B9%E4%B9%8B%E9%97%B4%E7%9A%84%E5%88%86%E6%AD%A7-iYouPort/">
+            後一篇：中国吹的牛皮可能会加剧中西方之间的分歧 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-12-07/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E5%8E%9F%E4%BE%86%E5%9C%A8-WTO%E6%A8%A1%E5%BC%8F-%E4%B9%8B%E5%89%8D-%E8%87%BA%E6%BE%8E%E9%87%91%E9%A6%AC-%E7%9A%84%E8%BA%AB%E5%88%86%E5%B7%B2%E7%B6%93%E8%A2%AB%E7%94%A8%E5%9C%A8%E6%9F%90%E4%BA%9B%E5%9C%8B%E9%9A%9B%E7%B5%84%E7%B9%94%E4%B8%AD%E4%BA%86/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-12-08/%E4%B8%AD%E5%9B%BD%E5%90%B9%E7%9A%84%E7%89%9B%E7%9A%AE%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%8A%A0%E5%89%A7%E4%B8%AD%E8%A5%BF%E6%96%B9%E4%B9%8B%E9%97%B4%E7%9A%84%E5%88%86%E6%AD%A7-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-01-02/%E7%B7%9A%E4%B8%8A%E8%AA%B2%E7%A8%8B%E5%B9%B3%E5%8F%B0-Teachable-%E4%BB%8B%E7%B4%B9%E8%88%87%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-11-14/%E6%88%91%E5%BF%83%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%90%86%E6%83%B3%E5%BE%B5%E6%89%8D%E6%96%87/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-12-07/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E5%8E%9F%E4%BE%86%E5%9C%A8-WTO%E6%A8%A1%E5%BC%8F-%E4%B9%8B%E5%89%8D-%E8%87%BA%E6%BE%8E%E9%87%91%E9%A6%AC-%E7%9A%84%E8%BA%AB%E5%88%86%E5%B7%B2%E7%B6%93%E8%A2%AB%E7%94%A8%E5%9C%A8%E6%9F%90%E4%BA%9B%E5%9C%8B%E9%9A%9B%E7%B5%84%E7%B9%94%E4%B8%AD%E4%BA%86/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-12-08/%E4%B8%AD%E5%9B%BD%E5%90%B9%E7%9A%84%E7%89%9B%E7%9A%AE%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%8A%A0%E5%89%A7%E4%B8%AD%E8%A5%BF%E6%96%B9%E4%B9%8B%E9%97%B4%E7%9A%84%E5%88%86%E6%AD%A7-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-01-02/%E7%B7%9A%E4%B8%8A%E8%AA%B2%E7%A8%8B%E5%B9%B3%E5%8F%B0-Teachable-%E4%BB%8B%E7%B4%B9%E8%88%87%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-11-14/%E6%88%91%E5%BF%83%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%90%86%E6%83%B3%E5%BE%B5%E6%89%8D%E6%96%87/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

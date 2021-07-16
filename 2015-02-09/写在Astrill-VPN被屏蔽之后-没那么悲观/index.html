@@ -1,0 +1,4957 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>写在Astrill VPN被屏蔽之后：没那么悲观 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+  
+    
+      
+        
+              
+  Vergil  在 星期一, 02/09/2015 - 10:59 提交 
+          
+          
+            
+              
+                
+                  
+                      4147241526_25355b6099_z.jpg  
+                    
+                       
+                        
+                          
+ 图： Jason Wong 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   写在Astrill VPN被屏蔽之后：没那么悲观 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  2014年11月4日，名为“枫叶香蕉”的翻墙软件作者许东，被北京西城区德胜门派出所警察以“寻衅滋事罪”羁押到北京市第一看守所。（详情参见：  《翻墙=犯法？从许东翻墙第一案说起》  一文）   2014年12月6日，Gmail 被全面屏蔽，POP3、IMAP 等服务器端口均被屏蔽，导致不仅无法访问在线版，并且连 Foxmail ，Outlook 等邮件客户端也无法正常使用。   2015年1月15日，著名的Android端翻墙软件fqrouter作者正式宣布该项目关闭，不再进行更新和维护；（关于fqrouter的介绍参见：  《七种武器之孔雀翎：FQrouter》  ）   前不久，一则新闻又给众多大陆网民浇上一盆冷水，著名VPN供应商 Astrill 通知用户，因为 GFW 升级，使用 IPSec、L2TP/IPSec协议的设备将无法进行正常访问，而《环球时报》英文网撰文称， 
+           中国工信部曾规定，在中国提供VPN服务的公司必须登记注册，否则将“不受中国法律的保护”
+           。   此事在大陆互联网上掀起悍然大波，众多中国互联网民直呼中国互联网寒冬将近，  今后翻墙的行为无论在立法上还是技术上，都将受到极大的威胁和限制  。   GFW和行政监管力量双管齐下，对翻墙行为进行联合打击，甚至有网友传播2015年4月将全面落实白名单制度建成大中华局域网的言论，一时间风声鹤唳，草木皆兵，大有山雨欲来风满楼之势。
+                   
+           那么事实上的情况真的就如此么？
+           
+                  个人认为事实情况没有那么悲观。
+                  这一次 Astrill 在国内被屏蔽，之所以受到如此大关注的主要原因，不仅仅是因为 Astrill 是一款人气颇高口碑不错的 VPN 服务供应商。更重要的原因是，许多网民以为是整个 VPN 协议受到了 GFW 的干扰和破坏，至此以后未在官方注册的 VPN 服务就在大陆无法使用了。   事实并非如此， VPN协议根据其加密的协议粗略分为PPTP，L2TP/IPSEC，OPENVPN，SSL VPN，Ikev2 VPN，Cisco VPN等，而这一次 Asrill 被屏蔽的是以 L2TP/IPSEC 协议加密的VPN服务。（关于VPN协议介绍内容可以参见：  《翻墙安全》  一文）   其实 VPN 服务被屏蔽由来已久，早在2010年期间，就有众多网友发现联通网络屏蔽了安全性能最弱的PPTP协议方式。   2012年十八大期间，OpenVPN协议方式就遭到全面封杀，包括我们在此前介绍的一款采用 OpenVPN 协议翻墙的解决方案 Pritunl 就因此无法使用。（关于Pritunl的介绍可以参见：  Pritunl：简易搭建个人VPN  ）   
+           而这一次安全性能较高的L2TP/IPSEC协议方式被屏蔽，应该说仅仅是GFW阶段升级的一个简单标志，并不能说其彻底摧毁了 VPN 协议的生存模式
+           。
+                   
+           封锁成本增加
+           
+                  由于大陆和海外的通信越来越多的采用加密方式，GFW对各种加密方式的识别和嗅探的压力日益增大，GFW的维护以及自身对于资源的消耗与日俱增。   同时GFW维护人员的各种疏忽大意和不当行为都会牵一发而动全身，对大陆整个互联网环境造成不可估量的破坏。    2014年初的那次导致接近八成以上中国网站域名无法解析的灾难  ，经过推测就是因为GFW维护人员操作错误导致的。   
+           因此全面彻底封杀翻墙方式，从技术上来说虽说并非不可能，但其成本和压力将是巨大的
+           ，而且这一次对于 L2TP/IPSec 协议的封杀主要集中在像 Astrill 这样名声在外的几个主要 VPN 服务商，而且只局限于IOS系统平台，有网友反映还是有不少漏网之鱼依旧可以继续提供服务。   而且，对于上述几种 VPN 访问协议的屏蔽，并不能阻挡网友翻墙的热情，就像一个推友在 Twitter 上写到的：
+                  
+                    看着一群中国人在 Twitter 上讨论 VPN 被屏蔽之后就无法翻墙的言论就觉得好笑。
+                  
+                  这场道高一尺魔高一丈的争斗并未结束，Astrill VPN 事后宣称这场与中国封锁的斗争并未结束。   退一步讲， 
+           即使 PPTP ，OpenVPN，L2TP/IPSec 协议都最终倒下无法恢复后，我们还有 SSL VPN ,Cisco VPN等协议可以选择，安全性能更高，更加隐蔽。
+           特别是依托于思科硬件服务器的 Cisco Anyconnect VPN 方式最近受到各大VPN服务商和用户的青睐。   就在即将写完本文之时，有网友发来消息，Astrill 重新开始恢复工作了。   借用一位网友的评论来结束此文：
+                  
+                    他们以为关了餐厅，我们就要去吃屎。
+                  
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                其实，你还缺一件武器                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                Facebook带来的恐慌                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                删除真的很容易吗？删除之后呢？抵制 Facebook 运动不该忽视深层问题                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                反间谍法出台 言论管控力度登峰造极                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 08:57 
+                   永久连接 
+                
+              
+              
+                
+                  payday loans in ct  
+                
+                    
+                    
+                      
+                        wells fargo direct deposit advance &lt;a href=  https://valoansofcalifornia.com/loans/how-to-get-a-loan-without-a-bank-a...  to get a loan without a bank account&lt;/a&gt;  payday loan direct lenders bad credit &lt;a href="  https://valoansofcalifornia.com/loans/next-day-cash-loans.html"&gt;next  day cash loans&lt;/a&gt;  debit card loans with no bank account &lt;a href=  https://valoansofcalifornia.com/loans/600-credit-score-credit-card.html&gt;600  credit score credit card&lt;/a&gt;  online payday loan direct lender &lt;a href="  https://valoansofcalifornia.com/loans/ace-cash-express-modesto-ca.html"&gt;ace  cash express modesto ca&lt;/a&gt;  ace check cashing dc &lt;a href=  https://valoansofcalifornia.com/loans/loan-places-open-on-sunday.html&gt;loan  places open on sunday&lt;/a&gt;  real payday loan lenders &lt;a href="  https://valoansofcalifornia.com/loans/long-term-personal-loan.html"&gt;long  term personal loan&lt;/a&gt;
+                        &lt;a href="  http://vondranlegal.com/us/sugar-dating-new-york-times.php"&gt;sugar  dating new york times&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/interracial-dating-white-guy-black...  dating white guy black girl&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/free-swinger-dating-sites.php"&gt;free  swinger dating sites&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/fat-girl-skinny-guy-dating.php"&gt;fat  girl skinny guy dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/texting-rules-for-dating-over-40.php"&gt;texting  rules for dating over 40&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 09:18 
+                   永久连接 
+                
+              
+              
+                
+                  small personal loans no credit  
+                
+                    
+                    
+                      
+                        payday loans without direct deposit from employer &lt;a href=  https://valoansofcalifornia.com/loans/no-credit-check-loans-new-york.htm...  credit check loans new york&lt;/a&gt;  is 600 a bad credit score &lt;a href="  https://valoansofcalifornia.com/loans/cash-link-title-pawn.html"&gt;cash  link title pawn&lt;/a&gt;  poor credit loan lenders &lt;a href=  https://valoansofcalifornia.com/loans/bad-credit-personal-loans-californ...  credit personal loans california&lt;/a&gt;  credit card for poor credit &lt;a href="  https://valoansofcalifornia.com/loans/private-loan-bad-credit.html"&gt;private  loan bad credit&lt;/a&gt;  personal loan for bad credit &lt;a href=  https://valoansofcalifornia.com/loans/cash-loan-no-credit.html&gt;cash  loan no credit&lt;/a&gt;  24 hour cash loans &lt;a href="  https://valoansofcalifornia.com/loans/fast-auto-and-payday-loans.html"&gt;fast  auto and payday loans&lt;/a&gt;
+                        &lt;a href="  http://ashevillemovingcompany.com/usa/nebraska-girl-murdered-online-dati...  girl murdered online dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/dating-a-skinny-girl.php"&gt;dating  a skinny girl&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/best-names-for-dating-sites.php"&gt;best  names for dating sites&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/safe-adult-dating-sites-in-my-area.php"&gt;safe  adult dating sites in my area&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/when-dating-in-san-francisco-tumbl...  dating in san francisco tumblr&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Jeaacalay (未验证)  
+                   星期四, 04/25/2019 - 00:35 
+                   永久连接 
+                
+              
+              
+                
+                  Synthroid 125mcg Online Pharmacy JeaPriods  
+                
+                    
+                    
+                      
+                        Amoxicillin Yogurt Effect Buy Cialis Online Pharmacy Cephalexin Sids Affects &lt;a href=  http://cheapcheapvia.com&gt;viagra&lt;/a&gt;  Kamagra France Livraison Rapide
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期六, 06/01/2019 - 11:09 
+                   永久连接 
+                
+              
+              
+                
+                  Citalopram Buy No Prescription Kelpaycle  
+                
+                    
+                    
+                      
+                        Cheap Kamagra Fast Delivery Cialis Generique En Europe &lt;a href=  http://orderviapills.com&gt;viagra  online&lt;/a&gt; What Is Amoxicillin For Amoxicillin Ok To Be In Sun Doryx Adoxa
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    StevElug (未验证)  
+                   星期六, 06/01/2019 - 20:38 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Generico Acquista Stevprople  
+                
+                    
+                    
+                      
+                        Cialis Generico PreР С–Р’В§o Farmacias Usa Online Obtenez Dapoxetine Online No Prescription &lt;a href=  http://xbmeds.com&gt;&lt;/a&gt;  The Healthy Man Viagra Cephalexin Synonym Cialis E Effetti Collaterali
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期日, 06/02/2019 - 05:02 
+                   永久连接 
+                
+              
+              
+                
+                  Cheapest Canadian Generic Cialis KelIdeodo  
+                
+                    
+                    
+                      
+                        Hearthyman &lt;a href=  http://nefoc.com&gt;propecia  minoxidil 5&lt;/a&gt; Cheapviagrausa Cialis Para Impotencia Valtrex Online Pharmacy
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 11:34 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Occasion En Baisse EllCauh  
+                
+                    
+                    
+                      
+                        Achat Tadalafil Canada Buy Nimegen &lt;a href=  http://rxasian.com&gt;buy  viagra&lt;/a&gt; Buy Real Propecia
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期日, 06/02/2019 - 16:11 
+                   永久连接 
+                
+              
+              
+                
+                  Can You Puchase Prochlorperazine Online Matsculky  
+                
+                    
+                    
+                      
+                        What Does Keflex Treat &lt;a href=  http://cialgeneri.com&gt;generic  cialis from india&lt;/a&gt; Prix Du Cialis En Suisse Real Viagra Without A Script Can I Purchase Generic Dutasteride Pills
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 20:54 
+                   永久连接 
+                
+              
+              
+                
+                  Amoxicillin Over The Counter EllCauh  
+                
+                    
+                    
+                      
+                        Derniers Conseils Plus Longs Xenical Effets Secondaires Finasteride 5 Mg Online Cheap &lt;a href=  http://crdrugs.com&gt;generic  cialis canada&lt;/a&gt; Zithromax For Children
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期一, 06/03/2019 - 16:29 
+                   永久连接 
+                
+              
+              
+                
+                  Ciplox EllCauh  
+                
+                    
+                    
+                      
+                        Buy Azithromycin Zithromax &lt;a href=  http://asacdz.com&gt;cialis  tablets for sale&lt;/a&gt; Que Es Cialis Vs Viagra Buy Liquid Doxycycline
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期一, 06/03/2019 - 17:21 
+                   永久连接 
+                
+              
+              
+                
+                  Propecia Cost Prescription LesTreS  
+                
+                    
+                    
+                      
+                        Viagra Cialis Levitra Comparison Propecia France Fluoxetine Us Pharmacy &lt;a href=  http://addrall.com&gt;acheter  alli suisse&lt;/a&gt; Keflex Allergic Reaction Symptoms Canadian Medicines
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期二, 06/04/2019 - 06:46 
+                   永久连接 
+                
+              
+              
+                
+                  Is Zithromax Okay For Breastfeeding Ellnoug  
+                
+                    
+                    
+                      
+                        Find Acticin Cheap In Usa With Next Day Delivery Propecia Online Without A Prescription Buy &lt;a href=  http://howtogetvia.com&gt;buy  viagra online&lt;/a&gt; Generic Amoxicilina Tablet On Line
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    <meta property="og:description" content="
+  
+    
+      
+        
+              
+  Vergil  在 星期一, 02/09/2015 - 10:59 提交 
+          
+          
+            
+              
+                
+                  
+                      4147241526_25355b6099_z.jpg  
+                    
+                       
+                        
+                          
+ 图： Jason Wong 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   写在Astrill VPN被屏蔽之后：没那么悲观 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  2014年11月4日，名为“枫叶香蕉”的翻墙软件作者许东，被北京西城区德胜门派出所警察以“寻衅滋事罪”羁押到北京市第一看守所。（详情参见：  《翻墙=犯法？从许东翻墙第一案说起》  一文）   2014年12月6日，Gmail 被全面屏蔽，POP3、IMAP 等服务器端口均被屏蔽，导致不仅无法访问在线版，并且连 Foxmail ，Outlook 等邮件客户端也无法正常使用。   2015年1月15日，著名的Android端翻墙软件fqrouter作者正式宣布该项目关闭，不再进行更新和维护；（关于fqrouter的介绍参见：  《七种武器之孔雀翎：FQrouter》  ）   前不久，一则新闻又给众多大陆网民浇上一盆冷水，著名VPN供应商 Astrill 通知用户，因为 GFW 升级，使用 IPSec、L2TP/IPSec协议的设备将无法进行正常访问，而《环球时报》英文网撰文称， 
+           中国工信部曾规定，在中国提供VPN服务的公司必须登记注册，否则将“不受中国法律的保护”
+           。   此事在大陆互联网上掀起悍然大波，众多中国互联网民直呼中国互联网寒冬将近，  今后翻墙的行为无论在立法上还是技术上，都将受到极大的威胁和限制  。   GFW和行政监管力量双管齐下，对翻墙行为进行联合打击，甚至有网友传播2015年4月将全面落实白名单制度建成大中华局域网的言论，一时间风声鹤唳，草木皆兵，大有山雨欲来风满楼之势。
+                   
+           那么事实上的情况真的就如此么？
+           
+                  个人认为事实情况没有那么悲观。
+                  这一次 Astrill 在国内被屏蔽，之所以受到如此大关注的主要原因，不仅仅是因为 Astrill 是一款人气颇高口碑不错的 VPN 服务供应商。更重要的原因是，许多网民以为是整个 VPN 协议受到了 GFW 的干扰和破坏，至此以后未在官方注册的 VPN 服务就在大陆无法使用了。   事实并非如此， VPN协议根据其加密的协议粗略分为PPTP，L2TP/IPSEC，OPENVPN，SSL VPN，Ikev2 VPN，Cisco VPN等，而这一次 Asrill 被屏蔽的是以 L2TP/IPSEC 协议加密的VPN服务。（关于VPN协议介绍内容可以参见：  《翻墙安全》  一文）   其实 VPN 服务被屏蔽由来已久，早在2010年期间，就有众多网友发现联通网络屏蔽了安全性能最弱的PPTP协议方式。   2012年十八大期间，OpenVPN协议方式就遭到全面封杀，包括我们在此前介绍的一款采用 OpenVPN 协议翻墙的解决方案 Pritunl 就因此无法使用。（关于Pritunl的介绍可以参见：  Pritunl：简易搭建个人VPN  ）   
+           而这一次安全性能较高的L2TP/IPSEC协议方式被屏蔽，应该说仅仅是GFW阶段升级的一个简单标志，并不能说其彻底摧毁了 VPN 协议的生存模式
+           。
+                   
+           封锁成本增加
+           
+                  由于大陆和海外的通信越来越多的采用加密方式，GFW对各种加密方式的识别和嗅探的压力日益增大，GFW的维护以及自身对于资源的消耗与日俱增。   同时GFW维护人员的各种疏忽大意和不当行为都会牵一发而动全身，对大陆整个互联网环境造成不可估量的破坏。    2014年初的那次导致接近八成以上中国网站域名无法解析的灾难  ，经过推测就是因为GFW维护人员操作错误导致的。   
+           因此全面彻底封杀翻墙方式，从技术上来说虽说并非不可能，但其成本和压力将是巨大的
+           ，而且这一次对于 L2TP/IPSec 协议的封杀主要集中在像 Astrill 这样名声在外的几个主要 VPN 服务商，而且只局限于IOS系统平台，有网友反映还是有不少漏网之鱼依旧可以继续提供服务。   而且，对于上述几种 VPN 访问协议的屏蔽，并不能阻挡网友翻墙的热情，就像一个推友在 Twitter 上写到的：
+                  
+                    看着一群中国人在 Twitter 上讨论 VPN 被屏蔽之后就无法翻墙的言论就觉得好笑。
+                  
+                  这场道高一尺魔高一丈的争斗并未结束，Astrill VPN 事后宣称这场与中国封锁的斗争并未结束。   退一步讲， 
+           即使 PPTP ，OpenVPN，L2TP/IPSec 协议都最终倒下无法恢复后，我们还有 SSL VPN ,Cisco VPN等协议可以选择，安全性能更高，更加隐蔽。
+           特别是依托于思科硬件服务器的 Cisco Anyconnect VPN 方式最近受到各大VPN服务商和用户的青睐。   就在即将写完本文之时，有网友发来消息，Astrill 重新开始恢复工作了。   借用一位网友的评论来结束此文：
+                  
+                    他们以为关了餐厅，我们就要去吃屎。
+                  
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                其实，你还缺一件武器                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                Facebook带来的恐慌                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                删除真的很容易吗？删除之后呢？抵制 Facebook 运动不该忽视深层问题                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                反间谍法出台 言论管控力度登峰造极                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 08:57 
+                   永久连接 
+                
+              
+              
+                
+                  payday loans in ct  
+                
+                    
+                    
+                      
+                        wells fargo direct deposit advance &lt;a href=  https://valoansofcalifornia.com/loans/how-to-get-a-loan-without-a-bank-a...  to get a loan without a bank account&lt;/a&gt;  payday loan direct lenders bad credit &lt;a href="  https://valoansofcalifornia.com/loans/next-day-cash-loans.html"&gt;next  day cash loans&lt;/a&gt;  debit card loans with no bank account &lt;a href=  https://valoansofcalifornia.com/loans/600-credit-score-credit-card.html&gt;600  credit score credit card&lt;/a&gt;  online payday loan direct lender &lt;a href="  https://valoansofcalifornia.com/loans/ace-cash-express-modesto-ca.html"&gt;ace  cash express modesto ca&lt;/a&gt;  ace check cashing dc &lt;a href=  https://valoansofcalifornia.com/loans/loan-places-open-on-sunday.html&gt;loan  places open on sunday&lt;/a&gt;  real payday loan lenders &lt;a href="  https://valoansofcalifornia.com/loans/long-term-personal-loan.html"&gt;long  term personal loan&lt;/a&gt;
+                        &lt;a href="  http://vondranlegal.com/us/sugar-dating-new-york-times.php"&gt;sugar  dating new york times&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/interracial-dating-white-guy-black...  dating white guy black girl&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/free-swinger-dating-sites.php"&gt;free  swinger dating sites&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/fat-girl-skinny-guy-dating.php"&gt;fat  girl skinny guy dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/texting-rules-for-dating-over-40.php"&gt;texting  rules for dating over 40&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 09:18 
+                   永久连接 
+                
+              
+              
+                
+                  small personal loans no credit  
+                
+                    
+                    
+                      
+                        payday loans without direct deposit from employer &lt;a href=  https://valoansofcalifornia.com/loans/no-credit-check-loans-new-york.htm...  credit check loans new york&lt;/a&gt;  is 600 a bad credit score &lt;a href="  https://valoansofcalifornia.com/loans/cash-link-title-pawn.html"&gt;cash  link title pawn&lt;/a&gt;  poor credit loan lenders &lt;a href=  https://valoansofcalifornia.com/loans/bad-credit-personal-loans-californ...  credit personal loans california&lt;/a&gt;  credit card for poor credit &lt;a href="  https://valoansofcalifornia.com/loans/private-loan-bad-credit.html"&gt;private  loan bad credit&lt;/a&gt;  personal loan for bad credit &lt;a href=  https://valoansofcalifornia.com/loans/cash-loan-no-credit.html&gt;cash  loan no credit&lt;/a&gt;  24 hour cash loans &lt;a href="  https://valoansofcalifornia.com/loans/fast-auto-and-payday-loans.html"&gt;fast  auto and payday loans&lt;/a&gt;
+                        &lt;a href="  http://ashevillemovingcompany.com/usa/nebraska-girl-murdered-online-dati...  girl murdered online dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/dating-a-skinny-girl.php"&gt;dating  a skinny girl&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/best-names-for-dating-sites.php"&gt;best  names for dating sites&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/safe-adult-dating-sites-in-my-area.php"&gt;safe  adult dating sites in my area&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/when-dating-in-san-francisco-tumbl...  dating in san francisco tumblr&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Jeaacalay (未验证)  
+                   星期四, 04/25/2019 - 00:35 
+                   永久连接 
+                
+              
+              
+                
+                  Synthroid 125mcg Online Pharmacy JeaPriods  
+                
+                    
+                    
+                      
+                        Amoxicillin Yogurt Effect Buy Cialis Online Pharmacy Cephalexin Sids Affects &lt;a href=  http://cheapcheapvia.com&gt;viagra&lt;/a&gt;  Kamagra France Livraison Rapide
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期六, 06/01/2019 - 11:09 
+                   永久连接 
+                
+              
+              
+                
+                  Citalopram Buy No Prescription Kelpaycle  
+                
+                    
+                    
+                      
+                        Cheap Kamagra Fast Delivery Cialis Generique En Europe &lt;a href=  http://orderviapills.com&gt;viagra  online&lt;/a&gt; What Is Amoxicillin For Amoxicillin Ok To Be In Sun Doryx Adoxa
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    StevElug (未验证)  
+                   星期六, 06/01/2019 - 20:38 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Generico Acquista Stevprople  
+                
+                    
+                    
+                      
+                        Cialis Generico PreР С–Р’В§o Farmacias Usa Online Obtenez Dapoxetine Online No Prescription &lt;a href=  http://xbmeds.com&gt;&lt;/a&gt;  The Healthy Man Viagra Cephalexin Synonym Cialis E Effetti Collaterali
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期日, 06/02/2019 - 05:02 
+                   永久连接 
+                
+              
+              
+                
+                  Cheapest Canadian Generic Cialis KelIdeodo  
+                
+                    
+                    
+                      
+                        Hearthyman &lt;a href=  http://nefoc.com&gt;propecia  minoxidil 5&lt;/a&gt; Cheapviagrausa Cialis Para Impotencia Valtrex Online Pharmacy
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 11:34 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Occasion En Baisse EllCauh  
+                
+                    
+                    
+                      
+                        Achat Tadalafil Canada Buy Nimegen &lt;a href=  http://rxasian.com&gt;buy  viagra&lt;/a&gt; Buy Real Propecia
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期日, 06/02/2019 - 16:11 
+                   永久连接 
+                
+              
+              
+                
+                  Can You Puchase Prochlorperazine Online Matsculky  
+                
+                    
+                    
+                      
+                        What Does Keflex Treat &lt;a href=  http://cialgeneri.com&gt;generic  cialis from india&lt;/a&gt; Prix Du Cialis En Suisse Real Viagra Without A Script Can I Purchase Generic Dutasteride Pills
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 20:54 
+                   永久连接 
+                
+              
+              
+                
+                  Amoxicillin Over The Counter EllCauh  
+                
+                    
+                    
+                      
+                        Derniers Conseils Plus Longs Xenical Effets Secondaires Finasteride 5 Mg Online Cheap &lt;a href=  http://crdrugs.com&gt;generic  cialis canada&lt;/a&gt; Zithromax For Children
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期一, 06/03/2019 - 16:29 
+                   永久连接 
+                
+              
+              
+                
+                  Ciplox EllCauh  
+                
+                    
+                    
+                      
+                        Buy Azithromycin Zithromax &lt;a href=  http://asacdz.com&gt;cialis  tablets for sale&lt;/a&gt; Que Es Cialis Vs Viagra Buy Liquid Doxycycline
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期一, 06/03/2019 - 17:21 
+                   永久连接 
+                
+              
+              
+                
+                  Propecia Cost Prescription LesTreS  
+                
+                    
+                    
+                      
+                        Viagra Cialis Levitra Comparison Propecia France Fluoxetine Us Pharmacy &lt;a href=  http://addrall.com&gt;acheter  alli suisse&lt;/a&gt; Keflex Allergic Reaction Symptoms Canadian Medicines
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期二, 06/04/2019 - 06:46 
+                   永久连接 
+                
+              
+              
+                
+                  Is Zithromax Okay For Breastfeeding Ellnoug  
+                
+                    
+                    
+                      
+                        Find Acticin Cheap In Usa With Next Day Delivery Propecia Online Without A Prescription Buy &lt;a href=  http://howtogetvia.com&gt;buy  viagra online&lt;/a&gt; Generic Amoxicilina Tablet On Line
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="写在Astrill VPN被屏蔽之后：没那么悲观" />
+    <meta property="twitter:title" content="写在Astrill VPN被屏蔽之后：没那么悲观" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fpao-pao.net%2Farticle%2F360" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://pao-pao.net/article/360" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://pao-pao.net/article/360&text=写在Astrill VPN被屏蔽之后：没那么悲观&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://pao-pao.net/article/360&title=写在Astrill VPN被屏蔽之后：没那么悲观" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://pao-pao.net/article/360&title=写在Astrill VPN被屏蔽之后：没那么悲观" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=写在Astrill VPN被屏蔽之后：没那么悲观&body=
+  
+    
+      
+        
+              
+  Vergil  在 星期一, 02/09/2015 - 10:59 提交 
+          
+          
+            
+              
+                
+                  
+                      4147241526_25355b6099_z.jpg  
+                    
+                       
+                        
+                          
+ 图： Jason Wong 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   写在Astrill VPN被屏蔽之后：没那么悲观 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  2014年11月4日，名为“枫叶香蕉”的翻墙软件作者许东，被北京西城区德胜门派出所警察以“寻衅滋事罪”羁押到北京市第一看守所。（详情参见：  《翻墙=犯法？从许东翻墙第一案说起》  一文）   2014年12月6日，Gmail 被全面屏蔽，POP3、IMAP 等服务器端口均被屏蔽，导致不仅无法访问在线版，并且连 Foxmail ，Outlook 等邮件客户端也无法正常使用。   2015年1月15日，著名的Android端翻墙软件fqrouter作者正式宣布该项目关闭，不再进行更新和维护；（关于fqrouter的介绍参见：  《七种武器之孔雀翎：FQrouter》  ）   前不久，一则新闻又给众多大陆网民浇上一盆冷水，著名VPN供应商 Astrill 通知用户，因为 GFW 升级，使用 IPSec、L2TP/IPSec协议的设备将无法进行正常访问，而《环球时报》英文网撰文称， 
+           中国工信部曾规定，在中国提供VPN服务的公司必须登记注册，否则将“不受中国法律的保护”
+           。   此事在大陆互联网上掀起悍然大波，众多中国互联网民直呼中国互联网寒冬将近，  今后翻墙的行为无论在立法上还是技术上，都将受到极大的威胁和限制  。   GFW和行政监管力量双管齐下，对翻墙行为进行联合打击，甚至有网友传播2015年4月将全面落实白名单制度建成大中华局域网的言论，一时间风声鹤唳，草木皆兵，大有山雨欲来风满楼之势。
+                   
+           那么事实上的情况真的就如此么？
+           
+                  个人认为事实情况没有那么悲观。
+                  这一次 Astrill 在国内被屏蔽，之所以受到如此大关注的主要原因，不仅仅是因为 Astrill 是一款人气颇高口碑不错的 VPN 服务供应商。更重要的原因是，许多网民以为是整个 VPN 协议受到了 GFW 的干扰和破坏，至此以后未在官方注册的 VPN 服务就在大陆无法使用了。   事实并非如此， VPN协议根据其加密的协议粗略分为PPTP，L2TP/IPSEC，OPENVPN，SSL VPN，Ikev2 VPN，Cisco VPN等，而这一次 Asrill 被屏蔽的是以 L2TP/IPSEC 协议加密的VPN服务。（关于VPN协议介绍内容可以参见：  《翻墙安全》  一文）   其实 VPN 服务被屏蔽由来已久，早在2010年期间，就有众多网友发现联通网络屏蔽了安全性能最弱的PPTP协议方式。   2012年十八大期间，OpenVPN协议方式就遭到全面封杀，包括我们在此前介绍的一款采用 OpenVPN 协议翻墙的解决方案 Pritunl 就因此无法使用。（关于Pritunl的介绍可以参见：  Pritunl：简易搭建个人VPN  ）   
+           而这一次安全性能较高的L2TP/IPSEC协议方式被屏蔽，应该说仅仅是GFW阶段升级的一个简单标志，并不能说其彻底摧毁了 VPN 协议的生存模式
+           。
+                   
+           封锁成本增加
+           
+                  由于大陆和海外的通信越来越多的采用加密方式，GFW对各种加密方式的识别和嗅探的压力日益增大，GFW的维护以及自身对于资源的消耗与日俱增。   同时GFW维护人员的各种疏忽大意和不当行为都会牵一发而动全身，对大陆整个互联网环境造成不可估量的破坏。    2014年初的那次导致接近八成以上中国网站域名无法解析的灾难  ，经过推测就是因为GFW维护人员操作错误导致的。   
+           因此全面彻底封杀翻墙方式，从技术上来说虽说并非不可能，但其成本和压力将是巨大的
+           ，而且这一次对于 L2TP/IPSec 协议的封杀主要集中在像 Astrill 这样名声在外的几个主要 VPN 服务商，而且只局限于IOS系统平台，有网友反映还是有不少漏网之鱼依旧可以继续提供服务。   而且，对于上述几种 VPN 访问协议的屏蔽，并不能阻挡网友翻墙的热情，就像一个推友在 Twitter 上写到的：
+                  
+                    看着一群中国人在 Twitter 上讨论 VPN 被屏蔽之后就无法翻墙的言论就觉得好笑。
+                  
+                  这场道高一尺魔高一丈的争斗并未结束，Astrill VPN 事后宣称这场与中国封锁的斗争并未结束。   退一步讲， 
+           即使 PPTP ，OpenVPN，L2TP/IPSec 协议都最终倒下无法恢复后，我们还有 SSL VPN ,Cisco VPN等协议可以选择，安全性能更高，更加隐蔽。
+           特别是依托于思科硬件服务器的 Cisco Anyconnect VPN 方式最近受到各大VPN服务商和用户的青睐。   就在即将写完本文之时，有网友发来消息，Astrill 重新开始恢复工作了。   借用一位网友的评论来结束此文：
+                  
+                    他们以为关了餐厅，我们就要去吃屎。
+                  
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                其实，你还缺一件武器                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                Facebook带来的恐慌                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                删除真的很容易吗？删除之后呢？抵制 Facebook 运动不该忽视深层问题                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                反间谍法出台 言论管控力度登峰造极                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 08:57 
+                   永久连接 
+                
+              
+              
+                
+                  payday loans in ct  
+                
+                    
+                    
+                      
+                        wells fargo direct deposit advance &lt;a href=  https://valoansofcalifornia.com/loans/how-to-get-a-loan-without-a-bank-a...  to get a loan without a bank account&lt;/a&gt;  payday loan direct lenders bad credit &lt;a href="  https://valoansofcalifornia.com/loans/next-day-cash-loans.html"&gt;next  day cash loans&lt;/a&gt;  debit card loans with no bank account &lt;a href=  https://valoansofcalifornia.com/loans/600-credit-score-credit-card.html&gt;600  credit score credit card&lt;/a&gt;  online payday loan direct lender &lt;a href="  https://valoansofcalifornia.com/loans/ace-cash-express-modesto-ca.html"&gt;ace  cash express modesto ca&lt;/a&gt;  ace check cashing dc &lt;a href=  https://valoansofcalifornia.com/loans/loan-places-open-on-sunday.html&gt;loan  places open on sunday&lt;/a&gt;  real payday loan lenders &lt;a href="  https://valoansofcalifornia.com/loans/long-term-personal-loan.html"&gt;long  term personal loan&lt;/a&gt;
+                        &lt;a href="  http://vondranlegal.com/us/sugar-dating-new-york-times.php"&gt;sugar  dating new york times&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/interracial-dating-white-guy-black...  dating white guy black girl&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/free-swinger-dating-sites.php"&gt;free  swinger dating sites&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/fat-girl-skinny-guy-dating.php"&gt;fat  girl skinny guy dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/texting-rules-for-dating-over-40.php"&gt;texting  rules for dating over 40&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 09:18 
+                   永久连接 
+                
+              
+              
+                
+                  small personal loans no credit  
+                
+                    
+                    
+                      
+                        payday loans without direct deposit from employer &lt;a href=  https://valoansofcalifornia.com/loans/no-credit-check-loans-new-york.htm...  credit check loans new york&lt;/a&gt;  is 600 a bad credit score &lt;a href="  https://valoansofcalifornia.com/loans/cash-link-title-pawn.html"&gt;cash  link title pawn&lt;/a&gt;  poor credit loan lenders &lt;a href=  https://valoansofcalifornia.com/loans/bad-credit-personal-loans-californ...  credit personal loans california&lt;/a&gt;  credit card for poor credit &lt;a href="  https://valoansofcalifornia.com/loans/private-loan-bad-credit.html"&gt;private  loan bad credit&lt;/a&gt;  personal loan for bad credit &lt;a href=  https://valoansofcalifornia.com/loans/cash-loan-no-credit.html&gt;cash  loan no credit&lt;/a&gt;  24 hour cash loans &lt;a href="  https://valoansofcalifornia.com/loans/fast-auto-and-payday-loans.html"&gt;fast  auto and payday loans&lt;/a&gt;
+                        &lt;a href="  http://ashevillemovingcompany.com/usa/nebraska-girl-murdered-online-dati...  girl murdered online dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/dating-a-skinny-girl.php"&gt;dating  a skinny girl&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/best-names-for-dating-sites.php"&gt;best  names for dating sites&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/safe-adult-dating-sites-in-my-area.php"&gt;safe  adult dating sites in my area&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/when-dating-in-san-francisco-tumbl...  dating in san francisco tumblr&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Jeaacalay (未验证)  
+                   星期四, 04/25/2019 - 00:35 
+                   永久连接 
+                
+              
+              
+                
+                  Synthroid 125mcg Online Pharmacy JeaPriods  
+                
+                    
+                    
+                      
+                        Amoxicillin Yogurt Effect Buy Cialis Online Pharmacy Cephalexin Sids Affects &lt;a href=  http://cheapcheapvia.com&gt;viagra&lt;/a&gt;  Kamagra France Livraison Rapide
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期六, 06/01/2019 - 11:09 
+                   永久连接 
+                
+              
+              
+                
+                  Citalopram Buy No Prescription Kelpaycle  
+                
+                    
+                    
+                      
+                        Cheap Kamagra Fast Delivery Cialis Generique En Europe &lt;a href=  http://orderviapills.com&gt;viagra  online&lt;/a&gt; What Is Amoxicillin For Amoxicillin Ok To Be In Sun Doryx Adoxa
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    StevElug (未验证)  
+                   星期六, 06/01/2019 - 20:38 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Generico Acquista Stevprople  
+                
+                    
+                    
+                      
+                        Cialis Generico PreР С–Р’В§o Farmacias Usa Online Obtenez Dapoxetine Online No Prescription &lt;a href=  http://xbmeds.com&gt;&lt;/a&gt;  The Healthy Man Viagra Cephalexin Synonym Cialis E Effetti Collaterali
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期日, 06/02/2019 - 05:02 
+                   永久连接 
+                
+              
+              
+                
+                  Cheapest Canadian Generic Cialis KelIdeodo  
+                
+                    
+                    
+                      
+                        Hearthyman &lt;a href=  http://nefoc.com&gt;propecia  minoxidil 5&lt;/a&gt; Cheapviagrausa Cialis Para Impotencia Valtrex Online Pharmacy
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 11:34 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Occasion En Baisse EllCauh  
+                
+                    
+                    
+                      
+                        Achat Tadalafil Canada Buy Nimegen &lt;a href=  http://rxasian.com&gt;buy  viagra&lt;/a&gt; Buy Real Propecia
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期日, 06/02/2019 - 16:11 
+                   永久连接 
+                
+              
+              
+                
+                  Can You Puchase Prochlorperazine Online Matsculky  
+                
+                    
+                    
+                      
+                        What Does Keflex Treat &lt;a href=  http://cialgeneri.com&gt;generic  cialis from india&lt;/a&gt; Prix Du Cialis En Suisse Real Viagra Without A Script Can I Purchase Generic Dutasteride Pills
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 20:54 
+                   永久连接 
+                
+              
+              
+                
+                  Amoxicillin Over The Counter EllCauh  
+                
+                    
+                    
+                      
+                        Derniers Conseils Plus Longs Xenical Effets Secondaires Finasteride 5 Mg Online Cheap &lt;a href=  http://crdrugs.com&gt;generic  cialis canada&lt;/a&gt; Zithromax For Children
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期一, 06/03/2019 - 16:29 
+                   永久连接 
+                
+              
+              
+                
+                  Ciplox EllCauh  
+                
+                    
+                    
+                      
+                        Buy Azithromycin Zithromax &lt;a href=  http://asacdz.com&gt;cialis  tablets for sale&lt;/a&gt; Que Es Cialis Vs Viagra Buy Liquid Doxycycline
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期一, 06/03/2019 - 17:21 
+                   永久连接 
+                
+              
+              
+                
+                  Propecia Cost Prescription LesTreS  
+                
+                    
+                    
+                      
+                        Viagra Cialis Levitra Comparison Propecia France Fluoxetine Us Pharmacy &lt;a href=  http://addrall.com&gt;acheter  alli suisse&lt;/a&gt; Keflex Allergic Reaction Symptoms Canadian Medicines
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期二, 06/04/2019 - 06:46 
+                   永久连接 
+                
+              
+              
+                
+                  Is Zithromax Okay For Breastfeeding Ellnoug  
+                
+                    
+                    
+                      
+                        Find Acticin Cheap In Usa With Next Day Delivery Propecia Online Without A Prescription Buy &lt;a href=  http://howtogetvia.com&gt;buy  viagra online&lt;/a&gt; Generic Amoxicilina Tablet On Line
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://pao-pao.net/article/360" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://pao-pao.net/article/360&title=写在Astrill VPN被屏蔽之后：没那么悲观&caption=
+  
+    
+      
+        
+              
+  Vergil  在 星期一, 02/09/2015 - 10:59 提交 
+          
+          
+            
+              
+                
+                  
+                      4147241526_25355b6099_z.jpg  
+                    
+                       
+                        
+                          
+ 图： Jason Wong 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   写在Astrill VPN被屏蔽之后：没那么悲观 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  2014年11月4日，名为“枫叶香蕉”的翻墙软件作者许东，被北京西城区德胜门派出所警察以“寻衅滋事罪”羁押到北京市第一看守所。（详情参见：  《翻墙=犯法？从许东翻墙第一案说起》  一文）   2014年12月6日，Gmail 被全面屏蔽，POP3、IMAP 等服务器端口均被屏蔽，导致不仅无法访问在线版，并且连 Foxmail ，Outlook 等邮件客户端也无法正常使用。   2015年1月15日，著名的Android端翻墙软件fqrouter作者正式宣布该项目关闭，不再进行更新和维护；（关于fqrouter的介绍参见：  《七种武器之孔雀翎：FQrouter》  ）   前不久，一则新闻又给众多大陆网民浇上一盆冷水，著名VPN供应商 Astrill 通知用户，因为 GFW 升级，使用 IPSec、L2TP/IPSec协议的设备将无法进行正常访问，而《环球时报》英文网撰文称， 
+           中国工信部曾规定，在中国提供VPN服务的公司必须登记注册，否则将“不受中国法律的保护”
+           。   此事在大陆互联网上掀起悍然大波，众多中国互联网民直呼中国互联网寒冬将近，  今后翻墙的行为无论在立法上还是技术上，都将受到极大的威胁和限制  。   GFW和行政监管力量双管齐下，对翻墙行为进行联合打击，甚至有网友传播2015年4月将全面落实白名单制度建成大中华局域网的言论，一时间风声鹤唳，草木皆兵，大有山雨欲来风满楼之势。
+                   
+           那么事实上的情况真的就如此么？
+           
+                  个人认为事实情况没有那么悲观。
+                  这一次 Astrill 在国内被屏蔽，之所以受到如此大关注的主要原因，不仅仅是因为 Astrill 是一款人气颇高口碑不错的 VPN 服务供应商。更重要的原因是，许多网民以为是整个 VPN 协议受到了 GFW 的干扰和破坏，至此以后未在官方注册的 VPN 服务就在大陆无法使用了。   事实并非如此， VPN协议根据其加密的协议粗略分为PPTP，L2TP/IPSEC，OPENVPN，SSL VPN，Ikev2 VPN，Cisco VPN等，而这一次 Asrill 被屏蔽的是以 L2TP/IPSEC 协议加密的VPN服务。（关于VPN协议介绍内容可以参见：  《翻墙安全》  一文）   其实 VPN 服务被屏蔽由来已久，早在2010年期间，就有众多网友发现联通网络屏蔽了安全性能最弱的PPTP协议方式。   2012年十八大期间，OpenVPN协议方式就遭到全面封杀，包括我们在此前介绍的一款采用 OpenVPN 协议翻墙的解决方案 Pritunl 就因此无法使用。（关于Pritunl的介绍可以参见：  Pritunl：简易搭建个人VPN  ）   
+           而这一次安全性能较高的L2TP/IPSEC协议方式被屏蔽，应该说仅仅是GFW阶段升级的一个简单标志，并不能说其彻底摧毁了 VPN 协议的生存模式
+           。
+                   
+           封锁成本增加
+           
+                  由于大陆和海外的通信越来越多的采用加密方式，GFW对各种加密方式的识别和嗅探的压力日益增大，GFW的维护以及自身对于资源的消耗与日俱增。   同时GFW维护人员的各种疏忽大意和不当行为都会牵一发而动全身，对大陆整个互联网环境造成不可估量的破坏。    2014年初的那次导致接近八成以上中国网站域名无法解析的灾难  ，经过推测就是因为GFW维护人员操作错误导致的。   
+           因此全面彻底封杀翻墙方式，从技术上来说虽说并非不可能，但其成本和压力将是巨大的
+           ，而且这一次对于 L2TP/IPSec 协议的封杀主要集中在像 Astrill 这样名声在外的几个主要 VPN 服务商，而且只局限于IOS系统平台，有网友反映还是有不少漏网之鱼依旧可以继续提供服务。   而且，对于上述几种 VPN 访问协议的屏蔽，并不能阻挡网友翻墙的热情，就像一个推友在 Twitter 上写到的：
+                  
+                    看着一群中国人在 Twitter 上讨论 VPN 被屏蔽之后就无法翻墙的言论就觉得好笑。
+                  
+                  这场道高一尺魔高一丈的争斗并未结束，Astrill VPN 事后宣称这场与中国封锁的斗争并未结束。   退一步讲， 
+           即使 PPTP ，OpenVPN，L2TP/IPSec 协议都最终倒下无法恢复后，我们还有 SSL VPN ,Cisco VPN等协议可以选择，安全性能更高，更加隐蔽。
+           特别是依托于思科硬件服务器的 Cisco Anyconnect VPN 方式最近受到各大VPN服务商和用户的青睐。   就在即将写完本文之时，有网友发来消息，Astrill 重新开始恢复工作了。   借用一位网友的评论来结束此文：
+                  
+                    他们以为关了餐厅，我们就要去吃屎。
+                  
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                其实，你还缺一件武器                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                Facebook带来的恐慌                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                删除真的很容易吗？删除之后呢？抵制 Facebook 运动不该忽视深层问题                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                反间谍法出台 言论管控力度登峰造极                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 08:57 
+                   永久连接 
+                
+              
+              
+                
+                  payday loans in ct  
+                
+                    
+                    
+                      
+                        wells fargo direct deposit advance &lt;a href=  https://valoansofcalifornia.com/loans/how-to-get-a-loan-without-a-bank-a...  to get a loan without a bank account&lt;/a&gt;  payday loan direct lenders bad credit &lt;a href="  https://valoansofcalifornia.com/loans/next-day-cash-loans.html"&gt;next  day cash loans&lt;/a&gt;  debit card loans with no bank account &lt;a href=  https://valoansofcalifornia.com/loans/600-credit-score-credit-card.html&gt;600  credit score credit card&lt;/a&gt;  online payday loan direct lender &lt;a href="  https://valoansofcalifornia.com/loans/ace-cash-express-modesto-ca.html"&gt;ace  cash express modesto ca&lt;/a&gt;  ace check cashing dc &lt;a href=  https://valoansofcalifornia.com/loans/loan-places-open-on-sunday.html&gt;loan  places open on sunday&lt;/a&gt;  real payday loan lenders &lt;a href="  https://valoansofcalifornia.com/loans/long-term-personal-loan.html"&gt;long  term personal loan&lt;/a&gt;
+                        &lt;a href="  http://vondranlegal.com/us/sugar-dating-new-york-times.php"&gt;sugar  dating new york times&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/interracial-dating-white-guy-black...  dating white guy black girl&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/free-swinger-dating-sites.php"&gt;free  swinger dating sites&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/fat-girl-skinny-guy-dating.php"&gt;fat  girl skinny guy dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/texting-rules-for-dating-over-40.php"&gt;texting  rules for dating over 40&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 09:18 
+                   永久连接 
+                
+              
+              
+                
+                  small personal loans no credit  
+                
+                    
+                    
+                      
+                        payday loans without direct deposit from employer &lt;a href=  https://valoansofcalifornia.com/loans/no-credit-check-loans-new-york.htm...  credit check loans new york&lt;/a&gt;  is 600 a bad credit score &lt;a href="  https://valoansofcalifornia.com/loans/cash-link-title-pawn.html"&gt;cash  link title pawn&lt;/a&gt;  poor credit loan lenders &lt;a href=  https://valoansofcalifornia.com/loans/bad-credit-personal-loans-californ...  credit personal loans california&lt;/a&gt;  credit card for poor credit &lt;a href="  https://valoansofcalifornia.com/loans/private-loan-bad-credit.html"&gt;private  loan bad credit&lt;/a&gt;  personal loan for bad credit &lt;a href=  https://valoansofcalifornia.com/loans/cash-loan-no-credit.html&gt;cash  loan no credit&lt;/a&gt;  24 hour cash loans &lt;a href="  https://valoansofcalifornia.com/loans/fast-auto-and-payday-loans.html"&gt;fast  auto and payday loans&lt;/a&gt;
+                        &lt;a href="  http://ashevillemovingcompany.com/usa/nebraska-girl-murdered-online-dati...  girl murdered online dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/dating-a-skinny-girl.php"&gt;dating  a skinny girl&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/best-names-for-dating-sites.php"&gt;best  names for dating sites&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/safe-adult-dating-sites-in-my-area.php"&gt;safe  adult dating sites in my area&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/when-dating-in-san-francisco-tumbl...  dating in san francisco tumblr&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Jeaacalay (未验证)  
+                   星期四, 04/25/2019 - 00:35 
+                   永久连接 
+                
+              
+              
+                
+                  Synthroid 125mcg Online Pharmacy JeaPriods  
+                
+                    
+                    
+                      
+                        Amoxicillin Yogurt Effect Buy Cialis Online Pharmacy Cephalexin Sids Affects &lt;a href=  http://cheapcheapvia.com&gt;viagra&lt;/a&gt;  Kamagra France Livraison Rapide
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期六, 06/01/2019 - 11:09 
+                   永久连接 
+                
+              
+              
+                
+                  Citalopram Buy No Prescription Kelpaycle  
+                
+                    
+                    
+                      
+                        Cheap Kamagra Fast Delivery Cialis Generique En Europe &lt;a href=  http://orderviapills.com&gt;viagra  online&lt;/a&gt; What Is Amoxicillin For Amoxicillin Ok To Be In Sun Doryx Adoxa
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    StevElug (未验证)  
+                   星期六, 06/01/2019 - 20:38 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Generico Acquista Stevprople  
+                
+                    
+                    
+                      
+                        Cialis Generico PreР С–Р’В§o Farmacias Usa Online Obtenez Dapoxetine Online No Prescription &lt;a href=  http://xbmeds.com&gt;&lt;/a&gt;  The Healthy Man Viagra Cephalexin Synonym Cialis E Effetti Collaterali
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期日, 06/02/2019 - 05:02 
+                   永久连接 
+                
+              
+              
+                
+                  Cheapest Canadian Generic Cialis KelIdeodo  
+                
+                    
+                    
+                      
+                        Hearthyman &lt;a href=  http://nefoc.com&gt;propecia  minoxidil 5&lt;/a&gt; Cheapviagrausa Cialis Para Impotencia Valtrex Online Pharmacy
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 11:34 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Occasion En Baisse EllCauh  
+                
+                    
+                    
+                      
+                        Achat Tadalafil Canada Buy Nimegen &lt;a href=  http://rxasian.com&gt;buy  viagra&lt;/a&gt; Buy Real Propecia
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期日, 06/02/2019 - 16:11 
+                   永久连接 
+                
+              
+              
+                
+                  Can You Puchase Prochlorperazine Online Matsculky  
+                
+                    
+                    
+                      
+                        What Does Keflex Treat &lt;a href=  http://cialgeneri.com&gt;generic  cialis from india&lt;/a&gt; Prix Du Cialis En Suisse Real Viagra Without A Script Can I Purchase Generic Dutasteride Pills
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 20:54 
+                   永久连接 
+                
+              
+              
+                
+                  Amoxicillin Over The Counter EllCauh  
+                
+                    
+                    
+                      
+                        Derniers Conseils Plus Longs Xenical Effets Secondaires Finasteride 5 Mg Online Cheap &lt;a href=  http://crdrugs.com&gt;generic  cialis canada&lt;/a&gt; Zithromax For Children
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期一, 06/03/2019 - 16:29 
+                   永久连接 
+                
+              
+              
+                
+                  Ciplox EllCauh  
+                
+                    
+                    
+                      
+                        Buy Azithromycin Zithromax &lt;a href=  http://asacdz.com&gt;cialis  tablets for sale&lt;/a&gt; Que Es Cialis Vs Viagra Buy Liquid Doxycycline
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期一, 06/03/2019 - 17:21 
+                   永久连接 
+                
+              
+              
+                
+                  Propecia Cost Prescription LesTreS  
+                
+                    
+                    
+                      
+                        Viagra Cialis Levitra Comparison Propecia France Fluoxetine Us Pharmacy &lt;a href=  http://addrall.com&gt;acheter  alli suisse&lt;/a&gt; Keflex Allergic Reaction Symptoms Canadian Medicines
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期二, 06/04/2019 - 06:46 
+                   永久连接 
+                
+              
+              
+                
+                  Is Zithromax Okay For Breastfeeding Ellnoug  
+                
+                    
+                    
+                      
+                        Find Acticin Cheap In Usa With Next Day Delivery Propecia Online Without A Prescription Buy &lt;a href=  http://howtogetvia.com&gt;buy  viagra online&lt;/a&gt; Generic Amoxicilina Tablet On Line
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=写在Astrill VPN被屏蔽之后：没那么悲观&url=https://pao-pao.net/article/360" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>写在Astrill VPN被屏蔽之后：没那么悲观</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2015-02-09
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Vergil</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#泡泡">
+          泡泡
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://pao-pao.net/article/360" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="泡泡的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#泡泡 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <section class="clearfix" id="content" role="main">
+  <div class="region region-content">
+    <div class="block block-system" id="block-system-main">
+      <div class="content">
+        <div about="/article/360" class="node node-pao-pao-article node-promoted node-full view-mode-full clearfix" id="node-360" typeof="sioc:Item foaf:Document">
+<span class="rdf-meta element-hidden" content="写在Astrill VPN被屏蔽之后：没那么悲观" property="dc:title"> </span> <span class="rdf-meta element-hidden" content="12" datatype="xsd:integer" property="sioc:num_replies"> </span>           <div class="submitted">
+<span content="2015-02-09T10:59:24+01:00" datatype="xsd:dateTime" property="dc:date dc:created" rel="sioc:has_creator"> <a about="/author/30" class="username" datatype="" href="/author/30" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> Vergil </a> 在 星期一, 02/09/2015 - 10:59 提交 </span>
+          </div>
+          <div class="content">
+            <div class="field field-name-field-image field-type-image field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="file file-image file-image-jpeg" id="file-968--2">
+                    <h2 class="element-invisible" id="b6099zjpg--"> <a href="/file/968"> 4147241526_25355b6099_z.jpg </a> </h2>
+                    <div class="content">
+<img alt="" height="164" src="https://pao-pao.net/sites/pao-pao.net/files/styles/article_detail/public/4147241526_25355b6099_z.jpg?itok=oKK4e1ve" title="" typeof="foaf:Image" width="290" />                       <div class="field field-name-field-image-source field-type-link-field field-label-hidden">
+                        <div class="field-items">
+                          <div class="field-item even">
+<a href="https://www.flickr.com/photos/jasewong/4147241526"> 图： Jason Wong </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-title field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="dc:title">
+                  <h1 class="page-title" id="astrill-vpn-"> 写在Astrill VPN被屏蔽之后：没那么悲观 </h1>
+                </div>
+              </div>
+            </div>
+            <div class="field-name-author">
+              <div class="label-inline">
+文/
+              </div>
+ <a about="/author/30" class="username" datatype="" href="/author/30" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> Vergil </a>
+            </div>
+            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="content:encoded">
+                  <p>2014年11月4日，名为“枫叶香蕉”的翻墙软件作者许东，被北京西城区德胜门派出所警察以“寻衅滋事罪”羁押到北京市第一看守所。（详情参见： <a href="https://pao-pao.net/node/292" rel="nofollow"> 《翻墙=犯法？从许东翻墙第一案说起》 </a> 一文） <br /> <br /> 2014年12月6日，Gmail 被全面屏蔽，POP3、IMAP 等服务器端口均被屏蔽，导致不仅无法访问在线版，并且连 Foxmail ，Outlook 等邮件客户端也无法正常使用。 <br /> <br /> 2015年1月15日，著名的Android端翻墙软件fqrouter作者正式宣布该项目关闭，不再进行更新和维护；（关于fqrouter的介绍参见： <a href="https://pao-pao.net/node/58" rel="nofollow"> 《七种武器之孔雀翎：FQrouter》 </a> ） <br /> <br /> 前不久，一则新闻又给众多大陆网民浇上一盆冷水，著名VPN供应商 Astrill 通知用户，因为 GFW 升级，使用 IPSec、L2TP/IPSec协议的设备将无法进行正常访问，而《环球时报》英文网撰文称， <strong>
+           中国工信部曾规定，在中国提供VPN服务的公司必须登记注册，否则将“不受中国法律的保护”
+          </strong> 。 <br /> <br /> 此事在大陆互联网上掀起悍然大波，众多中国互联网民直呼中国互联网寒冬将近， <a href="https://pao-pao.net/node/345" rel="nofollow"> 今后翻墙的行为无论在立法上还是技术上，都将受到极大的威胁和限制 </a> 。 <br /> <br /> GFW和行政监管力量双管齐下，对翻墙行为进行联合打击，甚至有网友传播2015年4月将全面落实白名单制度建成大中华局域网的言论，一时间风声鹤唳，草木皆兵，大有山雨欲来风满楼之势。</p>
+                  <h2 id="section"> <strong>
+           那么事实上的情况真的就如此么？
+          </strong> </h2>
+                  <p>个人认为事实情况没有那么悲观。</p>
+                  <p>这一次 Astrill 在国内被屏蔽，之所以受到如此大关注的主要原因，不仅仅是因为 Astrill 是一款人气颇高口碑不错的 VPN 服务供应商。更重要的原因是，许多网民以为是整个 VPN 协议受到了 GFW 的干扰和破坏，至此以后未在官方注册的 VPN 服务就在大陆无法使用了。 <br /> <br /> 事实并非如此， VPN协议根据其加密的协议粗略分为PPTP，L2TP/IPSEC，OPENVPN，SSL VPN，Ikev2 VPN，Cisco VPN等，而这一次 Asrill 被屏蔽的是以 L2TP/IPSEC 协议加密的VPN服务。（关于VPN协议介绍内容可以参见： <a href="https://pao-pao.net/node/286" rel="nofollow"> 《翻墙安全》 </a> 一文） <br /> <br /> 其实 VPN 服务被屏蔽由来已久，早在2010年期间，就有众多网友发现联通网络屏蔽了安全性能最弱的PPTP协议方式。 <br /> <br /> 2012年十八大期间，OpenVPN协议方式就遭到全面封杀，包括我们在此前介绍的一款采用 OpenVPN 协议翻墙的解决方案 Pritunl 就因此无法使用。（关于Pritunl的介绍可以参见： <a href="https://pao-pao.net/node/213" rel="nofollow"> Pritunl：简易搭建个人VPN </a> ） <br /> <br /> <strong>
+           而这一次安全性能较高的L2TP/IPSEC协议方式被屏蔽，应该说仅仅是GFW阶段升级的一个简单标志，并不能说其彻底摧毁了 VPN 协议的生存模式
+          </strong> 。</p>
+                  <h2 id="section-1"> <strong>
+           封锁成本增加
+          </strong> </h2>
+                  <p>由于大陆和海外的通信越来越多的采用加密方式，GFW对各种加密方式的识别和嗅探的压力日益增大，GFW的维护以及自身对于资源的消耗与日俱增。 <br /> <br /> 同时GFW维护人员的各种疏忽大意和不当行为都会牵一发而动全身，对大陆整个互联网环境造成不可估量的破坏。 <br /> <br /> <a href="https://pao-pao.net/node/27" rel="nofollow"> 2014年初的那次导致接近八成以上中国网站域名无法解析的灾难 </a> ，经过推测就是因为GFW维护人员操作错误导致的。 <br /> <br /> <strong>
+           因此全面彻底封杀翻墙方式，从技术上来说虽说并非不可能，但其成本和压力将是巨大的
+          </strong> ，而且这一次对于 L2TP/IPSec 协议的封杀主要集中在像 Astrill 这样名声在外的几个主要 VPN 服务商，而且只局限于IOS系统平台，有网友反映还是有不少漏网之鱼依旧可以继续提供服务。 <br /> <br /> 而且，对于上述几种 VPN 访问协议的屏蔽，并不能阻挡网友翻墙的热情，就像一个推友在 Twitter 上写到的：</p>
+                  <blockquote>
+                    <p>看着一群中国人在 Twitter 上讨论 VPN 被屏蔽之后就无法翻墙的言论就觉得好笑。</p>
+                  </blockquote>
+                  <p>这场道高一尺魔高一丈的争斗并未结束，Astrill VPN 事后宣称这场与中国封锁的斗争并未结束。 <br /> <br /> 退一步讲， <strong>
+           即使 PPTP ，OpenVPN，L2TP/IPSec 协议都最终倒下无法恢复后，我们还有 SSL VPN ,Cisco VPN等协议可以选择，安全性能更高，更加隐蔽。
+          </strong> 特别是依托于思科硬件服务器的 Cisco Anyconnect VPN 方式最近受到各大VPN服务商和用户的青睐。 <br /> <br /> 就在即将写完本文之时，有网友发来消息，Astrill 重新开始恢复工作了。 <br /> <br /> 借用一位网友的评论来结束此文：</p>
+                  <blockquote>
+                    <p>他们以为关了餐厅，我们就要去吃屎。</p>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-service-links-displays-group field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="service-links">
+<a class="service-links-twitter" href="https://twitter.com/share?url=https%3A//pao-pao.net/article/360&amp;text=%E5%86%99%E5%9C%A8Astrill%20VPN%E8%A2%AB%E5%B1%8F%E8%94%BD%E4%B9%8B%E5%90%8E%EF%BC%9A%E6%B2%A1%E9%82%A3%E4%B9%88%E6%82%B2%E8%A7%82" rel="nofollow" title="Share this on Twitter"> <img alt="Twitter logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/twitter.png" typeof="foaf:Image" /> </a> <a class="service-links-facebook" href="https://www.facebook.com/sharer.php?u=https%3A//pao-pao.net/article/360&amp;t=%E5%86%99%E5%9C%A8Astrill%20VPN%E8%A2%AB%E5%B1%8F%E8%94%BD%E4%B9%8B%E5%90%8E%EF%BC%9A%E6%B2%A1%E9%82%A3%E4%B9%88%E6%82%B2%E8%A7%82" rel="nofollow" title="Share on Facebook"> <img alt="Facebook logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/facebook.png" typeof="foaf:Image" /> </a> <a class="service-links-google" href="https://www.google.com/bookmarks/mark?op=add&amp;bkmk=https%3A//pao-pao.net/article/360&amp;title=%E5%86%99%E5%9C%A8Astrill%20VPN%E8%A2%AB%E5%B1%8F%E8%94%BD%E4%B9%8B%E5%90%8E%EF%BC%9A%E6%B2%A1%E9%82%A3%E4%B9%88%E6%82%B2%E8%A7%82" rel="nofollow" title="Bookmark this post on Google"> <img alt="谷歌 logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/google.png" typeof="foaf:Image" /> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block block-views related" id="block-views-articles-related-block-1">
+            <h2 id="section-2"> 您可能感兴趣的文章 </h2>
+            <div class="content">
+              <div class="view view-articles-related view-id-articles_related view-display-id-block_1 related promoted view-dom-id-852ca2824f9d306ea4e50a124fe969ca">
+                <div class="view-content">
+                  <div class="views-row views-row-1 views-row-odd views-row-first">
+                    <div class="ds-2col node node-pao-pao-article node-promoted node-sticky view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/808"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/tou__28.jpg?itok=3Vs66PZV" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-3"> <a href="/article/808"> 其实，你还缺一件武器 </a>                                 <h2 id="section-4"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-2 views-row-even">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/319"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/wen_tou_tu_1.jpg?itok=kX2ilgkw" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="facebook----"> <a href="/article/319"> Facebook带来的恐慌 </a>                                 <h2 id="section-5"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-3 views-row-odd">
+                    <div class="ds-2col node node-pao-pao-article node-promoted node-sticky view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/1026"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/wechatimg60.jpeg?itok=W38v3EIf" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="facebook-----"> <a href="/article/1026"> 删除真的很容易吗？删除之后呢？抵制 Facebook 运动不该忽视深层问题 </a>                                 <h2 id="section-6"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-4 views-row-even views-row-last">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/246"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/314989744_5b5a852b47_z.jpg?itok=68v1QZm9" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-7"> <a href="/article/246"> 反间谍法出台 言论管控力度登峰造极 </a>                                 <h2 id="section-8"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.block -->
+          <ul class="links inline">
+            <li class="comment-add first last active"><a class="active" href="/article/360#comment-form" title="分享您有关本文的看法与观点。"> 冒个泡吧！ </a></li>
+          </ul>
+          <div class="comment-wrapper" id="comments">
+            <h2 class="title" id="section-9"> 评论 </h2>
+ <a id="comment-90">
+      </a>             <div about="/comment/90#comment-90" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> CarolBig (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-04-17T08:57:33+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期三, 04/17/2019 - 08:57 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/90#comment-90" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="payday-loans-in-ct--"> <a class="permalink" href="/comment/90#comment-90" rel="bookmark"> payday loans in ct </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>wells fargo direct deposit advance &lt;a href= <a href="https://valoansofcalifornia.com/loans/how-to-get-a-loan-without-a-bank-account.html&gt;how"> https://valoansofcalifornia.com/loans/how-to-get-a-loan-without-a-bank-a... </a> to get a loan without a bank account&lt;/a&gt; <br /> payday loan direct lenders bad credit &lt;a href=" <a href="https://valoansofcalifornia.com/loans/next-day-cash-loans.html&quot;&gt;next"> https://valoansofcalifornia.com/loans/next-day-cash-loans.html"&gt;next </a> day cash loans&lt;/a&gt; <br /> debit card loans with no bank account &lt;a href= <a href="https://valoansofcalifornia.com/loans/600-credit-score-credit-card.html&gt;600"> https://valoansofcalifornia.com/loans/600-credit-score-credit-card.html&gt;600 </a> credit score credit card&lt;/a&gt; <br /> online payday loan direct lender &lt;a href=" <a href="https://valoansofcalifornia.com/loans/ace-cash-express-modesto-ca.html&quot;&gt;ace"> https://valoansofcalifornia.com/loans/ace-cash-express-modesto-ca.html"&gt;ace </a> cash express modesto ca&lt;/a&gt; <br /> ace check cashing dc &lt;a href= <a href="https://valoansofcalifornia.com/loans/loan-places-open-on-sunday.html&gt;loan"> https://valoansofcalifornia.com/loans/loan-places-open-on-sunday.html&gt;loan </a> places open on sunday&lt;/a&gt; <br /> real payday loan lenders &lt;a href=" <a href="https://valoansofcalifornia.com/loans/long-term-personal-loan.html&quot;&gt;long"> https://valoansofcalifornia.com/loans/long-term-personal-loan.html"&gt;long </a> term personal loan&lt;/a&gt;</p>
+                        <p>&lt;a href=" <a href="http://vondranlegal.com/us/sugar-dating-new-york-times.php&quot;&gt;sugar"> http://vondranlegal.com/us/sugar-dating-new-york-times.php"&gt;sugar </a> dating new york times&lt;/a&gt; <br /> &lt;a href=" <a href="http://ashevillemovingcompany.com/usa/interracial-dating-white-guy-black-girl.php&quot;&gt;interracial"> http://ashevillemovingcompany.com/usa/interracial-dating-white-guy-black... </a> dating white guy black girl&lt;/a&gt; <br /> &lt;a href=" <a href="http://ashevillemovingcompany.com/usa/free-swinger-dating-sites.php&quot;&gt;free"> http://ashevillemovingcompany.com/usa/free-swinger-dating-sites.php"&gt;free </a> swinger dating sites&lt;/a&gt; <br /> &lt;a href=" <a href="http://ashevillemovingcompany.com/usa/fat-girl-skinny-guy-dating.php&quot;&gt;fat"> http://ashevillemovingcompany.com/usa/fat-girl-skinny-guy-dating.php"&gt;fat </a> girl skinny guy dating&lt;/a&gt; <br /> &lt;a href=" <a href="http://vondranlegal.com/us/texting-rules-for-dating-over-40.php&quot;&gt;texting"> http://vondranlegal.com/us/texting-rules-for-dating-over-40.php"&gt;texting </a> rules for dating over 40&lt;/a&gt;</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/90"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-112">
+      </a>             <div about="/comment/112#comment-112" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> CarolBig (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-04-17T09:18:58+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期三, 04/17/2019 - 09:18 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/112#comment-112" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="small-personal-loans-no-credit--"> <a class="permalink" href="/comment/112#comment-112" rel="bookmark"> small personal loans no credit </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>payday loans without direct deposit from employer &lt;a href= <a href="https://valoansofcalifornia.com/loans/no-credit-check-loans-new-york.html&gt;no"> https://valoansofcalifornia.com/loans/no-credit-check-loans-new-york.htm... </a> credit check loans new york&lt;/a&gt; <br /> is 600 a bad credit score &lt;a href=" <a href="https://valoansofcalifornia.com/loans/cash-link-title-pawn.html&quot;&gt;cash"> https://valoansofcalifornia.com/loans/cash-link-title-pawn.html"&gt;cash </a> link title pawn&lt;/a&gt; <br /> poor credit loan lenders &lt;a href= <a href="https://valoansofcalifornia.com/loans/bad-credit-personal-loans-california.html&gt;bad"> https://valoansofcalifornia.com/loans/bad-credit-personal-loans-californ... </a> credit personal loans california&lt;/a&gt; <br /> credit card for poor credit &lt;a href=" <a href="https://valoansofcalifornia.com/loans/private-loan-bad-credit.html&quot;&gt;private"> https://valoansofcalifornia.com/loans/private-loan-bad-credit.html"&gt;private </a> loan bad credit&lt;/a&gt; <br /> personal loan for bad credit &lt;a href= <a href="https://valoansofcalifornia.com/loans/cash-loan-no-credit.html&gt;cash"> https://valoansofcalifornia.com/loans/cash-loan-no-credit.html&gt;cash </a> loan no credit&lt;/a&gt; <br /> 24 hour cash loans &lt;a href=" <a href="https://valoansofcalifornia.com/loans/fast-auto-and-payday-loans.html&quot;&gt;fast"> https://valoansofcalifornia.com/loans/fast-auto-and-payday-loans.html"&gt;fast </a> auto and payday loans&lt;/a&gt;</p>
+                        <p>&lt;a href=" <a href="http://ashevillemovingcompany.com/usa/nebraska-girl-murdered-online-dating.php&quot;&gt;nebraska"> http://ashevillemovingcompany.com/usa/nebraska-girl-murdered-online-dati... </a> girl murdered online dating&lt;/a&gt; <br /> &lt;a href=" <a href="http://vondranlegal.com/us/dating-a-skinny-girl.php&quot;&gt;dating"> http://vondranlegal.com/us/dating-a-skinny-girl.php"&gt;dating </a> a skinny girl&lt;/a&gt; <br /> &lt;a href=" <a href="http://ashevillemovingcompany.com/usa/best-names-for-dating-sites.php&quot;&gt;best"> http://ashevillemovingcompany.com/usa/best-names-for-dating-sites.php"&gt;best </a> names for dating sites&lt;/a&gt; <br /> &lt;a href=" <a href="http://vondranlegal.com/us/safe-adult-dating-sites-in-my-area.php&quot;&gt;safe"> http://vondranlegal.com/us/safe-adult-dating-sites-in-my-area.php"&gt;safe </a> adult dating sites in my area&lt;/a&gt; <br /> &lt;a href=" <a href="http://ashevillemovingcompany.com/usa/when-dating-in-san-francisco-tumblr.php&quot;&gt;when"> http://ashevillemovingcompany.com/usa/when-dating-in-san-francisco-tumbl... </a> dating in san francisco tumblr&lt;/a&gt;</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/112"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-11020">
+      </a>             <div about="/comment/11020#comment-11020" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Jeaacalay (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-04-25T00:35:49+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期四, 04/25/2019 - 00:35 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/11020#comment-11020" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="synthroid-125mcg-online-pharmacy-jeapriods--"> <a class="permalink" href="/comment/11020#comment-11020" rel="bookmark"> Synthroid 125mcg Online Pharmacy JeaPriods </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Amoxicillin Yogurt Effect Buy Cialis Online Pharmacy Cephalexin Sids Affects &lt;a href= <a href="http://cheapcheapvia.com&gt;viagra&lt;/a&gt;"> http://cheapcheapvia.com&gt;viagra&lt;/a&gt; </a> Kamagra France Livraison Rapide</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/11020"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-16075">
+      </a>             <div about="/comment/16075#comment-16075" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Kelpaycle (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-01T11:09:01+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期六, 06/01/2019 - 11:09 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/16075#comment-16075" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="citalopram-buy-no-prescription-kelpaycle--"> <a class="permalink" href="/comment/16075#comment-16075" rel="bookmark"> Citalopram Buy No Prescription Kelpaycle </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Cheap Kamagra Fast Delivery Cialis Generique En Europe &lt;a href= <a href="http://orderviapills.com&gt;viagra"> http://orderviapills.com&gt;viagra </a> online&lt;/a&gt; What Is Amoxicillin For Amoxicillin Ok To Be In Sun Doryx Adoxa</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/16075"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-17691">
+      </a>             <div about="/comment/17691#comment-17691" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> StevElug (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-01T20:38:45+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期六, 06/01/2019 - 20:38 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/17691#comment-17691" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="viagra-generico-acquista-stevprople--"> <a class="permalink" href="/comment/17691#comment-17691" rel="bookmark"> Viagra Generico Acquista Stevprople </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Cialis Generico PreР С–Р’В§o Farmacias Usa Online Obtenez Dapoxetine Online No Prescription &lt;a href= <a href="http://xbmeds.com&gt;&lt;/a&gt;"> http://xbmeds.com&gt;&lt;/a&gt; </a> The Healthy Man Viagra Cephalexin Synonym Cialis E Effetti Collaterali</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/17691"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-18570">
+      </a>             <div about="/comment/18570#comment-18570" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> RebVoks (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-02T05:02:53+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期日, 06/02/2019 - 05:02 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/18570#comment-18570" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="cheapest-canadian-generic-cialis-kelideodo--"> <a class="permalink" href="/comment/18570#comment-18570" rel="bookmark"> Cheapest Canadian Generic Cialis KelIdeodo </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Hearthyman &lt;a href= <a href="http://nefoc.com&gt;propecia"> http://nefoc.com&gt;propecia </a> minoxidil 5&lt;/a&gt; Cheapviagrausa Cialis Para Impotencia Valtrex Online Pharmacy</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/18570"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-19105">
+      </a>             <div about="/comment/19105#comment-19105" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Stepthype (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-02T11:34:47+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期日, 06/02/2019 - 11:34 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/19105#comment-19105" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="levitra-occasion-en-baisse-ellcauh--"> <a class="permalink" href="/comment/19105#comment-19105" rel="bookmark"> Levitra Occasion En Baisse EllCauh </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Achat Tadalafil Canada Buy Nimegen &lt;a href= <a href="http://rxasian.com&gt;buy"> http://rxasian.com&gt;buy </a> viagra&lt;/a&gt; Buy Real Propecia</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/19105"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-19506">
+      </a>             <div about="/comment/19506#comment-19506" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Franexpok (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-02T16:11:45+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期日, 06/02/2019 - 16:11 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/19506#comment-19506" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="can-you-puchase-prochlorperazine-online-matsculky--"> <a class="permalink" href="/comment/19506#comment-19506" rel="bookmark"> Can You Puchase Prochlorperazine Online Matsculky </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>What Does Keflex Treat &lt;a href= <a href="http://cialgeneri.com&gt;generic"> http://cialgeneri.com&gt;generic </a> cialis from india&lt;/a&gt; Prix Du Cialis En Suisse Real Viagra Without A Script Can I Purchase Generic Dutasteride Pills</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/19506"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-19965">
+      </a>             <div about="/comment/19965#comment-19965" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Stepthype (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-02T20:54:36+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期日, 06/02/2019 - 20:54 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/19965#comment-19965" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="amoxicillin-over-the-counter-ellcauh--"> <a class="permalink" href="/comment/19965#comment-19965" rel="bookmark"> Amoxicillin Over The Counter EllCauh </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Derniers Conseils Plus Longs Xenical Effets Secondaires Finasteride 5 Mg Online Cheap &lt;a href= <a href="http://crdrugs.com&gt;generic"> http://crdrugs.com&gt;generic </a> cialis canada&lt;/a&gt; Zithromax For Children</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/19965"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-21870">
+      </a>             <div about="/comment/21870#comment-21870" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Stepthype (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-03T16:29:08+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期一, 06/03/2019 - 16:29 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/21870#comment-21870" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="ciplox-ellcauh--"> <a class="permalink" href="/comment/21870#comment-21870" rel="bookmark"> Ciplox EllCauh </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Buy Azithromycin Zithromax &lt;a href= <a href="http://asacdz.com&gt;cialis"> http://asacdz.com&gt;cialis </a> tablets for sale&lt;/a&gt; Que Es Cialis Vs Viagra Buy Liquid Doxycycline</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/21870"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-21940">
+      </a>             <div about="/comment/21940#comment-21940" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Randveifs (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-03T17:21:29+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期一, 06/03/2019 - 17:21 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/21940#comment-21940" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="propecia-cost-prescription-lestres--"> <a class="permalink" href="/comment/21940#comment-21940" rel="bookmark"> Propecia Cost Prescription LesTreS </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Viagra Cialis Levitra Comparison Propecia France Fluoxetine Us Pharmacy &lt;a href= <a href="http://addrall.com&gt;acheter"> http://addrall.com&gt;acheter </a> alli suisse&lt;/a&gt; Keflex Allergic Reaction Symptoms Canadian Medicines</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/21940"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-23211">
+      </a>             <div about="/comment/23211#comment-23211" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Ellincuse (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-04T06:46:20+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期二, 06/04/2019 - 06:46 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/23211#comment-23211" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="is-zithromax-okay-for-breastfeeding-ellnoug--"> <a class="permalink" href="/comment/23211#comment-23211" rel="bookmark"> Is Zithromax Okay For Breastfeeding Ellnoug </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/360"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Find Acticin Cheap In Usa With Next Day Delivery Propecia Online Without A Prescription Buy &lt;a href= <a href="http://howtogetvia.com&gt;buy"> http://howtogetvia.com&gt;buy </a> viagra online&lt;/a&gt; Generic Amoxicilina Tablet On Line</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/360/23211"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+            <h2 class="title comment-form" id="section-10"> 冒个泡吧！ </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.block -->
+  </div>
+  <!-- /.region -->
+</section>
+
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#泡泡 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2018-05-30/%E4%BA%92%E8%81%94%E7%BD%91%E8%B6%8B%E5%8A%BF%E6%8A%A5%E5%91%8A2018-%E4%BE%9D%E6%97%A7%E5%91%88%E7%8E%B0%E4%B8%8D%E8%89%AF%E8%B6%8B%E5%8A%BF-%E8%BF%99%E9%87%8C%E6%98%AF%E5%85%B7%E4%BD%93%E5%88%86%E6%9E%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-02-04/%E6%B0%91%E6%97%8F%E7%9F%9B%E7%9B%BE%E5%BA%94%E7%94%B1%E5%81%9C%E6%AD%A2%E4%BF%A1%E6%81%AF%E9%9A%94%E7%A6%BB%E5%BC%80%E5%A7%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2015-02-11</time>
+        <a href="https://nodebe4.github.io/oped2/2015-02-11/%E4%B8%80%E5%B0%81%E6%B2%A1%E6%9C%89%E5%90%91%E9%A9%AC%E4%BA%91%E5%AF%84%E5%87%BA%E7%9A%84%E5%85%AC%E5%BC%80%E4%BF%A1-%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%A6%82%E4%BD%95%E6%8A%84%E8%A2%AD%E9%A6%99%E6%B8%AF%E5%90%AF%E5%8A%A8%E7%9A%84%E5%88%9B%E6%84%8F/">
+          一封没有向马云寄出的公开信：阿里巴巴如何抄袭香港启动的创意
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2015-02-10</time>
+        <a href="https://nodebe4.github.io/oped2/2015-02-10/%E6%B0%B8%E4%B9%85%E8%A2%AB%E5%B0%81%E7%9A%84T%E6%81%A4%E7%BD%91%E5%BA%97-%E5%90%B4%E5%90%9E%E4%B8%93%E8%AE%BF/">
+          永久被封的T恤网店：吴吞专访
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2015-02-05</time>
+        <a href="https://nodebe4.github.io/oped2/2015-02-05/%E8%AF%BB%E8%80%85%E6%9D%A5%E7%A8%BF-%E7%AB%8B%E6%B3%95%E8%80%85%E7%9A%84%E8%83%8C%E5%8F%9B/">
+          读者来稿：立法者的背叛
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2015-02-04</time>
+        <a href="https://nodebe4.github.io/oped2/2015-02-04/%E6%B5%8B%E8%AF%95-%E5%BE%AE%E4%BF%A1%E5%A6%82%E4%BD%95%E5%AE%A1%E6%9F%A5%E5%86%85%E5%AE%B9/">
+          测试：微信如何审查内容
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2015-02-05/%E8%AF%BB%E8%80%85%E6%9D%A5%E7%A8%BF-%E7%AB%8B%E6%B3%95%E8%80%85%E7%9A%84%E8%83%8C%E5%8F%9B/">
+            前一篇：读者来稿：立法者的背叛
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2015-02-10/%E6%B0%B8%E4%B9%85%E8%A2%AB%E5%B0%81%E7%9A%84T%E6%81%A4%E7%BD%91%E5%BA%97-%E5%90%B4%E5%90%9E%E4%B8%93%E8%AE%BF/">
+            後一篇：永久被封的T恤网店：吴吞专访
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2015-02-05/%E8%AF%BB%E8%80%85%E6%9D%A5%E7%A8%BF-%E7%AB%8B%E6%B3%95%E8%80%85%E7%9A%84%E8%83%8C%E5%8F%9B/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2015-02-10/%E6%B0%B8%E4%B9%85%E8%A2%AB%E5%B0%81%E7%9A%84T%E6%81%A4%E7%BD%91%E5%BA%97-%E5%90%B4%E5%90%9E%E4%B8%93%E8%AE%BF/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2015-02-10/%E6%B0%B8%E4%B9%85%E8%A2%AB%E5%B0%81%E7%9A%84T%E6%81%A4%E7%BD%91%E5%BA%97-%E5%90%B4%E5%90%9E%E4%B8%93%E8%AE%BF/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2015-02-05/%E8%AF%BB%E8%80%85%E6%9D%A5%E7%A8%BF-%E7%AB%8B%E6%B3%95%E8%80%85%E7%9A%84%E8%83%8C%E5%8F%9B/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2015-02-05/%E8%AF%BB%E8%80%85%E6%9D%A5%E7%A8%BF-%E7%AB%8B%E6%B3%95%E8%80%85%E7%9A%84%E8%83%8C%E5%8F%9B/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2015-02-10/%E6%B0%B8%E4%B9%85%E8%A2%AB%E5%B0%81%E7%9A%84T%E6%81%A4%E7%BD%91%E5%BA%97-%E5%90%B4%E5%90%9E%E4%B8%93%E8%AE%BF/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<泡泡>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2015-02-10/%E6%B0%B8%E4%B9%85%E8%A2%AB%E5%B0%81%E7%9A%84T%E6%81%A4%E7%BD%91%E5%BA%97-%E5%90%B4%E5%90%9E%E4%B8%93%E8%AE%BF/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<泡泡>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2015-02-05/%E8%AF%BB%E8%80%85%E6%9D%A5%E7%A8%BF-%E7%AB%8B%E6%B3%95%E8%80%85%E7%9A%84%E8%83%8C%E5%8F%9B/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

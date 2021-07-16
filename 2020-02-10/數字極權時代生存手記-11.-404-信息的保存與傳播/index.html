@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>《數字極權時代生存手記》11. 404 信息的保存與傳播 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+《數字極權時代生存手記》11. 404 信息的保存與傳播
+——
+" />
+    <meta property="og:description" content="
+《數字極權時代生存手記》11. 404 信息的保存與傳播
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="《數字極權時代生存手記》11. 404 信息的保存與傳播" />
+    <meta property="twitter:title" content="《數字極權時代生存手記》11. 404 信息的保存與傳播" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40Luterngun%2F%25E6%2595%25B8%25E5%25AD%2597%25E6%25A5%25B5%25E6%25AC%258A%25E6%2599%2582%25E4%25BB%25A3%25E7%2594%259F%25E5%25AD%2598%25E6%2589%258B%25E8%25A8%2598-11-404-%25E4%25BF%25A1%25E6%2581%25AF%25E7%259A%2584%25E4%25BF%259D%25E5%25AD%2598%25E8%2588%2587%25E5%2582%25B3%25E6%2592%25AD-bafyreibsixuaxoeboll4b6wt5gncy4pw6gtwjaummh7u5uoo627n7l22am" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@Luterngun/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-11-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BF%9D%E5%AD%98%E8%88%87%E5%82%B3%E6%92%AD-bafyreibsixuaxoeboll4b6wt5gncy4pw6gtwjaummh7u5uoo627n7l22am" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@Luterngun/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-11-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BF%9D%E5%AD%98%E8%88%87%E5%82%B3%E6%92%AD-bafyreibsixuaxoeboll4b6wt5gncy4pw6gtwjaummh7u5uoo627n7l22am&text=《數字極權時代生存手記》11. 404 信息的保存與傳播&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@Luterngun/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-11-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BF%9D%E5%AD%98%E8%88%87%E5%82%B3%E6%92%AD-bafyreibsixuaxoeboll4b6wt5gncy4pw6gtwjaummh7u5uoo627n7l22am&title=《數字極權時代生存手記》11. 404 信息的保存與傳播" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@Luterngun/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-11-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BF%9D%E5%AD%98%E8%88%87%E5%82%B3%E6%92%AD-bafyreibsixuaxoeboll4b6wt5gncy4pw6gtwjaummh7u5uoo627n7l22am&title=《數字極權時代生存手記》11. 404 信息的保存與傳播" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=《數字極權時代生存手記》11. 404 信息的保存與傳播&body=
+《數字極權時代生存手記》11. 404 信息的保存與傳播
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@Luterngun/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-11-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BF%9D%E5%AD%98%E8%88%87%E5%82%B3%E6%92%AD-bafyreibsixuaxoeboll4b6wt5gncy4pw6gtwjaummh7u5uoo627n7l22am" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@Luterngun/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-11-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BF%9D%E5%AD%98%E8%88%87%E5%82%B3%E6%92%AD-bafyreibsixuaxoeboll4b6wt5gncy4pw6gtwjaummh7u5uoo627n7l22am&title=《數字極權時代生存手記》11. 404 信息的保存與傳播&caption=
+《數字極權時代生存手記》11. 404 信息的保存與傳播
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=《數字極權時代生存手記》11. 404 信息的保存與傳播&url=https://matters.news/@Luterngun/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-11-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BF%9D%E5%AD%98%E8%88%87%E5%82%B3%E6%92%AD-bafyreibsixuaxoeboll4b6wt5gncy4pw6gtwjaummh7u5uoo627n7l22am" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>《數字極權時代生存手記》11. 404 信息的保存與傳播</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-02-10
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Luterngun</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@Luterngun/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-11-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BF%9D%E5%AD%98%E8%88%87%E5%82%B3%E6%92%AD-bafyreibsixuaxoeboll4b6wt5gncy4pw6gtwjaummh7u5uoo627n7l22am" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1581357831000-->
+<p><a href="https://matters.news/@Luterngun/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-11-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BF%9D%E5%AD%98%E8%88%87%E5%82%B3%E6%92%AD-bafyreibsixuaxoeboll4b6wt5gncy4pw6gtwjaummh7u5uoo627n7l22am">《數字極權時代生存手記》11. 404 信息的保存與傳播</a>
+——</p>
+
+<div>
+  <blockquote>
+人與政權的鬥爭，就是記憶與遺忘的鬥爭。  </blockquote>
+  <p>——米蘭·昆達拉《笑忘書》</p>
+  <blockquote>
+讀到一篇好文章，存下來，在我們力所能及的範圍，和別人分享，也是一種抗爭。  </blockquote>
+  <p>——周保松《<a href="https://matters.news/@pochungchow/%E5%90%84%E4%BA%BA%E9%83%BD%E7%9B%A1%E4%B8%80%E9%BB%9E%E5%8A%9B-%E7%AA%81%E7%A0%B4%E6%96%B0%E8%81%9E%E5%B0%81%E9%8E%96%E5%92%8C%E8%A8%80%E8%AB%96%E5%AF%A9%E6%9F%A5-zdpuAymxeL2pdheUTByCF3Ju4UXR7LG1yBJsoaUXjAiNPitiv" target="_blank">各人都盡一點力，突破新聞封鎖和言論審查</a>》</p>
+  <blockquote>
+兄弟爬刪，各自努力  </blockquote>
+  <p><br /></p>
+  <p>微信、微博、豆瓣等牆內平台上發佈的涉及敏感事件和話題往往會被管理者以「多人舉報」、「違反《網絡安全法》」等藉口刪除，即人們常說的「404」。本節將介紹幾種在網頁被「404」將之保存下來以便二次傳播的方法。</p>
+  <h2 id="section"><strong>1 網頁存檔</strong></h2>
+  <p>在線網頁存檔工具的優勢在於可以保持網頁的原貌，相比於文本轉錄在二次傳播時更具公信力；以網頁鏈接的形式傳播也比直接分享文件更便捷。</p>
+  <p><strong>1.1 The Internet Archive </strong></p>
+  <p><a href="http://archive.org/" target="_blank">archive.org</a> 是一個非營利性的數字圖書館組織，同樣提供網頁存檔服務，它的中文名稱是「互聯網檔案館」。雖然它的 <a href="http://archive.is/" target="_blank">archive.is</a> 的域名很相像，兩者在網頁抓取方式上存在差別。（暫時未被 GFW 封鎖）</p>
+  <p><strong>1.2 archive.is </strong></p>
+  <p><a href="https://archive.is/" target="_blank">archive.is</a> 是一個私人資助的數字時間囊網站，提供抓取網頁內容的服務。archive.is 還擁有 archive.li、archive.fo 等多個不同的域名，支持短鏈接形式轉發分享。（已被 GFW 封鎖）</p>
+  <p><strong>1.3 Archive Now</strong></p>
+  <p><a href="https://github.com/oduwsdl/archivenow" target="_blank">archivenow</a> 是美國老道明大學網絡科學與數字圖書館研究組 (ODU WS-DL) 開發的能將網頁資源轉化為網頁存檔的命令行工具，目前支持 Megalodon.jp、The WebCite Archive、The Perma.cc Archive、The Archive.is、The Archive.st 和 The Internet Archive 6 家網頁存檔網站。</p>
+  <p><strong>1.4 Archive2049Bot </strong></p>
+  <p><a href="https://t.me/Archive2049Bot" target="_blank">Archive2049Bot</a> 是<a href="https://terminus2049.github.io/index.html/" target="_blank">端點星</a>項目開發的能將網頁保存到 archive.is 的 Telegram 機器人。</p>
+  <p><br /></p>
+  <h2 id="pdf"><strong>2 導出PDF</strong></h2>
+  <p>絕大多數瀏覽器都支持將網頁導出為 PDF 保存。（File &gt; Print &gt; Save as PDF）</p>
+  <p>iOS 13 中，在瀏覽器中對網頁截圖後系統會提供將整個網頁保存為 PDF 的選項。 PDF 可以上傳到 Telegram 頻道，或者先上傳到 Google Drive、Dropbox 等國外網盤，再分享網盤文件的鏈接。避免使用百度網盤等中國公司的服務，以此規避網絡審查與網絡實名制帶來的人身風險。</p>
+  <p><br /></p>
+  <h2 id="section-1"><strong>3 導出圖片 </strong></h2>
+  <p>新浪微博、豆瓣等 SNS 的移動應用程式支持將內容生成為圖片導出。 端傳媒的客戶端應用支持將文章導出為長圖，可供讓讀者在牆內轉發傳播，分享給那些還不會翻牆的人。</p>
+  <p>分享長圖時應注意圖片可能會因壓縮變糊而無法閱讀，如果是通過 Telegram 分享長圖，建議選擇以文件/File 而非圖片形式發出；如果是通過 Twitter 等 SNS 平台分享，建議將長圖上傳到不受中國審查的第三方圖床，分享圖片的 URL 鏈接。</p>
+  <p><br /></p>
+  <h2 id="section-2"><strong>4 網頁長截圖 </strong></h2>
+  <p>長截圖工具可以用於保存新浪微博等難以使用 archive.is 直接存檔的內容。</p>
+  <p><strong>4.1 網頁截圖/長截圖 </strong></p>
+  <p><strong>4.1.1 移動端</strong> <br />iOS: Picsew, Tailor 等。 <br />Android：PPIICC 等。</p>
+  <p><strong>4.1.2 桌面端 </strong><br />Firefox 支持<a href="https://support.mozilla.org/en-US/kb/firefox-screenshots" target="_blank">網頁截圖</a>。 <br />Chrome 用家可以利用 Chrome 開發者工具進行<a href="https://archive.is/7eTlG" target="_blank">網頁截圖</a>。 <br />macOS： <br />Command + Option + I <br />①截取整個網頁 <br />Command + Shift + P <br />輸入命令：Capture full size screenshot<br />②（模擬移動設備）截取手機版網頁長圖 <br />Command + Shift + M <br />點擊右上方的擴展按鈕選擇「Capture full size screenshot」<br />Windows： <br />①Control + Option + F12 截取整個網頁 <br />②Control + Shift + P <br />輸入命令：Capture full size screenshot</p>
+  <p><strong>4.2 截圖拼接</strong></p>
+  <p>對於過長的截圖，長截圖工具可能無法一次性抓取，一些客戶端有時也會出現無法生成長圖的情況，此時可以採取分頁截圖後再拼接的方法。iMark 提供最高支持 9 張圖片的拼圖功能，如果分頁截圖超過 9 張，還可以在生成的長圖的基礎上繼續拼接。</p>
+  <p><br /></p>
+  <h2 id="section-3"><strong>5 頁面存儲 </strong></h2>
+  <p>在桌面級操作系統上，可以利用瀏覽器提供的“頁面存儲”功能將網頁存儲到本地。這種做法的缺點是最終得到的是一個文件，難以直接分享。</p>
+  <p><br /></p>
+  <h2 id="section-4"><strong>6 文本轉錄 </strong></h2>
+  <p>你還可以將涉及敏感話題的網頁內容拷貝後粘貼到支持以 URL 鏈接形式轉發的內容發布平台。</p>
+  <p><a href="https://privatebin.net/" target="_blank">PrivateBin</a>：極簡、開源的在線剪貼板網站。網站本身不讀取記錄文本的內容，所有數據只在瀏覽器端以 256-bit AES 加密/解密。用戶可以選擇剪貼板文本的保存時間（5分鐘、10分鐘、1小時、1天、1周、1個月、1年、永久）和文本格式（純文本、源碼、Markdown），可選擇閱後即焚、開放討論或者為鏈接添加密碼。更多信息可以訪問該<a href="https://privatebin.info/" target="_blank">項目頁面</a>查看。（暫時未被 GFW 封鎖）</p>
+  <p><a href="https://pastebin.com/" target="_blank">Pastebin</a>：在線剪貼板網站。免費版提供基礎功能，付費版支持免廣告、使用文件夾、上傳文件、自動保存草稿等高級功能。</p>
+  <p><a href="https://telegra.ph/" target="_blank">Telegraph</a>：Telegram 提供的匿名博客服务。（已被 GFW 封鎖）</p>
+  <p><a href="https://simplenote.com/%20" target="_blank">Simplenote</a>：輕量級、全平台筆記應用，支持在線發布筆記。（需註冊）</p>
+  <p><a href="https://matters.news/" target="_blank">Matters</a>：基於區塊鏈、以 <a href="https://ipfs.io/" target="_blank">IPFS</a> 存儲信息的內容發布平台。IPFS 基於 P2P，難以被 GFW 徹底封殺。每篇 Matters 作品標題下都有「分佈式入口」按鈕，開啟後可以查看「作品指紋」和「公共節點」。 「指紋」是一篇作品上載到 IPFS 後生成的獨一無二的 ID，通過指紋可在 IPFS 不同節點調取作品內容。 「公共節點」是一篇作品在 IPFS 網絡的存儲地點，你可以使用任意公共節點地址對作品進行傳播。 Matters 域名已經被 GFW 封鎖，但是 IPFS 還有很多未被封鎖的公共節點，因此 Matters 作品的公共節點地址仍可在牆內訪問。</p>
+  <p>*<strong>不要</strong>使用有道雲筆記、石墨筆記等中國廠商提供的服務或者特供中國市場的服務，以及自带敏感词过滤的锤子便签等中國產软件。</p>
+  <h2 id="section-5"><strong>小結</strong><br /></h2>
+  <p>信息保存的媒介應當具備以下特性： <br />抗審查——基於外國網站或者區塊鏈，網信辦無法直接命令平台商刪帖 <br />鏈接化——便於傳播 <br />附加特性： <br />抗封鎖——中國網民可以免翻牆直接訪問</p>
+  <p>以下是編者建議 <br />牆外： <br />archive.is <br />Telegraph <br />Google Drive 等網盤（分享 PDF）</p>
+  <p>牆內： <br />The Archive Web <br />Matters（公共節點） <br />PrivateBin <br />Terminus 端點星計劃（鏡像網站）</p>
+  <p><br /></p>
+  <p>參見： <a href="https://www.iyouport.org/%E6%89%8B%E6%85%A2%E6%97%A0%EF%BC%9A%E5%A6%82%E4%BD%95%E6%8A%A2%E5%9C%A8%E4%BF%A1%E6%81%AF%E8%A2%AB%E9%81%AE%E6%8C%A1%E3%80%81%E6%B1%A1%E6%9F%93%E6%88%96%E5%AE%8C%E5%85%A8%E6%B6%88%E5%A4%B1%E4%B9%8B/" target="_blank"><br />iYouPort｜手慢無：如何搶在信息被遮擋、污染或完全消失之前捕獲它們？</a>（2019-12-25）</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-02-10</time>
+        <a href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-9.%E5%8D%B3%E6%99%82%E9%80%9A%E8%A8%8A%E6%87%89%E7%94%A8%E6%B3%9B%E8%AB%96/">
+          《數字極權時代生存手記》9.即時通訊應用泛論
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-02-10</time>
+        <a href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-10.-Telegram%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+          《數字極權時代生存手記》10. Telegram不完全指南
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-02-10</time>
+        <a href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-12.-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E7%8D%B2%E5%8F%96%E6%B8%A0%E9%81%93/">
+          《數字極權時代生存手記》12. 404 信息的獲取渠道
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-02-10</time>
+        <a href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-13.-%E8%A8%BB%E5%86%8A%E5%A4%96%E5%8D%80-Apple-ID/">
+          《數字極權時代生存手記》13. 註冊外區 Apple ID
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-12.-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E7%8D%B2%E5%8F%96%E6%B8%A0%E9%81%93/">
+            前一篇：《數字極權時代生存手記》12. 404 信息的獲取渠道
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-10.-Telegram%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+            後一篇：《數字極權時代生存手記》10. Telegram不完全指南
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-12.-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E7%8D%B2%E5%8F%96%E6%B8%A0%E9%81%93/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-10.-Telegram%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-10.-Telegram%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-12.-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E7%8D%B2%E5%8F%96%E6%B8%A0%E9%81%93/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-12.-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E7%8D%B2%E5%8F%96%E6%B8%A0%E9%81%93/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-10.-Telegram%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-10.-Telegram%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-02-10/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-12.-404-%E4%BF%A1%E6%81%AF%E7%9A%84%E7%8D%B2%E5%8F%96%E6%B8%A0%E9%81%93/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

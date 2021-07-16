@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>何兆武的思想世界：复杂生命与多面历史的互动互嵌 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+何兆武的思想世界：复杂生命与多面历史的互动互嵌
+——
+" />
+    <meta property="og:description" content="
+何兆武的思想世界：复杂生命与多面历史的互动互嵌
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="何兆武的思想世界：复杂生命与多面历史的互动互嵌" />
+    <meta property="twitter:title" content="何兆武的思想世界：复杂生命与多面历史的互动互嵌" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60d1af68be099b1e9c3e27b2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60d1af68be099b1e9c3e27b2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60d1af68be099b1e9c3e27b2&text=何兆武的思想世界：复杂生命与多面历史的互动互嵌&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60d1af68be099b1e9c3e27b2&title=何兆武的思想世界：复杂生命与多面历史的互动互嵌" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60d1af68be099b1e9c3e27b2&title=何兆武的思想世界：复杂生命与多面历史的互动互嵌" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=何兆武的思想世界：复杂生命与多面历史的互动互嵌&body=
+何兆武的思想世界：复杂生命与多面历史的互动互嵌
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60d1af68be099b1e9c3e27b2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60d1af68be099b1e9c3e27b2&title=何兆武的思想世界：复杂生命与多面历史的互动互嵌&caption=
+何兆武的思想世界：复杂生命与多面历史的互动互嵌
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=何兆武的思想世界：复杂生命与多面历史的互动互嵌&url=https://www.allnow.com/post/60d1af68be099b1e9c3e27b2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>何兆武的思想世界：复杂生命与多面历史的互动互嵌</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-22
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 刘超</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60d1af68be099b1e9c3e27b2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60d1af68be099b1e9c3e27b2">何兆武的思想世界：复杂生命与多面历史的互动互嵌</a>
+——</p>
+
+<div>
+  <p>撰稿丨 刘超（浙江大学研究员）</p>
+  <p>每次念及现今的学界宿耆，谈及史学理论和历史哲学，论及西方经典的译介，我常常会想到何兆武先生。要了解历史哲学、了解西方思想、了解许多过往的人与事，细致地研读先生的作品，无疑是法门之一。这绝非区区的个人之见。</p>
+  <p>然而，作为一个久负盛名的资深学者，何先生涉足领域广泛、著作繁多，要窥其大概并不容易。所幸，2020年元旦刚过，本人就邂逅了一套新面世的“何兆武思想文化随笔”（学林出版社2020年版）。丛书凡四册：论历史则聚焦于“必然与偶然”，谈读书则定位于“触摸时代的灵魂”，谈哲学乃关注“从身份到契约”，论文化则指向“冲击与反响”。此书选编自有章法，读来受益匪浅。以此为基点，思及先生的其他许多作品，似能更好地理解先生宏大精深的思想世界。</p>
+  <p>是年伊始，便有流疫出现，全球都按下暂停键。在此非常时期，不佞正好闭门潜心修读，致思幽微。凭借诸般力作思结千载，视通万里。何先生的作品，自然成为常读之书。这些书，读之给人无限宁静，时有天清月明之感。展读这些文字，宛如重又与先生晤谈，潜入历史及思想的幽静之境。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-22/60d1b0b14cd55d54dd5db45c+L.jpg" data-id="60d1b0b52114416715c3d674" alt="“何兆武思想文化随笔”丛书（《触摸时代的灵魂：何兆武谈读书》《必然与偶然 : 何兆武谈历史》《从身份到契约 : 何兆武谈哲学》《冲击与反响 : 何兆武谈文化》），学林出版社2020年1月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+“何兆武思想文化随笔”丛书（《触摸时代的灵魂：何兆武谈读书》《必然与偶然 : 何兆武谈历史》《从身份到契约 : 何兆武谈哲学》《冲击与反响 : 何兆武谈文化》），学林出版社2020年1月版
+    </figcaption>
+  </figure>
+  <p><strong>历史长河边的学思履痕</strong></p>
+  <p>何先生学问源深，涉足广泛，尤以史学理论及历史哲学、思想史的研究及翻译见长，于中外交流史亦颇有建树，后来更是以一部《上学记》出圈，风靡各界。这套书比较完整地呈现何先生的学思及著述体系。何先生主要作品，大致涵盖了三大类：翻译、研究和创作。</p>
+  <p>何先生迄今长达七八十年的学术生涯成绩斐然，这套书正是先生漫长学术生涯的真实而鲜活的印痕。何先生不仅亲译了大量作品，还与同行联手合译了大量作品，于中外学术交流、于中国学术发展，可谓功莫大焉。何先生翻译作品涵盖英、法、德、俄四大语种，数量之多不胜枚举，内中各家各派的学说都有反映，可见译者视野、胸怀之开阔。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-22/60d1b1499c232e01c17d1e07+L.jpg" data-id="60d1b14e2114416715c3d677" alt="《上学记》，何兆武口述，文靖执笔，生活·读书·新知三联书店2013年1月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《上学记》，何兆武口述，文靖执笔，生活·读书·新知三联书店2013年1月版
+    </figcaption>
+  </figure>
+  <p>据我所知，先生最喜好的或是史与哲，对文艺并无特别的偏爱。但从上世纪八十年代起，先生在《读书》《随笔》《万象》《书屋》等知名文化期刊发表了大量作品，不仅在学界颇受瞩目，在读书界也极有影响，俨然成为文章高手。其文笔之美，远在一般学者之上，这只能理解为一种天分。“诗有别裁，非关学也。”在先生的这些作品中，史学与哲学相遇，共同熔铸在具有文学质感的诗性语言中。</p>
+  <p>本书所收作品，不仅有专题论文、学术随笔、散文杂文，也有书评序跋等，可以说相对较好地呈现了先生多方面的成就。内中有历史分析，有哲学探讨，有往事的回想和社会的关怀。我所感兴趣的，不仅仅是这些文字呈现的思想或诗性-理性哲学，而且包括压在文字背后的那些人和事，那些过往的情思、时光与生命，那些灵心善感和吉光片羽，还有那诗意与冷峻兼具的学术人生。经此文字，往昔风华旖旎而至。回首“昨日的世界”，那里面保管着生命的热度，存留着生命在大地上的真实印痕。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-22/60d1b3529c232e01c17d1e0a+L.jpg" data-id="60d1b356904b8c02a16a32b1" alt="何兆武与本文作者刘超。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+何兆武与本文作者刘超。
+    </figcaption>
+  </figure>
+  <p>先生的精神底色是西南联大，从1939年入校到1946年联大解体，几乎与联大共始终。联大七年的生活，让先生积累了丰富的经验。此间作者先后亲见过梅贻琦、吴宓、吴有训、姚从吾、马约翰、冯友兰、金岳霖、闻一多、雷海宗、曾昭抡等名流，以及日后名重一时的王浩、何炳棣、汪曾祺等同辈。这些人物，大都在何先生的文字中留下了痕迹。在同代人中，先生着墨最多的是至友王浩。</p>
+  <p>克罗齐有言：“一切历史都是当代史。”历史学家不仅是要通过过去理解现在，而且要通过现在来理解过去。历史学家要以自己的学精神世界和生命体验，融入和领会他所要探究的历史世界。历史，首先是人类的历史。人在历史中居于核心地位。历学是“人学”，历史研究更应以人为主体、揭示人性的复杂，引导、激励人去思考自己的生活，让每个人都度过更有意义的人生（路新生）。 福斯泰尔·德·库朗热认为：“历史学不只是研究各种材料性的事实和制度，它真正的研究对象是人类的心灵。它应当立志要知道，这颗心灵相信过什么、思考过什么、感受过什么，在人类生活的不同岁月当中。”科林伍德说：“历史事件乃是人类心灵活动的表现。”史学理应究天人之际、通古今之变，但这又何其难也、其对人类心智的挑战又何其大。马克·布鲁赫说：“优秀的历史学家好像传说中的食人魔。哪里闻到人的气味，哪里就有他的猎物。”雨果则称：“凡是能够在一个朝代中分清楚谁在低声说话，而且听得见他在统治者耳边低声说些什么，有这种能耐的人就是真正的历史家。”</p>
+  <p>历史离不开思想。联大出身的田余庆先生直言：“没有思想，就没有历史学。”“生活经验丰富，了解当代社会最深的史学家，是最能了解过去社会的史学家。”深知论世治史之难的何先生以为，“人性是复杂的，每个人都是高尚且龌龊、真诚且虚伪的，但都是真。”“一个人最难认出的是自己的相貌，同样，心灵的自我认识也是最难的。那需要经历一些事情、遇到一些人，或者需要时间拉开距离，以‘他者’的视角重新审视自我。所有这些正如一面面的镜子……无限数量的镜子累加起来，才能恢复‘全部的真’。”识人是如此，论世更如此。</p>
+  <p>“纯粹的天才，无法成为史学家，天才接受了既有的史学方法或自创一套卓越的史学方法后，才能成为史学家或杰出的史学家。”对于见证了漫长历史进程、有着丰富阅历及生命体验、有深厚学识和哲学素养的学者来说，治史无疑有着极大优势。何先生曾直言：“没有哲学深度，就不能真正理解历史。”其实，先生本人正是如此。先生治学广博，但无疑对治史最勤、最有心得。从先生的文字中，便能约略窥见先生漫长学术道路的轨迹和创获。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-22/60d1b2219c232e01c17d1e08+L.jpeg" data-id="60d1b2242114416715c3d67a" alt="何兆武与荷兰学者杜森，2014年" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+何兆武与荷兰学者杜森，2014年
+    </figcaption>
+  </figure>
+  <p><strong>复杂生命与多面历史的互动互嵌</strong></p>
+  <p>何先生学贯中西，对东西方历史都极富洞见、成绩卓著。从著译来看，先生治学的重心无疑是在西方（尤其是欧洲）思想的研究，其中对卢梭、罗素、梅内克等人的名作都多有译介和研究，尤以康德研究蜚声遐迩（译作《论优美感与崇高感》便是其副产品）。先生对欧陆思想别有兴味，对歌德、帕斯卡尔等人有特殊的喜好。智慧的歌德说：我过去的经历是真，我今天的回忆是诗。回忆，不仅是对往昔的再现，也完全可能是对过去的重构。这是一种再创造的过程，是学术提炼和艺术加工的过程。先生显然也对此深有自觉。</p>
+  <p>何先生学贯中西，对东西方从古至今的历史、文化、思想和人物都有深刻的认识，对何为历史、史学何为、人于历中何以自处、何以有为等基本问题都有着自己的判断。</p>
+  <p>各册书中作品各异，但质量都颇为整齐，时有卓见，常读常新。作者在“谈哲学”部分，相当一部分是研究康德。除了对康德著名的三大批判的论述外，还专门对其历史理性批判进行了探讨。《康德也懂历史吗？》一文便是此中典型。文章重申了康德名言：人是目的，不是工具；并说：“自由，以自由为基础的道德律和权力，绝不是一句空话，它是驾驭人类历史的大经大法。一切政治都必须以他为原则，否则政治就会堕落为一场权术玩弄。”“对任何一种力量，恐怕既不应从单纯的外部环境加以解释而无视其内在的价值，也不应单纯着眼于其内在价值而无视其外部的环境。单纯从时代背景来说明其思想，不免限于庸俗唯物论；而不考虑时代的制约则不免于形而上学的独断论。”“读康德的人大多以第一批判为入门，有时兼及第二。一般很少读他的第三，更谈不到第四。最令人遗憾的莫过于就连王静安那样一位美学大师而兼史学大师，也未能接触到第三和第四。倘若他读过了又会得出什么样的结论，这就只好留待我们的想象了。我猜想，他或许更少一些叔本华那种浅薄而廉价的悲观论。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-22/60d1b27e9c232e01c17d1e09+L.jpg" data-id="60d1b2829b2d825085c25ee9" alt="王国维" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+王国维
+    </figcaption>
+  </figure>
+  <p>王国维是近代中国最有成就的学者，也是近代中国最复杂的学人之一，是研究近代中国学术无法回避的人物。在相当长时期里，许多人对王氏多有论列，但对其思想内核未能进行系统的深度探讨。改革开放之初，何兆武便完成了《论王国维的哲学思想》一文并于1980年发表。此文对王国维的学行进行了溯源和条分缕析。应该说，此后先生并未将重点置于王国维等中国近代学人的后续研究尚上，但他的这一论文却成为王国维研究的奠基性工作，后来者的大量相关无数研究这均从中受益甚多。此文也成为本套丛书中少有的长篇专题论文。此文能追本溯源，从西方哲学入手，剖析王国维思想的源头和内在脉络，故多有不易之见。“康德把理性最后分解为三种根本的不可再简约的能力——认识‘真’的纯粹理性，要求‘善’的实践理性与感受‘美’的判断能力。康德就这样概括了他对全部人类理性的根本见解。”</p>
+  <p>“王国维自幼缺乏严格的数理科学知识和训练……要使他能够很好地掌握康德所处理的问题，会有一定困难。这种困难也会妨碍他能够很好地接受康德思想中辩证法的因素。叔本华不是科学家，读叔本华的书并不需要什么科学知识的凭借。但王国维之所欲醉心于叔本华，甚至誉之为‘凌轹古今’……那当然在技术的背后，还有更深邃的思想原因。尽管在王国维的眼里，康德、叔本华方法就是哲学真理的化身，因此看来他沉浸在康德、叔本华的哲学似乎应该感到满意了；事实却不然。他越是沉溺于康德和叔本华，就越是感觉到怀疑和痛苦。”其在诗中时有流露，“早知世界由心造，无奈悲欢触绪来”，“人生过后惟存悔，知识增时转益疑”，“终古诗人太无赖，苦求乐土向尘寰。”这呈现“一种奇特的结合：一方面是追求和渴望，另一方面是怀疑和虚无。在巨大变革的历史时代里，怀疑总是对于一定社会的统治思想的一种抗议。但是由于他的脆弱性，他的怀疑染上了一层浓厚的虚无色彩，从而使其中消极的成分多于积极的成分。”</p>
+  <p>在天才论上，王氏也离开康德而追步叔本华。叔本华说：“艺术是天才的创作。”王氏也随之认为天才就是具有特别超意志的静观能力的人，是孤独的“往往不胜孤寂之感”的冷眼旁观者，是超出“流俗”之上的精神贵族。自然，如此思路，难免引其走上孤绝之路。静安一生，苦求纯粹、可爱而切实的真，最后却发现“可爱者不可信，可信不可爱”，遭遇了真与善、真与美的深刻撕裂，终于酿成悲剧。何先生一般甚少论及王国维，不过，此文确属力作，至今仍为范例。这类论述在书中在在皆是，时有出彩之处，予人诸多启迪。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-22/60d1b37e9c232e01c17d1e0b+L.jpg" data-id="60d1b3819b2d825085c25eeb" alt="何兆武" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+何兆武
+    </figcaption>
+  </figure>
+  <p>在另一文中，作者指出：“盖伦大体上是以颇为暗淡的眼光在看待现代文明的。……物质生活水平不断的提高远远不是意味着人类的进步，反而是意味着在炮制永远不能餍足的欲求；——它是与人性中的道德义务背道而驰的……科学的日益专门化反而使得群众日益陷入蒙昧状态，而世界的一体化又导致人们日益丧失自己的独立与自由。”“在学术思想研究的领域中，有时候提出问题的价值并不亚于给出结论的价值。盖伦本书的价值或许更多地是应向此中求之。”人类文明“出现了一场理性的分裂：纯粹理性（或工具理性）不断地飞速前进时，而同时实践理性（或道德理性）却牛步迟迟永远都从原点上重新起步。毫无疑问，今人的知识是古人所望尘莫及的；但今人的德行也比古人高尚吗？我们似乎没有任何依据可以这样肯定。……是不是人类文明史就永远注定了是在这样一场理性的二律背反之中摸索着前进呢？”作者于此再次直面了人类永恒的困境。理性与德性的分裂甚至撕裂并不罕见，以智转德、形成完整的心智和健全的人格，更是道阻且长。这恐怕也是无止境的追问和无穷的困惑了。科学与人文、理想与现实、物质与意识之间有着巨大张力，作者在此直面这些永恒的问题，提出了自己的卓见。</p>
+  <p><strong>诗与真：历史特质、规律及机制</strong></p>
+  <p>本套书中，有相当篇幅是探讨历史（学）问题，特别是史学特质与社会历史规律。这不仅是本丛书的重头戏，也是先生研究的专长和中心议题之一。何先生对历史和史学有自己的理解，并对许多历史及理论问题进行了深度探讨，也对许多相关学者、思想家进行了评析。</p>
+  <p>关于历史（学）的特质，何先生已多有论述，学界亦素有争论，可谓见仁见智。有人强调：“文史要分，而且要严格地分……历史是科学，它根本不容许有任何一点浪漫主义的色彩，也不容许像写实主义文学那样来写作。”然而，也有人呼吁“历史学家也要有艺术家的创新精神”。卡西尔则说，伟大的史学家并不缺乏诗人的精神，真正的历史综合或概括所依赖的正是对事物之经验实在的敏锐感受力与自由想象力的天赋合一。伯里表示：“史学乃科学，不多也不少”；雅各布·布克哈特表示，史学是一切科学中最不科学的学问。 柯林伍德说：“艺术和科学不是被排除于历史之外，而是包含于历史之中 ……反之，历史并不以某种方式包含于艺术或科学之中”。以上各派，各执一词。何先生对史学的理解，显然更倾向于认为历史介于科学与人文之间；史学必须必须经科学之洗礼，才能涤荡其中夹杂的那些前科学的元素。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-22/60d1b5439c232e01c17d1e13+L.jpg" data-id="60d1b5469b2d825085c25f00" alt="向达" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+向达
+    </figcaption>
+  </figure>
+  <p>对于历史内核的考察，何兆武可谓素所关注。联大时期的何兆武，曾在课上向史学名家向达发问：如无印度的影响，中国文化将是什么样子呢？向达回答：历史当其成过去以后，再回过头去看，就是命定的了。日后，何先生表示：“多年来，每当读史书而发奇想时，总不免记起向达先生这以非常之巧妙的答案，那巧妙地宛如一件完美无瑕的艺术品。”这不是宿命论，也是不是倒放电影的推演，而是一种史家对历史的充满哲思和诗意的理解。向达先生的回答实在“巧妙”，此中自有一种诗性的朦胧美，历史与哲学在此相遇、相融。舍此，还能有更好的回答或诠释吗？几十年后的今日，或许人们对此仍无更好的答案，这个问题也就成为永远的谜题和长久的困惑了。</p>
+  <p>1941 年春， 雷海宗在云南大学作了一次讲演，他比较了世界文明的兴衰周期，从中总结出一套文化形态的演变规律。主持人林同济盛赞该理论是一场“历史家的浪漫”（the romance of a historian）。何兆武认为，作为一种传奇（romance）来看待，这个理论确实颇为恢宏壮丽、引人入胜；但生物学的方法，毕竟不是科学的唯一的方法，更不是史学的方法。较之雷海宗的那种史家的“浪漫”，何兆武或许更多了几分史家的冷峻。</p>
+  <p>历史撰研，始终对人类提出着相当高的挑战。梁启超以为，史家要“养成精确的观察力”，既“不要为因袭传统的思想所蔽”，也“不要为自己的成见所蔽”。既然史学旨在求真，史家就须与各种干扰做不懈的斗争。史家主要是历史的观察者和阐释者，需要保持着独立的判断和历史洞察力，需要尽量超脱小我的立场，提防成见、信仰、情绪和好恶支配自己的判断。——何先生知人论世，亦大抵如此。史家不仅要透过历史迷雾甄别真伪、虚实，更要挖掘其意涵。然而，人类社会是非常复杂的系统，真实的历史非常复杂，要清晰厘定已异常困难，要做出合理评判尤其不易。这也为历史撰研设定了相当的难度。</p>
+  <p>也正是有此意义上，有学者提出了“冷酷实证史观”：人类历史不完全是按人们的愿望演化的，在演化进程中始终存在着人的能动性和制度结构性之间的张力。“社会不是设计和憧憬出来的，社会是博弈和争斗出来的。历史主要不取决于理想愿望”和观念，而“主要取决于支配政权主体利益结构的制度与文化。”“改变自己难，改变社会更难”；“政治哲学关心正义，而政治只关心输赢。”成王败寇乃是常态。“思想家纠结于制度文化的合理性，理论家则只醉心于制度文化的存在性。”（方绍伟）</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-22/60d1b5f09c232e01c17d1e14+L.jpg" data-id="60d1b5f32114416715c3d67d" alt="雷海宗的全家照，1946年" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+雷海宗的全家照，1946年
+    </figcaption>
+  </figure>
+  <p>对于治史的意义及历史的规律，何先生亦多有讨论。在论述康德时，先生指出：“历史是理性发展的过程，当然大体上也就是一场由坏而好、由于恶至善的不断进步；同时既然万物的发展都有一个终结，历史有没有一个终结呢？这又是一个永远不能解决而永远要追问的问题。”“文明的发展有其必然规律，但回顾人类过去的历史，有着太多的敌对和对抗、专制和屈服。”“一部人类史的开阖大关键，不外是人类怎样由传统社会转入近代化的历程。”“迄今为止，一切进步性社会的运动，都是一场‘从身份到契约’的运动”。以上也是各方关注的核心议题之一。</p>
+  <p>当然，关于这些问题，有着相当多的讨论和争议。例如，社会学家赵鼎新教授对中国盛行的线性进步史观和西方盛行的多元史观提出异议。赵教授认为，“科学就是一种片面的、系统地看问题的方式。……通过控制实验来找到两个因子之间一种确定性的互动关系，并将它们上升为理论。”科学的核心从经验上来说是控制实验，它具有控制实验、系统思想、实证主义等要素。任何东西皆可通过观察、控制实验来解决。当然，不是所有科学都完全如此；只有物理学完全满足这些条件，而其他学科则向物理学看齐。他对不同学科的特质进行深入探讨后指出，包括历史学在内的社会科学（social sciences）与物理学、生物学等学科有很大差异。一般地说，物理学是科学化程度最高的学科，生物学次之，社会科学又次之，但也更为复杂。社会科学与生物学一样，有多个层次，每个层次背后都有大量机制在起作用。社会科学的机制和社会现象的关系非常复杂。史家常用的关键逻辑，不是归纳，不是演绎，而是归溯。在方法论的基础上，物理学的主要基础是法则（law），生物学的主要基础是覆盖性法则（进化论法则及大量附属机制），社会学的方法论是结构/机制解释，它“只有机制，没有覆盖性法则”。因此，社会科学的非科学性因素较为明显，“社会科学的解释，具有非常大的艺术性”。</p>
+  <p>就此意义而言，历史变迁或社会演化自有其机制，但其中是否必定存在普遍意义的规律、或者说人能否充分认识社会历史的规律，无疑是极富争议的问题。若从人文学视角看，历史研究或许主要是致力于规律的探讨；而在许多社会科学家看来，历史研究也许更多地还是对社会机制的解释，而不是规律探索。随着社会科学专门研究的深入，社会内在的机制可能比历史学家所理解的因果关系更复杂，其中许多可能是个体所难以直观认知或感受到的。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-22/60d1b6cd9c232e01c17d1e15+L.jpg" data-id="60d1b6d09b2d825085c25f01" alt="何兆武汉译思想名著" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+何兆武汉译思想名著
+    </figcaption>
+  </figure>
+  <p>无论是论述研究，还是社会科学研究，人的意义和作用都是一个无可回避的议题。宇宙浩渺，人只是社会有机体的一分子。个体的力量无疑是渺小的，然而在历史节点上的个体，往往对历史产生深远影响；至于组织起来的群体，更可能对社会进程产生不可估量的影响。在先生所译帕斯卡尔的作品中，便有名言：“人只不过是一根芦苇，但它是一根会思想的芦苇……纵使宇宙毁灭了他，人却仍然要比致他于死命的东西更高贵得多。”诚然，人类的出现本就是自然界的奇迹；而每个个体生命的诞生，又有着相当的偶然性。在偶然与必然、个体生命与历史进程等议题上，亦有着诸多讨论。</p>
+  <p>通过个体及其组织的社会实践，通过具体的社会机制，人类建立了个体与社会、与大历史的真实有机联结。而个体的能动性与社会的结构性因素之间的互动，最终实现了主体性与客观实在性的历史统一。历史的种种特性，使偶然与必然、结构性与能动性的张力更具阐释空间。面对多义的历史，人的能动性就显得格外突出。米塞斯说：“政治、社会和经济事件是全民合作带来的结果。”每个人的贡献“总的来说可以被他人的贡献所替代”，“在极其伟大的智力成就和艺术成就领域，情况就不一样了。”使天才“的工作具有特殊光彩的那点东西，却是独一无二的……如果偶然事件令他殒命，则所有的人都会失去某种无法补偿的东西。”“在这个意义上，我们可以说，偶然性在人类事务中起了某种作用。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-22/60d1b78c9c232e01c17d1e16+L.jpg" data-id="60d1b78f2114416715c3d67f" alt="何兆武" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+何兆武
+    </figcaption>
+  </figure>
+  <p><strong>无尽的探寻</strong></p>
+  <p>人是追求意义的动物。人不仅有生存、安全的需求，也有爱和归属、尊重及自我实现的需求。个体的价值如何？人生的意义何在？或者说，人生何求？这些问题都是人无法忽略的问题，也是困扰着许多人的问题。它是人类始终面对、无以回避的“永恒之问”。</p>
+  <p>何先生博学深思、阅历极丰、冷暖皆知。先生从上世纪三十年代开始颠沛流离，此后足迹遍及东西南北、亚欧北美等几大洲。在这长长的岁月中，先生从未停止过对知识的追求，亦从未停止过对幸福的追寻和对生命意义的探索。正是这种对未知的谦逊，成就了先生对苍茫岁月的豁达、对纷繁世事的豁达、对诸般物事的宽厚以及对复杂历史的“了解之同情”，也成就了先生精彩纷呈、渊深无涯的“灵心善感”。凡所经历的种种，都构成了先生的精神养分，造就了史家的洞见和智者的卓识。</p>
+  <p>细读先生的文字，仿若聆听东西哲人的精彩言说，从中可见历史的风云气象；又宛若欣赏山水长卷，从中体察到时光的温度和灵性。借此，可约略窥知百年人瑞的那深博的思想世界和丰富的学术历程。于此之外的许多人和事，以及先生青少年时代的踪迹，或许亦可循着《上学记》等文字去细细品味了。</p>
+  <p>刘超，清华大学史学博士、日本东北大学法学博士。长期致力于学术研究和文艺创作。近年主要研究中国史、高等教育、知识社会学及政治哲学。主要著作有《学府与政府》、《清华大学文史哲谱系》（合著）、《世纪清华》、《回眸千山》等。刘超</p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-24</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-24/%E5%9B%BE%E7%81%B5%E7%9A%84%E6%82%B2%E5%89%A7-%E6%A8%A1%E4%BB%BF%E6%B8%B8%E6%88%8F-%E4%B8%8E%E6%80%A7%E5%88%AB%E5%9B%B0%E6%83%91/">
+          图灵的悲剧：“模仿游戏”与性别困惑
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-23</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-23/%E8%A2%ABC%E7%BD%97%E5%AB%8C%E5%BC%83%E7%9A%84%E5%8F%AF%E5%8F%A3%E5%8F%AF%E4%B9%90-%E4%BB%8E%E5%9B%9E%E6%98%A5%E7%A5%9E%E8%8D%AF%E5%88%B0%E8%82%A5%E5%AE%85%E5%BF%AB%E4%B9%90%E6%B0%B4/">
+          被C罗嫌弃的可口可乐：从回春神药到肥宅快乐水
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-21</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-21/%E6%AD%A3%E5%9C%A8%E6%94%B9%E5%86%99%E7%9A%84%E5%8F%8D%E7%8A%B9%E5%8F%B2-%E5%9C%A8%E7%BA%B3%E7%B2%B9%E5%8D%A0%E9%A2%86%E6%97%B6%E6%9C%9F-%E6%B3%A2%E5%85%B0%E6%98%AF%E6%96%BD%E5%AE%B3%E8%80%85%E8%BF%98%E6%98%AF%E5%8F%97%E5%AE%B3%E8%80%85/">
+          正在改写的反犹史：在纳粹占领时期，波兰是施害者还是受害者？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-20</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-20/%E4%B8%AD%E6%AC%A7-%E7%9A%84%E9%AD%85%E5%8A%9B-%E6%96%87%E5%AD%A6%E5%85%B1%E5%92%8C%E5%9B%BD-%E9%BB%84%E9%87%91%E6%97%B6%E4%BB%A3%E4%B8%8E%E6%80%80%E6%97%A7%E7%9A%84%E4%B9%8C%E6%89%98%E9%82%A6/">
+          “中欧”的魅力：文学共和国、黄金时代与怀旧的乌托邦
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-21/%E8%AE%A9%E6%82%A8%E7%9C%8B%E8%B5%B7%E6%9D%A5%E6%9B%B4%E4%B8%93%E4%B8%9A-%E7%BB%99%E5%9C%A8%E7%BA%BF%E5%9F%B9%E8%AE%AD%E5%B8%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8F%90%E7%A4%BA-%E5%9F%B9%E8%AE%AD%E5%B8%88%E6%8C%87%E5%8D%97-3-iYouPort/">
+            前一篇：让您看起来更专业，给在线培训师的一些提示：培训师指南（3） - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-22/%E9%9A%BE%E6%B0%91%E8%90%A5%E6%88%90%E4%BA%86%E7%9B%91%E8%A7%86%E6%8A%80%E6%9C%AF%E7%9A%84%E8%AF%95%E9%AA%8C%E5%9C%BA-iYouPort/">
+            後一篇：难民营成了监视技术的试验场 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-21/%E8%AE%A9%E6%82%A8%E7%9C%8B%E8%B5%B7%E6%9D%A5%E6%9B%B4%E4%B8%93%E4%B8%9A-%E7%BB%99%E5%9C%A8%E7%BA%BF%E5%9F%B9%E8%AE%AD%E5%B8%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8F%90%E7%A4%BA-%E5%9F%B9%E8%AE%AD%E5%B8%88%E6%8C%87%E5%8D%97-3-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-22/%E9%9A%BE%E6%B0%91%E8%90%A5%E6%88%90%E4%BA%86%E7%9B%91%E8%A7%86%E6%8A%80%E6%9C%AF%E7%9A%84%E8%AF%95%E9%AA%8C%E5%9C%BA-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-23/%E8%A2%ABC%E7%BD%97%E5%AB%8C%E5%BC%83%E7%9A%84%E5%8F%AF%E5%8F%A3%E5%8F%AF%E4%B9%90-%E4%BB%8E%E5%9B%9E%E6%98%A5%E7%A5%9E%E8%8D%AF%E5%88%B0%E8%82%A5%E5%AE%85%E5%BF%AB%E4%B9%90%E6%B0%B4/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-21/%E6%AD%A3%E5%9C%A8%E6%94%B9%E5%86%99%E7%9A%84%E5%8F%8D%E7%8A%B9%E5%8F%B2-%E5%9C%A8%E7%BA%B3%E7%B2%B9%E5%8D%A0%E9%A2%86%E6%97%B6%E6%9C%9F-%E6%B3%A2%E5%85%B0%E6%98%AF%E6%96%BD%E5%AE%B3%E8%80%85%E8%BF%98%E6%98%AF%E5%8F%97%E5%AE%B3%E8%80%85/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-21/%E8%AE%A9%E6%82%A8%E7%9C%8B%E8%B5%B7%E6%9D%A5%E6%9B%B4%E4%B8%93%E4%B8%9A-%E7%BB%99%E5%9C%A8%E7%BA%BF%E5%9F%B9%E8%AE%AD%E5%B8%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8F%90%E7%A4%BA-%E5%9F%B9%E8%AE%AD%E5%B8%88%E6%8C%87%E5%8D%97-3-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-22/%E9%9A%BE%E6%B0%91%E8%90%A5%E6%88%90%E4%BA%86%E7%9B%91%E8%A7%86%E6%8A%80%E6%9C%AF%E7%9A%84%E8%AF%95%E9%AA%8C%E5%9C%BA-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-23/%E8%A2%ABC%E7%BD%97%E5%AB%8C%E5%BC%83%E7%9A%84%E5%8F%AF%E5%8F%A3%E5%8F%AF%E4%B9%90-%E4%BB%8E%E5%9B%9E%E6%98%A5%E7%A5%9E%E8%8D%AF%E5%88%B0%E8%82%A5%E5%AE%85%E5%BF%AB%E4%B9%90%E6%B0%B4/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-21/%E6%AD%A3%E5%9C%A8%E6%94%B9%E5%86%99%E7%9A%84%E5%8F%8D%E7%8A%B9%E5%8F%B2-%E5%9C%A8%E7%BA%B3%E7%B2%B9%E5%8D%A0%E9%A2%86%E6%97%B6%E6%9C%9F-%E6%B3%A2%E5%85%B0%E6%98%AF%E6%96%BD%E5%AE%B3%E8%80%85%E8%BF%98%E6%98%AF%E5%8F%97%E5%AE%B3%E8%80%85/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

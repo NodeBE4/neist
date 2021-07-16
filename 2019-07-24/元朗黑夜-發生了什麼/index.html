@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>元朗黑夜，發生了什麼？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+元朗黑夜，發生了什麼？
+——
+" />
+    <meta property="og:description" content="
+元朗黑夜，發生了什麼？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="元朗黑夜，發生了什麼？" />
+    <meta property="twitter:title" content="元朗黑夜，發生了什麼？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40az%2F%25E5%2585%2583%25E6%259C%2597%25E9%25BB%2591%25E5%25A4%259C-%25E7%2599%25BC%25E7%2594%259F%25E4%25BA%2586%25E4%25BB%2580%25E9%25BA%25BC-zdpuApH9pC1eAMbZmv4RJPq5NqesR5yyGxRANeZnND8BnL71b" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@az/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC-zdpuApH9pC1eAMbZmv4RJPq5NqesR5yyGxRANeZnND8BnL71b" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@az/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC-zdpuApH9pC1eAMbZmv4RJPq5NqesR5yyGxRANeZnND8BnL71b&text=元朗黑夜，發生了什麼？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@az/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC-zdpuApH9pC1eAMbZmv4RJPq5NqesR5yyGxRANeZnND8BnL71b&title=元朗黑夜，發生了什麼？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@az/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC-zdpuApH9pC1eAMbZmv4RJPq5NqesR5yyGxRANeZnND8BnL71b&title=元朗黑夜，發生了什麼？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=元朗黑夜，發生了什麼？&body=
+元朗黑夜，發生了什麼？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@az/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC-zdpuApH9pC1eAMbZmv4RJPq5NqesR5yyGxRANeZnND8BnL71b" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@az/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC-zdpuApH9pC1eAMbZmv4RJPq5NqesR5yyGxRANeZnND8BnL71b&title=元朗黑夜，發生了什麼？&caption=
+元朗黑夜，發生了什麼？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=元朗黑夜，發生了什麼？&url=https://matters.news/@az/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC-zdpuApH9pC1eAMbZmv4RJPq5NqesR5yyGxRANeZnND8BnL71b" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>元朗黑夜，發生了什麼？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2019-07-24
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 張潔平</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@az/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC-zdpuApH9pC1eAMbZmv4RJPq5NqesR5yyGxRANeZnND8BnL71b" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1563946313000-->
+<p><a href="https://matters.news/@az/%E5%85%83%E6%9C%97%E9%BB%91%E5%A4%9C-%E7%99%BC%E7%94%9F%E4%BA%86%E4%BB%80%E9%BA%BC-zdpuApH9pC1eAMbZmv4RJPq5NqesR5yyGxRANeZnND8BnL71b">元朗黑夜，發生了什麼？</a>
+——</p>
+
+<div>
+  <p>7月22日晚上的香港元朗，發生了什麼？這篇文參考了各種新聞直播視頻、報道、警方的記者會，僅作信息梳理。6月開始，反對逃犯條例修訂的市民和平遊行，怎樣一步步走到如今黑惡勢力出場，恐懼蔓延，市民對警方的信任降至冰點？香港為何高燒不退？接下來會怎麼樣？另文再談。</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/b09dcd09-027a-4ac6-a084-f79489eeab34/photo-2019-07-24-11-12-32.jpg" data-asset-id="b09dcd09-027a-4ac6-a084-f79489eeab34" referrerpolicy="no-referrer" />    <figcaption>
+<span>元朗在香港新界西北部，遠離港島，靠近深圳灣</span>
+    </figcaption>
+  </figure>
+  <p>元朗黑夜並非全無預兆。7月22日這一夜之後，驚恐的人們尋找線索，發現當日白天，元朗村民不少已經收到信息，稱晚上會出事，讓大家早點回家；再往前兩周，在新界十八鄉的一個村代表就職典禮上，中聯辦新界工作部部長李薊貽<a href="https://news.mingpao.com/pns/%E8%A6%81%E8%81%9E/article/20190723/s00001/1563820638391/%E5%8D%80%E8%AD%B0%E5%93%A1-%E9%84%89%E4%BA%8B%E4%B8%AD%E4%BA%BA%E5%85%A9%E5%91%A8%E5%89%8D%E9%86%9E%E9%87%80-%E9%84%89%E5%B1%80%E8%AD%B4%E8%B2%AC%E6%9A%B4%E5%8A%9B" target="_blank">在台上發言</a>時，就暗示近日會有人在元朗示威，而元朗「有勇氣又守護家園」的居民「不會給他們進來元朗搞事」，在場者聞言即鼓掌叫好。</p>
+  <p>在7月22日之前，並沒有團體計劃在元朗遊行示威。而這一則謠傳的消息，動員出的「守護家園的勇氣人士」，正是在新界勢力盤亙已久的「14K」、「和勝和」等幫派力量，俗稱，黑社會。</p>
+  <p>以下是當天晚上發生的事：</p>
+  <h2 id="section"><strong>21:00 白衣人大量出現</strong></h2>
+  <p>大批白衣人露出纹身在元朗街头出现，他們手持棍棒，面戴口罩。他們剛完成大型集結，拿掉藤條與棍棒上原先附有的國旗、區旗，向元朗地鐵站進發。後警方確認，白衣人有「14K」與「和勝和」等幫派背景。（source：直播視頻、香港01等）</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/0ce84adc-0419-44ee-9e25-fe5b34bf8872/yuenlong-tvuw-l-1200x0.png" data-asset-id="0ce84adc-0419-44ee-9e25-fe5b34bf8872" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p>視頻：<a href="https://www.facebook.com/siulai.hk/videos/2107587812685687/?v=2107587812685687" target="_blank"><strong>https://www.facebook.com/siulai.hk/videos/2107587812685687/?v=2107587812685687</strong></a></p>
+  <h2 id="section-1"><strong>22:00 零星攻擊開始，議員及市民不斷報警</strong></h2>
+  <p>元朗地鐵站旁的大型商場YOHO附近，開始有白衣人零星襲擊路人，他們揚言「不是白衫就打」。身穿灰色衣服，任廚師的蘇先生在下班走近 YOHO MALL時，在街上被近20人持棍狀物體不斷襲擊。有立法會議員、區議員及市民不停報警，警察曾表示已調度人手在元朗站設立指揮中心，亦有電話那頭回應：「如果怕就不要出來街上。」（source：明報、香港01、路透社等）</p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/d0dcbfd5-c2a7-4617-948d-a95e03057ad5/bkn-20190722050900936-0722-00822-001-01p.jpg" data-asset-id="d0dcbfd5-c2a7-4617-948d-a95e03057ad5" referrerpolicy="no-referrer" />    <figcaption>
+<span>廚師蘇先生被棍棒狂擊後的背傷</span>
+    </figcaption>
+  </figure>
+  <p><strong>立法會議員10點報警的音頻：</strong><a href="https://www.facebook.com/watch/?v=2351003955020170" target="_blank"><strong>https://www.facebook.com/watch/?v=2351003955020170</strong></a></p>
+  <h2 id="section-2"><strong>22:45 - 23:14 第一輪密集攻擊，30分鐘無警察</strong></h2>
+  <p>越來越多的白衣人進入元朗地鐵站，一度達到近百人，在地鐵的不同樓層，從大堂到月台甚至進入地鐵車廂，以棍棒無差別追打普通市民，其中有不少是歸家的一家老小。不少人被打得頭破血流，尖叫與哭泣聲此起彼伏。港鐵職員、立法會議員、市民均多次報警。其中，22:53，有兩名軍裝巡邏警員接報到場，目擊白衫人群後，兩名警員轉身離開。在第二天的記者發佈會上，警務處長解釋，這兩名警員因裝備不足，回去請求增援。與此同時，白衣人在地鐵站內持續無差別襲擊普通市民。不少市民流血受傷，<a href="https://www.youtube.com/watch?v=q2iX6s8L4qk&amp;t=22s" target="_blank">一名途經的年輕孕婦也被推襲倒地</a>（視頻）。十數名市民躲進地鐵洗手間。</p>
+  <p>正在站內進行視頻直播的《立場新聞》記者，被白衣人恐嚇進而推倒、圍毆，直播畫面繼續，從畫面中，棍棒打落清晰可見，女記者的驚聲尖叫聲清晰可聞。遇襲的女記者手、肩、背、後腦多處受傷，右肩需縫四針。民主黨立法會議員林卓廷也在停靠在元朗站月台的港鐵車廂內被包圍毆打，面部受傷，嘴唇內外共縫18針，右手手指骨裂。（source：各大傳媒及直播視頻綜合）</p>
+  <p>立場新聞記者直播視頻：<a href="https://www.facebook.com/watch/?v=2336365169962035" target="_blank">https://www.facebook.com/watch/?v=2336365169962035</a></p>
+  <p>立法會議員林卓廷直播視頻：<a href="https://www.facebook.com/LamCheukTing.Official/videos/%E5%85%83%E6%9C%97%E7%8F%BE%E5%A0%B4/547539255780791/" target="_blank">https://www.facebook.com/LamCheukTing.Official/videos/元朗現場/547539255780791/</a></p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/1e362013-e745-4174-b9cf-1d549b70bc6d/67590763-894460547585085-6800322050192834560-n.jpg" data-asset-id="1e362013-e745-4174-b9cf-1d549b70bc6d" referrerpolicy="no-referrer" />    <figcaption>
+<span>網絡圖片</span>
+    </figcaption>
+  </figure>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/83eb3258-0c66-4d30-a4ca-82396bfb2e07/pasted-image-0.png" data-asset-id="83eb3258-0c66-4d30-a4ca-82396bfb2e07" referrerpolicy="no-referrer" />    <figcaption>
+<span>網絡圖片</span>
+    </figcaption>
+  </figure>
+  <h2 id="section-3"><strong>23:15 白衣人離開，同時警方到達</strong></h2>
+  <p>在<a href="https://www.facebook.com/standnewshk/videos/407353793207073/?__xts__[0]=68.ARCZG85dyTf3E4DYaz0GDD1Du22QN1x5By13Q2mgIvjhCtdMQUtSkC0HhKguCXr9OlswGU327mo0ekho7LKqzIvtmkX7FqM6TplFsl80nihXnNsQsgUyQGqMk8x4J7MK1KQWmuMc8MlKlIpYebIJTnfZLyKfP2mvwcMzBUFO2b599X0s-T9NZrMOr8f82Le4hGhFeXtC9ZzbYVpEdBIrRoJixBRHj006tCGQVE82n4OIMbH9sJQZGdKXOwOu4V7bhZB4ozEWcIPDn6w7LOeZWYFoF0xJeijaBEMPnTbHIzl34mnEZ4IXLwuc6wB80b8SwlVpnNbGLQtKHsRMyhk9h6kJZoyhvw&amp;__tn__=H-R" target="_blank">立場新聞的全程直播畫面</a>中可見，白衣人突然撤退，1分鐘後，白衣人從畫面中消失，與此同時，23:15，元朗助理指揮官游乃強警司與帶著盾牌的十多名防暴警員到場。港鐵新聞稿也確認了這一警方到達的時間。但警方後來表示，他們在23:20抵達元朗站增援，其時白衣人已離開。受到驚嚇的市民見到警察姍姍來遲，怒火中燒，鼓譟指責。（source：立場新聞直播、端傳媒）</p>
+  <h2 id="section-4"><strong>23:44 警方離開</strong></h2>
+  <p>警方從元朗站J出口離開地鐵站。23:55，元朗站應警方要求關閉。</p>
+  <h2 id="section-5"><strong>00:20-01:17 第二輪密集攻擊，30分鐘無警察</strong></h2>
+  <p>警方離開約半小時後，又有一批白衣人回到地鐵站內和鄰近商場襲擊途人。他們更強行拉開已經關閉的地鐵站鐵閘衝進大堂、月台，繼續無差別追打地鐵站中的普通市民，甚至截停、追擊載人回家的途徑車輛。商場職員及地鐵職員均有報警，因警方遲遲未見蹤影，有市民於0時35分左右向消防求助，四輛消防車及消防員在大約5分鐘後到場支援。因在直播中目睹第一輪攻擊、開車前往救援的無線電視前主播柳俊江，被5至6名白衣人士用木棍、鐵通毆打致頭破血流，共縫了11針。</p>
+  <p>白衣人拉開鐵閘重新衝入地鐵站視頻：<a href="https://www.facebook.com/RTHKVNEWS/videos/471247477011931/" target="_blank"><strong>https://www.facebook.com/RTHKVNEWS/videos/471247477011931/</strong></a></p>
+  <p>從地鐵站接人回家的車輛被襲擊視頻：<a href="https://www.facebook.com/ThingsAtHongKong/videos/1946763282090111/" target="_blank"><strong>https://www.facebook.com/ThingsAtHongKong/videos/1946763282090111/</strong></a></p>
+  <p>地鐵車廂內有被打市民跪地保護家人，被一拳打到倒地：<a href="https://www.facebook.com/fan.chan.75873/videos/494846347726136/" target="_blank"><strong>https://www.facebook.com/fan.chan.75873/videos/494846347726136/</strong></a></p>
+  <figure class="embed-video">
+    <div class="iframe-container">
+      <iframe src="https://www.youtube.com/embed/zVCXgBohzGU?rel=0" frameborder="0" allowfullscreen="true" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+    </div>
+    <figcaption>
+<span>柳俊江受襲後接受採訪</span>
+    </figcaption>
+  </figure>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/69d9b0c0-a7c8-44f6-9b26-906e2ea5c270/jpg.jpg" data-asset-id="69d9b0c0-a7c8-44f6-9b26-906e2ea5c270" referrerpolicy="no-referrer" />    <figcaption>
+<span>受傷倒地的前無線新聞電視主播柳俊江</span>
+    </figcaption>
+  </figure>
+  <h2 id="section-6"><strong>01:17 警察來了</strong></h2>
+  <p>防暴警察現身，並進入地鐵站巡邏。大量白衣人離開地鐵站，進入旁邊的圍村。</p>
+  <h2 id="section-7"><strong>02:00-04:00 警察調查結束，未有逮捕任何人</strong></h2>
+  <p>警察進入圍村調查，一度與白衣人對峙，其後離開，並未逮捕任何人。</p>
+  <h2 id="section-8"><strong>05:15</strong></h2>
+  <p>元朗警區助理指揮官（刑事）游乃強警司見記者，將白衣人無差別襲擊事件稱白衫與黑衫「兩批人紛爭」，是「政見不同的兩個陣營打鬥」，稱警方會對「任何陣營」都公平處理，並說「無論哪個陣營」都「沒見到攻擊性武器」。游乃強稱：「我們沒有作出任何拘捕行動，暫時不能確保村口這些人有份參與元朗西鐵站的打鬥。不能因為他白衣就是有問題，任何陣營都要公平處理，亦不能因為黑衣就有打鬥，一定公平處理。刑事的同事見不到有人拿攻擊性武器。」</p>
+  <p>游乃強視頻：<a href="https://hk.news.yahoo.com/video/%E5%85%83%E6%9C%97%E8%A1%9D%E7%AA%81-%E9%A6%96%E6%89%B9%E5%88%B0%E5%A0%B4%E8%AD%A6%E5%93%A1%E8%AD%A6%E5%8A%9B%E4%B8%8D%E8%B6%B3%E7%84%A1%E5%8D%B3%E6%99%82%E8%99%95%E7%90%86-221335287.html" target="_blank">https://hk.news.yahoo.com/video/元朗衝突-首批到場警員警力不足無即時處理-221335287.html</a></p>
+  <p>此前，香港電台記者在元朗地鐵站門口遇見八鄉分區指揮官李漢民，問他，你幾點來的？李漢民回答：「我看不到表。」<a href="https://www.youtube.com/watch?v=I5h9LpXgmmU" target="_blank">https://www.youtube.com/watch?v=I5h9LpXgmmU</a></p>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/1e7cfc53-8590-4b8a-ab4c-681dcc5c8049/67357718-10219746681919848-8989467581043703808-n.jpg" data-asset-id="1e7cfc53-8590-4b8a-ab4c-681dcc5c8049" referrerpolicy="no-referrer" />    <figcaption>
+<span>香港電台視頻截圖</span>
+    </figcaption>
+  </figure>
+  <p>這一夜，根據香港醫管局數據顯示，共有45名男女送院，當中1名男子危殆，留醫屯門醫院。另外，有3男傷勢嚴重，11男子穩定，其餘人士經治理後已出院。</p>
+  <p>第二天，香港特首林鄭月娥率全部司局長召開<a href="https://www.hk01.com/%E6%94%BF%E6%83%85/341973/%E9%80%83%E7%8A%AF%E6%A2%9D%E4%BE%8B-%E6%85%8B%E5%BA%A6%E8%AA%8D%E4%BD%8E%E5%A8%81-%E7%AB%8B%E5%A0%B4%E4%BE%9D%E8%88%8A%E7%A1%AC-%E6%9E%97%E9%84%AD%E8%A8%98%E8%80%85%E6%9C%83%E5%85%A8%E6%96%87%E4%B8%80%E8%A6%BD" target="_blank">記者發佈會（全文）</a>，評價元朗暴力事件「目無法紀、令人髮指」，稱政府「絕不姑息」。警務處長盧偉聰無法在現場回答關於警力部署的問題。</p>
+  <p>元朗黑夜，令無數香港人無眠。</p>
+  <p>無論是在家看視頻直播，還是恰好在現場的元朗居民，或是專門趕去救人的人，目睹無差別攻擊的發生，目睹現場男女老幼的驚駭、哭泣，尤其是，當得知事件早有風聲、白衣人數小時前就開始聚集、至少一小時前就不斷有人報警的前提下，仍看到，現場兩次密集襲擊發生時，「恰好」均無警察在場，只有消防員不斷到場救護。此情此景，令港人心碎，尤其令港人對警隊的信任降至冰點。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2019-07-29</time>
+        <a href="https://nodebe4.github.io/oped2/2019-07-29/729%E5%9C%8B%E5%8B%99%E9%99%A2%E6%B8%AF%E6%BE%B3%E8%BE%A6%E8%A8%98%E8%80%85%E6%9C%83-%E8%A6%81%E9%BB%9E%E9%80%9F%E8%A8%98/">
+          729國務院港澳辦記者會，要點速記
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-07-27</time>
+        <a href="https://nodebe4.github.io/oped2/2019-07-27/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E/">
+          49天，香港反送中運動如何來到臨界點？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-07-21</time>
+        <a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">
+          一齣罪惡劇本背後，是回不了頭的墮落
+        </a>
+      </li>
+    
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2019-07-23/%E7%A7%BB%E9%99%A4%E4%BD%A0%E7%9A%84%E7%BB%B5%E7%BE%8A%E5%A2%99-%E7%BB%99%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9A%845%E4%B8%AA%E9%98%B2%E5%BE%A1%E8%AF%BE%E7%A8%8B-iYouPort/">
+            前一篇：移除你的绵羊墙：给普通人的5个防御课程 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2019-07-24/%E4%B8%BB%E9%A2%98%E4%B8%8D%E6%98%AF%E5%86%9B%E4%BA%8B-iYouPort/">
+            後一篇：主题不是军事 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2019-07-23/%E7%A7%BB%E9%99%A4%E4%BD%A0%E7%9A%84%E7%BB%B5%E7%BE%8A%E5%A2%99-%E7%BB%99%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9A%845%E4%B8%AA%E9%98%B2%E5%BE%A1%E8%AF%BE%E7%A8%8B-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2019-07-24/%E4%B8%BB%E9%A2%98%E4%B8%8D%E6%98%AF%E5%86%9B%E4%BA%8B-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2019-07-27/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2019-07-23/%E7%A7%BB%E9%99%A4%E4%BD%A0%E7%9A%84%E7%BB%B5%E7%BE%8A%E5%A2%99-%E7%BB%99%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9A%845%E4%B8%AA%E9%98%B2%E5%BE%A1%E8%AF%BE%E7%A8%8B-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2019-07-24/%E4%B8%BB%E9%A2%98%E4%B8%8D%E6%98%AF%E5%86%9B%E4%BA%8B-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2019-07-27/49%E5%A4%A9-%E9%A6%99%E6%B8%AF%E5%8F%8D%E9%80%81%E4%B8%AD%E9%81%8B%E5%8B%95%E5%A6%82%E4%BD%95%E4%BE%86%E5%88%B0%E8%87%A8%E7%95%8C%E9%BB%9E/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

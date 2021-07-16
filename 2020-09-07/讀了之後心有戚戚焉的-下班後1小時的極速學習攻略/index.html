@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》
+——
+" />
+    <meta property="og:description" content="
+讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》" />
+    <meta property="twitter:title" content="讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40hulitw%2Flearning-how-to-learn-7c92be9b72fa%3Fsource%3Drss-f1fb3e40dc37------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@hulitw/learning-how-to-learn-7c92be9b72fa?source=rss-f1fb3e40dc37------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@hulitw/learning-how-to-learn-7c92be9b72fa?source=rss-f1fb3e40dc37------2&text=讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@hulitw/learning-how-to-learn-7c92be9b72fa?source=rss-f1fb3e40dc37------2&title=讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@hulitw/learning-how-to-learn-7c92be9b72fa?source=rss-f1fb3e40dc37------2&title=讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》&body=
+讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@hulitw/learning-how-to-learn-7c92be9b72fa?source=rss-f1fb3e40dc37------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@hulitw/learning-how-to-learn-7c92be9b72fa?source=rss-f1fb3e40dc37------2&title=讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》&caption=
+讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》&url=https://medium.com/@hulitw/learning-how-to-learn-7c92be9b72fa?source=rss-f1fb3e40dc37------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-09-07
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Huli">
+          Huli
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@hulitw/learning-how-to-learn-7c92be9b72fa?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Huli的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Huli 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1599486125000-->
+<p><a href="https://medium.com/@hulitw/learning-how-to-learn-7c92be9b72fa?source=rss-f1fb3e40dc37------2">讀了之後心有戚戚焉的《下班後1小時的極速學習攻略》</a>
+——</p>
+
+<div>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*BYGK9YikTFeS6YM7" />    <figcaption>
+Photo by <a href="https://unsplash.com/@aaronburden?utm_source=medium&amp;utm_medium=referral">Aaron Burden</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a>，我只是希望秋天趕快來所以選了這張
+    </figcaption>
+  </figure>
+  <p>前一陣子收到采實文化的來信，邀請我閱讀並分享一本新書：《<a href="https://www.books.com.tw/products/0010865071">下班後1小時的極速學習攻略</a>》，雖然說很久沒有看書了，但第一次收到出版社的邀請滿開心的，就直接答應了下來。</p>
+  <p>上個週末花了點時間把這本書給看完，覺得讀這本書的時機真是對極了。這是一本在講學習的書，雖然說書名跟作者的背景都會讓人以為這本書是只給上班族看的，但其實裡面提到的東西，就算不是上班族也很受用。</p>
+  <p>而我會說時機很對，是因為我一直有在帶一個線上的課程：<a href="https://bootcamp.lidemy.com/">程式導師實驗計畫</a>，從計劃當中可以觀察學生學習的狀況，也可以看到他們所寫的心得，這是第四期的計畫了，從前幾期的累積中，對於「學習」這件事也是有些自己的看法。</p>
+  <p>底下我將會分享一些看完書以後的心得，也會從書中節錄一些我很有感觸的段落。</p>
+  <h3 id="section">學習的訣竅就是：先別急著學習</h3>
+  <p>無論是學習，或者是做其他事情也好，有許多人都忽略了「事前準備」的重要性。什麼都還沒準備，就直接捲起袖子下去做事了。</p>
+  <p>以前在學校上課時，老師總是會強調預習的重要，因為有預習過的話，就能大概知道課堂上會教些什麼東西，也能夠更清楚整張學習地圖長什麼樣子，知道自己在上面的哪一個位置。</p>
+  <p>在做運動之前也都會先暖身，把筋拉開，把身子暖起來之後才開始做運動，讓身體有足夠的伸展，在運動時才比較不容易受傷。</p>
+  <p>寫程式也是一樣的，當接到一個新功能的需求時，絕對不是直接開啟帥氣的編輯器開始寫 code。事實正好相反，寫 code 是最後一件事。在寫 code 之前，我一定會把相關的規格文件看過一遍，知道這個功能的範圍多大，會影響到什麼。</p>
+  <p>在看規格的時候，腦中也同時規劃起了程式碼，例如說這邊要新增一個頁面，這邊要用 function 包起來，這邊要注意畫面的狀態等等。事先思考過的好處，就是真的動手做事時不會迷失，不會不知道自己現在在哪裡。</p>
+  <p>之前在教學時，我就有一個章節的標題是：<a href="https://github.com/Lidemy/ALG101-too-weak-to-leetcode/tree/master/unit1">要學好程式，從不要寫程式開始</a>，比起先寫 code，還有更多事情是更該做，也更值得做的。</p>
+  <p>而這本書也是同樣的，它並不是直接就教你一些學習的方法，而是先從計畫開始。你為什麼想學習？有準備好什麼樣的計畫？學習的目標訂在哪裡？這些都是在開始前應該先想過的。當然，這並不是說沒有想過就不能開始，但若是你有先想過這些問題，學習起來會更容易。</p>
+  <p>而在學習之前最重要的，就是要清楚自己的目標：</p>
+  <blockquote>
+<em>沒有哪一種努力是沒有目標的。做任何一件事必然都有其原因，而目標中「有多少自己的想法」，決定了你努力的程度。這個乘載著個人動機的目標，將督促你繼續向前邁進。</em>  </blockquote>
+  <blockquote>
+<em>假設你正規劃這次暑假出國旅行，為了避免休假行程出問題，你會盡最大努力及時完成手邊工作；雖然專心投入工作耗費心神，但是越靠近休假（目標），你的心情越好。</em>  </blockquote>
+  <blockquote>
+<em>反之，假設你工作的目標只是為了達到公司年度營業額，情況又是如何？也許在工作態度上就有所不同，不像為了自己的旅遊而工作那樣積極。即使是處理相同的工作，目標是否由自己設定，將會影響工作的態度。</em>  </blockquote>
+  <blockquote>
+<em>—— 節錄並改寫自下班後 1 小時的極速學習 p.29</em>  </blockquote>
+  <p>為了自己學習顯然是目標性最強的。書中給出的例子也滿合理，確實是這樣。在休假之前都會確保自己的東西不出問題，不然休假時就沒有辦法安心。</p>
+  <p>不過很多人可能沒有辦法有這麼強的目標性，對他來說學程式就只是一件「可以試試看」的事情。但儘管如此，還是可以幫自己設定一個目標，例如說「我要學到可以寫出個人網站」或是「我要學到可以出去找工作」之類的。</p>
+  <p>以我的課程來說，幫大家設定的目標就是：「找到工程師的工作」。</p>
+  <h3 id="section-1">學習的時間以及空間管理</h3>
+  <p>在學習上許多人會有一個迷思，認為「全職學習就一定時間比較多」，這句話半對半錯。正解是：「可以學習的時間確實變多了，但真正拿來學習的時間則不一定」。</p>
+  <p>我自己在<a href="https://medium.com/@hulitw/i-failed-9386c6b0a681">閉關修煉</a>的時期或甚至更早以前，就有這樣的感觸了。時間多是一回事，有多少時間可以有效利用又是另外一回事。一天上班八個小時，回家學習一個小時，跟一天看 YouTube 三小時、玩遊戲三小時、學習一小時，兩者在學習的時間上是一樣的。</p>
+  <p>學習的時間應該根據自己的狀況去調整，而不是一直訂著根本沒完成過的計畫，然後相信自己一定做得到。「Hope is not a strategy」，懷抱著希望且相信自己做得到，這並不是一種計畫。</p>
+  <p>對那些職場人（作者在書中所使用的名詞，用來指稱那些目前有著正職工作的人）來說也是一樣的：</p>
+  <blockquote>
+<em>職場人學習的時間明顯不足。可以不放棄某種程度的社交活動和休閒活動，又能兼顧學習，這種事在現實生活中不可能存在。在學習期間，必須放棄順序排在較後面的活動。舉例來說，如果想要守住學習的時間，對職場同事或親友的婚喪喜慶就必須設定出席的限度。</em>  </blockquote>
+  <blockquote>
+<em>比較令人意外的是，職場人在學習期間，經常沒有依照先後順序行動的習慣。如果有誰覺得不必有所犧牲，「只要利用時間學習就行了」，這種想法無疑是邁向失敗的捷徑，甚至可能讓你的社交生活和學習雙雙落空。</em>  </blockquote>
+  <blockquote>
+<em>— — 節錄並改寫自下班後 1 小時的極速學習 p.49</em>  </blockquote>
+  <p>要利用下班時間學習的話，勢必要做出取捨，什麼都想要的話，就只會什麼都得不到。</p>
+  <p>作者在書中也有給出自己設計的週末計畫，兼顧了學習跟休息，大概是：</p>
+  <ul>
+    <li>08:00 起床</li>
+    <li>09:00~12:00 學習</li>
+    <li>12:00~19:00 休息（約朋友吃飯、運動、購物等等）</li>
+    <li>19:00~22:00 學習</li>
+    <li>23:00 就寢</li>
+  </ul>
+  <p>雖然整個下午都是放鬆休息的狀態，但其實一天也學習了 6 個小時！若是下午有空檔的話，也許可以再多出一至兩個小時。</p>
+  <p>書中也有提到比起投入大量的時間學習，職場人更需要的是在有限時間內提高效率的練習，懂得有效利用時間才是學習的關鍵。我自己認為不只是職場人，其實全職學習的人也可以參考類似的方法，把平日也規劃成上面那樣的時程表，然後中午休息那一段可以再切割一下，擠出兩個小時，這樣一天就有八個小時的學習時間了。</p>
+  <p>除了時間管理以外，「空間管理」也是很重要的。<a href="https://www.ptt.cc/man/joke/DE63/DC5E/DC7C/M.1176566917.A.826.html">床是會高速移動的物體</a>，根據相對論，床具有極大的吸力，更何況家裡除了床還有電視跟其他誘惑。能在家裡認真學習的人，小弟我是真心佩服。</p>
+  <p>作者在書中也有對幾個不同的學習場地做出評論，例如說咖啡廳比較適合早上去，因為下午可能會變得有些吵雜，然後每天一杯咖啡的話其實也不便宜。圖書館的話很安靜而且不需要花錢，但有可能需要早一點去佔位子。</p>
+  <p>至於在家學習，作者有訂出幾個需要遵守的規範：</p>
+  <blockquote>
+<em>1. 區隔學習的空間跟休息的空間<br />2. 在家盡可能不長時間學習<br />3. 為轉換心情及體能管理，一天至少短暫外出一次<br />4. 在排定好的時間外，絕對不開電腦或電視</em>  </blockquote>
+  <blockquote>
+<em>— — 節錄並改寫自下班後 1 小時的極速學習 p.94</em>  </blockquote>
+  <p>我自己的話在家裡也是很難專心學習，之前有時候需要遠端工作，我一定會去一些 co-working space，而且因為不會被其他人所干擾，甚至會覺得效率比我在辦公室時還要高。</p>
+  <p>所以除了時間以外，空間也是很重要的一項影響學習效率的因素。</p>
+  <h3 id="section-2">學習的心態調整</h3>
+  <p>我之前已經有寫過幾篇文章在談這件事了，像是<a href="https://medium.com/@hulitw/mindset-36c163303217">打造「正確」學習 mindset</a>以及<a href="https://medium.com/hulis-blog/before-learning-b9b933b6078e">學程式的第零課：心態調整</a>，在談的都是學習的心態。</p>
+  <p>有些人在學習開始之前，就會產生抗拒的心態，或者是不知道該怎麼選擇學習的目標，深怕「選錯」。而作者在書中則給了一個十分正面的心態：</p>
+  <blockquote>
+<em>我想說的是，只要勇於嘗試就行的事情，不必花太多時間煩惱或看人臉色。不少人會這麼問：「我已經 OO 歲了，現在開始準備考試也沒問題嗎？」，有趣的是，不管是二十五歲、三十歲還是三十五歲，各年齡層的人都會問相同的問題。幼兒在挑戰拿當湯匙前，不會想著「我拿得起湯匙嗎？」「拿錯的話，會不會被媽媽笑？」的問題。如果心裡有那樣的顧慮，大概連湯匙也拿不好了。</em>  </blockquote>
+  <blockquote>
+<em>— — 節錄並改寫自下班後 1 小時的極速學習 p.230</em>  </blockquote>
+  <blockquote>
+<em>任何的選擇都無關失敗。如果你已經盡了最大的努力設定明確的目標，並且經過深思熟慮後，做出最適當的決定，那麼這個決定已經無關失敗。不是你的決定錯誤，只是你和目標無緣，不必再對此感到挫折。</em>  </blockquote>
+  <blockquote>
+<em>— — 節錄並改寫自下班後 1 小時的極速學習 p.36</em>  </blockquote>
+  <p>在選擇學習的目標時，也必須從自身出發，去想一下自己到底想要學什麼，是為了自己而學，還是為了其他人而學？如果不是自己發自內心想學，動力或許就低一些。如果真的不知道學什麼但又想學習，選擇一個最多人在學的也是可以。</p>
+  <p>除了學習開始之前會碰到這種心態上的問題，學習中也會碰到撞牆期，如果沒有跨過那道牆的話，就到此為止了。在觀察學生心得的時候，也常常會看到他們提出各種疑問，例如說：</p>
+  <ul>
+    <li>我現在學的真的是我喜歡的嗎？</li>
+    <li>我真的想要寫程式嗎？</li>
+    <li>我真的有在進步嗎？</li>
+    <li>我真的想成為工程師嗎？</li>
+    <li>我真的有學進去嗎？</li>
+  </ul>
+  <p>這一部分可能是課程設計上的問題，沒有讓學生察覺到自己的進步，就失去了一些成就感，導致自我懷疑；但另一方面，若是能改變自己的心態去面對這些問題，或許也是一種方法：</p>
+  <blockquote>
+<em>此外，學習的撞牆期也是必須克服的問題。無論學習什麼難免都會碰上實力提昇不上來的時期。這時一旦放棄，就將前功盡棄，與其如此，倒不如努力從頭到尾學習過一次。</em>  </blockquote>
+  <blockquote>
+<em>如果前面的方法都不管用呢？最後的方法是用「先做再說」的態度學習。「為什麼要學習？」「學習真的能讓情況好轉嗎？」「學習真令人厭煩。」這些想法暫且拋到腦後吧！先下定決心把無法理解的部分背起來，堅持學習到能順利答題的程度為止吧！這個學習未來會得到什麼樣的結果，就留待日後檢驗。</em>  </blockquote>
+  <blockquote>
+<em>雖然這種方法看起來很笨，不過我身邊取得不錯成就的人來看，也有不少人是用這種態度學習的。想法越單純，專注力越高。只要對學習產生一絲厭煩情緒，就會對學習造成阻礙。既然已經設定好目標，也下定決心要達到目標了，那麼默默堅持到最後才是最重要的。</em>  </blockquote>
+  <blockquote>
+<em>— — 節錄並改寫自下班後 1 小時的極速學習 p.128</em>  </blockquote>
+  <p>分享一個小故事，我有時候會因為各種拖延症不想開始做事，就會去看 YouTube 廢片，看完之後滑 PTT，PTT 看完再去滑個臉書，然後一天就這樣過去了。在晚上睡覺前，就會覺得自己今天很廢，什麼事都沒做，都把時間浪費掉了。</p>
+  <p>為什麼會拖延？可能是因為覺得做起事來很廢，但其實不斷拖延不做事，比做事本身還要累，因為那是一種精神上的疲憊。你會一直不斷責備自己，但事情依然沒有被做好。這樣的話，還不如找個時間開始做事，你甚至會發現做事情本身要花的精力比想像中的少，比拖延還要輕鬆。</p>
+  <p>另一個作者有談到的是比較的心態，在我那個線上課程的計畫中，每個人都可以看到其他同學的進度跟作業，所以難免會產生比較心態，會覺得為什麼自己跟課跟得那麼慢，為什麼別人的作業都寫得那麼好。</p>
+  <blockquote>
+<em>有時候看起來學習不比自己認真的朋友通過了考試，自己卻不合格。這種時候難免會喪失學習的動力，以為自己「果然不是讀書的料」。一旦喪失鬥志，將導致學習效果不佳，並再次得不到理想的結果，淪為惡性循環。</em>  </blockquote>
+  <blockquote>
+<em>我們所看到的人，並不是他的全部。很多時候通過考試的朋友表面看起來比自己不認真，事實上卻不是如此。如果真有朋友完全不學習，卻運氣非常好地通過考試呢？就算如此，那也是他個人的問題，和我準備考試一點關係也沒有。因為那樣的朋友而消耗自己的情緒，對考試毫無幫助。</em>  </blockquote>
+  <blockquote>
+<em>— — 節錄並改寫自下班後 1 小時的極速學習 p.163</em>  </blockquote>
+  <p>作者的態度十分務實，無論別人做了什麼，都跟你考試會不會通過，跟你學習的目標能不能達成無關，如果為了其他人而消耗自己的情緒，只會有負面影響，所以是不必要的。</p>
+  <p>在書的後半段也提到他有訓練過「切割情緒」，把心房想成有幾個不同的小房間，住著不同的情緒，當某一種情緒太過強烈時，就想辦法把房門關起來，不要去想它。</p>
+  <p>或是有一個小方法也很管用，就是出聲提醒自己應該做事了，例如說「阿！該背英文單字了」、「該去洗碗了」之類的，靠著做事情來分散注意力。</p>
+  <p>有一段話我覺得寫得很好：</p>
+  <blockquote>
+<em>我過去在學習時，也經歷過低潮。職場人在學習時的每一刻，其實都是與深陷低潮的危機對抗的過程。當低潮的危機來臨時，請記住這個事實 — — 低潮既然是我造成的，我自然有能力克服；低潮隨時都可能出現，我也隨時可以戰勝它。</em>  </blockquote>
+  <blockquote>
+<em>— — 節錄並改寫自下班後 1 小時的極速學習 p.236</em>  </blockquote>
+  <p>解鈴還須繫鈴人，自己把鈴鐺掛上去的，就自己拿下來吧。</p>
+  <h3 id="section-3">學習方法</h3>
+  <p>大家注意到了嗎？我前面寫了這麼多，卻還沒有提到學習的方法，這是因為前面那些事情如果都有做好，我覺得就已經先成功一半了。</p>
+  <p>在談學習方法之前，我們先回來談一下學習心態。有些人學習之所以不順，是因為最大的敵人就是自己，卻又沒辦法下定決心剷除自己，改變自己的觀念：</p>
+  <blockquote>
+<em>每個職場人都有自己一套學習方法。但是在學習方面有過成功經驗的人，通常會堅持自己的學習方法。這可能是自尊心的問題，也可能是他們不願接受變化。</em>  </blockquote>
+  <blockquote>
+<em>但是隨著時間改變，考試制度或出題方式不斷推陳出新，最有效的學習方式也並非全然適用於所有的情況。過去成功過一次的方法，可能不適合現在。我們必須時時檢視自己目前的學習方法，努力追求最新、最好的學習方法。如果考試結果不理想，也要客觀分析原因，才能避免再次失敗。</em>  </blockquote>
+  <blockquote>
+<em>— — 節錄並改寫自下班後 1 小時的極速學習 p.236</em>  </blockquote>
+  <p>以前有用不代表現在有用，有些人就是很鐵齒，不換方法就是不換。現在的方法就算不管用，也不換，或許是期待某一天它會有用，也或許就是莫名的堅持。</p>
+  <p>這樣做的缺點在於，這是很消耗精力的一件事。當你的學習方法不管用，學習進度就會十分緩慢，看不太到自我的成長，一旦看不到成長，就會產生各種對自我以及對學習的懷疑，當這個懷疑大到一定程度的時候，就放棄了。</p>
+  <p>學習最困難的就是堅持到底。因為在這路上會有一堆心態上的問題需要處理，任何一個都有可能讓你萌生退意。</p>
+  <p>因此我對學習方法的看法跟作者一樣，必須時時檢視自己的學習方法是否適合自己以及現在正在學習的東西，若是試了一陣子沒有成效，就果斷放棄換一個，而不是堅持原本的。這也是我在<a href="https://medium.com/@hulitw/learning-c6656ef14cd4">用對你有效的學習方法，無論那是什麼</a>所談到的東西。</p>
+  <p>再來真的要談到學習方法了，有一個方法我印象深刻，因為我也不斷跟學生說可以試試看：</p>
+  <blockquote>
+<em>放下想理解所有內容的執念</em>  </blockquote>
+  <blockquote>
+<em>學習時犯下的最大錯誤，在於一字不漏地閱讀書本，執著於一次理解書本的內容。我們都以為熟讀書本，就能理解書中內容，並且留下長久的記憶。因此每次遇到不懂的地方，總是反覆推敲思考，直到完全理解之後，才願意進入下一個段落。然而用這種方式學習，一天能夠學習的份量只會逐漸減少。過於仔細閱讀新接觸的書本，不但導致速度降低，還會把自己搞得越來越累。再說就算完整讀過一遍，也不可能百分之百理解，所以我們必須調整學習時的心態，只要求理解核心內容就好。</em>  </blockquote>
+  <blockquote>
+<em>我建議為每個段落設定時間限制，如果在預定時間內沒有讀完，就繼續往下一段。要是已經讀過兩次，腦中還是無法理解文字的意義，應該暫且跳過該段內容。一開始不必急著理解或背記太過瑣碎的內容。</em>  </blockquote>
+  <blockquote>
+<em>許多人因為急著想立刻明白所有內容，也因為如果沒有完全理解就闔上書本，內心會感到不安，所以反覆閱讀無法理解的句子。但是為了消除這個不安的情緒而反覆閱讀，只會使進度嚴重落後，喪失學習動力。我們並不是為了解決心中的不安才學習的。</em>  </blockquote>
+  <blockquote>
+<em>— — 節錄並改寫自下班後 1 小時的極速學習 p.99</em>  </blockquote>
+  <p>最後一段話講得真好，「我們並不是為了解決心中的不安才學習的」，學習有先後順序，其中最重要的就是學習目標，我們是為了達成學習的目標而學習的。</p>
+  <p>以我的課程為例，目標就是「轉職成工程師」，而不是「把所有東西學會」，有些學生常常會花很多額外的時間琢磨細節，這不是不好，只是悖離了原本的學習目標。很多東西之所以課程沒提到，就是因為我覺得那相對上來說不重要，只要把這週重要的內容學習完畢，就可以前往下一週了。</p>
+  <p>但依然有些人沒有辦法跨過自己心中的坎，就是沒有辦法跟「不安」共存，一定要把自己心中的疑惑解決了才願意繼續下去。但問題是一樣的，進度落後容易喪失學習動力，很有可能你的不安還沒解決，你就先放棄學習了（但若是真的沒有辦法跟不安共存，也是不用特別勉強，找到適合自己的方法最重要）。</p>
+  <blockquote>
+<em>職場人準備考試，最好「隨便應付」。什麼？隨便應付？學習可以隨便應付嗎？這句話的意思，是指學習時不必理解所有考試內容。如果你下定決心要仔細理解考試內容，甚至讀完非常瑣碎的部分，那麼這個學習將難以堅持到終點。</em>  </blockquote>
+  <blockquote>
+<em>通過考試比考試成績重要。即使不是考試，在學習其他事物時，也只要做到勉強達成個人目標的程度就好。有不了解的部分，只要知道問題所在就可以跳過。當職場人的學習出現壓力的那一刻起，學習便註定失敗。</em>  </blockquote>
+  <blockquote>
+<em>— — 節錄並改寫自下班後 1 小時的極速學習 p.51</em>  </blockquote>
+  <p>之前有人問過我，看了這麼多期學生，最後能成功找到工作的那些人，有什麼特質？之前我可能會回答「能把課程跟完」，但現在我會回答：「能接受自己只明白課程教的內容就好。能夠跟不安共存，並且容忍自己的作業只是『OK』，而不是『很好』」。</p>
+  <h3 id="section-4">總結</h3>
+  <p>其實在看這本書的時候，我最敬佩的是作者對於學習的心態。從我節錄的那些段落中就可以看得出來，作者對於學習是保持一種非常正向的態度，但那種正向不是「強迫樂觀」的那種，而是經由理性分析之後得到的結果。</p>
+  <p>舉例來說，跟他人比較除了增進自己的情緒消耗以外毫無幫助，因此不需要跟他人比較；選擇既然都已經選了，就算真的選錯也無濟於事，因此選擇沒有對錯，只是跟選擇的目標無緣而已。</p>
+  <p>這種心態其實是很多人沒有的，有很多人依然是深怕選錯，深怕失敗。</p>
+  <p>另外，也可以從書中看出作者對於細節的用心程度。我一直都認為細節是專業跟非專業的關鍵，正是那些小細節產生了差異，讓一個人從前 1% 變成前 0.1%。</p>
+  <p>作者在書中有一段談到時間管理，在前一晚會先把自己隔天要穿的衣服準備好，要帶的東西也全部準備好，隔天起床只要盥洗過後差不多就可以出門了，省了一半的時間。</p>
+  <p>在通勤的時候也會分析各種狀況，例如說搭地鐵的時候可能適合看書，但公車不適合，因為公車太晃了；所以在搭公車時可以戴著耳機聽一些英文的資源，增進英文聽力，但走路的時候不適合，因為有可能聽不到周遭的環境音，會有一點危險；所以走路的時候可以想一下自己待會到公司要做些什麼，降低暖身的時間，一到公司就可以進入狀況開始辦公。</p>
+  <p>這些細節，有些人連想都沒想過，但是對作者來說只是日常生活的一部分。</p>
+  <p>我自己有時候也是會比較注意這種細節的人。例如說搭公車的時候，由於是常搭的路線，我知道哪些是熱門站，哪些是冷門站。如果要去的目的地剛好是冷門站，但是公車上人很多，我就會選擇在上一站的熱門站，跟著人潮一起下車，就不用在那邊一直「借過借過」。</p>
+  <p>也會根據自己在哪一站下車決定坐哪裡。需要在冷門站下車的話，就不適合坐後面的位子，因為很有可能你還沒下車，門就關了，你大喊司機也不一定聽得到。所以住家最理想的地方是離熱門站大概三四站的冷門站，去程一定有位子，回程不用怕人多下不了車。</p>
+  <p>我自己在看這本書的時候是邊讀邊點頭，「嗯，我也這樣想，講得真好」，就好像是有人把我的想法做了統整那樣子，然後就趕快把心中比較有感觸的段落節錄下來。</p>
+  <p>總之呢，我覺得這本書對於一些茫然的學習者應該會有些幫助，至少在心態的建立、學習方法的選擇以及學習的前置作業上，能夠得到一些建議跟幫助。</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=7c92be9b72fa" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Huli 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2020-10-04/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E5%9B%9B%E6%9C%9F%E8%AA%B2%E7%A8%8B%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E6%94%B9%E5%8B%95/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-06-24/%E5%BE%9E%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%AF%84%E7%89%A9%E6%AB%83%E7%90%86%E8%A7%A3%E8%AE%8A%E6%95%B8%E5%84%B2%E5%AD%98%E6%A8%A1%E5%9E%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2020-10-04</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-04/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E5%9B%9B%E6%9C%9F%E8%AA%B2%E7%A8%8B%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E6%94%B9%E5%8B%95/">
+          程式導師實驗計畫第四期課程做了哪些改動？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-02/%E5%89%8D%E7%AB%AF%E5%BC%95%E8%B7%AF%E4%BA%BA%E8%A8%88%E7%95%AB%E5%A4%B1%E6%95%97%E5%BF%83%E5%BE%97/">
+          前端引路人計畫失敗心得
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-13/%E8%80%83%E8%B3%87%E5%B7%A5%E6%89%80%E6%88%91%E8%A6%BA%E5%BE%97%E6%98%AF%E4%B8%80%E5%80%8B%E6%9C%80%E7%A9%A9%E5%81%A5%E7%9A%84%E5%81%9A%E6%B3%95-%E4%B8%80%E4%BE%86%E6%98%AF%E5%AD%B8%E6%A0%A1%E5%B7%B2%E7%B6%93%E6%98%AF%E5%80%8B%E5%B9%AB%E4%BD%A0%E6%90%9C%E9%9B%86%E5%A5%BD%E4%B8%80%E5%AE%9A%E7%A8%8B%E5%BA%A6%E8%B3%87%E8%A8%8A%E7%9A%84%E5%9C%B0%E6%96%B9-%E4%BA%8C%E4%BE%86%E6%98%AF%E9%82%A3%E5%80%8B%E5%AD%B8%E6%AD%B7%E5%B0%8D%E5%BE%88/">
+          考資工所我覺得是一個最穩健的做法，一來是學校已經是個幫你搜集好一定程度資訊的地方，二來是那個學歷對很多公司來說還是滿重要的
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-07-29</time>
+        <a href="https://nodebe4.github.io/oped2/2020-07-29/hello-%E7%9B%AE%E5%89%8D%E9%82%84%E6%B2%92%E6%9C%89%E5%96%94/">
+          hello，目前還沒有喔
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-09-07/%E6%B0%B8%E8%BF%9C%E7%9A%84%E5%8F%8D%E5%AF%B9%E6%B4%BE-%E6%8D%B7%E5%85%8B%E7%94%B5%E5%BD%B1%E6%96%B0%E6%B5%AA%E6%BD%AE-%E6%9C%80%E9%87%8D%E8%A6%81%E6%97%97%E6%89%8B%E4%BC%8A%E6%97%A5-%E9%97%A8%E6%B3%BD%E5%B0%94%E5%8E%BB%E4%B8%96/">
+            前一篇：永远的反对派：“捷克电影新浪潮”最重要旗手伊日·门泽尔去世
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-09-07/%E6%95%B0%E6%8D%AE%E5%8C%BF%E5%90%8D%E5%8C%96%E7%9A%84%E9%99%B7%E9%98%B1-iYouPort/">
+            後一篇：数据匿名化的陷阱 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-09-07/%E6%B0%B8%E8%BF%9C%E7%9A%84%E5%8F%8D%E5%AF%B9%E6%B4%BE-%E6%8D%B7%E5%85%8B%E7%94%B5%E5%BD%B1%E6%96%B0%E6%B5%AA%E6%BD%AE-%E6%9C%80%E9%87%8D%E8%A6%81%E6%97%97%E6%89%8B%E4%BC%8A%E6%97%A5-%E9%97%A8%E6%B3%BD%E5%B0%94%E5%8E%BB%E4%B8%96/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-09-07/%E6%95%B0%E6%8D%AE%E5%8C%BF%E5%90%8D%E5%8C%96%E7%9A%84%E9%99%B7%E9%98%B1-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-10-02/%E5%89%8D%E7%AB%AF%E5%BC%95%E8%B7%AF%E4%BA%BA%E8%A8%88%E7%95%AB%E5%A4%B1%E6%95%97%E5%BF%83%E5%BE%97/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-08-13/%E8%80%83%E8%B3%87%E5%B7%A5%E6%89%80%E6%88%91%E8%A6%BA%E5%BE%97%E6%98%AF%E4%B8%80%E5%80%8B%E6%9C%80%E7%A9%A9%E5%81%A5%E7%9A%84%E5%81%9A%E6%B3%95-%E4%B8%80%E4%BE%86%E6%98%AF%E5%AD%B8%E6%A0%A1%E5%B7%B2%E7%B6%93%E6%98%AF%E5%80%8B%E5%B9%AB%E4%BD%A0%E6%90%9C%E9%9B%86%E5%A5%BD%E4%B8%80%E5%AE%9A%E7%A8%8B%E5%BA%A6%E8%B3%87%E8%A8%8A%E7%9A%84%E5%9C%B0%E6%96%B9-%E4%BA%8C%E4%BE%86%E6%98%AF%E9%82%A3%E5%80%8B%E5%AD%B8%E6%AD%B7%E5%B0%8D%E5%BE%88/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-09-07/%E6%B0%B8%E8%BF%9C%E7%9A%84%E5%8F%8D%E5%AF%B9%E6%B4%BE-%E6%8D%B7%E5%85%8B%E7%94%B5%E5%BD%B1%E6%96%B0%E6%B5%AA%E6%BD%AE-%E6%9C%80%E9%87%8D%E8%A6%81%E6%97%97%E6%89%8B%E4%BC%8A%E6%97%A5-%E9%97%A8%E6%B3%BD%E5%B0%94%E5%8E%BB%E4%B8%96/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-09-07/%E6%95%B0%E6%8D%AE%E5%8C%BF%E5%90%8D%E5%8C%96%E7%9A%84%E9%99%B7%E9%98%B1-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Huli>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-10-02/%E5%89%8D%E7%AB%AF%E5%BC%95%E8%B7%AF%E4%BA%BA%E8%A8%88%E7%95%AB%E5%A4%B1%E6%95%97%E5%BF%83%E5%BE%97/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Huli>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-08-13/%E8%80%83%E8%B3%87%E5%B7%A5%E6%89%80%E6%88%91%E8%A6%BA%E5%BE%97%E6%98%AF%E4%B8%80%E5%80%8B%E6%9C%80%E7%A9%A9%E5%81%A5%E7%9A%84%E5%81%9A%E6%B3%95-%E4%B8%80%E4%BE%86%E6%98%AF%E5%AD%B8%E6%A0%A1%E5%B7%B2%E7%B6%93%E6%98%AF%E5%80%8B%E5%B9%AB%E4%BD%A0%E6%90%9C%E9%9B%86%E5%A5%BD%E4%B8%80%E5%AE%9A%E7%A8%8B%E5%BA%A6%E8%B3%87%E8%A8%8A%E7%9A%84%E5%9C%B0%E6%96%B9-%E4%BA%8C%E4%BE%86%E6%98%AF%E9%82%A3%E5%80%8B%E5%AD%B8%E6%AD%B7%E5%B0%8D%E5%BE%88/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

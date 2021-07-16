@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>如何专心睡眠 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+如何专心睡眠
+——
+" />
+    <meta property="og:description" content="
+如何专心睡眠
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="如何专心睡眠" />
+    <meta property="twitter:title" content="如何专心睡眠" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40yeeyan%2F-94b530d16d8d%3Fsource%3Drss-216c8ba84893------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@yeeyan/-94b530d16d8d?source=rss-216c8ba84893------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@yeeyan/-94b530d16d8d?source=rss-216c8ba84893------2&text=如何专心睡眠&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@yeeyan/-94b530d16d8d?source=rss-216c8ba84893------2&title=如何专心睡眠" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@yeeyan/-94b530d16d8d?source=rss-216c8ba84893------2&title=如何专心睡眠" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=如何专心睡眠&body=
+如何专心睡眠
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@yeeyan/-94b530d16d8d?source=rss-216c8ba84893------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@yeeyan/-94b530d16d8d?source=rss-216c8ba84893------2&title=如何专心睡眠&caption=
+如何专心睡眠
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=如何专心睡眠&url=https://medium.com/@yeeyan/-94b530d16d8d?source=rss-216c8ba84893------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>如何专心睡眠</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2014-12-18
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Yeeyan</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@yeeyan/-94b530d16d8d?source=rss-216c8ba84893------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1418901134000-->
+<p><a href="https://medium.com/@yeeyan/-94b530d16d8d?source=rss-216c8ba84893------2">如何专心睡眠</a>
+——</p>
+
+<div>
+  <h3 id="section">当我们的思维停不下来的时候</h3>
+  <p><strong>我的睡眠时间表是这样的：</strong></p>
+  <p>8:30: 准备上床睡觉</p>
+  <p>9:00: 上床</p>
+  <p>9:30: 希望自己入睡</p>
+  <p>9:55: 确定自己要入睡</p>
+  <p>10:00:我的天啊，你还没睡？你为什么不睡？你知道自己不睡觉时将发生些什么。好吧，只想着睡觉吧。我的意思是，等一下，别再想睡觉这件事啦！甚至连这个词也别去想。</p>
+  <p>10:05:一切都毁了，全毁了。</p>
+  <p>12:30:有人在用真空吸尘器打扫卫生吗？我确定有人在这么做。我一定要把他们找到，拽出来痛打一顿。</p>
+  <p>1:00: *无声的愤怒，直至睡意袭来*</p>
+  <p>我生活中的许多时光都充斥着我对于无法适时入睡的恐惧。我计算了我所需的睡眠时间并精确到了分钟。每晚我躺在床上等待着那些执着的想法从脑袋中涌出。我曾经认为困扰我夜间休息的那无尽的思维洪流仅仅是我所独有。但是我大错特错了。</p>
+  <p>如果你无法在晚上关掉你的思维阀门，你不是一个人。据估计，有3,000–4,000万美国人都患有睡眠障碍，另有2,000万人患有偶发性失眠。糟糕的是，疾病控制中心认为这是一种关乎公众健康的传染病。要明白为什么我们在夜间无法停止思考，首先我们应该弄懂我们身体中管理睡眠的机制。</p>
+  <p>直至20世纪50年代，科学家才相信，睡眠完全是一个被动过程。现在，科学家认为身体的觉醒和睡眠模式是一种双进程模型（two-process model）。分为S进程：在夜间提升我们的睡眠渴望，抑制我们的觉醒中枢。以及C进程：在白天让我们保持清醒。这种双进程模式也被昼夜节律[1]（circadian rhythm）所影响。</p>
+  <p>昼夜节律是身体的时钟，管理着我们的活动和行为。昼夜节律由视交叉上核（suprachiasmatic nucleus-SCN）所控制，视交叉上核是大脑的一部分，被称为昼夜节律起搏器。早晨的光线让视交叉上核知道“嘿，该起床了，重新再开始这一过程吧”。随着日落，视交叉上核给我们的身体发出信号，让身体平静下来，准备睡觉。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/661/0*TPPbQRvPtlDviSNA.png" />
+  </figure>
+  <p><strong>日光有助于调节我们的昼夜节律</strong></p>
+  <p>昼夜节律如果被破坏，将会阻止我们在夜间入睡，让我们在白天感到极度疲惫。这种破坏也会对我们的健康产生有害影响。</p>
+  <blockquote>
+（夜班）倒班工人患心脏疾病、消化紊乱以及情绪和精神疾病的风险更高，这些都与他们的睡眠问题相关。夜班期间，车间事故的数量和严重性也会有所上升。  </blockquote>
+  <p>好吧，虽然我们理解了睡眠的运行过程，但是当我们上床睡觉以后，我们的身体会发生什么呢？</p>
+  <p>睡眠有两种形式，分别是快速眼动（REM）睡眠和非快速眼动（NREM）睡眠。这两种睡眠对于处于恢复过程中的身体来说都十分必要。睡眠也有五个阶段，整个过程需要90–120分钟。在一种理想的情况下，睡眠看起来是这样的：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/498/0*lcWf_Qi2Ql1O1fTX.png" />
+  </figure>
+  <p>处于睡眠周期中的大脑</p>
+  <p>我们无法关掉思维的阀门，是因为我们无法将第一阶段的α脑波转化成第二阶段的θ脑波。那些患有严重睡眠障碍的人通常在入睡后就立刻进入快速眼动睡眠。当我们开始入睡时，我们的大脑会非常放松，但是这并不是一个被动的过程。我们的大脑会重新排列并评估白天的事务，促进新的记忆形成，清空记忆碎片。</p>
+  <p>正如任何曾经尝试过的人都会告诉我的那样，关掉思维阀门说来容易做来难。你没有魔法开关，按下去就能入睡，但是有一些有助于你让脑袋静一静的小诀窍。</p>
+  <p>1.给自己降温</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/452/0*8uFjVp9c86Ogc2Eh.png" />
+  </figure>
+  <p>千万别真把脑袋塞到一大块冰里</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/497/0*Th98Lw7Z3c2OUFUj.png" />
+  </figure>
+  <p>褪黑素是一种对于睡眠十分重要的激素。图片改编自《新科学家》</p>
+  <p>你知道我们的电视、电脑和手机发出的光稍稍有些偏 蓝色吗？那种看似平静的蓝光其实会剥夺你的睡眠。短波蓝光会抑制睡眠所需激素 — — 褪黑素的产生。置身在蓝光之中甚至能够让我们不再遵守昼夜节律。如果全部购买红光灯对你来说有点极端，那么就至少在你睡前两小时降低你所使用的灯光量吧。</p>
+  <p>3.用左侧鼻孔呼吸</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/536/0*b1_PFYEF_-eQI3wK.png" />
+  </figure>
+  <p>虽然可能看上去很怪异，但是这样呼吸的确能够让你平静下来</p>
+  <p>4.早晨出门转转</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/492/0*_ShvrW_48iXjDqj-.png" />
+  </figure>
+  <p>当谈论到睡眠时，太阳是我们的好朋友。嗯，至少白天如此。</p>
+  <p>5.形象化你的睡眠</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/509/0*kRhUt-euwe5fzHuA.png" />
+  </figure>
+  <p>如果你觉得你能做到，那么你就有可能做到。</p>
+  <p>除此之外，还有许多非常实用的睡眠小妙招，但是它们都是基于同一个原理变化而来。让思维和身体为睡眠做准备，就要减少我们思维中的情绪内容，尽可能多地消除外部刺激。你绝对有必要发掘各种各样的睡眠方法，进行各种各样的睡眠练习。这么做能帮助你理解那些妨碍你拥有一个平静思维的桎梏。</p>
+  <p>睡眠是一个过程。它不仅仅发生于你躺在床上的时刻。我们的身体一天到晚都在为睡眠做准备。它实际上有助于我将睡眠想象成为一个不间断发生的过程，而不是一件应该会发生的事情。这让我减轻了一些压力。我的身体其实就是这样构造的。相信并倾听我们身体的自然过程，的确有助于我找到一种更好的入睡方法。</p>
+  <p>译注：</p>
+  <p>[1]昼夜节律：生命活动以24小时左右为周期的变动，又称近日节律。</p>
+  <p>Translated by <a href="http://www.yeeyan.org/">Yeeyan</a></p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=94b530d16d8d" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%83%B3%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87-%E5%B0%B1%E5%88%AB%E5%86%8D%E5%81%9A%E8%BF%997%E4%BB%B6%E4%BA%8B%E4%BA%86/">
+          想提高效率，就别再做这7件事了
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/">
+          我为什么不做一个 TED 讲者
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%9D%83%E5%8A%9B%E7%9A%84%E6%B8%B8%E6%88%8F-%E9%98%85%E8%AF%BB%E6%8C%87%E5%8D%97/">
+          《权力的游戏》阅读指南
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2014-08-27/%E7%BB%99%E6%88%91%E5%89%8D%E4%BB%BB%E4%B8%BB%E4%BA%BA%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1/">
+          给我前任主人的一封信
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%9D%83%E5%8A%9B%E7%9A%84%E6%B8%B8%E6%88%8F-%E9%98%85%E8%AF%BB%E6%8C%87%E5%8D%97/">
+            前一篇：《权力的游戏》阅读指南
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/">
+            後一篇：我为什么不做一个 TED 讲者
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E6%9D%83%E5%8A%9B%E7%9A%84%E6%B8%B8%E6%88%8F-%E9%98%85%E8%AF%BB%E6%8C%87%E5%8D%97/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E6%9D%83%E5%8A%9B%E7%9A%84%E6%B8%B8%E6%88%8F-%E9%98%85%E8%AF%BB%E6%8C%87%E5%8D%97/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2014-12-18/%E6%9D%83%E5%8A%9B%E7%9A%84%E6%B8%B8%E6%88%8F-%E9%98%85%E8%AF%BB%E6%8C%87%E5%8D%97/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2014-12-18/%E6%9D%83%E5%8A%9B%E7%9A%84%E6%B8%B8%E6%88%8F-%E9%98%85%E8%AF%BB%E6%8C%87%E5%8D%97/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

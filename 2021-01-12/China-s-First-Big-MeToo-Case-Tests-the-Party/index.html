@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>China’s First Big #MeToo Case Tests the Party – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+China’s First Big #MeToo Case Tests the Party
+——
+" />
+    <meta property="og:description" content="
+China’s First Big #MeToo Case Tests the Party
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="China’s First Big #MeToo Case Tests the Party" />
+    <meta property="twitter:title" content="China’s First Big #MeToo Case Tests the Party" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Flibrary%2Fnyrb-china-archive%2Fchinas-first-big-metoo-case-tests-party" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/library/nyrb-china-archive/chinas-first-big-metoo-case-tests-party" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/library/nyrb-china-archive/chinas-first-big-metoo-case-tests-party&text=China’s First Big #MeToo Case Tests the Party&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/library/nyrb-china-archive/chinas-first-big-metoo-case-tests-party&title=China’s First Big #MeToo Case Tests the Party" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/library/nyrb-china-archive/chinas-first-big-metoo-case-tests-party&title=China’s First Big #MeToo Case Tests the Party" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=China’s First Big #MeToo Case Tests the Party&body=
+China’s First Big #MeToo Case Tests the Party
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/library/nyrb-china-archive/chinas-first-big-metoo-case-tests-party" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/library/nyrb-china-archive/chinas-first-big-metoo-case-tests-party&title=China’s First Big #MeToo Case Tests the Party&caption=
+China’s First Big #MeToo Case Tests the Party
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=China’s First Big #MeToo Case Tests the Party&url=https://www.chinafile.com/library/nyrb-china-archive/chinas-first-big-metoo-case-tests-party" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>China’s First Big #MeToo Case Tests the Party</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-01-12
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Lavender Au</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-first-big-metoo-case-tests-party" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1610438400000-->
+<p><a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-first-big-metoo-case-tests-party">China’s First Big #MeToo Case Tests the Party</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-cf0a4f60988636770df59b540c2cca3b">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/chinafile_feminist_mengwencao_05-copy.jpg" title="China’s First Big #MeToo Case Tests the Party" class="colorbox" data-colorbox-gallery="gallery-node-52981-ShZqAZlSemg" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/chinafile_feminist_mengwencao_05-copy.jpg?itok=0vYvV2FR" width="1200" height="800" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Mengwen Cao for ChinaFile
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>Chinese protesters attend the Women’s March in New York City, January 19, 2019.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">In November, a court at last notified Zhou Xiaoxuan, known more commonly by her nickname, Xianzi, that it would try her case, a civil lawsuit filed in 2018 against television host Zhu Jun, who she alleges sexually harassed her. But when the trial finally opened, on December 2, Zhu was not there. She had asked the court to summon him; it had neglected to do so.</p>
+      <p>It had already taken more than two years for Xianzi’s case to come to court. In China, it usually takes six months, perhaps a year if the case is complex. When Xianzi asked the court earlier this year why proceedings had not started, she was told “the conditions are not right.” Suits like Xianzi’s are not often seen in China, where the harasser—not the harassed—is more likely to sue. Sexual harassment typically comes to court dressed as a claim for defamation compensation.</p>
+      <p>Zhu Jun, a former host for national broadcaster CCTV, is part of this trend. Zhu has kept a low profile for the last few years, but that was not always the case. For 21 years, 700 million people each year have watched him, arrayed in suits of velvet or sequins, a bow tie or bolo around his neck, host the New Year’s Gala, China’s most important televised event.</p>
+      <p>His official biography is that of a model citizen: following in his father’s footsteps, he took up the clarinet, and played in the People’s Liberation Army band, once parading for the veteran Chinese leader Deng Xiaoping, and also performing <em>xiangsheng</em>, two-man comedic banter, to troops in the country’s northwest. Before his TV career took off, and he was still too poor to buy his wife new clothes, he used to make them for her. As he ascended the ranks of the national broadcaster, in time everyone came to call him, affectionately, “CCTV’s Big Brother” (an appellation that does not, in China, have any sinister connotation).</p>
+      <p>In July 2018, two months before she filed her suit, Xianzi posted a detailed account of her allegations against Zhu, which went viral on social media; in response, Zhu sued Xianzi for 650,000 renminbi (U.S.$100,000) for damage to his reputation and mental well-being. When Xianzi was notified of his suit, she was standing outside Haidian People’s Court in northwest Beijing. While she had been preparing to sue him, she realized, he’d been doing the same.</p>
+      <p>Zhu, in fact, is suing not only Xianzi, but also a woman named Xu Chao, who was then working at Greenpeace. Xu Chao had shared Xianzi’s original post, in which she’d made her allegations of sexual harassment, and it happened to be Xu’s sharing of the post on the popular social media site Weibo that helped it really take off. Xu did not know Xianzi beforehand, though they have met since Zhu brought his suit against the two of them. When I asked Xu why Zhu had sued her, in particular, among the many others who had also reposted Xianzi’s story, she said she thought it must be a combination of two things: first, her post got more than 10,000 shares before it was censored, and second, she doesn’t have any public standing that might protect her—as someone like Luo Changping, a magazine editor well-known for calling out corruption, does. “I’m a nobody,” she said.</p>
+      <p>Since Xianzi accused Zhu, other victims have reached out to her, as well as many people who believe her story. Xianzi was a 21-year-old student when she went to work as an intern at the TV show <em>Artistic Life</em> in 2014, where Zhu was both host and producer—she describes him as having “absolute power” over the production team. There was nothing very artistic about the program, which was essentially a daytime TV-style talk show in which Zhu’s line of questioning was designed to make its celebrity guests cry—one dismissive reviewer compared its effect to tear gas.</p>
+      <p>According to Xianzi, she had to conduct an interview with an important person as part of her internship, so when a colleague said he was going to see Zhu, he suggested she should come along (as an intern, Xianzi did not normally interact directly with Zhu). The colleague left soon afterwards, and Zhu asked to see the camera hanging around Xianzi’s neck. He played with it and took a picture of them both. She remembers he asked her if she wanted to stay at CCTV. She told him she wanted to do a Master’s at Beijing Film Academy, because she was more interested in going into film than working in TV. He told her he knew the dean there.</p>
+      <p>Then he offered to take her on a tour of the new CCTV building and to treat her at one of the restaurants nearby, which she refused. He told her that she looked like his wife. Taking her hand in his, he said he could read palms. Then he started to grope and forcibly kiss her. A producer and an assistant on the show came into the room briefly, and Xianzi hung her head, ashamed, not wanting them to see her. She knew they wouldn’t do anything to help her—Zhu could easily block their career development if they spoke out. Two members of the audience then knocked on the door to ask Zhu to sign something, but Xianzi was too shaken to move. It was only when the show’s guest came in, with his staff—people who were not beholden to Zhu—that Xianzi felt able to seize the chance and leave. Zhu denies Xianzi’s account.</p>
+      <p>Now, over six years later, Xianzi has a social media following of more than 330,000 and works as a scriptwriter. If she loses her suit, she’ll have to return to court and face the man she has accused of sexually harassing her to defend herself against his claim of damages.</p>
+      <p>While Chinese law has long prohibited sexual harassment, until a new civil code came into force this year, the legal definitions of such conduct were unclear, as were liabilities for harassers and workplaces. Although, in 2018, there had been a surge of stories about sexual violence, there has, as in other countries, since been a public backlash because many men, and indeed, some women, believe gender equality is already a reality in China. And this backlash can also take a nationalistic hue, with #MeToo denounced as a Western import (along with “feminism”).</p>
+      <p>Very few sexual harassment cases ever come to court in China, and a very few of those are found in favor of the harassed. In one such, heard in 2019 in Chengdu, in Sichuan province, the court did nothing more than order the harasser to apologize to his victim. But Zhu’s aggressive legal strategy may reflect the very high stakes in these two cases. If Xianzi wins hers, it would be the first successful #MeToo suit against someone with close links to the state apparatus in China. Its outcome is also of immense personal consequence to Xianzi, as a win would mean that the court would automatically dismiss Zhu’s defamation suit.</p>
+      <p>The case is also about showing others who have been sexually harassed whether they can expect justice and what they may face in seeking it. Xianzi was accused of being delusional by Zhu’s legal team, after they learned she had visited a hospital. To prove otherwise, she took a mental health examination at Peking University Sixth Hospital. “Through this process, you have no privacy to speak of, no dignity,” she told me. She has continued posting about the process, publicly documenting her every engagement with the legal system. Xianzi is very deliberately testing that system to see whether it will uphold China’s formal commitments to gender equality.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">The court proceedings at the December hearing were held in private. Xianzi had applied for the transcripts to be published, but the court refused, without giving a reason. Present, aside from Xianzi, were only the lawyers, some bailiffs, and three judges; except for a few other court employees, all the other seats were empty. Her parents appeared briefly, to give their statements. Xianzi has eight witnesses in all, but the courts in China tend to trust documents more than people.</p>
+      <p>The day’s hearing was a lonely experience for Xianzi. Her friends had given her chocolates before she went in, but she had to check them in at security. There was no food served within the courthouse, and so, for the whole hearing, which lasted 10 hours, she did not eat. During her restroom breaks, Xianzi walked along a long corridor, and when she looked out through the windows, she could see the lights from the street opposite the courthouse. She knew there were people in the street outside, but it was too far away to make out their faces.</p>
+      <p>In fact, more than a hundred of her supporters were waiting outside, provisioned by those who couldn’t make it with deliveries of fried chicken, bubble tea, and heat packs. There were students from Beijing’s universities and workers from nearby businesses. Some were her friends, but many were strangers. Because Xianzi had spoken on Weibo in support of LGBTQ rights, there were also employees from related NGOs there, in solidarity. And there were others who had come from outside Beijing. One, an older man from Hebei province, had reached out to Xianzi in 2018, after his daughter had recollected that, when very young, she’d been sexually assaulted by a neighbor.</p>
+      <p>There were even two people from Xianzi’s hometown, Wuhan, who spoke to her in their local dialect after she emerged from the hearing, well into the evening. Addressing her supporters, Xianzi said things had not gone smoothly at the hearing. She told them she’d applied for the court to adjourn, for Zhu Jun to appear at the next hearing, for the sitting judges to recuse themselves, and for “people’s assessors,” members of the public drawn like jurors, to join a new panel of judges in hearing her case. And she said she would apply again for the proceedings to be made public.</p>
+      <p>In fighting her case, Xianzi has faced all kinds of difficulties. She went to the police the day after the original incident, back in 2014. Her case was first handled by a policeman she describes as young and kind, who gave her a lift back to her dormitory. But the next time she went to the station, two other, more senior officers had taken over her case. They lectured her on the positive influence Zhu had on society, and exhorted her to not destroy the public’s good impression of him. They also said they’d sent colleagues to Wuhan to talk to her parents, whose positions as civil servants they urged her to consider.</p>
+      <p>Some seven hundred miles away, in Wuhan, Xianzi’s parents signed a statement saying that they would not speak to their daughter about the case and her allegations. They called her, saddened and frightened, and told her not to go to the police again, and not to go out alone.</p>
+      <p>The whole process of pursuing her suit has been daunting and exhausting for Xianzi. The first time I set up an interview with her, we were supposed to speak at nine in the evening. But she had fallen asleep earlier and then slept through my calls. When I spoke to her the next day, she still sounded tired. The burden of responsibility weighs heavily on her; she worries that if she loses, people will lose hope in the #MeToo movement.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">For her part, Xu, who shared Xianzi’s story two years ago, is chiefly worried about getting blamed for something she hasn’t done. She doesn’t consider herself a feminist, but she cares about social justice, and she often posts on topics in line with her values. Because she previously worked for an NGO, though, many—among both Xianzi’s supporters and her detractors—consider Xu responsible for organizing the vigil outside the court.</p>
+      <p>Since leaving Greenpeace last September, Xu has moved to the U.K. to study public health. After the hearing last month, she woke up to messages on her Telegram app from Xianzi’s supporters discussing tactics for the next hearing, like arriving early to block the road before the police do. Meanwhile, on Weibo there were comments accusing her of being a foreign spy trying to import Western concepts into China. She tries to stay focused on her studies, but the critics and trolls online have led her to seek counseling.</p>
+      <p>Xu told me that she finds it hard to judge the line between the legitimate pursuit of justice and what’s best left alone as politically sensitive and likely to provoke punitive action by the government. Last year, the police arrested two people Xu knows: in April, Chen Mei, who uploaded censored articles about the pandemic onto GitHub; and in December, Du Bin, a journalist and former freelance for <em>The New York Times</em>, who was researching Communist Party history. If she does cross over into politically sensitive terrain and gets arrested, she says, she wants it to be for a choice she has made herself.</p>
+      <p>Xu does support the way Xianzi’s case has drawn attention to sexual harassment and gender equality more broadly, but it’s not her fight. “I’m not brave enough to speak up for all the victims in China,” she said. “That’s a pressure I can’t bear.”</p>
+      <p>Xu remembers seeing, back in July 2018, two or three #MeToo stories a day in her media feeds, stories of sexual violence in education, culture, art, and—what irritated her most—in her own NGO world, too: accounts of men who had abused the kindness of volunteers to sexually assault and harass them. Among them were men she knew, had respected, had even sat down to dinner with. She began to analyze each story she saw.</p>
+      <p>When she saw Xianzi’s story on WeChat, she shared it on Weibo because she believed it was likely to win in court. Not long afterward, Xu’s landlord told her she needed to delete her post or move out; he said that a friend of his who worked at the local police bureau was advising him to tell her this, and that he was additionally worried for his job at a state-owned enterprise. Trusting that her best defense was to put everything in the public realm, Xu posted about her landlord’s actions, saying she was looking for a new one who didn’t work for a state-owned enterprise. In the end, the landlord became preoccupied with doxing threats, and she was able to stay without complying to his demand.</p>
+      <p>Because her sharing of Xianzi’s post had gone viral, Xu knew that Zhu might bring an action against her, so she was not shocked to receive notification of his suit in September 2018. Xu was obliged to cover her own legal expenses, including gathering evidence in the form of screenshots from her social media accounts and getting it all notarized, which cost 5,000 renminbi (U.S.$760)—almost as much as she now spends on her living costs after rent. By the time she’d finished, she had a dossier so thick it was “like a book.” She is fighting Zhu’s suit on the grounds that she, an ordinary citizen, shouldn’t be subject to the same fact-checking standards as a professional journalist.</p>
+      <p>Even before Xianzi’s case, Xu had gotten used to the feeling of being watched in recent years. She had been monitored by state security because, she assumed, she was an employee of an international NGO. She was all too aware of the surveillance because, from time to time, she would receive an invitation she knew better than to refuse to have dinner with state security officers. At the table, the officers sometimes sounded out her political opinions—asking what she thought of the situation in Hong Kong or how she saw the relationship between China and the U.S.</p>
+      <p>“I tried to focus on the food,” she told me. After such meals, the agents customarily requested to be added as “friends” on her WeChat account. To date, these new “friends” have not brought up Xianzi’s case with her, although they have asked her to delete politically sensitive posts. But one of the officers also offered to help when she posted on behalf of a friend who wanted to find a way to ship masks into China from France during the early weeks of the coronavirus pandemic.</p>
+      <p>Although they helped her then, she knows that their situations are quite different: “I’m part of civil society, and they monitor civil society.” Her old Weibo account was frozen last year, so she uses a new account under a different username. Xianzi’s Weibo account has stayed active, but there was a period of nearly two months, right after she came out with her story in July 2018, when her posts could not be reshared.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">Neither Xianzi nor Zhu are permitted to speak openly about the trial proceedings. This, in theory, protects the court from public scrutiny and allows the judges privacy and confidentiality. But a couple of weeks after the first hearing, Zhang Yang, who goes under the Weibo username “a journalist with ideals,” and has 5 million followers, published his account of what happened, which included an interview with Zhu.</p>
+      <p>What Zhang does is closer to crisis communications than journalism, steering public discussion away from controversial matters and toward inconsequential ones. His social media strategy is to weigh in on hot-button issues under the guise of being a detached observer, downplaying any cause for outrage and often leveling personal attacks against the accuser.</p>
+      <p>He applied that same pseudo-objective approach to Xianzi’s case, presenting his conclusions as the result of a journalistic investigation into what happened in that dressing room six years ago, complete with photos of the scene. In Zhang’s telling, it was Xianzi, not Zhu, who took the photo of the two together—the act of a fangirl who wanted to get close to a star. And, he reported, no fewer than 10 people had entered the dressing room while Xianzi was with Zhu, and none saw him touch her.</p>
+      <p>After Zhang’s account was published, Zhu posted on his Weibo account, claiming not to know he was being interviewed, that he thought he was answering questions from a friend, not Zhang. Nevertheless, he endorsed Zhang’s report as accurate.</p>
+      <p>Zhu no doubt wanted to rehabilitate his image. CCTV hosts must have an unblemished reputation, as they are seen as representing the nation, and Zhu has not hosted the last three New Year’s Galas. And his ploy seemed to work: Zhang’s story was soon listed among “top searches” on Weibo. No story of which the government does not approve stays up in that list for long.</p>
+      <p>Xianzi posted an online rebuttal, in which she described Zhang’s article as a “malicious distortion.” Yet a wave of elite, older men soon rallied around Zhu, resharing his account of what had happened, some trying to appear neutral, some outright supporting him. Among them were Weibo CEO Wang Gaofei, who broke with his usual veneer of impartiality to repost Zhang’s report; the former Ogilvy China creative director Qiu Xinyu; and the nationalist commentator Meng Chi—each of whom has a followership in the millions. Their fans in turn left thousands of comments, defending Zhu’s right not to show up to the trial and defending the court not requiring him to attend.</p>
+      <p>The most common statement I saw among the Weibo comments was “I believe in the law.” In other words, whatever the court decides will become the official version of the truth. In practice, though, these commenters rushed to Zhu’s defense before any court ruling, once he said <em>he</em> was the real victim. And if Xianzi loses her case, they can be counted on to brand her a liar or a slut.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">I spoke to the veteran feminist activist Lü Pin, who knows only too well how the line of what is deemed politically acceptable can shift virtually overnight. As the founder of the media platform Feminist Voices, she built its social media following to a quarter of a million. In 2015, the police detained several of Lü’s colleagues (she happened to be in New York at the time and has lived there since). Then, in 2018, came an online smear campaign targeting the platform, accusing it of being linked to organized vice and of being funded by the Saudi Arabian government, and that same year, it was suspended. Whenever someone defended Feminist Voices, their post was very often censored, even as the conspiracy theories and slurs stayed up.</p>
+      <p>I asked Lü if she thinks Xianzi is facing any personal danger. “If you’re a professional organizer, that’s very dangerous,” she said. But Xianzi’s status as a victim gives her some protection, Lü believes. Lü describes #MeToo as a social and cultural movement, not a political one. When I asked her how the boundary is drawn, she said: “That’s not our decision, that’s for the Party to decide.”</p>
+      <p>In her view, the #MeToo movement in China differs from its counterpart in the U.S. as those involved are not famous and don’t have much social capital. Although China’s celebrities have huge followings, they are circumspect in what they say, for they serve not just their fans, but the nation and the Communist Party. If they are accused of being insufficiently patriotic, they publicly apologize to the nation, to affirm that they would be nothing without the Party. The most high-profile names connected with the #MeToo movement are not the accusers, but the accused, like Zhu.</p>
+      <p>#MeToo in China has been shaped by routine official pressure and routine state supervision. It does not manifest as public dissent or collective protest, which is too obviously dangerous and counterproductive, but takes different forms. While mainstream Chinese media have reported other sexual harassment cases, they cannot cover Xianzi’s, because Zhu is, in his minor way, part of the state’s public face. Commentary about the case appears instead on social media, personal blogs, and unofficial channels, but often only fleetingly. And after the court hearing, for example, the censors quickly scrubbed Weibo of comments, though the discussions following Zhang’s report—including, in fact, defenses from Xianzi’s supporters—are still up.</p>
+      <p>“The Great Firewall works both ways,” Lü said, meaning that online censorship makes it more difficult for those within China to access and share information, and also for those on the outside to understand the movement, as citizens’ posts may only be up for a few days or a few hours. Those posting online must stay ahead of the censor by becoming the censor. Lü has deleted hundreds of thousands of her own words. This tactic of saying-and-unsaying is a pragmatic decision to avoid drawing undue attention.</p>
+      <p>Many of those involved in China’s #MeToo movement do not consider themselves feminists or dissidents. They position themselves as pushing the legal system to live up to its own tenets—gender equality is enshrined in China’s constitution. Xianzi’s own conduct has been in line with that approach. She said, back in 2018, that she doesn’t want labels attached to her, including that of “feminist.” And she has disappointed some liberals in China for her careful observance of one political red line—posting about how she believes Taiwan is part of China, comparing the statements of those who desire independence to the acts of an unfilial son.</p>
+      <p>Xianzi went to the police, went to court, because she believes that the legal system should deliver justice. “That belief is important: it can drive change in the judicial system,” said Lü—though few I spoke to believed Xianzi would win her own legal battle. Nevertheless, Xianzi has already used her platform to build an informal community that speaks up for victims of sexual violence beyond herself. Just by documenting her experience, she has shaken those living within the lie that China has already achieved complete gender equality.<span class="cube"></span></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2021-01-12</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-12/Four-Principles-to-Guide-U.S.-Policy-Toward-China/">
+          Four Principles to Guide U.S. Policy Toward China
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-01-12</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-12/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+          Visually Understanding the Data on Foreign NGO Representative Offices and Temporary Activities
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-01-11</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-11/Precarious-Progress/">
+          Precarious Progress
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-12-29</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-29/Because-There-Were-Cameras,-I-Didn-t-Ask-Any-Ques/">
+          ‘Because There Were Cameras, I Didn’t Ask Any Questions’
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-01-11/Precarious-Progress/">
+            前一篇：Precarious Progress
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-01-12/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+            後一篇：Visually Understanding the Data on Foreign NGO Representative Offices and Temporary Activities
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-01-11/Precarious-Progress/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-01-12/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-01-12/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-01-11/Precarious-Progress/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-01-11/Precarious-Progress/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-01-12/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-01-12/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-01-11/Precarious-Progress/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="高頻版 git.io/JUJZT">
+    <meta property="og:description" content="高頻版 git.io/JUJZT" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fnodebe4.github.io%2Foped2%2Fpage28%2F" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://nodebe4.github.io/oped2/page28/" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://nodebe4.github.io/oped2/page28/&text=觀點2-高頻版 git.io/JUJZT&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://nodebe4.github.io/oped2/page28/&title=觀點2-高頻版 git.io/JUJZT" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://nodebe4.github.io/oped2/page28/&title=觀點2-高頻版 git.io/JUJZT" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=觀點2-高頻版 git.io/JUJZT&body=" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://nodebe4.github.io/oped2/page28/" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://nodebe4.github.io/oped2/page28/&title=觀點2-高頻版 git.io/JUJZT&caption=&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=觀點2-高頻版 git.io/JUJZT&url=https://nodebe4.github.io/oped2/page28/" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+<ul class="archive">
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-24/Tor-%E6%9C%89%E9%82%A3%E9%BA%BC%E9%9B%A3%E7%94%A8%E5%97%8E/">
+      
+        Tor 有那麼難用嗎？
+      </a>
+      <time>2020-05-24</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Luterngun</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Luterngun/tor-%25E6%259C%2589%25E9%2582%25A3%25E9%25BA%25BC%25E9%259B%25A3%25E7%2594%25A8%25E5%2597%258E-bafyreihg3jvks3r7xxz3jq33xagsn52bavfejr4q3l5dfvqresrnjslnkq" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-23/%E6%AD%A6%E6%B1%89%E7%96%AB%E6%83%85%E6%8F%AD%E7%A4%BA%E7%9A%84%E5%88%B6%E5%BA%A6%E9%97%AE%E9%A2%98/">
+      
+        武汉疫情揭示的制度问题
+      </a>
+      <time>2020-05-23</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/21c/institutional-problems-behind-coronavirus-disease-in-wuhan" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-23/%E4%BD%A0%E8%B0%88%E8%AE%BA%E4%BA%BA%E6%B0%91%E7%9A%84%E5%8F%A3%E5%90%BB-%E5%A5%BD%E5%83%8F%E4%BD%A0%E6%8B%A5%E6%9C%89%E4%BB%96%E4%BB%AC-%E4%BB%96%E4%BB%AC%E6%98%AF%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84/">
+      
+        「你谈论人民的口吻，好像你拥有他们，他们是属于你的」
+      </a>
+      <time>2020-05-23</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/dushu/tl8i8iq8wgqvujyexo03mq" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-23/%E4%BB%8E%E7%96%AB%E6%83%85%E7%9A%84%E6%8A%A5%E9%81%93%E5%92%8C%E8%AE%A8%E8%AE%BA%E7%9C%8B%E7%A4%BE%E4%BC%9A%E4%BB%B7%E5%80%BC%E7%9A%84%E8%BD%AC%E5%9E%8B/">
+      
+        从疫情的报道和讨论看社会价值的转型
+      </a>
+      <time>2020-05-23</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/21c/transformation-of-social-values-as-seen-from-media-reports-and-public-discussions-of-coronavirus-disease" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-23/6000%E5%B9%B4%E5%89%8D%E6%97%A9%E6%9C%9F%E5%9F%8E%E5%B8%82%E7%9A%84%E5%85%B4%E8%B5%B7-%E7%BB%99%E4%BB%8A%E5%A4%A9%E5%B8%A6%E6%9D%A5%E4%BB%80%E4%B9%88%E5%90%AF%E7%A4%BA/">
+      
+        6000年前早期城市的兴起，给今天带来什么启示？
+      </a>
+      <time>2020-05-23</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 曾梦龙</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#燕京书评" class="tag">
+        燕京书评
+      </a>
+      
+
+      
+      <a href="https://m.allnow.com/post/5ec8a541fcd35600016d5451" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-22/%E7%8F%A0%E5%B3%B0%E5%9C%B0%E7%90%86-%E9%9A%BE%E4%BB%A5%E6%8F%8F%E8%BF%B0%E7%9A%84%E8%AF%B1%E6%83%91/">
+      
+        珠峰地理：难以描述的诱惑
+      </a>
+      <time>2020-05-22</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/lifeweek/sorn6hfrokieqpklgdvhgw" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-22/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-2.0%E7%89%88-%E9%99%84%E4%BB%B6%E4%B8%80/">
+      
+        《數字極權時代生存手記》2.0版 - 附件一
+      </a>
+      <time>2020-05-22</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Luterngun</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Matters" class="tag">
+        Matters
+      </a>
+      
+
+      
+      <a href="https://matters.news/@Luterngun/%25E6%2595%25B8%25E5%25AD%2597%25E6%25A5%25B5%25E6%25AC%258A%25E6%2599%2582%25E4%25BB%25A3%25E7%2594%259F%25E5%25AD%2598%25E6%2589%258B%25E8%25A8%2598-2-0%25E7%2589%2588-%25E9%2599%2584%25E4%25BB%25B6%25E4%25B8%2580-bafyreick62zzimjgjogwn4rsv73jb7mivzlpu4jgj5l7ftqotakzqaylqq" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-22/%E4%B8%AD%E5%A4%AE-%E5%85%A8%E9%9D%A2%E7%AE%A1%E6%B2%BB-%E8%BF%9B%E5%9C%BA%E5%90%8E-%E9%A6%99%E6%B8%AF%E7%9A%84-%E9%AB%98%E5%BA%A6%E8%87%AA%E6%B2%BB-%E8%BF%98%E6%9C%89%E5%A4%9A%E5%B0%91/">
+      
+        中央「全面管治」进场后，香港的「高度自治」，还有多少?
+      </a>
+      <time>2020-05-22</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/initium/opinion-hk-autonomy-one-country-two-system" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-22/%E5%8E%9A%E8%BE%BE%E5%8D%83%E9%A1%B5%E7%9A%84%E5%AE%89%E8%BF%AA-%E6%B2%83%E9%9C%8D%E5%B0%94%E4%BC%A0%E8%AE%B0-%E7%A7%B0%E4%BB%96%E6%98%AF20%E4%B8%96%E7%BA%AA%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E8%89%BA%E6%9C%AF%E5%AE%B6/">
+      
+        厚达千页的安迪·沃霍尔传记，称他是20世纪最重要的艺术家
+      </a>
+      <time>2020-05-22</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 曾梦龙</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#燕京书评" class="tag">
+        燕京书评
+      </a>
+      
+
+      
+      <a href="https://m.allnow.com/post/5ec76497fcd3560001b7b15e" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-21/%E8%A7%A3%E5%AF%86-%E4%B8%A4%E5%8A%9E-%E6%B2%BB%E6%B8%AF-%E8%B0%81%E6%89%8D%E6%98%AF%E9%A6%99%E6%B8%AF%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%AE%A1%E6%B2%BB%E8%80%85/">
+      
+        解密「两办」治港：谁才是香港未来的管治者？
+      </a>
+      <time>2020-05-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/initium/hongkong-the-liaison-office-new-boss" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-21/%E7%8E%AF%E7%8F%A0%E5%B3%B0-5-%E5%BA%A7%E5%B7%A8%E5%B3%B0%E6%94%80%E7%99%BB%E5%8F%B2/">
+      
+        环珠峰 5 座巨峰攀登史
+      </a>
+      <time>2020-05-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/lifeweek/sorn5hfrokieqpklgdvhgw" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-21/%E7%8E%B0%E4%BB%A3%E7%99%BB%E5%B1%B1%E8%80%85-%E4%BB%8E%E5%BE%81%E6%9C%8D%E5%88%B0%E4%B8%8E%E8%87%AA%E7%84%B6%E8%9E%8D%E5%90%88/">
+      
+        现代登山者：从征服到与自然融合
+      </a>
+      <time>2020-05-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/lifeweek/sorn7hfrokieqpklgdvhgw" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-21/%E4%BD%BF%E7%94%A8%E9%80%BB%E8%BE%91%E5%BF%AB%E9%80%9F%E8%AE%B0%E5%BF%86%E5%A4%A7%E9%87%8F%E4%BF%A1%E6%81%AF-%E5%A1%91%E9%80%A0%E8%B6%85%E5%BC%BA%E8%AE%B0%E5%BF%86%E5%8A%9B%E7%9A%84%E6%96%B9%E6%B3%95-7-iYouPort/">
+      
+        使用逻辑快速记忆大量信息：塑造超强记忆力的方法（7） - iYouPort
+      </a>
+      <time>2020-05-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%bd%bf%e7%94%a8%e9%80%bb%e8%be%91%e5%bf%ab%e9%80%9f%e8%ae%b0%e5%bf%86%e5%a4%a7%e9%87%8f%e4%bf%a1%e6%81%af%ef%bc%9a%e5%a1%91%e9%80%a0%e8%b6%85%e5%bc%ba%e8%ae%b0%e5%bf%86%e5%8a%9b%e7%9a%84%e6%96%b9/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-21/%E4%BF%9D%E6%8C%81%E9%9B%B6%E4%BF%A1%E4%BB%BB-%E5%8F%98%E5%BE%97%E9%9A%BE%E4%BB%A5%E8%A2%AB%E8%BF%BD%E8%B8%AA%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95-4-iYouPort/">
+      
+        保持零信任：变得难以被追踪的简单方法（4） - iYouPort
+      </a>
+      <time>2020-05-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%bf%9d%e6%8c%81%e9%9b%b6%e4%bf%a1%e4%bb%bb%ef%bc%9a%e5%8f%98%e5%be%97%e9%9a%be%e4%bb%a5%e8%a2%ab%e8%bf%bd%e8%b8%aa%e7%9a%84%e7%ae%80%e5%8d%95%e6%96%b9%e6%b3%95%ef%bc%884%ef%bc%89/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-21/%E6%8A%97%E8%AE%AE%E8%80%85%E4%BD%BF%E7%94%A8%E6%95%B0%E7%99%BE%E4%B8%AA%E6%BF%80%E5%85%89%E7%AC%94%E5%87%BB%E8%90%BD%E8%AD%A6%E5%AF%9F%E6%97%A0%E4%BA%BA%E6%9C%BA-iYouPort/">
+      
+        抗议者使用数百个激光笔击落警察无人机 - iYouPort
+      </a>
+      <time>2020-05-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e6%8a%97%e8%ae%ae%e8%80%85%e4%bd%bf%e7%94%a8%e6%95%b0%e7%99%be%e4%b8%aa%e6%bf%80%e5%85%89%e7%ac%94%e5%87%bb%e8%90%bd%e8%ad%a6%e5%af%9f%e6%97%a0%e4%ba%ba%e6%9c%ba/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-21/%E8%BF%94%E5%9B%9E%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E6%99%AE%E9%80%9A%E4%BA%BA%E5%A6%82%E4%BD%95%E5%BC%BA%E5%8C%96%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7-iYouPort/">
+      
+        返回基础知识：普通人如何强化智能手机和计算机的安全性 - iYouPort
+      </a>
+      <time>2020-05-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e8%bf%94%e5%9b%9e%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%ef%bc%9a%e6%99%ae%e9%80%9a%e4%ba%ba%e5%a6%82%e4%bd%95%e5%bc%ba%e5%8c%96%e6%99%ba%e8%83%bd%e6%89%8b%e6%9c%ba%e5%92%8c%e8%ae%a1%e7%ae%97%e6%9c%ba/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-21/%E9%A6%99%E6%B8%AF%E6%96%87%E5%87%AD%E8%AF%95%E5%8E%86%E5%8F%B2%E7%A7%91%E8%AF%95%E9%A2%98%E4%BA%89%E8%AE%AE/">
+      
+        香港文凭试历史科试题争议
+      </a>
+      <time>2020-05-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/initium/opinion-hk-dse-politics" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-21/A-New-U.S.-Consensus-on-China-May-Not-Be-as-Soli/">
+      
+        A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears
+      </a>
+      <time>2020-05-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Ali Wyne</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-20/%E5%87%86%E5%A4%87%E7%99%BB%E9%A1%B6%E7%9A%84%E4%BA%BA-%E7%8F%A0%E5%B3%B0%E5%A4%A7%E6%9C%AC%E8%90%A5%E4%BA%94%E5%A4%A9%E4%BA%94%E5%A4%9C/">
+      
+        准备登顶的人：珠峰大本营五天五夜
+      </a>
+      <time>2020-05-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/lifeweek/sorn9hfrokieqpklgdvhgw" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-20/%E8%87%AA%E4%B8%BB%E7%99%BB%E5%B1%B1-30-%E5%B9%B4-%E4%B8%80%E4%B8%AA%E5%AD%A6%E7%94%9F%E7%A4%BE%E5%9B%A2%E5%AF%B9%E5%B1%B1%E5%B3%B0%E7%9A%84%E6%8E%A2%E7%B4%A2/">
+      
+        自主登山 30 年：一个学生社团对山峰的探索
+      </a>
+      <time>2020-05-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/lifeweek/sorn4hfrokieqpklgdvhgw" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-20/%E7%BB%8F%E6%B5%8E%E6%8B%94%E9%AB%98-%E6%94%BF%E6%B2%BB%E5%9B%B4%E5%A0%B5-%E9%A6%99%E6%B8%AF%E6%8F%BD%E7%82%92%E6%88%96%E5%86%8D%E5%87%BA%E5%8F%91-%E7%9B%AE%E7%9A%84%E5%9C%B0%E5%9C%A8%E4%BD%95%E6%96%B9/">
+      
+        经济拔高，政治围堵——香港揽炒或再出发？目的地在何方？
+      </a>
+      <time>2020-05-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/initium/opinion-hk-political-economical-situation" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-20/%E5%90%8E%E7%96%AB%E6%83%85%E6%97%B6%E4%BB%A3%E7%9A%84%E7%BB%8F%E6%B5%8E-%E4%B8%8D%E5%A4%AA%E4%B8%80%E6%A0%B7/">
+      
+        后疫情时代的经济：不太一样
+      </a>
+      <time>2020-05-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/economist/not-quite-all-there" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-20/How-Will-Historians-Look-Back-at-the-Coronavirus-O/">
+      
+        How Will Historians Look Back at the Coronavirus Outbreak?
+      </a>
+      <time>2020-05-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Sulmaan Khan</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/reporting-opinion/viewpoint/how-will-historians-look-back-coronavirus-outbreak" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-20/12%E4%B8%AA%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E8%B5%84%E6%BA%90-%E6%8C%96%E6%8E%98%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E8%83%8C%E5%90%8E%E7%9A%84%E7%A7%98%E5%AF%86-iYouPort/">
+      
+        12个开源情报资源：挖掘电子邮件背后的秘密 - iYouPort
+      </a>
+      <time>2020-05-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/12%e4%b8%aa%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e8%b5%84%e6%ba%90%ef%bc%9a%e6%8c%96%e6%8e%98%e7%94%b5%e5%ad%90%e9%82%ae%e4%bb%b6%e8%83%8c%e5%90%8e%e7%9a%84%e7%a7%98%e5%af%86/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-20/%E5%A6%82%E4%BD%95%E7%BB%8F%E8%90%A5%E4%B8%80%E4%B8%AA%E5%81%87%E6%96%B0%E9%97%BB%E5%B8%9D%E5%9B%BD-iYouPort/">
+      
+        如何经营一个假新闻帝国？ - iYouPort
+      </a>
+      <time>2020-05-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e7%bb%8f%e8%90%a5%e4%b8%80%e4%b8%aa%e5%81%87%e6%96%b0%e9%97%bb%e5%b8%9d%e5%9b%bd%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-20/%E6%94%BB%E5%87%BB%E8%80%85%E5%A6%82%E4%BD%95%E6%94%B6%E9%9B%86%E6%9C%89%E5%85%B3%E7%9B%AE%E6%A0%87%E7%9A%84%E6%83%85%E6%8A%A5-%E4%BB%96%E4%BB%AC%E8%83%BD%E4%BA%86%E8%A7%A3%E4%BD%A0%E5%A4%9A%E5%B0%91-iYouPort/">
+      
+        攻击者如何收集有关目标的情报？他们能了解你多少？ - iYouPort
+      </a>
+      <time>2020-05-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e6%94%bb%e5%87%bb%e8%80%85%e5%a6%82%e4%bd%95%e6%94%b6%e9%9b%86%e6%9c%89%e5%85%b3%e7%9b%ae%e6%a0%87%e7%9a%84%e6%83%85%e6%8a%a5%ef%bc%9f%e4%bb%96%e4%bb%ac%e8%83%bd%e4%ba%86%e8%a7%a3%e4%bd%a0%e5%a4%9a/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-20/%E6%8A%96%E9%9F%B3%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80%E4%BA%86%E8%BF%9B%E5%85%A5%E4%B8%AD%E5%9B%BD%E8%AD%A6%E5%AF%9F%E5%9B%BD%E5%AE%B6%E7%9A%84%E7%AA%97%E5%8F%A3-iYouPort/">
+      
+        抖音如何打开了进入中国警察国家的窗口 - iYouPort
+      </a>
+      <time>2020-05-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e6%8a%96%e9%9f%b3%e5%a6%82%e4%bd%95%e6%89%93%e5%bc%80%e4%ba%86%e8%bf%9b%e5%85%a5%e4%b8%ad%e5%9b%bd%e8%ad%a6%e5%af%9f%e5%9b%bd%e5%ae%b6%e7%9a%84%e7%aa%97%e5%8f%a3/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-20/%E6%AF%94%E7%96%AB%E6%83%85%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84-%E6%98%AF%E9%9D%A2%E5%AF%B9%E6%84%9F%E6%83%85/">
+      
+        比疫情更复杂的，是面对感情?
+      </a>
+      <time>2020-05-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/lifeweek/frfnwokbsga2v8espzowfucjafkm" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-20/%E7%96%AB%E6%83%85%E4%B8%AD-%E9%82%A3%E4%BA%9B%E8%A2%AB%E9%87%8D%E4%BC%B0%E7%9A%84%E6%83%85%E6%84%9F%E5%92%8C%E5%85%B3%E7%B3%BB/">
+      
+        疫情中，那些被重估的情感和关系
+      </a>
+      <time>2020-05-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/lifeweek/frfnwokbsga1v8espzowfucjafkm" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/%E4%B8%BA%E5%9B%BD%E7%99%BB%E9%A1%B6-60-%E5%B9%B4/">
+      
+        为国登顶 60 年
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/lifeweek/sorn8hfrokieqpklgdvhgw" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/Nation-State-%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%93%E6%94%BF%E6%94%BF%E6%B2%BB%E4%B8%8B%E8%A2%AB%E5%BC%82%E5%8C%96/">
+      
+        Nation State 如何在专政政治下被异化
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/initium/opinion-wangke-nation-state" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/%E6%8A%97%E4%BD%93%E6%A3%80%E6%B5%8B-%E6%96%B0%E5%86%A0%E7%96%AB%E6%83%85%E7%9A%84%E7%83%AD%E9%97%A8%E8%AF%9D%E9%A2%98/">
+      
+        抗体检测：新冠疫情的热门话题
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/lifeweek/8lu6v1xlh3jjbly7rnbtog" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/%E6%98%A5%E5%AF%92/">
+      
+        春寒
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/economist/spring-freeze" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/%E6%BE%B3%E9%97%A8%E4%B9%96%E5%AD%A9%E5%AD%90-%E9%A6%99%E6%B8%AF%E5%9D%8F%E5%AD%A9%E5%AD%90/">
+      
+        澳门乖孩子，香港坏孩子？
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/initium/hongkong-leon-ieong-interview-macau-national-security" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/%E9%A2%A0%E8%A6%86%E7%9A%84%E7%86%94%E7%82%89/">
+      
+        颠覆的熔炉
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/economist/crucible-of-creative-disruption" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/U.S.-China-Relations-2020-Coronavirus-and-Electio/">
+      
+        U.S.-China Relations 2020: Coronavirus and Elections
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Paul Haenle &amp; Xie Tao</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/library/china-world-podcast/us-china-relations-2020-coronavirus-and-elections" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/%E7%9C%8B%E6%B8%85%E4%BF%A1%E6%81%AF%E6%88%98-2019%E5%85%A8%E7%90%83%E6%9C%89%E7%BB%84%E7%BB%87%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E6%93%8D%E7%BA%B5%E6%B8%85%E5%8D%95-iYouPort/">
+      
+        看清信息战：2019全球有组织社交媒体操纵清单 - iYouPort
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e7%9c%8b%e6%b8%85%e4%bf%a1%e6%81%af%e6%88%98%ef%bc%9a2019%e5%85%a8%e7%90%83%e6%9c%89%e7%bb%84%e7%bb%87%e7%a4%be%e4%ba%a4%e5%aa%92%e4%bd%93%e6%93%8d%e7%ba%b5%e6%b8%85%e5%8d%95/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/%E9%B8%AD%E5%AD%90%E7%9A%84%E6%AC%A7%E6%B4%B2%E7%89%88%E6%9C%AC-%E5%8F%8D%E7%9B%91%E8%A7%86%E7%9A%84%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%9C%9F%E7%9A%84%E8%83%BD%E6%91%86%E8%84%B1%E7%BE%8E%E5%9B%BD%E4%BA%86%E5%90%97-iYouPort/">
+      
+        鸭子的欧洲版本？反监视的搜索引擎真的能摆脱美国了吗？ - iYouPort
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e9%b8%ad%e5%ad%90%e7%9a%84%e6%ac%a7%e6%b4%b2%e7%89%88%e6%9c%ac%ef%bc%9f%e5%8f%8d%e7%9b%91%e8%a7%86%e7%9a%84%e6%90%9c%e7%b4%a2%e5%bc%95%e6%93%8e%e7%9c%9f%e7%9a%84%e8%83%bd%e6%91%86%e8%84%b1/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/22%E4%B8%AA%E9%BB%91%E5%AE%A2%E9%80%9F%E6%88%90%E8%AF%BE%E8%A7%86%E9%A2%91%E5%8F%8A%E8%B5%84%E6%BA%90-iYouPort/">
+      
+        22个黑客速成课视频及资源 - iYouPort
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/22%e4%b8%aa%e9%bb%91%e5%ae%a2%e9%80%9f%e6%88%90%e8%af%be%e8%a7%86%e9%a2%91%e5%8f%8a%e8%b5%84%e6%ba%90/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/%E6%AC%A7%E6%B4%B2%E5%AF%B9%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB%E5%92%8C%E5%85%B6%E4%BB%96%E4%B8%AD%E5%9B%BD%E6%8A%80%E6%9C%AF%E7%9A%84%E5%85%B4%E8%B6%A3%E6%AD%A3%E5%9C%A8%E5%A1%AB%E8%A1%A5%E7%BE%8E%E5%9B%BD%E7%BC%BA%E5%B8%AD%E7%9A%84%E6%B7%B1%E5%9C%B3%E5%B1%95%E4%BC%9A-iYouPort/">
+      
+        欧洲对面部识别和其他中国技术的兴趣正在填补美国缺席的深圳展会 - iYouPort
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e6%ac%a7%e6%b4%b2%e5%af%b9%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e5%92%8c%e5%85%b6%e4%bb%96%e4%b8%ad%e5%9b%bd%e6%8a%80%e6%9c%af%e7%9a%84%e5%85%b4%e8%b6%a3%e6%ad%a3%e5%9c%a8%e5%a1%ab%e8%a1%a5%e7%be%8e/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-19/What-Are-the-Right-and-the-Wrong-Ways-for-the-U.S/">
+      
+        What Are the Right and the Wrong Ways for the U.S. to Support Taiwan?
+      </a>
+      <time>2020-05-19</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Daniel R. Russel, Yu-Jie Chen &#38; more</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/conversation/what-are-right-and-wrong-ways-us-support-taiwan" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-18/%E9%87%8D%E6%96%B0%E5%8F%91%E7%8E%B0%E5%9B%BD%E8%B4%A7/">
+      
+        重新发现国货
+      </a>
+      <time>2020-05-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/lifeweek/8lu6v2xlh3jjbly7rnbtog" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-18/%E9%A3%9E%E8%B7%83-%E7%BA%B5%E8%BA%AB%E4%B8%80%E8%B7%83%E7%9A%84%E8%83%8C%E5%90%8E/">
+      
+        飞跃：纵身一跃的背后
+      </a>
+      <time>2020-05-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/lifeweek/8lu6v3xlh3jjbly7rnbtog" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-18/%E5%AA%92%E4%BD%93%E8%A7%82%E5%AF%9F-%E4%B8%AD%E7%BE%8E%E4%B9%8B%E5%A4%96-%E4%B8%96%E7%95%8C%E5%A6%82%E4%BD%95%E8%AE%A8%E8%AE%BA-%E4%B8%AD%E5%9B%BD%E8%B4%A3%E4%BB%BB%E8%AE%BA/">
+      
+        媒体观察：中美之外，世界如何讨论「中国责任论」
+      </a>
+      <time>2020-05-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/initium/international-china-us-pandemic-world-media" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-18/%E6%94%B9%E8%A3%85%E4%B8%8A%E8%B7%AF/">
+      
+        改装上路
+      </a>
+      <time>2020-05-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/economist/pimp-the-ride" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-18/%E5%8D%8E%E4%B8%BA%E4%B9%8B%E6%88%98-%E4%BC%9A%E6%80%BB%E8%A6%81%E5%BC%80/">
+      
+        华为之战：会总要开
+      </a>
+      <time>2020-05-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/economist/some-body-to-hold" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-18/What-Are-the-Right-and-the-Wrong-Ways-for-the-U.S/">
+      
+        What Are the Right and the Wrong Ways for the U.S. to Support Taiwan?
+      </a>
+      <time>2020-05-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Daniel R. Russel, Yu-Jie Chen &#38; more</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#中参馆" class="tag">
+        中参馆
+      </a>
+      
+
+      
+      <a href="https://www.chinafile.com/conversation/what-are-right-and-wrong-ways-us-support-taiwan" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-18/%E5%A6%82%E4%BD%95%E7%A0%B4%E8%A7%A3%E5%8F%97%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4%E7%9A%84Microsoft-Office%E6%96%87%E4%BB%B6-%E5%8C%85%E6%8B%ACWord%E6%96%87%E6%A1%A3%E5%92%8CExcel%E7%94%B5%E5%AD%90%E8%A1%A8%E6%A0%BC-iYouPort/">
+      
+        如何破解受密码保护的Microsoft Office文件，包括Word文档和Excel电子表格 - iYouPort
+      </a>
+      <time>2020-05-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e7%a0%b4%e8%a7%a3%e5%8f%97%e5%af%86%e7%a0%81%e4%bf%9d%e6%8a%a4%e7%9a%84microsoft-office%e6%96%87%e4%bb%b6%ef%bc%8c%e5%8c%85%e6%8b%acword%e6%96%87%e6%a1%a3%e5%92%8cexcel%e7%94%b5/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-18/%E4%BD%A0%E7%9A%84%E6%89%8B%E6%9C%BA%E5%B0%B1%E6%98%AF%E7%A7%98%E5%AF%86%E7%9B%91%E8%A7%86%E8%AE%BE%E5%A4%87-Snowden%E8%AE%BF%E8%B0%88%E8%A7%86%E9%A2%91-iYouPort/">
+      
+        你的手机就是秘密监视设备 - Snowden访谈视频 - iYouPort
+      </a>
+      <time>2020-05-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%bd%a0%e7%9a%84%e6%89%8b%e6%9c%ba%e5%b0%b1%e6%98%af%e7%a7%98%e5%af%86%e7%9b%91%e8%a7%86%e8%ae%be%e5%a4%87-snowden%e8%ae%bf%e8%b0%88%e8%a7%86%e9%a2%91/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-05-18/%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E7%A0%B4%E5%9D%8F%E6%B0%91%E4%B8%BB%E7%9A%84%E8%AF%81%E6%8D%AE%E8%B6%8A%E6%9D%A5%E8%B6%8A%E5%A4%9A-iYouPort/">
+      
+        社交媒体破坏民主的证据越来越多 - iYouPort
+      </a>
+      <time>2020-05-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%aa%92%e4%bd%93%e7%a0%b4%e5%9d%8f%e6%b0%91%e4%b8%bb%e7%9a%84%e8%af%81%e6%8d%ae%e8%b6%8a%e6%9d%a5%e8%b6%8a%e5%a4%9a/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+
+</ul>
+
+<div class="pagination">
+  
+    <span class="prev">
+      <a href="/oped2/page27/" class="prev">
+        上一页
+      </a>
+    </span>
+  
+  
+    <span class="next">
+      <a href="/oped2/page29/" class="next">
+        下一页
+      </a>
+    </span>
+  
+
+  <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    <a class="fab-action fab-action-1" title="上一页(热键 &#8594;)" href="/oped2/page27/">
+      <i>上</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一页(热键 &#8592;)" href="/oped2/page29/">
+      <i>下</i>
+    </a>
+    
+    
+    
+    
+    
+  </div>
+</div>
+
+
+  <script>
+  /* post pagination keyboard shortcuts */
+  document.body.onkeyup = function(e){
+    if (e.keyCode == '37') { window.location = '/oped2/page27/'; } // left arrow key
+    if (e.keyCode == '39') { window.location = '/oped2/page29/'; } // right arrow key
+  };
+  </script>
+
+</div>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

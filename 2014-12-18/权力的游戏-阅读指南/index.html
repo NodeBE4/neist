@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>《权力的游戏》阅读指南 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+《权力的游戏》阅读指南
+——
+" />
+    <meta property="og:description" content="
+《权力的游戏》阅读指南
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="《权力的游戏》阅读指南" />
+    <meta property="twitter:title" content="《权力的游戏》阅读指南" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40yeeyan%2F-5d0c7d67326b%3Fsource%3Drss-216c8ba84893------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@yeeyan/-5d0c7d67326b?source=rss-216c8ba84893------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@yeeyan/-5d0c7d67326b?source=rss-216c8ba84893------2&text=《权力的游戏》阅读指南&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@yeeyan/-5d0c7d67326b?source=rss-216c8ba84893------2&title=《权力的游戏》阅读指南" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@yeeyan/-5d0c7d67326b?source=rss-216c8ba84893------2&title=《权力的游戏》阅读指南" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=《权力的游戏》阅读指南&body=
+《权力的游戏》阅读指南
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@yeeyan/-5d0c7d67326b?source=rss-216c8ba84893------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@yeeyan/-5d0c7d67326b?source=rss-216c8ba84893------2&title=《权力的游戏》阅读指南&caption=
+《权力的游戏》阅读指南
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=《权力的游戏》阅读指南&url=https://medium.com/@yeeyan/-5d0c7d67326b?source=rss-216c8ba84893------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>《权力的游戏》阅读指南</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2014-12-18
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Yeeyan</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@yeeyan/-5d0c7d67326b?source=rss-216c8ba84893------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1418900443000-->
+<p><a href="https://medium.com/@yeeyan/-5d0c7d67326b?source=rss-216c8ba84893------2">《权力的游戏》阅读指南</a>
+——</p>
+
+<div>
+  <p>注意：以下内容包含轻微剧透，但是如果我能提起你阅读这套书的兴趣的话，那么这些剧透还是值得的。反正一旦你读进去了你就会忘了这些剧透的。</p>
+  <p><strong>冰与火之歌阅读指南</strong></p>
+  <blockquote>
+<em>又名：如何在阅读乔治·R·R·马丁那本厚得吓人史诗作品时，</em><strong><em>不被</em></strong><em>里面的虐待、强奸、乱伦、和谋杀</em><strong><em>摧残心灵</em></strong><em>；</em><strong><em>不受</em></strong><em>中世纪语言</em><strong><em>的阻碍</em></strong><em>；</em><strong><em>不迷失于</em></strong><em>里面那个由名字怪异的城市及其周围的地理环境构成的广袤虚构世界之中；</em><strong><em>不因</em></strong><em>其中史诗般的历史和神话而</em><strong><em>头脑混乱</em></strong><em>；</em><strong><em>不因</em></strong><em>其中数不胜数的角色而</em><strong><em>摸不着头脑；或者不因</em></strong><em>其对风俗和文化的详细描写而</em><strong><em>感到无趣。</em></strong>  </blockquote>
+  <p><strong>注意：</strong>以下内容包含轻微剧透，但是如果我能提起你阅读这套书的兴趣的话，那么<strong>这些剧透还是值得的</strong>。反正一旦你读进去了你就会忘了这些剧透的。</p>
+  <h4 id="section"><strong>如何阅读《权力的游戏》</strong></h4>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/600/0*e1PwC25dakVSR4fj.gif" />
+  </figure>
+  <p>弗罗多的旅程：芭芭拉·斯特雷奇（Barbara Strachey）为J.R.R.托尔金的《指环王》绘制的地图（我觉得读这个比光读那部三部曲还要费劲）</p>
+  <p>我必须坦白：我从没读完《指环王》。我试过很多次，但是当我读到《双塔奇兵》（The Two Towers）的某个地方时，我实在是读不下去了。他们又开始在会议上讨论古老的歌谣和神话，或者分析古语言。我想读兽人（orcs）和哥布林（goblins），巫师和精灵 — — 想读冒险故事！（为自己说句公道话，我第一次尽全力阅读《指环王》时才12岁。三十年后的现在我可能会更有耐心。）我真正需要的是互动性的指导（比如雄心勃勃的<a href="http://lotrproject.com/">指环王计划（LotrProject）</a>） — — 详细的旅程地图、文化历史、角色简介、详细的家族树状图、图片！ — — 这样才能让我有代入感，而不是心不在焉不知所措地阅读。或者，或许在中土世界里，强奸和砍头并不常见到足以吸引我的注意力。</p>
+  <p>这让我想到了史诗作品《冰与火之歌》，它似幻想但又并非完全是幻想。乔治•R•R•马丁（GRRM）身兼多职：中世纪历史学家、业余制图师、文化人类学家、皇家系谱专家、关联式心理学家（relational psychoanalyst）和复仇之神。他的作品时而野蛮暴力 — — 因此才有上文提到的强奸和砍头 — — 时而又丰满庄严。最近我刚读完这一系列的卷四和卷五，之后发自肺腑地感到一种脱离了真实世界的失落感，这感觉就像一趟难忘的国外旅程即将结束那样：一种不愿离去的流连忘返之感。</p>
+  <p>我想说服你同我一起进入那个世界。如果马丁书中的主要大陆 — — <a href="https://medium.com/p/5d0c7d67326b/edit">维斯特洛</a>大陆（Westeros）是到到网[1]（TripAdvisor）上的一个旅游目的地的话，我会给它打五颗星，但是接着我会附上几条警告。我的目的是：虽然维斯特洛危险重重也并非完美之地，但我还是想将它推销给你。这个世界是如此的纷繁复杂，无可否认有时要理解它并非易事，因为故事的文字（和情节）信息量会爆棚（一场婚宴就有77道菜！）。这种精细得令人发指的构建世界的方式对一些读者来说是难以承受的。这需要费一些精力，但是维斯特洛完全值得我们前去旅行，值得我们去经历那些改变一生的事物。当你回来时，你会觉得自己就像是土生土长的维斯特洛人一样。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/500/0*DLe_39TJLf4kEfha.jpg" />
+  </figure>
+  <p>读书的人，一生可以体验上千种生活，而不读书的人只会有一种生活。 — — 玖健·黎德（Jojen Reed），《魔龙的狂舞》</p>
+  <p>而这趟旅程是多么的漫长啊！《冰与火之歌》计划为七部曲，现在原稿已达4273页，共有五卷：《权力的游戏》、《列王的纷争》、《冰雨的风暴》、《群鸦的盛宴》、《魔龙的狂舞》。还有两卷即将出版：《凛冬的寒风》预计将在2015年与读者见面，之后是《春晓的梦想》，这两本书可能给这一系列再添3000页。</p>
+  <p>还有其他的附带旅途，有超过五部的前传中篇小说（发生在本系列的主要情节之前的故事）、一本食谱、一本地图集以及一本关于历史和传说的书籍。同时不要错过获奖的HBO电视剧（已出四季，还没完结），以及骨灰粉丝们创造的无数应用、游戏、书籍和网页。</p>
+  <p>你最好带着清醒的头脑和正确的装备来体验《冰与火之歌》。在自己疲惫不堪、心烦意乱或者心绪受扰时（你自己挑一个吧）游览维斯特洛是不明智的。如果这些书对注意力高度集中的要求听起来很是恐怖，你不要害怕：现代读书工具以及马丁的狂热粉丝们不懈努力创造出的辅助工具，已经把阅读体验转换成了一种名副其实的奇幻冒险。</p>
+  <p>在进入《冰与火之歌》的世界之前，我需要一大批工具。我的装备庞大但都是必需品：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/603/0*il9AFFO9YHWgES_X.png" />
+  </figure>
+  <p><strong>三个工具</strong></p>
+  <p>-Kindle Paperwhite</p>
+  <p>-爱疯5</p>
+  <p>- iPad（第四代）</p>
+  <p><strong>两本字典</strong></p>
+  <p>-《牛津英语词典》（Kindle默认字典）</p>
+  <p>-《权力的游戏》非官方Kindle辞典（The Unofficial Game of Thrones Kindle Dictionary</p>
+  <p><strong>五本电子书（Kindle版）</strong></p>
+  <p>-《权力的游戏》</p>
+  <p>-《列王的纷争》</p>
+  <p>-《冰雨的风暴》</p>
+  <p>-《群鸦的盛宴》</p>
+  <p>-《魔龙的狂舞》</p>
+  <p><strong>一个应用（iOS版）</strong></p>
+  <p>-冰火世界（A World of Ice and Fire）</p>
+  <p><strong>一个网站（可选可不选，建议重读时使用）</strong></p>
+  <p><a href="http://www.westeros.org/">-Westeros.org</a> (<strong>注意</strong>：含剧透)</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/269/0*eKqkYaVHZVVLaqex.png" />
+  </figure>
+  <p>iOS应用《冰火世界》</p>
+  <p>带着这些科技装备，我用我的Kindle Paperwhite开始了《冰与火之歌》（又名《权力的游戏》丛书）之旅。我使用<a href="http://keckrew.blogspot.ca/2013/06/game-of-thrones-kindle-dictionary.html">《权力的游戏》非官方Kindle辞典</a>来帮助自己记忆人名和地名，同时使用系统默认的《牛津英语词典》来查找古英语词汇。有时我还使用iPad或iPhone的应用<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0CB0QFjAA&amp;url=http%3A%2F%2Fwww.georgerrmartin.com%2Fgrrm_book%2Fgeorge-r-r-martins-a-world-of-ice-and-fire-mobile-app%2F&amp;ei=iz4FVMfwFYHzgwTNlYHwBQ&amp;usg=AFQjCNFKzYjiCnyb8DLQd7">《冰火世界》</a>来协助阅读。通过它我可以在地图上寻找地点，掌握角色们所在的位置。</p>
+  <p>稍后我会更详细地介绍这些工具，但是现在我想说明的是，不论你是初读者还是想加深阅读乐趣的重读者，我都希望这篇文章能在帮助你进行维斯特洛冒险的同时，让你免受恐惧的摧残和语言的阻碍，免受地理的混淆，不被神话困扰，不因细节而感到无聊，或者不因人物众多而困惑不已。</p>
+  <h4 id="section-1"><strong>不被书中的虐待、强暴、乱伦、和谋杀摧残心灵</strong></h4>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/540/0*6U2Qxv48iea0ZrVM.jpg" />
+  </figure>
+  <p>马丁和《冰与火之歌》的人物们玩耍时的情景（<a href="http://themetapicture.com/a-song-of-ice-and-death/">来源不明</a>）</p>
+  <p>承受力弱的人并不适合阅读《冰与火之歌》。不太剧透地讲，书中有关性和暴力的内容比例和《圣经》有的一拼。但是就像阿丽莎·罗森博格（Alyssa Rosenberg）在她的随笔《冰与火之歌中的强奸、神话编写以及国家的兴衰》（Rape, Myth-Making, and the Rise and Fall of Nations in A Song of Ice and Fire）中指出的那样，书中人物对性的态度（以及性行为）加深了我们对故事中各个地区和文化的了解。</p>
+  <p><em>对于那些对强暴和家庭暴力敏感的读者来说，书中遍布的性侵犯以及对性侵犯的讨论是一道难以逾越的障碍，让他们难以享受阅读……每个人对艺术中的暴力都有自己的承受底线，但是如果有人说《冰与火之歌》中对性暴力和家庭暴力的描写只不过是一种过分渲染的噱头，那他就大错特错了。</em></p>
+  <p>她接着说：</p>
+  <blockquote>
+<em>强奸影响着这套书中所有角色的生活，塑造着他们的世界，不论他们是贵族还是平民，犯罪者还是受害者。虽然他们每个人都感到痛苦、恐惧和愤怒，但是这些性侵犯对整个大陆的影响则是由我们来见证。甚至当强奸不被用作开战理由或者操纵宫廷政治的方式时，人们对它的容忍以及伸张正义的失败，都会扭曲维斯特洛大陆和它的敌人们。《冰与火之歌》中性暴力的充斥并非是一种噱头，而是对腐败和人性缺失的有力指证和控诉。</em>  </blockquote>
+  <p>除了强奸、通奸以及其他关乎性的权力角逐，书中还有许多其他的暴力。书中的人物会被肢解、砍头、剥皮、刺死、碾死、毒死、饿死、吞噬、诅咒、淹死、身体破裂、活活烧死、冻得僵硬、撕成碎片，还会染上恶疾。这些在书中是很常见的，并不算是剧透。如果在刚开始阅读时你就做好了最坏的打算，那你或许可以更好地应对即将遭受的创伤。只是明白这一点：所有的这类描写都是为了紧张气氛、使作品更加真实，并且增添真实的危险和悬疑感。</p>
+  <h4 id="section-2"><strong>福利</strong></h4>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/754/0*trWvS3N8KV3hCEK9.jpg" />
+  </figure>
+  <p><a href="http://studioincandescence.deviantart.com/art/All-the-Kills-in-the-Game-of-Thrones-415126783">《权力的游戏》中的所有杀害关系</a>，由studioincandescence制作。</p>
+  <p><em>Studio Incandescence试着制作了一份展示（目前）《冰与火之歌》中所有杀害关系的信息图。不要看得太仔细（</em><strong><em>严重剧透</em></strong><em>），只是记住，这套书不适合胆小者阅读。</em></p>
+  <p><strong>不受中世纪语言的阻碍</strong></p>
+  <p>《牛津英语词典》（Kindle默认字典）中能查到马丁使用的大部分古英语单词。</p>
+  <p>什么是“<em>destrier</em>”（<em>军马</em>）？为什么士兵们要手执印有<em>sigils（图章）</em>的护盾？白雪是如何堆在<em>crenelations（雉堞，城墙防御体系中主要的攻防设施之一）</em>上的<em>？</em></p>
+  <p>除非你在中学时是<a href="http://dnd.wizards.com/">地下城主</a>[2]（Dungeon Master），否则这些词对你来说会像<a href="http://wiki.dothraki.org/Main_Page">多斯拉克语</a>（书中一个马背上的野蛮民族的语言）一样陌生。</p>
+  <p>对于书中的语言，<a href="http://blog.oxforddictionaries.com/2012/04/the-language-of-game-of-thrones/">牛津字典的博主山姆·普尔福德（Sam Pulford）</a>有话要说：</p>
+  <p><em>许多人将这一系列书籍称为“中世纪奇幻小说”，其中的一些用词也确实体现了这点。除了骑士制度的设定，书中所用的词汇也为其增添了中世纪的韵味。其中有一些是作者自己发明的词汇 — — 例如“turncloak”，意思是“变节者”（</em><a href="http://oxforddictionaries.com/definition/turncoat"><em>turncoat</em></a><em>），是马丁根据古代的读音修改而来。但是许多都是有着悠久历史的词语。Ser即Sir（先生），Southron即Southern（南方人），</em><a href="http://oxforddictionaries.com/definition/craven"><em>craven</em></a><em>即cowardly（胆怯的），根据《牛津英语词典》，它们的历史分别可以追溯到1451年、1488年和1400年。</em></p>
+  <p>我喜欢电子阅读器的一点是它们能方便读者查阅各种字典。我现在的电子阅读器Kindle Paperwhite也是如此。《牛津英语词典》是它的默认词典，它通常能够解释古英语和中世纪英语词汇。只要长按住不懂的单词，立刻就能查到它们的意思。如果连着无线，我还能快速点进<a href="http://www.wikipedia.org/">维基百科</a>来扩充我的知识。</p>
+  <p>当牛津不足以解释生词的时候，我总能通过<a href="http://keckrew.blogspot.ca/2013/06/game-of-thrones-kindle-dictionary.html">The Elephant制作的《权力的游戏》非官方词典</a>找到答案。它的下载和<a href="http://www.epubor.com/how-to-change-or-add-dictionary-to-kindle.html">安装</a>相对简单，还能通过<a href="http://awoiaf.westeros.org/">冰与火之歌维基</a>来向你解释诸如<em>turncloak和maester（学士）这类马丁自创的词语。</em></p>
+  <p>阻碍你的不只是古英语和一些马丁的自创词，书中还有其他的语言。幸运的是，马丁并没有用高等<a href="https://medium.com/p/5d0c7d67326b/edit">瓦雷利亚语（High Valyrian）和多斯拉克语</a>长篇书写，为读者省了力气。山姆·普尔福德在牛津字典的博客中写道：“书中七大王国的各种语言的特点和韵味是通过一些口语短语体现出来的，读者们可以稍后将那些短语与特定的语言联系起来。”他还引用了些例子：“<a href="https://medium.com/p/5d0c7d67326b/edit">阿斯塔波</a>[3](Astapor )的弥桑黛（Missendei）称呼自己为‘这个’而非‘我’”以及“多斯拉克人在提到常识或者民俗时会用‘众所周知’。”</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/540/0*9xWGJVqKFhnVrNxS.jpg" />
+  </figure>
+  <p>高等瓦雷利亚语短语“Valar Morghulis”，意为“凡人皆有一死。”你可能会在HBO电视剧《权力的游戏》第四季的闪电式宣传中看到这句话。</p>
+  <p>乔治•R•R•马丁并不像J·R·R·托尔金那样着迷于语言学。他选择仅仅创造一些具有代表性的词汇，代表那些语言的“韵味”。正如<a href="http://www.westeros.org/Citadel/SSM/Entry/1250/">马丁坦白</a>的那样，“托尔金是一名文献学者，是牛津大学的导师，能够几十年如一日地将精灵语精雕细琢。而我呢，只不过是一个勤勤恳恳的科幻和奇幻小说家，也没有他那样的语言天赋。换句话说，我并没有真正创造出一套瓦雷利亚语。我所能做的就是对我想像的世界中的主要语言进行粗描淡写，并让它们拥有独具特色的发音和拼写方式。”</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/600/0*7snzgorW4tIUKFfP.jpg" />
+  </figure>
+  <p>你可以通过网站<a href="http://www.dothraki.org/">冰火的语言</a>来学习瓦雷利亚语和多斯拉克语。</p>
+  <p>HBO的电视剧《权力的游戏》则需要对这些语言进行更加充分的描述，因为剧中的人物是要<em>大声说出</em>这些语言的。于是HBO聘请了<a href="http://conlang.org/">语言创造协会（Language Creation Society）</a>（这协会真是酷炫又怪异）的大卫·彼得森（David Peterson），让他利用书中的多斯拉克语和瓦雷利亚语片段来创造语言。</p>
+  <p>如果你想将自己武装到牙齿，你其实可以通过网站<a href="http://www.dothraki.org/">冰火的语言</a>来学习这些语言。</p>
+  <h4 id="section-3"><strong>不迷失于里面那个由名字怪异的城市及其周围的地理环境构成的广袤虚构世界之中</strong></h4>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*e8AU7aCFgkoYGoGz.jpg" />
+  </figure>
+  <p>图片来自于马丁和乔纳森·罗伯茨（Jonathan Roberts）制作的<a href="http://beckermayer.com/titles/the-lands-of-ice-and-fire/">《冰与火的大地》</a>（<a href="http://beckermayer.com/titles/the-lands-of-ice-and-fire/">The Lands of Ice and Fire</a>）</p>
+  <p>《冰与火之歌》中有将近550处不同的地理位置，从旅馆和城堡，到河流和小岛，到荒野和沙漠、群山和王国、城市和要塞，在里面你很容易迷路。谢天谢地有<a href="http://www.fantasticmaps.com/">乔纳森·罗伯茨</a>这位幻想世界的制图师。他和马丁合制了<a href="http://beckermayer.com/titles/the-lands-of-ice-and-fire/">《冰与火的大地》</a>，其中包含了12幅详细的维斯特洛大陆和已知世界的地图。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/764/0*gEpgkezcDSSBccCg.jpg" />
+  </figure>
+  <p><a href="http://awoiaf.westeros.org/images/6/64/Tomasz_Jedruszek_Kings_Landing.jpg">Tomasz Jedruszeks想象中的君临城</a></p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/594/0*_W-KCn9YWuoRTGS-.png" />
+  </figure>
+  <p>许多马丁笔下的角色在书中的世界漫游时，身边通常都会有一个博学的旅伴来给他们讲述当地乡村的情况和地标。我那位值得信任的旅伴便是iOS应用<a href="http://www.georgerrmartin.com/grrm_book/george-r-r-martins-a-world-of-ice-and-fire-mobile-app/">《冰火世界》</a>，乔纳森·罗伯茨绘制的华丽详细的地图，许多都能在上面查到，还可缩放。当书中角色进行旅行时，我会使用这个应用来查找河流、森林、平原、地区、要塞和城市的名称，这让我有一种身临其境的感觉。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1014/0*W1d3phO54MSn2ykn.jpg" />
+  </figure>
+  <p>在网站<a href="http://quartermaester.info/">quartermaester.info</a>上你能缩放地图、观察王国，或者跟随主要角色的脚步一章一章地旅行而防止剧透。</p>
+  <p>另一个致力于维斯特洛（和已知世界）地图的网站（<a href="http://quartermaester.info/">quartermaester.info</a>）给我们提供了类似于谷歌地图的体验，在那里你可以对详细的地图进行缩放，还能打开图层面板查看某一地区的影响势力和统治贵族。你还能点开主要角色的路径图，查看他们在各处的旅程路径。网站还有一个体贴的滑动条，通过它你可以根据自己的读书进度来调整路径图以避免不必要的剧透。</p>
+  <h4 id="section-4"><strong>不因其中史诗般的历史和神话而头脑混乱</strong></h4>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*0OCMSTg86g1gmeKE.jpg" />
+  </figure>
+  <p>奈杰尔·埃文·丹尼斯（Nigel Evan Dennis）绘制的<a href="https://medium.com/p/5d0c7d67326b/edit">维斯特洛</a>古代历史时间轴详细图，来自他的网站<a href="http://www.wherehaveallthewildlingsgone.com/#oldhistory">野人都去哪儿了？</a></p>
+  <p>《冰与火之歌》弥漫着中世纪欧洲的味道。马丁承认，他的奇幻史诗从其两大主要灵感中借鉴了许多元素：玫瑰战争（The War of the Roses），以及《受诅咒的君王》（The Accursed Kings）。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/174/0*PR26z0VBz8o7Lj_1.png" />
+  </figure>
+  <p>约克家族和兰开斯特家族（Houses York and Lancaster）的家徽给了马丁关于世仇王室的灵感。提利尔家族（House Tyrell）的家徽是一朵黄玫瑰，而兰尼斯特家族的则是一头狮子，这一家族的名字和兰开斯特异常相似。</p>
+  <p>玫瑰战争是敌对的约克家族和兰开斯特家族在1455和1487年间为争夺英格兰王位发动的王朝战争。最后在博斯沃思原野（Bosworth Field）的决战中，兰开斯特家族的亨利·都铎（Henry Tudor）战胜了约克家族的理查三世（King Richard III）。他立即通过迎娶约克家族的伊丽莎白来将两个敌对家族合二为一，建立了新的都铎王朝（迎来了黄金时代（the Golden Age））。莎士比亚也受到了这一充满戏剧性的著名历史事件的启发，创作了《理查三世》（The Tragedy of King Richard the Third）。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/214/0*PDgSUfWKZd-3XAlr.jpg" />
+  </figure>
+  <p>《铁国王》（The Iron King）是《受诅咒的君王》的第一卷，马丁将这一系列称为“<a href="https://medium.com/p/5d0c7d67326b/edit">《权力的游戏》之原型</a>”</p>
+  <p>乔治·R·R·马丁的第二个灵感便是<a href="http://en.wikipedia.org/wiki/The_Accursed_Kings">《受诅咒的君王》</a> — — 莫里斯·图翁(Maurice Druon)在1955年开始创作的七部曲。这一历史小说以13和14世纪的法国王朝中的勾心斗角为基础。马丁受邀为其最近出版的英语译本撰写介绍，将其形容为“《权力的游戏》之原型”。</p>
+  <p>马丁写道：“《受诅咒的君王》中的铁国王、被勒死的王后、战争和背叛、谎言和欲望、欺骗、家族敌对、<a href="https://medium.com/p/5d0c7d67326b/edit">圣殿骑士</a>的诅咒[4]（the curse of the Templars）、狸猫换太子、母狼[5]（she-wolves）、罪恶、宝剑、伟大王朝的厄运……所有的所有（呃，大部分）都直接取材于历史的篇章。”</p>
+  <p>就像在《指环王》中“<a href="https://www.youtube.com/watch?v=r21CMDyPuGo">我们靠走是进不了魔都的</a>”那样，我们也不能漫不经心地漫步于维斯特洛大陆。弄懂维斯特洛的神话和历史就像进行一场《指环王》中的护戒使者会议那样：在最糟的情况下你会感觉举步维艰，而在最好的情况下你会感到奇妙无比。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/775/0*AkJ-f3HoPIx4qE0x.jpg" />
+  </figure>
+  <p><a href="http://www.fastcodesign.com/1670630/a-top-nike-designer-rebrands-game-of-thrones"><em>达林·克雷森齐（Darrin Crescenzi）设计的维斯特洛各家族的族徽。</em></a></p>
+  <p>当乔治·R·R·马丁笔下的角色们讨论古代帝王和王室家族、著名战役、盛行的传言和古老的童话时，你最好集中注意力。有时，当不同家族的士兵组成的军队经过时，他们会描述几十种护盾和家徽。对读者来说，困难的并不仅仅是庞大的篇幅和信息量。故事中不同的角色和视角描述的这些家族信息是如何发展，如何扩充和变化的，这也对读者构成了挑战。</p>
+  <p>“正如故事会向前发展，同时它也会向后发展，通过展示眼前的事物在几十年、几世纪、甚至一千年前的样子来使这一事物更有层次，让其与历史共鸣。但是我们还了解到，我们不能信任书中对时间和历史的描述，因为事件发生的时间，甚至有没有发生过，都是不确定的。” — — 亚当·怀特海德（Adam Whitehead），《不可靠的世界：维斯特洛的历史和时间记录》（An Unreliable World: History and Timekeeping in Westeros），摘自《绝境长城之外》（Beyond the Wall）</p>
+  <p>《魔龙的狂舞》中的角色霍斯特·布莱伍德（Hoster Blackwood）支持怀特海德先生的说法。在引用一位古代学者的古老书卷时，他说：“大历史书说从那【安达尔人穿越狭海】以后已经过了四千年了，但是有些学士坚称只有两千年。总有那么一个时间点，从它再往前，所有的日子都变得模糊而混乱，而历史的真相也就成了笼罩着一层薄雾的传奇。”（译注：引号内借用了中文版《魔龙的狂舞》的翻译。）</p>
+  <p>这就给读者带来了负担，因为他们需要将这些不断变化的元素拼凑成一个连贯的整体。“一环扣一环，”怀特海德说，“我们从书中得到的信息是不完整的，这就要求读者客观地将杂乱的事实和观点结合在一起，形成一幅更大的图像。”模糊的历史、人物易受影响的记忆以及主观经验，这些模凌两可的内容为读者提供了丰富的交流和猜测的空间。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/378/0*kcKTURgY-8pum3oA.jpg" />
+  </figure>
+  <p><em>“这本配图丰富的书籍是对七国历史的全面记录，生动地描述了诱发《冰与火之歌》中的事件的史诗战役、家族苦战、以及勇敢的反叛。本书由马丁、小埃利奥·M·加西亚（Elio M. García, Jr）以及Westeros.org的创立者琳达·安东森（Linda Antonsson）合著。” — — 亚马逊</em></p>
+  <p><a href="http://asoiaf.westeros.org/">冰与火的论坛</a>（Westeros.org的一部分）名副其实，是那些喜欢用自己的理论来解释书中矛盾的粉丝们的论坛。论坛的创立者将各种历史和传说收集在一起，编写得极为出色，以至于乔治·R·R·马丁还凭借这些信息给《冰与火之歌》写了一本姐妹书，取名为《冰与火的世界：维斯特洛和权力的游戏秘史》（The World of Ice and Fire: The Untold History of Westeros and The Game of Thrones）。</p>
+  <p>最后我让自己放轻松，接受自己不能一次就将所有信息全部消化的事实。各种各样的网站及相关论坛就像是一个庞大的外部存储器，你能随时随地点进去查找信息。</p>
+  <h4 id="section-5"><strong>不因其中数不胜数的角色而摸不着头脑</strong></h4>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/615/0*tf3C5kCnNv0gP8pF.jpg" />
+  </figure>
+  <p>冰与火之歌维基上的<a href="http://awoiaf.westeros.org/index.php/House_Targaryen">坦格利安家谱</a></p>
+  <p>《冰与火之歌》中提到的角色将近两千人。等第七卷收尾时，书中史诗级的角色人数可能能与《圣经》匹敌（《圣经》中的角色人数也只不过是3200多人）。书中列出了400多个不同的家族，每一个都有自己独有的家徽，或者盾形徽号。其中一些举足轻重，但是绝大多数都只不过是马丁在构筑世界时用来装饰门面的而已。大部分章节是以书中主要角色的视角（POV ，<a href="https://medium.com/p/5d0c7d67326b/edit">point-of-view</a>）写成的，这些角色是那些正在发生的复杂事件的见证者。在第一卷《权力的游戏》中，有八个不同的视角。当你读完第五卷《魔龙的狂舞》时，你已经接触过14个主要视角，10个次要视角，7个作为前言和后记出现的一次性视角了。这些视角真是数量庞大，难以处理。</p>
+  <p>有时这些视角还会重合，描述相同的场景和对话。如果你在读完《群鸦的盛宴》第五章之后立即阅读《魔龙的狂舞》第七章的话，你会刚觉到一种强烈的即视感（déja vu）。当山姆和琼恩相遇时，两本书中两人的动作相似，对话都是一样的。幸好这种情况不常发生。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*xgYxaZTsn4FKwZQZ.gif" />
+  </figure>
+  <p>有时不同角色的视角会重合，就像《群鸦的盛宴》第五章中山姆的视角和《魔龙的狂舞》第七章中琼恩的视角那样。</p>
+  <p>目前我已经把全套书都读完了（每一本我都爱不释手），但是随着故事接近尾声，我遇到了一些问题。卷四并未提及一些我钟爱的角色，当卷五终于出版时，我只读了几章就已经云里雾里了。在与《大西洋月刊》（The Atlantic）的记者蕾切尔·布朗（Rachael Brown）的访谈中，乔治承认：“《魔龙的狂舞》并非第五卷，而更像是另一个版本的第四卷。这两本书是平行的，故事都是在《冰雪的风暴》（第三卷）结束后三分钟开始的。 我花了一年时间在网上寻找一个巧妙的、系统的，但又不带剧透的方法来帮助我以平行的方式阅读这两本书。最终我在汤不热（tumblr）上找到了一个名为“所有皮革都欠煮”（All Leather Must Be Boiled）的博客。博主肖恩·T·科林斯（Sean T. Collins）是一名撰稿人，为《滚石杂志》（Rolling Stone）撰写关于《权力的游戏》的文章<a href="http://boiledleather.com/post/25902554148/a-new-reader-friendly-combined-reading-order-for-a">。他将两本书结合在一起，发布了一个方便读者的阅读顺序</a>。他的推荐语如下：</p>
+  <p>第一次读《冰与火之歌》？你听没听说第四卷和第五卷，即《群鸦的盛宴》和《魔龙的狂舞》的故事时间段是一样的，但却把角色分开了，所以《盛宴》中的大部分角色并不会出现于《狂舞》中，《狂舞》中的角色也是如此？……你是否想把这两个部分的故事重新梳理在一起，帮助自己更加享受阅读过程？来看看这个吧！</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/492/0*XueRdkGYLei4O_FX.png" />
+  </figure>
+  <p>“<a href="http://boiledleather.com/post/25902554148/a-new-reader-friendly-combined-reading-order-for-a">方便读者的《群鸦的盛宴》和《魔龙的狂舞》重组顺序</a>”</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/592/0*d5HaBvL_M9l1VNwu.png" />
+  </figure>
+  <p>官方手机配套应用《冰火世界》能让你查看角色简介，但是每次摸不着头脑时就放下Kindle拿起爱疯会让人感到乏味，影响阅读流畅。</p>
+  <p>记得前几章里我提到的<a href="http://keckrew.blogspot.ca/2013/06/game-of-thrones-kindle-dictionary.html">权力的游戏非官方Kindle字典</a>吗？它最大的用处就是帮助查阅角色简介。不认识某人？在你的Kindle Paperwhite上长按他的名字然后放开，页面上就会叠加出现摘自冰火维基的不带剧透的人物描述。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/750/0*Rsiy0DvGJtpZgBw7.jpg" />
+  </figure>
+  <p>某个耐心的读者在<a href="http://imgur.com/X5JznsJ">马丁的《冰与火之歌》中标记出了所有有角色死亡的书页</a>。害怕吧。提心吊胆吧。</p>
+  <p>别对你心爱的角色用情太深。马丁可能将所有主要角色赶尽杀绝。“我们在电影中经常看见陷入困境的主角，”马丁说，“他被20人包围，但是你知道他能脱身，因为他有主角光环。你并不是真的担心他。而我希望我的读者……在我书中的角色陷入危险时感到害怕。我希望他们会害怕翻页，害怕那个角色活不过下一页。”</p>
+  <p>在权力的游戏中，没有人是安全的，也没有什么事物是神圣的。这也是刺激之处。你真的不知道接下来会发生什么。任何事情都不是确定的。就像他们用高等瓦雷利亚语说的那样：Valar Morghulis(凡人皆有一死)。</p>
+  <h4 id="section-6"><strong>不因其对风俗和文化的详细描写而感到无趣</strong></h4>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/260/0*g6SwflaHykrQQLeu.jpg" />
+  </figure>
+  <p>乔治·R·R·马丁的权力的游戏：《冰与火的盛宴：官方配套食谱》（A Feast of Ice &amp; Fire: The Official Companion Cookbook）</p>
+  <p>乔治·R·R·马丁在《冰与火的盛宴：官方配套食谱》的引言中坦白到：“对我来说读书就像旅行。读书时我想要观赏景色，闻闻花香，当然还有品尝食物。作为作者，我的目标一直都是为我的读者创造身临其境的体验。当一位读者放下我的书，我希望他能记住书中的情节，就像那是他亲身体验过的事情一样。而要取得这样的效果，方法便是为读者提供感官细节。”</p>
+  <p>乔治有确实保证了读者能够身临其境。在一场极其重要的婚礼上，有77道主菜被端上了宴席。差不多每道菜都有描写。</p>
+  <p><em>……我耗费了许多的精力来描述书中角色的食物：食物是什么、怎么制作的、色香味如何。这样让场景变得真实生动，令人难忘。感官印象能从更深、更原始的层次打动我们，再智慧的话语都做不到这一点。</em></p>
+  <p><em>而且我描述的那些食物还有其他的用处。史诗奇幻文学的吸引人之处，一部分在于世界的构建，而食物又是世界构建的一部分。从角色们的食物（以及角色们不吃的东西）中，读者能了解到许多关于那个世界和文化的知识。 — — GRRM，《冰与火的盛宴：官方配套食谱》</em></p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/396/0*xI4V0yolO4EwoY5o.jpg" />
+  </figure>
+  <p>席恩‧葛雷乔伊(Theon Greyjoy)的服饰，由<a href="http://www.micheleclapton.com/got_s1_images.html">米歇尔·克莱普顿</a>为HBO的电视剧《权力的游戏》设计。</p>
+  <p>对七大王国（及其之外的世界）的细节描写并不局限于食物：不同文化的服装、建筑、歌谣、武器、以及社会风谷在书中都有详细介绍。</p>
+  <p>书中的世界，即马丁构建的世界，仍在扩大。它还有许多的衍生物，包括地图、食谱、服饰、一部红极一时的电视剧、游戏（棋类游戏、纸牌游戏、角色扮演游戏、电子游戏）、艺术品、歌谣、论坛、维基、网站。它已经和我们的独特文化相互交织了。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/800/0*SGBS71pW_I85TbXA.jpg" />
+  </figure>
+  <p>2014年挪威首都奥斯陆的《冰与火之歌》武器展，照片由本杰明·史坚达拍摄。</p>
+  <p>许多读者批评马丁说他的描写过多，显得累赘。一个网络笑话说所有的角色都撑不过卷五，“<a href="https://www.goodreads.com/quotes/825477-no-one-will-be-alive-by-the-last-book-in">卷六的一千页不过是描写白雪飘扬下的凄凉墓地</a>”。</p>
+  <p>乔治承认，他经常受读者诟病，因为书中“不必要的宴会、不必要的服装、不必要的纹章，这些对情节的发展来说可有可无。但是，”<a href="http://www.theatlantic.com/entertainment/archive/2011/07/george-rr-martin-on-sex-fantasy-and-a-dance-with-dragons/241738/">他在与《大西洋月刊》的蕾切尔·布朗的访谈中坦白说道</a>，“我认为，读小说并不是为了了解情节的发展。如果我们只关注情节，那为什么还要读小说？读读文学导读就够了。”</p>
+  <p>说得太好了！</p>
+  <h4 id="section-7"><strong>结语</strong></h4>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/500/0*E6RfhIS43ydYil2o.jpg" />
+  </figure>
+  <p>就像出国旅游一样，你总是可以选择不去旅游，而是躺在自家舒适安全的沙发上观看旅游视频。《权力的游戏》是HBO最为火热的电视剧，其中包含了原著中的大部分重要情节。</p>
+  <p>我的选择是，在沉浸于电视剧之前先阅读原著。在屈从于别人的体验（虽然也是奇幻的体验）之前先自己亲身感受一下。如果你还没有看过电视剧或者没读过原著，这份妙极了的<a href="http://www.reddit.com/r/gameofthrones/wiki/faq#wiki_should_i_read_the_books_first_or_watch_the_show_first.3F">Reddit网冰火常见问题解答</a>能为你提供所有的论点，帮助你衡量是否应该将原著和电视剧结合起来看。</p>
+  <p>不论你最终的决定如何，我希望这篇文章能帮助减少你的疑虑。一下是六个潜在障碍：</p>
+  <p>1. <strong>创伤：</strong>书中的残忍情节会给你的心灵造成创伤，但那些情节是必要的，它能塑造我们对维斯特洛大陆及其文化道德和行为方式的认识。</p>
+  <p>2. <strong>语言：</strong>你能通过免费的Kindle字典来瓦解中世纪语言带来的障碍（如果你不用Kindle，网上总会有答案）。</p>
+  <p>3. <strong>地理：</strong>你可以通过专业绘制的地图来探索整个“已知世界”（有纸质的、在线的和智能手机版的）。</p>
+  <p>4. <strong>历史/神话：</strong>你可以通过论坛上的朋友们绘制的时间轴，或者新书《冰与火之歌的世界》来缕清或者研究书中磅礴又模糊的历史和神话。</p>
+  <p>5. <strong>角色：</strong>如果书中史诗般庞大的角色阵容让你头晕眼花，一个App可以帮助你：《冰火世界》，支持iOS6和安卓，你能在查看角色介绍的同时避免被剧透。</p>
+  <p>6. <strong>无趣：</strong>这我可就没办法了。但是请明白这点：《冰与火之歌》是一片广阔复杂的土地，其间遍布着财富。这是一个供你细细品味，亲身体验的世界。游览维斯特洛就要完全沉浸于其细节之中，与角色交流，并将自己迷失于故事之中。</p>
+  <p><strong>凡人皆需阅读！（Valar Pikiptis!）</strong></p>
+  <p>_____________</p>
+  <p><strong>译注：</strong></p>
+  <p>[1] 到到网：到到网是TripAdvisor的中国官网，TripAdvisor是全球最大最受欢迎的旅游社区，也是全球第一的旅游评论网站。</p>
+  <p>[2] 地下城主：是进行龙与地下城系列桌上角色扮演游戏时组织玩家的游戏主持人，一般由精通游戏规则、经验丰富的老玩家担任</p>
+  <p>[3] 阿斯塔波：《冰与火之歌》中奴隶湾的一座城市,以出产一种特殊的奴隶 — — 无垢者而闻名。</p>
+  <p>[4] 圣殿骑士的诅咒：圣殿骑士团是中世纪天主教的军事组织，乃著名的三大骑士团之一。1312年，法王腓力四世提出要求，教皇克雷芒五世宣布解散圣殿骑士团。1314年，骑士团大团长雅克·德·莫莱在上火刑架之前，诅咒法王腓力四世和教皇克雷芒五世，说他们会在一年内面临永恒的审判。事实的确与之符合。教皇克雷芒五世一个月后暴病而死，“美男子”腓力四世半年后打猎时突然身亡。</p>
+  <p>[5] 母狼：指伊莎贝拉王后，1292年生于法国。</p>
+  <p>Translated by <a href="http://select.yeeyan.org/view/468525/429092">sibyl玥</a>，<a href="http://www.yeeyan.org/">Yeeyan</a></p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=5d0c7d67326b" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/">
+          我为什么不做一个 TED 讲者
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E5%A6%82%E4%BD%95%E4%B8%93%E5%BF%83%E7%9D%A1%E7%9C%A0/">
+          如何专心睡眠
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2014-08-27/%E7%BB%99%E6%88%91%E5%89%8D%E4%BB%BB%E4%B8%BB%E4%BA%BA%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1/">
+          给我前任主人的一封信
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">
+          A Letter to My Former Family From a Shelter Cat
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2014-12-17/%E7%BD%91%E7%BB%9C%E6%96%B0%E9%97%BB%E7%AE%A1%E5%88%B6%E4%B8%8B%E7%9A%84-%E4%B8%B4%E6%97%B6-%E5%AA%92%E4%BD%93%E4%BA%BA/">
+            前一篇：网络新闻管制下的“临时”媒体人
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2014-12-18/%E5%A6%82%E4%BD%95%E4%B8%93%E5%BF%83%E7%9D%A1%E7%9C%A0/">
+            後一篇：如何专心睡眠
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2014-12-17/%E7%BD%91%E7%BB%9C%E6%96%B0%E9%97%BB%E7%AE%A1%E5%88%B6%E4%B8%8B%E7%9A%84-%E4%B8%B4%E6%97%B6-%E5%AA%92%E4%BD%93%E4%BA%BA/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E5%A6%82%E4%BD%95%E4%B8%93%E5%BF%83%E7%9D%A1%E7%9C%A0/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E5%A6%82%E4%BD%95%E4%B8%93%E5%BF%83%E7%9D%A1%E7%9C%A0/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2014-08-27/%E7%BB%99%E6%88%91%E5%89%8D%E4%BB%BB%E4%B8%BB%E4%BA%BA%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2014-12-17/%E7%BD%91%E7%BB%9C%E6%96%B0%E9%97%BB%E7%AE%A1%E5%88%B6%E4%B8%8B%E7%9A%84-%E4%B8%B4%E6%97%B6-%E5%AA%92%E4%BD%93%E4%BA%BA/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2014-12-18/%E5%A6%82%E4%BD%95%E4%B8%93%E5%BF%83%E7%9D%A1%E7%9C%A0/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2014-12-18/%E5%A6%82%E4%BD%95%E4%B8%93%E5%BF%83%E7%9D%A1%E7%9C%A0/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2014-08-27/%E7%BB%99%E6%88%91%E5%89%8D%E4%BB%BB%E4%B8%BB%E4%BA%BA%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

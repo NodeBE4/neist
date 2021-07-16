@@ -1,0 +1,3377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>翻墙安全 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+  
+    
+      
+        
+              
+  贝带劲  在 星期五, 11/28/2014 - 16:25 提交 
+          
+          
+            
+              
+                
+                  
+                      3589639652_be6734f90c_z.jpg  
+                    
+                       
+                        
+                          
+ 图： Mónidas de Mon 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   翻墙安全 
+                
+              
+            
+            
+              
+文/
+              
+  贝带劲 
+            
+            
+              
+                
+                  大陆网络管制愈加严峻的如今，翻墙技术已成为大陆网民首要基础技能。但能翻墙不代表就有信息安全保障，使用代理也不一定就能确保匿名，Java、Office、iTunes、Quicktime、Flash都能侦测到真实的IP，也就是说，这些浏览器插件是需要谨慎使用的。此外，虽然大多数墙外平台不至于与中国当局合作而泄露用户资料，但用户自己泄露个人信息而导致被人肉搜索到的情况却并不罕见。
+                   不推荐使用国产VPN 
+                  市场研究公司Globalwebindex在2014年Q3的GWI Social报告中，特别观察了利用VPN和代理服务器访问受限社交网络的趋势。报告指，中国有9300万VPN网民，占据整体网民的20%。这个数字有可能被高估了，但也能透露在中国的VPN用户的确不少。   VPN（Vitral Private Network）是诸多翻墙手段中比较常用的一种，门槛低操作简单，适合小白用户，相比下付费的VPN更为稳定。它的原理是客户端使用相应的协议与VPN服务器进行通信，成功连接后在操作系统内建立一个虚拟网卡，一般来说默认PC上所有网络通信都从这虚拟网卡上进出，经过VPN服务器中转后再到达目的地。通常VPN协议都会对数据流进行强加密处理，从而使得第三方（如GFW）无法得知数据内容。但VPN服务器本身会知道用户所操作的内容。   VPN协议主要有：PPTP，L2TP，IPSEC，OPENVPN，SSL VPN，Ikev2 VPN，Cisco VPN，其中的PPTP和L2TP是明文传输协议。PPTP的协议规范本身并没有描述加密或身份验证的部份，它依靠点对点协议（PPP）来实现这些安全性功能。当用户使用PPTP VPN翻墙时，实际上是同时启用了128位MPPE（微软点对点加密），但目前GFW已经做到了暴力破解MPPE加密的能力。（暴力破解又叫穷举法，是一种针对于密码的破译方法，即将密码进行逐个推算直到找出真正的密码为止。理论上利用这种方法可以破解任何一种密码，问题只在于如何缩短试误时间。）   PPTP协议的加密实现-MPPE是基于RC4的，目前也很容易被破解，MS-CHAP2的实现是用用户密码的MD4作为密钥加密，都可以轻而易举破解。  曾经有网友表示，用VPN上推特会在联通查到记录  。 PPP没有对完整性的保护，链路上的分组可以被篡改和重放。没有完整性保护的加密是没有意义的，比如攻击者可以窃听，然后修改IP payload上的 destination 后重放，曾经有针对 WEP 的攻击用此方法。 另，PPP 的控制消息也没有任何保护，对于配置不当或者实现不当的 PPTP, 可以通过伪造 ECP 包，把 ms-chap, mppe 降级成 pap, 无加密。   Windows 下 L2TP/IPSec 实现也不很安全，它没有将 IPSec 指定为 required 的选项，如通过干扰 IKE, 可以把 L2TP/IPSec 降级成没有 IPSec 保护的 L2TP。   曾经有用户表示，当  Shadowsocks  的加密连接算法设置为默认的RC4或略有改进的RC4-MD5时，用上一段时间就会被GFW封锁，需要改密码或IP才能继续使用。网友Ghost Assassin推测认为，如果GFW成功识别了Shadowsocks与远程服务器建立连接时的特征，那么不管使用什么加密方式都会很快被GFW干扰，而不会只有RC4-MD5和RC4连接被干扰，那么最大的可能就是GFW已经可以破解RC4-MD5，而它同时也是MPPE使用的加密算法，那么PPTP VPN就不再安全了。   L2TP不含任何认证和加密功能，全由 IPSec 负责，IKE是 IPSec 的一部分，L2TP 本身只完成数据传输之类的工作，不负责认证和加密，需要配合其它安全协议使用。L2TP/IPSec并没有被GFW严重封锁，目前尚不清楚原因，Ghost Assassin的分析认为或可能是当局有意释放，借以钓鱼。   相比下，OPEN VPN的身份验证机制很完善，隧道加密程度也比较强，使用的是OPEN SSL加密算法，提供了可选的数据包HMAC功能以提高连接的安全性。此外，OpenSSL的硬件加速也能提高它的性能。在用户空间运行中，无须对内核及网络协议栈作修改，初始完毕后以chroot方式运行，放弃root权限，使用mlockall以防止敏感数据交换到磁盘。或正因此，OPEN VPN也是被封锁得比较严重的一个。   GFW的危害在于它不只有封锁一个目的，更有监控的功能，中国当局的法律上没有明确指出使用VPN违法，又有不少内地供应商在出售和提供免费VPN，同时又有一部分VPN被封杀，这就不由得让人起疑。曾经有用户反映，不少墙内VPN都没有办法作为  TOR  的前置代理   ，“打开Tor浏览器显示洋葱头是打x的，没有变成绿色的洋葱头，只有连接国外vpn时Tor的洋葱头才是绿色的”，   分析认为，有可能是国内 VPN 对 IP 或域名进行了过滤所致， 推测大陆的VPN有可能留有后门。建议使用VPN+TOR（Tor Browser Bundle），它可  以提供匿名的网络访问，保护隐私  ，目前认为当局无法破解TOR流量，可以确保翻墙安全。另外，不推荐使用免翻推特端发布敏感讯息，普通浏览还是可以的。
+                  
+                    
+                      
+                         
+                          
+                            
+ 图/ casmaron 
+                            
+                          
+                        
+                      
+                    
+                  
+                   此外，360浏览器、百度浏览器等国内浏览器官方内置的翻墙功能都不支持使用，这些代理很可能会被用于  中间人攻击  。如果该“中间人”与浏览器官方同一阵线，那么浏览器验证机制就会放行这种攻击。国内产浏览器也不推荐使用，有用户透露，360浏览器在安装的过程中就引发了win7系统报警，证明该程序有规避认证的行为。全球三大桌面浏览器在隐私保护方面的比较一般认为，Firefox最优，其次是Chrome/Chromium，再其次是IE。
+                   保护个人隐私信息细节   尽可能远离大陆网络平台和服务 
+                  发照片自爆是很多网友的喜好，但经常发表敏感政治言论的网友这方面就要小心些了，很容易因此被人肉搜索到。另，建议登陆海外网站的时候尽可能不使用和在大陆平台上同样的昵称和同样的本人照片头像，即便墙内身份暴露，只要否认墙外身份，“有关部门”就基本无法获取证据。   很多社交平台都有分享地理位置的功能，比如墙内的微信、微博和墙外的推特等，但不推荐使用，如果您用的是苹果产品，可以直接选择在设置中关闭定位服务的方法来保护行踪隐私。   有些网站希望用户输入求学就业经历，以便联系到同学同事互相添加。如果该应用是大陆开发的产品就不推荐使用这项功能。您肯定有其他方式联系到您觉得值得联系的同学和同事。    尽可能不使用公共场合免费的wifi  ，如果遭遇恶意搭建的wifi，很容易被盗取个人信息，其他安全性不明的wifi网络也要谨慎选择。   曾经有网友曝，小米手机和小米平板都会在用户使用加密数据或使用VPN翻墙時，窃取数据并发送到北京某服務器；360系列软件则会监控用戶的qq、skype等通讯窃取数据。对于后者已能基本确信，对于前者建议谨慎选择以防患于未然。   大陆产的杀毒软件也不推荐使用，  本网曾有报道  ，奇虎 360 投资的一家微型公司“麦芽地”，其前身是个人网站“麦克孤独”，被曝是“WireLurker(MacHook)”木马制作者和传播者。   11月3号出台的《  反恐法草案  》中第十五条提到：“电信业务经营者、互联网服务提供者应当在电信和互联网的设计、建设和运行中预设技术接口，将密码方案报密码主管部门审查。未预设技术接口，或者未报审密码方案的，相关产品或者技术不得投入使用。已经投入使用的，主管部门应当责令其立即停止使用。在中华人民共和国境内提供电信业务、互联网服务的，应当将相关设备、境内用户数据留存在中华人民共和国境内。拒不留存的，不得在中华人民共和国境内提供服务”。该草案很可能全盘通过，也就是说，极大程度上增强了使用国内平台和服务的危险性。   有些网友喜欢使用  密码管理软件  ，每个网站都用随机密码，以便于减少被破解机率。但据11月20号Solidot的报道，BM Trusteer称，计算机罪犯正以保存用户最敏感登录凭证的密码管理器为目标，利用按键记录工具去窃取主密码。Citade木马的一个配置文件设计在用户打开两种开源密码管理工具Password Safe或KeePass时启动按键记录器。安全研究人员认为，以密码管理器作为重点攻击目标将会在未来日益流行。能自动生成随机密码的密码管理器有助于增强在线账号的安全性，但如果密码管理器的主密码失窃，其保存的所有密码将会同时失窃，影响要比单一账户被攻陷严重得多。﻿   此外，对大陆用户来说，尽可能选用  谷歌邮箱传递紧要讯息，设置两步验证  ，经常更换密码。Gmail可以让Web用户在登录和使用GMail的整个连接过程全部为HTTPS协议加密传输。用客户端软件POP3或者IMAP协议访问GMAIL，如Outlook Express、Foxmail、Entourage、Eudora、Netscape Mail、Mozilla等也可设置为SSL安全连接。相比之下，大多数免费邮件服务器不提供，或者只在用户身份认证时才提供SSL连接。前期有根据谷歌和加州大学圣迭戈分校的一份研究报告指，黑客入侵电子邮件只需三分钟，之后使用关键字搜索方式判断该邮箱是否有价值，只要符合黑客需要，一般在有价值的邮箱中花15到20分钟便搞定如何利用你的邮件。如做更安全考虑，可将紧要内容发过后及时删除（如需可另作保存），并在“已删除邮件中”选择“永久删除”。   大陆用户无疑会面临越来越恶劣的网络环境，一方面是GFW的升级使翻墙变得愈加困难，另一方面，用户的信息安全也越来越缺乏保障。用户有必要了解上网（翻墙）的环境，更有必要了解在中国发布言论的风险。“事实是，任何网络安全措施都有可能避免不了极权的打击，但是不能因此放弃或者忽视网络安全策略。即便如此，很多勇敢的表达者依然通过互联网在传播着他们的观点。无论极权怎样去控制、禁止用户的表达和传播，互联网都会告诉它：对极权的反对永远不会疲倦，不会恐惧，不会停息”，时评人苏星河表示。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                全网封杀“变态辣椒”说明什么？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                当 “不作恶” 成为空谈，“定制人”将终结民主                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                一国两制病了 而香港政府没有药                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                中国宣布2015净网计划：还会发生什么？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    LesWape (未验证)  
+                   星期三, 06/05/2019 - 08:32 
+                   永久连接 
+                
+              
+              
+                
+                  Cheap Generic Cialis LesWape  
+                
+                    
+                    
+                      
+                        Amoxicillin Clavulanate Acid &lt;a href=  http://cialtadalaf.com&gt;cialis  from canada&lt;/a&gt; Viagra 100mg No Prescription On Line Zentel Low Price Trimohills
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    <meta property="og:description" content="
+  
+    
+      
+        
+              
+  贝带劲  在 星期五, 11/28/2014 - 16:25 提交 
+          
+          
+            
+              
+                
+                  
+                      3589639652_be6734f90c_z.jpg  
+                    
+                       
+                        
+                          
+ 图： Mónidas de Mon 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   翻墙安全 
+                
+              
+            
+            
+              
+文/
+              
+  贝带劲 
+            
+            
+              
+                
+                  大陆网络管制愈加严峻的如今，翻墙技术已成为大陆网民首要基础技能。但能翻墙不代表就有信息安全保障，使用代理也不一定就能确保匿名，Java、Office、iTunes、Quicktime、Flash都能侦测到真实的IP，也就是说，这些浏览器插件是需要谨慎使用的。此外，虽然大多数墙外平台不至于与中国当局合作而泄露用户资料，但用户自己泄露个人信息而导致被人肉搜索到的情况却并不罕见。
+                   不推荐使用国产VPN 
+                  市场研究公司Globalwebindex在2014年Q3的GWI Social报告中，特别观察了利用VPN和代理服务器访问受限社交网络的趋势。报告指，中国有9300万VPN网民，占据整体网民的20%。这个数字有可能被高估了，但也能透露在中国的VPN用户的确不少。   VPN（Vitral Private Network）是诸多翻墙手段中比较常用的一种，门槛低操作简单，适合小白用户，相比下付费的VPN更为稳定。它的原理是客户端使用相应的协议与VPN服务器进行通信，成功连接后在操作系统内建立一个虚拟网卡，一般来说默认PC上所有网络通信都从这虚拟网卡上进出，经过VPN服务器中转后再到达目的地。通常VPN协议都会对数据流进行强加密处理，从而使得第三方（如GFW）无法得知数据内容。但VPN服务器本身会知道用户所操作的内容。   VPN协议主要有：PPTP，L2TP，IPSEC，OPENVPN，SSL VPN，Ikev2 VPN，Cisco VPN，其中的PPTP和L2TP是明文传输协议。PPTP的协议规范本身并没有描述加密或身份验证的部份，它依靠点对点协议（PPP）来实现这些安全性功能。当用户使用PPTP VPN翻墙时，实际上是同时启用了128位MPPE（微软点对点加密），但目前GFW已经做到了暴力破解MPPE加密的能力。（暴力破解又叫穷举法，是一种针对于密码的破译方法，即将密码进行逐个推算直到找出真正的密码为止。理论上利用这种方法可以破解任何一种密码，问题只在于如何缩短试误时间。）   PPTP协议的加密实现-MPPE是基于RC4的，目前也很容易被破解，MS-CHAP2的实现是用用户密码的MD4作为密钥加密，都可以轻而易举破解。  曾经有网友表示，用VPN上推特会在联通查到记录  。 PPP没有对完整性的保护，链路上的分组可以被篡改和重放。没有完整性保护的加密是没有意义的，比如攻击者可以窃听，然后修改IP payload上的 destination 后重放，曾经有针对 WEP 的攻击用此方法。 另，PPP 的控制消息也没有任何保护，对于配置不当或者实现不当的 PPTP, 可以通过伪造 ECP 包，把 ms-chap, mppe 降级成 pap, 无加密。   Windows 下 L2TP/IPSec 实现也不很安全，它没有将 IPSec 指定为 required 的选项，如通过干扰 IKE, 可以把 L2TP/IPSec 降级成没有 IPSec 保护的 L2TP。   曾经有用户表示，当  Shadowsocks  的加密连接算法设置为默认的RC4或略有改进的RC4-MD5时，用上一段时间就会被GFW封锁，需要改密码或IP才能继续使用。网友Ghost Assassin推测认为，如果GFW成功识别了Shadowsocks与远程服务器建立连接时的特征，那么不管使用什么加密方式都会很快被GFW干扰，而不会只有RC4-MD5和RC4连接被干扰，那么最大的可能就是GFW已经可以破解RC4-MD5，而它同时也是MPPE使用的加密算法，那么PPTP VPN就不再安全了。   L2TP不含任何认证和加密功能，全由 IPSec 负责，IKE是 IPSec 的一部分，L2TP 本身只完成数据传输之类的工作，不负责认证和加密，需要配合其它安全协议使用。L2TP/IPSec并没有被GFW严重封锁，目前尚不清楚原因，Ghost Assassin的分析认为或可能是当局有意释放，借以钓鱼。   相比下，OPEN VPN的身份验证机制很完善，隧道加密程度也比较强，使用的是OPEN SSL加密算法，提供了可选的数据包HMAC功能以提高连接的安全性。此外，OpenSSL的硬件加速也能提高它的性能。在用户空间运行中，无须对内核及网络协议栈作修改，初始完毕后以chroot方式运行，放弃root权限，使用mlockall以防止敏感数据交换到磁盘。或正因此，OPEN VPN也是被封锁得比较严重的一个。   GFW的危害在于它不只有封锁一个目的，更有监控的功能，中国当局的法律上没有明确指出使用VPN违法，又有不少内地供应商在出售和提供免费VPN，同时又有一部分VPN被封杀，这就不由得让人起疑。曾经有用户反映，不少墙内VPN都没有办法作为  TOR  的前置代理   ，“打开Tor浏览器显示洋葱头是打x的，没有变成绿色的洋葱头，只有连接国外vpn时Tor的洋葱头才是绿色的”，   分析认为，有可能是国内 VPN 对 IP 或域名进行了过滤所致， 推测大陆的VPN有可能留有后门。建议使用VPN+TOR（Tor Browser Bundle），它可  以提供匿名的网络访问，保护隐私  ，目前认为当局无法破解TOR流量，可以确保翻墙安全。另外，不推荐使用免翻推特端发布敏感讯息，普通浏览还是可以的。
+                  
+                    
+                      
+                         
+                          
+                            
+ 图/ casmaron 
+                            
+                          
+                        
+                      
+                    
+                  
+                   此外，360浏览器、百度浏览器等国内浏览器官方内置的翻墙功能都不支持使用，这些代理很可能会被用于  中间人攻击  。如果该“中间人”与浏览器官方同一阵线，那么浏览器验证机制就会放行这种攻击。国内产浏览器也不推荐使用，有用户透露，360浏览器在安装的过程中就引发了win7系统报警，证明该程序有规避认证的行为。全球三大桌面浏览器在隐私保护方面的比较一般认为，Firefox最优，其次是Chrome/Chromium，再其次是IE。
+                   保护个人隐私信息细节   尽可能远离大陆网络平台和服务 
+                  发照片自爆是很多网友的喜好，但经常发表敏感政治言论的网友这方面就要小心些了，很容易因此被人肉搜索到。另，建议登陆海外网站的时候尽可能不使用和在大陆平台上同样的昵称和同样的本人照片头像，即便墙内身份暴露，只要否认墙外身份，“有关部门”就基本无法获取证据。   很多社交平台都有分享地理位置的功能，比如墙内的微信、微博和墙外的推特等，但不推荐使用，如果您用的是苹果产品，可以直接选择在设置中关闭定位服务的方法来保护行踪隐私。   有些网站希望用户输入求学就业经历，以便联系到同学同事互相添加。如果该应用是大陆开发的产品就不推荐使用这项功能。您肯定有其他方式联系到您觉得值得联系的同学和同事。    尽可能不使用公共场合免费的wifi  ，如果遭遇恶意搭建的wifi，很容易被盗取个人信息，其他安全性不明的wifi网络也要谨慎选择。   曾经有网友曝，小米手机和小米平板都会在用户使用加密数据或使用VPN翻墙時，窃取数据并发送到北京某服務器；360系列软件则会监控用戶的qq、skype等通讯窃取数据。对于后者已能基本确信，对于前者建议谨慎选择以防患于未然。   大陆产的杀毒软件也不推荐使用，  本网曾有报道  ，奇虎 360 投资的一家微型公司“麦芽地”，其前身是个人网站“麦克孤独”，被曝是“WireLurker(MacHook)”木马制作者和传播者。   11月3号出台的《  反恐法草案  》中第十五条提到：“电信业务经营者、互联网服务提供者应当在电信和互联网的设计、建设和运行中预设技术接口，将密码方案报密码主管部门审查。未预设技术接口，或者未报审密码方案的，相关产品或者技术不得投入使用。已经投入使用的，主管部门应当责令其立即停止使用。在中华人民共和国境内提供电信业务、互联网服务的，应当将相关设备、境内用户数据留存在中华人民共和国境内。拒不留存的，不得在中华人民共和国境内提供服务”。该草案很可能全盘通过，也就是说，极大程度上增强了使用国内平台和服务的危险性。   有些网友喜欢使用  密码管理软件  ，每个网站都用随机密码，以便于减少被破解机率。但据11月20号Solidot的报道，BM Trusteer称，计算机罪犯正以保存用户最敏感登录凭证的密码管理器为目标，利用按键记录工具去窃取主密码。Citade木马的一个配置文件设计在用户打开两种开源密码管理工具Password Safe或KeePass时启动按键记录器。安全研究人员认为，以密码管理器作为重点攻击目标将会在未来日益流行。能自动生成随机密码的密码管理器有助于增强在线账号的安全性，但如果密码管理器的主密码失窃，其保存的所有密码将会同时失窃，影响要比单一账户被攻陷严重得多。﻿   此外，对大陆用户来说，尽可能选用  谷歌邮箱传递紧要讯息，设置两步验证  ，经常更换密码。Gmail可以让Web用户在登录和使用GMail的整个连接过程全部为HTTPS协议加密传输。用客户端软件POP3或者IMAP协议访问GMAIL，如Outlook Express、Foxmail、Entourage、Eudora、Netscape Mail、Mozilla等也可设置为SSL安全连接。相比之下，大多数免费邮件服务器不提供，或者只在用户身份认证时才提供SSL连接。前期有根据谷歌和加州大学圣迭戈分校的一份研究报告指，黑客入侵电子邮件只需三分钟，之后使用关键字搜索方式判断该邮箱是否有价值，只要符合黑客需要，一般在有价值的邮箱中花15到20分钟便搞定如何利用你的邮件。如做更安全考虑，可将紧要内容发过后及时删除（如需可另作保存），并在“已删除邮件中”选择“永久删除”。   大陆用户无疑会面临越来越恶劣的网络环境，一方面是GFW的升级使翻墙变得愈加困难，另一方面，用户的信息安全也越来越缺乏保障。用户有必要了解上网（翻墙）的环境，更有必要了解在中国发布言论的风险。“事实是，任何网络安全措施都有可能避免不了极权的打击，但是不能因此放弃或者忽视网络安全策略。即便如此，很多勇敢的表达者依然通过互联网在传播着他们的观点。无论极权怎样去控制、禁止用户的表达和传播，互联网都会告诉它：对极权的反对永远不会疲倦，不会恐惧，不会停息”，时评人苏星河表示。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                全网封杀“变态辣椒”说明什么？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                当 “不作恶” 成为空谈，“定制人”将终结民主                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                一国两制病了 而香港政府没有药                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                中国宣布2015净网计划：还会发生什么？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    LesWape (未验证)  
+                   星期三, 06/05/2019 - 08:32 
+                   永久连接 
+                
+              
+              
+                
+                  Cheap Generic Cialis LesWape  
+                
+                    
+                    
+                      
+                        Amoxicillin Clavulanate Acid &lt;a href=  http://cialtadalaf.com&gt;cialis  from canada&lt;/a&gt; Viagra 100mg No Prescription On Line Zentel Low Price Trimohills
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="翻墙安全" />
+    <meta property="twitter:title" content="翻墙安全" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fpao-pao.net%2Farticle%2F286" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://pao-pao.net/article/286" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://pao-pao.net/article/286&text=翻墙安全&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://pao-pao.net/article/286&title=翻墙安全" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://pao-pao.net/article/286&title=翻墙安全" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=翻墙安全&body=
+  
+    
+      
+        
+              
+  贝带劲  在 星期五, 11/28/2014 - 16:25 提交 
+          
+          
+            
+              
+                
+                  
+                      3589639652_be6734f90c_z.jpg  
+                    
+                       
+                        
+                          
+ 图： Mónidas de Mon 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   翻墙安全 
+                
+              
+            
+            
+              
+文/
+              
+  贝带劲 
+            
+            
+              
+                
+                  大陆网络管制愈加严峻的如今，翻墙技术已成为大陆网民首要基础技能。但能翻墙不代表就有信息安全保障，使用代理也不一定就能确保匿名，Java、Office、iTunes、Quicktime、Flash都能侦测到真实的IP，也就是说，这些浏览器插件是需要谨慎使用的。此外，虽然大多数墙外平台不至于与中国当局合作而泄露用户资料，但用户自己泄露个人信息而导致被人肉搜索到的情况却并不罕见。
+                   不推荐使用国产VPN 
+                  市场研究公司Globalwebindex在2014年Q3的GWI Social报告中，特别观察了利用VPN和代理服务器访问受限社交网络的趋势。报告指，中国有9300万VPN网民，占据整体网民的20%。这个数字有可能被高估了，但也能透露在中国的VPN用户的确不少。   VPN（Vitral Private Network）是诸多翻墙手段中比较常用的一种，门槛低操作简单，适合小白用户，相比下付费的VPN更为稳定。它的原理是客户端使用相应的协议与VPN服务器进行通信，成功连接后在操作系统内建立一个虚拟网卡，一般来说默认PC上所有网络通信都从这虚拟网卡上进出，经过VPN服务器中转后再到达目的地。通常VPN协议都会对数据流进行强加密处理，从而使得第三方（如GFW）无法得知数据内容。但VPN服务器本身会知道用户所操作的内容。   VPN协议主要有：PPTP，L2TP，IPSEC，OPENVPN，SSL VPN，Ikev2 VPN，Cisco VPN，其中的PPTP和L2TP是明文传输协议。PPTP的协议规范本身并没有描述加密或身份验证的部份，它依靠点对点协议（PPP）来实现这些安全性功能。当用户使用PPTP VPN翻墙时，实际上是同时启用了128位MPPE（微软点对点加密），但目前GFW已经做到了暴力破解MPPE加密的能力。（暴力破解又叫穷举法，是一种针对于密码的破译方法，即将密码进行逐个推算直到找出真正的密码为止。理论上利用这种方法可以破解任何一种密码，问题只在于如何缩短试误时间。）   PPTP协议的加密实现-MPPE是基于RC4的，目前也很容易被破解，MS-CHAP2的实现是用用户密码的MD4作为密钥加密，都可以轻而易举破解。  曾经有网友表示，用VPN上推特会在联通查到记录  。 PPP没有对完整性的保护，链路上的分组可以被篡改和重放。没有完整性保护的加密是没有意义的，比如攻击者可以窃听，然后修改IP payload上的 destination 后重放，曾经有针对 WEP 的攻击用此方法。 另，PPP 的控制消息也没有任何保护，对于配置不当或者实现不当的 PPTP, 可以通过伪造 ECP 包，把 ms-chap, mppe 降级成 pap, 无加密。   Windows 下 L2TP/IPSec 实现也不很安全，它没有将 IPSec 指定为 required 的选项，如通过干扰 IKE, 可以把 L2TP/IPSec 降级成没有 IPSec 保护的 L2TP。   曾经有用户表示，当  Shadowsocks  的加密连接算法设置为默认的RC4或略有改进的RC4-MD5时，用上一段时间就会被GFW封锁，需要改密码或IP才能继续使用。网友Ghost Assassin推测认为，如果GFW成功识别了Shadowsocks与远程服务器建立连接时的特征，那么不管使用什么加密方式都会很快被GFW干扰，而不会只有RC4-MD5和RC4连接被干扰，那么最大的可能就是GFW已经可以破解RC4-MD5，而它同时也是MPPE使用的加密算法，那么PPTP VPN就不再安全了。   L2TP不含任何认证和加密功能，全由 IPSec 负责，IKE是 IPSec 的一部分，L2TP 本身只完成数据传输之类的工作，不负责认证和加密，需要配合其它安全协议使用。L2TP/IPSec并没有被GFW严重封锁，目前尚不清楚原因，Ghost Assassin的分析认为或可能是当局有意释放，借以钓鱼。   相比下，OPEN VPN的身份验证机制很完善，隧道加密程度也比较强，使用的是OPEN SSL加密算法，提供了可选的数据包HMAC功能以提高连接的安全性。此外，OpenSSL的硬件加速也能提高它的性能。在用户空间运行中，无须对内核及网络协议栈作修改，初始完毕后以chroot方式运行，放弃root权限，使用mlockall以防止敏感数据交换到磁盘。或正因此，OPEN VPN也是被封锁得比较严重的一个。   GFW的危害在于它不只有封锁一个目的，更有监控的功能，中国当局的法律上没有明确指出使用VPN违法，又有不少内地供应商在出售和提供免费VPN，同时又有一部分VPN被封杀，这就不由得让人起疑。曾经有用户反映，不少墙内VPN都没有办法作为  TOR  的前置代理   ，“打开Tor浏览器显示洋葱头是打x的，没有变成绿色的洋葱头，只有连接国外vpn时Tor的洋葱头才是绿色的”，   分析认为，有可能是国内 VPN 对 IP 或域名进行了过滤所致， 推测大陆的VPN有可能留有后门。建议使用VPN+TOR（Tor Browser Bundle），它可  以提供匿名的网络访问，保护隐私  ，目前认为当局无法破解TOR流量，可以确保翻墙安全。另外，不推荐使用免翻推特端发布敏感讯息，普通浏览还是可以的。
+                  
+                    
+                      
+                         
+                          
+                            
+ 图/ casmaron 
+                            
+                          
+                        
+                      
+                    
+                  
+                   此外，360浏览器、百度浏览器等国内浏览器官方内置的翻墙功能都不支持使用，这些代理很可能会被用于  中间人攻击  。如果该“中间人”与浏览器官方同一阵线，那么浏览器验证机制就会放行这种攻击。国内产浏览器也不推荐使用，有用户透露，360浏览器在安装的过程中就引发了win7系统报警，证明该程序有规避认证的行为。全球三大桌面浏览器在隐私保护方面的比较一般认为，Firefox最优，其次是Chrome/Chromium，再其次是IE。
+                   保护个人隐私信息细节   尽可能远离大陆网络平台和服务 
+                  发照片自爆是很多网友的喜好，但经常发表敏感政治言论的网友这方面就要小心些了，很容易因此被人肉搜索到。另，建议登陆海外网站的时候尽可能不使用和在大陆平台上同样的昵称和同样的本人照片头像，即便墙内身份暴露，只要否认墙外身份，“有关部门”就基本无法获取证据。   很多社交平台都有分享地理位置的功能，比如墙内的微信、微博和墙外的推特等，但不推荐使用，如果您用的是苹果产品，可以直接选择在设置中关闭定位服务的方法来保护行踪隐私。   有些网站希望用户输入求学就业经历，以便联系到同学同事互相添加。如果该应用是大陆开发的产品就不推荐使用这项功能。您肯定有其他方式联系到您觉得值得联系的同学和同事。    尽可能不使用公共场合免费的wifi  ，如果遭遇恶意搭建的wifi，很容易被盗取个人信息，其他安全性不明的wifi网络也要谨慎选择。   曾经有网友曝，小米手机和小米平板都会在用户使用加密数据或使用VPN翻墙時，窃取数据并发送到北京某服務器；360系列软件则会监控用戶的qq、skype等通讯窃取数据。对于后者已能基本确信，对于前者建议谨慎选择以防患于未然。   大陆产的杀毒软件也不推荐使用，  本网曾有报道  ，奇虎 360 投资的一家微型公司“麦芽地”，其前身是个人网站“麦克孤独”，被曝是“WireLurker(MacHook)”木马制作者和传播者。   11月3号出台的《  反恐法草案  》中第十五条提到：“电信业务经营者、互联网服务提供者应当在电信和互联网的设计、建设和运行中预设技术接口，将密码方案报密码主管部门审查。未预设技术接口，或者未报审密码方案的，相关产品或者技术不得投入使用。已经投入使用的，主管部门应当责令其立即停止使用。在中华人民共和国境内提供电信业务、互联网服务的，应当将相关设备、境内用户数据留存在中华人民共和国境内。拒不留存的，不得在中华人民共和国境内提供服务”。该草案很可能全盘通过，也就是说，极大程度上增强了使用国内平台和服务的危险性。   有些网友喜欢使用  密码管理软件  ，每个网站都用随机密码，以便于减少被破解机率。但据11月20号Solidot的报道，BM Trusteer称，计算机罪犯正以保存用户最敏感登录凭证的密码管理器为目标，利用按键记录工具去窃取主密码。Citade木马的一个配置文件设计在用户打开两种开源密码管理工具Password Safe或KeePass时启动按键记录器。安全研究人员认为，以密码管理器作为重点攻击目标将会在未来日益流行。能自动生成随机密码的密码管理器有助于增强在线账号的安全性，但如果密码管理器的主密码失窃，其保存的所有密码将会同时失窃，影响要比单一账户被攻陷严重得多。﻿   此外，对大陆用户来说，尽可能选用  谷歌邮箱传递紧要讯息，设置两步验证  ，经常更换密码。Gmail可以让Web用户在登录和使用GMail的整个连接过程全部为HTTPS协议加密传输。用客户端软件POP3或者IMAP协议访问GMAIL，如Outlook Express、Foxmail、Entourage、Eudora、Netscape Mail、Mozilla等也可设置为SSL安全连接。相比之下，大多数免费邮件服务器不提供，或者只在用户身份认证时才提供SSL连接。前期有根据谷歌和加州大学圣迭戈分校的一份研究报告指，黑客入侵电子邮件只需三分钟，之后使用关键字搜索方式判断该邮箱是否有价值，只要符合黑客需要，一般在有价值的邮箱中花15到20分钟便搞定如何利用你的邮件。如做更安全考虑，可将紧要内容发过后及时删除（如需可另作保存），并在“已删除邮件中”选择“永久删除”。   大陆用户无疑会面临越来越恶劣的网络环境，一方面是GFW的升级使翻墙变得愈加困难，另一方面，用户的信息安全也越来越缺乏保障。用户有必要了解上网（翻墙）的环境，更有必要了解在中国发布言论的风险。“事实是，任何网络安全措施都有可能避免不了极权的打击，但是不能因此放弃或者忽视网络安全策略。即便如此，很多勇敢的表达者依然通过互联网在传播着他们的观点。无论极权怎样去控制、禁止用户的表达和传播，互联网都会告诉它：对极权的反对永远不会疲倦，不会恐惧，不会停息”，时评人苏星河表示。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                全网封杀“变态辣椒”说明什么？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                当 “不作恶” 成为空谈，“定制人”将终结民主                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                一国两制病了 而香港政府没有药                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                中国宣布2015净网计划：还会发生什么？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    LesWape (未验证)  
+                   星期三, 06/05/2019 - 08:32 
+                   永久连接 
+                
+              
+              
+                
+                  Cheap Generic Cialis LesWape  
+                
+                    
+                    
+                      
+                        Amoxicillin Clavulanate Acid &lt;a href=  http://cialtadalaf.com&gt;cialis  from canada&lt;/a&gt; Viagra 100mg No Prescription On Line Zentel Low Price Trimohills
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://pao-pao.net/article/286" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://pao-pao.net/article/286&title=翻墙安全&caption=
+  
+    
+      
+        
+              
+  贝带劲  在 星期五, 11/28/2014 - 16:25 提交 
+          
+          
+            
+              
+                
+                  
+                      3589639652_be6734f90c_z.jpg  
+                    
+                       
+                        
+                          
+ 图： Mónidas de Mon 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   翻墙安全 
+                
+              
+            
+            
+              
+文/
+              
+  贝带劲 
+            
+            
+              
+                
+                  大陆网络管制愈加严峻的如今，翻墙技术已成为大陆网民首要基础技能。但能翻墙不代表就有信息安全保障，使用代理也不一定就能确保匿名，Java、Office、iTunes、Quicktime、Flash都能侦测到真实的IP，也就是说，这些浏览器插件是需要谨慎使用的。此外，虽然大多数墙外平台不至于与中国当局合作而泄露用户资料，但用户自己泄露个人信息而导致被人肉搜索到的情况却并不罕见。
+                   不推荐使用国产VPN 
+                  市场研究公司Globalwebindex在2014年Q3的GWI Social报告中，特别观察了利用VPN和代理服务器访问受限社交网络的趋势。报告指，中国有9300万VPN网民，占据整体网民的20%。这个数字有可能被高估了，但也能透露在中国的VPN用户的确不少。   VPN（Vitral Private Network）是诸多翻墙手段中比较常用的一种，门槛低操作简单，适合小白用户，相比下付费的VPN更为稳定。它的原理是客户端使用相应的协议与VPN服务器进行通信，成功连接后在操作系统内建立一个虚拟网卡，一般来说默认PC上所有网络通信都从这虚拟网卡上进出，经过VPN服务器中转后再到达目的地。通常VPN协议都会对数据流进行强加密处理，从而使得第三方（如GFW）无法得知数据内容。但VPN服务器本身会知道用户所操作的内容。   VPN协议主要有：PPTP，L2TP，IPSEC，OPENVPN，SSL VPN，Ikev2 VPN，Cisco VPN，其中的PPTP和L2TP是明文传输协议。PPTP的协议规范本身并没有描述加密或身份验证的部份，它依靠点对点协议（PPP）来实现这些安全性功能。当用户使用PPTP VPN翻墙时，实际上是同时启用了128位MPPE（微软点对点加密），但目前GFW已经做到了暴力破解MPPE加密的能力。（暴力破解又叫穷举法，是一种针对于密码的破译方法，即将密码进行逐个推算直到找出真正的密码为止。理论上利用这种方法可以破解任何一种密码，问题只在于如何缩短试误时间。）   PPTP协议的加密实现-MPPE是基于RC4的，目前也很容易被破解，MS-CHAP2的实现是用用户密码的MD4作为密钥加密，都可以轻而易举破解。  曾经有网友表示，用VPN上推特会在联通查到记录  。 PPP没有对完整性的保护，链路上的分组可以被篡改和重放。没有完整性保护的加密是没有意义的，比如攻击者可以窃听，然后修改IP payload上的 destination 后重放，曾经有针对 WEP 的攻击用此方法。 另，PPP 的控制消息也没有任何保护，对于配置不当或者实现不当的 PPTP, 可以通过伪造 ECP 包，把 ms-chap, mppe 降级成 pap, 无加密。   Windows 下 L2TP/IPSec 实现也不很安全，它没有将 IPSec 指定为 required 的选项，如通过干扰 IKE, 可以把 L2TP/IPSec 降级成没有 IPSec 保护的 L2TP。   曾经有用户表示，当  Shadowsocks  的加密连接算法设置为默认的RC4或略有改进的RC4-MD5时，用上一段时间就会被GFW封锁，需要改密码或IP才能继续使用。网友Ghost Assassin推测认为，如果GFW成功识别了Shadowsocks与远程服务器建立连接时的特征，那么不管使用什么加密方式都会很快被GFW干扰，而不会只有RC4-MD5和RC4连接被干扰，那么最大的可能就是GFW已经可以破解RC4-MD5，而它同时也是MPPE使用的加密算法，那么PPTP VPN就不再安全了。   L2TP不含任何认证和加密功能，全由 IPSec 负责，IKE是 IPSec 的一部分，L2TP 本身只完成数据传输之类的工作，不负责认证和加密，需要配合其它安全协议使用。L2TP/IPSec并没有被GFW严重封锁，目前尚不清楚原因，Ghost Assassin的分析认为或可能是当局有意释放，借以钓鱼。   相比下，OPEN VPN的身份验证机制很完善，隧道加密程度也比较强，使用的是OPEN SSL加密算法，提供了可选的数据包HMAC功能以提高连接的安全性。此外，OpenSSL的硬件加速也能提高它的性能。在用户空间运行中，无须对内核及网络协议栈作修改，初始完毕后以chroot方式运行，放弃root权限，使用mlockall以防止敏感数据交换到磁盘。或正因此，OPEN VPN也是被封锁得比较严重的一个。   GFW的危害在于它不只有封锁一个目的，更有监控的功能，中国当局的法律上没有明确指出使用VPN违法，又有不少内地供应商在出售和提供免费VPN，同时又有一部分VPN被封杀，这就不由得让人起疑。曾经有用户反映，不少墙内VPN都没有办法作为  TOR  的前置代理   ，“打开Tor浏览器显示洋葱头是打x的，没有变成绿色的洋葱头，只有连接国外vpn时Tor的洋葱头才是绿色的”，   分析认为，有可能是国内 VPN 对 IP 或域名进行了过滤所致， 推测大陆的VPN有可能留有后门。建议使用VPN+TOR（Tor Browser Bundle），它可  以提供匿名的网络访问，保护隐私  ，目前认为当局无法破解TOR流量，可以确保翻墙安全。另外，不推荐使用免翻推特端发布敏感讯息，普通浏览还是可以的。
+                  
+                    
+                      
+                         
+                          
+                            
+ 图/ casmaron 
+                            
+                          
+                        
+                      
+                    
+                  
+                   此外，360浏览器、百度浏览器等国内浏览器官方内置的翻墙功能都不支持使用，这些代理很可能会被用于  中间人攻击  。如果该“中间人”与浏览器官方同一阵线，那么浏览器验证机制就会放行这种攻击。国内产浏览器也不推荐使用，有用户透露，360浏览器在安装的过程中就引发了win7系统报警，证明该程序有规避认证的行为。全球三大桌面浏览器在隐私保护方面的比较一般认为，Firefox最优，其次是Chrome/Chromium，再其次是IE。
+                   保护个人隐私信息细节   尽可能远离大陆网络平台和服务 
+                  发照片自爆是很多网友的喜好，但经常发表敏感政治言论的网友这方面就要小心些了，很容易因此被人肉搜索到。另，建议登陆海外网站的时候尽可能不使用和在大陆平台上同样的昵称和同样的本人照片头像，即便墙内身份暴露，只要否认墙外身份，“有关部门”就基本无法获取证据。   很多社交平台都有分享地理位置的功能，比如墙内的微信、微博和墙外的推特等，但不推荐使用，如果您用的是苹果产品，可以直接选择在设置中关闭定位服务的方法来保护行踪隐私。   有些网站希望用户输入求学就业经历，以便联系到同学同事互相添加。如果该应用是大陆开发的产品就不推荐使用这项功能。您肯定有其他方式联系到您觉得值得联系的同学和同事。    尽可能不使用公共场合免费的wifi  ，如果遭遇恶意搭建的wifi，很容易被盗取个人信息，其他安全性不明的wifi网络也要谨慎选择。   曾经有网友曝，小米手机和小米平板都会在用户使用加密数据或使用VPN翻墙時，窃取数据并发送到北京某服務器；360系列软件则会监控用戶的qq、skype等通讯窃取数据。对于后者已能基本确信，对于前者建议谨慎选择以防患于未然。   大陆产的杀毒软件也不推荐使用，  本网曾有报道  ，奇虎 360 投资的一家微型公司“麦芽地”，其前身是个人网站“麦克孤独”，被曝是“WireLurker(MacHook)”木马制作者和传播者。   11月3号出台的《  反恐法草案  》中第十五条提到：“电信业务经营者、互联网服务提供者应当在电信和互联网的设计、建设和运行中预设技术接口，将密码方案报密码主管部门审查。未预设技术接口，或者未报审密码方案的，相关产品或者技术不得投入使用。已经投入使用的，主管部门应当责令其立即停止使用。在中华人民共和国境内提供电信业务、互联网服务的，应当将相关设备、境内用户数据留存在中华人民共和国境内。拒不留存的，不得在中华人民共和国境内提供服务”。该草案很可能全盘通过，也就是说，极大程度上增强了使用国内平台和服务的危险性。   有些网友喜欢使用  密码管理软件  ，每个网站都用随机密码，以便于减少被破解机率。但据11月20号Solidot的报道，BM Trusteer称，计算机罪犯正以保存用户最敏感登录凭证的密码管理器为目标，利用按键记录工具去窃取主密码。Citade木马的一个配置文件设计在用户打开两种开源密码管理工具Password Safe或KeePass时启动按键记录器。安全研究人员认为，以密码管理器作为重点攻击目标将会在未来日益流行。能自动生成随机密码的密码管理器有助于增强在线账号的安全性，但如果密码管理器的主密码失窃，其保存的所有密码将会同时失窃，影响要比单一账户被攻陷严重得多。﻿   此外，对大陆用户来说，尽可能选用  谷歌邮箱传递紧要讯息，设置两步验证  ，经常更换密码。Gmail可以让Web用户在登录和使用GMail的整个连接过程全部为HTTPS协议加密传输。用客户端软件POP3或者IMAP协议访问GMAIL，如Outlook Express、Foxmail、Entourage、Eudora、Netscape Mail、Mozilla等也可设置为SSL安全连接。相比之下，大多数免费邮件服务器不提供，或者只在用户身份认证时才提供SSL连接。前期有根据谷歌和加州大学圣迭戈分校的一份研究报告指，黑客入侵电子邮件只需三分钟，之后使用关键字搜索方式判断该邮箱是否有价值，只要符合黑客需要，一般在有价值的邮箱中花15到20分钟便搞定如何利用你的邮件。如做更安全考虑，可将紧要内容发过后及时删除（如需可另作保存），并在“已删除邮件中”选择“永久删除”。   大陆用户无疑会面临越来越恶劣的网络环境，一方面是GFW的升级使翻墙变得愈加困难，另一方面，用户的信息安全也越来越缺乏保障。用户有必要了解上网（翻墙）的环境，更有必要了解在中国发布言论的风险。“事实是，任何网络安全措施都有可能避免不了极权的打击，但是不能因此放弃或者忽视网络安全策略。即便如此，很多勇敢的表达者依然通过互联网在传播着他们的观点。无论极权怎样去控制、禁止用户的表达和传播，互联网都会告诉它：对极权的反对永远不会疲倦，不会恐惧，不会停息”，时评人苏星河表示。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                全网封杀“变态辣椒”说明什么？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                当 “不作恶” 成为空谈，“定制人”将终结民主                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                一国两制病了 而香港政府没有药                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                中国宣布2015净网计划：还会发生什么？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    LesWape (未验证)  
+                   星期三, 06/05/2019 - 08:32 
+                   永久连接 
+                
+              
+              
+                
+                  Cheap Generic Cialis LesWape  
+                
+                    
+                    
+                      
+                        Amoxicillin Clavulanate Acid &lt;a href=  http://cialtadalaf.com&gt;cialis  from canada&lt;/a&gt; Viagra 100mg No Prescription On Line Zentel Low Price Trimohills
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=翻墙安全&url=https://pao-pao.net/article/286" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>翻墙安全</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2014-11-28
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 贝带劲</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#泡泡">
+          泡泡
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://pao-pao.net/article/286" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="泡泡的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#泡泡 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <section class="clearfix" id="content" role="main">
+  <div class="region region-content">
+    <div class="block block-system" id="block-system-main">
+      <div class="content">
+        <div about="/article/286" class="node node-pao-pao-article node-promoted node-full view-mode-full clearfix" id="node-286" typeof="sioc:Item foaf:Document">
+<span class="rdf-meta element-hidden" content="翻墙安全" property="dc:title"> </span> <span class="rdf-meta element-hidden" content="1" datatype="xsd:integer" property="sioc:num_replies"> </span>           <div class="submitted">
+<span content="2014-11-28T16:25:02+01:00" datatype="xsd:dateTime" property="dc:date dc:created" rel="sioc:has_creator"> <a about="/author/379" class="username" datatype="" href="/author/379" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> 贝带劲 </a> 在 星期五, 11/28/2014 - 16:25 提交 </span>
+          </div>
+          <div class="content">
+            <div class="field field-name-field-image field-type-image field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="file file-image file-image-jpeg" id="file-736--2">
+                    <h2 class="element-invisible" id="be6734f90czjpg--"> <a href="/file/736"> 3589639652_be6734f90c_z.jpg </a> </h2>
+                    <div class="content">
+<img alt="" height="164" src="https://pao-pao.net/sites/pao-pao.net/files/styles/article_detail/public/3589639652_be6734f90c_z.jpg?itok=SqoZSVaZ" title="" typeof="foaf:Image" width="290" />                       <div class="field field-name-field-image-source field-type-link-field field-label-hidden">
+                        <div class="field-items">
+                          <div class="field-item even">
+<a href="https://www.flickr.com/photos/atopeconlatxabaleria/3589639652"> 图： Mónidas de Mon </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-title field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="dc:title">
+                  <h1 class="page-title" id="section"> 翻墙安全 </h1>
+                </div>
+              </div>
+            </div>
+            <div class="field-name-author">
+              <div class="label-inline">
+文/
+              </div>
+ <a about="/author/379" class="username" datatype="" href="/author/379" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> 贝带劲 </a>
+            </div>
+            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="content:encoded">
+                  <p>大陆网络管制愈加严峻的如今，翻墙技术已成为大陆网民首要基础技能。但能翻墙不代表就有信息安全保障，使用代理也不一定就能确保匿名，Java、Office、iTunes、Quicktime、Flash都能侦测到真实的IP，也就是说，这些浏览器插件是需要谨慎使用的。此外，虽然大多数墙外平台不至于与中国当局合作而泄露用户资料，但用户自己泄露个人信息而导致被人肉搜索到的情况却并不罕见。</p>
+                  <h2 id="vpn-"> 不推荐使用国产VPN </h2>
+                  <p>市场研究公司Globalwebindex在2014年Q3的GWI Social报告中，特别观察了利用VPN和代理服务器访问受限社交网络的趋势。报告指，中国有9300万VPN网民，占据整体网民的20%。这个数字有可能被高估了，但也能透露在中国的VPN用户的确不少。 <br /> <br /> VPN（Vitral Private Network）是诸多翻墙手段中比较常用的一种，门槛低操作简单，适合小白用户，相比下付费的VPN更为稳定。它的原理是客户端使用相应的协议与VPN服务器进行通信，成功连接后在操作系统内建立一个虚拟网卡，一般来说默认PC上所有网络通信都从这虚拟网卡上进出，经过VPN服务器中转后再到达目的地。通常VPN协议都会对数据流进行强加密处理，从而使得第三方（如GFW）无法得知数据内容。但VPN服务器本身会知道用户所操作的内容。 <br /> <br /> VPN协议主要有：PPTP，L2TP，IPSEC，OPENVPN，SSL VPN，Ikev2 VPN，Cisco VPN，其中的PPTP和L2TP是明文传输协议。PPTP的协议规范本身并没有描述加密或身份验证的部份，它依靠点对点协议（PPP）来实现这些安全性功能。当用户使用PPTP VPN翻墙时，实际上是同时启用了128位MPPE（微软点对点加密），但目前GFW已经做到了暴力破解MPPE加密的能力。（暴力破解又叫穷举法，是一种针对于密码的破译方法，即将密码进行逐个推算直到找出真正的密码为止。理论上利用这种方法可以破解任何一种密码，问题只在于如何缩短试误时间。） <br /> <br /> PPTP协议的加密实现-MPPE是基于RC4的，目前也很容易被破解，MS-CHAP2的实现是用用户密码的MD4作为密钥加密，都可以轻而易举破解。 <a href="https://twitter.com/Vela1680/status/532068496788574208" rel="nofollow"> 曾经有网友表示，用VPN上推特会在联通查到记录 </a> 。 PPP没有对完整性的保护，链路上的分组可以被篡改和重放。没有完整性保护的加密是没有意义的，比如攻击者可以窃听，然后修改IP payload上的 destination 后重放，曾经有针对 WEP 的攻击用此方法。 另，PPP 的控制消息也没有任何保护，对于配置不当或者实现不当的 PPTP, 可以通过伪造 ECP 包，把 ms-chap, mppe 降级成 pap, 无加密。 <br /> <br /> Windows 下 L2TP/IPSec 实现也不很安全，它没有将 IPSec 指定为 required 的选项，如通过干扰 IKE, 可以把 L2TP/IPSec 降级成没有 IPSec 保护的 L2TP。 <br /> <br /> 曾经有用户表示，当 <a href="https://pao-pao.net/node/130" rel="nofollow"> Shadowsocks </a> 的加密连接算法设置为默认的RC4或略有改进的RC4-MD5时，用上一段时间就会被GFW封锁，需要改密码或IP才能继续使用。网友Ghost Assassin推测认为，如果GFW成功识别了Shadowsocks与远程服务器建立连接时的特征，那么不管使用什么加密方式都会很快被GFW干扰，而不会只有RC4-MD5和RC4连接被干扰，那么最大的可能就是GFW已经可以破解RC4-MD5，而它同时也是MPPE使用的加密算法，那么PPTP VPN就不再安全了。 <br /> <br /> L2TP不含任何认证和加密功能，全由 IPSec 负责，IKE是 IPSec 的一部分，L2TP 本身只完成数据传输之类的工作，不负责认证和加密，需要配合其它安全协议使用。L2TP/IPSec并没有被GFW严重封锁，目前尚不清楚原因，Ghost Assassin的分析认为或可能是当局有意释放，借以钓鱼。 <br /> <br /> 相比下，OPEN VPN的身份验证机制很完善，隧道加密程度也比较强，使用的是OPEN SSL加密算法，提供了可选的数据包HMAC功能以提高连接的安全性。此外，OpenSSL的硬件加速也能提高它的性能。在用户空间运行中，无须对内核及网络协议栈作修改，初始完毕后以chroot方式运行，放弃root权限，使用mlockall以防止敏感数据交换到磁盘。或正因此，OPEN VPN也是被封锁得比较严重的一个。 <br /> <br /> GFW的危害在于它不只有封锁一个目的，更有监控的功能，中国当局的法律上没有明确指出使用VPN违法，又有不少内地供应商在出售和提供免费VPN，同时又有一部分VPN被封杀，这就不由得让人起疑。曾经有用户反映，不少墙内VPN都没有办法作为 <a href="https://pao-pao.net/node/230" rel="nofollow"> TOR </a> 的前置代理 <span> <span> ，“打开Tor浏览器显示洋葱头是打x的，没有变成绿色的洋葱头，只有连接国外vpn时Tor的洋葱头才是绿色的”， </span> </span> 分析认为，有可能是国内 VPN 对 IP 或域名进行了过滤所致， 推测大陆的VPN有可能留有后门。建议使用VPN+TOR（Tor Browser Bundle），它可 <a href="https://pao-pao.net/node/284" rel="nofollow"> 以提供匿名的网络访问，保护隐私 </a> ，目前认为当局无法破解TOR流量，可以确保翻墙安全。另外，不推荐使用免翻推特端发布敏感讯息，普通浏览还是可以的。</p>
+                  <div class="half-right">
+                    <div class="media media-element-container media-full">
+                      <div class="ds-1col file file-image file-image-jpeg view-mode-full clearfix">
+<img alt="" class="media-element file-full" height="320" src="https://pao-pao.net/sites/pao-pao.net/files/styles/large/public/3171021945_c19e65edcf_z.jpg?itok=VuXZtT4S" title="" typeof="foaf:Image" width="480" />                         <div class="field field-name-field-image-source field-type-link-field field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="https://www.flickr.com/photos/casmaron/3171021945"> 图/ casmaron </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p><br /> 此外，360浏览器、百度浏览器等国内浏览器官方内置的翻墙功能都不支持使用，这些代理很可能会被用于 <a href="https://pao-pao.net/node/167" rel="nofollow"> 中间人攻击 </a> 。如果该“中间人”与浏览器官方同一阵线，那么浏览器验证机制就会放行这种攻击。国内产浏览器也不推荐使用，有用户透露，360浏览器在安装的过程中就引发了win7系统报警，证明该程序有规避认证的行为。全球三大桌面浏览器在隐私保护方面的比较一般认为，Firefox最优，其次是Chrome/Chromium，再其次是IE。</p>
+                  <h2 id="section-1"> 保护个人隐私信息细节   尽可能远离大陆网络平台和服务 </h2>
+                  <p>发照片自爆是很多网友的喜好，但经常发表敏感政治言论的网友这方面就要小心些了，很容易因此被人肉搜索到。另，建议登陆海外网站的时候尽可能不使用和在大陆平台上同样的昵称和同样的本人照片头像，即便墙内身份暴露，只要否认墙外身份，“有关部门”就基本无法获取证据。 <br /> <br /> 很多社交平台都有分享地理位置的功能，比如墙内的微信、微博和墙外的推特等，但不推荐使用，如果您用的是苹果产品，可以直接选择在设置中关闭定位服务的方法来保护行踪隐私。 <br /> <br /> 有些网站希望用户输入求学就业经历，以便联系到同学同事互相添加。如果该应用是大陆开发的产品就不推荐使用这项功能。您肯定有其他方式联系到您觉得值得联系的同学和同事。 <br /> <br /> <a href="https://pao-pao.net/node/135" rel="nofollow"> 尽可能不使用公共场合免费的wifi </a> ，如果遭遇恶意搭建的wifi，很容易被盗取个人信息，其他安全性不明的wifi网络也要谨慎选择。 <br /> <br /> 曾经有网友曝，小米手机和小米平板都会在用户使用加密数据或使用VPN翻墙時，窃取数据并发送到北京某服務器；360系列软件则会监控用戶的qq、skype等通讯窃取数据。对于后者已能基本确信，对于前者建议谨慎选择以防患于未然。 <br /> <br /> 大陆产的杀毒软件也不推荐使用， <a href="http://a123.g.akamai.net/f/1/1/1/dci.download.akamai.com/35985/159415/1/p/?u=/article/280" rel="nofollow"> 本网曾有报道 </a> ，奇虎 360 投资的一家微型公司“麦芽地”，其前身是个人网站“麦克孤独”，被曝是“WireLurker(MacHook)”木马制作者和传播者。 <br /> <br /> 11月3号出台的《 <a href="http://www.npc.gov.cn/npc/xinwen/lfgz/flca/2014-11/03/content_1885027.htm" rel="nofollow"> 反恐法草案 </a> 》中第十五条提到：“电信业务经营者、互联网服务提供者应当在电信和互联网的设计、建设和运行中预设技术接口，将密码方案报密码主管部门审查。未预设技术接口，或者未报审密码方案的，相关产品或者技术不得投入使用。已经投入使用的，主管部门应当责令其立即停止使用。在中华人民共和国境内提供电信业务、互联网服务的，应当将相关设备、境内用户数据留存在中华人民共和国境内。拒不留存的，不得在中华人民共和国境内提供服务”。该草案很可能全盘通过，也就是说，极大程度上增强了使用国内平台和服务的危险性。 <br /> <br /> 有些网友喜欢使用 <a href="https://pao-pao.net/node/53" rel="nofollow"> 密码管理软件 </a> ，每个网站都用随机密码，以便于减少被破解机率。但据11月20号Solidot的报道，BM Trusteer称，计算机罪犯正以保存用户最敏感登录凭证的密码管理器为目标，利用按键记录工具去窃取主密码。Citade木马的一个配置文件设计在用户打开两种开源密码管理工具Password Safe或KeePass时启动按键记录器。安全研究人员认为，以密码管理器作为重点攻击目标将会在未来日益流行。能自动生成随机密码的密码管理器有助于增强在线账号的安全性，但如果密码管理器的主密码失窃，其保存的所有密码将会同时失窃，影响要比单一账户被攻陷严重得多。﻿ <br /> <br /> 此外，对大陆用户来说，尽可能选用 <a href="https://pao-pao.net/node/70" rel="nofollow"> 谷歌邮箱传递紧要讯息，设置两步验证 </a> ，经常更换密码。Gmail可以让Web用户在登录和使用GMail的整个连接过程全部为HTTPS协议加密传输。用客户端软件POP3或者IMAP协议访问GMAIL，如Outlook Express、Foxmail、Entourage、Eudora、Netscape Mail、Mozilla等也可设置为SSL安全连接。相比之下，大多数免费邮件服务器不提供，或者只在用户身份认证时才提供SSL连接。前期有根据谷歌和加州大学圣迭戈分校的一份研究报告指，黑客入侵电子邮件只需三分钟，之后使用关键字搜索方式判断该邮箱是否有价值，只要符合黑客需要，一般在有价值的邮箱中花15到20分钟便搞定如何利用你的邮件。如做更安全考虑，可将紧要内容发过后及时删除（如需可另作保存），并在“已删除邮件中”选择“永久删除”。 <br /> <br /> 大陆用户无疑会面临越来越恶劣的网络环境，一方面是GFW的升级使翻墙变得愈加困难，另一方面，用户的信息安全也越来越缺乏保障。用户有必要了解上网（翻墙）的环境，更有必要了解在中国发布言论的风险。“事实是，任何网络安全措施都有可能避免不了极权的打击，但是不能因此放弃或者忽视网络安全策略。即便如此，很多勇敢的表达者依然通过互联网在传播着他们的观点。无论极权怎样去控制、禁止用户的表达和传播，互联网都会告诉它：对极权的反对永远不会疲倦，不会恐惧，不会停息”，时评人苏星河表示。</p>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-service-links-displays-group field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="service-links">
+<a class="service-links-twitter" href="https://twitter.com/share?url=https%3A//pao-pao.net/article/286&amp;text=%E7%BF%BB%E5%A2%99%E5%AE%89%E5%85%A8" rel="nofollow" title="Share this on Twitter"> <img alt="Twitter logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/twitter.png" typeof="foaf:Image" /> </a> <a class="service-links-facebook" href="https://www.facebook.com/sharer.php?u=https%3A//pao-pao.net/article/286&amp;t=%E7%BF%BB%E5%A2%99%E5%AE%89%E5%85%A8" rel="nofollow" title="Share on Facebook"> <img alt="Facebook logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/facebook.png" typeof="foaf:Image" /> </a> <a class="service-links-google" href="https://www.google.com/bookmarks/mark?op=add&amp;bkmk=https%3A//pao-pao.net/article/286&amp;title=%E7%BF%BB%E5%A2%99%E5%AE%89%E5%85%A8" rel="nofollow" title="Bookmark this post on Google"> <img alt="谷歌 logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/google.png" typeof="foaf:Image" /> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block block-views related" id="block-views-articles-related-block-1">
+            <h2 id="section-2"> 您可能感兴趣的文章 </h2>
+            <div class="content">
+              <div class="view view-articles-related view-id-articles_related view-display-id-block_1 related promoted view-dom-id-213268469d6b48d4a2bf747054542097">
+                <div class="view-content">
+                  <div class="views-row views-row-1 views-row-odd views-row-first">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/156"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/rebel_pepper.png?itok=yFkfiDzw" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-3"> <a href="/article/156"> 全网封杀“变态辣椒”说明什么？ </a>                                 <h2 id="section-4"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-2 views-row-even">
+                    <div class="ds-2col node node-pao-pao-article node-promoted node-sticky view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/1023"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/wechatimg929.jpeg?itok=zxZYA5tV" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-5"> <a href="/article/1023"> 当 “不作恶” 成为空谈，“定制人”将终结民主 </a>                                 <h2 id="section-6"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-3 views-row-odd">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/249"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/hk_3.jpg?itok=q4Tw6K3x" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-7"> <a href="/article/249"> 一国两制病了 而香港政府没有药 </a>                                 <h2 id="section-8"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-4 views-row-even views-row-last">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/341"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/404.jpg?itok=SbjQmglN" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-9"> <a href="/article/341"> 中国宣布2015净网计划：还会发生什么？ </a>                                 <h2 id="section-10"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.block -->
+          <ul class="links inline">
+            <li class="comment-add first last active"><a class="active" href="/article/286#comment-form" title="分享您有关本文的看法与观点。"> 冒个泡吧！ </a></li>
+          </ul>
+          <div class="comment-wrapper" id="comments">
+            <h2 class="title" id="section-11"> 评论 </h2>
+ <a id="comment-26338">
+      </a>             <div about="/comment/26338#comment-26338" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> LesWape (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-05T08:32:12+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期三, 06/05/2019 - 08:32 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/26338#comment-26338" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="cheap-generic-cialis-leswape--"> <a class="permalink" href="/comment/26338#comment-26338" rel="bookmark"> Cheap Generic Cialis LesWape </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/286"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Amoxicillin Clavulanate Acid &lt;a href= <a href="http://cialtadalaf.com&gt;cialis"> http://cialtadalaf.com&gt;cialis </a> from canada&lt;/a&gt; Viagra 100mg No Prescription On Line Zentel Low Price Trimohills</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/286/26338"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+            <h2 class="title comment-form" id="section-12"> 冒个泡吧！ </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.block -->
+  </div>
+  <!-- /.region -->
+</section>
+
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#泡泡 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2018-05-30/%E4%BA%92%E8%81%94%E7%BD%91%E8%B6%8B%E5%8A%BF%E6%8A%A5%E5%91%8A2018-%E4%BE%9D%E6%97%A7%E5%91%88%E7%8E%B0%E4%B8%8D%E8%89%AF%E8%B6%8B%E5%8A%BF-%E8%BF%99%E9%87%8C%E6%98%AF%E5%85%B7%E4%BD%93%E5%88%86%E6%9E%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-02-04/%E6%B0%91%E6%97%8F%E7%9F%9B%E7%9B%BE%E5%BA%94%E7%94%B1%E5%81%9C%E6%AD%A2%E4%BF%A1%E6%81%AF%E9%9A%94%E7%A6%BB%E5%BC%80%E5%A7%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2014-12-01</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-01/%E4%B8%A4%E5%B2%B8%E6%96%B0%E9%97%BB-%E4%B8%8D-%E4%BA%A4%E6%B5%81-%E9%99%86%E5%A7%94%E4%BC%9A%E5%91%BC%E5%90%81%E4%B8%AD%E5%9B%BD%E6%94%BE%E5%AE%BD%E5%8F%B0%E6%B9%BE%E6%96%B0%E9%97%BB%E7%AE%A1%E5%88%B6%E7%9A%84%E5%BC%A6%E5%A4%96%E4%B9%8B%E9%9F%B3/">
+          两岸新闻（不）交流：陆委会呼吁中国放宽台湾新闻管制的弦外之音
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-11-30</time>
+        <a href="https://nodebe4.github.io/oped2/2014-11-30/%E4%BA%B2%E4%B8%AD%E5%85%B1%E5%9B%BD%E6%B0%91%E5%85%9A%E6%83%A8%E8%B4%A5-%E5%A4%A7%E9%99%86%E5%AE%98%E5%AA%92%E5%86%B7%E5%A4%84%E7%90%86/">
+          亲中共国民党惨败 大陆官媒冷处理
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-11-28</time>
+        <a href="https://nodebe4.github.io/oped2/2014-11-28/%E4%B8%80%E5%9B%BD%E4%B8%A4%E7%BD%91-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8D%8D%E5%8D%AB%E5%AE%83/">
+          “一国两网”，我们为什么要捍卫它
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-11-27</time>
+        <a href="https://nodebe4.github.io/oped2/2014-11-27/%E9%98%B2%E7%81%AB%E5%A2%99%E6%8A%8A%E4%B8%AD%E5%9B%BD%E7%A7%91%E5%AD%A6%E4%BB%8E%E5%B7%A8%E4%BA%BA%E8%82%A9%E8%86%80%E4%B8%8A%E6%8B%89%E4%B8%8B%E6%9D%A5/">
+          防火墙把中国科学从巨人肩膀上拉下来
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2014-11-28/%E4%B8%80%E5%9B%BD%E4%B8%A4%E7%BD%91-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8D%8D%E5%8D%AB%E5%AE%83/">
+            前一篇：“一国两网”，我们为什么要捍卫它
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2014-11-30/%E4%BA%B2%E4%B8%AD%E5%85%B1%E5%9B%BD%E6%B0%91%E5%85%9A%E6%83%A8%E8%B4%A5-%E5%A4%A7%E9%99%86%E5%AE%98%E5%AA%92%E5%86%B7%E5%A4%84%E7%90%86/">
+            後一篇：亲中共国民党惨败 大陆官媒冷处理
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2014-11-28/%E4%B8%80%E5%9B%BD%E4%B8%A4%E7%BD%91-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8D%8D%E5%8D%AB%E5%AE%83/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2014-11-30/%E4%BA%B2%E4%B8%AD%E5%85%B1%E5%9B%BD%E6%B0%91%E5%85%9A%E6%83%A8%E8%B4%A5-%E5%A4%A7%E9%99%86%E5%AE%98%E5%AA%92%E5%86%B7%E5%A4%84%E7%90%86/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2014-11-30/%E4%BA%B2%E4%B8%AD%E5%85%B1%E5%9B%BD%E6%B0%91%E5%85%9A%E6%83%A8%E8%B4%A5-%E5%A4%A7%E9%99%86%E5%AE%98%E5%AA%92%E5%86%B7%E5%A4%84%E7%90%86/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2014-11-28/%E4%B8%80%E5%9B%BD%E4%B8%A4%E7%BD%91-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8D%8D%E5%8D%AB%E5%AE%83/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2014-11-28/%E4%B8%80%E5%9B%BD%E4%B8%A4%E7%BD%91-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8D%8D%E5%8D%AB%E5%AE%83/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2014-11-30/%E4%BA%B2%E4%B8%AD%E5%85%B1%E5%9B%BD%E6%B0%91%E5%85%9A%E6%83%A8%E8%B4%A5-%E5%A4%A7%E9%99%86%E5%AE%98%E5%AA%92%E5%86%B7%E5%A4%84%E7%90%86/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<泡泡>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2014-11-30/%E4%BA%B2%E4%B8%AD%E5%85%B1%E5%9B%BD%E6%B0%91%E5%85%9A%E6%83%A8%E8%B4%A5-%E5%A4%A7%E9%99%86%E5%AE%98%E5%AA%92%E5%86%B7%E5%A4%84%E7%90%86/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<泡泡>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2014-11-28/%E4%B8%80%E5%9B%BD%E4%B8%A4%E7%BD%91-%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8D%8D%E5%8D%AB%E5%AE%83/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

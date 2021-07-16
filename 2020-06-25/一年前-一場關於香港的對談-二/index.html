@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>一年前，一場關於香港的對談（二） – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+一年前，一場關於香港的對談（二）
+——
+" />
+    <meta property="og:description" content="
+一年前，一場關於香港的對談（二）
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="一年前，一場關於香港的對談（二）" />
+    <meta property="twitter:title" content="一年前，一場關於香港的對談（二）" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40islander%2F%2525E4%2525B8%252580%2525E5%2525B9%2525B4%2525E5%252589%25258D-%2525E4%2525B8%252580%2525E5%2525A0%2525B4%2525E9%252597%25259C%2525E6%252596%2525BC%2525E9%2525A6%252599%2525E6%2525B8%2525AF%2525E7%25259A%252584%2525E5%2525B0%25258D%2525E8%2525AB%252587-%2525E4%2525BA%25258C-bafyreiaw4s5533h622ldpczzhxaepylbio2pzcyue4zlschnedbirkwybi" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@islander/%25E4%25B8%2580%25E5%25B9%25B4%25E5%2589%258D-%25E4%25B8%2580%25E5%25A0%25B4%25E9%2597%259C%25E6%2596%25BC%25E9%25A6%2599%25E6%25B8%25AF%25E7%259A%2584%25E5%25B0%258D%25E8%25AB%2587-%25E4%25BA%258C-bafyreiaw4s5533h622ldpczzhxaepylbio2pzcyue4zlschnedbirkwybi" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@islander/%25E4%25B8%2580%25E5%25B9%25B4%25E5%2589%258D-%25E4%25B8%2580%25E5%25A0%25B4%25E9%2597%259C%25E6%2596%25BC%25E9%25A6%2599%25E6%25B8%25AF%25E7%259A%2584%25E5%25B0%258D%25E8%25AB%2587-%25E4%25BA%258C-bafyreiaw4s5533h622ldpczzhxaepylbio2pzcyue4zlschnedbirkwybi&text=一年前，一場關於香港的對談（二）&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@islander/%25E4%25B8%2580%25E5%25B9%25B4%25E5%2589%258D-%25E4%25B8%2580%25E5%25A0%25B4%25E9%2597%259C%25E6%2596%25BC%25E9%25A6%2599%25E6%25B8%25AF%25E7%259A%2584%25E5%25B0%258D%25E8%25AB%2587-%25E4%25BA%258C-bafyreiaw4s5533h622ldpczzhxaepylbio2pzcyue4zlschnedbirkwybi&title=一年前，一場關於香港的對談（二）" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@islander/%25E4%25B8%2580%25E5%25B9%25B4%25E5%2589%258D-%25E4%25B8%2580%25E5%25A0%25B4%25E9%2597%259C%25E6%2596%25BC%25E9%25A6%2599%25E6%25B8%25AF%25E7%259A%2584%25E5%25B0%258D%25E8%25AB%2587-%25E4%25BA%258C-bafyreiaw4s5533h622ldpczzhxaepylbio2pzcyue4zlschnedbirkwybi&title=一年前，一場關於香港的對談（二）" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=一年前，一場關於香港的對談（二）&body=
+一年前，一場關於香港的對談（二）
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@islander/%25E4%25B8%2580%25E5%25B9%25B4%25E5%2589%258D-%25E4%25B8%2580%25E5%25A0%25B4%25E9%2597%259C%25E6%2596%25BC%25E9%25A6%2599%25E6%25B8%25AF%25E7%259A%2584%25E5%25B0%258D%25E8%25AB%2587-%25E4%25BA%258C-bafyreiaw4s5533h622ldpczzhxaepylbio2pzcyue4zlschnedbirkwybi" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@islander/%25E4%25B8%2580%25E5%25B9%25B4%25E5%2589%258D-%25E4%25B8%2580%25E5%25A0%25B4%25E9%2597%259C%25E6%2596%25BC%25E9%25A6%2599%25E6%25B8%25AF%25E7%259A%2584%25E5%25B0%258D%25E8%25AB%2587-%25E4%25BA%258C-bafyreiaw4s5533h622ldpczzhxaepylbio2pzcyue4zlschnedbirkwybi&title=一年前，一場關於香港的對談（二）&caption=
+一年前，一場關於香港的對談（二）
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=一年前，一場關於香港的對談（二）&url=https://matters.news/@islander/%25E4%25B8%2580%25E5%25B9%25B4%25E5%2589%258D-%25E4%25B8%2580%25E5%25A0%25B4%25E9%2597%259C%25E6%2596%25BC%25E9%25A6%2599%25E6%25B8%25AF%25E7%259A%2584%25E5%25B0%258D%25E8%25AB%2587-%25E4%25BA%258C-bafyreiaw4s5533h622ldpczzhxaepylbio2pzcyue4zlschnedbirkwybi" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>一年前，一場關於香港的對談（二）</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-06-25
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 島民</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@islander/%25E4%25B8%2580%25E5%25B9%25B4%25E5%2589%258D-%25E4%25B8%2580%25E5%25A0%25B4%25E9%2597%259C%25E6%2596%25BC%25E9%25A6%2599%25E6%25B8%25AF%25E7%259A%2584%25E5%25B0%258D%25E8%25AB%2587-%25E4%25BA%258C-bafyreiaw4s5533h622ldpczzhxaepylbio2pzcyue4zlschnedbirkwybi" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1593100507000-->
+<p><a href="https://matters.news/@islander/%25E4%25B8%2580%25E5%25B9%25B4%25E5%2589%258D-%25E4%25B8%2580%25E5%25A0%25B4%25E9%2597%259C%25E6%2596%25BC%25E9%25A6%2599%25E6%25B8%25AF%25E7%259A%2584%25E5%25B0%258D%25E8%25AB%2587-%25E4%25BA%258C-bafyreiaw4s5533h622ldpczzhxaepylbio2pzcyue4zlschnedbirkwybi">一年前，一場關於香港的對談（二）</a>
+——</p>
+
+<div>
+  <p><strong>一年前的6月29日，島民和<a class="mention" href="https://matters.news/@az" target="_blank" data-display-name="張潔平" data-user-name="az" data-id="VXNlcjo2">﻿<span>@張潔平</span>﻿</a> 在台北進行了一次關於反送中運動最初的對談。許多談話在一年後的今天重看，已經恍如隔世，但一些觀察也許得到驗證，一些被推翻，一些思考也許還可以延續。我會在近日分上下兩集把當日的對談文字稿發出，共7000多字。以下是篇二。</strong></p>
+  <hr />
+  <p><strong>﻿島民：我們剛才短暫地休息了一下，就在這短暫的不知有沒有半小時的時間裡，看到了反送中第二個墮樓身亡的新聞。*我自己沒有轉發這條新聞，因為報導這種事件的守則就是，盡量不要在首頁頭版出現，加上我自己是很容易被情緒感染的人，我就不轉了。</strong></p>
+  <p><strong>但我覺得還是要說一說這個事情。二百萬人遊行的前一天晚上梁凌杰先生墮樓，我那天白天訪問了六個人，正好要瘋狂地打逐字稿然後寫稿，打算在下午兩點遊行開始之前寫完，我就可以去街上看看。但是梁先生墮樓的事情對我的情緒造成了很大的困擾，也對那篇稿的寫作產生了困擾，因為我前一天訪問的六個人當晚都出現了相當大的情緒震蕩。有非常憤怒的，要以死相博的那種，年紀大的忙著安撫年紀小的，所以我也陷入了情緒崩潰無法寫作的狀態。再加上那幾天我一直都還沒有時間好好面對自己的情緒，我甚至都沒有哭過，我就打了個電話給潔平。具體說了什麼我已經忘了，我只記得說完以後我平靜了。沒想到今天又出一次這種事情，唉。</strong></p>
+  <p><br /></p>
+  <p><strong>潔平：我記得說了什麼。就是說要回到真實中，去體驗那個真實的悲傷。因為大部分人都在社交媒體上把自己最負面的情緒講出來，這些疊加在一起構成了一個超級巨大的負面能量的網絡。（島民：悲傷的黑洞。）對它是不真實的，它只是人的諸多情感裡的一部分的強共振，所構成的黑洞。你必須要走出來見到活生生的人，跟活生生的人擁抱、談天，怎樣都可以。</strong></p>
+  <p><strong>我也挺震驚的，居然有第二個。你剛才講到的，我覺得很多年輕人可以這麼沒有包袱地、「清純」地、「天真」地走出來，是因為沒有歷史包袱。但是相應的，我就很擔心他們對打擊的承受能力沒有那麼強。因為你會容易鑽牛角尖，覺得我都這樣了，我都已經做了這麼這麼多的事情，如此的……而且還是為了這麼小小的一個事情，不是要什麼，只是要守住原來的東西。這麼小小的要求，都不行嗎？</strong></p>
+  <p><strong>雨傘之後其實有挺多傘後抑鬱的人，我自己也聽說過一個蠻詳細的故事。我也知道這個故事對這個自殺的年輕人的老師和朋友有很大很大的影響。那大概是傘後一兩年的時間。那個學生自殺的時候也是留下了跟雨傘運動相關的符號。但是當時所有人都把這個事情瞞下來了，沒有人敢對媒體講。一方面當然是不想讓這麼悲傷的事情被過度的炒作，也是怕被誤讀，所以他的朋友家人老師都很壓抑地過了好幾年，是不被社會所理解的。以死明志是所有抗爭當中最激烈的一種，通常主流社會是不接受這種事的。這也是以前有年輕人走上這條路而他們的家人不敢對外講的原因，就是因為社會可能不認可，可能覺得就是你自己有病。</strong></p>
+  <p><strong>但是梁凌杰墮樓那天，我覺得很驚訝，有那麼多香港人引他為同路人，而且要完成他的遺志。這說明主流社會對以死抗爭的接受度好高，我其實挺驚訝的。我當時也在跟一些做社會運動的朋友聊，為什麼主流社會對以死抗爭的接受度可以突然這麼高，而不是像以前那樣去怪當事人，說這個人肯定是自己有病，有情感困擾之類的。我朋友的說法是因為主流社會對現行體制的不滿真的已經高到了一個程度。因為對現在體制越不滿，對抗爭的接受度就越高。</strong></p>
+  <p><strong>但有一點也是很可怕，就是每個人現在都是一個媒體，你看你說剛才你 Facebook 已經有98個人轉發了那條墮樓的新聞。這個真的有傳染性，我也不是很知道……政府如果真的不出來做點什麼的話，這種情緒是不是會繼續蔓延。而且香港人現在去尋求國際媒體的關注，到處去登報發聲，也把自己架在了新的道德高點上，那這樣是很難走暴力抗爭的路線的，如果是這樣，那所有的這些絕望還有什麼出口？只能對自己。（島民：聽起來真可怕。）挺嚇人的，唉。</strong></p>
+  <p><strong>因為暴力抗爭的成本很高，如果香港在國際上的抗爭形象是這樣，那……（島民：殺不了別人只能殺自己了是嗎？）唉。</strong></p>
+  <p><strong>即便是抗爭者這方也會想要扭轉這種絕望的情緒，剛剛看到羅冠聰寫了一句話寫得很好，他說希望是最奢侈的想象，但是一定要有希望。因為絕望產生的力量雖然很大，但這個力量是毀滅性的。而且，唉。這個話題很難談下去。真的希望港府有人出來負責任，不然這個循環一直進行下去真的挺嚇人，唉。</strong></p>
+  <p><br /></p>
+  <p><strong>島民：嗯。去年許寶強到中研院分享他的雨傘五週年關鍵詞計畫，帶來他的新書叫《情感政治》，當中就寫到一個概念叫「左翼憂鬱」，有點類似傘後的這種。但是左翼憂鬱並不是一個好詞，它是有一種自我設限的意味在裡面的。但我當時就覺得這個詞非常戳中傘後的年輕人的現實狀況。</strong></p>
+  <p><strong>那天晚上我們就吃飯，大家就開始討論很大的問題，比如，這個世界會好嗎？這個世界為什麼會好？如果不會好的話，我們要怎麼辦？當然大家有不同的意見，許寶強是一個爸爸型的教育者、學者，會堅持每週跟大學生去進行導修課，其實就是談人生的聊天課。他說他在這幾年的導修課中發現很多年輕人有自殺的傾向，他就開始思考要怎麼回答年輕人的問題。當年輕人問你，這個世界會好嗎？你可以草率地回答說，會的，只要我們努力就會好的，你看東歐以前，歷史經驗 blablah，你們還年輕。這樣是一種答法。但他發現這種答法越來越無法說服這些年輕人了。（潔平：無力。）對，無力。而且在年輕人20幾歲的生命經驗裡，如果他看到的整個世界都是在下墜，你要怎麼說服他去想更久遠以前曾經有人也這樣過，然後最後獲得了勝利。這是很難的。</strong></p>
+  <p><strong>他就說，不如換一種答法，我們就告訴年輕人，對，這個世界不會好了。它可能還會不斷地變壞。但是問題就是，我們在這種情況下還要不要活下去。這才是我們現在要思考的問題。他舉了魯迅的一個例子，魯迅是悲觀主義者，一生都覺得中國是沒有希望的。但到魯迅去世的時候，著作等身，寫的東西堆在地上有一個人這麼高。他寫了那麼多東西，留下來了。許寶強就說，這就是在一個你覺得不會變好的世界裡的一種活法。</strong></p>
+  <p><strong>但我當時聽了我就想，要是我的話，我不敢這樣對年輕人講。</strong></p>
+  <p><br /></p>
+  <p><strong>潔平：是要這麼講。因為我們顯然是在一個世界的下滑通道，你看大歷史的話，很多人都說現在越來越像一戰前的世界，不是後冷戰也不是新冷戰。世界的幾個大的霸主不是真的在用意識形態來戰爭，而是回到了用 power 來競爭，進入前戰爭的狀態。大國的霸權持續了一百年才到了一戰。我覺得80年代從柏林墻倒塌到2000年，那20年的世界，可能是我們這一代經歷的難得的黃金時代。未來的世界肯定不能讓我們很樂觀地說一定會變好，你不能告訴別人一件你自己都不相信的事情。</strong></p>
+  <p><strong>所以我特別同意許寶強的這個說法。我這兩年自己也在想，因為也有學生在問我。我不確定這是不是人類學家項飆的原意，他講過「認命不認輸」。我覺得就是這個命，你要認，人的物理生命相對歷史來說是非常短暫，我們就活一百年，在歷史長河中，你被降生到哪個一百年，這是你的命運。但是認命不代表你要認輸，你在你活的一百年裡依然可以做很多有意義的，不管是記錄也好抗爭也好，日常生活中的一些行動。我覺得能有動力繼續做事的人可能都是這麼想的。</strong></p>
+  <p><strong>我最近也在勸人從美國回到香港。很多人覺得香港有末日情結，你換一個角度去看，這也很可能是「盛世」。香港再壞，很難……我覺得一國兩制的餘威是可以持續很久的，不管一國兩制實際上的制度安排可以守住多少。香港還是保持在整個中華地區相對自由的地方，可能它的自由會慢慢萎縮，但是它保持的一個相對比較自由的狀況還是會有挺長時間的。那些自由萎縮的地方會有很多很多的抗爭，去抵抗那個萎縮的速度。你不覺得把生命投入在這樣的過程裡才是最有意義的事情嗎？當自由開始限縮的時候，其實我倒覺得這個社會是可愛的，因為大家意識到自由不再是一個理所當然的東西，原來這麼多的地方和國家是沒有這個東西的。你手中的自由快要被拿走了，很多人一起去抵抗，這不是你可以度過自己一生最有意義的時刻嗎？那不然呢？</strong></p>
+  <p><br /></p>
+  <p><strong>島民：這就涉及到另一個問題了。我的一個受訪者就說自己從中學時期就開始想，自己做的很多事情到底是為了自我實現，還是為了香港呢？</strong></p>
+  <p><br /></p>
+  <p><strong>潔平：你不太能把生命投注在一個抽象的東西上。「香港」是一個抽象的東西，但是香港是活在每個香港人身上的。如果你認為自己是香港人，你要承擔起香港人身份的特殊性，盡你的力量，在你身上把香港的一些好的東西傳承下去，那香港就不再是一個抽象的東西。什麼叫為了香港？如果你自己承擔了香港700萬分之一的責任，那你把自己實現出來，就是把700萬分之一的香港實現出來了。</strong></p>
+  <p><strong>梁曉燕對我的啟發很大。她經歷了八九，其實想起來是很悲傷的，二十多歲經歷了八九，就跟現在的這一代香港年輕人一樣經歷了人生最大的打擊。但她沒有摔倒，而是用接下來三十年的時間在做中國公民社會的基礎性工作和研究。但現在中國的這個狀態，她做的這些事幾乎一鋪清袋，一夜回到解放前，你說她怎麼活下去？她還是活得很好，她覺得自己一個人影響了很多人，這些人會把這些影響再傳承下去。</strong></p>
+  <p><strong>推到最負面的情況來講，就算這個世界在我們一生中都不會變好，那我們至少可以度過有意義的一生吧。也有很多正面的情況，世界的很多變化是非常突然的。5月份的時候沒有人想到會有一百萬人上街。一方面是因為這麼多人出來了，一方面也因為國際局勢就是突然變了，中美貿易戰等背景，棋盤突然變了。這種事情你不知道的，你不知道你的努力會在哪天突然結出果實。</strong></p>
+  <p><strong>這就像癌症一樣，癌症病人不會突然死去，通常癌症都要跟一個人共存三五十年。如果說極權是我們身上的癌症，這個癌症正在感染周圍的香港，甚至是台灣。OK，怎樣，你要把自己的腦袋切掉嗎？你要把自己的心臟切掉嗎？你要找到一個方法跟它共處，讓自己的其他部分盡量健康地運作下去。與病同行，你可能會煥發出健康人更多的力量，很多厲害的人都是這樣的。</strong></p>
+  <p><br /></p>
+  <p><strong>島民：好，過於正能量了，說得我有點抑鬱。</strong></p>
+  <p><br /></p>
+  <p><strong>潔平：我在香港十四年，這一個月讓我特別感動的是，真的每個人都在自己的位置上盡做。人們不再執著在一個廣場上，在金鐘，在一條馬路上做點什麼。無論你是一個藝術家，一個老師，一個法律工作者。感覺到這個事情是因為，當你去談一件事，商量一個點子，大家的眼神一對上，就立刻知道要做什麼，特別容易就談成了。這個感覺是從來沒有過的，根本不需要去說服對方，大家都很想做點什麼。</strong></p>
+  <p><br /></p>
+  <p><strong>島民：我記得我那時候寫，這是香港最熱烈的社運年代。</strong></p>
+  <p><br /></p>
+  <p><strong>潔平：真的。或者說把運動變成日常吧。（島民：聽起來真累。）把日常變成一種運動。你來 ending 一下吧。</strong></p>
+  <p><br /></p>
+  <p><strong>島民：你讓我沉澱一下。我覺得你講了很多正能量的東西，可是我還是……</strong></p>
+  <p><br /></p>
+  <p><strong>潔平：你不覺得每個人在自己的崗位上盡做，是一種非常好的狀態嗎？</strong></p>
+  <p><br /></p>
+  <p><strong>島民：雨傘的時候也是這樣的。</strong></p>
+  <p><br /></p>
+  <p><strong>潔平：嗯……不是。雨傘的時候大家是要一個東西。現在的盡做，對我自己來說，已經不太在乎你幹嘛了，我只在乎我做了我崗位上能做的所有的事情。</strong></p>
+  <p><br /></p>
+  <p><strong>島民：這個能量能維持多久……</strong></p>
+  <p><br /></p>
+  <p><strong>潔平：我希望能久一點。</strong></p>
+  <p><br /></p>
+  <p><strong>註：</strong></p>
+  <p><strong>* 反送中第二個墮樓身亡的人：2019年6月29日下午，一名少女在粉嶺墮樓，當場不治。梯間牆身有用紅筆寫上的「反送中」三字，以及一封給香港人的信。</strong></p>
+  <p><br /></p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-08-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-03/Podcast-%E7%AC%AC%E5%85%AB%E6%9C%9F-%E5%9C%A8%E5%88%A5%E8%99%95-%E7%9C%8B%E8%A6%8B%E9%A6%99%E6%B8%AF-%E5%85%A8%E6%96%87/">
+          Podcast 第八期：在別處，看見香港（全文）
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-07-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-07-13/%E6%A5%B5%E6%AC%8A%E4%B9%8B%E4%B8%8B-%E6%88%91%E5%80%91%E7%9A%84%E6%81%90%E6%87%BC-%E6%8A%B5%E6%8A%97%E8%88%87%E6%84%9B/">
+          極權之下，我們的恐懼、抵抗與愛
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-25</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-25/%E4%B8%80%E5%B9%B4%E5%89%8D-%E4%B8%80%E5%A0%B4%E9%97%9C%E6%96%BC%E9%A6%99%E6%B8%AF%E7%9A%84%E5%B0%8D%E8%AB%87/">
+          一年前，一場關於香港的對談
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-24</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-24/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-2.0%E7%89%88-%E9%99%84%E4%BB%B6%E4%B8%80/">
+          《數字極權時代生存手記》2.0版 - 附件一
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-25/%E4%B8%80%E5%B9%B4%E5%89%8D-%E4%B8%80%E5%A0%B4%E9%97%9C%E6%96%BC%E9%A6%99%E6%B8%AF%E7%9A%84%E5%B0%8D%E8%AB%87/">
+            前一篇：一年前，一場關於香港的對談
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-26/%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%86%8D%E5%BA%A6%E5%BE%81%E6%9C%8D/">
+            後一篇：命令与再度征服
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-06-25/%E4%B8%80%E5%B9%B4%E5%89%8D-%E4%B8%80%E5%A0%B4%E9%97%9C%E6%96%BC%E9%A6%99%E6%B8%AF%E7%9A%84%E5%B0%8D%E8%AB%87/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-06-26/%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%86%8D%E5%BA%A6%E5%BE%81%E6%9C%8D/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-07-13/%E6%A5%B5%E6%AC%8A%E4%B9%8B%E4%B8%8B-%E6%88%91%E5%80%91%E7%9A%84%E6%81%90%E6%87%BC-%E6%8A%B5%E6%8A%97%E8%88%87%E6%84%9B/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-06-25/%E4%B8%80%E5%B9%B4%E5%89%8D-%E4%B8%80%E5%A0%B4%E9%97%9C%E6%96%BC%E9%A6%99%E6%B8%AF%E7%9A%84%E5%B0%8D%E8%AB%87/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-06-25/%E4%B8%80%E5%B9%B4%E5%89%8D-%E4%B8%80%E5%A0%B4%E9%97%9C%E6%96%BC%E9%A6%99%E6%B8%AF%E7%9A%84%E5%B0%8D%E8%AB%87/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-06-26/%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%86%8D%E5%BA%A6%E5%BE%81%E6%9C%8D/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-07-13/%E6%A5%B5%E6%AC%8A%E4%B9%8B%E4%B8%8B-%E6%88%91%E5%80%91%E7%9A%84%E6%81%90%E6%87%BC-%E6%8A%B5%E6%8A%97%E8%88%87%E6%84%9B/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-06-25/%E4%B8%80%E5%B9%B4%E5%89%8D-%E4%B8%80%E5%A0%B4%E9%97%9C%E6%96%BC%E9%A6%99%E6%B8%AF%E7%9A%84%E5%B0%8D%E8%AB%87/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

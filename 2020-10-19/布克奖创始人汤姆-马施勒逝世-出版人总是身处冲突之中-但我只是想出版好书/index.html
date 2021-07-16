@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书” – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”
+——
+" />
+    <meta property="og:description" content="
+布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”" />
+    <meta property="twitter:title" content="布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fm.allnow.com%2Fpost%2F5f8d539f3a3e102778286f08" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://m.allnow.com/post/5f8d539f3a3e102778286f08" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://m.allnow.com/post/5f8d539f3a3e102778286f08&text=布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://m.allnow.com/post/5f8d539f3a3e102778286f08&title=布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://m.allnow.com/post/5f8d539f3a3e102778286f08&title=布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”&body=
+布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://m.allnow.com/post/5f8d539f3a3e102778286f08" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://m.allnow.com/post/5f8d539f3a3e102778286f08&title=布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”&caption=
+布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”&url=https://m.allnow.com/post/5f8d539f3a3e102778286f08" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-10-19
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 危幸龄</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://m.allnow.com/post/5f8d539f3a3e102778286f08" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1603105200000-->
+<p><a href="https://m.allnow.com/post/5f8d539f3a3e102778286f08">布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”</a>
+——</p>
+
+<div>
+  <p>10月16日，87岁的英国著名出版人汤姆·马施勒（Tom Maschler）在法国阿普特一家医院告别人世。</p>
+  <p> </p>
+  <p>“二战后英国最出色的文学出版商”，很多人这样概括他的一生。他有一双甄别文学天才的慧眼，不仅发掘并推动了如伊恩·麦克尤恩（Ian McEwan）、菲利普·罗斯（Philip Roth）、库尔特·冯内古特（Kurt Vonnegut）、多丽丝·莱辛（Doris Lessing）、马丁·埃米斯（Martin Amis）、布鲁斯·查特文（Bruce Chatwin）等为大众熟知的作家作品，帮助拉美系小说家加夫列尔·加西亚·马尔克斯（Gabriel Garcia Marquez）和马里奥·巴尔加斯·略萨（Mario Vargas Llosa）等进入英语世界版图，同时也是布克奖（Booker Prize）的主要创始人之一。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-19/5f8d53f0a4188f0001536077.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>汤姆·马施勒（Tom Maschler）图源：卫报</p>
+    </figcaption>
+  </figure>
+  <p>1933年8月16日，马施勒出生于柏林。他的父亲拥有两家出版公司，1938年全家搬到了维也纳。由于身上带着的犹太血统，马施勒一家在1939年被迫逃离奥地利，其财产（其中还有与保罗·塞尚、文森特·梵高和托马斯·曼等人的往来信件）被纳粹没收，他的祖父母辈中有三人死于大屠杀。</p>
+  <p> </p>
+  <p>最终，他们全家在英国定居。20世纪40年代，马施勒父母离异后，他便和母亲丽塔一起生活。丽塔在泰晤士河畔亨利镇附近的别墅里找到一份保洁工作，平时他们就生活在马车房里。马施勒在村里的学校上学，和兄弟们没事儿就摘苹果卖给当地人。马施勒12岁时，母亲带他去了法国布列塔尼，说他需要花一个夏天的时间学习法语。她挨家挨户敲门，直到找到一户人家愿意教他并收留他；随后，她便自己回了英国。</p>
+  <p> </p>
+  <p>从那时起，马施勒基本上就开始自己独自生活。他就读于一所贵格会寄宿学校，喜爱运动，尤擅网球。牛津大学的圣埃德蒙学院（St Edmund’s College）认为，虽然他的成绩一般，但考虑到他的网球才华，还是给他发了录取信，并提供了奖学金。然而，当马施勒知道奖学金更多是出于他的运动天赋，而非学术前途授予时，他拒绝了。</p>
+  <p> </p>
+  <p>很快，他决定背起背包出发上路，到美国各地潜行，在任何能赚钱的地方（洛杉矶的金枪鱼罐头工厂、芝加哥的建筑工地等）打工。随后，他不仅走遍美国，还游遍欧洲。20岁时，他成了一名导游，并发了一笔小财。</p>
+  <p> </p>
+  <p>在闯荡意大利电影圈失败后，马施勒于1955年回到英国，开始在出版业工作。在加入乔纳森·凯普出版社（Jonathan Cape）之前，他在企鹅出版社（Penguin Books）工作过一段时间，出版了20世纪50年代英国一些新兴剧作家作品，在文学圈掀起了一波小浪花。“我想我可以说，从60年代末到80年代，凯普就有一些特别的东西，使它极具影响力”，马施勒2005年对英国《独立报》说。他一直经营着这家出版社，直到1988年出售，此后多年他也一直与它保持着联系。</p>
+  <p> </p>
+  <p>“我不是一个特别博学的人，”马施勒在2005年对《独立报》说。然而，每当他被斥为仅仅是一个书商、一个能力仅限于商业而非鉴赏力的人时，他会非常生气：“我对出版的直觉在很大程度上是一种本能反应……我唯一能说的是，我的涉猎很广，比大多数人都广……当然，其中一些纯粹是靠运气。我非常喜欢运气这个词。”</p>
+  <p> </p>
+  <h2 id="section">让出版成为重大文学事件，不仅仅是运气</h2>
+  <p> </p>
+  <p>“幸运之神”垂青始于1960年，26岁的马施勒成为英国乔纳森·凯普出版社的文学总监，当时出版社的创始人乔纳森·凯普已经去世。不到一年，他就开始使这家日渐衰落的公司逐渐恢复元气。</p>
+  <p> </p>
+  <p>起初，他以250英镑买下了约瑟夫·海勒（Joseph Heller）的处女作《第二十二条军规》（Catch-22）版权。这本书在1961年出版后，立即成为英国最畅销的书籍之一。2005年，马施勒对《卫报》说，“这本书获得了口碑销量双丰收，其实在出版前就已在文学界引起了轰动……我不知道还有哪本美国作家的书在英国获得过如此巨大的成功。”</p>
+  <p> </p>
+  <p>同样是在1961年，玛丽·海明威的丈夫、小说家欧内斯特·海明威自杀后不久，马施勒受邀去她在爱达荷州的家。当时，马施勒准备帮她出版海明威回忆录《流动的盛宴》（A Moveable Feast），这本书在1964年出版时成为了一个重大文学事件。</p>
+  <p> </p>
+  <p>当然，没有人会说仅仅是运气驱动了马施勒的事业。他像巨人一样“引领”着凯普，他的出版名单囊括了一些20世纪小说界的重量级人物：1964年，他就出版了披头士乐队成员约翰·列侬的作品；1969年，他出版了菲利普·罗斯（Philip Roth）的《波特诺伊的抱怨》（Portnoy’s Complaint）英国版，这本书助力罗斯成为了文学名人；不少于15位诺贝尔文学奖得主的作品都是马施勒出版的，包括加西亚·马尔克斯（Garcia Marquez）、纳丁·戈迪默（Nadine Gordimer）、马里奥·巴尔加斯·略萨（Mario Vargas Llosa）和V.S.奈保尔（V.S. Naipaul）。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-19/5f8d5441d7f8a70001ef0b35.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>1957年的一次聚会上，右数第三为马施勒 图源：卫报</p>
+    </figcaption>
+  </figure>
+  <p>除此之外，马施勒还是商业方面的能手。凭着敏锐的市场营销意识，他出版了首批“玩具书”（pop-up books），委托动物学家德斯蒙德·莫里斯（Desmond Morris）写了《裸猿》（The Naked Ape），这是一本1967年出版的关于进化和人类行为的非虚构畅销书。还有类似艾伦·奥尔德里奇（Alan Aldridge）的《蝴蝶球与蚱蜢盛宴》（the Butterfly Ball and the Grasshopper Feast）和基特·威廉姆斯（Kit Williams）的《寻宝书》（treasure hunt book Masquerade）等插画书籍，帮助他打开了儿童以及青少年市场。</p>
+  <p> </p>
+  <p>“在办公室里，他就像踩着风火轮儿一样跑来跑去，把文稿扔在你桌上，大叫，‘我强烈建议你看看这个’，要是你没有看，他就会骂你是个傻瓜”，曾经的公关波利·萨姆森（Polly Samson）告诉《卫报》。晚年，马施勒被诊断为患有躁郁症，这或许可以解释他以往的“自大狂”风格。</p>
+  <p> </p>
+  <p>“但汤姆就是有这样一种非凡本领，他能一眼看出什么是好的或卖座的，虽然他自己显然不太擅长写作，”他曾经的同事弗朗西斯·温德姆告诉《卫报》。他还曾决定出版弗吉尼亚·斯蒂芬（Virginia Stephen）的早期作品，说她有非凡才华，但当时他并没有意识到她其实和弗吉尼亚·伍尔夫（Virginia Woolf）是同一个人。</p>
+  <p> </p>
+  <h2 id="section-1">设立布克奖：开辟“新式小说”的可能性</h2>
+  <p> </p>
+  <p>马施勒十几岁到法国时就注意到，整个法国都对龚古尔文学奖（Prix Goncourt）感到兴奋。他认为，英国也应该设立类似的奖项与之抗衡，这便是布克奖（Booker Prize）设立的初衷。它最初被称为“布克-麦康奈尔奖”（Booker-McConnell Prize），以赞助商的名字命名。2002年，曼财团（Man Group）成为赞助商，布克奖名称由Booker Prize变成Man Booker Prize。现在也有译作“曼布克奖“或“曼氏布克奖”。2004年，布克奖打破了地域壁垒，宣布从2005年开始，每两年颁发一次奖金为60000英镑的布克国际奖（Man Booker International Prize），所有作家，无论国别，只要其作品以英文或有英文译本发表，均有资格获得此奖，并且获奖题材不仅仅限于小说。</p>
+  <p> </p>
+  <p>自1969年首届奖项颁发以来，布克奖已成为文学界类似奥斯卡一样的年度盛事。博彩公司就哪些作家将被列入“候选名单”进行赔率竞猜，颁奖典礼也在电视上播出；而且，正如马施勒所设想的那样，获奖者和其他入选者的作品销量也大幅增长，实现了商业和文化效益的双赢。</p>
+  <p> </p>
+  <p>“创立布克奖可能是我做过的最重要的事，”他告诉《卫报》。“它的影响可能在于，人们开始意识到，他们有空应该多读读小说，尤其是好小说。想到这儿，我就很自豪。”</p>
+  <p> </p>
+  <p>有人说，布克奖身上一直承载着一种典型的“英国性”——冒险精神与文化大杂烩的结合。若不是它，人们或许不是安详地在临睡前阅读几本励志人物传记，就是靠沉浸在悬念侦探小说中消磨时间，而布克奖从角落中搜寻出那些原本闻所未闻的小说作家，在他们扬名天下的同时，也总是容易挑起文学界剑拔弩张的激辩。比如，当萨尔曼·拉什迪（Salman Rushdie）1993年凭借《午夜之子》（Midnight's Children）获得为纪念布克奖25周年额外增设的“布克奖中奖”之后，他便从此祸福相倚，但这也就是布克奖多年来的使命：开辟“新式小说”的可能性。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-19/5f8d54b4a4188f000153607c.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>马斯勒自传Publisher，作者：Tom Mascheler，出版社：Macmillan UK，出版年：2007-03</p>
+    </figcaption>
+  </figure>
+  <h2 id="section-2">“出版人总是身处冲突之中，但我只是想出版好书”</h2>
+  <p> </p>
+  <p>一直以来，作家与出版人的关系就相当微妙。作家依靠出版人推广自己的作品，但同时又对出版人“怀恨在心”。在《作家与出版人》中，西格弗里德·温塞德列举了过去一些作家与出版人之间的种种不愉快，比如阿尔弗雷德·德布林曾描述：“出版商用一只眼睛盯着作家，另一只盯着读者，第三只眼总是目不转睛盯着钱囊。”在那个时代，出版人与作者之间的冲突，实则也是出版人自己的“角色冲突”。</p>
+  <p> </p>
+  <p>“出版人总是身处这种冲突之中。主张社会变革的人，即便不是先锋，也是小众，因为文化历来就不属于大众，它属于少数派，属于富有者，往往是一种偶得的幸福。谁主张改变，谁认为文化必须民主化，谁把文化理解为日常生活的人道化进程，谁就几乎不可避免地陷入到与自身时代的冲突中。”</p>
+  <p> </p>
+  <p>但马施勒活得通透，在平衡冲突时，他显得得心应手。早在上世纪五十年代，他就出版过先锋作品。敢赌，敢冲，成了他的一大特点。</p>
+  <p>  </p>
+  <p>在出版行业取得巨大成功之后，当被问到是否打算通过出版来进行一场革命时，马施勒回答说：“不。我只是想出版好书，他们得不得奖，我真的无所谓。在我看来，能真正触动我的就是好的，因此我也希望它们能触动除了我之外更多人——它必须是传统意义上的好，句子好，主题妙。但更重要的是，它要能让人产生一种情感反应。我是一个非常情绪化的人。”</p>
+  <p> </p>
+  <p>以上，是马施勒2008年接受《日本时报》（the Japantimes）采访时的一段问答。在名利、口碑与冲突之间，该如何平衡？对他来说，自己一手创造的“出版传奇”，其实并无所谓秘籍，只是按照自己想法和喜好，不刻意迎合大众，对作者和其作品负责。</p>
+  <p> </p>
+  <p>“我不一定比别人好，但我知道我跟别人不一样。”马施勒将自己大半辈子奉献给了出版，但他也从中找到了自己的价值。</p>
+  <p> </p>
+  <p> </p>
+  <p>参考来源：</p>
+  <p>https://www.washingtonpost.com/local/obituaries/tom-maschler-british-publisher-instrumental-in-founding-the-booker-prize-dies-at-87/2020/10/17/7afff156-109f-11eb-8074-0e943a91bf08_story.html</p>
+  <p> </p>
+  <p>https://www.japantimes.co.jp/life/2008/04/06/people/a-storied-life-of-luck-and-literary-passions/</p>
+  <p> </p>
+  <p>https://www.theguardian.com/books/2020/oct/16/tom-maschler-obituary</p>
+  <p> </p>
+  <p>作家和出版人/作者：（德）西格弗里德·温塞德/译者：卢盛舟/品牌方：九久读书人/出版社：人民文学出版社/出版时间：2018-10</p>
+  <p> </p>
+  <p>日不落帝国金融战：伦敦金融城的前世今生/作者：李俊辰/出版社：清华大学出版社/出版时间：2012-08</p>
+  <p>——————</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2020-10-21</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-21/%E5%8D%81%E5%B9%B4%E7%A0%8D%E6%9F%B4-%E5%BC%A0%E5%AE%8F%E6%9D%B0-%E5%B8%9D%E5%9B%BD%E5%AE%98%E5%9C%BA%E7%94%9F%E6%80%81%E4%B8%8B%E7%9A%84%E8%85%90%E8%B4%A5%E4%B8%8E%E5%8F%8D%E8%85%90%E8%B4%A5/">
+          十年砍柴、张宏杰：帝国官场生态下的腐败与反腐败
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-20</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-20/%E5%9C%A8%E5%B9%B3%E9%81%A5%E7%9C%8B%E7%94%B5%E5%BD%B1-%E7%A9%B6%E7%AB%9F%E7%9C%8B%E4%BB%80%E4%B9%88-%E4%B8%A8%E5%B9%B3%E9%81%A5%E7%94%B5%E5%BD%B1%E5%B1%95%E7%B3%BB%E5%88%97%E6%8A%A5%E9%81%93/">
+          在平遥看电影，究竟看什么？丨平遥电影展系列报道
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-19/%E6%98%8E%E4%BB%A3%E7%9A%84%E5%A3%AB%E4%BA%BA%E7%94%9F%E6%B4%BB-%E6%96%87%E5%8C%96%E9%A3%8E%E6%99%AF%E4%B8%8E%E5%8E%86%E5%8F%B2%E7%8E%B0%E5%9C%BA%E6%84%9F/">
+          明代的士人生活、文化风景与历史现场感
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-18</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-18/%E8%B4%BE%E6%A8%9F%E6%9F%AF-%E5%B9%B3%E9%81%A5%E5%9B%BD%E9%99%85%E7%94%B5%E5%BD%B1%E5%B1%95%E4%BB%8A%E5%90%8E%E4%BA%A4%E7%BB%99%E6%94%BF%E5%BA%9C%E4%B8%BE%E5%8A%9E-%E5%B0%86%E4%BB%BB%E5%B1%B1%E8%A5%BF%E7%94%B5%E5%BD%B1%E5%AD%A6%E9%99%A2%E9%99%A2%E9%95%BF/">
+          贾樟柯：平遥国际电影展今后交给政府举办，将任山西电影学院院长
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-19/%E6%98%8E%E4%BB%A3%E7%9A%84%E5%A3%AB%E4%BA%BA%E7%94%9F%E6%B4%BB-%E6%96%87%E5%8C%96%E9%A3%8E%E6%99%AF%E4%B8%8E%E5%8E%86%E5%8F%B2%E7%8E%B0%E5%9C%BA%E6%84%9F/">
+            前一篇：明代的士人生活、文化风景与历史现场感
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-19/%E5%A6%82%E4%BD%95%E9%87%8A%E6%94%BE%E9%9A%90%E8%97%8F%E7%9A%84%E5%88%9B%E9%80%A0%E5%8A%9B-iYouPort/">
+            後一篇：如何释放隐藏的创造力 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-10-19/%E6%98%8E%E4%BB%A3%E7%9A%84%E5%A3%AB%E4%BA%BA%E7%94%9F%E6%B4%BB-%E6%96%87%E5%8C%96%E9%A3%8E%E6%99%AF%E4%B8%8E%E5%8E%86%E5%8F%B2%E7%8E%B0%E5%9C%BA%E6%84%9F/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-10-19/%E5%A6%82%E4%BD%95%E9%87%8A%E6%94%BE%E9%9A%90%E8%97%8F%E7%9A%84%E5%88%9B%E9%80%A0%E5%8A%9B-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-10-20/%E5%9C%A8%E5%B9%B3%E9%81%A5%E7%9C%8B%E7%94%B5%E5%BD%B1-%E7%A9%B6%E7%AB%9F%E7%9C%8B%E4%BB%80%E4%B9%88-%E4%B8%A8%E5%B9%B3%E9%81%A5%E7%94%B5%E5%BD%B1%E5%B1%95%E7%B3%BB%E5%88%97%E6%8A%A5%E9%81%93/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-10-19/%E6%98%8E%E4%BB%A3%E7%9A%84%E5%A3%AB%E4%BA%BA%E7%94%9F%E6%B4%BB-%E6%96%87%E5%8C%96%E9%A3%8E%E6%99%AF%E4%B8%8E%E5%8E%86%E5%8F%B2%E7%8E%B0%E5%9C%BA%E6%84%9F/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-10-19/%E6%98%8E%E4%BB%A3%E7%9A%84%E5%A3%AB%E4%BA%BA%E7%94%9F%E6%B4%BB-%E6%96%87%E5%8C%96%E9%A3%8E%E6%99%AF%E4%B8%8E%E5%8E%86%E5%8F%B2%E7%8E%B0%E5%9C%BA%E6%84%9F/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-10-19/%E5%A6%82%E4%BD%95%E9%87%8A%E6%94%BE%E9%9A%90%E8%97%8F%E7%9A%84%E5%88%9B%E9%80%A0%E5%8A%9B-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-10-20/%E5%9C%A8%E5%B9%B3%E9%81%A5%E7%9C%8B%E7%94%B5%E5%BD%B1-%E7%A9%B6%E7%AB%9F%E7%9C%8B%E4%BB%80%E4%B9%88-%E4%B8%A8%E5%B9%B3%E9%81%A5%E7%94%B5%E5%BD%B1%E5%B1%95%E7%B3%BB%E5%88%97%E6%8A%A5%E9%81%93/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-10-19/%E6%98%8E%E4%BB%A3%E7%9A%84%E5%A3%AB%E4%BA%BA%E7%94%9F%E6%B4%BB-%E6%96%87%E5%8C%96%E9%A3%8E%E6%99%AF%E4%B8%8E%E5%8E%86%E5%8F%B2%E7%8E%B0%E5%9C%BA%E6%84%9F/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

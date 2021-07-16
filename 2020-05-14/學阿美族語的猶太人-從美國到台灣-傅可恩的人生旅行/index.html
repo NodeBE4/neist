@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行
+——
+" />
+    <meta property="og:description" content="
+學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行" />
+    <meta property="twitter:title" content="學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40islander%2F%25E5%25AD%25B8%25E9%2598%25BF%25E7%25BE%258E%25E6%2597%258F%25E8%25AA%259E%25E7%259A%2584%25E7%258C%25B6%25E5%25A4%25AA%25E4%25BA%25BA-%25E5%25BE%259E%25E7%25BE%258E%25E5%259C%258B%25E5%2588%25B0%25E5%258F%25B0%25E7%2581%25A3-%25E5%2582%2585%25E5%258F%25AF%25E6%2581%25A9%25E7%259A%2584%25E4%25BA%25BA%25E7%2594%259F%25E6%2597%2585%25E8%25A1%258C-bafyreibu7vlp2t4gkta6yom2yxihfr7adqbet2aji2kn7mdhiy6b25m7fq" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@islander/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C-bafyreibu7vlp2t4gkta6yom2yxihfr7adqbet2aji2kn7mdhiy6b25m7fq" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@islander/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C-bafyreibu7vlp2t4gkta6yom2yxihfr7adqbet2aji2kn7mdhiy6b25m7fq&text=學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@islander/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C-bafyreibu7vlp2t4gkta6yom2yxihfr7adqbet2aji2kn7mdhiy6b25m7fq&title=學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@islander/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C-bafyreibu7vlp2t4gkta6yom2yxihfr7adqbet2aji2kn7mdhiy6b25m7fq&title=學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行&body=
+學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@islander/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C-bafyreibu7vlp2t4gkta6yom2yxihfr7adqbet2aji2kn7mdhiy6b25m7fq" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@islander/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C-bafyreibu7vlp2t4gkta6yom2yxihfr7adqbet2aji2kn7mdhiy6b25m7fq&title=學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行&caption=
+學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行&url=https://matters.news/@islander/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C-bafyreibu7vlp2t4gkta6yom2yxihfr7adqbet2aji2kn7mdhiy6b25m7fq" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-05-14
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 島民</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@islander/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C-bafyreibu7vlp2t4gkta6yom2yxihfr7adqbet2aji2kn7mdhiy6b25m7fq" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1589506377000-->
+<p><a href="https://matters.news/@islander/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C-bafyreibu7vlp2t4gkta6yom2yxihfr7adqbet2aji2kn7mdhiy6b25m7fq">學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行</a>
+——</p>
+
+<div>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/6ec1b8d6-ed24-49ce-8229-c7b29ea44439.jpeg" data-asset-id="6ec1b8d6-ed24-49ce-8229-c7b29ea44439" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p>圖片來源：台灣國際民族誌影展提供</p>
+  <p>傅可恩沒想到的是，他現在反倒成了家族里唯一一個在亞洲的人。</p>
+  <p>20世紀六十年代，一位猶太裔美國物理學家離開出生長大的紐約，舉家搬到阿富汗，在那裏做了八年的大學教師。這是 Friedman 家族首次踏入亞洲。沒過幾年，物理學家帶著懷孕的妻子去臨近的伊朗旅遊，未料妻子卻半夜陣痛，意外地把孩子生在了伊朗。他們給這個男孩取名 Kerim，一個不管在美國主流社會還是猶太社區都不太典型的名字，有些中亞的味道，為的是紀念他的出生。23年後，這個男孩繞了一大圈，又回到亞洲，最終定居在台灣，現在的名字叫：傅可恩。</p>
+  <p>台灣花蓮壽豐鄉，是今年已經47歲的傅可恩在亞洲最熟悉的地方。壽豐鄉的東華大學，擁有全台灣第一個專注原住民族研究的原住民民族學院，主要招收原住民學生，傅可恩在此教授語言人類學和視覺人類學。夾在台灣中央山脈和海岸山脈之間狹長的花東縱谷中，北起花蓮，南至台東，這里也生活著台灣人數最多的原住民族，人口超過20萬的阿美族。</p>
+  <p>跨越太平洋的遙遠距離來到亞洲，最終讓傅可恩留下來的，正是這個採野菜、捉蝸牛、捕海魚、釀米酒，以母系社會傳統祭儀與古調歌謠而聞名的原住民族。從操著半生不熟的中文開始，傅可恩扛著一部攝影機，在花東縱谷做了數不清的田野調查，生生把自己變成了一個學習阿美族語的影像民族誌學者。今年10月，亞洲第一個國際民族誌影展在台北舉行第9屆，5天放映42部紀錄片，關於台灣原住民的佔去一半，策展人正是傅可恩。</p>
+  <p>他用中英雙語主持映後座談，對台灣原民文化的瞭解令在座華人驚嘆。可就是這麼一個人，在1991年剛到台灣的時候，還驚訝地問朋友：「什麼？原來台灣有原住民的嗎？」</p>
+  <h2 id="section">第一站雲南：我當年是個背包客</h2>
+  <p>傅可恩不是沒見過原住民，中國大陸的叫法是少數民族。1990年，他在全美排名前十的哈弗福德學院讀到人類學三年級，決定休學半年，到中國旅行。那個年代，背包客們已經發掘出今天很熱門的中國西行路線，傅可恩走的就是這條路：他從紐約到香港，然後進入廣州，一路走雲南、四川、新疆，再沿著絲綢之路和沿路的背包客拼車，從全世界最高的高速公路走到了巴基斯坦。</p>
+  <p>他第一次見到少數民族，就是在這趟旅行中。在麗江，他遇到傣族和納西族，在西雙版納，他遇到了白族。那時少數民族的漢語也不好，跟他半斤八兩。「我遇到北京來的人，他們講中文都講得很快。可是那些少數民族都慢慢講，我們的詞匯也都比較簡單，反而比較容易溝通。」</p>
+  <p>他對中國最早的興趣，和他童年在亞洲的經歷並沒什麼關系。反而是在紐約，他讀聯合國附屬小學，交了兩個最好的朋友，是一對來自中國的雙胞胎。聯合國小學的學生種族國籍非常多元，每個人都必修法語課，到了七年級（相當於初一），還要選修一門第二外語。因為這兩個好朋友，他選修了中文。他還記得那個年代的教科書，教的詞都是「同志」之類的。他努力學了幾年，覺得中文真是有點難，算是沒學會。</p>
+  <p>到了高中大學，家庭的影響顯現出來。「我那個時候就已經開始想，要做亞洲的研究。」傅可恩說。父母熟悉中亞、南亞，哥哥當年則在巴基斯坦做難民援助的工作。「我對亞洲有興趣，可是好像這幾個地方我都已經知道一點，只有東亞我不清楚。」他好奇東亞是怎麼樣的，就這樣，把休學旅行的目的地定在了中國。</p>
+  <p>人類學背景讓他把旅遊也看成是田野。高中時，他讀的國際學校要求交小論文，他就研究了北歐的因紐特文化。現在回想，年少時的選擇不是隨性而為，「少數民族一直都是我的興趣」。所以到中國之前，他特地調查了哪些地區有少數民族，一心想親眼看看，走訪部落。年輕的窮遊學生到了背包客棧，又遇到世界各地的背包客，互相打聽攻略結伴成行。</p>
+  <p>可是旅途中，他強烈感受到自己的中文實在不好。「這樣不行。」他心想。有一天，他在虎跳峽爬山，遇到了幾個很會說中文的外國人，還有會寫漢字的。他忍不住問：「你們是在哪兒學的中文？」</p>
+  <p>「台灣。」他們說。1990年，大陸還沒有很多對外漢語的培訓機搆，而這幾位驢友都有在台灣的漢語學校留學的經歷。驢友們知道他經費不足，建議他到台灣一邊教英文，一邊學中文。傅可恩把這話聽進去了。一年之後他大學畢業，為了學中文，真的跑到了台灣。這一去，沒想到是張單程機票，半生都留在了台灣。「如果過幾年我才想起學中文，我就會去北京學了，我也許就會遇到別的文化。」多年後回想，傅可恩也覺得人生奇妙，「所以這個就是，機緣巧合」。</p>
+  <h2 id="section-1">遇見台灣：學了漢語，還要學阿美族語</h2>
+  <p>「我小時候不知道有台灣這個地方。」傅可恩說。</p>
+  <p>結束休學旅行回到美國後，他趕緊查了查資料，發現史丹佛大學在台灣大學設立了當時全球唯一的「國際華語研習所」。那一刻，傅可恩知道自己必須認識台灣了：「如果我真的要做中文的學術研究，一定要到那邊讀書。」<br />但那時候，他壓根沒想過會在台灣遇到原住民的議題。「我不知道台灣有原住民。」他說。</p>
+  <p>直到他真的到台北，一邊申請碩士學位一邊上中文課。他還記得那是1991年，他在台北街頭見到一群遊行的人。「他們在幹嘛？他們是誰？」他問朋友。「人家跟我說，原住民！我問，台灣有原住民嗎？」傅可恩當年看到的，恰巧是台灣原住民要擺脫歧視稱呼「山胞」的正名運動。如今，「山胞」的稱呼早已走入歷史。傅可恩對台灣原住民的興趣，則由此而起，一發不可收拾。</p>
+  <p>他發現這些原住民有不同於漢人的社會文化，尤其是語言。剛好，他碩士的研究方向，就是語言人類學。正名運動還促使台灣開始做族語教育的斧正，針對原住民的基礎教育不再只有漢語，還加入族語課程。傅可恩覺得，這正是透過語言來理解台灣社會變遷的好機會。</p>
+  <p>1997年，他碩士畢業，繼續邊學中文邊讀博士，雖然博士的學校是美國天普大學，但他的田野還是台灣，中文也進步了許多。他曾每天10個小時密集學習中文，但真的進入田野調查，卻發現課堂上學的標准北京口音和花東縱谷的原住民口音不一樣，很難溝通。2000年，他第一次獨自在部落做田野調查，才幫他真的學到了實用的、好溝通的中文。</p>
+  <p>花蓮光復鄉，是台灣阿美族聚居人數第二多的地方，屬於北部阿美族。傅可恩打聽到光復有一間小學要開始做九年一貫的阿美族族語課程，就申請去做田野調查，從2000年9月到第二年10月，駐校整整一年。學生老師們都很歡迎這個來做研究的學生，他住在老師們的宿舍，小朋友們被教導，要對大人有禮貌，見人都得問好。「那個時候很好笑。」傅可恩忍不住笑：「他們都說老師好，老師好，可是我不是老師，他們不知道怎麼稱呼我，所以他們都會說美國人好。」</p>
+  <p>作為小學里唯一的美國人，上課時，他就靜靜地坐在最後一排，旁聽、記錄。下課時，再找老師和學生做訪談。這是台灣最早期的族語教育進學校，通過一年的調查，傅可恩發現這樣教族語，跟自己剛開始學中文一樣，有很大的問題。「一個孩子，一個禮拜就用40分鐘來學自己的族語，沒有語言環境，而且上課討論都是用漢語，算下來，真的講族語的時間只有10到15分鐘。這不是很奇怪嗎？」這也是他最開始在中文課上學不好中文的原因。</p>
+  <p>他開始在全台灣尋找多元的、融入生活的原住民語言課程，找到了，就跑去做調查，帶上攝影機，記錄了上課過程之後，再回學校去研究。因為研究阿美族的族語教育，他自己也開始學阿美語，但這又跟漢語截然不同，他不得不從頭學起，慶幸的是，這種參與體驗式的學習，讓他學得比當年快多了。<br />這種興趣一直持續到他自己也成了大學老師。就在他入駐花蓮的小學做田野調查的同一年，東華大學剛剛成立了原住民民族學院，就在花蓮壽豐鄉。六年後，博士畢業一年的傅可恩如願到這里任教。</p>
+  <p>「本來我想，這里離我研究的阿美族這麼近，我非常喜歡花蓮，那就先做兩年再說吧。」沒想到，兩年，又兩年，再兩年，如今已經11年。他還是非常喜歡在東華大學教書，雖然教學工作的繁重讓他少了去部落做田野調查的機會，但也有意外收獲。「我們的學生，包括碩士生、博士生，還有很多老師，都是原住民。所以我就算沒有去部落，每一天都身處在一個非常關心原住民的環境。」這所大學如今成了他新的「田野」。</p>
+  <p>他總會邀請學生結合自己的文化背景討論課上的議題，例如有一堂課講塗爾幹的《宗教生活的基本形式》，剛好有一位50多歲的博士生，本身是排灣族的頭目。「他就應用他自己的文化背景來討論塗爾幹。」傅可恩興奮地說，「在這樣的環境下教書，真的很不一樣。」</p>
+  <p>另一堂針對本科生的課，則教授原住民影像，課上播放大量關於原住民的紀錄片和電影。傅可恩的學生蘇靜純就選修了這門課，她的媽媽是阿美族，爸爸是漢族。她還記得，課上討論過台灣第一部自制的寬銀幕彩色中文電影《吳鳳》。吳鳳是清治時期的官員，在台灣嘉義任職通事，在嘉義還有吳鳳廟供人參拜。但吳鳳廣為人知，是因為不論是日治時期還是後來，教科書中都記載他「為革除原住民出草習俗而捨生取義」。出草即是獵首，是原住民砍下動物或人的頭顱的習俗，但有特定動機，並不是隨意殺戮。傅可恩在課上給大家播放了電影片段，請同學一起討論，最後發現電影對原住民的出草習俗存在誇大。「是不是原住民就是很殘暴凶惡的？原住民是不是就是壞人，是強盜呢？」</p>
+  <p>也是因為在東華大學，傅可恩有了和原住民學生一起去部落探訪的機會。擁有一半阿美族血統的學生蘇靜純就是其中一個。去年暑假，蘇靜純就跟傅可恩一起回到他第一次做田野調查的花蓮光復鄉。17年過去，這里的族語教育已經截然不同，成立了部落大學，提倡「生活學習」。這一次，輪到學生掌鏡頭，傅可恩自己成了鏡頭中的人。</p>
+  <h2 id="section-2">阿美族的野菜與影像人類學</h2>
+  <p>阿美族對野菜的使用，是台灣原住民族中的一絕。在部落大學，傅可恩去研究族語的「生活學習」，其中一課，就是要跟部落的老奶奶一起去菜園拔菜，然後分辨野菜的功能。新式的族語課全程都講阿美語。「不同的野菜有不同功能，有的可以治感冒，你還要知道怎麼煮，是要炒呢？還是煮湯？」用攝影機記錄傅可恩的學生蘇靜純說。</p>
+  <p>鏡頭下，傅可恩認真地跟在老奶奶身後學拔野菜，有時也去部落老人的家裏，聽老人用阿美族語講古老的故事。部落大學吸引他每星期兩三天去部落觀察研究，長年用影像做記錄，他早就萌生出拍紀錄片的念頭。</p>
+  <p>早在2011年，他就以印度貧民窟的故事為主題，與從事導演工作多年的印度妻子一起，拍攝了人生第一部紀錄片《長官，請別打我！》，還成為了當屆台灣國際民族誌影展的入圍影片。今年，他的角色直接變成了這個影展的策展人。</p>
+  <p>影像人類學，是傅可恩少年時進入人類學的通道。高中的那門人類學課程里，他就借用了一個影像民族誌的理論，分析比較了三部關於因紐特人的紀錄片。到台灣後，影像人類學者拍攝的原住民紀錄片，也成了傅可恩瞭解部落文化的重要渠道。在傅可恩剛剛進入阿美族部落的時候，台灣中央研究院民族學研究所所長胡台麗已經成立了台灣民族誌影像學會，幾年後又創辦台灣國際民族誌影展。如今他也成了學會的理事，但卻發現，其實真正自己動手拍過紀錄片的人類學家屈指可數。「不少人類學家對紀錄片有興趣，可是自己沒有拍過，也有原住民紀錄片的導演，可他們又沒有人類學背景。」傅可恩覺得，自己可以把人類學研究中的阿美族文化真正拍出來，成為紀錄片，讓阿美族野菜成為影像人類學的養分。</p>
+  <p>三年前，他再度和妻子合作，在台東的都蘭部落，終於把自己研究多年的阿美族題材拍成了紀錄片。台東，是台灣最多阿美族居住的地方，都蘭部落則背靠阿美族聖山都蘭山。都蘭，阿美語 Atolan，意思是一堆石頭，是阿美族人最早開墾的時候，將田裏挖出的石頭堆成一堆堆的意思。</p>
+  <p>拍攝時，適逢阿美族一年一度的豐年祭前夕，部落舉行了一個美食比賽，請所有人用部落傳統的方式做菜，連工具也要自己製作。這些工具包括竹筒 lawas、檳榔鞘 parol，還有木頭做的鍋、碗和小杯子。隨後開始的豐年祭持續了一整個星期，傅可恩和妻子就每天早起，趕去拍攝一整天。而食材當中，女性拔野菜和捉蝸牛，水性好的阿美族男人需要下水射魚，或是撿拾可以吃的貝類，獻給部落的老人和婦女，是母系社會特色。傅可恩最集中拍攝的，還是野菜。</p>
+  <p>阿美族自稱為「吃草的民族」，美國人傅可恩也跟著吃。怎麼煮呢？「她們大部分就是在水里滾一滾，加一點點鹽巴，可能配一些辣椒。」傅可恩說。但味道如何，就不好評判。阿美族煮野菜調料很少，味道取決於野菜的原味。「很多野菜是很苦的。」他說，「不過我可以接受，所以沒問題。」</p>
+  <p>他還遵循阿美族不同年齡階級的分工來拍攝。阿美族慣例按年齡給部落成員劃分階級，以分配不同的工作，各個部落不同。而在都蘭，細分的年齡階級有13級之多，粗略的分法，則可分為青少年階級 pakalongay，青年階級 kapah，壯年階級 matataparay和老人階級 tu’as。在豐年祭中，各個年齡階級每天都要負責不同的儀式，當中就包括烹煮食物。</p>
+  <p>有趣的是，傅可恩在其中一個年齡階級里發現了一個義大利裔美國人。原來這個意大利人在台灣定居多年，已經退休，又被當地阿美族部落接納，得以參與儀式。意大利人對著傅可恩的鏡頭講述了自己在部落的生活，包括自己的「野菜奇遇」。「他跟我說了一個很好笑的事情。就是剛買房子的時候，旁邊有草地，那我們就習慣要除草，用除草機，英文我們叫 weeds 嘛，雜草啊。」</p>
+  <p>可是沒想到，旁邊的阿美族鄰居跑了出來。「她們說，不要啊，這個是可以吃的！是食物，美食！」傅可恩一臉認真地說，對於美國或其他國家背景的人類學者來說，把這個訪談拍進紀錄片，幫助他們理解阿美族的文化，簡直太重要了。</p>
+  <p>研究影像人類學，自己也拍了原住民紀錄片之後，去年夏天，傅可恩接下一個重任，就是擔任今年第九屆台灣國際民族誌影展的策展人。台灣國際民族誌影展自2001年成立，前三屆由創辦人、中央研究院的胡台麗教授策展，此後則分別由研究原住民的台灣影像人類學者林文玲和蔡政良策展。</p>
+  <p>「我是第一位外國的策展人。」傅可恩說。</p>
+  <p>籌備影展用掉了他一年多的時間，先是在網上徵集到1500部報名影片，第一輪淘汰三分之二，剩下500部，由台灣民族誌影像學會的四個成員分工去看。每部電影不論淘汰或入選，都要有兩個人看過。傅可恩用了兩個半月的時間，天天看，在學校看，在家裏看，最終看完了250多部民族誌紀錄片，和學會成員一起，選出了最終的42部入圍紀錄片。其中《作部落的人》講述的就是他關注的部落教育問題，而閉幕影片《不得不上路》則講述一位花蓮吉安鄉的阿美族人類學者，在20多年對部落祭師文化進行田野調查之後，自己也成了一位部落的祭師。</p>
+  <p>影展結束後，傅可恩就立刻從台北回到花蓮，返校上課。他打算在課堂上給學生放映《不得不上路》。「這是一部特別適合人類學者看的紀錄片。」他說，「因為我們也會自己思考一個問題，也希望學生能思考，就是原來，你做原住民研究、人類學研究，這麼認真地做記錄，最後真的會改變你的生活。」這句話說的是《不得不上路》的主角，也說的是傅可恩自己。</p>
+  <h2 id="section-3">在異文化中認識自己</h2>
+  <p>今年民族誌影展的總監蔡政良，和傅可恩相識多年。他自己也是個好故事，客家人，台東大學助理教授，卻做了台東都蘭部落阿美族頭目的總幹事，部落老人的養子，還被取名為阿美語 Futuru，意為「真正的男人」。有這層經歷，他覺得傅可恩對原住民的熱情不難理解。</p>
+  <p>「這很正常。」蔡政良說，「人在生物上沒什麼不一樣，但文化上，社會範式上，生活方式上，有這麼多可能性，人類學者就去研究、討論這些脈絡。傅老師是這樣，許多人類學家都是這樣。」而傅可恩自己的身份，猶太裔美國人，也並不妨礙他遠跨重洋，將熱情都投入到台灣原住民身上。</p>
+  <p>他在原住民民族學院任教，許多原住民研究生、博士生，大部分都希望研究自己的部落。可是傅可恩卻覺得，有時可以試試，看看別的族群。「我很贊成他們研究自己的文化。可是如果你沒有研究其他文化的經驗，我覺得你沒有辦法真正理解你自己的。」他會鼓勵學生趁年輕，研究台灣別的族群，「不一定跑很遠」，但要從自己的文化中「跳出去」。</p>
+  <p>這種經驗也來自他自己。他從前沒想過這個問題，「如果你之前問，我不會覺得這有什麼重要」，但現在，他說自己年紀大了，想法變了。「當我研究其他國家的少數民族，或是被壓迫的族群，最終也會幫助我理解自己那個族群的歷史。」</p>
+  <p>他自己的族群，是世代生活在美國紐約的猶太人。他的英文姓氏是 Friedman。「如果你去紐約，以前有那種電話黃頁可以查，你翻一翻裏面姓 Friedman 的人，那麼厚。那些都是猶太人。」</p>
+  <p>但在他離開紐約之前，從沒有注意到自己也是少數族裔。「只有是去夏令營，或者上大學了，開始認識美國主流文化了，到外面了，我才會發現，我不一樣。」他讀社會科學，漸漸發現許多重要的人物都身在主流社會以外，「比如韋伯、塗爾幹、馬克思」。在人類學的世界，有更多人類學家本身是少數民族、新移民、性小眾等等。</p>
+  <p>「你會比較注意，也要去理解少數族群和主流文化的關係。」傅可恩說，「也許，人類學家之所以成為人類學家，也有這樣的原因吧。」</p>
+  <p>蔡政良解釋傅可恩的選擇，一個猶太裔美國人，到台灣成為研究原住民阿美族的人類學家，是「透過異文化來瞭解人，也透過異文化來瞭解自己」。他還「預測」了一件事：「到後期，到了晚年，人類學家就會回頭來看自己。」</p>
+  <p>會嗎？傅可恩也會有離開台灣的原住民田野，反觀美國猶太文化的一日嗎？他還不知道。他現在比較想做的，是在教學工作中抽出時間，真正住到花蓮的阿美族部落中去做研究：「我還是覺得，只有在那裏生活，才能學好那裏的語言。」</p>
+  <p>（原文刊於《南方人物週刊》，此為初版，與最終刊出版略有不同，<a href="http://www.sohu.com/a/211224449_120100" target="_blank">http://www.sohu.com/a/211224449_120100</a>）</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-05-16</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-16/%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E5%B0%88%E9%A1%8C-%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E7%B6%93%E6%BF%9F%E5%AD%B8-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%AF%B8%E9%87%91%E5%B0%BA%E5%9C%9F%E7%9A%84%E4%B8%AD%E7%92%B0%E6%B4%BB36%E5%B9%B4/">
+          [環球大廈專題]環球大廈經濟學：如何在寸金尺土的中環活36年？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-15</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-15/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/">
+          非主流香港：九龍城 泰國城
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-13/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA/">
+          異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-05</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-05/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C/">
+          像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-14/A-Letter-to-My-Friend-under-Quarantine-in-Wuhan/">
+            前一篇：‘A Letter to My Friend under Quarantine in Wuhan’
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-15/A-Letter-to-My-Friend-under-Quarantine-in-Wuhan/">
+            後一篇：‘A Letter to My Friend under Quarantine in Wuhan’
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-05-14/A-Letter-to-My-Friend-under-Quarantine-in-Wuhan/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-05-15/A-Letter-to-My-Friend-under-Quarantine-in-Wuhan/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-05-15/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-05-13/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-05-14/A-Letter-to-My-Friend-under-Quarantine-in-Wuhan/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-05-15/A-Letter-to-My-Friend-under-Quarantine-in-Wuhan/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-05-15/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-05-13/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿
+——
+" />
+    <meta property="og:description" content="
+孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿" />
+    <meta property="twitter:title" content="孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60dd6f5552082c7fe8b3cf36" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60dd6f5552082c7fe8b3cf36" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60dd6f5552082c7fe8b3cf36&text=孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60dd6f5552082c7fe8b3cf36&title=孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60dd6f5552082c7fe8b3cf36&title=孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿&body=
+孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60dd6f5552082c7fe8b3cf36" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60dd6f5552082c7fe8b3cf36&title=孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿&caption=
+孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿&url=https://www.allnow.com/post/60dd6f5552082c7fe8b3cf36" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-07-01
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 孙江</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60dd6f5552082c7fe8b3cf36" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60dd6f5552082c7fe8b3cf36">孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿</a>
+——</p>
+
+<div>
+  <p>演讲 | 孙江；整理 | 元十雨</p>
+  <p>上世纪八十年代末以来，有关“文化记忆”的研究在海外兴起，逐渐发展为一个跨学科的新的研究领域，涉及社会学、历史学、哲学、文学、心理学、媒介研究，以及神经认知科学等学科。</p>
+  <p>记忆研究协会（The Memory Studies Association）网站，如此界定“记忆研究”这一领域所关心的问题：“我们如何向自己和他人再现（represent）过往？在诸多过往中，我们再现哪个版本？在何时何地，出于何种原因，我们会改变再现过往的方式？这些对过往的再现，如何形塑了我们的行动、身份认同和理解方式？个体层面与集体层面的再现历程，彼此如何关联互动？在如此宽泛的层面上思考‘记忆’，究竟意味着什么？从何种层面而言，在伦理上、在政治上，我们有责任去铭记？而承负起这些责任，或未能承负起这些责任，又各将带来何种后果？”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-01/60dd6ffb9c232e01c17d2129+L.jpg" data-id="60dd6fff904b8c02a16a3532" alt ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture"></figcaption>
+  </figure>
+  <p>记忆研究的理论基础，通常会追溯到上世纪二十年代法国社会学家莫里斯·哈布瓦赫（Maurice Halbwachs）提出的“集体记忆”概念。根据阿斯特莉特·埃尔（Astrid Erll）在《文化记忆研究导论》中的介绍，二战之后，“集体记忆”开始被小范围的学者研究，但直到八十年代之后，随着理论思潮中的叙事转向和人类学转向，这一概念才引起越来越多学者的关注。法国历史学家皮埃尔·诺拉（Pierre Nora）“记忆之场”概念，以及法国学者阿莱达·阿斯曼（Aleida Assmann）和扬·阿斯曼（Jan Assmann）对媒介和文化记忆的研究，成为“记忆研究”的典范。当代的记忆研究，则与性别研究、后殖民理论、数字媒介研究等广泛交织。</p>
+  <p>埃尔与安斯加尔·纽宁（Ansgar Nvnning）合作主编，出版于2008年的英文论文集《文化记忆研究指南》（<em>Cultural Memory Studies：An International and Interdisciplinary Handbook</em>），日前由南京大学出版社出版，李恭忠和李霞翻译。这本书中文版的主编、南京大学学衡研究院教授孙江，在南京大学金陵学院作了题为“文化记忆理论的谱系”的讲座，从历史哲学的角度梳理了记忆研究的基础理论，并格外关注了德国哲学传统为记忆研究带来的思想资源。</p>
+  <p>以下是孙江讲座的内容整理。经授权，由《燕京书评》整理发布。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-01/60dd704b9c232e01c17d212a+L.jpg" data-id="60dd704e2114416715c3d90b" alt="《文化记忆研究指南》，阿斯特莉特·埃尔、安斯加尔·纽宁主编， 李恭忠、李霞译，南京大学出版社2021年2月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《文化记忆研究指南》，阿斯特莉特·埃尔、安斯加尔·纽宁主编， 李恭忠、李霞译，南京大学出版社2021年2月版
+    </figcaption>
+  </figure>
+  <h2 id="section"><strong>文化记忆的谱系：从记忆术说起</strong></h2>
+  <p>“记忆”，是这几年大家经常谈到的。记得2000年我在一所大学讲“记忆”的时候，言者甚少。实际上，我们在生活中无处不与“记忆”打交道，还在孩童时，就已经接触记忆了。在座的每位同学都熟知贺知章的《回乡偶成》：“少小离家老大还，乡音难改鬓毛催。儿童相见不相识，笑问客从何处来。” “乡音”是过去的痕迹，“笑问”中含有顽皮的好奇：这位陌生的老爷爷怎么会说和我一样的话呢？这是一位八旬老者追忆似水年华的诗，我在课上拿这首诗讲记忆，能说上半个小时。可怜天下父母心！竟被家长当成童蒙诗了。</p>
+  <p>如果把目光转向欧亚大陆的西边，可以看到，在欧洲历史传统中有一个非常重要的教育方法，叫“记忆术”（art of memory）。柏拉图在《斐多篇》谈到一个古埃及的故事。神塞乌斯（Theuth）发明了文字，他告诉国王萨姆斯（Thamus），我发明了一样东西，可以教给你儿子，你儿子能借此把天下的知识尽皆纳入囊中。萨姆斯问是什么东西？塞乌斯说：文字。国王看后答道，这东西确实不错，但如果我儿子掌握了，就不再会用心去记忆了，因为文字在他的心中播下了遗忘的种子。确实，文字本来是帮助记忆的，如果过度依赖这种外在的工具，反而会损害人的记忆。</p>
+  <p>那么，古希腊人是如何记忆的呢？有一则广被引用的故事：古希腊色萨利（Thessaly）的贵族斯克帕斯（Scopas）举行家宴，请来凯奥斯岛（Ceos）出身的著名诗人西蒙尼得斯（Simonides）为他唱赞美诗。西蒙尼得斯在赞美主人时，不经意提到自己敬仰的卡斯特洛（Castor）和婆琉得乌克斯（Pollux）——两位勇敢的双胞胎神。斯克帕斯很不高兴，声言只能付给约定报酬的一半，于是双方发生了争执。正当相持不下的时候，有人说门外有两人要见西蒙尼得斯。西蒙尼得斯出门探视，没有看到任何人，正在纳闷中，身后的大厦轰然坍塌。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-01/60dd70a64cd55d54dd5db733+L.jpg" data-id="60dd70a99b2d825085c261ab" alt="西蒙尼德斯。图源/视觉中国。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+西蒙尼德斯。图源/视觉中国。
+    </figcaption>
+  </figure>
+  <p>地震了！参加宴会的人尽皆丧身瓦砾下。灾难过后，需要分辨死者的身份，但尸体受损严重。西蒙尼德斯说，我知道如何确认每个人的身份。西蒙尼得斯用的是什么方法呢？记忆术。西塞罗（Cicero）说，西蒙尼得斯由于记得每个人用餐的“位置”，在心中“唤起”想要的事物，并把它们安排在这些位置上。这种通过“形象”与“场所”对接的方法看似简单，实际上有一套整严的记忆方法。</p>
+  <p>记忆术既然这么重要，西人借此生产出怎样的知识呢？具体说，围绕记忆，形成了怎样的知识谱系？以下，我要讲的四个问题：第一个是“亚里士多德命题”，第二个是“历史与记忆”，第三个是“历史即记忆”。别小看这两个词之间只是连词的不同，意涵是不一样的。第四个是回到“生”。</p>
+  <h2 id="section-1"><strong>亚里士多德命题：文化记忆理论的起点</strong></h2>
+  <p>在古希腊，历史女神叫克利俄（Clio），是宙斯的女儿。克利俄的母亲是谁呢？尼莫西妮（Mnemosyne），是“记忆女神”。这是一个很重要的隐喻：历史是从记忆母胎中诞生出来的。换言之，记忆产生了历史。但是，古希腊人似乎并没有深究历史和记忆的关系。给这个问题留下未解之谜的人叫亚里士多德（Aristotle）。亚里士多德被称为“万学之父”，学问超过老师柏拉图（Plato），只有一点不如老师：文学。说到文学，还是柏拉图要强些。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-01/60dd70df9c232e01c17d212b+L.jpg" data-id="60dd70e29b2d825085c261ac" alt="左：记忆女神尼莫西妮（Mnemosyne），图片来源：Mnemosyne, <em>Dante Gabriel Rossetti, 1881, Delaware Art Museum；</em>右：历史女神克利俄（Clio），图片来源：Vatican Museums,Rome，photo by Mark Cartwright" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+左：记忆女神尼莫西妮（Mnemosyne），图片来源：Mnemosyne, <em>Dante Gabriel Rossetti, 1881, Delaware Art Museum；</em>右：历史女神克利俄（Clio），图片来源：Vatican Museums,Rome，photo by Mark Cartwright
+    </figcaption>
+  </figure>
+  <p>亚里士多德有一本很有名的书——《诗学》。爱好文学的同学，学习历史的同学，应该都知道书里有两段文字论述历史和文学的关系，大意是：历史描述过去发生的事情，诗学即文学描述可能发生的事情。这是第一点。第二点，历史描述具体的事情，文学彰显普遍的事情。很多人喜欢引用亚里士多德这段话，但不知其详，甚至用错了。原因出在误解了历史这一概念。</p>
+  <p>被誉为“历史学之父”的希罗多德，在他的著作《历史》一书中，共有20处提到“历史”（ιστορία，history），含义是“调查研究及其结果”。这里的历史有点像我们今天社会学、人类学的田野调查，指称的范围是非常有限的。</p>
+  <p>对历史的这一理解，并非希罗多德一个人独有，在柏拉图的著作里，也有同样的看法。柏拉图著述宏富，但著作里只有5处提到“历史”。我经常告诉学生，书读到关键处是要查对原文的，因为由原文译成英文再译成汉语后，有时差别很大，无法从汉语还原原文。柏拉图著作里的“历史”，有的译成“自然科学”，有的译成“探讨”，有的译成“记忆”，有的甚至写作“熟知后的模仿”，如果不看原文，绝对不知道原来都是一个词——“历史”（ιστορία）。在亚里士多德的书里，这个词出现过24次，其中有实质意义的只有9处，大致含义不外乎调查研究及其结果。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-01/60dd70ff9c232e01c17d212c+L.jpg" data-id="60dd7103904b8c02a16a3534" alt="柏拉图学园（The Academy）。图源/视觉中国。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+柏拉图学园（The Academy）。图源/视觉中国。
+    </figcaption>
+  </figure>
+  <p>这样一来，就出现了一个疑问：应该怎么理解《诗学》里的“历史”？从文化记忆理论的角度，“记忆”（memory）无疑是一个可资的参考。亚里士多德在《论记忆与回忆》（<em>On Memory and Reminiscence</em>）一文里阐述了一个思想：记忆保存过去，回忆唤起过去。从这句话可以知道，我们平时讲的“记忆”，经常与“回忆”混在一起。在古希腊，这两个词是分开的。“记忆”，是保存过去的容器；“回忆”（ἀνάμνησις）是人的当下行为，在古希腊语里，ἀνά是上升、自下而上，μνησις是察觉和回忆，合起来，就是自下而上的精神活动<strong>。</strong>人们通过精神性活动来唤起消失的东西，捕捉沉淀在记忆府库中的东西。苏格拉底认为人的灵魂不死，可以用“学习”和“探索”等“回忆”方法获取被忘却的东西。</p>
+  <p>在这个意义上，亚里士多德所讲的“历史”，是不是有记忆意蕴呢？有点。“历史”既然是调查研究的结果，无疑涉及记忆所保存的过去。回忆是一种唤起过去的行为，和ιστορία（history）——调查研究是不是也有些关联？无疑是有的。调查研究记录了大量的回忆性资料——口传。所以，“历史”的含义又与“回忆”发生了关系。在我看来，亚里士多德《诗学》留下了一道命题——历史作为动词可能与回忆有关，作为名词可能涉及记忆。这是思考文化记忆理论的起点，研究者不断回到这一原点去思考。</p>
+  <h2 id="section-2"><strong>历史与记忆：集体记忆能否收敛个体记忆？</strong></h2>
+  <p>历史和记忆是两个东西，最早系统揭示这一关系的是莫里斯·哈布瓦赫（Maurice Halbwachs）。对记忆研究感兴趣的同学，要读的第一本书就是哈布瓦赫写的《论集体记忆》。哈布瓦赫出生在德法交界的阿林斯煤矿地区，普法战争法国败给德国之后，这里成为德国领土。失去故乡的哈布瓦赫和父母来到巴黎，在那儿开始了学习。因为他父亲是德语教师，所以他精通德语。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-01/60dd716e9c232e01c17d212e+L.jpg" data-id="60dd7172904b8c02a16a3535" alt="《论集体记忆》英文版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《论集体记忆》英文版
+    </figcaption>
+  </figure>
+  <p>哈布瓦赫写的东西很少，在纳粹的集中营里死去。死后半个多世纪，突然成为非常有名的学者。研究记忆的，都要提哈布瓦赫创造的一个概念——“集体记忆”（collective memory）。</p>
+  <p>今天我们会说社会记忆（social memory）、公共记忆（public memory）、国家记忆（national memory）等，原点就是哈布瓦赫的集体记忆。“集体记忆”概念的发明得益于两位大家：一个是心理学哲学家柏格森（H. Bergson），柏格森研究个体记忆（individual memory），认为存在两种类型的记忆：一种是由习惯构成的记忆，指向行动；另一种记忆包含了对现时生活的某种漠不关心。哈布瓦赫从柏格森的个体记忆中获取了养分。影响哈布瓦赫的另一个人是他的老师社会学家涂尔干（Emile Durkheim）。涂尔干发现社会事实优于个人事实，社会事实先于个体而存在，比个体更持久。社会事实以外在的形式“强制”和作用于人们，塑造了人们的意识。这种“强制”既指人们无法摆脱其熏陶和影响，又指对于某些社会规则拒不遵从将受到惩罚。人类大多数的意向不是依据个人意愿建构的，是在外界引导、熏陶和压迫下形成的。</p>
+  <p>集体记忆有三层含义：第一，时间在流逝，记忆的框架既置身其中，也置身其外。我们思考过去，是通过记忆的框架来进行的。就像唐诗一样，我们可以借助唐诗来理解那个时代。但是，如果真进入当时的情境，可能会发现另一番景象。唐诗提供的框架既是过去的，又是被后人不断塑造的。</p>
+  <p>第二，个体记忆依存于集体记忆，因为个体生命是要消失的，个体记忆最终会被集体记忆所收敛。或者用哈布瓦赫的话来说，我们每个个体实际上是依赖于集体记忆的框架来记忆的，个体记忆的作用微乎其微。</p>
+  <p>第三，集体记忆具有双重性质——既是一种物质客体、物质现实，如一尊塑像、一座纪念碑、空间中的一个地点；又是一种象征符号，或某种具有精神内涵的东西，某种附着于并被强加在这种物质现实之上的为群体所共享的东西。</p>
+  <p>哈布瓦赫关于集体记忆的看法，是后世讨论记忆时不断引用或反驳的。而在同时代，历史学家马克·布洛赫（Marc Bloch）在一篇书评中对“集体记忆”提出了质疑。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-01/60dd71a29c232e01c17d212f+L.jpeg" data-id="60dd71aa9b2d825085c261ae" alt="马克·布洛赫，（Marc Bloch，1886-1944），法国著名历史学家,年鉴学派创始人之一。1929年他与吕西安·费弗尔合作创办《社会经济史年鉴》杂志，标志着年鉴学派的诞生。生前出版的著作包括《法兰西岛》（1913）、《国王和农奴》（1920）、《国王神迹》（1924）、《致力于欧洲社会的比较历史研究》（1928）、《法国农村史》（1931）和《封建社会》（两卷，1940）。死后出版的著作有：《奇怪的战败：1940年写下的证词》（1946），以及未完成的《历史学家的技艺》（1949）等。布洛赫一生曾两次投身行伍：第一次世界大战中因作战勇敢获得多枚勋章；1939年再度投笔从戎，为法国的独立而战。1940年法国投降后，毅然参加抵抗运动。1944年6月16日，被纳粹德国的盖世太保逮捕后枪杀于里昂城郊。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+马克·布洛赫，（Marc Bloch，1886-1944），法国著名历史学家,年鉴学派创始人之一。1929年他与吕西安·费弗尔合作创办《社会经济史年鉴》杂志，标志着年鉴学派的诞生。生前出版的著作包括《法兰西岛》（1913）、《国王和农奴》（1920）、《国王神迹》（1924）、《致力于欧洲社会的比较历史研究》（1928）、《法国农村史》（1931）和《封建社会》（两卷，1940）。死后出版的著作有：《奇怪的战败：1940年写下的证词》（1946），以及未完成的《历史学家的技艺》（1949）等。布洛赫一生曾两次投身行伍：第一次世界大战中因作战勇敢获得多枚勋章；1939年再度投笔从戎，为法国的独立而战。1940年法国投降后，毅然参加抵抗运动。1944年6月16日，被纳粹德国的盖世太保逮捕后枪杀于里昂城郊。
+    </figcaption>
+  </figure>
+  <p>马克·布洛赫的批评如下：即便记忆是集体的，也无法将记忆主体归于集体这一实体之中，而且，一旦将“集体”这一形容词视为如个体一样可以“回忆”，就有将集体视为一个自明的实体的危险。在记忆热的当下，温习一下这点非常重要，因为我们在谈集体记忆时，常常将个体记忆置之一旁了。</p>
+  <p>马克·布洛赫接着批评道，集体记忆轻视了通过个人之间的交流所传递的记忆。如果不重视个人之间记忆的传递，会造成将自身并没有体验的过去当作真实的体验来加以回忆，由此会产生怎样的幻想，无法知晓。</p>
+  <p>半个世纪后，试图对这个质疑进行全面回答的人物出现了，他的名字叫皮埃尔·诺拉（Pierre Nora）。皮埃尔·诺拉主编的《记忆之场》3卷7巨册，长达5000页，是由130多位研究者撰写的135篇文章构成的。《记忆之场》本身就是一座记忆的丰碑。我常感叹，他能做成这事，是与他编辑出身有关，一个好的编辑，必须有两个特点：眼界高——见识不输于专业学者，身段低——要会延揽各种作者。南京大学学衡研究院正在组织翻译《记忆之场》全译本，如果完成的话，将会是一套20册的译著。皮埃尔·诺拉今年90岁，身体健康，思维敏捷。去年我让在巴黎留学的学生跟他联系，请他给汉文版写一篇序言。老人说还早，等你们全部翻译好再写不迟。最后我让学生做了一个采访，留下七八分钟的录像。</p>
+  <p>皮埃尔·诺拉主编的《记忆之场》想超越拉维斯（Ernest Lavisse）构筑的法兰西民族史，选择的角度是记忆之场。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-01/60dd71ce4cd55d54dd5db734+L.jpg" data-id="60dd71d1904b8c02a16a3537" alt="《记忆之场：法国国民意识的文化社会史》， [法]皮埃尔·诺拉主编，黄艳红等译，南京大学出版社2020年1月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《记忆之场：法国国民意识的文化社会史》， [法]皮埃尔·诺拉主编，黄艳红等译，南京大学出版社2020年1月版
+    </figcaption>
+  </figure>
+  <p>皮埃尔·诺拉为什么要研究记忆之场？因为到20世纪末，近代以来的知识体系受到了前所未有的挑战。</p>
+  <p>第一个挑战来自网络。各位同学都随身带着一个宝贝——手机，如果哪天出门忘带了，会一日不安吧？有些人在听我的讲座，也会不时地看看手机。这种信息传播手段是20世纪末以来逐渐形成的，它颠覆了支撑现代生活的印刷文化。</p>
+  <p>还有一个挑战是世代更替。承负着沉重的20世纪苦难的世代，一个个在消失。活在物质充裕的现代社会的新生代和旧世代在文化认同、家国意识等方面很不一样。如何抢救历史，诺拉在《记忆之场》导言中以“历史在加速”开头，传递了这种紧迫感。</p>
+  <p>更重要的挑战来自“语言学的转向”带来的“认识论的转向”。以往被视为如如不动的、客观的叙述，现在人们发现由于是人通过语言或图像等手段所表征出来的，有其局限性——时代的、个体的、方法的，等等。为此，有人提出以“弱思考”（weak thinking）来应对和修正。弱思考不是不思考，它的反义词是形而上学思考。</p>
+  <p>构成今日所谓法国传统的，大都是法国大革命后出现的，皮埃尔·诺拉将其打包放在了一个概念里面，称为“记忆之场”（Lieux de Mémoire）。这个概念由“场所”（lieux）和“记忆”（mémoire）构成，追根溯源，与古希腊、罗马的记忆术有关，拉丁语叫loci memoriae。</p>
+  <p>记忆之场有三个特征：实在的、象征的、功能的。档案馆是实在的场所，被赋予了一定的象征意义。教科书、遗嘱、老兵协会因为成为某种仪式中的对象也进入了记忆之场。 一分钟的默哀堪称象征的极端例证。记忆之场还有形塑和传承记忆的职能。在这三个层次上，记忆和历史交互影响，彼此决定。与历史存在有具体所指不同，记忆之场在现实中没有所指对象，它只是个指向自身的符号，纯粹的符号。</p>
+  <p>皮埃尔·诺拉认为，记忆是记忆，历史是历史，二者不是一回事。他有一个经典的比喻，记忆把回忆置于神圣的殿堂，历史则把回忆驱逐出去，让一切去神圣化。因而记忆是绝对的，历史只承认相对性。可见，诺拉的《记忆之场》继承了哈布瓦赫关于历史与记忆二元对立的观点并将其推向极致，重构了法兰西民族史叙事的框架。借用阿莱达·阿斯曼（Aleida Assmann）的话，诺拉把哈布瓦赫视为时空上存在的结合体——集体，改为由超越时空的象征媒介来自我界定的抽象共同体。</p>
+  <h2 id="section-3"><strong>历史即记忆：阿莱达·阿斯曼的记忆理论与保罗·利科的记忆现象学</strong></h2>
+  <p>接下来讲第三个问题，思考方式与刚才不同。记忆和历史不是对立的关系，而是一体两面的关系：记忆即历史，历史即记忆。</p>
+  <p>扬·阿斯曼（Jan Assmann）和阿莱达·阿斯曼夫妇共同创立了“文化记忆”理论，他们打破了将记忆和历史二分的理解，关注记忆和历史之间的紧密联系。在阿莱达·阿斯曼看来，历史与记忆犹如磁石的两极，历史是抽象的立足于超越个体的研究过程，执着于主观的记忆是饱含情感的活生生的个体回想，围绕二者的张力关系有待跨学科的综合研究。</p>
+  <p>阿莱达·阿斯曼把记忆拆解为四个方面、两组关系：一组关系是交往记忆和文化记忆，另一组关系是功能记忆和储存记忆。交往记忆是以个体生命为框架、以日常交往为基础的记忆，是一种尚未成型的非正式记忆。很自然地，随着交往记忆主体的消失，交往记忆也就消失了。当然，其中一部分可能会留在他人的回忆中，但这已经不是当事人的记忆了，而是他者的记忆。文化记忆是一个特定时代、特定社会所特有的可以反复使用的文本体系、意向系统和仪式系统，比如节日就是如此。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-01/60dd72199c232e01c17d2130+L.jpg" data-id="60dd721c2114416715c3d90e" alt="阿莱达·阿斯曼（Aleida Assmann）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+阿莱达·阿斯曼（Aleida Assmann）
+    </figcaption>
+  </figure>
+  <p>阿莱达·阿斯曼说，如果不想让时代证人的经验记忆在未来消失，就必须把个体记忆转化成文化记忆。现在，国内很流行口述史（oral history）。其实，oral history在西文里的份量和“口述史”在汉语里的份量是不一样的。我刚才谈到历史作为调查研究及其结果的原初意涵，History的基本含义是故事。但是，在我们的话语体系里面，能成为历史的“史”，已经不是单纯的故事或记录，而含有道德判断的因素。严格地说，与oral history对应的是“口述故事”。“口述故事”要真正变成“史”，需要一个检验的过程，否则，如果说出来的都是历史的话，“历史”就陷入真假难分的相对主义境地了。</p>
+  <p>还有一组关系，叫功能记忆和储存记忆。功能记忆是与群体相关的、有选择性的价值联系，是面向未来的记忆，是在我们的生活中实实在在起作用的记忆。功能记忆有各式各样的变体，拥有三个重要的面向：合法化、非合法化与差异化。合法化的功能记忆大多与官方或政治记忆有关，常常以一种现时的记忆独占过去的记忆结构。非合法化的记忆是官方记忆的反面，尤其以战败者和被镇压者的记忆为载体。差异化则是为了塑造集体认同的象征性表达形式。</p>
+  <p>功能记忆有一个仓库，是所有记忆的记忆，存放在我们称为档案馆、图书馆的地方，阿莱达·阿斯曼称之为储存记忆。任何功能记忆的背后都有大量的存储记忆作支撑，功能记忆出于不同的动机，巧妙地利用了过去。存储记忆则脱离于社会的实用功能，保存于博物馆、档案馆等空间中。</p>
+  <p>在主张历史与记忆具有紧密关系的学者中，还有一个人物，哲学家保罗·利科（Paul Ricœur）。Ricœur这个名字由Rire+coeur两部分组成，意思是“笑心”。利科的名著《记忆，历史，遗忘》博大精深，已经有中译本了。这本书揭示了记忆和历史的辩证关系。记忆是这一辩证法的起点和终点，历史是连接记忆两端的媒介。利科将二者的关系一直追溯到刚才说的尼莫西妮和克利俄的关系上去。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-01/60dd72484cd55d54dd5db735+L.jpg" data-id="60dd724b904b8c02a16a3539" alt="保罗·利科。图源/Liberation。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+保罗·利科。图源/Liberation。
+    </figcaption>
+  </figure>
+  <p>怎样才能把记忆变成历史呢？他说有三个步骤：第一步叫表象。我们回忆一个事物时，是有形象（image）的。一个形象出来之后，就留下了一个痕迹，是把“不在”唤起并呈现在“现在”。为了让这个“不在”的现在凸显出它的真实性，人们会加上一个时间副词，使它成为一个可以捕捉的记载。接下来是确认过程，要排除假的，想象的，甚至幻想的东西。记忆不完全可靠，所以确认是非常重要。</p>
+  <p>记忆的目的不单是思念逝去的过去，还是对主体自身的确认。首先，记忆是“我”的记忆，可以将其传递给他人。通过口述、文本和影像，他人的记忆也可以传送地给我。如此不断扩散开来，记忆的主体就有了各种主语——单数的“你”“我”“他”，和复数的“你们”“我们”“他们”。就此而言，哈布瓦赫称个人记忆是集体记忆是正确的。但是，哈布瓦赫并没有注意到可以将记忆归属于各种各样的“主体”，我们的记忆和其他群体记忆之间的交叉。</p>
+  <p>所谓口述史，如果没有经过上述作业——表象、唤起、确认，以及主体之间的互动——的话，不过是口述故事，还不能成为史。进一步说，这种口述的结果，如要成为历史学家可以使用的史料，就要像拿到法庭或公证处的文书一样，只有得到确认后，才能成为史料。</p>
+  <p>读过佛经的同学都知道，佛经起首有四个字——“如是我闻”，好像亲耳听到、亲眼看到的那样。佛陀灭迹后，弟子们聚集在一起，回忆佛陀给他们讲经的情形，把重要的话记录下来。为了表示虔诚，起首要有这四个字。我们能保证每个回忆者都有“如是我闻”的战战兢兢的觉悟吗？不能。即使有，人还有选择性遗忘和记忆的倾向：对我好的，我就把它记下来；对我不好的，我就把它忘掉，或者把它压抑到记忆深处去。利科在他的著作最后以这样一段话结尾是颇具深意的：</p>
+  <p>历史的背后，有记忆与遗忘。</p>
+  <p>记忆与遗忘的背后，是生。</p>
+  <p>但，书写生则是另一种历史。</p>
+  <h2 id="section-4"><strong>回到“生”：尼采之问、连接性转向与新媒体时代</strong></h2>
+  <p><br />总结一下。亚里士多德在《诗学》里讲到文学与历史的关系，这里的“历史”与记忆或回忆是怎样的关系，并不清楚。在哈布瓦赫发明“集体记忆”概念后，历史与记忆的关系成为文化记忆理论绕不开的问题。文化记忆理论是沿着两条路径展开的：哈布瓦赫和皮埃尔·诺拉把记忆和历史对立起来；与此相反，阿斯曼夫妇和保罗·利科把记忆和历史拧在一起。</p>
+  <p>接下来，今天要讲的第四个问题是：回到“生”。</p>
+  <p>作为活在当下的人，我们应该怎样理解这个问题？实际上，反过来思考的话，人的历史的发生，是在人和神的关系发生断裂之后。当人和神之间的关系断裂后，以人为主体的历史便诞生了。历史是围绕人的“生”——生命和生活——展开的。</p>
+  <p>但是，人的“生”，经常被形而上学的言说所绑架。尼采在《不合时宜的沉思》（Unzeitgemäße Betrachtungen）——英译《历史的用途与滥用》（The Use and Abuse of History）——开篇引用了一则寓言：人从追逐水草的牲口旁边走过时，看到牲口专注地享受眼前的欢乐不无羡慕。他们为什么这么快乐？而我——人，为什么如此愁苦？因为我的心中装满了和我的“生”不相关的东西：历史。因此，挣脱历史的束缚成为一个问题。在此，基于“生”（das leben）的记忆扮演了重要的角色。在我看来，关于记忆研究，不是从哈布瓦赫开始的，应该从尼采算起，尼采说的“生”，就是利科“记忆与遗忘的背后，是生”。</p>
+  <p>历史研究是通过回忆、文字和影像等，将不在的过去唤到当下。这样，主体很自然地就参与到历史书写过程中。也因此，就出现了两种正反的辩证关系：一种关系是历史对于我们的“生”的掣肘，另一方面是我们的“生”对历史的操作。在匀质化的集体记忆笼罩下，个体的记忆显得非常重要。今天谈文化记忆，关心的焦点应该是在集体记忆缝隙中的个体记忆，这些记忆很多伴随个体自然生命的消失而消失。</p>
+  <p>文化记忆在今日面临来自网络的挑战。新媒体的出现，导致文化保存、传播、消费方式的变化。16世纪印刷术逐渐普及之后，记忆术作为文化传播的手段逐渐退出舞台。在今日，重新认识记忆术、确切地说保存个体记忆成为一个紧迫的工作。</p>
+  <p>刚才提到的西蒙尼德斯，在三四百年前就漂洋过海到了中国，利玛窦（Matteo Rcci）译作“西末泥德”。利玛窦为了在中国士子中传播基督教信仰，特地把西蒙尼德斯的记忆术传给了中国士子。士子们不是苦于四书五经的记忆吗？记忆术可以帮你。结果，记忆术对科举士子没有什么帮助。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-01/60dd72a79c232e01c17d2131+L.jpg" data-id="60dd72aa9b2d825085c261b1" alt="利玛窦（左）与徐光启，图片来源：视觉中国" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+利玛窦（左）与徐光启，图片来源：视觉中国
+    </figcaption>
+  </figure>
+  <p>伴随印刷术的普及，各种印刷品充斥世界，人们不需要记忆术特地去记忆某些东西了。而由印刷术支撑的现代文化传播，到二十世纪末发生了根本的变化，新媒体网络时代出现了。英国社会学家安德鲁·霍斯金斯（Andrew Hoskins）教授认为这个时代是一个“连接性转向”（connective turn）的时代。按一下键盘，人们可以穿越，可以把过去唤到当下，从而使当下和过去有了一种面对面的“即时感”。同时，有些东西可能很快会从我的生活世界里消失。“连接性转向”之后，文化记忆如何持续下去，成为今天研究者的一个重要问题，也成为了每一个文化面临的巨大问题：如何保存文化的集体记忆。</p>
+  <p><em>*霍斯金斯教授正在策划一本大型学术期刊——Memory, Mind &amp; Media，简称MMM，将由牛津大学出版社出版。该刊邀约了世界近百名学者参与编委工作，我欣然接受邀请。对我来说，这也是一个学习机会。</em></p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-07-02</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-02/%E6%9D%8E%E5%B0%8F%E9%BE%99-%E5%A5%BD%E8%8E%B1%E5%9D%9E-%E6%AD%A6%E6%89%93%E7%89%87%E5%92%8C%E4%BA%9A%E8%A3%94%E7%9A%84%E5%BD%A2%E8%B1%A1%E5%8F%98%E8%BF%81/">
+          李小龙：好莱坞、武打片和亚裔的形象变迁
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-01/%E9%98%BF%E7%91%9F-%E5%85%8B%E6%8B%89%E5%85%8B%E5%A5%96%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%9F%AD%E5%90%8D%E5%8D%95-%E4%B8%AD%E5%9B%BD%E4%BD%9C%E5%AE%B6%E9%83%9D%E6%99%AF%E8%8A%B3-%E6%B5%81%E6%B5%AA%E8%8B%8D%E7%A9%B9-%E5%85%A5%E5%9B%B4/">
+          阿瑟·克拉克奖公布2021年短名单，中国作家郝景芳《流浪苍穹》入围
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-30</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-30/%E9%B2%81%E5%A4%A7%E7%BB%B4-%E8%92%99%E5%85%83%E5%B8%9D%E5%9B%BD-%E6%98%8E%E6%B8%85%E7%8E%8B%E6%9D%83%E5%92%8C%E4%B8%9C%E5%8C%97%E4%BA%9A%E5%9C%B0%E7%BC%98%E6%94%BF%E6%B2%BB%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-28</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-28/%E5%9C%A3%E5%9F%83%E5%85%8B%E8%8B%8F%E4%BD%A9%E9%87%8C%E8%AF%9E%E8%BE%B0121%E5%B9%B4-%E5%B0%8F%E7%8E%8B%E5%AD%90-%E6%98%AF%E6%88%90%E4%BA%BA%E7%9A%84%E6%AE%8B%E9%85%B7%E5%AF%93%E8%A8%80%E8%BF%98%E6%98%AF%E7%BA%AF%E7%BE%8E%E7%9A%84%E7%AB%A5%E8%AF%9D/">
+          圣埃克苏佩里诞辰121年：《小王子》是成人的残酷寓言还是纯美的童话?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-30/%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E4%B8%8A%E7%9A%84%E8%A1%8C%E5%8A%A8%E4%B8%BB%E4%B9%89%E5%AE%89%E5%85%A8%E6%80%A7-%E6%A1%86%E6%9E%B6%E6%89%8B%E5%86%8C-iYouPort/">
+            前一篇：社交媒体上的行动主义安全性：框架手册 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-01/%E9%98%BF%E7%91%9F-%E5%85%8B%E6%8B%89%E5%85%8B%E5%A5%96%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%9F%AD%E5%90%8D%E5%8D%95-%E4%B8%AD%E5%9B%BD%E4%BD%9C%E5%AE%B6%E9%83%9D%E6%99%AF%E8%8A%B3-%E6%B5%81%E6%B5%AA%E8%8B%8D%E7%A9%B9-%E5%85%A5%E5%9B%B4/">
+            後一篇：阿瑟·克拉克奖公布2021年短名单，中国作家郝景芳《流浪苍穹》入围
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-30/%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E4%B8%8A%E7%9A%84%E8%A1%8C%E5%8A%A8%E4%B8%BB%E4%B9%89%E5%AE%89%E5%85%A8%E6%80%A7-%E6%A1%86%E6%9E%B6%E6%89%8B%E5%86%8C-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-07-01/%E9%98%BF%E7%91%9F-%E5%85%8B%E6%8B%89%E5%85%8B%E5%A5%96%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%9F%AD%E5%90%8D%E5%8D%95-%E4%B8%AD%E5%9B%BD%E4%BD%9C%E5%AE%B6%E9%83%9D%E6%99%AF%E8%8A%B3-%E6%B5%81%E6%B5%AA%E8%8B%8D%E7%A9%B9-%E5%85%A5%E5%9B%B4/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-07-01/%E9%98%BF%E7%91%9F-%E5%85%8B%E6%8B%89%E5%85%8B%E5%A5%96%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%9F%AD%E5%90%8D%E5%8D%95-%E4%B8%AD%E5%9B%BD%E4%BD%9C%E5%AE%B6%E9%83%9D%E6%99%AF%E8%8A%B3-%E6%B5%81%E6%B5%AA%E8%8B%8D%E7%A9%B9-%E5%85%A5%E5%9B%B4/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-30/%E9%B2%81%E5%A4%A7%E7%BB%B4-%E8%92%99%E5%85%83%E5%B8%9D%E5%9B%BD-%E6%98%8E%E6%B8%85%E7%8E%8B%E6%9D%83%E5%92%8C%E4%B8%9C%E5%8C%97%E4%BA%9A%E5%9C%B0%E7%BC%98%E6%94%BF%E6%B2%BB%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-30/%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E4%B8%8A%E7%9A%84%E8%A1%8C%E5%8A%A8%E4%B8%BB%E4%B9%89%E5%AE%89%E5%85%A8%E6%80%A7-%E6%A1%86%E6%9E%B6%E6%89%8B%E5%86%8C-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-07-01/%E9%98%BF%E7%91%9F-%E5%85%8B%E6%8B%89%E5%85%8B%E5%A5%96%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%9F%AD%E5%90%8D%E5%8D%95-%E4%B8%AD%E5%9B%BD%E4%BD%9C%E5%AE%B6%E9%83%9D%E6%99%AF%E8%8A%B3-%E6%B5%81%E6%B5%AA%E8%8B%8D%E7%A9%B9-%E5%85%A5%E5%9B%B4/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-07-01/%E9%98%BF%E7%91%9F-%E5%85%8B%E6%8B%89%E5%85%8B%E5%A5%96%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%9F%AD%E5%90%8D%E5%8D%95-%E4%B8%AD%E5%9B%BD%E4%BD%9C%E5%AE%B6%E9%83%9D%E6%99%AF%E8%8A%B3-%E6%B5%81%E6%B5%AA%E8%8B%8D%E7%A9%B9-%E5%85%A5%E5%9B%B4/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-30/%E9%B2%81%E5%A4%A7%E7%BB%B4-%E8%92%99%E5%85%83%E5%B8%9D%E5%9B%BD-%E6%98%8E%E6%B8%85%E7%8E%8B%E6%9D%83%E5%92%8C%E4%B8%9C%E5%8C%97%E4%BA%9A%E5%9C%B0%E7%BC%98%E6%94%BF%E6%B2%BB%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

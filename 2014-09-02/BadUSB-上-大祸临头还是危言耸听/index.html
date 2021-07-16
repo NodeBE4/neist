@@ -1,0 +1,4167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>BadUSB（上）：大祸临头还是危言耸听？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+  
+    
+      
+        
+              
+  Vergil  在 星期二, 09/02/2014 - 12:17 提交 
+          
+          
+            
+              
+                
+                  
+                      图片来源：欧新社  
+                    
+
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   BadUSB（上）：大祸临头还是危言耸听？ 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  在刚刚过去的八月份，计算机安全领域最热门的话题莫过于被称为“BadUSB”的USB漏洞。该漏洞是由Karsten Nohl 和 Jakob Lell共同发现的，准备今年八月中旬在拉斯维加斯举行的2014年度“黑帽子”（BlackHat）安全大会上予以公布，一度引起北美众多IT媒体的广泛关注。  ZDNet  和  WIRED  在大会开始前就对其作了详尽的报道，由于该漏洞受众为目前PC广泛使用的USB协议，因此随后在大洋彼岸的中国大陆IT界迅速掀起波澜，众多媒体竞相报道和转载，大谈其危害性和隐蔽性，备受争议的大陆安全厂商  奇虎360  虽然通过其微博平台第一时间进行了报道，但由于缺乏有效对策甚至直接遭到其董事长  周鸿祎  的直接批评：
+                  
+                  
+                    
+
+                    
+                  
+                  这个“BadUSB”漏洞究竟是何方神圣，能够聚焦在镁光灯下吸引众多眼球？几乎成为每一台PC机标配的USB接口为何会暴露出如此巨大的漏洞呢？该漏洞又会对我们的使用造成哪些威胁？下面我们以常用的USB存储盘（以下简称”U盘“），简单介绍一下该漏洞的攻击原理和方法：
+                  
+                  
+                    
+            攻击原理
+           
+                  
+                  
+                  
+                  
+                    
+
+                    
+                  
+                  
+           （一）隐蔽性
+           。
+                  我们打开U盘内部结构，可以看到它由芯片控制器和闪存两大部分组成，前者是U盘的大脑，负责控制与PC主机的识别和通讯，后者用以数据的存储。（详见上图）
+                  值得注意的是后者将储存区域划分一部分出来存放U盘的固件，它的作用就好比PC机主板上的  BIOS  （基本输入输出系统），控制U盘的引导和软硬件交互，可以比作是U盘的操作系统。从安全考虑，普通用户是无法通过常规手段读写存放U盘固件的存储区域。
+                  
+                  
+                    
+
+                    
+                  
+                  而Karsten Nohl 和 Jakob Lell 则通过某种方式（将USB闪存中的固件进行了可逆并重新编程，相当于改写了U盘的操作系统。如读者对该过程感觉抽象或艰涩难懂，可以看看最近美国AMC电视台热播的IT剧《奔腾时代》（  Halt and Catch Fire  ）第一集中两位主角对IBM主机的BIOS系统进行逆向破解的情节（也有网友批评该过程并不严谨可行）。
+                  由于目前PC电脑上的杀毒软件无法访问到U盘存放固件的区域，因此也就意味着 
+           杀毒软件和
+           
+           U
+           
+           盘格式化都是无法应对固件改写造成的安全隐患
+           。
+                  资深的网友一定会记得当年由台湾大学生陈盈豪开发的  CIH 病毒  ，就是专门针对PC主机的BIOS系统进行攻击而对整个IT行业造成了巨大的经济损失。
+                  
+           （二）传播性。
+          
+                  不仅仅局限于对主机的攻击，据称它还可以感染其它通过宿主PC上接驳的其它USB设备，由于USB标准在Windows，Linux和Mac系统上都有良好的支持和兼容，因此它能够在全平台上威胁使用者的数据安全，涉及范围相当巨大。
+                  
+           （三）危害性。
+          
+                  为何要大费周章的来改写U盘固件呢，接下来就要谈一下USB协议中存在的安全漏洞。
+                  由于目前USB设备的广泛使用，横跨存储设备、网卡，音频和视频设备，摄像头等周边设备，因此要求系统提供最大的兼容性甚至免驱支持，因此导致在当初设计USB标准时没有强制要求每一个USB设备必须具备一个唯一可确认的身份号码，一个USB设备允许兼具和内置多个输入输出硬件设备的特征描述。
+                  
+                  
+                    
+
+                    
+                  
+                  以USB摄像头为例，当它插入电脑后，它的控制芯片向主机发出申请，告诉操作系统自己是一个视频设备，然后操作系统就会进行识别和设置，并从本地驱动库里寻找到该设备的驱动并加载完成，WinXP系统以上的免驱支持就是这个过程。
+                  如果该USB摄像头还有通话功能，它还必须向系统再次提出申请，要求得到音频设备的驱动支持，也就是说协议中允许 USB 设备可以以多个身份出现并可以在使用过程中随便变换。
+                  由于需要切换不同角色的需求，USB设备无法像网络设备一样占有一个唯一可识别的MAC地址供系统甄别和验证，所以操作系统只知道有USB设备接入，但却无法知道有几个设备接入了系统。
+                  所以Karsten Nohl 和 Jakob Lell就是利用了这个漏洞发起的攻击，他们在8月14日举行的BlackHat安全大会上，就成功的将一个改写过固件的U盘伪装成一个USB键盘，并通过虚拟键盘输入预先编写的指令和代码对电脑实施下一步的攻击和控制，安装木马后门获取客户信息。
+                  
+                  
+                    
+
+                    
+                  
+                  不仅仅是键盘，它还可以虚拟成一个USB网卡，通过对DNS服务器的寻址记录进行篡改对宿主PC的网络访问进行恶意跳转，即所谓的  DNS劫持  攻击，例如，某用户意图访问工商银行网站，但虚拟成USB网卡的U盘却将其解析到另一个钓鱼网站，导致用户登陆网银时输入的用户名和账户密码泄露。
+                  同时，它还可以隐藏在U盘启动盘中，可以在系统启动过程中载入隐藏在U盘中的含有恶意代码的系统，并且不仅仅局限于使用U盘作为载体，还可以通过Android手机通过USB连接电脑上事实上述类似效果的攻击。
+                  以上内容的具体细节可以访问Karsten Nohl 和 Jakob Lell 在BlackHat安全大会上的演讲，Youtube视频地址：  BadUSB - On Accessories that Turn Evil  。
+                  正因为由于其具备前所未有的隐蔽性、传播性和危害性，因此受到IT安全领域的广泛关注和报道，USB漏洞问题引起了各界的广泛关注。    如何预防BadUSB漏洞 
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                “计算机和狗”之辩，为什么要批评美国？—— 监视之恶（六）破解荒唐的狡辩（上）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                短视、冲动、漫无边际的私欲…… nobody cares 的背后究竟是什么                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                一个误解引发对中文社交媒体政治参与的思考                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                2014中国互联网的英雄：炼狱在2014的浦志强                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 09:19 
+                   永久连接 
+                
+              
+              
+                
+                  credit score for personal loan approval  
+                
+                    
+                    
+                      
+                        check into cash sign in &lt;a href=  https://valoansofcalifornia.com/loans/cash-america-today-loan-reviews.ht...  america today loan reviews&lt;/a&gt;  online loans no credit &lt;a href="  https://valoansofcalifornia.com/loans/check-advance-loans-near-me.html"&gt;...  advance loans near me&lt;/a&gt;  how to get a loan with no bank account &lt;a href=  https://valoansofcalifornia.com/loans/quick-and-easy-payday-loans.html&gt;q...  and easy payday loans&lt;/a&gt;  credit one bank reviews bbb &lt;a href="  https://valoansofcalifornia.com/loans/24-7-loans-online.html"&gt;24  7 loans online&lt;/a&gt;  i need a loan sharks tonight &lt;a href=  https://valoansofcalifornia.com/loans/application-credit-card-bad-credit...  credit card bad credit&lt;/a&gt;  small personal loans no credit check &lt;a href="  https://valoansofcalifornia.com/loans/payday-loans-direct-lenders-only.h...  loans direct lenders only&lt;/a&gt;
+                        &lt;a href="  http://callkennytoday.com/temp/tips-on-online-dating.php"&gt;tips  on online dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/black-man-white-woman-dating-sites.php"&gt;black  man white woman dating sites&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/women-seeking-men-ontario.php"&gt;women  seeking men ontario&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/why-are-women-on-dating-sites-comi...  are women on dating sites. coming from ghana&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/how-to-survive-dating-a-girl-in-med-school.ph...  to survive dating a girl in med school&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期六, 06/01/2019 - 04:09 
+                   永久连接 
+                
+              
+              
+                
+                  Finasteride 5 Mg Online Cheap Kelpaycle  
+                
+                    
+                    
+                      
+                        Want To Buy Isotretinoin Wigan &lt;a href=  http://erxbid.com&gt;cialis  generico costo&lt;/a&gt; Herbal Viagra Chinese Replica Viagra 100 Mg
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 05:03 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Generika Forum EllCauh  
+                
+                    
+                    
+                      
+                        Propecia Finasteride Generic &lt;a href=  http://viapill.com&gt;buy  viagra&lt;/a&gt; Buying Viagra In The Caribbean
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期一, 06/03/2019 - 01:28 
+                   永久连接 
+                
+              
+              
+                
+                  Generic Viagra No Precription Kelpaycle  
+                
+                    
+                    
+                      
+                        Kamagra Legal Kaufen Resultados Propecia Purchase Alli Online &lt;a href=  http://buycial.com&gt;order  cialis online&lt;/a&gt; El Cialis Y Levitra
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期二, 06/04/2019 - 08:38 
+                   永久连接 
+                
+              
+              
+                
+                  24hr Cialis Ellnoug  
+                
+                    
+                    
+                      
+                        Cialis Farmacia Andorra &lt;a href=  http://cial40mg.com&gt;cialis  without a doctor's prescription&lt;/a&gt; Priligy 30 Mg Compresse Kamagra Viagra Generika
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    <meta property="og:description" content="
+  
+    
+      
+        
+              
+  Vergil  在 星期二, 09/02/2014 - 12:17 提交 
+          
+          
+            
+              
+                
+                  
+                      图片来源：欧新社  
+                    
+
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   BadUSB（上）：大祸临头还是危言耸听？ 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  在刚刚过去的八月份，计算机安全领域最热门的话题莫过于被称为“BadUSB”的USB漏洞。该漏洞是由Karsten Nohl 和 Jakob Lell共同发现的，准备今年八月中旬在拉斯维加斯举行的2014年度“黑帽子”（BlackHat）安全大会上予以公布，一度引起北美众多IT媒体的广泛关注。  ZDNet  和  WIRED  在大会开始前就对其作了详尽的报道，由于该漏洞受众为目前PC广泛使用的USB协议，因此随后在大洋彼岸的中国大陆IT界迅速掀起波澜，众多媒体竞相报道和转载，大谈其危害性和隐蔽性，备受争议的大陆安全厂商  奇虎360  虽然通过其微博平台第一时间进行了报道，但由于缺乏有效对策甚至直接遭到其董事长  周鸿祎  的直接批评：
+                  
+                  
+                    
+
+                    
+                  
+                  这个“BadUSB”漏洞究竟是何方神圣，能够聚焦在镁光灯下吸引众多眼球？几乎成为每一台PC机标配的USB接口为何会暴露出如此巨大的漏洞呢？该漏洞又会对我们的使用造成哪些威胁？下面我们以常用的USB存储盘（以下简称”U盘“），简单介绍一下该漏洞的攻击原理和方法：
+                  
+                  
+                    
+            攻击原理
+           
+                  
+                  
+                  
+                  
+                    
+
+                    
+                  
+                  
+           （一）隐蔽性
+           。
+                  我们打开U盘内部结构，可以看到它由芯片控制器和闪存两大部分组成，前者是U盘的大脑，负责控制与PC主机的识别和通讯，后者用以数据的存储。（详见上图）
+                  值得注意的是后者将储存区域划分一部分出来存放U盘的固件，它的作用就好比PC机主板上的  BIOS  （基本输入输出系统），控制U盘的引导和软硬件交互，可以比作是U盘的操作系统。从安全考虑，普通用户是无法通过常规手段读写存放U盘固件的存储区域。
+                  
+                  
+                    
+
+                    
+                  
+                  而Karsten Nohl 和 Jakob Lell 则通过某种方式（将USB闪存中的固件进行了可逆并重新编程，相当于改写了U盘的操作系统。如读者对该过程感觉抽象或艰涩难懂，可以看看最近美国AMC电视台热播的IT剧《奔腾时代》（  Halt and Catch Fire  ）第一集中两位主角对IBM主机的BIOS系统进行逆向破解的情节（也有网友批评该过程并不严谨可行）。
+                  由于目前PC电脑上的杀毒软件无法访问到U盘存放固件的区域，因此也就意味着 
+           杀毒软件和
+           
+           U
+           
+           盘格式化都是无法应对固件改写造成的安全隐患
+           。
+                  资深的网友一定会记得当年由台湾大学生陈盈豪开发的  CIH 病毒  ，就是专门针对PC主机的BIOS系统进行攻击而对整个IT行业造成了巨大的经济损失。
+                  
+           （二）传播性。
+          
+                  不仅仅局限于对主机的攻击，据称它还可以感染其它通过宿主PC上接驳的其它USB设备，由于USB标准在Windows，Linux和Mac系统上都有良好的支持和兼容，因此它能够在全平台上威胁使用者的数据安全，涉及范围相当巨大。
+                  
+           （三）危害性。
+          
+                  为何要大费周章的来改写U盘固件呢，接下来就要谈一下USB协议中存在的安全漏洞。
+                  由于目前USB设备的广泛使用，横跨存储设备、网卡，音频和视频设备，摄像头等周边设备，因此要求系统提供最大的兼容性甚至免驱支持，因此导致在当初设计USB标准时没有强制要求每一个USB设备必须具备一个唯一可确认的身份号码，一个USB设备允许兼具和内置多个输入输出硬件设备的特征描述。
+                  
+                  
+                    
+
+                    
+                  
+                  以USB摄像头为例，当它插入电脑后，它的控制芯片向主机发出申请，告诉操作系统自己是一个视频设备，然后操作系统就会进行识别和设置，并从本地驱动库里寻找到该设备的驱动并加载完成，WinXP系统以上的免驱支持就是这个过程。
+                  如果该USB摄像头还有通话功能，它还必须向系统再次提出申请，要求得到音频设备的驱动支持，也就是说协议中允许 USB 设备可以以多个身份出现并可以在使用过程中随便变换。
+                  由于需要切换不同角色的需求，USB设备无法像网络设备一样占有一个唯一可识别的MAC地址供系统甄别和验证，所以操作系统只知道有USB设备接入，但却无法知道有几个设备接入了系统。
+                  所以Karsten Nohl 和 Jakob Lell就是利用了这个漏洞发起的攻击，他们在8月14日举行的BlackHat安全大会上，就成功的将一个改写过固件的U盘伪装成一个USB键盘，并通过虚拟键盘输入预先编写的指令和代码对电脑实施下一步的攻击和控制，安装木马后门获取客户信息。
+                  
+                  
+                    
+
+                    
+                  
+                  不仅仅是键盘，它还可以虚拟成一个USB网卡，通过对DNS服务器的寻址记录进行篡改对宿主PC的网络访问进行恶意跳转，即所谓的  DNS劫持  攻击，例如，某用户意图访问工商银行网站，但虚拟成USB网卡的U盘却将其解析到另一个钓鱼网站，导致用户登陆网银时输入的用户名和账户密码泄露。
+                  同时，它还可以隐藏在U盘启动盘中，可以在系统启动过程中载入隐藏在U盘中的含有恶意代码的系统，并且不仅仅局限于使用U盘作为载体，还可以通过Android手机通过USB连接电脑上事实上述类似效果的攻击。
+                  以上内容的具体细节可以访问Karsten Nohl 和 Jakob Lell 在BlackHat安全大会上的演讲，Youtube视频地址：  BadUSB - On Accessories that Turn Evil  。
+                  正因为由于其具备前所未有的隐蔽性、传播性和危害性，因此受到IT安全领域的广泛关注和报道，USB漏洞问题引起了各界的广泛关注。    如何预防BadUSB漏洞 
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                “计算机和狗”之辩，为什么要批评美国？—— 监视之恶（六）破解荒唐的狡辩（上）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                短视、冲动、漫无边际的私欲…… nobody cares 的背后究竟是什么                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                一个误解引发对中文社交媒体政治参与的思考                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                2014中国互联网的英雄：炼狱在2014的浦志强                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 09:19 
+                   永久连接 
+                
+              
+              
+                
+                  credit score for personal loan approval  
+                
+                    
+                    
+                      
+                        check into cash sign in &lt;a href=  https://valoansofcalifornia.com/loans/cash-america-today-loan-reviews.ht...  america today loan reviews&lt;/a&gt;  online loans no credit &lt;a href="  https://valoansofcalifornia.com/loans/check-advance-loans-near-me.html"&gt;...  advance loans near me&lt;/a&gt;  how to get a loan with no bank account &lt;a href=  https://valoansofcalifornia.com/loans/quick-and-easy-payday-loans.html&gt;q...  and easy payday loans&lt;/a&gt;  credit one bank reviews bbb &lt;a href="  https://valoansofcalifornia.com/loans/24-7-loans-online.html"&gt;24  7 loans online&lt;/a&gt;  i need a loan sharks tonight &lt;a href=  https://valoansofcalifornia.com/loans/application-credit-card-bad-credit...  credit card bad credit&lt;/a&gt;  small personal loans no credit check &lt;a href="  https://valoansofcalifornia.com/loans/payday-loans-direct-lenders-only.h...  loans direct lenders only&lt;/a&gt;
+                        &lt;a href="  http://callkennytoday.com/temp/tips-on-online-dating.php"&gt;tips  on online dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/black-man-white-woman-dating-sites.php"&gt;black  man white woman dating sites&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/women-seeking-men-ontario.php"&gt;women  seeking men ontario&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/why-are-women-on-dating-sites-comi...  are women on dating sites. coming from ghana&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/how-to-survive-dating-a-girl-in-med-school.ph...  to survive dating a girl in med school&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期六, 06/01/2019 - 04:09 
+                   永久连接 
+                
+              
+              
+                
+                  Finasteride 5 Mg Online Cheap Kelpaycle  
+                
+                    
+                    
+                      
+                        Want To Buy Isotretinoin Wigan &lt;a href=  http://erxbid.com&gt;cialis  generico costo&lt;/a&gt; Herbal Viagra Chinese Replica Viagra 100 Mg
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 05:03 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Generika Forum EllCauh  
+                
+                    
+                    
+                      
+                        Propecia Finasteride Generic &lt;a href=  http://viapill.com&gt;buy  viagra&lt;/a&gt; Buying Viagra In The Caribbean
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期一, 06/03/2019 - 01:28 
+                   永久连接 
+                
+              
+              
+                
+                  Generic Viagra No Precription Kelpaycle  
+                
+                    
+                    
+                      
+                        Kamagra Legal Kaufen Resultados Propecia Purchase Alli Online &lt;a href=  http://buycial.com&gt;order  cialis online&lt;/a&gt; El Cialis Y Levitra
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期二, 06/04/2019 - 08:38 
+                   永久连接 
+                
+              
+              
+                
+                  24hr Cialis Ellnoug  
+                
+                    
+                    
+                      
+                        Cialis Farmacia Andorra &lt;a href=  http://cial40mg.com&gt;cialis  without a doctor's prescription&lt;/a&gt; Priligy 30 Mg Compresse Kamagra Viagra Generika
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="BadUSB（上）：大祸临头还是危言耸听？" />
+    <meta property="twitter:title" content="BadUSB（上）：大祸临头还是危言耸听？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fpao-pao.net%2Farticle%2F163" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://pao-pao.net/article/163" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://pao-pao.net/article/163&text=BadUSB（上）：大祸临头还是危言耸听？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://pao-pao.net/article/163&title=BadUSB（上）：大祸临头还是危言耸听？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://pao-pao.net/article/163&title=BadUSB（上）：大祸临头还是危言耸听？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=BadUSB（上）：大祸临头还是危言耸听？&body=
+  
+    
+      
+        
+              
+  Vergil  在 星期二, 09/02/2014 - 12:17 提交 
+          
+          
+            
+              
+                
+                  
+                      图片来源：欧新社  
+                    
+
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   BadUSB（上）：大祸临头还是危言耸听？ 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  在刚刚过去的八月份，计算机安全领域最热门的话题莫过于被称为“BadUSB”的USB漏洞。该漏洞是由Karsten Nohl 和 Jakob Lell共同发现的，准备今年八月中旬在拉斯维加斯举行的2014年度“黑帽子”（BlackHat）安全大会上予以公布，一度引起北美众多IT媒体的广泛关注。  ZDNet  和  WIRED  在大会开始前就对其作了详尽的报道，由于该漏洞受众为目前PC广泛使用的USB协议，因此随后在大洋彼岸的中国大陆IT界迅速掀起波澜，众多媒体竞相报道和转载，大谈其危害性和隐蔽性，备受争议的大陆安全厂商  奇虎360  虽然通过其微博平台第一时间进行了报道，但由于缺乏有效对策甚至直接遭到其董事长  周鸿祎  的直接批评：
+                  
+                  
+                    
+
+                    
+                  
+                  这个“BadUSB”漏洞究竟是何方神圣，能够聚焦在镁光灯下吸引众多眼球？几乎成为每一台PC机标配的USB接口为何会暴露出如此巨大的漏洞呢？该漏洞又会对我们的使用造成哪些威胁？下面我们以常用的USB存储盘（以下简称”U盘“），简单介绍一下该漏洞的攻击原理和方法：
+                  
+                  
+                    
+            攻击原理
+           
+                  
+                  
+                  
+                  
+                    
+
+                    
+                  
+                  
+           （一）隐蔽性
+           。
+                  我们打开U盘内部结构，可以看到它由芯片控制器和闪存两大部分组成，前者是U盘的大脑，负责控制与PC主机的识别和通讯，后者用以数据的存储。（详见上图）
+                  值得注意的是后者将储存区域划分一部分出来存放U盘的固件，它的作用就好比PC机主板上的  BIOS  （基本输入输出系统），控制U盘的引导和软硬件交互，可以比作是U盘的操作系统。从安全考虑，普通用户是无法通过常规手段读写存放U盘固件的存储区域。
+                  
+                  
+                    
+
+                    
+                  
+                  而Karsten Nohl 和 Jakob Lell 则通过某种方式（将USB闪存中的固件进行了可逆并重新编程，相当于改写了U盘的操作系统。如读者对该过程感觉抽象或艰涩难懂，可以看看最近美国AMC电视台热播的IT剧《奔腾时代》（  Halt and Catch Fire  ）第一集中两位主角对IBM主机的BIOS系统进行逆向破解的情节（也有网友批评该过程并不严谨可行）。
+                  由于目前PC电脑上的杀毒软件无法访问到U盘存放固件的区域，因此也就意味着 
+           杀毒软件和
+           
+           U
+           
+           盘格式化都是无法应对固件改写造成的安全隐患
+           。
+                  资深的网友一定会记得当年由台湾大学生陈盈豪开发的  CIH 病毒  ，就是专门针对PC主机的BIOS系统进行攻击而对整个IT行业造成了巨大的经济损失。
+                  
+           （二）传播性。
+          
+                  不仅仅局限于对主机的攻击，据称它还可以感染其它通过宿主PC上接驳的其它USB设备，由于USB标准在Windows，Linux和Mac系统上都有良好的支持和兼容，因此它能够在全平台上威胁使用者的数据安全，涉及范围相当巨大。
+                  
+           （三）危害性。
+          
+                  为何要大费周章的来改写U盘固件呢，接下来就要谈一下USB协议中存在的安全漏洞。
+                  由于目前USB设备的广泛使用，横跨存储设备、网卡，音频和视频设备，摄像头等周边设备，因此要求系统提供最大的兼容性甚至免驱支持，因此导致在当初设计USB标准时没有强制要求每一个USB设备必须具备一个唯一可确认的身份号码，一个USB设备允许兼具和内置多个输入输出硬件设备的特征描述。
+                  
+                  
+                    
+
+                    
+                  
+                  以USB摄像头为例，当它插入电脑后，它的控制芯片向主机发出申请，告诉操作系统自己是一个视频设备，然后操作系统就会进行识别和设置，并从本地驱动库里寻找到该设备的驱动并加载完成，WinXP系统以上的免驱支持就是这个过程。
+                  如果该USB摄像头还有通话功能，它还必须向系统再次提出申请，要求得到音频设备的驱动支持，也就是说协议中允许 USB 设备可以以多个身份出现并可以在使用过程中随便变换。
+                  由于需要切换不同角色的需求，USB设备无法像网络设备一样占有一个唯一可识别的MAC地址供系统甄别和验证，所以操作系统只知道有USB设备接入，但却无法知道有几个设备接入了系统。
+                  所以Karsten Nohl 和 Jakob Lell就是利用了这个漏洞发起的攻击，他们在8月14日举行的BlackHat安全大会上，就成功的将一个改写过固件的U盘伪装成一个USB键盘，并通过虚拟键盘输入预先编写的指令和代码对电脑实施下一步的攻击和控制，安装木马后门获取客户信息。
+                  
+                  
+                    
+
+                    
+                  
+                  不仅仅是键盘，它还可以虚拟成一个USB网卡，通过对DNS服务器的寻址记录进行篡改对宿主PC的网络访问进行恶意跳转，即所谓的  DNS劫持  攻击，例如，某用户意图访问工商银行网站，但虚拟成USB网卡的U盘却将其解析到另一个钓鱼网站，导致用户登陆网银时输入的用户名和账户密码泄露。
+                  同时，它还可以隐藏在U盘启动盘中，可以在系统启动过程中载入隐藏在U盘中的含有恶意代码的系统，并且不仅仅局限于使用U盘作为载体，还可以通过Android手机通过USB连接电脑上事实上述类似效果的攻击。
+                  以上内容的具体细节可以访问Karsten Nohl 和 Jakob Lell 在BlackHat安全大会上的演讲，Youtube视频地址：  BadUSB - On Accessories that Turn Evil  。
+                  正因为由于其具备前所未有的隐蔽性、传播性和危害性，因此受到IT安全领域的广泛关注和报道，USB漏洞问题引起了各界的广泛关注。    如何预防BadUSB漏洞 
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                “计算机和狗”之辩，为什么要批评美国？—— 监视之恶（六）破解荒唐的狡辩（上）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                短视、冲动、漫无边际的私欲…… nobody cares 的背后究竟是什么                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                一个误解引发对中文社交媒体政治参与的思考                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                2014中国互联网的英雄：炼狱在2014的浦志强                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 09:19 
+                   永久连接 
+                
+              
+              
+                
+                  credit score for personal loan approval  
+                
+                    
+                    
+                      
+                        check into cash sign in &lt;a href=  https://valoansofcalifornia.com/loans/cash-america-today-loan-reviews.ht...  america today loan reviews&lt;/a&gt;  online loans no credit &lt;a href="  https://valoansofcalifornia.com/loans/check-advance-loans-near-me.html"&gt;...  advance loans near me&lt;/a&gt;  how to get a loan with no bank account &lt;a href=  https://valoansofcalifornia.com/loans/quick-and-easy-payday-loans.html&gt;q...  and easy payday loans&lt;/a&gt;  credit one bank reviews bbb &lt;a href="  https://valoansofcalifornia.com/loans/24-7-loans-online.html"&gt;24  7 loans online&lt;/a&gt;  i need a loan sharks tonight &lt;a href=  https://valoansofcalifornia.com/loans/application-credit-card-bad-credit...  credit card bad credit&lt;/a&gt;  small personal loans no credit check &lt;a href="  https://valoansofcalifornia.com/loans/payday-loans-direct-lenders-only.h...  loans direct lenders only&lt;/a&gt;
+                        &lt;a href="  http://callkennytoday.com/temp/tips-on-online-dating.php"&gt;tips  on online dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/black-man-white-woman-dating-sites.php"&gt;black  man white woman dating sites&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/women-seeking-men-ontario.php"&gt;women  seeking men ontario&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/why-are-women-on-dating-sites-comi...  are women on dating sites. coming from ghana&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/how-to-survive-dating-a-girl-in-med-school.ph...  to survive dating a girl in med school&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期六, 06/01/2019 - 04:09 
+                   永久连接 
+                
+              
+              
+                
+                  Finasteride 5 Mg Online Cheap Kelpaycle  
+                
+                    
+                    
+                      
+                        Want To Buy Isotretinoin Wigan &lt;a href=  http://erxbid.com&gt;cialis  generico costo&lt;/a&gt; Herbal Viagra Chinese Replica Viagra 100 Mg
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 05:03 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Generika Forum EllCauh  
+                
+                    
+                    
+                      
+                        Propecia Finasteride Generic &lt;a href=  http://viapill.com&gt;buy  viagra&lt;/a&gt; Buying Viagra In The Caribbean
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期一, 06/03/2019 - 01:28 
+                   永久连接 
+                
+              
+              
+                
+                  Generic Viagra No Precription Kelpaycle  
+                
+                    
+                    
+                      
+                        Kamagra Legal Kaufen Resultados Propecia Purchase Alli Online &lt;a href=  http://buycial.com&gt;order  cialis online&lt;/a&gt; El Cialis Y Levitra
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期二, 06/04/2019 - 08:38 
+                   永久连接 
+                
+              
+              
+                
+                  24hr Cialis Ellnoug  
+                
+                    
+                    
+                      
+                        Cialis Farmacia Andorra &lt;a href=  http://cial40mg.com&gt;cialis  without a doctor's prescription&lt;/a&gt; Priligy 30 Mg Compresse Kamagra Viagra Generika
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://pao-pao.net/article/163" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://pao-pao.net/article/163&title=BadUSB（上）：大祸临头还是危言耸听？&caption=
+  
+    
+      
+        
+              
+  Vergil  在 星期二, 09/02/2014 - 12:17 提交 
+          
+          
+            
+              
+                
+                  
+                      图片来源：欧新社  
+                    
+
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   BadUSB（上）：大祸临头还是危言耸听？ 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  在刚刚过去的八月份，计算机安全领域最热门的话题莫过于被称为“BadUSB”的USB漏洞。该漏洞是由Karsten Nohl 和 Jakob Lell共同发现的，准备今年八月中旬在拉斯维加斯举行的2014年度“黑帽子”（BlackHat）安全大会上予以公布，一度引起北美众多IT媒体的广泛关注。  ZDNet  和  WIRED  在大会开始前就对其作了详尽的报道，由于该漏洞受众为目前PC广泛使用的USB协议，因此随后在大洋彼岸的中国大陆IT界迅速掀起波澜，众多媒体竞相报道和转载，大谈其危害性和隐蔽性，备受争议的大陆安全厂商  奇虎360  虽然通过其微博平台第一时间进行了报道，但由于缺乏有效对策甚至直接遭到其董事长  周鸿祎  的直接批评：
+                  
+                  
+                    
+
+                    
+                  
+                  这个“BadUSB”漏洞究竟是何方神圣，能够聚焦在镁光灯下吸引众多眼球？几乎成为每一台PC机标配的USB接口为何会暴露出如此巨大的漏洞呢？该漏洞又会对我们的使用造成哪些威胁？下面我们以常用的USB存储盘（以下简称”U盘“），简单介绍一下该漏洞的攻击原理和方法：
+                  
+                  
+                    
+            攻击原理
+           
+                  
+                  
+                  
+                  
+                    
+
+                    
+                  
+                  
+           （一）隐蔽性
+           。
+                  我们打开U盘内部结构，可以看到它由芯片控制器和闪存两大部分组成，前者是U盘的大脑，负责控制与PC主机的识别和通讯，后者用以数据的存储。（详见上图）
+                  值得注意的是后者将储存区域划分一部分出来存放U盘的固件，它的作用就好比PC机主板上的  BIOS  （基本输入输出系统），控制U盘的引导和软硬件交互，可以比作是U盘的操作系统。从安全考虑，普通用户是无法通过常规手段读写存放U盘固件的存储区域。
+                  
+                  
+                    
+
+                    
+                  
+                  而Karsten Nohl 和 Jakob Lell 则通过某种方式（将USB闪存中的固件进行了可逆并重新编程，相当于改写了U盘的操作系统。如读者对该过程感觉抽象或艰涩难懂，可以看看最近美国AMC电视台热播的IT剧《奔腾时代》（  Halt and Catch Fire  ）第一集中两位主角对IBM主机的BIOS系统进行逆向破解的情节（也有网友批评该过程并不严谨可行）。
+                  由于目前PC电脑上的杀毒软件无法访问到U盘存放固件的区域，因此也就意味着 
+           杀毒软件和
+           
+           U
+           
+           盘格式化都是无法应对固件改写造成的安全隐患
+           。
+                  资深的网友一定会记得当年由台湾大学生陈盈豪开发的  CIH 病毒  ，就是专门针对PC主机的BIOS系统进行攻击而对整个IT行业造成了巨大的经济损失。
+                  
+           （二）传播性。
+          
+                  不仅仅局限于对主机的攻击，据称它还可以感染其它通过宿主PC上接驳的其它USB设备，由于USB标准在Windows，Linux和Mac系统上都有良好的支持和兼容，因此它能够在全平台上威胁使用者的数据安全，涉及范围相当巨大。
+                  
+           （三）危害性。
+          
+                  为何要大费周章的来改写U盘固件呢，接下来就要谈一下USB协议中存在的安全漏洞。
+                  由于目前USB设备的广泛使用，横跨存储设备、网卡，音频和视频设备，摄像头等周边设备，因此要求系统提供最大的兼容性甚至免驱支持，因此导致在当初设计USB标准时没有强制要求每一个USB设备必须具备一个唯一可确认的身份号码，一个USB设备允许兼具和内置多个输入输出硬件设备的特征描述。
+                  
+                  
+                    
+
+                    
+                  
+                  以USB摄像头为例，当它插入电脑后，它的控制芯片向主机发出申请，告诉操作系统自己是一个视频设备，然后操作系统就会进行识别和设置，并从本地驱动库里寻找到该设备的驱动并加载完成，WinXP系统以上的免驱支持就是这个过程。
+                  如果该USB摄像头还有通话功能，它还必须向系统再次提出申请，要求得到音频设备的驱动支持，也就是说协议中允许 USB 设备可以以多个身份出现并可以在使用过程中随便变换。
+                  由于需要切换不同角色的需求，USB设备无法像网络设备一样占有一个唯一可识别的MAC地址供系统甄别和验证，所以操作系统只知道有USB设备接入，但却无法知道有几个设备接入了系统。
+                  所以Karsten Nohl 和 Jakob Lell就是利用了这个漏洞发起的攻击，他们在8月14日举行的BlackHat安全大会上，就成功的将一个改写过固件的U盘伪装成一个USB键盘，并通过虚拟键盘输入预先编写的指令和代码对电脑实施下一步的攻击和控制，安装木马后门获取客户信息。
+                  
+                  
+                    
+
+                    
+                  
+                  不仅仅是键盘，它还可以虚拟成一个USB网卡，通过对DNS服务器的寻址记录进行篡改对宿主PC的网络访问进行恶意跳转，即所谓的  DNS劫持  攻击，例如，某用户意图访问工商银行网站，但虚拟成USB网卡的U盘却将其解析到另一个钓鱼网站，导致用户登陆网银时输入的用户名和账户密码泄露。
+                  同时，它还可以隐藏在U盘启动盘中，可以在系统启动过程中载入隐藏在U盘中的含有恶意代码的系统，并且不仅仅局限于使用U盘作为载体，还可以通过Android手机通过USB连接电脑上事实上述类似效果的攻击。
+                  以上内容的具体细节可以访问Karsten Nohl 和 Jakob Lell 在BlackHat安全大会上的演讲，Youtube视频地址：  BadUSB - On Accessories that Turn Evil  。
+                  正因为由于其具备前所未有的隐蔽性、传播性和危害性，因此受到IT安全领域的广泛关注和报道，USB漏洞问题引起了各界的广泛关注。    如何预防BadUSB漏洞 
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                “计算机和狗”之辩，为什么要批评美国？—— 监视之恶（六）破解荒唐的狡辩（上）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                短视、冲动、漫无边际的私欲…… nobody cares 的背后究竟是什么                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                一个误解引发对中文社交媒体政治参与的思考                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                2014中国互联网的英雄：炼狱在2014的浦志强                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    CarolBig (未验证)  
+                   星期三, 04/17/2019 - 09:19 
+                   永久连接 
+                
+              
+              
+                
+                  credit score for personal loan approval  
+                
+                    
+                    
+                      
+                        check into cash sign in &lt;a href=  https://valoansofcalifornia.com/loans/cash-america-today-loan-reviews.ht...  america today loan reviews&lt;/a&gt;  online loans no credit &lt;a href="  https://valoansofcalifornia.com/loans/check-advance-loans-near-me.html"&gt;...  advance loans near me&lt;/a&gt;  how to get a loan with no bank account &lt;a href=  https://valoansofcalifornia.com/loans/quick-and-easy-payday-loans.html&gt;q...  and easy payday loans&lt;/a&gt;  credit one bank reviews bbb &lt;a href="  https://valoansofcalifornia.com/loans/24-7-loans-online.html"&gt;24  7 loans online&lt;/a&gt;  i need a loan sharks tonight &lt;a href=  https://valoansofcalifornia.com/loans/application-credit-card-bad-credit...  credit card bad credit&lt;/a&gt;  small personal loans no credit check &lt;a href="  https://valoansofcalifornia.com/loans/payday-loans-direct-lenders-only.h...  loans direct lenders only&lt;/a&gt;
+                        &lt;a href="  http://callkennytoday.com/temp/tips-on-online-dating.php"&gt;tips  on online dating&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/black-man-white-woman-dating-sites.php"&gt;black  man white woman dating sites&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/women-seeking-men-ontario.php"&gt;women  seeking men ontario&lt;/a&gt;  &lt;a href="  http://ashevillemovingcompany.com/usa/why-are-women-on-dating-sites-comi...  are women on dating sites. coming from ghana&lt;/a&gt;  &lt;a href="  http://vondranlegal.com/us/how-to-survive-dating-a-girl-in-med-school.ph...  to survive dating a girl in med school&lt;/a&gt;
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期六, 06/01/2019 - 04:09 
+                   永久连接 
+                
+              
+              
+                
+                  Finasteride 5 Mg Online Cheap Kelpaycle  
+                
+                    
+                    
+                      
+                        Want To Buy Isotretinoin Wigan &lt;a href=  http://erxbid.com&gt;cialis  generico costo&lt;/a&gt; Herbal Viagra Chinese Replica Viagra 100 Mg
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期日, 06/02/2019 - 05:03 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Generika Forum EllCauh  
+                
+                    
+                    
+                      
+                        Propecia Finasteride Generic &lt;a href=  http://viapill.com&gt;buy  viagra&lt;/a&gt; Buying Viagra In The Caribbean
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Kelpaycle (未验证)  
+                   星期一, 06/03/2019 - 01:28 
+                   永久连接 
+                
+              
+              
+                
+                  Generic Viagra No Precription Kelpaycle  
+                
+                    
+                    
+                      
+                        Kamagra Legal Kaufen Resultados Propecia Purchase Alli Online &lt;a href=  http://buycial.com&gt;order  cialis online&lt;/a&gt; El Cialis Y Levitra
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期二, 06/04/2019 - 08:38 
+                   永久连接 
+                
+              
+              
+                
+                  24hr Cialis Ellnoug  
+                
+                    
+                    
+                      
+                        Cialis Farmacia Andorra &lt;a href=  http://cial40mg.com&gt;cialis  without a doctor's prescription&lt;/a&gt; Priligy 30 Mg Compresse Kamagra Viagra Generika
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=BadUSB（上）：大祸临头还是危言耸听？&url=https://pao-pao.net/article/163" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>BadUSB（上）：大祸临头还是危言耸听？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2014-09-02
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Vergil</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#泡泡">
+          泡泡
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://pao-pao.net/article/163" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="泡泡的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#泡泡 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <section class="clearfix" id="content" role="main">
+  <div class="region region-content">
+    <div class="block block-system" id="block-system-main">
+      <div class="content">
+        <div about="/article/163" class="node node-pao-pao-article node-promoted node-full view-mode-full clearfix" id="node-163" typeof="sioc:Item foaf:Document">
+<span class="rdf-meta element-hidden" content="BadUSB（上）：大祸临头还是危言耸听？" property="dc:title"> </span> <span class="rdf-meta element-hidden" content="5" datatype="xsd:integer" property="sioc:num_replies"> </span>           <div class="submitted">
+<span content="2014-09-02T12:17:56+02:00" datatype="xsd:dateTime" property="dc:date dc:created" rel="sioc:has_creator"> <a about="/author/30" class="username" datatype="" href="/author/30" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> Vergil </a> 在 星期二, 09/02/2014 - 12:17 提交 </span>
+          </div>
+          <div class="content">
+            <div class="field field-name-field-image field-type-image field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="file file-image file-image-png" id="file-393--2">
+                    <h2 class="element-invisible" id="section"> <a href="/file/393"> 图片来源：欧新社 </a> </h2>
+                    <div class="content">
+<img alt="" height="164" src="https://pao-pao.net/sites/pao-pao.net/files/styles/article_detail/public/usb3.png?itok=yAwrIyyH" title="" typeof="foaf:Image" width="290" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-title field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="dc:title">
+                  <h1 class="page-title" id="badusb-"> BadUSB（上）：大祸临头还是危言耸听？ </h1>
+                </div>
+              </div>
+            </div>
+            <div class="field-name-author">
+              <div class="label-inline">
+文/
+              </div>
+ <a about="/author/30" class="username" datatype="" href="/author/30" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> Vergil </a>
+            </div>
+            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="content:encoded">
+                  <p>在刚刚过去的八月份，计算机安全领域最热门的话题莫过于被称为“BadUSB”的USB漏洞。该漏洞是由Karsten Nohl 和 Jakob Lell共同发现的，准备今年八月中旬在拉斯维加斯举行的2014年度“黑帽子”（BlackHat）安全大会上予以公布，一度引起北美众多IT媒体的广泛关注。 <a href="https://www.zdnet.com/badusb-big-bad-usb-security-problems-ahead-7000032211/" rel="nofollow"> ZDNet </a> 和 <a href="https://www.wired.com/2014/07/usb-security/" rel="nofollow"> WIRED </a> 在大会开始前就对其作了详尽的报道，由于该漏洞受众为目前PC广泛使用的USB协议，因此随后在大洋彼岸的中国大陆IT界迅速掀起波澜，众多媒体竞相报道和转载，大谈其危害性和隐蔽性，备受争议的大陆安全厂商 <a href="https://www.360.cn/" rel="nofollow"> 奇虎360 </a> 虽然通过其微博平台第一时间进行了报道，但由于缺乏有效对策甚至直接遭到其董事长 <a href="https://zh.wikipedia.org/zh/%E5%91%A8%E9%B8%BF%E7%A5%8E" rel="nofollow"> 周鸿祎 </a> 的直接批评：</p>
+                  <p></p>
+                  <div class="media media-element-container media-full">
+                    <div class="ds-1col file file-image file-image-png view-mode-full clearfix">
+<img alt="" class="media-element file-full" height="300" src="https://www.pao-pao.net/sites/pao-pao.net/files/styles/large/public/1_15.png?itok=u3IqtToz" title="" typeof="foaf:Image" width="480" />
+                    </div>
+                  </div>
+                  <p>这个“BadUSB”漏洞究竟是何方神圣，能够聚焦在镁光灯下吸引众多眼球？几乎成为每一台PC机标配的USB接口为何会暴露出如此巨大的漏洞呢？该漏洞又会对我们的使用造成哪些威胁？下面我们以常用的USB存储盘（以下简称”U盘“），简单介绍一下该漏洞的攻击原理和方法：</p>
+                  <p></p>
+                  <ul>
+                    <li><strong>
+            攻击原理
+           </strong></li>
+                  </ul>
+                  <p></p>
+                  <p></p>
+                  <div class="media media-element-container media-full">
+                    <div class="ds-1col file file-image file-image-png view-mode-full clearfix">
+<img alt="" class="media-element file-full" height="321" src="https://www.pao-pao.net/sites/pao-pao.net/files/styles/large/public/2_2.png?itok=JT7ZCyap" title="" typeof="foaf:Image" width="480" />
+                    </div>
+                  </div>
+                  <p><strong>
+           （一）隐蔽性
+          </strong> 。</p>
+                  <p>我们打开U盘内部结构，可以看到它由芯片控制器和闪存两大部分组成，前者是U盘的大脑，负责控制与PC主机的识别和通讯，后者用以数据的存储。（详见上图）</p>
+                  <p>值得注意的是后者将储存区域划分一部分出来存放U盘的固件，它的作用就好比PC机主板上的 <a href="https://zh.wikipedia.org/wiki/BIOS#BIOS.E4.B8.8ECMOS.E7.9A.84.E5.85.B3.E7.B3.BB" rel="nofollow"> BIOS </a> （基本输入输出系统），控制U盘的引导和软硬件交互，可以比作是U盘的操作系统。从安全考虑，普通用户是无法通过常规手段读写存放U盘固件的存储区域。</p>
+                  <p></p>
+                  <div class="media media-element-container media-full">
+                    <div class="ds-1col file file-image file-image-jpeg view-mode-full clearfix">
+<img alt="" class="media-element file-full" height="270" src="https://www.pao-pao.net/sites/pao-pao.net/files/styles/large/public/3_0.jpg?itok=-Nqj6UPd" title="" typeof="foaf:Image" width="480" />
+                    </div>
+                  </div>
+                  <p>而Karsten Nohl 和 Jakob Lell 则通过某种方式（将USB闪存中的固件进行了可逆并重新编程，相当于改写了U盘的操作系统。如读者对该过程感觉抽象或艰涩难懂，可以看看最近美国AMC电视台热播的IT剧《奔腾时代》（ <a href="https://zh.wikipedia.org/wiki/%E6%80%A5%E7%81%AB%E6%94%BB%E8%8A%AF" rel="nofollow"> Halt and Catch Fire </a> ）第一集中两位主角对IBM主机的BIOS系统进行逆向破解的情节（也有网友批评该过程并不严谨可行）。</p>
+                  <p>由于目前PC电脑上的杀毒软件无法访问到U盘存放固件的区域，因此也就意味着 <strong>
+           杀毒软件和
+          </strong> <strong>
+           U
+          </strong> <strong>
+           盘格式化都是无法应对固件改写造成的安全隐患
+          </strong> 。</p>
+                  <p>资深的网友一定会记得当年由台湾大学生陈盈豪开发的 <a href="https://zh.wikipedia.org/wiki/CIH%E7%97%85%E6%AF%92" rel="nofollow"> CIH 病毒 </a> ，就是专门针对PC主机的BIOS系统进行攻击而对整个IT行业造成了巨大的经济损失。</p>
+                  <p><strong>
+           （二）传播性。
+          </strong></p>
+                  <p>不仅仅局限于对主机的攻击，据称它还可以感染其它通过宿主PC上接驳的其它USB设备，由于USB标准在Windows，Linux和Mac系统上都有良好的支持和兼容，因此它能够在全平台上威胁使用者的数据安全，涉及范围相当巨大。</p>
+                  <p><strong>
+           （三）危害性。
+          </strong></p>
+                  <p>为何要大费周章的来改写U盘固件呢，接下来就要谈一下USB协议中存在的安全漏洞。</p>
+                  <p>由于目前USB设备的广泛使用，横跨存储设备、网卡，音频和视频设备，摄像头等周边设备，因此要求系统提供最大的兼容性甚至免驱支持，因此导致在当初设计USB标准时没有强制要求每一个USB设备必须具备一个唯一可确认的身份号码，一个USB设备允许兼具和内置多个输入输出硬件设备的特征描述。</p>
+                  <p></p>
+                  <div class="media media-element-container media-full">
+                    <div class="ds-1col file file-image file-image-jpeg view-mode-full clearfix">
+<img alt="" class="media-element file-full" height="333" src="https://www.pao-pao.net/sites/pao-pao.net/files/styles/large/public/5_1.jpg?itok=n085lTTw" title="" typeof="foaf:Image" width="480" />
+                    </div>
+                  </div>
+                  <p>以USB摄像头为例，当它插入电脑后，它的控制芯片向主机发出申请，告诉操作系统自己是一个视频设备，然后操作系统就会进行识别和设置，并从本地驱动库里寻找到该设备的驱动并加载完成，WinXP系统以上的免驱支持就是这个过程。</p>
+                  <p>如果该USB摄像头还有通话功能，它还必须向系统再次提出申请，要求得到音频设备的驱动支持，也就是说协议中允许 USB 设备可以以多个身份出现并可以在使用过程中随便变换。</p>
+                  <p>由于需要切换不同角色的需求，USB设备无法像网络设备一样占有一个唯一可识别的MAC地址供系统甄别和验证，所以操作系统只知道有USB设备接入，但却无法知道有几个设备接入了系统。</p>
+                  <p>所以Karsten Nohl 和 Jakob Lell就是利用了这个漏洞发起的攻击，他们在8月14日举行的BlackHat安全大会上，就成功的将一个改写过固件的U盘伪装成一个USB键盘，并通过虚拟键盘输入预先编写的指令和代码对电脑实施下一步的攻击和控制，安装木马后门获取客户信息。</p>
+                  <p></p>
+                  <div class="media media-element-container media-full">
+                    <div class="ds-1col file file-image file-image-jpeg view-mode-full clearfix">
+<img alt="" class="media-element file-full" height="337" src="https://www.pao-pao.net/sites/pao-pao.net/files/styles/large/public/6.jpg?itok=bwqggXoy" title="" typeof="foaf:Image" width="480" />
+                    </div>
+                  </div>
+                  <p>不仅仅是键盘，它还可以虚拟成一个USB网卡，通过对DNS服务器的寻址记录进行篡改对宿主PC的网络访问进行恶意跳转，即所谓的 <a href="https://baike.baidu.com/view/3163602.htm" rel="nofollow"> DNS劫持 </a> 攻击，例如，某用户意图访问工商银行网站，但虚拟成USB网卡的U盘却将其解析到另一个钓鱼网站，导致用户登陆网银时输入的用户名和账户密码泄露。</p>
+                  <p>同时，它还可以隐藏在U盘启动盘中，可以在系统启动过程中载入隐藏在U盘中的含有恶意代码的系统，并且不仅仅局限于使用U盘作为载体，还可以通过Android手机通过USB连接电脑上事实上述类似效果的攻击。</p>
+                  <p>以上内容的具体细节可以访问Karsten Nohl 和 Jakob Lell 在BlackHat安全大会上的演讲，Youtube视频地址： <a href="https://www.youtube.com/watch?v=nuruzFqMgIw" rel="nofollow"> BadUSB - On Accessories that Turn Evil </a> 。</p>
+                  <p>正因为由于其具备前所未有的隐蔽性、传播性和危害性，因此受到IT安全领域的广泛关注和报道，USB漏洞问题引起了各界的广泛关注。 <br /> <br /> <a href="https://pao-pao.net/article/164" rel="nofollow"> 如何预防BadUSB漏洞 </a></p>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-service-links-displays-group field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="service-links">
+<a class="service-links-twitter" href="https://twitter.com/share?url=https%3A//pao-pao.net/article/163&amp;text=BadUSB%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E5%A4%A7%E7%A5%B8%E4%B8%B4%E5%A4%B4%E8%BF%98%E6%98%AF%E5%8D%B1%E8%A8%80%E8%80%B8%E5%90%AC%EF%BC%9F" rel="nofollow" title="Share this on Twitter"> <img alt="Twitter logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/twitter.png" typeof="foaf:Image" /> </a> <a class="service-links-facebook" href="https://www.facebook.com/sharer.php?u=https%3A//pao-pao.net/article/163&amp;t=BadUSB%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E5%A4%A7%E7%A5%B8%E4%B8%B4%E5%A4%B4%E8%BF%98%E6%98%AF%E5%8D%B1%E8%A8%80%E8%80%B8%E5%90%AC%EF%BC%9F" rel="nofollow" title="Share on Facebook"> <img alt="Facebook logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/facebook.png" typeof="foaf:Image" /> </a> <a class="service-links-google" href="https://www.google.com/bookmarks/mark?op=add&amp;bkmk=https%3A//pao-pao.net/article/163&amp;title=BadUSB%EF%BC%88%E4%B8%8A%EF%BC%89%EF%BC%9A%E5%A4%A7%E7%A5%B8%E4%B8%B4%E5%A4%B4%E8%BF%98%E6%98%AF%E5%8D%B1%E8%A8%80%E8%80%B8%E5%90%AC%EF%BC%9F" rel="nofollow" title="Bookmark this post on Google"> <img alt="谷歌 logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/google.png" typeof="foaf:Image" /> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block block-views related" id="block-views-articles-related-block-1">
+            <h2 id="section-1"> 您可能感兴趣的文章 </h2>
+            <div class="content">
+              <div class="view view-articles-related view-id-articles_related view-display-id-block_1 related promoted view-dom-id-cb2ddc834fa555049925bc360b31063c">
+                <div class="view-content">
+                  <div class="views-row views-row-1 views-row-odd views-row-first">
+                    <div class="ds-2col node node-pao-pao-article node-promoted node-sticky view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/1040"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/tou__13.jpeg?itok=B_CxjcwS" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-2"> <a href="/article/1040"> “计算机和狗”之辩，为什么要批评美国？—— 监视之恶（六）破解荒唐的狡辩（上） </a>                                 <h2 id="section-3"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-2 views-row-even">
+                    <div class="ds-2col node node-pao-pao-article node-promoted node-sticky view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/824"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/wechatimg884.jpeg?itok=xITXCVAy" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="nobody-cares-----"> <a href="/article/824"> 短视、冲动、漫无边际的私欲…… nobody cares 的背后究竟是什么 </a>                                 <h2 id="section-4"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-3 views-row-odd">
+                    <div class="ds-2col node node-pao-pao-article node-promoted node-sticky view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/756"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/851439890_4726509284352206768.jpg?itok=5CMx-6Pw" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-5"> <a href="/article/756"> 一个误解引发对中文社交媒体政治参与的思考 </a>                                 <h2 id="section-6"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-4 views-row-even views-row-last">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/313"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/14467018382_536b212500_z.jpg?itok=Pdb3SViY" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-7"> <a href="/article/313"> 2014中国互联网的英雄：炼狱在2014的浦志强 </a>                                 <h2 id="section-8"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.block -->
+          <ul class="links inline">
+            <li class="comment-add first last active"><a class="active" href="/article/163#comment-form" title="分享您有关本文的看法与观点。"> 冒个泡吧！ </a></li>
+          </ul>
+          <div class="comment-wrapper" id="comments">
+            <h2 class="title" id="section-9"> 评论 </h2>
+ <a id="comment-114">
+      </a>             <div about="/comment/114#comment-114" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> CarolBig (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-04-17T09:19:14+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期三, 04/17/2019 - 09:19 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/114#comment-114" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="credit-score-for-personal-loan-approval--"> <a class="permalink" href="/comment/114#comment-114" rel="bookmark"> credit score for personal loan approval </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/163"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>check into cash sign in &lt;a href= <a href="https://valoansofcalifornia.com/loans/cash-america-today-loan-reviews.html&gt;cash"> https://valoansofcalifornia.com/loans/cash-america-today-loan-reviews.ht... </a> america today loan reviews&lt;/a&gt; <br /> online loans no credit &lt;a href=" <a href="https://valoansofcalifornia.com/loans/check-advance-loans-near-me.html&quot;&gt;check"> https://valoansofcalifornia.com/loans/check-advance-loans-near-me.html"&gt;... </a> advance loans near me&lt;/a&gt; <br /> how to get a loan with no bank account &lt;a href= <a href="https://valoansofcalifornia.com/loans/quick-and-easy-payday-loans.html&gt;quick"> https://valoansofcalifornia.com/loans/quick-and-easy-payday-loans.html&gt;q... </a> and easy payday loans&lt;/a&gt; <br /> credit one bank reviews bbb &lt;a href=" <a href="https://valoansofcalifornia.com/loans/24-7-loans-online.html&quot;&gt;24"> https://valoansofcalifornia.com/loans/24-7-loans-online.html"&gt;24 </a> 7 loans online&lt;/a&gt; <br /> i need a loan sharks tonight &lt;a href= <a href="https://valoansofcalifornia.com/loans/application-credit-card-bad-credit.html&gt;application"> https://valoansofcalifornia.com/loans/application-credit-card-bad-credit... </a> credit card bad credit&lt;/a&gt; <br /> small personal loans no credit check &lt;a href=" <a href="https://valoansofcalifornia.com/loans/payday-loans-direct-lenders-only.html&quot;&gt;payday"> https://valoansofcalifornia.com/loans/payday-loans-direct-lenders-only.h... </a> loans direct lenders only&lt;/a&gt;</p>
+                        <p>&lt;a href=" <a href="http://callkennytoday.com/temp/tips-on-online-dating.php&quot;&gt;tips"> http://callkennytoday.com/temp/tips-on-online-dating.php"&gt;tips </a> on online dating&lt;/a&gt; <br /> &lt;a href=" <a href="http://vondranlegal.com/us/black-man-white-woman-dating-sites.php&quot;&gt;black"> http://vondranlegal.com/us/black-man-white-woman-dating-sites.php"&gt;black </a> man white woman dating sites&lt;/a&gt; <br /> &lt;a href=" <a href="http://vondranlegal.com/us/women-seeking-men-ontario.php&quot;&gt;women"> http://vondranlegal.com/us/women-seeking-men-ontario.php"&gt;women </a> seeking men ontario&lt;/a&gt; <br /> &lt;a href=" <a href="http://ashevillemovingcompany.com/usa/why-are-women-on-dating-sites-coming-from-ghana.php&quot;&gt;why"> http://ashevillemovingcompany.com/usa/why-are-women-on-dating-sites-comi... </a> are women on dating sites. coming from ghana&lt;/a&gt; <br /> &lt;a href=" <a href="http://vondranlegal.com/us/how-to-survive-dating-a-girl-in-med-school.php&quot;&gt;how"> http://vondranlegal.com/us/how-to-survive-dating-a-girl-in-med-school.ph... </a> to survive dating a girl in med school&lt;/a&gt;</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/163/114"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-15343">
+      </a>             <div about="/comment/15343#comment-15343" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Kelpaycle (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-01T04:09:57+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期六, 06/01/2019 - 04:09 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/15343#comment-15343" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="finasteride-5-mg-online-cheap-kelpaycle--"> <a class="permalink" href="/comment/15343#comment-15343" rel="bookmark"> Finasteride 5 Mg Online Cheap Kelpaycle </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/163"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Want To Buy Isotretinoin Wigan &lt;a href= <a href="http://erxbid.com&gt;cialis"> http://erxbid.com&gt;cialis </a> generico costo&lt;/a&gt; Herbal Viagra Chinese Replica Viagra 100 Mg</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/163/15343"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-18571">
+      </a>             <div about="/comment/18571#comment-18571" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Stepthype (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-02T05:03:45+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期日, 06/02/2019 - 05:03 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/18571#comment-18571" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="levitra-generika-forum-ellcauh--"> <a class="permalink" href="/comment/18571#comment-18571" rel="bookmark"> Levitra Generika Forum EllCauh </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/163"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Propecia Finasteride Generic &lt;a href= <a href="http://viapill.com&gt;buy"> http://viapill.com&gt;buy </a> viagra&lt;/a&gt; Buying Viagra In The Caribbean</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/163/18571"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-20438">
+      </a>             <div about="/comment/20438#comment-20438" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Kelpaycle (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-03T01:28:32+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期一, 06/03/2019 - 01:28 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/20438#comment-20438" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="generic-viagra-no-precription-kelpaycle--"> <a class="permalink" href="/comment/20438#comment-20438" rel="bookmark"> Generic Viagra No Precription Kelpaycle </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/163"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Kamagra Legal Kaufen Resultados Propecia Purchase Alli Online &lt;a href= <a href="http://buycial.com&gt;order"> http://buycial.com&gt;order </a> cialis online&lt;/a&gt; El Cialis Y Levitra</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/163/20438"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-23447">
+      </a>             <div about="/comment/23447#comment-23447" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Ellincuse (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-04T08:38:05+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期二, 06/04/2019 - 08:38 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/23447#comment-23447" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="hr-cialis-ellnoug--"> <a class="permalink" href="/comment/23447#comment-23447" rel="bookmark"> 24hr Cialis Ellnoug </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/163"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Cialis Farmacia Andorra &lt;a href= <a href="http://cial40mg.com&gt;cialis"> http://cial40mg.com&gt;cialis </a> without a doctor's prescription&lt;/a&gt; Priligy 30 Mg Compresse Kamagra Viagra Generika</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/163/23447"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+            <h2 class="title comment-form" id="section-10"> 冒个泡吧！ </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.block -->
+  </div>
+  <!-- /.region -->
+</section>
+
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#泡泡 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2018-05-30/%E4%BA%92%E8%81%94%E7%BD%91%E8%B6%8B%E5%8A%BF%E6%8A%A5%E5%91%8A2018-%E4%BE%9D%E6%97%A7%E5%91%88%E7%8E%B0%E4%B8%8D%E8%89%AF%E8%B6%8B%E5%8A%BF-%E8%BF%99%E9%87%8C%E6%98%AF%E5%85%B7%E4%BD%93%E5%88%86%E6%9E%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-02-04/%E6%B0%91%E6%97%8F%E7%9F%9B%E7%9B%BE%E5%BA%94%E7%94%B1%E5%81%9C%E6%AD%A2%E4%BF%A1%E6%81%AF%E9%9A%94%E7%A6%BB%E5%BC%80%E5%A7%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2014-09-04</time>
+        <a href="https://nodebe4.github.io/oped2/2014-09-04/%E8%B0%B7%E6%AD%8C%E5%9C%A8%E4%B8%AD%E5%9B%BD%E6%95%99%E8%82%B2%E7%BD%91%E9%81%AD%E5%9B%BD%E5%AE%B6%E7%BA%A7-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB/">
+          谷歌在中国教育网遭国家级“中间人攻击”
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-09-02</time>
+        <a href="https://nodebe4.github.io/oped2/2014-09-02/BadUSB-%E4%B8%8B-%E6%9D%A5%E8%80%85%E4%B8%8D%E5%96%84-%E5%A6%82%E4%BD%95%E9%A2%84%E9%98%B2/">
+          BadUSB（下）：来者不善，如何预防？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-09-01</time>
+        <a href="https://nodebe4.github.io/oped2/2014-09-01/%E6%96%B0%E6%B5%AA%E5%8C%85%E5%85%BB%E8%83%BD%E4%B8%BA%E8%87%AA%E5%AA%92%E4%BD%93%E8%BF%94%E9%AD%82%E5%90%97/">
+          新浪包养能为自媒体返魂吗？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-08-29</time>
+        <a href="https://nodebe4.github.io/oped2/2014-08-29/%E7%94%B5%E8%A7%86%E6%9C%BA%E9%A1%B6%E7%9B%92%E4%B8%8E%E9%BB%91%E5%AE%A2%E6%82%AC%E7%96%91-%E8%B0%81%E6%98%AF%E6%9C%80%E5%A4%A7%E5%8F%97%E7%9B%8A%E8%80%85/">
+          电视机顶盒与黑客悬疑：谁是最大受益者
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2014-09-01/%E6%96%B0%E6%B5%AA%E5%8C%85%E5%85%BB%E8%83%BD%E4%B8%BA%E8%87%AA%E5%AA%92%E4%BD%93%E8%BF%94%E9%AD%82%E5%90%97/">
+            前一篇：新浪包养能为自媒体返魂吗？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2014-09-02/BadUSB-%E4%B8%8B-%E6%9D%A5%E8%80%85%E4%B8%8D%E5%96%84-%E5%A6%82%E4%BD%95%E9%A2%84%E9%98%B2/">
+            後一篇：BadUSB（下）：来者不善，如何预防？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2014-09-01/%E6%96%B0%E6%B5%AA%E5%8C%85%E5%85%BB%E8%83%BD%E4%B8%BA%E8%87%AA%E5%AA%92%E4%BD%93%E8%BF%94%E9%AD%82%E5%90%97/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2014-09-02/BadUSB-%E4%B8%8B-%E6%9D%A5%E8%80%85%E4%B8%8D%E5%96%84-%E5%A6%82%E4%BD%95%E9%A2%84%E9%98%B2/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2014-09-02/BadUSB-%E4%B8%8B-%E6%9D%A5%E8%80%85%E4%B8%8D%E5%96%84-%E5%A6%82%E4%BD%95%E9%A2%84%E9%98%B2/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2014-09-01/%E6%96%B0%E6%B5%AA%E5%8C%85%E5%85%BB%E8%83%BD%E4%B8%BA%E8%87%AA%E5%AA%92%E4%BD%93%E8%BF%94%E9%AD%82%E5%90%97/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2014-09-01/%E6%96%B0%E6%B5%AA%E5%8C%85%E5%85%BB%E8%83%BD%E4%B8%BA%E8%87%AA%E5%AA%92%E4%BD%93%E8%BF%94%E9%AD%82%E5%90%97/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2014-09-02/BadUSB-%E4%B8%8B-%E6%9D%A5%E8%80%85%E4%B8%8D%E5%96%84-%E5%A6%82%E4%BD%95%E9%A2%84%E9%98%B2/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<泡泡>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2014-09-02/BadUSB-%E4%B8%8B-%E6%9D%A5%E8%80%85%E4%B8%8D%E5%96%84-%E5%A6%82%E4%BD%95%E9%A2%84%E9%98%B2/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<泡泡>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2014-09-01/%E6%96%B0%E6%B5%AA%E5%8C%85%E5%85%BB%E8%83%BD%E4%B8%BA%E8%87%AA%E5%AA%92%E4%BD%93%E8%BF%94%E9%AD%82%E5%90%97/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

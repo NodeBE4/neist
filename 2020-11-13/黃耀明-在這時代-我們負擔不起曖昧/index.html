@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>黃耀明：在這時代，我們負擔不起曖昧 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+黃耀明：在這時代，我們負擔不起曖昧
+——
+" />
+    <meta property="og:description" content="
+黃耀明：在這時代，我們負擔不起曖昧
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="黃耀明：在這時代，我們負擔不起曖昧" />
+    <meta property="twitter:title" content="黃耀明：在這時代，我們負擔不起曖昧" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40az%2F%2525E9%2525BB%252583%2525E8%252580%252580%2525E6%252598%25258E-%2525E5%25259C%2525A8%2525E9%252580%252599%2525E6%252599%252582%2525E4%2525BB%2525A3-%2525E6%252588%252591%2525E5%252580%252591%2525E8%2525B2%2525A0%2525E6%252593%252594%2525E4%2525B8%25258D%2525E8%2525B5%2525B7%2525E6%25259B%252596%2525E6%252598%2525A7-bafyreicbo6mmy6hlbi74zdz25okqctpg75yr7eulrudln2cq76mvrdpzfy" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@az/%25E9%25BB%2583%25E8%2580%2580%25E6%2598%258E-%25E5%259C%25A8%25E9%2580%2599%25E6%2599%2582%25E4%25BB%25A3-%25E6%2588%2591%25E5%2580%2591%25E8%25B2%25A0%25E6%2593%2594%25E4%25B8%258D%25E8%25B5%25B7%25E6%259B%2596%25E6%2598%25A7-bafyreicbo6mmy6hlbi74zdz25okqctpg75yr7eulrudln2cq76mvrdpzfy" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@az/%25E9%25BB%2583%25E8%2580%2580%25E6%2598%258E-%25E5%259C%25A8%25E9%2580%2599%25E6%2599%2582%25E4%25BB%25A3-%25E6%2588%2591%25E5%2580%2591%25E8%25B2%25A0%25E6%2593%2594%25E4%25B8%258D%25E8%25B5%25B7%25E6%259B%2596%25E6%2598%25A7-bafyreicbo6mmy6hlbi74zdz25okqctpg75yr7eulrudln2cq76mvrdpzfy&text=黃耀明：在這時代，我們負擔不起曖昧&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@az/%25E9%25BB%2583%25E8%2580%2580%25E6%2598%258E-%25E5%259C%25A8%25E9%2580%2599%25E6%2599%2582%25E4%25BB%25A3-%25E6%2588%2591%25E5%2580%2591%25E8%25B2%25A0%25E6%2593%2594%25E4%25B8%258D%25E8%25B5%25B7%25E6%259B%2596%25E6%2598%25A7-bafyreicbo6mmy6hlbi74zdz25okqctpg75yr7eulrudln2cq76mvrdpzfy&title=黃耀明：在這時代，我們負擔不起曖昧" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@az/%25E9%25BB%2583%25E8%2580%2580%25E6%2598%258E-%25E5%259C%25A8%25E9%2580%2599%25E6%2599%2582%25E4%25BB%25A3-%25E6%2588%2591%25E5%2580%2591%25E8%25B2%25A0%25E6%2593%2594%25E4%25B8%258D%25E8%25B5%25B7%25E6%259B%2596%25E6%2598%25A7-bafyreicbo6mmy6hlbi74zdz25okqctpg75yr7eulrudln2cq76mvrdpzfy&title=黃耀明：在這時代，我們負擔不起曖昧" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=黃耀明：在這時代，我們負擔不起曖昧&body=
+黃耀明：在這時代，我們負擔不起曖昧
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@az/%25E9%25BB%2583%25E8%2580%2580%25E6%2598%258E-%25E5%259C%25A8%25E9%2580%2599%25E6%2599%2582%25E4%25BB%25A3-%25E6%2588%2591%25E5%2580%2591%25E8%25B2%25A0%25E6%2593%2594%25E4%25B8%258D%25E8%25B5%25B7%25E6%259B%2596%25E6%2598%25A7-bafyreicbo6mmy6hlbi74zdz25okqctpg75yr7eulrudln2cq76mvrdpzfy" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@az/%25E9%25BB%2583%25E8%2580%2580%25E6%2598%258E-%25E5%259C%25A8%25E9%2580%2599%25E6%2599%2582%25E4%25BB%25A3-%25E6%2588%2591%25E5%2580%2591%25E8%25B2%25A0%25E6%2593%2594%25E4%25B8%258D%25E8%25B5%25B7%25E6%259B%2596%25E6%2598%25A7-bafyreicbo6mmy6hlbi74zdz25okqctpg75yr7eulrudln2cq76mvrdpzfy&title=黃耀明：在這時代，我們負擔不起曖昧&caption=
+黃耀明：在這時代，我們負擔不起曖昧
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=黃耀明：在這時代，我們負擔不起曖昧&url=https://matters.news/@az/%25E9%25BB%2583%25E8%2580%2580%25E6%2598%258E-%25E5%259C%25A8%25E9%2580%2599%25E6%2599%2582%25E4%25BB%25A3-%25E6%2588%2591%25E5%2580%2591%25E8%25B2%25A0%25E6%2593%2594%25E4%25B8%258D%25E8%25B5%25B7%25E6%259B%2596%25E6%2598%25A7-bafyreicbo6mmy6hlbi74zdz25okqctpg75yr7eulrudln2cq76mvrdpzfy" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>黃耀明：在這時代，我們負擔不起曖昧</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-11-13
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 張潔平</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@az/%25E9%25BB%2583%25E8%2580%2580%25E6%2598%258E-%25E5%259C%25A8%25E9%2580%2599%25E6%2599%2582%25E4%25BB%25A3-%25E6%2588%2591%25E5%2580%2591%25E8%25B2%25A0%25E6%2593%2594%25E4%25B8%258D%25E8%25B5%25B7%25E6%259B%2596%25E6%2598%25A7-bafyreicbo6mmy6hlbi74zdz25okqctpg75yr7eulrudln2cq76mvrdpzfy" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1605266389000-->
+<p><a href="https://matters.news/@az/%25E9%25BB%2583%25E8%2580%2580%25E6%2598%258E-%25E5%259C%25A8%25E9%2580%2599%25E6%2599%2582%25E4%25BB%25A3-%25E6%2588%2591%25E5%2580%2591%25E8%25B2%25A0%25E6%2593%2594%25E4%25B8%258D%25E8%25B5%25B7%25E6%259B%2596%25E6%2598%25A7-bafyreicbo6mmy6hlbi74zdz25okqctpg75yr7eulrudln2cq76mvrdpzfy">黃耀明：在這時代，我們負擔不起曖昧</a>
+——</p>
+
+<div>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/51a0f949-441c-4a75-b593-660d768e7a78.webp" onerror="this.srcset='https://assets.matters.news/embed/51a0f949-441c-4a75-b593-660d768e7a78.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/51a0f949-441c-4a75-b593-660d768e7a78.jpeg" onerror="this.srcset='https://assets.matters.news/embed/51a0f949-441c-4a75-b593-660d768e7a78.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/51a0f949-441c-4a75-b593-660d768e7a78.webp" /> <img src="https://assets.matters.news/embed/51a0f949-441c-4a75-b593-660d768e7a78.jpeg" srcset="https://assets.matters.news/processed/540w/embed/51a0f949-441c-4a75-b593-660d768e7a78.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>達明一派2017演唱會</span>
+    </figcaption>
+  </figure>
+  <p>按：這篇文章寫於2019年8月，當時，達明一派在籌備原本要在2019年底紅館登場的演唱會。台灣的《新活水》雜誌時任總編輯張鐵志邀請我訪問明哥。在若干次與明哥的談話中，那一次的氛圍一直令我印象深刻。我們都身處在香港那一個決定性的夏天裡。我想我們都感到了那種時代轉折點的不安、激動與使命。他的講話很直接、乾淨。就像標題說的那樣，在那一個時刻，已經容不下曖昧、遲疑和閃躲了。結果，2019年的夏天一直沒有結束。引用馬嶽教授的話：「香港人以一個夏天推進了一個時代。」而其他一切事情都讓位給了時代。2020年，時代的路徑再次超出了想像，政治和病毒的瘟疫一起登場。走過了生命和制度的傾覆，達明一派的演唱會在此刻，終於要登場了。「意難平」，他們取名為。聽過達明的人知道，那會是香港精神、城市故事的一種尊嚴展演。</p>
+  <p>今天是他們開唱的日子，貼出這篇去年與黃耀明的訪談，敬達明。意難平，歌不停。</p>
+  <p>正文：</p>
+  <p>跟黃耀明聊天，是7月29日的晚上，在中環某個露天平台上。那天掛了風球，逐漸升級的颱風在高樓之間穿梭，發出淒厲的嗚咽聲，路邊花叢裏的植物都在劇烈搖晃，我們坐在路邊，衣服和表情都被吹得亂七八糟，幾乎快聽不見對方說什麼。</p>
+  <p>明哥體貼地拿著我的錄音筆，放在靠近自己身邊的地方，用書包給它前後筑了個「巢」，抵擋風聲。「這樣能錄到嗎？」「可以的。」他簡短問我，我簡短答。</p>
+  <p>我們都沒有想要進屋。回頭想想實在奇怪，颱風天，悶熱，四周都是冷氣房、酒吧，怎麼會有香港人願意呆在露天的地方？在香港的大街小巷逛一圈，只有西式餐廳或者旅遊景點的餐廳才會開露天座位，而愛坐街邊露天席的多半是外國人，香港人永遠都進屋坐優雅的墻邊冷氣位。</p>
+  <p>明哥曾是吃什麼去了哪裡跟誰約會都會被被娛樂雜誌跟拍的明星人物，一向有自己常去的餐廳，習慣的電影院，在街上走路低調不引人注目的對策。但隨著2012年那場著名的演唱會出櫃行動，以及香港政治氣氛愈發濃郁和緊張，他越來越常出現在街上──同志遊行、捍衛新聞自由遊行、七一、六四、雨傘運動，一直到從反送中開始的香港之夏，他不只走在街上、走在遊行的人群中，甚至走上「大台」，成為一些行動現場重要的發言者。</p>
+  <p>也不只是他，越來越多的香港人都習慣了「上街」的感覺。而且跟以往不同，「上街」不再是「在警方規定時間規定路線走在馬路上喊口號」這一種固定想象，從雨傘時開啟長達79天的佔領主要交通幹道，到2019年這個夏天，抗議在香港18個區遍地開花，地鐵站、商場、居民區、機場、碼頭、高速公路都成了抗爭場所，炎炎烈日，連儂墻、催淚彈、襲擊與防守、血和淚的痕跡遍佈大街小巷，讓居住在這座城市的人，重新以極為直覺、親密乃至疼痛的方式，以身體與城市發生了聯結。</p>
+  <p>總之，在這個夏天難得的和平時光，我們好像都很想在街上坐著，哪怕被風吹得東倒西歪。</p>
+  <p>明哥說起，因為這個夏天，他去了一些在香港生活這麼多年從來沒去過、或是幾乎很少去的地方。上一次這樣仔細地看自己的城市，還是1997年。七一主權移交的前夕，他和朋友們租了輛巴士，一條一條街、一個一個區走遍了香港所有地方，回頭想想很dramatic，好像是告別之前要認識眼前人的每一吋肌膚。「回歸」並沒有帶來戲劇化的突變。很長一段時間，表面看來，香港還是那個香港。黃耀明和達明一派繼續創作、寫歌、唱歌、做演出，繼續在歌裏記錄這城市的故事，像以前一樣，不顧忌放入政治隱喻，在流行歌的舞台上，直指最尖銳的時代和政治問題。</p>
+  <p>而氣候終於是變了。隱約是2008之後，到2012年更確切，眼前曾打開的新世界，似乎又逐漸關上了。中國重新開始政治上的嚴控，曾經帶給人新鮮自由的網路技術，搖身一變，成了利維坦管控的工具。港人曾經建立起的對一國兩制的安全感，也在民主改革的落空、新聞自由與教育的審查壓力、選舉的政治審查、跨境司法漏洞等種種張力裏，逐漸垮塌。</p>
+  <p>2012年達明一派做了《兜兜轉轉演演唱唱會》，這場演唱會放入已經由反國教運動而起，躁動香港的各種政治符號、甚至政治呼籲，被人笑稱為這簡直是最藝術的政治集會。這一年黃耀明50歲，在最後一場演出上，他說出：「我是一個同性戀者」，「有一天，我們自己愛的人，不需要你的批准」。他說我們不斷在演唱會問，什麼是香港人，但如果你都不敢告訴別人你究竟是什麼人，那又該如何談身份認同？他當時沒有料到，這一次公開的come out，彷彿徹底改變了人生軌道──性別少數的身份可以come out，其它議題又有什麼不可以？為什麼我不可以做更多？</p>
+  <p>他此後創辦「大愛同盟」，推動同志平權；創辦文藝復興基金會，推動年輕人創作；在雨傘運動時成立了「文化監暴」；在六四30週年甚至登上了燭光集會的大台，演唱紀念六四的《回憶有罪》。30年前，香港人支持北京民運，全部明星名人出列「民主歌聲獻中華」，30年後，這條前線，僅剩黃耀明一人。今天的黃耀明，出現在港聞版，多過娛樂版。</p>
+  <p>明哥笑說，自己從來沒打算要做一個政治人物，以前不會，以後也不會。參與這麼多社會政治行動，只是身為音樂人、創作者，無法對社會環境的變化置身事外。創作的前提是，社會有開放自由的土壤（制度保障）和氣候（文化氛圍），香港此種情勢，每個人都應該在自己的位置努力，守住這土壤和氣候。</p>
+  <p>「事在人為。我們有責任去把一個壞的時代，變成好的時代。」</p>
+  <p>以往人人說明哥不擅言辭，做採訪遠不如唱歌。但從2012年走到今天，每個跟明哥聊過嚴肅話題的人，都驚訝於他表達的日漸簡明清晰，和對許多政治概念理解的精準。實情是，他花了很多時間去學習公共表達，甚至找立法會議員請教專門的政治概念。以前，音樂是他的語言，演出（performance）是他的語言，現在他明白，公共表達也需要成為一種語言。「畢竟在這個年代，做一個改革的人，可能是比歌手更重要的身份。」</p>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/5116d476-20e0-4605-856b-ee122141d858.webp" onerror="this.srcset='https://assets.matters.news/embed/5116d476-20e0-4605-856b-ee122141d858.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/5116d476-20e0-4605-856b-ee122141d858.jpeg" onerror="this.srcset='https://assets.matters.news/embed/5116d476-20e0-4605-856b-ee122141d858.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/5116d476-20e0-4605-856b-ee122141d858.webp" /> <img src="https://assets.matters.news/embed/5116d476-20e0-4605-856b-ee122141d858.jpeg" srcset="https://assets.matters.news/processed/540w/embed/5116d476-20e0-4605-856b-ee122141d858.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>達明一派2020: 意難平/神經</span>
+    </figcaption>
+  </figure>
+  <p><strong>以下是與黃耀明訪談節錄</strong></p>
+  <p>問：在這場運動裏的position？</p>
+  <p>黃：從雨傘之後我一直在想，可以做什麼。之前人家問，你會做政治家嗎，你會當議員嗎？我說我不會。我是關心，但我不懂做這個事情，沒有這個能力，也沒有這個耐性。我還是做我自己擅長的事情，可以參與到一些創意的、藝術的campaign裏，但最主要的還是做音樂。香港有很多人在做政治工作、政治評論，但從藝術的角度去參與社會，真的沒有很多人。我有一個我自己的位置。</p>
+  <p>問：年底達明一派的演唱會，沒有新歌，但會重新演出達明出過的每一張專輯、每一首歌。可以詳細談談嗎？為什麼這樣想？</p>
+  <p>黃：本來今年年底達明一派是想出版新的專輯，但整個夏天已經打亂了，時間沒有了，本來想談的主題也可能會改。所以會直接focus在12月達明一派的演出，我們是把達明一派曾出過的8張專輯所有的歌，重新演出一遍。還好沒有太多令我們覺得難堪的歌（笑）。</p>
+  <p>我們都老了。想讓自己，也讓我們香港人，看看我們走過的路。達明一派的專輯是香港歷史的一部分。在香港那麼脆弱的時候，特別珍惜有機會，重新再看自己的歷史。你也不知道有多少時間可以重新看一遍，重新聽一遍。我不知道這算不算懷舊。算不算都好，對我也不重要。</p>
+  <p>是香港電台頒金針獎給我們的時候，我們想到。之前也有過這個idea，一個德國的樂隊Kraftwerk這樣做過，但他們通知我們有這個獎時，我們就覺得，更加要做。因為我們是非常香港的一個樂隊。可能對很多人來講，四大天王、譚詠麟、張國榮、鄭秀文很香港，對很多人來說，他們才有香港人的character，但他們的歌很少記錄這個城市。達明一派很多歌是關於香港的，我們用我們的方法記錄了很多香港的事。我一直都很驕傲。要覺得驕傲，是香港人，是香港這個地方，在這個年代，很需要的事情。</p>
+  <p>在有機會的時候，看看我們有過的一切。</p>
+  <p>問：人重新整理自己的歷史，重新讓好的東西被再現，這樣的再現會有很不一樣的情感指向。比如，這是不是在给香港唱輓歌？怎樣去面對歷史，但又能positive？</p>
+  <p>黃：很多人形容達明一派，或者我的歌，常說充滿末世感。末世的歌一定是輓歌，很容易被這樣理解。但我想不是的。這些歌在不同的時間、場合唱，會有不同的意義。在創作的80年代，可能真的是悲觀。那時候很多人問我，你們為什麼這麼悲觀，尤其當時一切還不錯。我覺得悲劇會給我們很多力量，快樂的歌很虛假。我們唱的是悲歌，但不是輓歌。我的悲觀，是一個filter，是一面鏡子，讓你看這個世界。但最後那個要傳遞的message，不是再見，不是消極的。我們可以很悲觀去看事情，然後做出一些比較積極的，面向未來的決定。灰暗正是激發改變的力量。</p>
+  <p>問：如你所說，同樣的歌，換一個時空重新演繹，可能會有不一樣的意義。可以描述一下，這種重新梳理對你來說的意義嗎？</p>
+  <p>黃：重新面對過去的每一個作品，有些好，有些不好，都去面對的話，這會是一個很有趣的exercise，去面對自己的缺點、優點，所有的一切。這是以前很少去做的。以前通常是盡量去避開那些你覺得難堪的事情，或者你不覺得夠好的，但是這一次，不行，你給自己一個遊戲的規則，是每一個都要面對。</p>
+  <p>問：面對真實的歷史可以獲得能量。你說過很多次，2012年在紅館演唱會上come out，之後發生的一切，好像都是從那裡開始的。這是面對真實帶來的力量嗎？</p>
+  <p>黃：Come out開始，給了我參與社會運動，主動參與、牽涉入政治的一個點。以前我的作品、我這個人也是關心社會、關心政治，但我沒有很大的involve在裡面。我是個旁觀的人。但是2012年，那一次達明一派的演出本來就特別的political，我突然come out，也是一個很political的姿態。</p>
+  <p>每個人都知道你是，和你自己說出來你是，其實是很不一樣的。尤其是用那個平台，用那種腔調說出來，我後來才意識到，那是一個政治的宣言。但當時沒有想太多，是當天下午才突然覺得應該可以講出來。</p>
+  <p>如果沒有這個起點，就沒有後面的事情，沒有文藝復興基金會，沒有大愛同盟，我也不會踏足第一次的同志遊行。要知道，你在紅館的舞台，對八千一萬個很愛你的人，說你是同志，和你走出銅鑼灣去遊行，是兩回事。前者給了我很多很多的energy，去踏出後一步。敢去銅鑼灣，站在鬧市里，去跟人家說，我是同志。敢第一次跟大愛同盟的戰友，走去平機會抗議。以前不會的，不敢的，以前會寫一首歌去諷刺，現在可以拿一個牌站在那裡，去派單張。有這些事情，才有之後雨傘的轉變。這是一個參與社會運動的turning point，以一個創作人、一個歌手的身份。</p>
+  <p>問：在香港的社會運動裏，近幾年的指標人物不少是LGBT群體，你覺得是偶然嗎？從身為性別弱勢的地方出發，是不是比別人更能同理到其它的弱勢社群？</p>
+  <p>黃：我覺得是。社會運動的icon都是LGBT，不是偶然，因為你是小眾，你明白處於弱勢的感覺，你會更有同理心。而你一直在為自己身處的小眾社群爭取的時候，才會意識到，原來是那個大世界不公平，大世界如果不變好，我們在小世界爭取沒有用。比如我們每個月去平機會抗議沒有用，他們沒有法定的能力，什麼都不能做的。民主派議員在立法會每年動議同志平權、同志婚姻，沒有用的，因為那個建制的制度沒有空間。我們從這個小世界出發可以看到：只有世界變好，同志才會變好。</p>
+  <p>問：真正come out之後，你再回去創作作品的時候，會有什麼不同嗎？</p>
+  <p>黃：2012年之後，我們在舞台的創作很多，歌的創作比較少。但無論是舞台還是歌，我們都把很多事情，講得很白。比如2014年的《太平山下》，大家聽那首歌會覺得，哇，這不像以前的你，「爛鬥爛」，講這麼白？你演唱會就真的拿起一桿香港旗幟，好像要宣示什麼？這是2012年前不會有的。一方面是行動的意味更強，另一方面，因為時勢一直在變壞。你就會創作那麼憤怒的歌，做那麼憤怒的演出。雨傘運動之後，我做了《美麗的呼聲聽證會》，那也是很直白地講，香港是不是要死了？亞視的死亡、流行音樂的死亡和香港的死亡是不是一樣？這些事情都是很直接的，沒有那麼多曖昧了。</p>
+  <p>問：你會擔心這些直白，會傷害作品本身嗎？</p>
+  <p>黃：不會擔心。我覺得每個時代需要不同的作品。可能在這個時代，我們負擔不起曖昧。我們來自的80年代90年代，還可以很曖昧。但是現在不行。</p>
+  <p>問：你曾說在做一個明星和創作作品之間，作品是最重要的。但當你說，時代負擔不起曖昧的時候，聽起來，作品已經不是最重要的事情了？</p>
+  <p>黃：你可以這樣說。身邊的朋友問我，你現在怎麼每天都在看FB，都在做鍵盤戰士。我在想，可能某一個時刻，歌手是不重要的。其實我看何韻詩，她不是在做歌手，她根本就是在做一個政治的領袖。起碼在這段日子里，我們歌手的身份，比較次要。在這個年代，作為一個改革的人，好像比較重要。不過回頭講，就算作品很直白，也不一定不好。</p>
+  <p>問：2012年之後，你確實做了很多不同的事，這些事除了是更積極地參與社會或政治，也有某種共通性，比如去給年輕人創造新平台、新空間？</p>
+  <p>黃：很多人問我，你不搞「人山人海」了嗎？人山人海以前有at17啊。我說對，不搞了，這個年代不需要唱片公司，每個歌手都是自己的個體，他們不需要老闆，他們是自己的老闆。所以我們開始做「文藝復興」，文藝復興有一個「搶耳計劃」，就是教大家怎樣做自己的老闆。這個時代需要的搶耳這樣的計劃，教大家做自己的老闆，而不是我們作為唱片公司去簽新人。</p>
+  <p>我很貪戀新鮮的事情。今天的年輕人，好像不需要你給他們機會，只需要你分享經驗，提供資源，他們自己會去做。就像這場運動，這個運動沒有大台，沒有領袖，也不需要你去撐開什麼空間，他們每個人享受自己小小的空間。</p>
+  <p>問：如果回到一開始的問題，回到這場運動，你在其中的position，你會覺得自己跟年輕人的關係是什麼？運動中有很多「廢中、廢老」的自嘲說法，你怎麼看？</p>
+  <p>黃：說「廢中」、「廢老」，是主動放棄自己。如果每個人都要take your position，那「中」跟「老」有很多位置要做。我覺得華人的社會，普遍對小鮮肉、對青春，有過度的期待，不能覺得老就是沒有用的。一個健康的社會，是我們可以共存的。我已經過了青春很久很久，但我從來沒有覺得自己是個廢人。我做很多事情你們做不到的，我有的創意，可能是你沒有的，我自己很驕傲，我還是要做下去。我有自己的位置和要做的事。我不會跟年輕人去競爭，也不要阻止年輕人去前進，我當然不會。我們都可以去開拓自己的新世界啊。</p>
+  <p>問：最後一個問題，可能會讓你傷心，先抱歉……這次運動裏很多前線抗爭者都在學習面對生死。我想問問，Ellen離開了，對你的影響是什麼樣的？你會怎麼看待生死？</p>
+  <p>黃：（靜默一陣）我只能夠說，她是生病了，這個病奪去了她的生命。我認識的Ellen是很愛生命的，我知道那不是她的選擇，她是抗拒不了那個病的控制。我當然很傷心。我只能這樣去面對。我自己已經活到57歲了，對於病或者老或者死，我想過很多，都會比較容易接受。</p>
+  <p>問：接受它作為一種無常嗎？還是別的？</p>
+  <p>黃：接受它作為……This is fact of life。這就是生命的真相，我會接受。</p>
+  <p>問：這種接受會影響你的創作、行動、生活嗎？</p>
+  <p>黃：我想，這些事情都看透了，就不會怕。連老、病、死我都不怕，為什麼會要怕被打壓掙不到錢，為什麼要怕我沒有工作──那些只是數字。香港人可能會罵我，五毛可能會罵我，但我沒什麼好怕。沒在怕，就沒有畏懼。Fearless。可能這種變化也是2012年開始的，讓你慢慢面對自己。你不怕它，就會很自由地活下去。（完）</p>
+  <p>原文發表於《新活水》雜誌2019年11月刊。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-11-16</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-16/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E5%8F%AA%E8%A6%81%E6%98%AF-%E5%8F%A3%E9%A0%AD%E6%89%BF%E8%AB%BE-%E5%B0%B1%E4%B8%8D%E8%A6%81%E5%A4%AA%E7%95%B6%E4%B8%80%E5%9B%9E%E4%BA%8B-%E5%9C%A8%E5%A4%96%E4%BA%A4%E4%B8%8A%E4%B9%9F%E6%98%AF%E4%B8%80%E6%A8%A3%E7%9A%84/">
+          [經濟與外交]只要是「口頭承諾」，就不要太當一回事，在外交上也是一樣的
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-11-15</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-15/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E8%8F%AF%E5%83%91%E6%94%BF%E7%AD%96%E8%B2%8C%E4%BC%BC%E4%BD%8F%E6%B5%B7%E9%82%8A-%E7%AE%A1%E5%BE%97%E7%9C%9F%E7%9A%84%E5%BE%88%E5%AF%AC%E8%80%B6/">
+          [外交雜聞]中華民國華僑政策貌似住海邊，管得真的很寬耶
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-11-12</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-12/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E9%A6%99%E6%B8%AF%E4%BA%BA%E7%9A%84-%E6%85%8B%E5%BA%A6%E4%B8%8D%E4%BD%B3-%E8%AE%93%E8%87%BA%E7%81%A3%E9%A7%90%E6%B8%AF%E4%BA%BA%E5%93%A1%E6%8F%B9%E9%8D%8B%E4%BA%86/">
+          [臺灣小事]香港人的「態度不佳」，讓臺灣駐港人員揹鍋了
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-11-11</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-11/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%8D%E8%A6%81%E5%98%B2%E7%AC%91%E8%87%BA%E7%81%A3%E6%94%BF%E5%BA%9C-%E5%A3%93%E9%8C%AF%E5%AF%B6-%E4%BA%86%E5%95%A6-%E9%81%B8%E8%88%89%E7%B5%90%E6%9E%9C%E6%9C%AC%E4%BE%86%E5%B0%B1%E6%98%AF%E5%BE%88%E9%9B%A3%E7%8C%9C%E7%9A%84%E5%98%9B/">
+          [外交雜聞]不要嘲笑臺灣政府「壓錯寶」了啦，選舉結果本來就是很難猜的嘛
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-11-12/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E9%A6%99%E6%B8%AF%E4%BA%BA%E7%9A%84-%E6%85%8B%E5%BA%A6%E4%B8%8D%E4%BD%B3-%E8%AE%93%E8%87%BA%E7%81%A3%E9%A7%90%E6%B8%AF%E4%BA%BA%E5%93%A1%E6%8F%B9%E9%8D%8B%E4%BA%86/">
+            前一篇：[臺灣小事]香港人的「態度不佳」，讓臺灣駐港人員揹鍋了
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-11-13/%E7%BE%8E%E5%9B%BD%E7%9A%84%E9%80%89%E4%B8%BE%E4%B8%BA%E4%BB%80%E4%B9%88%E6%92%95%E8%A3%82%E4%BA%86%E5%8D%8E%E4%BA%BA%E7%BE%A4%E4%BD%93-%E8%AE%A9%E6%88%91%E4%BB%AC%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8-%E5%B7%9D%E7%B2%89-%E8%BF%99%E4%B8%AA%E8%AF%8D-iYouPort/">
+            後一篇：美国的选举为什么撕裂了华人群体：让我们避免使用“川粉”这个词 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-11-12/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E9%A6%99%E6%B8%AF%E4%BA%BA%E7%9A%84-%E6%85%8B%E5%BA%A6%E4%B8%8D%E4%BD%B3-%E8%AE%93%E8%87%BA%E7%81%A3%E9%A7%90%E6%B8%AF%E4%BA%BA%E5%93%A1%E6%8F%B9%E9%8D%8B%E4%BA%86/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-11-13/%E7%BE%8E%E5%9B%BD%E7%9A%84%E9%80%89%E4%B8%BE%E4%B8%BA%E4%BB%80%E4%B9%88%E6%92%95%E8%A3%82%E4%BA%86%E5%8D%8E%E4%BA%BA%E7%BE%A4%E4%BD%93-%E8%AE%A9%E6%88%91%E4%BB%AC%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8-%E5%B7%9D%E7%B2%89-%E8%BF%99%E4%B8%AA%E8%AF%8D-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-11-15/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E8%8F%AF%E5%83%91%E6%94%BF%E7%AD%96%E8%B2%8C%E4%BC%BC%E4%BD%8F%E6%B5%B7%E9%82%8A-%E7%AE%A1%E5%BE%97%E7%9C%9F%E7%9A%84%E5%BE%88%E5%AF%AC%E8%80%B6/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-11-12/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E9%A6%99%E6%B8%AF%E4%BA%BA%E7%9A%84-%E6%85%8B%E5%BA%A6%E4%B8%8D%E4%BD%B3-%E8%AE%93%E8%87%BA%E7%81%A3%E9%A7%90%E6%B8%AF%E4%BA%BA%E5%93%A1%E6%8F%B9%E9%8D%8B%E4%BA%86/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-11-12/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E9%A6%99%E6%B8%AF%E4%BA%BA%E7%9A%84-%E6%85%8B%E5%BA%A6%E4%B8%8D%E4%BD%B3-%E8%AE%93%E8%87%BA%E7%81%A3%E9%A7%90%E6%B8%AF%E4%BA%BA%E5%93%A1%E6%8F%B9%E9%8D%8B%E4%BA%86/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-11-13/%E7%BE%8E%E5%9B%BD%E7%9A%84%E9%80%89%E4%B8%BE%E4%B8%BA%E4%BB%80%E4%B9%88%E6%92%95%E8%A3%82%E4%BA%86%E5%8D%8E%E4%BA%BA%E7%BE%A4%E4%BD%93-%E8%AE%A9%E6%88%91%E4%BB%AC%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8-%E5%B7%9D%E7%B2%89-%E8%BF%99%E4%B8%AA%E8%AF%8D-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-11-15/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E8%8F%AF%E5%83%91%E6%94%BF%E7%AD%96%E8%B2%8C%E4%BC%BC%E4%BD%8F%E6%B5%B7%E9%82%8A-%E7%AE%A1%E5%BE%97%E7%9C%9F%E7%9A%84%E5%BE%88%E5%AF%AC%E8%80%B6/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-11-12/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E9%A6%99%E6%B8%AF%E4%BA%BA%E7%9A%84-%E6%85%8B%E5%BA%A6%E4%B8%8D%E4%BD%B3-%E8%AE%93%E8%87%BA%E7%81%A3%E9%A7%90%E6%B8%AF%E4%BA%BA%E5%93%A1%E6%8F%B9%E9%8D%8B%E4%BA%86/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’
+——
+" />
+    <meta property="og:description" content="
+‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’" />
+    <meta property="twitter:title" content="‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fnot-forensic-genetics-anymore-surveillance" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/not-forensic-genetics-anymore-surveillance" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/not-forensic-genetics-anymore-surveillance&text=‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/not-forensic-genetics-anymore-surveillance&title=‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/not-forensic-genetics-anymore-surveillance&title=‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’&body=
+‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/not-forensic-genetics-anymore-surveillance" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/not-forensic-genetics-anymore-surveillance&title=‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’&caption=
+‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’&url=https://www.chinafile.com/reporting-opinion/viewpoint/not-forensic-genetics-anymore-surveillance" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-03-17
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Jessica Batke</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/not-forensic-genetics-anymore-surveillance" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1584497880000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/not-forensic-genetics-anymore-surveillance">‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-eeab957792e04f5d21d4d2dfd31694e1">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-668252.jpg" title="‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’" class="colorbox" data-colorbox-gallery="gallery-node-52016-ARYrNY2rqXY" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-668252.jpg?itok=358gyzIM" width="1500" height="976" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Robert King—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A civilian scientist working in the Broward County crime lab handles processed DNA extractions that were taken from blood samples of convicted criminals, in Fort Lauderdale, Florida, July 13, 2000.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">In February, ChinaFile published an <a href="https://www.chinafile.com/reporting-opinion/features/american-company-sold-dna-analysis-equipment-security-officials-xinjiang" target="_blank" rel="nofollow">article</a> about the Wisconsin-based company Promega selling DNA analysis equipment to the police in China’s Xinjiang Uighur Autonomous Region. Not long after we posted the story, Yves Moreau contacted ChinaFile to discuss his experiences communicating with Promega. Moreau, a professor of engineering, specializing in human clinical genomics, at the University of Leuven, Belgium, had been emailing with Promega since 2016, warning its communications department first about how Promega’s products might be used in a proposed DNA databasing project in Kuwait, and later alerting the company to his concerns about Xinjiang. My interview with Moreau became a wide-ranging conversation about genetic privacy, the true meaning of “free, informed” consent, inconsistent ethics standards for trans-national businesses, and the scientific community’s concerns over the United States government’s use of DNA samples.</p>
+      <hr />
+      <p><strong>Can you tell me a bit about your day job, to help explain the expertise that you bring to this issue?</strong></p>
+      <p>I’m a data-cruncher in clinical genetics. I do analysis of patient genomes to identify mutations that cause rare genetic disorders. I got interested in genetic privacy about a decade ago. With my team, I’ve been building infrastructures that allow us to do research on genetic data while protecting patient data privacy.</p>
+      <p>It’s from that background that I eventually got interested in human rights and human genetics, or forensic genetic “ethicology.” It happened by accident. Somebody forwarded me an article about the mandatory DNA databasing of the entire population of Kuwait. I was very surprised because I was already working on genetic privacy, and this law I hadn’t heard about had passed a year earlier. I asked around: “What is our community doing about this?”</p>
+      <p></p>
+      <div class="node node-article cboxes article align-left grid-4 img-yes logo-no">
+        <div class="cboxes-inner">
+          <div class="cb-head">
+            <h3 id="features"> <a href="https://www.chinafile.com/reporting-opinion/features">Features</a></h3>
+ <span class="date">02.19.20</span> <span class="type-icon"></span>
+          </div>
+          <div class="cb-link">
+<a href="https://www.chinafile.com/reporting-opinion/features/american-company-sold-dna-analysis-equipment-security-officials-xinjiang"></a>
+          </div>
+          <div class="cb-img">
+<img src="https://www.chinafile.com/sites/default/files/styles/system/public/assets/images/article/system/xinjiang-police-sys.jpg?itok=CJx1wURl" width="620" height="450" alt="" referrerpolicy="no-referrer" />
+          </div>
+          <div class="cb-cont">
+            <h2 id="american-company-sold-dna-analysis-equipment-to-security-officials-in-xinjiang-documents-show"><a href="https://www.chinafile.com/reporting-opinion/features/american-company-sold-dna-analysis-equipment-security-officials-xinjiang" title="American Company Sold DNA Analysis Equipment to Security Officials in Xinjiang, Documents Show">American Company Sold DNA Analysis Equipment to Security Officials in Xinjiang, Documents Show</a></h2>
+ <span class="authors"> <span>Jessica Batke &amp; Mareike Ohlberg</span> </span>             <div class="inner-content">
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+In 2015, the Xinjiang Production and Construction Corps Public Security Bureau announced it planned to purchase equipment from the U.S.-based biotechnology company Promega for the purpose of analyzing DNA and adding it to a national database,...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>Doing DNA profiling of an entire population, and all the visitors that would travel to Kuwait, seemed like quite a poor idea. And it turned out that there was really no reaction from the scientific community. So I got in touch with a colleague who said, “Well, actually, our Society of Human Genetics does take social standpoints, and that’s something we could take a standpoint on.” They wrote a very nice letter to the Prime Minister of Kuwait. I thought it was so nice so as not to be very useful, but I was wrong, because it was then picked up by scientists. <em>New Scientist</em> wrote a <a href="https://www.newscientist.com/article/2105483-kuwaits-mass-dna-database-is-a-huge-attack-on-genetic-privacy/" target="_blank" rel="nofollow">piece</a>, and then <em>The Washington Post</em> wrote a <a href="https://www.washingtonpost.com/news/worldviews/wp/2016/09/14/kuwait-plans-to-create-a-huge-dna-database-of-resident-and-visitors-scientists-are-appalled/" target="_blank" rel="nofollow">piece</a>. And at the same time, there were a number of things happening in Kuwait. Within three months, because there was international pressure and also a lot of national pressure, the parliament had to repeal the law.</p>
+      <p>There were some very limited reports on how people in Xinjiang had to provide fingerprints, voice prints, 3D facial scans, and DNA samples to get a passport. I reached out to Human Rights Watch and asked if they would be interested in having somebody with some technical expertise connect with them on this. They were interested, and then they discovered some important documents that I reviewed. And then I reached out to some colleagues who are expert forensic geneticists who said, “Oh, that’s big, because it means that the Xinjiang authorities are building very large-scale DNA profiling infrastructure in Xinjiang.” And so that’s when the reporting on DNA profiling [in Xinjiang] started, back in 2017.</p>
+      <p><strong>Why do you think the scientific community wasn’t initially engaged about the proposed DNA database in Kuwait? Are there not many scientists concerned with privacy issues?</strong></p>
+      <p>There’s quite a bit of work on how to do research while protecting privacy and guaranteeing confidentiality. The community overall is fairly responsible, but in a first-world sense. So Europe, the U.S.—that’s the context. There’s not a lot of thought about what it means once you go to other regions of the world. It’s really a classical scientific context.</p>
+      <p>Across scientific communities, there is a variable level of consciousness of the implications of using this kind of data. Physicians are usually quite conscious that behind the data they’re looking at are patients. When you get biologists, they might be less aware. And then when you get to computer scientists—of course, it’s a whole landscape, not just one thing—but usually people are even less aware and tend to consider whatever they have in front of them as just “data.” There’s a distanciation with respect to data that occurs very quickly when you do data analysis.</p>
+      <p><strong>Do you believe that true informed consent is possible in Xinjiang right now?</strong></p>
+      <p>The requirement for human subject research is free and informed consent. If I’m going to do, let’s say, a genome-wide association study trying to see how some disease has genetic variances in the population of Xinjiang, I believe that for that research you could talk about free, informed consent. I would worry about how the data might be reused, but for the initial project where it’s clear that you’re going to do this [particular] analysis, I believe that free, informed consent is possible.</p>
+      <p>When you talk about the kind of techniques that can be directly used by the police to identify individuals and therefore to repress populations, then I think that informed consent would entail saying, “Do you agree to participate in a study whose results are directly relevant for the development of technology that can be used to discriminate against your ethnic population, against your family, or against yourself?” In these situations, I think free, informed consent is an oxymoron. You could imagine that it was free consent because you didn’t tell the participants everything. Or, you could imagine that it was informed consent because you’ve told the participants that they could be abused as a result of the research. But, you know, they’re not free to say no. Free, informed consent in this context is an oxymoron for <em>this</em> type of research.</p>
+      <p>The second dimension is that free, informed consent is a necessary but not a sufficient condition for ethical research. You cannot use free, informed consent as a free card to bypass all the other ethics requirements. So [for the requirement of] beneficence, and nonmaleficence, you cannot do research where there is a clear risk that the results would be used to abuse an individual or a population. [For the requirement of] justice, people should share both the burdens and the rewards of research in a fair way. Again, [in Xinjiang,] these requirements are not met. This type of research fails on essentially all ethical dimensions that you can imagine. Informed consent could not possibly be a solution to these problems.</p>
+      <p>There is a very strong trend now to say, “OK, here is a piece of research that people are criticizing, let’s see whether there was free, informed consent, and let’s see whether there was ethical approval, and if these requirements are met, then the criticism was not relevant.” I think this is wrong. I think it’s happening because these things are much more tangible, much less subject to opinion. So, basically you can say, “Did you have the proper form or the proper signatures, and did you have the proper documents with the stamp of the institutional review board?” Questioning the ethics of a study in general is trickier because, indeed, it touches on values. What is ethically acceptable will have some cultural variation.</p>
+      <p>At the same time, there are quite a few publications where the study was approved by the ethics committee of the Ministry of Public Security’s Institute of Forensic Science. That doesn’t make sense. The police having their own ethics committee to approve their own studies? That doesn’t work. So in those cases, you have to question how the ethical approval was given. There is space for some cultural variability, but these kinds of situations are really not all that complicated. They ask that you, for example, as a journal, second-guess an ethics committee. And, actually, guidelines on ethical publishing foresee that possibility, [the possibility] for a journal or a publisher to decline to publish work that has been approved by an ethics committee because they don’t feel comfortable with it. Publishers can say that, even if they’re not sure about the cultural standard where the research was done, if they feel too uncomfortable with [the ethics of the research], they can deem it unacceptable.</p>
+      <p>In the case of Xinjiang, it’s more clear-cut. When the police approve the development of technology that is being used on a massive scale to repress a certain population, you can really question whether the ethical approval makes sense at all. I don’t think it does.</p>
+      <p><strong>You told me you first contacted Promega in 2016 about the possibility of its equipment being used in Kuwait. How did Promega respond?</strong></p>
+      <p>Well, they were initially very responsive. But when the questions got more pointed, I got boilerplate answers like, “Yes, we are concerned about things like genetic privacy.” But in terms of really reacting and doing something about it . . . Of course, the DNA database did not go through in Kuwait, but I didn’t have the impression that [Promega was] at all willing to take it seriously and intervene.</p>
+      <p>Actually, at the time, Promega had important leverage. First, they were a technology supplier [to two of the companies that were bidding for the Kuwait contract, <a href="https://www.meed.com/kuwait-tenders-forensics-contract/" target="_blank" rel="nofollow">Sorenson and Bode Cellmark</a>]. So they could have told Sorenson or Bode Cellmark that they weren’t going to supply the technology because they thought there was a problem [with the database project].</p>
+      <p>[Thermo Fisher was a third company also bidding for the Kuwait contract.] Second, and this is quite complicated because a lot of it is secret, but there was a <a href="http://www.laipla.net/wp-content/uploads/2015/01/PromegaPetRehgEnBancJan15.pdf" target="_blank" rel="nofollow">lawsuit</a> between Promega and Life Technologies [a company that changed names and became part of Thermo Fisher] because Promega holds important intellectual property on DNA profiling technology. And from what I understand of the settlement terms, the products that Thermo Fisher was selling could only be used for forensic and paternity testing use. So Promega could have said, for example, “When you do mass DNA profiling of an entire population, this is not forensic genetics anymore. This is surveillance.” Obviously it would have taken a lot of guts, but Promega could have told Thermo Fisher that using the technology in that way might infringe on the terms of the settlement. Now, the settlement is secret, so what I’m saying is rather speculative, but you can see that several of Thermo Fisher’s products are specified as being for forensic case use or paternity testing only. I’m quite sure that comes from the settlement between Promega and Thermo Fisher. So that means that—at least for some time, because the patents might have since expired—Promega did have a lot of leverage on forensic DNA technology that it apparently chose not to use.</p>
+      <p><strong>You first contacted Promega about Xinjiang in 2017, is that correct?</strong></p>
+      <p>Yes. But from then on they were unresponsive. Since 2017, I’ve been sending them regular emails with updates about the Xinjiang situation or issues of genomic surveillance, just to keep them updated and hoping this would be fed back to their corporate organization so that they would realize that it was important to be careful about how this technology is used.</p>
+      <p><strong>Did you have specific information about the use or potential use of Promega’s equipment in Xinjiang, or was this just a generalized concern, knowing what you already knew about what was going on in Kuwait?</strong></p>
+      <p>What was in [ChinaFile’s Promega article] were the kinds of things that I saw as well. We saw a number of winning bids explicitly mentioning products from Promega sold in Xinjiang. Promega is less high-profile than Thermo Fisher, because Thermo Fisher was the dominant supplier of sequencers to the market. [Editor’s note: Promega does not manufacture DNA sequencers; it manufactures “kits” that amplify certain aspects of the DNA information, allowing that information to be put into a sequencer.] Also, in terms of kits, Thermo Fisher is an important player. So I didn’t put as much focus on Promega because they were a second-line player in this market. But I still communicated with them and insisted that there was a problem with their technology.</p>
+      <p>Since 2017, they have been clearly aware of the risk of abuse of their technology in Xinjiang and in the rest of China—because, of course, we focus a lot on Xinjiang, but that is not to say that there aren’t problematic things happening in the rest of China. There are lots of problems with DNA databasing across the whole of China, because the government tends to focus on target groups. There was a <a href="https://www.hrw.org/news/2017/05/15/china-police-dna-database-threatens-privacy" target="_blank" rel="nofollow">good report</a> from Human Rights Watch on this. They tend to focus on sex workers, on drug addicts—on groups that are seen as criminal but that are also extremely vulnerable social groups. Political opponents, protesters, petitioners: all these groups have been disproportionately targeted by DNA profiling across China.</p>
+      <p>So it’s important that Promega, from 2017 on, could not say that they did not know something was wrong. That’s a position companies like to take, saying that they blinded themselves and therefore didn’t know what was going on. Well, in this case, because they were given proper notice, they cannot say that they were not aware of it.</p>
+      <p><strong>In your opinion, how should companies be responding to the information that their products are being used to abet human rights abuses? How should foreign governments be responding?</strong></p>
+      <p>When Thermo Fisher made the <a href="https://apnews.com/ad2f0cef05c64e809e1f4c29b449e682" target="_blank" rel="nofollow">announcement</a> that they were going to stop selling their human identification solutions in Xinjiang, they actually made a very important statement. They said that they recognized the importance of considering how their products are used or may be used by their customers. It’s really quite unique for a company to acknowledge that, and I think it’s very, very important.</p>
+      <p>The key element in this is foreseeability. For example, the basis to decide whether somebody is complicit in a crime is whether or not the action they contributed was essential for the offense to happen in the way it happened. If you’re talking about supplying the technology [in Xinjiang], that would fulfill the requirement. But the second criteria is that they knew, or should have known, what was going to happen. So let’s say I’m a hardware store and I sell knives. If a man buys a knife in my shop and uses it to murder his wife a year later, then the police are not going to come to my shop and say I should go to prison because I sold a knife to this man. But, the situation would be really quite different if the man had burst into the store, shouting that his wife was cheating on him and that he wanted to buy the biggest knife that the store had. In that case, my responsibility could be put in question.</p>
+      <p>This kind of responsibility <em>does</em> apply to companies when they do business in their own country, but somehow, when they go to the other side of the world, it suddenly seems to disappear. It seems that only the local regulations apply, and of course when you go and do business with the Chinese police, what you’re doing is not illegal in China. But I think that there is a fairly straightforward solution: a company should be accountable both to the legal strictures of the country in which it does business—which is already the case—and also of its home country. The idea is that if you’re an American business, when you do business in China, you should abide by American standards of liability.</p>
+      <p>Currently, there is an effort by the United Nations to <a href="https://www.ohchr.org/Documents/HRBodies/HRCouncil/WGTransCorp/OEIGWG_RevisedDraft_LBI.pdf" target="_blank" rel="nofollow">draft a treaty</a> on the responsibility of transnational corporations. [If it were to pass as written,] it could definitely be something that would have an immense impact on our civilization. This is not hyperbole. Today, most human rights abuses involve a technological component, so [we should] hold companies responsible for their actions when they actually know what’s going on. Thermo Fisher sells sequencers in Xinjiang, and Thermo Fisher has offices all across China; it cannot say that it has no knowledge whatsoever of what is happening in different regions of China. That is not defensible, in my opinion.</p>
+      <p><strong>Where else in the world do you see issues like this?</strong></p>
+      <p>Much of my effort is on China, because I only have 24 hours in a day, and I’m still running a regular lab, as best or as badly as I can. But there are other very concerning situations. Nothing on the scale of Xinjiang.</p>
+      <p>In the U.S., at the U.S.-Mexico border, there are <a href="https://www.eff.org/deeplinks/2019/08/ices-rapid-dna-testing-migrants-border-yet-another-iteration-family-separation" target="_blank" rel="nofollow">technologies being deployed</a> for rapid DNA profiling. This is a slightly more advanced technology that allows people with less technical skills to quickly do DNA profiling—a minimally-trained police officer can generate a DNA profile. That is being used against highly vulnerable populations: people who arrive at the border. Their DNA profiles are being put in the U.S.’s national DNA database, the <a href="https://www.fbi.gov/services/laboratory/biometric-analysis/codis" target="_blank" rel="nofollow">CODIS</a> database, that is used for criminals. Immigrants who are entering the country illegally, but also immigrants who are actually <a href="https://www.nytimes.com/2019/10/02/us/dna-testing-immigrants.html" target="_blank" rel="nofollow">applying for asylum at a legal port of entry</a>, are being put in this database. Minors from these populations are put in these databases. This is saying that these people are almost criminals, while sociological studies actually show that both legal and illegal immigrants have a <a href="https://www.citylab.com/equity/2019/02/crime-immigration-city-migrants-refugees-state-of-the-union/582001/" target="_blank" rel="nofollow">lower criminality rate</a> than the general population. The idea that someone who arrived illegally at the border is a potential criminal is a very deep form of stigmatization that has no basis whatsoever.</p>
+      <p>This technology is also used to try to check whether a child is the child of the claimed parent. So a parent arrives at the border with a child, and then the argument is these children are being trafficked by people who are unrelated to them—and that might actually sometimes happen—and that the traffickers are trying to use the child to cross the border, because the child will receive better protection. However, checking family relations based on DNA is extremely problematic. It essentializes family relations to biological relations, which is really wrong. Even the Romans had a saying: the mother is always obvious, but the father is the one the marriage points to. Paternity is actually as much a social construct as it is a biological construct, and in the 21st century, maternity is also, to some extent, a social construct. Essentializing family relations to biological relations is extremely disruptive to families. A parent might not be the biological parent of a child and still be the parent of that child. And it’s not acceptable to simply say, “It’s too bad we make mistakes in two, three, four percent of cases.”</p>
+      <p>The other ongoing issue is consumer genomic databases, such as 23andMe, Ancestry.com, and <a href="https://www.theatlantic.com/science/archive/2018/06/gedmatch-police-genealogy-database/561695/" target="_blank" rel="nofollow">GEDmatch</a>. These companies, in particular the bigger ones, 23andMe and Ancestry.com, have enough genetic information to have a virtual DNA database of the entire U.S. population, and probably even the European population. Because you don’t have to be in the genetic database to be traceable—you only need to have a relative in the database and have genealogical information. A company like Ancestry not only has the genetic profiles, it also has all the genealogical information. It has billions of genealogical records from all over the world. That means that the only thing that is protecting the U.S. population from being in a national [government criminal] DNA database is the fact that the police still need a warrant to access that information, and that these companies vowed to fight those warrants. But there’s no guarantee they will win.</p>
+      <p>However, GEDmatch, which is a smaller company, allows people to use their profiles to do matches across other suppliers. So if you’re a customer of 23andMe, you cannot find a relative that has a profile at Ancestry, but you can both upload your profiles to GEDmatch to find each other. There is at least one reported case of a judge <a href="https://www.sciencenews.org/article/why-warrant-search-gedmatch-genetic-data-has-sparked-privacy-concerns" target="_blank" rel="nofollow">issuing a warrant</a> against GEDmatch.</p>
+      <p>So the U.S. is very close to having a population-wide DNA database in the hands of these two companies, accessible to the police through a warrant. That’s also concerning because people never signed up for this. There was never any social debate about whether these databases could be used by the police. Also, strikingly, in the CODIS criminal database, the police are not allowed to search for relatives. So we’re in this very strange situation where the police are not allowed to use their own criminal database in a certain way, and therefore they’re trying to use a general population database in a manner that they’re not even allowed to use against criminals. This is extremely problematic.<span class="cube"></span></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-03-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-19/Xi-Jinping-May-Welcome-Trump-s-Racism/">
+          Xi Jinping May Welcome Trump’s Racism
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-19/As-Its-Coronavirus-Outbreak-Abates,-China-Is-Tryin/">
+          As Its Coronavirus Outbreak Abates, China Is Trying out a New Look. Is It Working?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-12</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-12/China-and-Intervention-at-the-UN-Security-Council/">
+          China and Intervention at the UN Security Council
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-09</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">
+          ‘Our Daily Media Consumption Is Completely Different’
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-17/%E6%9E%84%E5%BB%BA%E9%98%B2%E5%BE%A1%E7%9B%B4%E8%A7%89%E6%98%AF%E7%94%9F%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F-%E5%8F%98%E5%BE%97%E9%9A%BE%E4%BB%A5%E8%A2%AB%E8%BF%BD%E8%B8%AA%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95-2-iYouPort/">
+            前一篇：构建防御直觉是生存的基本功：变得难以被追踪的简单方法（2） - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-18/%E7%89%B9%E6%9C%97%E6%99%AE%E7%9A%84%E5%89%91%E5%92%8C%E7%9B%BE/">
+            後一篇：特朗普的剑和盾
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-03-17/%E6%9E%84%E5%BB%BA%E9%98%B2%E5%BE%A1%E7%9B%B4%E8%A7%89%E6%98%AF%E7%94%9F%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F-%E5%8F%98%E5%BE%97%E9%9A%BE%E4%BB%A5%E8%A2%AB%E8%BF%BD%E8%B8%AA%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95-2-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-03-18/%E7%89%B9%E6%9C%97%E6%99%AE%E7%9A%84%E5%89%91%E5%92%8C%E7%9B%BE/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-03-19/As-Its-Coronavirus-Outbreak-Abates,-China-Is-Tryin/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-03-12/China-and-Intervention-at-the-UN-Security-Council/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-03-17/%E6%9E%84%E5%BB%BA%E9%98%B2%E5%BE%A1%E7%9B%B4%E8%A7%89%E6%98%AF%E7%94%9F%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F-%E5%8F%98%E5%BE%97%E9%9A%BE%E4%BB%A5%E8%A2%AB%E8%BF%BD%E8%B8%AA%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95-2-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-03-18/%E7%89%B9%E6%9C%97%E6%99%AE%E7%9A%84%E5%89%91%E5%92%8C%E7%9B%BE/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-03-19/As-Its-Coronavirus-Outbreak-Abates,-China-Is-Tryin/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-03-12/China-and-Intervention-at-the-UN-Security-Council/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

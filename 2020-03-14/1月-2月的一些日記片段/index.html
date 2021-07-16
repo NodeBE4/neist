@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>1月-2月的一些日記片段 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+1月-2月的一些日記片段
+——
+" />
+    <meta property="og:description" content="
+1月-2月的一些日記片段
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="1月-2月的一些日記片段" />
+    <meta property="twitter:title" content="1月-2月的一些日記片段" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40islander%2F1%25E6%259C%2588-2%25E6%259C%2588%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E6%2597%25A5%25E8%25A8%2598%25E7%2589%2587%25E6%25AE%25B5-bafyreid2dmq3e6uz5idm7it4ktu7yo7s2ssiyap3yo3ruaxt5qfjosh5zm" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@islander/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5-bafyreid2dmq3e6uz5idm7it4ktu7yo7s2ssiyap3yo3ruaxt5qfjosh5zm" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@islander/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5-bafyreid2dmq3e6uz5idm7it4ktu7yo7s2ssiyap3yo3ruaxt5qfjosh5zm&text=1月-2月的一些日記片段&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@islander/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5-bafyreid2dmq3e6uz5idm7it4ktu7yo7s2ssiyap3yo3ruaxt5qfjosh5zm&title=1月-2月的一些日記片段" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@islander/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5-bafyreid2dmq3e6uz5idm7it4ktu7yo7s2ssiyap3yo3ruaxt5qfjosh5zm&title=1月-2月的一些日記片段" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=1月-2月的一些日記片段&body=
+1月-2月的一些日記片段
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@islander/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5-bafyreid2dmq3e6uz5idm7it4ktu7yo7s2ssiyap3yo3ruaxt5qfjosh5zm" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@islander/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5-bafyreid2dmq3e6uz5idm7it4ktu7yo7s2ssiyap3yo3ruaxt5qfjosh5zm&title=1月-2月的一些日記片段&caption=
+1月-2月的一些日記片段
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=1月-2月的一些日記片段&url=https://matters.news/@islander/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5-bafyreid2dmq3e6uz5idm7it4ktu7yo7s2ssiyap3yo3ruaxt5qfjosh5zm" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>1月-2月的一些日記片段</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-03-14
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 島民</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@islander/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5-bafyreid2dmq3e6uz5idm7it4ktu7yo7s2ssiyap3yo3ruaxt5qfjosh5zm" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1584195925000-->
+<p><a href="https://matters.news/@islander/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5-bafyreid2dmq3e6uz5idm7it4ktu7yo7s2ssiyap3yo3ruaxt5qfjosh5zm">1月-2月的一些日記片段</a>
+——</p>
+
+<div>
+  <p>1月30日</p>
+  <p>困在家裡陪父母防疫第7天，回不去學校，也不敢出門半步。新鮮蔬菜快吃完了，昨晚陪媽媽把家中囤積的很多乾菜拿出來泡水，例如木耳、梅乾菜、黃花菜，也開始考慮把綠豆拿出來種豆芽。口罩暫時可用半個月，但酒精還買不到。我用威露士消毒水擦拭家裡的開關、門把、手機、電腦，剩下的倒進馬桶沖洗，擦完之後，手指總會皺皮發白。</p>
+  <p>在家也交了期末報告，貼上前幾段，給大家看看。願我們都不要被任何東西殺死。</p>
+  <p>//落筆之時，我已經把自己和父母關在溫州的家中第四天。隨著肺炎疫情的發酵，我回家的這一個禮拜，一直忙著網購防護和消毒物品，囤積糧食，勸阻長輩出門，幫助募款和運送物資到武漢，以及與我的記者朋友們資訊互通，也與一些自我隔離的武漢朋友在網路上互相打氣，希望他們安好。有人說，2020的開端太糟了，可不可以退貨？但其實，2019對我來說，也已經足夠糟了。從2019年6月開始的香港反送中事件，把我幾乎所有的香港朋友都捲入其中，而這些人，是我生命中最重要的一個階段裡相識相伴的人。我自己也因為對運動提供的一些幫助和參與，而懷著對回家極大的恐懼。因為暴政、疾病，我們恐懼、悲傷、絕望，覺得自己好像命若琴弦。我們的這門課，也在這半年發生了。</p>
+  <p>……林老師半開玩笑地總結，到我們這堂課來的，都是來「治病」的，論文寫出來了，病就治好了。我的論文雖然還沒有提出大綱，動筆之日遙遙無期，但我好歹先把這門課給修完了。想想人類學祖師爺馬林諾斯基當年也是去熱帶做田野兼養病，那麼我的「病」，被治好了多少呢？</p>
+  <p>如我前文所述，這是動蕩的半年，我的狀態不好，所以我在這一學期裡強迫自己休息，找些消遣娛樂，因此只選了這一門課。學期結束至今，回頭看看，過去半年中，每週二晚上的三個小時，使我能夠定期與人對話、思考，獲得一些喘息。而課下讀書、準備報告、寫心得，也讓我重新沉澱在一種純樸的校園生活中，保持閱讀和學習的習慣。所以，在對本課程的內容做心得之前，我要先感謝這門課的存在，感謝開課、授課的林老師和黃老師。謝謝你們讓我在人身安全和情緒都受威脅的大時代裡，仍然可以在台北木柵，擁有一種安穩的、有尊嚴的、靈動的生活。</p>
+  <p>//</p>
+  <p>2月8日</p>
+  <p>幾年前做過一個中國有機農業的專題，走訪了江浙滬周邊十幾家有機小農的自家農場，主要集中在崇明島和杭嘉湖平原一帶的偏僻山村。種植者多是出身城市的隱世文青，秉承福岡正信的自然農法，小規模種植，小範圍訂購，用順豐快遞來做即日派送。有機小農，菜價自然高，也不進入主流市場，一直默默無聞，勉強支撐。</p>
+  <p>疫情爆發，主流市場菜價飛漲，新鮮蔬菜快要比肉值錢，我突然想到這些我走訪過的小農。他們自給自足，遠離人口密集區，少消費，不施農藥，有水土就可持續出菜，因而菜價未漲。之前採訪回來，我給我媽推薦過這些小農場，她嫌貴，沒有買過。總算，現在是買的時候了。</p>
+  <p>2月10日</p>
+  <p>最近見到一些文學界人士發表令人瞠目結舌的言論，我想起香港也有胡燕青，不禁偷偷地想，看來人還是要讀點社會科學才行，只是讀文學好像比較容易歪掉。但很快，我又發現一些讀社會科學的人也差不多，而且常常處在一種不小心流露了內心深處的恨意，又急忙拿一些理論來修正的狀況。其實我罵黑警死全家的時候也是這樣，我認真討論過要物理閹割三萬香港警察才能解恨，還要切成一段段放進榨汁機。</p>
+  <p>又但是呢，最近疫症延燒，逼出了好多比我去得更盡的人，大概是去到一個詳細討論黑警的孩子要如何活剮才解恨的地步，而且不論這孩子是否其實前線勇武一員，不論其是否與家庭決裂，不論其是否也深受其害，總之要活剮。這些，我稱之為走火入魔。</p>
+  <p>看了這幾多時日之後，我明白了，這跟讀什麼學科其實沒有關係，並不是讀什麼就容易歪掉。這跟左右也沒什麼關係，很多人聲稱或是以為自己左或是右，有一天他恍然大悟，直面內心深處的自己，發現原來他不是。</p>
+  <p>我做記者，新聞專業主義告訴我，懷疑一切，追問一切。我讀人類學，有人問我此學科最根本的一詞為何，我說，同理心。其實不是學科給了我什麼，是我的心帶我選擇了這些學科。我對這世界有恨意，四面八方都有東西要殺死我，但我若活在仇恨裡，將成為自己最討厭的人。</p>
+  <p>2月13日</p>
+  <p>今天講一個送菜的故事。瘟疫蔓延時，自上而下網格化管理，社區封閉式管理，也沒什麼人敢去菜市場、超市這些人群聚集的地方。百物騰貴，也是當然的。跨省市的快遞變得很慢很慢，或是乾脆送不進來，最貴的順豐也一樣。所以，網購本地的新鮮蔬菜，成了最重要的事之一。</p>
+  <p>前幾天我教了我媽之後，她已經算是熟練運用各種網購蔬菜的平台了。然後她就想到80多歲的外婆，怕老人家抵抗力差，記性也不好，出去亂走做不好防疫措施，或是買不到菜。外公外婆住在城市的另一端，我們不能自己送去，就網購，送貨地址寫外婆家。本來幾天前已經成功了一次，今天下午是第二次了，理應沒什麼問題，沒想到我媽不停接到送貨員的電話。</p>
+  <p>電話那頭先是問路，再三講那路名、附近的地標，對方都不知道。對方還說路被封了，進不去了。我媽來來回回接了三四個電話，對方還是找不到。我在旁邊聽得急了，就對著電話說，你找找百度地圖吧，你開個導航不就過去了嗎？你說路封了，那是封閉式管理的關卡，總有人守著吧？給他測個體溫登記一下，送完菜就出來，不就行了嗎？但對方硬是找不到，還走錯方向，問了好幾次才說確實有測體溫的，就這樣又折騰了兩三個電話，才終於找到了路。沒想到的是，就算進了社區，對方還是找不到哪一棟，我媽就又接到了兩個電話。直到我外公站在門外大喊，對方才終於找到。外公說，對方是一對夫妻，兩個人送來了十幾袋蔬菜，他請人家放在門口，他自己慢慢拿進去就好。</p>
+  <p>終於送菜成功，我和我媽都感慨，這兩個人怎麼這麼笨，外婆家那麼好找的地方，居然要打十幾個電話才找得到。我媽說，可能是非常時期，原來送快遞的外地打工仔都沒有回來，這兩個人是臨時找的吧。這種時候有人送菜已經很好，她生怕對方不送了，十幾個電話都特別耐心地接了，在電話旁氣急敗壞的那個是我。坐下來仔細想想，外賣行業這麼發達，快遞小哥都用APP接單，自帶地圖導航，為什麼這兩個人會找不到路？然後我想到，我以前在火車上遇到過一個外賣小哥，他說，手機上網的流量費很貴，尤其是開導航，GPS特別耗流量，所以他記熟了路之後，都不捨得開導航。這對送菜的夫妻，會不會也是這樣呢？更甚者，也許他們用的根本都不是智能手機，可能是兩百人民幣的諾基亞傻瓜機，只能打電話呢？這種時候，能在家的人，不是吃了這頓沒下頓的人，都不會出來跑腿送貨的。送快遞接觸的人很多，他們難道能買到千金難尋的口罩和酒精？</p>
+  <p>這些人，也是為像我這樣可以躲在家叫外賣的人，負重前行吧。我躺在舒適客廳裡的不耐煩和氣急敗壞，該引以為恥。</p>
+  <p>2月18日</p>
+  <p>說服父母的最佳方式大概就是模仿央視主持人說話了。眼看溫州每天的新增確診越來越少，爸媽又開始想出門。我數口罩，報浙江省其他城市的確診（更少！有幾個都連續好幾天零增長了），給他們看樓下藥店還是沒有口罩的微信朋友圈，都沒有用。</p>
+  <p>最有用的就是這樣說話：「現在是這場戰役的最關鍵時刻，你們絕對不能鬆懈！如果現在鬆懈了，全國人民一個月不出門的努力就白費了！鐘南山都沒說可以出門，疫情拐點還沒有來！除非溫州連續一個星期沒有新增病例，對外交通完全恢復，樓下藥店可以正常買到口罩，我才會出門！」</p>
+  <p>2月20日</p>
+  <p>與父母一起關在家一個月，母語能力顯著上升。也是因為我媽的普通話實在是⋯⋯雖然我已經離開温州十年了，但我的温州話還是比我媽的普通話要好，只是偶爾說著說著會出現一些粵語的詞，「果個⋯」之類的。至於我媽的普通話，最近很常說的一個詞是「疫情」，但她永遠都是說「玉琪」，因為温州話的「疫」發音是「玉」，然後「情」字的鼻音她又發不出來。偏偏她真的有一個小姐妹叫玉琪，我剛開始真的以為她在說那位阿姨怎麼了。再比如她看到本地新聞說有菜農的菜因為沒人運送只能爛在地裡，「開死了」。我：？？？？後來才明白她說的是「虧死了」，因為温州話的「虧」發音是「開」⋯⋯</p>
+  <p>而且我發現我媽講話開始比較有頭有尾了，剛開始她講話我真的聽不懂她在說什麼，比如她會連著說幾個毫不相關的詞，或是看著手機驚嘆但無法明白表達她看到了什麼。更常見的場景是我問她什麼東西在哪裡，她會說「就是那裡，那個那個的那裡」。我：？？？？後來我就開始追問她每件事的五個W，where and when who said it what happened why ！！！這樣一問之下我發現大部分她看到的都是謠言或者舊新聞。</p>
+  <p>而且我發現有時候就是要勸長輩明白說自己不知道或者忘了某件事不是可恥的，不要給我撒謊、不懂裝懂或是企圖顧左右而言他，我都看得出來。不知道就是不知道，人都有不知道的事，父母跟女兒承認不知道某些事，並不丟人啊。</p>
+  <p>2月25日</p>
+  <p>我本來有一瞬間以為，被困武漢的台灣血友病童母親（韓粉）馬女士的事，會讓人開始反思以國籍一概界定每個異質的人，是多麼討厭。比如馬女士這樣愛中國而拿台灣護照的人，明明很多人就不覺得她是台灣共同體的一部分，但國籍制度在那裡，她就是有資格被接回台灣受照顧和保護。而另外一些人，在台灣長期生活，喜歡和守護這片土地，也給小英催票，但是沒有國籍，所以沒有資格受制度照顧和保護。共同體和國籍，瘟疫與邊界，我以為這些事，是會被拿出來討論的時候。結果我還是太天真了，我以為全世界都跟我一樣安那其，我太傻了。馬女士被接回來以後，不情願的網民們確實開始了一些討論，但討論的是健保為什麼要給陸配用。是啊，瞭解台灣的人都會知道，這才是順風的風向……我到底在想什麼？？？我還是嘲笑我自己吧。</p>
+  <p>2月25日</p>
+  <p>剛才，我聽到我家的社區樓下也開始出現大吼大叫釋放情緒的人了。</p>
+  <p>「啊——————」他喊了好久。</p>
+  <p>城市被半封禁的日子已經一個月，我在這個離開了十年的陌生「故鄉」父母家，已經第40天。可以吼叫自然是好的，至少樓下的那個人，他有發聲的自由。</p>
+  <p>前天早上開始，城市逐漸恢復內外交通，滯留了一個月的快遞紛紛到達，路上的車變多了不少。很多人要復工，但仍沒有公車和足夠的口罩。也是在同一天，市政府透過網購app發放50萬個免費口罩，每天下午4點開搶，一人5個。但這城市有900萬人，我當然沒有搶到。</p>
+  <p>也是在同一天，我早晨醒來發現家裡出奇地安靜和空曠，原來我父母趁著公路可以通行，出門去看望兩邊的長輩了。這是一個多月以來，我第一次獨處在這空間。我意識到我可以大聲說話了，我可以打電話給朋友，說一些我想說的話，發表一些父母聽到會反面和追問的意見，還可以毫無顧忌地大聲哭泣和喊叫。那瞬間我突然覺得我自由了，連陽光都特別好。</p>
+  <p>我給三四個朋友打了電話，當然，不是每個人都剛好接到，那畢竟是工作日的早晨。我的女孩跟我說，她不知道我不可以說話，不能說話真的好慘呀。我問她，那我下一個要打給誰呢？我還要打給誰呢？畢竟我父母中午就回來了，我沒有太多時間的。</p>
+  <p>我也想吃我喜歡的食物。口罩仍在每天減少，所以我還是不敢出門。但起碼我想吃甜品，過幾天是我生日，我想看看有沒有我喜歡的蛋糕可以外送。發現外送app竟然顯示可以訂購，我又覺得自己更加自由了一點。但是，很快我又意識到，社區仍未開放送餐員進來，所以我還是必須走出社區門口拿這個蛋糕。我又猶豫了，真的要為了一個蛋糕消耗一個口罩嗎？</p>
+  <p>據說城市許多對外的航班都恢復了，高鐵也是。可是，我能去哪裡？我的生活，之前幾年在香港，後來在台灣。但我仍然不能回去，不是嗎？我仍然困在這個家庭，這座城市，這個國。我仍然靠VPN度日。我仍然不能高聲呼喊。即使身處台港的時候，我也從未真的自由過，不是嗎？我難道不是總在提防Facebook上的奇怪「好友」，提防身邊的「眼睛」嗎？我不是仍有包袱在這個國嗎？</p>
+  <p>這一日的早晨，不過跟那些時刻一樣，是又一個自由的錯覺罷了。</p>
+  <p>到中午，我父母回來，憂心忡忡地說，現在城市推行健康碼出行，老人家沒有智能手機，不會申請，沒辦法出門去醫院開藥，但長期藥物快要吃完了，不知該怎麼辦。後來我們找到了解決方法，在自費的藥房花錢購買，一千多人民幣，瞞著老人。仍有些可以用錢解決的事。但更多的事，是錢解決不了的。</p>
+  <p>3月5日</p>
+  <p>自1月24日至今，我第一次出門，其實也只是去附近的超市買些蔬菜。全副武裝自然是不用說的，戴了殺人不留指紋的乳膠手套，連頭髮都沒有露出來。在賣糖的貨架旁邊遇到一個小朋友，她戴著兒童口罩，眼睛一直盯著水果軟糖。我明白的，那個好好吃，我也好想吃。</p>
+  <p>結果她爸爸說：「不能吃這個，吃了這個會咳嗽的，咳嗽了就要抓進去的。」</p>
+  <p>啊⋯⋯好有道理。我也不吃了。</p>
+  <p>3月6日</p>
+  <p>今天又全副武裝到樓下散步半小時，在雜貨店門口遇到一隻小狗狗。黃色的垂著耳朵好乖好乖，靜靜的不說話，我看著牠，牠有點害羞。到我要走的時候，牠才跟過來，也是默默的，亦步亦趨，我停下來看牠，牠也歪著頭看我。牠知道我喜歡牠了，乖孩子。可惜姐姐不能帶你走，手上戴著乳膠手套，也不能摸摸你。</p>
+  <p>後來聽雜貨店的老闆娘說，這隻狗狗是在疫情發生之後不久突然出現的，這麼乖巧又乾淨，實在不像野狗，也許是被什麼人拋棄了才跑來這裡的吧。怪不得臉上總是傷心的樣子。後來有個鄰居的小男孩想要養牠，可是媽媽說，現在寵物醫院都沒有開門，要帶去打針確認沒病才可以養。於是這個小男孩就每天來雜貨店門口餵東西給牠吃，又給牠噴噴消毒水（不知是什麼，希望不是次氯酸）。我想起夏天在蘭嶼，東清海堤的老闆娘家也有一隻小狗，叫小胖。我想念小胖了。</p>
+  <p>樓下還有幾隻小野貓，我把牠們分為小橘家族和小三花家族。牠們有時會穿過草叢去向釣魚的人討魚吃。有時傍晚會打架。我也想念馬桶蓋了。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-05-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-02/%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E5%B0%88%E9%A1%8C-%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E7%B6%93%E6%BF%9F%E5%AD%B8-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%AF%B8%E9%87%91%E5%B0%BA%E5%9C%9F%E7%9A%84%E4%B8%AD%E7%92%B0%E6%B4%BB36%E5%B9%B4/">
+          [環球大廈專題]環球大廈經濟學：如何在寸金尺土的中環活36年？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-30</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-30/%E6%AD%B7%E5%8F%B2%E6%AD%A3%E5%9C%A8%E6%88%91%E5%80%91%E8%BA%AB%E4%B8%8A%E7%99%BC%E7%94%9F-%E7%98%9F%E7%96%AB%E4%B8%AD%E7%9A%84%E5%B9%B3%E6%B0%91%E6%97%A5%E8%A8%98/">
+          歷史正在我們身上發生：瘟疫中的平民日記
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-14/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9/">
+          重新認識了一些食物
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-13/%E4%B8%80%E7%A8%AE%E4%BE%8B%E5%A4%96%E7%9A%84%E7%94%9F%E6%B4%BB/">
+          一種例外的生活
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-14/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9/">
+            前一篇：重新認識了一些食物
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-16/%E5%A6%82%E6%9E%9C%E4%BD%A0%E9%80%80%E5%87%BA%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93-%E8%83%BD%E8%AF%BB%E5%A4%9A%E5%B0%91%E6%9C%AC%E4%B9%A6-iYouPort/">
+            後一篇：如果你退出社交媒体，能读多少本书？ - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-03-14/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-03-16/%E5%A6%82%E6%9E%9C%E4%BD%A0%E9%80%80%E5%87%BA%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93-%E8%83%BD%E8%AF%BB%E5%A4%9A%E5%B0%91%E6%9C%AC%E4%B9%A6-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-03-30/%E6%AD%B7%E5%8F%B2%E6%AD%A3%E5%9C%A8%E6%88%91%E5%80%91%E8%BA%AB%E4%B8%8A%E7%99%BC%E7%94%9F-%E7%98%9F%E7%96%AB%E4%B8%AD%E7%9A%84%E5%B9%B3%E6%B0%91%E6%97%A5%E8%A8%98/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-03-14/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-03-14/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-03-16/%E5%A6%82%E6%9E%9C%E4%BD%A0%E9%80%80%E5%87%BA%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93-%E8%83%BD%E8%AF%BB%E5%A4%9A%E5%B0%91%E6%9C%AC%E4%B9%A6-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-03-30/%E6%AD%B7%E5%8F%B2%E6%AD%A3%E5%9C%A8%E6%88%91%E5%80%91%E8%BA%AB%E4%B8%8A%E7%99%BC%E7%94%9F-%E7%98%9F%E7%96%AB%E4%B8%AD%E7%9A%84%E5%B9%B3%E6%B0%91%E6%97%A5%E8%A8%98/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-03-14/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

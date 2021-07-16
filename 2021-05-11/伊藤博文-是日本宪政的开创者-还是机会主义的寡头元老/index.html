@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？
+——
+" />
+    <meta property="og:description" content="
+伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？" />
+    <meta property="twitter:title" content="伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F608bbe874ab30b55b90554e6" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/608bbe874ab30b55b90554e6" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/608bbe874ab30b55b90554e6&text=伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/608bbe874ab30b55b90554e6&title=伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/608bbe874ab30b55b90554e6&title=伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？&body=
+伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/608bbe874ab30b55b90554e6" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/608bbe874ab30b55b90554e6&title=伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？&caption=
+伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？&url=https://www.allnow.com/post/608bbe874ab30b55b90554e6" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-11
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 郑非</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/608bbe874ab30b55b90554e6" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/608bbe874ab30b55b90554e6">伊藤博文：是日本宪政的开创者，还是机会主义的寡头元老？</a>
+——</p>
+
+<div>
+  <p><strong>一</strong></p>
+  <p> </p>
+  <p>泷井一博写作本书，自述其义是要为十九世纪东洋第一大政治家伊藤博文正名。他说道，在当代日本，无论学界还是大众，对伊藤氏的评价都不太高。学界人物觉得，伊藤的政治立场反复无常，身兼日本宪政体制开创者、元老寡头和政党政治家几种相互矛盾的角色，颇有机会主义者的嫌疑。极具影响力的历史小说家司马辽太郎，直陈伊藤是“大政治家”、“没有哲学的政略家、没有思想的现实主义者”。泷井一博对这种见解不以为然，他认为这是对一位有革新精神但在手段上持保守主义态度的政治人物的误解。</p>
+  <p> </p>
+  <p>泷井一博认为，伊藤生平政治抱负无过三样——文明、立宪国家与国民政治。简而言之，日本要向西方文明看齐，建立宪政体制，同时将日本社会打造成一个政治民族。由于伊藤氏有此眼光，泷井氏认为伊藤是“可以与福泽谕吉比肩的近代日本政治思想家”；与福泽谕吉不同的是，伊藤持渐进主义的秩序观和世界观，讲究“实学”，嫌弃思辨的、观念的学问，而喜欢经验主义的实用知识。因此，泷井一博给伊藤博文的另一赞誉是“知性政治家”。</p>
+  <p> </p>
+  <p>本书重点叙述了伊藤博文生平的两大事件——制定明治宪法与开创立宪政友会。这两大事件，都可以说是伊藤生平的两大转折：在前者，是身为藩阀人物而立宪，将一部分政权拱手让人；在后者，则是身为元老、寡头，放下身段与民间反对派合作，建立一大政党攻讦政府。怎么看，都像是有大心胸、抱负的人才能干的事情（而这正是泷井一博对伊藤赞誉有加的原因之一）。</p>
+  <p> </p>
+  <p>但在继续讨论泷井的这个看法是否对路之前，还是需要简要介绍一下这两件事的本末。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="608bbf4ae35e83525fe5ff3d" src="https://img.allhistory.com/now/2021-04-30/608bbf47d7f8a7000165f878+L.png" alt="《伊藤博文》，[日]泷井一博著，张晓明、魏敏、周娜译，江苏人民出版社2021年3月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《伊藤博文》，[日]泷井一博著，张晓明、魏敏、周娜译，江苏人民出版社2021年3月版
+    </figcaption>
+  </figure>
+  <p><strong>二</strong></p>
+  <p> </p>
+  <p>这里要说的第一件事情是，日本明治维新之后建立的虽是一藩阀政府（萨摩、长州人士把控政府），当时的政府官员其实大致都有国家非立宪不可的认知。比如元老院在《推进国宪复命书》（1878年）中写道：“（当今世界）以开明兴盛著称的国家均采用立宪之政……不伸张民权，国家则分崩离析，所以君主不能独享其权。因此，欲分享君民之权，使君民之权各得其所，非制定国宪不可。”</p>
+  <p> </p>
+  <p>这个共识，有其背景——明治政府初年，政府锐意求新，西学东渐之势澎湃而来，自由民权运动高企。伊藤博文本人在1880年底承认：“欧洲变革之说自法兰西兴起后，渐次浸染欧洲各国，相扶相拥终成大势，有政之国不得不改其政。当变旧图新之时，有的国家激荡混乱，至今未止；有的国家明君贤相乘机以变制变，转而稳定了国家。总之，均难免防止独裁之风，与人民分割政权。欧洲文明浸染我国，政体之说亦流布于士族之间，数年间蔓延全国，成不可遏止之势。”</p>
+  <p> </p>
+  <p>当时摆在藩阀政府面前的，不外乎三条路：有司专制、英国道路与德意志道路。</p>
+  <p> </p>
+  <p>所谓“有司专制”，就是照走老路——出身于萨摩、长州等数强藩的藩阀人士依靠对军队、政府机器的掌握，强行压制民权呼声，保持对政权的垄断。</p>
+  <p> </p>
+  <p>明治时代的政治家们，普遍觉得这条路不大能走得通。一是如上所说，分割政权看起来是时代大势；二是当时世界上还没有大做出口加工贸易、靠外资投资驱动经济发展的政治与经济条件，要想增强国力，只能靠国内社会与市场的内在发展。日本要与列国争竞，就不能不稍假民力；三是明治政权根基不稳——藩阀政府是靠二三藩的私人关系组建而成，并没有政党、社会团体与势力可做依靠。掌握政权这么久，靠的就是“改革共识”和枪杆子。</p>
+  <p> </p>
+  <p>当时风起云涌的自由民权运动，更增加了很多政治家的紧迫感。右大臣岩仓具视十分担忧，说道：“期望开设国会之议论，四方泛起。如置之不理，恐诡激之言行越发煽动民心，扰乱国家之平安，终至无可防治之祸患。”藩阀巨头井上馨的判断也是一样：“安危之机实在今日，待明日风雨震雷交替到来之时，即使牺牲性命也难以挽回。”总之，“国会问题若不解决，则明治政府之艰难永无休止之日”（伊藤博文语）。他们必须马上主动出击，在制宪问题上掌握主动权才是。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="608bbf64e2366f1bfd991369" src="https://img.allhistory.com/now/2021-04-30/608bbf63d7f8a7000165f879+L.png" alt="明治维新时期的武士" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+明治维新时期的武士
+    </figcaption>
+  </figure>
+  <p>那么，剩下两条路，到底该走哪条？</p>
+  <p> </p>
+  <p>所谓英国道路，八字可以蔽之——“议会政治、政党政治”。全国的政治中心在议会，由议会控制立法、财政、军政。议会中多数党领袖或民选政治家组阁掌握行政权，控制行政官僚团体。当时，英、法、美各国均走的是这条路。</p>
+  <p> </p>
+  <p>德意志道路呢？十八世纪以来，统治普鲁士的霍亨索伦王朝，同样也感觉到政治与社会变革的压力。为了应对此等挑战，霍亨索伦王朝搞出了一套防御性弹性改革策略，即主动有控制的进行政治改革，有条件的放弃一部分专制权力与理念，以保证政治的主导权牢牢地掌握在王室与贵族手里。</p>
+  <p> </p>
+  <p>到了德意志帝国兴起，俾斯麦自己也否认自己是绝对专制统治的爱好者。他认为，在专制统治之下，最大的问题是无人负责；他还主张，应该让议会和报纸有公开批评政府的可能，尽好一个诤臣的本分。俾斯麦自承，“我一直认为君主权力在一定程度上应受到一种独立的全国性代表机构的监督”，以免君权肆意妄为。不过，这并不意味着他们决定将政权拱手相让。他们所希望的建立的宪政体制，是“君主民辅”型的。大体而言，这指的是政府由行政主导，议会起翼赞之用。</p>
+  <p> </p>
+  <p>明治政府明显更偏爱于德国道路。早在1871年，明治政府向西方派出使团。该使团关切的重心，首在考察列国政制。到了德国的时候，日本这些使节们就觉得，德国比英法更有参考价值，认为“研究此国之政治与风俗，比研究英国之事情得益尤多”（《美欧回览实纪》）。木户孝允更断言：“尤当取者，当以普鲁士为最。”</p>
+  <p> </p>
+  <p>之后，在1882年，明治政府派出伊藤博文前往德国进行宪法调查，学习德意志经验。在欧洲，伊藤博文先后求教于德国学者格涅斯特、奥地利学者施泰因（尤以施泰因为重）。这些德意志学者认为，民主与自由之间存在紧张关系，过度的民主将会导致多数专制，损害少数人的利益；因此，为了保障国民的公共利益，需要有一个强大的行政机构、一支训练有素的官僚队伍来制衡立法部门。在他们的眼中，纯民主政治有害无益，法国民主政治混乱不堪、效率低下，英国体制基于英国特殊国情，并不能普世皆准（他们提出，各国的宪政都立足于本国历史、传统和特殊文化之上，因此，不能搞“全盘西化”）。他们鼓励日本向德国学习，实施“君主民辅”的有限宪政——君主有强大权威，能够号令政府，但同时也依法行政，听取权限有限的议会的诤言。这样，君权和民权就能够相互促进、相互保障。开设议会、力行法制就不会分割君权，反而会增强君主治国的权威与权能。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="608bbf86e2366f1bfd99136a" src="https://img.allhistory.com/now/2021-04-30/608bbf84d7f8a7000165f87b+L.png" alt="日本遣欧使节团（1871—1873）。左起：木户孝允、山口尚芳、岩仓具视、伊藤博文、大久保利通。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+日本遣欧使节团（1871—1873）。左起：木户孝允、山口尚芳、岩仓具视、伊藤博文、大久保利通。
+    </figcaption>
+  </figure>
+  <p>伊藤博文写信回国：“在德意志跟从格涅斯特、施泰因两位老师，了解到了国家组织的基本理论，确立了巩固皇室基础、永保国家大权的大政方针。我国目前的形势是将英、美、法的自由激进论者的学说当做金科玉律，几乎将国家颠覆。（通过这次宪法调查）找到了对付他们的道理和方法，死而无憾。”</p>
+  <p> </p>
+  <p>1883年，伊藤博文回到日本，按照德国模式开始制宪。1889年颁布的明治宪法，同1850年普鲁士宪法大体雷同，甚至有法学家声称只有三条独创。为了统一思想，伊藤自己亲自动手写了一部《日本帝国宪法义解》，称得上是“巧引异国千色线，织成斑斓日本锦”。在《义解》一开始，他就阐述了自己的政治理想，“使上有元首大权之一统，下有股肱大臣之辅弼，议会之助力，各级机关各得其所，而臣民之权利义务亦日益明晰。”即，既发挥议会的效能，又不至于喧宾夺主。明治宪法中处处可见此调和状态。比如，《义解》第五条规定道：“立法之大权，原本为天皇统一掌握之物。议会之责任仅在于协作参赞而已，本末之关系明确，不应弄乱。”此种不一而足，限于此间篇幅，就不一一赘述了。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="608bbf98e2366f1bfd99136b" src="https://img.allhistory.com/now/2021-04-30/608bbf96d7f8a7000165f87c+L.png" alt="《大日本帝国宪法》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《大日本帝国宪法》
+    </figcaption>
+  </figure>
+  <p><strong>三</strong></p>
+  <p> </p>
+  <p>接下来说第二件事，伊藤博文组织立宪政友会。</p>
+  <p> </p>
+  <p>在伊藤博文的主持之下，日本终于通过了一部有限宪法，成立了议会。按照伊藤博文的意思，行政机构与议会可以说是主辅关系。在一次谈话中，他讲到：“盖议会或社会中党派兴起虽难以避免，但政府为党派左右甚为不可......盖君主位于臣民之上，必须立于各政党之外。”换句话说，在伊藤的眼中，政党、议会只是政治协商组织，大事还是官僚说了算。出于这种想法，伊藤氏的最初议会策略是所谓“超然主义”，一方面也就是说行政机构本身要在各党派之间不偏不党，另一方面也意味着不会让政党组织政党内阁。</p>
+  <p> </p>
+  <p>问题在于，伊藤氏所设想的官僚与民间政党和衷共济的状况一开始就没有出现。立宪之后的几年里，发生的是行政、立法对峙——解散议会——重新大选——民党获胜——民党杯葛政府预算——重新解散的循环状态。官僚们意识到，要么修改或废除宪法（这样做的政治代价是巨大的），要么向民党让步（换句话说，伊藤博文料想的主辅之势将不复存在）。</p>
+  <p> </p>
+  <p>民党方面也不好受，好些人在政争中已经消磨了锐气，开始考虑置身于藩阀门庭之下。当时的自由党领袖之一，河野广中，深切感到：“即使攻陷了元勋内阁的牙城，还会有其他的藩阀之流取而代之，打倒几次，也还是照旧反复，只不过是在政党与藩阀之间徒事重复斗争，一味牺牲而已，对建立立宪政体的基础，大概一点成效也没有。”而“以往的政党和藩阀横断政界，两者拼搏相斗”只能是牺牲大而收效甚微，莫如“今后改变对于藩阀的正面攻击，说服藩阀巨头，投降于政党的军门，吸收藩阀巨头加入政党，以此从根本上扫荡根除藩阀，形成政界纵断的形势，以打开两大政党对立的新局面，……实现政权授受，如此则不失为建立立宪政体的捷径”。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="608bbfb4e2366f1bfd99136c" src="https://img.allhistory.com/now/2021-04-30/608bbfb26b045d00016b1b5b+L.png" alt="河野广中" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+河野广中
+    </figcaption>
+  </figure>
+  <p>河野派出人去跟伊藤博文联系，寻求妥协。伊藤博文则求之不得，他意识到据此可以消化政党对萨长政府的冲击力，于是决定放下身段与之合作（也就是放弃超然主义）。既然不能依靠制度设计来实现主辅之道，那就只能纳入/提携。</p>
+  <p> </p>
+  <p>不过，这种提携也不是一成不变，价码不合适时，大家还是要吵闹的。于是，伊藤博文深感“雇佣兵不足恃，非亲兵不可”，打算自己来组建一个亲政府的政党。宪政党（原自由党）得知这个消息之后，派遣代表到伊藤博文处，希望伊藤博文加入宪政党，愿意奉伊藤博文为领袖。对宪政党的这种拥戴，伊藤博文予以断然拒绝，反而要求宪政党解散，然后加入自己组建的新党派，这再好不过地体现了收编之含义。 </p>
+  <p> </p>
+  <p>更有意思的是，伊藤博文的这个新党并不以党为名，他指示道“改变以往的以党为名，此次断然取名为立宪政友会，把中央组织改变为俱乐部，各地也设支部性的俱乐部”。 推敲起来，伊藤博文的用意恐怕旨在消除现有政党的组织色彩，使此新党成为“政协”之类的议政之所。“政友”一词，也说明伊藤希望消除现有政党与藩阀政府竞争政权的色彩。宪政党犹豫了一个多月，终于决定就此投靠，解散全党，党员以个人身份加入政友会。</p>
+  <p> </p>
+  <p>至此，如果非要对明治维新以来的日本立宪政治过程做一个相当简单的评价，我会说，这就是一部驯化史。驯化达到顶点的标志是，来自民间的政党人士完全丧失自己的政治独立性与政治理想，投身于藩阀麾下，成为明治政府的护城河。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="608bbfc8e35e83525fe5ff43" src="https://img.allhistory.com/now/2021-04-30/608bbfc66b045d00016b1b5d+L.png" alt="明治维新前日本派出的巴黎世界博览会使节团。后排左一是中国读者非常熟悉的涩泽荣一。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+明治维新前日本派出的巴黎世界博览会使节团。后排左一是中国读者非常熟悉的涩泽荣一。
+    </figcaption>
+  </figure>
+  <p><strong>四</strong></p>
+  <p> </p>
+  <p>回过头来，再说泷井一博此书。</p>
+  <p> </p>
+  <p>很显然，泷井一博是将伊藤博文看成是态度审慎、举措渐进的革新家。他指出，当伊藤博文前去德意志考察宪政时，首先就教于德国学者格涅斯特，格氏对日本立宪一事颇多抵触，加之德皇威廉一世在宴会时也告诫伊藤，劝日本不要开设国会，这让伊藤感到意外。伊藤失望之余，转向奥地利学者施泰因。又说“伊藤……与天皇的神化、极端的自由思想、反动的德国学，以及过激的法国学都保持着距离。”换句话说，泷井一博认为，伊藤博文学习的对象是奥地利，而不是德意志。</p>
+  <p> </p>
+  <p>其实，这件事比较好理解。伊藤博文之前所接触到的/想要学习的是1870年代的德意志，对“君主民辅制”满怀期待，但1882年他来到德国时，行政机构和德意志国会之间的争斗正方兴未艾，这套体制露出偌大破绽。而隔壁的奥地利同德国体制颇为相似，此时正是皇帝密友爱德华·塔费伯爵（Eduard Taaffe）担任首相，他颇有作为，惯会收买各党派和利益集团。在他任内，原先频繁出现的议会政治僵局暂时消失了。两相比较，自然是奥地利比较亮眼。（如果伊藤博文晚十年、二十年来奥地利，可能就会看到另外一副场景——皇帝频繁动用紧急敕令才能摆脱政治僵局，某伯爵直言不讳：“在我们的国家，乐观主义者应当自杀。”）从这个角度讲，在彼时伊藤眼中，奥地利是运转较优的德意志而已。</p>
+  <p> </p>
+  <p>泷井一博认为，伊藤博文讲求实学、崇尚经验，这是事实。但我们也要看到，在彼时，他的渐进主义主要体现在抨击持契约论或自然法的民权派。1882年，他在写给松方正义的书信中有如下表述：“青年书生渐啃读洋书，苦思书上之理论，将其视作万古不易之定论，若欲实行之于实地，则为浅薄肤浅之见，却置自国之国体历史于度外，无人之境地创立新政府，不过一般之陋见。”此种言论颇多，也不一一枚举了，这里要说的是，以历史法学来对抗民主自由思想，本是十九世纪德、奥欧陆保守主义学界发明创造而出，伊藤博文继承的应该主要是这一派，而不是英国的自由保守主义。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="608bbff9e2366f1bfd99136d" src="https://img.allhistory.com/now/2021-04-30/608bbff76b045d00016b1b5e+L.png" alt="伊藤博文国葬仪式" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+伊藤博文国葬仪式
+    </figcaption>
+  </figure>
+  <p>最后，泷井一博认为，伊藤博文组织政友会是为了开展国民政治。当然，伊藤博文可能确实有这个想法，他曾批评“封建时代的日本国民与政治毫无干系，唯唯诺诺受支配于人”，希望日本人能够“有权利参与国家之事”。但是，泷井一博也承认说，伊藤博文组织新政党的目的是为了促进国民和谐，打击所谓“复仇政治”（政党斗争）。换句话说，伊藤博文的立场还是国家主义，而非赞同现代政党体系所提倡的多元竞争。</p>
+  <p> </p>
+  <p>要看出伊藤博文此举的“收编”含义，泷井一博自己也写出了以下几个迹象：一，伊藤拒绝将自己的组织冠之以“党”名，而是会。二，伊藤所编写的党的规章明确说到——大臣的选任基于天皇的大权，政友会不得反对，内阁的人选党内也不得置喙；其党也不干涉公务员的任用，不涉及地方行政。三，伊藤一方面要求其党对领袖的绝对服从，另一方面则主张松弛党的组织，使之成为某种俱乐部。四，伊藤对政党的期待，并不是将它看成是一政治行动者，而是智囊团、搜集全国信息的内参机构。</p>
+  <p> </p>
+  <p>总的来说，我认为泷井一博对伊藤博文的推崇有忽视历史背景之嫌。同山县有朋这种藩阀人士比起来，伊藤博文确实要开明、柔软得多，他确实想要搞有限宪政，也确实希望能够实现国、民一心，但他的底色仍然是一名寡头元老。他是欧陆式的保守主义者，而非日本的迪斯雷利或埃德蒙·柏克。</p>
+  <p> </p>
+  <blockquote>
+    <p>郑非系毕业于复旦大学国际政治专业博士，就业于上海政法学院国际事务与公共管理学院。从事比较政治研究。当前研究方向：族群政治、帝国政治、后发展国家政党政治。著有《帝国的分裂：美国独立战争的起源》、《合群：帝国与民族》（待出版）两书。</p>
+  </blockquote>
+  <p> </p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-11</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-11/%E7%AA%81%E7%A0%B4%E4%B8%8E%E9%87%8D%E6%9E%84-%E5%8E%86%E5%8F%B2%E7%A4%BE%E4%BC%9A%E5%AD%A6%E7%9A%84%E4%B8%89%E6%B3%A2%E6%B5%AA%E6%BD%AE%E5%8F%8A%E5%85%B6%E6%9C%AA%E6%9D%A5/">
+          突破与重构：历史社会学的三波浪潮及其未来
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-11</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-11/%E5%BE%90%E8%B4%B2-%E5%90%AF%E8%92%99%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E4%B8%BA%E4%BD%95%E4%BC%9A%E4%B8%8E%E6%9A%B4%E6%94%BF%E5%90%8C%E8%A1%8C-%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-11</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-11/%E4%BB%8E%E9%AD%8F%E7%8E%9B%E5%BE%B7%E5%9B%BD%E5%88%B0%E9%AD%8F%E7%8E%9B%E7%BE%8E%E5%9B%BD-%E9%AD%8F%E7%8E%9B%E6%B0%91%E4%B8%BB%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%BB%99%E6%88%91%E4%BB%AC%E6%97%B6%E4%BB%A3%E7%95%99%E4%B8%8B%E6%80%8E%E6%A0%B7%E7%9A%84%E5%90%AF%E7%A4%BA/">
+          从魏玛德国到魏玛美国：魏玛民主的失败给我们时代留下怎样的启示？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-11</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-11/%E4%BB%8E%E6%80%80%E5%AD%95%E5%88%B0%E8%82%B2%E5%84%BF-%E6%AD%8C%E9%A2%82%E8%83%8C%E5%90%8E%E7%9A%84%E7%A4%BE%E4%BC%9A%E5%BB%BA%E6%9E%84%E4%B8%8E%E5%88%B6%E5%BA%A6%E6%9A%B4%E5%8A%9B%E4%B8%A8%E6%AF%8D%E4%BA%B2%E8%8A%82%E8%8D%90%E4%B9%A6/">
+          从怀孕到育儿：歌颂背后的社会建构与制度暴力丨母亲节荐书
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-11/%E4%BB%8E%E9%AD%8F%E7%8E%9B%E5%BE%B7%E5%9B%BD%E5%88%B0%E9%AD%8F%E7%8E%9B%E7%BE%8E%E5%9B%BD-%E9%AD%8F%E7%8E%9B%E6%B0%91%E4%B8%BB%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%BB%99%E6%88%91%E4%BB%AC%E6%97%B6%E4%BB%A3%E7%95%99%E4%B8%8B%E6%80%8E%E6%A0%B7%E7%9A%84%E5%90%AF%E7%A4%BA/">
+            前一篇：从魏玛德国到魏玛美国：魏玛民主的失败给我们时代留下怎样的启示？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-11/%E5%BE%90%E8%B4%B2-%E5%90%AF%E8%92%99%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E4%B8%BA%E4%BD%95%E4%BC%9A%E4%B8%8E%E6%9A%B4%E6%94%BF%E5%90%8C%E8%A1%8C-%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+            後一篇：徐贲②：启蒙知识分子为何会与暴政同行？丨燕京访谈
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-11/%E4%BB%8E%E9%AD%8F%E7%8E%9B%E5%BE%B7%E5%9B%BD%E5%88%B0%E9%AD%8F%E7%8E%9B%E7%BE%8E%E5%9B%BD-%E9%AD%8F%E7%8E%9B%E6%B0%91%E4%B8%BB%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%BB%99%E6%88%91%E4%BB%AC%E6%97%B6%E4%BB%A3%E7%95%99%E4%B8%8B%E6%80%8E%E6%A0%B7%E7%9A%84%E5%90%AF%E7%A4%BA/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-11/%E5%BE%90%E8%B4%B2-%E5%90%AF%E8%92%99%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E4%B8%BA%E4%BD%95%E4%BC%9A%E4%B8%8E%E6%9A%B4%E6%94%BF%E5%90%8C%E8%A1%8C-%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-11/%E5%BE%90%E8%B4%B2-%E5%90%AF%E8%92%99%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E4%B8%BA%E4%BD%95%E4%BC%9A%E4%B8%8E%E6%9A%B4%E6%94%BF%E5%90%8C%E8%A1%8C-%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-11/%E4%BB%8E%E9%AD%8F%E7%8E%9B%E5%BE%B7%E5%9B%BD%E5%88%B0%E9%AD%8F%E7%8E%9B%E7%BE%8E%E5%9B%BD-%E9%AD%8F%E7%8E%9B%E6%B0%91%E4%B8%BB%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%BB%99%E6%88%91%E4%BB%AC%E6%97%B6%E4%BB%A3%E7%95%99%E4%B8%8B%E6%80%8E%E6%A0%B7%E7%9A%84%E5%90%AF%E7%A4%BA/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-11/%E4%BB%8E%E9%AD%8F%E7%8E%9B%E5%BE%B7%E5%9B%BD%E5%88%B0%E9%AD%8F%E7%8E%9B%E7%BE%8E%E5%9B%BD-%E9%AD%8F%E7%8E%9B%E6%B0%91%E4%B8%BB%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%BB%99%E6%88%91%E4%BB%AC%E6%97%B6%E4%BB%A3%E7%95%99%E4%B8%8B%E6%80%8E%E6%A0%B7%E7%9A%84%E5%90%AF%E7%A4%BA/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-11/%E5%BE%90%E8%B4%B2-%E5%90%AF%E8%92%99%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E4%B8%BA%E4%BD%95%E4%BC%9A%E4%B8%8E%E6%9A%B4%E6%94%BF%E5%90%8C%E8%A1%8C-%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-11/%E5%BE%90%E8%B4%B2-%E5%90%AF%E8%92%99%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E4%B8%BA%E4%BD%95%E4%BC%9A%E4%B8%8E%E6%9A%B4%E6%94%BF%E5%90%8C%E8%A1%8C-%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-11/%E4%BB%8E%E9%AD%8F%E7%8E%9B%E5%BE%B7%E5%9B%BD%E5%88%B0%E9%AD%8F%E7%8E%9B%E7%BE%8E%E5%9B%BD-%E9%AD%8F%E7%8E%9B%E6%B0%91%E4%B8%BB%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%BB%99%E6%88%91%E4%BB%AC%E6%97%B6%E4%BB%A3%E7%95%99%E4%B8%8B%E6%80%8E%E6%A0%B7%E7%9A%84%E5%90%AF%E7%A4%BA/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

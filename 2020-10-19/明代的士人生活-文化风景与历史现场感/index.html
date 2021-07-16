@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>明代的士人生活、文化风景与历史现场感 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+明代的士人生活、文化风景与历史现场感
+——
+" />
+    <meta property="og:description" content="
+明代的士人生活、文化风景与历史现场感
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="明代的士人生活、文化风景与历史现场感" />
+    <meta property="twitter:title" content="明代的士人生活、文化风景与历史现场感" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fm.allnow.com%2Fpost%2F5f8d22c8edebb22f4a58786b" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://m.allnow.com/post/5f8d22c8edebb22f4a58786b" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://m.allnow.com/post/5f8d22c8edebb22f4a58786b&text=明代的士人生活、文化风景与历史现场感&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://m.allnow.com/post/5f8d22c8edebb22f4a58786b&title=明代的士人生活、文化风景与历史现场感" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://m.allnow.com/post/5f8d22c8edebb22f4a58786b&title=明代的士人生活、文化风景与历史现场感" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=明代的士人生活、文化风景与历史现场感&body=
+明代的士人生活、文化风景与历史现场感
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://m.allnow.com/post/5f8d22c8edebb22f4a58786b" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://m.allnow.com/post/5f8d22c8edebb22f4a58786b&title=明代的士人生活、文化风景与历史现场感&caption=
+明代的士人生活、文化风景与历史现场感
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=明代的士人生活、文化风景与历史现场感&url=https://m.allnow.com/post/5f8d22c8edebb22f4a58786b" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>明代的士人生活、文化风景与历史现场感</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-10-19
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 萧小壹</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://m.allnow.com/post/5f8d22c8edebb22f4a58786b" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1603094620000-->
+<p><a href="https://m.allnow.com/post/5f8d22c8edebb22f4a58786b">明代的士人生活、文化风景与历史现场感</a>
+——</p>
+
+<div>
+  <p>作者丨王旭</p>
+  <p>在某种意义上，中国古代社会“学官一体”“官教一体”，拥有功名也就意味着获得了从政、清议、公议的资格，文化上识文断字与解读经义，具有高于普通民众的身份特权。在朝者为官，位列公卿；在野者为绅，作为官员序列之补充。官绅群体往往包含于士人阶层之内，相继在儒士—官僚—地主这个生态循环圈中运动繁衍，构成一个强大的社会集团，具有结构层面的“稳定性”。“先王分士农工商以经国事，各一其业而殊其务”，著名历史学者阎步克曾如此置论中国古代士人之源起与功能：“等级分化使士成为一个特殊等级，功能分化使士摆脱了事，特别地以师为任而形成知识群体，新的整合中这一群体再度入仕任事，最终形成了典型形态的士大夫阶层。”此言甚善。</p>
+  <p> </p>
+  <p>唐宋之后，以科举存废及其发生作用为考虑的出发点，民众在这种“半封闭与有限度”的流动机制下，被分化为不同阶序。而处于“第一等阶”的士人，则因仕隐、年资、机遇与功名高低不同，有层序地分布在城市、集镇和乡村——尽管地位有所等差，科举功名在朝之士和退居乡里的官员关系网络也不尽相同，甚至有“商居其末”的历史事实，然而具备低层次功名身份而不仕的士绅，却构成了基层职役、官府佐贰、经济贸易和社会管控的核心阶层，形成了士人文化的多重性与差异性，同时也形塑着传统中国知识—政治—社会之间的基本景观。</p>
+  <p> </p>
+  <p>事实上，科举制度建立与完善之后，朝廷的选贤与能和设官分职基本都是在有功名之士人中实现的，形成了一种权力相对共享的“士人政治”，成为传统帝国政制一种颇有特色的流动模式。作为专制主义中央集权体制的补充和配合，士人文化与官僚体制对皇权有某种制衡作用。但由于官僚阶层的分化和派系，强横的皇权往往处于凌驾地位，明清的世风、学林都与政治走向之间建立着微妙的关联。因此，在“士农工商”的四民社会结构下，读书为先，农次之，工再次之，商人最后。传统中国推崇乡里耕读走向政教仕进，“朝为田舍郎，暮登天子堂”，这是科考模式下最光耀门楣和富有价值的事情。最终，士人与官僚进一步合流并进，在历史发展中成为中国政治结构的新动向，形成了相对成熟的帝制社会景观。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-19/5f8d236bd7f8a70001ef0aeb.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>《明代士大夫的精神世界》，陈宝良著，北京师范大学出版社2017年1月版</p>
+    </figcaption>
+  </figure>
+  <p>可以看出，书写宽泛意义上的士大夫精神生活史，不仅要包含名学耆宿、政治人物，还要涉及那些低功名、仕途不畅乃至地方文人的相关内容。同时，微观与宏观是辩证运动的。传统中国士人的精神生活与学术交往活动，是在总体社会的延展中进行的，具有相当复杂的历史面相。近期，笔者读陈宝良《明代士大夫的精神世界》一书，看到了这种学术可能性。</p>
+  <p> </p>
+  <p>士人阶层是一个大概念，同时士大夫的精神生活史（对士人精神世界的探索，贯穿了陈宝良近些年的多篇文章），也包含着多层次的内容，具有一定的学术难度。正如有学者对于社会生活史的评述，“生活史立足于民众的日常活动，从生活方式上把握民众，民众生活镶嵌于社会组织、物质生活、岁时节日、生命周期、聚落形态中才能体现出来，并揭示民众生活与政权的关系以及历史变动带来的影响”。因此，构思士人生活史之框架与网络，建立其阐释话语，需要在混杂无序的文献中进行高度的概括与凝练。同时，“想对明代士大夫有一个整体的观感乃至深度的了解，必须走进他们的精神世界之中”。</p>
+  <p> </p>
+  <p>精神史、生活史属于社会史的有机内容。《明代士大夫的精神世界》其行文次第，从文化观念和社会变迁的角度出发，重点讨论了君子小人之辨、仕隐的困惑、忠孝节义的悖论、生死抉择、雅俗互动五个主题，聚焦思想史论域，呈现出一个多样性的士人生活场景，考察了士大夫的精神与政治、社会之间的关系。不仅如此，士人观念的产生以及在观念导引下行为的选择，有一个形成的缘由与机制，本书也在一种宏大的视野下有所诠释，而不是仅仅偏向于“观念史”的狭小范畴，展现出深厚的学术素养。如果再从可读性与文风展演的角度评介，陈著行文的流畅性与雅致性，富有文献的张力与历史现场感，颇有明代士人思想动态图的影子，应是目前学术著作“可读化”的代表之一。</p>
+  <p> </p>
+  <p>优秀的学术著作往往不乏反响。陈宝良《明代士大夫的精神世界》在2017年出版之后，在学术界引起较大反响，出现了不少评论与报道。其中，中央民族大学彭勇在《〈明代士大夫的精神世界〉如何超越传统》一文中，对陈宝良的学术生涯和主要著述已做详论。笔者在此主要说一些他人未涉及和自己思考的内容，求教于学界。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-19/5f8d239ca4188f000153600c.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>明代·唐伯虎《葑田行犊图》。图源：CFP</p>
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>思想不仅有实践界域的逻辑，也有学脉延续的疏通。“明学”思想的核心谱系，是继承着“宋学”的精神并进一步走向精致化和整合化，两者并称为“宋明理学”，可见其源流与共性。尤其是在社会环境相对宽松的背景下，追求思想解放、物质享乐与经世致用此种思想观念的诞生，彰显了明代士人复杂的文化形象，其人格个性也不断扩展。本书借助思想史与社会史的谱系方式，勾勒出宏观之中士人的微观行为，经纬交错，进而加以学理化，在政治—社会—文化—个人之间建立了贯通的线索，在方法上可谓一种“新文化史”（New Cultural History）的学术路径，有助于理解明代中早期与明代晚期的历史场景。</p>
+  <p> </p>
+  <p>士人“生活世界的表达，可以包括日常生活的总和，关注经验与记忆，也包括权力关系和文化网络”。个人无法独立于社会而存在，并被社会观念与文化走向所导引。明代士人的政治人格与文化品质，就是在个人—社会之间的张力中进行了多样的选择，也有不同的人生归宿。政治上的钳制与影响、法网纪纲的严密酷烈，形成了明初文人噤若寒蝉的谨慎。然而，当政治氛围相对放松之后，“法网稍宽、纪纲渐颓”，言论趋向自由化，社会的活力不断加大，士大夫的文化观念与精神世界即有了同步的变革，且士人思想的总体转向也是最敏感的社会折射。这给我们的启示是：中国社会与文化的发展是在权力结构变动和消长中得以实现的。</p>
+  <p> </p>
+  <p>陈宝良的学术关怀，当然不仅仅局限于士人思想的范围，而是在明代总体社会的演进中“放开手脚”。社会有“常定”，亦有“变乱”，本书通过对士大夫阶层的观念与价值体系转变历程的考析，是试图借此阐明中国社会近代化过程的渐进与复杂。“清议是指非居权力中枢的士人干预朝廷政治的言论形式”，而建基于“思想文化”之上的士人诸般言说，构成了明代的“公共舆论”，并正如本书指出，言论俨然为朝廷决策的一个重要的考虑因素。而士大夫家族及其关系网络，以地缘、姻缘、师生、同年与文社“声气”等“五同”为主要因素，在帝都京师及地域化呈现中，显示着文化权力带来的社会效用。那些具有相同思想观念的士人，通过社会组织集聚起来，表现为基于书院讲学之上的讲学会、文会与文社和以同乡、同业为纽带的会馆。士人对于理论学说的服膺，结社分派，构成了最基本的交际网络、朋党关系和门户党争，彼此之间既有“志同道合”，也有“异论相搅”。社会组织的崛起与扩展，渐而与国运互动共生，如晚明的东林、复社等“党社”运动，之于政治极大的冲击与形塑，可以说关联着朝代的兴衰浮沉，两者密切相因。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-19/5f8d23cca4188f000153600e.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>本文原载于《南开史学》2020年第1期，由社会科学文献出版社授权刊发。</p>
+    </figcaption>
+  </figure>
+  <p>政治权力对于社会走向的影响是持久的，在皇权强盛时，“有朝廷而无社会”，社会力量出于一种相对拘谨和萌芽的状态。但往往在朝代中后期，中央权力就开始力不从心、控而不制，不断分流和重组，士人的精神与生活也陷入“忧色”的境地，就是“明初高度集权”与“晚明纲纪无常”的二元事实。晚明通俗文学的兴盛，在陈宝良的叙事逻辑中，就透露出反对社会控制和打破精神“罗网”的意义。在大变革的环境中，一些不符合儒家精神和礼法教义的书籍言论涌现于世，诗风文风亦有多元色彩。士大夫阶层（特别是民间文人）此类大胆的尝试，冲击了传统的礼教与价值系统，正统—非正统的界限不断迁移重构。如许仲琳的小说《封神演义》，其中哪吒逼父、杨戬反殷等故事思路，与传统忠孝观与生死观明显有别，都被民众所津津乐道，再通过出版业广布流播，平民主义开始盛行。是以，旧的纲常伦理之失落，民众时常“不识四礼”，而新型文化认同的形成，士人口中的“风俗日坏”，是社会变革的思想文化向度，也是别样的文化景观。</p>
+  <p> </p>
+  <p>晚明社会转型曾经是一个极具吸引力的学术论题，不同学人皆有讨论对象不一、程度有别的研究，论述层次也不尽相同。“绅为一邑之望，士为四民之首”，士人阶层与社会的关联是极为明确的。明代商业经济的发展，民众“弃农趋末”，整体社会的价值取向和财富分流逐步有了不同以往的格局，是在晚明时期渐次完成的。士人群体面对此种社会变化，一方面因自身经济优渥和身份居上继续“崇雅”，儒雅风流，注重生活品质和人生境界；另一方面“俗文化”的崛起与传布，走向社会，开枝散叶，也引发了文化认同上的雅俗之辨、高低之分。不同类型文化的继替，代表着平民文化的戏曲、小说、民歌和俗谚勃兴，进而重构着士人的“知识”与“志趣”，士庶之间的樊篱在文化层面走向合流。正所谓“富贵而俗者，比比皆是；贫贱而雅者，难见其人”，雅俗互动成为一种时代风气。</p>
+  <p> </p>
+  <p>故而，在科举危机和“异业治生”的现实下，听戏赏曲，沉迷街巷，士人生活模式的雅俗之派分也明确彰显，流品高低评价亦有趋变之势。也就是说，“士气”与“民风”在文化走向纵深的背景下，不断交融互通，“尚俗”观念被认可，使得社会活力继续增大，并最终孕育出晚明娱乐文化、休闲文化与享乐主义的生活模式。精英与大众在文化界限上的融通，原属上层社会的礼乐传统不断分化下流形成新的风气，也预示着社会机体变革的前夜。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-19/5f8d23fba4188f000153600f.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>明代·唐伯虎《双鉴行窝图》。图源：CFP</p>
+    </figcaption>
+  </figure>
+  <p>有意思的是，陈宝良在涉及明代社会流动与等级制度变动的部分中，关注到了人口剧烈增长和都市化问题。明代社会的变迁趋势，以晚明最为剧烈。本书总结出三种流动模式：即科举导致的上下层流动、士商互动与儒、侠、盗互动。第二种与第三种流动机制基本是明代中后期的显著特点。尤其是第三种现象，值得学界进一步讨论。处于等级上阶的士人走向多样化选择，反映了社会变革的烈度与广度。同时，士人与地方势力集团的结合，造成新型权力的聚合，又给予权力秩序显著的重构，导致“乱象已形、乱心已办”，儒家传统和权力系统面临极大的挑战，“英雄、大众观念”也隐然逆转。尽管作者没有进一步对比，但是这样一种历史现象，参照到清代中后期的类同表现，地方主义的兴盛和民间文化的崛起，可谓传统帝制末期社会转向的普遍机理。</p>
+  <p> </p>
+  <p>士大夫阶层的观念与价值体系的转变历程，折射出社会文化变革的深层次内容。陈宝良对于君子小人之辨、生死观念以及忠孝节义的讨论，具有相当宏阔的历史视野。众所周知，理学经义的规设与士人认同乃至选择之间，是一个微妙的关系。本书通多对于不同士人具体而微的分析，展现着文化对人影响的复杂性，而非一个决定性关涉。士人精神世界的歧路与挣扎，是一个明显“社会化”的生活构成，而不是单纯的思想文化内涵，有时候甚至存在行动上的“悖论”，需要在政治、文化和经济层面进行全盘的考量。在文化遵从、思想背离与个人行为之间，出仕/归隐、忠孝/避义、死难/惜生等困境下，有一个可塑的空间和张力。明代士人对此类问题的学术思考、对个人选择的解释乃至后学的二次疏解，进一步促进了理学与心学的演化，道德观、人性观、天理观乃至政治理念继而嬗变，“重德轻才观”与道德结构不断瓦解，建构“身隐”与“心隐”的界域，跳出君子—小人的二元结构，客观上造就了明代思想文化更为深邃的意义。</p>
+  <p> </p>
+  <p>士人的精神世界与政治品格是在动态社会变迁中不断形塑的。在本书的《余论》中，陈宝良对于士大夫“精神史”（Intellectual History）的长期贯通，有一个准确的、长时段的总结，其论说多见击节之处。制度上的变化与理性精神的起伏，同时构成了晚明士人文化反思与总结的两个动力。明清易代之际乃至清朝建立，文人的彷徨无措与社会秩序的颠覆具有因果上的联系。部分胸有济世救国观念的士人此时秉持着“道统”衰落的愤懑，颇具“士以天下为己任”的道德责任感，怀念故国，试图重新确立儒学一统的文化格局，并排斥晚明之后的诸子学，以服务于现实的政治需求与个人追索；也有的士人哀叹家国破败，倡言人生不过“恍然一场梦”，顿时感伤主义蔚然成风，标榜游戏人间，纵横娱乐场，行走风月之中，产生了思想文化层面的幻灭感与末世意识，生死与仕隐观念也再次转型，呼应着政权移易下士人边缘化的现实。这样一种二元甚至多元的思想文化转变，恰恰与政治社会的变迁同向共生。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-19/5f8d241da4188f0001536011.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>明代·杜堇《玩古图》（局部）。图源：CFP</p>
+    </figcaption>
+  </figure>
+  <p>作为文本阅读者和学术评论者的角度，从资料层面来讲，如果对于明代地方士人的文献进一步挖掘，他们的生命史、文化观得以完整化、序列化呈现，或会丰富目前所展现情况的厚度。进一步来说，士人内部也是分化的，对明代城乡士人、不同地域士人和身处不同位置的士人其文化观念的差异进行多重比对和再建构，相信本书的价值将更为光彩与深切。此外，本书的“导论”显得过长，有一百五十八页，占据全书几乎三分之一篇幅。正文部分包括“余论”在内分为七个章节，尽管“导论”长也可以看作一个优点，作者可以细致地、有效地阐释其书写思路和基本问题，但在整体结构上则稍显失衡。当然，任何学术著作都不是一个终极的结果，也不可能顾及所有内容，更不可能是完美的，但愿以上两点并非“吹毛求疵”。</p>
+  <p> </p>
+  <p>总而言之，陈宝良《明代士大夫的精神世界》一书虽持“新文化史”研究的学术思路，但对史料的排比与整合却愈用其力，具有“竭泽而渔”与“详加考辨”的精神，颇具严谨性。把握住士人精神史的内涵，同时涉及了义理的阐释；注重宏观解读，又不乏鲜活的案例；集中研讨思想史，却有着总体史的自觉，采取跨范式的取向，“希望在政治史、教育史、地域研究等领域的相互关联之下，重新诠释明代思想史的实际动态”，试图从历史和社会的脉系中来阐释明代士人的知识与行动。更为突出的是，作者在诸多论证中也直接或间接地回应了市民社会、公共空间、中国近代化历程等一系列久有讨论与争议的学术问题。</p>
+  <p> </p>
+  <p>客观来说，能够将学术方法、研究内容与问题旨归科学地弥合内化，本书可谓一个较为典范的文本。《明代士大夫的精神世界》就是在这样一种学术路径与视野中，将士人生活、精神世界和明代政治三者描摹出一幅具有现场感的历史图景。实际上，作者所言之“阅读拙著需要回到历史现场，以平恕的态度与明代士大夫对话”，也正说明这一点。</p>
+  <p> </p>
+  <p><em>王旭系复旦大学历史学系博士研究生。</em>原载于《南开史学》2020年第1期，由社会科学文献出版社授权刊发。</p>
+  <p>————</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2020-10-20</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-20/%E5%9C%A8%E5%B9%B3%E9%81%A5%E7%9C%8B%E7%94%B5%E5%BD%B1-%E7%A9%B6%E7%AB%9F%E7%9C%8B%E4%BB%80%E4%B9%88-%E4%B8%A8%E5%B9%B3%E9%81%A5%E7%94%B5%E5%BD%B1%E5%B1%95%E7%B3%BB%E5%88%97%E6%8A%A5%E9%81%93/">
+          在平遥看电影，究竟看什么？丨平遥电影展系列报道
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-19/%E5%B8%83%E5%85%8B%E5%A5%96%E5%88%9B%E5%A7%8B%E4%BA%BA%E6%B1%A4%E5%A7%86-%E9%A9%AC%E6%96%BD%E5%8B%92%E9%80%9D%E4%B8%96-%E5%87%BA%E7%89%88%E4%BA%BA%E6%80%BB%E6%98%AF%E8%BA%AB%E5%A4%84%E5%86%B2%E7%AA%81%E4%B9%8B%E4%B8%AD-%E4%BD%86%E6%88%91%E5%8F%AA%E6%98%AF%E6%83%B3%E5%87%BA%E7%89%88%E5%A5%BD%E4%B9%A6/">
+          布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-18</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-18/%E8%B4%BE%E6%A8%9F%E6%9F%AF-%E5%B9%B3%E9%81%A5%E5%9B%BD%E9%99%85%E7%94%B5%E5%BD%B1%E5%B1%95%E4%BB%8A%E5%90%8E%E4%BA%A4%E7%BB%99%E6%94%BF%E5%BA%9C%E4%B8%BE%E5%8A%9E-%E5%B0%86%E4%BB%BB%E5%B1%B1%E8%A5%BF%E7%94%B5%E5%BD%B1%E5%AD%A6%E9%99%A2%E9%99%A2%E9%95%BF/">
+          贾樟柯：平遥国际电影展今后交给政府举办，将任山西电影学院院长
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-18</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-18/%E4%B8%96%E7%95%8C%E9%A1%B6%E7%BA%A7%E7%A7%91%E5%AD%A6%E6%9D%82%E5%BF%97%E5%9C%A8%E5%A4%A7%E9%80%89%E5%89%8D%E5%85%AC%E5%BC%80%E7%AB%99%E9%98%9F-%E6%94%BF%E6%B2%BB%E6%89%AD%E6%9B%B2%E4%BA%86%E7%A7%91%E5%AD%A6%E7%9A%84%E4%B8%AD%E7%AB%8B/">
+          世界顶级科学杂志在大选前公开站队，政治扭曲了科学的中立？
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-19/%E8%AA%AA%E5%90%A7-%E9%A6%99%E6%B8%AF-%E5%9C%A8%E5%8F%B0%E5%8C%97%E8%A9%A9%E6%AD%8C%E7%AF%80%E8%81%BD%E5%88%B0%E9%A6%99%E6%B8%AF/">
+            前一篇：說吧，香港——在台北詩歌節聽到香港
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-19/%E5%B8%83%E5%85%8B%E5%A5%96%E5%88%9B%E5%A7%8B%E4%BA%BA%E6%B1%A4%E5%A7%86-%E9%A9%AC%E6%96%BD%E5%8B%92%E9%80%9D%E4%B8%96-%E5%87%BA%E7%89%88%E4%BA%BA%E6%80%BB%E6%98%AF%E8%BA%AB%E5%A4%84%E5%86%B2%E7%AA%81%E4%B9%8B%E4%B8%AD-%E4%BD%86%E6%88%91%E5%8F%AA%E6%98%AF%E6%83%B3%E5%87%BA%E7%89%88%E5%A5%BD%E4%B9%A6/">
+            後一篇：布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-10-19/%E8%AA%AA%E5%90%A7-%E9%A6%99%E6%B8%AF-%E5%9C%A8%E5%8F%B0%E5%8C%97%E8%A9%A9%E6%AD%8C%E7%AF%80%E8%81%BD%E5%88%B0%E9%A6%99%E6%B8%AF/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-10-19/%E5%B8%83%E5%85%8B%E5%A5%96%E5%88%9B%E5%A7%8B%E4%BA%BA%E6%B1%A4%E5%A7%86-%E9%A9%AC%E6%96%BD%E5%8B%92%E9%80%9D%E4%B8%96-%E5%87%BA%E7%89%88%E4%BA%BA%E6%80%BB%E6%98%AF%E8%BA%AB%E5%A4%84%E5%86%B2%E7%AA%81%E4%B9%8B%E4%B8%AD-%E4%BD%86%E6%88%91%E5%8F%AA%E6%98%AF%E6%83%B3%E5%87%BA%E7%89%88%E5%A5%BD%E4%B9%A6/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-10-19/%E5%B8%83%E5%85%8B%E5%A5%96%E5%88%9B%E5%A7%8B%E4%BA%BA%E6%B1%A4%E5%A7%86-%E9%A9%AC%E6%96%BD%E5%8B%92%E9%80%9D%E4%B8%96-%E5%87%BA%E7%89%88%E4%BA%BA%E6%80%BB%E6%98%AF%E8%BA%AB%E5%A4%84%E5%86%B2%E7%AA%81%E4%B9%8B%E4%B8%AD-%E4%BD%86%E6%88%91%E5%8F%AA%E6%98%AF%E6%83%B3%E5%87%BA%E7%89%88%E5%A5%BD%E4%B9%A6/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-10-18/%E8%B4%BE%E6%A8%9F%E6%9F%AF-%E5%B9%B3%E9%81%A5%E5%9B%BD%E9%99%85%E7%94%B5%E5%BD%B1%E5%B1%95%E4%BB%8A%E5%90%8E%E4%BA%A4%E7%BB%99%E6%94%BF%E5%BA%9C%E4%B8%BE%E5%8A%9E-%E5%B0%86%E4%BB%BB%E5%B1%B1%E8%A5%BF%E7%94%B5%E5%BD%B1%E5%AD%A6%E9%99%A2%E9%99%A2%E9%95%BF/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-10-19/%E8%AA%AA%E5%90%A7-%E9%A6%99%E6%B8%AF-%E5%9C%A8%E5%8F%B0%E5%8C%97%E8%A9%A9%E6%AD%8C%E7%AF%80%E8%81%BD%E5%88%B0%E9%A6%99%E6%B8%AF/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-10-19/%E5%B8%83%E5%85%8B%E5%A5%96%E5%88%9B%E5%A7%8B%E4%BA%BA%E6%B1%A4%E5%A7%86-%E9%A9%AC%E6%96%BD%E5%8B%92%E9%80%9D%E4%B8%96-%E5%87%BA%E7%89%88%E4%BA%BA%E6%80%BB%E6%98%AF%E8%BA%AB%E5%A4%84%E5%86%B2%E7%AA%81%E4%B9%8B%E4%B8%AD-%E4%BD%86%E6%88%91%E5%8F%AA%E6%98%AF%E6%83%B3%E5%87%BA%E7%89%88%E5%A5%BD%E4%B9%A6/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-10-19/%E5%B8%83%E5%85%8B%E5%A5%96%E5%88%9B%E5%A7%8B%E4%BA%BA%E6%B1%A4%E5%A7%86-%E9%A9%AC%E6%96%BD%E5%8B%92%E9%80%9D%E4%B8%96-%E5%87%BA%E7%89%88%E4%BA%BA%E6%80%BB%E6%98%AF%E8%BA%AB%E5%A4%84%E5%86%B2%E7%AA%81%E4%B9%8B%E4%B8%AD-%E4%BD%86%E6%88%91%E5%8F%AA%E6%98%AF%E6%83%B3%E5%87%BA%E7%89%88%E5%A5%BD%E4%B9%A6/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-10-18/%E8%B4%BE%E6%A8%9F%E6%9F%AF-%E5%B9%B3%E9%81%A5%E5%9B%BD%E9%99%85%E7%94%B5%E5%BD%B1%E5%B1%95%E4%BB%8A%E5%90%8E%E4%BA%A4%E7%BB%99%E6%94%BF%E5%BA%9C%E4%B8%BE%E5%8A%9E-%E5%B0%86%E4%BB%BB%E5%B1%B1%E8%A5%BF%E7%94%B5%E5%BD%B1%E5%AD%A6%E9%99%A2%E9%99%A2%E9%95%BF/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

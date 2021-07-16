@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>China’s Zoom Bomb – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+China’s Zoom Bomb
+——
+" />
+    <meta property="og:description" content="
+China’s Zoom Bomb
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="China’s Zoom Bomb" />
+    <meta property="twitter:title" content="China’s Zoom Bomb" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Fchinas-zoom-bomb" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/chinas-zoom-bomb" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/chinas-zoom-bomb&text=China’s Zoom Bomb&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/chinas-zoom-bomb&title=China’s Zoom Bomb" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/chinas-zoom-bomb&title=China’s Zoom Bomb" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=China’s Zoom Bomb&body=
+China’s Zoom Bomb
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/chinas-zoom-bomb" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/chinas-zoom-bomb&title=China’s Zoom Bomb&caption=
+China’s Zoom Bomb
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=China’s Zoom Bomb&url=https://www.chinafile.com/conversation/chinas-zoom-bomb" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>China’s Zoom Bomb</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-06-16
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Wang Dan, Donald Clarke &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/chinas-zoom-bomb" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1592284380000-->
+<p><a href="https://www.chinafile.com/conversation/chinas-zoom-bomb">China’s Zoom Bomb</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-5de3a4bdce5aebcd4fde2db4cd081d2a">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/52366_sm2.jpg" title="China’s Zoom Bomb" class="colorbox" data-colorbox-gallery="gallery-node-52366-exZyoobh4CQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/52366_sm2.jpg?itok=K3K1BknK" width="1200" height="800" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Kevin Frayer—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A paramilitary soldier stands guard under a portrait of Mao Zedong as tourists pass by, in front of the Forbidden City at Tiananmen Square in Beijing, June 4, 2014.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">In the lead-up to the 31st anniversary of the Tiananmen Square demonstrations this spring, Zoom, the U.S.-based company whose online meeting platform has rocketed to global prominence amid the COVID-19 pandemic, received requests from China’s government to help it suppress commemoration of the June 4, 1989 massacre. Zoom <a href="https://blog.zoom.us/wordpress/2020/06/11/improving-our-policies-as-we-continue-to-enable-global-collaboration/" target="_blank" rel="nofollow">acceded</a> to this request, blocking Zoom accounts affiliated with two prominent Tiananmen activists—<a href="https://www.chinafile.com/contributors/wang-dan" target="_blank" rel="nofollow">Wang Dan</a> and Zhou Fengsuo—both of whom live in exile in the United States, as well as a Hong Kong-based account used by <a href="https://www.npr.org/transcripts/876293203" target="_blank" rel="nofollow">Lee Cheuk-Yan</a>, a former Hong Kong legislator and longtime labor activist who was a key progenitor of the territory’s annual Tiananmen vigil. After Axios <a href="https://www.axios.com/zoom-closes-chinese-user-account-tiananmen-square-f218fed1-69af-4bdd-aac4-7eaf67f34084.html" target="_blank" rel="nofollow">broke</a> the news of the shuttering of Zhou’s and Lee’s accounts last week, Zoom issued a public <a href="https://blog.zoom.us/wordpress/2020/06/11/improving-our-policies-as-we-continue-to-enable-global-collaboration/" target="_blank" rel="nofollow">statement</a> explaining that, in order to ensure “compliance with local laws,” it had also shut down three memorial meetings on its platform, after “Chinese authorities demanded we take action,” as Zoom put it, because the meetings were being attended by Zoom users in mainland China.</p>
+      <p>This is <a href="https://www.chinafile.com/conversation/what-just-happened-nba-china" target="_blank" rel="nofollow">hardly the first time</a> a U.S. company has complied with a demand from Chinese authorities. Nor is there anything new about China’s government efforts to <a href="https://www.chinafile.com/keyword/tiananmen-protests" target="_blank" rel="nofollow">snuff out</a> the memory of June 4th. But Zoom’s actions presented a particularly stark picture of the ways companies conducting business in China not only discard their stated values in order to operate within China itself, but also become vehicles for the export of the country’s authoritarian politics far beyond its national borders.</p>
+      <p>Zoom restored the accounts it had blocked and promised to do more to refine its technology to allow it to better adapt to political conditions in the countries where it operates; it had shut down the memorials in question, Zoom’s statement explained, because it lacked a tool for individually removing mainland Chinese participants. The company vowed that “going forward Zoom will not allow requests from the Chinese government to impact anyone outside of mainland China.” But this has been small comfort to users around the world, including many institutions, now <a href="https://medium.com/@millwarj/open-letter-to-us-and-other-universities-in-light-of-zooms-revelations-about-collaborating-with-f54379c9436a" target="_blank" rel="nofollow">considering</a> whether or not to continue to use Zoom’s products.</p>
+      <p>What is the right way to ensure that companies following China’s laws don’t violate the rights of consumers using their products outside of China’s borders? Is it possible for foreign companies with a presence in China to maintain their stated commitments to norms and values that China’s government rejects? —<em><a href="https://www.chinafile.com/contributors/susan-jakes" target="_blank" rel="nofollow">Susan Jakes</a></em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-8541" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/wang-dan"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/wang_dan_sm.png?itok=JO_KdhL4" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="wang-dan"><a href="https://www.chinafile.com/contributors/wang-dan" title="Wang Dan">Wang Dan</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">How can a company maintain its business in an authoritarian state like China without violating human rights principles? It is indeed an issue that requires a serious balance.</p>
+        <p>From my point of view, I certainly think that the principle of human rights is above all else. If that’s the price, you should close your business in the country that forces you to do evil. Because how you conduct yourself is still more important than how much money you make.</p>
+        <p>But if you put me in the shoes of a company, I can understand the dilemma. Since you are doing business in a country that requires you to cooperate with policies that violate human rights principles, I would suggest you set two boundaries for yourself before you decide to compromise.</p>
+        <p>First, don't allow that country to interfere with your clients who live outside of that country. Zoom shut down a meeting event I co-organized and planned to host on June 4. The company’s behavior is inexcusable because the event was held in the United States. Zoom should not have accepted the Chinese government’s request to <a href="https://techcrunch.com/2020/06/11/zoom-admits-to-shutting-down-activist-accounts-at-the-request-of-the-chinese-government/" target="_blank" rel="nofollow">shut it down</a>.</p>
+        <p>Second, even in an authoritarian country like China, if the authorities ask you to take actions that infringe on the security of your users, the company should quit the market rather than cooperate.</p>
+        <p>In a word, you can compromise, but there must be a bottom line. The enterprises should have to pay for any actions that go beyond the bottom line. Of course, I don't think governments can leave businesses alone in this dilemma. It is the responsibility of democratic governments to protect their own enterprises from such dilemmas by negotiation, even confrontation.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8546" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/donald-clarke"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/donald-clarke_1_0.jpg?itok=ZXE9cmfF" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="donald-clarke"><a href="https://www.chinafile.com/contributors/donald-clarke" title="Donald Clarke">Donald Clarke</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">It’s troubling that whoever is in charge at Zoom thought it was fine to terminate the account of a U.S. user simply because China told it to. But Zoom <a href="https://perma.cc/KH5G-VT88" target="_blank" rel="nofollow">has promised</a> to change its ways.</p>
+        <p>First, Zoom intends to develop technology that will allow it to block meeting participants based on geography. This will enable it “to comply with requests from local authorities when they determine activity on our platform is illegal within their borders.” Thus, if China asks Zoom to prevent anyone from China from participating in a specific Zoom meeting, or indeed in any Zoom meetings at all, Zoom will comply.</p>
+        <p>Second, Zoom states that it “will not allow requests from the Chinese government to impact anyone outside of mainland China.” This seems to be a promise not to suspend or terminate accounts, or otherwise interfere with meetings, of people outside of mainland China.</p>
+        <p>Zoom’s second policy is welcome, but represents the very minimum that we should demand from any company. Its first policy is going to leave many dissatisfied, but to be fair to Zoom, it does not seem terribly different in principle from the compromises many other companies have made in order to do business in China.</p>
+        <p>Zoom argues that, like other multinationals, it must obey “local law” wherever it does business. Well, yes and no. This seemingly innocuous principle surely cannot excuse everything. Companies cannot avoid assessing what local law actually demands. If China passed a law demanding that Zoom assassinate enemies of the state, Zoom would presumably choose to stop doing business in China instead of complying.</p>
+        <p>Thus, when Zoom says it is obeying local law because it must, it is really saying, “We don’t think compliance is so terrible that it’s worth risking our China business over.” That might be a defensible position, but let’s be clear that that <em>is</em> the position.</p>
+        <p>There’s one more complication: What exactly <em>is</em> the law in China? There is no law from which one could reasonably deduce that participation in meetings about June 4th was illegal. What actually happens, of course, is that an official calls up Zoom and <em>tells</em> them that the meeting is illegal. I doubt that the specific legislative basis is cited or even asked for.</p>
+        <p>Is Chinese law, then, simply whatever some government official says it is? Intriguingly, that is exactly the argument made by <a href="http://cicc.court.gov.cn/html/1/219/235/237/1015.html" target="_blank" rel="nofollow">Shen Sibao</a>, a distinguished Chinese law professor, in a recent <a href="https://www.gwlr.org/animal-science-products-inc/" target="_blank" rel="nofollow">U.S. Supreme Court case</a>:</p>
+        <blockquote>
+          <p>Many official requirements are also transmitted through communications that may consist of department documents or oral directions, even including telephone calls. It is not the form of communication that creates its binding character, but the source and authority of the party giving the direction. Regardless of form, to the extent that these directions come from people in superior authority they are no less binding and obligatory on subordinates and the companies than any other type of “law.”</p>
+        </blockquote>
+        <p>This is not a crazy argument, although it’s not one that we normally see advanced, as it was in this case, in support of the Chinese government’s official position in litigation. But should companies be placing themselves in a position where the orders they have to follow are not public and generally binding rules enacted through a known process, but instead the random and arbitrary instructions of any petty bureaucrat? It turns out that “We must comply with local law”—complying with law is good, right?—means something considerably less sanctified: “We must comply with whatever any government official who phones up tells us to do.”</p>
+        <p>This is not what Zoom would do in the United States: It would challenge an unwelcome order it thought was beyond the official’s power. But in China, the idea of challenging these kinds of orders is often utterly unrealistic. Perhaps the only answer to problems like this is federal legislation that prohibits companies from cooperating with certain kinds of demands.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8556" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/jeffrey-ding"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/jeffrey_ding_0.png?itok=gc-Ganyo" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="jeffrey-ding"><a href="https://www.chinafile.com/contributors/jeffrey-ding" title="Jeffrey Ding">Jeffrey Ding</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Zoom’s recent shutdowns of U.S.-based activists’ accounts for organizing commemorations of the 1989 Tiananmen Square massacre has inspired much discussion on how to ensure companies adhering to China’s censorship regime do not violate the rights of American consumers. This focus on protecting people outside of mainland China from Chinese government censorship is too narrow for two reasons. First, it disregards the fact that the Chinese people are the main targets of Zoom-enabled censorship and surveillance. Second, it further reinforces a U.S. human rights approach that wavers according to geopolitical whims.</p>
+        <p>Understandably, U.S. reactions to Zoom’s account closure have centered on Zoom’s egregious <a href="https://www.npr.org/2020/06/12/876351501/zoom-acknowledges-it-suspended-activists-accounts-at-china-s-request" target="_blank" rel="nofollow">closing</a> of the accounts of Zhou Fengsuo and Wang Dan, two U.S.-based critics of the Chinese government. On June 12, a bipartisan group of 12 senators <a href="https://www.rubio.senate.gov/public/_cache/files/6f83f64a-d54f-481a-ba38-ee1b3d01c933/5126A480790CA66300B2C9CEAD813139.20.06.12-letter-to-zoom-ceo-re-china.pdf" target="_blank" rel="nofollow">sent</a> Zoom CEO Eric Yuan a list of eight questions, the majority of which were directly related to extraterritorial censorship. None asked if Zoom would continue to enable territorial censorship, namely the Chinese government’s surveillance and censorship of its own citizens. Tellingly, in its <a href="https://blog.zoom.us/wordpress/2020/06/11/improving-our-policies-as-we-continue-to-enable-global-collaboration/" target="_blank" rel="nofollow">public statement</a> responding to media scrutiny of account closures, Zoom limited its promised reforms to preventing the Chinese government from interfering with Zoom users outside of mainland China.</p>
+        <p>These revelations should force broader scrutiny of Zoom’s compliance and complicity with the Chinese government’s censorship and surveillance of Zoom users in China. Zhou Fengsuo <a href="https://twitter.com/ZhouFengSuo/status/1271063113127866368" target="_blank" rel="nofollow">tweeted</a>, “For all the buzz that #Zoom is getting now, I wish more people could watch this testimony of Tiananmen Mother Zhang Xianling, the most visceral retelling [of] her son’s death at the hands of [the] PLA, [and the] reason of account closure.” Will Zoom continue to abet the Chinese government in preventing Chinese people from hearing Zhang’s story? Zoom’s promise to develop technology that restricts meetings by geographic location does nothing to <a href="https://www.washingtonpost.com/opinions/china-is-censoring-its-critics-on-zoom-will-the-tech-company-continue-to-comply/2020/06/12/5c895f74-acd5-11ea-94d2-d7bc43b26bf9_story.html" target="_blank" rel="nofollow">address</a> the larger question of its continuing role in censoring Chinese users.</p>
+        <p>Finally, the narrow focus on Zoom’s account closures of U.S.-based activists also lays bare broader inconsistencies in U.S. human rights policy, raising concerns that human rights are a geopolitical football rather than a genuine commitment. For instance, U.S. Senator Josh Hawley, an outspoken critic of U.S. tech companies operating in China, <a href="https://www.hawley.senate.gov/senator-hawley-zoom-pick-side-american-principles-and-free-speech-or-short-term-global-profits-and" target="_blank" rel="nofollow">asked</a> Eric Yuan to “pick a side: American principles and free-speech, or short-term global profits and censorship.” The uncomfortable truth is that U.S. tech companies regularly censor online content for the sake of global profits. In the second half of 2017, Facebook <a href="https://qz.com/1279549/facebook-censors-the-most-illegal-content-in-turkey/" target="_blank" rel="nofollow">took down</a> nearly 4,000 pieces of content at the request of the Turkish government, helping to facilitate what Human Rights Watch has <a href="https://www.hrw.org/news/2014/09/02/turkey-internet-freedom-rights-sharp-decline" target="_blank" rel="nofollow">called</a> Turkey’s expansion of “abusive surveillance and data collection powers.”</p>
+        <p>Closer to home, the American tech company Palantir, whose co-founder has <a href="https://www.kansascity.com/news/local/news-columns-blogs/the-buzz/article199723414.html" target="_blank" rel="nofollow">made</a> scrutinized donations to Hawley, has been <a href="https://www.washingtonpost.com/business/2019/08/22/war-inside-palantir-data-mining-firms-ties-ice-under-attack-by-employees/" target="_blank" rel="nofollow">accused</a> by activist groups and its own employees of supporting ICE operations that separated families of undocumented immigrants and placed them in border camps with appalling conditions. Does the “pick a side” morality test—American principles or short-term profits—extend to the complicity of American tech companies in human rights violations by the Turkish government and the U.S. government? Or does the mantle of human rights only get raised when geopolitically convenient, as a geopolitical football in service of great power competition with China? When it comes to the Zoom account closures, lawmakers should zoom out and see the broader picture.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8561" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/samantha-hoffman"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/samantha_hoffman_headshot.jpeg?itok=ehXOuiPd" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="samantha-hoffman"><a href="https://www.chinafile.com/contributors/samantha-hoffman" title="Samantha Hoffman">Samantha Hoffman</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">It is not surprising to learn that the People’s Republic of China (PRC) demanded U.S.-based company Zoom <a href="https://www.axios.com/zoom-closes-chinese-user-account-tiananmen-square-f218fed1-69af-4bdd-aac4-7eaf67f34084.html" target="_blank" rel="nofollow">comply</a> with legal demands that affected non-PRC based persons. This is <a href="https://www.scmp.com/news/china/diplomacy-defence/article/2152459/beijings-demand-refer-china-taiwan-still-being-defied" target="_blank" rel="nofollow">not the first time</a> the PRC has made such a demand applicable to a foreign company’s <a href="https://jamestown.org/program/grasping-power-with-both-hands-social-credit-the-mass-line-and-party-control/" target="_blank" rel="nofollow">overseas activities</a>.</p>
+        <p>Many technology companies claim they “<a href="https://www.hrw.org/news/2020/06/11/tech-companies-should-stand-chinas-bullying" target="_blank" rel="nofollow">comply with local law</a>” to deflect criticism about their exposure to such demands. But, like Zoom, they do not tend to say which laws or legal processes were used to make the determination that they were in violation of the law. Perhaps the companies don’t even know, and just act on demands to avoid business risk. Anyway, the law in China is what the Chinese Communist Party says it is, and as Chairman Xi Jinping <a href="https://web.archive.org/web/20190216174426/http:/cpc.people.com.cn/xuexi/n1/2019/0215/c421030-30707597.html" target="_blank" rel="nofollow">said</a> in a speech published in February 2019, “Comprehensively relying upon the law to rule the country does not at all weaken the Party’s leadership, but rather strengthens and improves the Party’s leadership, continuously enhances the Party’s ability and level to rely upon the law to rule the country and consolidates the Party’s hold on power.”</p>
+        <p>The blunt censorship Zoom allowed on its platform is not the only way the PRC attempts to control its information environment. How PRC authorities knew about the planned Zoom meeting remains an open question. There are many possibilities that would not involve Zoom directly. If Zoom’s data were accessed, however, the company’s privacy policy states that while it generally stores data in the United States, data can be <a href="http://archive.fo/5gKKh" target="_blank" rel="nofollow">transferred</a> to either the U.S. or “third parties acting on [its] behalf, for purposes of processing or storage.” According to this policy, Zoom can transfer users’ data to the PRC, where privacy protections do not inhibit the Party’s political demands.</p>
+        <p>Whoever has the <a href="https://www.aspi.org.au/report/engineering-global-consent-chinese-communist-partys-data-driven-power-expansion" target="_blank" rel="nofollow">opportunity to access</a> the data a given product generates and collects can derive value from that data. How the data is processed and used depends on the intent of the actor processing it. Valuable data does not have to be derived from surveillance technology. For instance, smart-TV manufacturers’ data on users’ viewing habits <a href="https://www.theatlantic.com/technology/archive/2019/11/smart-tvs-collect-data-political-advertising-use/601381/" target="_blank" rel="nofollow">can be used</a> in both advertising and for political campaigns in a liberal democracy. In the hands of another actor, the same data could inform <a href="https://www.aspi.org.au/report/engineering-global-consent-chinese-communist-partys-data-driven-power-expansion" target="_blank" rel="nofollow">propaganda</a>. Governments’ ability to control potential use of data is limited when it is not stored inside their jurisdiction. This is the case for many PRC companies. Hisense, for instance, is a <a href="https://blog.technavio.com/blog/largest-tv-manufacturers-by-market-share" target="_blank" rel="nofollow">globally leading</a> smart-TV manufacturer and a PRC state-owned enterprise. Hisense’s privacy policies, including in the <a href="http://archive.fo/tYp7V" target="_blank" rel="nofollow">United States</a> and <a href="http://archive.fo/UaYHK" target="_blank" rel="nofollow">Australia</a>, state that personal data collected can be held in the servers the company owns and operates in the PRC.</p>
+        <p>Given the nature of these risks, Zoom’s <a href="https://blog.zoom.us/wordpress/2020/06/11/improving-our-policies-as-we-continue-to-enable-global-collaboration/" target="_blank" rel="nofollow">claim</a> to be developing a technical solution to the problem is not satisfying. In fact, it is difficult to see how any technical solution could satisfactorily respond to what is really a political problem.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8566" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/orville-schell"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/schell_0.jpg?itok=NBzs9L40" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="orville-schell"><a href="https://www.chinafile.com/contributors/orville-schell" title="Orville Schell">Orville Schell</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">By now, the details of Zoom’s censorship of several U.S. clients’ online conversations on their platform about the June 4th Beijing Massacre are well known. Quite apart from being an abrogation of freedom of expression, the Chinese Communist Party’s (CCP’s) brazen strong-arming of a foreign company bespeaks of an even more pernicious trend: its readiness to violate the rights of people outside of China’s borders with covert and corrupting intrusions into their own sovereign countries. Of late, we’ve seen a growing number of instances of the Party’s seeking to control or distort information flows outside of China. Twitter just <a href="https://app.ft.com/content/deeb3704-5924-44e3-9363-dd28ce7f67f1" target="_blank" rel="nofollow">removed</a> 23,750 accounts as well as 150,000 “amplifier” accounts that were part of Beijing’s aggressive “<a href="https://www.hoover.org/sites/default/files/research/docs/12_diamond-schell_app1_2ndprinting_web.pdf" target="_blank" rel="nofollow">external propaganda</a>” campaign. And such interference in the internal affairs of other countries is only one piece in the Party’s <a href="https://asiasociety.org/center-us-china-relations/chinas-influence-american-interests-promoting-constructive-vigilance" target="_blank" rel="nofollow">enormous mosaic</a> of ever more aggressive influence-seeking strategems abroad.</p>
+        <p>Like every global businessman, Zoom CEO Eric Yuan must covet his China market share and want to protect his company’s substantial engineering and research staff there because salaries are lower. But if he’s not careful, such slavish, immoral, and illegal obedience to the CCP could alienate his other global customers and crash his company even more quickly than it arose when people were suddenly forced to meet digitally when the pandemic hit.</p>
+        <p>As the debate heats up about whether democratic countries should allow Huawei to install its 5G infrastructure, what such coercive efforts show is that no company bound to China is truly free from Party control. Indigenous companies like Huawei are <a href="https://www.lawfareblog.com/beijings-new-national-intelligence-law-defense-offense" target="_blank" rel="nofollow">subject to</a> Article 7 of China’s Intelligence Law, which stipulates that: “Any organization or citizen shall support, assist, and cooperate with state intelligence work according to law.”</p>
+        <p>But the Zoom incident reminds us that even American companies get the same Party treatment once reserved for their Chinese counterparts. Indeed, under Xi Jinping’s new authoritarianism, it has become difficult for anyone—whether businessman, scientist, journalist, novelist, academic, NGOer, or clergyman—to find a secure ground to stand on as the abyss between the U.S. and China yawns ever wider. This the real tragedy of U.S.-China relations, one that Zoom’s travails only highlight. Xi’s paranoid aggressive posture towards any country that resists him has eroded the middle ground between China and the outside world that had been so laboriously built up over the years since Nixon and Kissinger’s epic 1972 trip to Beijing. And now he has met his match in Donald Trump! This, as well as the insult against free speech, Zoom’s cave-in to the CCP and its possible fall, makes this a triple-barreled tragedy.</p>
+        <p>A Chinese-born venture capitalist emailed me saying that while the personal or financial penalties arising from speaking out publicly on the Zoom issue were potentially serious, he nonetheless wanted to send me the following comments to use anonymously. His understandable caution bespeaks of the degree to which the Party has succeeded in stifling such critical voices.</p>
+        <blockquote>
+          <p>It’s outrageous for Zoom to shut down U.S. citizens’ accounts at Beijing’s request. This demonstrates that Beijing will eventually apply its model of ruling China to the rest of the world whenever they can. Zoom’s statement admitted the company had made a mistake, reinstated the accounts, and promised never to do it again.</p>
+          <p>However, the statement said that Zoom would block Chinese citizens’ access to Zoom at Beijing’s request. If China’s leaders deem some participants’ access to Zoom “illegal,” they ought to provide evidence as to which particular laws or regulations have been violated. They cannot claim a Chinese citizen’s activity is illegal at their whim. No matter how Zoom may want to accommodate Beijing, I predict Beijing will eventually shut down Zoom’s service in China, just like what happened with <a href="https://www.technologyreview.com/2018/12/19/138307/how-google-took-on-china-and-lost/" target="_blank" rel="nofollow">Google</a>. This is irreconcilable. Zoom’s behavior has nothing to do with its founder’s Chinese birth, or its engineering team based in China. Any U.S. company facilitating information exchange across China’s border will suffer exactly the same dilemma. The U.S. government and media must be cognizant about this. Zoom is a U.S. company and its founder a U.S. citizen. They should be treated no differently from any other U.S. company and citizen in this rule-of-law country.”</p>
+        </blockquote>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8571" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/julian-g-ku"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/julian-ku-highres.jpg?itok=uzYnyrGB" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="julian-g-ku"><a href="https://www.chinafile.com/contributors/julian-g-ku" title="Julian G. Ku">Julian G. Ku</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">In a famous 2000 speech advocating China’s admission to the World Trade Organization, President Bill Clinton <a href="http://movies2.nytimes.com/library/world/asia/030900clinton-china-text.html" target="_blank" rel="nofollow">argued</a> that the Internet could change China in dramatic ways and that China would be unable to censor or control it. Implicit in his argument was that U.S. companies would introduce U.S. values to China via the Internet, and China would have to choose between the newest technologies or maintaining its strict censorship regime. In Clinton’s vision, U.S. technology companies would be a vanguard for change inside of China.</p>
+        <p>Two decades later, we are witnessing something close to the opposite of Clinton’s rosy vision. As the recent incident involving Zoom’s termination of U.S.-based accounts at the behest of the Chinese government shows, cutting-edge innovative U.S. tech companies like Zoom are actually supporting the Chinese government’s censorship efforts within China and even importing Chinese government censorship into the U.S. And Zoom’s actions are hardly unique, as other U.S. technology giants such as <a href="https://www.theguardian.com/technology/2020/feb/25/apple-censorship-requests-china-shareholder-groups-proposal" target="_blank" rel="nofollow">Apple</a> and Microsoft have long <a href="https://www.wired.com/story/us-companies-help-censor-internet-china/" target="_blank" rel="nofollow">implemented</a> the Chinese government’s censorship rules within China.</p>
+        <p>To be sure, a U.S. corporation like Zoom that decides to operate in China has a duty to comply with Chinese law just as a Chinese corporation operating in the U.S. has a duty to comply with U.S. law. It is telling, however, that by Zoom’s own account, it did not even consider rejecting the Chinese government’s demands despite the impact of those demands on Zoom users in the U.S. Zoom did not even seek to challenge the Chinese government’s demands in Chinese court, which Zoom surely would have done had the U.S. government made similar demands. Instead, the company erred on the side of giving the Chinese government what it wanted even at the cost of harming its U.S. users. Zoom’s actions should not surprise us. Other U.S. companies, such as Marriott and the <a href="https://www.cnbc.com/2019/10/21/china-state-media-on-nba-commissioner-adam-silver-hong-kong-tweet-fallout.html" target="_blank" rel="nofollow">NBA</a>, also have been pressured to terminate U.S.-based employees for speech that offended the Chinese government, and Marriott has actually <a href="https://www.wsj.com/articles/marriott-employee-roy-jones-hit-like-then-china-got-mad-1520094910" target="_blank" rel="nofollow">done so</a>.</p>
+        <p>It should be clear now that U.S. tech companies are not going to change China’s censorship regime. At this point, all we can hope for is that these same tech companies won’t bring Chinese government censorship to the U.S. Since such companies are rarely willing to stand up to the Chinese government, it is important that the U.S. government acts. Congress should enact “blocking” legislation voiding the domestic effect of Chinese censorship laws in the U.S. Such legislation should also allow any U.S. users to seek damages from U.S. companies that implement the Chinese government’s censorship demands. Such a law would deter U.S. companies (or at least make them think twice) before rushing to carry out the Chinese government’s censorship demands.</p>
+        <p>U.S. technology companies deciding to operate in China should openly admit that they cannot actually live up the values of the free expression they usually espouse and defend in the U.S. The Chinese government has forced them to choose between their values and immense profits. Given the huge amounts of money at stake for them in China, it is perhaps understandable that U.S. companies have chosen profits over values. But it is far from laudable.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8576" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/Graham-Webster"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/webster.graham.headshot.jpeg?itok=PW6p15Tf" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="graham-webster"><a href="https://www.chinafile.com/contributors/Graham-Webster" title="Graham Webster">Graham Webster</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Zoom is perfectly positioned to bear the brunt of several tough problems in the technology business today.</p>
+        <p>The first factor shaping Zoom’s challenges is the COVID-19 pandemic. The company began this year as one of several online video-conferencing platforms that most people might encounter occasionally, if ever. Now, it is the primary communications infrastructure for many schools, businesses, and private gatherings. Suddenly, Zoom is to multiparty video conferences what Kleenex is to facial tissue.</p>
+        <p>This rapid growth brought several platform abuse and governance challenges: “Zoom bombing” intrusions into people’s conferences and <a href="https://www.latimes.com/california/story/2020-03-25/zoombombing-usc-classes-interrupted-racist-remarks" target="_blank" rel="nofollow">online classrooms</a>; sloppy or misleading use of language around <a href="https://theintercept.com/2020/03/31/zoom-meeting-encryption/" target="_blank" rel="nofollow">end-to-end encryption</a> that led to security questions; and all the <a href="https://www.fbi.gov/news/pressrel/press-releases/fbi-warns-of-child-sexual-abuse-material-being-displayed-during-zoom-meetings?__cf_chl_jschl_tk__=84e4425682d0fbc9e713d91dcf1cd91918b23e44-1592238713-0-AYSmbuDdJgPFSd30wsb2QQQwxadtbPpMTbXnL5gkt7Am-DwHaSByzolpNW15_Hqwhc2kiZXF2s9Vn7B4Hbqpnc2K7EhvhvksVmUueqEi7LAtmX1PoUeuX1GmO7ZZjOkaCEqBuhCHP03eEVBa3pZhZ2Qp0lCN7qzRjTBnxiDmSu3SdxlH_AAgPEF_Y9fqYTV-XORKm2XBqumJoaWPf2ODsJtWe9N8r36HDdtERu18ApE7n3lxH99PmkYt93cFRazcdciySua82XSH5cIU7liecUvKGlkACkAXXnmoBg2s21yY73JO0tm0KC6MIax2TsMp5mSZBsppSy0iYnek9qfFocmTCsXCmvkLcqJvqvN_LdFNrh_QhrIQ-jiXpV89FpMgYuv8Y9Fq0EpvvO7xPx4ewrcNyEcwedbuGbI_a-B0GQN-zqlpUZJJF1641AtIaGpSBGqFiNLtnkZq0HVayf8LBRQpnpgbiZt1xQsub-NZRrQ9" target="_blank" rel="nofollow">dark criminal uses</a> of relatively anonymizable online channels.</p>
+        <p>The second factor shaping Zoom’s challenges is its unique ties to China. Unlike its competitors—run by companies like Microsoft, Google, and Cisco—Zoom <a href="https://www.sec.gov/Archives/edgar/data/1585521/000156459019022032/zm-10q_20190430.htm" target="_blank" rel="nofollow">said</a> in an <a href="https://www.sec.gov/Archives/edgar/data/1585521/000119312519083351/d642624ds1.htm" target="_blank" rel="nofollow">SEC filing</a> it had “a high concentration of research and development personnel in China.” Users attuned to China-related cybersecurity risks, out of an abundance of caution rather than due to documented cases of abuse, are likely already cautious in using Zoom for potentially sensitive matters.</p>
+        <p>The recent shutdown of teleconferences and accounts associated with commemorations of the deadly military attack on peaceful demonstrators in Tiananmen Square in 1989, however, revealed how ill-prepared the company was to navigate the Chinese government’s censorship and security requirements while hosting a huge variety of daily activities around the world. It’s unsurprising that Chinese officials would demand Zoom cut off Tiananmen-related content to Chinese users; it’s more surprising that, by Zoom’s own account, the company had no way to do this without shutting down discourse that involved people in many other countries.</p>
+        <p>Zoom now faces a choice. Will it implement censorship capabilities aligned with national borders, as <a href="https://money.cnn.com/2014/06/04/technology/linkedin-china-censorship/" target="_blank" rel="nofollow">LinkedIn has done</a> in blocking Chinese users from viewing certain content? Will it decide that the ongoing job of satisfying Chinese censors and the Chinese government’s online surveillance activities is too objectionable and close down China services, as <a href="https://www.technologyreview.com/2018/12/19/138307/how-google-took-on-china-and-lost/" target="_blank" rel="nofollow">Google did</a>? Staying under the radar, clearly, will no longer work.</p>
+        <p>The challenge for users and U.S. institutions is also complex. Unless the company is able to make credible, auditable commitments on censorship and Chinese (or other) government access to data, Zoom cannot be trusted for the most sensitive communications—perhaps even including online teaching that touches on issues the Chinese government deems sensitive, which could put Chinese students attending such classes at risk. These risks may actually be small, but the public simply doesn’t know enough to be sure—and it’s possible neither do Zoom’s executives.</p>
+        <p>Still, a rush to abandon Zoom as a Chinese threat raises at least two major problems. First, though people especially vulnerable to Chinese government surveillance or persecution might avoid the service out of an abundance of caution, the risks are mostly hypothetical. The risks of long-arm Chinese censorship should be far less if the company develops the ability to block content exclusively for Chinese users. And, so far, Zoom does have advantages in ease of access across platforms and tech skill level.</p>
+        <p>Finally, and more immediately for those involved in U.S.-China policy, business, or research: Zoom is currently a rare channel of relatively low-friction communication through the Great Firewall and myriad barriers to in-person meetings. The company, and everyone else, should weigh the importance of that connectivity in deciding how to deal with real challenges.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8586" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/yaqiu-wang"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/wangyaqiu.jpeg?itok=b9qqIj2m" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="yaqiu-wang"><a href="https://www.chinafile.com/contributors/yaqiu-wang" title="Yaqiu Wang">Yaqiu Wang</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Zoom apparently has no qualms about censoring critics in China. In a statement, the company <a href="https://blog.zoom.us/wordpress/2020/06/11/improving-our-policies-as-we-continue-to-enable-global-collaboration/" target="_blank" rel="nofollow">said</a>, “We shut down the meetings instead of blocking the participants by country.” The company apologized for not doing a good job censoring international calls that have participants from China—because the way it did so unnecessarily affected users outside of China. Zoom said it was told by Chinese authorities that it had to “comply with local law,” yet Chinese law <a href="https://www.washingtonpost.com/world/asia_pacific/zoom-censors-video-talks-on-hong-kong-and-tiananmen-drawing-criticism/2020/06/11/0197dc94-ab90-11ea-a43b-be9f6494a87d_story.html" target="_blank" rel="nofollow">does not</a> prohibit talking about Tiananmen or participating in international discussions.</p>
+        <p>The company’s disregard for freedom of expression is troubling but not surprising. Multinationals often cite “complying with local laws” when they give in to political pressure from Beijing. Apple <a href="https://www.theverge.com/2017/8/1/16079834/tim-cook-china-vpn-app-removal-q3-2017-earnings" target="_blank" rel="nofollow">cited</a> this reason when it removed hundreds of virtual private network (VPN) apps from China’s App Store. LinkedIn <a href="https://blog.linkedin.com/2014/02/24/introducing-linkedins-simplified-chinese-beta-site" target="_blank" rel="nofollow">said</a> the same when it blocked content critical of the Chinese government.</p>
+        <p>Companies that think they can keep “complying with local laws,” which are often abusive, but not affect the rights and interests of their customers outside of China are being naïve. Apple’s <a href="https://www.theguardian.com/technology/2020/jun/12/apple-removes-two-podcast-apps-from-china-store-after-censorship-demands" target="_blank" rel="nofollow">never-ending</a> capitulations to Beijing have already affected what people around the world can watch through its streaming services: In early 2018, company management <a href="https://www.buzzfeednews.com/article/alexkantrowitz/apple-china-tv-protesters-hong-kong-tim-cook" target="_blank" rel="nofollow">warned</a> the creators of some of the shows on Apple TV+ to avoid portraying China in a negative light. (Apple did not respond to a letter Human Rights Watch sent in November inquiring about its China-related operations.) Hollywood is <a href="https://www.theatlantic.com/ideas/archive/2019/09/hollywoods-great-leap-backward-free-expression/598045/" target="_blank" rel="nofollow">increasingly censoring</a> its films for Beijing’s sensibilities, such as the <a href="https://www.businessinsider.com/top-guns-maverick-appears-changed-to-please-chinas-communist-party-2019-7" target="_blank" rel="nofollow">removal</a> of a Taiwan flag from Tom Cruise’s bomber jacket in the recent sequel to the 1986 movie <em>Top Gun</em>.</p>
+        <p>Companies understandably want access to China’s huge market. Some 700 Zoom engineers are <a href="https://www.cnbc.com/2020/05/29/zoom-next-big-platform-for-startups-to-build-billion-dollar-businesses.html" target="_blank" rel="nofollow">based</a> in China. The majority of Apple’s <a href="https://apnews.com/5fb64c1137ad45f284dc605ca7f9c321" target="_blank" rel="nofollow">products</a> are <a href="https://www.theverge.com/2019/6/28/19102703/apple-mac-pro-china-production-assembly" target="_blank" rel="nofollow">assembled</a> in China. But capitulation hasn’t and won’t get them to safety—it has made them vulnerable to more demands for capitulation.</p>
+        <p>If each company alone faces a choice between submitting to Beijing’s censorship demands and being denied access to the Chinese market, many will surely opt for groveling. But if companies band together to stand up to the Chinese government’s bullying, the balance of power could shift. The Chinese government can’t get rid of all foreign companies.</p>
+        <p>Companies have a responsibility to respect human rights under the United Nations <a href="https://www.ohchr.org/Documents/Publications/GuidingPrinciplesBusinessHR_EN.pdf" target="_blank" rel="nofollow">Guiding Principles on Business and Human Rights</a>. They should draft and promote codes of conduct for dealing with China that prohibit participation in or facilitation of infringements of the right to free expression, information, privacy, association, or other internationally recognized human rights. Strong common standards would make it more difficult for Beijing to ostracize those who stand up for basic rights and freedoms. Consumers and shareholders would also be better placed to insist that the companies not succumb to censorship as the price of doing business in China, and that they should never benefit from or contribute to abuses.</p>
+        <p>Facing pressure from within and outside of the company last year, Google <a href="https://www.bbc.com/news/technology-49015516" target="_blank" rel="nofollow">terminated</a> a plan to launch a censored search engine in China, saving itself from being complicit in human rights violations. Other companies should do the same.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8601" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/lotus-ruan"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/lotusruan.jpeg?itok=TYZUDkk9" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="lotus-ruan"><a href="https://www.chinafile.com/contributors/lotus-ruan" title="Lotus Ruan">Lotus Ruan</a></h3>
+      </div>
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/jeffrey-knockel"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/jeffrey_knockel.png?itok=VDvVp3oi" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="jeffrey-knockel"><a href="https://www.chinafile.com/contributors/jeffrey-knockel" title="Jeffrey Knockel">Jeffrey Knockel</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Zoom’s compliance with censorship requests from the Chinese government puts a spotlight on the costs of doing business in China. While Zoom is headquartered in the U.S. and most of its users are<a href="https://citizenlab.ca/2020/04/move-fast-roll-your-own-crypto-a-quick-look-at-the-confidentiality-of-zoom-meetings/" target="_blank" rel="nofollow">in North America</a>, it also has a company presence and users in China, which exposes it to China’s strict content regulations. Operating a platform inside and outside of China poses an unavoidable balancing act due to the requirement of applying censorship and surveillance to users in China while also providing a platform free of restrictions expected by users outside of China. This tension exists for <a href="https://www.nytimes.com/2005/09/08/business/worldbusiness/yahoo-helped-chinese-to-prosecute-journalist.html" target="_blank" rel="nofollow">international</a> companies <a href="https://www.theverge.com/2018/2/28/17055088/apple-chinese-icloud-accounts-government-privacy-speed" target="_blank" rel="nofollow">trying to enter</a> the Chinese market as well as China-based companies trying to internationalize. For example, even non-China users of Tencent’s WeChat become subject to Chinese political <a href="https://citizenlab.ca/2016/11/wechat-china-censorship-one-app-two-systems/" target="_blank" rel="nofollow">censorship</a> and <a href="https://citizenlab.ca/2020/05/we-chat-they-watch/" target="_blank" rel="nofollow">surveillance</a> whenever they communicate with users with accounts registered in China.</p>
+        <p>Companies can approach doing business in China in multiple ways each with their own set of challenges. First, companies outside of China may determine that complying with Chinese laws that threaten the rights of users is incompatible with their values. Google, for example, left China in 2010 due to <a href="https://www.justsecurity.org/59941/googles-dragonfly-bellwether-human-rights-digital-age/" target="_blank" rel="nofollow">human rights concerns</a>, and plans to reenter the market were <a href="https://www.bbc.com/news/technology-49015516" target="_blank" rel="nofollow">terminated</a> in 2019 following criticism inside and outside the company.</p>
+        <p>Second, companies may fragment their platforms. ByteDance, for instance, operates Douyin inside of China and TikTok outside of China. While users of Douyin are subject to Chinese laws, users of TikTok are not. By segregating users into two different platforms, there is little cross-border interaction on either platform.</p>
+        <p>Finally, companies may attempt a balancing act, operating a single platform in both markets. Such companies should issue transparency reports that disclose information summarizing government requests for access to or takedown of data and their responses to those requests. Regular reporting not only educates users about company policies but also reduces unnecessary adverse actions against users. Logging responses to government requests increases the <a href="https://www.ibtimes.com/linkedin-abides-chinese-censorship-laws-it-consistent-1678060" target="_blank" rel="nofollow">consistency</a> of companies’ responses to such requests and holds companies more accountable. Companies should also provide users clear in-app indications whenever their communication may be subject to Chinese censorship and surveillance. Tencent’s <a href="https://rankingdigitalrights.org/index2019/companies/tencent/index/" target="_blank" rel="nofollow">reluctance</a> to provide a transparent explanation of how it handles user data and how it responds to government requests has invited international <a href="https://ipolitics.ca/2019/07/05/mps-staff-warned-not-to-use-chinese-app-wechat-due-to-cybersecurity-risks/" target="_blank" rel="nofollow">resistance</a> to its most popular products.</p>
+        <p>Ultimately, companies need to determine if they should operate in China knowing that it is not a matter of <em>if</em> but <em>when</em> they receive requests from Chinese authorities. If companies operate in China, then they must determine whether to fragment their platforms or risk subjecting their users outside of China to Chinese censorship and surveillance requirements. Companies must be honest and transparent about their business choices and conduct. Only then can users make informed decisions about which platforms to use, on the basis of each platform’s security, privacy, safety, and ethics.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8606" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/glenn-d-tiffert"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/glenn_tiffert.jpg?itok=VHGfxHzm" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="glenn-d-tiffert"><a href="https://www.chinafile.com/contributors/glenn-d-tiffert" title="Glenn D. Tiffert">Glenn D. Tiffert</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Oops, they did it again. China has conscripted another Western entity to <a href="https://www.nytimes.com/2016/04/28/world/asia/china-teng-biao-american-bar-association.html" target="_blank" rel="nofollow">silence dissent</a> beyond its borders and <a href="https://www.nytimes.com/2017/08/18/world/asia/cambridge-university-press-academic-freedom.html" target="_blank" rel="nofollow">bury history</a>. With this ham-fisted gesture, Zoom joins a growing list of foreign entities that are carrying water internationally for the Chinese Communist Party (CCP). <a href="https://www.nytimes.com/2018/07/25/business/taiwan-american-airlines-china.html" target="_blank" rel="nofollow">Airlines</a>, <a href="https://www.nytimes.com/2018/01/11/business/china-marriott-tibet-taiwan.html" target="_blank" rel="nofollow">hotel chains</a>, <a href="https://www.cima.ned.org/publication/beyond-great-firewall-china-became-global-information-power/" target="_blank" rel="nofollow">media companies</a>, <a href="https://www.bbc.com/news/business-50078886" target="_blank" rel="nofollow">clothing retailers</a>, <a href="https://www.nytimes.com/2020/05/29/world/australia/drew-pavlou-china-university-queensland.html" target="_blank" rel="nofollow">universities</a>, and <a href="https://blogs.wsj.com/chinarealtime/2014/06/04/linkedin-said-it-would-censor-in-china-now-it-is-and-some-users-are-unhappy/" target="_blank" rel="nofollow">technology companies</a> have all surrendered to the CCP’s political preferences with respect not just to operations in China, but globally. They are hastily <a href="https://www.axios.com/johns-hopkins-coronavirus-map-taiwan-china-5c461906-4f1c-42e7-b78e-a4b43f4520ab.html" target="_blank" rel="nofollow">redrawing maps</a>, <a href="https://qz.com/1685587/versace-the-latest-brand-to-express-deepest-apologies-to-china/" target="_blank" rel="nofollow">recalling products</a>, <a href="https://www.reuters.com/article/us-china-delta-idUSKBN1F10RC" target="_blank" rel="nofollow">revising websites</a>, <a href="https://www.nytimes.com/2018/02/06/business/mercedes-daimler-dalai-lama-china.html" target="_blank" rel="nofollow">changing advertising</a> campaigns, and <a href="https://www.nytimes.com/2019/10/24/sports/basketball/nba-china-tilman-fertitta-morey.html" target="_blank" rel="nofollow">muzzling</a> and <a href="https://www.wsj.com/articles/marriott-employee-roy-jones-hit-like-then-china-got-mad-1520094910" target="_blank" rel="nofollow">firing</a> employees in a thankless effort to stay one step ahead of the CCP’s brutally Leninist version of cancel culture.</p>
+        <p>Meanwhile, liberal democracies are struggling to muster effective responses because they are tied in ideological knots. Accustomed to the notion that economic and political freedom go naturally hand in hand, they flounder when an authoritarian regime with deep pockets enters the frame and commences to haggle over the price of the values that they profess to hold dear. <a href="https://www.ned.org/sharp-power-and-democratic-resilience-series-compromising-the-knowledge-economy/" target="_blank" rel="nofollow">Faustian bargains</a> are struck.</p>
+        <p>The logic is simple. Outraging a few overseas critics is a small price to pay for access to the world’s second-largest economy, where the CCP is gatekeeper. Over time, these atomistic decisions, each reasonable in its own myopic way, accumulate into a result that no one, except the CCP, would have chosen. Reality shifts, and we adjust to a new normal: Zoom, the market leader in web conferencing, expresses remorse and promises to do better by refining its internal processes so that it can implement Chinese censorship in the future with less collateral damage.</p>
+        <p>As a historian of 20th-century China, I am used to the idea that the CCP <a href="https://academic.oup.com/ahr/article-abstract/124/2/550/5426383" target="_blank" rel="nofollow">suppresses, sanitizes, and rewrites the past</a> to suit its political whims. What is harder to stomach is a Western firm, headquartered in a jurisdiction that enjoys freedom of expression and the rule of law, now taking up the baton for China’s leaders and invoking the shield of legal compliance to justify its avarice. Prepare yourselves for abuses of process and CCP-sponsored takedowns mid-stream. For students and scholars who cannot participate in lectures or classes. For <a href="https://www.nytimes.com/2020/02/06/world/asia/chinese-doctor-Li-Wenliang-coronavirus.html" target="_blank" rel="nofollow">Li Wenliang’s</a> heirs to struggle that much harder to be heard. And for other illiberal nations to follow suit. Zoom <a href="https://blog.zoom.us/wordpress/2020/06/11/improving-our-policies-as-we-continue-to-enable-global-collaboration/" target="_blank" rel="nofollow">says</a> that it “is proud of the role we are playing globally.” Indeed. This is engagement, but on whose terms?</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8611" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/lindsay-gorman"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/gorman_sm.jpg?itok=5EC9TW1S" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="lindsay-gorman"><a href="https://www.chinafile.com/contributors/lindsay-gorman" title="Lindsay Gorman">Lindsay Gorman</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">When it comes to straddling the differences between open democracies and China’s repressive censorship regime, the “<a href="https://www.economist.com/business/2019/11/28/one-company-two-systems" target="_blank" rel="nofollow">one company, two systems</a>” approach is not new.</p>
+        <p>But three things about this particular episode of attempting to do the splits make it unique.</p>
+        <p>First, Zoom is a U.S. company that propagated the Chinese Communist Party’s censorship regime on U.S. soil (in addition to Hong Kong). There is indeed a long history of U.S. technology firms trying to play it both ways when it comes to compliance with the Chinese censorship regime in order to access a lucrative market. Perhaps the canonical tech example is Google’s <a href="https://www.bbc.com/news/technology-49015516" target="_blank" rel="nofollow">Project Dragonfly</a>, the embattled censored search engine the company attempted to create for the Chinese market. Eventually, the project was canned in the face of ideological backlash from both its Silicon Valley employees and Washington’s national security elite. But it’s another beast when compliance with Chinese censorship stifles speech extraterritorially—especially within the United States itself. (A recent example is Daryl Morey’s comments in support of the Hong Kong protests, which led to a <a href="https://www.chinafile.com/conversation/what-just-happened-nba-china" target="_blank" rel="nofollow">feud</a> between China and the NBA.)</p>
+        <p>Second, the pandemic has meant that more and more of our activities rely on this ubiquitous video-conferencing technology and has thrust it into the spotlight virtually overnight. Zoom’s censorship faux pas is not something that can easily be ignored, and the benefit of the doubt that Zoom’s meteoric rise has granted it in the face of <a href="https://www.washingtonpost.com/news/powerpost/paloma/the-cybersecurity-202/2020/04/03/the-cybersecurity-202-researchers-praise-zoom-s-quick-pledge-to-fix-a-slew-of-security-and-privacy-problems/5e860e8888e0fa101a75932b/" target="_blank" rel="nofollow">past cyber security challenges</a> is quickly eroding.</p>
+        <p>Third, this particular extraterritorial censorship incident comes at a time where tensions between the United States and China are at a recent high. And more democratic nations are re-considering their <a href="https://www.politico.eu/article/coronavirus-emboldens-europes-supply-chain-security-hawks/" target="_blank" rel="nofollow">supply chain dependence</a> on China in light of the pandemic. The Zoom question further exposes the challenges inherent in deep economic integration and ideological opposition at the same time.</p>
+        <p>While Zoom’s answer will be to create machinations whereby Chinese accounts can be suspended without affecting those in the United States, questions remain over whether “one company, two systems” will continue to be morally palatable in the United States. And how this will play out in Hong Kong over the longer term remains to be seen.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-06-30</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-30/How-Should-Democracies-Respond-to-China-s-New-Nati/">
+          How Should Democracies Respond to China’s New National Security Law for Hong Kong?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-16</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-16/Hong-Kong-s-Forthcoming-Security-Law-and-Its-Poten/">
+          Hong Kong’s Forthcoming Security Law and Its Potential Effect on International Non-Profits
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-13/Is-Hong-Kong-about-to-Get-Its-Own-Foreign-NGO-Law/">
+          Is Hong Kong about to Get Its Own Foreign NGO Law in the Name of ‘National Security’?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-09</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-09/For-Me,-the-Breakdown-in-U.S.-China-Relations-Is-P/">
+          For Me, the Breakdown in U.S.-China Relations Is Personal
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-16/%E6%B5%B7%E6%98%8E%E5%A8%81%E6%9C%AA%E5%87%BA%E7%89%88%E5%B0%8F%E8%AF%B4%E9%A6%96%E6%AC%A1%E5%88%8A%E5%8F%91-%E4%B8%80%E7%AF%87%E5%AA%B2%E7%BE%8E-%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7-%E7%9A%84%E9%81%97%E4%BD%9C/">
+            前一篇：海明威未出版小说首次刊发 一篇媲美《老人与海》的遗作
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-16/Hong-Kong-s-Forthcoming-Security-Law-and-Its-Poten/">
+            後一篇：Hong Kong’s Forthcoming Security Law and Its Potential Effect on International Non-Profits
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-06-16/%E6%B5%B7%E6%98%8E%E5%A8%81%E6%9C%AA%E5%87%BA%E7%89%88%E5%B0%8F%E8%AF%B4%E9%A6%96%E6%AC%A1%E5%88%8A%E5%8F%91-%E4%B8%80%E7%AF%87%E5%AA%B2%E7%BE%8E-%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7-%E7%9A%84%E9%81%97%E4%BD%9C/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-06-16/Hong-Kong-s-Forthcoming-Security-Law-and-Its-Poten/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-06-16/Hong-Kong-s-Forthcoming-Security-Law-and-Its-Poten/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-06-13/Is-Hong-Kong-about-to-Get-Its-Own-Foreign-NGO-Law/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-06-16/%E6%B5%B7%E6%98%8E%E5%A8%81%E6%9C%AA%E5%87%BA%E7%89%88%E5%B0%8F%E8%AF%B4%E9%A6%96%E6%AC%A1%E5%88%8A%E5%8F%91-%E4%B8%80%E7%AF%87%E5%AA%B2%E7%BE%8E-%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7-%E7%9A%84%E9%81%97%E4%BD%9C/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-06-16/Hong-Kong-s-Forthcoming-Security-Law-and-Its-Poten/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-06-16/Hong-Kong-s-Forthcoming-Security-Law-and-Its-Poten/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-06-13/Is-Hong-Kong-about-to-Get-Its-Own-Foreign-NGO-Law/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

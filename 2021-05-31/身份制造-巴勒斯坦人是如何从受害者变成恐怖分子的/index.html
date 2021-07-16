@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？
+——
+" />
+    <meta property="og:description" content="
+身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？" />
+    <meta property="twitter:title" content="身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60b47c21ac95bf78e1cbae89" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60b47c21ac95bf78e1cbae89" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60b47c21ac95bf78e1cbae89&text=身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60b47c21ac95bf78e1cbae89&title=身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60b47c21ac95bf78e1cbae89&title=身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？&body=
+身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60b47c21ac95bf78e1cbae89" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60b47c21ac95bf78e1cbae89&title=身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？&caption=
+身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？&url=https://www.allnow.com/post/60b47c21ac95bf78e1cbae89" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-31
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 宋宇</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60b47c21ac95bf78e1cbae89" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60b47c21ac95bf78e1cbae89">身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？</a>
+——</p>
+
+<div>
+  <p>“当前的确是我们悲惨的时刻。”</p>
+  <p>《报道伊斯兰》中文版首次问世之际，爱德华·萨义德曾在回复台湾学者单德兴的邮件里写下这句话。那时 “9·11”事件刚过去不久，这名美籍巴勒斯坦裔知识分子和许多纽约市民一样，惊愕于毫无征兆的毁灭；但几乎在同一时间，电视机上反复播放的双子塔画面、汹涌而来的复仇宣言唤起了他的警惕。萨义德提笔写下两篇回应，警示将伊斯兰世界等同于恐怖主义、认定它势必与西方水火不容的危险。</p>
+  <p>不只在西方，妖魔化穆斯林的做法也随飞机撞击双子塔的画面抵达了太平洋彼岸。这里的国家本与中东一道，受西方凝视，而今却在灾难的虚拟重演中二度切割“我们”与“他们”，萨义德在《报道伊斯兰》中的观点不幸得到印证。单德兴代出版社与萨义德接洽，询问是否可以将两篇关于“9·11”的文章收入新书时，他简短的回复中只有这样一句评价：“当前的确是我们悲惨的时刻。”这既是针对2000年戴维营和谈失败后，第二次巴勒斯坦大起义期间的惨况，也是指2001年“9·11”事件后，西方乃至一些东方国家对伊斯兰世界报道的极度简化与扭曲失真。</p>
+  <p>今年5月，以色列当局延续以往扩大犹太定居点的一贯做派，非法驱逐东耶路撒冷谢赫·贾拉街区的巴勒斯坦居民，又在斋月期间与阿克萨清真寺的巴勒斯坦人发生冲突，暴力镇压示威者。但直到哈马斯向以色列发射火箭炮后，西方主流媒体才以此为起点进行大量报道，巴勒斯坦又一次笼罩在“极端”、“非理性”的脸谱下，以色列在加沙地带的武装行动成了“正义的反击”。20年过去，巴勒斯坦人的生存空间比之前更受挤压，而那种非此即彼、抽空历史和现实的本质主义观点依旧遍行于世。混乱过后，巴勒斯坦被抛入真空，寂静无声。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-31/60b47cb19c232e01c17d1682+L.jpeg" data-id="60b47cb6ab4ffd0cef1c48d9" alt="站在废墟上的巴勒斯坦男子" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+站在废墟上的巴勒斯坦男子
+    </figcaption>
+  </figure>
+  <p><strong>隐身的施害者：西方媒体报道中被动语态的使用</strong></p>
+  <p>从上世纪七八十年代以来，许多知识分子都曾批评过西方媒体（尤其是美国媒体）对以色列暴行的视而不见以及对巴勒斯坦的污名化。萨义德的“中东研究三部曲”，聚焦于西方对东方的再现问题，考察再现的力量如何使权力、知识与传媒共谋，将穆斯林世界化归为一片蛮荒空白。他的好友、美国公共知识分子诺姆·乔姆斯基，则长期致力于撕开大众媒体用语言和诡辩术制造的幻象，例如说他们对“恐怖主义”和“民主”的使用——只有敌国的恐怖活动才是需要被荡平的恐怖主义，而由美国及其盟友施行的恐怖行为不管再怎么残暴，也是为“民主”和“自由”之故。</p>
+  <p>萨义德与乔姆斯基的论述，通常从个案出发，深入挖掘其背后的文化心理与政治、经济机制，其他学者的相关研究也大致采用这一模式，鲜有学者从数量上分析印证偏见的存在。但最近，麻省理工大学电子工程及计算机系的学生霍利·M.杰克逊（Holly M. Jackson），运用最先进的自然语言处理工具包以及经检验的自建回归模型，分析了33000篇《纽约时报》的文章，以统计、定量的方式指证了西方媒体在报道巴以问题时的双标。</p>
+  <p>杰克逊选取的这些文章，分别发表于第一次（1987年12月至1993年9月）和第二次（2000年9月至2005年2月）巴勒斯坦大起义期间，经过对文章语态、用词和语调的分析后，她发现，尽管第二次大起义期间的报道看似更多元，但相对该时段以色列更为暴力血腥的武装行动来说，这些声音显得微不足道，与第一次大起义期间的报道相比，西方媒体对巴勒斯坦的偏见可以说是有增无减。</p>
+  <p>在运用工具包进行分析时，杰克逊特别关注涉及巴以团体行动的动词是被动语态还是主动语态。一般来说，正规写作中不鼓励被动语态的使用，因为它允许写作者隐去动作的施加者。试想在武装冲突期间，如果一篇新闻以“加沙地带受袭，超xx人死亡”为标题，这样的模糊性是否会引诱读者在第一时间把脑海中那个恐怖的大胡子穆斯林当做施暴者呢？退一步来说，即使是一句简单的“数名xx人受袭遇难”，施害的主体也被巧妙淡化，读者不明前因，没有追责对象，只得到一个悲惨的结果。根据杰克逊的分析结果，第一次巴勒斯坦大起义期间，《纽约时报》在提到巴勒斯坦时使用被动语态的情况占15.7%，而提到以色列时只有6.4%的时间在用被动语态，《纽约时报》的写作者们似乎集体性地有意抹去巴勒斯坦惨况的制造者，而更多地明确以色列的损失是谁造成的。进入21世纪后，这一状况并没有改变。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-31/60b47cdd4cd55d54dd5dacfb+L.jpeg" data-id="60b47ce2afa7517017e4d850" alt="第一次巴勒斯坦大起义（上两图）与第二次巴勒斯塔大起义（下两图）期间，《纽约时报》文章以被动语态提到巴勒斯坦人和以色列人时的语气（左列，正值表示积极语气，负值表示消极语气）和客观性（右列，正值越高代表越客观）。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+第一次巴勒斯坦大起义（上两图）与第二次巴勒斯塔大起义（下两图）期间，《纽约时报》文章以被动语态提到巴勒斯坦人和以色列人时的语气（左列，正值表示积极语气，负值表示消极语气）和客观性（右列，正值越高代表越客观）。
+    </figcaption>
+  </figure>
+  <p>此外，杰克逊还留意文章中诸如“杀死”、“焚毁”、“拘捕”等暴力性词汇的使用。分析统计结果表明，第一次巴勒斯坦大起义期间，《纽约时报》在提及巴勒斯坦时使用这些词汇的比例是提及以色列时的两倍，第二次大起义期间两者的差距虽然有所缩减，但正如前文所说的，考虑到该时段的死亡人数几乎是第一次的4.6倍（且大部分是巴勒斯坦人），这些报道绝不如其宣传所说的“客观”、“中立”。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-31/60b47cf59c232e01c17d1683+L.png" data-id="60b47cfaab4ffd0cef1c48da" alt="第一次巴勒斯坦大起义（左）与第二次巴勒斯坦大起义（右）期间，《纽约时报》提及巴勒斯坦人与以色列人时使用暴力性语言的比例对比。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+第一次巴勒斯坦大起义（左）与第二次巴勒斯坦大起义（右）期间，《纽约时报》提及巴勒斯坦人与以色列人时使用暴力性语言的比例对比。
+    </figcaption>
+  </figure>
+  <p>至于今年5月的事件，虽然目前还没有类似的量化研究指明西方媒体对巴勒斯坦历史性困境的无视以及对以色列暴行的纵容，但浏览各大主流媒体的报道，情况也不比之前要好。《纽约时报》记者帕特里克·金斯利（Patrick Kingsley）和伊莎贝尔·克什纳（Isabel Kershner）在一篇文章中写道：“随着战事升级，加沙地带和以色列有超过30人死亡。”以色列在这句话中被明确点出来，而死去的28位巴勒斯坦人却被剥夺了身份。《时代》的一篇文章也有类似问题，它在标题中强调了一名以色列儿童被杀害，却只字不提58名巴勒斯坦儿童的死亡。</p>
+  <p><strong>制造合理的受害者：恐怖主义污名与历史的阻断</strong></p>
+  <p>污名化伊斯兰有两项重要的策略：一是反复渲染“他们”的恐怖活动而隐匿“我们”的，让恐怖分子的标签自动浮现在“他们”头上；二是剔除历史的脉络，将现实因果中的暴力转写为某一文明的基因，从而使所有穆斯林都成为潜在的恐怖分子。</p>
+  <p>1948年建国以后，以色列诚然接收了几十万犹太人，但犹太人两千年后终于“归乡”的神话，却建立在另一群人的流离失所之上。在这片土地上生活了两千年的巴勒斯坦人骤然遭到驱逐，阿拉伯联盟将他们推往前线，却又屡次在战败后装聋作哑，再加上以色列当局长期以来的土地征用政策，巴勒斯坦人的生存空间备受蚕食，到今天，一系列政策和习惯性做法已经演变为公然的种族隔离。</p>
+  <p>学者王炎曾在伯利恒的一个小广场上见到四幅地图，它们描绘的是日益消失的巴勒斯坦，从1947年以前英国托管下犹太与阿拉伯混居的辽阔领域，到“六日战争”后零星条布，巴勒斯坦辖区缩水到原来的12%。与此同时，巴勒斯坦人在其生活的土地上只是“二等公民”，亦或直接说“难民”。巴勒斯坦权力机构颁发的护照很少被其他国家承认，以色列又从2003年开始收紧对巴公民归化政策，只有与以色列公民通婚的人才享有居留权，大量巴勒斯坦人实质上没有国籍。</p>
+  <p>失去身份、脚下的土地岌岌可危、随时可能被推入海洋，这样的生活何尝不是日复一日的恐惧和绝望？西方主流媒体没有将此定义为一场由国家施行的恐怖主义或人道主义危机，这些历史和现实甚至不会在充满血腥和火光的报道中作为背景出现，事情的开头永远是哈马斯可怕而拙劣的火箭弹，佐以《古兰经》和圣战，就像80年代，当以色列在黎巴嫩强迫平民迁徙、轰炸难民营时，其明目张胆的恐怖主义行径也未曾见诸各大媒体，反被夸耀为恐怖主义的“因应之道”（《纽约时报》社论标题Israeli’s Answer to Terror）。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-31/60b47d1e4cd55d54dd5dacfc+L.jpeg" data-id="60b47d2a8717253efd7e2bf7" alt="地图上消失的巴勒斯坦" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+地图上消失的巴勒斯坦
+    </figcaption>
+  </figure>
+  <p>今年5月，《纽约时报》记者伊莎贝尔·克什纳（Isabel Kershner）沿袭这一传统，将以色列中部城市卢德（Lod）的骚乱描绘为当地阿拉伯人针对犹太移民的一次蓄意反扑。克什纳用大量篇幅介绍了被称为“新犹太复国主义”的组织托拉核心（Torah Nucleus），她声称，以色列在巴勒斯坦被占土地上扩大定居点诚然饱受诟病，但托拉核心在以色列合法边界内所施行的犹太化不失为一种“做出改变的尝试”。卢德是一座阿拉伯人与以色列人混居的城市，这座城市里的阿拉伯人只有30%，但恐怕对于托拉核心来说，只有当这个数字是0%的时候才能达到他们所谓的“平衡”。克什纳花大量篇幅叙述了犹太新居者数十年来遭受的来自阿拉伯人的暴力，在有关当前骚乱的部分，她写道：“（卢德市）数百名阿拉伯人走上街头，投掷石块，纵火焚烧汽车和其他财物。引得他们如此泄愤的主要目标，是那些宣称要振兴这座工人阶级城市、使其更犹太化的新迁年轻东正教犹太家庭。”</p>
+  <p>克什纳没有说的是，该市阿拉伯居民在法律上与犹太居民享有平等的权利，现实中却被禁止购买土地，从1948年至今，该地区阿拉伯人口翻了7倍，却没有新增一个阿拉伯定居点，犹太社区反倒增加了700个。克什纳同样没有说的是，犹太军队于1948年进入卢德时大肆驱逐巴勒斯坦人，并杀害了250名男女，其中包括儿童——这场屠杀，至今烙印在当地阿拉伯人的记忆里。</p>
+  <p>每论及此，总有人要问，那么犹太人所遭受的大屠杀呢？他们难道没有权利重返家园吗？且不说学界已有对犹太民族离散神话的质疑以及民族建构的再研究，犹太人在欧洲所受的迫害，从任何道理上讲都无法合理化今日对另一族群的暴行，犹太复国主义更是如此。正如萨义德在评论“9·11”事件时所说：“任何信念、神明与抽象理念都不能为滥杀无辜而辩护。尤其是当一小撮人主导此类行动，他们自认为代表某种信念，其实根本不然。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-31/60b47d494cd55d54dd5dacfd+L.png" data-id="60b47d56afa7517017e4d853" alt="卢德市街头" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+卢德市街头
+    </figcaption>
+  </figure>
+  <p><strong>消失的“萨松”：何处听见巴勒斯坦的声音？</strong></p>
+  <p>《纽约时报》记者托马斯·弗里德曼曾驻耶路撒冷四年，他凭借在第一次巴勒斯坦大起义期间的报道获得了普利策奖，使其成为中东事务的权威，中文读者可能对他在《地球是平的》中有关全球化的论述更熟悉——或许，中东并不在其所论述的全球化框架之内。萨义德与乔姆斯基数次警告，人们必须意识到弗里德曼所宣扬的全球化是在何种秩序下进行，谁主导、谁获利、谁被牺牲、谁被抛弃。</p>
+  <p>弗里德曼曾经为撰写过一篇题为《和平提议》的文章，他挑选了一个名叫萨松（Sasson）的坏脾气老头来代表“以色列沉默的大多数”，认为他所支持的政治和解是巴以问题“和平解决的关键”。然而，这个老头对巴勒斯坦的偏见根深蒂固，他假装一只手是屠刀，反复剁向另一只手的食指，直到比划至关节位置，他说：“如果我们给巴勒斯坦人一个机会，这就是他们会对我们做的事情。”萨松所要求的和解，是让以色列控制被占领区域，并威胁巴勒斯坦人“如果他们把我们中的一个人送进医院，我们将把他们的两百人送进停尸房”。</p>
+  <p>针对弗里德曼的构想，乔姆斯基敏锐地批评道：“没有人提及任何巴勒斯坦的‘萨松’，其实，没有人承认巴勒斯坦人怎么想或期望什么也很重要。对于和平提议的讨论全部建立在这样的基础上：什么对犹太人有利——这才是最重要的。”恰巧，杰克逊在运用自然语言处理工具包进行海量分析时发现，弗里德曼的这篇文章是以被动语态提及巴勒斯坦，而以主动语态提及以色列最多的，他泛泛地提出要确保巴勒斯坦人的权利，却没有明确由什么法律、机构来保障。</p>
+  <p>面对今日的炮火与动荡，各国政府呼吁巴以保持克制，巴以于当地时间5月21日凌晨2时达成停火协议，但这并没能阻止以色列警方在第二天冲入阿萨克清真寺，投放催泪弹和震荡弹，一纸脆弱的搁置承诺，与其说是暂缓矛盾，不如说是刻意回避以色列的种族压迫、中东恐怖主义与犹太复国主义以及美国的关系。萨义德在1984年提出，巴勒斯坦人被剥夺了“叙事的权利”。不论是讲述过去、记录当下，还是拟定未来，巴勒斯坦声音始终被迫缺席。</p>
+  <blockquote>
+    <p>宋宇系媒体人。</p>
+  </blockquote>
+  <blockquote>
+    <p>参考资料：</p>
+    <p>《报道伊斯兰》，爱德华·萨义德著，阎纪宇译，上海译文出版社2009年5月版</p>
+    <p>《民主的幻觉》，诺姆·乔姆斯基著，王燕译，三辉图书丨南京大学出版社2021年1月版</p>
+    <p>The New York Times Distorts the Palestinian Struggle.<a href="http://web.mit.edu/hjackson/www/The_NYT_Distorts_the_Palestinian_Struggle.pdf">http://web.mit.edu/hjackson/www/The_NYT_Distorts_the_Palestinian_Struggle.pdf</a></p>
+    <p>Before Rage Flared, a Push to Make Israel’s Mixed Towns More Jewish.<a href="https://www.nytimes.com/2021/05/23/world/middleeast/arabs-jewish-israel-palestine.html?searchResultPosition=9">https://www.nytimes.com/2021/05/23/world/middleeast/arabs-jewish-israel-palestine.html?searchResultPosition=9</a></p>
+    <p>Proposals for Peace.<a href="https://www.nytimes.com/1988/11/27/magazine/l-proposals-for-peace-388188.html">https://www.nytimes.com/1988/11/27/magazine/l-proposals-for-peace-388188.html</a></p>
+    <p>《寻访巴勒斯坦》 王炎<a href="https://mp.weixin.qq.com/s/0Opw0_Teunqok8Undrx09Q">https://mp.weixin.qq.com/s/0Opw0_Teunqok8Undrx09Q</a></p>
+    <p>《巴勒斯坦被剥夺的“叙述权”；疫苗分配与个人财富有关吗？》<a href="https://mp.weixin.qq.com/s?__biz=MzU4NzQ4OTYzMA==&amp;mid=2247495241&amp;idx=1&amp;sn=4a189fc7cdf795c7c72d32bb0121309f&amp;chksm=fde9e678ca9e6f6e073006a4fb1917fe7f98f6c26ecb76b3df192748d697e5f86bbe7db4fa1b&amp;scene=21#wechat_redirect">https://mp.weixin.qq.com/s?__biz=MzU4NzQ4OTYzMA==&amp;mid=2247495241&amp;idx=1&amp;sn=4a189fc7cdf795c7c72d32bb0121309f&amp;chksm=fde9e678ca9e6f6e073006a4fb1917fe7f98f6c26ecb76b3df192748d697e5f86bbe7db4fa1b&amp;scene=21#wechat_redirect</a></p>
+  </blockquote>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-02</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-02/%E5%88%98%E6%93%8E-%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90-%E6%94%BF%E6%B2%BB%E6%AD%A3%E7%A1%AE%E4%B8%8E%E4%BB%8B%E5%85%A5%E7%A4%BE%E4%BC%9A%E7%9A%84%E8%B7%9D%E7%A6%BB%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          刘擎： 知识分子、政治正确与介入社会的距离丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-01/%E4%BD%9C%E4%B8%BA%E7%A4%BE%E4%BC%9A%E5%BB%BA%E6%9E%84%E7%9A%84-%E5%84%BF%E7%AB%A5-%E4%B8%8E%E4%BD%9C%E4%B8%BA%E7%A4%BE%E4%BC%9A%E9%97%AE%E9%A2%98%E7%9A%84-%E7%AB%A5%E5%B9%B4-%E5%84%BF%E7%AB%A5%E8%8A%82%E8%8D%90%E4%B9%A6/">
+          作为社会建构的“儿童”与作为社会问题的“童年” | 儿童节荐书
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-30</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/">
+          “乡村维密秀”：土味短视频背后的抵抗性亚文化
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-29</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-29/%E9%A9%AC%E6%8B%89%E6%9D%BE%E6%82%B2%E5%89%A7%E8%83%8C%E5%90%8E%E7%9A%84%E5%81%A5%E8%BA%AB%E6%97%B6%E4%BB%A3-%E8%BA%AB%E4%BD%93%E5%BD%A2%E5%A1%91-%E4%B8%AD%E4%BA%A7%E7%84%A6%E8%99%91%E4%B8%8E%E6%9C%8B%E5%85%8B%E5%85%BB%E7%94%9F/">
+          马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/">
+            前一篇：“乡村维密秀”：土味短视频背后的抵抗性亚文化
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-31/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BB%8A%E5%A4%A9%E7%9A%84%E6%8A%97%E8%AE%AE%E6%B4%BB%E5%8A%A8%E6%B2%A1%E6%9C%89%E5%AF%BC%E8%87%B4%E9%9D%A9%E5%91%BD-iYouPort/">
+            後一篇：为什么今天的抗议活动没有导致革命？ - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-31/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BB%8A%E5%A4%A9%E7%9A%84%E6%8A%97%E8%AE%AE%E6%B4%BB%E5%8A%A8%E6%B2%A1%E6%9C%89%E5%AF%BC%E8%87%B4%E9%9D%A9%E5%91%BD-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-01/%E4%BD%9C%E4%B8%BA%E7%A4%BE%E4%BC%9A%E5%BB%BA%E6%9E%84%E7%9A%84-%E5%84%BF%E7%AB%A5-%E4%B8%8E%E4%BD%9C%E4%B8%BA%E7%A4%BE%E4%BC%9A%E9%97%AE%E9%A2%98%E7%9A%84-%E7%AB%A5%E5%B9%B4-%E5%84%BF%E7%AB%A5%E8%8A%82%E8%8D%90%E4%B9%A6/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-31/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BB%8A%E5%A4%A9%E7%9A%84%E6%8A%97%E8%AE%AE%E6%B4%BB%E5%8A%A8%E6%B2%A1%E6%9C%89%E5%AF%BC%E8%87%B4%E9%9D%A9%E5%91%BD-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-01/%E4%BD%9C%E4%B8%BA%E7%A4%BE%E4%BC%9A%E5%BB%BA%E6%9E%84%E7%9A%84-%E5%84%BF%E7%AB%A5-%E4%B8%8E%E4%BD%9C%E4%B8%BA%E7%A4%BE%E4%BC%9A%E9%97%AE%E9%A2%98%E7%9A%84-%E7%AB%A5%E5%B9%B4-%E5%84%BF%E7%AB%A5%E8%8A%82%E8%8D%90%E4%B9%A6/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

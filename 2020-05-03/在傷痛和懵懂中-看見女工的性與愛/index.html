@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>在傷痛和懵懂中，看見女工的性與愛 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+在傷痛和懵懂中，看見女工的性與愛
+——
+" />
+    <meta property="og:description" content="
+在傷痛和懵懂中，看見女工的性與愛
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="在傷痛和懵懂中，看見女工的性與愛" />
+    <meta property="twitter:title" content="在傷痛和懵懂中，看見女工的性與愛" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40islander%2F%25E5%259C%25A8%25E5%2582%25B7%25E7%2597%259B%25E5%2592%258C%25E6%2587%25B5%25E6%2587%2582%25E4%25B8%25AD-%25E7%259C%258B%25E8%25A6%258B%25E5%25A5%25B3%25E5%25B7%25A5%25E7%259A%2584%25E6%2580%25A7%25E8%2588%2587%25E6%2584%259B-bafyreidsgariurdige5n6i3ovv7z3evxzgx7s2kvaokzmklyzz2gpsdkey" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@islander/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B-bafyreidsgariurdige5n6i3ovv7z3evxzgx7s2kvaokzmklyzz2gpsdkey" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@islander/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B-bafyreidsgariurdige5n6i3ovv7z3evxzgx7s2kvaokzmklyzz2gpsdkey&text=在傷痛和懵懂中，看見女工的性與愛&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@islander/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B-bafyreidsgariurdige5n6i3ovv7z3evxzgx7s2kvaokzmklyzz2gpsdkey&title=在傷痛和懵懂中，看見女工的性與愛" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@islander/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B-bafyreidsgariurdige5n6i3ovv7z3evxzgx7s2kvaokzmklyzz2gpsdkey&title=在傷痛和懵懂中，看見女工的性與愛" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=在傷痛和懵懂中，看見女工的性與愛&body=
+在傷痛和懵懂中，看見女工的性與愛
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@islander/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B-bafyreidsgariurdige5n6i3ovv7z3evxzgx7s2kvaokzmklyzz2gpsdkey" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@islander/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B-bafyreidsgariurdige5n6i3ovv7z3evxzgx7s2kvaokzmklyzz2gpsdkey&title=在傷痛和懵懂中，看見女工的性與愛&caption=
+在傷痛和懵懂中，看見女工的性與愛
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=在傷痛和懵懂中，看見女工的性與愛&url=https://matters.news/@islander/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B-bafyreidsgariurdige5n6i3ovv7z3evxzgx7s2kvaokzmklyzz2gpsdkey" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>在傷痛和懵懂中，看見女工的性與愛</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-05-03
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 島民</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@islander/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B-bafyreidsgariurdige5n6i3ovv7z3evxzgx7s2kvaokzmklyzz2gpsdkey" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1588482828000-->
+<p><a href="https://matters.news/@islander/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B-bafyreidsgariurdige5n6i3ovv7z3evxzgx7s2kvaokzmklyzz2gpsdkey">在傷痛和懵懂中，看見女工的性與愛</a>
+——</p>
+
+<div>
+  <figure class="image">
+<img src="https://assets.matters.news/embed/841358b8-e306-4763-9526-e7c091edd2a9.jpeg" data-asset-id="841358b8-e306-4763-9526-e7c091edd2a9" referrerpolicy="no-referrer" />    <figcaption>
+<span></span>
+    </figcaption>
+  </figure>
+  <p>這天晚上，25歲的冬冬躺在床上，腦子里一下閃過多年前在老家見到的一幕駭人景象。這種聯想本是不合時宜的，因為她正要經歷人生的第一次性關係，害羞又緊張，她決心托付真心的男友正在浴室。可是她總忍不住想，接下來要發生的事，是什麼樣的呢？是不是和多年前見到的一樣？</p>
+  <p>那一年她剛剛初中畢業，有一天晚上，她獨自走在路上，親眼看到四個騎摩托車的男孩把三個女孩子拉進了巷子里去。那是她同村的三個女孩子，女孩們掙扎、大喊，她趕緊跑到派出所去報警，可警察卻不相信她，說了好久才跟她去。到的時候，四個男孩剛好騎著摩托車走了。巷子里，地上躺著三個赤裸的女孩，哭泣著。那一幕，冬冬看得很清楚。「我好恨。也很恐懼。」這就是她對性最初的認識。</p>
+  <p>冬冬從老家到深圳打工已經七年了，這一夜和男友在酒店，她被自己的出血嚇壞了，第二天還去看了醫生。醫生發現，過度緊張讓她像痛經一樣的短暫肚子疼，而且因為不懂，她也沒有採取任何避孕措施。</p>
+  <p>她不是沒見過避孕套，之前廠裡面發過，但人家工友一打開，她就覺得「天哪，這樣也行」，趕緊走開了。工友們節日搞活動，結婚的可以領避孕套，她一看，直說：「天哪，好意思拿這個東西過來啊。」</p>
+  <p>不過，同樣在深圳打工的95後女工小芬則代表了另一種對性的態度：「性就跟吃飯、睡覺一樣，就是人的正常需求，也有很多人贊同這種說法。」比她大足足十歲的麗梅則已經結婚生子，丈夫在異地，她住在女工宿舍，有時會偷偷自慰，滿足自己的性需求。然而，她們也有過和冬冬類似的羞恥與恐懼，只是隱痛無人去問。</p>
+  <p>2001年，世界衛生組織資助的《中國城市外來青年女工的生育健康狀況與需求》調查顯示，大多數女工都缺乏正確的性知識。到了2011年，英國BMC旗下的一間學術期刊上刊登了同樣議題的新研究，把調查範圍集中到深圳和廣州三間工廠的共5156名女工，卻發現儘管十年過去，她們大多數仍然對性沒有足夠的認知。女工不是無性的勞作機器，當越來越多的代工企業年復一年吸引著十七八歲的小女孩從鄉村走進城市工廠，又有誰看到了她們的性與愛？</p>
+  <h2 id="section">教育缺失下的性啓蒙</h2>
+  <p>冬冬去了醫院之後，很怕男朋友再提出性行為的要求。第一次的經驗讓她覺得，每次性關係都會是痛的。「如果能的話，我想做試管嬰兒，一次性兩個，一定沒有性生活痛。」她盤算了對方是獨生子，肯定要生孩子，於是這樣打算。</p>
+  <p>她對性的認知，在一些有完整性教育的人看來，實在少得有些荒唐，這跟從小的家庭環境有關。「我家裡都比較封建。我要是一跟家裡說性啊什麼的，我媽肯定會罵我。」到深圳之前，她所有衣服的領子都包到脖子，大多時候都穿白襯衫和西褲。「我媽和大伯母他們都叫我那樣穿。如果你穿得不正經，露這露那，她們就會說你，你看你穿什麼衣服？她們也會在我們面前說，哪家女孩子不正經。」她甚至不知道月經和嬰兒是從同一個通道出來的，也從沒有人跟她說過避孕是怎麼回事。什麼色情小說、A片，她更是沒看過。「女孩子怎麼會想看那些呢？」她說。</p>
+  <p>她之前曾經談過一個男朋友，但談了三年都只是牽一下手，她心裡覺得，要麼就跟定一個人再有性關係，要麼就不要。直到時間一年年過去，和她要好的幾個女工友都陸續有了男朋友，和男朋友同居了，就紛紛來勸她。一個朋友對她說：「你試一下，不是你想得那麼恐怖。」另一個朋友則說：「如果你真的那個的話，可能感情會更好的。」還有朋友說：「你再這樣下去，以後變成個老處女怎麼辦？最起碼趁現在還年輕的，趕緊的。現在開放了嘛，不像以前那麼古老。」</p>
+  <p>被說得多了，又遇到一個自己屬意的新男友，她終於決定試一試。這個男朋友，也就成了她認識性的最重要的途徑，儘管男生自己也不知有多少性知識。</p>
+  <p>和冬冬一樣，許多年輕女工的性知識都是從男性那邊獲得的，小芬和麗梅也是。但不同的是，小芬和麗梅都是因為童年被性侵，而被迫認識了性。</p>
+  <p>說起這段童年經歷，小芬已經釋然。她結過一次婚，婚前和前夫坦誠了往事。他說不介意，讓她深深感動，最終決定嫁給他，可惜最後因債務危機而離婚。在她七八歲的時候，她和小姨住在一起，同村的一個大哥哥性侵了她。那時她對性沒有任何概念，只是看電視講，跟男孩子牽牽手睡一覺就會懷孕，於是特別擔心。幾個月後，搬到鄰村去的媽媽終於來把她接走，結束了她的噩夢。她苦笑著說：」我覺得如果我媽再不把我換個環境，我可能就會像新聞裡面說的，沒准兒十二三歲就懷孕了，都有可能。「至今，她小姨和媽媽都不知道曾發生過性侵的事，她從沒說過。「這要跟她們說，她們不得傷心一輩子啊？」</p>
+  <p>但是性教育的缺乏，讓她一直到十七八歲出來打工，都擔心自己會因為童年的經歷而懷孕。直到她在深圳聽了女工機構的生理課，才明白是怎麼回事。可是新的擔心又來了。「我就擔心，這不是處女了，我該怎麼辦，我沒法找到自己的真愛了。」那時她剛好暗戀一個男生，就旁敲側擊地問他：如果你的女朋友不是處的話怎麼辦？結果對方想都沒想就說：那就分嘍。小芬一聽，再也沒對這男生抱過任何幻想。</p>
+  <p>她在拉上和工友們也聊過處女情結的話題，發現主流的看法仍然是，如果不是處女，可能會嫁不出去。「大部分人還是會認為自己是一個處女比較重要。」但真到了談婚論嫁的時候，她沒想過隱瞞，性侵的事在她心裡是個疙瘩，她覺得該讓對方知道，要是對方介意，就分了吧。</p>
+  <p>但已經結婚八年的麗梅，卻從沒有對丈夫提起過以前痛苦的遭遇。她的性啓蒙，來自一場連恐帶嚇的拐帶。初中畢業後，出來打工前，她在老家遇到一個大她二十幾歲的男人，對方拿她爸爸多年的家暴史來恐嚇她，說留在家裡遲早被打死，把她帶離了老家。走的時候，她身上什麼也沒帶，連身份證也沒有。在路上，對方騙她說晚上沒有車了，就帶她到酒店，強迫她發生了性關係，還帶她到山東、河南一路轉悠。路上發現，她懷孕了。「懷孕四個月，他就帶我回他老家，我感覺整個人很悶，他的親戚看我不叫人，就罵我，還把我的頭按在水里，差點把我淹死……」說到這裡，麗梅泣不成聲。</p>
+  <p>最後她的家人終於輾轉找到了她，她在親戚開的小診所吃了打胎藥，那個男人從此人間蒸發。這件往事，從此成為麗梅心上的一個秘密。到深圳打工以後，相親認識的丈夫她不怎麼喜歡，也不怎麼討厭，臉也沒看清，就由家人做主，領了結婚證。丈夫至今不知道那件事。「他一定不能接受。」麗梅臉色一暗，說，「他還是不要知道這些事好。」丈夫在北方城市做建築工，兩人異地婚姻，一年就見一兩次，感情淡漠，就這樣，已經七八年。</p>
+  <h2 id="section-1">不能說的性</h2>
+  <p>麗梅和丈夫因為打工而長年分居兩地，最長的一次相處，就只有麗梅一次辭工去找他的三個月。他們已經有一個大女兒，家裡人總想讓她生個二胎，添個孫子。丈夫的姐姐就說過，讓她別工作了，工資不要了，跟著丈夫，多過夫妻生活，早點懷上。麗梅心裡不是滋味兒，但也沒說。當年藥流掉四個月的孩子，讓她對懷孕其實有點恐懼，生第一個已經不容易。性，就好像只是為了生育。</p>
+  <p>然而她真正想從性中獲得的東西，卻從來沒有人問過，她也不曾主動提過。「就算我心裡有需求，我也不主動。」她說。她和丈夫至今的每一次性關係，都是丈夫提出的要求。她有時候拒絕，丈夫就會很生氣，還不允許她發出聲音。</p>
+  <p>可她的真實感受其實是：「我從來沒在我老公那裡得到過快感。」她沒說過，也不知道如果說了，對方會是什麼反應。關鍵是，「我要怎麼說呢？」具體的感受是，她每次一有感覺，丈夫就已經停了，「他根本沒有前戲，也沒覺得要有」。她說自己不喜歡跟他溝通，就算是在親密的性行為前後，也都是「你睡你的，我睡我的，好像我唯一跟他的交集，就是躺個人在邊上而已」。</p>
+  <p>麗梅知道自己對這樣的性生活不滿意。面對類似的情況，小芬的方法是，把自己的需要原原本本說出來，告訴對方。「比如說這一次他比較用力，比較粗暴，我就會事後跟他講，溫柔點兒。那下次他就會慢一點，不會那麼用力。」事實證明，她的傾訴是有效的。</p>
+  <p>不過她也明白，像她這樣的做法在女工友中其實很少見。拉上一堆女孩子總一起聊天，只有開開黃色玩笑的時候才跟性沾一點邊兒，尺度最大的說法就是：「你們好幾個還沒結婚的，年齡又比較大，你怎麼解決你個人的那個問題啊？」最後總是開開玩笑就過去了。女孩子們在一起，聊到月經、痛經總是很自然，可是一旦討論到性關係，小芬說，基本上沒有放得開的。「像這種事情，她們會去百度吧。」當然，她也知道百度上真真假假，「可是她們寧願相信假的，也不願意去問啊。因為這種事情不一定能開得了口，這是最關鍵的。」</p>
+  <p>冬冬就是小芬說的這種女孩。她在廠裡也有些已婚的女工友比較要好，但大家從來都不談性的話題，要不就是談家庭、孩子、婆媳關係。她自己也回避這些問題。「不敢說。連父母都不敢說，有時候親姐姐都不敢說，因為說出來覺得好那個。」比小芬遇到的那些年輕工友更甚，冬冬連百度都不會去百度。儘管在第一次性行為之後，她非常擔心是不是每次性行為都會痛，但她至今都沒有在網上查過、問過這個問題，也沒有在現實中問過任何人。性，對她來說是非常羞恥的事，不僅羞於啓齒，就連自己私底下去查一查、看一看，都很羞恥。</p>
+  <p>她也害怕未婚先孕。來深圳的第一年，她進廠第一天就遇到跳樓事件，一個女孩就在她面前一兩米的地方，「嘭」，從五樓砸下來。跳樓的原因是，女孩未婚先孕，男友跑了，不要她了，最終一屍兩命。但出於羞恥，冬冬也從沒有問過人該怎樣避孕，只有一個模糊的概念。「這種事情，哪裡好意思問呢？」</p>
+  <h2 id="section-2">性需求，她們這樣解決</h2>
+  <p>對性感到最羞恥的冬冬，還在為男友可能的下一次性邀約而苦惱。她不是不願意，只是怕痛，又怕懷孕，但又不好意思去買避孕套，更開不了口讓男友準備避孕套。「做女人真苦。」她想。</p>
+  <p>但小芬說，跟男孩子相處之後，她發現這些事情「很正常」。「就不是那種，特別害羞啊，不是在犯罪，不是一件羞恥的事。」她說。即使童年被性侵，她也能克服陰影，面對自己的慾望。「我一直沒有覺得做愛是一件特別惡心的事情。」</p>
+  <p>離婚以後，她搬回工廠宿舍住，八個女工一起。有一陣子，她很愛看網上的色情漫畫，「直接就是男的和女的在那兒，不知道為啥就開始了」。和丈夫異地的麗梅也住在宿舍，也會躲在床上用手機看色情小說。</p>
+  <p>長年見不到丈夫，她有時覺得自己有需求，就在晚上關燈之後，在被子裡面悄悄自慰。老家房間里偶然翻到的色情硬碟，教會了她自慰的方法。比起來，她覺得自己來，比跟丈夫過夫妻生活，還要來得舒服。小芬也這樣覺得。她還一直想嘗試一些自慰工具，但只是在網上看，一直沒下單，因為太貴。</p>
+  <p>小芬是被性侵之後學會自慰的，小時候睡覺會偷偷夾被子，被人看見就馬上縮回去。「就一直覺得這個事情不好，是我一個人的秘密。」直到在深圳接觸了女工機構，才發現不止她一個人會這樣，原來好多人都會這樣，她終於沒有負罪感了，但還是會怕周圍的人知道了，會用異樣的眼光看她，所以還是要偷偷摸摸。宿舍裝了床簾以後就好多了，床簾一拉，別人就不會發現她。</p>
+  <p>沒有伴侶，或是伴侶不在身邊，有人會選擇在廠裡找個性伴侶，做「流水夫妻」。麗梅就遇到過這樣的邀請，對方直接對她說：「我們都是異地，互相解決吧。」所謂「流水夫妻」，在她看來也就是「炮友」，她並不想要，所以就拒絕了。她怕危險，也怕自己投入感情，影響真正的婚姻和老家的孩子。小芬一度想過試著約炮，但最後還是覺得太危險，不如自己解決。</p>
+  <p>很特別的是，小芬還開始探索自己的性取向，覺得自己有可能也喜歡女生。這並不是因為她對哪個女生心動了，而是因為她對性行為的過程產生了新的觀察和理解。「我覺得一個男的和一個女的在一起做愛，多多少少還是有一種不平等的感覺，就好像他總在支配你。」這種感覺從何而來，我們不得而知，不過小芬也還沒有試過和女生發生性關係，「也許差不多，也有可能？」她笑自己。</p>
+  <p>這一切，對還剛剛開始認識性的冬冬來說，都讓她瞪大眼睛。「原來廠裡會有女工看色情小說？我真的不知道！」對性最懵懂、最害臊的她，還不能理解女生可以這樣大膽直接地面對自己的性需求。但她也意識到，女工多懂些性知識，能夠更好地保護自己，這是她願意去推動的事。「廠裡面的女孩子欠缺知識，不知道怎麼避孕，又懷孕，又打，打了又打，對這些事是盲目的。」她想成立一個女工小組，一起來討論這些，學習這些。她也希望鼓勵自己不再排斥談性，要開始看性教育的微信公眾號，參加公益組織的生理課。「我自己就像當試驗品，嘗試之後看我能不能適應這個角色吧！這樣我才能想到，大家的需求是什麼？大家的想法是什麼？我自己也才可以去解決問題。」她說。</p>
+  <p>在傷痛和懵懂之後，她要看見女工的性與愛。</p>
+  <p>（原文刊於尖椒部落，<a href="http://www.jianjiaobuluo.com/content/11897" data-href="http://www.jianjiaobuluo.com/content/11897" target="_blank">http://www.jianjiaobuluo.com/content/11897</a>，此為初版，與刊出版略有不同）</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-05-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-13/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA/">
+          異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-05</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-05/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C/">
+          像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-02/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E/">
+          後重慶大廈時代 麥高登的非裔廣州
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-02/%E6%98%8E%E6%B8%85%E8%80%81%E5%AE%85%E7%9A%84-%E9%A3%9B%E5%B1%8B%E7%92%B0%E9%81%8A%E8%A8%98-%E5%9C%A8%E4%B8%AD%E5%9C%8B-%E5%8F%A4%E5%BB%BA%E7%AF%89%E9%83%BD%E8%83%BD%E6%89%B9%E7%99%BC/">
+          明清老宅的「飛屋環遊記」：在中國，古建築都能批發
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-02/%E5%B0%B1%E4%B8%9A%E5%86%B2%E5%87%BB%E4%BD%95%E8%A7%A3/">
+            前一篇：就业冲击何解
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-03/%E7%9B%91%E6%8E%A7%E6%96%B0%E5%86%A0%E7%97%85%E6%AF%92-%E8%BF%98%E6%98%AF%E7%9B%91%E6%8E%A7%E4%BD%A0/">
+            後一篇：监控新冠病毒，还是监控你？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-05-02/%E5%B0%B1%E4%B8%9A%E5%86%B2%E5%87%BB%E4%BD%95%E8%A7%A3/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-05-03/%E7%9B%91%E6%8E%A7%E6%96%B0%E5%86%A0%E7%97%85%E6%AF%92-%E8%BF%98%E6%98%AF%E7%9B%91%E6%8E%A7%E4%BD%A0/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-05-05/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-05-02/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-05-02/%E5%B0%B1%E4%B8%9A%E5%86%B2%E5%87%BB%E4%BD%95%E8%A7%A3/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-05-03/%E7%9B%91%E6%8E%A7%E6%96%B0%E5%86%A0%E7%97%85%E6%AF%92-%E8%BF%98%E6%98%AF%E7%9B%91%E6%8E%A7%E4%BD%A0/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-05-05/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-05-02/%E5%BE%8C%E9%87%8D%E6%85%B6%E5%A4%A7%E5%BB%88%E6%99%82%E4%BB%A3-%E9%BA%A5%E9%AB%98%E7%99%BB%E7%9A%84%E9%9D%9E%E8%A3%94%E5%BB%A3%E5%B7%9E/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

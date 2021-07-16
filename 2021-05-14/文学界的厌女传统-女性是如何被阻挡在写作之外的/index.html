@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>文学界的厌女传统：女性是如何被阻挡在写作之外的？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+文学界的厌女传统：女性是如何被阻挡在写作之外的？
+——
+" />
+    <meta property="og:description" content="
+文学界的厌女传统：女性是如何被阻挡在写作之外的？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="文学界的厌女传统：女性是如何被阻挡在写作之外的？" />
+    <meta property="twitter:title" content="文学界的厌女传统：女性是如何被阻挡在写作之外的？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F609df2d2dd09510ee2cb0e5c" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/609df2d2dd09510ee2cb0e5c" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/609df2d2dd09510ee2cb0e5c&text=文学界的厌女传统：女性是如何被阻挡在写作之外的？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/609df2d2dd09510ee2cb0e5c&title=文学界的厌女传统：女性是如何被阻挡在写作之外的？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/609df2d2dd09510ee2cb0e5c&title=文学界的厌女传统：女性是如何被阻挡在写作之外的？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=文学界的厌女传统：女性是如何被阻挡在写作之外的？&body=
+文学界的厌女传统：女性是如何被阻挡在写作之外的？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/609df2d2dd09510ee2cb0e5c" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/609df2d2dd09510ee2cb0e5c&title=文学界的厌女传统：女性是如何被阻挡在写作之外的？&caption=
+文学界的厌女传统：女性是如何被阻挡在写作之外的？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=文学界的厌女传统：女性是如何被阻挡在写作之外的？&url=https://www.allnow.com/post/609df2d2dd09510ee2cb0e5c" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>文学界的厌女传统：女性是如何被阻挡在写作之外的？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-14
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 马盖先</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/609df2d2dd09510ee2cb0e5c" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/609df2d2dd09510ee2cb0e5c">文学界的厌女传统：女性是如何被阻挡在写作之外的？</a>
+——</p>
+
+<div>
+  <p><strong>为什么要读一本30年前出版的书？</strong></p>
+  <p> </p>
+  <p>上世纪七十年代，乔安娜·拉斯出版了一本小说合集，讲述女主人公艾力克斯（Alyx）冒险的故事，其中几个故事曾单独出版，比如《在天堂野餐》。她刻画了一个在科幻作品里少有的女英雄，曾嫁给粗鲁的男人，后成为海盗，有过许多惊险之旅。</p>
+  <p> </p>
+  <p>长久以来，科幻作品主要是由男性或男孩撰写；即便作品中有女性角色，大多是作为“附属品”，比如引起男主人公欲望或恐惧，或者那种等待救援的形象，女性角色的存在只是衬托出男主人公的男性气概。到了20世纪七八十年代，越来越多的的女性参与撰写科幻，却没有代表现实意义的女性人物的出现，女性形象大多是家庭主妇——女主人公的家庭美德拯救了整个时代。拉斯曾说：“科幻中有许多女性形象。但没有一个真正的女人。”拉斯是最早对此形成挑战的女作者之一，之后她亦被认为是最重要的女性主义科幻作家之一，主要科幻作品另有《雌性男人》等。</p>
+  <p> </p>
+  <p>1983年，拉斯出版了《如何抑止女性写作》，模仿文学评论中的惯用论调，以反讽的方式指出那些曾贬低和无视女性作者的人，包括鼎鼎大名的狄更斯、海明威、卢梭等。她也指出，不少著名女作家诸如伍尔夫、勃朗特姐妹、简·奥斯汀也曾在写作方面遭到贬抑。女诗人的遭遇也差不多，有名美国女诗人曾提到：“所有关于女人的诗歌，都是男人写的，男人写诗，女人存在于诗歌里。”就是说，男人是主体，拥有书写和改写的能力和权力；而女人是被书写的对象，是被动的、是静止的。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609df338b9c34444a4624b3d" src="https://img.allhistory.com/now/2021-05-14/609df3364cd55d1f8948d3a6+L.png" alt="《如何抑止女性写作》，[美]乔安娜·拉斯著，章艳译，三辉图书丨南京大学出版社2020年11月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《如何抑止女性写作》，[美]乔安娜·拉斯著，章艳译，三辉图书丨南京大学出版社2020年11月版
+    </figcaption>
+  </figure>
+  <p>除了文本内容，本书收集资料的方法也颇为有趣——分析语气和预设，也就是评论中那些无意透露出来的偏见。比如罗威尔（Lowell）在为女诗人普拉斯的《爱丽儿》写的序中，虽然满是赞誉，但无意识地展现出谴责。他是这样说的，普拉斯不是一个自白派，她没有胡思乱想，她不是女诗人（隐含的预设是，女诗人喜欢胡思乱想）：“诗中所写的一切都是个人的，是他的自白是他的感觉，但这种感觉的方式是有节制的幻觉。”（P42）</p>
+  <p> </p>
+  <p>2020年中国引进并翻译了这本书，中文名为《如何抑止女性写作》。2016年，三辉图书开始策划“女性书系”，引进了一系列讲述当下全球各种女性的生命经验的非虚构写作书籍，涵盖强奸、女性知识分子、代孕以及女性写作。当时，编辑等人向版代询问了许多相关书籍，直到版代推荐了一本细数了女性在创作时受到的结构性暴力的书《How to Suppress Women’s Writing》，这本出版于将近30年前的书才有了中文版，与中国读者见面。</p>
+  <p> </p>
+  <p>去年底《如何抑止女性写作》出版后，图书编辑在豆瓣上发起话题：“我所见的对女性创作的抑止”，请人们谈谈亲历的或见到的关于女性写作的打压。至今，这个话题在豆瓣上已经有80多万浏览量，许多人写下亲身经历，其中有不少和两百年前大同小异。或许，与文化霸权的抗争是永恒存在的。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609df352ee4d864c459d5b0c" src="https://img.allhistory.com/now/2021-05-14/609df3514cd55d1f8948d3a7+L.png" alt=" " ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+ 
+    </figcaption>
+  </figure>
+  <p><strong>“我常常有写作的冲动，又常常‘失去’我的作品”</strong></p>
+  <p> </p>
+  <p>1942年，普利策奖得主埃伦·格拉斯哥（Ellen Glasgow）拿着自己的第一部小说的手稿找代理商时，那个代理商说：“你太漂亮了，不应该当小说家，你不穿衣服的时候一样可爱。”他还企图强奸格拉斯哥。拉斯在书中提到了诸多类似的例子。</p>
+  <p> </p>
+  <p>事实上，19世纪20世纪女性写作最大的阻碍来自于家庭。大多数女人把孩子、家务排在前面，最后才是自己，要改变这个顺序真的太难了，或者说在那个时代，大多数人未曾尝试改变顺序。比如，有一名女性是四个孩子的妈妈，在外工作，回家要做家务，搭乘打公交车时都想着写作，她说：“我常常有写作的冲动，又常常‘失去’我的作品。”这些女性要工作，又要料理家务照顾孩子，让丈夫能够集中精力、无后顾之忧投入工作。</p>
+  <p> </p>
+  <p>拉斯于1953年考入康奈尔大学文理学院，是当时唯一的女学生。1967年，她成为康奈尔大学的教师，女大学生的比例已经提高到了50%。即便如此，在那个年代劝阻女性求知和劝阻女性写作很普遍。</p>
+  <p> </p>
+  <p>比如说，人们还是认为读博士的女孩子一定是疯子。一个女孩曾跑到拉斯办公室里哭，不是因为家人反对她写作，而是因为家人觉得写作可以让她在结婚之前有点事情做。社会在看待严肃写作的女孩子时，会认为这个行为很可爱，或者她比较早熟，至少是没什么坏处，但没有人会认真对待这件事。而如果是一个男孩宣告自己要成为作家，人们往往投以期待的目光。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609df3974e878e0826621eb0" src="https://img.allhistory.com/now/2021-05-14/609df3959c232e04ae3f1708+L.png" alt="女性写作者" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+女性写作者
+    </figcaption>
+  </figure>
+  <p>拉斯曾和另外两位男性教授，一起为一个创意写作术士项目筛选申请人。在点评对女性申请人的作品时，拉斯和他们的出现了意见分歧。拉斯很喜欢一个作品，这个作品写15岁的少女在和一个她不喜欢的男孩约会之后，独自回到妈妈的厨房，她打开擦得锃亮的白色冰箱，令人吃惊的事情发生了，冰箱里神奇而且自然地开满了红色的蔷薇花。</p>
+  <p> </p>
+  <p>在拉斯看来，这是一个少女经历的微妙心理，是青春期会出现的专属于女孩子的痛苦与悲伤。当时她打开了女性的世界，进入了一个有着完全不同标准的世界。这冰箱只是一个象征物，代表着现实中的妈妈以及女性世界。</p>
+  <p> </p>
+  <p>然而，另外两名男性教授无法理解，甚至厌恶这些元素。女孩或女性体验这些非常微妙的内容在那个时代的文学作品中并不常见，所以男性阅读者几乎不可能从文学作品当中辨识出来。拉斯经常听到这样的评价：“她写了，可是我看不懂她写了什么。”其实，这些逻辑的前提是我看不懂的东西就不存在，“他们不会想去了解自己看不懂的东西到底是什么”。</p>
+  <p> </p>
+  <p>现实是，许多努力写作的女孩子通过写作寻找自己，在这个世界上的价值找到写小说。然而，等到下定决心认真写作时，周围的人不断地谴责，不断地给你负面的评价，打消她们的积极性。也就是说，“她所找到的东西最终否定了她所做的一切，她始终没找到那个全新投入工作、充满创造力的生灵——她自己。”</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609df3afee4d864c459d5b0d" src="https://img.allhistory.com/now/2021-05-14/609df3ad4cd55d1f8948d3a8+L.png" alt="1910年代女性写作小组" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1910年代女性写作小组
+    </figcaption>
+  </figure>
+  <p><strong>几招常见的对女性作者的贬低</strong></p>
+  <p> </p>
+  <p>去年，有人在推特开了个账号，冒充热门日漫《鬼灭之刃》的作者“鳄鱼老师”吾峠呼世晴发文：“我其实是个女人。对不起。”随后，少年JUMP官推发文证实该账号并非本人。虽然这是个大乌龙，但引发的讨论更令人惊讶。有许多人留言：“热血少年漫画的作者必须得是男性”，“女人怎么可能懂热血、青春？”“女人应该老老实实画少女爱情漫画”。</p>
+  <p> </p>
+  <p>目前，“鳄鱼老师”的性别还未正式公布，但颇为讽刺的是，许多人在听到作者性别后的反应与书中的一个桥段几乎一模一样——而那发生在170多年前。</p>
+  <p> </p>
+  <p>当时，英国文坛出现一份令人震惊的作品，作者是个名不见经传的新人，许多文学评论家公开表示：“这份作品很有气势，很有创造力。”书中刻画了一个英国文坛史上少见的施虐者形象，野蛮、残酷，就像恶魔。人们纷纷猜想，作者或许是一个粗鲁的水手，虽然不了解女人，但不影响这本书是一份难得的现实主义作品，刻画了赤裸裸的现实。</p>
+  <p> </p>
+  <p>1850年，转折到来。这本小说再版，作者身份公诸于世——是个女作家。很快，人们不再称它是现实主义作品，而说这本作品是彻头彻尾的怪物，不少评论家写了长篇文章讨论这个作者而不是小说本身，人们说：“作者极其幼稚，女人不可能写出这么邪恶和现实的内容，这部小说只能被归类为爱情故事，是文学界的怪物。”还有人说，小说后半部分经历了女性化，使艺术性大打折扣。</p>
+  <p> </p>
+  <p>这本小说，就是艾米莉·勃朗特的《呼啸山庄》。过了将近一百年，贬低还未完全结束。1939年，由这本小说改编的电影采取了此前评论家们的意见，让主人公希斯克利夫的扮相更帅，还删了他性格残酷的内容，扭曲了勃朗特原先所表达的中心思想。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609df3ccee4d864c459d5b0e" src="https://img.allhistory.com/now/2021-05-14/609df3cb4cd55d1f8948d3ab+L.png" alt="勃朗特三姐妹" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+勃朗特三姐妹
+    </figcaption>
+  </figure>
+  <p>拉斯细数了人们常用来驳斥女性写作能力的说辞：第一，剥夺作者的著作权，“她没有写”；第二，诋毁作者，“她根本不该写”；第三，内容的双重标准，“她写的是什么东西？”第四，错误的归类，“她不是真正的艺术家，她写的不是真正的艺术，所以怎么可能写出文学作品呢？”</p>
+  <p> </p>
+  <p>还有一些攻击更加隐晦，没有说“不是女人写的，而是男人写的”，而是说“它自己写的”。没错，是“它”。</p>
+  <p> </p>
+  <p>在1848年的《北美评论》中，美国散文家和评论家珀西·埃德温·惠普尔（Percy Edwin Whipple） 在评价《简爱》的作者时就说：“这本书有两个作者，一个是姐姐，一个是弟弟，因为女人会无意识地表露出自己在生活中听到的思想和情感。”无独有偶，对于《科学怪人》这本书的作者，有人质疑说：“女人只是媒介，是在传递周围人的思想。”言下之意，作者只是被动地反映了身边人的思想，而且这些身边人大多是男性。总而言之，书中思想不是她独立思考的结果。</p>
+  <p> </p>
+  <p>拉斯发现，有种剥夺作者身份的方式最为彻底，也就是“这本书不是女人写的，因为写这本书的女人不仅仅是个女人”。（P31）狄更斯曾这样夸奖妻妹玛丽·霍加斯（Mary Hogarth）：在她的一生中，她远远超越了其性别和年龄所带来的弱点和虚荣。换句话说，女性作者只有超越其性别，才能写出好作品；女性身份，是永远无法写出优秀作品的。</p>
+  <p> </p>
+  <p>厄休拉曾经是英伦三岛图书发行量最大的科幻小说家，作品包括《地海》系列、《黑暗的左手》。曾有两名男作家在闲聊时聊到了一些女作家，提到厄休拉，其中一位表达了对她的崇敬之情，把另一位则表示赞同，紧接着一句：“你知道他的父亲是谁吗？”</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609df3eaee4d864c459d5b0f" src="https://img.allhistory.com/now/2021-05-14/609df3e94cd55d1f8948d3ad+L.png" alt=" " ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+ 
+    </figcaption>
+  </figure>
+  <p>到了20世纪，已经很少人用行为不端来形容女性写作了，但对女性作者的不屑发展为另一种方式——自白说。就是一个女性作家写的东西是自白，而非自传。这有两层意思，一个是她们写的并不是艺术，第二个是书写的内容是可耻的，且太过私人化，“真正的作家不应该把私人的东西告诉别人。”不过，也有人指出，男性作家在表列表达强烈情感的经历时，通常不会被贬低以为是自白，而会用自传来形容。</p>
+  <p> </p>
+  <p>拉斯发现，女性作家更经常以及更善于诉说、控诉，以及表达一些不太容易被社会接受的情欲，比如同性恋者的性欲；相较之下，男性作家的愤怒，有时是一种“革命”，有时是愚蠢的表现，但人们往往不会用“自白”去形容他们的表达方式。</p>
+  <p> </p>
+  <p>历史上，诸多著名的男性知识分子公开表示女性缺乏理性分析的能力。比如，卢梭一直认为，知识女性总想把自己变成男人。著名的精神分析学家弗洛伊德说：“女人渴望拥有男性生殖器，这个想法也许导致她们产生了进行分析的动机。”女性从事脑力工作，也常被认为是对被压抑的欲望的一种升华和调整。弗洛伊德的得意门生卡尔亚伯拉罕也说道：“相当一部分女性无法在心理上适应自己的女性角色，她们的同性恋倾向或者被压抑已久的成为男性的想法会升华，也就是成为男性一样，追求脑力劳动。”</p>
+  <p> </p>
+  <p>玛丽亚·曼尼丝（Marya Mannes）于1963年发表了一篇名为《富有创造力的女性的难题》的文章，提到“温和的革命”应当如此：女人可以爱男人，但不会因为男人放弃自己；女人可以爱孩子，但不会把心血都花在她们身上；女人可以享受家务，但不会醉心于其中；女人可以很有女人味，但不会沉迷于此。</p>
+  <p> </p>
+  <p>不过，她也无奈地说：“她们只能推迟结婚，嫁一个罕见又体贴的丈夫，或者忍受孤独，接受工作和内疚感的双重压力，这些孤独的少数人只能继续坚持下去。‘温和的革命’真的是少数。大部分觉醒后的女性还是带着强烈的愤怒和绝望继续生活着。”</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609df404b9c34444a4624b40" src="https://img.allhistory.com/now/2021-05-14/609df4029c232e04ae3f170b+L.png" alt="女性写作群体" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+女性写作群体
+    </figcaption>
+  </figure>
+  <p><strong>本书真正要探讨的是“如何对待少数派”</strong></p>
+  <p> </p>
+  <p>拉斯从未真正被视为20世纪七八十年代科幻小说家、女性小说家、美国文学家。</p>
+  <p> </p>
+  <p>随着越来越多女性进入原先由男性占领的领域和专业，在很长一段时间，她们也学会或复刻男性的做法。事实上，许多女孩为了保留女性主义，彼此之间创造了很多非正式习惯，包括剪难看的发型、把女性主义摇滚乐队的歌词写在牛仔裤上。“如果官方历史不能告诉你，你是从哪里来的，那么你就应该自己创造一些途径。”</p>
+  <p> </p>
+  <p>那么，到底什么是性别平等？</p>
+  <p> </p>
+  <p>这本书虽然讨论“女性为何被阻挡在写作之外”，但它并非仅仅谈了性别的问题，而涉及了多元性。也就是，人们何时能把多元性当做一件单纯、令人激动的美好事物，而不是出现了一个“异类”，就认为他/她是对现存社会结构的挑战与威胁，去试图消灭他/她。因此，这本书真正要说的是承认少数派。假设在当今社会，男人成了少数派，那也应该承认男性应有的权利。</p>
+  <p> </p>
+  <p>这里就涉及到一个“他者”的概念。纵观历史，我们会发现，特权群体的形成往往建立在被打击被剥削的那一群人上，特权群体不愿意承认他者的艺术，原因是他们需要他者的对比，才得以树立他们的特权地位。</p>
+  <p> </p>
+  <p>拉斯提到，富人被掩盖的一部分真相是“他们从谁那里获取了金钱、用怎样的方式获取财富”，穷人其实是富人成为富人的基础，没有穷人作为对比，哪来的富人呢？相似的，男性长久以来成为历史的主角，是因为女性被剥夺了相应的权利；白人是主流人群，是因为有色人种被剥夺了权利；正常性欲被掩盖的背后，是某一种表达性欲的方式获得特权……（P183）</p>
+  <p> </p>
+  <p>在女性主义的诸多流派中，有一派是“黑人女性主义”。此前的女性主义者发现，当西方学者在高谈女性主义时，其实正在压迫另一群女人，比如白人中产阶级女性得以在外打拼工作，为自己得以建立事业为傲，某种程度上是因为她们雇佣了菲佣——第三世界女性，帮她们处理家务。因此，才有了“黑人女性主义”。这个流派认为认为女性主义并非铁板一块，应该关注和分析不同阶层、制度下的女性面临的困境。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="609df4324e878e0826621eb1" src="https://img.allhistory.com/now/2021-05-14/609df4314cd55d1f8948d3af+L.png" alt="女性写作者" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+女性写作者
+    </figcaption>
+  </figure>
+  <p>《如何抑止女性写作》真正要传达的是尊重每一个群体，不管你是男人还是女人，是异性恋还是同性恋，是白人还是黑人。</p>
+  <p> </p>
+  <p>拉斯不仅是在谈论艺术和文学，也是在谈一个普世价值观：不可能有唯一的价值中心，也就无所谓绝对标准：“有必要用多个价值中心来代替那种关于好坏的线性等级，每一个价值中心都有自己的外围，有些彼此之间更为接近，有些更为远离，这些中心都是由历史事实构建的。不应该要求只有一种‘正确的风格’。”（P185）</p>
+  <p> </p>
+  <p>在拉斯心中，长期统治历史的绝对价值观，就像“人类曾经坚持认为太阳是围着地球转这样的错误观点”。月球和地球围绕着一个中心旋转，而太阳围着另一个共同的中心旋转，当我们观察时，要把所有太阳外围的行星都算进去，如此，事情就变得复杂。如果你问：“从整个宇宙的中心来看，地球的运动到底是怎么样的？”那唯一的回答是不知道，因为没有宇宙中心。</p>
+  <p> </p>
+  <blockquote>
+    <p>马盖先，曾留学台湾攻读社会学，关注青年文化、全球化、女性、阶层，曾为多部学术著作撰写书评社会学，个人书评公众号“与你一起夜读社会学” （macgyverbook）。</p>
+  </blockquote>
+  <p> </p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-16</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-16/%E6%88%98%E4%BA%89%E4%B8%8E%E9%9D%A9%E5%91%BD%E6%97%B6%E6%9C%9F%E7%9A%84%E8%A5%BF%E5%8D%97%E8%81%94%E5%A4%A7-%E5%9C%A8%E8%87%AA%E7%94%B1%E6%B0%91%E4%B8%BB%E4%B8%8E%E6%B0%91%E6%97%8F%E5%A4%A7%E4%B9%89%E4%B9%8B%E9%97%B4/">
+          战争与革命时期的西南联大：在自由民主与民族大义之间
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-15</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-15/%E5%93%88%E8%B4%9D%E9%A9%AC%E6%96%AF%E6%8B%92%E7%BB%9D%E9%98%BF%E8%81%94%E9%85%8B%E5%9B%BE%E4%B9%A6%E5%A5%96-%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9A%84%E8%89%AF%E7%9F%A5%E8%A1%A8%E7%8E%B0-%E8%BF%98%E6%98%AF%E8%A5%BF%E6%96%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%82%B2%E6%85%A2/">
+          哈贝马斯拒绝阿联酋图书奖：哲学家的良知表现，还是西方世界的傲慢？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-13</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-13/%E5%BE%90%E8%B4%B2-%E8%AD%A6%E6%83%95%E4%B8%AD%E5%9B%BD%E7%9A%84-%E6%9F%8F%E5%85%8B%E7%83%AD-%E5%92%8C-%E4%BF%9D%E5%AE%88%E4%B8%BB%E4%B9%89%E7%83%AD-%E9%80%A0%E6%88%90%E9%9B%86%E4%BD%93%E6%80%9D%E6%83%B3%E8%BF%B7%E6%80%9D-%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E8%AF%84/">
+          徐贲③：警惕中国的“柏克热”和“保守主义热”造成集体思想迷思 丨燕京书评
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-11</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-11/%E7%AA%81%E7%A0%B4%E4%B8%8E%E9%87%8D%E6%9E%84-%E5%8E%86%E5%8F%B2%E7%A4%BE%E4%BC%9A%E5%AD%A6%E7%9A%84%E4%B8%89%E6%B3%A2%E6%B5%AA%E6%BD%AE%E5%8F%8A%E5%85%B6%E6%9C%AA%E6%9D%A5/">
+          突破与重构：历史社会学的三波浪潮及其未来
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-13/%E5%A6%82%E6%9E%9C%E6%82%A8%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%B8%90%E6%88%B7%E8%A2%AB%E9%BB%91%E5%AE%A2%E5%85%A5%E4%BE%B5%E6%80%8E%E4%B9%88%E5%8A%9E-iYouPort/">
+            前一篇：如果您的电子邮件帐户被黑客入侵怎么办 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-14/Ahead-of-Its-Centennial,-the-Chinese-Communist-Par/">
+            後一篇：Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-13/%E5%A6%82%E6%9E%9C%E6%82%A8%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%B8%90%E6%88%B7%E8%A2%AB%E9%BB%91%E5%AE%A2%E5%85%A5%E4%BE%B5%E6%80%8E%E4%B9%88%E5%8A%9E-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-14/Ahead-of-Its-Centennial,-the-Chinese-Communist-Par/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-15/%E5%93%88%E8%B4%9D%E9%A9%AC%E6%96%AF%E6%8B%92%E7%BB%9D%E9%98%BF%E8%81%94%E9%85%8B%E5%9B%BE%E4%B9%A6%E5%A5%96-%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9A%84%E8%89%AF%E7%9F%A5%E8%A1%A8%E7%8E%B0-%E8%BF%98%E6%98%AF%E8%A5%BF%E6%96%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%82%B2%E6%85%A2/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-13/%E5%BE%90%E8%B4%B2-%E8%AD%A6%E6%83%95%E4%B8%AD%E5%9B%BD%E7%9A%84-%E6%9F%8F%E5%85%8B%E7%83%AD-%E5%92%8C-%E4%BF%9D%E5%AE%88%E4%B8%BB%E4%B9%89%E7%83%AD-%E9%80%A0%E6%88%90%E9%9B%86%E4%BD%93%E6%80%9D%E6%83%B3%E8%BF%B7%E6%80%9D-%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E8%AF%84/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-13/%E5%A6%82%E6%9E%9C%E6%82%A8%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%B8%90%E6%88%B7%E8%A2%AB%E9%BB%91%E5%AE%A2%E5%85%A5%E4%BE%B5%E6%80%8E%E4%B9%88%E5%8A%9E-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-14/Ahead-of-Its-Centennial,-the-Chinese-Communist-Par/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-15/%E5%93%88%E8%B4%9D%E9%A9%AC%E6%96%AF%E6%8B%92%E7%BB%9D%E9%98%BF%E8%81%94%E9%85%8B%E5%9B%BE%E4%B9%A6%E5%A5%96-%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9A%84%E8%89%AF%E7%9F%A5%E8%A1%A8%E7%8E%B0-%E8%BF%98%E6%98%AF%E8%A5%BF%E6%96%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%82%B2%E6%85%A2/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-13/%E5%BE%90%E8%B4%B2-%E8%AD%A6%E6%83%95%E4%B8%AD%E5%9B%BD%E7%9A%84-%E6%9F%8F%E5%85%8B%E7%83%AD-%E5%92%8C-%E4%BF%9D%E5%AE%88%E4%B8%BB%E4%B9%89%E7%83%AD-%E9%80%A0%E6%88%90%E9%9B%86%E4%BD%93%E6%80%9D%E6%83%B3%E8%BF%B7%E6%80%9D-%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E8%AF%84/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

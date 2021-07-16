@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>為什麼忘記密碼時只能重設，不把舊密碼告訴我？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+為什麼忘記密碼時只能重設，不把舊密碼告訴我？
+——
+" />
+    <meta property="og:description" content="
+為什麼忘記密碼時只能重設，不把舊密碼告訴我？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="為什麼忘記密碼時只能重設，不把舊密碼告訴我？" />
+    <meta property="twitter:title" content="為什麼忘記密碼時只能重設，不把舊密碼告訴我？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2Fcymetrics%2Fwhy-only-reset-password-not-retrieve-password-aa7cfb8699f1%3Fsource%3Drss-f1fb3e40dc37------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/cymetrics/why-only-reset-password-not-retrieve-password-aa7cfb8699f1?source=rss-f1fb3e40dc37------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/cymetrics/why-only-reset-password-not-retrieve-password-aa7cfb8699f1?source=rss-f1fb3e40dc37------2&text=為什麼忘記密碼時只能重設，不把舊密碼告訴我？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/cymetrics/why-only-reset-password-not-retrieve-password-aa7cfb8699f1?source=rss-f1fb3e40dc37------2&title=為什麼忘記密碼時只能重設，不把舊密碼告訴我？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/cymetrics/why-only-reset-password-not-retrieve-password-aa7cfb8699f1?source=rss-f1fb3e40dc37------2&title=為什麼忘記密碼時只能重設，不把舊密碼告訴我？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=為什麼忘記密碼時只能重設，不把舊密碼告訴我？&body=
+為什麼忘記密碼時只能重設，不把舊密碼告訴我？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/cymetrics/why-only-reset-password-not-retrieve-password-aa7cfb8699f1?source=rss-f1fb3e40dc37------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/cymetrics/why-only-reset-password-not-retrieve-password-aa7cfb8699f1?source=rss-f1fb3e40dc37------2&title=為什麼忘記密碼時只能重設，不把舊密碼告訴我？&caption=
+為什麼忘記密碼時只能重設，不把舊密碼告訴我？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=為什麼忘記密碼時只能重設，不把舊密碼告訴我？&url=https://medium.com/cymetrics/why-only-reset-password-not-retrieve-password-aa7cfb8699f1?source=rss-f1fb3e40dc37------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>為什麼忘記密碼時只能重設，不把舊密碼告訴我？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-07-09
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Huli</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/cymetrics/why-only-reset-password-not-retrieve-password-aa7cfb8699f1?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1625816141000-->
+<p><a href="https://medium.com/cymetrics/why-only-reset-password-not-retrieve-password-aa7cfb8699f1?source=rss-f1fb3e40dc37------2">為什麼忘記密碼時只能重設，不把舊密碼告訴我？</a>
+——</p>
+
+<div>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*d-btmcK3StRPxigr" />    <figcaption>
+Photo by <a href="https://unsplash.com/@flyd2069?utm_source=medium&amp;utm_medium=referral">FLY:D</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a>
+    </figcaption>
+  </figure>
+  <p>某天小明在整理他的我的最愛（到底誰的），發現了一個以前很常逛，但已經將近半年多沒去的一個論壇。小明想回去看看那邊變得怎麼樣了，於是點進去那個論壇，輸入了帳號密碼，得到了密碼錯誤的回覆。</p>
+  <p>嘗試了幾次之後，系統提示小明可以使用「忘記密碼」的功能，所以小明填了自己的 email 之後去信箱收信，發現系統傳來一個「重設密碼」的連結。雖然說最後小明成功利用重新設定的密碼登入，但有個問題讓他百思不得其解：</p>
+  <blockquote>
+「奇怪欸，幹嘛要我重設密碼，為什麼不把舊的密碼寄給我就好？」  </blockquote>
+  <p>應該有許多人都跟小明一樣，有過類似的疑惑。把舊密碼寄給我不是很好嗎，幹嘛強迫我換密碼？</p>
+  <p>這一個看似簡單的問題，背後其實藏了許多資訊安全相關的概念，就讓我們慢慢尋找問題的答案，順便學習一些基本的資安知識吧！</p>
+  <p>先提醒一下，雖然說前半段看起來可能跟文章主題無關，但好酒沉甕底，我保證最後會把這些東西關聯起來。</p>
+  <h3 id="section">被偷走的資料庫</h3>
+  <p>大家應該很常看到新聞說哪個網站的資料又被偷走了，顧客個資全部都外洩出去。例如說<a href="https://tw.news.yahoo.com/%E5%80%8B%E8%B3%87%E9%81%AD%E6%B4%A9-%E9%BA%A5%E7%95%B6%E5%8B%9E%E8%81%B2%E6%98%8E-%E4%B8%8D%E5%90%AB%E4%BB%98%E6%AC%BE%E8%B3%87%E6%96%99-103012207.html">麥當勞</a>在近期就發生了類似的事件：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/786/1*WjqCT3Tlzo7FdZ_tfLC4Pw.png" />    <figcaption>
+麥當勞資料外洩的通知信
+    </figcaption>
+  </figure>
+  <p>這邊我想帶大家探討的兩個問題是：</p>
+  <ol>
+    <li>資料真的這麼容易外洩嗎？</li>
+    <li>資料外洩之後，可能造成什麼後果？</li>
+  </ol>
+  <p>我們先來看第一個問題，有很多安全性的漏洞可以造成資料外洩，而有些漏洞的攻擊方式，比你想的還簡單一百倍。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*x2IFkXrnxX8y8oPk" />    <figcaption>
+Photo by <a href="https://unsplash.com/@arget?utm_source=medium&amp;utm_medium=referral">Arget</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a>
+    </figcaption>
+  </figure>
+  <p>你想像中的駭客可能像上面那樣，打著一大堆不知道在幹嘛的指令，畫面上出現很多黑底白字或是綠字的畫面，完全搞不懂在幹嘛，但是做著做著網站就被打下來了。</p>
+  <p>而事實上有些漏洞，可能在網址列上面改幾個字就攻擊成功了，就算你不懂任何程式也做得到。</p>
+  <p>舉例來說好了，假設今天有個購物網站，你買了一些東西之後送出訂單，訂單成立後跳轉到訂單頁面，上面有著一大堆你的個資，例如說：姓名、收貨地址、聯絡電話以及 Email 等等。</p>
+  <p>然後你發現訂單頁面的網址是 <a href="https://shop.huli.tw/orders?id=14597">https://shop.huli.tw/orders?id=14597</a></p>
+  <p>而正好你的訂單編號也是 14597，在好奇心的驅使之下，你就試著把數字改成 14596，然後按下 Enter。</p>
+  <p>當網站載入完成之後，你竟然還真的能看到編號為 14596 的訂單，上面出現一個你不認識的人的姓名、收貨地址、聯絡電話跟 Email。</p>
+  <p>有些攻擊就是這麼樸實無華且枯燥，只要改個字就能看到屬於其他人的資料。這時候如果你會寫程式的話，就可以寫個腳本自動去抓 id 是 1 一直到 id 是 15000 的資料，你就拿到了這個購物網站 15000 筆訂單的資訊，也就是一萬多個顧客的個資。</p>
+  <p>這過程中沒有什麼黑底白字的畫面，也不用一直瘋狂打字，唯一需要的只有改數字，個資就輕鬆到手。</p>
+  <p>這類型的漏洞有個專有名詞，稱為 IDOR，全名是：Insecure direct object references，大約就是不安全的直接資料存取的意思。漏洞產生的原因就是工程師在開發時，並沒有注意到權限控管，因此讓使用者能存取到其他人的資料。</p>
+  <p>有些人看到這邊可能以為我只是為了文章淺顯易懂，所以才舉一個簡化的例子，現實生活中的攻擊才沒這麼簡單。</p>
+  <p>這句話算是對了一半，大部分的網站確實都不會有這麼明顯的一個漏洞，攻擊方式會更複雜一點。<strong>但可怕的是，還真的有些網站就是這麼簡單，就是改個數字就可以拿到別人的資料。</strong></p>
+  <p>台灣有一個網站叫做 <a href="https://zeroday.hitcon.org/">HITCON ZeroDay</a>，是由台灣駭客協會所維護的漏洞回報平台。有些人發現漏洞之後可能會竊取個資拿去賣，從事非法行為，也有些人發現漏洞只是為了鍛鍊技術，並沒有想要做什麼壞事。</p>
+  <p>因此就可以透過這個平台進行回報，回報漏洞之後負責維護平台的志工們會幫你驗證漏洞，驗證過後回報給負責的廠商，讓他們去修復漏洞。</p>
+  <p>這個平台上的漏洞在修復過後隔一陣子會公開，或者儘管廠商沒有回報修復，過一陣子（例如說兩個月）後也會公開，因此在這平台上可以找到許多公開的漏洞，看過之後你大概就不會想在網站註冊時留下真實個資了…</p>
+  <p>例如說這兩個就是 IDOR 的真實漏洞：</p>
+  <ol>
+    <li><a href="https://zeroday.hitcon.org/vulnerability/ZD-2021-00206">享健身xarefit 任意訪問/下載所有會員個資</a></li>
+    <li><a href="https://zeroday.hitcon.org/vulnerability/ZD-2021-00260">DoorGods 防疫門神實聯制系統IDOR導致個資外洩</a></li>
+  </ol>
+  <p>對，不要懷疑，就真的只是在網址上改個數字而已這麼容易。</p>
+  <p>以後只要看到網址列上有這種數字，就可以試著去改改看，搞不好不會寫程式的你也可以發現 IDOR 的漏洞。</p>
+  <p>除了這種只要改個東西的漏洞之外，還有另外一個很常見但是需要一點技術能力才能攻破的漏洞，叫做 SQL Injection。</p>
+  <p>先來講講 SQL 是什麼，簡單來說就是跟資料庫查詢東西的一種程式語言。既然說是語言那就會有固定語法，若是以中文舉例，大概就像是：</p>
+  <blockquote>
+<em>去找「訂單資料」，給我「id 是 1 的」，按照「建立時間」排序</em>  </blockquote>
+  <p>用「」框起來的部分代表可以變動，而其他關鍵字例如說「去找」、「給我」這些都是固定的，因為語法要固定才能寫程式去解析。</p>
+  <p>同樣以上面假想的購物網站為例，如果網址是 <a href="https://shop.huli.tw/orders?id=14597">https://shop.huli.tw/orders?id=14597</a>，那網站去跟資料庫拿資料時，指令大概就是：</p>
+  <blockquote>
+<em>去找「訂單資料」，給我「id 是 14597 的」</em>  </blockquote>
+  <p>因為網址列上的 id 是 14597 嘛，所以這個 id 就會被放到查詢的指令去，如果 id 是別的，那查詢的指令也會不一樣。</p>
+  <p>這時候如果我的 id 不是數字，而是「1 的順便給我使用者資料」，查詢就變成：</p>
+  <blockquote>
+<em>去找「訂單資料」，給我「id 是 1 的順便給我使用者資料」</em>  </blockquote>
+  <p>那整個網站的使用者資料就順便被我抓下來了。</p>
+  <p>這個攻擊之所以叫做 SQL injection，重點就在於那個 injection，攻擊者「注入」了一段文字被當作指令的一部分執行，所以攻擊者就可以執行任意查詢。</p>
+  <p>比起上面講的 IDOR，SQL injection 通常會更為致命，因為不只是訂單資料本身，連其他資料也會被一起撈出來。所以除了訂單資料，會員資料跟商品資料都有可能一起外洩。</p>
+  <p>這邊也隨便找兩個公開的案例：</p>
+  <ol>
+    <li><a href="https://zeroday.hitcon.org/vulnerability/ZD-2020-00276">北一女中網站存在SQL Injection漏洞</a></li>
+    <li><a href="https://zeroday.hitcon.org/vulnerability/ZD-2021-00052">桃園高中 網站 SQL injection</a></li>
+  </ol>
+  <p>而防禦方式就是不要把使用者輸入的「1 的順便給我使用者資料」直接當作指令，而是經過一些處理，讓整段查詢變成：「給我 id 是：『1 的順便給我使用者資料』的資料」，那因為沒有這個 id，所以什麼事也不會發生。</p>
+  <h3 id="section-1">個資洩漏了，然後呢？</h3>
+  <p>前面我們已經看到了針對那些沒有做好防禦的網站，個資外洩是多麽容易的一件事情。</p>
+  <p>那個資洩漏之後，對使用者會有什麼影響呢？</p>
+  <p>大家最感同身受的應該就是詐騙電話吧，例如說某些買書的網站或是訂房網站，打過來跟你說什麼要分期退款，為了博取你的信任，連你買了哪本書，訂了哪個房間，或是你家地址跟姓名全都講得出來。</p>
+  <p>這些都是因為資料外洩的緣故，詐騙集團才會知道的這麼清楚。</p>
+  <p>但除了這些個資以外，還有兩個東西也會外洩，那就是你的帳號跟密碼。</p>
+  <p>也許你會想說：「不就帳號跟密碼嗎，我就在那個網站上面改密碼以後再用就好啦！」</p>
+  <p>事情也許沒有你想的這麼簡單。如果你沒有用密碼管理軟體的話，我大膽猜測你所有的密碼可能都是同一組。因為怕記不起來嘛，所以乾脆都用同一組密碼。</p>
+  <p>這時候如果帳密外洩，駭客是不是就可以拿這組帳密去其他服務試試看？</p>
+  <p>拿去登你的 Google，登你的 Facebook，這時候用同一組密碼的人就會被登進去。所以從表面看只是一個購物網站被入侵，但造成的結果卻是你的 Google 還有 Facebook 也一起被盜了。</p>
+  <p>所以，有時候某個網站被盜帳號可能不是那個網站的問題，而是駭客在其他地方拿到了你的帳號密碼，就來這邊試試看，沒想到就中了。</p>
+  <p>對於網站的開發者而言，保護好使用者的個資是天經地義的事情，保護密碼也是，有沒有什麼好方法可以保護密碼呢？</p>
+  <p>加密嗎？把密碼用某些演算法加密，這樣資料庫儲存的就會是加密後的結果，儘管被偷走了，駭客只要沒有解密的方法就解不開。</p>
+  <p>聽起來似乎是最安全的做法了，但其實還有一個問題，那就是網站的開發者還是會知道怎麼解密，如果有工程師監守自盜怎麼辦？他還是可以知道每個使用者的密碼是什麼，可以把這些資訊拿去賣或者是自己利用。</p>
+  <p>嗯…似乎我們也不能怎麼樣，因為無論如何，開發者都需要有方法知道資料庫存的密碼究竟是多少吧？不然在登入的時候怎麼確認帳號密碼是對的？</p>
+  <p>再者，這樣聽起來應該夠安全了，要怎麼樣才能更安全？難道要連網站的開發者都無法解密，都不知道密碼是什麼才夠安全嗎？</p>
+  <p>Bingo！答對了，就是要這樣沒錯！</p>
+  <h3 id="section-2">沒有人知道你的密碼，包括網站本身</h3>
+  <p>事實上，網站的資料庫是不會儲存你的密碼的。</p>
+  <p>或更精確地說，不會儲存你的「原始密碼」，但會儲存密碼經過某種運算後的結果，而且最重要的是，<strong>這個運算是無法還原的</strong>。</p>
+  <p>直接舉例比較快，假設今天有個很簡單的演算法，可以把密碼做轉換，轉換方式是：「數字不做轉換，英文字母把 a 換成 1，b 換成 2…z 換成 26」，以此類推，第幾個字母就換成幾，大小寫不分都一樣（先假設不會有符號）。</p>
+  <p>如果密碼是 abc123，轉換完就變成 123123。</p>
+  <p>在使用者註冊的時候，網站就把使用者輸入的 abc123 轉成 123123，然後存到資料庫裡面。因此資料庫存的密碼是 123123，而不是 abc123。</p>
+  <p>當使用者登入時，我們就再把輸入的值用同樣的邏輯轉換，如果輸入一樣，轉換後的結果就會一樣對吧？就知道密碼是不是正確的。</p>
+  <p>當駭客把資料庫偷走以後，會拿到 123123 這組密碼，那一樣啊，不是可以推論出原本是 abc123 嗎？不不不，沒這麼簡單。</p>
+  <p>123123、abcabc、12cab3…這些密碼轉換之後，不也是 123123 嗎？所以儘管知道轉換規則跟結果，卻沒有辦法還原成「唯一一組密碼」，這就是這個演算法厲害的地方！</p>
+  <p>這樣的轉換就叫做雜湊（Hash），abc123 每次 hash 過後的結果都會是 123123，但是從 123123 卻無法推回輸入一定是 abc123，因為有其他種可能性存在。</p>
+  <p>這就是 hash 跟加密最大的不同。</p>
+  <p>加密跟解密是成對的，如果可以加密就一定可以解密，所以你知道密文跟密鑰，就可以知道明文。但 hash 不同，你知道 hash 的演算法跟結果，卻無法回推出原本的輸入是什麼。</p>
+  <p>而這個機制最常見的應用之一，就在於密碼的儲存。</p>
+  <p>在註冊時把 hash 過後的密碼存進資料庫，登入時把輸入的密碼 hash 過後跟資料庫比對，就知道密碼是否正確。就算資料庫被偷，駭客也不知道使用者的密碼是什麼，因為回推不出來。</p>
+  <p>這就是為什麼忘記密碼的時候，網站不會跟你講原本的密碼是什麼，因為網站本身也不知道啊！</p>
+  <p>所以不能「找回密碼」，只能「重設密碼」，因為重設就代表你輸入新的密碼，然後網站把新的密碼 hash 之後存進資料庫，未來登入時就會用這組新的 hash 去比對。</p>
+  <p>有些人可能會注意到這樣的儲存方式似乎有個漏洞，延續前面的例子，資料庫存的是 123123 而我的原始密碼是 abc123，這樣如果用「abcabc」，hash 過後也是 123123，不就也可以登入嗎？這樣不太對吧，這不是我的密碼欸</p>
+  <p>有兩個不同的輸入卻產生出同一組輸出，這種狀況稱為碰撞（hash collision），碰撞一定會發生，但如果演算法設計的好，碰撞的機率就超級無敵小，小到幾乎可以忽略。</p>
+  <p>前面提的轉換規則只是為了方便舉例，真實世界中用的演算法複雜許多，就算只有一個字不同，結果都會天差地遠，以 SHA256 這個演算法為例：</p>
+  <ol>
+    <li>abc123 =&gt; 6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090</li>
+    <li>abc124 =&gt; cd7011e7a6b27d44ce22a71a4cdfc2c47d5c67e335319ed7f6ae72cc03d7d63f</li>
+  </ol>
+  <p>類似的輸入卻產生截然不同的輸出。</p>
+  <p>像我前面舉例用的轉換就是不安全的 hash 演算法，要盡量避免使用或是避免自己設計，盡可能使用密碼學家跟專家設計出的演算法，像是上面提到的 SHA256。</p>
+  <h3 id="section-3">結語</h3>
+  <p>忘記密碼時網站不會把密碼寄給我，因為網站自己都不知道我的密碼是什麼。雖然聽起來不太可能，但實際狀況就是如此。為了安全性，這是必須的手段。</p>
+  <p>要達成這樣的目的，背後最重要的技術原理就是 hash，「同樣的密碼會產生同樣的 hash 值，但從 hash 值沒辦法對應回原本的密碼」就是秘訣所在。</p>
+  <p>反之，如果你發現有網站可以找回你的密碼，那就得要多加注意，有可能網站資料庫存的不是 hash 值而是你的密碼。在這種狀況下，萬一有天資料庫被入侵，帳密被偷走，駭客就能得知你真實的密碼，然後去試其他的服務。</p>
+  <p>有關於密碼管理，現在瀏覽器也有功能可以自動幫你產生密碼外加記憶密碼，或也可以使用現成的密碼管理軟體，都可以在不同網站產生不同的密碼。</p>
+  <p>還有一點要注意，那就是並不是存 hash 值就絕對安全了。前面有提過同樣的輸入會產生同樣的結果，因此有心人可以先把常見密碼的 hash 值都算出來，例如說上面算過的 abc123 hash 過後是 6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090，只要把這個對應關係存起來，駭客看到這一大串 hash 就會知道對應的可能性之一是 abc123，就可以去嘗試這組密碼。</p>
+  <p>至於要怎麼防禦這類的攻擊，就又有其他的防禦方式，礙於篇幅這篇就先不提了，想知道更多可以參考這篇：<a href="https://medium.com/@brad61517/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8-%E5%AF%86%E7%A2%BC%E5%AD%98%E6%98%8E%E7%A2%BC-%E6%80%8E%E9%BA%BC%E4%B8%8D%E7%9B%B4%E6%8E%A5%E5%8E%BB%E8%A3%B8%E5%A5%94%E7%AE%97%E4%BA%86-%E6%B7%BA%E8%AB%87-hash-%E7%94%A8%E9%9B%9C%E6%B9%8A%E4%BF%9D%E8%AD%B7%E5%AF%86%E7%A2%BC-d561ad2a7d84">[資訊安全] 密碼存明碼，怎麼不直接去裸奔算了？淺談 Hash , 用雜湊保護密碼</a></p>
+  <p>這篇希望能讓對這個領域陌生的讀者們也能知道一些基本的概念，包括：</p>
+  <ol>
+    <li>有些網站比你想得脆弱很多，改個網址就可以拿到別人的資料</li>
+    <li>對於安全性做得不好的網站，拿到整個資料庫不是一件難事</li>
+    <li>忘記密碼只能找回，是因為網站也不知道你的密碼</li>
+    <li>如果有網站可以把舊密碼給你，那你得要小心一點</li>
+  </ol>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=aa7cfb8699f1" width="1" height="1" alt="" />  <hr />
+  <p><a href="https://medium.com/cymetrics/why-only-reset-password-not-retrieve-password-aa7cfb8699f1">為什麼忘記密碼時只能重設，不把舊密碼告訴我？</a> was originally published in <a href="https://medium.com/cymetrics">Cymetrics Tech Blog</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+    
+    
+      <li>
+        <time>2021-06-25</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-25/%E7%B0%A1%E5%96%AE%E4%BB%8B%E7%B4%B9%E7%99%BC%E5%B8%83-Medium-%E6%96%87%E7%AB%A0%E5%89%8D%E5%8F%AF%E4%BB%A5%E6%94%B9%E7%9A%84%E6%9D%B1%E8%A5%BF/">
+          簡單介紹發布 Medium 文章前可以改的東西
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-17/%E6%B7%BA%E8%AB%87-XSS-%E6%94%BB%E6%93%8A%E8%88%87%E9%98%B2%E7%A6%A6%E7%9A%84%E5%90%84%E5%80%8B%E7%92%B0%E7%AF%80/">
+          淺談 XSS 攻擊與防禦的各個環節
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-08/%E6%88%91%E4%BB%AC%E5%AF%B9%E8%AD%A6%E5%AF%9F%E7%9A%84%E6%86%8E%E6%81%B6%E6%8A%8A%E6%88%91%E4%BB%AC%E5%9B%A2%E7%BB%93%E5%9C%A8%E4%B8%80%E8%B5%B7-iYouPort/">
+            前一篇：我们对警察的憎恶把我们团结在一起 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%9A%87%E5%AE%B6%E5%A4%A9%E6%96%87%E5%AD%A6%E4%B8%8E%E6%B0%91%E9%97%B4%E5%90%89%E5%87%B6%E4%B9%A6-%E4%B8%AD%E5%9B%BD%E6%97%A5%E5%8E%86%E5%9C%A8%E5%8F%A4%E4%BB%A3%E7%A4%BE%E4%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%B1%E9%99%A9%E5%93%81/">
+            後一篇：皇家天文学与民间吉凶书：中国日历在古代社会为什么是危险品？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-07-08/%E6%88%91%E4%BB%AC%E5%AF%B9%E8%AD%A6%E5%AF%9F%E7%9A%84%E6%86%8E%E6%81%B6%E6%8A%8A%E6%88%91%E4%BB%AC%E5%9B%A2%E7%BB%93%E5%9C%A8%E4%B8%80%E8%B5%B7-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-07-09/%E7%9A%87%E5%AE%B6%E5%A4%A9%E6%96%87%E5%AD%A6%E4%B8%8E%E6%B0%91%E9%97%B4%E5%90%89%E5%87%B6%E4%B9%A6-%E4%B8%AD%E5%9B%BD%E6%97%A5%E5%8E%86%E5%9C%A8%E5%8F%A4%E4%BB%A3%E7%A4%BE%E4%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%B1%E9%99%A9%E5%93%81/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-25/%E7%B0%A1%E5%96%AE%E4%BB%8B%E7%B4%B9%E7%99%BC%E5%B8%83-Medium-%E6%96%87%E7%AB%A0%E5%89%8D%E5%8F%AF%E4%BB%A5%E6%94%B9%E7%9A%84%E6%9D%B1%E8%A5%BF/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-07-08/%E6%88%91%E4%BB%AC%E5%AF%B9%E8%AD%A6%E5%AF%9F%E7%9A%84%E6%86%8E%E6%81%B6%E6%8A%8A%E6%88%91%E4%BB%AC%E5%9B%A2%E7%BB%93%E5%9C%A8%E4%B8%80%E8%B5%B7-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-07-09/%E7%9A%87%E5%AE%B6%E5%A4%A9%E6%96%87%E5%AD%A6%E4%B8%8E%E6%B0%91%E9%97%B4%E5%90%89%E5%87%B6%E4%B9%A6-%E4%B8%AD%E5%9B%BD%E6%97%A5%E5%8E%86%E5%9C%A8%E5%8F%A4%E4%BB%A3%E7%A4%BE%E4%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%B1%E9%99%A9%E5%93%81/">
+      <i>前</i>
+    </a>
+    
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-25/%E7%B0%A1%E5%96%AE%E4%BB%8B%E7%B4%B9%E7%99%BC%E5%B8%83-Medium-%E6%96%87%E7%AB%A0%E5%89%8D%E5%8F%AF%E4%BB%A5%E6%94%B9%E7%9A%84%E6%9D%B1%E8%A5%BF/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

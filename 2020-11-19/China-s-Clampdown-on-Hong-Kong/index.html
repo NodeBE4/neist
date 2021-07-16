@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>China’s Clampdown on Hong Kong – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+China’s Clampdown on Hong Kong
+——
+" />
+    <meta property="og:description" content="
+China’s Clampdown on Hong Kong
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="China’s Clampdown on Hong Kong" />
+    <meta property="twitter:title" content="China’s Clampdown on Hong Kong" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Flibrary%2Fnyrb-china-archive%2Fchinas-clampdown-hong-kong" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong&text=China’s Clampdown on Hong Kong&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong&title=China’s Clampdown on Hong Kong" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong&title=China’s Clampdown on Hong Kong" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=China’s Clampdown on Hong Kong&body=
+China’s Clampdown on Hong Kong
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong&title=China’s Clampdown on Hong Kong&caption=
+China’s Clampdown on Hong Kong
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=China’s Clampdown on Hong Kong&url=https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>China’s Clampdown on Hong Kong</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-11-19
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Barbara Demick</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1605772800000-->
+<p><a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong">China’s Clampdown on Hong Kong</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-e26d337b8fb5ed3a15f590d75704859a">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1214824207.jpg" title="China’s Clampdown on Hong Kong" class="colorbox" data-colorbox-gallery="gallery-node-53016-WwvT57jdhhs" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1214824207.jpg?itok=yJqwqbsl" width="1200" height="800" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Anthony Kwan—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>Police fire tear gas to disperse protesters during an anti-government rally in Hong Kong, May 24, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">As the 1997 handover of Hong Kong from Britain to China approached, commentary in the English-language press about the future of the colony was written in the elegiac style of obituaries, extolling the past and lamenting the future. In June 1995, “The Death of Hong Kong” was the cover story of the international edition of <em>Fortune</em> magazine.</p>
+      <p>Predictions of Hong Kong’s demise proved to be premature. (In 2007 <em>Fortune</em> ran another story entitled, “Oops! Hong Kong Is Hardly Dead.”) Beijing seemed, at least initially, to honor its promises that Hong Kong could maintain its own legal system and rights of free speech and assembly for 50 years. Hong Kong’s economy exploded with a fresh infusion of tourists, students, shoppers, and immigrants, mostly from the mainland. Urban planners enthused about what they called the Greater Bay Area or Pearl River Delta: the Guangdong, Hong Kong, and Macau megalopolis. The construction of both a high-speed rail line and a 34-mile-long bridge linking Hong Kong to the mainland made travel between the two as effortless as trips between San Francisco and Silicon Valley.</p>
+      <p>Compared to the rest of China, Hong Kong remained an oasis of freedom. During the seven years I was a correspondent in Beijing, from 2007 to 2014, I would often go to Hong Kong to interview exiled Chinese professors and human-rights activists who had fled, or to browse bookstores for uncensored books about the Chinese leadership. (In 2015, the owners of some of those bookstores were abducted and detained by Chinese authorities.<sup id="fnr1"><a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fn1" rel="nofollow">1</a></sup>) Hong Kongers relished their ability to surf the Internet and access Twitter and Facebook. They could watch videos about the 1989 crackdown in Beijing’s Tiananmen Square or display photos of the Dalai Lama. And, most important, they could protest—a right that they elevated to an art form.</p>
+      <p>Hong Kong’s protests were fun, raucous, and creative; even Pussy Riot, the provocative Russian girl band, came to participate in one. Protesters wielded umbrellas both to protect themselves against pepper spray and to delight the television cameras with swirls of color. In his book <em>City on Fire</em>, an eloquent up-close account, Antony Dapiran is as focused on the aesthetics of the protests as on their political meaning. Hong Kong protesters, he observes admiringly, come up with the cleverest puns and make brilliant use of lanterns, candles, laser pointers, and Post-it Notes: “These thousands of colourful notes formed a vast mosaic, a physical feature in itself, the pieces of paper fluttering in the breeze, the colourful space a luminous beacon at night illuminated under the fluorescent lights.” He sees in the exceptionally rich protest culture a mash-up of themes from Hollywood action movies, Cantonese pop music, Japanese anime, and classical Chinese mythology.</p>
+      <p>Dapiran, an Australian lawyer who has lived in Hong Kong since 1999, traces how its residents have evolved under Chinese rule to the point that protest is now part of their identity; in his words (and italics), “<em>I am a Hong Konger, therefore I protest</em>.” Hong Kongers once distinguished themselves from mainlanders by their relative prosperity, but as China caught up economically, they focused more on what Dapiran calls Hong Kong’s “core values”—an uncensored media, an independent judiciary, the rule of law, and, of course, the right to demonstrate.</p>
+      <p>Hong Kongers demonstrated about everything from the removal of hawkers selling fish balls during the Chinese New Year to fare increases on mass transit (which had also provoked protests under British rule). But mostly they have demonstrated against Beijing’s persistent attempts to erode Hong Kong’s autonomy. In 2003, protests erupted over a bill proposed by Hong Kong’s legislature that would have expanded the prosecution of treason, sedition, theft of state secrets, and subversion, essentially extending the mainland’s intolerance of dissent into Hong Kong. In 2012, students protested Beijing’s attempt to impose a pro–Chinese Communist Party curriculum on Hong Kong’s schools. In 2014, protesters flooded the streets after Beijing announced it would prescreen candidates running for chief executive—the head of Hong Kong’s government—and approve only those who would swear “to love the country.”</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">The latest protests have been the most explosive of all. They began with a bill proposed in April 2019 to facilitate the extradition of criminal suspects in Hong Kong to various countries, including the Chinese mainland. The precipitating case was politically uncomplicated: A young Hong Kong man had murdered his pregnant girlfriend the year before while they were on a Valentine’s Day trip to Taiwan, then fled home and confessed. An arrest warrant was issued in Taiwan but the suspect could not be extradited. Hong Kongers rightly feared that the new law would allow any resident to be snatched away and swallowed into China’s murky legal system.</p>
+      <p>The mounting rage over China’s encroachments upon Hong Kong’s autonomy coalesced around the extradition bill. Inept handling by Hong Kong’s pro-Beijing chief executive, Carrie Lam, coupled with an excessively forceful response by the police, turned the protests into a full-throttle revolt against Chinese rule. Up to two million people (more than a quarter of Hong Kong’s population) turned out in the streets—not just students but also teachers, senior citizens, shop clerks, and financial sector employees who had sat out many previous demonstrations. Cathay Pacific officials and employees openly supported the protests, even after the government forced the cancellation of flights. School bus drivers volunteered to ferry protesters safely home after authorities closed subway stations in hopes of quieting the unrest. As the protests continued, those stations, government offices, and businesses perceived as pro-Beijing were vandalized; police became more violent, with tear gas, pepper spray, and water cannons giving way to beanbag projectiles, rubber bullets, and sometimes live ammunition. Thugs linked to organized crime groups beat commuters they suspected of attending protests.</p>
+      <p>For the better part of the year, the protests repeatedly swelled, receded, and came back larger than before. (I visited that fall during a brief lull when authorities were mostly scrubbing graffiti off public buildings.) Hong Kong was still heaving early this year when the COVID-19 pandemic forced it into lockdown—which provided a convenient pretext to ban protests.</p>
+      <p>Beijing bided its time until June 30, when the Standing Committee of the National People’s Congress issued a far-reaching national security law for Hong Kong that in effect criminalizes most forms of dissent by defining four separate categories of offense: separatism, subversion, terrorism, and collusion with foreign countries. Passed in secret with little input from local authorities, it essentially ended Hong Kong’s autonomy. The legislation is so broadly written and so punitive that it could result in a life sentence for someone who vandalizes a government building or subway station. And its scope is so wide that it covers offenses committed outside Hong Kong by people who are not residents (mainlanders and foreigners both), which could empower a newly formed secret police unit to pick up and extradite to the mainland any errant professor or journalist passing through.<sup id="fnr2"><a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fn2" rel="nofollow">2</a></sup></p>
+      <p>Dapiran, for all his enchantment with the protests—“protesters were writing the narrative of . . . history in real time”—is clear-eyed about what they actually achieved. He faults Hong Kongers for failing to perceive and then take advantage of the willingness of the Chinese Communist Party to make concessions, for example when Lam, in September of last year, withdrew the extradition bill. “Hong Kongers do not understand party-speak,’’ he writes. “There is no escaping the political, geographic, and economic reality that Hong Kong is a part of China. Hong Kong—for its own good—needs to find a modus vivendi with the mainland.” The protests, Dapiran notes, in fact might have hastened Hong Kong’s absorption by Beijing.</p>
+      <p>Police have already been using their new powers to arrest dissidents. Although the law was not supposed to be retroactive, authorities appear to be using speeches, articles, and social media posts from last year’s protests to build their cases against Beijing’s critics. The young activist leader Joshua Wong was arrested on September 24 on charges of participating in an illegal demonstration last October and of violating a colonial-era (and obviously pre-pandemic) law banning face masks. Others snared by the new law include Jimmy Lai, the 71-year-old media tycoon and owner of the pro-democracy newspaper <em>Apple Daily</em>; arrested in August, he was perp-walked in handcuffs through his own newsroom.<sup id="fnr3"><a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fn3" rel="nofollow">3</a></sup> Lai is charged with the vague crime of “colluding with foreign forces,” which carries a life sentence.</p>
+      <p>On top of this, legislative elections that were scheduled in Hong Kong for early September were postponed for a year, ostensibly because of the risk of spreading COVID-19, although a more likely explanation is that authorities knew they’d be embarrassed by an outpouring of support for pro-democracy candidates. Activists facing charges in Hong Kong have been trying with varying degrees of success to flee by speedboat, hoping to reach the safe haven of Taiwan. (12 were captured at sea on August 23.) The United States has suspended its extradition treaty with Hong Kong, following other countries such as the United Kingdom, Australia, Canada, France, and Germany. On July 14, Donald Trump issued an executive order that the U.S. will no longer treat Hong Kong as autonomous and will now subject it to the same export controls, sanctions, and tariffs as the rest of China.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap"><em>Vigil: Hong Kong on the Brink</em> was published before the national security law was introduced, but Jeffrey Wasserstrom, a professor at the University of California at Irvine, seems to have prophesied the impending disaster. His title refers both to the candlelight vigil held every June 4 for the victims of the 1989 crackdown in Tiananmen Square and to the act of watching over a dying patient—the patient, in this case, being Hong Kong. “Hong Kong was being altered by seemingly unstoppable processes,” Wasserstrom concluded after one of his visits. “It was being squeezed. Its people had no vote, and their voices were not heard, no matter how loudly they protested. Hong Kong is not just in its death throes, but is imagined by some to have already died.”</p>
+      <p>Wasserstrom has written an excellent primer on what is happening in Hong Kong. Although compact—the text runs to less than a hundred pages—it imparts much of the colorful history and flavor of the city. In 1842, Hong Kong island, then a rocky fishing outpost, was formally ceded to Britain by China’s Qing dynasty as part of a settlement of the First Opium War. In <em>Around the World in Eighty Days</em>, Jules Verne’s intrepid traveler Phileas Fogg described 19th-century Hong Kong as “a town in Kent or Surrey transferred by some strange magic to the antipodes.”</p>
+      <p>The colony expanded with the concession of the Kowloon Peninsula in 1860, at the end of the Second Opium War, and then again in 1898, when Britain signed a 99-year lease on the New Territories. (It was the expiration of that lease that led to the handover in 1997.) The colony’s importance as a British naval base grew during World War I. Occupied by the Japanese during World War II, Hong Kong bounced back after 1945 with a fresh influx of wealth and energy. The victory of the Communists in the Chinese Civil War and the establishment of the Peoples’ Republic of China in 1949 swelled Hong Kong’s population, as Chinese, many of them well-to-do, fled the mainland along with expatriates eager to keep doing business. Hundreds of firms left Shanghai for Hong Kong. From the 1960s through the 1990s, it boasted some of the highest economic growth rates in the world, earning a place alongside Singapore, Taiwan, and South Korea as one of the four Asian “tigers.” Its densely packed skyline glittered with the most stunning skyscrapers money could build.</p>
+      <p>In advance of the 1997 handover, China assured Britain that Hong Kong would have a high degree of autonomy for 50 years, under a constitution that would be known as the Basic Law. For China, this “one country, two systems” approach was an experiment, with vast implications for the future of Tibet and Xinjiang, two nominally autonomous regions within China where minorities have long sought greater rights; it was also a model for a peaceful reunification with Taiwan.<sup id="fnr4"><a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fn4" rel="nofollow">4</a></sup></p>
+      <p>From the outset, the arrangement was flawed. The Sino-British Joint Declaration, negotiated by Margaret Thatcher and Deng Xiaoping and signed in 1984, finessed the stickier points of the negotiations. The Basic Law that was drawn up a few years later promised universal suffrage, with the chief executive to be freely elected by 2017 and the legislature by 2020, but implementation was left exasperatingly vague. One provision of the Basic Law stipulated that “the method for selecting the Chief Executive shall be specified in light of the actual situation in the Hong Kong Special Administrative Region”—obfuscating language that almost guaranteed conflict. (This reminds me of one of the stock phrases I was instructed to memorize when studying Chinese: <em>Women zai shuo ba</em>, meaning “We’ll talk about it later”—the Chinese version of “kicking the can down the road.”) “Every political battle has had to do with Beijing gaslighting on universal suffrage,’’ Wasserstrom writes. “It is as if Beijing has dared its small territory to the south to constantly and never-endingly fight for every inch of political self-determination.”</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">Among the best-known combatants in this ongoing fight is Joshua Wong. Born in 1996, nine months before the handover, he was more or less a typical Hong Kong schoolboy, obsessed with video games, manga, and bubble tea. Diagnosed with dyslexia, he had difficulties writing in school but was a strong speaker from a remarkably early age. He knew how to galvanize and inspire, as he discovered when, while still in middle school, he organized a Facebook campaign against the “bland, oily and overpriced” lunches at his school. The campaign, he writes, “went viral.”</p>
+      <p>From there, Wong turned his attention to national politics; at the age of 14, he established a group called Scholarism to fight the pro-Beijing curriculum forced on Hong Kong schools in 2012. He started giving speeches on street corners and became a fixture in local media. In 2014, after China’s National People’s Congress decreed that only prescreened candidates could run for seats on Hong Kong’s legislative council and the office of chief executive, he was one of the organizers of 79 days of sit-ins (“Occupy Central”) in Hong Kong’s business district; those demonstrations transformed him, as he writes in <em>Unfree Speech</em>, into “a global poster boy for resistance against Communist China.” At 18, he appeared on the cover of the international edition of <em>Time</em>. He started writing op-eds for <em>The New York Times</em> and was the subject of a Netflix documentary called <em>Joshua: Teenager vs. Superpower</em>. He spent his 21st birthday in prison on charges of unlawful assembly and contempt of court.</p>
+      <p><em>Unfree Speech</em> was written partially as a prison diary, although, as Wong readily admits, his time behind bars was not especially harrowing; even in prison he was treated as the celebrity that he is. He clearly intended the book as a manifesto urging young people to action, but it is more successful as a memoir. Wong isn’t a sophisticated thinker, but he has an admirable coming-of-age story, and with the able assistance of his cowriter Jason Y. Ng, he tells it well. Wong alternates between expressing embarrassment at the attention he has received and basking in the glory of it. He compares himself at various times to Martin Luther King Jr., the late Chinese dissident and Nobel Peace Prize laureate Liu Xiaobo, and even Spider-Man: “I lived the life of Peter Parker. Like Spider-Man’s alter ego, I went to class during the day and rushed out to fight evil after school.”</p>
+      <p>Not that fighting evil was always such fun. Wong saw many of his friends be arrested and harassed, as well as become frustrated from the exertion of protesting without effecting any change. “Hong Kongers can feel the political ground simultaneously shifting and shrinking beneath their feet,” he laments. “Successive political showdowns bear out the notion that Hong Kong has not and will never shed its colony status. We’ve simply been handed from one imperialist master to another.”</p>
+      <p>But the relationship between Hong Kong and China is more complicated than that between an ordinary colony and a colonizer. Residents of both are overwhelmingly Han Chinese in ethnicity, but the language of Hong Kong is Cantonese rather than Mandarin, China’s official language. Like other visitors, I realized quickly that attempts to speak Mandarin to taxi drivers and shop clerks would be met with a scowl. The people of Hong Kong fiercely protect their separate identity, referring to themselves as “Hong Kongers” rather than Chinese. Many cannot shake the image—or, for some of the older generation, the personal memories—of the poverty and gratuitous brutality of Mao Zedong’s China.</p>
+      <p>In the early years of the new century—from 2001, when China joined the World Trade Organization, to the 2008 Summer Olympics in Beijing—polls showed that Hong Kongers were starting to embrace their identity as Chinese, encouraged by the economic prowess of their new motherland. Wong remembers the swell of pride he felt as a 12-year-old during the Olympics, when he and his schoolmates cheered the Chinese athletes and waved their little red flags—without being ordered to do so.</p>
+      <p>But in subsequent years, this goodwill and identification evaporated: As Beijing threw open Hong Kong’s doors to mainland visitors, so many descended—60 million in 2018 alone—that Hong Kongers began to feel like a minority in their own city. Closer ties with China came at the cost of Hong Kong’s quirky character. Although it still had its fragrant teashops and clattering dim sum parlors, large swaths of the city became about as charming as an airport shopping mall. In many neighborhoods, you heard more Mandarin than Cantonese. Chinese tycoons, many of them relatives of Communist Party leaders, shifted their fortunes to Hong Kong for safekeeping, snapping up so much real estate that the price of a studio apartment smaller than a hotel room shot above $1 million. The brightest students from Beijing and Shanghai entered the already cutthroat competition for university admissions and jobs.</p>
+      <p>Less illustrious mainlanders brought with them habits that offended Hong Kong’s lingering British sensibilities. Perhaps because it doesn’t show Hong Kong in a positive light, Wong doesn’t mention a particularly nasty episode in 2014 that started when a mainland mother allowed her toddler to relieve himself in the street (a common practice in rural China), setting off a spat between her and a Hong Konger who recorded it with his phone. Hong Kongers demonstrated against the influx of mainland tourists, denouncing them as “locusts.” At one protest, people pretended to defecate on a photo of Mao. The entire situation was ugly and xenophobic—one would say almost racist, if not for the fact that almost everyone involved was ethnically Chinese.<sup id="fnr5"><a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fn5" rel="nofollow">5</a></sup></p>
+      <p>Wong believes that China has overreached in trying to impose a love of the motherland on its new subjects, starting with the national curriculum he demonstrated against in 2012:</p>
+      <blockquote>
+        <p>Mother and son have very little in common, from language and customs to the way they view their government. The more the child is forced to show affection and gratitude toward his long-lost mother, the more he resists.</p>
+      </blockquote>
+      <p>“In many ways,” he writes, “Hong Kong is just like a foster child who was raised by a white family, and without his consent, returned to his Chinese biological parents.”</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">Today, Hong Kong is firmly in the grip of Beijing, which is firmly in the grip of the Chinese Communist Party. And Xi Jinping, the country’s most authoritarian leader since Mao, is firmly in charge of the Party. He has revived mid-20th-century tactics used by Mao—purges, rectification campaigns, crackdowns on improper speech—and is implementing them using 21st-century tools: closed-circuit cameras, facial recognition technology, biometric data, smartphone apps that track people’s movements and communications.<sup id="fnr6"><a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fn6" rel="nofollow">6</a></sup> Teachers at all levels, from kindergarten to university, are under orders to propagate “Xi Jinping thought”<sup id="fnr7"><a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fn7" rel="nofollow">7</a></sup> and can be fired for “improper speech.” Xi has been especially intolerant of any slippage around the distant fringes of his empire; every part of China must be completely under his control. Thousands of miles away from Hong Kong, in the far northwest region of Xinjiang, an estimated one million Uighurs and other Muslims are being incarcerated in camps for “patriotic education.”<sup id="fnr8"><a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fn8" rel="nofollow">8</a></sup> To the dismay of Tibetans and Mongolians, the Communist Party is imposing new limitations on the teaching of their languages in schools, insisting on Mandarin as the language of instruction. It doesn’t bode well for Hong Kong.</p>
+      <p>Xi has headed the Party and the country since 2012 and has eliminated term limits on the leadership, positioning himself to remain in power for life. At the next Party Congress in 2022, he is likely to seek and obtain another five-year term. But eventually, the reign of the 67-year-old leader will come to an end—either by his choosing or through other means—and his successors might prove more open to liberalization. There are still a few contrarian Chinese voices holding out hope. Jiwei Ci, a respected philosopher, published a book last year called <em>Democracy in China: The Coming Crisis</em>, in which he argues that the Chinese Communist Party will face a legitimacy crisis in the coming years if it doesn’t adopt more democratic methods. Ci writes that China’s ossified political system and its founding Marxist-Leninist ideology are increasingly out of step with a more open society, and that the Party must adapt if it is to survive. The Chinese Communist Party today suffers from an identity crisis. It has strayed so far from the revolutionary struggle that brought Mao to power in 1949 that it has lost its historical legitimacy. All that is left of communism in China is the name of the Chinese Communist Party. Successive leaders from Deng Xiaoping to Xi Jinping have retained the totemic stature of Mao Zedong for lack of a coherent ideological system to take its place. “That’s why they are hanging on to the original name of the party despite the noiseless evaporation of communism,” Ci writes, “the occasional lip service notwithstanding.”</p>
+      <p>What keeps the Party in power—besides repression—is what Ci calls performance legitimacy. As its propagandists endlessly repeat, the Party has presided over almost constant growth since the late 1970s and lifted more than one billion people out of poverty. But the regime cannot be sustained in perpetuity by growth alone, which has plateaued over the past decade and, as a result of the coronavirus crisis, reversed in the first quarter of this year—the first economic contraction since Mao’s death in 1976. “Only democracy can help China avoid a paralyzing legitimation crisis,” Ci writes. “To put it more strongly, only democracy can save China.”</p>
+      <p>By this reasoning, he says, the Chinese Communist Party cannot solve the Hong Kong crisis until it fixes itself. “Today’s China,” Ci writes,</p>
+      <blockquote>
+        <p>already the second-largest economy in the world and no longer genuinely red despite its remaining under the leadership of a nominally communist party, has yet to turn its undoubted hard power into the ability to win admiration and allegiance, to bind with cultural spell and moral values rather than with sheer force or material inducement alone. This is as true of China’s relation to Hong Kong, more than two decades after the handover, as it is of China’s image in the international arena.</p>
+      </blockquote>
+      <p>Although few in Beijing dare to publicly criticize Xi, the purges and rectification campaigns underway suggest that he is well aware of internal opposition. His elimination of term limits, implemented by Deng Xiaoping to prevent the rise of another Mao, was unpopular among Communist Party elders and intelligentsia. His handling of the Hong Kong protests—the biggest political challenge China has faced in years—has not been without its costs. A recent survey of public opinion in 14 countries by the Pew Research Center showed antipathy toward China at its highest level since the polling began more than a decade ago, with Beijing’s handling of Hong Kong, Xinjiang, and COVID-19 all contributing to the decline in its international prestige.</p>
+      <p>China oscillates through cycles of repression followed by liberalization. Mao’s Cultural Revolution was quickly followed by Deng’s reforms. In 1984, when Britain agreed to turn over Hong Kong, it was assumed that China was on an inexorable—albeit uneven—path toward democratization. This was a time when democracy was openly debated in university halls and literary salons; villages were taking small steps toward democracy by holding elections for local leaders. China was becoming more like Hong Kong. The assumption at the time of the Sino-British Joint Declaration was that differences in their political systems were fading and would be minor enough to be glossed over, if not by the time of the handover in 1997 then certainly by the time the 50-year “one nation, two systems” deal was to expire. Few predicted the gaping chasm that has opened up between the aspirations of Hong Kongers and the authoritarian turn of the Party.</p>
+      <p>None of this suggests that China will soon back down in its efforts to restrict Hong Kong’s rights and autonomy. But at least on paper, the “one country, two systems” arrangement doesn’t expire until 2047. Considering how often and how dramatically China has reinvented itself in the past century, a lot could happen in those 27 years.<span class="cube"></span></p>
+      <hr />
+      <ol id="footnotes">
+        <li id="fn1">See, for instance, Alex W. Palmer, “<a href="https://www.nytimes.com/2018/04/03/magazine/the-case-of-hong-kongs-missing-booksellers.html" target="_blank" rel="nofollow">The Case of Hong Kong’s Missing Booksellers</a>,” <em>The New York Times Magazine</em>, April 3, 2018.<a title="Jump back to footnote 1 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fnr1" rel="nofollow">↩</a></li>
+        <li id="fn2">For a summary and translation of the new law, see “<a href="https://www.hrichina.org/en/press-work/press-release/hric-annotated-bilingual-chart-law-peoples-republic-china-safeguarding" target="_blank" rel="nofollow">HRIC Annotated Bilingual Chart of the Law of the People’s Republic of China on Safeguarding National Security in the Hong Kong Special Administrative Region</a>,” Human Rights in China, July 5, 2020.<a title="Jump back to footnote 2 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fnr2" rel="nofollow">↩</a></li>
+        <li id="fn3">See, for instance, Timothy McLaughlin, “<a href="https://www.theatlantic.com/international/archive/2020/08/hong-kong-arrests-jimmy-lai/615121/" target="_blank" rel="nofollow">Hong Kong’s Most Brazen Arrest Yet</a>,” <em>The Atlantic</em>, August 10, 2000.<a title="Jump back to footnote 3 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fnr3" rel="nofollow">↩</a></li>
+        <li id="fn4">On the implications for Taiwan, see John Pomfret, “<a href="https://www.washingtonpost.com/opinions/2020/07/06/hong-kong-security-law-could-be-chinas-blueprint-deal-with-taiwan-problem/" target="_blank" rel="nofollow">The Hong Kong Security Law Could Be China’s Blueprint to Deal with the ‘Taiwan Problem’</a>,” <em>The Washington Post</em>, July 6, 2020.<a title="Jump back to footnote 4 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fnr4" rel="nofollow">↩</a></li>
+        <li id="fn5">See Jiayang Fan, “<a href="https://www.newyorker.com/news/news-desk/hong-kongs-toddler-test" target="_blank" rel="nofollow">Hong Kong’s Toddler Test</a>,” <em>The New Yorker</em>, May 7, 2014.<a title="Jump back to footnote 5 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fnr5" rel="nofollow">↩</a></li>
+        <li id="fn6">See, for instance, Orville Schell, “<a href="https://www.chinafile.com/nyrb-china-archive/crackdown-china-worse-and-worse" target="_blank" rel="nofollow">Crackdown in China: Worse and Worse</a>,” <em>The New York Review</em>.<a title="Jump back to footnote 6 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fnr6" rel="nofollow">↩</a></li>
+        <li id="fn7">See Alice Su, “<a href="https://www.latimes.com/world-nation/story/2020-06-27/in-chinas-universities-targeted-attacks-on-intellectuals-raise-memories-of-the-cultural-revolution" target="_blank" rel="nofollow">Spied On. Fired. Publicly Shamed. China’s Crackdown on Professors Reminds Many of Mao Era</a>,” <em>Los Angeles Times</em>, June 27, 2020.<a title="Jump back to footnote 7 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fnr7" rel="nofollow">↩</a></li>
+        <li id="fn8">See James Millward, “<a href="https://www.chinafile.com/library/nyrb-china-archive/reeducating-xinjiangs-muslims" target="_blank" rel="nofollow">‘Reeducating’ Xinjiang’s Muslims</a>,” <em>The New York Review</em>, February 7, 2019.<a title="Jump back to footnote 8 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/chinas-clampdown-hong-kong#fnr8" rel="nofollow">↩</a></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-12-08</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-08/How-the-CCP-Took-over-the-Most-Sacred-of-Uighur-Ri/">
+          How the CCP Took over the Most Sacred of Uighur Rituals
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-11-23</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-23/A-Border-Town-s-Second-Gamble/">
+          A Border Town’s Second Gamble
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-11-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-17/Meeting-the-China-Challenge-A-New-American-Strate/">
+          Meeting the China Challenge: A New American Strategy for Technology Competition
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-11-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-17/How-Can-the-U.S.-Maintain-Global-Leadership-in-Sci/">
+          How Can the U.S. Maintain Global Leadership in Science and Technology?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-11-18/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E5%85%AC%E6%AC%BE%E8%B2%B7%E7%89%9B%E8%82%89%E9%BA%B5%E7%AE%97%E4%BB%80%E9%BA%BC-%E9%82%84%E6%9C%89%E5%85%AC%E6%AC%BE%E5%80%9F%E4%BA%BA%E6%89%93%E9%BA%BB%E5%B0%87%E7%9A%84%E5%92%A7/">
+            前一篇：[臺灣小事]公款買牛肉麵算什麼，還有公款借人打麻將的咧
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-11-19/%E8%AE%B8%E5%A4%9A%E9%A1%B6%E5%B0%96%E7%9A%84AI%E7%A0%94%E7%A9%B6%E4%BA%BA%E5%91%98%E4%BB%8E%E7%A7%91%E6%8A%80%E5%AF%A1%E5%A4%B4%E5%85%AC%E5%8F%B8%E8%8E%B7%E5%BE%97%E8%B5%84%E9%87%91%E6%94%AF%E6%8C%81-iYouPort/">
+            後一篇：许多顶尖的AI研究人员从科技寡头公司获得资金支持 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-11-18/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E5%85%AC%E6%AC%BE%E8%B2%B7%E7%89%9B%E8%82%89%E9%BA%B5%E7%AE%97%E4%BB%80%E9%BA%BC-%E9%82%84%E6%9C%89%E5%85%AC%E6%AC%BE%E5%80%9F%E4%BA%BA%E6%89%93%E9%BA%BB%E5%B0%87%E7%9A%84%E5%92%A7/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-11-19/%E8%AE%B8%E5%A4%9A%E9%A1%B6%E5%B0%96%E7%9A%84AI%E7%A0%94%E7%A9%B6%E4%BA%BA%E5%91%98%E4%BB%8E%E7%A7%91%E6%8A%80%E5%AF%A1%E5%A4%B4%E5%85%AC%E5%8F%B8%E8%8E%B7%E5%BE%97%E8%B5%84%E9%87%91%E6%94%AF%E6%8C%81-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-11-23/A-Border-Town-s-Second-Gamble/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-11-17/Meeting-the-China-Challenge-A-New-American-Strate/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-11-18/%E8%87%BA%E7%81%A3%E5%B0%8F%E4%BA%8B-%E5%85%AC%E6%AC%BE%E8%B2%B7%E7%89%9B%E8%82%89%E9%BA%B5%E7%AE%97%E4%BB%80%E9%BA%BC-%E9%82%84%E6%9C%89%E5%85%AC%E6%AC%BE%E5%80%9F%E4%BA%BA%E6%89%93%E9%BA%BB%E5%B0%87%E7%9A%84%E5%92%A7/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-11-19/%E8%AE%B8%E5%A4%9A%E9%A1%B6%E5%B0%96%E7%9A%84AI%E7%A0%94%E7%A9%B6%E4%BA%BA%E5%91%98%E4%BB%8E%E7%A7%91%E6%8A%80%E5%AF%A1%E5%A4%B4%E5%85%AC%E5%8F%B8%E8%8E%B7%E5%BE%97%E8%B5%84%E9%87%91%E6%94%AF%E6%8C%81-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-11-23/A-Border-Town-s-Second-Gamble/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-11-17/Meeting-the-China-Challenge-A-New-American-Strate/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

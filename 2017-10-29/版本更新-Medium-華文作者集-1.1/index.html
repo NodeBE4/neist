@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>版本更新－Medium 華文作者集 1.1 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+版本更新－Medium 華文作者集 1.1
+——
+" />
+    <meta property="og:description" content="
+版本更新－Medium 華文作者集 1.1
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="版本更新－Medium 華文作者集 1.1" />
+    <meta property="twitter:title" content="版本更新－Medium 華文作者集 1.1" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fverbalflystep.com%2Flists-v1-1-bdb19f5a1403%3Fsource%3Drss-7e0de79fece------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://verbalflystep.com/lists-v1-1-bdb19f5a1403?source=rss-7e0de79fece------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://verbalflystep.com/lists-v1-1-bdb19f5a1403?source=rss-7e0de79fece------2&text=版本更新－Medium 華文作者集 1.1&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://verbalflystep.com/lists-v1-1-bdb19f5a1403?source=rss-7e0de79fece------2&title=版本更新－Medium 華文作者集 1.1" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://verbalflystep.com/lists-v1-1-bdb19f5a1403?source=rss-7e0de79fece------2&title=版本更新－Medium 華文作者集 1.1" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=版本更新－Medium 華文作者集 1.1&body=
+版本更新－Medium 華文作者集 1.1
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://verbalflystep.com/lists-v1-1-bdb19f5a1403?source=rss-7e0de79fece------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://verbalflystep.com/lists-v1-1-bdb19f5a1403?source=rss-7e0de79fece------2&title=版本更新－Medium 華文作者集 1.1&caption=
+版本更新－Medium 華文作者集 1.1
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=版本更新－Medium 華文作者集 1.1&url=https://verbalflystep.com/lists-v1-1-bdb19f5a1403?source=rss-7e0de79fece------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>版本更新－Medium 華文作者集 1.1</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2017-10-29
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 李飛步</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://verbalflystep.com/lists-v1-1-bdb19f5a1403?source=rss-7e0de79fece------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1509258660000-->
+<p><a href="https://verbalflystep.com/lists-v1-1-bdb19f5a1403?source=rss-7e0de79fece------2">版本更新－Medium 華文作者集 1.1</a>
+——</p>
+
+<div>
+  <h3 id="section">1.1 版本更新記錄及新增作者名單</h3>
+  <ol>
+    <li>更名為「<strong>Medium</strong> 華文作者集 1.1 (飛步編)」</li>
+    <li>更新申請入表方法：<br />以個人電郵收集申請，<strong>阻礙管理個人郵件</strong>，所以日後的申請，須發送到 <a href="https://goo.gl/WucJyY"><strong>Chatbot</strong></a>。如必要，才發到<a href="mailto:verbalflystep@gmail.com">個人電郵</a>。申請方法見作者集</li>
+    <li>技術上，無法 Tag 部份 Publication，所以只接受個人帳號申請</li>
+    <li>推介文章精華欄，字數限定約 <strong>60</strong> 字，即 <strong>Medium</strong> <strong>兩行半</strong></li>
+    <li>新增 <strong>23</strong> 位作者</li>
+    <li>新增 <strong>19</strong> 個文章主題類別，分別為：<br />動漫｜科幻｜職場心經｜社會｜遊戲｜藝術｜國際｜發展研究｜故事｜<br />射藝｜軟件開發｜宗教｜文化｜流行文化｜戲劇｜策略｜電視娛樂｜<br />語言學｜專題寫作</li>
+    <li>新增作者語音項 —<strong> {粵文}</strong></li>
+  </ol>
+  <blockquote>
+<a href="https://goo.gl/yi7gkG"><strong>按此返回《華文作者集 1.1 (飛步編)》</strong></a>  </blockquote>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*ryNt2jbbDwgddX4hhYcB8g.jpeg" />
+  </figure>
+  <h4 id="section-1">新增作者名單</h4>
+  <p><strong>▍</strong><a href="https://medium.com/u/a06b9f60d808"><strong>Evonne Tsai</strong></a><strong><br />｜行銷、策略、科技<br />/ </strong><a href="https://goo.gl/aJQ2Ln">為什麼我不參與Medium付費牆寫作計畫</a><br />「付費讀者不一定是我想影響的人，付費只能確定是『積極的閱讀者』，如果我想發揮影響力，藉由讓文章擴散，增加我的「目標讀者訂閱」數量，才是發展對我更有價值的受眾的方式。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/16d3a8d731c1"><strong>Jacky</strong></a><br />｜閱讀、網絡、科技、動漫、電影、科幻<br />/ <a href="https://goo.gl/8JpurT">攻殼後香港</a><br />「《攻殼》給我們上的一課是：認識自己，保持開放，採取主動，勇於嘗試，新的東西才能生出來。」</p>
+  <p>▍<a href="https://medium.com/u/988305609024"><strong>Aries</strong></a><strong> <br />｜藝術、嘻哈、閱讀</strong><br />/ <a href="https://goo.gl/jhVMQ5">這幅畫叫做 《握著橄欖枝的天使》</a><br />「在他那個時代的天使，有著中世紀的僵直構圖與聖潔的臉龐，像一碗純粹工整的容器，是一筆筆大寫的天國御用符號，但梅姆林的天使，好似真正獲得了肉體的質感。」</p>
+  <p>▍<a href="https://medium.com/u/4e03a50fc0dc"><strong>Manson</strong></a><strong> <br />｜國際、科技、社交媒體</strong><br />/ <a href="https://goo.gl/yZB6mj">緬甸人道危機：「昂山無權論」能否為她的冷漠開脫？</a><br />「顯然，昂山素姬一直小心奕奕地避免在羅興亞事件上觸怒軍方，但忽略了問題的根本，所謂的援助也只是杯水車薪，國際社會也難以苟同她有盡力及有誠意解決問題。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/c808e932d47f"><strong>程思傳</strong></a><strong> <br />｜電影 、閱讀 、寫作 、出版<br />/ </strong><a href="https://goo.gl/s2Ndxh">《逆權司機》你能展望未來，但記得勿忘過去</a><br />「看完電影，翻看很多光州事件有關的資料。總統朴正熙被刺殺後，全斗煥發動雙十二政變，南韓沒有迎來預期的民主政府，而是換成軍政府統治。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/d1ff380478f6"><strong>Kwan Yue 鈞裕</strong></a><strong><br />｜政治、經濟、發展研究、國際新聞<br />/ </strong><a href="https://goo.gl/kjzQRn">政府與市場：生產棒球還是高爾夫球有分別嗎？</a><strong><br />「</strong>同樣是波，棒球的縫線工序到今天仍未機械化，得在哥斯達黎加等地的工廠靠人手一針一針縫上；高爾夫球卻已發展成高科技產品，安坐美國等富裕國家裡機械化生產，可謂同波不同命。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/8a9247ac3f7"><strong>CY L.</strong></a><strong><br />｜射藝、科技、軟件開發</strong><br />/ <a href="https://goo.gl/ymYZR5">如何繪畫別人看得懂的軟件架構圖？──Simon Brown 的C4 Model</a><br />「Simon 認為毋須拘泥於一套行業通用規範，個別團隊只要有一套共識的規範即可。就像各式各樣的地形圖、街道圖、觀光圖，呈現方式不統一，但只要附上圖例說明，一般人都看得懂。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/ffd7d7577dab"><strong>Marcus Peck</strong></a><strong><br />｜宗教、文化</strong><br />/ <a href="https://goo.gl/fKHYiE">合一的尋索：談合一與劃一</a><br />「合一經常被挪用作為磨平差異的工具，例如教會團契內，大家用同一本靈修讀物，這三個月大家不能用其他的材料。可是，這最嚴重的錯誤，把『合一』當成『劃一』或『統一』。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/8594a5bf2dfe"><strong>文化九公</strong></a><br /><strong>｜音樂、專題寫作、媒體 </strong><br />/ <a href="https://goo.gl/r6EWpP">Live Music 2.0</a><br /> 「如今線上與線下的現場 LIVE M USIC 體驗已經糾纏不清，串流直播突破聽 LIVE M USIC 的界限，由單向現場音樂體驗變成可以透過社交媒體與全世界互動音樂體驗。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/62c83ff42cf7"><strong>Lizzy Chiang</strong></a><strong><br />｜電影<br />/ </strong><a href="https://goo.gl/4qHXbv">《神力女超人》：滿足每個人心中的想像力</a><br />「無論選擇為何，父權亦可能一直都在，但女性能用自己的方式存活，做出每一個決定，要愛也好，不愛也好，為愛犧牲也好，為愛戰鬥也好，都沒人能左右她們，擺脫父權的束縛。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/5a07ec8713a4"><strong>Bruce Lai 賴勇衡</strong></a><strong><br />｜</strong>電影、戲劇、閱讀<br />/<a href="https://goo.gl/f6c24i">《完美的獨裁》：最後一步靠你了</a><br />「Ringen 稱之為『效果強硬，執行柔軟』的『管控專制』(Controlocracy)，在直接的技術手段以外，更倚賴間接的意識形態操作，由人民的默許、自我審查和贊同來完成。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/3b28367cb44e"><strong>PoHua</strong></a><strong><br />｜</strong>閱讀、生活見聞<br />/ <a href="https://goo.gl/reJXqY">失控的同理心｜別讓同理心佔據所有思緒</a><br />「聚光燈照亮的範圍有限，當光亮聚焦在某處，就有地方是籠罩在昏暗之中。換言之，同理心使特定團體得到幫助，在有限資源的前提下，一定有其他『沒有被看見』的團體或個人被忽視。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/9c3ee9049a3f"><strong>Wade Jin</strong></a><strong><br />｜</strong>閱讀、學習方法<strong><br /></strong>/ <a href="https://goo.gl/XQXTzy">Information Snacking 的利與弊</a><br />「Information Snacking 指得是對接收到的資訊只大致了解，而沒有深入了解。過度的 Information Snacking 易使人誤以為學到很多，但其實都不深入嚴謹、且有諸多理解錯誤。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/9b40789035bf"><strong>Tang Siu Wa</strong></a><strong><br />｜文學<br />/ </strong><a href="https://goo.gl/yxPbP7">愛的廢棄物</a><br />「拒絕描述與歸類，也就無法「認識」。如果用本雅明的標準，這不是不抱希望的愛。所以有人說，羅蘭巴特只愛自己。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/668c210e23e0"><strong>Ronald Yick</strong></a><strong><br />｜閱讀<br />/ </strong>《<a href="https://goo.gl/YbMwNV">不漏洞拉 — — 越南船民的故事》之時代意義</a><br />「港府在 88 年實施甄別政策，區分難民類別，強行遣反經濟難民，不可移居外地。這就是電台播放『<a href="https://www.youtube.com/watch?v=lSgkqCJpnjI">不漏洞拉</a>』聲帶的原因。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/3ef969d8b398"><strong>阿果</strong></a><strong><br />｜文化、流行文化<br />/ </strong><a href="https://goo.gl/ma2gm8">港式臥底何處去？當合拍劇成為新潮流</a><br /><strong>「 </strong>未取得廣電部門頒發許可證的劇集，一律不得在網上播放。當日一眾合拍片因應內地送檢制度妥協，恐怕很快會在香港電視劇身上發生，觀眾宜金睛火眼，靜觀其變。因此我才百感交集。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/d470d211146e"><strong>游大東</strong></a><strong><br />｜電視娛樂、電影<br />/ </strong><a href="https://goo.gl/fMQPnm">《綠豆》食桌聯想 ── 吃東西醉翁之意</a><br />「查實，第一集瑪嘉烈與大衛吃飯是開心的，往後的對話都是沉悶的、幾近無言以對的，顯示關係轉差；有次大衛開車載瑪嘉烈到西貢吃車仔麵，然而瑪嘉烈只顧對着手機跟趙子龍調情。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/71094848e741"><strong>置地記者</strong></a><strong> {粵文}</strong><br /><strong>｜職場心經、金融、社會</strong><br />/ <a href="https://goo.gl/atCRc5">夠絕情。我都趕我自己出去</a><br />「結果，往往未必夠過程重要。 Go through 咗一個 Thinking Process 而做錯決定，最多都係揼春，但至少有 Lesson Learnt ；闔埋眼賭大細買啱咗，今次賺粒糖，下次可以輸間廠。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/f7e8780535d3"><strong>史兄</strong></a><strong> {粵文}<br />｜生活見聞<br />/ </strong><a href="https://goo.gl/eEaeGi">仆街磁石</a><br />「前度玲玲語帶無奈咁講：：有一種女人，不斷遇到仆街男人，一個接一個、一浪接一浪，瘋狂咁吸引班仆街嚟傷害佢。佢好似一舊強力攝石咁，唔係，簡直係一舊『仆街磁石』。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/9e1b21fcd743"><strong>Katarina Prestor (方麗娜)</strong></a><strong> {粵文}<br />｜小說、文學、電影、遊戲、生活見聞</strong><br />/ <a href="https://goo.gl/5oM9mu">即使世界如童話，不等於我要接受一隻青蛙</a><br />「青蛙說得很清楚，他說很喜歡公主，希望公主可以成為他的女朋友。公主也許有些感動，但是她在生理上無法接受和一隻青蛙在一起。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/d609b01e72bd"><strong>阿擇 （Chaaak）</strong></a><strong>{粵文}<br />｜語言學<br />/ </strong><a href="https://goo.gl/tZtavF">迷失方向嘅粵語研究</a><strong><br />「</strong>保護粵語，或者其他地球上一切語言，並不在於選優逐劣。更甚者優劣論正正就係消滅語言嘅利器，所有語言死亡正正係呢種「擇優而用」嘅功利語言心態造成。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/a32dbe5c7d80"><strong>講故佬</strong></a><strong> {粵文}<br />｜故事<br />/ </strong><a href="https://goo.gl/Sm47VH">仿生保姆</a><br />「網路地圖顯示，明輝工業用品就在這條巷子。貝爾沒想過陽光明媚的城市中會有如此闇暗的小道，就像活在附近高樓大廈的陰影之中。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/cad8149f8c7"><strong>Econ記者</strong></a><strong> {粵文}<br />｜國際新聞、經濟<br />/ </strong><a href="https://goo.gl/6YNqvz">甚麼是Prospect Theory？</a><br />「 在 Bernoulli 的構想中，其中一個重要假設是現代經濟學指的Diminishing Marginal Value of Wealth概念，即財富愈多，額外得到的Utility愈少。」</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*eJgnMz90tUR_EuU9LP2iQw.png" />    <figcaption>
+移民圖像／<a href="http://logomakr.com/4et9AJ">LOGOMAKR</a>
+    </figcaption>
+  </figure>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=bdb19f5a1403" width="1" height="1" alt="" />  <hr />
+  <p><a href="https://verbalflystep.com/lists-v1-1-bdb19f5a1403">版本更新－Medium 華文作者集 1.1</a> was originally published in <a href="https://verbalflystep.com">飛步出品</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2018-01-01</time>
+        <a href="https://nodebe4.github.io/oped2/2018-01-01/%E5%B9%B4%E5%BA%A6%E7%B2%BE%E9%81%B8%E6%96%87%E7%AB%A0-%E4%BA%94%E7%AF%87/">
+          年度精選文章／五篇
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2017-11-25</time>
+        <a href="https://nodebe4.github.io/oped2/2017-11-25/%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-Medium-%E8%8F%AF%E6%96%87%E4%BD%9C%E8%80%85%E9%9B%86-1.2/">
+          版本更新－Medium 華文作者集 1.2
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2017-10-24</time>
+        <a href="https://nodebe4.github.io/oped2/2017-10-24/Medium-%E7%A7%BB%E6%B0%91%E6%8C%87%E5%8D%97-%E4%B8%AD%E6%96%87%E4%BD%9C%E8%80%85%E9%9B%86-2.0-(%E9%A3%9B%E6%AD%A5%E7%B7%A8)/">
+          Medium 移民指南－中文作者集 2.0 (飛步編)
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2017-10-01</time>
+        <a href="https://nodebe4.github.io/oped2/2017-10-01/%E5%89%8D-Paypal-%E5%82%B3%E5%A5%87%E5%AF%A6%E7%BF%92%E7%94%9F-Paul-Martin-%E7%9A%84%E5%B0%8F%E6%95%85%E4%BA%8B/">
+          前 Paypal 傳奇實習生 Paul Martin 的小故事
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2017-10-28/%E4%BD%A0%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8%E7%BD%91%E4%B8%8A%E5%86%99%E9%95%BF%E6%96%87%E5%BE%88%E5%90%83%E4%BA%8F%E5%90%97/">
+            前一篇：你知道为什么在网上写长文很吃亏吗？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2017-10-29/%E4%BB%8E-%E6%B2%B9%E8%85%BB%E4%B8%AD%E5%B9%B4-%E7%9A%84%E8%AE%BD%E5%88%BA%E8%AF%B4%E8%B5%B7-%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%AF%B9%E4%B8%8D%E5%B9%B3%E7%AD%89%E9%97%AE%E9%A2%98%E6%9C%89%E7%9D%80%E7%89%B9%E6%AE%8A%E7%9A%84%E5%8F%8D%E9%A6%88%E6%96%B9%E5%BC%8F/">
+            後一篇：从“油腻中年”的讽刺说起——中国人对不平等问题有着特殊的反馈方式
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2017-10-28/%E4%BD%A0%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8%E7%BD%91%E4%B8%8A%E5%86%99%E9%95%BF%E6%96%87%E5%BE%88%E5%90%83%E4%BA%8F%E5%90%97/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2017-10-29/%E4%BB%8E-%E6%B2%B9%E8%85%BB%E4%B8%AD%E5%B9%B4-%E7%9A%84%E8%AE%BD%E5%88%BA%E8%AF%B4%E8%B5%B7-%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%AF%B9%E4%B8%8D%E5%B9%B3%E7%AD%89%E9%97%AE%E9%A2%98%E6%9C%89%E7%9D%80%E7%89%B9%E6%AE%8A%E7%9A%84%E5%8F%8D%E9%A6%88%E6%96%B9%E5%BC%8F/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2017-11-25/%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-Medium-%E8%8F%AF%E6%96%87%E4%BD%9C%E8%80%85%E9%9B%86-1.2/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2017-10-24/Medium-%E7%A7%BB%E6%B0%91%E6%8C%87%E5%8D%97-%E4%B8%AD%E6%96%87%E4%BD%9C%E8%80%85%E9%9B%86-2.0-(%E9%A3%9B%E6%AD%A5%E7%B7%A8)/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2017-10-28/%E4%BD%A0%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8%E7%BD%91%E4%B8%8A%E5%86%99%E9%95%BF%E6%96%87%E5%BE%88%E5%90%83%E4%BA%8F%E5%90%97/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2017-10-29/%E4%BB%8E-%E6%B2%B9%E8%85%BB%E4%B8%AD%E5%B9%B4-%E7%9A%84%E8%AE%BD%E5%88%BA%E8%AF%B4%E8%B5%B7-%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%AF%B9%E4%B8%8D%E5%B9%B3%E7%AD%89%E9%97%AE%E9%A2%98%E6%9C%89%E7%9D%80%E7%89%B9%E6%AE%8A%E7%9A%84%E5%8F%8D%E9%A6%88%E6%96%B9%E5%BC%8F/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2017-11-25/%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-Medium-%E8%8F%AF%E6%96%87%E4%BD%9C%E8%80%85%E9%9B%86-1.2/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2017-10-24/Medium-%E7%A7%BB%E6%B0%91%E6%8C%87%E5%8D%97-%E4%B8%AD%E6%96%87%E4%BD%9C%E8%80%85%E9%9B%86-2.0-(%E9%A3%9B%E6%AD%A5%E7%B7%A8)/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

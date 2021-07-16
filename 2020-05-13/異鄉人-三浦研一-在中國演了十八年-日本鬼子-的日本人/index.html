@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人
+——
+" />
+    <meta property="og:description" content="
+異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人" />
+    <meta property="twitter:title" content="異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40islander%2F%25E7%2595%25B0%25E9%2584%2589%25E4%25BA%25BA-%25E4%25B8%2589%25E6%25B5%25A6%25E7%25A0%2594%25E4%25B8%2580-%25E5%259C%25A8%25E4%25B8%25AD%25E5%259C%258B%25E6%25BC%2594%25E4%25BA%2586%25E5%258D%2581%25E5%2585%25AB%25E5%25B9%25B4-%25E6%2597%25A5%25E6%259C%25AC%25E9%25AC%25BC%25E5%25AD%2590-%25E7%259A%2584%25E6%2597%25A5%25E6%259C%25AC%25E4%25BA%25BA-bafyreic7geb23cjitmfci6r6s5t477ht6eykxzymqtagqbaoenkozifkni" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@islander/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA-bafyreic7geb23cjitmfci6r6s5t477ht6eykxzymqtagqbaoenkozifkni" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@islander/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA-bafyreic7geb23cjitmfci6r6s5t477ht6eykxzymqtagqbaoenkozifkni&text=異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@islander/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA-bafyreic7geb23cjitmfci6r6s5t477ht6eykxzymqtagqbaoenkozifkni&title=異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@islander/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA-bafyreic7geb23cjitmfci6r6s5t477ht6eykxzymqtagqbaoenkozifkni&title=異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人&body=
+異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@islander/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA-bafyreic7geb23cjitmfci6r6s5t477ht6eykxzymqtagqbaoenkozifkni" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@islander/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA-bafyreic7geb23cjitmfci6r6s5t477ht6eykxzymqtagqbaoenkozifkni&title=異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人&caption=
+異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人&url=https://matters.news/@islander/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA-bafyreic7geb23cjitmfci6r6s5t477ht6eykxzymqtagqbaoenkozifkni" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-05-13
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 島民</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@islander/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA-bafyreic7geb23cjitmfci6r6s5t477ht6eykxzymqtagqbaoenkozifkni" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1589422453000-->
+<p><a href="https://matters.news/@islander/%E7%95%B0%E9%84%89%E4%BA%BA-%E4%B8%89%E6%B5%A6%E7%A0%94%E4%B8%80-%E5%9C%A8%E4%B8%AD%E5%9C%8B%E6%BC%94%E4%BA%86%E5%8D%81%E5%85%AB%E5%B9%B4-%E6%97%A5%E6%9C%AC%E9%AC%BC%E5%AD%90-%E7%9A%84%E6%97%A5%E6%9C%AC%E4%BA%BA-bafyreic7geb23cjitmfci6r6s5t477ht6eykxzymqtagqbaoenkozifkni">異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人</a>
+——</p>
+
+<div>
+  <p>演員走在路上，都怕被認出來。日本演員三浦研一遇到的問題更棘手一些。走在北京街頭，他常被路人認出，被喊成「那個鬼子」，有時年紀大的男士看到他會直接罵，「你們日本人有啥了不起啊，你們日本人驕傲什麼啊⋯⋯」</p>
+  <p>所以，最近幾年，三浦研一出門必備兩樣東西：一頂貝雷帽和一副沒有鏡片的黑框眼鏡。帽子下藏著一顆光光的腦袋，眼鏡的做工精良，不走近了，還真看不出是個「偽裝」。</p>
+  <p>他已在中國生活了整整20年，其中有18年是在各類電視劇、電影中出演「日本鬼子」，比如《建黨偉業》中代表日本與中國簽訂《二十一條》的日本外交官日置益、《生死線》中的出身貴族并熱愛決鬥的日本軍官伊達雪之丞、《走向共和》中的日本海軍陸戰隊將軍野村。所以中國觀眾都叫他「鬼子專業戶」。</p>
+  <p>這份工作，兩面不討好。他不僅被中國人咒罵，也會令日本人不滿。曾有好奇的中國網民在社交媒體上發問，為什麼會有日本人願意到中國演「鬼子」？討論的結果大多不過是「經濟原因」、「混口飯吃」、「為了生存」。不過三浦研一說，其他人也許是，尤其是2008年之後大批湧入中國的日本演員，那是奔著錢來的，可他不是。</p>
+  <p>他出身於東京江戶川區，童年曾跟隨父親在美國紐約的曼哈頓區生活六年，3歲學習劍道，讀私立高中，擁有青山學院國際政治學碩士學位，更是日本的中國研究大師天兒慧的弟子。來中國的那一年，他帶著30萬人民幣，邊讀中國社會科學院的國際關係學博士，邊在五道口開一間「悟空酒吧」，還曾在中國社科院兼職任教一年，一群中國精英學生跟他修習日本文化，其中一些學生後來做了大學教授。可他最後卻選擇做了演員，專演「日本鬼子」。</p>
+  <p>說到這，三浦研一輕笑一聲，有些無奈地糾正這句話：「我是選擇做演員，不是選擇演鬼子。因為我剛開始做演員的時候，沒想到會一直要演日本軍官。」</p>
+  <p>後悔嗎？他說不。用了5根煙的時間，三浦研一與端傳媒記者分享了他的異鄉故事。</p>
+  <h2 id="section">研究中國，做學者不如做演員</h2>
+  <p>三浦研一是最早進入中國大陸的日本演員之一。20年前，他到中國社科院讀國際關係博士的時候，在中國大陸發展的日本演員還不到五個。那是1997年，日本的GDP總量超過4萬億美元，而中國只有9千億美元。他卻覺得中國有活力。「雖然那時候老百姓穿得破破爛爛的，」他用帶日文腔調的北京話對端傳媒記者說，「但我特別喜歡那個時候，大家沒有裝逼。」</p>
+  <p>他愛強調自己與普通演員的不同。「我的老師天兒慧曾經說，他培養出了日本的國會議員、外交官、電視主播，唯有一個我，是他學生中唯一的演員。」在青山學院讀碩士的時候，三浦研一跟著天兒慧讀了兩年的中國研究。</p>
+  <p>他對中國的興趣，一開始與抗日戰爭並沒什麼關聯。三浦的祖父在二戰期間是做保險庫生意的商人，曾在抗日戰爭時期到過上海，但祖父與父母從未和他討論過中國的事。而在小學、中學階段，他只記得課本上總說日本是對美國戰敗的，「我們的假想敵是美國」。至於中國，「有說日本的軍隊『去過』，但有的書說『侵略』，有的書說『侵入』，很模糊」。</p>
+  <p>直到他上了高中，偶然看到兩本周恩來的傳記，才第一次對中國產生興趣。他至今心醉周恩來，「作為歷史人物，他還是當今世界我最欽佩的人之一。每次有日本朋友來中國找我，我都帶他們去天津的周恩來紀念館，算起來已經去了好幾十次。」他欽佩周恩來什麼？「他一路加入革命的理想，和他親民的態度。」</p>
+  <p>後來他成為一名佛教徒，隸屬池田大作創立的國際創價學會。在池田大作的書中。他得知周恩來曾在病榻上與池田大作會面，又讀到湯因比與池田大作對話的《展望21世紀》。「看到他們的友誼，對我影響非常深。」</p>
+  <p>在青山學院碩士畢業後，三浦研一仍覺得對中國的了解不夠多。他告訴自己：「一個研究者需要客觀的分析，就要來這裡看看，來這裡生活才行。」大學畢業後7年的工作經歷，讓他攢下一些錢，他於是在1997年下定決心，買下單程機票，飛到中國，在北京城西北的五道口租房子住下，先在語言學校學一年半的中文，再去社科院讀博士。</p>
+  <p>他的研究興趣集中在意識形態。「我想知道，各個國家之間的意識形態差異是怎麼發生的，社會上的心理狀態又是怎麼造成的？」他舉例說，中國人從1949年開始不斷受到共產主義的影響，而日本則是自由主義和民主主義的國家。「現在中國人的片子，美國人、日本人看不懂，那有沒有可能通過一些文化的傳播方式，最終達到一種『共同的意識』呢？」</p>
+  <p>博士三年級，他在中國社科院兼職教日本文化，看著五六十個學生，全是中國精英，他卻覺得很不滿足。「我覺得我接觸不到大眾。」剛好那時，趙寶剛導演帶著《夜幕下的哈爾濱》來找他，片子講述的是上世紀三十年代在偽滿統治下，哈爾濱共產黨人的抗日故事。他心一橫，放下博士論文的開題報告，決定入行做演員，出演城府頗深的日本高級軍官小原大佐。劇中，他用比如今吃力得多的中文威脅一個中國人：「在哈爾濱，還有關東軍不能進的門嗎？」</p>
+  <p>從《夜幕下的哈爾濱》開始，他逐漸獲得主要配角的扮演機會，包括2009年《生死線》中，讓人又愛又恨的伊達雪之丞，同年的《闖關東2》中的藤本警官。</p>
+  <p>頻繁出演日本軍人，讓他開始閱讀大量關於抗日戰爭的史料，去中國各地拍戲，也總愛和當地的老人家交流。「我想聽他們的真心話，到底那個時候你接觸日本軍隊，是什麼感受？什麼情況？」有的老人告訴他，當年就是「鬼子來啦！特別害怕！」也有一位陝西農村的老人家讓他很意外。那是2006年他拍電影《圍剿》的時候，三浦研一出演日本軍官河野隊長，沒想到村子裡一位近80歲的老人突然對他說出了日語。「好幾十年沒說了，村裡人都不知道他會說日語。他知道我是日本人，就告訴我說這邊有個山，上面原來有砲台，有炮兵。炮兵是只針對天上飛機的，陸地上和村民交情都非常好，一起玩。村子裡有婚禮，日軍都會來參加，還一起喝酒，他就是這麼學的日語。」</p>
+  <p>三浦研一說，在北京的學院裡做學者，和知識分子交流，當然有意義，可是能有這樣的經歷嗎？「這些事情讓我想到，戰爭是必須每個格子每個格子來看。當然，整個戰爭是最好要避免的。」</p>
+  <p>到今年，他已經出演了近百部電視劇和電影，演過至少兩次崗村寧次，兩次東條英機。但他的競爭對手越來越多、年紀越來越年輕，就連過去在台灣發展的日本演員也跑來大陸「吸金」。其中最主要的原因是這20年間，影視圈對能出演「日本鬼子」的日本人，需求越來越大。</p>
+  <p>發生在1937年到1945年間的抗日戰爭，一直都是既被中國官方相中、又被普通觀眾熱愛熱愛的題材。尤其是在臨近二戰結束紀念週年的年份，抗日題材的影視劇經常獨霸熒屏。但雖然劇集產量變多，卻大多是手撕鬼子、石頭打飛機、雪地強姦村婦的「抗日神劇」，三浦研一的選擇變得越來越少了。</p>
+  <h2 id="section-1">不想拍神劇，想拍那些「不能拍的劇」</h2>
+  <p>採訪中，三浦只拒絕回答兩件事，一是具體年齡，二就是他演過哪些「不想演的角色」。這兩項資料在互聯網上都能找到，可他不想證實。</p>
+  <p>「有些小角色，糟糕的角色，為了生活，有的時候需要演那種。這種我在演員簡歷上就不寫，忘掉。」</p>
+  <p>他列舉自己的接戲要求，要先看劇本，然後是導演、演員陣容、製片公司……「有的劇本看著實在太糟糕了！」什麼樣的太糟糕？「不現實啊，呵呵。」他笑笑說。「可能中國人估計呢，日本人是一定要欺負中國人的，必須要當一個壞蛋。這種場景，我覺得很幼稚。」</p>
+  <p>在演歷史上的真實人物之前，他會先研究史料，看這個人在歷史上對這些事件是什麼想法。「演一個日本軍官，就覺得這個人他肯定要去南京了，他肯定要去大屠殺了。其實軍隊裡面也有人是不想做的、反叛的，這種矛盾也是有的。所有的日本人不一定了解所有的日本人，就像每個中國人不一定了解所有的中國人。每個軍人的想法不一定都是一樣的，就好像我們每天的生活，都有很多矛盾。」三浦說，演日軍不是想得那麼簡單。</p>
+  <p>再比如說，他看到很多中國演員演日本人，覺得「做不成」。許多細節方面的事，例如東京人、大阪人有不同的方言，有些思想也不同，中國演員就很難注意到這些事。</p>
+  <p>「我當然尊敬中國的英雄，但我也尊敬我的角色。」三浦研一說。</p>
+  <p>可惜，許多劇集並不需要一個有血有肉的日軍角色，只需要他出演兇狠的殺人機器。2005年，他在出演《我的母親趙一曼》時，就曾因為自己給角色演出了殺人前的表情變化，被導演制止，「不用這麼多」。</p>
+  <p>這種琢磨角色的習慣從他最早出演《走向共和》的時候就養成了。那時有一個簽署《馬關條約》的場景，扮演李鴻章和八國聯軍外交官的演員坐在前面，三浦研一站在後面的一排「各國軍官」中間，演一個日本小軍官。其他小演員都站著不動，只有他演的角色，先是正一正軍服，然後忍不住好奇，微微踮起腳想看前面，結果重心沒控制好，差點摔倒又趕緊站回來。導演張黎誇獎了還是群眾演員的他：「三浦是會演戲的。」</p>
+  <p>到了2009年的電影《拉貝日記》，他只演一個拿著喇叭、沒有名字的日本士兵，對一群中國人喊：「吃飯了！」然後這些人一過來，就被掃射殺害。但這個士兵事先到底知不知道這麼多人要被殺了？他覺得這很關鍵，因為如果這個士兵知道，拿喇叭的感覺就不一樣了。但劇本沒有寫明，他就去問德國導演，兩人討論了很久，最後確定這個士兵是知道的，他的「吃飯了」最後是帶著顫音喊出來的。</p>
+  <p>說起這些研究角色的細節，三浦研一說著說著就在咖啡店裡演起來，場景重現，興奮非常。他想和國際上的大導演合作，比如李安、吳宇森，但回到現在的現實情況，他就連連歎氣。「現在好作品不多了！」他曾經接過一部戲，本來的拍攝計劃是120天，後來因為製片方要節約成本，減到20天。他被迫放棄和妥協了很多自己原先的設想，心裡很不舒服。現在「流量」小鮮肉崛起，他自認不是「網紅」，「是演員不是藝人」，跟其他中國演員比，收入「不到人家的千分之一」。「前幾天一個製片人告訴我，某演員現在一部戲的價格是一個億，他還接了一個廣告，兩個億。一個演員幾十個廣告，那一年能賺多少啊！」</p>
+  <p>他放下半根煙，連連搖頭又擺手：「我是沒有，幾千萬都沒有。」</p>
+  <p>劇集質量下滑、影視資源分配不均，他開始想在中國大陸以外，拍一些「不能拍的抗戰劇」。說到底也是題材問題，他特別想拍的兩個題材，一是二戰結束時，滯留在中國東北的日本遺孤。二戰結束的時候，蘇聯軍隊進到中國內蒙和東北一帶，超过200萬日軍和日本僑民要撤離。「那個時候雖然國家之間發生強烈的衝突，但老百姓是無辜的，有些農民撿了日本女人留下的孩子，老百姓幫助老百姓。」他想自己找人寫劇本，做製片人。「這是我覺得中國人很好的地方。可是現在不讓拍啊！雖然說（不讓拍）是為了人民，為了國家，但是怎麼說呢，唉……」</p>
+  <p>另一個題材是更不可能在中國大陸開拍，劇本已經在創作之中，他希望可以去日本或美國好萊塢拍攝。這故事要講的，是1945年到1949年的國共內戰中，滯留在中國的日本殘兵分別為國共兩黨軍隊效力的事。戰爭史研究者、上海交通大學歷史系教授劉統曾在書中詳細提到，共產黨的東北野戰軍怎樣征用了8000多名日本醫生和護士，並收編日本專家重建東北兵工廠，造出的炮彈用於淮海戰役。而國民黨征用日本殘兵，則曾被中國共產黨新聞網發文批評，指日軍團長元泉馨被國民黨的閻錫山部隊吸納，「與人民解放軍作戰，繼續屠殺中國人民」。</p>
+  <p>三浦研一說，這種題材他不會考慮在中國拍，因為審查太厲害了。「但這是歷史非常盲目的一個點。這是真實的、充滿矛盾的歷史。」他不僅想做製片人，還想自己也演上一把。</p>
+  <h2 id="section-2">境遇不好的那幾年，他發現中國人「還未長大」</h2>
+  <p>對中國大陸的媒體，三浦研一從不提那些不能拍的題材。他也不在微博、微信朋友圈發任何埋怨「鬼子」角色太幼稚、不現實的評論。</p>
+  <p>「這些東西還是敏感題材，現在都是上面來管輿論。」</p>
+  <p>日本人的身份，也讓他對中國觀眾說話特別謹慎。「通過我的研究和觀察吧，美國人、歐洲人，或是我們日本，是自由國家，想知道什麼信息，都可以在網上知道，什麼音樂都可以聽，想看，什麼都能看。可是目前中國大陸不可以。」</p>
+  <p>他覺得這才是抗戰劇越拍越難看的原因。「老百姓知道的東西就跟其他國家不一樣，包括編劇導演，他知道的東西那麼少，他自己的意識形態限制了他的作品，做出來的作品就是那麼回事，很簡單，不能說服其他國家的人，只能中國人愛看，還感動。」</p>
+  <p>說到愛看和感動，他馬上想起票房破56億的《戰狼2》。他不屑，「我不看，沒意思。」</p>
+  <p>為什麼沒意思？他語調一轉，口氣沉沉地說，「現在的中國人，還沒有長大，還像孩子一樣。」這個「沒長大」，是他說的「不理性」、「只是仇恨別人」、「把過去不好的事情總記著」，還有對《戰狼2》式超級英雄的崇拜。「你要相信自己，沒有自己，就沒有家庭，那就沒有社會，就沒有國家。這不是從上而下看國家給你什麼，而是要看你自己。你自己幹嘛了？自己幹不了，就喜歡英雄，那你做得了英雄嗎？」他又比喻說：「這就跟我們看奧特曼一樣，是做夢。」</p>
+  <p>他記得在中日關係落入冰點的2012到2014年，自己有一段时间盡量白天不出門。「因為我住的隔壁有些房地產廣告，或是咖啡廳門口，羊肉串兒店門口，都寫著『日本人和狗不得進入』。」</p>
+  <p>那幾年，在中國的日本人境遇確實不好。曾有熱門新聞，講幾個日本人怎樣被友人一路護送離開中國，「避避風頭」。2012年是中日釣魚島問題升溫的一年，9月，日本宣布「國有化」釣魚島後，中國各地出現大規模的反日示威，北京、西安等多個城市都發生了打、砸、搶。日系車被砸，有人的腦袋也被砸破。在三浦研一長年生活的北京，不少中國民眾到日本駐華大使館門口扔雞蛋，扔礦泉水瓶，還和武警發生衝突。到2014年初，日本解禁集體自衛權，中日關係再度陷入冰點。</p>
+  <p>三浦研一說：「那我很容易被認出來，就不敢出門，也不敢坐出租車。不是說他們一定會做什麼，但就是怕萬一。」</p>
+  <p>他知道現在尤其是一些年紀大的中國人，對日本人還是有仇恨，或者是有刻板印象。「有的人會覺得壞事都是日本人幹的。比如誰偷東西了，你是哪的？你呢？哦，肯定是你日本人幹的。」</p>
+  <p>在中國被戴上有色眼鏡看待，很不好受。有的日本朋友勸他少演一點壞角色，不然大家以為日本人都這樣，怎麼辦？</p>
+  <p>端傳媒記者也問他，就不擔心自己演那麼多日本軍官，會加深中國觀眾對日本的刻板印象，助長仇日嗎？</p>
+  <p>「沒有。」他辯解道，「因為這只是表演，而且我選擇的角色雖然是軍人，但他內心是非常豐富的。」</p>
+  <p>記者追問：「你覺得觀眾能理解到這個內心的豐富嗎？」</p>
+  <p>他長出一口氣。「慢慢兒理解吧。」剛剛才說過老百姓「不理性」、「沒長大」，他又兜回來一點，「現在老百姓不像過去，所有播出來的東西都相信。」</p>
+  <p>在中國20年，他的中國朋友已經比日本朋友多了。50多歲了，「我沒有後悔來中國。」他自己算一算，又喃喃地說：「20年哦！差不多快一半的人生在中國。」</p>
+  <p>「我也愛中國。我是大愛的。」</p>
+  <p>他沒有孩子，離婚後一直獨身，父親去年去世，84歲的母親頗受打擊，讓他萌生了一個月回一次日本的想法。如果有孩子，他還是會讓孩子在日本，「要讓他有自由的空間，獨立思考」。</p>
+  <p>今年他難得接到一部不是抗戰題材的電影，去越南拍，演一個潛水店的老闆，他很喜歡。如果可能，他當然想多演一些「鬼子」以外的角色，想演好人，演主角，演「只能我來演的角色」。</p>
+  <p>採訪結束，三浦研一和記者確認，中國大陸的讀者需要翻牆才能看到端傳媒，笑說「那更好」，「這樣有些話他們看不到，比較好」。</p>
+  <p>天色暗了，他走出咖啡店去，T恤背後寫著兩個大字：「過客」。記者追上去問，他是不是過客？三浦研一笑笑，沒回答。</p>
+  <p>（原文刊於端傳媒，<a href="https://theinitium.com/article/20171110-strangers-JapaneseActorinChina/%EF%BC%89" target="_blank">https://theinitium.com/article/20171110-strangers-JapaneseActorinChina/）</a></p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-05-15</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-15/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/">
+          非主流香港：九龍城 泰國城
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-14/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C/">
+          學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-05</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-05/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C/">
+          像青苔一樣生長：訪韓麗珠 談失序香港下的瘟疫寫作
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-03/%E5%9C%A8%E5%82%B7%E7%97%9B%E5%92%8C%E6%87%B5%E6%87%82%E4%B8%AD-%E7%9C%8B%E8%A6%8B%E5%A5%B3%E5%B7%A5%E7%9A%84%E6%80%A7%E8%88%87%E6%84%9B/">
+          在傷痛和懵懂中，看見女工的性與愛
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-13/%E8%B0%81%E6%AD%A3%E5%9C%A8%E6%88%90%E4%B8%BA%E7%8B%AC%E8%A3%81%E8%80%85-%E8%BF%99%E5%8D%81%E7%82%B9%E8%BF%B9%E8%B1%A1%E5%B8%AE%E4%BD%A0%E5%88%A4%E6%96%AD-iYouPort/">
+            前一篇：谁正在成为独裁者？这十点迹象帮你判断 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-13/Missing-in-Action-U.S.-China-Cooperation-on-Coron/">
+            後一篇：Missing in Action: U.S.-China Cooperation on Coronavirus
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-05-13/%E8%B0%81%E6%AD%A3%E5%9C%A8%E6%88%90%E4%B8%BA%E7%8B%AC%E8%A3%81%E8%80%85-%E8%BF%99%E5%8D%81%E7%82%B9%E8%BF%B9%E8%B1%A1%E5%B8%AE%E4%BD%A0%E5%88%A4%E6%96%AD-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-05-13/Missing-in-Action-U.S.-China-Cooperation-on-Coron/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-05-14/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-05-05/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-05-13/%E8%B0%81%E6%AD%A3%E5%9C%A8%E6%88%90%E4%B8%BA%E7%8B%AC%E8%A3%81%E8%80%85-%E8%BF%99%E5%8D%81%E7%82%B9%E8%BF%B9%E8%B1%A1%E5%B8%AE%E4%BD%A0%E5%88%A4%E6%96%AD-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-05-13/Missing-in-Action-U.S.-China-Cooperation-on-Coron/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-05-14/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-05-05/%E5%83%8F%E9%9D%92%E8%8B%94%E4%B8%80%E6%A8%A3%E7%94%9F%E9%95%B7-%E8%A8%AA%E9%9F%93%E9%BA%97%E7%8F%A0-%E8%AB%87%E5%A4%B1%E5%BA%8F%E9%A6%99%E6%B8%AF%E4%B8%8B%E7%9A%84%E7%98%9F%E7%96%AB%E5%AF%AB%E4%BD%9C/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

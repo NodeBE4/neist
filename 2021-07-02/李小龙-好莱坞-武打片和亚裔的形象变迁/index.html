@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>李小龙：好莱坞、武打片和亚裔的形象变迁 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+李小龙：好莱坞、武打片和亚裔的形象变迁
+——
+" />
+    <meta property="og:description" content="
+李小龙：好莱坞、武打片和亚裔的形象变迁
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="李小龙：好莱坞、武打片和亚裔的形象变迁" />
+    <meta property="twitter:title" content="李小龙：好莱坞、武打片和亚裔的形象变迁" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60dea9e052082c7fe8b3cf92" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60dea9e052082c7fe8b3cf92" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60dea9e052082c7fe8b3cf92&text=李小龙：好莱坞、武打片和亚裔的形象变迁&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60dea9e052082c7fe8b3cf92&title=李小龙：好莱坞、武打片和亚裔的形象变迁" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60dea9e052082c7fe8b3cf92&title=李小龙：好莱坞、武打片和亚裔的形象变迁" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=李小龙：好莱坞、武打片和亚裔的形象变迁&body=
+李小龙：好莱坞、武打片和亚裔的形象变迁
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60dea9e052082c7fe8b3cf92" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60dea9e052082c7fe8b3cf92&title=李小龙：好莱坞、武打片和亚裔的形象变迁&caption=
+李小龙：好莱坞、武打片和亚裔的形象变迁
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=李小龙：好莱坞、武打片和亚裔的形象变迁&url=https://www.allnow.com/post/60dea9e052082c7fe8b3cf92" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>李小龙：好莱坞、武打片和亚裔的形象变迁</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-07-02
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 马修·波利</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60dea9e052082c7fe8b3cf92" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60dea9e052082c7fe8b3cf92">李小龙：好莱坞、武打片和亚裔的形象变迁</a>
+——</p>
+
+<div>
+  <p>1973年8月，《龙争虎斗》在美国洛杉矶首映，两支中国舞龙舞狮队沿着好莱坞星光大道向格劳曼中国戏院（Grauman’s Chinese Theatre）走去，为活动宣传造势。前一天晚上，闻讯而来的影迷开始聚集，包围了整个街区。在片中饰演鲁柏的约翰·萨克松回忆道：“我坐在豪华轿车的后座上，看到戏院外轮候入场以及排队买票的人群，一眼望不到头。我问司机，‘怎么回事？’他说，‘都是赶来看你电影的。’”</p>
+  <p>约翰·萨克松并不是唯一一个被《龙争虎斗》的成功震撼到的人。即使是历来不喜欢暴力场面的纽约影评人也感受到了它的力量。《纽约时报》称：“这部影片制作精良，剧情设置引人入胜，动作场面更是快如闪电，并且光影流动、色彩照人。你在任何影片中都未曾见过如此凶狠、凌厉、冷酷的东方英雄，而且在不借助枪械的情况下，单凭拳脚就能打出一片天地。”威廉·保罗（William Paul）在《村声》（<em>The Village Voice</em>）杂志中坦言：“仅从自身所受教养的角度来看，我认为这部电影令人厌恶，充满了怪诞的男性幻想。但我必须承认，在我潜意识最阴暗的角落深处，这一幻想引发了我的共鸣。”</p>
+  <p>《龙争虎斗》在全球范围内引起了巨大反响。电影的制作成本仅用了85万美元，1973年全球票房收入却高达9000万美元。在接下来的45年里，预计将达到3.5亿美元。弗雷德·温特劳布曾开玩笑说，这部电影的利润如此之高，以至于制片公司要额外分钱给他。编剧迈克尔·阿林回忆说：“华纳的律师给我写了一封信，信中说，‘这部电影将会大赚一笔’——这是我最喜欢的一句话——‘从各个方面来看。’这部电影让他们赚得盆满钵满，藏都藏不住。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deaa719c232e01c17d217b+L.jpg" data-id="60deaa8d904b8c02a16a3581" alt="《龙争虎斗》海报" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《龙争虎斗》海报
+    </figcaption>
+  </figure>
+  <p><strong>李小龙身后的香港电影业</strong></p>
+  <p>李小龙的两次葬礼过后，不到一个月，《龙争虎斗》正式上映，票房口碑双丰收。它让已经去世的李小龙成功地实现了他生前所说的“明确目标”——成为全美片酬最高的东方超级巨星。这也让他一举超过史蒂夫·麦奎因。《龙争虎斗》拍摄过程中，李小龙曾告诉弗雷德·温特劳布，他的目标是让这部电影比同时期史蒂夫·麦奎因制作的《亡命大煞星》（<em>The Getaway</em>）更成功。“如果我能给天堂的李小龙发一封电报的话，”弗雷德·温特劳布说，“上面会写着，‘无论从哪方面来看，《龙争虎斗》都远超《亡命大煞星》。’”</p>
+  <p>1973年3月21日上映的电视剧《功夫》和邵氏制作的《天下第一拳》仅为西方观众打开了一扇门，但李小龙凭借他在《龙争虎斗》中的精湛表演一脚将门踢飞——为西方引入了一种全新的电影类型。自此，这种曾被认为粗制滥造的香港功夫电影——《综艺》称为“劣质功夫片”（chopsocky）——逐渐成为一种文化现象，从城市的磨坊戏院进入了郊区的多银幕影院。“每个人都在打功夫，”一炮而红的神奇小子卡尔·道格拉斯（Carl Douglas）在歌中唱道，“他们灵动如猫，快如闪电。”这首发表于1974年的《功夫高手》（<em>Kung Fu Fighting</em>）销量高达1100万张。在纽约，同一时期上映的香港电影有30部之多。</p>
+  <p>李小龙之前为嘉禾拍摄的一系列电影（《唐山大兄》《精武门》《猛龙过江》）全部得以在美国发行上映，累积票房约5000万美元。此外，制作公司还将《青蜂侠》的三集内容剪辑到一起，以李小龙试镜片段为开场，在1974年11月以大电影的形式正式在院线上映。“李小龙先生所饰演的加藤，是青蜂侠里的忠实用人，同时也是位功夫高手。由于他去世前在香港拍摄的功夫电影大受欢迎，所以在一年之后，他享受了明星待遇，变成了《青蜂侠》的主演。”文森特·坎比（Vincent Canby）在《纽约时报》上写道。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deaab29c232e01c17d217c+L.jpg" data-id="60deaab8904b8c02a16a3583" alt="《李小龙 : 神话和真实》，[美]马修·波利著，史旭光译，天地出版社2021年6月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《李小龙 : 神话和真实》，[美]马修·波利著，史旭光译，天地出版社2021年6月版
+    </figcaption>
+  </figure>
+  <p>李小龙去世后，瞬间成为国际巨星，影迷们极其渴望了解他的生活细节。“我之前对他不太了解，现在想多知道一些与他有关的信息。”一位来自新泽西州的年轻女性在给《黑带》杂志的信中写道：“突然间，他去世了，我简直无法接受。就像是我刚刚认识他，却再也没机会见到他了。”数以百计的杂志争相发表与他有关的文章，多本纪念册和传记也相继出版上市。甚至还有一部劣质传记片《一代猛龙》（<em>The Dragon Dies Hard</em>）在1975年上映。在这部电影中，李小龙习武的起因竟被说成是为了应付几位在他工作时恶意挑衅的混混，他们试图抢占他的《华盛顿邮报》派送路线。</p>
+  <p>1973年，李小龙去世后，与其有关的产品也开始面世，甚至逐渐形成了一个完整的产业，销售的商品主要有吊坠、人偶、T恤、运动服以及各种李小龙海报——与切·格瓦拉一起被挂在宿舍墙上。武术杂志也从中分得一杯羹。像《黑带》和《格斗明星》这样的武术杂志，曾经只是小众报刊，也凭借着李小龙的东风成了光鲜亮丽的刊物，上面印有各种邮购广告，内容从132美元的不锈钢三叉刺到5.95美元的李小龙出拳木偶，应有尽有。就连李小龙的弟弟李振辉也专门制作了一张专辑，直接取名为《李小龙民谣》（<em>The Ballad Of Bruce Lee</em>），以此获利。“自从詹姆斯·迪恩（James Dean）车祸去世之后，还没有哪个好莱坞明星能具有如此高的商业价值。”影评人肯尼斯·杜兰（Kenneth Turan）在《洛杉矶时报》上写道。</p>
+  <p>李小龙成了功夫的守护神，被众人膜拜。日本青少年留跟他一样的发型，英国人称他为“功夫之王”，澳大利亚人认为他是“东方拳速最快的武术家”。猫王埃尔维斯·普雷斯利在看过几十遍《龙争虎斗》后，开始自筹资金制作自己的武打电影，但未能完成。印度有一首顶级的迪斯科歌曲，名为《为那位了不起的家伙，李小龙，干杯！》。在接下来的10年里，《龙争虎斗》不断重映，每次都能跻身于周五票房前五之列。伊朗有一家剧院每天播放这部电影，直到1979年政府被推翻。《龙争虎斗》的录像带还曾在20世纪80年代被走私到东欧，他们视李小龙为反抗主义的象征。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deab284cd55d54dd5db77f+L.png" data-id="60deab55904b8c02a16a3585" alt="李小龙在不同电影里的角色" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+李小龙在不同电影里的角色
+    </figcaption>
+  </figure>
+  <p>李小龙以传教士般的热情，通过电影这一媒介来推广自己的武术理念，所取得的成绩远远超出自己的想象。在李小龙去世之前，世界上只有不到500家武馆；到了20世纪90年代末，由于他的影响，仅在美国就有2000多万名武术习练者。在英国，习武需求大，但武馆少，所以会有成群的学生在少数几家武馆门口排队，上赶着向老师交学费，以确保下堂课能有一席之位。一位来自美国南卡罗来纳州的男孩给《黑带》杂志写信：“李小龙一直是我习武之路上的榜样，并且永远都是，他将激励我达到自己的巅峰。”</p>
+  <p>李小龙去世后，引得全世界为之疯狂，唯有香港陷入迷思。凭借剧中角色所代表的民族精神以及自身的独特魅力，李小龙在香港成为超级巨星。可他的突然离世深陷于丑闻之中，让香港人怅然若失，并深感不安。“很多人仍然喜欢他，”李小龙会会长黄耀强（W. Wong Yiu Keung）说，“但由于他的死并不光彩，导致许多人觉得被欺骗了。突然失去了一个偶像，他们感到空虚。”</p>
+  <p>《龙争虎斗》在香港票房惨淡，仅收入300万港元，与《唐山大兄》持平，比《猛龙过江》少200万，这是幻想破灭的体现。尽管，李小龙仍然是香港最具票房号召力的演员，但名气在生前已达至顶峰，如今开始回落。“他已经死了，”一位中国影迷说，“这一切还有什么意义呢？”</p>
+  <p>对香港电影人来说，重点是李小龙的拳脚打破了国际市场的壁垒。在李小龙之前，香港电影业相当于今天的尼日利亚，虽有利可图，但狭隘封闭，属于关起门来做生意。“在李小龙之后，我们有机会被外人关注到，尤其是好莱坞。”导演吴宇森说，他曾执导过《变脸》和《碟中谍2》。“李小龙为我们打开了这扇门，让世界各地的人真正开始关注中国的功夫片以及中国电影人。”</p>
+  <p>李小龙拯救了嘉禾，打破了邵氏的垄断。“邵逸夫财力雄厚，掌控着大量院线。他的策略是用诉讼把嘉禾扼杀在起步阶段，把我们完全榨干。”安德鲁·摩根说，“李小龙用功夫把我们带进了国际市场。这是以前想都不敢想的。我们最终可以把电影发行到欧洲、南美、北美，甚至是中东。邹文怀由此开辟了一条新的资金管道。因为我们拍过《龙争虎斗》，所以其他制作公司也有兴趣以合作拍片的方式跟我们合作。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deabb24cd55d54dd5db781+L.jpeg" data-id="60deabbd9b2d825085c261ec" alt="成龙凭借《尖峰时刻》（Rush Hour）奠定自己在好莱坞的地位" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+成龙凭借《尖峰时刻》（Rush Hour）奠定自己在好莱坞的地位
+    </figcaption>
+  </figure>
+  <p>很快，人们开始寻找下一个李小龙。凡是跟他沾边的人都拿到了电影合约，并被推到镜头前。查克·诺里斯饰演白人李小龙，洪金宝饰演胖乎乎的李小龙，成龙饰演滑稽的李小龙。然而，没人能真正成为李小龙，更无法超越他成为新的国际偶像和票房冠军。成龙曾试图打入好莱坞，在1980年拍了一部《杀手壕》（<em>The Big Brawl</em>），该片同样由高洛斯执导，邹文怀和弗雷德·温特劳布联合制作。可惜票房惨淡，铩羽而归。直到《龙争虎斗》上映25年之后，1998年，成龙才凭借《尖峰时刻》（<em>Rush Hour</em>）奠定了自己在好莱坞的地位，成为香港第二位成功打入好莱坞的典范。</p>
+  <p>香港某些善于投机的独立制片人由于无力负担查克·诺里斯、成龙和洪金宝等人的片酬，专门聘用了一批样貌外形与李小龙相似的特型演员，并为他们修改了艺名来蒙骗观众，伺机捞钱。比如黎小龙、吕小龙、赖小龙、巨龙和唐龙。这些仿龙电影甚至在片名上也尽量向李小龙原作靠拢，以混淆视听——《猛龙过海》《唐山二兄》《龙虎争斗》《死亡魔塔》《忠烈精武门》。到了20世纪70年代末，他们逐渐形成了自己的类型，在电影中将李小龙变成了漫画中的超级英雄，比如《李三脚威震地狱门》（电影中，李小龙下到地狱，和詹姆斯·邦德以及吸血鬼开打）和《神威三猛龙》（在这部电影中，巨龙、黎小龙、吕小龙和赖小龙扮演了四个李小龙的克隆人，携手作战，惩奸除恶，拯救世界）。</p>
+  <p>仿龙电影中最好的一部是1978年上映的《死亡游戏》。邹文怀声称，他从未想过要把李小龙在1972年拍摄的宝塔打戏拓展成一部完整的电影，但世界各地的发行商纷纷恳求他一定要将电影拍完。邹文怀只好找人补拍。他找来的导演是高洛斯，高也是《龙争虎斗》的导演。本片共用了两位李小龙特型演员——一个专注表演，一个侧重打斗。由于李小龙生前未能完成剧本，所以整个故事只能像拼图游戏一样，从拍完的场景去发展故事情节，然后再拼凑成一部完整的电影。最终的故事围绕一名叫卢比利的功夫影星展开，他拒绝与神秘的帮派首领合作。帮派首领派人在他拍戏时给他脸上开了一枪，众人以为他死了。他将计就计，假装死亡，并接受整容手术，最后终于成功复仇。邹文怀将1973年李小龙香港葬礼的真实镜头剪入正片中。影片自一开始，便显得支离破碎，毫无逻辑，令观者如坐针毡，直到最后一幕，李小龙与丹·伊鲁山度和贾巴尔的两场打戏出现，才让观众欣喜若狂、高声叫好。突然之间，这部乏味的电影变得魅力四射，同时这也是在提醒人们，为什么没有人能取代李小龙。</p>
+  <p>《死亡游戏》实属拼凑，全球影迷却对其津津乐道。“里约首映规模盛大，是他们有史以来最大的首映礼之一。”安德鲁·摩根说，“它在圣保罗破了纪录。德国也卖得非常好，去年在日本的票房进了前五，赚了800万美元。”琳达·李最初反对在片名中使用“死亡”一词，但最终只得被迫同意。1979年6月7日，在洛杉矶的派拉蒙剧院（Paramount Theatre）的首映礼上，琳达和14岁的李国豪、10岁的李香凝一同出席。1000多名身穿传统练功服的影迷高举着各自的武馆横幅。市长汤姆·布雷迪（Tom Brady）宣布这一天为李小龙日。李国豪上前为十米长的展览揭幕，里面陈列着他父亲生前演戏穿过的服装以及使用过的武器。李小龙的最后一部电影，不管有多烂，都总算是完成了。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deac0b9c232e01c17d217d+L.jpg" data-id="60deac119b2d825085c261ee" alt="《死亡游戏》里的经典片段：双节棍" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《死亡游戏》里的经典片段：双节棍
+    </figcaption>
+  </figure>
+  <p><strong>李小龙去世后的家人们</strong></p>
+  <p>1973年，李小龙在西雅图的葬礼结束之后，琳达把孩子交给卡尔加里（Calgary）的姐姐照顾，自己独自回香港参加死因研讯。她立刻发现李小龙生前没有立过遗嘱。这一疏忽给他的家人在情感和财务方面带来了很大的麻烦，一位美国公民死在英国的殖民地，在道德层面和法律程序上会有诸多不如意的地方。而且，李小龙去世时，不仅没有多少存款，还欠下不少债务。琳达花了七年的时间对李小龙的遗产进行遗嘱认证。在那段时间里，琳达和她的律师不得不跟邹文怀以及保险公司进行谈判，以最大化争取自己的利益。“我妈妈在爸爸过世后的头一年经常往返于香港，去处理很多生意上的事。”李香凝说道。</p>
+  <p>待事情稍微稳定后，琳达带着孩子们在西雅图和自己的母亲短暂住过一段时间。居家的几个月里，她非常想念在南加州与李小龙共度的美好时光。于是，拿到遗产收益后，她带着孩子们搬去了派洛斯福德牧场（Rancho Palos Verdes），那是洛杉矶郊区的高档住宅区。查克·诺里斯也住在那里，仅隔了两个街区。不过，他在那儿的时间并不长。李国豪经常和查克·诺里斯的两个儿子一起玩。琳达把李国豪和李香凝送进滚石乡村日学校（Rolling Hills Country Day School）读书，这是一间私立学校。照看孩子之余，琳达又在长堤的加州州立大学上夜校，攻读政治学，以完成她的大学学位。毕业后，她成为一名幼儿园教师。</p>
+  <p>李小龙去世一年后，广大影迷对《龙争虎斗》的反应给了琳达很大的惊喜。“小龙刚去世时，”琳达告诉《洛杉矶时报》，“我们没有想到他会像现在这样成为传奇人物。”李小龙去世后，与他有关的产业自1973年开始迅猛发展起来，琳达也随之收入颇丰，她试图对李小龙的遗产进行保护，并为自己的孩子们争取最大的利益。她和华纳签了一份合约，要完成一本书以及一部电影。1975年，她的传记《我夫李小龙》（<em>Bruce Lee: The Man Only I Knew</em>）大卖，但那部传记电影的计划在制作之前被取消了。之后，她与ZIV国际公司（Ziv International）签署代理合约，将李小龙的形象和肖像授权给海报、T恤、沙滩巾、文具、奖杯、灯具、男士化妆品、空手道服装、餐具、玻璃器皿、珠宝、游戏以及玩具制造商。斑马图书拿到了李小龙书籍的独家出版权，包括李小龙为截拳道整理的基本功训练手册和武术训练指南。李小龙死后，他的家庭经济收入得到了保障。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deac2c9c232e01c17d217e+L.jpeg" data-id="60deac3b904b8c02a16a3586" alt="琳达的《我夫李小龙》（Bruce Lee: The Man Only I Knew）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+琳达的《我夫李小龙》（Bruce Lee: The Man Only I Knew）
+    </figcaption>
+  </figure>
+  <p>孩子们过着平静的中上阶层生活，基本上没被父亲的名声所影响。他们没有去接触武术。琳达对他们说：“不要到处去说你是李小龙的孩子，得让人们先知道你自己是谁。”</p>
+  <p>李香凝更像自己的母亲：勤奋、敏感、害羞。她在读高中时接触了音乐剧，并视为自己今后的发展方向，之后就读于新奥尔良的杜兰大学（Tulane University），主修音乐，四年后毕业。</p>
+  <p><strong>“龙之诅咒”：李小龙之子李国豪之死</strong></p>
+  <p>李国豪在很大程度上遗传了父亲的基因。他8岁大的时候，告诉他的母亲，自己长大后要当一名演员。“他爱开玩笑，喜欢搞恶作剧，胆子很大，喜欢表演，”李香凝说，“他的身体协调性非常好。有一天，他想完成一个后空翻，此前没做过，结果他只试了两次，第三次就成功了。”李国豪也是一位极具魅力的叛逆者，而且跟他的父亲一样，也有过被学校开除的经历。高中时，他就读于加州顶尖私立高中查德威尔学校（Chadwick），后来因为带头组织反政府的抗议游行活动而被学校开除。“他动员学生们罢课。”李香凝回忆道。尽管他在波士顿的爱默生学院（Emerson College）拿到了一般教育发展考试（GED）的文凭，相当于高中学历，但他把所有的学习时间都用于去纽约寻找表演机会。一年后，李国豪辞职，搬回了洛杉矶。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deac664cd55d54dd5db782+L.png" data-id="60deac819b2d825085c261f0" alt="李小龙与家人" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+李小龙与家人
+    </figcaption>
+  </figure>
+  <p>琳达曾一再试图劝阻李国豪从事演艺事业，但最终都以失败告终。李国豪跑去文青聚集地银湖（Silver Lake）租了一间小平房，买了一辆哈雷和一辆1959年的凯迪拉克灵车（Cadillac hearse），开始在小镇上举行一些小型演出。</p>
+  <p>他的一个女朋友取笑他：“你不会是在做跟詹姆斯·迪恩一样的事吧？”</p>
+  <p>“宝贝，我可比詹姆斯·迪恩更有创意。”他回应道。</p>
+  <p>20岁的李国豪不想跟父亲一样，去拍动作片。他想成为一名戏剧演员，可没人会雇李小龙的儿子来演严肃的文戏。为了能正式进入演艺圈，他同意接拍几部低成本的武打片。他找到父亲的助教丹·伊鲁山度，跟他学习截拳道。</p>
+  <p>具有讽刺意味的是，他所接到的第一个角色竟然是在1986年上映的《功夫：电影》（<em>Kung Fu：the Movie</em>）中饰演主角金贵祥的儿子，与大卫·卡拉丁演对手戏。在接下来的五年里，他连着拍了几部劣质的功夫片，其中最精彩的是二十世纪福克斯在1992年推出的《龙霸天下》（<em>Rapid Fire</em>）。拍摄期间，李国豪邀请妹妹李香凝来担任自己的私人助理。她毕业后做了乐队的主唱，一直在新奥尔良到处演出，生活很不稳定。她也想进入演艺圈，为此向哥哥征求意见。“这是个不讲情面的行业，很现实，”李国豪告诉她，“人们不会把你当女性看待，你只是件商品。不过，如果你真的打算这么做的话，我会尽全力帮你。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deaca44cd55d54dd5db783+L.jpg" data-id="60deacab9b2d825085c261f2" alt="《龙：李小龙的故事》海报" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《龙：李小龙的故事》海报
+    </figcaption>
+  </figure>
+  <p>同年，好莱坞环球影业开始拍摄《龙：李小龙的故事》（<em>Bruce Lee Story</em>）。该片根据琳达在1989年再版的李小龙传记改编而成。环球影业以数百万美元的价格与琳达签约，独家买断了这本书的影视改编权，包括视频游戏以及周边商品的开发和销售。该片的导演是罗伯·科恩（Rob Cohen），由李截（Jason Scott Lee）饰演李小龙，同姓李，但并无亲属关系。罗伯·科恩以事实为依据，按照琳达对已故丈夫的回忆，最大程度上还原了李小龙在生活中的形象。这部电影是一个伟大的爱情故事片，讲述了一位积极乐观的美国年轻移民和崇拜他的妻子努力克服种族歧视，并最终如愿走到一起的故事。黄泽民在本片中被塑造成了一位内心险恶的国术人士，他被派去李小龙的武馆挑衅，因为李小龙教授白人中国功夫，这在他们看来，是不能忍受的。而且在电影中，《功夫》电视剧的创意来自李小龙，后来创意被窃取，交给了白人演员大卫·卡拉丁。</p>
+  <p>由于公众对李小龙的死因仍存在争议，所以罗伯·科恩想出一个主意，在剧作中加入一个穿着黑色武士盔甲的幽灵，不断在李小龙的梦境中出现。在第三次梦境中，幽灵开始追赶小国豪，迫使李小龙决定勇于面对它，拿起双节棍，将其击败。这个幽灵如同困扰内心的魔鬼，罗伯·科恩认为，这是李小龙为追求内心平静而奋斗的一种隐喻，但它却迎合了李小龙死因的另一个传说——龙之诅咒。</p>
+  <p>电影开拍前，环球影业找到李国豪，希望他能扮演自己的父亲，但他很快拒绝了这一提议。他不想一直活在父亲的光环下，这对他而言是个极大的心理负担。多年来，每次跟演艺圈的同行接触，人们都觉得他是李小龙的儿子，其次才是李国豪。这不是他想要的。而且，恰好在这个时候，他拿到了梦寐以求的角色，以主角身份出演《乌鸦》（<em>The Crow</em>）。这是一个根据漫画改编的故事，讲述了一位摇滚音乐人去世后，灵魂转世，回来为自己报仇的故事。李国豪希望通过这部电影让自己走出劣质功夫片的窠臼，正式进入主流电影圈。</p>
+  <p>然而，《乌鸦》的拍摄波折不断。先是北卡罗来纳州威尔明顿（Wilmington）反常的暴风雨摧毁了一些布景，之后是一名木匠因起重机与头顶的电线相连而触电，被严重烧伤；接着一位建筑工人不小心用螺丝刀把自己的手刺穿；还有一位心怀不满的工作人员一气之下开着卡车撞进了用石膏板搭建成的临时摄影棚，情况非常糟糕。《娱乐周刊》（<em>Entertainment Weekly</em>）甚至发文询问，这部电影是不是中邪了！“我不认为这有什么反常，”制片协调人詹妮弗·罗斯（Jennifer Roth）回答道，“我们有很多特技和特效，况且，我以前也拍过和死人有关的电影。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deacca4cd55d54dd5db784+L.jpeg" data-id="60deacd02114416715c3d960" alt="李国豪在《乌鸦》中的造型壁纸" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+李国豪在《乌鸦》中的造型壁纸
+    </figcaption>
+  </figure>
+  <p>一个月后，电影临近杀青时，李国豪在拍摄现场被枪杀。</p>
+  <p>根据所有人的说法，包括警方的调查在内，这是一起反常的事故，它是由于失误造成的——是缺乏经验、工作疏忽以及偷工减料的结果。“电影预算是3000万美元，但他们只想花1200万美元。”一位退出剧组的工作人员说道，他对这部电影不再抱有任何幻想。</p>
+  <p>在拍摄电影的上一个场景中，第二摄制组要求道具部门提供一把0.44口径的左轮手枪以及六发道具子弹拍特写镜头。这位经验不足的道具工作人员发现，现场没有道具子弹。为了节省宝贵的拍摄时间，他决定把实弹改装成道具子弹。先把六个实弹的弹头去掉，倒掉火药后，再把弹壳装进气缸，反复扣动扳机，以释放底火，并清除火药残留。之后，重新把弹头连接到弹壳上，就变成了没有火药的道具子弹。</p>
+  <p>但是，道具部门不知道的是，其中一个底火未能引爆。当工作人员在现场试枪时，带有弹头的道具子弹触发了火药残留物，其力量刚好足以把子弹推入枪膛，而不会射出去。之后，这把枪在没有检查的情况下，直接被送回道具部门存放。</p>
+  <p>两周后，也就是1993年3月30日，拍摄李国豪所饰演的艾瑞克·德雷文（Eric Draven）被杀害的闪回戏时，工作人员取回了那把枪膛中藏有子弹的左轮手枪。0.44口径的左轮手枪内装满了空包弹——弹壳内有火药和底火，但没有弹头。没人对手枪进行检查。子弹卡在枪膛里，空包弹在枪筒里，所以实际上这时候它已经是一把上了膛的杀人武器了。工作人员把手枪交到迈克尔·马西（Michael Massee）手里。他在这部电影中饰演杀害艾瑞克·德雷文的凶手。导演喊：“开拍！”迈克尔·马西拿起手枪，对准李国豪的身体，扣动了扳机。</p>
+  <p>李国豪应声倒地。头几分钟，没有人意识到已经铸成了大错。</p>
+  <p>救护车火速将李国豪送往新汉诺威地区医疗中心（New Hanover Regional Medical Center）。尽管进行了几个小时的急救，输了30多升血，外科医生们还是未能将他救活。伤口太大了，0.44口径的子弹正好卡在他的脊椎旁。李国豪于1993年3月31日下午1点04分死于内出血，年仅28岁。</p>
+  <p>李国豪原计划在拍完《乌鸦》之后，迎娶自己的未婚妻伊丽莎·赫顿（Eliza Hutton），婚礼定于4月17日在墨西哥举行。结果，李国豪意外去世，4月3日被安葬在西雅图，紧挨着父亲。这是安德鲁·摩根20年前为琳达购买的墓地。“这超出了我的认知范围，或许这就是命中注定的吧。上天先是带走了小龙，如今又从我身边抢走了国豪。”琳达说，“事情就这么发生了，我还没准备好。我只是觉得我们很幸运，他陪了我们这么长时间。有人说时间能治愈一切，可事实并非如此。你只能学着去接受它，然后坚强地生活下去。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deacf99c232e01c17d2180+L.jpeg" data-id="60dead062114416715c3d961" alt="李国豪和他的女友兼私人助理伊丽莎·赫顿（Eliza Hutton）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+李国豪和他的女友兼私人助理伊丽莎·赫顿（Eliza Hutton）
+    </figcaption>
+  </figure>
+  <p>1993年4月28日，《龙：李小龙的故事》首映之前，李小龙在好莱坞星光大道被授予一颗星，这也是电影宣传活动的一个重要环节。在揭幕仪式上，刚经历了丧子之痛的琳达，坚定地站上台发言，敦促电影界采取安全措施，以确保发生在李国豪身上的事不会再度发生。“国豪非常想来这儿，”琳达接着说，“他特别想回来参加这个仪式。因为，他说过，这是他父亲应得的。今天，我们相聚在这里，为李小龙的一生进行庆祝。尽管我们为国豪的缺席而感到遗憾，但这部电影能于今晚与大家见面，让我们在悲痛之余，稍感欣慰。”</p>
+  <p>李国豪的去世成了李小龙遗产的一部分。他在《乌鸦》中贡献了突破性的表演——敏感、扭曲、凶猛。著名影评人彼得·崔维斯（Peter Travers）在《滚石》（<em>Rolling Stone</em>）杂志中写道：“李国豪在这部电影中的表现非常好，很让人感动。他的表演充满了激情，他很有运动天赋。”这部电影成了经典的哥特式电影，票房收入高达5000万美元。但这还不足以让他摆脱父亲的阴影。第一本李小龙传记的作者亚历克斯·本·布洛克认为：“如果李国豪还活着，并且连着拍了50部伟大的电影，那么除了一些小小的注脚，没人会在意他与李小龙的关系，但正由于他猝然离世，导致他永远跟父亲绑定在一起。”由此开始，儿子的故事成了父亲传奇的注脚。</p>
+  <p>李国豪去世后，李香凝也跟随哥哥的脚步，准备进入演艺圈，先去上了表演课，之后又跟李小龙的门徒黄锦铭学习截拳道。“这真的很难，”李香凝回忆道，“因为这一切发生得太突然了。”大多数女明星出道都是从恐怖片开始，可作为李小龙的女儿，李香凝和她的哥哥一样，直接从劣质功夫片开始。“我很幸运，但同时也有一定的局限性。”李香凝说。</p>
+  <p>1994年，她正式参演的第一部电影《死亡擂台》（<em>Cage II: The Arena of Death</em>）直接被转为录影带，没上院线。1997年，她联合主演了《高压重犯》（<em>High Voltage</em>），算是有所进步。“我很难把心思完全放在表演上，”李香凝说，“也正因如此，我在这些电影中表现并不好。我还没从哥哥去世的悲痛中走出来。”</p>
+  <p>1998年，她出演了嘉禾的动作片《浑身是胆》（<em>Enter the Eagles</em>），英文片名借鉴了《龙争虎斗》（<em>Enter the Dragon</em>）。他们在布拉格拍摄，没有成型的剧本，拍摄时一片混乱。导演跟她讲：“只要像你爸爸那样做就行了。”“我承受了很大的压力，我是李小龙的女儿，必须要像他一样。”李香凝回忆道，“我回到酒店房间，大哭了一场。”那部电影之后，李香凝的演艺事业陷入了低谷。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60dead239c232e01c17d2181+L.jpeg" data-id="60dead302114416715c3d962" alt="由嘉禾娱乐事业有限公司出品的武术枪战电影《浑身是胆》，元奎执导，王敏德、李香凝、袁咏仪等主演。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+由嘉禾娱乐事业有限公司出品的武术枪战电影《浑身是胆》，元奎执导，王敏德、李香凝、袁咏仪等主演。
+    </figcaption>
+  </figure>
+  <p><strong>李小龙的遗产管理：从琳达到李香凝</strong></p>
+  <p>1968年，李小龙对于把自己的武术心得取名为“截拳道”的举动有些后悔。他无法回避的一个悖论是，他不断演变发展的“无形之形”，实际上已经成了一个条理清晰的格斗系统，有自己特定的技术和技击原则。李小龙逐渐担心截拳道会被教条化和程式化，导致学生被奴役，而远离解放的初衷。于是，他在1970年1月29日关闭了洛杉矶唐人街的武馆，并且让他的三位助教——丹·伊鲁山度（洛杉矶）、严镜海（奥克兰）、木村武之（西雅图）——向自己承诺永远不得以截拳道的名义开办商业武馆。他们只能在自家后院非正式地教导少数资深弟子。</p>
+  <p>结果，李小龙去世后成了国际偶像，成千上万的影迷想要像他一样，迫切地想学习他的截拳道，可求学无门。于是，他们只得拥进其他道场，去学习空手道、柔道、跆拳道或者其他功夫。在武术发展最鼎盛的时期，丹·伊鲁山度和木村武之遵守着他们的诺言，只在私下授课（严镜海于1972年12月死于肺癌）。李小龙的另外一些学生，比如杰西·格洛弗和乔·刘易斯，利用他们与李小龙的师生关系在全国各地举办讲习会。后来，丹·伊鲁山度开办了自己的商业武馆，教授他的个人武术课程——一种混合了李小龙截拳道、菲律宾卡利（Kali）和泰拳的体系。由于丹·伊鲁山度曾出演过《死亡游戏》，因而很快便凭借自己提出的“截拳道概念”（Jeet Kune Do Concepts）成为美国最受认可的截拳道导师。</p>
+  <p>琳达在李小龙的墓碑上刻下了“截拳道创始人”的字样，她对丈夫所创建的武术并没有感到矛盾，她只是急于想保护它。多年来，一些与李小龙毫无关系的人试图从中牟利，自称是截拳道正宗，并开设武馆，广收门徒。琳达觉得他们在破坏李小龙的遗产。1996年1月10日，她邀请李小龙第一代弟子齐聚西雅图开会，讨论成立相应的组织来保护李小龙的艺术。初始参会成员有琳达、李香凝、木村武之、周裕明、李恺、黄锦铭，杰瑞·泡提特、赫伯·杰克逊等人，后来被称为“振藩截拳道核心”。丹·伊鲁山度也参加了第一次会议，但他决定不参与其中。这就造成了原传截拳道和截拳道概念之间的分歧。前者支持核心组织，严格遵守李小龙生前所教的东西，被认为是保守派；后者偏向伊鲁山度的组织，试图不断发展这门艺术，自称是改革派。</p>
+  <p>武术教练多数都自视甚高，性格冲动，脾气暴躁，不会轻易服人。琳达之所以能够团结一大批李小龙不同时期的学生，主要源于大家对她的尊重，以及她身为幼儿园教师的经历，让她懂得平衡，能够协调所有意见不同的人。核心成立后，定期出版了《李小龙杂志》（<em>Bruce Lee Magazine</em>），并且每年举办一次大型截拳道讲习会。截拳道爱好者可以在讲习会上接受李小龙众弟子手把手的指导。尽管讲习会很受大众欢迎，但核心成员内部之间的争吵让人精疲力尽。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60dead554cd55d54dd5db787+L.png" data-id="60dead659b2d825085c261f7" alt="《李小龙杂志》（Bruce Lee Magazine）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《李小龙杂志》（Bruce Lee Magazine）
+    </figcaption>
+  </figure>
+  <p>经过四年的内讧，琳达不堪其扰，决定退休，把李小龙的遗产交到李香凝手上。“她非常小心地跟我谈起这件事，因为她不想将这件事强加给我，说‘这是你的责任。’”李香凝答应了，并且很热情。她的演艺事业迟迟没有起色，她觉得可以做更多的事情来推广李小龙的精神和艺术，让它能步入正轨，并带来更高的经济回报。埃尔维斯·普雷斯利遗产管理公司的年收入超过5000万美元，而李小龙遗产管理公司的年收入还不到100万美元。</p>
+  <p>李香凝高薪挖来了埃尔维斯·普雷斯利遗产管理公司的律师，并采用了一种更激进的方式来处理已故名人的相关业务。她成功地解散了振藩截拳道核心，并通过一场历时十年的斗争，从环球影城手中夺回了李小龙形象和肖像的商品开发销售权，包括影视剧改编权。此外，她还成立了一家名为LeeWay Media Group的制作公司，开发与李小龙有关的项目：纪录片、传记电影、电视剧和百老汇音乐剧。除了将李小龙带回公众视野，让其保持一定的关注度，最大化传播他的艺术，李香凝的一个主要目标是进入福布斯的已故名人收入排行榜。</p>
+  <p>福布斯已故名人收入排行榜是衡量一位偶像明星是否还具有持续影响力的风向标。多年来，前五名及其收入一直很稳定：迈克尔·杰克逊（Michael Jackson，1.5亿美元）、埃尔维斯·普雷斯利（Elvis Presley，5500万美元）、查尔斯·舒尔茨（Charles Schulz，4000万美元）、伊丽莎白·泰勒（Elizabeth Taylor，2000万美元）和鲍勃·马利（Bob Marley，1800万美元）。2013年，李小龙以700万美元的收入上榜，排名第十二，是首位跻身该榜单的亚洲名人。他仅落后史蒂夫·麦奎因（900万美元）一位——他们去世后，竞争还在继续。第二年，与马自达的代言协议使李小龙以900万美元与史蒂夫·麦奎因并列第九。人们可以想象他们在天堂里互相打趣：究竟谁才是最大牌的明星。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60dead869c232e01c17d2182+L.jpeg" data-id="60dead892114416715c3d965" alt="李小龙抱着小时候的李香凝" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+李小龙抱着小时候的李香凝
+    </figcaption>
+  </figure>
+  <p><strong>李小龙：重塑亚裔形象，激发平权运动</strong></p>
+  <p>几十年来，香港政府对李小龙一直不够重视。这位功夫巨星不太得体的行为，让一贯重视个人形象的香港市民感到不安。影迷们曾向政府提议，将李小龙在九龙塘的故居改建为博物馆，但多次提议无果。九龙塘故居变成了一家时钟酒店。无奈之下，李小龙影迷会筹得10万美元，以李小龙《精武门》中的形象制作了一尊雕像。政府官员迫于压力，同意将其放置在香港星光大道上，此处成了香港港口的著名旅游景点。2005年11月27日，李振辉亲自为哥哥2.4米高的雕像揭幕，以庆祝李小龙诞辰65周年。这是对李小龙短暂一生所取得的非凡成就以及去世后持久的文化影响力迟来的认可。</p>
+  <p>在美国，华裔演员大多都拿不到重要角色，只能自降身份出演温顺的助手，就好像《大淘金》（<em>Bonanza</em>）中的胡普辛（Hop Sing）。李小龙冲破重重阻碍，锐意打破好莱坞对华裔面孔的歧视。最终，他成为第一位在好莱坞电影中出演主角的中国人，也是自有声电影出现以来第一位亚洲电影明星。另一位华裔演员成龙，用了25年的时间，才取得这样非凡的成绩。</p>
+  <p>李小龙的电影在西方流行文化中树立起一个全新的中国形象：功夫大师。在李小龙之前，西方流行文化中的华人形象只有两位：傅满洲，虚构人物，“黄祸”的代表，大反派；陈查理（Charlie Chan），虚构人物，华人探长，少见的正面人物。然而，这两种银幕形象都显得过于迂腐刻板，并且在某种程度上，强化了西方人对中国男性的固有印象：顺从、没有攻击性、身体孱弱、缺乏男子气概——性格软弱、哭哭啼啼；狡猾、阴险；性冷淡或同性恋。李小龙的出现，以一种不畏强权、自强不息的精神，凭借着过硬的拳脚功夫和极佳的身体表现，树立了新的华人形象。他是第一位能够体现好莱坞对经典明星定义的华裔演员——男人想成为他，女人想和他在一起。棱角分明的李小龙以自信的微笑、挑衅的手势、优雅但致命的动作，给了中国人很大的勇气。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deada64cd55d54dd5db789+L.jpg" data-id="60deadb12114416715c3d966" alt="李小龙经典形象" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+李小龙经典形象
+    </figcaption>
+  </figure>
+  <p>《龙争虎斗》上映后，李小龙凌厉的拳脚立刻改变了西方人对亚洲人的看法。“我们住在阿拉米达（Alameda），紧挨着奥克兰，黑豹党（Black Panthers）就是从那儿发展起来的，”著名的格斗教练谢里昂回忆道，“《龙争虎斗》上映前，大家见到华人时，打招呼通常是，‘嗨，中国佬！’李小龙的电影上映后，立刻变成了‘嘿，兄弟！’”就连不喜欢李小龙的人都认为，他的电影有很大的影响。“他很自以为是，不过，因为他的电影，没人敢去抢中国孩子们的午餐钱了，因为他们觉得打不过这些孩子们。”周马双金的儿子周英熊（Mark Chow）说道。</p>
+  <p>因此，李小龙的电影帮助亚洲人改变了自我认知。如果李小龙能在电影中击败查克·诺里斯，也许他们在现实中也可以做到类似的事。李小龙受欢迎的程度激发了20世纪70年代亚裔美国人的政治运动，这项运动呼吁种族平等、社会正义和政治赋权。在亚洲，他的电影预示着一个更强大、更自信的香港、台湾乃至整个中国的崛起。中国人不再是“东亚病夫”，中国是强大的国家。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deade19c232e01c17d2183+L.jpeg" data-id="60deadef9b2d825085c261f9" alt="《杀死比尔》中的新娘造型是对李小龙的典型模仿" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《杀死比尔》中的新娘造型是对李小龙的典型模仿
+    </figcaption>
+  </figure>
+  <p>不但如此，李小龙也改变了西方电影的制作，他引入了一种全新的电影类型——功夫片，让这种电影类型得以在西方继续蓬勃发展。《黑客帝国》《杀死比尔》《疾速追杀》都证明了这一点。他对动作设计的影响更大。《龙争虎斗》不仅改变了谁可以出演动作片，也改变了主角们的格斗表现方式。约翰·韦恩那种打拳方式不见了，《龙争虎斗》过后，我们要求每位动作演员——从蝙蝠侠到福尔摩斯，从《致命武器》中的梅尔·吉布森到《谍影重重》中的马特·达蒙——都要成为功夫高手，能够像使用拳头一样熟练地使用双脚。</p>
+  <p>观众对主角的身材要求也变了。李小龙普及了健身运动。他的电影出现之前，厚实的胸肌是男性追求的理想型。之后，好莱坞的动作明星们先是风靡了一阵阿诺德·施瓦辛格和西尔维斯特·史泰龙那种表现方式——肌肉发达、作风硬朗、表情严肃，如今，又回到李小龙所代表的身材匀称、六块腹肌的标准上。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deae079c232e01c17d2184+L.jpg" data-id="60deae0b904b8c02a16a3591" alt="李小龙的经典造型" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+李小龙的经典造型
+    </figcaption>
+  </figure>
+  <p>李小龙不仅仅是一位艺人，更是一位布道者。通过电影这一流行媒介，他独自将中华文化推广向全世界。因为李小龙，数以百万的西方人开始学习武术。“在美国，每个城镇上都会有教堂和美容院，”弗雷德·温特劳布说，“《龙争虎斗》之后，又多出一间挂有李小龙画像的功夫道场。”许多热爱武术的学生在以中国哲学为基础发展出来的功夫流派中继续探索，道家的阴阳理论成了他们常挂在嘴边的字眼。</p>
+  <p>终极格斗冠军赛（Ultimate Fighting Championship）的创办人白大拿（Dana White）称李小龙是“混合格斗之父”。毫无疑问，如果没有李小龙的带动和启发，这项运动永远不会成功。截拳道便是早期格斗交叉训练的产物。李小龙务实的哲学理念为这项运动奠定了基础：“吸收有用的，抛弃无用的，加上自己特有的。”李小龙将“混合”的理念融入混合格斗（MMA）中。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-02/60deae309c232e01c17d2186+L.jpeg" data-id="60deae34904b8c02a16a3592" alt="李小龙《精武门》中的形象雕像，香港" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+李小龙《精武门》中的形象雕像，香港
+    </figcaption>
+  </figure>
+  <p>但在那个两极分化严重、种族冲突不断的时代，也许最重要的是他以身作则，起到了一个榜样示范作用。身为一名欧亚混血，他面临着东西两方的歧视，但他从未让这件事阻止自己前进的脚步。他宣扬的是种族团结。“我认为自己是人类的一员，因为在同一片天空下，我们是一个大家庭。”李小龙说，“事实就是这样，只不过家庭里的人和人有些不一样而已。”他毕生都在奉行这一理念。他接受任何想要跟他学习的人，真正做到了有教无类。他在美国的第一位弟子杰西·格洛弗说：“如果他觉得你是真诚的，他就会教你。”木村武之也提到过：“他不在乎你是什么种族。”</p>
+  <p>香港的李小龙雕像，是世界上第二座竖起的雕像。第一座雕像早一天在波黑南部的莫斯塔尔城（Mostar）揭幕。在20世纪90年代，南斯拉夫内战期间，莫斯塔尔城西信奉天主教的克罗地亚人和城东信奉伊斯兰教的波斯尼亚人发生了激烈的冲突。当敌对状态正式解除后，该市决定竖立一座新的和平纪念碑。对居民进行的一项民意调查显示，李小龙是唯一被双方共同尊重的人，双方视其为团结、正义以及种族和谐的象征，同时提名的还有教皇和甘地等人，李小龙从中脱颖而出。“我们将永远是穆斯林、塞尔维亚人或克罗地亚人，”青年组织“莫斯塔尔城市运动”（Urban Movement Mostar）的成员维塞林·加塔洛（Veselin Gatalo）说道，“但我们有一个共同点，那就是李小龙！”</p>
+  <blockquote>
+    <p>马修·波利（Matthew Polly），中文名包默思，毕业于普林斯顿大学，美国著名作家，也是中国功夫爱好者，曾在河南少林寺学习功夫两年。出版有American Shaolin（《少林很忙》）和Tapped Out（《拍地认输》，暂译），作品常年发表于《华盛顿邮报》《君子》《石板》《国家》等杂志。目前是耶鲁大学研究员，居住在美国康涅狄格州纽黑文。本文选自马修·波利的《李小龙 : 神话和真实》，由天地出版社授权刊发。</p>
+  </blockquote>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-07-03</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/">
+          北岛获日本大伴家持文学赏，受奖致辞：写作是我最后的防线
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-02</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-02/%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E4%B8%AD%E7%9A%84%E7%A4%BE%E7%BE%A4%E6%9A%B4%E5%8A%9B-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E7%9A%84%E5%86%85%E9%83%A8%E4%BC%9A%E8%B5%B0%E5%90%91%E5%88%86%E5%8C%96/">
+          女权运动中的社群暴力：为什么女权运动的内部会走向分化？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-01/%E9%98%BF%E7%91%9F-%E5%85%8B%E6%8B%89%E5%85%8B%E5%A5%96%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%9F%AD%E5%90%8D%E5%8D%95-%E4%B8%AD%E5%9B%BD%E4%BD%9C%E5%AE%B6%E9%83%9D%E6%99%AF%E8%8A%B3-%E6%B5%81%E6%B5%AA%E8%8B%8D%E7%A9%B9-%E5%85%A5%E5%9B%B4/">
+          阿瑟·克拉克奖公布2021年短名单，中国作家郝景芳《流浪苍穹》入围
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-01/%E5%AD%99%E6%B1%9F-%E5%9C%A8%E6%96%B0%E5%AA%92%E4%BD%93%E6%97%B6%E4%BB%A3-%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E6%96%87%E5%8C%96%E7%9A%84%E9%9B%86%E4%BD%93%E8%AE%B0%E5%BF%86%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%B2%E7%A8%BF/">
+          孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-01/%E5%9C%A8%E7%BA%BF%E5%9F%B9%E8%AE%AD%E5%92%8C%E4%BF%83%E8%BF%9B%E4%BA%BA%E6%9D%83%E6%96%B9%E9%9D%A2%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%95%99%E8%AE%AD-%E5%9F%B9%E8%AE%AD%E5%B8%88%E6%8C%87%E5%8D%97-4-iYouPort/">
+            前一篇：在线培训和促进人权方面的经验教训：培训师指南（4） - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-02/%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E4%B8%AD%E7%9A%84%E7%A4%BE%E7%BE%A4%E6%9A%B4%E5%8A%9B-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E7%9A%84%E5%86%85%E9%83%A8%E4%BC%9A%E8%B5%B0%E5%90%91%E5%88%86%E5%8C%96/">
+            後一篇：女权运动中的社群暴力：为什么女权运动的内部会走向分化？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-07-01/%E5%9C%A8%E7%BA%BF%E5%9F%B9%E8%AE%AD%E5%92%8C%E4%BF%83%E8%BF%9B%E4%BA%BA%E6%9D%83%E6%96%B9%E9%9D%A2%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%95%99%E8%AE%AD-%E5%9F%B9%E8%AE%AD%E5%B8%88%E6%8C%87%E5%8D%97-4-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-07-02/%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E4%B8%AD%E7%9A%84%E7%A4%BE%E7%BE%A4%E6%9A%B4%E5%8A%9B-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E7%9A%84%E5%86%85%E9%83%A8%E4%BC%9A%E8%B5%B0%E5%90%91%E5%88%86%E5%8C%96/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-07-02/%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E4%B8%AD%E7%9A%84%E7%A4%BE%E7%BE%A4%E6%9A%B4%E5%8A%9B-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E7%9A%84%E5%86%85%E9%83%A8%E4%BC%9A%E8%B5%B0%E5%90%91%E5%88%86%E5%8C%96/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-07-01/%E9%98%BF%E7%91%9F-%E5%85%8B%E6%8B%89%E5%85%8B%E5%A5%96%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%9F%AD%E5%90%8D%E5%8D%95-%E4%B8%AD%E5%9B%BD%E4%BD%9C%E5%AE%B6%E9%83%9D%E6%99%AF%E8%8A%B3-%E6%B5%81%E6%B5%AA%E8%8B%8D%E7%A9%B9-%E5%85%A5%E5%9B%B4/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-07-01/%E5%9C%A8%E7%BA%BF%E5%9F%B9%E8%AE%AD%E5%92%8C%E4%BF%83%E8%BF%9B%E4%BA%BA%E6%9D%83%E6%96%B9%E9%9D%A2%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%95%99%E8%AE%AD-%E5%9F%B9%E8%AE%AD%E5%B8%88%E6%8C%87%E5%8D%97-4-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-07-02/%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E4%B8%AD%E7%9A%84%E7%A4%BE%E7%BE%A4%E6%9A%B4%E5%8A%9B-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E7%9A%84%E5%86%85%E9%83%A8%E4%BC%9A%E8%B5%B0%E5%90%91%E5%88%86%E5%8C%96/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-07-02/%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E4%B8%AD%E7%9A%84%E7%A4%BE%E7%BE%A4%E6%9A%B4%E5%8A%9B-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A5%B3%E6%9D%83%E8%BF%90%E5%8A%A8%E7%9A%84%E5%86%85%E9%83%A8%E4%BC%9A%E8%B5%B0%E5%90%91%E5%88%86%E5%8C%96/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-07-01/%E9%98%BF%E7%91%9F-%E5%85%8B%E6%8B%89%E5%85%8B%E5%A5%96%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%9F%AD%E5%90%8D%E5%8D%95-%E4%B8%AD%E5%9B%BD%E4%BD%9C%E5%AE%B6%E9%83%9D%E6%99%AF%E8%8A%B3-%E6%B5%81%E6%B5%AA%E8%8B%8D%E7%A9%B9-%E5%85%A5%E5%9B%B4/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>How To Teach China This Fall – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+How To Teach China This Fall
+——
+" />
+    <meta property="og:description" content="
+How To Teach China This Fall
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="How To Teach China This Fall" />
+    <meta property="twitter:title" content="How To Teach China This Fall" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fhow-teach-china-fall" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/how-teach-china-fall" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/how-teach-china-fall&text=How To Teach China This Fall&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/how-teach-china-fall&title=How To Teach China This Fall" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/how-teach-china-fall&title=How To Teach China This Fall" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=How To Teach China This Fall&body=
+How To Teach China This Fall
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/how-teach-china-fall" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/how-teach-china-fall&title=How To Teach China This Fall&caption=
+How To Teach China This Fall
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=How To Teach China This Fall&url=https://www.chinafile.com/reporting-opinion/viewpoint/how-teach-china-fall" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>How To Teach China This Fall</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-08-19
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Dimitar D. Gueorguiev, Xiaobo Lü &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/how-teach-china-fall" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1597890900000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/how-teach-china-fall">How To Teach China This Fall</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-2069b6eda93e886ee46fbedc1574ab5f">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1266853983.jpg" title="How To Teach China This Fall" class="colorbox" data-colorbox-gallery="gallery-node-52491-SEhqOL2xejo" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1266853983.jpg?itok=C2Sy5HBG" width="1200" height="759" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Sam Wasson—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>Students sit socially distanced inside a classroom amid the COVID-19 pandemic, on the first day of the fall 2020 semester at the University of New Mexico in Albuquerque, New Mexico, August 17, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">The coming academic year presents unique challenges for university instructors teaching content related to China. The shift to online education, the souring of U.S.-China relations, and new national security legislation coming from Beijing have brought new sensitivities and new risks to our classrooms.</p>
+      <p>On June 30, 2020, the Chinese National People’s Congress passed the Hong Kong National Security Law (NSL). The law creates the potential for government authorities to interpret a <a href="https://npcobserver.com/2020/06/30/legislation-summary-hong-kong-national-security-law/" target="_blank" rel="nofollow">wide range</a> of speech and actions as the commission of or advocacy for secession, subversion, terrorism, or collusion with a foreign country against the People’s Republic of China (PRC) or the Hong Kong government specifically, <a href="https://www.prcleader.org/clarke" target="_blank" rel="nofollow">regardless</a> of citizenship or location of the offender. The broad scope of the NSL raises new and serious concerns for researchers, teachers, and students of China, especially when it comes to vulnerabilities associated with remote learning.</p>
+      <p>Most universities, if not all, have adopted Zoom as the videoconferencing technology for teaching since the outbreak of COVID-19 in the U.S. While the use of Zoom has facilitated remote teaching, it creates challenges to scholars who teach topics, narratives, and arguments China’s government deems “sensitive”—that is, out of bounds for debate. Specific to Chinese politics, several <a href="https://www.chinafile.com/conversation/chinas-zoom-bomb" target="_blank" rel="nofollow">recent incidents</a> involving Zoom and the PRC have raised the alarm on the use of Zoom in light of China’s NSL. As an Association for Asian Studies (AAS) <a href="https://www.asianstudies.org/aas-statement-regarding-remote-teaching-online-scholarship-safety-and-academic-freedom/?utm_source=AAS+Membership+Announcements&amp;utm_campaign=e491fbfb70-EMAIL_CAMPAIGN_2020_07_23_07_05&amp;utm_medium=email&amp;utm_term=0_3fb6313949-e491fbfb70-70859175" target="_blank" rel="nofollow">statement</a> recently pointed out, data generated from Zoom and other video conferencing applications is vulnerable to surveillance by the Chinese state.</p>
+      <p>Thus, remote learning creates additional challenges when a course includes material the Chinese government deems sensitive. The standard workaround for accessing blocked content in China has been the virtual private network (VPN). Unfortunately, VPNs not authorized by the government are <a href="https://www.scmp.com/news/china/policies-politics/article/2064587/chinas-move-clean-vpns-and-strengthen-great-firewall" target="_blank" rel="nofollow">no longer legal</a> for users in China (technically one needs special permission to operate them), which puts students at further risk of violating rules.</p>
+      <p>The purpose of this memo is to build on ideas <a href="https://www.asianstudies.org/aas-statement-regarding-remote-teaching-online-scholarship-safety-and-academic-freedom/?utm_source=AAS+Membership+Announcements&amp;utm_campaign=e491fbfb70-EMAIL_CAMPAIGN_2020_07_23_07_05&amp;utm_medium=email&amp;utm_term=0_3fb6313949-e491fbfb70-70859175" target="_blank" rel="nofollow">outlined</a> by the Association for Asian Studies to develop concrete recommendations for faculty who will be teaching China-related content this coming year. We write in a personal capacity as faculty members who teach courses related to the Chinese political system. We do not represent our respective universities. We do not represent our own field of study or the field of China studies as a whole, but we have consulted with a broad, diverse group of China scholars in preparing this document.</p>
+      <p>We hope our proposals will help students and faculty alike preserve their freedom of speech in the classroom. There is no single set of best practices that instructors should adopt. The decision of how to handle these issues is a deeply personal one, and it will depend on the instructor’s course, risk tolerance, and relationship with the Chinese state. Our goal is simply to provide some ideas and principles upon which to reflect. The general spirit of our recommendations is that we must continue to teach China as rigorously as before, and we also need to be more thoughtful as a community in managing risks and protecting data security for students and instructors.</p>
+      <h3 id="the-importance-of-teaching-china">The Importance of Teaching China</h3>
+      <p class="dropcap">The risks introduced by the NSL may discourage China-related content in the classroom, especially for courses that take place online. This chilling effect is what repressive laws are designed to do. Practically speaking, the NSL’s strength is rooted in its ambiguity. The mere possibility that provisions outlawing subversion could be invoked to prosecute mild criticism of China’s government casts a long shadow over all China discourse. An expansive interpretation of the NSL would be very costly for the Chinese state to enforce, but by avoiding “sensitive” topics we may inadvertently enforce the shadow ourselves.</p>
+      <p>Pedagogically speaking, China, as a case, is too influential to leave out of the classroom. Whether we are political scientists, historians, public health experts, or in any other field, knowledge about contemporary China is an asset to our students and it would be a disservice to them if we were to sidestep content on China on account of the NSL. Indeed, many students from China have self-selected into China courses deliberately, seeking different perspectives from those to which they have been previously exposed. By teaching China-related subjects, including topics that contradict the official narratives of the Chinese government, we help bring the country into focus and hopefully remove some of the ambiguity and anxiety that cultivates misunderstanding and misinformation.</p>
+      <p>The NSL aside, the current state of U.S.-China relations has grown notably tense. As public discourse becomes increasingly politicized during the upcoming U.S. presidential election cycle, our students need instruction on China more than ever. This is also why it is imperative for instructors to present a balanced view of Chinese politics and Chinese society, so that students can come to their own conclusions and parse out credible statements from erroneous ones. The alternative, avoiding China topics in the classroom, only amplifies the voices of those who profit from misrepresentation and narrow-minded chauvinism.</p>
+      <p>We recognize and appreciate that instructors come from a variety of backgrounds and, for good reason, approach risk differently. Ultimately, instructors will make their own choices about what topics to engage and how. Nonetheless, as we update our China materials for the classroom, it is imperative that we, as instructors, do not self-censor. Rather than shying away from “politically sensitive” topics, unpacking the nuances underpinning official narratives, such as on the <a href="https://www.chinafile.com/keyword/one-china-policy" target="_blank" rel="nofollow">One-China Policy</a>, democratic centralism, or state capitalism, can serve as an entry point for important conversations concerning sovereignty, political institutions, or economic principles. None of these narratives are black and white, and are thus ripe for thoughtful discussion. Still, some students, especially those from China, may not agree, or even engage in these discussions. This is okay. Now more than ever, it is worth appreciating the difficult position in which Chinese students find themselves—they are caught between a Chinese government that demands political loyalty and a U.S. government that is <a href="https://www.insidehighered.com/news/2018/08/09/politico-reports-trump-called-most-chinese-students-us-spies" target="_blank" rel="nofollow">actively demonizing</a> them.</p>
+      <h3 id="challenges-and-risk-assessment">Challenges and Risk Assessment</h3>
+      <p class="dropcap">Due to the ambiguous language of the NSL, we must assume that its enforcement is a moving target, which will change over time, and will be used to serve the political goals of the regime. We assess risk for specific groups below as of the time of writing, and our risk assessment considers the worst-case scenarios, regardless of their likelihood. We note that the enforcement of the NSL may have changed since the writing of this document.</p>
+      <ul>
+        <li>
+          <p><strong>Students Based in China:</strong> Students who participate in class from China could potentially face harassment from the Chinese government if the class draws attention, whether by actions that the student takes or by others. The students could be asked to turn over class materials to Chinese authorities, or even make unauthorized recordings, for further investigation. Students making comments deemed inappropriate by the government could potentially face legal action. For example, PRC citizens could be detained, and non-citizens could be expelled from the country. These represent unlikely but possible scenarios given China’s current political context and the state of U.S.-China relations. Non-legal risks, such as political intimidation and negative career consequences, have been present for some time and have intensified.</p>
+        </li>
+        <li>
+          <p><strong>Faculty and Teaching Staff:</strong> Faculty and teaching staff could be placed on Chinese government “watch lists” should their comments in class draw attention from the Chinese government. Faculty, graduate assistants, and staff who are Chinese citizens or have close personal ties to China are likely to face additional risks. It is possible that Chinese authorities could ask PRC students to collect intelligence about faculty and teaching staff who are deemed high priority. Faculty and teaching staff could face visa denials, harassment, or even detention when they visit mainland China and Hong Kong in the future based on the evidence the Chinese government collects through their class content. Although the risks to the faculty and teaching staff remain low for most instructors, the mere existence of this possibility could affect the ability and willingness of faculty and teaching staff to continue to conduct research on China. Further, instructors with relatives in the PRC may reasonably fear that their actions could have negative repercussions for family members. <strong>Teaching assistants</strong>, who do not choose course material and who depend on healthy relationships with faculty members for their advancement, are in a particularly vulnerable position.</p>
+        </li>
+        <li>
+          <p><strong>U.S.-Based Undergraduates:</strong> Relative to the above groups, we consider U.S.-based undergraduates to be less vulnerable to harassment or legal action by Chinese authorities. Even with the <a href="http://www.xinhuanet.com/english/2020-07/01/c_139178753.htm" target="_blank" rel="nofollow">provisions of Article 38</a> in the NSL—which applies to offenses committed by foreigners outside of Hong Kong—we consider it unlikely that a non-Chinese undergraduate will face difficulty in China for what they say or write in class. Undergraduates who are Chinese citizens could face the same consequences as students based in China, should their in-class comments draw attention from the Chinese government. We will learn more about how the NSL is being implemented in the years to come; for now, we would encourage fellow instructors to err on the side of caution and work to protect student data security.</p>
+        </li>
+        <li>
+          <p><strong>Classroom Environment and Course Content:</strong> Given the physical and security risks, some faculty members and teaching staff feel unable to speak fully openly about Chinese politics, history, and society. This could lead to the omission of important scholarly material and ideas deemed sensitive by the Chinese Communist Party. Relatedly, students might also feel that their classroom and written contributions are insecure and could potentially be monitored by the Chinese government. This could lead to a “chilling effect” and an environment of self-censorship in the classroom.</p>
+        </li>
+      </ul>
+      <h3 id="strategies-for-instructors">Strategies for Instructors</h3>
+      <ul>
+        <li>
+          <p><strong>Risk Disclosure</strong>: Before the semester begins, faculty should consider sending a note to enrolled students, particularly those who will be taking the course in China and Hong Kong, about the potential risks of enrolling in the course in light of the NSL. Faculty should direct enrolled students to the recent statement by the AAS. At a minimum, the content of the course, as well as the shifting legal environment, need to be clearly communicated to all students, so they can assess risks for themselves. Advise the students that the risks are likely elevated in an online teaching environment, and provide the option of enrolling another semester when the class is taught in-person. Students who are learning remotely in China, Hong Kong, or other locations with similar limitations on speech should be clearly informed of the risk they may be taking in using university resources. Risks associated with using the university VPN or accessing other resources should be clearly communicated by the staff members who work most closely with international students.</p>
+        </li>
+        <li>
+          <p><strong>Recording:</strong> Colleges and universities should avoid policies of “default recording,” whereby all lectures and sessions with student participation are recorded. Although, as we note above, it is impossible to ensure that no classes or segments of class are being recorded surreptitiously, defaulting to record all classes establishes an undesirable norm and a riskier environment for students and faculty. Some students or courses may have specific needs for recording, which should be accommodated by schools and instructors. Recordings could be limited to certain students, designed so they could only be viewed once by a given user, and so forth. In sessions with material to which Chinese authorities might object, recording policies should distinguish between instructor material and student comments and questions. No student questions or comments should ever be recorded or distributed.</p>
+          <p>Some faculty may choose to have students commit to not recording courses as a part of honor or academic integrity codes or pledges. These commitments may be difficult to enforce, but we think they set the right tone nonetheless and that they promote careful treatment of these issues on campuses. Instructors may work with university administrators to institute appropriate consequences for unsanctioned recordings or dissemination of course materials. In general, policies should be presentped as “country neutral.” We have focused here on challenges presented by the Chinese government, because that is our area of expertise, but speech is threatened and criminalized in other contexts as well. Presenting general and neutral policies is likely to be most effective without generating a sense that Chinese students should be under specific scrutiny.</p>
+        </li>
+        <li>
+          <p><strong>Course Content:</strong> We encourage instructors to exercise their freedom of speech by designing the syllabus as they see fit. Instructors should have discretion about whether they want to put certain course material online, as class content could potentially be accessed by Chinese authorities and used as evidence against the instructor and/or students.</p>
+        </li>
+        <li>
+          <p><strong>Protecting Participation:</strong> Instructors and universities should consider methods to protect student participation and ensure both safety and free discussion. “Amnesty policies” allow students to assess whether they feel safe participating in certain conversations and then either refrain from participating or reconsider the mode of their participation without penalty. For example, students could present comments anonymously (e.g., through emailing an instructor in advance) or listen to a discussion without such choices affecting their grade assessment. Instructors could also choose to institute blind grading for essays and exams; students would use an anonymized key on their assignments in lieu of their names. Faculty members should consider leading the discussion of topics that entail political risk instead of assuming teaching assistants share their own risk tolerance.</p>
+        </li>
+      </ul>
+      <h3 id="strategies-for-universities">Strategies for Universities</h3>
+      <ul>
+        <li>
+          <p><strong>Instructor Autonomy:</strong> Instructors should be able to choose their own policies on recording classes, conducting discussions, and so forth. Each has their own personal risk tolerance and personal relationship to course material and to China. Instructors themselves are likely the best judges of risk to themselves and their students and should be given autonomy over their courses rather than forced to comply with rules designed without this context. This autonomy should be extended to teaching assistants as well, who occupy a place between those who design courses and those who take them. Teaching assistants, because of nationality, career stage, or physical location, may face different risks than those faced by faculty members who design courses and retain power over the careers of graduate student teaching assistants. Teaching assistants must be protected by universities and invited to assess their own risks and seek redress.</p>
+        </li>
+        <li>
+          <p><strong>Ensuring Access to Resources:</strong>If universities expect to have students who are physically present in China, Hong Kong, or other regions where speech is curtailed, administrators might consider working with their information technology departments to test whether their remote learning platforms are accessible from mainland China and Hong Kong. If some students cannot access certain resources, the instructor might think of appropriate alternatives and ensure that students are not penalized for lack of access. In light of the NSL, we advise caution in encouraging students to employ a VPN to access blocked resources. Students may assume that a university’s VPN is “safe” because it is associated with the university. Accordingly, we urge universities and faculty to be transparent about the possible risks associated with using a VPN or attempting to access blocked content in China or Hong Kong.</p>
+          <p> </p>
+        </li>
+        <li>
+          <p><strong>Offering On-Campus Residence:</strong> Many campuses are offering support for a subset of students to stay on campus, despite COVID-19 outbreaks, if their home environment presents challenges for learning. Students who learn remotely from countries that curtail speech, such as China, may not be able to safely access necessary resources for learning. We suggest that, if the university is allowing only a subset of students to reside on campus, then the administration should consider a student’s citizenship in a country that curtails speech as one of the criteria in determining whether they may remain on campus. Alternatively, the university could offer support for citizens of China and Hong Kong to remain in the U.S. while studying, even if they are not on campus.</p>
+        </li>
+        <li>
+          <p><strong>Legal Support:</strong> As the AAS recommended, universities should clearly communicate what, if any, legal support they can offer students, faculty, or teaching staff who face repercussions for engaging in sensitive content.</p>
+        </li>
+        <li>
+          <p><strong>Offer Communication and Guidance:</strong> University administrators should communicate risks and university policy on protecting students to their faculties. Many scholars focusing specifically on China may be aware of the issues we discuss above, but teaching about China is not, nor should it be, the exclusive work of China scholars. Moreover, students based in countries that curtail speech, such as China, may face barriers to accessing learning materials in courses with little or no China-related content. All faculty members and instructors should understand policies on recording, participation, and the like and be made aware of the specific risks presented by the NSL through university-level communication. This kind of communication is critical in not only raising awareness but also facilitating a commitment to teaching China-related topics in a rigorous and thoughtful manner.<span class="cube"></span></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/">
+          The Future of China Studies in the U.S.
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-27/When-China-Reporters-Can-t-Report-from-China/">
+          When China Reporters Can’t Report from China
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-04</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-04/What-Now/">
+          What Now?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-03/Reciprocity-in-U.S.-Relations-with-China-Should-Be/">
+          Reciprocity in U.S. Relations with China Should Be a Tool, Not the Whole Strategy
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-08-19/%E5%A6%82%E4%BD%95%E6%89%93%E8%B4%A5VPN%E5%B9%B6%E8%BF%9C%E7%A8%8B%E8%B7%9F%E8%B8%AAMacOS%E8%AE%A1%E7%AE%97%E6%9C%BA-iYouPort/">
+            前一篇：如何打败VPN并远程跟踪MacOS计算机 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-08-20/%E6%89%98%E5%8D%A1%E5%B0%94%E4%B8%98%E5%85%8B-%E9%98%BF%E7%89%B9%E4%BC%8D%E5%BE%B7-%E9%BD%90%E6%B3%BD%E5%85%8B%E7%AD%89%E4%BA%BA%E8%81%94%E5%90%88%E5%8F%91%E5%A3%B0-%E8%A6%81%E6%B1%82%E6%AC%A7%E7%9B%9F%E5%AF%B9%E5%8E%8B%E8%BF%ABLGBT+%E7%BE%A4%E4%BD%93%E7%9A%84%E6%B3%A2%E5%85%B0%E6%94%BF%E5%BA%9C%E6%96%BD%E5%8E%8B/">
+            後一篇：托卡尔丘克、阿特伍德、齐泽克等人联合发声，要求欧盟对压迫LGBT+群体的波兰政府施压
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-08-19/%E5%A6%82%E4%BD%95%E6%89%93%E8%B4%A5VPN%E5%B9%B6%E8%BF%9C%E7%A8%8B%E8%B7%9F%E8%B8%AAMacOS%E8%AE%A1%E7%AE%97%E6%9C%BA-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-08-20/%E6%89%98%E5%8D%A1%E5%B0%94%E4%B8%98%E5%85%8B-%E9%98%BF%E7%89%B9%E4%BC%8D%E5%BE%B7-%E9%BD%90%E6%B3%BD%E5%85%8B%E7%AD%89%E4%BA%BA%E8%81%94%E5%90%88%E5%8F%91%E5%A3%B0-%E8%A6%81%E6%B1%82%E6%AC%A7%E7%9B%9F%E5%AF%B9%E5%8E%8B%E8%BF%ABLGBT+%E7%BE%A4%E4%BD%93%E7%9A%84%E6%B3%A2%E5%85%B0%E6%94%BF%E5%BA%9C%E6%96%BD%E5%8E%8B/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-08-27/When-China-Reporters-Can-t-Report-from-China/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-08-04/What-Now/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-08-19/%E5%A6%82%E4%BD%95%E6%89%93%E8%B4%A5VPN%E5%B9%B6%E8%BF%9C%E7%A8%8B%E8%B7%9F%E8%B8%AAMacOS%E8%AE%A1%E7%AE%97%E6%9C%BA-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-08-20/%E6%89%98%E5%8D%A1%E5%B0%94%E4%B8%98%E5%85%8B-%E9%98%BF%E7%89%B9%E4%BC%8D%E5%BE%B7-%E9%BD%90%E6%B3%BD%E5%85%8B%E7%AD%89%E4%BA%BA%E8%81%94%E5%90%88%E5%8F%91%E5%A3%B0-%E8%A6%81%E6%B1%82%E6%AC%A7%E7%9B%9F%E5%AF%B9%E5%8E%8B%E8%BF%ABLGBT+%E7%BE%A4%E4%BD%93%E7%9A%84%E6%B3%A2%E5%85%B0%E6%94%BF%E5%BA%9C%E6%96%BD%E5%8E%8B/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-08-27/When-China-Reporters-Can-t-Report-from-China/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-08-04/What-Now/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

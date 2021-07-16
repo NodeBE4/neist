@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？
+——
+" />
+    <meta property="og:description" content="
+极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？" />
+    <meta property="twitter:title" content="极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60ee86d864016f4d2b32bc70" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60ee86d864016f4d2b32bc70" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60ee86d864016f4d2b32bc70&text=极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60ee86d864016f4d2b32bc70&title=极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60ee86d864016f4d2b32bc70&title=极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？&body=
+极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60ee86d864016f4d2b32bc70" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60ee86d864016f4d2b32bc70&title=极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？&caption=
+极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？&url=https://www.allnow.com/post/60ee86d864016f4d2b32bc70" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-07-14
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 凯斯·桑斯坦</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60ee86d864016f4d2b32bc70" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60ee86d864016f4d2b32bc70">极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？</a>
+——</p>
+
+<div>
+  <p>互联网可以将人们聚集在一起，而不是让他们分散。数不清的人正在利用社交媒体组成更大也更多样化的群体。但是，也存在以利基社群（communities of niches）形式窄化人群的趋势。在Twitter的帮助下，行为科学研究者很容易就能找到与之交流的同行。如果你想要了解该领域的最新进展，Twitter能帮上大忙。例如，行为科学家们对“损失厌恶”感兴趣，这是指与同样数量的收益相比，人们更难以忍受损失。如果你对行为研究中的新案例、异常情况或详尽细节感兴趣的话，你会发现Twitter简直棒极了。没错，Twitter上有一个“损失厌恶”的标签（#lossaversion）。</p>
+  <p>那很棒。但是，对于专门领域的学术研究来说，这里存在的风险是Twitter将成为只属于他们自己的回音室。人们当然可以找到许多代表着不同主题或观点的标签。2015年，为了反对“让美国再次强大”（#MakeAmericaGreatAgain），“决不要特朗普”（#NeverTrump）的标签风靡一时。希拉里·克林顿的支持者们喜欢“我支持她”（#ImWithHer），而“把她关起来”（#LockHerUp）则是反对者们的标签。那些想要在食品包装上看到转基因（GMO）标志的人支持“标记它”（#JustLabelIt），而“黑命贵”（#BlackLivesMatter）则与“全命贵”（#AllLivesMatter）竞争。</p>
+  <p>许多高度专业化的网站、讨论组以及各种数不清的网络订阅源不断产生。这样的结果会产生什么问题呢？</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-14/60ee86ec9c232e01c17d25df+L.png" data-id="60ee87022114416715c3dd07" alt="《标签：社交媒体时代的众声喧哗》，[美]凯斯·桑斯坦著，陈颀、孙竞超译，麦读MyRead丨中国民主法制出版社2021年1月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《标签：社交媒体时代的众声喧哗》，[美]凯斯·桑斯坦著，陈颀、孙竞超译，麦读MyRead丨中国民主法制出版社2021年1月版
+    </figcaption>
+  </figure>
+  <p><strong>适当倾向性</strong></p>
+  <p>许多人最愿意相信，也最喜欢看的是用“适当倾向性”的内容讲述每天发生的事情。他们做出特定的选择，以确保可以相信自己所读到的内容。或者他们是想让自己远离那些难以置信的、极不靠谱的或惹人反感的观点。每个人都认为某些观点是无法接受的，并且如果有可能，我们会过滤掉这些内容。我在芝加哥住了很多年，热爱芝加哥熊队（现在我仍然爱他们——只是差了一点点）。当他们出现在全国性的电视频道上时，我就会关掉声音，然后听本地解说员的解说。我这样做，不仅因为本地解说员解说水平更高，还因为他们偏向于熊队。当熊队表现不佳时，他们会与我一起伤心。</p>
+  <p>或者想想这种情况，购买了一辆新车后，人们通常喜欢看到那些满腔热情地赞美他们刚刚入手的同款车型的广告。那些广告让人感到欣慰，因为它们可以证实购买这款车是一个明智的选择。如果你是某个政党的成员或对这一政党持有坚定的信念，你可能希望得到支持、增援及对方政党的把柄，而不是指责和批评。</p>
+  <p>此处，我们可以做些区分。某些群体的成员，想要与大多数或其他所有人隔绝，仅仅为了维持某种程度的舒适和一种可能的生活方式。出于同样的理由，一些宗教团体自我隔离。这样的团体容忍多元主义，对自我保护的热情更高；他们没什么大的野心，也不想劝说他人改宗。政治体制，也可以采取类似的行动。</p>
+  <p>另一些群体，则有一个自觉的社会计划，甚至是一种改造他人的“战斗任务”。他们对自我隔离的渴望是为了增强其成员的坚定信念，从而促进长期的招募和改造计划。恐怖分子就是以这种方式运作的。那便是他们使用社交媒体的原因之一。政党有时也会以类似的方式思考，而且他们常常忽视他人的观点，除非他们要嘲笑这些观点。在提供其他网站链接的时候，这些群体的目的往往是为了证明竞争对手的观点有多么危险或卑劣。这在Twitter和博客上，可谓是家常便饭。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-14/60ee871f9c232e01c17d25e0+L.jpeg" data-id="60ee8725904b8c02a16a3965" alt="凯斯·桑斯坦（Cass R. Sunstein），美国哈佛大学法学院教授，2009年-2012年曾任白宫信息和监管事务办公室主任，是当今美国法学学术印证率最高的法学家。他著述颇丰，出版有《助推》《网络共和国》《信息乌托邦》《弹劾》等极富影响的著作。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+凯斯·桑斯坦（Cass R. Sunstein），美国哈佛大学法学院教授，2009年-2012年曾任白宫信息和监管事务办公室主任，是当今美国法学学术印证率最高的法学家。他著述颇丰，出版有《助推》《网络共和国》《信息乌托邦》《弹劾》等极富影响的著作。
+    </figcaption>
+  </figure>
+  <p><strong>信息过载、群体主义与“合众为多”</strong></p>
+  <p>面对传播选择的激增，信息过载的风险无处不在——太多的选项、太多的话题、太多的意见，各种声音嘈杂纷乱。事实上，过载的风险与过滤的需求相伴相生。在我看来，布鲁斯·斯普林斯汀（Bruce Springsteen）的音乐永不过时，但是他风行于20世纪90年代的歌曲《找遍57个频道没有一个可看》<em>（57 Channels and Nothing On）</em>与当前海量的节目选择（何止57个？！）一对比，就显得滑稽和过时了。过滤经常体现为缩小选择范围，是为了避免过载并为海量的信息源强制设定某种秩序时的惯常之举。你的Twitter信息流，将仅限于推送你想要看到的内容；而你的Facebook好友，也只是人类的一小部分。</p>
+  <p>就过滤本身来说，这并不是问题。然而，当选择极大丰富之时，许多人会抓住机会只听或多听那些他们最为认同的观点。当然，对许多人而言，重要的是享受我们看到的或读到的内容，或从中学到东西，而我们不一定要从中获得安慰。然而，人类有一种自然的倾向，在选择娱乐和新闻时，并不希望它们妨碍我们先前的世界观。</p>
+  <p>我并不是说互联网是一个孤独或反社会的领域，绝非如此。与电视相反，当下的许多选项都非常社会化，极大地增强了人们与其他个人和群体建立联系的能力，而这些人是我们原本完全无法接触到的。Facebook、Twitter、Instagram、Medium和Vine提供了越来越多的引人注目的机会，借此创建新的组织和联系（而不是为了孤立）。这构成了讨论碎片化风险的基础。</p>
+  <p>一群具有全国代表性的美国人需要从四种新闻内容来源中选择其中一种，分别是福克斯（众所周知的保守派）、全国公共广播公司（NPR，众所周知的自由派）、美国有线电视新闻网（CNN，经常被认为偏自由派），以及英国广播公司（BBC，政治倾向不被大多数美国人所了解）。这些内容来源于不同的新闻类别：美国政治、伊拉克战争、美国种族问题、犯罪、旅行以及体育。在前四个分类中，共和党人以压倒性地优势选择了福克斯。与此相反，民主党人们在NPR和CNN之间平摊了他们的“选票”——并表现出对福克斯的普遍厌恶。对于旅行和体育，共和党人和民主党人之间的分歧大大减小。而无党派人士对四个新闻来源没有特定的偏好。</p>
+  <p>这一结果算不上出人意料，但的确有一个令人惊讶的发现：人们对于完全一样的新闻内容所感兴趣的程度受到网络标签的极大影响。对共和党人来说，福克斯的标签让同一新闻标题变得更有趣，内容也更加引人入胜。事实上，当顶着“福克斯”标签时，共和党人对同一新闻内容的点击率要高出三倍（有趣的是，当体育和旅行内容带有该标签时，其点击率也翻了倍）。民主党人则对带有“福克斯”标签的故事表示厌恶，而CNN和NPR的标签则适当增加了他们的兴趣程度。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-14/60ee87499c232e01c17d25e1+L.png" data-id="60ee875d2114416715c3dd0a" alt="信息大战" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+信息大战
+    </figcaption>
+  </figure>
+  <p>总体而言，福克斯吸引了大量共和党人的支持，而民主党观众和读者则竭力回避福克斯——在民主党人之间，CNN和NPR拥有明显而弱势的品牌忠诚度。我们有充分的理由设想，该结论适用于网络行为——倾向可识别的人们，正在查阅匹配他们偏好的信息源（包括网站在内），并且正在回避那些没有迎合他们偏好的信息源。</p>
+  <p>所有这些仅仅是冰山一角。因为互联网使得寻找志同道合的个体变得更容易，它能促成并加强拥有相同意识形态但地理上分散的边缘群体。因此，粒子物理学家、《星际迷航》<em>（Star Trek）</em>粉丝以及民兵组织成员利用互联网找到了彼此，交换信息并激发彼此的热情。在许多情况下，只要地理分隔将他们稀释至百万分之一，他们热络的对话可能永远不会达到临界质量（critical mass）。</p>
+  <p>人们正在努力“激发彼此的热情”，这个观点值得重点关注，因为它在接下来的讨论中扮演了重要的角色。的确，许多对特定话题有坚定立场的人几乎只与立场相近的人相互交流，比如控枪、堕胎或移民等话题。社交媒体的推送和链接，也遵循类似的模式。</p>
+  <p>所有这一切都非常自然，甚至相当合理。那些访问他们认为，具有恰当倾向性网站的人，很可能想要访问带有同样倾向性的网站；而那些出于特定观点创建某个网站的人，不大可能宣传他们的对手——人们倾向于喜欢与自己相似的人所喜欢的东西。许多人带着独特的视角查询网站，他们并不会将自己局限于想法相似的信息来源中。然而，今天我们对个体行为的认知，支持了一种普遍观点：许多人主要在倾听由自己声音产生的更多和更响亮的回音。至少可以这样讲，从民主立场来看，这有些事与愿违。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-14/60ee8c574cd55d54dd5dbbe0+L.jpeg" data-id="60ee8c5a9b2d825085c265f7" alt="手持标签的民众" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+手持标签的民众
+    </figcaption>
+  </figure>
+  <p>我并不打算否认一个显而易见的事实，即任何允许选择自由存在的体制，都会产生某种程度的观点分裂。在互联网到来的许多年前，在电视台屈指可数的时代，人们在报纸和无线广播之间做出了带有自我意识的选择。在任何时代，大多数人都希望获得安慰而不是受到挑战。以杂志和报纸为例，它们常常会以特定的观点迎合有明确喜好的人。自19世纪早期以来，非裔美国人普遍会阅读非裔美国人主办的报纸，而这些报纸就公共问题提供的报道与面向白人的报纸明显不同，并且就哪些问题才是重要问题，他们也做出了截然不同的选择。白人则很少阅读这些报纸。</p>
+  <p>但是，新兴事物仍具有重要的变革意义。伴随选项数量的急剧增加和定制能力的增强，实际选择范围也相应地增加。在许多情况下，这些选择很可能符合人口统计学特征或既存的政治信念，或者二者兼而有之。这当然有很多好处，尤其是它大大增加了信息的总量、选择的娱乐价值以及选项的纯粹乐趣。然而，这也存在着一些问题。如果形形色色的群体看到和听到的都是完全不同的观点，或者关注完全不同的话题，那么人们可能很难相互理解，而解决全社会所共同面对问题的难度或许也会增加。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-14/60ee8c964cd55d54dd5dbbe1+L.png" data-id="60ee8cb4904b8c02a16a3975" alt="越来越多的人不愿了解与自己相反的观点，避免互相交流，且意识不到该如何处理不同问题" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+越来越多的人不愿了解与自己相反的观点，避免互相交流，且意识不到该如何处理不同问题
+    </figcaption>
+  </figure>
+  <p>考虑一些例子。许多美国人担忧的某些环境问题——弃置危险废物的地点、转基因食品、气候变化——是极为严重的，需要政府即刻采取行动。但是，另一些人却认为，这些问题是狂热分子和自利的政府官员们凭着想象虚构出来的。许多美国人认为，大多数接受福利救济的人都好逸恶劳，依赖他人的救济为生。根据这种观点，包括削减救济品在内的“福利改革”名副其实，这是鼓励人们自食其力的必要步骤。但其他的许多美国人则相信，接受救济者们常常处于严重的不利境地，如果能够获得体面的工作，他们将完全愿意去工作。而根据这种观点，削减救济的“福利改革”是一种官方的不公。许多人认为，美国安全的最大威胁仍是恐怖主义，如果不将对抗恐怖主义作为首要任务，那么灾难性的袭击很有可能会接连发生。其他许多人则相信，尽管恐怖主义带来了严重的风险，但这种威胁被过分渲染了，而包括气候变化在内的其他问题至少应引起同等的关注。</p>
+  <p>退一步讲，对持有如此对立观点的人来说，要达成任何共识或在根本问题上取得进展，都会变得很困难。人们会去相信相反的“事实”。想想看，如果人们不了解与自己相反的观点，总是避免互相交流，并且意识不到该如何处理同胞们的不同问题，这些困难又将会增加多少。</p>
+  <p>仇恨团体（hate groups）和极端组织创建并运营了大量网站。至少，他们似乎取得了某种程度的成功，如果我们用“点击率”来衡量的话。这类网站中有一些拥有成百上千甚至几百万的访问者。同样令人吃惊的是，许多极端组织和仇恨团体会提供友情链接，并明确想要鼓励在想法相似的人中进行招募和讨论。</p>
+  <p>如果我们关注群体极化现象，我们就能加深自己的理解。这一现象激发了严重的问题，即在任何个人和群体做出多种选择的体制中，许多人最终生活在他们自己设计的回音室里。在互联网上，极化是一个真实的现象；我们或许甚至可以称之为“网络极化”（cyberpolarization）。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-14/60ee91cc9c232e01c17d25ed+L.jpeg" data-id="60ee91d02114416715c3dd19" alt="两极分化会带来严重的社会风险" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+两极分化会带来严重的社会风险
+    </figcaption>
+  </figure>
+  <p>群体极化现象对社交媒体和广义的互联网来说显然很重要，至少在具有鲜明身份认同的群体参与群体内讨论的程度上是如此。可以想见，上述的这种效果会发生在恐怖分子和仇恨团体之中，也会发生在各种不那么极端的组织之中。如果公共领域四分五裂，并且如果不同的群体正试图打造他们自己偏好的通信程序包，那么后果将不仅仅是趋同，还可能更加四分五裂，因为群体的成员彼此之间将朝着比其最初倾向的观点更为极端的方向发展。与此同时，不同的审议群体，每一个都由一群想法相似的人组成，将被驱使着渐行渐远，这仅仅是因为大部分的讨论发生在群体内部。</p>
+  <p>当然，我们大多数人并没有使用这种力量来过滤，从而隔离其他的观点。（即便如此，有些人会这样做，事实上他们也正在这样做。）许多人在Facebook和Twitter上，创造了类似回音室的东西；他们希望他们自己的观点得到确认。类似的事情也发生在成千上万选择报纸、无线广播台和电视频道的人们身上，因为他们能够听到他们自己声音的某种变体。</p>
+  <p>这足以造成明显的两极分化，并造成严重的社会风险。通常，恰恰是那些最有可能过滤掉不同看法的人，才是最应该听取不同看法的人。社交媒体（实际上）使人们更容易用想法相似者的观点将自己围住，并使自己免受竞争性观点的影响。仅仅因为这个原因，社交媒体就成了极化的温床，同时也成了民主和社会安宁的潜在威胁。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-14/60ee91f69c232e01c17d25ee+L.png" data-id="60ee91f92114416715c3dd1a" alt="社交媒体就成了极化的温床，同时也成了民主和社会安宁的潜在威胁。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+社交媒体就成了极化的温床，同时也成了民主和社会安宁的潜在威胁。
+    </figcaption>
+  </figure>
+  <p><strong>为什么会产生极化？</strong></p>
+  <p>关于群体极化，有三种主要的解释。当前，已经有大量的证据支持这些解释。</p>
+  <p><strong>说服性论证和信息。</strong>第一种解释强调了说服性论证和信息的作用。这就是一种简单的直觉。至少是在某种程度上，任何一个人在任何议题上的立场都与令人信服的论证成函数关系。总体上看，如果因为群体讨论的缘故，你的立场开始动摇了，它很有可能向群体内部所支持的最具说服性的立场偏移。在很大程度上，最具说服力的立场由其支持的合理性和论据的数量所界定。</p>
+  <p>这里的核心观点是：如果群体成员已经有了特定的倾向，他们会提供朝着同一方向开展大量讨论，而对相反的观点讨论极少，这两者所占的比例相差极大。讨论的结果，自然就使人们沿着他们的初始倾向走得更远。因此，假设一个群体的成员倾向于支持国家现任领导人，会在讨论中提供广泛的论据支持该领导人，而反对他们的讨论则会既少且弱。就其转变程度而言，群体成员会朝着一种支持当前领导人的更为极端的立场发生转变。而如果群体必须做决定，作为一个整体的群体不会移向中间立场，而是朝向更为极端的立场。</p>
+  <p>出于这种原因，群体极化背后的核心要素，即是存在一个有限论据池（limited argument pool）——它朝着某个特定的方向扭曲（在纯粹描述性的意义上）。我们很容易看到线上讨论组可能会发生怎样的变化；想想，如果是一群民主党人或共和党、一群恐怖分子或是环保主义者。这一点有助于解释每天社交网络上发生的事情。如果你的Twitter推送中都是那些像你一样想问题的人，或者说如果你的Facebook好友分享了你的理念，论据池就会受到极大的限制。</p>
+  <p>事实上，转变不会发生在参与讨论的个体身上，而是发生在只向广播、电视或互联网查询他们已有倾向的想法之时。这种查询倾向，会巩固并增强既有立场——经常最后演变为极端主义。如果收看福克斯新闻的人朝着更为保守的方向发展，又或者如果收看俄罗斯国家电视台节目的人最后对美国没有太大热情的话，相关的论据池可能扮演了很重要的角色。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-14/60ee92199c232e01c17d25ef+L.jpeg" data-id="60ee92222114416715c3dd1b" alt="查询自身已有倾向的想法之时，会巩固并增强既有立场" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+查询自身已有倾向的想法之时，会巩固并增强既有立场
+    </figcaption>
+  </figure>
+  <p><strong>声誉的考虑。</strong>第二种机制，涉及人们对自己声誉的关注，始于一种合理的联想，即人们希望其他群体成员能了解自己好的方面，也认为他们自己很好。一旦他们听说了其他人认定的事，他们经常会向着优势立场所在的方向调整自己的立场。德国社会学家伊丽莎白·诺艾尔－诺依曼（Elisabeth Noell－Neumann）将这种想法作为一种关于公共意见的一般性理论的基础，这就是“沉默螺旋”（spiral of silence），即持少数派立场的人会让自己保持沉默，随着时间的推移，那些立场可能会从社会上被消除。这种现象不只发生在威权社会中，也可能发生在民主社会中。这有时是好事；当社会聚焦于科学和道德真理时，那些认为太阳围着地球转或者认为奴隶制是好主意的人最后会自我沉默，使得谬误或令人憎恶的信仰消失（或几近消失）。然而，沉默螺旋不总是良性的。对当前的论述目的而言，核心观点在于当人们关心他们的声誉时，他们在组内讨论中所说的内容会受到影响。这样一来，群体会变得更为极端。</p>
+  <p>例如，假设一个特定群体中的成员倾向于鲜明反对某场战争，继续化石燃料依赖和枪支所有权，并且他们也希望人们看到他们在极力反对所有这些政策。如果他们处在一个其成员也极力反对这些事务的群体之中，在了解其他群体成员想法之后，他们可能会转向更强烈的反对立场。通过海量的研究，这种模式得以被精确观察。如果人们对自己所想之事有一个清楚的认识，并且不会让其他人的观点动摇自己，人们当然不会发生转变。但是，大多数的人在大多数时间里，并不是那么固执己见。</p>
+  <p>该观点说明了在电视、广播和社交媒体上，即使缺乏互动机会，人们也很可能受到他们接触的想法及主张的影响。注意，群体极化仅仅在接触他人观点的基础上发生。讨论不是必要的。这种“仅仅接触效应”的影响意味着，极化在一个四分五裂的言论市场中可能是一种普遍现象。</p>
+  <p>想象一下，保守派正在浏览保守派网站；自由派正在浏览自由派网站；环保主义者正在浏览致力于证成基因工程和气候变化风险的网站；而环保主义的批评者们，则正在浏览那些旨在披露据称是环保主义者制造的骗局的网站；倾向于种族仇恨的人们正在访问表达种族仇恨的网站。这些信息接触如果不能得到相反观点披露的补充，群体极化就成了无法避免的后果。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-14/60ee923e4cd55d54dd5dbbe4+L.png" data-id="60ee92442114416715c3dd1d" alt="只有当人们获得自信时，他们的信念才会变得更加极端" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+只有当人们获得自信时，他们的信念才会变得更加极端
+    </figcaption>
+  </figure>
+  <p><strong>自信，极端主义与确证。</strong>关于群体极化，最有趣的解释是强调自信、极端主义和他人确证之间的密切联系。在包括政治议题在内的许多议题上，人们对他们所想的东西并不是真的很确定，缺乏确定性使他们倾向于中间立场。我们会对复杂事务——增加最低薪酬的影响、控制气候变化的合理方式，或者如何应对某些危险的国际形势——感到不确定。我们的观点是温和的、暂时性的。</p>
+  <p>只有当人们获得自信时，他们的信念才会变得更加极端。不论好坏，他们都可以被激进化，即使最终的结论不是那么激进。来自他人的认同，会增加自信。因此，在彼此商议之后，想法相似的人们会更加相信他们认为正确的事情——因而也更加极端。即使在平常情境中，包括幻灯片中人的吸引力和椅子的舒适度，普通人在实验中的观点也会得更加极端，这仅仅是因为他们的观点得到了他人的确证，而且他们在得知其他人分享了他们的观点后变得更加自信。</p>
+  <p>这是一个十分重要的论点，它帮助我们解释了Twitter上每天都在发生什么。如果你得知“像你一样的人”喜欢某支乐队、某部电影，具有一种可辨识的政治立场，或者支持特定的竞选者，你或许会跟随他们的脚步。事实上，如果你得知“像你一样的人”对国家安全或社保改革所持的特定立场，你很可能会最终接受他们的立场，并且可能会很有自信地那样去做，即便你自己并没有怎么独立思考过这个问题。当人们发现其他人分享了自己的初始倾向，他们常常会变得更为自信，也因而更加走向极端。在这点上，想想社交平台带来的影响。在这些平台上，人们的观点最终会被想法相似者不断重申。</p>
+  <p>当你开始坚定相信某种政治主流立场时，你就变得激进了——例如，你喜欢的政治竞选者不仅是最好的，而且比其他竞选者不知好多少倍，任何其他选择都会导致灾难性的后果。在2016年唐纳德·特朗普和希拉里·克林顿之间的竞选中，这种情况在双方的支持者中间都有发生。当然，你可能以令人不安的方式变得激进化，我们会在适当时候探讨这一问题。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-14/60ee92624cd55d54dd5dbbe5+L.jpeg" data-id="60ee92682114416715c3dd1e" alt="在社交媒体上，你想要的观点最终会被想法相似者不断重申" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+在社交媒体上，你想要的观点最终会被想法相似者不断重申
+    </figcaption>
+  </figure>
+  <p><strong>群体身份认同的非凡意义</strong></p>
+  <p>对于极化来说，身份认同和成员资格的意识很重要，这对一般意义上的信息交流和特别意义上的社交媒体都成立。如果人们将自己视为某个群体的一部分，而这个群体拥有共同的身份和一定程度的团结，那么群体极化将显著增加。如果他们以这样的方式看待自己，群体极化更有可能发生，也会变得更加极端。如果说，一个线上讨论组的成员认为他们自己是高税率的反对者、动物权利的支持者，或是最高法院的批评者，其讨论极有可能将他们推至极端方向，仅仅因为他们将彼此理解为共同事业的一部分。可以料想，类似的变化发生在不同类型的人身上，比如收听保守派耳熟能详的广播节目的人，或是收看专注于传统宗教价值或揭露白人种族主义的电视节目的人。大量证据证明，情况的确如此。</p>
+  <p>群体身份认同，在另一方面也很重要。假设你正参与一场在线讨论，但你认为其他组员显然与你不同。如果是这样，你极有可能不会被他们所说的话打动。如果说其他组员是典型的“共和党人”，而你认为你自己是一个民主党人，你也许根本就不会改变观点。然而，假如在同样的讨论中你们都身为“选民”“陪审员”或者“公民”，你的确会改变原有的观点。因此，一种共享群体身份认同的意识会增强他人观点对你自己观点的影响，反之，一种不共享身份认同且存在相关差异的意识会降低这种影响，甚至有可能会消除影响。</p>
+  <p>这些结果并不奇怪。回想一下，群体极化通常是有限论据池、声誉考虑（reputational considerations）及确证效应（the effects of corroboration）的产物。如果情况确实如此，那么当群体成员在一个突出方面上认为彼此相似时，或者存在某种外部因素（政治、地理、种族或性别）将他们联合起来，群体极化就会增强。如果共享了身份认同，那么有说服力的讨论极有可能变得更有说服力；那些参与讨论者的身份认同给予他们一种信任或推动力。如果身份认同得以共享，社会影响将获得更大的力量。人们不希望自己的名誉在与他们相似的人眼中受损。而且，如果你觉得群体成员在某些相关问题上的理解与你不同，他们的观点极有可能不具说服力，社会影响力可能不大，或许根本没有。如果“像你一样的人们”支持你的初始倾向，你将会变得更加自信。但是，如果“和你不一样的人们”也支持这种倾向，你或许会变得不那么自信，并且开始重新思考你的观点。如果你的政敌——那些你认为最糊涂、最具破坏性的人——认为你的观点是对的，你也许最终会认为自己的想法是错误的。</p>
+  <blockquote>
+    <p>本文选自凯斯·桑斯坦《标签：社交媒体时代的众声喧哗》，由麦读MyRead授权刊发。</p>
+  </blockquote>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+    
+      <li>
+        <time>2021-07-15</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">
+          妻妾成群的道士与和尚：元代宗教史的另一个侧面
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-13</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-13/%E6%9C%B1%E6%B5%B7%E5%B0%B1-%E5%AF%B9%E5%88%B6%E5%BA%A6%E7%9A%84%E6%AD%A3%E7%A1%AE%E8%AE%A4%E8%AF%86-%E6%89%8D%E6%98%AF%E9%80%9A%E5%BE%80%E6%96%87%E6%98%8E%E4%B9%8B%E8%B7%AF%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          朱海就：对制度的正确认识，才是通往文明之路丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-12</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-12/%E6%9C%B1%E6%B5%B7%E5%B0%B1-%E5%A5%A5%E6%B4%BE%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E5%BC%80%E6%94%BE%E7%A4%BE%E4%BC%9A%E5%8F%8A%E5%85%B6%E6%95%8C%E4%BA%BA%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          朱海就：奥派经济学、开放社会及其敌人丨燕京访谈
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-13/%E4%BA%BA%E6%B0%91%E7%9A%84%E9%80%89%E6%8B%A9-%E7%BD%A2%E5%B7%A5%E7%9A%84%E7%94%B5%E4%BF%A1%E5%B7%A5%E4%BA%BA%E6%AD%A3%E5%9C%A8%E5%BB%BA%E7%AB%8B%E7%A4%BE%E5%8C%BA%E8%87%AA%E5%B7%B1%E7%9A%84ISP-iYouPort/">
+            前一篇：人民的选择：罢工的电信工人正在建立社区自己的ISP - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-14/%E6%88%91%E8%A6%81%E6%88%91%E7%9A%84%E8%A1%80%E6%B1%97%E9%92%B1-%E5%85%A8%E7%90%83%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%9A%84%E7%AE%97%E6%B3%95%E6%9A%B4%E6%94%BF%E5%9C%A8%E4%B8%AD%E5%9B%BD-iYouPort/">
+            後一篇：我要我的血汗钱：全球资本主义的算法暴政在中国 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-07-13/%E4%BA%BA%E6%B0%91%E7%9A%84%E9%80%89%E6%8B%A9-%E7%BD%A2%E5%B7%A5%E7%9A%84%E7%94%B5%E4%BF%A1%E5%B7%A5%E4%BA%BA%E6%AD%A3%E5%9C%A8%E5%BB%BA%E7%AB%8B%E7%A4%BE%E5%8C%BA%E8%87%AA%E5%B7%B1%E7%9A%84ISP-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-07-14/%E6%88%91%E8%A6%81%E6%88%91%E7%9A%84%E8%A1%80%E6%B1%97%E9%92%B1-%E5%85%A8%E7%90%83%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%9A%84%E7%AE%97%E6%B3%95%E6%9A%B4%E6%94%BF%E5%9C%A8%E4%B8%AD%E5%9B%BD-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-07-13/%E6%9C%B1%E6%B5%B7%E5%B0%B1-%E5%AF%B9%E5%88%B6%E5%BA%A6%E7%9A%84%E6%AD%A3%E7%A1%AE%E8%AE%A4%E8%AF%86-%E6%89%8D%E6%98%AF%E9%80%9A%E5%BE%80%E6%96%87%E6%98%8E%E4%B9%8B%E8%B7%AF%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-07-13/%E4%BA%BA%E6%B0%91%E7%9A%84%E9%80%89%E6%8B%A9-%E7%BD%A2%E5%B7%A5%E7%9A%84%E7%94%B5%E4%BF%A1%E5%B7%A5%E4%BA%BA%E6%AD%A3%E5%9C%A8%E5%BB%BA%E7%AB%8B%E7%A4%BE%E5%8C%BA%E8%87%AA%E5%B7%B1%E7%9A%84ISP-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-07-14/%E6%88%91%E8%A6%81%E6%88%91%E7%9A%84%E8%A1%80%E6%B1%97%E9%92%B1-%E5%85%A8%E7%90%83%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%9A%84%E7%AE%97%E6%B3%95%E6%9A%B4%E6%94%BF%E5%9C%A8%E4%B8%AD%E5%9B%BD-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-07-13/%E6%9C%B1%E6%B5%B7%E5%B0%B1-%E5%AF%B9%E5%88%B6%E5%BA%A6%E7%9A%84%E6%AD%A3%E7%A1%AE%E8%AE%A4%E8%AF%86-%E6%89%8D%E6%98%AF%E9%80%9A%E5%BE%80%E6%96%87%E6%98%8E%E4%B9%8B%E8%B7%AF%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

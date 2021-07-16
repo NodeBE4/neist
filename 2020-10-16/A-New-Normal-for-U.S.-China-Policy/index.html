@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>A New Normal for U.S. China Policy? – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+A New Normal for U.S. China Policy?
+——
+" />
+    <meta property="og:description" content="
+A New Normal for U.S. China Policy?
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="A New Normal for U.S. China Policy?" />
+    <meta property="twitter:title" content="A New Normal for U.S. China Policy?" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Fnew-normal-us-china-policy" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/new-normal-us-china-policy" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/new-normal-us-china-policy&text=A New Normal for U.S. China Policy?&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/new-normal-us-china-policy&title=A New Normal for U.S. China Policy?" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/new-normal-us-china-policy&title=A New Normal for U.S. China Policy?" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=A New Normal for U.S. China Policy?&body=
+A New Normal for U.S. China Policy?
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/new-normal-us-china-policy" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/new-normal-us-china-policy&title=A New Normal for U.S. China Policy?&caption=
+A New Normal for U.S. China Policy?
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=A New Normal for U.S. China Policy?&url=https://www.chinafile.com/conversation/new-normal-us-china-policy" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>A New Normal for U.S. China Policy?</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-10-16
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Teng Biao, Isabel Hilton &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/new-normal-us-china-policy" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1602893520000-->
+<p><a href="https://www.chinafile.com/conversation/new-normal-us-china-policy">A New Normal for U.S. China Policy?</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-8c63266c79797105627a962b729074ef">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/52656_sm.jpg" title="A New Normal for U.S. China Policy?" class="colorbox" data-colorbox-gallery="gallery-node-52656-0-nFvnuNK48" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/52656_sm.jpg?itok=BhZe1d6n" width="1400" height="932" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Thomas Peter—Pool/Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>U.S. President Donald Trump meets with China’s Premier Li Keqiang before a meeting at the Great Hall of the People in Beijing, November 9, 2017.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">In recent months, the U.S. government has ended both the <a href="https://nuvoices.com/2020/09/06/nuvoices-podcast-fulbrights-exit-from-china-and-hong-kong/" target="_blank" rel="nofollow">Fulbright</a> program and <a href="https://www.newyorker.com/magazine/2020/03/16/the-peace-corps-breaks-ties-with-china" target="_blank" rel="nofollow">Peace Corps</a> in China. Tit for tat <a href="https://cpj.org/thetorch/2020/06/u-s-continues-tit-for-tat-media-visa-war-with-china/" target="_blank" rel="nofollow">journalist visa</a> retaliations have resulted in bureau relocations. Donald Trump’s recent attempt to <a href="https://www.cnbc.com/2020/08/07/trump-banning-wechat-would-be-devastating-blow-to-some-chinese-families.html" target="_blank" rel="nofollow">ban WeChat</a> has panicked countless Americans who depend on it as their sole means of communicating with friends and family in China. More nebulous, but perhaps more insidious, the slide of American democracy has proved a powerful propaganda tool for anyone espousing the value of a powerful, one-party system. And as diplomatic ties fray between China and the U.S., both may continue to lose a crucial means of communication and understanding.</p>
+      <p>In China and across the world, then, many are watching as perhaps the most consequential U.S. election nears. After four years of <a href="https://www.piie.com/blogs/trade-investment-policy-watch/trump-trade-war-china-date-guide" target="_blank" rel="nofollow">Trump’s</a> trade <a href="https://www.cnbc.com/2019/05/31/the-new-front-in-trumps-trade-war-could-cost-consumers-at-least-93-billion.html" target="_blank" rel="nofollow">wars</a>, <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)31527-0/fulltext" target="_blank" rel="nofollow">withdrawal</a> from international bodies, and <a href="https://www.pri.org/stories/2020-04-22/xenophobia-takes-its-toll-trump-works-curb-immigration" target="_blank" rel="nofollow">xenophobic</a> immigration policies, the United States has hit an apex of isolationism. Even if a new government steps in, however, it’s not altogether clear the U.S. could or would regain its footing on the international stage. The vacuum left by a diminished Washington is being filled by Beijing.</p>
+      <p>Where does that leave ordinary Chinese and American citizens? Is there any way for these channels of communication to be salvaged? And, if not, what will be lost in the coming years? —<em><a href="https://www.chinafile.com/contributors/abby-seiff" target="_blank" rel="nofollow">Abby Seiff</a></em></p>
+      <p><em>Correction Note: Due to an editing error, a previous version of this article incorrectly stated that President Trump attempted to ban WhatsApp. He has attempted to ban WeChat.</em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-8861" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/teng-biao"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/teng_biao_0.jpg?itok=8FSnzP8H" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="teng-biao"><a href="https://www.chinafile.com/contributors/teng-biao" title="Teng Biao">Teng Biao</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Forty-eight years after Nixon’s historic trip to China, Secretary of State Mike Pompeo spoke at the Nixon library in July, <a href="https://www.washingtonpost.com/world/national-security/at-nixon-library-pompeo-declares-china-engagement-a-failure/2020/07/23/c4b073f2-cd29-11ea-99b0-8426e26d203b_story.html" target="_blank" rel="nofollow">declaring</a> U.S. engagement with China to be a “dismal failure.” The worsening <a href="https://www.brookings.edu/blog/order-from-chaos/2020/08/07/more-pain-than-gain-how-the-us-china-trade-war-hurt-america/" target="_blank" rel="nofollow">trade war</a>, the <a href="https://www.chinafile.com/conversation/technical-difficulties" target="_blank" rel="nofollow">ban</a> on WeChat and TikTok, the <a href="https://www.cjr.org/analysis/chinese-nationals-forced-resignations.php" target="_blank" rel="nofollow">expulsion</a> of journalists, and acts to <a href="https://www.npr.org/2020/07/09/889406296/u-s-sanctions-chinese-officials-including-politburo-member-for-xinjiang-abuses" target="_blank" rel="nofollow">sanction</a> Chinese officials may be just the start. More conflicts and tougher policies are on the way. Is decoupling between the U.S. and China desirable and possible?</p>
+        <p>Even after the Tiananmen massacre in 1989, many in the West still assumed that China would grow more free and open and become a democracy—as long as the world encouraged and allowed China to engage in the international legal system and the World Trade Organization. However, this has proven part of the “China fantasy,” as journalist James Mann <a href="https://james-mann.com/books/the-china-fantasy/" target="_blank" rel="nofollow">argued</a> 13 years ago. Business opportunism at the expense of human rights and democracy heavily contributed to the rise of an anti-democratic China.</p>
+        <p>For the past three decades, China has made amazing achievements, not only in economic and social development, but also in the fields of law, education, communication, and civil society. The limited permission of liberal ideas since the 1980s was consistent with the Chinese Communist Party’s (CCP’s) adoption of a “socialist market economy.” The logic and force of (state-)capitalism has profoundly impacted Chinese society, culture, and even politics. It is undeniable that engaging China has created some positive consequences, when compared to the lawless and penurious Mao Zedong era.</p>
+        <p>But unprincipled engagement with an autocratic regime is simply appeasement. China and the rest of the world now rely on each other not only for economic reasons, but geopolitical ones. Western businesses prioritized profits from the amazingly huge Chinese market over human rights concerns, and Western democracies, in turn, have long been reluctant to push for a democratization of China.</p>
+        <p>The policy of the U.S. toward China is based on the seemingly permanent rule of the CCP. Western companies make so much profit from China that they don’t want to endanger their cash cow. In the context of China’s democracy, the West’s appeasement and opportunism might be more problematic than regime change. But change is coming on the international arena as more and more countries grapple with China’s threat to the liberal International order and have begun to be tougher on China.</p>
+        <p>It is interesting and ridiculous, meanwhile, how many Chinese dissidents and pro-democracy intellectuals are supportive of President Donald Trump mainly because of his apparently tough policy toward China. But Trump’s China policy is not based on universal values at all. He has no interest in human rights or democratization in China. On the contrary, he has <a href="https://www.reuters.com/article/us-trump-asia-china-bromance/trump-heaps-praise-on-very-special-xi-in-china-visit-idUSKBN1D91C8" target="_blank" rel="nofollow">repeatedly</a> <a href="https://www.theguardian.com/us-news/2018/mar/04/donald-trump-praises-xi-jinping-power-grab-give-that-a-shot-china" target="_blank" rel="nofollow">praised</a> <a href="https://www.businessinsider.com/trump-xi-jinping-helped-the-us-more-than-any-predecessors-2018-4" target="_blank" rel="nofollow">Xi</a> <a href="https://www.politico.com/news/2020/04/15/trump-china-coronavirus-188736" target="_blank" rel="nofollow">Jinping</a> (and other dictators). Trump reportedly <a href="https://www.wsj.com/articles/john-bolton-the-scandal-of-trumps-china-policy-11592419564" target="_blank" rel="nofollow">told</a> Xi to keep building concentration camps in Xinjiang, <a href="https://www.reuters.com/article/us-hongkong-protests-trump/trump-says-its-up-to-china-to-deal-with-hong-kong-riots-idUSKCN1US0OR" target="_blank" rel="nofollow">labeled</a> the Hong Kong democracy movement “riots,” and <a href="https://www.businessinsider.com/bolton-trump-didnt-care-30th-anniversary-of-tiananmen-square-massacre-2020-6" target="_blank" rel="nofollow">refused</a> to give a statement on Tiananmen. Domestically, Trump has jeopardized the American constitution and its democracy in various ways, by <a href="https://www.cjr.org/the_media_today/trump-media-enemy.php" target="_blank" rel="nofollow">belittling</a> independent media, <a href="https://www.politico.com/news/2020/09/23/trump-peaceful-transition-of-power-420791" target="_blank" rel="nofollow">refusing to commit</a> to a peaceful transfer of power, instigating <a href="https://www.huffpost.com/entry/trump-racism-examples_n_5991dcabe4b09071f69b9261?guccounter=1&amp;guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&amp;guce_referrer_sig=AQAAAA6_cwBabcDothNbnWTkzZr4KwCNiClwS3pZvACcE-WyctnwByoLpHQZ1vOjApZuslLKY_GtPojoOZF9kJIw76" target="_blank" rel="nofollow">racism and xenophobia</a>, and more. These acts are priceless gifts to dictatorships.</p>
+        <p>In my opinion, decoupling with China is neither desirable nor possible. A healthy U.S.-China relationship must be based on America’s firm stance on human rights and liberal democracy. When Nixon <a href="https://www.jstor.org/stable/20039285?seq=3#metadata_info_tab_contents" target="_blank" rel="nofollow">claimed</a> “the world cannot be safe until China changes,” he was not wrong. But engagement in the name of appeasement has led to dangerous changes in China. And if America’s constitutional democracy is substantially impaired, that might be the most horrible thing for the international free order in the foreseeable future.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8866" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/isabel-hilton"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/ih_0.jpg?itok=XHWnoC0u" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="isabel-hilton"><a href="https://www.chinafile.com/contributors/isabel-hilton" title="Isabel Hilton">Isabel Hilton</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">When the Soviet Union collapsed in 1991, many explanations were offered: For Cold Warriors, it was a triumph of a Reaganite confrontation that forced an economically weak USSR to spend beyond its means on military hardware; for democrats, it demonstrated that autocracies inevitably fall; for <a href="https://www.britannica.com/topic/Helsinki-process" target="_blank" rel="nofollow">supporters of the Helsinki process</a>, it showed the strength of human interaction and the power of ideas to eat away at the soft tissue of the dictatorship.</p>
+        <p>Whichever explanation you favor, the list illuminates the limits of the Cold War analogy in the current U.S.-China confrontation: a strategic confrontation, yes, but with a China that is much stronger, more integrated in the global economy, and more resilient than the USSR. This has happened not least because its leaders, Xi Jinping included, drew lessons from the Soviet experience in order to ensure that the Chinese Communist Party would not suffer the same fate.</p>
+        <p>The weakness of the Trump approach in this profound competition between economic systems and governing philosophies is its disregard of public opinion in China or, for that matter, in the wider world. Containing Chinese global influence, if that is the Trump objective, will require more than threats, tariffs, and sanctions. It will require the U.S. to regain its power of attraction both for citizens of hostile states and those of its traditional allies. On both counts, the Trump administration is faring poorly. The most recent Pew survey <a href="https://www.pewresearch.org/fact-tank/2020/10/06/negative-views-of-both-us-and-china-amid-covid-19/" target="_blank" rel="nofollow">showed</a> us that while China’s reputation in the world’s more advanced democracies took a terrible hammering in 2020, so too did that of the U.S.</p>
+        <p>Leadership requires willing followers, and the soft power attraction of the U.S. has been a key complement to its hard power, underpinning its capacity to sustain a leadership position. China’s economic success may be a good story, but its domestic politics are not. Trump’s remarkable achievements have included showcasing to the world a United States riven by violence, racism, and partisan aggression, fostering hostility to the migrants on whose efforts, ambitions, and hopes U.S. success was built, and promoting the fear that any Chinese citizen in the U.S. could be a spy.</p>
+        <p>China has certainly contributed to the current tensions, but mimicking illiberal Chinese behavior by blocking interactions between citizens and cutting cultural and educational ties allows Chinese propagandists to make unfavorable comparisons: Would you not prefer, their message goes, a government that can protect the health of its citizens, that offers generous aid to poorer countries, that favors dialogue and cultural exchange, and that does not renege on its treaties? That used to be a description of the United States.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8871" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/evan-medeiros"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/evan.medeiros.097f.jpg?itok=2iJWavlb" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="evan-medeiros"><a href="https://www.chinafile.com/contributors/evan-medeiros" title="Evan Medeiros">Evan Medeiros</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The future of the U.S.-China relationship is as uncertain as it is consequential. U.S.-China ties have changed markedly under Trump, as “strategic competition” emerged—indeed, erupted—as the defining frame for relations. Washington then embraced <a href="https://thediplomat.com/2018/11/pushback-americas-new-china-strategy/" target="_blank" rel="nofollow">pushback</a> against China at seemingly every opportunity. With the pending presidential election, many are asking if the relationship will, or can, return to some semblance of stability and comity.</p>
+        <p>The uncomfortable reality is that the U.S.-China relationship has entered a new normal of persistent and consistent tensions. While the tone and some priorities might change under a new president, going forward relations will be marked by enduring tensions, occasional crises, and maybe occasional cooperation as well. There are four reasons for this.</p>
+        <p>First, elites in both the United States and China have effectively adopted a <em>new paradigm</em> for thinking about U.S.-China ties. Both sides have shifted from a paradigm of “balancing cooperation and competition” to one of “balancing competition and confrontation.”</p>
+        <p>This shift in thinking, often implicit, reflects the expansion, intensification, and diversification of the arenas of U.S.-China competition. On the classic issues of regional security and economic access, competition has only deepened as Xi has pursed more assertive behaviors abroad and more statist ones at home. Competition on issues of technology and ideology are also now central to the relationship, with some in Washington and Beijing framing this as a “systemic competition” between governance models and systems.</p>
+        <p>Second, there are <em>new politics</em> in both countries driving this paradigm shift. In the United States, a majority of elites and the public now view China as a long-term threat. There is bipartisan support in Congress for a more confrontational approach, with some members weaponizing the China issue for political gain. The U.S. business community is broadly frustrated with China and unwilling to publicly defend it, as are the U.S. media and many civil society groups who used to be engaged in China before Xi pushed many of them out. In China, nationalist voices critical of myriad aspects of U.S. policy are on the rise, with “<a href="https://thediplomat.com/2020/05/interpreting-chinas-wolf-warrior-diplomacy/" target="_blank" rel="nofollow">Wolf Warrior diplomacy</a>” being the latest, and most caustic, manifestation of this.</p>
+        <p>Third, there are <em>new dynamics</em> at the heart of U.S.-China interactions. Both Washington and Beijing are now pursuing more openly competitive policies and, sometimes, confrontational ones. There is greater tolerance for risk and friction in relations, with some voices actively seeking friction as a means of probing and testing the other. This dynamic is accentuated by the collapse of a cooperative agenda. President Trump has rejected cooperating with China on shared global challenges.</p>
+        <p>Finally, the U.S.-China relationship is generating <em>new global impacts</em>, which reinforce the drift toward bilateral confrontation. The tensions in U.S.-China relations are producing ripple effects on issues, in institutions, and in regions all over the world. Countries are increasingly feeling squeezed between Washington and Beijing, some of them choosing sides (such as over <a href="https://www.theatlantic.com/ideas/archive/2020/01/5g-where-china-and-west-finally-diverge/604309/" target="_blank" rel="nofollow">5G</a>) and most trying to avoid such an outcome. The global footprint of U.S.-China tensions—and the dislocations it will generate—is one of the newest and perhaps most impactful trends in international politics.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8876" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/ryan-hass"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/ryanhass.jpg?itok=E-0-MAlD" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="ryan-hass"><a href="https://www.chinafile.com/contributors/ryan-hass" title="Ryan Hass">Ryan Hass</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The sharpening adversarial antagonism between the United States and China has been well-documented. The ripple effects of deteriorating relations on ordinary American citizens has attracted less attention.</p>
+        <p>The impacts have been real and tangible, though. Inbound investment into the United States from China has <a href="https://www.wsj.com/articles/investment-between-u-s-and-china-falls-as-tensions-coronavirus-take-toll-11589218437" target="_blank" rel="nofollow">fallen</a> off a cliff. Business travel and tourism from China has <a href="https://www.nytimes.com/2019/06/12/business/trade-war-us-china-tourism.html" target="_blank" rel="nofollow">declined</a>, even before the pandemic caused borders to close. The trade war has taken a heavy toll on American farmers, business owners, and workers, leading to a spike in farm foreclosures, the <a href="https://www.moodysanalytics.com/-/media/article/2019/trade-war-chicken.pdf" target="_blank" rel="nofollow">loss</a> of 300,000 jobs, rising taxes for everyone in the form of tariffs, and the <a href="https://www.cnbc.com/2020/09/02/as-small-us-farms-face-crisis-trumps-trade-aid-flowed-to-corporations.html" target="_blank" rel="nofollow">diversion</a> of nearly U.S.$30 billion in taxpayer dollars to bail out the agricultural sector. The number of Chinese students <a arget="_blank" rel="nofollow" href="https://www.chinafile.com/conversation/undefined">enrolling</a> in American schools, and the full tuition expenses they pay, have been <a href="https://www.insidehighered.com/news/2019/10/17/colleges-see-declines-chinese-student-enrollments" target="_blank" rel="nofollow">declining</a>.</p>
+        <p>Each of these developments on their own would be troubling. Viewed collectively, they represent a challenge to America’s dynamism and its own self-image as an open society.</p>
+        <p>Proponents of this hardening approach justifiably point to Beijing’s own behavior as the spur for many of the decisions to cut off connections between the United States and China. As a former American diplomat who served in China and traveled regularly to Xinjiang, I need no persuasion that Beijing does not adequately respect the rights of its citizens or treat American companies, citizens, or diplomats fairly. I also have a heavy heart for the two Canadian citizens being <a href="https://www.nytimes.com/2020/06/19/world/asia/china-canada-kovrig-spavor.html" target="_blank" rel="nofollow">held</a> in China.</p>
+        <p>But I fear America has lost sight of its north star in its efforts to confront challenges posed by China’s egregious behavior. Under the banner of reciprocity, the United States appears to have begun emulating Chinese practices, whether on treatment of journalists, closure of consulates, shuttering of the Fulbright program and the Peace Corps in China, and shakedowns of corporations. None of these actions have come anywhere close to compelling China to change from a closed to an open society. America has lost more than it has gained in the process.</p>
+        <p>The last time the United States confronted a major geostrategic challenge, it was endowed with policymakers that could resist the allure of nativism to see clearly where America’s long-term interests lie. As one example, in his famous “<a href="https://digitalarchive.wilsoncenter.org/document/116178.pdf" target="_blank" rel="nofollow">Long Telegram</a>” from Embassy Moscow at the dawn of the Cold War, George Kennan wrote, “We must have courage and self-confidence to cling to our own methods and conceptions of human society. After all, the greatest danger that can befall us in coping with this problem of Soviet communism is that we shall allow ourselves to become like those with whom we are coping.”</p>
+        <p>Kennan had the wisdom to recognize that American ideals and interests are not advanced by mirroring Soviet behavior, however justified it might have felt in the moment. I remain confident that over time, American policymakers will reach similar judgments about the sources of America’s strength and the advantages of remaining an open and generous society that attracts the best people and ideas to its shores.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-11-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-02/The-Korean-Peninsula-after-the-U.S.-Elections/">
+          The Korean Peninsula after the U.S. Elections
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-29</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-29/State-of-Surveillance/">
+          State of Surveillance
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-08</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-08/How-Did-China-Beat-Its-COVID-Crisis/">
+          How Did China Beat Its COVID Crisis?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-07</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-07/International-NGOs-Increasingly-Working-with-Chine/">
+          International NGOs Increasingly Working with Chinese Partners . . . outside China
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-16/A-New-Normal-for-U.S.-China-Policy/">
+            前一篇：A New Normal for U.S. China Policy?
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+            後一篇：导演陈传兴：《掬水月在手》与叶嘉莹的传奇人生丨燕京访谈
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-10-16/A-New-Normal-for-U.S.-China-Policy/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-10-29/State-of-Surveillance/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-10-08/How-Did-China-Beat-Its-COVID-Crisis/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-10-16/A-New-Normal-for-U.S.-China-Policy/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-10-29/State-of-Surveillance/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-10-08/How-Did-China-Beat-Its-COVID-Crisis/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>831深夜，上環便利店的婆婆對我哭了起來 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+831深夜，上環便利店的婆婆對我哭了起來…
+——
+" />
+    <meta property="og:description" content="
+831深夜，上環便利店的婆婆對我哭了起來…
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="831深夜，上環便利店的婆婆對我哭了起來" />
+    <meta property="twitter:title" content="831深夜，上環便利店的婆婆對我哭了起來" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40az%2F831%25E6%25B7%25B1%25E5%25A4%259C-%25E4%25B8%258A%25E7%2592%25B0%25E4%25BE%25BF%25E5%2588%25A9%25E5%25BA%2597%25E7%259A%2584%25E5%25A9%2586%25E5%25A9%2586%25E5%25B0%258D%25E6%2588%2591%25E5%2593%25AD%25E4%25BA%2586%25E8%25B5%25B7%25E4%25BE%2586-zdpuAwgjgBeLcagjQ32QxhbKyNkqeX2fUzvPRK5YFFwGbP1JF" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@az/831%E6%B7%B1%E5%A4%9C-%E4%B8%8A%E7%92%B0%E4%BE%BF%E5%88%A9%E5%BA%97%E7%9A%84%E5%A9%86%E5%A9%86%E5%B0%8D%E6%88%91%E5%93%AD%E4%BA%86%E8%B5%B7%E4%BE%86-zdpuAwgjgBeLcagjQ32QxhbKyNkqeX2fUzvPRK5YFFwGbP1JF" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@az/831%E6%B7%B1%E5%A4%9C-%E4%B8%8A%E7%92%B0%E4%BE%BF%E5%88%A9%E5%BA%97%E7%9A%84%E5%A9%86%E5%A9%86%E5%B0%8D%E6%88%91%E5%93%AD%E4%BA%86%E8%B5%B7%E4%BE%86-zdpuAwgjgBeLcagjQ32QxhbKyNkqeX2fUzvPRK5YFFwGbP1JF&text=831深夜，上環便利店的婆婆對我哭了起來&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@az/831%E6%B7%B1%E5%A4%9C-%E4%B8%8A%E7%92%B0%E4%BE%BF%E5%88%A9%E5%BA%97%E7%9A%84%E5%A9%86%E5%A9%86%E5%B0%8D%E6%88%91%E5%93%AD%E4%BA%86%E8%B5%B7%E4%BE%86-zdpuAwgjgBeLcagjQ32QxhbKyNkqeX2fUzvPRK5YFFwGbP1JF&title=831深夜，上環便利店的婆婆對我哭了起來" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@az/831%E6%B7%B1%E5%A4%9C-%E4%B8%8A%E7%92%B0%E4%BE%BF%E5%88%A9%E5%BA%97%E7%9A%84%E5%A9%86%E5%A9%86%E5%B0%8D%E6%88%91%E5%93%AD%E4%BA%86%E8%B5%B7%E4%BE%86-zdpuAwgjgBeLcagjQ32QxhbKyNkqeX2fUzvPRK5YFFwGbP1JF&title=831深夜，上環便利店的婆婆對我哭了起來" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=831深夜，上環便利店的婆婆對我哭了起來&body=
+831深夜，上環便利店的婆婆對我哭了起來…
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@az/831%E6%B7%B1%E5%A4%9C-%E4%B8%8A%E7%92%B0%E4%BE%BF%E5%88%A9%E5%BA%97%E7%9A%84%E5%A9%86%E5%A9%86%E5%B0%8D%E6%88%91%E5%93%AD%E4%BA%86%E8%B5%B7%E4%BE%86-zdpuAwgjgBeLcagjQ32QxhbKyNkqeX2fUzvPRK5YFFwGbP1JF" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@az/831%E6%B7%B1%E5%A4%9C-%E4%B8%8A%E7%92%B0%E4%BE%BF%E5%88%A9%E5%BA%97%E7%9A%84%E5%A9%86%E5%A9%86%E5%B0%8D%E6%88%91%E5%93%AD%E4%BA%86%E8%B5%B7%E4%BE%86-zdpuAwgjgBeLcagjQ32QxhbKyNkqeX2fUzvPRK5YFFwGbP1JF&title=831深夜，上環便利店的婆婆對我哭了起來&caption=
+831深夜，上環便利店的婆婆對我哭了起來…
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=831深夜，上環便利店的婆婆對我哭了起來&url=https://matters.news/@az/831%E6%B7%B1%E5%A4%9C-%E4%B8%8A%E7%92%B0%E4%BE%BF%E5%88%A9%E5%BA%97%E7%9A%84%E5%A9%86%E5%A9%86%E5%B0%8D%E6%88%91%E5%93%AD%E4%BA%86%E8%B5%B7%E4%BE%86-zdpuAwgjgBeLcagjQ32QxhbKyNkqeX2fUzvPRK5YFFwGbP1JF" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>831深夜，上環便利店的婆婆對我哭了起來</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2019-08-31
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 張潔平</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@az/831%E6%B7%B1%E5%A4%9C-%E4%B8%8A%E7%92%B0%E4%BE%BF%E5%88%A9%E5%BA%97%E7%9A%84%E5%A9%86%E5%A9%86%E5%B0%8D%E6%88%91%E5%93%AD%E4%BA%86%E8%B5%B7%E4%BE%86-zdpuAwgjgBeLcagjQ32QxhbKyNkqeX2fUzvPRK5YFFwGbP1JF" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1567307686000-->
+<p><a href="https://matters.news/@az/831%E6%B7%B1%E5%A4%9C-%E4%B8%8A%E7%92%B0%E4%BE%BF%E5%88%A9%E5%BA%97%E7%9A%84%E5%A9%86%E5%A9%86%E5%B0%8D%E6%88%91%E5%93%AD%E4%BA%86%E8%B5%B7%E4%BE%86-zdpuAwgjgBeLcagjQ32QxhbKyNkqeX2fUzvPRK5YFFwGbP1JF">831深夜，上環便利店的婆婆對我哭了起來…</a>
+——</p>
+
+<div>
+  <p>凌晨一點半，在上環街角的7-11買東西。</p>
+  <p>收銀的是位婆婆，頭髮大半白了，眼神很警醒。她看我一眼，像是忍不住地小聲說：你知不知道今天發生了什麼？</p>
+  <p>走進店門前我的手機正放著太子站的視頻和油麻地站的直播，我也看了婆婆一眼，如果她說的是這個......</p>
+  <p>我謹慎回應一句：對，我剛剛看到太子站。</p>
+  <p>婆婆聽到「太子站」三個字，彷彿放鬆下來，痛苦的表情浮上白淨的臉：「不只是太子站，香港啊，我跟你說，香港好慘啊......」說著就哭了起來。</p>
+  <p>社會撕裂，告密起底橫行，「太子站」成了街角兩個陌生人彼此小心確認的密碼。我沒想到自己有一天在香港會以這樣的方式，開啟與街坊的聊天。</p>
+  <p>婆婆哭著說，我在這裡看著這五個月，香港怎樣一點一點變壞。一開始那個條例，在我這裡買酒的銀行工作的人就在說，搞那種條例幹什麼，林鄭一意孤行，夾硬要上，多少人反對都沒用，6月搞成這樣，幾百萬人上街。我也去了一次。那時氣氛跟現在不一樣啊。那時大家都生氣，但沒有現在這樣啊。你6月講暫緩，大家又不是傻，怎麼會接受你這樣玩，然後就不回應，不回應，7月人都看不見，就把年輕人留在街上，留給警察。就讓年輕人跟警察去打......越來越嚴重，越來越慘。</p>
+  <p>婆婆說到激動，抹一把紅紅的眼睛，「那個人，真的是香港的千古罪人啊。讓警察去打小孩子。讓他們在街上這樣互相打。香港人打香港人。」</p>
+  <p>婆婆說，有示威的日子，常有示威者來店裡買東西，買水，買飯糰。「一個飯糰就是午飯了，他們沒有錢啊，都是買最便宜的飯糰......」淚水又下來。</p>
+  <p>「新聞說示威者暴力，怎麼暴力得過警察？警察也可憐的，家人都被人搞。但警察有棍有槍有子彈啊。唉，林鄭，真的是千古罪人......」</p>
+  <p>婆婆說自己三十多年前來香港，現在七十多歲，早就退休了。一雙兒女都出息，兒子一個月給她四萬塊錢零花，她根本不用工作。但是閒不住也禁不住人求，就出來幫手做點事。上環這個街角，前後有酒吧，有咖啡，有旅行的小路，「鬼佬鬼婆很多，年輕人也很多，常常也有記者來跟我聊天」，「他們都跟我說，婆婆你好厲害，很多老人家不理解年輕人的。我說怎麼不理解，他們都從大陸落來香港，都忘了為什麼要來，都忘了共產黨什麼樣了嗎？香港年輕人好慘，很多人好累回不了家......」</p>
+  <p>婆婆說這次也沒有跟自己在大陸的姐妹講香港了。「不講了，傷感情。」「我在店裡跟人聊天，也會先聽你的想法，如果你支持政府的，那就算了，不講了，沒的講。政府對年輕人這樣你支持政府？不講了。」</p>
+  <p>「一支水，唔該。」</p>
+  <p>凌晨的店舖，身後不知什麼時候多了一個男生，在婆婆說話的間隙，輕輕說。</p>
+  <p>婆婆擦了一下眼睛，恢復平靜的表情，還笑了一下。「七蚊，拍卡還是現金？」</p>
+  <p>「謝謝你啊妹妹仔。」婆婆快速朝我補了一句，香港人的精氣神又回來了。</p>
+  <p>「謝謝你婆婆，保重啊。」我朝婆婆揮揮手，她突然抓了一下我的手，就像手握手的人鏈那樣不自然，但相親愛。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2019-11-10</time>
+        <a href="https://nodebe4.github.io/oped2/2019-11-10/%E9%A6%99%E6%B8%AF-%E4%B8%80%E5%A0%B4%E4%B8%8D%E6%98%8E%E4%B8%8D%E7%99%BD%E7%9A%84%E6%AD%BB%E4%BA%A1/">
+          香港，一場不明不白的死亡
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-10-09</time>
+        <a href="https://nodebe4.github.io/oped2/2019-10-09/%E6%AD%A4%E4%B9%8B%E7%9B%9B%E4%B8%96-%E5%BD%BC%E4%B9%8B%E8%A3%B8%E5%91%BD-%E4%BB%8A%E5%A4%8F%E9%A6%99%E6%B8%AF%E7%9A%84%E4%B8%89%E5%A0%B4%E9%81%8B%E5%8B%95/">
+          此之盛世，彼之裸命。今夏香港的三場運動。
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-08-15</time>
+        <a href="https://nodebe4.github.io/oped2/2019-08-15/%E5%85%B5%E8%87%A8%E9%A6%99%E6%B8%AF-%E6%B0%91%E6%97%8F%E8%8B%B1%E9%9B%84%E5%80%91-%E8%AB%8B%E5%8B%BF%E8%B7%9F%E8%BB%8A%E5%A4%AA%E8%B2%BC/">
+          兵臨香港？民族英雄們，請勿跟車太貼
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-08-15</time>
+        <a href="https://nodebe4.github.io/oped2/2019-08-15/%E7%B5%A6%E7%A4%BE%E5%8D%80%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1-Matters-%E8%88%87-LikeCoin%E5%AE%A3%E4%BD%88%E5%90%88%E4%BD%9C-_/">
+          給社區的一封信：Matters 與 LikeCoin宣佈合作 ^_^
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2019-08-31/%E5%A4%84%E7%BD%AE%E9%97%AE%E9%A2%98%E9%93%B6%E8%A1%8C/">
+            前一篇：处置问题银行
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2019-09-01/%E6%B7%B1%E5%85%A5%E5%B8%83%E9%9B%B7%E9%A1%BF%E6%A3%AE%E6%9E%97/">
+            後一篇：深入布雷顿森林
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2019-08-31/%E5%A4%84%E7%BD%AE%E9%97%AE%E9%A2%98%E9%93%B6%E8%A1%8C/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2019-09-01/%E6%B7%B1%E5%85%A5%E5%B8%83%E9%9B%B7%E9%A1%BF%E6%A3%AE%E6%9E%97/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2019-10-09/%E6%AD%A4%E4%B9%8B%E7%9B%9B%E4%B8%96-%E5%BD%BC%E4%B9%8B%E8%A3%B8%E5%91%BD-%E4%BB%8A%E5%A4%8F%E9%A6%99%E6%B8%AF%E7%9A%84%E4%B8%89%E5%A0%B4%E9%81%8B%E5%8B%95/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2019-08-15/%E5%85%B5%E8%87%A8%E9%A6%99%E6%B8%AF-%E6%B0%91%E6%97%8F%E8%8B%B1%E9%9B%84%E5%80%91-%E8%AB%8B%E5%8B%BF%E8%B7%9F%E8%BB%8A%E5%A4%AA%E8%B2%BC/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2019-08-31/%E5%A4%84%E7%BD%AE%E9%97%AE%E9%A2%98%E9%93%B6%E8%A1%8C/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2019-09-01/%E6%B7%B1%E5%85%A5%E5%B8%83%E9%9B%B7%E9%A1%BF%E6%A3%AE%E6%9E%97/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2019-10-09/%E6%AD%A4%E4%B9%8B%E7%9B%9B%E4%B8%96-%E5%BD%BC%E4%B9%8B%E8%A3%B8%E5%91%BD-%E4%BB%8A%E5%A4%8F%E9%A6%99%E6%B8%AF%E7%9A%84%E4%B8%89%E5%A0%B4%E9%81%8B%E5%8B%95/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2019-08-15/%E5%85%B5%E8%87%A8%E9%A6%99%E6%B8%AF-%E6%B0%91%E6%97%8F%E8%8B%B1%E9%9B%84%E5%80%91-%E8%AB%8B%E5%8B%BF%E8%B7%9F%E8%BB%8A%E5%A4%AA%E8%B2%BC/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>The Future of China Studies in the U.S. – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+The Future of China Studies in the U.S.
+——
+" />
+    <meta property="og:description" content="
+The Future of China Studies in the U.S.
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="The Future of China Studies in the U.S." />
+    <meta property="twitter:title" content="The Future of China Studies in the U.S." />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Ffuture-of-china-studies-us" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/future-of-china-studies-us" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/future-of-china-studies-us&text=The Future of China Studies in the U.S.&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/future-of-china-studies-us&title=The Future of China Studies in the U.S." class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/future-of-china-studies-us&title=The Future of China Studies in the U.S." class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=The Future of China Studies in the U.S.&body=
+The Future of China Studies in the U.S.
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/future-of-china-studies-us" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/future-of-china-studies-us&title=The Future of China Studies in the U.S.&caption=
+The Future of China Studies in the U.S.
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=The Future of China Studies in the U.S.&url=https://www.chinafile.com/conversation/future-of-china-studies-us" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>The Future of China Studies in the U.S.</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-08-27
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Sheena Greitens, Rebecca E. Karl &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/future-of-china-studies-us" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1598575380000-->
+<p><a href="https://www.chinafile.com/conversation/future-of-china-studies-us">The Future of China Studies in the U.S.</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-f8a5bb5fde6e7d76c4b5d01791951f24">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1228093503.jpg" title="The Future of China Studies in the U.S." class="colorbox" data-colorbox-gallery="gallery-node-52516-jdzX2445D2k" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1228093503.jpg?itok=r0NkumoS" width="1200" height="801" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Melissa Sue Gerrits—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A student wearing a face mask studies outside the closed Wilson Library on the campus of the University of North Carolina at Chapel Hill in Chapel Hill, North Carolina, August 18, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">As an extraordinarily fraught school year begins, the study of China on U.S. campuses (or their new virtual equivalents), as well as China’s role in university life more broadly, has recently become a subject of scrutiny and debate. Last week, a group of China-focused political scientists <a href="https://www.chinafile.com/reporting-opinion/viewpoint/how-teach-china-fall" target="_blank" rel="nofollow">outlined</a> the “unique challenges” they feel educators now face when teaching about China in an atmosphere colored by Hong Kong’s new National Security Law, potential surveillance of online teaching platforms, stepped-up repression of dissent in China, the mass internment and persecution of members of ethnic minority groups in Xinjiang, and a growing hostility in U.S.-China relations. Their statement came on the heels of calls for Western universities to <a href="https://foreignpolicy.com/2020/08/19/universities-confucius-institutes-china/" target="_blank" rel="nofollow">close</a> satellite campuses in China, as well as an <a href="https://www.state.gov/letter-from-under-secretary-keith-krach-to-the-governing-boards-of-american-universities/" target="_blank" rel="nofollow">unusual letter</a> from a U.S. Under Secretary of State to university governing boards urging a variety of measures to counteract what he described as the “the malign actions of the CCP [Chinese Communist Party]” threatening academic freedom, human dignity, university endowments, and intellectual property. Meanwhile, in China, Peking University last week <a href="https://www.hrichina.org/en/press-work/issues-brief/hric-comment-and-translation-peking-universitys-rules-participation-online" target="_blank" rel="nofollow">issued rules</a> requiring professors to seek permission 15 days in advance to attend international academic webinars (including those held in Hong Kong and Macau). And all of this is occurring against a backdrop of the various changes to study and teaching wrought by the COVID-19 pandemic.</p>
+      <p>What is the future of China studies in the United States given this changing environment? How are recent politics in China and in China’s relations with the U.S. likely to alter the mechanics and substance of China studies in the United States? What kinds of changes, if any, should China scholars in the United States consider making in their research and teaching methods? And how might these changes affect the direction of the field as a whole? —<em>The Editors</em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-8776" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/sheena-greitens"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/greitens_-_headshot_bw.jpg?itok=Nf8EwwtD" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="sheena-greitens"><a href="https://www.chinafile.com/contributors/sheena-greitens" title="Sheena Greitens">Sheena Greitens</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Two developments raise new challenges for teaching China-related courses: passage of the Hong Kong National Security Law (NSL), and the COVID-induced switch to remote teaching.</p>
+        <p>The NSL potentially criminalizes words/actions regarded by Chinese authorities as supporting or advocating secession, terrorism, subversion, or collusion with foreign countries—regardless of an individual’s location or citizenship. Although it’s not clear what content might be deemed subversive enough to warrant official attention, the definition is broad enough that most China-focused courses would likely have content meeting that threshold. But so could courses on international security, global history, migration, contentious politics, national identity, conflict resolution, gender studies, and more—meaning that the law touches not just on how universities teach China, but how we teach about the world writ large.</p>
+        <p>Virtual education augments this in two ways. First, it creates additional legal hurdles for Chinese students who have returned to China and are taking American courses online. They must try to access course content while <a href="https://blogs.loc.gov/kluge/2020/08/how-distance-learning-could-put-chinese-students-at-us-universities-at-risk/?loclr=eaklub" target="_blank" rel="nofollow">complying with</a> Chinese law—making data access and tools like proxy servers an issue. Second, online education may make student behavior in an American classroom visible to authorities in China. If content is accessed by non-participants or recorded and comes to the attention of Chinese authorities, they may then feel pressure to enforce the law.</p>
+        <p>There are a <a href="https://www.wsj.com/articles/chinas-national-security-law-reaches-into-harvard-princeton-classrooms-11597829402" target="_blank" rel="nofollow">number</a> of <a href="https://www.chinafile.com/reporting-opinion/viewpoint/how-teach-china-fall" target="_blank" rel="nofollow">strategies</a> instructors can adopt to mitigate risk and protect students’ freedoms. Ultimately, however, we must be honest—with ourselves and students—that nothing an individual instructor at an American university can do will completely remove the risk generated by the NSL. Fundamentally, that risk is generated by the People’s Republic of China national security law and and its extraterritorial scope.</p>
+        <p>As Chinese law, domestic politics, and foreign/security policy change rapidly, with global impacts, it’s imperative that faculty are able to continue their work. Instructors must be able to present as comprehensive and accurate a picture of China as possible, so that citizens and students in the U.S., around the world, and inside China itself can understand the country and the challenges its growing role presents.</p>
+        <p>The U.S. cannot afford to handicap research on China, or student understanding of it, by truncating course content on the very issues that make China a global strategic challenge. So parts of the approach taken by American universities should <em>not</em> change.</p>
+        <p>At the same time, though, universities must think comprehensively about how to handle the complex issues they face vis-à-vis China. These emerging issues are not going away; universities need to set a strategy to address these challenges long-term.</p>
+        <p>In a previous era, when a frequent issue was scholars <a href="https://www.cambridge.org/core/journals/china-quarterly/article/repressive-experiences-among-china-scholars-new-evidence-from-survey-data/C1CB08324457ED90199C274CDC153127" target="_blank" rel="nofollow">encountering</a> repression during research, faculty often dealt with China-related challenges without much institutional involvement or support. That needs to change, especially now that student safety is involved.</p>
+        <p>Universities should discuss elevated risks with faculty whose research and teaching center on China, as well as with students who may be at risk under the new law. They should offer flexibility to address their concerns, and start thinking about what kind of long-term adjustments may be necessary.</p>
+        <p>But they should not stop there. Today, university engagement with China spans not just research and teaching, but institutional partnerships and donor engagement. Here, many China faculty have expertise that could be helpful: They can identify risks, warn of side effects, and offer solutions that might not be obvious to those less familiar with China.</p>
+        <p>Domain-specific policies are also necessary. As recent federal investigations have <a href="https://ustr.gov/sites/default/files/Section%20301%20FINAL.PDF" target="_blank" rel="nofollow">highlighted</a>, STEM fields face higher risks of tech transfer and fraud—whereas in the social sciences, some of these risks are lower and the benefits of interaction higher. To the extent that American national security depends on a clear-eyed understanding of the challenges China presents, continued conversation with Chinese counterparts is both necessary and advantageous for the United States.</p>
+        <p>Universities should now think carefully and comprehensively about the full range of China-related activities they engage in: partnerships, research, exchanges, fundraising, etc. After taking a full inventory, they should develop a coordinated, proactive strategy grounded in fundamental academic principles such as free inquiry and safety. Only then will they, students, and faculty have a realistic sense of how to navigate the tricky times ahead.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8781" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/rebecca-e-karl"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/rebecca_karl.jpg?itok=KWV0XTEF" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="rebecca-e-karl"><a href="https://www.chinafile.com/contributors/rebecca-e-karl" title="Rebecca E. Karl">Rebecca E. Karl</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">My University (NYU) largely has been unresponsive to the concerns of China-related faculty in New York with regard to the new challenges facing us this semester. A group of us across various New York-based universities held Zoom meetings this summer to assess how we might deal with the political problem of teaching remotely, with students logging in from all over. We decided that language needed to be included on our syllabi to alert students to potential peril. NYU has refused to weigh in, merely informing us that the decisions we make are our own.</p>
+        <p>While the focus in public commentary has been on the noxiousness of the National Security Law and the surveillance in China of the Internet, we are equally concerned for students from the People’s Republic of China (PRC) who might get caught in the cross-hairs of U.S.-based regimes of surveillance and suspicion. The postings, social media presences, and political identifications of such students, scholars, and professors are the potential subjects of searches, visa <a href="https://www.forbes.com/sites/stuartanderson/2020/06/01/inside-trumps-immigration-order-to-restrict-chinese-students/#748f7aa53bec" target="_blank" rel="nofollow">denials</a>, denials of entry into this country, and <a href="https://www.nytimes.com/2020/05/28/us/politics/china-hong-kong-trump-student-visas.html" target="_blank" rel="nofollow">threatened</a> and <a href="https://www.bbc.com/news/world-us-canada-49493886" target="_blank" rel="nofollow">actual</a> deportation.</p>
+        <p>Noting that regimes of surveillance operate in both countries and are potentially dangerous for students, professors, researchers, or others is not to draw absolute equivalences—these regimes clearly operate in different registers. Yet, on the one hand, it is to recognize that AI and social media corporations <a href="https://www.forbes.com/sites/jenniferwang/2019/06/22/why-blackstone-cofounder-steve-schwarzman-donated-188-million-to-support-the-humanities-and-ai-ethics/" target="_blank" rel="nofollow">cooperate</a> with governments across national borders, and that whatever China is doing is in part <a href="https://www.business-humanrights.org/en/china-83-major-brands-implicated-in-report-on-forced-labour-of-ethnic-minorities-from-xinjiang-assigned-to-factories-across-provinces-includes-company-responses" target="_blank" rel="nofollow">enabled</a> by U.S.-based and transnational entities that stand to profit from the PRC’s <a href="https://www.theatlantic.com/international/archive/2020/01/stephen-schwarzman-china-surveillance-scholars-colleges/604675" target="_blank" rel="nofollow">surveillance</a> projects. It is, also, to recognize that the fantasies of free and unfettered circulations of scholars, ideas, and knowledge upon which 21st century globalized universities are structurally predicated are now thoroughly exposed as fantastical. Universities such as NYU, whose finances, balance sheets, and indeed standing in the international scholarly community are entirely built upon this fantasy, will do everything they can to displace the structural political risks onto individual students and professors. This is akin to what NYU is doing by re-opening in-person classes during the pandemic. It exemplifies a neoliberal conviction that the individual should decide “freely” and then be prepared to die for that decision. I am enraged at these institutional positions—on the pandemic and on teaching “sensitive” China material. It absolves the University of taking a stand and allows it to continue to conduct business as usual.</p>
+        <p>Meanwhile, this is the language I intend to include in relevant syllabi:</p>
+        <h4 id="political-safety-alert">Political Safety Alert:</h4>
+        <p>Please be advised that in taking this class you may be exposing yourself to some political risk.</p>
+        <ul>
+          <li>Some or all of the topics addressed in this course could be deemed politically sensitive by the PRC state.</li>
+          <li>The unusual conditions facing us in Fall 2020 require us to alert students who might face political risk when submitting papers or participating in discussions.</li>
+          <li>The potential danger inheres not only in platforms (Zoom, etc.) but in how personal devices connect to a surveilled Internet.</li>
+          <li>Given the increasing Sinophobia driving U.S. policy, Chinese students also may have concerns about surveillance by the U.S. state/media companies in cahoots with the state, as social media and other traces of activity have been requested of those applying for visas and green cards, or from those seeking entry at airports or land borders across the country.</li>
+        </ul>
+        <p>If you have concerns about political safety, we will find a way to discuss the situation as safely as we can.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8786" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/thomas-kellogg"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/thomas-kellogg.jpg?itok=lzNI3juh" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="thomas-kellogg"><a href="https://www.chinafile.com/contributors/thomas-kellogg" title="Thomas Kellogg">Thomas Kellogg</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Hong Kong’s new National Security Law (NSL), by design, creates particular challenges for both instructors and students. Its vague and overbroad criminal provisions could easily be stretched to cover academic conversation on “sensitive” issues, and its extraterritorial reach is meant to chill speech by anyone, anywhere.</p>
+        <p>What to do? First, acknowledge that the primary targets of the law are Hong Kong activists, along with their core supporters in the U.S., Europe, and elsewhere, many of whom have strong family ties to Hong Kong. Beijing knows the international community is a key source of support for the pro-democracy movement in Hong Kong, and it wants to weaken the ties that sustain it.</p>
+        <p>For Beijing, academic conversation on human rights and the rule of law in Hong Kong <em>outside</em> China and Hong Kong is a much lower priority. The risk of actual prosecution of U.S.-based academics and students is therefore quite low. Other potential punishments may well be more likely, such as barring scholars from entering Hong Kong, or bureaucratically blocking students from traveling from Hong Kong to the United States. It’s too early to say whether Chinese officials will reach for such tools on a regular basis.</p>
+        <p>Academic freedom must remain at the core of U.S. teaching, research, and discussion on China. It is a core value that must be maintained, and there are compelling pragmatic reasons to ensure U.S. academics don’t engage in self-censorship in their teaching and research on China: The United States remains a leader in scholarly efforts to understand China. U.S. universities shouldn’t sacrifice that competitive strength, especially at a time when America’s diminished global standing is <a href="https://www.politico.com/story/2018/04/23/foreign-students-colleges-trump-544717" target="_blank" rel="nofollow">taking a toll</a> on global recruitment efforts.</p>
+        <p>U.S. academics should expand their contacts with Hong Kong counterparts. The NSL aims to isolate Hong Kong’s robust, vibrant civil society from the international community. It may well succeed in making Hong Kong pro-democracy activists think twice about new lobbying efforts in Washington, London, or Brussels. But U.S. universities can make sure that Hong Kong universities—especially academics and students working on key subjects like democratization in Hong Kong, or threats to the rule of law—remain deeply embedded in the global community, and that Hong Kong academic voices remain a regular part of the dialogue on those subjects on U.S. campuses.</p>
+        <p>Finally, U.S. China scholars should look to include the NSL in their own teaching and research agendas. Beijing hopes that the NSL’s vague provisions, including those that specifically target academic institutions and media outlets, will deter Hong Kong-based academics from studying the law or from writing critically on the impact of the law on Hong Kong’s world class judiciary and other key legal institutions. U.S. scholars—particularly at law schools—should make sure that the NSL receives the close academic scrutiny it deserves.</p>
+        <p>Over the first two months since the NSL was passed, at least 20 individuals have been <a href="https://www.nchrd.org/2020/08/fear-over-hong-kong-national-security-law-boosts-abuses-of-human-rights/" target="_blank" rel="nofollow">arrested</a> under its provisions, many of them for activities that would not be considered criminal in a pre-NSL Hong Kong. Somewhat surprisingly, Beijing has been quite aggressive in its use of the law thus far. If that trend continues, the implementation of the law will be an important story for U.S.-based China hands to understand, and to explain, both to our students and to the broader policy community, in Washington and beyond.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8791" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/aynne-kokas"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/kokas.jpg?itok=IRZDoaWo" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="aynne-kokas"><a href="https://www.chinafile.com/contributors/aynne-kokas" title="Aynne Kokas">Aynne Kokas</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">China Studies is changing irrevocably before our very eyes. What is emerging are differences in language study, classroom education, field research, and advocacy that decrease the connectedness between learning and scholarship in both countries.</p>
+        <p>Language study is being gutted. Recent U.S. government <a href="https://www.whitehouse.gov/wp-content/uploads/2020/02/budget_fy21.pdf" target="_blank" rel="nofollow">funding</a> for the study of China has <a href="https://www.nhalliance.org/what_the_administration_missed_about_title_vi_and_fulbright_hays" target="_blank" rel="nofollow">dramatically decreased</a>. The Modern Language Association, the major professional association for language and literature research, has <a href="https://www.mla.org/Resources/Research/Surveys-Reports-and-Other-Documents/Teaching-Enrollments-and-Programs/Foreign-Languages-and-Higher-Education-New-Structures-for-a-Changed-World" target="_blank" rel="nofollow">considered</a> the decline in U.S. foreign language education a “crisis” as far back as 2007. <a href="https://www.chinafile.com/conversation/are-confucius-institutes-good-american-universities" target="_blank" rel="nofollow">Confucius Institutes</a>, which have supplemented reduced language instruction budgets, <a href="https://www.nas.org/storage/app/media/Reports/Outsourced%20to%20China/confucius-institutes-that-closed-updated-august-26-2020.pdf" target="_blank" rel="nofollow">are closing</a> due to national security <a href="https://www.state.gov/designation-of-the-confucius-institute-u-s-center-as-a-foreign-mission-of-the-prc/" target="_blank" rel="nofollow">concerns</a> about Chinese government influence. Study abroad, long the capstone experience of students studying Chinese language, is hampered by questions of access related to both COVID-19 and the precarious status of many U.S.-China educational collaborations in mainland China. Hong Kong’s National Security Law also increases the potential risk for students seeking to study abroad, making already gun-shy universities and parents concerned about encouraging student study abroad.</p>
+        <p>Classroom education is becoming more limited in scope. With many classrooms around the country moving online, professors are now <a href="https://blogs.loc.gov/kluge/2020/08/how-distance-learning-could-put-chinese-students-at-us-universities-at-risk/" target="_blank" rel="nofollow">contending with the risks</a> of teaching students located simultaneously in China and the United States. Students in China and faculty distributing content to China are subject to local regulations like the <a href="https://www.chinalawtranslate.com/en/provisions-on-the-governance-of-the-online-information-content-ecosystem/" target="_blank" rel="nofollow">Provisions on the Governance of the Online Information Content Ecosystem</a>, which create potential civil or criminal liability for online production and distribution of what the law broadly refers to as “negative information.” Universities often provide virtual private networks (VPNs), the proxy servers that students need to access content on proprietary course management systems and via university libraries, but are breaking Chinese law by supplying them to students in China. While it is unclear how the People’s Republic of China will enforce these laws and regulations in a COVID-era educational context, the threat of a crackdown on students is <a href="https://www.washingtonpost.com/outlook/2020/08/11/tiktok-wechat-bans-ineffective/" target="_blank" rel="nofollow">enough to change</a> the educational dynamic in classes and the types of students who may or may not take certain courses.</p>
+        <p>Research practices in China have already changed. Following <a href="https://www.theglobeandmail.com/world/article-600-days-in-detention-a-sobering-milestone-for-michael-kovrig/" target="_blank" rel="nofollow">the arrest and continued detention</a> of Canadian think-tanker Michael Kovrig and consultant Michael Spavor, field research requires a new risk calculus. Hong Kong’s <a href="http://www.xinhuanet.com/english/2020-07/01/c_139178753.htm" target="_blank" rel="nofollow">National Security Law</a> further heightened the stakes of speaking out against Chinese policies. COVID-19 has made travel between the two countries expensive and complicated. The Chinese government continues to <a href="https://techcrunch.com/2020/06/11/zoom-admits-to-shutting-down-activist-accounts-at-the-request-of-the-chinese-government/" target="_blank" rel="nofollow">constrain</a> the online communication environment, a practice exemplified by June 4 service shutdowns to Chinese activists on Zoom.</p>
+        <p>The U.S. is also making research in China more difficult. Trump’s August 6 <a href="https://www.whitehouse.gov/presidential-actions/executive-order-addressing-threat-posed-wechat/" target="_blank" rel="nofollow">WeChat ban</a> threatens to cut off connections between communities across the Pacific. WeChat, admittedly, is notorious for its censorship as well. The platform also presents serious surveillance risks for those using it on their devices. Still, most China scholars are aware of these risks and take precautions, like using multiple devices to keep in touch with interlocutors in China.</p>
+        <p>Options exist for continuing to build a healthy field, even in the context of significant political risks. China Studies outside of China is a growing field. The roles of overseas Chinese communities, Chinese government intervention in international organizations, and Chinese investment abroad are rich areas for China scholars’ analysis. Scholars can advocate for funding for area and language study from U.S. sources. Finally, this is a moment for inter-generational engagement. There are senior scholars for whom going to China and conducting fieldwork was not feasible, and yet they made significant contributions to the field. Intergenerational exchanges on fieldwork and methods have the potential to continue the rich tradition of China Studies. None of these approaches recapture the engagement that characterized China Studies in the 1990s and the first decade of the 2000s. Yet the study of China has only become more critical. It is thus incumbent upon students and scholars to continue to search for constructive approaches to engagement.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8796" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/neysun-mahboubi"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/neysun_mahboubi.jpg?itok=EV4L_nBQ" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="neysun-a-mahboubi"><a href="https://www.chinafile.com/contributors/neysun-mahboubi" title="Neysun  A. Mahboubi">Neysun A. Mahboubi</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">While the attention of U.S.-based China scholars right now is understandably focused on the dilemmas of how to <em>teach</em> China under virtual conditions, the question of how to <em>research</em> China is likely to prove the more challenging one, in the years ahead. Whether in my own field of Chinese law, or any social science discipline applied to China, U.S. and other foreign researchers have made enormous strides over the past 50 years, moving far beyond the highly constrained, <a href="https://www.chinafile.com/china-frontier-once-border-borders" target="_blank" rel="nofollow">through-the-looking-glass methodologies</a> they made do with during the Cultural Revolution. In particular, the ability to conduct qualitative research on-the-ground in China, buttressed by open cooperation with Chinese academic colleagues, has generated much broader and deeper knowledge about the realities of Chinese politics, economics, society, culture, and law than would have been fathomable in the late 1960s and early 1970s.</p>
+        <p>Amidst the current upheavals in U.S.-China relations, regardless of whether one’s position is more in favor of so-called “engagement” or instead “de-coupling”—both tenuous concepts—the utility of U.S.-based scholars’ continuing to sharpen and enhance their understanding of China’s complex realities seems clear. But the worsening atmosphere of mutual distrust threatens to impose new limits on the abilities of U.S. researchers, not unlike those <a href="https://www.chinafile.com/reporting-opinion/viewpoint/when-china-reporters-cant-report-china" target="_blank" rel="nofollow">recently placed</a> on U.S. journalists who report (or used to report) from within China. Perhaps most troubling, some of these limitations may even come from the U.S. side, given the steadily <a href="https://www.nbcnews.com/news/china/american-universities-are-soft-target-china-s-spies-say-u-n1104291" target="_blank" rel="nofollow">rising paranoia</a> in official and popular discourse about all things China-related on American university campuses.</p>
+        <p>A natural academic reaction to this changing research landscape may be to retreat to the older, Kremlinology-style methods—along with the narrower research questions, focused especially on Chinese elites—that predominated in the China field before the normalization of relations between the U.S. and China (and, indeed, for more than a few years after that). Somewhat ironically, another reaction might be to privilege the newest, most cutting-edge quantitative research tools, drawing only on the various data sets that China’s push towards “big data” in recent years has made available. For scholars of Chinese law, like me, it will be tempting to focus just on close textual analysis of the written materials that China’s legal system churns out so voluminously.</p>
+        <p>There are sure to be some who believe that research conducted along the foregoing lines, no longer robustly supplemented by qualitative work, on-the ground and in collaboration with Chinese colleagues, is more or less “good enough” all things considered. But this would be a tempting road to nowhere. Precisely because China remains so much a closed and opaque target for academic inquiry, there simply exists no plausible alternative to the on-the-ground research U.S. scholars have been able to conduct, and hone with ever-greater sophistication, in recent decades. If those methods become unavailable, or are no longer as enthusiastically pursued, our understanding of China will suffer greatly. There is no escaping this basic equation. So, once COVID-19 travel restrictions are lifted, and as long as visas remain available, U.S.-based scholars of China will have no choice but to return there and continue all the research projects that have fallen into abeyance since the onset of the pandemic, however fraught the circumstances and whatever the risks. And universities will need to stand ready to support that work, notwithstanding the growing headwinds on both sides. As an academic community, we know far too much now about what we didn’t know before to ever make peace with any return to the old limits.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-09-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-17/Could-Same-Sex-Marriage-Advocacy-in-China-Be-Poise/">
+          Could Same-Sex Marriage Advocacy in China Be Poised for a Breakthrough?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-09-09</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-09/In-Defense-of-Diplomacy-with-China/">
+          In Defense of Diplomacy with China
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-27/When-China-Reporters-Can-t-Report-from-China/">
+          When China Reporters Can’t Report from China
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-19/How-To-Teach-China-This-Fall/">
+          How To Teach China This Fall
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-08-27/%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E6%89%8B%E9%93%90-%E7%BB%B3%E7%B4%A2-%E6%9D%9F%E7%BA%BF%E5%B8%A6%E5%92%8C%E5%B8%83%E5%9F%BA%E8%83%B6%E5%B8%A6-%E5%9C%A8%E7%81%BE%E9%9A%BE%E4%B8%AD%E5%B9%B8%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95-4-iYouPort/">
+            前一篇：如何摆脱手铐、绳索、束线带和布基胶带：在灾难中幸存的方法（4） - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-08-29/%E5%B0%91%E5%B9%B4%E9%82%A6-%E5%A6%82%E6%9E%9CZ%E4%B8%96%E4%BB%A3%E5%BD%93%E6%94%BF-%E7%BE%8E%E5%9B%BD%E5%85%9A%E6%B4%BE%E6%94%BF%E6%B2%BB%E8%83%BD%E5%90%A6%E5%BC%A5%E5%90%88/">
+            後一篇：《少年邦》：如果Z世代当政，美国党派政治能否弥合？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-08-27/%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E6%89%8B%E9%93%90-%E7%BB%B3%E7%B4%A2-%E6%9D%9F%E7%BA%BF%E5%B8%A6%E5%92%8C%E5%B8%83%E5%9F%BA%E8%83%B6%E5%B8%A6-%E5%9C%A8%E7%81%BE%E9%9A%BE%E4%B8%AD%E5%B9%B8%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95-4-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-08-29/%E5%B0%91%E5%B9%B4%E9%82%A6-%E5%A6%82%E6%9E%9CZ%E4%B8%96%E4%BB%A3%E5%BD%93%E6%94%BF-%E7%BE%8E%E5%9B%BD%E5%85%9A%E6%B4%BE%E6%94%BF%E6%B2%BB%E8%83%BD%E5%90%A6%E5%BC%A5%E5%90%88/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-09-09/In-Defense-of-Diplomacy-with-China/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-08-27/When-China-Reporters-Can-t-Report-from-China/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-08-27/%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E6%89%8B%E9%93%90-%E7%BB%B3%E7%B4%A2-%E6%9D%9F%E7%BA%BF%E5%B8%A6%E5%92%8C%E5%B8%83%E5%9F%BA%E8%83%B6%E5%B8%A6-%E5%9C%A8%E7%81%BE%E9%9A%BE%E4%B8%AD%E5%B9%B8%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95-4-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-08-29/%E5%B0%91%E5%B9%B4%E9%82%A6-%E5%A6%82%E6%9E%9CZ%E4%B8%96%E4%BB%A3%E5%BD%93%E6%94%BF-%E7%BE%8E%E5%9B%BD%E5%85%9A%E6%B4%BE%E6%94%BF%E6%B2%BB%E8%83%BD%E5%90%A6%E5%BC%A5%E5%90%88/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-09-09/In-Defense-of-Diplomacy-with-China/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-08-27/When-China-Reporters-Can-t-Report-from-China/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

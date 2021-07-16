@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>‘We’re Hardly Heroic’ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+‘We’re Hardly Heroic’
+——
+" />
+    <meta property="og:description" content="
+‘We’re Hardly Heroic’
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="‘We’re Hardly Heroic’" />
+    <meta property="twitter:title" content="‘We’re Hardly Heroic’" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fwere-hardly-heroic" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/were-hardly-heroic" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/were-hardly-heroic&text=‘We’re Hardly Heroic’&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/were-hardly-heroic&title=‘We’re Hardly Heroic’" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/were-hardly-heroic&title=‘We’re Hardly Heroic’" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=‘We’re Hardly Heroic’&body=
+‘We’re Hardly Heroic’
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/were-hardly-heroic" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/were-hardly-heroic&title=‘We’re Hardly Heroic’&caption=
+‘We’re Hardly Heroic’
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=‘We’re Hardly Heroic’&url=https://www.chinafile.com/reporting-opinion/viewpoint/were-hardly-heroic" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>‘We’re Hardly Heroic’</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-04-03
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Tracy Wen Liu</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/were-hardly-heroic" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1585897200000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/were-hardly-heroic">‘We’re Hardly Heroic’</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-a407f713ef50085900b6a657cea915ec">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/52071_sm.jpg" title="‘We’re Hardly Heroic’" class="colorbox" data-colorbox-gallery="gallery-node-52071-Ay5_ocZpFms" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/52071_sm.jpg?itok=2oZ-bKbO" width="1400" height="933" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Yuan Zheng—FeatureChina via AP
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A healthcare professional rests while working in the intensive care unit of a hospital designated for COVID-19 patients in Wuhan, Hubei province, February 23, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">Dr. Li, a heart specialist at Wuhan No. 4 Hospital, spent the third week of March preparing for the reopening of the hospital’s general clinics, which closed on January 22, when No. 4 became a key facility for treating COVID-19 patients. After working for two months on the front lines of the coronavirus outbreak, Li is mentally and psychologically at a loss about what to do next. He can’t sleep or eat, he often feels dazed, and sometimes, seemingly out of nowhere, he weeps.</p>
+      <p>Li’s trauma stands in stark contrast to the image projected by China’s media, which is filled with articles and broadcasts <a href="http://www.xinhuanet.com/world/2020-03/20/c_1125744079.htm" target="_blank" rel="nofollow">glorifying</a> the government’s response to the epidemic. Amid so much exultation, Li is increasingly reluctant to express fears or concerns to others around him. He has become a different man—one who understands that “life is fragile and weak.”</p>
+      <p>I met Li (his name has been changed to protect his privacy) online on January 23, the day the city of Wuhan was locked down. I am based in Texas, and my friends and I had set up a WeChat group to donate masks and personal protective equipment (PPE) to hospitals in and around Wuhan. Now that COVID-19 has escalated into a global pandemic, it has become increasingly important that the rest of the world understand what the doctors and nurses in Wuhan—several of whom I now call friends—experienced and are still experiencing. Insofar as China has achieved a “victory” over the coronavirus, it has come at a massive and lasting human cost.</p>
+      <h3 id="the-covid-ward">The COVID Ward</h3>
+      <p class="dropcap">My communications with Li were initially impersonal and focused on the logistics of getting PPE delivered to his hospital. But late on January 27, Li suddenly sent a message to the WeChat group saying that he needed to blow off some steam. I was still online, so I stayed to hear him describe the situation in Wuhan in vivid, heart-breaking detail.</p>
+      <p>That morning, after passing through several stages of disinfection, Li had walked into the hospital’s contamination zone, where he immediately encountered a man sprawled on the floor, masked, covered in a quilt, with a yellow-green complexion. Two steps away, another person lay prone on a bench, seriously ill and hardly breathing. A young man sitting next to him was yelling into a phone, seeking help. And many other patients were lying on the ground in the clinic hallway, gasping for breath. All around, patients and their family members stood, sat, or simply lay on the floor. According to Li, they had no expressions on their faces, as if they had become accustomed—or at least resigned—to their misery.</p>
+      <p></p>
+      <div class="node node-article cboxes article align-left grid-4 img-yes logo-no">
+        <div class="cboxes-inner">
+          <div class="cb-head">
+            <h3 id="viewpoint"> <a href="https://www.chinafile.com/reporting-opinion/viewpoint">Viewpoint</a></h3>
+ <span class="date">02.22.20</span> <span class="type-icon"></span>
+          </div>
+          <div class="cb-link">
+<a href="https://www.chinafile.com/reporting-opinion/viewpoint/despite-government-assurances-medical-workers-hubei-say-they-lack"></a>
+          </div>
+          <div class="cb-img">
+<img src="https://www.chinafile.com/sites/default/files/styles/system/public/assets/images/article/system/2019ncov-sys.jpg?itok=etnZyem-" width="620" height="450" alt="" referrerpolicy="no-referrer" />
+          </div>
+          <div class="cb-cont">
+            <h2 id="despite-government-assurances-medical-workers-in-hubei-say-they-lack-supplies"><a href="https://www.chinafile.com/reporting-opinion/viewpoint/despite-government-assurances-medical-workers-hubei-say-they-lack" title="Despite Government Assurances, Medical Workers in Hubei Say They Lack Supplies">Despite Government Assurances, Medical Workers in Hubei Say They Lack Supplies</a></h2>
+ <span class="authors"> <span>Tracy Wen Liu</span> </span>             <div class="inner-content">
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+Amid quickly changing news about the trajectory of the outbreak of the novel coronavirus, Covid-19, on February 20, the Chinese government body overseeing the response to the epidemic announced that medical supplies adequate to combating the spread...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>The floor was covered in garbage, blood, vomit, and sputum. The patients far outnumbered the medical personnel. Li saw two nurses in charge of intake and registration surrounded by patients’ family members, some of whom knelt at their feet begging for help. Occasionally an ambulance arrived with still more patients. Looking outside, Li saw a seemingly endless line of people waiting at the hospital door, many of whom could support themselves only by leaning against the wall.</p>
+      <p>In the early days of the lockdown, Li told me, the number of outpatients coming to the clinic each day was in the thousands. People waited four or five hours just to sign in, then waited another four or five hours either to receive take-home medicine or to be admitted to an infusion room on the second floor, where they joined several hundred others waiting for available beds.</p>
+      <p>Some people collapsed while waiting; some, clearly, were near death. The hospital’s wards were so full that the corridors and doctors’ lounges had to be used for additional beds. All of these were filled, and remained so, because no one seemed to be recovering.</p>
+      <p>“There’s insufficient manpower, limited treatment, and scarce PPE,” Li told me. He struggled to explain why he couldn’t help these people. “I’m doing my best,” he said over and over. “What more could I have done?” I stayed chatting with him until it was time for him to go back to work.</p>
+      <h3 id="days-of-panic">Days of Panic</h3>
+      <p class="dropcap">Two days later, on January 29, Li called me in a frenzy. While on duty that day, the family members of a recently deceased patient had attacked one of Li’s colleagues, ripping off his mask and shouting, “If we’re sick, we’ll be sick together. If we have to die, we’ll die together.” (The Chinese news outlet Caixin later <a href="http://china.caixin.com/2020-01-30/101509515.html" target="_blank" rel="nofollow">reported</a> on the incident.) Li was furious—his messages to the group bristled with exclamation marks.</p>
+      <p>But he was also exhausted. He told us that he almost couldn’t take any more. “For a long time, I have been psychologically prepared to be infected,” he told me, referring again to the lack of adequate PPE. But what he was not prepared for was the trauma of having to fend off patients who had been pushed to the edge of panic and despair. He had witnessed fellow doctors being cursed at, beaten, and dragged around the hospital hallways. He feared it was only a matter of time before he experienced the same treatment.</p>
+      <p>Li’s messages depicted a scene of continuing deterioration. More and more people were dying. But because PPE was so scarce, there were times when medical staff would not enter the wards even to carry away dead bodies. Li, sitting beside the corpses, tried to distract himself by mechanically writing prescriptions for those who were still alive. It was a living hell.</p>
+      <p>In the early days of the lockdown, the local funeral home had gotten by with a van to transport corpses from the hospital. But soon enough, it needed a cargo truck. One day, after his shift, Li witnessed hospital workers putting corpses—he counted as many as seven or eight—into body bags and throwing them onto the truck bed.</p>
+      <p>The scene stayed with him. He couldn’t get it out of his head when he was awake. When he managed to sleep, he had nightmares. He was overcome by a sense of helplessness. While the state media were portraying healthcare workers as heroes, he was devoting his time and energy to treating patients who would not recover. “We’re hardly heroic,” he says.</p>
+      <p>Li has continued to message and call me about once a week since our first long conversation. “I’ve been slowly improving,” he told me on March 11. Still, he continues to suffer from insomnia, and he is reluctant to tell friends and family in China how he’s really feeling.</p>
+      <p>The situation at work has taken another demoralizing turn. When the outbreak was raging, he explained, some of the hospital’s administrators cowered in their offices, too afraid to venture out into the wards. But now that commendations are being handed out, the bosses have been the first in line for bonuses. “It’s much more profitable to work in the financial industry,” he laments. “Do you think I might still have an opportunity to work in that profession?”</p>
+      <h3 id="in-the-trenches">In the Trenches</h3>
+      <p class="dropcap">Li is not alone in considering a career change. Another of my contacts, a 30-year-old nurse at Wuhan Changhang General Hospital, has also asked herself if she can keep going. Ms. Wang, as I’ll call her, was among the first to work in the hospital’s “fever clinic” when the outbreak began. From the beginning, she recounts, everything was in short supply, including not just PPE and medicine but even cafeteria provisions. She had to work, with little food or water, 12-hour shifts that started at 6:00 or 7:00 in the morning. When fatigue overcame her, she didn’t dare take off her protective gear. She simply leaned against a wall and slept with it on.</p>
+      <p>When the city shut down, Wang couldn’t get to work by bus, so she used a bike-share. But one morning, she rose at 5:00 and couldn’t find an available bike, so she walked to the hospital instead. On the way, feeling more desperate and frustrated than ever, she called me and asked, “Can you help us put out an appeal to give the frontline doctors and healthcare workers a way out of this?”</p>
+      <p>Wang is optimistic and kind, but she does not hide her emotions. When a patient’s family gave her a small gift of tea and snacks, she was deeply moved. She also speaks her mind and is unafraid of people in authority. At the beginning of the epidemic, when Wuhan residents had yet to come to grips with the scale of the crisis, Wang bought Tamiflu—an antiviral used to treat influenza that has been administered to patients in Wuhan even though there is <a href="https://www.hopkinsguides.com/hopkins/view/Johns_Hopkins_ABX_Guide/540747/all/Coronavirus_COVID_19__SARS_CoV_2_" target="_blank" rel="nofollow">no scientific evidence</a> that it is effective against COVID-19—and gave it to relatives and friends, counseling them not to go out.</p>
+      <p>Then, when China’s State Council <a href="http://www.gov.cn/xinwen/2020-01/24/content_5472009.htm" target="_blank" rel="nofollow">set up a hotline</a> for reporting incidents of negligence in combating the outbreak, Wang immediately reported that her hospital’s leaders had concealed infections among the medical staff. Her best friend was among the earliest to contract COVID-19 and had been put into intensive care with respiratory and heart failure on January 23. In an attempt to ease Wang’s worries, the friend sent a photo of herself smiling behind her ventilator. But the gesture had the opposite effect. After seeing it, Wang told me, she felt even more terrified and desperate to avoid infection.</p>
+      <p>Even so, Wang continued to work, and just two days later—on January 25—she started to cough. In a text message, she told me that a CT scan had identified a shadow on her right lung. I told her to rest. She said she couldn’t, because her hospital was short of nurses as it was.</p>
+      <h3 id="heal-thyself">Heal Thyself?</h3>
+      <p class="dropcap">While serving on the front lines, Wang saw many of her colleagues break down and cry in the hospital’s lounge. She sent me a video of a nurse curled up in a corner weeping and proclaiming hysterically that she wanted to quit. I asked Wang what had happened to that nurse, but she told me that such episodes were common. As soon as a patient rang a call button, the nurses would pick themselves up and hurry back to the ward.</p>
+      <p>On January 27, Wang was diagnosed with a coronavirus infection. That judgment was based solely on her CT scan, even though the standard for confirming a coronavirus case at the time was to use a test kit. Within two weeks, China would formally <a href="https://www.npr.org/sections/goatsandsoda/2020/02/13/805519117/a-change-in-how-one-chinese-province-reports-coronavirus-adds-thousands-of-cases?utm_medium=RSS&amp;utm_campaign=globalhealth" target="_blank" rel="nofollow">loosen</a> its criteria for counting cases, allowing for more diagnoses based on characteristic symptoms.</p>
+      <p>Wang and other infected colleagues were told to self-isolate at home. By late January, hundreds of her colleagues were in home-quarantine or had been hospitalized. She and her husband sequestered themselves in separate bedrooms of their apartment. For weeks, Wang lived in fear, both for herself and for her loved ones, not least her four-year-old son, whom she had left with her in-laws.</p>
+      <p>Wang’s supervisor instructed her not to tell anyone she was infected. If someone asked, she was supposed to say “no,” to avoid sowing panic. By then, many hospitals and media outlets had received orders not to talk about the epidemic. On January 27, Wang told me that medical staff had been ordered to remain calm and collected in front of anyone who did not work at the hospital.</p>
+      <p>During her quarantine at home, Wang kept busy by connecting with various online volunteer organizations that were trying to deliver more PPE to her hospital. When her symptoms finally abated on February 27, she was given two diagnostic tests 24 hours apart, as <a href="https://www.channelnewsasia.com/news/asia/china-doctors-tougher-discharge-criteria-covid-19-coronavirus-12495878" target="_blank" rel="nofollow">protocol required</a>. When they both came back negative, she immediately returned to work. “I was really scared this time,” she told me. “I didn’t know if I could do it again. I have a son. Now I realize I want a safer job.”</p>
+      <p>In March, the Chinese tech firm ByteDance (the parent company of the popular social-media app TikTok), <a href="https://news.pedaily.cn/202003/452840.shtml" target="_blank" rel="nofollow">offered</a> 100,000 renminbi (U.S.$14,100) to every medical worker who had been infected. Yet because Wang’s COVID-19 infection had never been confirmed by a test, she assumed that she would be ineligible for the reward. In any case, she told me that she was not interested in that kind of compensation. What she really wants is a <em>post mortem </em>investigation into “the government and hospital officials who covered up the outbreak.”</p>
+      <h3 id="far-from-over">Far From Over</h3>
+      <p class="dropcap">A final account of the COVID-19 crisis comes from a longtime friend whom I’ll call Jing. An anesthesiologist in the city of Shiyan, near Wuhan, Jing had never imagined that she would be working on the front lines of an epidemic. But by late February, she had no choice. The first wave of medical personnel had pushed themselves physically and psychologically to the limit, but the number of patients being admitted continued to rise.</p>
+      <p>In response, Jing’s hospital launched a training program to teach medical specialists in other fields how to treat coronavirus patients in a clinical setting. After her crash course, Jing was sent into the trenches. When I spoke to her on February 22, she admitted that when she first witnessed an ambulance bringing in a new COVID-19 patient, her immediate instinct was to turn and run. But she fought that impulse. As a healthcare provider, her job was to help people, so she got to work. After her first day in the clinic, she cried long and hard.</p>
+      <p>As of early April, the epidemic appears to have been mostly contained in China. But Jing is wary of letting down her guard. She worries that <a href="http://china.caixin.com/2020-02-28/101521885.html" target="_blank" rel="nofollow">discharge standards</a> will be set too low, and she wonders if adequate testing has been conducted in places like prisons and nursing homes. Given the spread of the coronavirus globally, she also fears that a wave of new cases will be imported from overseas.</p>
+      <p>When I spoke to Jing on March 8, she told me that the higher-ups in her hospital do not share her sense of vigilance. On the contrary, they have been acting as if the battle already had been won. “While we are grateful to the people across the country, medical teams that came to support our Hubei, overseas Chinese, and civil society for their supplies,” she told me, “we have no thanks for our leaders or the government. This still isn’t over, and they’re already rushing to collect rewards for merit.”</p>
+      <p>As the full horror of the epidemic passes from the country of my birth to the country where I live, I want people to know about how bad things got in Wuhan. Watching people in my neighborhood ignore the calls for social distancing fills me with rage and dread. Everyone outside China must understand how much that country’s medical workers sacrificed to bring the outbreak under control.</p>
+      <p>More to the point, everyone must recognize that the campaign against COVID-19 is far from over, and that we will all be living under its shadow for a long time to come. While the number of confirmed cases in China is decreasing, and immediate fears of death may have eased, the scars from the outbreak’s peak will remain. And doctors, nurses, and other medical professionals, in particular, will continue to struggle with what they experienced. Their wounds will not heal soon.<span class="cube"></span></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-04-09</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-09/The-Myth-of-Chinese-Capitalism/">
+          The Myth of Chinese Capitalism
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-04-06</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-06/What-Does-the-Coronavirus-Mean-for-EU-China-Relati/">
+          What Does the Coronavirus Mean for EU-China Relations?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-04-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-02/We-re-Hardly-Heroic/">
+          ‘We’re Hardly Heroic’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-28</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-28/Is-U.S.-China-Cooperation-on-COVID-19-Still-Possib/">
+          Is U.S.-China Cooperation on COVID-19 Still Possible?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-04-03/%E7%BE%8E%E5%9B%A2%E5%8D%96%E8%8F%9C/">
+            前一篇：美团卖菜
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-04-03/%E8%99%9A%E6%8B%9F%E5%81%B6%E5%83%8F%E5%BC%80%E5%A7%8B%E4%BB%BF%E7%9C%9F%E4%BA%86/">
+            後一篇：虚拟偶像开始仿真了
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-04-03/%E7%BE%8E%E5%9B%A2%E5%8D%96%E8%8F%9C/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-04-03/%E8%99%9A%E6%8B%9F%E5%81%B6%E5%83%8F%E5%BC%80%E5%A7%8B%E4%BB%BF%E7%9C%9F%E4%BA%86/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-04-06/What-Does-the-Coronavirus-Mean-for-EU-China-Relati/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-04-02/We-re-Hardly-Heroic/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-04-03/%E7%BE%8E%E5%9B%A2%E5%8D%96%E8%8F%9C/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-04-03/%E8%99%9A%E6%8B%9F%E5%81%B6%E5%83%8F%E5%BC%80%E5%A7%8B%E4%BB%BF%E7%9C%9F%E4%BA%86/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-04-06/What-Does-the-Coronavirus-Mean-for-EU-China-Relati/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-04-02/We-re-Hardly-Heroic/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

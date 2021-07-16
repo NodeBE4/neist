@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>How Should the U.S. Approach Climate Diplomacy with China? – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+How Should the U.S. Approach Climate Diplomacy with China?
+——
+" />
+    <meta property="og:description" content="
+How Should the U.S. Approach Climate Diplomacy with China?
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="How Should the U.S. Approach Climate Diplomacy with China?" />
+    <meta property="twitter:title" content="How Should the U.S. Approach Climate Diplomacy with China?" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Fhow-should-us-approach-climate-diplomacy-china" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/how-should-us-approach-climate-diplomacy-china" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/how-should-us-approach-climate-diplomacy-china&text=How Should the U.S. Approach Climate Diplomacy with China?&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/how-should-us-approach-climate-diplomacy-china&title=How Should the U.S. Approach Climate Diplomacy with China?" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/how-should-us-approach-climate-diplomacy-china&title=How Should the U.S. Approach Climate Diplomacy with China?" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=How Should the U.S. Approach Climate Diplomacy with China?&body=
+How Should the U.S. Approach Climate Diplomacy with China?
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/how-should-us-approach-climate-diplomacy-china" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/how-should-us-approach-climate-diplomacy-china&title=How Should the U.S. Approach Climate Diplomacy with China?&caption=
+How Should the U.S. Approach Climate Diplomacy with China?
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=How Should the U.S. Approach Climate Diplomacy with China?&url=https://www.chinafile.com/conversation/how-should-us-approach-climate-diplomacy-china" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>How Should the U.S. Approach Climate Diplomacy with China?</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-07-12
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Isabel Hilton, Scott Moore &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/how-should-us-approach-climate-diplomacy-china" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1626089880000-->
+<p><a href="https://www.chinafile.com/conversation/how-should-us-approach-climate-diplomacy-china">How Should the U.S. Approach Climate Diplomacy with China?</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-1c1c19a68ce31d49f6406c8fbdae7c35">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-800065546.jpeg" title="How Should the U.S. Approach Climate Diplomacy with China?" class="colorbox" data-colorbox-gallery="gallery-node-53296-BfsnoQ5eNA8" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-800065546.jpeg?itok=F76j1E0f" width="1200" height="782" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Kevin Frayer—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A worker carries a panel for a large floating solar farm project under construction by the Sungrow Power Supply Company on a lake caused by a collapsed and flooded coal mine in Huainan, Anhui province, June 13, 2017.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">During the Trump Administration, American media <a href="https://www.nytimes.com/2017/03/29/world/asia/trump-climate-change-paris-china.html" target="_blank" rel="nofollow">routinely</a> <a href="https://www.nationalgeographic.com/science/article/china-takes-leadership-climate-change-trump-clean-power-plan-paris-agreement" target="_blank" rel="nofollow">touted</a> China as the <a href="https://www.politico.com/story/2019/08/15/climate-china-global-translations-1662345" target="_blank" rel="nofollow">new climate leader</a>. Days before Trump took office, President Xi Jinping and other Chinese officials <a href="https://www.nytimes.com/2017/03/29/world/asia/trump-climate-change-paris-china.html" target="_blank" rel="nofollow">spoke</a> of the need to maintain global climate cooperation. Last year, Xi surprised many when he <a href="https://www.bbc.com/news/science-environment-54256826" target="_blank" rel="nofollow">announced</a> at the UN General Assembly that China would reach carbon neutrality by 2060.</p>
+      <p>But a new American president and the economic realities of post-COVID recovery have shifted global climate approaches yet again. Struggling to revive a flagging economy, China has been quietly rolling back emissions restrictions and reducing the scope of an ambitious carbon market scheme, <em>The Wall Street Journal</em> <a href="https://www.wsj.com/articles/chinas-economic-officials-temper-climate-efforts-11623241401" target="_blank" rel="nofollow">reported</a> last month. The U.S., meanwhile, has <a href="https://www.npr.org/sections/inauguration-day-live-updates/2021/01/20/958923821/biden-moves-to-have-u-s-rejoin-climate-accord" target="_blank" rel="nofollow">re-committed</a> to the Paris climate accord, and the Biden administration <a href="https://www.nytimes.com/2021/04/15/world/asia/us-china-climate-john-kerry.html" target="_blank" rel="nofollow">has pushed</a> China to lower its emissions—which <a href="https://rhg.com/research/chinas-emissions-surpass-developed-countries/" target="_blank" rel="nofollow">now exceed</a> all OECD nations combined (though remain lower per capita than many).</p>
+      <p>For the U.S. and its allies, balancing the need for global climate cooperation with domestic demands and geopolitical realities has never been simple. When the G7 <a href="https://www.reuters.com/world/china-climate-vaccines-what-g7-agreed-this-weekend-2021-06-13/" target="_blank" rel="nofollow">met in June</a>, tackling climate change and countering Chinese influence were both named top priorities. Top progressive groups in the U.S., meanwhile, <a href="https://www.politico.com/news/2021/07/07/biden-china-climate-collapse-progressives-498588" target="_blank" rel="nofollow">have urged</a> lawmakers to take a less confrontational approach to China, prioritizing bilateral climate diplomacy above all.</p>
+      <p>As China continues to emerge as a superpower and move forward with its colossal Belt and Road Initiative amid the climate crisis, American climate engagement with China is more critical than ever. What would an effective climate diplomacy for the U.S. and China look like? —<em>The Editors</em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-9101" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/isabel-hilton"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/ih_0.jpg?itok=XHWnoC0u" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="isabel-hilton"><a href="https://www.chinafile.com/contributors/isabel-hilton" title="Isabel Hilton">Isabel Hilton</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">There is already a template for effective U.S.-China climate diplomacy: In <a href="https://obamawhitehouse.archives.gov/the-press-office/2014/11/11/us-china-joint-announcement-climate-change" target="_blank" rel="nofollow">November 2014</a>, Xi Jinping and Barack Obama <a href="https://obamawhitehouse.archives.gov/the-press-office/2014/11/11/us-china-joint-announcement-climate-change" target="_blank" rel="nofollow">agreed</a> to work together on climate change and to support efforts to reach a global agreement in Paris the following year. That U.S.-China negotiation <a href="https://www.theguardian.com/environment/2014/nov/12/china-and-us-make-carbon-pledge" target="_blank" rel="nofollow">led</a> directly to the U.S. pledge to reduce its emissions to 26 to 28 percent below 2005 levels by 2025, and to the first outing of China’s now oft-repeated promise to peak its emissions at least by 2030.</p>
+        <p>From that handshake emerged still more initiatives. China <a href="https://www.scientificamerican.com/article/china-is-preparing-to-launch-the-world-rsquo-s-biggest-carbon-market/" target="_blank" rel="nofollow">promised</a> to implement a national carbon market by 2017, though the development and implementation of the market proved complex and the authorities repeatedly <a href="https://www.bloomberg.com/news/articles/2021-06-28/china-s-carbon-market-set-to-miss-target-for-start-of-trading?sref=JSHmLqWQ" target="_blank" rel="nofollow">delayed</a> the launch. China also <a href="https://www.ifc.org/wps/wcm/connect/news_ext_content/ifc_external_corporate_site/news+and+events/news/china+pledges+$3+billion+to+ifc+for+joint+investments+in+emerging+markets#:~:text=IFC%2C%20a%20member%20of%20the,to%20businesses%20in%20emerging%" target="_blank" rel="nofollow">pledged</a> to contribute more than $3 billion to emerging economies. Both countries promised to regularly tighten their mitigation pledges. They also vowed ongoing bilateral climate conversations, which thrived until the wrecking ball of the Donald Trump presidency destroyed them. Despite the <a href="https://www.state.gov/u-s-china-joint-statement-addressing-the-climate-crisis/" target="_blank" rel="nofollow">promises made</a> after John Kerry’s meeting with China’s climate envoy Xie Zhenhua in April, the two countries have not yet fully reinstated them.</p>
+        <p>It was relatively easy, then, for China to claim leadership. Just staying in the Paris Agreement looked good when compared to the behavior of the U.S. Now, Beijing is as reluctant to concede the idea of climate leadership to a prodigal U.S. as it is to concede anything else to Washington. In the interim, China’s domestic <a href="https://www.washingtonpost.com/politics/2020/06/01/nationalism-china-is-running-high-heres-how-beijing-reins-it/" target="_blank" rel="nofollow">nationalism</a> has heightened, complicating even this area of obvious mutual interest. Extremist positions in both nations could render collaboration impossible.</p>
+        <p>John Kerry, the U.S. envoy on climate change, has repeatedly <a href="https://www.france24.com/en/live-news/20210127-us-will-work-with-china-on-climate-despite-other-differences-kerry" target="_blank" rel="nofollow">warned</a> that climate talks should be <a href="https://foreignpolicy.com/2021/04/26/john-kerry-climate-envoy-interview-china-green-marketplace/" target="_blank" rel="nofollow">siloed</a>, shielded from the fallout out of deteriorating bilateral relations. He is right, but doing so will not be easy.</p>
+        <p>A best-case scenario would include a restoration of bilateral cooperation with a view to both nations presenting increased mitigation pledges at the upcoming COP26 UN Climate Change Conference and pledging further support for mitigation and adaptation in poorer countries. China and the U.S. should pledge to bring their overseas investments in line with the <a href="https://sdgs.un.org/goals" target="_blank" rel="nofollow">UN Sustainable Development Goals</a>, and they could work together to curb excesses in critical areas like deforestation and overfishing. They and the EU could also agreed to a set of standards on green investment, as well as on a moratorium on trade sanctions on low-carbon goods and technologies. It wouldn’t fix climate change, but it would certainly help.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9106" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/scott-moore"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/moore_sm.jpg?itok=mHjwGV18" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="scott-moore"><a href="https://www.chinafile.com/contributors/scott-moore" title="Scott Moore">Scott Moore</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The climate crisis is usually thought of as a challenge that calls for unprecedented cooperation, especially between the world’s largest emitters, China and the United States. Certainly, any serious effort to address climate change will require Beijing and Washington to work together within a broader multilateral framework. But given political and geopolitical realities, an effective approach to U.S.-China climate diplomacy will have to be based more on competition than cooperation. Fortunately, a race to the top on clean energy development and climate financing might be just what the planet needs.</p>
+        <p>During the Obama Administration, climate cooperation was the bright spot in otherwise contentious U.S.-China relations. But in the half-decade since the Paris Agreement was developed—<a href="https://www.csis.org/us-china-climate-and-energy-relationship" target="_blank" rel="nofollow">largely</a> on the strength of bilateral commitments from Washington and Beijing—this bright spot has been almost entirely blotted out by political, economic, and technological tension. To be sure, diplomatic engagement continues, and both sides have strong reasons to ensure it remains constructive. But climate cooperation has become increasingly vulnerable to deep fault lines in the U.S.-China relationship. As just one example, the Biden Administration is <a href="https://www.cnn.com/2021/06/24/politics/solar-materials-china-forced-labor/index.html" target="_blank" rel="nofollow">restricting</a> imports of a key component in solar panel manufacture in response to Beijing’s human rights abuses in Xinjiang. China, for its part, is <a href="https://www.ft.com/content/d3ed83f4-19bc-4d16-b510-415749c032c1" target="_blank" rel="nofollow">exploring</a> export restrictions on rare earth elements used in wind turbines and other clean energy equipment as a means to punish U.S. defense contractors involved in the sale of arms to Taiwan.</p>
+        <p>At the same time, bilateral climate cooperation between the United States and China is no longer as central to climate diplomacy as it once was. Each country has made ambitious medium-term climate commitments; the challenge now is to ensure that both are taking the steps needed to fulfill them and prod other countries to slash their own emissions. That’s where the idea of a virtuous kind of climate competition comes in: Let the most ambitious country reap both the economic rewards of developing and deploying more efficient clean technology and the soft power benefits of turbocharging financing for climate adaptation.</p>
+        <p>Though renewable energy is expanding faster than almost anyone anticipated, continued innovation is needed to replace fossil fuels for baseload power generation, heavy industry, and transport applications, especially in the developing world. That innovation in turn requires more investment, especially from the public sector. The recent <a href="https://www.cnbc.com/2021/06/08/senate-passes-bipartisan-tech-and-manufacturing-bill-aimed-at-china.html" target="_blank" rel="nofollow">U.S. Innovation and Competition Act</a>, which channeled some U.S.$250 billion toward technology research and development largely to compete more effectively with China, shows the political promise of mobilizing more public investment for clean energy on the basis of competition rather than cooperation.</p>
+        <p>Just as important is the need for a race to increase climate financing. While China moves toward decarbonizing at home, it <a href="https://qz.com/1760615/china-quits-coal-at-home-but-promotes-the-fossil-fuel-in-developing-countries/" target="_blank" rel="nofollow">continues to finance</a> fossil fuel infrastructure abroad. Competing with Beijing on financing terms for infrastructure projects in developing countries offers countries like the U.S. a way to promote cleaner, greener alternatives while also blunting China’s growing geopolitical influence. Offering other forms of aid and development assistance to help the poorest and most vulnerable adapt to climate change can be an even more effective way to enhance soft power—while also helping the planet.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9111" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/alex-wang"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/alex_wag_portrait_s.jpeg?itok=bljT1JWJ" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="alex-wang"><a href="https://www.chinafile.com/contributors/alex-wang" title="Alex Wang">Alex Wang</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The U.S. and China <a href="https://www.pbl.nl/en/trends-in-global-co2-emissions" target="_blank" rel="nofollow">account</a> for nearly 45 percent of global CO2 emissions (and some 40 percent of all greenhouse gas emissions). Any solution to climate change will require decisive action from these two leading emitters. As competition increasingly defines the U.S.-China relationship, the key will be to ensure that this competition remains constructive.</p>
+        <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3826681" target="_blank" rel="nofollow">Constructive competition</a> can be analogized to the U.S.-Soviet race to the moon. Yet, in several ways, it is much broader, implicating core economic growth opportunities, reshaping relations with the other nations of the world, and putting underlying governance approaches to the test.</p>
+        <p>In the early months of the Biden administration, competition in all three of these areas has already begun to take clearer shape with bipartisan support for <a href="https://www.nytimes.com/2021/06/28/us/politics/house-science-research-bills.html" target="_blank" rel="nofollow">legislation</a> and executive orders on climate-oriented <a href="https://www.whitehouse.gov/briefing-room/presidential-actions/2021/02/24/executive-order-on-americas-supply-chains/" target="_blank" rel="nofollow">supply chains</a> and <a href="https://www.whitehouse.gov/briefing-room/statements-releases/2021/04/22/executive-summary-u-s-international-climate-finance-plan/" target="_blank" rel="nofollow">international financing</a>. These have all been motivated by competition with China; it has taken a common “enemy” to generate cross-party collaboration within the U.S.</p>
+        <p>But these moves come late. They are an attempt to catch up in the wake of China’s progress on industrial development (e.g., Made in China 2025, a government policy to build Chinese leadership in high-tech manufacturing) and international engagement (e.g., the Belt and Road Initiative). China’s strategy on clean tech has allowed it, for example, to dominate <a href="https://www.bloomberg.com/features/2020-china-solar-giant-longi/" target="_blank" rel="nofollow">solar</a> and <a href="https://www.voanews.com/silicon-valley-technology/how-china-dominates-global-battery-supply-chain" target="_blank" rel="nofollow">battery</a> supply chains. For all of the criticisms of the Belt and Road Initiative, China has made progress reaching out to countries that had been ignored by the West and providing them with goods and services they need.</p>
+        <p>China has acted as the upstart, attempting to find space where incumbents have yet to establish themselves. The U.S., as the dominant superpower, has been too complacent. And climate change is the great disrupter, forcing dramatic systemic change and reshaping the balance of power among global actors.</p>
+        <p>How do we keep competition from turning destructive? How do we ensure the U.S. succeeds in fending off its new greatest rival? I venture a few suggestions.</p>
+        <p>First, do no harm. The Hu Anming <a href="https://www.knoxnews.com/story/news/crime/2021/06/15/jury-deliberates-fate-ex-university-tennessee-professor-falsely-accused-spy/7685206002/" target="_blank" rel="nofollow">case</a> in Tennessee is the poster child for competition as McCarthyism: FBI agents faced with hard targets and heated rhetoric falsely accusing a Chinese-born scientist of spying. Competition has spurred our politicians to action. It must not be allowed to enable xenophobia.</p>
+        <p>Second, recognize not all Chinese gains come at U.S. expense. China’s rise has created vulnerabilities. The U.S. is too reliant on China for clean technologies, and the Biden administration is right to take actions to diversify. But American leaders should also acknowledge where China has done well for the world (for instance, on reducing the costs of clean technologies and accelerating improvements in global economic well-being).</p>
+        <p>Third, build up effective governance capacity. As Americans accept a larger role for the government in climate change and competition with China, we should double down on effective governance consistent with American values. The U.S. should offer ample state support for the development and deployment of clean technologies, ensure accountability for government programs without stifling action, and implement international development aid that actually considers the interests of recipient countries.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-9116" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/lauri-myllyvirta"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/lauri_myllyvirta.jpg?itok=vWIbCaek" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="lauri-myllyvirta"><a href="https://www.chinafile.com/contributors/lauri-myllyvirta" title="Lauri Myllyvirta">Lauri Myllyvirta</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">China’s leadership has set the long-term goal of carbon neutrality as a key priority. Over the past year, however, the country’s CO2 emissions have <a href="https://www.carbonbrief.org/analysis-chinas-co2-emissions-surged-4-in-second-half-of-2020" target="_blank" rel="nofollow">increased</a> sharply, as a result of economic policies that favored construction projects and heavy industry sectors after the COVID-19 lockdowns. Putting a stop to this carbon-intensive growth pattern is something the country is still grappling with. For more than a decade, the leadership has been talking about addressing the unbalanced nature of the economy and its excessive reliance on heavy industry. But in the past few years, <a href="https://www.carbonbrief.org/analysis-surge-in-chinas-steel-production-helps-to-fuel-record-high-co2-emissions" target="_blank" rel="nofollow">steel</a> production has again outpaced overall economic growth, indicating that the importance of heavy industry and construction has only increased.</p>
+        <p>Xi Jinping has <a href="http://www.xinhuanet.com/english/2021-05/01/c_139919713.htm" target="_blank" rel="nofollow">set</a> low-carbon development as a strategic priority for China. There are obvious reasons to do this: Food security, water resources, and the regional security environment, all key strategic issues, would be jeopardized by runaway climate change. The carbon neutrality target is also industrial policy: China’s ambition is to <a href="https://www.forbes.com/sites/dominicdudley/2019/01/11/china-renewable-energy-superpower/?sh=32ed059c745a" target="_blank" rel="nofollow">lead</a> in the key low-carbon technologies of the 21st century, and to be seen as a <a href="http://www.xinhuanet.com/politics/2021-06/03/c_1127523733.htm" target="_blank" rel="nofollow">contributor to solving</a> global environmental issues.</p>
+        <p>The best thing the U.S. can do to push China along is to institute a program comparable in scale and ambition to China’s carbon neutrality goal. If China’s leadership sees the U.S. and the EU pulling ahead with 100 percent clean electricity, smart grids, electrified transport, zero-carbon manufacturing, and major financing and technology partnerships with the developing world, that would spur Beijing to speed up its own transition, given the country’s ambition to lead or compete in these technologies.</p>
+        <p>China’s Belt and Road Initiative responds to a real need for infrastructure in the developing world. Yet the initiative has suffered from a heavy bias towards coal and fossil fuels. While the development funding and financing by OECD countries already trumps the Belt and Road in scale, they need to mobilize far greater financial resources to help more of the developing world transition their economies to zero emissions.</p>
+        <p>The more competitive and even confrontational state of international geopolitics has also opened the door to building mechanisms to track progress and sanction laggards. It is essential for the U.S. to articulate its expectations towards China, measure the country’s emissions trends and policies against those expectations in a systematic way, and be prepared to take action through trade, diplomatic, economic, security, and other policies as appropriate. This approach of elevating climate to a key national security concern, where all available levers are used to persuade other countries to do their fair share, doesn’t only apply to the U.S. and China, of course. The approach should be applied equally to all countries and not selectively to China—both to make it clear that the purpose is not to pick unfairly on China and because the policies of other emitters matter as well.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+    
+    
+      <li>
+        <time>2021-07-10</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-10/Why-China-Is-Going-After-Its-Tech-Giants/">
+          Why China Is Going After Its Tech Giants
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-24</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-24/How-Will-the-EU-Navigate-U.S.-China-Tensions/">
+          How Will the EU Navigate U.S.-China Tensions?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-12/%E6%9C%B1%E6%B5%B7%E5%B0%B1-%E5%A5%A5%E6%B4%BE%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E5%BC%80%E6%94%BE%E7%A4%BE%E4%BC%9A%E5%8F%8A%E5%85%B6%E6%95%8C%E4%BA%BA%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+            前一篇：朱海就：奥派经济学、开放社会及其敌人丨燕京访谈
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-12/%E6%95%B0%E5%AD%97%E8%BF%BD%E8%B8%AA-%E6%94%BF%E5%BA%9C%E9%97%B4%E8%B0%8D%E5%A6%82%E4%BD%95%E8%AF%86%E5%88%AB-%E8%B7%9F%E8%B8%AA%E5%92%8C%E5%9B%B4%E6%8D%95%E5%BC%82%E8%AE%AE%E4%BA%BA%E5%A3%AB-iYouPort/">
+            後一篇：数字追踪：政府间谍如何识别，跟踪和围捕异议人士 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-07-12/%E6%9C%B1%E6%B5%B7%E5%B0%B1-%E5%A5%A5%E6%B4%BE%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E5%BC%80%E6%94%BE%E7%A4%BE%E4%BC%9A%E5%8F%8A%E5%85%B6%E6%95%8C%E4%BA%BA%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-07-12/%E6%95%B0%E5%AD%97%E8%BF%BD%E8%B8%AA-%E6%94%BF%E5%BA%9C%E9%97%B4%E8%B0%8D%E5%A6%82%E4%BD%95%E8%AF%86%E5%88%AB-%E8%B7%9F%E8%B8%AA%E5%92%8C%E5%9B%B4%E6%8D%95%E5%BC%82%E8%AE%AE%E4%BA%BA%E5%A3%AB-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-07-10/Why-China-Is-Going-After-Its-Tech-Giants/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-07-12/%E6%9C%B1%E6%B5%B7%E5%B0%B1-%E5%A5%A5%E6%B4%BE%E7%BB%8F%E6%B5%8E%E5%AD%A6-%E5%BC%80%E6%94%BE%E7%A4%BE%E4%BC%9A%E5%8F%8A%E5%85%B6%E6%95%8C%E4%BA%BA%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-07-12/%E6%95%B0%E5%AD%97%E8%BF%BD%E8%B8%AA-%E6%94%BF%E5%BA%9C%E9%97%B4%E8%B0%8D%E5%A6%82%E4%BD%95%E8%AF%86%E5%88%AB-%E8%B7%9F%E8%B8%AA%E5%92%8C%E5%9B%B4%E6%8D%95%E5%BC%82%E8%AE%AE%E4%BA%BA%E5%A3%AB-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-07-10/Why-China-Is-Going-After-Its-Tech-Giants/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

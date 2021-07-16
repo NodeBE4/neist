@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>刘擎：全球化、996和人工智能丨燕京访谈 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+刘擎：全球化、996和人工智能丨燕京访谈
+——
+" />
+    <meta property="og:description" content="
+刘擎：全球化、996和人工智能丨燕京访谈
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="刘擎：全球化、996和人工智能丨燕京访谈" />
+    <meta property="twitter:title" content="刘擎：全球化、996和人工智能丨燕京访谈" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60b83cd922095f1787ff6fdd" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60b83cd922095f1787ff6fdd" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60b83cd922095f1787ff6fdd&text=刘擎：全球化、996和人工智能丨燕京访谈&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60b83cd922095f1787ff6fdd&title=刘擎：全球化、996和人工智能丨燕京访谈" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60b83cd922095f1787ff6fdd&title=刘擎：全球化、996和人工智能丨燕京访谈" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=刘擎：全球化、996和人工智能丨燕京访谈&body=
+刘擎：全球化、996和人工智能丨燕京访谈
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60b83cd922095f1787ff6fdd" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60b83cd922095f1787ff6fdd&title=刘擎：全球化、996和人工智能丨燕京访谈&caption=
+刘擎：全球化、996和人工智能丨燕京访谈
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=刘擎：全球化、996和人工智能丨燕京访谈&url=https://www.allnow.com/post/60b83cd922095f1787ff6fdd" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>刘擎：全球化、996和人工智能丨燕京访谈</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-02
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 张弘</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60b83cd922095f1787ff6fdd" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60b83cd922095f1787ff6fdd">刘擎：全球化、996和人工智能丨燕京访谈</a>
+——</p>
+
+<div>
+  <p>采写︱张弘</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-03/60b83cf34cd55d54dd5dadee+L.jpg" data-id="60b83cf6afa7517017e4d923" alt="拉斐尔作品《雅典学院》（来自视觉中国）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+拉斐尔作品《雅典学院》（来自视觉中国）
+    </figcaption>
+  </figure>
+  <p>如果按时间顺序阅读刘擎的“西方思想年度述评”系列文章，从2003年的“西方知识界重要事件综述”一直读到2019“西方思想年度述评”，不难对西方近20年来的思想变迁得到一个大致的印象，同时也可以看出西方左翼、右翼思想的持续交锋。除此之外，中国模式也在西方备受瞩目，并引发了广泛持久的争论。</p>
+  <p>在经济问题上，由贸易全球化在西方国家内部带来的不平等加剧，贫富差距进一步扩大，中产阶级的收入增长陷入停滞。这不仅导致了政党政治的高度分裂，在西方知识分子中同样引发了激烈的思想交锋。</p>
+  <p>在社会问题上，种族问题正在考验着西方。美国的亚裔、黑人维权此起彼伏；在欧洲，法国的伊斯兰极端主义遭到了马克龙的果断反击，但左翼人士和极右阵营对此均有不满。</p>
+  <p>冷战结束之后，福山《历史终结与最后之人》引发的争论至今未息，福山仍然坚持自己的观点。在刘擎看来，福山的理论框架没有大的错误，但他低估了实质的差异：法律给定了普遍的权利，并不意味着大家都获得了普遍的承认。这似乎意味着，自由民主制度虽然面临挑战，但其基础依然牢固。</p>
+  <p>在一个复杂多变的时代。当中国改变世界的同时，世界也在改变中国。当西方从“单声部”重回“多声部”之时，中国也同样如此。我们如何认识西方？中国如何崛起？现行的中国模式是否具有可持续性？在全球范围内，是否需要一个邦联型的世界政府？资方利用高科技不断改变规则，对员工形成人身控制，996普遍出现，背后的原因是什么？就相关问题，《燕京书评》采访了刘擎。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-03/60b83d4a9c232e01c17d176a+L.jpg" data-id="60b83d4fafa7517017e4d924" alt="刘擎，美国明尼苏达大学政治学博士，现任华东师范大学紫江特聘教授，政治学系博士生导师、兼任世界政治研究中心主任。综艺节目《奇葩说》第七季导师。（照片由刘擎本人提供）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+刘擎，美国明尼苏达大学政治学博士，现任华东师范大学紫江特聘教授，政治学系博士生导师、兼任世界政治研究中心主任。综艺节目《奇葩说》第七季导师。（照片由刘擎本人提供）
+    </figcaption>
+  </figure>
+  <h2 id="section"><strong>中国人批评西方左翼太矫情，是没能真正移情地理解他们</strong></h2>
+  <p><strong>燕京书评：你在《二〇〇〇年以来的西方》423页提到，一系列事件让西方左派幻灭：从赫鲁晓夫的秘密报告、匈牙利事件、布拉格事件、“古拉格”，直到苏联解体、柏林墙的倒塌。这让西方正统左翼难以对待自己过去的这段历史。那么，西方左派是否有过全面的反思？</strong></p>
+  <p><strong>刘擎：</strong>有。这个反思很沉痛。萨特他们那时候不愿意否定苏联，是觉得如果没有苏联，世界就没有其他的可能性了，资本主义就变成了唯一的游戏，这会让他们不甘心。在改革开放之初，中国知识分子基本上没有对资本主义的切肤之痛，这个感受性非常不一样。</p>
+  <p>但是，他们经过二战之后，资本主义就是他们最大的痛。他们在情感上对它深恶痛绝，有的是出于正义感，对资本主义很愤怒。我们中国人没有办法在同等程度上感同身受。因为好多人就会觉得，你们再糟糕也比我们最苦难的时候要好。尤其是我们经过了“大饥荒”、“文革”这些事情以后。有些中国知识分子就认为，你们这些西方左派知识分子批评资本主义很矫情，你们这个制度已经很好了。</p>
+  <p>但我认为，这种看法不严肃，没有真正移情地理解他们。这里面有学术原因。西方左派中有一些真正有同情心的人。冷战结束以后，西方左派有很长一段时间失语。难道说你还要为苏联辩护吗？你还要把希望寄托了在一个错误的模式身上吗？然后，新的希望在哪里？我认为，他们到现在还没有解决这个问题，有一些左派把希望转移到中国。</p>
+  <p>一些左派主要转向了文化批评、文学批评，这一块比较活跃。在经济议题上，比如说全民基本收入，他们大体是在社会民主主义和放任自由主义之间的光谱当中找一个位置，但范式到现在还没有建立起来。对左派来说，他们比较擅长批评，对于现实问题没什么整体方案。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-03/60b83da04cd55d54dd5dadf0+L.jpg" data-id="60b83da5ab4ffd0cef1c49ac" alt="《二〇〇〇以来的西方》，刘擎著，当代世界出版社2021年4月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《二〇〇〇以来的西方》，刘擎著，当代世界出版社2021年4月版
+    </figcaption>
+  </figure>
+  <h2 id="section-1"><strong>批评“政治正确”需要具体化讨论，泛泛而论没什么启发</strong></h2>
+  <p><strong>燕京书评：2015年年初，左翼政治哲学家迈克尔·沃尔泽在《异议》杂志发表《伊斯兰主义与左派》，批评左翼知识分子漠视伊斯兰极端主义的暴虐现象，采取无批判的同情态度，放弃了自己理应坚持的启蒙主义传统及其基本价值。在沃尔泽看来，这背后的一个原因是左派格外害怕被指责为患有“伊斯兰恐惧症”</strong>（Islamophobia）<strong>。几个月之后，更为激进的左翼知识明星齐泽克发出了更为激进的声音：扔掉这样一种禁忌——“任何对伊斯兰右派的批判都是‘伊斯兰恐惧症’的证据”。这里，似乎涉及人们经常争论的问题：“政治正确”</strong>（立场）<strong>。那么，左翼知识分子为什么会害怕患上“伊斯兰恐惧症”？这种情况现在是否仍然普遍存在？</strong></p>
+  <p><strong>刘擎：</strong>对西方知识分子而言，“伊斯兰恐惧症”是对人的一个批评，就是说你看到伊斯兰就会害怕，这是一个政治不正确的标志。所以，他们都害怕患“伊斯兰恐惧症”，这种状况确实普遍存在。因为你患“伊斯兰恐惧症”本身是政治不正确，你躲开就是正确的；你批评他再躲开它，你可能也是政治不正确。所以，迈克尔·沃尔泽像一个老左派，我估计他现在应该被历史淘汰了。他自己是个犹太人，这一篇文章会有争议。但这是六年以前的事了。</p>
+  <p>现在马克龙争的就是这个东西。马克龙这次说，少废话，在共和主义之内，普遍的公民权是第一位的，所有的文化特殊权都要让位。他以前没有这么明确，而是有一点弹性，有点迂回，有一点暧昧。但他现在很明确，文化特殊主义不要进入政治，你就在自己社区里搞，但不能和共和原则相抵触。像一夫多妻制、不让女生上学、婚前的贞操检查，这些都跟法兰西的原则不一致，就是应该废除。他这一点很强硬。有人说，他就是个戴着面具的特朗普。在这一点上，我暂且认为文化左派的进步主义意愿是好的，但我认为特殊主义作为目标是不可行的。我是个平权主义者，我们提一个东西的特殊性，不是因为那个东西有多高的特殊价值，而是因为这个思想或者这些群体仍然处在被压迫或者特别弱势的状态，所以我们要提及它。但是，我们提及它不是为了标榜它，我们需要通过特殊达到那种普遍的、一致的平等。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-03/60b83dd64cd55d54dd5dadf1+L.jpg" data-id="60b83dd9afa7517017e4d927" alt="法国总统马克龙。（来自视觉中国）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+法国总统马克龙。（来自视觉中国）
+    </figcaption>
+  </figure>
+  <p>对于有些人来说，特殊就是目标本身。我认为普遍的平等是目标，并不是说女性要高于男性或者男性要高于女性。在这个意义上，女权主义是平权主义的一个工具，这可能和现在文化激进左派不太一致。</p>
+  <p>政治正确不是左派自己说的，而是批评他们的人用来讽刺他们的。这个词最早是左派自己内部发明的，是用来调侃自己，用来自黑的，他们自己不用这种语言。那么，现在批评“政治正确”的人似乎是在主张言论自由，但自由其实一直存在边界，只不过时代发展了，禁忌的内容不一样了。就像刚才谈到的，有没有可能减少禁忌的领地？而不是说30年以前我受到压制，现在轮到你受压制。这个问题肯定非常有争议，而且深入的讨论也需要具体化，泛泛而论没有什么洞见和启发。</p>
+  <p><strong>燕京书评：当地时间2021年2月16日晚，法国国民议会以压倒性优势通过旨在打击宗教极端主义和分裂主义的《巩固共和国原则法》草案，主要内容包括加强对宗教组织的监管、维护公共服务中立性、规范家庭教育等。但是，左翼人士和穆斯林群体批评马克龙政府针对伊斯兰教、污名化穆斯林，并多次发起示威。右翼则批评法案避重就轻。极右翼政党“国民阵线”主席勒庞和副主席巴尔代拉，均表示法案未挑明伊斯兰极端主义威胁，反而“误伤”普通民众，损害他们的自由。你怎么看待这种现象？</strong></p>
+  <p><strong>刘擎：</strong>我写《2020年西方思想年度述评》时，看到美国有不少评论家批评马克龙，说马克龙是为了争取右派选民。可是，如果他不争取，这些人就跟着勒庞了，勒庞就是另外一个特朗普，然后就把法国分裂？而且在一些穆斯林社区中，形成了一些“飞地”，女性和同性恋者在那里受到非人的待遇，被剥夺了权利。对这种现象，许多进步派人士没有表达出足够明确的批评，他们有自己犹疑不决的原因，担心有“伊斯兰恐惧症”的嫌疑。这固然可以理解，但有些时候必须做出选择。马克龙在这次的决断是非常厉害，他直接给《纽约时报》专栏作家打电话，有人说他专断。我觉得，政治家有的时候就需要这种当机立断。在这个问题上，我倾向于支持马克龙的选择。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-03/60b83e199c232e01c17d176b+L.jpg" data-id="60b83e1bab4ffd0cef1c49ae" alt="《刘擎西方现代思想讲义》，刘擎著，新星出版社2021年1月版。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《刘擎西方现代思想讲义》，刘擎著，新星出版社2021年1月版。
+    </figcaption>
+  </figure>
+  <h2 id="section-2"><strong>全球化的西方与中国：中国很清楚自己想要什么</strong></h2>
+  <p><strong>燕京书评：新一波全球化在大部分国家内部同时造成了受益者与受挫者，你称之为全球化的“（国内）断层线”。经济学家米兰诺维奇在其名著《全球不平等》中提供的证据表明，1988 年以来，新一轮的全球化缩小了国与国之间的贫富差距，但加剧了国内基于阶层的不平等。秦晖教授认为，中国经济保持持续的高增长，除了低工资、低福利的传统优势外，中国更以“低人权”的“优势”人为压低四大要素</strong>（人力、土地、资金和非再生资源）<strong>价格，以不许讨价还价、限制乃至取消许多交易权利的办法“降低交易成本”……从而显示出无论是自由市场国家还是福利国家都罕见的惊人竞争力。结合以上两者，你怎么看待全球化的这种负面效应？</strong></p>
+  <p><strong>刘擎：</strong>这是一个很大的议题，但我在这个问题上并不是专家，我觉得自己要谨慎。《2020年西方思想年度述评》里面，我写到了几个明显的要素。一个是资本和技术的普遍主义流动，甚至有超越国家力量的权力。像Facebook可以把特朗普的账号禁掉，他说我是资讯公司，但它其实处在一个垄断地位。另外，澳大利亚政府想让Facebook为平台上出现的媒体内容付费，Facebook就封锁了所有新闻内容和几个州政府和紧急部门账号，最后双方妥协。现在，Facebook就变得有点像国家了，权力很大，有些具有主权性质。所以，技术和资本的流动以及高新技术行业有可能出现新的垄断寡头，它会导致一个社会结构的变化，就是全世界精英会联合起来，无产者会四分五裂。比如说，美国的工人可能还会敌视中国的工人，情况会变得特别复杂。</p>
+  <p>中国当然是一个很特殊的情况，中国是以国家组织化的经济来参加全球竞争，这是个非常特殊的现象。我觉得，秦晖所说的低人权优势抓住了一部分要害，但不是全部。而且，前几年是有效的，现在就未必有效。华为是低人权优势吗？这很难说。因为它的研发是全球的，它的研发能力是全球的，中国也在组织。这让华为的国籍变得不是很清楚，它在构成上有很多新的现象。所以，在全球化的问题上，需要重视全球化对民族国家内部造成的裂痕；其实，中国也有沿海地区跟东北之间的区别，这个趋势也跟产业升级有关。</p>
+  <p>全球化对西方最大的麻烦，是由于全球化会造成新的阶级分层，然后造成政治分裂。因为西方民主国家的政治反馈很快，每一次选举都会体现出来，这就涉及到罗德里克的三重悖论——全球化、大众民主、国家主权，你只能三选二。我们中国不能说没有大众民主，在三选二的问题上，中国很清楚要选什么。</p>
+  <p>在这个意义上，如果不从政治哲学的规范来评价，就实然而言，中国是有优势的。这个问题，其实需要很好的政治经济学的分析；我在这方面没有特别进入细部的讨论，主要借助像米兰诺维奇和罗德里克这方面的研究。米兰诺维奇算是左派，但他比罗德里克稍微激进一点，罗德里克有点像一个中间的左派。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-03/60b83e484cd55d54dd5dadf2+L.jpg" data-id="60b83e4d8717253efd7e2cc2" alt="《做一个清醒的现代人》，刘擎著，湖南文艺出版社2021年4月版。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《做一个清醒的现代人》，刘擎著，湖南文艺出版社2021年4月版。
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：西班牙学者胡里奥·克雷斯波·麦克伦南在《欧洲》一书</strong>（404页）<strong>比较了美国梦与欧洲梦的不同，我感觉这实际是美国高度竞争性资本主义与欧洲社会民主主义制度之间的区别。作者认为，欧洲梦的核心价值在世界各地广受欢迎。中国长期有着大一统的传统，如果走出了历史三峡，你认为哪一种更合适？</strong></p>
+  <p><strong>刘擎：</strong>谈这个问题很容易一厢情愿，我现在就宁愿放在一个未知状态。我想说的是，并不是说因为是什么人就会有不同的梦；有时候你做了什么样的梦，才使你成为什么样的人。也就是说，这个世界的变化会影响你是什么样人。在我是一个中国人这件事情上，现在说和20年前说，与50年前说和100年说，它的含义是不同的。其实，不是说你这个人的本质是不变的，所以你是中国人，你就会做这样的梦。你现在做了什么样的梦，你可能就变成什么样的人。</p>
+  <p>我有一个方法论的说法：文化是遭遇的。每一个民族的认同，它当然有持续性和稳定性，不是铁板一块，都在改变。在社会达尔文主义弱肉强食和竞争这点上，现在的中国比美国还要厉害。你说这是中国的吗？反正现在变成了中国人自己相信的东西。这是中国传统的吗？我不知道。</p>
+  <p>每个国家的政治精英都会把民族放在第一位，问题在于，有的政治精英能够动员民众，因为民族意识是被建构的。美国从《独立宣言》开始，首先要保障个人权利，而政府是派生的：政府唯一的职能就是保障民众的权利，你不能保证，我就可以革命造反，可以取代政府。实际上，没有国家是通过契约论诞生，但它作为一个思考模式，在美国就有吸引力。我们认为，国家先天就有它的权力、尊严、价值，这些都是本有的，而不是派生的——这和美国很不一样。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-03/60b83e794cd55d54dd5dadf3+L.jpg" data-id="60b83e818717253efd7e2cc4" alt="《纷争的年代》，刘擎著，广西师范大学出版社2021年1月版。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《纷争的年代》，刘擎著，广西师范大学出版社2021年1月版。
+    </figcaption>
+  </figure>
+  <h2 id="section-3"><strong>所有问题都是全球问题，世界主义是人类问题的根本出路</strong></h2>
+  <p><strong>燕京书评：特朗普败选后拒不认输，这种情况在美国大选上很少见到。加上美国两党政治极化，似乎表明美国民主制度面临着巨大挑战，你怎么看？</strong></p>
+  <p><strong>刘擎：</strong>最近几年和前几年的不同在于，共和党缺乏一个有效的政治动员模式，他们的选民处在郊区和乡村。相对来说，这些地方的人年纪比较大，教育程度相对较低，选民大部分是白人、中产阶级或工人阶级，他们比较同质化。但这部分人住得很分散，动员成本很高。你要动员300万人，可能到费城这样大城市一站就够了；你要到农村动员300万人，就要走很多地方。</p>
+  <p>但是，特朗普是一个大魔法师，他对选民有感召力，能把你所有的困扰给出一些简单的回答，当他们被有效动员、被激发愤怒和敌意的时候，就会发生政治极化。所以，政治极化主要是因为新的动员方式，特别是特朗普用了一个特别有效、特别强的动员方式。他一上来就攻击媒体：所有主流刊物都是fake news（假新闻）。政党极化在美国本来就存在，但特朗普用他个人化的方式，加剧和深化了这种分裂。</p>
+  <p>现在，共和党和民主党只剩下程序性共识。当然，这还是很重要的。林肯说的作为民族宗教或者国家宗教（national religion）的法治——大家还是没破坏，包括特朗普在内。最后，他为什么没有决一死战？他可能计算过，这样做的成功率不大；但是，无论如何，他没有说以后我们再也不要选举了。但是，只有程序性共识，没有任何实质性共识，会很危险，会使国家政治非常动荡。</p>
+  <p>特朗普其实是把以前那些白人、受伤的人的不满表达出来了。以前，白人不敢表达自己的不满，因为说出来会显得政治不正确。白人自认为是美国的主人，其他人来了，你们对我们客气点、尊重一点，我们同化你。他们是有优越感的，但可以不说。然而，他们始终有“我是主人，你是客人”的信念。简单说，其实是这些白人觉得外来人口反客为主。这是两个事情，一是说他们的感受可能是错误的，是有偏见的，是白人至上的；但是，他们的感受是真的，他们觉得在自己的国家变成了陌生人。</p>
+  <p>所以，在这个问题上，一派认为是经济问题，白人被边缘化了；另一派认为，你们想保护自己的特权。按照保守派攻击自由派的说法，你们来挑动文化问题，把白人都说成是种族主义者，那这个国家一半人是种族主义者？你们造就了国家的分裂。但是，对自由派来说，是特朗普把好多年被压制的隐形种族矛盾挑唆出来了，是你们在搞破坏。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-03/60b83eb24cd55d54dd5dadf4+L.jpg" data-id="60b83eb6ab4ffd0cef1c49b0" alt="亨廷顿（左）与福山。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+亨廷顿（左）与福山。
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：尽管亨廷顿“文明的冲突”的观点在现实中已有鲜明体现，但弗朗西斯·福山在柏林墙遗址前接受《德国之声》采访，他对“历史终结论”毫无悔意，并坚信“推倒柏林墙的精神长存”。你在《刘擎西方现代思想讲义》中说：“但很可能，世界的真相是在二者之间。”可否详述你自己的观点？</strong></p>
+  <p><strong>刘擎：</strong>现在对福山的批评和当年对福山的狂热有区别吗？当年他是看到德国、苏联模式都失败，就剩下英美模式了，你以前只不过是借当时的形势为他鼓掌，你现在也是借现在的形势唱衰他，但这可能都是短视的。福山在理论上有一个问题，就是我刚才说过的，法律给定了普遍的权利，并不意味着大家都获得了普遍的承认。如果仔细看他的《历史终结与最后之人》，他并不认为这是好的状态，他承袭尼采的“末人说”，认为在自由民主下，人们都没有斗争的愿望了。但现在可以看到，人们斗争的愿望还很强；但这种斗争同时意味着，只能在自由民主的框架下实现人人平等。你的人人平等只是一个虚假的公众承诺，没有兑现；如果要让它兑现，那就还在它的框架里。</p>
+  <p>我不认为福山的理论框架有很大的错误，但他低估了实质的差异，对人的承认的赤字作用。一个政治科学家在政治上没法证伪福山的论证，那是个哲学命题，是一个历史目的论的命题。</p>
+  <p>福山的命题是有意义的，我们经常会处在文明冲突的感受当中。但是，我们不知道这种冲突是在走向更高融合的一个阶段，还是真的走向分化。从人类大历史来看，冲突一直导向融合。战国时期的中国本来没这么大，欧盟也没这么大，所以很难说——但太长时段的看法，对当下来说没有什么意义。比如说英国脱欧是局部的事情，但也是分裂。所以，我们讲合久必分，分久必合。用尤瓦尔·赫拉利的话说，合久必分是一时，分久必合是长期趋势。这是一个看法，但现在谈论为时过早。</p>
+  <p><strong>燕京书评：你认为将要走向一个邦联式的世界政府，理由何在？</strong></p>
+  <p><strong>刘擎：</strong>这当然是一个非常遥远的愿景，但也不是说完全没有现实相关性。因为现在有好多问题，没有一个国家能够独立解决。像全球气候问题、环境问题，像瘟疫、新冠肺炎这种疾病，哪件事情是一个国家可以完全单独决定的？造一个手机都不能完全自力更生。</p>
+  <p>所以，这要求全球合作。现实主义大师汉斯·摩根索的名著是《国家间政治》，但我一直认为他是一个暗藏的世界主义者，他著作的后面两章专门写世界政府的可能性，从来没有说过这是不可能的。他强调，必须先有一个世界社会，才能有世界政府。我们现在这个世界，是不是一个世界社会呢？我想可能还不是，但已经有了一点影子。因为几乎所有的问题都是全球问题，我今年写的《西方思想年度述评》提到生活本地性的瓦解，这就表明，现在好多问题都是所谓的“世界内政”问题了。</p>
+  <p>我认为，比联邦还要松散的世界政府是可能的，联合国可能就是某种版本，但它运转不好。要有一个至少像欧盟这样邦联性世界政府，需要很高水平的跨文化、跨传统、跨民族、跨政治的合作，这非常不容易。</p>
+  <p>未来历史是这样：世界内政需要世界政府来解决，最后，所有的战争问题都是治安问题，都是警察型的，但它要获得正当性，就需要一个世界政府。所以，我关注欧盟的发展，欧盟面临过多次危机，但今年又挺过来了。虽然就现状而论，欧盟主义和世界主义的前景很黯淡，但我相信，这是人类问题的根本出路。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-03/60b83edc9c232e01c17d176e+L.JPG" data-id="60b83edfafa7517017e4d929" alt="996是弱势群体为国家崛起而付出的代价吗？（来自视觉中国）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+996是弱势群体为国家崛起而付出的代价吗？（来自视觉中国）
+    </figcaption>
+  </figure>
+  <h2 id="section-4"><strong>国家不能忘记自己最初道义上的承诺</strong></h2>
+  <p><strong>燕京书评：《刘擎西方现代思想讲义》中多次提到，现代社会的特征之一，是工具理性淹没了价值理性。我感觉，当下中国的996，还有快递员、骑手被困在系统中，既有制度的因素，也有资本的过度贪婪，而信息技术的发展也为这种控制提供了便利，你怎么看？</strong></p>
+  <p><strong>刘擎：</strong>你说得对，这些因素都有。如果没有这么便捷的信息技术控制的话，人们可以有办法、有对策应对这种控制，我可以偷懒，我可以磨洋工。但是，现在有信息技术，我就没办法了。在这一个方面，我们跟西方有共同之处：现在一些互联网公司的员工在家上班，公司就不放心员工到底在干什么，发明了很多控制技术。</p>
+  <p>但中国很奇怪，我们是个社会主义国家，我们有劳动法保护员工，为什么996现在还这么普遍？我觉得，除了资本家要盈利之外，我们有一种mentality的心态。就是说，中国崛起要走非常态的路，要付出一代一代人的牺牲。我们有过这样的传统，把国家兴盛看成是一场战争，我们在打仗，打仗就是要有英雄，就是要前赴后继。我们明明有对员工保护的法律，但资本的逻辑能够那么明显地侵犯法律保护制度，这在中国不容易发生。但最终得以可能，是因为不同的阶层都会认可这样一种大国崛起模式。如果我们不强大就会挨打，甚至会被压迫，所以我们愿意付出代价，这是一种论述，或者是一种叙事。</p>
+  <p>这种叙事有很多人相信，但真正付出代价是那些最弱势的打工者。这是一个我很难评断的问题，但我要指出这个现象。这里面有一个问题，就是我们这个社会主义国家要强大，要跟美国抗衡，这可能在很多人看来是地缘政治的重要战略。但是，一个国家不能忘记自己最初道义上的承诺，特别是一个社会主义国家。</p>
+  <p><strong>燕京书评：你曾经反省，对于流量时代、算法时代的市场逻辑，学者做了过于简单的判断，因为大部分学者做不到准确的判断，所以就把它简单化、粗鄙化。这种现象可能存在。但另一方面，流量时代、算法时代的市场逻辑在中国确实有不好的一面：例如，很多APP下载会逼迫你让它读取通讯录等私人资料，一些电商平台收集个人消费习惯并出卖数据，甚至还有一些应用软件具有窃听功能，还有人脸识别的滥用……这不完全是使用高科技必须承担的代价吧？</strong></p>
+  <p><strong>刘擎：</strong>我那些话不是针对这些问题。对于流量时代、算法时代的市场逻辑，有些知识分子会说，所有的娱乐、所有的公共文化都是流量造成的。我觉得太片面了。</p>
+  <p>但你刚才说的是另一个问题。我们在使用科技的时候，我们是不是必须要付出巨大的代价？不是。我注意到，现在有年轻人在研究数字隐私权，他们不是光喊口号，而是用高科技的方法来应对。之前我去参加了他们一个会议，非常有启发。我们可以用很多技术环节来保护数字隐私，你要用可以，但必须让我知道，而且按照自由交易的原则，你是不是要付给我报酬？因为我的数据可以看做我的财产，现在被你大公司用于商业。这些网络公司都在用我们的数据资料赚钱，我们为什么没有得到分成？这些问题都是可以提出来的。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-03/60b83f1f9c232e01c17d176f+L.jpg" data-id="60b83f228717253efd7e2cc6" alt="人工智能对未来影响很大。（来自视觉中国）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+人工智能对未来影响很大。（来自视觉中国）
+    </figcaption>
+  </figure>
+  <h2 id="section-5"><strong>在没搞清楚人的意识是什么之前，很难谈论人工智能问题</strong></h2>
+  <p><strong>燕京书评：你在2017年的《西方思想年度述评》中说，关于技术奇点与“超人类主义”之类的论述，在人工智能研究界饱受争议。中国学者何怀宏、赵汀阳也认为，不能让人工智能获得自主意识，但徐贲认为，对人工智能不能有奴隶主的心态。你怎么想？</strong></p>
+  <p><strong>刘擎：</strong>这里边很复杂。一个是实然的判断：它会怎么样；一个是应然的判断，它能不能够做到——比如说让机器人获得自主性。这两个问题，我现在都不知道，我对此保持开放的态度，并且非常关注。因为这涉及到人类的自我理解。它确实会从定义上改变什么是人类、什么是文明。有一个人甚至说，我们人类出现就是为了把机器人发明出来，这就是人类的目的。在这个意义上，我们是文明的史前史，因为机器人是硅基的，能够活很长时间。</p>
+  <p>对这些事情，我现在无法判断，我就是感兴趣，因为它在根本上会改变我们对人的理解。之前何怀宏教授到我们学校来做讲座，我对他意见有质疑。就是说，你现在还没搞清楚人的意识是什么，你怎么能谈机器不可能有意识呢？什么叫意识起点，我们自己还不是很清楚，在心灵哲学这个领域里，现在最主流的叫涌现论和泛灵论，在我们还没搞清楚人类意识到底是怎么回事的时候，很难说要去防范机器人产生自主意识。我是觉得这个领域非常有意思，而且对我们未来影响很大，但在实然和应然两方面，我都没法判断。</p>
+  <p><strong>燕京书评：现代学科的分工细化，使得哲学与科学渐行渐远。在当下，包括人工智能和基因编辑等在内的新科技，引发了很多新的问题，哲学家也纷纷介入。那么，你怎么看待当下这两者之间的关系？</strong></p>
+  <p><strong>刘擎：</strong>哲学是所有的学科之母，但它到近现代就开始急剧的衰落，它是把自己的地盘一个个分出去了。比如，科学本来叫自然哲学。到现在，哲学剩下领域非常少，比如形而上学（本体论）的问题、认识论的问题，还有些心灵哲学的问题。人生哲学虽然属于哲学，但是现在已经没有人做了，专业哲学家不会在专业杂志上讨论人生意义，因为这是不可解的问题。所以，作为学科的哲学，相对来说特别收缩。我在内部做过一个讲座，题目就叫做“辉煌的衰落”。</p>
+  <p>另一方面，由于学科划分过细，我们对世界的理解和认知变得破碎化。所以，现在又出现了跨学科的倾向，就是研究一个问题，比如人的意识，有哲学家跟脑科学家在一起合作。我们看到一个长久的学科分化趋势，但又看到以问题为导向进行跨学科的合作趋势。</p>
+  <p>我认为，哲学的衰落不可挽回。逻辑、思维方法、心灵哲学，还有所谓传统的形而上学问题，可能保留在哲学里面，而这些问题就是永远解决不了，你不断地在讨论。但它的衰落和全面收缩并不值得悲哀，因为它现在仍然可以跟各个学科合作，在跨学科的合作中显示哲学应有、能有的力量。</p>
+  <p>半个多世纪以前，查尔斯·斯诺认为存在着两种相互对立的文化：一种是人文文化，一种是科学文化，它们彼此的分裂造成了社会的损失。因为大多数知识分子只了解一种文化，因此会对现代社会做出错误的解释，对过去进行不适当的描述，对未来做出错误的选择与估计。斯诺自己主张两种文化需要对话和融合。我现在觉得，由于生物技术、人工智能和网络的发展，它使得哲学、人文学科和自然科学重新联合起来了，这种方式的研究非常活跃。国内外都是这样。</p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-04</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-04/%E8%84%B1%E5%8F%A3%E7%A7%80%E8%88%9E%E5%8F%B0%E4%B8%8A%E7%9A%84%E6%AD%A7%E8%A7%86%E4%B8%8E%E5%8F%8D%E6%AD%A7%E8%A7%86-%E6%88%91%E4%BB%AC%E4%BD%8E%E4%BC%B0%E4%BA%86%E7%AC%91%E5%A3%B0%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF%E7%9A%84%E6%95%88%E5%8A%9B/">
+          脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-03</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-03/%E5%A4%A7%E5%8D%AB-%E8%BF%AA%E5%A5%A5%E6%99%AE%E5%87%AD-%E7%81%B5%E9%AD%82%E5%85%84%E5%BC%9F-%E8%8E%B7%E5%BE%97%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E5%88%9B%E9%80%A0%E4%BA%86%E5%92%92%E8%AF%AD%E5%BC%8F%E6%9C%89%E5%90%B8%E5%BC%95%E5%8A%9B%E7%9A%84%E8%AF%AD%E8%A8%80/">
+          大卫·迪奥普凭《灵魂兄弟》获得国际布克奖：“创造了咒语式有吸引力的语言”
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-02</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-02/%E5%88%98%E6%93%8E-%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90-%E6%94%BF%E6%B2%BB%E6%AD%A3%E7%A1%AE%E4%B8%8E%E4%BB%8B%E5%85%A5%E7%A4%BE%E4%BC%9A%E7%9A%84%E8%B7%9D%E7%A6%BB%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          刘擎： 知识分子、政治正确与介入社会的距离丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-01/%E4%BD%9C%E4%B8%BA%E7%A4%BE%E4%BC%9A%E5%BB%BA%E6%9E%84%E7%9A%84-%E5%84%BF%E7%AB%A5-%E4%B8%8E%E4%BD%9C%E4%B8%BA%E7%A4%BE%E4%BC%9A%E9%97%AE%E9%A2%98%E7%9A%84-%E7%AB%A5%E5%B9%B4-%E5%84%BF%E7%AB%A5%E8%8A%82%E8%8D%90%E4%B9%A6/">
+          作为社会建构的“儿童”与作为社会问题的“童年” | 儿童节荐书
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-02/%E5%88%AB%E5%82%BB%E4%BA%86-%E8%B0%B7%E6%AD%8C%E6%B0%B8%E8%BF%9C%E4%B8%8D%E4%BC%9A%E7%BB%99%E4%BD%A0%E9%9A%90%E7%A7%81-iYouPort/">
+            前一篇：别傻了，谷歌永远不会给你隐私 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-03/%E5%A4%A7%E5%8D%AB-%E8%BF%AA%E5%A5%A5%E6%99%AE%E5%87%AD-%E7%81%B5%E9%AD%82%E5%85%84%E5%BC%9F-%E8%8E%B7%E5%BE%97%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E5%88%9B%E9%80%A0%E4%BA%86%E5%92%92%E8%AF%AD%E5%BC%8F%E6%9C%89%E5%90%B8%E5%BC%95%E5%8A%9B%E7%9A%84%E8%AF%AD%E8%A8%80/">
+            後一篇：大卫·迪奥普凭《灵魂兄弟》获得国际布克奖：“创造了咒语式有吸引力的语言”
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-02/%E5%88%AB%E5%82%BB%E4%BA%86-%E8%B0%B7%E6%AD%8C%E6%B0%B8%E8%BF%9C%E4%B8%8D%E4%BC%9A%E7%BB%99%E4%BD%A0%E9%9A%90%E7%A7%81-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-03/%E5%A4%A7%E5%8D%AB-%E8%BF%AA%E5%A5%A5%E6%99%AE%E5%87%AD-%E7%81%B5%E9%AD%82%E5%85%84%E5%BC%9F-%E8%8E%B7%E5%BE%97%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E5%88%9B%E9%80%A0%E4%BA%86%E5%92%92%E8%AF%AD%E5%BC%8F%E6%9C%89%E5%90%B8%E5%BC%95%E5%8A%9B%E7%9A%84%E8%AF%AD%E8%A8%80/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-03/%E5%A4%A7%E5%8D%AB-%E8%BF%AA%E5%A5%A5%E6%99%AE%E5%87%AD-%E7%81%B5%E9%AD%82%E5%85%84%E5%BC%9F-%E8%8E%B7%E5%BE%97%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E5%88%9B%E9%80%A0%E4%BA%86%E5%92%92%E8%AF%AD%E5%BC%8F%E6%9C%89%E5%90%B8%E5%BC%95%E5%8A%9B%E7%9A%84%E8%AF%AD%E8%A8%80/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-02/%E5%88%98%E6%93%8E-%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90-%E6%94%BF%E6%B2%BB%E6%AD%A3%E7%A1%AE%E4%B8%8E%E4%BB%8B%E5%85%A5%E7%A4%BE%E4%BC%9A%E7%9A%84%E8%B7%9D%E7%A6%BB%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-02/%E5%88%AB%E5%82%BB%E4%BA%86-%E8%B0%B7%E6%AD%8C%E6%B0%B8%E8%BF%9C%E4%B8%8D%E4%BC%9A%E7%BB%99%E4%BD%A0%E9%9A%90%E7%A7%81-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-03/%E5%A4%A7%E5%8D%AB-%E8%BF%AA%E5%A5%A5%E6%99%AE%E5%87%AD-%E7%81%B5%E9%AD%82%E5%85%84%E5%BC%9F-%E8%8E%B7%E5%BE%97%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E5%88%9B%E9%80%A0%E4%BA%86%E5%92%92%E8%AF%AD%E5%BC%8F%E6%9C%89%E5%90%B8%E5%BC%95%E5%8A%9B%E7%9A%84%E8%AF%AD%E8%A8%80/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-03/%E5%A4%A7%E5%8D%AB-%E8%BF%AA%E5%A5%A5%E6%99%AE%E5%87%AD-%E7%81%B5%E9%AD%82%E5%85%84%E5%BC%9F-%E8%8E%B7%E5%BE%97%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E5%88%9B%E9%80%A0%E4%BA%86%E5%92%92%E8%AF%AD%E5%BC%8F%E6%9C%89%E5%90%B8%E5%BC%95%E5%8A%9B%E7%9A%84%E8%AF%AD%E8%A8%80/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-02/%E5%88%98%E6%93%8E-%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90-%E6%94%BF%E6%B2%BB%E6%AD%A3%E7%A1%AE%E4%B8%8E%E4%BB%8B%E5%85%A5%E7%A4%BE%E4%BC%9A%E7%9A%84%E8%B7%9D%E7%A6%BB%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

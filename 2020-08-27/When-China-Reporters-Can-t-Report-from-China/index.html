@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>When China Reporters Can’t Report from China – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+When China Reporters Can’t Report from China
+——
+" />
+    <meta property="og:description" content="
+When China Reporters Can’t Report from China
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="When China Reporters Can’t Report from China" />
+    <meta property="twitter:title" content="When China Reporters Can’t Report from China" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fwhen-china-reporters-cant-report-china" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/when-china-reporters-cant-report-china" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/when-china-reporters-cant-report-china&text=When China Reporters Can’t Report from China&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/when-china-reporters-cant-report-china&title=When China Reporters Can’t Report from China" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/when-china-reporters-cant-report-china&title=When China Reporters Can’t Report from China" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=When China Reporters Can’t Report from China&body=
+When China Reporters Can’t Report from China
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/when-china-reporters-cant-report-china" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/when-china-reporters-cant-report-china&title=When China Reporters Can’t Report from China&caption=
+When China Reporters Can’t Report from China
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=When China Reporters Can’t Report from China&url=https://www.chinafile.com/reporting-opinion/viewpoint/when-china-reporters-cant-report-china" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>When China Reporters Can’t Report from China</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-08-27
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Matt DeButts</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/when-china-reporters-cant-report-china" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1598510760000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/when-china-reporters-cant-report-china">When China Reporters Can’t Report from China</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-3a20e329e44510168c7e4c08140d95a1">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-458662204_1.jpg" title="When China Reporters Can’t Report from China" class="colorbox" data-colorbox-gallery="gallery-node-52511-X3OeNjmil1E" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-458662204_1.jpg?itok=27qIY9Kk" width="1200" height="799" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Fred Dufour—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>Foreign journalists work in Tiananmen Square in Beijing, November 9, 2014.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">Shortly after midnight on March 18, a phone call awoke Steven Lee Myers in his Beijing apartment. The call was followed by a flurry of messages: WhatsApp, text, email. Friends and colleagues were asking him questions: What is going on? What does this mean? What are we going to do?</p>
+      <p>Myers had been appointed <em>The New York Times</em>’ Beijing bureau chief just three months prior. Now, dazed and half-asleep, he was learning that the Chinese government would <a href="https://www.npr.org/2020/03/17/817214390/china-pulls-credentials-from-journalists-at-3-major-u-s-publications" target="_blank" rel="nofollow">require</a> American journalists with soon-to-expire press credentials at three American newspapers—<em>The New York Times</em>, <em>The Wall Street Journal</em>, and <em>The Washington Post</em>—to hand in their press credentials and prepare for deportation from the country. The organizations had 10 days to comply.</p>
+      <p><em>The New York Times</em> had dispatched a seasoned journalist, Chris Buckley, to Wuhan to cover the ongoing coronavirus outbreak there. The bureau’s <a href="https://www.nytimes.com/2020/02/06/world/asia/chinese-doctor-Li-Wenliang-coronavirus.html" target="_blank" rel="nofollow">profile of Li Wenliang</a>, the Chinese “whistleblower” who first alerted the world to the danger of the virus, had appeared on the paper’s front page. Elsie Chen, one of the paper’s news researchers, had conducted an <a href="https://twitter.com/elsiechenyi/status/1223979177679835142" target="_blank" rel="nofollow">interview</a> with the doctor shortly before he died.</p>
+      <p>Myers was overwhelmed by the information he was receiving. He stayed awake deep into the Beijing night, contemplating how the bureau would adapt.</p>
+      <p>“The main sensation was like having the legs knocked out of a table,” Myers told me. “Suddenly it’s not stable anymore.”</p>
+      <p>For decades, U.S. journalists in China and Chinese journalists in the U.S. have operated at the intersection of an awkward partnership between the world’s eminent superpower and its rising Asian competitor, endeavoring to provide an incisive window, however narrow, into the lives of citizens lived halfway across the globe. In the mid-2010s, that project came under increased pressure from an authoritarian regime sensitive to perceived interference. By the late 2010s, the Foreign Correspondents’ Club of China <a href="https://www.reuters.com/article/china-media/china-using-visas-for-foreign-reporters-as-a-weapon-group-says-idUSL4N2AV12K" target="_blank" rel="nofollow">noted</a> that working conditions for journalists in China had “markedly deteriorated.” With the American election of Donald Trump in November 2016, journalists in America <a href="https://www.theatlantic.com/international/archive/2020/06/journalists-united-states-press-freedom/613120/" target="_blank" rel="nofollow">faced heightened harassment</a>, too.</p>
+      <p>2020 may be remembered as the year when the fragile edifice of U.S.-China journalism, one leg upon which the U.S.-China table has traditionally rested, came crumbling down. In February, the <a href="https://www.npr.org/2020/02/19/807294777/china-expels-3-wall-street-journal-reporters-citing-racist-editorial" target="_blank" rel="nofollow">expulsion</a> of three China-based <em>Wall Street Journal</em> reporters led to American retaliatory <a href="https://www.nytimes.com/2020/03/02/world/asia/china-journalists-diplomats-expulsion.html" target="_blank" rel="nofollow">personnel caps</a> on Chinese government-owned news organizations. That led to March’s <a href="https://www.npr.org/2020/03/17/817214390/china-pulls-credentials-from-journalists-at-3-major-u-s-publications" target="_blank" rel="nofollow">expulsion</a> of <em>Times</em>, <em>Post</em>, and <em>Journal</em> reporters. From 10 China-based reporters with <em>New York Times</em> press credentials, the <em>Times</em> has now been reduced to two. The <em>Journal</em> has four. The <em>Post</em> has one. As U.S.-China ties deteriorate, what was once unthinkable is now distinctly possible: a future where U.S.-China journalism is conducted primarily, if not entirely, remotely. What will that mean for journalists, readers, and the relationship itself?</p>
+      <p>For Myers, these questions are no longer theoretical. These days, he’s based in Seoul, South Korea. In his case, leaving China has meant delaying stories—stories he had been excited to report—because they are not practicable from abroad. Myers cited the example of fishing on the Yangtze River.</p>
+      <p>“They banned commercial fishing on the Yangtze, which people have been doing for 5,000 years. I wanted to do a story on how that would change the social network,” said Myers. “I can’t do that story sitting here.”</p>
+      <p>Investigative stories, too, may require on-the-ground reconnaissance. The <em>Times</em>’ Mike Forsythe, based in New York, recently documented in a <a href="https://twitter.com/PekingMike/status/1293533950086975490" target="_blank" rel="nofollow">Twitter thread</a> how ancestral tombstones aid reporters in establishing family relations of the country’s Communist elite. (His China-based colleague, Sui-Lee Wee, visited the tomb.) Emily Feng, now NPR’s China correspondent, <a href="https://twitter.com/EmilyZFeng/status/1016576449434664960" target="_blank" rel="nofollow">began her investigation</a> of separated Uighur children via a visit to an abandoned school in Hebei province. With fewer journalists in China, these stories are harder to tell.</p>
+      <p>The <em>Times</em> has sought creative workarounds. In mid-July, the paper published a <a href="https://www.nytimes.com/2020/07/17/business/china-coronavirus-swimsuits.html" target="_blank" rel="nofollow">profile of Xingcheng</a>, a county-level city in Liaoning province famous for its swimwear production. The story, which ran with no dateline, featured eye-popping images of Xingcheng’s beaches and bathing suits taken by a freelance photographer. The story’s author, Raymond Zhong, quotes a swimwear factory worker, Yao Haifu, and describes his “broad, boyish face” with a “curly pat of hair.”</p>
+      <p>It was a classic <em>Times</em> story—character-driven, colorful, examining the U.S.-China relationship from an unexpected angle. And yet, the story was written remotely. Zhong was expelled from China in March.</p>
+      <p>“I’m not going to pretend it’s an ideal situation,” said Myers. “We are making an effort to [. . .] figure out ways around the limitations we have by not being on the ground.”</p>
+      <p>How to find journalistic “color,” that vivid detail which brings a story to life, is among the greatest challenges of remote reporting. Josh Chin, <em>The Wall Street Journal</em>’s deputy China bureau chief, said that the bureau’s choice of stories and attention to detail has not changed significantly. It’s the “type” of detail that has changed.</p>
+      <p>“We can still do nuance, but it’s harder for us to bring in that street-level color that humanizes the story,” said Chin. “We used to travel to report a lot of our stories. Inevitably we’ve had to pare that back.”</p>
+      <p>The expulsions have also deprived papers of some of their most experienced reporters. In addition to Myers and Chin, other expelled journalists include <em>The New York Times</em>’ Chris Buckley, who has a Ph.D. in Chinese Studies, and Ian Johnson, a Pulitzer Prize-winning 20-year China resident whose visa had been sponsored by the <em>Times</em>. While talented newer reporters command their own strengths—including bringing much-needed diversity to the predominantly white male veteran reporting corps—the expelled reporters’ accumulated experience may be hard to replace.</p>
+      <p>“My whole career, my whole MO, has been based on getting to know people long-term,” said Johnson, “If I can’t do that, I’ll have to figure out something else to do.”</p>
+      <p>Johnson is now working on a Ph.D., alongside a book.</p>
+      <p>Necessarily, reporters have turned to phone reporting to supplant meat-and-potatoes in-person conversations. Each of the half dozen reporters interviewed for this story agreed that speaking with sources by phone was among the best of imperfect options. Unfortunately, getting Chinese sources to talk has been harder and harder in recent years, says Yufan Huang, a former <em>New York Times</em> researcher in Beijing.</p>
+      <p>“Maybe if you try 10 people, one of them will be willing to talk to you,” Huang said, citing widespread skepticism of foreign media organizations. Remote reporting will exacerbate the challenge. “If you go in person, people will be nice enough to answer your question even if they don’t like America.”</p>
+      <p>In authoritarian regimes, reaching people remotely can also mean risking harm to the interviewee. When interviewing in person, says Janine Zacharia, a lecturer in Journalism at Stanford University, it is easier to assess risks via one’s surroundings or context clues. Calling from thousands of miles away is different.</p>
+      <p>“I’d be very nervous interviewing a Uighur family from here in California,” Zacharia said. “I’m not really aware of how safe it is for that person to be communicating.”</p>
+      <p>To safeguard sources, journalists might insist on more secure means of communication, like Signal or Telegram. But that brings challenges of its own.</p>
+      <p>“Most Chinese sources won’t trust those things,” said Huang, “and even if they do, they won’t go through that kind of trouble [of downloading the app] to talk to you. Most of the time Chinese sources are not Edward Snowden, trying to leak. They are just normal people who maybe want to talk with friends.”</p>
+      <p>American newspapers typically hire Chinese-speaking researchers like Huang to supplement their reporting capacity in-country. China’s government <a href="http://ipc.fmprc.gov.cn/eng/wgjzzhzn/t716850.htm" target="_blank" rel="nofollow">allows</a> such staff to assist foreign reporters in their work, and while they sometimes write bylined stories of their own, many foreign media outlets assume China’s government frowns upon such original reporting, particularly when it touches on topics deemed politically “sensitive.” News organizations face a tradeoff: If they rely more heavily on researchers, who are usually Chinese nationals and remain in-country, they can write better-reported stories. But if they fall afoul of government regulations on researchers’ conduct, they risk <a href="https://qz.com/1094098/why-you-dont-know-the-names-of-the-peoplefang-who-take-the-biggest-risks-to-bring-you-your-china-news/" target="_blank" rel="nofollow">endangering the researchers</a> or antagonizing the Chinese government even further, jeopardizing their chances of receiving future visas for their journalists.</p>
+      <p>“We follow the law on researchers very closely,” said Myers.</p>
+      <p>The U.S. government’s recent <a href="https://www.nytimes.com/2020/03/02/world/asia/china-journalists-diplomats-expulsion.html" target="_blank" rel="nofollow">imposition</a> of “caps” on Chinese journalists in the U.S.—expulsions in all but name—will also influence Chinese coverage of America, says Fang Kecheng, Assistant Professor in the School of Journalism and Communication at the Chinese University of Hong Kong.</p>
+      <p>But not much, he says. Many Chinese readers get their news from a mix of state and private media; the former takes directives from the Publicity Department, while the latter is comprised of WeChat or Weibo-native aggregators like <a href="https://www.newyorker.com/culture/culture-desk/the-post-truth-publication-where-chinese-students-in-america-get-their-news" target="_blank" rel="nofollow">College Daily</a>(北美留学生日报), Zhanhao (占豪), or Here in UK (英国那些事). Many of these accounts bear only a passing resemblance to traditional journalism. Instead, Fang says, many of these so-called “self-media” (自媒体) gravitate toward politically safe content that will reliably generate revenue. In China, the intersection of “safe” and “clickbait” has typically meant nationalistic pablum.</p>
+      <p>“This is a business model for them. They don’t really care about the factual value of the content,” said Fang. “Self-media is more tabloid than tabloid.”</p>
+      <p>Of greater harm to Chinese audiences is the diminution of foreign media’s capacity to report on Chinese domestic grievances. Chinese media outlets remain abundantly capable of reporting on domestic political and social controversy, as evidenced by the proliferation of first-rate domestic coverage in the wake of the Wuhan coronavirus outbreak. However, they are often <a href="https://www.nytimes.com/2020/02/14/business/wuhan-coronavirus-journalists.html" target="_blank" rel="nofollow">forbidden</a> by the Chinese government from doing so.</p>
+      <p>As a result, many Chinese citizens who are unfairly treated by the government turn to foreign media for a platform. When the <em>Times</em>’ China corps shrinks from 10 to two, people like this lose “basically their only chance to get their stories out,” notes Fang. “It’s a huge loss for them.”</p>
+      <p>Still, technological advances mean that burying stories is no longer as simple as revoking a journalist’s press card. In recent years, academics and journalists have turned to big data to unearth realities the Party would prefer to obscure. Adrian Zenz, now a senior fellow in China Studies at the Victims of Communism Memorial Foundation, first discovered evidence of Xinjiang’s concentration camps <a href="https://jamestown.org/program/evidence-for-chinas-political-re-education-campaign-in-xinjiang/" target="_blank" rel="nofollow">via analysis</a> of public construction tenders. Researchers <a href="https://www.chinafile.com/library/nyrb-china-archive/reeducating-xinjiangs-muslims" target="_blank" rel="nofollow">followed up</a> those insights with before-and-after comparisons of Google Earth images. Today, some advocate for machine learning as a window into the Communist Party’s inner workings.</p>
+      <p>Weifeng Zhong, senior research fellow at the Mercatus Center at George Mason University, believes there is merit in that approach. He is one of the key developers of the <a href="https://policychangeindex.org/" target="_blank" rel="nofollow">Policy Change Index</a> (PCI), an open-source machine learning project that uses historical datasets to detect Chinese government policy changes. By comparing current <em>People’s Daily</em> articles with articles that have appeared in the past, Zhong hopes to flag unusual stories that might indicate a policy shift. In and of itself, the model isn’t enough to generate journalistic insight, he says. However, Zhong thinks it can “help journalists to screen out what articles are worth reading.”</p>
+      <p>“I am optimistic that even from afar, one can get a lot from the messages coming out of China,” said Zhong. The challenge is to “take the step from inference [. . .] to what are the Party’s intentions.”</p>
+      <p>Filling in that data with plot, characters, and images is the challenge of remote reporting. It’s a challenge Zacharia emphasizes in her course on foreign correspondence. How do reporters make distant lives relevant to a domestic reader? How can characters leap from the page when the reporter hasn’t met them in person?</p>
+      <p>Zacharia recommends going back to “the fundamentals.” Calling sources. Finding on-the-ground help. Creating “compelling single-character stories.” She notes that during a pandemic, reporting on distant warzones can resemble reporting on a New York hospital: thousands of people are dying, but you can’t get into the hospital. Finding individual stories within the numbers, she says, remains crucial.</p>
+      <p>In doing so, we should remain humble, adds Johnson.</p>
+      <p>“You can’t possibly capture the nuances of any place in the world, but especially a country that is more closed, as China is, by looking at social media and making phone calls,” he says.</p>
+      <p>Accessing emotive stories from afar can be hard emotionally as well as logistically. Emily Feng, NPR’s China correspondent, laments the “extractive” sensation of interviewing from a distance. Reporting from Beijing on Wuhan in the early days of the outbreak, for instance.</p>
+      <p>“You never look them in the eye, you can’t see how they felt,” Feng said, about speaking with people who had lost relatives to the coronavirus. “You just kind of run away with the worst moment of their lives.”</p>
+      <p>Feng is one of the lucky ones. Her organization, NPR, was <a href="https://xw.qq.com/cmsid/20200704A07X7H00" target="_blank" rel="nofollow">selected</a> for an audit in July, requiring the submission of personnel, finance, and operational figures. The audit was smooth; her visa remains valid. She took my phone call from her apartment in Beijing.</p>
+      <p>The high-level effect of remote reporting, says Arne Westad, Professor of History and Global Affairs at Yale University, may be the empowerment of government at the expense of journalism. With fewer reporters in each other’s countries, journalists can’t reality-check government pronouncements. <em>The Wall Street Journal</em> must rely more heavily on documents, for instance; <em>The New York Times</em> sends fewer reporters to investigate.</p>
+      <p>“We are more hostage to what’s being told to us on an official level in both countries, China and here,” said Westad, referring to the United States.</p>
+      <p>For China’s remaining American journalists, life has both changed and remained the same since the expulsion of their colleagues. Feng, who is currently NPR’s only correspondent in country, demurred when asked whether this year’s expulsions has influenced her coverage. “It’s just more work,” she said.</p>
+      <p>Why?</p>
+      <p>“I feel more pressure to make the most of my time here, to do as much in-depth, on-the-ground reporting as possible,” she said. “I feel like being here is a privilege, and now other people don’t have that privilege.”</p>
+      <p>It was morning in Beijing. She had to run, she said. She had stories to write.<span class="cube"></span></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/">
+          The Future of China Studies in the U.S.
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/">
+          The Future of China Studies in the U.S.
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-19/How-To-Teach-China-This-Fall/">
+          How To Teach China This Fall
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-04</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-04/What-Now/">
+          What Now?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-08-27/%E8%8D%B7%E5%85%B090%E5%90%8E%E4%BD%9C%E5%AE%B6%E8%8E%B72020%E5%B9%B4%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E8%87%AA%E8%AE%A4%E6%80%A7%E5%88%AB%E8%BA%AB%E4%BB%BD%E4%BB%8B%E4%BA%8E%E7%94%B7%E6%80%A7%E5%A5%B3%E6%80%A7%E4%B9%8B%E9%97%B4/">
+            前一篇：荷兰90后作家获2020年国际布克奖：自认性别身份介于男性女性之间
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/">
+            後一篇：The Future of China Studies in the U.S.
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-08-27/%E8%8D%B7%E5%85%B090%E5%90%8E%E4%BD%9C%E5%AE%B6%E8%8E%B72020%E5%B9%B4%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E8%87%AA%E8%AE%A4%E6%80%A7%E5%88%AB%E8%BA%AB%E4%BB%BD%E4%BB%8B%E4%BA%8E%E7%94%B7%E6%80%A7%E5%A5%B3%E6%80%A7%E4%B9%8B%E9%97%B4/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-08-19/How-To-Teach-China-This-Fall/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-08-27/%E8%8D%B7%E5%85%B090%E5%90%8E%E4%BD%9C%E5%AE%B6%E8%8E%B72020%E5%B9%B4%E5%9B%BD%E9%99%85%E5%B8%83%E5%85%8B%E5%A5%96-%E8%87%AA%E8%AE%A4%E6%80%A7%E5%88%AB%E8%BA%AB%E4%BB%BD%E4%BB%8B%E4%BA%8E%E7%94%B7%E6%80%A7%E5%A5%B3%E6%80%A7%E4%B9%8B%E9%97%B4/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-08-19/How-To-Teach-China-This-Fall/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

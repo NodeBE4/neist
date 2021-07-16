@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History
+——
+" />
+    <meta property="og:description" content="
+Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History" />
+    <meta property="twitter:title" content="Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fahead-of-its-centennial-chinese-communist-party-frets-over-unsanctioned" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/ahead-of-its-centennial-chinese-communist-party-frets-over-unsanctioned" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/ahead-of-its-centennial-chinese-communist-party-frets-over-unsanctioned&text=Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/ahead-of-its-centennial-chinese-communist-party-frets-over-unsanctioned&title=Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/ahead-of-its-centennial-chinese-communist-party-frets-over-unsanctioned&title=Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History&body=
+Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/ahead-of-its-centennial-chinese-communist-party-frets-over-unsanctioned" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/ahead-of-its-centennial-chinese-communist-party-frets-over-unsanctioned&title=Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History&caption=
+Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History&url=https://www.chinafile.com/reporting-opinion/viewpoint/ahead-of-its-centennial-chinese-communist-party-frets-over-unsanctioned" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-14
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Hans van de Ven</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/ahead-of-its-centennial-chinese-communist-party-frets-over-unsanctioned" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1620989220000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/ahead-of-its-centennial-chinese-communist-party-frets-over-unsanctioned">Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-92ad56a110d37d5febe7b84de362b75e">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1208878826.jpeg" title="Ahead of Its Centennial, the Chinese Communist Party Frets Over Unsanctioned Takes on Its History" class="colorbox" data-colorbox-gallery="gallery-node-53191-urlxzkzCHNQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1208878826.jpeg?itok=xC6g-dQ3" width="1200" height="800" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Nicolas Asfouri—AFP/Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A boy wearing a facemask walks past a propaganda poster outside a shopping mall in Beijing, April 1, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">On July 1, the Chinese Communist Party will commemorate its founding in Shanghai one hundred years ago. Unsurprisingly, Beijing is leaving no stone unturned to ensure that nothing untoward takes place in the run-up to the great day. On April 9, the Reporting Center for Illegal and Unhealthy Information, a division of the Cyberspace Administration, which oversees and regulates China’s Internet, <a href="https://www.12377.cn/wxxx/2021/fc6eb910_web.html" target="_blank" rel="nofollow">announced</a> that it had launched a new facility on its portal to fight “historical nihilism.” Chinese citizens concerned about online posts that “distort the history of the Party [or] of New China,” “attack the Party’s leadership or ideology,” or “slander heroic martyrs”—as China’s current leaders deploy the term—would now <a href="https://gaodawei.wordpress.com/2021/04/10/prc-are-your-neighbors-distorting-history-or-spreading-politically-incorrect-ideas-online-report-them/" target="_blank" rel="nofollow">enjoy</a> a convenient way to “enthusiastically report harmful information [and] work together to maintain a healthy network ecology.” The Center would also <a href="https://weibo.com/ttarticle/p/show?id=2309404624102726959575" target="_blank" rel="nofollow">provide</a> a phone hotline and a web address for the reporting of such historical nihilism.</p>
+      <p>That such a history-policing mechanism exists is not news. For years, the Reporting Center has run a platform to report “harmful information,” handily grouped in <a href="https://www.12377.cn/" target="_blank" rel="nofollow">nine categories</a> including terrorism, gambling, fraud, pornography, the spreading of rumors, low morals, and attacks on the Party and the state. But it has only been since the April 9 announcement that a special zone on its website has existed for the reporting of historical nihilism specifically directed against the official history of the Chinese Communist Party. The COVID-19 pandemic is the only other issue receiving that level of attention. People’s Republic of China (PRC) authorities, apparently, are as worried about what they regard as distortions of Party history as they are about Covid.</p>
+      <p>A new version of <em>A Brief History of the Chinese Communist Party</em>, published on February 26 and <a href="https://item.xhsd.com/items/110000103151196;" target="_blank" rel="nofollow">for sale</a> at popular bookstores for only around 42 renminbi (U.S.$6.50), provides up-to-date guidance on what Beijing regards as the proper understanding of Chinese Communist Party (CCP) history. It replaces the 2010 edition, published when Hu Jintao was Secretary General of the CCP and President of the People’s Republic of China. Whereas in earlier editions Mao Zedong was lauded as the architect of the revolution but also held responsible for the Cultural Revolution, in the new version Mao is a warrior against corruption and bureaucratic malfeasance—as Xi Jinping likes to portray himself. In the new version, rather less is said about the late Chairman’s responsibility for the Great Leap Famine and the Cultural Revolution, which is no longer termed the “10 years of catastrophe” as it had been in previous editions.</p>
+      <p>For those who do not want to buy the book, an <a href="https://www.12371.cn/" target="_blank" rel="nofollow">education campaign</a> currently in full swing is another good source for an authoritative understanding of CCP history. China’s media are full of reports about great events in the CCP’s history. They not only profile its founding, but also the martyrs who died for the cause as well as major events in the Party’s history: the fight against the Kuomintang’s encirclement of the Jiangxi Soviet in the 1930s; the battles fought by CCP armed forces during the War of Resistance against Japan; the Korean War; and Mao’s meeting with Nixon and Kissinger. Party branches, work units, and schools across the country <a href="http://politics.people.com.cn/n1/2021/0326/c1001-32061064.html" target="_blank" rel="nofollow">read and analyze</a> the CCP’s history in their regular meetings. CCTV has published a slick <a href="https://www.youtube.com/watch?v=WF_q_vLEBLg" target="_blank" rel="nofollow">video clip</a> that in two and a half minutes covers the Communist Revolution and calls on China’s youth to follow in the footsteps of earlier generations of Party members. And nursery schools participate in storytelling competitions for Communist heroes. There can be no excuse for ignorance.</p>
+      <p>The aim seems to be to turn the history of the Party into a source of pride, inspiration, and spiritual strength. “Do not forget our first aspiration; never forget our mission,” as the <a href="https://baike.baidu.com/item/%E2%80%9C%E4%B8%8D%E5%BF%98%E5%88%9D%E5%BF%83%E3%80%81%E7%89%A2%E8%AE%B0%E4%BD%BF%E5%91%BD%E2%80%9D%E4%B8%BB%E9%A2%98%E6%95%99%E8%82%B2" target="_blank" rel="nofollow">current slogan</a> has it. After the Cultural Revolution, China’s fight against foreign domination in the aftermath of the Opium Wars and especially China’s victory over Japan in World War II, rather than the communist revolution, stood central in the master narrative of the founding of what the Party calls “New China.” Since the 1980s, that <a href="https://www.google.com/books/edition/China_s_Good_War/mLHuDwAAQBAJ?hl=en&amp;gbpv=1&amp;dq=Rana+Mitter,+China%27s+Good+War+(Harvard+UP,+2020),+57.&amp;printsec=frontcover" target="_blank" rel="nofollow">narrative</a> has nurtured the Party’s strengthening of nationalism, <a href="https://www.google.com/books/edition/China_at_War/HHCbDwAAQBAJ?hl=en&amp;gbpv=1&amp;dq=Hans+van+de+Ven,+China+at+War&amp;printsec=frontcover" target="_blank" rel="nofollow">telling</a> a story convenient for hoped-for PRC-Taiwan reunification. But it also contained a danger: The CCP’s armed forces did little serious fighting during the second World War. The version of China’s victory against Japan in which Chiang Kai-shek’s Nationalists waged war on the frontlines while the Communists did so in the Japanese rear, with both necessary to defeating the invader, never quite held water. Famously, Mao Zedong himself <a href="https://www.chinanews.com/hb/news/2009/01-08/1520159.shtml" target="_blank" rel="nofollow">admitted</a> in the 1950s and stated in a 1972 meeting with Japanese premier Kakuei Tanaka that were it not for the Japanese, the Communists would still be in the hills. With the likelihood of rapprochement with Taiwan fading in the face of the harsh political crackdown in Hong Kong, a return to the Party as the cause of all successes and as the only guarantee for future prosperity has become the clarion call of Party propaganda.</p>
+      <p>The defamation of martyrs is the most eye-catching of the acts that the Party holds up as examples of historical nihilism. That term, defined in the infamous internal Party document on ideological work “<a href="https://www.chinafile.com/document-9-chinafile-translation" target="_blank" rel="nofollow">Document 9</a>” as interpretations of history that “fundamentally undermine the CCP’s historical purpose,” has been deployed in recent years against a whole host of politically heterodox approaches, not only to PRC history but also to the <a href="https://www.jeremiahjenne.com/the-archives/2018/4/8/chinese-academy-of-social-sciences-throwing-shade-at-the-new-qing-history" target="_blank" rel="nofollow">history of the Qing dynasty</a>, the 1911 Revolution, and the Second World War. Remembering, celebrating, and <a href="https://m.thepaper.cn/newsDetail_forward_9428945" target="_blank" rel="nofollow">visiting</a> Party members seen as having made great sacrifices for the CCP or their descendants and relatives is a key theme in the commemorations of the CCP’s founding. Soldiers have pride of place. Proper commemoration of veterans has been an issue for some time. Xi Jinping <a href="https://www.scmp.com/news/china/article/1604473/first-national-martyrs-day-remembers-those-who-sacrificed-china" target="_blank" rel="nofollow">instituted</a> Martyrs’ Day in 2014. Ever since, on September 30, the day in 1949 when the foundation stone was laid of the Monument to the People’s Heroes on Tiananmen Square, Xi has led his leadership colleagues in laying wreaths at the monument, the Ministry of Veterans Affairs and charitable organizations <a href="http://www.mva.gov.cn/xinwen/mtbd/202105/t20210507_47072.html" target="_blank" rel="nofollow">arrange visits</a> to descendants and relatives of fallen heroes, and commemorative events take place across China. Manya Koetse of the website What’s on Weibo reported in April 2019 that the Weibo account of Chinese-Danish actor Zhao Lixin was <a href="https://www.whatsonweibo.com/chinese-actor-zhao-lixin-banned-from-weibo-over-comments-on-second-sino-japanese-war/" target="_blank" rel="nofollow">blocked</a> after he noted that the Japanese occupation of Beijing beginning in 1937 had been remarkably less violent than that of Nanjing later the same year. The reporting of the deaths of the four People’s Liberation Army (PLA) soldiers killed in the recent border clash with India <a href="https://www.whatsonweibo.com/remember-their-faces-an-online-tribute-to-the-chinese-soldiers-killed-on-border-clash-with-india/" target="_blank" rel="nofollow">stressed</a> not that they died in a violent brawl with stones and pipes, but their patriotism, unselfish heroism, and willingness to give their lives for their country.</p>
+      <p>It is unsurprising that the PRC is deeply concerned with promoting a positive image of the PLA now that it has become a superpower with a military to match. If China’s claim to greatness now partly rests on its military might, the PLA needs to be something of which the country can be proud. The huge military parades of 2015 to commemorate China’s victory over Japan and in 2019 to mark the 70th anniversary of the founding of the People’s Republic indicate the extent of the effort the CCP is putting into raising the reputation of its military forces.</p>
+      <p>Much less attention has so far been paid outside China to the centenary of the CCP. In the Netherlands, some newspapers, including <em>Trouw</em> (Loyal), have <a href="https://www.trouw.nl/verdieping/henk-sneevliet-gaf-china-een-verenigd-front~b62297a5/" target="_blank" rel="nofollow">reported</a> on Henricus Sneevliet (alias Maring), the Dutch revolutionary the Communist International in Moscow sent to China in 1921. He attended the first congress of the Chinese Communist Party and was instrumental in forming the first CCP-KMT united front, which saw the CCP grow into a sizable mass party. He is unlikely to feature in the PRC’s commemorations of the event. In Germany, Heidelberg University’s Barbara Mittler, Director of the Cluster of Excellence “Asia and Europe in a Global Context,” runs a year-long virtual seminar series titled “<a href="https://www.cats.uni-heidelberg.de/media/lsm.html" target="_blank" rel="nofollow">Living the Socialist Modern</a>.” She sees it as offering “unofficial” or “private” histories of the CCP. Harvard University Press has published Tony Saich’s <em><a href="https://www.hup.harvard.edu/catalog.php?isbn=9780674988118" target="_blank" rel="nofollow">From Rebel to Ruler: One Hundred Years of the Chinese Communist Party</a></em>, which stresses the CCP’s adaptability to new conditions. Cambridge University Press’ offer is <em><a href="https://www.cambridge.org/core/books/chinese-communist-party/ACDE7A4F414A8857DFAE7C13B1DBD7BB" target="_blank" rel="nofollow">The Chinese Communist Party: A Century in Ten Lives</a></em>, which I edited along with Timothy Cheek and Klaus Muehlhahn. Offering 10 profiles, one for each decade of the CCP’s history, it provides a mosaic illustrating what it has been like to live with, in, and under the CCP. It’s a safe bet much of the book will qualify as “harmful information.” So if readers object, they can file a report on <a href="http://www.12377.cn/" target="_blank" rel="nofollow">www.12377.cn</a> or, if they are in China, just dial 12377. <span class="cube"></span></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-22</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-22/How-Should-the-U.S.-Respond-to-China-s-Military-Ci/">
+          How Should the U.S. Respond to China’s Military-Civil Fusion Strategy?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-18</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-18/A-Letter-to-My-Editors-and-to-China-s-Censors/">
+          A Letter to My Editors and to China’s Censors
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-13</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-13/Police-Issue-Administrative-Warning-to-Australian/">
+          Police Issue Administrative Warning to Australian NGO, Global Times Reports
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-06</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-06/What-Should-China-Do-about-Its-Aging-Population/">
+          What Should China Do about Its Aging Population?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-14/%E6%96%87%E5%AD%A6%E7%95%8C%E7%9A%84%E5%8E%8C%E5%A5%B3%E4%BC%A0%E7%BB%9F-%E5%A5%B3%E6%80%A7%E6%98%AF%E5%A6%82%E4%BD%95%E8%A2%AB%E9%98%BB%E6%8C%A1%E5%9C%A8%E5%86%99%E4%BD%9C%E4%B9%8B%E5%A4%96%E7%9A%84/">
+            前一篇：文学界的厌女传统：女性是如何被阻挡在写作之外的？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-15/%E5%93%88%E8%B4%9D%E9%A9%AC%E6%96%AF%E6%8B%92%E7%BB%9D%E9%98%BF%E8%81%94%E9%85%8B%E5%9B%BE%E4%B9%A6%E5%A5%96-%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9A%84%E8%89%AF%E7%9F%A5%E8%A1%A8%E7%8E%B0-%E8%BF%98%E6%98%AF%E8%A5%BF%E6%96%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%82%B2%E6%85%A2/">
+            後一篇：哈贝马斯拒绝阿联酋图书奖：哲学家的良知表现，还是西方世界的傲慢？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-14/%E6%96%87%E5%AD%A6%E7%95%8C%E7%9A%84%E5%8E%8C%E5%A5%B3%E4%BC%A0%E7%BB%9F-%E5%A5%B3%E6%80%A7%E6%98%AF%E5%A6%82%E4%BD%95%E8%A2%AB%E9%98%BB%E6%8C%A1%E5%9C%A8%E5%86%99%E4%BD%9C%E4%B9%8B%E5%A4%96%E7%9A%84/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-15/%E5%93%88%E8%B4%9D%E9%A9%AC%E6%96%AF%E6%8B%92%E7%BB%9D%E9%98%BF%E8%81%94%E9%85%8B%E5%9B%BE%E4%B9%A6%E5%A5%96-%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9A%84%E8%89%AF%E7%9F%A5%E8%A1%A8%E7%8E%B0-%E8%BF%98%E6%98%AF%E8%A5%BF%E6%96%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%82%B2%E6%85%A2/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-18/A-Letter-to-My-Editors-and-to-China-s-Censors/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-13/Police-Issue-Administrative-Warning-to-Australian/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-14/%E6%96%87%E5%AD%A6%E7%95%8C%E7%9A%84%E5%8E%8C%E5%A5%B3%E4%BC%A0%E7%BB%9F-%E5%A5%B3%E6%80%A7%E6%98%AF%E5%A6%82%E4%BD%95%E8%A2%AB%E9%98%BB%E6%8C%A1%E5%9C%A8%E5%86%99%E4%BD%9C%E4%B9%8B%E5%A4%96%E7%9A%84/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-15/%E5%93%88%E8%B4%9D%E9%A9%AC%E6%96%AF%E6%8B%92%E7%BB%9D%E9%98%BF%E8%81%94%E9%85%8B%E5%9B%BE%E4%B9%A6%E5%A5%96-%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9A%84%E8%89%AF%E7%9F%A5%E8%A1%A8%E7%8E%B0-%E8%BF%98%E6%98%AF%E8%A5%BF%E6%96%B9%E4%B8%96%E7%95%8C%E7%9A%84%E5%82%B2%E6%85%A2/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-18/A-Letter-to-My-Editors-and-to-China-s-Censors/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-13/Police-Issue-Administrative-Warning-to-Australian/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

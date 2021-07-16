@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>極限時刻：香港變局進入最關鍵一周 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+極限時刻：香港變局進入最關鍵一周
+——
+" />
+    <meta property="og:description" content="
+極限時刻：香港變局進入最關鍵一周
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="極限時刻：香港變局進入最關鍵一周" />
+    <meta property="twitter:title" content="極限時刻：香港變局進入最關鍵一周" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40az%2F%2525E6%2525A5%2525B5%2525E9%252599%252590%2525E6%252599%252582%2525E5%252588%2525BB-%2525E9%2525A6%252599%2525E6%2525B8%2525AF%2525E8%2525AE%25258A%2525E5%2525B1%252580%2525E9%252580%2525B2%2525E5%252585%2525A5%2525E6%25259C%252580%2525E9%252597%25259C%2525E9%25258D%2525B5%2525E4%2525B8%252580%2525E5%252591%2525A8-zdpuAyxmQ6R1QzAwwJYHtBwQnJJZxddoULV3EajHDKiom8mWU" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@az/%25E6%25A5%25B5%25E9%2599%2590%25E6%2599%2582%25E5%2588%25BB-%25E9%25A6%2599%25E6%25B8%25AF%25E8%25AE%258A%25E5%25B1%2580%25E9%2580%25B2%25E5%2585%25A5%25E6%259C%2580%25E9%2597%259C%25E9%258D%25B5%25E4%25B8%2580%25E5%2591%25A8-zdpuAyxmQ6R1QzAwwJYHtBwQnJJZxddoULV3EajHDKiom8mWU" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@az/%25E6%25A5%25B5%25E9%2599%2590%25E6%2599%2582%25E5%2588%25BB-%25E9%25A6%2599%25E6%25B8%25AF%25E8%25AE%258A%25E5%25B1%2580%25E9%2580%25B2%25E5%2585%25A5%25E6%259C%2580%25E9%2597%259C%25E9%258D%25B5%25E4%25B8%2580%25E5%2591%25A8-zdpuAyxmQ6R1QzAwwJYHtBwQnJJZxddoULV3EajHDKiom8mWU&text=極限時刻：香港變局進入最關鍵一周&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@az/%25E6%25A5%25B5%25E9%2599%2590%25E6%2599%2582%25E5%2588%25BB-%25E9%25A6%2599%25E6%25B8%25AF%25E8%25AE%258A%25E5%25B1%2580%25E9%2580%25B2%25E5%2585%25A5%25E6%259C%2580%25E9%2597%259C%25E9%258D%25B5%25E4%25B8%2580%25E5%2591%25A8-zdpuAyxmQ6R1QzAwwJYHtBwQnJJZxddoULV3EajHDKiom8mWU&title=極限時刻：香港變局進入最關鍵一周" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@az/%25E6%25A5%25B5%25E9%2599%2590%25E6%2599%2582%25E5%2588%25BB-%25E9%25A6%2599%25E6%25B8%25AF%25E8%25AE%258A%25E5%25B1%2580%25E9%2580%25B2%25E5%2585%25A5%25E6%259C%2580%25E9%2597%259C%25E9%258D%25B5%25E4%25B8%2580%25E5%2591%25A8-zdpuAyxmQ6R1QzAwwJYHtBwQnJJZxddoULV3EajHDKiom8mWU&title=極限時刻：香港變局進入最關鍵一周" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=極限時刻：香港變局進入最關鍵一周&body=
+極限時刻：香港變局進入最關鍵一周
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@az/%25E6%25A5%25B5%25E9%2599%2590%25E6%2599%2582%25E5%2588%25BB-%25E9%25A6%2599%25E6%25B8%25AF%25E8%25AE%258A%25E5%25B1%2580%25E9%2580%25B2%25E5%2585%25A5%25E6%259C%2580%25E9%2597%259C%25E9%258D%25B5%25E4%25B8%2580%25E5%2591%25A8-zdpuAyxmQ6R1QzAwwJYHtBwQnJJZxddoULV3EajHDKiom8mWU" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@az/%25E6%25A5%25B5%25E9%2599%2590%25E6%2599%2582%25E5%2588%25BB-%25E9%25A6%2599%25E6%25B8%25AF%25E8%25AE%258A%25E5%25B1%2580%25E9%2580%25B2%25E5%2585%25A5%25E6%259C%2580%25E9%2597%259C%25E9%258D%25B5%25E4%25B8%2580%25E5%2591%25A8-zdpuAyxmQ6R1QzAwwJYHtBwQnJJZxddoULV3EajHDKiom8mWU&title=極限時刻：香港變局進入最關鍵一周&caption=
+極限時刻：香港變局進入最關鍵一周
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=極限時刻：香港變局進入最關鍵一周&url=https://matters.news/@az/%25E6%25A5%25B5%25E9%2599%2590%25E6%2599%2582%25E5%2588%25BB-%25E9%25A6%2599%25E6%25B8%25AF%25E8%25AE%258A%25E5%25B1%2580%25E9%2580%25B2%25E5%2585%25A5%25E6%259C%2580%25E9%2597%259C%25E9%258D%25B5%25E4%25B8%2580%25E5%2591%25A8-zdpuAyxmQ6R1QzAwwJYHtBwQnJJZxddoULV3EajHDKiom8mWU" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>極限時刻：香港變局進入最關鍵一周</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2019-11-18
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 張潔平</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@az/%25E6%25A5%25B5%25E9%2599%2590%25E6%2599%2582%25E5%2588%25BB-%25E9%25A6%2599%25E6%25B8%25AF%25E8%25AE%258A%25E5%25B1%2580%25E9%2580%25B2%25E5%2585%25A5%25E6%259C%2580%25E9%2597%259C%25E9%258D%25B5%25E4%25B8%2580%25E5%2591%25A8-zdpuAyxmQ6R1QzAwwJYHtBwQnJJZxddoULV3EajHDKiom8mWU" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1574131242000-->
+<p><a href="https://matters.news/@az/%25E6%25A5%25B5%25E9%2599%2590%25E6%2599%2582%25E5%2588%25BB-%25E9%25A6%2599%25E6%25B8%25AF%25E8%25AE%258A%25E5%25B1%2580%25E9%2580%25B2%25E5%2585%25A5%25E6%259C%2580%25E9%2597%259C%25E9%258D%25B5%25E4%25B8%2580%25E5%2591%25A8-zdpuAyxmQ6R1QzAwwJYHtBwQnJJZxddoULV3EajHDKiom8mWU">極限時刻：香港變局進入最關鍵一周</a>
+——</p>
+
+<div>
+  <p>（此文寫於上週末。寫的時候還在想，如果說這場大攬炒還有什麼角色沒正式登場，大概就是司法之戰了。結果：香港高院判禁蒙面法違背基本法，而人大法工委氣勢洶洶出來反駁。同時，理大的驚人之戰打的血肉模糊、人心撕扯。這一週，才剛剛開始。）</p>
+  <p>香港抗議已進入第24周。如同一場燃燒血肉的馬拉松，在過去一周，它逼近了自己的極限時刻。</p>
+  <p>22歲的香港科技大學學生周梓樂，在午夜到達可以監看警察在周圍施放催淚彈情況的社區停車場，卻從4米高的矮墻不明原因摔下，最終不治身亡。成了第一個，在運動現場死亡的示威者。儘管他並非死於直接的對峙，甚至死因至今不明，但他青年示威者的身份仍然引發了同路人的巨大哀戚。連續多日，去往他身亡的停車場悼念的人絡繹不絕，幾萬人聚集在金鐘，為他舉辦悼念活動。從他身亡的第一天開始，5個多月來在現場最常出現的口號，發生了意味深長的轉變：</p>
+  <p>6月開始的「香港人，加油」，到10月禁蒙面法出台後升級為「香港人，反抗」。11月8日周梓樂身亡，當天晚上的口號，變為了「香港人，報仇」。此後再也沒有回去。</p>
+  <p>「加油」爭取運動的五大訴求，示威一直在基本和平的框架內。「反抗」之後，示威者升級武力，針對親中商鋪的打砸開始集中出現，擴大為更廣泛的不合作運動。而「報仇」意味著什麼？會出現什麼結果？沒有人知道。可以知道的是，過去我們仍用「撕裂」形容的親示威陣營與親管治陣營的對立，隨著血腥衝突長時間加劇，恐怕要升級為「仇恨」。撕裂還可能通過對話來促進溝通，仇恨對法治社會的根基破壞更大，和解的過程更漫長，且必須要以公平的真相調查為前提。</p>
+  <p>周梓樂身亡之後的一周，運動全面激化。激化的含義是：這場運動中的所有角色都逼近了自己的極限位置，曾經置身事外的人也被拉入局中，而所有隱藏未現身的角色也終於浮出水面。</p>
+  <p>一，示威者極限施壓。</p>
+  <p>以發起全城罷工為目標，逐漸演變至堵塞香港九龍新界交通大動脈，客觀上造成部分癱瘓城市運作的極限施壓。這一行動，令此前仍可以保持與示威「無關」的日常生活的許多普通市民，因為交通全面受阻，衝突全城持續，都受到了負面影響。而這影響，最極端體現為：</p>
+  <p>二，平民在衝突中死亡。</p>
+  <p>第一個人在平民與平民的衝突中喪生。11月13日，示威者在上水用磚塊及路障堵路時，與另一批人士發生爭執，兩群人鬥毆時，磚塊砸中旁邊一名70歲長者頭部，長者當場昏迷，送院一天後不治身亡。他是一名清潔工，事發時休班路過，正以手機拍攝現場。警方將案件列為謀殺。此前另有一位約50歲男士，因政見不同與示威者發生口角時，遭潑易燃液體，並引燃，當場燒成火人，送院後全身近五成皮膚三度燒傷，至今危殆。在此之前幾個月，也發生過示威者在街頭派發傳單或和平行動時，遭反對者刀砍、刺傷、車撞、毆打重傷入院的多次事件。</p>
+  <p>三，警方對實彈的使用接近失控。自稱示威者公告「武裝殺警」計劃。</p>
+  <p>11月11日，在西灣河的堵路現場，交通警察與年輕示威者的推撞中，在對方未有任何武器，也沒有明顯攻擊動作的情況下，交通警直接實彈開槍，射中21歲黑衣青年的腹部，送院危殆，切除部分肝腎器官才轉為穩定。這是連月來第三起示威者實彈中彈案例。與此同時，香港媒體《立場新聞》發佈一則投稿以及<a href="https://www.thestandnews.com/politics/%E6%9A%B4%E5%8A%9B%E9%82%8A%E7%B7%A3-1-%E5%B8%AB%E6%B3%95%E5%8C%97%E6%84%9B%E5%85%B1%E5%92%8C%E8%BB%8D-%E9%A0%90%E5%91%8A%E5%8D%80%E9%81%B8%E5%89%8D%E4%BC%8F%E6%93%8A%E8%AD%A6%E5%93%A1-%E5%89%8D%E7%B7%9A-v-%E5%B0%8F%E9%9A%8A-%E7%9A%84%E6%AD%A6%E8%A3%9D%E6%83%B3%E5%83%8F/?fbclid=IwAR2ufjtK1DE89pE7fOngPo0KOThcpH67jYMGzo17B87ZNEtr1w7frP-dx_o" target="_blank">深度訪問</a>，稱示威陣營中出現代號「V小隊」的組織，以武裝革命為目標，希望在11月24日區議會選舉前「血腥攻擊」，報復殺警。</p>
+  <p>四，示威者與警方爆發五個月以來單日最激烈衝突。</p>
+  <p>在示威者的極限施壓和警方的失控武力對撞之下，這個星期，示威者與警方爆發了五個月以來單日最激烈的衝突，地點在香港中文大學。中大門口的「二號橋」地處新界交通動脈上方，便於示威者堵路，在這裡示威者與警方連續對峙兩日，警方更一度推進入校園，逮捕示威學生，在校園內發大量催淚彈和橡膠子彈，近百名學生現場受傷，引發強烈的輿論反彈。有數萬名中大校友在交通中斷的情況下，從四面八方馳援學校，一場堵路衝突演化為政治意味強烈的「大學保衛戰」。11月12日，警方共發射了1567枚催淚彈、1312發橡膠子彈，其中絕大多數落在中文大學曾經安寧的校園，破了10月1日的單日最高紀錄（1400枚催淚彈、900發橡膠子彈）。</p>
+  <p>五，香港政府的管治合法性瀕臨崩潰。</p>
+  <p>11月12日，香港民意研究所發佈特區政府的定期民望報告，特首林鄭月娥評分只剩下19.5分，支持率淨值低至負71%，跌至她本人上任以來，以及歷任特首的最低點。調查中，有56%的受訪者對林鄭的評分為0分，更有超過80%受訪者反對她繼續出任特首。而港府16位司局長的滿意率淨值，也首次出現全部負數，反映市民對整個管治班子強烈不滿。英國金融時報也首度發出編輯部名義文章，指出香港政府已經失去合法性，甚至進入警力管治 。</p>
+  <p>六，習近平首次公開對香港局勢表態。</p>
+  <p>誰都知道香港街頭的示威者，對抗的真正對象並不是香港警察、林鄭月娥或者香港政府。林鄭月娥此前不經意流出的談話錄音，也試圖說明這一點：特區政府在香港亂局中沒有自主決策能力。結果就是，港府對運動缺少政治斡旋與決斷，放任警察與示威者在街頭持續喋血衝突，結構性的不公使仇恨螺旋升級，和平緩解的可能性越來越低。但北京在這場運動中的角色，始終藏在港澳辦的原則性聲明，人民日報、新華社到環球時報、微博乃至墻外的輿論動員背後。11月14日，中國國家主席習近平首次對香港問題公開表態：「止暴制亂、恢復秩序是香港當前最緊迫任務」。</p>
+  <p>七，解放軍出場。</p>
+  <p>在習近平講話後兩天，11月16日，解放軍駐港部隊離開軍營，現身香港街頭。迎來的卻不是恐慌，而是現場部分市民的掌聲。「解放軍鎮壓」的想象一直是六四屠城留給香港社會運動最大的陰影，每每運動激化，「軍車已在深圳河北」、「裝甲車正在開進香港」、「港警已經換成解放軍」的謠言就甚囂塵上。2019年的香港這場由反修例開始的運動，對「解放軍」帶來的終極鎮壓想象沒有停止過，「攬炒」派甚至正是要召喚這一敵人提前登場，而國際媒體也一直嚴陣以待，等待拍攝「終極時刻」。然而誰也沒想到，五個月後，解放軍是以這樣的面貌登場：在示威者癱瘓主要交通、極限施壓的第五天，駐港部隊的「特戰八連」身著便裝短褲，「雪楓特戰營」直接穿著籃球服，列隊走出位於九龍塘的軍營，拿著水桶和掃把，加入街上正在清理路障的市民，一起清理軍營門口、交通幹道上示威者擺滿的磚塊鐵馬。在記者拍攝中，他們稱這一行動為「自發」。這一形象頗親民的軟性登場，持續了半小時，然後在周圍市民的掌聲中歸隊，回到軍營。</p>
+  <p>根據基本法第14條，解放軍駐港部隊儘負責香港防務，而不可以干預香港的地方事務，除非香港政府主動向中央政府提出請求驻军协助，否則駐港部隊不可離開軍營行動。駐港部隊士兵的行動顯然不會是「自發」，明確挑戰基本法，政治宣示意圖十分明顯。</p>
+  <p>至此，香港這場運動中所有角色，示威者、普通市民、愛國愛港人士、幫派力量、香港政府及警察、北京及軍隊，幾乎全部登場，且都將自己的位置推至了接近極限。</p>
+  <p>6月迄今，香港警方已經發出超過9000枚催淚彈，超過6000枚各類子彈，拘捕了超過4000人，被控暴動罪及以上（刑期10年起）的人數超過200人。毒煙瀰漫的城市，悲情也瀰漫。保安局長李家超回應查詢時表示，今年6月至9月，香港的自殺及屍體發現案，比去年同期增長了15%。</p>
+  <p>然而暴力愈演愈烈。「暴力不能解決問題，暴力只會衍生更大的暴力。」這句話，林鄭月娥和警察對示威者說過，示威者也對特區政府和警隊說過。公平才能停止暴力。但恰恰是結構性的不公正——政治問題無法政治解決，示威者被捕得到司法制裁，執法者濫暴則無人追究——導致了暴力進入惡性循環。</p>
+  <p>11月24日，是預定的全港區議會選舉的日子。街頭的衝突、抗爭與仇恨，是否能疏導入選舉成為長期建設性的力量？在習近平親自施壓之下，被仇恨點燃的部分示威者與長期暴力失控的警察，之間的血腥衝突會否進一步升級？已經登場亮相的解放軍會否還能靜觀其變？香港的抗爭會否經由平穩選舉，轉為長期行動？還是會在短期內激化，引發更大暴力？</p>
+  <p>未來一周，可能是香港局勢最關鍵的變數。</p>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/3d215d60-7a37-4fa2-9f86-487af2618518.webp" onerror="this.srcset='https://assets.matters.news/embed/3d215d60-7a37-4fa2-9f86-487af2618518.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/3d215d60-7a37-4fa2-9f86-487af2618518.jpeg" onerror="this.srcset='https://assets.matters.news/embed/3d215d60-7a37-4fa2-9f86-487af2618518.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/3d215d60-7a37-4fa2-9f86-487af2618518.webp" /> <img src="https://assets.matters.news/embed/3d215d60-7a37-4fa2-9f86-487af2618518.jpeg" srcset="https://assets.matters.news/processed/540w/embed/3d215d60-7a37-4fa2-9f86-487af2618518.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>路透社拍攝的理工大學衝突照片</span>
+    </figcaption>
+  </figure>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-01-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-01-02/%E7%9C%8B%E8%A6%8B%E9%A6%99%E6%B8%AF-%E6%B2%92%E6%9C%89%E4%BB%80%E9%BA%BC%E6%98%AF%E7%90%86%E6%89%80%E6%87%89%E7%95%B6%E7%9A%84-%E7%B5%A6-%E9%A6%99%E6%B8%AF%E7%AC%AC%E4%B8%80%E8%AA%B2-%E7%9A%84%E5%87%BA%E7%89%88%E5%BA%8F/">
+          看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-12-31</time>
+        <a href="https://nodebe4.github.io/oped2/2019-12-31/%E4%B8%8D%E6%95%A2%E5%9B%9E%E7%AD%94%E7%9A%84%E5%95%8F%E5%8D%B7-2019%E5%B9%B4%E6%84%8F%E5%91%B3%E8%91%97%E4%BB%80%E9%BA%BC/">
+          不敢回答的問卷：2019年意味著什麼？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-11-10</time>
+        <a href="https://nodebe4.github.io/oped2/2019-11-10/%E9%A6%99%E6%B8%AF-%E4%B8%80%E5%A0%B4%E4%B8%8D%E6%98%8E%E4%B8%8D%E7%99%BD%E7%9A%84%E6%AD%BB%E4%BA%A1/">
+          香港，一場不明不白的死亡
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-10-09</time>
+        <a href="https://nodebe4.github.io/oped2/2019-10-09/%E6%AD%A4%E4%B9%8B%E7%9B%9B%E4%B8%96-%E5%BD%BC%E4%B9%8B%E8%A3%B8%E5%91%BD-%E4%BB%8A%E5%A4%8F%E9%A6%99%E6%B8%AF%E7%9A%84%E4%B8%89%E5%A0%B4%E9%81%8B%E5%8B%95/">
+          此之盛世，彼之裸命。今夏香港的三場運動。
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2019-11-18/%E8%B0%B7%E6%AD%8C%E6%90%9C%E5%9B%BE%E4%B8%8D%E5%A5%BD%E7%94%A8%E6%80%8E%E4%B9%88%E5%8A%9E-%E6%8E%A8%E8%8D%90%E5%8F%A6%E5%A4%96%E4%B8%A4%E4%B8%AA%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7-iYouPort/">
+            前一篇：谷歌搜图不好用怎么办：推荐另外两个更好用的工具 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2019-11-18/%E4%B8%AD%E5%9B%BD%E4%B8%AD%E5%B0%8F%E5%9E%8B%E9%93%B6%E8%A1%8C%E4%B8%BA%E4%BD%95%E6%AD%A5%E5%B1%A5%E8%B9%92%E8%B7%9A/">
+            後一篇：中国中小型银行为何步履蹒跚？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2019-11-18/%E8%B0%B7%E6%AD%8C%E6%90%9C%E5%9B%BE%E4%B8%8D%E5%A5%BD%E7%94%A8%E6%80%8E%E4%B9%88%E5%8A%9E-%E6%8E%A8%E8%8D%90%E5%8F%A6%E5%A4%96%E4%B8%A4%E4%B8%AA%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2019-11-18/%E4%B8%AD%E5%9B%BD%E4%B8%AD%E5%B0%8F%E5%9E%8B%E9%93%B6%E8%A1%8C%E4%B8%BA%E4%BD%95%E6%AD%A5%E5%B1%A5%E8%B9%92%E8%B7%9A/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2019-12-31/%E4%B8%8D%E6%95%A2%E5%9B%9E%E7%AD%94%E7%9A%84%E5%95%8F%E5%8D%B7-2019%E5%B9%B4%E6%84%8F%E5%91%B3%E8%91%97%E4%BB%80%E9%BA%BC/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2019-11-10/%E9%A6%99%E6%B8%AF-%E4%B8%80%E5%A0%B4%E4%B8%8D%E6%98%8E%E4%B8%8D%E7%99%BD%E7%9A%84%E6%AD%BB%E4%BA%A1/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2019-11-18/%E8%B0%B7%E6%AD%8C%E6%90%9C%E5%9B%BE%E4%B8%8D%E5%A5%BD%E7%94%A8%E6%80%8E%E4%B9%88%E5%8A%9E-%E6%8E%A8%E8%8D%90%E5%8F%A6%E5%A4%96%E4%B8%A4%E4%B8%AA%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2019-11-18/%E4%B8%AD%E5%9B%BD%E4%B8%AD%E5%B0%8F%E5%9E%8B%E9%93%B6%E8%A1%8C%E4%B8%BA%E4%BD%95%E6%AD%A5%E5%B1%A5%E8%B9%92%E8%B7%9A/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2019-12-31/%E4%B8%8D%E6%95%A2%E5%9B%9E%E7%AD%94%E7%9A%84%E5%95%8F%E5%8D%B7-2019%E5%B9%B4%E6%84%8F%E5%91%B3%E8%91%97%E4%BB%80%E9%BA%BC/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2019-11-10/%E9%A6%99%E6%B8%AF-%E4%B8%80%E5%A0%B4%E4%B8%8D%E6%98%8E%E4%B8%8D%E7%99%BD%E7%9A%84%E6%AD%BB%E4%BA%A1/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>最后的报纸 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+最后的报纸
+——
+" />
+    <meta property="og:description" content="
+最后的报纸
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="最后的报纸" />
+    <meta property="twitter:title" content="最后的报纸" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40yeeyan%2F-19242e810ee1%3Fsource%3Drss-216c8ba84893------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@yeeyan/-19242e810ee1?source=rss-216c8ba84893------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@yeeyan/-19242e810ee1?source=rss-216c8ba84893------2&text=最后的报纸&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@yeeyan/-19242e810ee1?source=rss-216c8ba84893------2&title=最后的报纸" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@yeeyan/-19242e810ee1?source=rss-216c8ba84893------2&title=最后的报纸" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=最后的报纸&body=
+最后的报纸
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@yeeyan/-19242e810ee1?source=rss-216c8ba84893------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@yeeyan/-19242e810ee1?source=rss-216c8ba84893------2&title=最后的报纸&caption=
+最后的报纸
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=最后的报纸&url=https://medium.com/@yeeyan/-19242e810ee1?source=rss-216c8ba84893------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>最后的报纸</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2014-12-18
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Yeeyan</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@yeeyan/-19242e810ee1?source=rss-216c8ba84893------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1418901605000-->
+<p><a href="https://medium.com/@yeeyan/-19242e810ee1?source=rss-216c8ba84893------2">最后的报纸</a>
+——</p>
+
+<div>
+  <h4 id="section">印刷报纸的终结</h4>
+  <p>我家乡的地方报纸 — — 《罗阿诺克时报》（The Roanoke Times）是一份经典的都市日报，其源头可追溯到19世纪80年代。与大多数同类报纸相同，它在过去的十年里陷入了危机。随着印刷广告收入的减少，报社出现了极大的亏损，数字广告根本无法弥补。2008年的金融危机使这类问题加速发展，《罗阿诺克时报》的母公司兰德马克通信(Landmark)便开始为它寻找买家，最终于2013年将其卖给了沃伦·巴菲特（Warren Buffett）的伯克希尔·哈撒韦传媒集团（Berkshire Hathaway Media Group）。新闻编辑部的人员面对这一收购松了口气，因为巴菲特在前几次收购时对被收购的公司的员工们做出了一个著名的保证：“会给你们的报纸运营提供强劲的财力支持。”在收购了《罗阿诺克时报》的三个月之后，伯克希尔·哈撒韦传媒集团就裁去了31名员工，比其员工总人数的十分之一还多一点。</p>
+  <p>随着数字化设备和网络的兴起，媒体环境变得变幻莫测，这让许多人为之哀叹，但是社会各界早就正确预言了报纸业的缓慢衰败。十年里，印刷广告收入就缩水了65%，到2013年达到了有记录以来的最低点，而2014年将会更糟。即使是像伯克希尔·哈撒韦传媒集团这样财力雄厚、眼光长远的大公司也要依靠缩减开支来维持盈利，而缩减开支就意味着裁员。</p>
+  <p>《罗阿诺克时报》的遭遇 — — 财力的逐渐衰弱，不时地解雇员工 — — 对全国的报社来说都是家常便饭，而更大的风暴还在后面。下一轮的合并正向我们袭来；像论坛公司（Tribune）和甘乃特公司[1]（Gannett）这样的大型媒体公司都在抛弃他们的报纸（用残酷的商业术语来说就是“甩掉他们”）。如果你是一个纸媒出版物的记者，你可能会饭碗不保。然后就没有然后了。是时候做些什么了。</p>
+  <p>在过去的十年里，公司一直都将记者们当作小孩，让他们对自己公司的情况知之甚少。我的一位朋友给我讲了一个故事，故事里的记者们被问到他们的出版物的付费印刷发行量是多少。他们只能凭空猜测，数量从15万到30万不等，而真实的发行量只有35,000。如果一名记者对他从事报道的行业领域如此无知，那他就不会是一名记者了。</p>
+  <p>记者的无知并非出于偶然。了解行业情况的人通常会掩盖实情，不让员工知道。我的朋友杰伊·罗斯（Jay Rosen）曾写过文章评论媒体的“无辜作品”（production of innocence） — — 媒体在报道一个存在争议的问题时，必须向读者发出“我们不知谁对谁错”的信号。那些对自己的行业进行报道的小部分记者则有一个与之相关的工作，即无知作品（production of ignorance）。当新闻界对当下的混乱局面进行报道时，他们必须坚持没有人知道会发生什么。每当媒体报道自己的时候，都会按照这一规律进行报道。最近，当论坛公司摆脱了旗下的报纸业务后，《纽约时报》就以这样的标题发表了一篇新闻报道 — — 《论坛公司正分拆其出版部门，印刷业前途未卜》。</p>
+  <p>印刷业前途怎么了？试着想象一个印刷业前途未卜的世界吧：或许25岁的青年们会开始要求以不能共享的格式、每天一次地接收来自昨天的新闻。或许广告商会认为“点击购买”的图标是给懦弱的人使用的。手机可能只是一时的潮流。毕竟，在印刷业里什么事都有可能发生。未来真的难以预料。</p>
+  <p>同时，让我们回到财务主管的办公室，看看这个图表。这个趋势线让你感觉前途未卜吗？</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*kqjBGx9KGtkxsnRq.jpg" />
+  </figure>
+  <p>与媒体记者故作的无知恰恰相反，日报的未来是目前为数不多的必然之一：在这个十年里，大多数的日报正在消失。（如果你在报社工作，却不知道过去几年里你们的发行量或收入发生了什么事，现在可能是一个询问的好时机。）现在已经太迟了，我们甚至可以预测纸媒行业终结时的境况。</p>
+  <p>随便在美国找一家周日报纸，那会是那一周最大的报纸了，里面塞满了各种内容和广告。星期日是黄金日，因为那天的发行量最大，读者浏览报纸的时间也是最充裕的。星期日也是国家级广告客户，比如家得宝[2]（Home Depot）和马克思办公[3]（Office Max）、史泰博[4](Staples)和迈克尔斯百货公司（Michael’s）投递优惠券和促销小册子的日子。</p>
+  <p>这些小册子，即“夹页广告”(free-standing inserts)，是现今许多报纸最大的印刷广告的单一来源。分类广告剧减，地方的陈列式广告[5]也缩水了，很久以前充满黑色幽默感的新闻编辑者就把讣告栏改称为“订户倒计时”。</p>
+  <p>对大多数报纸而言，印刷广告是必不可少的收入来源，零售广告又是印刷广告的基本组成部分，而星期天又是零售的黄金日，夹页广告对周日来说至关重要。支撑着整个倒金字塔的只是二十几家全国性广告客户的市场部而已。</p>
+  <p>而这些广告客户也抛弃了广告要印在报纸中才能到达读者手中的观念，已经一只脚踏出了印刷广告的大门。CVS公司（美国最大的药品零售公司）和百思买集团（Best Buy）（全球最大家用电器和电子产品零售集团）与为它们打广告报纸几乎没有关联，他们甚至懒得在广告上印上本地销售点的地址。（你总能在网上查到的。）从广告客户的角度来看，美国的报纸已经变成了使用蓝色袋子的派递服务而已，袋子里有星座占卜和足够多的当地体育新闻，所以人们才会把袋子打开。</p>
+  <p>夹页广告是最后一个拒绝电子化的广告源之一。它们也是接下来要消失的广告。电子优惠券公司Cellfire和报纸交易应用Find &amp; Save[6]等正在研究电子优惠券；克罗格（Kroger’s）和西夫韦（Safeway）等零售集团已经直接在网上给客户提供优惠券了。这一电子化趋势随着印刷发行量的衰败而发展。让我们回到《罗阿诺克时报》这个例子上。它被出售了五年才找到买家。那五年里，它的周日读者从106,000人减少到了85,000人，缩水了四分之一；周末读者从96,000 人减少到了65,000人，缩水了三分之一。全国各地都在重演它的故事。印刷刊物的读者一直在向手机叛逃。要么抛弃地方报纸，要么濒临灭绝。</p>
+  <p>印刷发行量缩减的同时，其数字替代品则变得更具魅力，如此一来企业便会开始将投入于夹页广告的资本移向别处。夹页广告消失的话，周日便不再是黄金日。当周日不再是黄金日，报刊业也就无利可图了。而当报刊业无利可图，报刊印刷就会缩水甚至停产，这又将导致一笔惊人的开支。（如果你在某个报系工作，去向你的财务主管打听一下微薄的养老金吧，为防自己昏厥记得带上嗅盐。）这些开支会让公司财务雪上加霜，导致进一步的企业合并、裁员、投递日数缩减、或者彻底破产。</p>
+  <p>地方报社的关闭比地方鞋店的关闭更加严重，唯一的原因是 — — 报社雇佣新闻工作者。我向一些记者、编辑和学者们询问新闻工作者们要如何准备应对下一轮裁员，他们不约而同地给了我三个有力的答案：第一，要擅长理解和表述数据；第二，了解如何将社交媒体应用于新闻编辑；第三，通过团队协作和尝试新鲜事物来竭尽所能地积累新闻编辑经验。</p>
+  <p>在新闻业内，对第一条建议的讨论是最普遍的 — — 要对数字敏感。在过去的“图表配新闻”的新闻模式中，数据只是居于新闻之后的；而如今，数据正逐渐变成新闻本身。内特·希尔弗[7]（Nate Silver）改变了我们对政治预测的看法。ProPublica[8]将数据库与故事叙述相结合的技术超越了全国所有的公司。《凶杀案观察》[9]（Homicide Watch）的员工虽比《华盛顿邮报》少，却能报道更多的凶杀案（事实上是所有的凶杀案）。虽然学会编码是（使用数据的）黄金标准，但是只要学习统计学的网络课程，擅长谷歌电子表格就能对你有所帮助。不论你是想保住现有工作还是寻找新的工作，让自己更加善于发现、理解、和表述数字都能使你从竞争者中脱颖而出。</p>
+  <p>第二，学会利用社交媒体工具来发掘新闻故事和新闻来源。社交媒体最早是被用作营销工具，但是这种让你能够直接接触公众的媒介也能被用于新闻工作。实例有大有小，从在哈德逊河上着陆的飞机的照片，到《卫报》收集的群众对成千上万的议会开支报告的分析，这些都依赖新闻编辑室和外界世界之间更加交融的联系。你要练习阅读Facebook上的对话，从Instagram的照片里寻找新闻灵感；明白在推特或者微信上有礼貌地寻求帮助可以为你带来关键新闻来源或者一大群志愿者。</p>
+  <p>第三，新闻工作正日益变为一项团队工作。综合文本和视觉资料、读者可以质疑并注解的数据库、对即时新闻进行实时更新的博客群体 — — 所有这些都要求更加紧密的合作，过去“一条新闻报道，一个作者署名”的模式已经脱离时代了。你应该自愿参加（或者提出）任何需要更深层次的合作的活动，即使你自己并不习惯这样合作；任何需要你尝试新工具和技术的活动你也应该如此。（当然，讽刺的是，虽然越来越多的新闻机构开始重视合作，但是它们仍然雇用单人而非团队来完成新闻工作。下一次你找工作时，你可能要让你的未来老板相信你的价值在于你个人，但是这种价值中的一部分在进行团队工作时也能表现得很好。）</p>
+  <p>对这三条意见的一个反驳：它们太少、太晚了，远不能拯救大多数的新闻人。这是事实，但同时也并不重要。现在我们正迎来吉姆·布雷迪[10]（Jim Brady）所描述的“抱团取暖”的新闻事业阶段。一些报纸当然能够存活下来，借助合并或者联邦破产法第11章[11]来苟延残喘，但是即使是这些报纸也难逃规模缩减的命运。新闻类的创业公司和非营利组织能提供一些工作。考虑到即将在接下来的几年里面临失业的人的人数，许多新闻工作者将跳出任何与传统报纸相类似的产业去寻找下一份工作。对这些工作而言，以上的建议大部分还是挺中肯的。</p>
+  <p>对这些建议的另一个反驳是：明眼人都知道自己应该擅长数据处理、社交媒体和团队合作，不用别人来建议。这也是事实。这些建议都只是在说一些显而易见的事，而且这些事情已经显而易见了有一段时间了。令人惊异 — — 同时也令人灰心的是，我们花了太长的时间来对这些明显的建议做出反应，这部分是因为还有一些人坚信印刷业前途未卜这样的谎言。</p>
+  <p>对于即将来临的变化，与我讨论过的人有另一个共同的反应：他们意识到，新闻工作者们再也不能依靠他们的雇主来获得学习新技能的机会。长久以来，新闻工作者的职业发展都是他们在从基层向上爬升的过程中的额外收获而已；报社会要你报道一条新的独家新闻，或者送你去发布一条能成就你的职业生涯的新闻报道。而如今，各大报纸都在为生存斗争，而大多数的报纸都在缓慢地输掉这场争斗，所以它们的时间或资源几乎都投入到了“对基本服务的维持”中。如果你是一家报社的新闻工作者，而你又想为自己的下一份工作训练自己，你已经是一个人了，只能单枪匹马战斗。</p>
+  <p>人们倾向于为新闻业的崩溃寻找一个道德维度，但是它并没有道德维度。事实是广告商在消失，先是分类广告，最后是夹页广告。这只是在商言商而已，维持报社开门对广告客户们来说本就不是利害攸关的。曾经，商界和新闻界的分离被认为是一件好事，而此刻却成为了全产业的一个失败点。</p>
+  <p>广告刊登和纸媒编辑之间的缓慢分离似乎很快就要加快速度。就如ProPublica的迪克·托福（Dick Tofel）经常指出的那样，自2006年来，报纸收入就在缩水，但是美国经济从2009年开始就一直在增长。1970年至现在，美国平均每隔六年就会经历一场经济衰退；目前的增长期在今年春天就跨过了六年的门槛。从统计上来看，我们离下一场经济危机的距离比离上一场的距离更近，而广告费将第一个被砍掉。许多报纸会像海明威笔下的麦克·坎贝尔（Mike Campbell）那样走向破产：先逐渐衰败，然后轰然崩塌。</p>
+  <p>报纸之死确实令人伤悲，但新闻人才的先兆性丧失才是灾难性的。如果你是那个人才，是时候学习一些不包括在你目前工作的生产程序之中的事物了。这并不简单，也令人讨厌，你的老板也不会给你太大帮助，这样做甚至还可能是无用功，但是我们即将面临下一轮大收缩。如果你想要从中存活下来，任何反抗都比坐以待毙强。</p>
+  <p><strong>译注：</strong></p>
+  <p>[1] 甘乃特：当今美国第一大报业集团，是美国报界利润率最高的公司之一。</p>
+  <p>[2] 家得宝：全球领先的家居建材用品零售商，美国第二大零售商，连续9年被美国《财富》杂志评为“最受欢迎的专业零售商”。</p>
+  <p>[3]马克思办公：马克思办公、欧迪办公（Office Depot）和史泰博是美国办公用品三大零售商。</p>
+  <p>[4] 史泰博:全球领先的办公用品零售和分销商。</p>
+  <p>[5] 陈列式广告：一种型态的广告，最常见包含超脱文字之外的图形资讯，如标识、照片或其他图形、位置地图等依此类推。它定期出现于一般专栏区同一网页，或者邻接的网页间。</p>
+  <p>[6] Find &amp; Save：报纸交易应用Find &amp; Save是一款比价购物应用，专门用于收集各大报纸的本地销售数据。通过与美国各大报业集团合作，收集它们在线的星期天”通告”，或它们的传单、特价和优惠券，在媒体和消费者之间建立联系。</p>
+  <p>[7] 内特·希尔弗：号称为美国公众眼里完美的“预言帝”，他的“预言”被称为竞选预测之神谕。曾在2012年美国总统大选时对美国50个州的投票结果进行了正确预测。</p>
+  <p>[8] ProPublica:一间总部设在纽约市曼哈顿区的非盈利性公司，自称为一个独立的非盈利新闻编辑部，为公众利益进行调查报道。其记者与多间新闻机构一同合作进行侦查报道。</p>
+  <p>[9] 《凶杀案观察》：又名《华盛顿凶杀案观察》（Homicide Watch D.C.），是由社区发起的报道计划，通过原始报道、法庭档案、社交媒体、受害人以及嫌疑人的亲朋好友的帮助来报道记录华盛顿哥伦比亚特区的凶杀案。</p>
+  <p>[10] 吉姆•布雷迪：美国罗纳德·里根政府时期的白宫新闻秘书。</p>
+  <p>[11] 联邦破产法第11章: 多数上市公司会按照第11章申请破产保护，而不是第7章直接进行破产清算，因为他们仍希望继续运营并控制破产程序。按第11章的重组计划，公司可继续运营，其股票和债券也在市场继续交易，公司也必须继续向证券交易委员会提交报告。</p>
+  <p>Translated by <a href="http://www.yeeyan.org/">Yeeyan</a></p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=19242e810ee1" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2017-10-24</time>
+        <a href="https://nodebe4.github.io/oped2/2017-10-24/Medium-%E7%A7%BB%E6%B0%91%E6%8C%87%E5%8D%97-%E4%B8%AD%E6%96%87%E4%BD%9C%E8%80%85%E9%9B%86-2.0-(%E9%A3%9B%E6%AD%A5%E7%B7%A8)/">
+          Medium 移民指南－中文作者集 2.0 (飛步編)
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2017-10-01</time>
+        <a href="https://nodebe4.github.io/oped2/2017-10-01/%E5%89%8D-Paypal-%E5%82%B3%E5%A5%87%E5%AF%A6%E7%BF%92%E7%94%9F-Paul-Martin-%E7%9A%84%E5%B0%8F%E6%95%85%E4%BA%8B/">
+          前 Paypal 傳奇實習生 Paul Martin 的小故事
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%83%B3%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87-%E5%B0%B1%E5%88%AB%E5%86%8D%E5%81%9A%E8%BF%997%E4%BB%B6%E4%BA%8B%E4%BA%86/">
+          想提高效率，就别再做这7件事了
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/">
+          我为什么不做一个 TED 讲者
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%83%B3%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87-%E5%B0%B1%E5%88%AB%E5%86%8D%E5%81%9A%E8%BF%997%E4%BB%B6%E4%BA%8B%E4%BA%86/">
+            前一篇：想提高效率，就别再做这7件事了
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2014-12-20/%E9%A6%99%E6%B8%AF-%E4%BB%8E%E8%AD%A6%E6%96%B9%E6%8B%98%E6%8D%95%E5%8D%A0%E4%B8%AD%E7%BD%91%E4%B8%8A%E5%8F%91%E8%A8%80%E8%80%85%E7%9C%8B%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E5%8F%8A%E4%BA%92%E8%81%94%E7%BD%91%E7%A7%81%E9%9A%90/">
+            後一篇：香港：从警方拘捕占中网上发言者看言论自由及互联网私隐
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E6%83%B3%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87-%E5%B0%B1%E5%88%AB%E5%86%8D%E5%81%9A%E8%BF%997%E4%BB%B6%E4%BA%8B%E4%BA%86/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2014-12-20/%E9%A6%99%E6%B8%AF-%E4%BB%8E%E8%AD%A6%E6%96%B9%E6%8B%98%E6%8D%95%E5%8D%A0%E4%B8%AD%E7%BD%91%E4%B8%8A%E5%8F%91%E8%A8%80%E8%80%85%E7%9C%8B%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E5%8F%8A%E4%BA%92%E8%81%94%E7%BD%91%E7%A7%81%E9%9A%90/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2017-10-01/%E5%89%8D-Paypal-%E5%82%B3%E5%A5%87%E5%AF%A6%E7%BF%92%E7%94%9F-Paul-Martin-%E7%9A%84%E5%B0%8F%E6%95%85%E4%BA%8B/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E6%83%B3%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87-%E5%B0%B1%E5%88%AB%E5%86%8D%E5%81%9A%E8%BF%997%E4%BB%B6%E4%BA%8B%E4%BA%86/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2014-12-18/%E6%83%B3%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87-%E5%B0%B1%E5%88%AB%E5%86%8D%E5%81%9A%E8%BF%997%E4%BB%B6%E4%BA%8B%E4%BA%86/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2014-12-20/%E9%A6%99%E6%B8%AF-%E4%BB%8E%E8%AD%A6%E6%96%B9%E6%8B%98%E6%8D%95%E5%8D%A0%E4%B8%AD%E7%BD%91%E4%B8%8A%E5%8F%91%E8%A8%80%E8%80%85%E7%9C%8B%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E5%8F%8A%E4%BA%92%E8%81%94%E7%BD%91%E7%A7%81%E9%9A%90/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2017-10-01/%E5%89%8D-Paypal-%E5%82%B3%E5%A5%87%E5%AF%A6%E7%BF%92%E7%94%9F-Paul-Martin-%E7%9A%84%E5%B0%8F%E6%95%85%E4%BA%8B/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2014-12-18/%E6%83%B3%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87-%E5%B0%B1%E5%88%AB%E5%86%8D%E5%81%9A%E8%BF%997%E4%BB%B6%E4%BA%8B%E4%BA%86/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

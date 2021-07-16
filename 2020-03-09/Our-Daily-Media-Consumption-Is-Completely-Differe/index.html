@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>‘Our Daily Media Consumption Is Completely Different’ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+‘Our Daily Media Consumption Is Completely Different’
+——
+" />
+    <meta property="og:description" content="
+‘Our Daily Media Consumption Is Completely Different’
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="‘Our Daily Media Consumption Is Completely Different’" />
+    <meta property="twitter:title" content="‘Our Daily Media Consumption Is Completely Different’" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Four-daily-media-consumption-completely-different" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/our-daily-media-consumption-completely-different" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/our-daily-media-consumption-completely-different&text=‘Our Daily Media Consumption Is Completely Different’&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/our-daily-media-consumption-completely-different&title=‘Our Daily Media Consumption Is Completely Different’" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/our-daily-media-consumption-completely-different&title=‘Our Daily Media Consumption Is Completely Different’" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=‘Our Daily Media Consumption Is Completely Different’&body=
+‘Our Daily Media Consumption Is Completely Different’
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/our-daily-media-consumption-completely-different" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/our-daily-media-consumption-completely-different&title=‘Our Daily Media Consumption Is Completely Different’&caption=
+‘Our Daily Media Consumption Is Completely Different’
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=‘Our Daily Media Consumption Is Completely Different’&url=https://www.chinafile.com/conversation/our-daily-media-consumption-completely-different" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+    
+
+
+
+<article class="post">
+  <h1>‘Our Daily Media Consumption Is Completely Different’</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-03-09
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Muyi Xiao, Yan Cong &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/our-daily-media-consumption-completely-different" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1583741460000-->
+<p><a href="https://www.chinafile.com/conversation/our-daily-media-consumption-completely-different">‘Our Daily Media Consumption Is Completely Different’</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-d8a5ac6e5ccb6177b326bb969a1bb574">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-493418522.jpg" title="‘Our Daily Media Consumption Is Completely Different’" class="colorbox" data-colorbox-gallery="gallery-node-51886-WWV5S1ivth0" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-493418522.jpg?itok=tEdGcKBf" width="1200" height="801" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Xiaolu Chu—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A family watches President Xi Jinping and his wife, Madame Peng Liyuan, attend a welcome ceremony in the United Kingdom, on television in Beijing, October 20, 2015.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">In 1994, China officially <a href="http://www.china.org.cn/business/2014-04/20/content_32150035.htm" target="_blank" rel="nofollow">went online</a>. Four years later, the Ministry of Public Security (MPS) initiated the “<a href="http://www.china.com.cn/chinese/zhuanti/283732.htm" target="_blank" rel="nofollow">Golden Shield Project</a>,” also known as the establishment of the “Great Firewall.”</p>
+      <p>Since then, the flow of information has been filtered through the “wall” as it trickles toward netizens in mainland China surfing without a virtual private network (VPN). And my parents are among them.</p>
+      <p>Born in the 1950s in central China, they survived the Great Famine in their early childhood, and the Cultural Revolution as teenagers. When television appeared in their late 20s, they immediately fell in love with its captivating and illuminating form of recreation. Every day at 7:00 p.m., they bask in its blue glow as they watch <em>Xinwen Lianbo</em>, the news program produced and aired by the state-owned station China Central Television (CCTV). Provincial TV stations are <a href="https://freedomhouse.org/blog/china-central-television-long-standing-weapon-beijing-s-arsenal-repression" target="_blank" rel="nofollow">required</a> to air the <a href="https://www.tandfonline.com/doi/full/10.1080/17544750.2018.1554593" target="_blank" rel="nofollow">program</a> simultaneously, but my parents always insist on watching the broadcast directly from CCTV, as if its origin confers a kind of sanctity upon its content.</p>
+      <p>Growing up, I was never included in the fun. I was allowed only one hour of cartoons, starting at 6:00. Another half an hour of TV to watch the news? That would have been too much of a distraction from studying. I spent all my time on math and science, subjects my parents, like so many others, believed would make me “an intellectual with a bright future.” Humanities were for the ones who weren’t smart enough, they told me.</p>
+      <p>In the 18 years I lived at home, we never had a single conversation about current affairs or politics. I had a very minimal understanding of my country and was in no place to initiate discussion, and my parents were never enthusiastic enough to bring anything up. Then when I turned 18, I performed “unexpectedly poorly” for a science student on the college entrance exam and ended up at an English language-focused journalism school in Beijing. Since graduating, I have mostly worked in foreign newsrooms, something my parents couldn’t have fathomed when I was a child.</p>
+      <p>Covering China’s domestic social news beat, I was both allowed and required to seek out information not already blocked by the “wall.” I began to share some of it with my parents: the downfall of Bo Xilai, the stories of families whose homes were forcibly demolished, and protests against Qingdao authorities after an oil pipeline explosion and against the Malaysia government after the disappearance of MH370. When they learned about an event that <em>Xinwen Lianbo</em> didn’t cover they usually welcomed the new information with a bit of astonishment, but never doubt.</p>
+      <p>In 2017, I moved to New York and began working on more stories about China’s politics and its position in the world. One day, my dad called me out of concern for my safety in the U.S. amid the tense political climate he sensed back in China. He asked, “why did the U.S. start a trade war?” Just as I had done in the past, I told him what I learned from outside the “wall.” To my surprise, he became agitated when I mentioned the U.S. assertion that in certain areas China had bent the rules, arguing that China did everything it ought to do to survive and thrive. “Do you know how poor we were when we were little?” he demanded.</p>
+      <p>Not long after, another conversation about Hong Kong ended similarly. My parents quoted <em>Xinwen Lianbo</em> and “the Internet,” where they had devoured various stories that contradicted what I was telling them.</p>
+      <p>I grumbled about the conversation to a group of my friends who, like me, were born and raised in China and now work for international media. I asked them how they managed talking to their loved ones back in China, when censorship had become so much more pervasive.</p>
+      <p align="right">—<em><a href="https://www.chinafile.com/contributors/muyi-xiao" target="_blank" rel="nofollow">Muyi Xiao</a></em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-8176" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/yan-cong"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/yan-cong_bio-pic.jpg?itok=VvRB6zlB" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="yan-cong"><a href="https://www.chinafile.com/contributors/yan-cong" title="Yan Cong">Yan Cong</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <h3 id="two-different-worlds">Two Different Worlds</h3>
+        <p class="dropcap">I studied and worked in New York between 2012 and 2014, first as an exchange student, then as a graduate student in journalism, and then as an intern at ChinaFile. In 2015, I went back to Beijing to freelance for international publications and to work on personal projects. When I lived abroad, talking to my parents mostly meant exchanging brief updates on life and work, inquiries about my grandparents’ health, relating an occasional fun anecdote about my life in New York. But today, I live in the same city as my parents and we’re in constant contact, allowing for a lot more opportunities to discuss a topic we rarely did before: politics.</p>
+        <p>Talking about politics with my parents brings out a lot of contradictory feelings in me. I want them to believe in what I believe in, because so many of my life choices are based on the values I hold dear. On the other hand, I feel I can’t force my ideas on them given the vast differences in our life experiences. I grew up in the privilege of a middle class urban family that they worked so hard to build, and then traveled and lived abroad with their full support. Although my parents are also well-traveled, they haven’t had the same overseas experience, and their social circle remains mostly Chinese.</p>
+        <p>A lot of our conversations start with my work as a journalist, because I find it easier for them to relate to issues I work on. When I was working on a photo project about Cambodian women being trafficked to China to marry Chinese “leftover” men, my mother showed a tremendous amount of sympathy for the woman I was photographing. Every time I came back from a trip, she would ask after my subject’s well-being, look at the photos I had taken, and comment on how cute the woman’s children were. She was outraged when she heard about how traffickers tricked women into marriage under false pretenses, and she expressed disappointment that the trafficked women didn’t receive healthcare or other social services in China. My mother rarely discusses social issues with me, and has always asked me not to be critical of the government in my reporting. My sense was that had she not learned about the story from me, she might not have shown the same degree of sympathy for the Cambodian women and even might have had more sympathy for the Chinese men because they had to pay so much money to get married.</p>
+        <p>Sometimes, conversations with my parents lead nowhere simply because our daily media consumption is completely different. I read news from both English and Chinese media, and my education and work experience equip me to tell the difference between propaganda and journalism, to seek out factual information in fast-paced news cycles. My parents mainly read content on WeChat, which is a highly controlled and censored ecosystem, from accounts they follow or articles shared by their friends. There’s no easy way for me to share with my parents what I’m reading, listening to, and watching, without their paying for a virtual private network (VPN) to circumvent digital censorship or for subscriptions to journalistically credible Chinese language outlets like Initium and Caixin. They can’t read news in English.</p>
+        <p>But because of their lack of trust in the media they read, and their lack of access to quality media coverage, they sometimes ask me what I’ve been reading on issues they desperately want to know more about. Last year, my father asked me quite a few times for the latest update on the China-U.S. trade talks, because it would have an impact on his small investment in the Chinese stock market. Sometimes he’d ask, “how is the foreign media covering this?” Sometimes, he’d send me an article he read on WeChat and ask me to fact-check it. But his interest seemed to fade when it came to matters beyond establishing basic facts. Once I attempted to explain the U.S.’s allegations of <a href="https://www.scmp.com/magazines/post-magazine/long-reads/article/2170132/how-chinas-rampant-intellectual-property-theft" target="_blank" rel="nofollow">IP theft</a> by China. He quickly brushed me off; the trade war was purely a U.S. attempt to limit China’s growth, he told me. In hindsight, that conversation could have evolved into a more meaningful one about how a country could and should rise while playing fair, but like so many arguments, mixed with strong emotions and opinions, it just didn’t go that way.</p>
+        <p>The frustrations of talking about politics with our parents partially come from the failure to persuade them to understand what we believe in, but conversation is a two-way street—maybe we’re too caught up in persuasion to listen to their thoughts and concerns. The most painful part of this process is the sudden realization that it feels like we live in different worlds. I sometimes revisit the story of the “<a href="https://www.buzzfeednews.com/article/ishmaeldaro/the-touching-way-some-asian-americans-are-telling-their-rela" target="_blank" rel="nofollow">Letter for Black Lives</a>,” a collaborative project from a group of Asian Americans to start a conversation with their relatives about Black Lives Matter, to remind myself that the burden is more on me than on my parents to bridge that gap.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8181" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/zhaoyin-feng"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/feng-zhaoyin.jpg?itok=Dlfeqhy_" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="zhaoyin-feng"><a href="https://www.chinafile.com/contributors/zhaoyin-feng" title="Zhaoyin Feng">Zhaoyin Feng</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <h3 id="agree-to-disagree">Agree to Disagree</h3>
+        <p class="dropcap">Before the Hong Kong protests, my cousins and I rarely had deep conversations, let alone heated debates over politics. The seven of us—our ages ranging from mid-20s to early-40s—have a WeChat group to arrange family events and exchange basic pleasantries. But what’s happening in Hong Kong has turned our conversations upside down.</p>
+        <p>Hong Kong is a place close to the heart of my Cantonese family. Growing up in Guangzhou, my cousins and I spent our childhoods glued to Hong Kong TV programs. Over the years, we visited Hong Kong often, and it’s now just a 45-minute high-speed train ride away. We don’t see Hong Kong as a big shopping mall or an exotic tourist destination. We share culture with Hongkongers and have family ties there; my youngest cousin, W, who lives in Hong Kong, was born to a Hong Kong father and a mainland mother.</p>
+        <p>In late July, W snapped when one of our older cousins shared a video alleging protesters in Hong Kong were paid by the CIA to demonstrate. “Fuck. More bullshit about overseas payments.” Other cousins quickly jumped in. “Hong Kong is in chaos,” they said. “What else was reported outside of the Great Firewall (GFW)?” My cousins asked me to brief them.</p>
+        <p>On the censored and surveilled Chinese Internet, it’s extremely difficult to have informed and open political discussions. “Let’s keep this discussion brief. As the admin of this group, I am getting overwhelmed,” H, the cousin who started the group, wrote. We all know WeChat is not a safe place to discuss Chinese politics, and that group administrators face greater risks. I found myself walking on a tightrope, carefully avoiding words which could endanger my family members.</p>
+        <p>I forwarded to the chat group WeChat posts explaining the protests that I considered objective. They disappeared. At some point, W posted some news from Hong Kong media. “You must have not been able to see this in the mainland,” he wrote to the group. But his comments came off as arrogant and backfired. My cousins in Guangzhou are tech-savvy enough to use VPNs and don’t only read domestic news sources. But it’s true that not all of them consume non-Chinese media on a daily basis. “I am forced to use Xuexi Qiangguo [the app “Study and Make the Nation Great”] every day and really don’t have time to read about Hong Kong,” C, a cousin who is a Chinese Communist Party member working in local government, complained. The propaganda app, which teaches “Xi Jinping Thought” and other political doctrines, had sucked up the time she could have spent reading other media.</p>
+        <p>Aware of the information gap inside and outside of the Great Firewall, my cousins still find it difficult to determine which news sources represent the truth. “News sources outside of the firewall are not necessarily trustworthy. They all have perspectives and are not completely neutral,” one cousin said. And I agreed.</p>
+        <p>In a country where most news is political propaganda, it can be hard to believe there exist independent media outlets that do not serve any political purposes. “I don’t fully trust either foreign or domestic media outlets,” a cousin’s spouse wrote. On one hand, my cousins consider some Chinese propaganda ridiculous; on the other, they truly believe some international media are trolling China with malign intent. Their distrust of the media is very similar to that of people elsewhere around the world convinced that everything they read is “fake news.”</p>
+        <p>I try to present the basic facts without defining which outlets represent “the truth.” After the <em>Global Times</em> reporter <a href="https://www.wsj.com/articles/chinese-reporter-assaulted-at-hong-kong-airport-becomes-mainland-hero-11565789917" target="_blank" rel="nofollow">Fu Guohao</a> was seized by demonstrators in the Hong Kong international airport, I shared a <a href="https://twitter.com/ZhaoyinFeng/status/1161704574341787654?s=20" target="_blank" rel="nofollow">transcript</a> of key moments in an hour-long video of the incident, pointing out that though a few protesters were violent against Fu, many were trying to protect him. “Indeed. I heard people yelling ‘no beating’ in the video, too,” a cousin acknowledged.</p>
+        <p>Another cousin pushed back, saying that a different man from mainland China had been unfairly targeted and beaten up in the airport on the same day, and that the bystanders were calling him derogatory names. “These Hongkongers obviously do not want to co-exist with mainlanders.”</p>
+        <p>I told my cousins that I too felt upset for these two mainlanders, and that I didn’t see any concrete evidence of Fu’s deliberately inviting violence, a claim trending on social media among protest supporters. “These two assaults sent a chill down my spine,” I told them, adding that I was being targeted by online trolls for my own reporting on the protest for a Western media outlet. I told them about<a href="https://theinitium.com/article/20190829-opinion-what-makes-pink-totalitarianism-possible/" target="_blank" rel="nofollow">Chen Chun</a>, a Chinese scholar who had been attacked on Weibo for his Twitter posts expressing sympathy for the protests. “It seems like we are heading toward <em>1984</em>,” a cousin wrote, referencing George Orwell.</p>
+        <p>What has arguing with my cousins taught me about tough political discussions with family in China? Listen, listen, and listen. Don’t act condescending. Acknowledge their logic—their opinions are based on the information available to them. Point out the bias and limits of that information. Present facts rather than arguing that certain media or people uphold the absolute truth. Present human stories, including one’s own, to which they can relate. In other words, do what I do daily as a journalist covering the U.S. and China. To fight against biased news reports dehumanizing people from both sides, we have to put human faces into the story.</p>
+        <p>I’d like to think my family’s efforts to communicate were not in vain. Tensions ran high in our chat group, but we deepened our understanding of one another. Some cousins have expressed empathy for the protesters. Some agreed to disagree. We have become more like a family, maintaining differences but trying our best to understand and accommodate each other. At the most intense phase of the protests, my Hong Kong cousin W was the only one posting in the group on a daily basis. He shared distressing videos and images of police brutality, cursing the police and their parents. The rest of us read quietly most of the time. “Discuss with rationality. Don’t indulge in hatred,” a cousin eventually wrote.</p>
+        <p>On W’s birthday in late December 2019, clashes continued to take place in Hong Kong, but he had stopped posting about the protest. All the cousins wished him a happy birthday in the WeChat group. He did not reply. Days later, he wrote, on a different topic. “Zhaoyin, is this true?” He sent over a clip of <em>The Daily Show</em> mocking Donald Trump’s tweets. “Ah ha, finally an easy one,” I told myself and breathed a sigh of relief that he had not abandoned the group.</p>
+        <p>I remembered a hot humid summer two decades ago, when all of us crammed into a small room to play a martial arts video game together. We teamed up to skillfully beat the bad guys. If only the real world were always that clear cut.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8186" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/lan-lin"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/lanlinprofile.jpg?itok=wp_QwJcd" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="lan-lin"><a href="https://www.chinafile.com/contributors/lan-lin" title="Lan Lin">Lan Lin</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <h3 id="an-odd--mom">An “Odd ” Mom</h3>
+        <p class="dropcap">One of the perks of traveling that my parents enjoy most is being surrounded by a different world, and the real people living in it. “You can’t get that nuance otherwise,” my mom used to tell me.</p>
+        <p>Hong Kong is a city our family frequently visits, not only because it’s close to ours, but also because of the delicious cha chaan teng restaurants, huge shopping malls, and uncensored Internet.</p>
+        <p>On a summer break during college, I stopped by Hong Kong while flying back to China from Los Angeles. My mother met me at the airport.</p>
+        <p>It was midnight after we’d settled into our hotel. I lay on the bed and started watching YouTube videos. Mom leaned against the wooden headboard, browsing on her phone. I craned my neck, “What are you reading, mom?” “Just some random stuff,” she kept scrolling. A light blue bird icon caught my eye. “Wow! Since when have you known about Twitter?” Mom rolled her eyes at me, “Girl, I know a lot of things you don’t know about.”</p>
+        <p>Aiding my jet lag, she started telling me about how stories about Hong Kong were taboo when she was a kid growing up in Foshan, Guangdong province, and her first time visiting the city after its return to Chinese sovereignty in 1997. That night, I realized my mother had been quietly reading the news whenever she visited Hong Kong. It became clear that although she never received a Western education, let alone training in journalism, she is actually more aware of uncensored news than her daughter who went to an American college.</p>
+        <p>Her consciousness was formed through travel. Unlike many of the beneficiaries of China’s economic reforms who began to travel in the 1990s, my parents eschewed organized tour groups, preferring to plan their own trips. An early trip took them to Cambodia 10 years ago, and their enjoyment of its landscape and temples defied their expectations of what a recently war-ravaged country would be like. After that trip, my parents developed an understanding that parts of the world are hidden or misrepresented by China’s media. They learned the importance of not just believing in the information they were fed, but seeking out more themselves.</p>
+        <p>That consciousness put my parents at odds with their peers. Most of their acquaintances are middle-aged Chinese busy investing in real estate and planning their children’s education or career paths, and domestic news is good enough for those purposes. As China’s media censorship strengthens, it becomes increasingly impossible for my parents to discuss an issue with their friends, since no one is eager to look beyond the answers China’s media provides. Every time they do argue, conversations get ugly, relationships turn awkward. My parents have had to learn a hard lesson: agree to disagree. In other words, keep quiet.</p>
+        <p>“Given that all of your friends are reading the same public WeChat accounts, how to do you determine what information is accurate?” I asked my mom during one of our routine video chats.“I just look for opinions that somewhat reflect what I’ve seen in my travels. But honestly, when you read the same things from different outlets at the same time, you know those are probably the script. It’s like when you and your dad reply simultaneously saying you’ve done the laundry when I ask on WeChat.” I couldn’t agree more.</p>
+        <p>In June, when protests began in Hong Kong, the mainland went from knowing almost nothing about them to seeing highly selective snippets reflecting the government’s point of view. Mom and I have been tossing information back and forth. “Don’t talk too much about it with your friends, not even the closest ones, and certainly don’t share on social,” she alerted me over the phone one day. “I am not that influential, you know.” I replied unconcernedly. “I know you think we are old and pessimistic, but your generation was born in the bright times, you know little about what China used to be like and what could be at stake now,” Mom’s voice stiffened.</p>
+        <p>The fear is substantial. Though I don’t consider myself a journalist yet, I have a better idea of what being a journalist means now. I like the saying “fear is your worst enemy,” a mentality that has helped deliver countless good stories to the world. But I couldn’t say it to my mom and dad, because they are already the bravest parents I could ever ask for.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8191" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/chauncey-jung"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/chauncey_photo.jpg?itok=IZtllDaQ" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="chauncey-jung"><a href="https://www.chinafile.com/contributors/chauncey-jung" title="Chauncey Jung">Chauncey Jung</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <h3 id="the-man-who-opened-the-door-for-me">The Man Who Opened the Door for Me</h3>
+        <p class="dropcap">Back in 2004, my father brought home a little satellite. He put it up somewhere on the roof, and after that, a couple more channels started showing on the family TV.</p>
+        <p>As an elementary school student, I had very little interest in current affairs, let alone politics. With the satellite, I started to watch sports channels and documentaries from TV stations in Hong Kong and Taiwan. That was the moment I realized that there was a world outside of CCTV, and that there was history my textbooks didn’t teach.</p>
+        <p>My father speaks very little English, but he likes to show off the few lines that he knows. I remember he watched the Voice of America channel constantly. The programs were usually in English, but around 9:00 p.m. some not-so-good-looking TV anchors hosted shows about China in Chinese, and they presented a very different view of the country than the one I was taught at school.</p>
+        <p>Like others born in the People’s Republic of China, I felt like it was an honor to be wearing that red scarf. My teachers told us Taiwan was part of China and that there are 56 different ethnicities living harmoniously in the country. We memorized and recited Hu Jintao’s “<a href="http://cpc.people.com.cn/GB/64156/64157/4544006.html" target="_blank" rel="nofollow">Eight Honors and Eight Shames</a>” propaganda lines in class. But watching TV at home, I was in a totally different world. There, I saw Tibetan activists accusing the Chinese government of oppressing minority rights, democracy advocates bemoaning the lack of accountability and justice in China, and occasionally, English-speaking panelists speaking critically about China’s politics, and talking about Taiwan.</p>
+        <p>I had difficult feelings about what I watched. I knew my teachers would say that these were anti-China organizations. I tried to switch channels to sports events or entertainment shows, but my father insisted on watching the VOA’s news and commentary show <em>Shishi Dajia Tan</em> (<em>Let’s All Talk About Current Affairs</em>). This was probably the only show he cared about. We had a lot of arguments because of this. He was disappointed in me, and I was confused about why he was so interested in this stuff in the first place.</p>
+        <p>Now I feel lucky I got to stay informed. On more than one occasion in a politics class in middle school, we speculated about whether the Dalai Lama would be arrested by the Chinese police if he came to China again. Talking about political rumors and jokes made me more popular at school. I once told a joke about Jiang Zemin and his affairs with popular singers. Our history teacher gave me a death stare and told me to stop spreading these rumors. But everyone in the classroom probably found my stories far more interesting than the lecture.</p>
+        <p>Watching my father’s satellite TV piqued my curiosity about forbidden subjects, and before it was completely blocked by China’s great firewall, Google became my best friend. I started to pay more attention to the news. Gradually, I realized that there were issues within China’s political system.</p>
+        <p>Still, I was hesitant to become a journalist after graduating from university. I wanted a more stable job. But around 2016, I started to develop an eagerness to write, to bring more insight to readers who cared about current affairs, technology, and political issues. I started covering international stories for Sohu, and then moved into part-time freelancing in English and Chinese. I write about topics the government deems “sensitive,” and I try to get my work published.</p>
+        <p>In a plot twist, my father now worries about my safety.</p>
+        <p>As someone with a degree in Chinese literature, he was glad to see me write well, a talent that for the first 18 years of my life he did not recognize I had, but he frets I might get into trouble for what I write. Crackdowns and censorship are getting more and more intense in the country. And my personal WeChat blog was closed down for seven days after I reposted stories about the <a href="https://www.cnn.com/2018/04/25/asia/china-metoo-peking-university-intl/index.html" target="_blank" rel="nofollow">#MeToo</a> movement at Peking University.</p>
+        <p>Looking back at all this, I am certainly proud of the things that I am doing. And I’m thankful my father opened the door for me.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8196" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/kiki-tianqi-zhao"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/zhao_sm.jpg?itok=tOxhB_37" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="kiki-tianqi-zhao"><a href="https://www.chinafile.com/contributors/kiki-tianqi-zhao" title="Kiki Tianqi Zhao">Kiki Tianqi Zhao</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <h3 id="parents-are-not-what-we-assume">Parents Are Not What We Assume</h3>
+        <p class="dropcap">Assuming parents, or anyone, living inside China’s Great Firewall don’t have a sophisticated understanding of society and politics is wrong to start with.</p>
+        <p>My mom and I grew up in drastically different times and environments. She grew up during the Cultural Revolution with the slogan: “Without the Communist Party, There is No New China.” When Mao Zedong died in 1976, my mom, then 18, cried hard and thought the world was ending. I grew up as China’s economy took off, with a childhood filled with Hans Christian Anderson’s stories, teenage years adoring Korean boy bands and reading sentimental romance novels. The education we received was also very different. My mom wasn’t able to attend college—she said she didn’t learn much in middle school except for reciting Mao’s “Little Red Book.” I went to college in Beijing and have graduate degrees from universities in the U.S. Most of my adult life, I have worked and lived outside the Great Firewall, while my mom lives in Harbin and has never used a VPN. My mom was an elementary school teacher until she retired in 2013. I worked in Beijing for international newspapers and heavily relied on English in my job.</p>
+        <p>However, despite these differences, I rarely feel a gap when I discuss politics with my mom. When I lived with her before college, we didn’t talk much about it. Once, in high school, I didn’t attend a politics exam and got a score of zero. My teacher phoned my mom. I told her I didn’t want to do it because the politics textbook was filled with rhetoric I couldn’t make sense of. She shrugged it off.</p>
+        <p>Ever since I left home for college, chatting on the phone or through FaceTime with her has become routine. We have had long conversations on life, people, the world, and politics—especially after I started to work as a journalist in Beijing. When we have discussed current news, I’ve briefed her during video chats, translated English news articles for her, or sent her screenshots of good Chinese news articles. My mom often says I’m her teacher now because I feed her information. I asked her one time why some friends felt it was hard for them to talk with their parents, not to mention discuss politics with them. She said she felt she’s been growing up with me. Because we chat often, she said, her thoughts could catch up with mine. “I think some parent-child clashes you describe might be caused by the parents’ self-centeredness. Parents like to think they are right and it’s hard for them to accept what their children think,” she told me.</p>
+        <p>But it is not because I send my mom uncensored news that she has a sophisticated understanding of society and politics. In fact, she has long been critical of the society she grew up in. She told me she didn’t discuss politics much with me when I was a teenager because she didn’t want me to be an “angry young woman.”</p>
+        <p>I asked my mom when the moment was that she became critical of a system whose leader she had genuinely thought would save the world. She said there wasn’t a clear moment, but there were many moments adding up to make her question what she was taught to believe in. When she was about 12, a local Party member came to her home to collect eggs—all families were required to turn in a portion of what they produced. My mom told the man: “Our chicken doesn’t have eggs today, why do we have to turn in eggs?” The man turned to my mom and raised his voice: “You are lucky you are just a kid.” My mom was scared and ran off. She said many families, including hers, didn’t always have enough eggs, so they sometimes bought them from the market to turn in to avoid being labeled “counter revolutionaries.” “At the time, I didn’t understand why we had to turn in eggs even when we didn’t have any. The eggs were so precious even our family was reluctant to eat them,” my mom told me. She said that was her earliest memory of understanding what lies were.</p>
+        <p>Another reason my mom feels comfortable discussing politics with me is that she’s always been an avid reader. She told me she liked Alexis de Tocqueville’s <em>Democracy in America</em> (translated in Chinese), and the Chinese writer Lin Da’s (林达’s) books on America’s political and legal systems. Recently, after finishing the translated Chinese version of historian Philip Kuhn’s book <em>Soulstealers</em>, a book I recommended to her, and <em><a href="https://www.ucpress.edu/book/9780520250901/the-talented-women-of-the-zhang-family" target="_blank" rel="nofollow">The Talented Women of the Zhang Family</a></em> by Susan Mann, she’s started Jonathan Spence’s account of the Taiping Rebellion, <em>God’s Chinese Son</em>. She has bought almost all of Spence’s books that have been translated into Chinese.</p>
+        <p>I asked my mom how she felt about living inside the Great Firewall. “Well,” she replied, “it leaves me plenty of time to read all of these good books.”</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-03-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-17/This-Is-Not-Forensic-Genetics-Anymore.-This-Is-Su/">
+          ‘This Is Not Forensic Genetics Anymore. This Is Surveillance.’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-12</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-12/China-and-Intervention-at-the-UN-Security-Council/">
+          China and Intervention at the UN Security Council
+        </a>
+      </li>
+    
+    
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-08/%E4%B8%89%E7%AF%87%E6%9C%80%E6%96%B0%E7%9A%84%E6%96%B0%E5%86%A0%E8%82%BA%E7%82%8E%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87-%E9%83%BD%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/">
+            前一篇：三篇最新的新冠肺炎相关论文，都讲了什么？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-09/%E8%82%A1%E5%B8%82%E7%8E%B0%E5%9C%A8%E7%94%B1%E8%AE%A1%E7%AE%97%E6%9C%BA-%E7%AE%97%E6%B3%95%E5%92%8C%E8%A2%AB%E5%8A%A8%E7%AE%A1%E7%90%86%E8%80%85%E8%BF%90%E8%A1%8C-%E8%BF%99%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%88-iYouPort/">
+            後一篇：股市现在由计算机、算法和被动管理者运行，这意味着什么？ - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-03-08/%E4%B8%89%E7%AF%87%E6%9C%80%E6%96%B0%E7%9A%84%E6%96%B0%E5%86%A0%E8%82%BA%E7%82%8E%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87-%E9%83%BD%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-03-09/%E8%82%A1%E5%B8%82%E7%8E%B0%E5%9C%A8%E7%94%B1%E8%AE%A1%E7%AE%97%E6%9C%BA-%E7%AE%97%E6%B3%95%E5%92%8C%E8%A2%AB%E5%8A%A8%E7%AE%A1%E7%90%86%E8%80%85%E8%BF%90%E8%A1%8C-%E8%BF%99%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%88-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-03-12/China-and-Intervention-at-the-UN-Security-Council/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-03-08/%E4%B8%89%E7%AF%87%E6%9C%80%E6%96%B0%E7%9A%84%E6%96%B0%E5%86%A0%E8%82%BA%E7%82%8E%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87-%E9%83%BD%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-03-09/%E8%82%A1%E5%B8%82%E7%8E%B0%E5%9C%A8%E7%94%B1%E8%AE%A1%E7%AE%97%E6%9C%BA-%E7%AE%97%E6%B3%95%E5%92%8C%E8%A2%AB%E5%8A%A8%E7%AE%A1%E7%90%86%E8%80%85%E8%BF%90%E8%A1%8C-%E8%BF%99%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%88-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-03-12/China-and-Intervention-at-the-UN-Security-Council/">
+      <i>左</i>
+    </a>
+    
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

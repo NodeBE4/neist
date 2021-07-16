@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>朱海就：奥派经济学、开放社会及其敌人丨燕京访谈 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+朱海就：奥派经济学、开放社会及其敌人丨燕京访谈
+——
+" />
+    <meta property="og:description" content="
+朱海就：奥派经济学、开放社会及其敌人丨燕京访谈
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="朱海就：奥派经济学、开放社会及其敌人丨燕京访谈" />
+    <meta property="twitter:title" content="朱海就：奥派经济学、开放社会及其敌人丨燕京访谈" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60ebabe364016f4d2b32b9aa" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60ebabe364016f4d2b32b9aa" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60ebabe364016f4d2b32b9aa&text=朱海就：奥派经济学、开放社会及其敌人丨燕京访谈&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60ebabe364016f4d2b32b9aa&title=朱海就：奥派经济学、开放社会及其敌人丨燕京访谈" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60ebabe364016f4d2b32b9aa&title=朱海就：奥派经济学、开放社会及其敌人丨燕京访谈" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=朱海就：奥派经济学、开放社会及其敌人丨燕京访谈&body=
+朱海就：奥派经济学、开放社会及其敌人丨燕京访谈
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60ebabe364016f4d2b32b9aa" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60ebabe364016f4d2b32b9aa&title=朱海就：奥派经济学、开放社会及其敌人丨燕京访谈&caption=
+朱海就：奥派经济学、开放社会及其敌人丨燕京访谈
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=朱海就：奥派经济学、开放社会及其敌人丨燕京访谈&url=https://www.allnow.com/post/60ebabe364016f4d2b32b9aa" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>朱海就：奥派经济学、开放社会及其敌人丨燕京访谈</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-07-12
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 张弘</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60ebabe364016f4d2b32b9aa" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60ebabe364016f4d2b32b9aa">朱海就：奥派经济学、开放社会及其敌人丨燕京访谈</a>
+——</p>
+
+<div>
+  <p>采写︱张弘</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-12/60ebac339c232e01c17d24f3+L.jpg" data-id="60ebac3e2114416715c3dc43" alt="美国前总统里根和英国前首相撒切尔夫人都是哈耶克的信徒。（图源：视觉中国）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+美国前总统里根和英国前首相撒切尔夫人都是哈耶克的信徒。（图源：视觉中国）
+    </figcaption>
+  </figure>
+  <p>正如哥本哈根商学院教授福斯所说，传统上，人们认为奥地利学派经济学起源于19世纪70年代和80年代维也纳教授卡尔·门格尔的著作。事实上，奥地利学派的许多核心思想可以在坎蒂隆、法国重农主义者甚至更早期的西班牙耶稣会士的著作中找到痕迹。门格尔的学生维塞尔和庞巴维克从不同方向拓展了门格尔的思想，第三代奥地利学派经济学家米塞斯与哈耶克使该学派在20世纪上半叶展现出了一种蓬勃发展的态势。但是二战结束之后，这个学派一直处于沉寂的状态。一直到20世纪70年代，奥地利学派才在美国重新焕发活力。自那之后，奥地利学派在全球范围内扩展。它在欧洲、拉丁美洲和俄罗斯都拥有很多的追随者。</p>
+  <p>上世纪80年代，奥地利学派代表人物哈耶克（1974年诺贝尔经济学奖得主）的著作，曾经深刻影响了美国总统里根和英国首相撒切尔夫人。《哈耶克传》（阿兰·艾博斯坦著，秋风译）显示，撒切尔夫人作为首相在下院说：“我是哈耶克教授的热情崇拜者。我们这里一些尊贵的议员应该读读他的书。”哈耶克的《通往奴役之路》《自由秩序原理》《法律、立法与自由》等书对她影响很大。里根也提到，他曾拜读过哈耶克的一本书，他还邀请哈耶克到白宫来与他面谈。里根当选总统之后，二十多位奥地利学派得 学者成为了他的智囊。以色列总统西蒙·佩雷斯曾有一个经验性的观察：“一般来说，在这个世界中，那些把自由放在平等之上的国家与那些把平等放在自由之上的国家相比较，前者在平等方面要比后者在自由方面做得更好。”而这正是奥地利学派所呼吁和支持的观点。</p>
+  <p>近年来，奥地利学派在中国的影响力日益增强。哈耶克的主要著作被都被翻译成了中文，米塞斯的《人的行为》有了几个译本，罗斯巴德等人的著作也被引进出版。但是，奥地利学派并非主流。浙江工商大学经济学院教授朱海就是奥地利学派的代表之一，前不久，他的《真正的市场》面世。就奥地利学派的观点和方法，与其他经济学派的异同等问题，燕京书评采访了朱海就。今天刊出的是第一篇，明天将刊出第二篇。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-12/60ebac6e4cd55d54dd5dbaf1+L.jpg" data-id="60ebac8c9b2d825085c2651d" alt="朱海就，1973年生，浙江青田人，2002年毕业于浙江大学并获得经济学博士学位，现为浙江工商大学经济学院教授。著有《市场的本质》《大改革：中国市场化改革的理论与现实取向》《市场的合作与秩序》等。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+朱海就，1973年生，浙江青田人，2002年毕业于浙江大学并获得经济学博士学位，现为浙江工商大学经济学院教授。著有《市场的本质》《大改革：中国市场化改革的理论与现实取向》《市场的合作与秩序》等。
+    </figcaption>
+  </figure>
+  <h2 id="section"><strong>经济学论文的数学化与学术的国家化有直接关系</strong></h2>
+  <p><strong>燕京书评：一般认为，奥地利学派的研究方法延续了15世纪以来的经济思想，包含了大卫·休谟、亚当·斯密、大卫·李嘉图、弗雷德里克·巴斯夏等。奥地利学派认为，只有在逻辑上出自于人类行为原则的经济理论才是真实的。这种理论的正式名称是人类行为学</strong>（praxeology）<strong>，长期以来，奥地利学派便提倡一种从这种理论所衍生的解释方式。人类行为学的方法使得经济学家们能以此探索适用于所有人类的经济规律，而奥地利学派的解释方式则可以用于针对特定的历史时期进行研究。路德维希·冯·米塞斯与弗里德里克·哈耶克等人，在研究方法上坚持方法论的个人主义。你在书中反复强调：1.奥地利学派是以人的行动为基础，人的行为是有目的的；2.人的偏好、人的预期、人的知识所固有的非决定和不可预期</strong>（53页）<strong>。我感觉，这似乎是一个哲学问题，而这种出发点的不同，导致了奥派与新古典经济学和其他经济学派的不同，为什么奥派要坚持从这两点出发展开经济学分析？</strong></p>
+  <p><strong></strong></p>
+  <p><strong>朱海就：</strong>人类行为学（praxeology），我们现在常称之为“行动学”，我认为它不仅是奥派经济学，也是整个经济学之所以成为一门独特学科的根本特征。经济学作为一门学科，其不同于其他学科的独到之处，不是它使用了计量、实证、数学模型，因为这些都是技术层面的，更不是研究所谓的“经济问题”，而在于它是一建立了从人的行动出发的逻辑体系。行动学是米塞斯在门格尔的理论之上建立的，在上世纪二三十年代的社会主义经济计算大辩论中发展起来。</p>
+  <p>门格尔写了一本非常重要的书《国民经济学》原理，在这本书中，他强调了价值的主观性，认为价值是人对某物满足其需求的重要性的判断，这样一个能够做出判断的人在古典经济学中是没有的，这个能够做出重要性判断的人是真实的，不是虚构的。米塞斯进一步发展了门格尔的这一主观主义思想，从人的行动的有目的性出发建立理论体系的大厦。相比之下，新古典经济学的“经济人”或“理性人”假设是不真实的，这与他们的目的在于说明均衡有关。经济学理论必须能够解释现实，对应现实，否则就没有意义，那么怎么才能具有这样的现实性？就是从真实的人出发。奥派坚持了这一点，使自己的理论具有现实性，奥派的方法也因此被称为逻辑现实主义。</p>
+  <p>行动学为什么重要？我们认为社会科学的方法其实就两种，即理论和历史。历史的方法是“理解”，即根据解释者自己理解的解释，这样的解释没有理论依据，是任意的。理论的方法认为历史需要用确切的理论去解释，当理论不能解释的时候，才能用理解的方法。这个“理论”就是“行动学”。奥派认为理论先于历史，所有的历史都是理论的历史，我们总是用理论去观察历史，并且历史也是由某种理论或观点的人创造的，理解历史要理解他们所拥有的理论或观点。行动学是从人的行动的有目的性这一公理出发建立的一套理论体系，揭示了人类社会也有着和自然科学一样的法则，这种法则是先验的，当我们理解了这一法则时，我们才能判断自己的行动和某种制度的后果，否则很可能陷入瞎干，蛮干中，即它使我们避免“人定胜天”。</p>
+  <p>行动学是关于社会的科学，让我们知道社会是怎么一回事的科学，这种关于社会的知识是国人迄今为止都极为贫乏的知识。历史上我们理解社会的工具，如儒释道法等并不是关于社会的科学，过去一百多年引入的西方主流思想在这方面也有很大局限。奥派经济学是属于全人类的智慧，对中国有特别的意义，但它还没引起重视。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-12/60ebacd24cd55d54dd5dbaf2+L.jpg" data-id="60ebacdb2114416715c3dc44" alt="《真正的市场》。朱海就著，上海三联书店2021年5月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《真正的市场》。朱海就著，上海三联书店2021年5月版
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：主流的经济学，大量而广泛地使用了数学。在主流经济学期刊上，不使用数学就无法发表论文，而奥地利经济学家认为，这恰恰说明主流经济学已经误入歧途。你在书中引用了米塞斯和门格尔反对用数学研究经济学的理由。但是，数学是自然科学的基础和重要工具，为什么奥地利学派拒绝使用数学？</strong></p>
+  <p><strong></strong></p>
+  <p><strong>朱海就：</strong>这个问题经常被问起。一百多年前，门格尔写信给瓦尔拉斯时就谈了这个问题，门格尔说概念的本质无法用数学表示，如价值、利润和租等的本质是无法用数学表示的，如无法用数学语言说明什么是价值，而对这些概念的理解构成经济学的基础。数学方法把真实的人，即人的目的、判断和发现等排除在外，因为这些是不能用数学符号表示的。所以，数学虽然有逻辑，但对经济学来说，它不现实，也无法展现现实。</p>
+  <p>用数学来考察人类活动，是把人的世界变成物的世界。新古典经济学假设人的目的或手段是给定的，这时人所面临的是在给定条件下求解最大化，这时可以用数学，但这个假设是不真实的。在人的世界中没有不变的关系，人也不是生活在一个给定信息的静态均衡世界里，不是对外部信号机械地做出反应。实证主义利用的总是已经产生的，并且也是能够收集的数据；而那些被个体主观感知的，如幸福和痛苦的感受，由于没有数据而被忽视，但这些是根本性的。数据承载着理论，人们是根据他的立场观点去选择数据的。社会现象不是机械的世界，任何一个数据都是总量或平均，我们很难说某个数据就是某个行为的结果。重要的不是数据，而是人们对数据的认识和理解。这种认识和理解包含重要性的判断，无法用数据表示。所以，认为可以用数据解决问题是一种计划经济思维。</p>
+  <p>我本人在大学期间学了比较多的数学，用的数学教材是黄正中老先生编的《高等数学》上下册，这本教科书我还保存着，其内容包含酉空间、二次型等，其难度应该比现在大学经济系用的数学教科书难得多。我当时的数学成绩也还不错，当然现在学奥派经济学就没怎么用上。现在大量使用数学的经济学文章很少有给人什么启发的，可以说基本上没有什么价值，但这些文章的“发表”使很多人获得现实的利益，比如成为项目结题的依据，这样就可以拿到课题经费，进入某个人才计划，评上职称和升迁，等等。经济学论文基本上是为此而生产，为这些利益服务的，它们本身没有什么价值。经济学论文的数学化与学术的国家化有直接关系，因为这种无效的生产只有国家才会支持，市场是不可能支持的，相关人员都是这种无效生产的受益者，他们构成一个垄断的利益圈子，这种现象的出现让人痛心，它完全背离了学术的精神，我只能希望他们能够醒悟。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-12/60ebad324cd55d54dd5dbaf4+L.jpg" data-id="60ebad419b2d825085c2651f" alt="哈耶克（右）和米塞斯，在米塞斯获得维也纳大学博士学位五十周年庆典上。图片来自《米塞斯大传》。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+哈耶克（右）和米塞斯，在米塞斯获得维也纳大学博士学位五十周年庆典上。图片来自《米塞斯大传》。
+    </figcaption>
+  </figure>
+  <h2 id="section-1"><strong>真正的市场与真实的市场</strong></h2>
+  <p><strong>燕京书评：科斯提出了“真实的市场”这一概念，你在书中提出了“真正的市场”这一概念，并解释为“那种有助于个体幸福不断增进的市场”。在我看来，幸福是一个很主观的概念，而你在书中也反复强调奥派一直贯彻主观主义，两者之间有着怎样的联系？</strong></p>
+  <p><strong></strong></p>
+  <p><strong>朱海就：</strong>这本书的书名是“真正的市场”，我必须对“什么是真正的市场”有一个说明。在本书的前面，我做了一个非常一般性的说明，即“那种有助于个体幸福不断增进的市场”。在本书的后面，我也有进一步的说明。</p>
+  <p>在说明“真正的市场”时，我很自然想到了“个体幸福的不断增进”，因为我确实认为个体幸福是最为根本性的，市场经济最终要落实到个体幸福的不断增进上，这个是“真正的市场”的目的。这个理解和奥派的方法论确实有关系。奥派强调方法论个体主义和主观主义，认为实现整体性的目标不等于个体幸福的增进，因为只有个体自己知道他的需求、他的拥有，因此应该让个体自己做出选择。并且，也只有让个体在一般性规则之上做出自主的选择时，才是最有利于个体幸福的不断增进的，这样一种状态可以称为真正的市场。</p>
+  <p><strong>燕京书评：你在书中强调，古典经济学中没有区分企业家功能和资本家功能，新古典经济学中的企业家只是一个管理者</strong>（109-111页）<strong>，熊彼特强调企业家的重要性，但在方法论层面没有企业家。而奥派认为，企业家</strong>（创新、发现、想象，203页）<strong>、知识和市场过程是三大最重要的概念。那么，企业家、知识、市场过程这三大概念应如何理解？</strong></p>
+  <p><strong></strong></p>
+  <p><strong>朱海就：</strong>企业家这个概念是奥派主观主义方法的充分体现，自坎迪隆把这个概念引入经济学以来，它一直是奥派区别于其他经济学派的重要内容。它与不确定性联系在一起，人为了应对不确定性，必须做出判断、发现和想象等，企业家正是指这样一种功能，而和职业无关。米塞斯说，乞丐都要判断哪里才能要到更多钱，所以广义上每个人都是企业家，或者说，人的行动必然是“企业家的”，狭义的企业家是指那种特别具有警觉能力的人，米塞斯称之为“促进者”。</p>
+  <p>在奥派经济学家中，哈耶克特别强调知识，认为知识是分散的、主观的、隐含的和实践的等，我们可以说重要的知识是存在于企业家头脑中的知识，也就是有关判断、发现和想象的知识，这种知识无法明晰化，不能为他人所知。企业家对这种知识的利用，带动了其他知识的利用，并创造了财富。市场是企业家发挥才能的过程，也是企业家利用知识的过程。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-12/60ebad6a9c232e01c17d24f5+L.jpg" data-id="60ebad6f9b2d825085c26520" alt="米塞斯代表作《人的行为》，上海社会科学院出版社2015年9月版。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+米塞斯代表作《人的行为》，上海社会科学院出版社2015年9月版。
+    </figcaption>
+  </figure>
+  <h2 id="section-2"><strong>主流经济学：并非因正确而成为主流，乃因政治而成为主流</strong></h2>
+  <p><strong>燕京书评：米塞斯说过，“经济学不受欢迎是它对特权的后果展开分析的结果。人们不可能反驳经济学家的论证：一切特权都损害其他所有人的利益或者至少是其中一大部分人的利益，那些受害者只有在他们也被授予特权时才能够容忍这些特权的存在。然后，当每个人都拥有特权时，没有人会受益，所有人都受损，因为劳动生产率必定随之普遍下降。然而，那些完全明白他们没有特权的帮助就不能在竞争性市场中取胜的贪婪的人们对经济学家的告诫置之不理。他们确信他们会比其他群体得到更多的更有价值的特权，或者他们至少能够在一个时期内阻止其他群体得到补偿性的特权。在他们眼里，经济学家只不过是打算破坏他们计划的捣乱分子。”那么，这是否也是奥地利学派不能成为主流的重要原因？</strong></p>
+  <p><strong></strong></p>
+  <p><strong>朱海就：</strong>米塞斯这段话很精彩。特权是市场的反面，特权维护了一部分人的利益，但损害了所有其他人的利益。而经济学对特权之危害的揭示是那么深刻，自然是不会受那些拥有特权的人的欢迎的，他们害怕因此失去自己的特权利益。这里说的经济学是指真正的经济学，不是服务于特权的经济学，后者是伪经济学。</p>
+  <p>特权需要伪经济学为它服务，蒙蔽大众，这样就可以高枕无忧了。特权手里有很多资源，可以笼络很多“经济学家”为它服务，因为他们也是人，有趋利性。由于这些伪经济学家得到大量资源的支持，他们成为人多势众的一方，他们占据主要的传播途径，他们的经济学因此成为“主流经济学”。即主流经济学不是因为它正确而成为主流的，而是因为政治而成为主流。相反，更为正确的经济学不仅得不到支持，反而被特权打压，无法进入特权控制的传播渠道，这样就被边缘化了。米塞斯本人就被边缘化，他甚至在大学没有得到正式的教职，但他没有向特权低头，他把“不向邪恶低头，而是勇敢地与之抗争”作为自己的座右铭。</p>
+  <p><strong>燕京书评：《真正的市场》批驳了新古典经济学和其他经济学派的谬误，似乎只有奥地利经济学派才是正确的。这种看法，想必会引发其他学派经济学者的批评。之前我读过科斯和王宁合著的《变革中国》，我感觉科斯的制度经济学理论在一些地方与你在本书中显示出来的奥派观点基本一致，那么，两者之间的异同究竟在哪里？</strong></p>
+  <p><strong></strong></p>
+  <p><strong>朱海就：</strong>经济学这门学科的一个特点是它有很多不同的流派，不同流派都有自己的方法、理论和政策主张，但这并不是说所有的流派都是正确的。正确的经济学只有一种，相对来说奥派更接近“正确的经济学”。这里的正确是指“方法论”，其他经济学派在某些方面也有正确的地方，在一些具体问题上有洞见，如芝加哥学派在政策建议上和奥派有很多相近之处，如都反对通货膨胀，但在方法论上有区别。而我认为方法论是根本性的，是衡量正确与否的关键。如哈耶克说，凯恩斯的错误主要是方法论的错误。</p>
+  <p>方法论错了，具体的阐述就不重要了。新古典经济学不是在边际革命的基础上前进一步，而是某种程度上回到了古典经济学，这是哈耶克对马歇尔的评价，而奥派通过对主观主义的弘扬，真正建立了现代经济学。但我不是全盘否定主流经济学，如张维迎教授指出的，主流经济学不是好的“市场理论”，即在市场理论上确实是不足的，因为市场是一个多人世界，是一个协调问题；而主流是一个最大化理论，是有关一人或两人世界的经济学；我这本书是关于市场问题，我对主流的批评是指它在这方面的局限。</p>
+  <p>不可否认，主流经济学在具体的特定问题上的解释还是很强的，因为具体的问题很大程度上和约束条件有关，但相对而言，奥派不太关注具体的问题，而是更关心一般性的问题，我认为奥派也会采取主流类似的方法去解释具体的问题。即对具体问题的解释是可以包容在奥派中的，相对来说，奥派是一个更为一般性的框架，而主流是一个特例，如给定信息或均衡下的特例。我不认为有独特的奥派经济学，而是认为经济学应该就是这样的。在这点上，我赞同弗里德曼说的，经济学没有奥派与非奥派之分，只有好与不好之分。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-12/60ebad984cd55d54dd5dbaf5+L.jpg" data-id="60ebadab9b2d825085c26522" alt="米塞斯。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+米塞斯。
+    </figcaption>
+  </figure>
+  <h2 id="section-3"><strong>政府、市场与企业家：政府扮演保护私有产权的裁判员角色</strong></h2>
+  <p><strong>燕京书评：你在“行动人”的基础上提出了“行动-规则”框架，强调协调，而协调需要规则。制度主要是协调人的行动，使不同个体的计划得以兼容</strong>（第8页）<strong>。那么，你认为政府在其中应该扮演怎样的角色？</strong></p>
+  <p><strong></strong></p>
+  <p><strong>朱海就：</strong>这是非常好的问题。“协调”是我这本书的一个核心概念，也是第三篇的主题。协调的思想可以追溯到斯密，他在《国富论》一开始就强调分工，他把分工看作是财富增长的原因，而分工正是一个“协调”问题。李嘉图的重要贡献“比较优势理论”说明不同国家之间，即便在没有绝对优势的情况下，只要有相对的优势，那么通过贸易也能实现互利，这也是一个与“协调”相关的理论，我把他视为斯密分工思想的发展。米塞斯则进一步把李嘉图的比较优势理论一般化，说明人的行动本身就包含了协调。</p>
+  <p>企业家通过经济计算，通过判断，发现和想象利润机会，把资源用于更能满足消费者需求的领域；在这个过程中，他使不同的主体，如员工、要素供给者和消费者的行为达成协调，也就是满足了他们各自的需求，这意味着财富的增长。如企业家亏损，那意味着他没有实现协调，这时市场迫使他把协调的功能让给其他企业家。</p>
+  <p>政府在协调中扮演重要角色。我们说，协调需要借助于价格，而价格的产生又取决于私有产权，因为没有产权，就没有交换和企业家对资产运用的可能，这样也就没有价格。所以，政府的作用是保护私有产权，扮演好裁判员的角色，自己直接参与资源配置则不合适。</p>
+  <p>协调的关键是“一般性规则”。当个体的行动遵循一般性规则时，将实现充分的协调，当然这是一个过程，因为一般性规则及其重要性需要被认识，一般性规则本身也是演变的。一般性规则也提供了衡量政府行为的尺度。当政府完全遵循一般性规则时，这样的政府是“理想的”；相反，当政府完全背离一般性规则时，这样的政府是最糟糕的。现实中的政府介于这两者之间，不同国家的政府处在两者所构成的“线段”的不同位置上。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-12/60ebadeb9c232e01c17d24f6+L.jpg" data-id="60ebadf3904b8c02a16a388b" alt="《米塞斯大传》，约尔格·吉多·许尔斯曼著，上海社会科学院出版社2016年8月版。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《米塞斯大传》，约尔格·吉多·许尔斯曼著，上海社会科学院出版社2016年8月版。
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：哈耶克在《通往奴役之路》等著作中，对于计划经济有过犀利的批评，但大数据的出现，使得马云这样的企业家和何大安这样的教授认为，可以产生新的计划经济。你在第十四章批驳了何大安的观点，认为大数据会对产业发展产生影响，但以此实施计划经济则不可能获得成功。</strong></p>
+  <p><strong></strong></p>
+  <p><strong>朱海就：</strong>大数据只是一种手段，它本身并没有制度蕴意，人们使用大数据来实现什么目的才是重要的。这是一个制度问题，而不是技术问题。个人、企业家和政府都可以使用大数据，但都要受规则的约束，即在运用大数据的过程中不能侵犯个体的产权。确实，政府权力比较大，如不受监督约束，则更有可能侵犯个体的产权。因此，大数据的相关产权需要明确，相关的法规应该建立起来，政府在法律之下使用大数据。</p>
+  <p>现在有一种观点，认为大数据应该国有化，成为公共财产，如大数据企业应该由国家所有，我对此是不赞同的。数据资产是投资人、企业家和个体行动的结果，产权应该归属他们，企业家在法律下使用大数据就是服务公共利益的最好方式。政府的作用是为企业家使用数据资产提供保护，并且防止不合法的使用。</p>
+  <h2 id="section-4"><strong>自发秩序并非自动产生，条件是政府放松对民间的管制</strong></h2>
+  <p><strong>燕京书评：奥地利学派坚持自由竞争的市场原则，强调最好的秩序是自发秩序，如你在书中所说，哈耶克的自发秩序理论说明了人类长期选择所形成的规则是可靠的，人类的延续不能背离传统，不能背离历经长时间所形成的规则</strong>（301）<strong>。经济史家侯家驹先生的《中国经济史》一书显示，在中国历史上，皇权至少三次的打断了中国资本主义萌芽。有学者认为，在帝制中国（秦代到清代），不可能产生资本主义。这似乎说明，在家天下的情况下，自发秩序无法生长。你怎么看？</strong></p>
+  <p><strong></strong></p>
+  <p><strong>朱海就：</strong>自发秩序的生成不是自动的，而是有条件的，就是政府放松对民间的管制，私有财产权包括人身的安全得到保护。在家天下的情况下，这个条件不具备，因此自发秩序无法生长，总是会被它打断。家天下和自发秩序不能相容，因为家天下是要维护垄断利益，而自发秩序会威胁到这种垄断利益，所以强权必然会干预，限制市场秩序的扩展，它只会允许市场扩展到它认为对它最有利的程度。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-12/60ebae144cd55d54dd5dbaf6+L.jpg" data-id="60ebae1c2114416715c3dc46" alt="哈耶克。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+哈耶克。
+    </figcaption>
+  </figure>
+  <p>侯先生经验研究得出的结论与奥派是一致的，就是当政府放松管制，民间自由度比较高的时候，经济发展就会比较好。这里的关键问题时，为什么皇权会一而再、再而三地打压自发秩序？一个根本原因是自由市场在观念上还没有战胜皇权专制的思想，皇权是一个认知错误，有着牢不可破的观念基础。</p>
+  <p>比如在中国历史上，人们推崇“学而优则仕”，“万般皆下品，惟有读书高”，读书的目的不是求智慧，而是当官、光宗耀祖。当官备受推崇，而企业家、商人则地位低下，从“士农工商”的排序中就可以看出。企业家没有地位，没有尊严，当企业家的财产权被剥夺时，没有人替他辩护，这样市场经济怎么可能发展？一个社会推崇当官或权力，维护了既有的权力秩序，但却不利于市场的扩展。推崇权力，其实是一种集体的“不理性”，因为权力并不创造财富，更多的是拿走你身上的财富，而一个社会竟然推崇它，这确实是不可思议的荒唐。</p>
+  <p>只有推崇创造（企业家），你的财富才能增加，这才是理性的。我认为，这种不理性和经济学知识的贫困有关。缺乏经济学知识，使大众认为商人是剥削的，因此当政府打压商人时，他们也拍手称快，把政府的这种行为视为正义之举。皇权的长久存在，最终是一个认知问题。对经济学的无知，尤其是知识分子对经济学的无知，导致了皇权的长久存在。这是为什么奥派经济学，一种关于良序社会的科学，一种能够帮助人们正确认识自己利益的科学，对中国如此之重要的原因。</p>
+  <p>要补充说明的是，“学而优则仕”也是一种“理性”，因为毕竟当官赚钱容易，别人会把钱送上来，但这种理性只是局限下最大化的理性，不是放在社会背景下的理性。没有看到，如约束强权，也会增进自己的利益。他们维护这样一种“容易”的制度，最终也是损害了自己的利益。但这种理性是人们陌生的。经济学告诉人们正确的理性，也就是对自己有利的理性“应该是什么”，但它不能保证人们能够拥有这样的理性。</p>
+  <p>奥派经济学是关于开放社会或扩展秩序的“理论”，这种“理论”在中国历史上是非常贫困的。如前面提到的，儒、释、道和法都没有提供这样一种有关市场或扩展秩序的理论，过去一百多年西方引入的主流理论也没有，比如没有指出私有产权的重要性。当大众不知道开放社会或扩展是怎么回事的时候，社会的发展或秩序的扩展自然就可能推进。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-12/60ebae3e9c232e01c17d24f7+L.jpg" data-id="60ebae4a9b2d825085c26524" alt="《凯恩斯、拉斯基、哈耶克：改变世界的三个经济学家》，肯尼斯 R. 胡佛著，上海社会科学院出版社2013年6月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《凯恩斯、拉斯基、哈耶克：改变世界的三个经济学家》，肯尼斯 R. 胡佛著，上海社会科学院出版社2013年6月版
+    </figcaption>
+  </figure>
+  <h2 id="section-5"><strong>张五常用错误的方法得出了错误的结论</strong></h2>
+  <p><strong></strong></p>
+  <p><strong>燕京书评：你把产权定义为“拥有发挥企业家才能的创造物”，产权问题的核心是“能不能发挥企业家才能”，那些被人们自觉履践的制度通常是“自发”地内生出来的，先于成文制度（374页）。《真正的市场》用较长的篇幅批评张五常对中国改革开放的解释。你认为，地方政府存在竞争，但同时也在竞赛，两者互相冲突（399）。此外，地方政府不是合格的资源配置主体。一般人都知道，政府参与配置资源，相当于既做运动员又做裁判，通常会扭曲经济制度，那么，张五常将最坏的制度解释为“最好的制度”，这究竟是认识论还是方法论所导致？</strong></p>
+  <p><strong></strong></p>
+  <p><strong>朱海就：</strong>确实，我对中国改革开放的解释和张五常不一样。张五常把中国经济的成功归为人为的制度安排，即一种能够使地方政府配置资源的制度安排，如土地的国有。而我从市场的角度理解，认为改革开放使个体能够拥有自己发挥企业家才能的创造物，也就是承认了个体的财产权，这样就激励个体去创造，使市场价格得以出现；而价格的出现，使地方政府能够经济计算，“理性地”配置资源，使地方政府能够扮演类似企业家的角色。这时，国有土地虽然在“法律”上是国有，但由于融入了分工合作，在“经济”上具有类似企业家配置私有财产的性质。 所以，市场的出现是地方政府能够“理性地”行动前提，而张五常教授没有看到这个关键点。我们看到，在“大跃进”时代，地方政府也“竞争”，但结果是破坏性的，因为在那时没有出现市场，没有市场价格信号，地方政府的行动是盲目的。</p>
+  <p>张五常教授得出这个结论，和他的方法论有关。实证主义方法根据经验观察得出结论，也就是说，不是从确定的、先验的法则出发来思考的，这是其一。其二是与局限条件下的最大化方法有关，张五常教授用最大化来解释经济现象，但这种方法不适用于多人世界，即市场，因为市场是一个多人的协调问题，不是一个最大化问题。对地方政府最大化的解释，不能等同于对经济增长的解释；因为前者是单个个体的最大化问题，后者是一个多人世界的协调问题。单个主体的最大化，不等于整体的最大化。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-12/60ebae6f9c232e01c17d24f8+L.jpg" data-id="60ebae742114416715c3dc47" alt="凯恩斯是哈耶克的论敌。（图源：视觉中国）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+凯恩斯是哈耶克的论敌。（图源：视觉中国）
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：罗斯巴德从自然权利出发，主张无政府资本主义；另一种以“协调”为基础的无政府资本主义，把发挥企业家才能视为实现协调的实现条件。你勾画了一个令人振奋的前景：国家不以地域和民族为界，以具体人为转移，在空间和民族上相互交错，位于特定地区的政府可以服务于世界各地的居民。这种朝着“市场化组织”方向演变的政府，代表一种更高级的文明形态（271页）。我感觉，这可以从奥派的学术观点推导出来，但是，正如你在书中所言，土地一直是经济学的要素，这一步在学术上的跨越是否过大？</strong></p>
+  <p><strong></strong></p>
+  <p><strong>朱海就：</strong>在《真正的市场》第十一章，我提出了“协调视角的无政资”概念，这也是本书一个重要观点，它对罗斯巴德的观点做了修正，提供了一幅未来社会的理想图景，但它又不是乌托邦，因为在逻辑上是可行的。据我所知，国外有的地方已经在试验“私有城市”，就是政府服务的非公共化，这与我在书中提出的“协调视角的无政资”是接近的。古典自由主义者，如斯密主张小政府，政府扮演守夜人；大部分奥派经济学家，如米塞斯和哈耶克也都是小政府的支持者，但小政府的最大问题是承认政府的垄断具有合法性，当政府具有垄断地位时，政府的扩张就难以避免。</p>
+  <p>对此，西班牙奥派经济学家德索托认为，古典自由主义事实上已经失败，二十世纪的灾难就是证明。要避免政府的扩张，首先在理论上就不应该认可政府的垄断地位，而是要把政府放在一般性规则之下，使之具有和其他主体同等的地位，就是把政府作为一种功能来看，这种功能是开放性的，其他组织也可以提供，这样政府就成为竞争性的协调体系的一部分。</p>
+  <p>这样，也打破了民族国家和地理国家的限制，真正实现自由贸易、资金的自由流动和自由来往等。这是学术上的构想，能否变成现实取决于人的观念和行动，因为任何的社会政治形态最终都是人的观念和行动的产物，而不是“注定”就应该如何。</p>
+  <p>如哈耶克所说，经济学家不应该考虑政治上是否可行，“经济理论家或政治哲学家的首要任务应当是影响公众意见，使得今天在政治上看起来不可能的事情具有政治上的可能性”。</p>
+  <p>在“协调视角的无政资”这一构想下，土地或管辖区的问题不再存在，因为作为一种功能的政府不是通过对居住在固定区域内的居民收税来获得收入，而是通过服务来获得收入。这时，人员是流动性的，政府也是流动性的，当然也可以不流动，居民和政府都不属于某个固定区域，不再有地理意义上的国家，而是一个个私人管理的社区或城市。</p>
+  <p>———</p>
+  <p>微信搜索“燕京书评”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-07-14</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-14/%E6%9E%81%E5%8C%96%E4%B8%8E%E6%92%95%E9%80%BC-%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%91%E4%BB%AC-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B6%8A%E6%9D%A5%E8%B6%8A%E6%97%A0%E6%B3%95%E6%8E%A5%E5%8F%97%E4%B8%8D%E5%90%8C%E7%9A%84%E8%A7%82%E7%82%B9/">
+          极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-13</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-13/%E6%9C%B1%E6%B5%B7%E5%B0%B1-%E5%AF%B9%E5%88%B6%E5%BA%A6%E7%9A%84%E6%AD%A3%E7%A1%AE%E8%AE%A4%E8%AF%86-%E6%89%8D%E6%98%AF%E9%80%9A%E5%BE%80%E6%96%87%E6%98%8E%E4%B9%8B%E8%B7%AF%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          朱海就：对制度的正确认识，才是通往文明之路丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-11</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-11/%E8%84%B1%E7%BC%B0%E5%B9%B4%E4%BB%A3%E7%9A%84%E6%97%B6%E9%97%B4%E4%BF%98%E8%99%8F-%E7%8E%B0%E5%9C%A8%E4%B8%80%E5%88%87%E5%90%AC%E5%A4%A9%E7%94%B1%E5%91%BD%E4%BA%86%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E5%9D%8A/">
+          脱缰年代的时间俘虏：现在一切听天由命了丨燕京书坊
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-10</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-10/%E9%85%92%E3%81%AE%E7%A5%9E%E5%90%AF-%E6%97%A5%E6%9C%AC%E7%83%A7%E9%85%92-%E5%8F%91%E9%85%B5%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%88%91%E4%BB%AC%E6%9C%AA%E6%9D%A5%E7%9A%84%E7%94%9F%E6%B4%BB%E6%96%B9%E5%BC%8F/">
+          酒の神启：日本烧酒、发酵技术与我们未来的生活方式
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-11/%E8%84%B1%E7%BC%B0%E5%B9%B4%E4%BB%A3%E7%9A%84%E6%97%B6%E9%97%B4%E4%BF%98%E8%99%8F-%E7%8E%B0%E5%9C%A8%E4%B8%80%E5%88%87%E5%90%AC%E5%A4%A9%E7%94%B1%E5%91%BD%E4%BA%86%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E5%9D%8A/">
+            前一篇：脱缰年代的时间俘虏：现在一切听天由命了丨燕京书坊
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">
+            後一篇：How Should the U.S. Approach Climate Diplomacy with China?
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-07-11/%E8%84%B1%E7%BC%B0%E5%B9%B4%E4%BB%A3%E7%9A%84%E6%97%B6%E9%97%B4%E4%BF%98%E8%99%8F-%E7%8E%B0%E5%9C%A8%E4%B8%80%E5%88%87%E5%90%AC%E5%A4%A9%E7%94%B1%E5%91%BD%E4%BA%86%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E5%9D%8A/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-07-13/%E6%9C%B1%E6%B5%B7%E5%B0%B1-%E5%AF%B9%E5%88%B6%E5%BA%A6%E7%9A%84%E6%AD%A3%E7%A1%AE%E8%AE%A4%E8%AF%86-%E6%89%8D%E6%98%AF%E9%80%9A%E5%BE%80%E6%96%87%E6%98%8E%E4%B9%8B%E8%B7%AF%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-07-11/%E8%84%B1%E7%BC%B0%E5%B9%B4%E4%BB%A3%E7%9A%84%E6%97%B6%E9%97%B4%E4%BF%98%E8%99%8F-%E7%8E%B0%E5%9C%A8%E4%B8%80%E5%88%87%E5%90%AC%E5%A4%A9%E7%94%B1%E5%91%BD%E4%BA%86%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E5%9D%8A/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-07-11/%E8%84%B1%E7%BC%B0%E5%B9%B4%E4%BB%A3%E7%9A%84%E6%97%B6%E9%97%B4%E4%BF%98%E8%99%8F-%E7%8E%B0%E5%9C%A8%E4%B8%80%E5%88%87%E5%90%AC%E5%A4%A9%E7%94%B1%E5%91%BD%E4%BA%86%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E5%9D%8A/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-07-13/%E6%9C%B1%E6%B5%B7%E5%B0%B1-%E5%AF%B9%E5%88%B6%E5%BA%A6%E7%9A%84%E6%AD%A3%E7%A1%AE%E8%AE%A4%E8%AF%86-%E6%89%8D%E6%98%AF%E9%80%9A%E5%BE%80%E6%96%87%E6%98%8E%E4%B9%8B%E8%B7%AF%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-07-11/%E8%84%B1%E7%BC%B0%E5%B9%B4%E4%BB%A3%E7%9A%84%E6%97%B6%E9%97%B4%E4%BF%98%E8%99%8F-%E7%8E%B0%E5%9C%A8%E4%B8%80%E5%88%87%E5%90%AC%E5%A4%A9%E7%94%B1%E5%91%BD%E4%BA%86%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E5%9D%8A/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

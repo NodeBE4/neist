@@ -1,0 +1,11092 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>如何将安卓手机变成黑客设备 - 无需 Root - iYouPort – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+  
+     如何将安卓手机变成黑客设备 — 无需 Root 
+  
+  
+  McCaffrey     Knowledge Node  ,  技术  ,  给行动者的护身符和武器             2020年6月3日 
+          2019年12月31日 
+   2 Minutes 
+  
+  
+    
+       
+      
+       没有树莓派？不要急，你的安卓就可以
+      
+      
+    
+           
+  
+      
+
+    只需轻按几下，即可将 Android 手机武器化为隐蔽的黑客设备，该设备可以运行  Nmap  、  Nikto  和  Netcat 之类的工具  —— 做到所有这些而无需Root。
+    由 UserLAnd Technologies 创建的  UserLAnd  是一个完全免费的 Android 应用程序，它使安装 Linux 发行版变得快捷而轻松，无需 Root。
+    这样就可以在当前的 Android OS 旁边运行  ARM64 Debian  操作系统。
+    这种 ARM 架构有时也称为 “AARCH64”，与 Kali Linux Raspberry Pi ARM 映像所使用的架构相同，这使得导入 Kali 的工具库很容易。
+    最重要的是，UserLAnd 团队添加了一个专用的 Kali 文件系统，因此，并非所有用户都需要导入存储库。
+    所有创建的文件系统都很容易使用。尽管许多 Kali 工具可以正常工作，但 UserLAnd 仍然是一个新项目，在执行某些命令时可能会导致某些工具（例如 Nmap）损坏或失败。值得一提的是，这些问题可能会在不久的将来得到解决。
+    UserLAnd 利用自定义脚本和可执行文件允许创建 Debian 和 Ubuntu 文件系统。其中一个例子是  PRoot  ，这是一种  开源软件  ，可实现类似于  chroot  的功能。
+    PRoot 允许您使用备用根目录执行程序，而无需 Root。通常，  用户空间  应用程序将通过  系统调用  直接与内核通信。
+    借助 UserLAnd，PRoot 在后台运行，解释这些系统调用，并且在必要时执行和操作它们，以模拟文件系统中的用户和权限。
+    null-byte 的解释从安装SSH客户端开始，它将是与 Debian OS 进行交互的主要应用程序。然后逐步介绍一些操作系统设置技巧，并导入 Kali Linux 存储库，以将 Android 手机真正转变为黑客设备。
+    如某些读者所知，Kali Linux 基于 Debian 操作系统，因此导入其存储库不会导致任何破坏或不可靠的情况。
+    在下面看到他们的 
+    演示视频
+    ：
+          
+ 
+      
+
+     
+    第一步：安装 ConnectBot APP（可选）
+    
+    UserLAnd 最近添加了内置的SSH功能，因此不再需要此步骤。但是，如果您愿意，仍可以使用第三方SSH客户端。
+     ConnectBot  是专为 Android 智能手机设计的  开源  SSH客户端，可让您安全地与SSH服务器连接。
+    这将是与新的 UserLAnd Debian 操作系统进行交互的主要方式。如果您不使用或无法访问 Google Play，则可以通过  F-Droid  存储库使用 ConnectBot。
+    
+      
+     Play Store Link:
+      
+      ConnectBot
+       
+     (free)
+    
+      
+     F-Droid Link:
+      
+      ConnectBot
+       
+     (free)
+    
+    
+           
+  
+      
+
+     JuiceSSH  也是替代 ConnectBot 的很好选择，因为它具有更多功能，因此您可以根据需要使用它。ConnectBot 定期更新，对于初学者来说更容易。
+     
+    第二步：安装 UserLAnd App
+    
+    上面已经介绍了 UserLAnd 的功能，因此这里不再赘述。重要的是您要安装它，使用 Google Play 或 F-Droid 进行安装。
+    
+      
+     Play Store Link:
+      
+      UserLAnd
+       
+     (free)
+    
+      
+     F-Droid Link:
+      
+      UserLAnd
+       
+     (free)
+    
+    
+           
+  
+      
+
+    免责声明：UserLAnd 确实有局限性。如果没有 root，Android 的 Wi-Fi 界面将无法切换为监控模式，因此传统的 Wi-Fi 黑客工具（如 Aircrack-ng）将无法使用。
+    但是，使用 UserLAnd 仍然可以完成很多工作，在不 Root 或擦除 Android OS 的情况下运行 Kali 绝非易事。
+    因此，您值得在 Google Play 上给 UserLAnd 应用程序一个良好的评分，开发者应该得到这样积极的反馈。
+     
+    第三步：创建一个新的文件系统
+    
+    安装完成后，打开 UserLAnd，然后查看 “Apps” 选项卡。刷新选项卡，然后等待几分钟以填充分发。
+    Kali Linux OS 最近已添加到可用发行版列表中。选择 “Kali” 或 “Debian”，UserLAnd 应用程序将提示输入凭据。
+    创建用户名、密码和VNC密码。文件系统安装完成后，该“密码”将允许您访问在文件系统准备安装时启动的SSH服务器。
+    本教程中将不会使用 “VNC密码”。
+           
+  
+      
+
+    然后，UserLAnd 将从其 GitHub 存档下载用于创建文件系统的必要可执行文件和脚本。下载和提取所需东西的时间将取决于您的 Android CPU 和互联网连接的速度。
+    在某些测试中，安装过程最多需要20分钟才能完成，因此请耐心等待。
+    在我的第一次尝试中，UserLAnd 返回了 “  Could not extract filesystem. Something went wrong  ” 这样的错误。在这种情况下删除并重新安装 UserLAnd 就可以解决问题。如果此错误仍然存​​在  ，请打开  一个新的 GitHub 问题。
+     
+    第四步：与文件系统交互
+    
+    安装完成后，转到 “会话” 选项卡，然后选择新创建的选项。
+    UserLAnd 将自动尝试打开 ConnectBot 并询问“您确定要继续连接吗？”点击“是”，然后输入在上一步中创建的密码。
+           
+  
+      
+
+    此时，将蓝牙键盘同步到手机可以使操作系统的设置更加容易，但这不是必需的。如果您不使用蓝牙键盘，建议您从Play商店安装  Hacker’s Keyboard  ，然后继续进行操作，您会了解原因的。
+     
+    第五步：更新操作系统
+    
+    在 Android 手机上安装新操作系统后，要做的第一件事就是确保该系统是最新版。
+    这可以通过首先使用 
+    su
+    创建根shell来完成。然后使用 
+    apt-get update &amp;&amp; apt-get dist-upgrade
+    命令。
+    [email protected]:~$ su
+[email protected]: /home/distortion# apt-get update &amp;&amp; apt-get dist-upgrade
+Ign:1 http://cdn-fastly.deb.debian.org/debian stable InRelease
+Get:2 http://cdn-fastly.deb.debian.org/debian stable-updates InRelease [91.0 kB]
+Hit:3 http://cdn-fastly.deb.debian.org/debian stable Release
+Get:4 http://cdn-fastly.deb.debian.org/debian stable Release.gpg [2434 B]
+Get:5 http://cdn-fastly.deb.debian.org/debian stable-updates/main arm64 Packages [5096 B]
+Get:6 http://cdn-fastly.deb.debian.org/debian stable-updates/main Translation-en [4512 B]
+Get:7 http://cdn-fastly.deb.debian.org/debian stable/main Translation-en [5393 B]
+Get:8 http://cdn-fastly.deb.debian.org/debian stable/contrib arm64 Packages [29.9 kB]
+Get:9 http://cdn-fastly.deb.debian.org/debian stable/contrib Translation-en [45.9 kB]
+Get:10 http://cdn-fastly.deb.debian.org/debian stable/non-free arm64 Package [50.8 kB]
+Get:11 http://cdn-fastly.deb.debian.org/debian stablenon-free Translation-en [80.6 kB]
+Fetched 5714 kB in 31s (183 kB/s)
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  tzdata
+1 upgraded, 0 newly intalled, 0 to remove and 0 not upgraded.
+Need to get 270 kB of archives.
+After this operation, 1024 B of additional disk space will be used.
+Do you want to continue? [Y/n]    
+    对于上面的输出，只有一个包需要更新，但并非总是如此。
+     
+    第六步：安装基本软件
+    
+    这个新的文件系统极其简单，默认情况下不包含太多软件。
+    以下是为日常 Debian 和 Kali 用户推荐的一些软件包。其中某些软件包不是必需的，但可以使今后将Android用作主要黑客设备更加容易。
+    1、 
+    screen
+    — Screen 是一个终端多路复用器，允许用户同时运行并在多个终端会话之间交替。
+    这是使用 UserLAnd 时要安装的最重要的软件包之一。 Android 手机无法很好地处理长时间SSH会话，并且可能会无缘无故地断开连接。这种问题可能导致正在运行的命令失败，无法重新连接到会话以查看进度。
+    所以要使用 Screen 来维持持久的Shell会话。
+    2、 
+    net-tools
+    — Net-tools 是一套工具，包含 ifconfig、netstat、route 和其他一些有用的网络应用程序。
+    3、 
+    netcat
+    — Netcat 是功能丰富的 UNIX 实用程序，旨在成为创建TCP和UDP连接的可靠工具。Netcat 可用于创建简单的macOS后门并与之交互。
+    4、 
+    neofetch
+    — Neofetch 是一种跨平台的系统信息收集工具。除了帮您向同事和朋友炫耀分发内容或为 WonderHowTo 创建封面照片外，此程序包没有其他功能。
+    5、 
+    gnupg
+    —  GnuPG  （有时称为 gpg）通常用于加密文件和保护电子邮件通信。一些安装程序脚本（例如 Metasploit）使用 gpg 来导入其软件签名密钥。
+    可以在没有 gpg 的情况下手动安装 Metasploit，可能过程相对复杂。
+    6、 
+    curl
+    — cURL 是一种命令行工具，能够通过HTTP和其他流行协议下载文件。这是从Internet下载文件的有用工具。
+    7、 
+    wget
+    — 类似于 cURL，也是用于从Internet下载文件的命令行工具。一些开发人员更喜欢 wget 而不是 cURL，对于保持安装状态和可用性都很有帮助。
+    8、 
+    git
+    — Git 是一种流行的版本控制软件，通常用于克隆（下载）GitHub 项目。
+    9、 
+    nano
+    — Nano 是命令行文本编辑器，它可以使通过SSH编辑文件更加方便。如果首选 Vim 或 Emacs，则改为下载这些文本编辑器（或除nano外）。
+    可以使用 
+    apt-get
+    命令安装以上软件包：
+    apt-get update &amp;&amp; apt-get install net-tools netcat neofetch gnupg curl wget git nano screen    
+     
+    第七步：导入 Kali Linux 存储库（视情况而定）
+    
+    如果您在步骤3中安装了 Kali OS，则可以跳过此步骤。
+    对于 Debian OS 用户，这不是必须的，但是，这样做可以快速安装诸如 sqlmap、Commix、Bettercap、Nikto、dnsmap 之类的应用程序，以及数百种在 Debian 的默认存储库中找不到的软件包。
+    要开始导入 Kali Linux 存储库，请使用 
+    nano
+    将 Kali 的存储库添加到 /etc/apt/sources.list 文件中。
+    nano /etc/apt/sources.list    
+    将以下行添加到文件底部，然后使用 Ctrl + X 退出并保存更改。
+    ConnectBot 在屏幕上有按钮，如 Ctrl 和 Shift 等键。或者使用蓝牙键盘或黑客键盘应用也一样。
+    deb http://http.kali.org/kali kali-rolling main contrib non-free    
+           
+  
+      
+
+    然后，使用以下 wget 命令添加 Kali 签名密钥：
+    wget -q -O - https://www.kali.org/archive-key.asc | apt-key add -    
+    如果命令成功，终端将返回 “OK”（如下所示）。最后，使用 
+    apt-get update
+    命令更新 APT 缓存。
+    [email protected]:/home/distortion# wget -q -O - https://www.kali.org/archive-key.asc | apt-key add -
+OK
+[email protected]:/home/distortion# apt-get update
+Ign:1 http://cdn-fastly.deb.debian.org/debian stable InRelease
+Hit:3 http://cdn-fastly.deb.debian.org/debian stable-updates InRelease
+Hit:4 http://cdn-fastly.deb.debian.org/debian stable Release
+Ign:2 http://ftp.halifax.rwth-aachen.de/kali kali-rolling InRelease
+Get:6 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling Release [29.6 kB]
+Get:7 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling Release.gpg [833 B]
+Get:8 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling/main arm64 Packages [16.4 MB]
+64% [8 Packages 9415 kB/16.4 MB 57%]                               546 kB/s 13s    
+     
+    最后
+    
+    使用 UserLAnd，将 Android 变成黑客设备会非常容易。
+    尽管 Android 处理数据的速度比树莓派要慢，但它仍然是一款功能强大、易于隐藏的进攻工具，能够运行 Kali 软件。
+    您可以根据需要探索更多用途。不要做坏事！⚪️
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       Android 
+       hacktivist 
+       technique 
+       Technology 
+       tools 
+       UserLAnd 
+    
+  
+  
+    
+
+    Published
+           2020年6月3日 
+       2019年12月31日 
+    
+  
+
+" />
+    <meta property="og:description" content="
+  
+     如何将安卓手机变成黑客设备 — 无需 Root 
+  
+  
+  McCaffrey     Knowledge Node  ,  技术  ,  给行动者的护身符和武器             2020年6月3日 
+          2019年12月31日 
+   2 Minutes 
+  
+  
+    
+       
+      
+       没有树莓派？不要急，你的安卓就可以
+      
+      
+    
+           
+  
+      
+
+    只需轻按几下，即可将 Android 手机武器化为隐蔽的黑客设备，该设备可以运行  Nmap  、  Nikto  和  Netcat 之类的工具  —— 做到所有这些而无需Root。
+    由 UserLAnd Technologies 创建的  UserLAnd  是一个完全免费的 Android 应用程序，它使安装 Linux 发行版变得快捷而轻松，无需 Root。
+    这样就可以在当前的 Android OS 旁边运行  ARM64 Debian  操作系统。
+    这种 ARM 架构有时也称为 “AARCH64”，与 Kali Linux Raspberry Pi ARM 映像所使用的架构相同，这使得导入 Kali 的工具库很容易。
+    最重要的是，UserLAnd 团队添加了一个专用的 Kali 文件系统，因此，并非所有用户都需要导入存储库。
+    所有创建的文件系统都很容易使用。尽管许多 Kali 工具可以正常工作，但 UserLAnd 仍然是一个新项目，在执行某些命令时可能会导致某些工具（例如 Nmap）损坏或失败。值得一提的是，这些问题可能会在不久的将来得到解决。
+    UserLAnd 利用自定义脚本和可执行文件允许创建 Debian 和 Ubuntu 文件系统。其中一个例子是  PRoot  ，这是一种  开源软件  ，可实现类似于  chroot  的功能。
+    PRoot 允许您使用备用根目录执行程序，而无需 Root。通常，  用户空间  应用程序将通过  系统调用  直接与内核通信。
+    借助 UserLAnd，PRoot 在后台运行，解释这些系统调用，并且在必要时执行和操作它们，以模拟文件系统中的用户和权限。
+    null-byte 的解释从安装SSH客户端开始，它将是与 Debian OS 进行交互的主要应用程序。然后逐步介绍一些操作系统设置技巧，并导入 Kali Linux 存储库，以将 Android 手机真正转变为黑客设备。
+    如某些读者所知，Kali Linux 基于 Debian 操作系统，因此导入其存储库不会导致任何破坏或不可靠的情况。
+    在下面看到他们的 
+    演示视频
+    ：
+          
+ 
+      
+
+     
+    第一步：安装 ConnectBot APP（可选）
+    
+    UserLAnd 最近添加了内置的SSH功能，因此不再需要此步骤。但是，如果您愿意，仍可以使用第三方SSH客户端。
+     ConnectBot  是专为 Android 智能手机设计的  开源  SSH客户端，可让您安全地与SSH服务器连接。
+    这将是与新的 UserLAnd Debian 操作系统进行交互的主要方式。如果您不使用或无法访问 Google Play，则可以通过  F-Droid  存储库使用 ConnectBot。
+    
+      
+     Play Store Link:
+      
+      ConnectBot
+       
+     (free)
+    
+      
+     F-Droid Link:
+      
+      ConnectBot
+       
+     (free)
+    
+    
+           
+  
+      
+
+     JuiceSSH  也是替代 ConnectBot 的很好选择，因为它具有更多功能，因此您可以根据需要使用它。ConnectBot 定期更新，对于初学者来说更容易。
+     
+    第二步：安装 UserLAnd App
+    
+    上面已经介绍了 UserLAnd 的功能，因此这里不再赘述。重要的是您要安装它，使用 Google Play 或 F-Droid 进行安装。
+    
+      
+     Play Store Link:
+      
+      UserLAnd
+       
+     (free)
+    
+      
+     F-Droid Link:
+      
+      UserLAnd
+       
+     (free)
+    
+    
+           
+  
+      
+
+    免责声明：UserLAnd 确实有局限性。如果没有 root，Android 的 Wi-Fi 界面将无法切换为监控模式，因此传统的 Wi-Fi 黑客工具（如 Aircrack-ng）将无法使用。
+    但是，使用 UserLAnd 仍然可以完成很多工作，在不 Root 或擦除 Android OS 的情况下运行 Kali 绝非易事。
+    因此，您值得在 Google Play 上给 UserLAnd 应用程序一个良好的评分，开发者应该得到这样积极的反馈。
+     
+    第三步：创建一个新的文件系统
+    
+    安装完成后，打开 UserLAnd，然后查看 “Apps” 选项卡。刷新选项卡，然后等待几分钟以填充分发。
+    Kali Linux OS 最近已添加到可用发行版列表中。选择 “Kali” 或 “Debian”，UserLAnd 应用程序将提示输入凭据。
+    创建用户名、密码和VNC密码。文件系统安装完成后，该“密码”将允许您访问在文件系统准备安装时启动的SSH服务器。
+    本教程中将不会使用 “VNC密码”。
+           
+  
+      
+
+    然后，UserLAnd 将从其 GitHub 存档下载用于创建文件系统的必要可执行文件和脚本。下载和提取所需东西的时间将取决于您的 Android CPU 和互联网连接的速度。
+    在某些测试中，安装过程最多需要20分钟才能完成，因此请耐心等待。
+    在我的第一次尝试中，UserLAnd 返回了 “  Could not extract filesystem. Something went wrong  ” 这样的错误。在这种情况下删除并重新安装 UserLAnd 就可以解决问题。如果此错误仍然存​​在  ，请打开  一个新的 GitHub 问题。
+     
+    第四步：与文件系统交互
+    
+    安装完成后，转到 “会话” 选项卡，然后选择新创建的选项。
+    UserLAnd 将自动尝试打开 ConnectBot 并询问“您确定要继续连接吗？”点击“是”，然后输入在上一步中创建的密码。
+           
+  
+      
+
+    此时，将蓝牙键盘同步到手机可以使操作系统的设置更加容易，但这不是必需的。如果您不使用蓝牙键盘，建议您从Play商店安装  Hacker’s Keyboard  ，然后继续进行操作，您会了解原因的。
+     
+    第五步：更新操作系统
+    
+    在 Android 手机上安装新操作系统后，要做的第一件事就是确保该系统是最新版。
+    这可以通过首先使用 
+    su
+    创建根shell来完成。然后使用 
+    apt-get update &amp;&amp; apt-get dist-upgrade
+    命令。
+    [email protected]:~$ su
+[email protected]: /home/distortion# apt-get update &amp;&amp; apt-get dist-upgrade
+Ign:1 http://cdn-fastly.deb.debian.org/debian stable InRelease
+Get:2 http://cdn-fastly.deb.debian.org/debian stable-updates InRelease [91.0 kB]
+Hit:3 http://cdn-fastly.deb.debian.org/debian stable Release
+Get:4 http://cdn-fastly.deb.debian.org/debian stable Release.gpg [2434 B]
+Get:5 http://cdn-fastly.deb.debian.org/debian stable-updates/main arm64 Packages [5096 B]
+Get:6 http://cdn-fastly.deb.debian.org/debian stable-updates/main Translation-en [4512 B]
+Get:7 http://cdn-fastly.deb.debian.org/debian stable/main Translation-en [5393 B]
+Get:8 http://cdn-fastly.deb.debian.org/debian stable/contrib arm64 Packages [29.9 kB]
+Get:9 http://cdn-fastly.deb.debian.org/debian stable/contrib Translation-en [45.9 kB]
+Get:10 http://cdn-fastly.deb.debian.org/debian stable/non-free arm64 Package [50.8 kB]
+Get:11 http://cdn-fastly.deb.debian.org/debian stablenon-free Translation-en [80.6 kB]
+Fetched 5714 kB in 31s (183 kB/s)
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  tzdata
+1 upgraded, 0 newly intalled, 0 to remove and 0 not upgraded.
+Need to get 270 kB of archives.
+After this operation, 1024 B of additional disk space will be used.
+Do you want to continue? [Y/n]    
+    对于上面的输出，只有一个包需要更新，但并非总是如此。
+     
+    第六步：安装基本软件
+    
+    这个新的文件系统极其简单，默认情况下不包含太多软件。
+    以下是为日常 Debian 和 Kali 用户推荐的一些软件包。其中某些软件包不是必需的，但可以使今后将Android用作主要黑客设备更加容易。
+    1、 
+    screen
+    — Screen 是一个终端多路复用器，允许用户同时运行并在多个终端会话之间交替。
+    这是使用 UserLAnd 时要安装的最重要的软件包之一。 Android 手机无法很好地处理长时间SSH会话，并且可能会无缘无故地断开连接。这种问题可能导致正在运行的命令失败，无法重新连接到会话以查看进度。
+    所以要使用 Screen 来维持持久的Shell会话。
+    2、 
+    net-tools
+    — Net-tools 是一套工具，包含 ifconfig、netstat、route 和其他一些有用的网络应用程序。
+    3、 
+    netcat
+    — Netcat 是功能丰富的 UNIX 实用程序，旨在成为创建TCP和UDP连接的可靠工具。Netcat 可用于创建简单的macOS后门并与之交互。
+    4、 
+    neofetch
+    — Neofetch 是一种跨平台的系统信息收集工具。除了帮您向同事和朋友炫耀分发内容或为 WonderHowTo 创建封面照片外，此程序包没有其他功能。
+    5、 
+    gnupg
+    —  GnuPG  （有时称为 gpg）通常用于加密文件和保护电子邮件通信。一些安装程序脚本（例如 Metasploit）使用 gpg 来导入其软件签名密钥。
+    可以在没有 gpg 的情况下手动安装 Metasploit，可能过程相对复杂。
+    6、 
+    curl
+    — cURL 是一种命令行工具，能够通过HTTP和其他流行协议下载文件。这是从Internet下载文件的有用工具。
+    7、 
+    wget
+    — 类似于 cURL，也是用于从Internet下载文件的命令行工具。一些开发人员更喜欢 wget 而不是 cURL，对于保持安装状态和可用性都很有帮助。
+    8、 
+    git
+    — Git 是一种流行的版本控制软件，通常用于克隆（下载）GitHub 项目。
+    9、 
+    nano
+    — Nano 是命令行文本编辑器，它可以使通过SSH编辑文件更加方便。如果首选 Vim 或 Emacs，则改为下载这些文本编辑器（或除nano外）。
+    可以使用 
+    apt-get
+    命令安装以上软件包：
+    apt-get update &amp;&amp; apt-get install net-tools netcat neofetch gnupg curl wget git nano screen    
+     
+    第七步：导入 Kali Linux 存储库（视情况而定）
+    
+    如果您在步骤3中安装了 Kali OS，则可以跳过此步骤。
+    对于 Debian OS 用户，这不是必须的，但是，这样做可以快速安装诸如 sqlmap、Commix、Bettercap、Nikto、dnsmap 之类的应用程序，以及数百种在 Debian 的默认存储库中找不到的软件包。
+    要开始导入 Kali Linux 存储库，请使用 
+    nano
+    将 Kali 的存储库添加到 /etc/apt/sources.list 文件中。
+    nano /etc/apt/sources.list    
+    将以下行添加到文件底部，然后使用 Ctrl + X 退出并保存更改。
+    ConnectBot 在屏幕上有按钮，如 Ctrl 和 Shift 等键。或者使用蓝牙键盘或黑客键盘应用也一样。
+    deb http://http.kali.org/kali kali-rolling main contrib non-free    
+           
+  
+      
+
+    然后，使用以下 wget 命令添加 Kali 签名密钥：
+    wget -q -O - https://www.kali.org/archive-key.asc | apt-key add -    
+    如果命令成功，终端将返回 “OK”（如下所示）。最后，使用 
+    apt-get update
+    命令更新 APT 缓存。
+    [email protected]:/home/distortion# wget -q -O - https://www.kali.org/archive-key.asc | apt-key add -
+OK
+[email protected]:/home/distortion# apt-get update
+Ign:1 http://cdn-fastly.deb.debian.org/debian stable InRelease
+Hit:3 http://cdn-fastly.deb.debian.org/debian stable-updates InRelease
+Hit:4 http://cdn-fastly.deb.debian.org/debian stable Release
+Ign:2 http://ftp.halifax.rwth-aachen.de/kali kali-rolling InRelease
+Get:6 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling Release [29.6 kB]
+Get:7 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling Release.gpg [833 B]
+Get:8 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling/main arm64 Packages [16.4 MB]
+64% [8 Packages 9415 kB/16.4 MB 57%]                               546 kB/s 13s    
+     
+    最后
+    
+    使用 UserLAnd，将 Android 变成黑客设备会非常容易。
+    尽管 Android 处理数据的速度比树莓派要慢，但它仍然是一款功能强大、易于隐藏的进攻工具，能够运行 Kali 软件。
+    您可以根据需要探索更多用途。不要做坏事！⚪️
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       Android 
+       hacktivist 
+       technique 
+       Technology 
+       tools 
+       UserLAnd 
+    
+  
+  
+    
+
+    Published
+           2020年6月3日 
+       2019年12月31日 
+    
+  
+
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="如何将安卓手机变成黑客设备 - 无需 Root - iYouPort" />
+    <meta property="twitter:title" content="如何将安卓手机变成黑客设备 - 无需 Root - iYouPort" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.iyouport.org%2F%25e5%25a6%2582%25e4%25bd%2595%25e5%25b0%2586%25e5%25ae%2589%25e5%258d%2593%25e6%2589%258b%25e6%259c%25ba%25e5%258f%2598%25e6%2588%2590%25e9%25bb%2591%25e5%25ae%25a2%25e8%25ae%25be%25e5%25a4%2587-%25e6%2597%25a0%25e9%259c%2580-root%2F" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e5%b0%86%e5%ae%89%e5%8d%93%e6%89%8b%e6%9c%ba%e5%8f%98%e6%88%90%e9%bb%91%e5%ae%a2%e8%ae%be%e5%a4%87-%e6%97%a0%e9%9c%80-root/" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e5%b0%86%e5%ae%89%e5%8d%93%e6%89%8b%e6%9c%ba%e5%8f%98%e6%88%90%e9%bb%91%e5%ae%a2%e8%ae%be%e5%a4%87-%e6%97%a0%e9%9c%80-root/&text=如何将安卓手机变成黑客设备 - 无需 Root - iYouPort&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e5%b0%86%e5%ae%89%e5%8d%93%e6%89%8b%e6%9c%ba%e5%8f%98%e6%88%90%e9%bb%91%e5%ae%a2%e8%ae%be%e5%a4%87-%e6%97%a0%e9%9c%80-root/&title=如何将安卓手机变成黑客设备 - 无需 Root - iYouPort" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e5%b0%86%e5%ae%89%e5%8d%93%e6%89%8b%e6%9c%ba%e5%8f%98%e6%88%90%e9%bb%91%e5%ae%a2%e8%ae%be%e5%a4%87-%e6%97%a0%e9%9c%80-root/&title=如何将安卓手机变成黑客设备 - 无需 Root - iYouPort" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=如何将安卓手机变成黑客设备 - 无需 Root - iYouPort&body=
+  
+     如何将安卓手机变成黑客设备 — 无需 Root 
+  
+  
+  McCaffrey     Knowledge Node  ,  技术  ,  给行动者的护身符和武器             2020年6月3日 
+          2019年12月31日 
+   2 Minutes 
+  
+  
+    
+       
+      
+       没有树莓派？不要急，你的安卓就可以
+      
+      
+    
+           
+  
+      
+
+    只需轻按几下，即可将 Android 手机武器化为隐蔽的黑客设备，该设备可以运行  Nmap  、  Nikto  和  Netcat 之类的工具  —— 做到所有这些而无需Root。
+    由 UserLAnd Technologies 创建的  UserLAnd  是一个完全免费的 Android 应用程序，它使安装 Linux 发行版变得快捷而轻松，无需 Root。
+    这样就可以在当前的 Android OS 旁边运行  ARM64 Debian  操作系统。
+    这种 ARM 架构有时也称为 “AARCH64”，与 Kali Linux Raspberry Pi ARM 映像所使用的架构相同，这使得导入 Kali 的工具库很容易。
+    最重要的是，UserLAnd 团队添加了一个专用的 Kali 文件系统，因此，并非所有用户都需要导入存储库。
+    所有创建的文件系统都很容易使用。尽管许多 Kali 工具可以正常工作，但 UserLAnd 仍然是一个新项目，在执行某些命令时可能会导致某些工具（例如 Nmap）损坏或失败。值得一提的是，这些问题可能会在不久的将来得到解决。
+    UserLAnd 利用自定义脚本和可执行文件允许创建 Debian 和 Ubuntu 文件系统。其中一个例子是  PRoot  ，这是一种  开源软件  ，可实现类似于  chroot  的功能。
+    PRoot 允许您使用备用根目录执行程序，而无需 Root。通常，  用户空间  应用程序将通过  系统调用  直接与内核通信。
+    借助 UserLAnd，PRoot 在后台运行，解释这些系统调用，并且在必要时执行和操作它们，以模拟文件系统中的用户和权限。
+    null-byte 的解释从安装SSH客户端开始，它将是与 Debian OS 进行交互的主要应用程序。然后逐步介绍一些操作系统设置技巧，并导入 Kali Linux 存储库，以将 Android 手机真正转变为黑客设备。
+    如某些读者所知，Kali Linux 基于 Debian 操作系统，因此导入其存储库不会导致任何破坏或不可靠的情况。
+    在下面看到他们的 
+    演示视频
+    ：
+          
+ 
+      
+
+     
+    第一步：安装 ConnectBot APP（可选）
+    
+    UserLAnd 最近添加了内置的SSH功能，因此不再需要此步骤。但是，如果您愿意，仍可以使用第三方SSH客户端。
+     ConnectBot  是专为 Android 智能手机设计的  开源  SSH客户端，可让您安全地与SSH服务器连接。
+    这将是与新的 UserLAnd Debian 操作系统进行交互的主要方式。如果您不使用或无法访问 Google Play，则可以通过  F-Droid  存储库使用 ConnectBot。
+    
+      
+     Play Store Link:
+      
+      ConnectBot
+       
+     (free)
+    
+      
+     F-Droid Link:
+      
+      ConnectBot
+       
+     (free)
+    
+    
+           
+  
+      
+
+     JuiceSSH  也是替代 ConnectBot 的很好选择，因为它具有更多功能，因此您可以根据需要使用它。ConnectBot 定期更新，对于初学者来说更容易。
+     
+    第二步：安装 UserLAnd App
+    
+    上面已经介绍了 UserLAnd 的功能，因此这里不再赘述。重要的是您要安装它，使用 Google Play 或 F-Droid 进行安装。
+    
+      
+     Play Store Link:
+      
+      UserLAnd
+       
+     (free)
+    
+      
+     F-Droid Link:
+      
+      UserLAnd
+       
+     (free)
+    
+    
+           
+  
+      
+
+    免责声明：UserLAnd 确实有局限性。如果没有 root，Android 的 Wi-Fi 界面将无法切换为监控模式，因此传统的 Wi-Fi 黑客工具（如 Aircrack-ng）将无法使用。
+    但是，使用 UserLAnd 仍然可以完成很多工作，在不 Root 或擦除 Android OS 的情况下运行 Kali 绝非易事。
+    因此，您值得在 Google Play 上给 UserLAnd 应用程序一个良好的评分，开发者应该得到这样积极的反馈。
+     
+    第三步：创建一个新的文件系统
+    
+    安装完成后，打开 UserLAnd，然后查看 “Apps” 选项卡。刷新选项卡，然后等待几分钟以填充分发。
+    Kali Linux OS 最近已添加到可用发行版列表中。选择 “Kali” 或 “Debian”，UserLAnd 应用程序将提示输入凭据。
+    创建用户名、密码和VNC密码。文件系统安装完成后，该“密码”将允许您访问在文件系统准备安装时启动的SSH服务器。
+    本教程中将不会使用 “VNC密码”。
+           
+  
+      
+
+    然后，UserLAnd 将从其 GitHub 存档下载用于创建文件系统的必要可执行文件和脚本。下载和提取所需东西的时间将取决于您的 Android CPU 和互联网连接的速度。
+    在某些测试中，安装过程最多需要20分钟才能完成，因此请耐心等待。
+    在我的第一次尝试中，UserLAnd 返回了 “  Could not extract filesystem. Something went wrong  ” 这样的错误。在这种情况下删除并重新安装 UserLAnd 就可以解决问题。如果此错误仍然存​​在  ，请打开  一个新的 GitHub 问题。
+     
+    第四步：与文件系统交互
+    
+    安装完成后，转到 “会话” 选项卡，然后选择新创建的选项。
+    UserLAnd 将自动尝试打开 ConnectBot 并询问“您确定要继续连接吗？”点击“是”，然后输入在上一步中创建的密码。
+           
+  
+      
+
+    此时，将蓝牙键盘同步到手机可以使操作系统的设置更加容易，但这不是必需的。如果您不使用蓝牙键盘，建议您从Play商店安装  Hacker’s Keyboard  ，然后继续进行操作，您会了解原因的。
+     
+    第五步：更新操作系统
+    
+    在 Android 手机上安装新操作系统后，要做的第一件事就是确保该系统是最新版。
+    这可以通过首先使用 
+    su
+    创建根shell来完成。然后使用 
+    apt-get update &amp;&amp; apt-get dist-upgrade
+    命令。
+    [email protected]:~$ su
+[email protected]: /home/distortion# apt-get update &amp;&amp; apt-get dist-upgrade
+Ign:1 http://cdn-fastly.deb.debian.org/debian stable InRelease
+Get:2 http://cdn-fastly.deb.debian.org/debian stable-updates InRelease [91.0 kB]
+Hit:3 http://cdn-fastly.deb.debian.org/debian stable Release
+Get:4 http://cdn-fastly.deb.debian.org/debian stable Release.gpg [2434 B]
+Get:5 http://cdn-fastly.deb.debian.org/debian stable-updates/main arm64 Packages [5096 B]
+Get:6 http://cdn-fastly.deb.debian.org/debian stable-updates/main Translation-en [4512 B]
+Get:7 http://cdn-fastly.deb.debian.org/debian stable/main Translation-en [5393 B]
+Get:8 http://cdn-fastly.deb.debian.org/debian stable/contrib arm64 Packages [29.9 kB]
+Get:9 http://cdn-fastly.deb.debian.org/debian stable/contrib Translation-en [45.9 kB]
+Get:10 http://cdn-fastly.deb.debian.org/debian stable/non-free arm64 Package [50.8 kB]
+Get:11 http://cdn-fastly.deb.debian.org/debian stablenon-free Translation-en [80.6 kB]
+Fetched 5714 kB in 31s (183 kB/s)
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  tzdata
+1 upgraded, 0 newly intalled, 0 to remove and 0 not upgraded.
+Need to get 270 kB of archives.
+After this operation, 1024 B of additional disk space will be used.
+Do you want to continue? [Y/n]    
+    对于上面的输出，只有一个包需要更新，但并非总是如此。
+     
+    第六步：安装基本软件
+    
+    这个新的文件系统极其简单，默认情况下不包含太多软件。
+    以下是为日常 Debian 和 Kali 用户推荐的一些软件包。其中某些软件包不是必需的，但可以使今后将Android用作主要黑客设备更加容易。
+    1、 
+    screen
+    — Screen 是一个终端多路复用器，允许用户同时运行并在多个终端会话之间交替。
+    这是使用 UserLAnd 时要安装的最重要的软件包之一。 Android 手机无法很好地处理长时间SSH会话，并且可能会无缘无故地断开连接。这种问题可能导致正在运行的命令失败，无法重新连接到会话以查看进度。
+    所以要使用 Screen 来维持持久的Shell会话。
+    2、 
+    net-tools
+    — Net-tools 是一套工具，包含 ifconfig、netstat、route 和其他一些有用的网络应用程序。
+    3、 
+    netcat
+    — Netcat 是功能丰富的 UNIX 实用程序，旨在成为创建TCP和UDP连接的可靠工具。Netcat 可用于创建简单的macOS后门并与之交互。
+    4、 
+    neofetch
+    — Neofetch 是一种跨平台的系统信息收集工具。除了帮您向同事和朋友炫耀分发内容或为 WonderHowTo 创建封面照片外，此程序包没有其他功能。
+    5、 
+    gnupg
+    —  GnuPG  （有时称为 gpg）通常用于加密文件和保护电子邮件通信。一些安装程序脚本（例如 Metasploit）使用 gpg 来导入其软件签名密钥。
+    可以在没有 gpg 的情况下手动安装 Metasploit，可能过程相对复杂。
+    6、 
+    curl
+    — cURL 是一种命令行工具，能够通过HTTP和其他流行协议下载文件。这是从Internet下载文件的有用工具。
+    7、 
+    wget
+    — 类似于 cURL，也是用于从Internet下载文件的命令行工具。一些开发人员更喜欢 wget 而不是 cURL，对于保持安装状态和可用性都很有帮助。
+    8、 
+    git
+    — Git 是一种流行的版本控制软件，通常用于克隆（下载）GitHub 项目。
+    9、 
+    nano
+    — Nano 是命令行文本编辑器，它可以使通过SSH编辑文件更加方便。如果首选 Vim 或 Emacs，则改为下载这些文本编辑器（或除nano外）。
+    可以使用 
+    apt-get
+    命令安装以上软件包：
+    apt-get update &amp;&amp; apt-get install net-tools netcat neofetch gnupg curl wget git nano screen    
+     
+    第七步：导入 Kali Linux 存储库（视情况而定）
+    
+    如果您在步骤3中安装了 Kali OS，则可以跳过此步骤。
+    对于 Debian OS 用户，这不是必须的，但是，这样做可以快速安装诸如 sqlmap、Commix、Bettercap、Nikto、dnsmap 之类的应用程序，以及数百种在 Debian 的默认存储库中找不到的软件包。
+    要开始导入 Kali Linux 存储库，请使用 
+    nano
+    将 Kali 的存储库添加到 /etc/apt/sources.list 文件中。
+    nano /etc/apt/sources.list    
+    将以下行添加到文件底部，然后使用 Ctrl + X 退出并保存更改。
+    ConnectBot 在屏幕上有按钮，如 Ctrl 和 Shift 等键。或者使用蓝牙键盘或黑客键盘应用也一样。
+    deb http://http.kali.org/kali kali-rolling main contrib non-free    
+           
+  
+      
+
+    然后，使用以下 wget 命令添加 Kali 签名密钥：
+    wget -q -O - https://www.kali.org/archive-key.asc | apt-key add -    
+    如果命令成功，终端将返回 “OK”（如下所示）。最后，使用 
+    apt-get update
+    命令更新 APT 缓存。
+    [email protected]:/home/distortion# wget -q -O - https://www.kali.org/archive-key.asc | apt-key add -
+OK
+[email protected]:/home/distortion# apt-get update
+Ign:1 http://cdn-fastly.deb.debian.org/debian stable InRelease
+Hit:3 http://cdn-fastly.deb.debian.org/debian stable-updates InRelease
+Hit:4 http://cdn-fastly.deb.debian.org/debian stable Release
+Ign:2 http://ftp.halifax.rwth-aachen.de/kali kali-rolling InRelease
+Get:6 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling Release [29.6 kB]
+Get:7 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling Release.gpg [833 B]
+Get:8 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling/main arm64 Packages [16.4 MB]
+64% [8 Packages 9415 kB/16.4 MB 57%]                               546 kB/s 13s    
+     
+    最后
+    
+    使用 UserLAnd，将 Android 变成黑客设备会非常容易。
+    尽管 Android 处理数据的速度比树莓派要慢，但它仍然是一款功能强大、易于隐藏的进攻工具，能够运行 Kali 软件。
+    您可以根据需要探索更多用途。不要做坏事！⚪️
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       Android 
+       hacktivist 
+       technique 
+       Technology 
+       tools 
+       UserLAnd 
+    
+  
+  
+    
+
+    Published
+           2020年6月3日 
+       2019年12月31日 
+    
+  
+
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e5%b0%86%e5%ae%89%e5%8d%93%e6%89%8b%e6%9c%ba%e5%8f%98%e6%88%90%e9%bb%91%e5%ae%a2%e8%ae%be%e5%a4%87-%e6%97%a0%e9%9c%80-root/" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e5%b0%86%e5%ae%89%e5%8d%93%e6%89%8b%e6%9c%ba%e5%8f%98%e6%88%90%e9%bb%91%e5%ae%a2%e8%ae%be%e5%a4%87-%e6%97%a0%e9%9c%80-root/&title=如何将安卓手机变成黑客设备 - 无需 Root - iYouPort&caption=
+  
+     如何将安卓手机变成黑客设备 — 无需 Root 
+  
+  
+  McCaffrey     Knowledge Node  ,  技术  ,  给行动者的护身符和武器             2020年6月3日 
+          2019年12月31日 
+   2 Minutes 
+  
+  
+    
+       
+      
+       没有树莓派？不要急，你的安卓就可以
+      
+      
+    
+           
+  
+      
+
+    只需轻按几下，即可将 Android 手机武器化为隐蔽的黑客设备，该设备可以运行  Nmap  、  Nikto  和  Netcat 之类的工具  —— 做到所有这些而无需Root。
+    由 UserLAnd Technologies 创建的  UserLAnd  是一个完全免费的 Android 应用程序，它使安装 Linux 发行版变得快捷而轻松，无需 Root。
+    这样就可以在当前的 Android OS 旁边运行  ARM64 Debian  操作系统。
+    这种 ARM 架构有时也称为 “AARCH64”，与 Kali Linux Raspberry Pi ARM 映像所使用的架构相同，这使得导入 Kali 的工具库很容易。
+    最重要的是，UserLAnd 团队添加了一个专用的 Kali 文件系统，因此，并非所有用户都需要导入存储库。
+    所有创建的文件系统都很容易使用。尽管许多 Kali 工具可以正常工作，但 UserLAnd 仍然是一个新项目，在执行某些命令时可能会导致某些工具（例如 Nmap）损坏或失败。值得一提的是，这些问题可能会在不久的将来得到解决。
+    UserLAnd 利用自定义脚本和可执行文件允许创建 Debian 和 Ubuntu 文件系统。其中一个例子是  PRoot  ，这是一种  开源软件  ，可实现类似于  chroot  的功能。
+    PRoot 允许您使用备用根目录执行程序，而无需 Root。通常，  用户空间  应用程序将通过  系统调用  直接与内核通信。
+    借助 UserLAnd，PRoot 在后台运行，解释这些系统调用，并且在必要时执行和操作它们，以模拟文件系统中的用户和权限。
+    null-byte 的解释从安装SSH客户端开始，它将是与 Debian OS 进行交互的主要应用程序。然后逐步介绍一些操作系统设置技巧，并导入 Kali Linux 存储库，以将 Android 手机真正转变为黑客设备。
+    如某些读者所知，Kali Linux 基于 Debian 操作系统，因此导入其存储库不会导致任何破坏或不可靠的情况。
+    在下面看到他们的 
+    演示视频
+    ：
+          
+ 
+      
+
+     
+    第一步：安装 ConnectBot APP（可选）
+    
+    UserLAnd 最近添加了内置的SSH功能，因此不再需要此步骤。但是，如果您愿意，仍可以使用第三方SSH客户端。
+     ConnectBot  是专为 Android 智能手机设计的  开源  SSH客户端，可让您安全地与SSH服务器连接。
+    这将是与新的 UserLAnd Debian 操作系统进行交互的主要方式。如果您不使用或无法访问 Google Play，则可以通过  F-Droid  存储库使用 ConnectBot。
+    
+      
+     Play Store Link:
+      
+      ConnectBot
+       
+     (free)
+    
+      
+     F-Droid Link:
+      
+      ConnectBot
+       
+     (free)
+    
+    
+           
+  
+      
+
+     JuiceSSH  也是替代 ConnectBot 的很好选择，因为它具有更多功能，因此您可以根据需要使用它。ConnectBot 定期更新，对于初学者来说更容易。
+     
+    第二步：安装 UserLAnd App
+    
+    上面已经介绍了 UserLAnd 的功能，因此这里不再赘述。重要的是您要安装它，使用 Google Play 或 F-Droid 进行安装。
+    
+      
+     Play Store Link:
+      
+      UserLAnd
+       
+     (free)
+    
+      
+     F-Droid Link:
+      
+      UserLAnd
+       
+     (free)
+    
+    
+           
+  
+      
+
+    免责声明：UserLAnd 确实有局限性。如果没有 root，Android 的 Wi-Fi 界面将无法切换为监控模式，因此传统的 Wi-Fi 黑客工具（如 Aircrack-ng）将无法使用。
+    但是，使用 UserLAnd 仍然可以完成很多工作，在不 Root 或擦除 Android OS 的情况下运行 Kali 绝非易事。
+    因此，您值得在 Google Play 上给 UserLAnd 应用程序一个良好的评分，开发者应该得到这样积极的反馈。
+     
+    第三步：创建一个新的文件系统
+    
+    安装完成后，打开 UserLAnd，然后查看 “Apps” 选项卡。刷新选项卡，然后等待几分钟以填充分发。
+    Kali Linux OS 最近已添加到可用发行版列表中。选择 “Kali” 或 “Debian”，UserLAnd 应用程序将提示输入凭据。
+    创建用户名、密码和VNC密码。文件系统安装完成后，该“密码”将允许您访问在文件系统准备安装时启动的SSH服务器。
+    本教程中将不会使用 “VNC密码”。
+           
+  
+      
+
+    然后，UserLAnd 将从其 GitHub 存档下载用于创建文件系统的必要可执行文件和脚本。下载和提取所需东西的时间将取决于您的 Android CPU 和互联网连接的速度。
+    在某些测试中，安装过程最多需要20分钟才能完成，因此请耐心等待。
+    在我的第一次尝试中，UserLAnd 返回了 “  Could not extract filesystem. Something went wrong  ” 这样的错误。在这种情况下删除并重新安装 UserLAnd 就可以解决问题。如果此错误仍然存​​在  ，请打开  一个新的 GitHub 问题。
+     
+    第四步：与文件系统交互
+    
+    安装完成后，转到 “会话” 选项卡，然后选择新创建的选项。
+    UserLAnd 将自动尝试打开 ConnectBot 并询问“您确定要继续连接吗？”点击“是”，然后输入在上一步中创建的密码。
+           
+  
+      
+
+    此时，将蓝牙键盘同步到手机可以使操作系统的设置更加容易，但这不是必需的。如果您不使用蓝牙键盘，建议您从Play商店安装  Hacker’s Keyboard  ，然后继续进行操作，您会了解原因的。
+     
+    第五步：更新操作系统
+    
+    在 Android 手机上安装新操作系统后，要做的第一件事就是确保该系统是最新版。
+    这可以通过首先使用 
+    su
+    创建根shell来完成。然后使用 
+    apt-get update &amp;&amp; apt-get dist-upgrade
+    命令。
+    [email protected]:~$ su
+[email protected]: /home/distortion# apt-get update &amp;&amp; apt-get dist-upgrade
+Ign:1 http://cdn-fastly.deb.debian.org/debian stable InRelease
+Get:2 http://cdn-fastly.deb.debian.org/debian stable-updates InRelease [91.0 kB]
+Hit:3 http://cdn-fastly.deb.debian.org/debian stable Release
+Get:4 http://cdn-fastly.deb.debian.org/debian stable Release.gpg [2434 B]
+Get:5 http://cdn-fastly.deb.debian.org/debian stable-updates/main arm64 Packages [5096 B]
+Get:6 http://cdn-fastly.deb.debian.org/debian stable-updates/main Translation-en [4512 B]
+Get:7 http://cdn-fastly.deb.debian.org/debian stable/main Translation-en [5393 B]
+Get:8 http://cdn-fastly.deb.debian.org/debian stable/contrib arm64 Packages [29.9 kB]
+Get:9 http://cdn-fastly.deb.debian.org/debian stable/contrib Translation-en [45.9 kB]
+Get:10 http://cdn-fastly.deb.debian.org/debian stable/non-free arm64 Package [50.8 kB]
+Get:11 http://cdn-fastly.deb.debian.org/debian stablenon-free Translation-en [80.6 kB]
+Fetched 5714 kB in 31s (183 kB/s)
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  tzdata
+1 upgraded, 0 newly intalled, 0 to remove and 0 not upgraded.
+Need to get 270 kB of archives.
+After this operation, 1024 B of additional disk space will be used.
+Do you want to continue? [Y/n]    
+    对于上面的输出，只有一个包需要更新，但并非总是如此。
+     
+    第六步：安装基本软件
+    
+    这个新的文件系统极其简单，默认情况下不包含太多软件。
+    以下是为日常 Debian 和 Kali 用户推荐的一些软件包。其中某些软件包不是必需的，但可以使今后将Android用作主要黑客设备更加容易。
+    1、 
+    screen
+    — Screen 是一个终端多路复用器，允许用户同时运行并在多个终端会话之间交替。
+    这是使用 UserLAnd 时要安装的最重要的软件包之一。 Android 手机无法很好地处理长时间SSH会话，并且可能会无缘无故地断开连接。这种问题可能导致正在运行的命令失败，无法重新连接到会话以查看进度。
+    所以要使用 Screen 来维持持久的Shell会话。
+    2、 
+    net-tools
+    — Net-tools 是一套工具，包含 ifconfig、netstat、route 和其他一些有用的网络应用程序。
+    3、 
+    netcat
+    — Netcat 是功能丰富的 UNIX 实用程序，旨在成为创建TCP和UDP连接的可靠工具。Netcat 可用于创建简单的macOS后门并与之交互。
+    4、 
+    neofetch
+    — Neofetch 是一种跨平台的系统信息收集工具。除了帮您向同事和朋友炫耀分发内容或为 WonderHowTo 创建封面照片外，此程序包没有其他功能。
+    5、 
+    gnupg
+    —  GnuPG  （有时称为 gpg）通常用于加密文件和保护电子邮件通信。一些安装程序脚本（例如 Metasploit）使用 gpg 来导入其软件签名密钥。
+    可以在没有 gpg 的情况下手动安装 Metasploit，可能过程相对复杂。
+    6、 
+    curl
+    — cURL 是一种命令行工具，能够通过HTTP和其他流行协议下载文件。这是从Internet下载文件的有用工具。
+    7、 
+    wget
+    — 类似于 cURL，也是用于从Internet下载文件的命令行工具。一些开发人员更喜欢 wget 而不是 cURL，对于保持安装状态和可用性都很有帮助。
+    8、 
+    git
+    — Git 是一种流行的版本控制软件，通常用于克隆（下载）GitHub 项目。
+    9、 
+    nano
+    — Nano 是命令行文本编辑器，它可以使通过SSH编辑文件更加方便。如果首选 Vim 或 Emacs，则改为下载这些文本编辑器（或除nano外）。
+    可以使用 
+    apt-get
+    命令安装以上软件包：
+    apt-get update &amp;&amp; apt-get install net-tools netcat neofetch gnupg curl wget git nano screen    
+     
+    第七步：导入 Kali Linux 存储库（视情况而定）
+    
+    如果您在步骤3中安装了 Kali OS，则可以跳过此步骤。
+    对于 Debian OS 用户，这不是必须的，但是，这样做可以快速安装诸如 sqlmap、Commix、Bettercap、Nikto、dnsmap 之类的应用程序，以及数百种在 Debian 的默认存储库中找不到的软件包。
+    要开始导入 Kali Linux 存储库，请使用 
+    nano
+    将 Kali 的存储库添加到 /etc/apt/sources.list 文件中。
+    nano /etc/apt/sources.list    
+    将以下行添加到文件底部，然后使用 Ctrl + X 退出并保存更改。
+    ConnectBot 在屏幕上有按钮，如 Ctrl 和 Shift 等键。或者使用蓝牙键盘或黑客键盘应用也一样。
+    deb http://http.kali.org/kali kali-rolling main contrib non-free    
+           
+  
+      
+
+    然后，使用以下 wget 命令添加 Kali 签名密钥：
+    wget -q -O - https://www.kali.org/archive-key.asc | apt-key add -    
+    如果命令成功，终端将返回 “OK”（如下所示）。最后，使用 
+    apt-get update
+    命令更新 APT 缓存。
+    [email protected]:/home/distortion# wget -q -O - https://www.kali.org/archive-key.asc | apt-key add -
+OK
+[email protected]:/home/distortion# apt-get update
+Ign:1 http://cdn-fastly.deb.debian.org/debian stable InRelease
+Hit:3 http://cdn-fastly.deb.debian.org/debian stable-updates InRelease
+Hit:4 http://cdn-fastly.deb.debian.org/debian stable Release
+Ign:2 http://ftp.halifax.rwth-aachen.de/kali kali-rolling InRelease
+Get:6 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling Release [29.6 kB]
+Get:7 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling Release.gpg [833 B]
+Get:8 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling/main arm64 Packages [16.4 MB]
+64% [8 Packages 9415 kB/16.4 MB 57%]                               546 kB/s 13s    
+     
+    最后
+    
+    使用 UserLAnd，将 Android 变成黑客设备会非常容易。
+    尽管 Android 处理数据的速度比树莓派要慢，但它仍然是一款功能强大、易于隐藏的进攻工具，能够运行 Kali 软件。
+    您可以根据需要探索更多用途。不要做坏事！⚪️
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       Android 
+       hacktivist 
+       technique 
+       Technology 
+       tools 
+       UserLAnd 
+    
+  
+  
+    
+
+    Published
+           2020年6月3日 
+       2019年12月31日 
+    
+  
+
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=如何将安卓手机变成黑客设备 - 无需 Root - iYouPort&url=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e5%b0%86%e5%ae%89%e5%8d%93%e6%89%8b%e6%9c%ba%e5%8f%98%e6%88%90%e9%bb%91%e5%ae%a2%e8%ae%be%e5%a4%87-%e6%97%a0%e9%9c%80-root/" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>如何将安卓手机变成黑客设备 - 无需 Root - iYouPort</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-06-02
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#iYouPort">
+          iYouPort
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e5%b0%86%e5%ae%89%e5%8d%93%e6%89%8b%e6%9c%ba%e5%8f%98%e6%88%90%e9%bb%91%e5%ae%a2%e8%ae%be%e5%a4%87-%e6%97%a0%e9%9c%80-root/" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="iYouPort的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#iYouPort 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <article class="post-11891 post type-post status-publish format-standard has-post-thumbnail hentry category-knowledge-node category-289 category-67 tag-android tag-hacktivist tag-technique tag-technology tag-tools tag-userland" id="post-11891">
+  <header class="entry-header">
+    <h1 class="entry-title" id="root-"> 如何将安卓手机变成黑客设备 — 无需 Root </h1>
+  </header>
+  <div class="entry-meta">
+<span class="byline"> <a href="https://www.iyouport.org/author/don-evans/" rel="author" title="由McCaffrey发布"> McCaffrey </a> </span> <span class="cat-links"> <a href="https://www.iyouport.org/category/knowledge-node/" rel="category tag"> Knowledge Node </a> , <a href="https://www.iyouport.org/category/%e6%8a%80%e6%9c%af/" rel="category tag"> 技术 </a> , <a href="https://www.iyouport.org/category/%e7%bb%99%e8%a1%8c%e5%8a%a8%e8%80%85%e7%9a%84%e6%8a%a4%e8%ba%ab%e7%ac%a6%e5%92%8c%e6%ad%a6%e5%99%a8/" rel="category tag"> 给行动者的护身符和武器 </a> </span> <span class="published-on">         <time class="entry-date published" datetime="2020-06-03T00:04:23+08:00"> 2020年6月3日 </time>
+         <time class="updated" datetime="2019-12-31T15:10:58+08:00"> 2019年12月31日 </time>
+ </span> <span class="word-count"> 2 Minutes </span>
+  </div>
+  <div class="entry-content">
+    <ul>
+      <li class="graf graf--p"><span style="color: #00ccff;"> <em>
+      <strong>
+       没有树莓派？不要急，你的安卓就可以
+      </strong>
+     </em> </span></li>
+    </ul>
+    <p><img alt="" class="aligncenter size-full wp-image-11892 jetpack-lazy-image" data-lazy-sizes="(max-width: 668px) 100vw, 668px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/hacking.jpeg?resize=668%2C1002&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/hacking.jpeg?w=668&amp;ssl=1 668w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/hacking.jpeg?resize=200%2C300&amp;ssl=1 200w" data-recalc-dims="1" height="1002" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/hacking.jpeg?resize=668%2C1002&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="668" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-11892" data-recalc-dims="1" height="1002" sizes="(max-width: 668px) 100vw, 668px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/hacking.jpeg?resize=668%2C1002&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/hacking.jpeg?w=668&amp;ssl=1 668w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/hacking.jpeg?resize=200%2C300&amp;ssl=1 200w" width="668" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">只需轻按几下，即可将 Android 手机武器化为隐蔽的黑客设备，该设备可以运行 <a class="markup--anchor markup--p-anchor" data-href="https://null-byte.wonderhowto.com/how-to/easily-detect-cves-with-nmap-scripts-0181925/" href="https://null-byte.wonderhowto.com/how-to/easily-detect-cves-with-nmap-scripts-0181925/" rel="noopener noreferrer" target="_blank"> Nmap </a> 、 <a class="markup--anchor markup--p-anchor" data-href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-find-vulnerabilities-for-any-website-using-nikto-0151729/" href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-find-vulnerabilities-for-any-website-using-nikto-0151729/" rel="noopener noreferrer" target="_blank"> Nikto </a> 和 <a class="markup--anchor markup--p-anchor" data-href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-use-netcat-swiss-army-knife-hacking-tools-0148657/" href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-use-netcat-swiss-army-knife-hacking-tools-0148657/" rel="noopener noreferrer" target="_blank"> Netcat 之类的工具 </a> —— 做到所有这些而无需Root。</p>
+    <p class="graf graf--p">由 UserLAnd Technologies 创建的 <a class="markup--anchor markup--p-anchor" data-href="https://github.com/CypherpunkArmory/UserLAnd" href="https://github.com/CypherpunkArmory/UserLAnd" rel="noopener noreferrer" target="_blank"> UserLAnd </a> 是一个完全免费的 Android 应用程序，它使安装 Linux 发行版变得快捷而轻松，无需 Root。</p>
+    <p class="graf graf--p">这样就可以在当前的 Android OS 旁边运行 <a class="markup--anchor markup--p-anchor" data-href="https://wiki.debian.org/Arm64Port" href="https://wiki.debian.org/Arm64Port" rel="noopener noreferrer" target="_blank"> ARM64 Debian </a> 操作系统。</p>
+    <p class="graf graf--p">这种 ARM 架构有时也称为 “AARCH64”，与 Kali Linux Raspberry Pi ARM 映像所使用的架构相同，这使得导入 Kali 的工具库很容易。</p>
+    <p class="graf graf--p">最重要的是，UserLAnd 团队添加了一个专用的 Kali 文件系统，因此，并非所有用户都需要导入存储库。</p>
+    <p class="graf graf--p">所有创建的文件系统都很容易使用。尽管许多 Kali 工具可以正常工作，但 UserLAnd 仍然是一个新项目，在执行某些命令时可能会导致某些工具（例如 Nmap）损坏或失败。值得一提的是，这些问题可能会在不久的将来得到解决。</p>
+    <p class="graf graf--p">UserLAnd 利用自定义脚本和可执行文件允许创建 Debian 和 Ubuntu 文件系统。其中一个例子是 <a class="markup--anchor markup--p-anchor" data-href="https://proot-me.github.io/" href="https://proot-me.github.io/" rel="noopener noreferrer" target="_blank"> PRoot </a> ，这是一种 <a class="markup--anchor markup--p-anchor" data-href="https://github.com/proot-me/PRoot" href="https://github.com/proot-me/PRoot" rel="noopener noreferrer" target="_blank"> 开源软件 </a> ，可实现类似于 <a class="markup--anchor markup--p-anchor" data-href="https://www.computerhope.com/jargon/c/chroot.htm" href="https://www.computerhope.com/jargon/c/chroot.htm" rel="noopener noreferrer" target="_blank"> chroot </a> 的功能。</p>
+    <p class="graf graf--p">PRoot 允许您使用备用根目录执行程序，而无需 Root。通常， <a class="markup--anchor markup--p-anchor" data-href="https://unix.stackexchange.com/questions/87625/what-is-difference-between-user-space-and-kernel-space" href="https://unix.stackexchange.com/questions/87625/what-is-difference-between-user-space-and-kernel-space" rel="noopener noreferrer" target="_blank"> 用户空间 </a> 应用程序将通过 <a class="markup--anchor markup--p-anchor" data-href="https://en.wikipedia.org/wiki/System_call" href="https://en.wikipedia.org/wiki/System_call" rel="noopener noreferrer" target="_blank"> 系统调用 </a> 直接与内核通信。</p>
+    <p class="graf graf--p">借助 UserLAnd，PRoot 在后台运行，解释这些系统调用，并且在必要时执行和操作它们，以模拟文件系统中的用户和权限。</p>
+    <p class="graf graf--p">null-byte 的解释从安装SSH客户端开始，它将是与 Debian OS 进行交互的主要应用程序。然后逐步介绍一些操作系统设置技巧，并导入 Kali Linux 存储库，以将 Android 手机真正转变为黑客设备。</p>
+    <p class="graf graf--p">如某些读者所知，Kali Linux 基于 Debian 操作系统，因此导入其存储库不会导致任何破坏或不可靠的情况。</p>
+    <p class="graf graf--p">在下面看到他们的 <strong>
+    演示视频
+   </strong> ：</p>
+    <p class="graf graf--p">      <iframe allowfullscreen="allowfullscreen" height="421" src="//www.youtube.com/embed/zFo8okxBKDc" width="750">
+ 
+      </iframe>
+</p>
+    <h3 class="graf graf--p" id="connectbot-app"> <strong class="markup--strong markup--p-strong">
+    第一步：安装 ConnectBot APP（可选）
+   </strong> </h3>
+    <p class="graf graf--p">UserLAnd 最近添加了内置的SSH功能，因此不再需要此步骤。但是，如果您愿意，仍可以使用第三方SSH客户端。</p>
+    <p class="graf graf--p"><a class="markup--anchor markup--p-anchor" data-href="https://connectbot.org/" href="https://connectbot.org/" rel="noopener noreferrer" target="_blank"> ConnectBot </a> 是专为 Android 智能手机设计的 <a class="markup--anchor markup--p-anchor" data-href="https://github.com/connectbot" href="https://github.com/connectbot" rel="noopener noreferrer" target="_blank"> 开源 </a> SSH客户端，可让您安全地与SSH服务器连接。</p>
+    <p class="graf graf--p">这将是与新的 UserLAnd Debian 操作系统进行交互的主要方式。如果您不使用或无法访问 Google Play，则可以通过 <a class="markup--anchor markup--p-anchor" data-href="https://f-droid.org/" href="https://f-droid.org/" rel="noopener noreferrer" target="_blank"> F-Droid </a> 存储库使用 ConnectBot。</p>
+    <ul class="postList">
+      <li class="graf graf--li"><strong class="markup--strong markup--li-strong">
+     Play Store Link:
+    </strong> <a class="markup--anchor markup--li-anchor" data-href="https://play.google.com/store/apps/details?id=org.connectbot" href="https://play.google.com/store/apps/details?id=org.connectbot" rel="nofollow noopener noreferrer" target="_blank"> <strong class="markup--strong markup--li-strong">
+      ConnectBot
+     </strong> </a> <strong class="markup--strong markup--li-strong">
+     (free)
+    </strong></li>
+      <li class="graf graf--li"><strong class="markup--strong markup--li-strong">
+     F-Droid Link:
+    </strong> <a class="markup--anchor markup--li-anchor" data-href="https://f-droid.org/packages/org.connectbot/" href="https://f-droid.org/packages/org.connectbot/" rel="nofollow noopener noreferrer" target="_blank"> <strong class="markup--strong markup--li-strong">
+      ConnectBot
+     </strong> </a> <strong class="markup--strong markup--li-strong">
+     (free)
+    </strong></li>
+    </ul>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-11893 jetpack-lazy-image" data-lazy-sizes="(max-width: 1080px) 100vw, 1080px" data-lazy-src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/12/1-10.jpg?resize=1080%2C410&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/12/1-10.jpg?w=1080&amp;ssl=1 1080w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/12/1-10.jpg?resize=300%2C114&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/12/1-10.jpg?resize=1024%2C389&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/12/1-10.jpg?resize=768%2C292&amp;ssl=1 768w" data-recalc-dims="1" height="410" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/12/1-10.jpg?resize=1080%2C410&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1080" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-11893" data-recalc-dims="1" height="410" sizes="(max-width: 1080px) 100vw, 1080px" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/12/1-10.jpg?resize=1080%2C410&amp;ssl=1" srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/12/1-10.jpg?w=1080&amp;ssl=1 1080w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/12/1-10.jpg?resize=300%2C114&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/12/1-10.jpg?resize=1024%2C389&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/12/1-10.jpg?resize=768%2C292&amp;ssl=1 768w" width="1080" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p"><a class="markup--anchor markup--p-anchor" data-href="https://play.google.com/store/apps/details?id=com.sonelli.juicessh&amp;hl=en_US" href="https://play.google.com/store/apps/details?id=com.sonelli.juicessh&amp;hl=en_US" rel="noopener noreferrer" target="_blank"> JuiceSSH </a> 也是替代 ConnectBot 的很好选择，因为它具有更多功能，因此您可以根据需要使用它。ConnectBot 定期更新，对于初学者来说更容易。</p>
+    <h3 class="graf graf--p" id="userland-app"> <strong class="markup--strong markup--p-strong">
+    第二步：安装 UserLAnd App
+   </strong> </h3>
+    <p class="graf graf--p">上面已经介绍了 UserLAnd 的功能，因此这里不再赘述。重要的是您要安装它，使用 Google Play 或 F-Droid 进行安装。</p>
+    <ul class="postList">
+      <li class="graf graf--li"><strong class="markup--strong markup--li-strong">
+     Play Store Link:
+    </strong> <a class="markup--anchor markup--li-anchor" data-href="https://play.google.com/store/apps/details?id=tech.ula" href="https://play.google.com/store/apps/details?id=tech.ula" rel="nofollow noopener noreferrer" target="_blank"> <strong class="markup--strong markup--li-strong">
+      UserLAnd
+     </strong> </a> <strong class="markup--strong markup--li-strong">
+     (free)
+    </strong></li>
+      <li class="graf graf--li"><strong class="markup--strong markup--li-strong">
+     F-Droid Link:
+    </strong> <a class="markup--anchor markup--li-anchor" data-href="https://f-droid.org/packages/tech.ula/" href="https://f-droid.org/packages/tech.ula/" rel="nofollow noopener noreferrer" target="_blank"> <strong class="markup--strong markup--li-strong">
+      UserLAnd
+     </strong> </a> <strong class="markup--strong markup--li-strong">
+     (free)
+    </strong></li>
+    </ul>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-11894 jetpack-lazy-image" data-lazy-sizes="(max-width: 1080px) 100vw, 1080px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/2-10.jpg?resize=1080%2C416&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/2-10.jpg?w=1080&amp;ssl=1 1080w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/2-10.jpg?resize=300%2C116&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/2-10.jpg?resize=1024%2C394&amp;ssl=1 1024w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/2-10.jpg?resize=768%2C296&amp;ssl=1 768w" data-recalc-dims="1" height="416" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/2-10.jpg?resize=1080%2C416&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1080" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-11894" data-recalc-dims="1" height="416" sizes="(max-width: 1080px) 100vw, 1080px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/2-10.jpg?resize=1080%2C416&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/2-10.jpg?w=1080&amp;ssl=1 1080w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/2-10.jpg?resize=300%2C116&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/2-10.jpg?resize=1024%2C394&amp;ssl=1 1024w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/2-10.jpg?resize=768%2C296&amp;ssl=1 768w" width="1080" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">免责声明：UserLAnd 确实有局限性。如果没有 root，Android 的 Wi-Fi 界面将无法切换为监控模式，因此传统的 Wi-Fi 黑客工具（如 Aircrack-ng）将无法使用。</p>
+    <p class="graf graf--p">但是，使用 UserLAnd 仍然可以完成很多工作，在不 Root 或擦除 Android OS 的情况下运行 Kali 绝非易事。</p>
+    <p class="graf graf--p">因此，您值得在 Google Play 上给 UserLAnd 应用程序一个良好的评分，开发者应该得到这样积极的反馈。</p>
+    <h3 class="graf graf--p" id="section"> <strong class="markup--strong markup--p-strong">
+    第三步：创建一个新的文件系统
+   </strong> </h3>
+    <p class="graf graf--p">安装完成后，打开 UserLAnd，然后查看 “Apps” 选项卡。刷新选项卡，然后等待几分钟以填充分发。</p>
+    <p class="graf graf--p">Kali Linux OS 最近已添加到可用发行版列表中。选择 “Kali” 或 “Debian”，UserLAnd 应用程序将提示输入凭据。</p>
+    <p class="graf graf--p">创建用户名、密码和VNC密码。文件系统安装完成后，该“密码”将允许您访问在文件系统准备安装时启动的SSH服务器。</p>
+    <p class="graf graf--p">本教程中将不会使用 “VNC密码”。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-11895 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?resize=1100%2C927&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?w=1196&amp;ssl=1 1196w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?resize=300%2C253&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?resize=1024%2C863&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?resize=768%2C647&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?resize=1100%2C927&amp;ssl=1 1100w" data-recalc-dims="1" height="927" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?resize=1100%2C927&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-11895" data-recalc-dims="1" height="927" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?resize=1100%2C927&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?w=1196&amp;ssl=1 1196w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?resize=300%2C253&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?resize=1024%2C863&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?resize=768%2C647&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/3-17.png?resize=1100%2C927&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">然后，UserLAnd 将从其 GitHub 存档下载用于创建文件系统的必要可执行文件和脚本。下载和提取所需东西的时间将取决于您的 Android CPU 和互联网连接的速度。</p>
+    <p class="graf graf--p">在某些测试中，安装过程最多需要20分钟才能完成，因此请耐心等待。</p>
+    <p class="graf graf--p">在我的第一次尝试中，UserLAnd 返回了 “ <a class="markup--anchor markup--p-anchor" data-href="https://github.com/CypherpunkArmory/UserLAnd/issues/369" href="https://github.com/CypherpunkArmory/UserLAnd/issues/369" rel="nofollow noopener noreferrer" target="_blank"> Could not extract filesystem. Something went wrong </a> ” 这样的错误。在这种情况下删除并重新安装 UserLAnd 就可以解决问题。如果此错误仍然存​​在 <a class="markup--anchor markup--p-anchor" data-href="https://github.com/CypherpunkArmory/UserLAnd/issues/" href="https://github.com/CypherpunkArmory/UserLAnd/issues/" rel="noopener noreferrer" target="_blank"> ，请打开 </a> 一个新的 GitHub 问题。</p>
+    <h3 class="graf graf--p" id="section-1"> <strong class="markup--strong markup--p-strong">
+    第四步：与文件系统交互
+   </strong> </h3>
+    <p class="graf graf--p">安装完成后，转到 “会话” 选项卡，然后选择新创建的选项。</p>
+    <p class="graf graf--p">UserLAnd 将自动尝试打开 ConnectBot 并询问“您确定要继续连接吗？”点击“是”，然后输入在上一步中创建的密码。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-11896 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?resize=1100%2C931&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?w=1186&amp;ssl=1 1186w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?resize=300%2C254&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?resize=1024%2C867&amp;ssl=1 1024w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?resize=768%2C650&amp;ssl=1 768w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?resize=1100%2C931&amp;ssl=1 1100w" data-recalc-dims="1" height="931" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?resize=1100%2C931&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-11896" data-recalc-dims="1" height="931" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?resize=1100%2C931&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?w=1186&amp;ssl=1 1186w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?resize=300%2C254&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?resize=1024%2C867&amp;ssl=1 1024w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?resize=768%2C650&amp;ssl=1 768w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/12/4-14.png?resize=1100%2C931&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">此时，将蓝牙键盘同步到手机可以使操作系统的设置更加容易，但这不是必需的。如果您不使用蓝牙键盘，建议您从Play商店安装 <a class="markup--anchor markup--p-anchor" data-href="https://play.google.com/store/apps/details?id=org.pocketworkstation.pckeyboard" href="https://play.google.com/store/apps/details?id=org.pocketworkstation.pckeyboard" rel="noopener noreferrer" target="_blank"> Hacker’s Keyboard </a> ，然后继续进行操作，您会了解原因的。</p>
+    <h3 class="graf graf--p" id="section-2"> <strong class="markup--strong markup--p-strong">
+    第五步：更新操作系统
+   </strong> </h3>
+    <p class="graf graf--p">在 Android 手机上安装新操作系统后，要做的第一件事就是确保该系统是最新版。</p>
+    <p class="graf graf--p">这可以通过首先使用 <strong class="markup--strong markup--p-strong">
+    su
+   </strong> 创建根shell来完成。然后使用 <strong class="markup--strong markup--p-strong">
+    apt-get update &amp;&amp; apt-get dist-upgrade
+   </strong> 命令。</p>
+    <div class="language-plaintext graf graf--pre highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[email protected]:~$ su
+[email protected]: /home/distortion# apt-get update &amp;&amp; apt-get dist-upgrade
+Ign:1 http://cdn-fastly.deb.debian.org/debian stable InRelease
+Get:2 http://cdn-fastly.deb.debian.org/debian stable-updates InRelease [91.0 kB]
+Hit:3 http://cdn-fastly.deb.debian.org/debian stable Release
+Get:4 http://cdn-fastly.deb.debian.org/debian stable Release.gpg [2434 B]
+Get:5 http://cdn-fastly.deb.debian.org/debian stable-updates/main arm64 Packages [5096 B]
+Get:6 http://cdn-fastly.deb.debian.org/debian stable-updates/main Translation-en [4512 B]
+Get:7 http://cdn-fastly.deb.debian.org/debian stable/main Translation-en [5393 B]
+Get:8 http://cdn-fastly.deb.debian.org/debian stable/contrib arm64 Packages [29.9 kB]
+Get:9 http://cdn-fastly.deb.debian.org/debian stable/contrib Translation-en [45.9 kB]
+Get:10 http://cdn-fastly.deb.debian.org/debian stable/non-free arm64 Package [50.8 kB]
+Get:11 http://cdn-fastly.deb.debian.org/debian stablenon-free Translation-en [80.6 kB]
+Fetched 5714 kB in 31s (183 kB/s)
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  tzdata
+1 upgraded, 0 newly intalled, 0 to remove and 0 not upgraded.
+Need to get 270 kB of archives.
+After this operation, 1024 B of additional disk space will be used.
+Do you want to continue? [Y/n]</code></pre></div>    </div>
+    <p class="graf graf--p">对于上面的输出，只有一个包需要更新，但并非总是如此。</p>
+    <h3 class="graf graf--p" id="section-3"> <strong class="markup--strong markup--p-strong">
+    第六步：安装基本软件
+   </strong> </h3>
+    <p class="graf graf--p">这个新的文件系统极其简单，默认情况下不包含太多软件。</p>
+    <p class="graf graf--p">以下是为日常 Debian 和 Kali 用户推荐的一些软件包。其中某些软件包不是必需的，但可以使今后将Android用作主要黑客设备更加容易。</p>
+    <p class="graf graf--p">1、 <strong class="markup--strong markup--p-strong">
+    screen
+   </strong> — Screen 是一个终端多路复用器，允许用户同时运行并在多个终端会话之间交替。</p>
+    <p class="graf graf--p">这是使用 UserLAnd 时要安装的最重要的软件包之一。 Android 手机无法很好地处理长时间SSH会话，并且可能会无缘无故地断开连接。这种问题可能导致正在运行的命令失败，无法重新连接到会话以查看进度。</p>
+    <p class="graf graf--p">所以要使用 Screen 来维持持久的Shell会话。</p>
+    <p class="graf graf--p">2、 <strong class="markup--strong markup--p-strong">
+    net-tools
+   </strong> — Net-tools 是一套工具，包含 ifconfig、netstat、route 和其他一些有用的网络应用程序。</p>
+    <p class="graf graf--p">3、 <strong class="markup--strong markup--p-strong">
+    netcat
+   </strong> — Netcat 是功能丰富的 UNIX 实用程序，旨在成为创建TCP和UDP连接的可靠工具。Netcat 可用于创建简单的macOS后门并与之交互。</p>
+    <p class="graf graf--p">4、 <strong class="markup--strong markup--p-strong">
+    neofetch
+   </strong> — Neofetch 是一种跨平台的系统信息收集工具。除了帮您向同事和朋友炫耀分发内容或为 WonderHowTo 创建封面照片外，此程序包没有其他功能。</p>
+    <p class="graf graf--p">5、 <strong class="markup--strong markup--p-strong">
+    gnupg
+   </strong> — <a class="markup--anchor markup--p-anchor" data-href="https://www.gnupg.org/" href="https://www.gnupg.org/" rel="nofollow noopener noreferrer" target="_blank"> GnuPG </a> （有时称为 gpg）通常用于加密文件和保护电子邮件通信。一些安装程序脚本（例如 Metasploit）使用 gpg 来导入其软件签名密钥。</p>
+    <p class="graf graf--p">可以在没有 gpg 的情况下手动安装 Metasploit，可能过程相对复杂。</p>
+    <p class="graf graf--p">6、 <strong class="markup--strong markup--p-strong">
+    curl
+   </strong> — cURL 是一种命令行工具，能够通过HTTP和其他流行协议下载文件。这是从Internet下载文件的有用工具。</p>
+    <p class="graf graf--p">7、 <strong class="markup--strong markup--p-strong">
+    wget
+   </strong> — 类似于 cURL，也是用于从Internet下载文件的命令行工具。一些开发人员更喜欢 wget 而不是 cURL，对于保持安装状态和可用性都很有帮助。</p>
+    <p class="graf graf--p">8、 <strong class="markup--strong markup--p-strong">
+    git
+   </strong> — Git 是一种流行的版本控制软件，通常用于克隆（下载）GitHub 项目。</p>
+    <p class="graf graf--p">9、 <strong class="markup--strong markup--p-strong">
+    nano
+   </strong> — Nano 是命令行文本编辑器，它可以使通过SSH编辑文件更加方便。如果首选 Vim 或 Emacs，则改为下载这些文本编辑器（或除nano外）。</p>
+    <p class="graf graf--p">可以使用 <strong class="markup--strong markup--p-strong">
+    apt-get
+   </strong> 命令安装以上软件包：</p>
+    <div class="language-plaintext graf graf--pre highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get update &amp;&amp; apt-get install net-tools netcat neofetch gnupg curl wget git nano screen</code></pre></div>    </div>
+    <h3 class="graf graf--p" id="kali-linux-"> <strong class="markup--strong markup--p-strong">
+    第七步：导入 Kali Linux 存储库（视情况而定）
+   </strong> </h3>
+    <p class="graf graf--p">如果您在步骤3中安装了 Kali OS，则可以跳过此步骤。</p>
+    <p class="graf graf--p">对于 Debian OS 用户，这不是必须的，但是，这样做可以快速安装诸如 sqlmap、Commix、Bettercap、Nikto、dnsmap 之类的应用程序，以及数百种在 Debian 的默认存储库中找不到的软件包。</p>
+    <p class="graf graf--p">要开始导入 Kali Linux 存储库，请使用 <strong class="markup--strong markup--p-strong">
+    nano
+   </strong> 将 Kali 的存储库添加到 /etc/apt/sources.list 文件中。</p>
+    <div class="language-plaintext graf graf--pre highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano /etc/apt/sources.list</code></pre></div>    </div>
+    <p class="graf graf--p">将以下行添加到文件底部，然后使用 Ctrl + X 退出并保存更改。</p>
+    <p class="graf graf--p">ConnectBot 在屏幕上有按钮，如 Ctrl 和 Shift 等键。或者使用蓝牙键盘或黑客键盘应用也一样。</p>
+    <div class="language-plaintext graf graf--pre highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deb http://http.kali.org/kali kali-rolling main contrib non-free</code></pre></div>    </div>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-11897 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?resize=1100%2C883&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?w=1186&amp;ssl=1 1186w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?resize=300%2C241&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?resize=1024%2C822&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?resize=768%2C616&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?resize=1100%2C883&amp;ssl=1 1100w" data-recalc-dims="1" height="883" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?resize=1100%2C883&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-11897" data-recalc-dims="1" height="883" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?resize=1100%2C883&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?w=1186&amp;ssl=1 1186w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?resize=300%2C241&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?resize=1024%2C822&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?resize=768%2C616&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/12/5-12.png?resize=1100%2C883&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">然后，使用以下 wget 命令添加 Kali 签名密钥：</p>
+    <div class="language-plaintext graf graf--pre highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget -q -O - https://www.kali.org/archive-key.asc | apt-key add -</code></pre></div>    </div>
+    <p class="graf graf--p">如果命令成功，终端将返回 “OK”（如下所示）。最后，使用 <strong class="markup--strong markup--p-strong">
+    apt-get update
+   </strong> 命令更新 APT 缓存。</p>
+    <div class="language-plaintext graf graf--pre highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[email protected]:/home/distortion# wget -q -O - https://www.kali.org/archive-key.asc | apt-key add -
+OK
+[email protected]:/home/distortion# apt-get update
+Ign:1 http://cdn-fastly.deb.debian.org/debian stable InRelease
+Hit:3 http://cdn-fastly.deb.debian.org/debian stable-updates InRelease
+Hit:4 http://cdn-fastly.deb.debian.org/debian stable Release
+Ign:2 http://ftp.halifax.rwth-aachen.de/kali kali-rolling InRelease
+Get:6 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling Release [29.6 kB]
+Get:7 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling Release.gpg [833 B]
+Get:8 http://ftp.acc.umu.se/mirror/kali.org/kali kali-rolling/main arm64 Packages [16.4 MB]
+64% [8 Packages 9415 kB/16.4 MB 57%]                               546 kB/s 13s</code></pre></div>    </div>
+    <h3 class="graf graf--p" id="section-4"> <strong class="markup--strong markup--p-strong">
+    最后
+   </strong> </h3>
+    <p class="graf graf--p">使用 UserLAnd，将 Android 变成黑客设备会非常容易。</p>
+    <p class="graf graf--p">尽管 Android 处理数据的速度比树莓派要慢，但它仍然是一款功能强大、易于隐藏的进攻工具，能够运行 Kali 软件。</p>
+    <p class="graf graf--p">您可以根据需要探索更多用途。不要做坏事！⚪️</p>
+    <div id="atatags-1611829871-5f426c5c17095"></div>
+    <div class="sharedaddy sd-sharing-enabled">
+      <div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+        <h3 class="sd-title" id="section-5"> 共享此文章： </h3>
+        <div class="sd-content">
+          <ul>
+            <li class="share-twitter"><a class="share-twitter sd-button share-icon no-text" data-shared="sharing-twitter-11891" href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e5%b0%86%e5%ae%89%e5%8d%93%e6%89%8b%e6%9c%ba%e5%8f%98%e6%88%90%e9%bb%91%e5%ae%a2%e8%ae%be%e5%a4%87-%e6%97%a0%e9%9c%80-root/?share=twitter" rel="nofollow noopener noreferrer" target="_blank" title="点击以在 Twitter 上共享"> <span> </span> <span class="sharing-screen-reader-text"> 点击以在 Twitter 上共享（在新窗口中打开） </span> </a></li>
+            <li class="share-facebook"><a class="share-facebook sd-button share-icon no-text" data-shared="sharing-facebook-11891" href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e5%b0%86%e5%ae%89%e5%8d%93%e6%89%8b%e6%9c%ba%e5%8f%98%e6%88%90%e9%bb%91%e5%ae%a2%e8%ae%be%e5%a4%87-%e6%97%a0%e9%9c%80-root/?share=facebook" rel="nofollow noopener noreferrer" target="_blank" title="点击以在 Facebook 上共享"> <span> </span> <span class="sharing-screen-reader-text"> 点击以在 Facebook 上共享（在新窗口中打开） </span> </a></li>
+            <li class="share-end"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-161182987-11891-5f426c5c176ae" data-src="https://widgets.wp.com/likes/#blog_id=161182987&amp;post_id=11891&amp;origin=www.iyouport.org&amp;obj_id=161182987-11891-5f426c5c176ae" id="like-post-wrapper-161182987-11891-5f426c5c176ae">
+      <h3 class="sd-title" id="section-6"> 赞过： </h3>
+      <div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;">
+<span class="button"> <span> 赞 </span> </span> <span class="loading"> 正在加载…… </span>
+      </div>
+ <span class="sd-text-color"> </span> <a class="sd-link-color">
+   </a>
+    </div>
+    <div class="jp-relatedposts" id="jp-relatedposts">
+      <h3 class="jp-relatedposts-headline" id="section-7"> <em>
+     相关
+    </em> </h3>
+    </div>
+  </div>
+  <div class="entry-footer">
+    <ul class="post-tags light-text">
+      <li>Tagged</li>
+      <li><a href="https://www.iyouport.org/tag/android/" rel="tag"> Android </a></li>
+      <li><a href="https://www.iyouport.org/tag/hacktivist/" rel="tag"> hacktivist </a></li>
+      <li><a href="https://www.iyouport.org/tag/technique/" rel="tag"> technique </a></li>
+      <li><a href="https://www.iyouport.org/tag/technology/" rel="tag"> Technology </a></li>
+      <li><a href="https://www.iyouport.org/tag/tools/" rel="tag"> tools </a></li>
+      <li><a href="https://www.iyouport.org/tag/userland/" rel="tag"> UserLAnd </a></li>
+    </ul>
+  </div>
+  <div class="entry-author-wrapper">
+    <div class="site-posted-on">
+<strong>
+    Published
+   </strong>       <time class="entry-date published" datetime="2020-06-03T00:04:23+08:00"> 2020年6月3日 </time>
+      <time class="updated" datetime="2019-12-31T15:10:58+08:00"> 2019年12月31日 </time>
+    </div>
+  </div>
+</article>
+
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#iYouPort 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%BD%93%E6%B0%91%E4%B8%BB%E5%A4%B1%E8%B4%A5-%E5%B7%AB%E6%9C%AF%E8%93%AC%E5%8B%83%E5%8F%91%E5%B1%95-%E6%81%B6%E9%AD%94%E5%9B%B0%E6%89%B0%E7%9A%84%E5%9C%9F%E5%9C%B0-iYouPort/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-10-11/%E7%BD%91%E7%BB%9C-%E6%B0%B4%E5%86%9B-%E7%9A%84%E5%B8%83%E5%B1%80-iYouPort/">最早</a>--</span>
+    
+      <li>
+        <time>2020-06-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-03/%E4%BD%A0%E7%9A%84%E5%85%A8%E8%83%BD%E9%92%A5%E5%8C%99%E6%89%A3-%E4%BD%9C%E4%B8%BA%E4%B8%80%E5%90%8D%E5%85%AC%E6%B0%91%E8%B0%83%E6%9F%A5%E8%80%85%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%84%91%E5%9B%BE-iYouPort/">
+          你的全能钥匙扣：作为一名公民调查者的基本脑图 - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-03/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E7%9A%84%E9%98%9F%E5%8F%8B%E4%B9%8B%E9%97%B4%E4%B8%8D%E4%BC%9A%E5%88%86%E4%BA%AB%E7%9F%A5%E8%AF%86-iYouPort/">
+          为什么你的队友之间不会分享知识？ - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-02/%E6%88%98%E7%95%A5%E7%BD%91-%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84%E5%B7%A5%E5%85%B7-%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%97%E8%AE%AE%E8%BF%90%E5%8A%A8%E8%83%BD%E5%90%A6%E6%88%90%E5%8A%9F%E4%BB%A5%E5%8F%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%B1%E8%B4%A5-%E5%8C%85%E6%8B%AC%E5%85%AD%E5%9B%9B-iYouPort/">
+          战略网：鲜为人知的工具 - 可视化抗议运动能否成功以及为什么失败，包括六四 - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-02/%E5%85%A8%E7%90%83%E5%A4%A7%E8%A7%84%E6%A8%A1%E7%9B%91%E8%A7%86%E7%9A%84%E5%B4%9B%E8%B5%B7-%E6%88%91%E4%BB%AC%E6%98%AF%E5%A6%82%E4%BD%95%E8%B5%B0%E5%88%B0%E8%BF%99%E4%B8%80%E6%AD%A5%E7%94%B0%E5%9C%B0%E7%9A%84-iYouPort/">
+          全球大规模监视的崛起：我们是如何走到这一步田地的？ - iYouPort
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-02/%E6%88%98%E7%95%A5%E7%BD%91-%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84%E5%B7%A5%E5%85%B7-%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%97%E8%AE%AE%E8%BF%90%E5%8A%A8%E8%83%BD%E5%90%A6%E6%88%90%E5%8A%9F%E4%BB%A5%E5%8F%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%B1%E8%B4%A5-%E5%8C%85%E6%8B%AC%E5%85%AD%E5%9B%9B-iYouPort/">
+            前一篇：战略网：鲜为人知的工具 - 可视化抗议运动能否成功以及为什么失败，包括六四 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-03/Has-COVID-19-Changed-How-China-s-Leaders-Approach/">
+            後一篇：Has COVID-19 Changed How China’s Leaders Approach National Security?
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-06-02/%E6%88%98%E7%95%A5%E7%BD%91-%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84%E5%B7%A5%E5%85%B7-%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%97%E8%AE%AE%E8%BF%90%E5%8A%A8%E8%83%BD%E5%90%A6%E6%88%90%E5%8A%9F%E4%BB%A5%E5%8F%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%B1%E8%B4%A5-%E5%8C%85%E6%8B%AC%E5%85%AD%E5%9B%9B-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-06-03/Has-COVID-19-Changed-How-China-s-Leaders-Approach/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-06-03/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E7%9A%84%E9%98%9F%E5%8F%8B%E4%B9%8B%E9%97%B4%E4%B8%8D%E4%BC%9A%E5%88%86%E4%BA%AB%E7%9F%A5%E8%AF%86-iYouPort/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-06-02/%E6%88%98%E7%95%A5%E7%BD%91-%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84%E5%B7%A5%E5%85%B7-%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%97%E8%AE%AE%E8%BF%90%E5%8A%A8%E8%83%BD%E5%90%A6%E6%88%90%E5%8A%9F%E4%BB%A5%E5%8F%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%B1%E8%B4%A5-%E5%8C%85%E6%8B%AC%E5%85%AD%E5%9B%9B-iYouPort/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-06-02/%E6%88%98%E7%95%A5%E7%BD%91-%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84%E5%B7%A5%E5%85%B7-%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%97%E8%AE%AE%E8%BF%90%E5%8A%A8%E8%83%BD%E5%90%A6%E6%88%90%E5%8A%9F%E4%BB%A5%E5%8F%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%B1%E8%B4%A5-%E5%8C%85%E6%8B%AC%E5%85%AD%E5%9B%9B-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-06-03/Has-COVID-19-Changed-How-China-s-Leaders-Approach/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<iYouPort>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-06-03/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E7%9A%84%E9%98%9F%E5%8F%8B%E4%B9%8B%E9%97%B4%E4%B8%8D%E4%BC%9A%E5%88%86%E4%BA%AB%E7%9F%A5%E8%AF%86-iYouPort/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<iYouPort>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-06-02/%E6%88%98%E7%95%A5%E7%BD%91-%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84%E5%B7%A5%E5%85%B7-%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%97%E8%AE%AE%E8%BF%90%E5%8A%A8%E8%83%BD%E5%90%A6%E6%88%90%E5%8A%9F%E4%BB%A5%E5%8F%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%B1%E8%B4%A5-%E5%8C%85%E6%8B%AC%E5%85%AD%E5%9B%9B-iYouPort/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

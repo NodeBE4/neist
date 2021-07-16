@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>那些可以問得更好的程式問題 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+那些可以問得更好的程式問題
+——
+" />
+    <meta property="og:description" content="
+那些可以問得更好的程式問題
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="那些可以問得更好的程式問題" />
+    <meta property="twitter:title" content="那些可以問得更好的程式問題" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40hulitw%2Fask-better-questions-19f01b02f436%3Fsource%3Drss-f1fb3e40dc37------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@hulitw/ask-better-questions-19f01b02f436?source=rss-f1fb3e40dc37------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@hulitw/ask-better-questions-19f01b02f436?source=rss-f1fb3e40dc37------2&text=那些可以問得更好的程式問題&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@hulitw/ask-better-questions-19f01b02f436?source=rss-f1fb3e40dc37------2&title=那些可以問得更好的程式問題" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@hulitw/ask-better-questions-19f01b02f436?source=rss-f1fb3e40dc37------2&title=那些可以問得更好的程式問題" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=那些可以問得更好的程式問題&body=
+那些可以問得更好的程式問題
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@hulitw/ask-better-questions-19f01b02f436?source=rss-f1fb3e40dc37------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@hulitw/ask-better-questions-19f01b02f436?source=rss-f1fb3e40dc37------2&title=那些可以問得更好的程式問題&caption=
+那些可以問得更好的程式問題
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=那些可以問得更好的程式問題&url=https://medium.com/@hulitw/ask-better-questions-19f01b02f436?source=rss-f1fb3e40dc37------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>那些可以問得更好的程式問題</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-07-22
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Huli">
+          Huli
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@hulitw/ask-better-questions-19f01b02f436?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Huli的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Huli 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1595424127000-->
+<p><a href="https://medium.com/@hulitw/ask-better-questions-19f01b02f436?source=rss-f1fb3e40dc37------2">那些可以問得更好的程式問題</a>
+——</p>
+
+<div>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*Xwa6iaZsl2yUyzjw" />    <figcaption>
+Photo by <a href="https://unsplash.com/@ph_an_tom?utm_source=medium&amp;utm_medium=referral">Duangphorn Wiriya</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a>
+    </figcaption>
+  </figure>
+  <p>提問很難，尤其是對初學者來說。</p>
+  <p>所以我在教學的時候一直在想，除了<a href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way">提問的智慧</a>以外，有沒有什麼文章是可以讓學生看了之後，能夠更快速、更深刻地去體會為什麼他們問的問題不夠好？</p>
+  <p>舉例應該是最快的，而且不能是假想的例子，因為身為一個已經比較會提問的人，我想出來的例子跟真實的例子應該會差很遠。因此，我特別從學生那邊搜集了一些問題，這樣就可以直接來看這些被真實提出的問題，再來分析它們哪邊不夠好，哪邊可以再改進。</p>
+  <p>文章的問題皆為真實的提問，而我有把能夠識別出提問者身份的資訊去除，事前也有徵得本人同意。在看這些問題之前，我先講一下我整理出來的提問心法：一大原則，三大要素。</p>
+  <h3 id="section">問問題一大原則</h3>
+  <p>這個原則就是：</p>
+  <blockquote>
+角色互換  </blockquote>
+  <p>或是你要想成「設身處地」、「將心比心」之類的也可以。</p>
+  <p>當你把問題寫好要提出來的時候，你要想的第一件事情應該是：「如果我今天被其他人問一樣問題，我有<strong>足夠的資訊</strong>去 debug 嗎？」</p>
+  <p>很多人會以為問題的好壞取決於難易度，例如說這個問題只是少打一個字，所以是個壞問題；這問題很難 debug，所以是個好問題。不是的，問題的難易度取決於個人，儘管只是打錯字，但你就是卡了一個小時還解不出來，那就代表對你來說，這是一個困難的問題。</p>
+  <p>提問的好壞取決於資訊量，太少資訊量就是需要通靈人出場的時候，太多資訊量反倒變成一種雜訊，甚至是干擾。以初學者來說，<strong>寧可多給資訊，也不要少給。</strong></p>
+  <p>很多時候你的提問之所以資訊量太少，是因為這些資訊量存在於你的腦海中，而不是你的提問裡面，通常有可能 3 成在提問裡，7 成在你腦海。所以對他人而言，他只看到了你理解的 3 成，或甚至是更少。</p>
+  <p>在這種狀況下，其他人就只能靠經驗或者是通靈能力，才能理解你到底想問什麼。所以你必須要把你腦海中儲存的那些 context 一起放到問題裡面，其他人才知道這個問題完整的樣子到底是什麼。</p>
+  <p>這也是為什麼角色互換很重要，你要像開無痕視窗那樣，把你對這個問題的背景知識都拿掉，然後只看那個問題本身，去想一下如果有人這樣來問你，你有沒有辦法拿到你需要的資訊？如果沒有，通常就代表資訊量不足；如果有，但是你發現「你需要的資訊」其實存在你腦中，而不是你的提問，就代表你應該把這項資訊放到問題裡面。</p>
+  <p>不過這對初學者來說其實也不容易，因為有時候很難知道到底哪些是背景知識，哪些又是一定要放進問題裡的。</p>
+  <p>因此，我整理了底下的三大元素，可以先跟著做就是了。</p>
+  <h3 id="section-1">問問題三大要素</h3>
+  <ol>
+    <li>問題描述</li>
+    <li>程式碼</li>
+    <li>截圖與文字</li>
+  </ol>
+  <p>第一點就是這問題想提問的點到底是什麼？你碰到的狀況到底是什麼？預期的狀況是什麼？</p>
+  <p>第二點就是程式碼，如果它是一個程式相關的問題，請把程式碼附上。</p>
+  <p>第三點就是附上截圖，把出現錯誤的畫面或是覺得有問題的地方截圖附上來。另外，程式碼也可以一起截圖，但這不代表就不需要「文字的程式碼了」，兩個都有的話其實會更好。</p>
+  <p>為什麼呢？因為要回答你問題的人，看到你問題時手邊不一定立刻就有電腦，所以沒辦法把你的程式碼跑起來確認結果。這時候如果有截圖，看程式碼就比較容易，也更有機會早一點幫你把 bug 找出來。</p>
+  <p>再者，這個要素是「截圖與文字」，意思是光有截圖是不夠的，你要把截圖中的重要訊息再用文字打一遍。為什麼？因為我可能會需要幫你把錯誤訊息拿去 Google，才知道這是什麼意思。如果你只有附截圖，那我就要自己再看著截圖打一遍——但通常沒有人會這麼勤勞。</p>
+  <p>截圖只是為了方便手邊沒有電腦的人解題，以及比較能確認整體的狀況為何，但裡面的重要資訊還是要再以文字來表示，才能完整表達問題。</p>
+  <p>知道以上三大要素以後，我們來看看各種真實世界的提問範例。</p>
+  <h3 id="section-2">範例一</h3>
+  <blockquote>
+我想請問一下<br />你寫oddnumbersum 和 evennumbersum 的時候，都有先set sum ＝ 0，再一個一個加上去。<br />最後return sum但做完oddnumbersum 後，sum不是應該是32嗎？  </blockquote>
+  <blockquote>
+那為什麼在做 evennumbersum 的時候，又要重新let sum ＝ 0？  </blockquote>
+  <h4 id="section-3">問題描述</h4>
+  <p>勉強算是清楚，但最大的問題是缺乏 context，我知道他在講我曾經寫過的程式碼，但我不知道是哪一段，而且我也忘記原本的程式碼長怎樣了</p>
+  <h4 id="section-4">程式碼</h4>
+  <p>完全沒有附，導致我不知道怎麼回答他</p>
+  <h4 id="section-5">截圖與文字</h4>
+  <p>無</p>
+  <h4 id="section-6">分析</h4>
+  <p>因為少了程式碼，所以我完全不知道該怎麼回答，因此我只能回：「你可能要附一下程式碼或是截圖喔」</p>
+  <p>附截圖是因為在 Slack 上程式碼可能比較不容易觀看，所以附截圖會更清楚。但截圖的缺點就是只適合比較短的程式碼，而且沒辦法複製，因此我覺得程式碼跟截圖一起附上是比較好的。</p>
+  <p>後來把截圖補上以後，我就有足夠資訊回答他的問題了。</p>
+  <h3 id="section-7">範例二</h3>
+  <blockquote>
+卡關了QQ，為什麼我看不太懂我為什麼不能push?  </blockquote>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/570/1*8ST3u_p4sXaCnnqAlV2rGQ.png" />
+  </figure>
+  <h4 id="section-8">問題描述</h4>
+  <p>因為有搭配截圖，所以看得出來他想問什麼，但資訊還是不足</p>
+  <h4 id="section-9">程式碼</h4>
+  <p>這題不需要</p>
+  <h4 id="section-10">截圖與文字</h4>
+  <p>無</p>
+  <h4 id="section-11">分析</h4>
+  <p>從截圖可以看出來，是在做 git push 的時候出錯，但除了截圖以外，應該要附上截圖中的重要資訊的文字版，所以應該要附上截圖中出現的 git repo 的網址，這樣我才能去 GitHub 看一下那個 repo 有沒有什麼異狀。</p>
+  <p>再者，也應該一併附上之前下其他指令的截圖，才有辦法 debug。</p>
+  <h4 id="section-12">範例三</h4>
+  <blockquote>
+目前在寫 week3 作業，但依照 ESlint 給的回饋修改程式碼後，仍有兩個錯誤，都是同樣的：error Parsing error: Unexpected token = （如圖所示）  </blockquote>
+  <blockquote>
+根據這個回傳的錯誤訊息，我找到 <a href="https://stackoverflow.com/questions/36001552/eslint-parsing-error-unexpected-token">stackoverflow 說是因為環境設置不同的關係</a>  </blockquote>
+  <blockquote>
+所以又找到<a href="https://lifesaver.codes/answer/standard-parsing-error-unexpected-token-=">這篇文章的解決方式</a>：修改 package.json，新增 standard，並在裡頭設置 parser: babel-eslint（如下）  </blockquote>
+  <blockquote>
+"standard": {<br /> "parser": "babel-eslint"<br /> }  </blockquote>
+  <blockquote>
+不過依然出現相同的 error 問題，也無法以 /* eslint-disable */ 阻止噴出這個錯誤。<br />所以來詢問是否有建議的解決方式  </blockquote>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/643/1*OWv0ptS2OvOo3KZ11FRbSg.png" />
+  </figure>
+  <h4 id="section-13">問題描述</h4>
+  <p>描述的滿清楚的，而且有附上自己嘗試解決問題的過程。</p>
+  <h4 id="section-14">程式碼</h4>
+  <p>這題最大的重點在於從截圖中可以明確看出，這是 eslint 偵測到某一段程式碼不符合規則所以報錯，但因為沒有附上程式碼，所以無從 debug</p>
+  <h4 id="section-15">截圖與文字</h4>
+  <p>有截圖，但應該附上裡面的文字，也就是那個錯誤訊息的文字版</p>
+  <h4 id="section-16">分析</h4>
+  <p>既然錯誤跟程式碼有關，那就一定要附上程式碼，不然缺少必要資訊，沒辦法判斷問題在哪。</p>
+  <p>於是我回說：「eslint 報錯一定是有原因的，錯誤訊息寫說是第10行那邊有出錯，但沒有看到程式碼沒辦法判斷原因，可以把程式碼 10 行左右那邊整個截圖貼上來，不然沒辦法判斷」</p>
+  <p>後來學生把程式碼貼上，就能看到錯誤在哪邊，修掉之後就沒問題了。</p>
+  <h4 id="section-17">範例四</h4>
+  <blockquote>
+大家安安<br />前幾天我寫好了第三週的功課，也都已經得到 LIOJ 的 AC，今天打算來把他們都通過 Eslint 的測試然後交作業。<br />結果今天再次測試的時候發現結果都變得怪怪的… 我在想會不會是因為我前天寫完作業之後更新了 Windows 10 的 2004 Build，另外今天 Command Line 也變得有點奇怪，我之前都是使用 Sublime Text 3 搭配 Git Bash 編寫程式，有人有遇到一樣的問題嗎？  </blockquote>
+  <h4 id="section-18">問題描述</h4>
+  <p>描述的滿不清楚，只有講「結果都變得怪怪的」，但卻沒有講說到底怎樣叫做怪怪的？是結果有出錯嗎？是出現奇怪的字元嗎？除非我會通靈，不然我不會知道。</p>
+  <h4 id="section-19">程式碼</h4>
+  <p>無</p>
+  <h4 id="section-20">截圖與文字</h4>
+  <p>無</p>
+  <h4 id="section-21">分析</h4>
+  <p>這題的資訊量不足，因為都只有講說「怪怪的」，卻沒有具體指出哪裡怪。應該附上的資訊為：</p>
+  <ol>
+    <li>之前是什麼樣子</li>
+    <li>現在是什麼樣子，差別在哪</li>
+    <li>預期中的結果是什麼</li>
+    <li>相關程式碼與截圖</li>
+  </ol>
+  <p>這一題後來有其他同學幫忙解答，在獲得以上資訊之後，順利解決問題。</p>
+  <h3 id="section-22">後記</h3>
+  <p>再複習一次三大要素：</p>
+  <ol>
+    <li>問題描述</li>
+    <li>程式碼</li>
+    <li>截圖與文字</li>
+  </ol>
+  <p>除非你真的很有自信某一個不需要，不然請全部都附上。問題的完整度直接決定了這個問題是否能夠被快速且有效率地解決，有時候錯誤的問題只會引來錯誤的回覆（尤其是回答的人經驗不太夠的時候，這個在社群裡面很常出現），而更糟的是因為你也不知道那個回覆是錯的，所以也一起被帶偏了。</p>
+  <p>不過我寫這篇文章不是叫大家停止問問題或是停止幫其他人解決問題啦，在一個學習氣氛良好的社群之下，是可以盡情發問跟解惑的，在 Lidemy 的社群裡面因為有我跟助教在，所以回答錯也沒關係，因為最後有人會跑出來給正確答案，點出錯誤在哪裡。</p>
+  <p>還有一點想特別提的，是有關於回答問題。那就是儘管問問題的人給了許多資訊，你必須去意識到一件事，那就是「提問者給的資訊有可能是錯的」。這很重要，因為有些人會想說既然是提問者自己給的，那就一定 100% 是正確的，但事實往往不然。</p>
+  <p>例如說可能會有這樣的提問：「我程式碼一開始都是好的，但是跑 eslint 把錯誤修正之後就壞了，可是邏輯我都沒動，只有加分號而已」，這時如果你完全相信他說的，就很有可能找不出問題在哪裡。</p>
+  <p>因為有可能真相是，在修錯誤的時候，也有把某個變數修掉，所以不只是加分號而已，其實還有其他變動。提問者沒有騙你，因為他自己也忘記，或是根本沒有發現這件事。</p>
+  <p>以這個觀點來看，我覺得回答問題可能可以分成幾個等級：</p>
+  <ol>
+    <li>Level1：根據提問者給的資訊回答，沒給的就回答不出來</li>
+    <li>Level2：承上，但可以透過通靈推敲出沒給的資訊大概是什麼</li>
+    <li>Level3：承上，而且可以分析出提問者給的某些資訊其實是錯的</li>
+  </ol>
+  <p>第三個 level 之所以難，是因為有可能他給的資訊是對的，而問題真正的根源是某個你想像不到的地方，所以你才會覺得他的說法不合理。</p>
+  <p>最後做個總結，其實無論是提問或是回答問題都是需要經驗的累積，看過的問題愈多，自然就能夠愈快從過去的經驗中尋找答案，畢竟很多常見的問題都是類似的。提問也是，在一開始學程式時背景知識嚴重不足，所以不知道該怎麼提問其實也滿合理的，但是當你會的東西愈來愈多，你就會漸漸知道某些資訊是重要的，在提問的時候就會一併奉上。</p>
+  <p>這篇如果之後有些案例會繼續更新，希望能整理得越來越完整。感謝 Lidemy，感謝助教以及學生們。</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=19f01b02f436" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Huli 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2020-10-04/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E5%9B%9B%E6%9C%9F%E8%AA%B2%E7%A8%8B%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E6%94%B9%E5%8B%95/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-06-24/%E5%BE%9E%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%AF%84%E7%89%A9%E6%AB%83%E7%90%86%E8%A7%A3%E8%AE%8A%E6%95%B8%E5%84%B2%E5%AD%98%E6%A8%A1%E5%9E%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2020-08-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-13/%E8%80%83%E8%B3%87%E5%B7%A5%E6%89%80%E6%88%91%E8%A6%BA%E5%BE%97%E6%98%AF%E4%B8%80%E5%80%8B%E6%9C%80%E7%A9%A9%E5%81%A5%E7%9A%84%E5%81%9A%E6%B3%95-%E4%B8%80%E4%BE%86%E6%98%AF%E5%AD%B8%E6%A0%A1%E5%B7%B2%E7%B6%93%E6%98%AF%E5%80%8B%E5%B9%AB%E4%BD%A0%E6%90%9C%E9%9B%86%E5%A5%BD%E4%B8%80%E5%AE%9A%E7%A8%8B%E5%BA%A6%E8%B3%87%E8%A8%8A%E7%9A%84%E5%9C%B0%E6%96%B9-%E4%BA%8C%E4%BE%86%E6%98%AF%E9%82%A3%E5%80%8B%E5%AD%B8%E6%AD%B7%E5%B0%8D%E5%BE%88/">
+          考資工所我覺得是一個最穩健的做法，一來是學校已經是個幫你搜集好一定程度資訊的地方，二來是那個學歷對很多公司來說還是滿重要的
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-07-29</time>
+        <a href="https://nodebe4.github.io/oped2/2020-07-29/hello-%E7%9B%AE%E5%89%8D%E9%82%84%E6%B2%92%E6%9C%89%E5%96%94/">
+          hello，目前還沒有喔
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-07-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-07-19/%E9%80%99%E9%82%8A%E5%85%B6%E5%AF%A6%E4%B8%8D%E6%98%AF-%E9%A8%99%E9%81%8E%E7%80%8F%E8%A6%BD%E5%99%A8-%E6%AF%94%E8%BC%83%E5%83%8F%E6%98%AF%E9%A8%99%E9%81%8E%E4%BC%BA%E6%9C%8D%E5%99%A8-%E8%B7%9F%E7%80%8F%E8%A6%BD%E5%99%A8%E6%B2%92%E9%97%9C%E4%BF%82/">
+          這邊其實不是「騙過瀏覽器」，比較像是騙過伺服器，跟瀏覽器沒關係
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-28</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-28/%E4%BD%A0%E6%98%AF%E5%B0%8D%E7%9A%84/">
+          你是對的！
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-07-21/%E8%9E%8D%E5%8C%96-%E6%89%80%E6%9C%89%E5%80%BA%E5%8A%A1-%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E9%BB%91%E5%AE%A2%E6%A0%91%E8%8E%93%E6%B4%BE-%E9%BB%91%E5%AE%A2%E4%B8%BB%E4%B9%89%E8%A1%8C%E5%8A%A8%E5%8A%9B-6-iYouPort/">
+            前一篇：融化 所有债务 ……如何构建黑客树莓派 - 黑客主义行动力（6） - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-07-22/%E8%AF%B4%E8%B0%8E%E7%9A%84%E7%9C%BC%E7%9D%9B-%E6%A0%B9%E6%A4%8D%E4%BA%8E%E7%BB%B4%E5%A4%9A%E5%88%A9%E4%BA%9A%E6%97%B6%E4%BB%A3%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB-iYouPort/">
+            後一篇：说谎的眼睛：根植于维多利亚时代面部识别 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-07-21/%E8%9E%8D%E5%8C%96-%E6%89%80%E6%9C%89%E5%80%BA%E5%8A%A1-%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E9%BB%91%E5%AE%A2%E6%A0%91%E8%8E%93%E6%B4%BE-%E9%BB%91%E5%AE%A2%E4%B8%BB%E4%B9%89%E8%A1%8C%E5%8A%A8%E5%8A%9B-6-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-07-22/%E8%AF%B4%E8%B0%8E%E7%9A%84%E7%9C%BC%E7%9D%9B-%E6%A0%B9%E6%A4%8D%E4%BA%8E%E7%BB%B4%E5%A4%9A%E5%88%A9%E4%BA%9A%E6%97%B6%E4%BB%A3%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-07-29/hello-%E7%9B%AE%E5%89%8D%E9%82%84%E6%B2%92%E6%9C%89%E5%96%94/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-07-19/%E9%80%99%E9%82%8A%E5%85%B6%E5%AF%A6%E4%B8%8D%E6%98%AF-%E9%A8%99%E9%81%8E%E7%80%8F%E8%A6%BD%E5%99%A8-%E6%AF%94%E8%BC%83%E5%83%8F%E6%98%AF%E9%A8%99%E9%81%8E%E4%BC%BA%E6%9C%8D%E5%99%A8-%E8%B7%9F%E7%80%8F%E8%A6%BD%E5%99%A8%E6%B2%92%E9%97%9C%E4%BF%82/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-07-21/%E8%9E%8D%E5%8C%96-%E6%89%80%E6%9C%89%E5%80%BA%E5%8A%A1-%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E9%BB%91%E5%AE%A2%E6%A0%91%E8%8E%93%E6%B4%BE-%E9%BB%91%E5%AE%A2%E4%B8%BB%E4%B9%89%E8%A1%8C%E5%8A%A8%E5%8A%9B-6-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-07-22/%E8%AF%B4%E8%B0%8E%E7%9A%84%E7%9C%BC%E7%9D%9B-%E6%A0%B9%E6%A4%8D%E4%BA%8E%E7%BB%B4%E5%A4%9A%E5%88%A9%E4%BA%9A%E6%97%B6%E4%BB%A3%E9%9D%A2%E9%83%A8%E8%AF%86%E5%88%AB-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Huli>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-07-29/hello-%E7%9B%AE%E5%89%8D%E9%82%84%E6%B2%92%E6%9C%89%E5%96%94/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Huli>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-07-19/%E9%80%99%E9%82%8A%E5%85%B6%E5%AF%A6%E4%B8%8D%E6%98%AF-%E9%A8%99%E9%81%8E%E7%80%8F%E8%A6%BD%E5%99%A8-%E6%AF%94%E8%BC%83%E5%83%8F%E6%98%AF%E9%A8%99%E9%81%8E%E4%BC%BA%E6%9C%8D%E5%99%A8-%E8%B7%9F%E7%80%8F%E8%A6%BD%E5%99%A8%E6%B2%92%E9%97%9C%E4%BF%82/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

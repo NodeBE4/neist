@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Technical Difficulties – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Technical Difficulties
+——
+" />
+    <meta property="og:description" content="
+Technical Difficulties
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Technical Difficulties" />
+    <meta property="twitter:title" content="Technical Difficulties" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Ftechnical-difficulties" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/technical-difficulties" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/technical-difficulties&text=Technical Difficulties&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/technical-difficulties&title=Technical Difficulties" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/technical-difficulties&title=Technical Difficulties" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Technical Difficulties&body=
+Technical Difficulties
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/technical-difficulties" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/technical-difficulties&title=Technical Difficulties&caption=
+Technical Difficulties
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Technical Difficulties&url=https://www.chinafile.com/conversation/technical-difficulties" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Technical Difficulties</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-09-25
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Samantha Hoffman, Fergus Ryan &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/technical-difficulties" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1601081940000-->
+<p><a href="https://www.chinafile.com/conversation/technical-difficulties">Technical Difficulties</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-0060721c1fd6ad92173da62b55ebfabc">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1273915645.jpg" title="Technical Difficulties" class="colorbox" data-colorbox-gallery="gallery-node-52561-gaYvijYi1q4" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1273915645.jpg?itok=NkfCH9Nv" width="1200" height="783" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Sean Gallup—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>Bicyclists ride past an advertisement for social media company TikTok in Berlin, Germany on September 21, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">Citing national security concerns, the Trump administration <a href="https://www.commerce.gov/news/press-releases/2020/09/commerce-department-prohibits-wechat-and-tiktok-transactions-protect" target="_blank" rel="nofollow">announced</a> September 18 that it was banning both TikTok and WeChat from mobile app stores starting Sunday, with further usage bans to come. While that date came and went without any impact on the apps’ accessibility in the U.S. (TikTok was, at least momentarily, <a href="https://arstechnica.com/tech-policy/2020/09/trump-reportedly-approves-oracle-tiktok-deal-in-concept/" target="_blank" rel="nofollow">saved</a> by its recent efforts at an American ownership deal, and a federal judge issued a temporary <a href="https://www.nytimes.com/2020/09/20/business/economy/court-wechat-ban.html" target="_blank" rel="nofollow">injunction</a> against the WeChat ban), the issue is hardly resolved. The TikTok ownership deal is far from final, and the U.S. government is <a href="https://www.reuters.com/article/us-usa-tiktok-ban/u-s-tells-judge-it-opposes-tiktok-effort-to-halt-app-store-ban-idUSKCN26G2UW" target="_blank" rel="nofollow">awaiting</a> a court decision this weekend <a href="https://twitter.com/paigeleskin/status/1309560809283092481" target="_blank" rel="nofollow">after opposing</a> TikTok’s injunction request.</p>
+      <p>The latest attempt to ban the apps followed up on a <a href="https://www.whitehouse.gov/presidential-actions/executive-order-addressing-threat-posed-tiktok/" target="_blank" rel="nofollow">pair</a> of <a href="https://www.whitehouse.gov/presidential-actions/executive-order-addressing-threat-posed-wechat/" target="_blank" rel="nofollow">executive orders</a> President Donald Trump issued last month barring U.S. transactions with ByteDance and Tencent, the apps’ parent companies, by September 20. The U.S. Department of Commerce <a href="https://www.commerce.gov/news/press-releases/2020/09/commerce-department-prohibits-wechat-and-tiktok-transactions-protect" target="_blank" rel="nofollow">said</a> in a September 18 statement that the prohibitions on both were intended “to safeguard the national security of the United States.”</p>
+      <p>With an estimated 600 million users worldwide and 100 million in the U.S., TikTok is one of the fastest growing apps in the world. WeChat, the social media, messaging, and mobile payment platform, has more than a billion users, and serves as a critical means of communication in and out of China where the government blocks messaging apps widely used elsewhere in the world.</p>
+      <p>Even if a deal is reached to allow American users to continue accessing one or both of the apps, the showdown is unlikely to be a one-off. U.S.-China relations have been worsening in recent years. Should Trump win re-election, his stance on China seems unlikely to soften. But even if leadership changes, the security concerns surrounding Chinese technology are not going anywhere. Critics have <a href="https://www.nytimes.com/2020/09/17/opinion/tiktok-china-strategy.html" target="_blank" rel="nofollow">argued</a> that the People’s Republic of China’s (PRC’s) 2017 National Intelligence Law—which requires companies to aid in intelligence-gathering if requested—means there is no way for user data to truly be secure from foreign interference. As Chinese tech companies continue to grow in global prominence, American lawmakers will have to figure out how to balance national security with access to a global marketplace.</p>
+      <p>Is there anything democracies can do to address valid security concerns surrounding Chinese technology? In the future, will we simply see two sets of firewalls, one keeping Chinese companies out of the U.S.? What is lost when citizens in one country can’t access the platforms of another? And if the security concerns are valid, where does this leave the rest of the globe? —<em><a href="https://www.chinafile.com/contributors/abby-seiff" target="_blank" rel="nofollow">Abby Seiff</a></em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-8841" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/fergus-ryan"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/fergus_ryan_sm.jpg?itok=pUtX8YVP" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="fergus-ryan"><a href="https://www.chinafile.com/contributors/fergus-ryan" title="Fergus Ryan">Fergus Ryan</a></h3>
+      </div>
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/samantha-hoffman"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/samantha_hoffman_headshot.jpeg?itok=ehXOuiPd" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="samantha-hoffman"><a href="https://www.chinafile.com/contributors/samantha-hoffman" title="Samantha Hoffman">Samantha Hoffman</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The U.S.’s whack-a-mole approach for dealing with People’s Republic of China (PRC) tech companies posing national security risks does not mitigate the inherent risks associated with these companies’ activities. Vis-a-vis China, there are no solutions that truly solve the problems because they are both political and systemic in nature. That’s largely due to how the Chinese Communist Party (CCP) wields power, and the ways PRC laws impact its companies. There aren’t technical solutions to these problems. Only Chinese policymakers can fully solve them, and that seems unlikely. So the best liberal democracies can do is develop effective risk-mitigation. For PRC-originated platforms, there is no clear solution, but President Trump’s executive orders represent a blunt policy approach that has so far only succeeded in creating a series of negative second-order effects that have made properly solving the problem even harder.</p>
+        <p>There are some tech sector regulatory solutions that would help to protect U.S. and other liberal democracies’ security interests. At the very least, democracies should hold Chinese social media networks to the same standards as any other major international social media network, but those standards need to be improved, regardless of any app’s country of origin or ownership. Liberal democracies must engage in careful and coordinated policy planning that includes: transparent user data privacy and user data protection frameworks that apply to all social media networks; independent audits of social media algorithms; transparency about the guidelines that human moderators use and what impact their decisions have on their algorithms; and legally-mandated investigations and disclosure of any information operations taking place on platforms. If certain platforms can’t meet these requirements, they shouldn’t be allowed to operate in that jurisdiction.</p>
+        <p>We lose an opportunity for mutual understanding between countries if citizens from one country can’t access the platforms of another. The bigger the information divide, the bigger the potential for misunderstanding. Unfortunately, this situation already exists due to a Great Firewall that cloisters Chinese citizens in an information environment that’s cut off from the rest of the world and primed with a nationalistic ideology. Information bubbles like this are extremely powerful and can be weaponized. The more the Chinese Party-state controls its information space to promote its own narrative, the more it limits its own options for how it can resolve international conflicts. Don’t forget, it was ByteDance’s decision to separate TikTok users and those of its <a href="https://www.scmp.com/abacus/tech/article/3040147/bytedance-says-tiktok-and-douyin-are-different-they-face-similar" target="_blank" rel="nofollow">PRC-based sister app Douyin</a>. On WeChat, PRC-based users and overseas users are able to engage with each other but in a highly <a href="https://www.cjr.org/tow_center/how-wechat-became-primary-news-source-china.php" target="_blank" rel="nofollow">censored and surveilled</a> space. On top of being a censorship and surveillance tool, WeChat is also the <a href="https://www.hrw.org/news/2020/08/14/wechat-trap-chinas-diaspora" target="_blank" rel="nofollow">primary tool</a> the CCP uses to push propaganda and misinformation to overseas Chinese.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8846" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/julian-g-ku"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/julian-ku-highres.jpg?itok=uzYnyrGB" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="julian-g-ku"><a href="https://www.chinafile.com/contributors/julian-g-ku" title="Julian G. Ku">Julian G. Ku</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">It is fair to question the U.S. government’s recent efforts to effectively ban TikTok and WeChat on national security grounds. It is certainly true that the U.S. government has never before used its powers over cross-border economic transactions to target social media applications, especially ones that are used by millions of Americans. It is also true that the unfortunate effect of the WeChat ban in particular is to further divide the U.S. and Chinese Internets by making it more difficult for U.S. residents to communicate freely and directly with people in China.</p>
+        <p>But while we should rightly decry the further curtailment of people-to-people engagement between the U.S. and China and possible U.S. protectionism, we should also avoid falling into the trap of “moral equivalence” between the two governments. To put it bluntly, the problem here is not Trump, it’s China.</p>
+        <p>Long before President Trump ever considered running for president, the Chinese government had successfully created a separate “Chinternet” that either completely excluded non-Chinese social media and messaging apps or subjected those foreign apps to severe Chinese government censorship. The only reason social media could foster exchange and communication between the U.S. and China is because of the willingness of the U.S. government to tolerate China’s one-sided approach to walling off its own companies and social media from foreign competition.</p>
+        <p>So what’s changed to shift U.S. government policy now? While there are serious and legitimate national security concerns about Chinese technology companies, the real problem is not the practices of those individual companies. The problem is not ByteDance or Tencent. The problem is the ugly and vicious tendencies of the Chinese government under Xi Jinping.</p>
+        <p>The Chinese government has demonstrated on numerous occasions that it is willing to use access to data to conduct intrusive surveillance of its own citizens. That same government has, in the past, aggressively sought to <a href="https://www.washingtonpost.com/world/national-security/chinese-hackers-breach-federal-governments-personnel-office/2015/06/04/889c0e52-0af7-11e5-95fd-d580f1c5d44e_story.html" target="_blank" rel="nofollow">hack personal data</a> of U.S. government employees and even to use social media like LinkedIn to <a href="https://www.reuters.com/article/us-linkedin-china-espionage-exclusive/exclusive-us-accuses-china-of-super-aggressive-spy-campaign-on-linkedin-idUSKCN1LG15Y" target="_blank" rel="nofollow">recruit</a> intelligence assets. Meanwhile, the Chinese government has revealed its ruthless nature in its suppression and potential genocide of the Uighur ethnic minority within China while also leveraging Chinese social media apps like WeChat to <a href="https://www.amnesty.org/en/latest/research/2020/02/china-uyghurs-abroad-living-in-fear/" target="_blank" rel="nofollow">monitor and intimidate</a> Chinese citizens abroad. Given these actions by the Chinese government, it is hard to dismiss the U.S. actions against TikTok and WeChat as completely unfounded.</p>
+        <p>At the end of the day, the only way the U.S.-China technology standoff can be de-escalated is through efforts by the Chinese government to pull back from its extremist and unapologetic ruthlessness. The United States and its allies should make sure the Chinese government takes concrete actions to earn back the trust it will need to allow its companies to enjoy the unfettered access to the U.S. market and the data of U.S. residents.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8851" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/yaqiu-wang"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/wangyaqiu.jpeg?itok=b9qqIj2m" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="yaqiu-wang"><a href="https://www.chinafile.com/contributors/yaqiu-wang" title="Yaqiu Wang">Yaqiu Wang</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The U.S. and other governments should make decisions about Chinese tech companies based on human rights considerations, including the companies’ impact on the rights of people around the world—not just their own citizens.</p>
+        <p>The Chinese companies Tencent, owner of WeChat, and ByteDance, which owns TikTok, play a significant role in facilitating and entrenching the Chinese government’s censorship, surveillance, and propaganda regime inside China. There is <a href="https://www.aspi.org.au/report/tiktok-and-wechat" target="_blank" rel="nofollow">emerging evidence</a> that they also have a debilitating influence on rights outside the country.</p>
+        <p>ByteDance’s products catering to Chinese users—including news aggregator Jinri Toutiao, search engine <a href="https://qz.com/1686840/bytedances-toutiao-search-and-tiktok-may-censor-hong-kong-protests/" target="_blank" rel="nofollow">Toutiao Search</a>, and Douyin, the domestic version of TikTok—all censor what the Chinese government considers “politically sensitive” content. Articles that mention the <a href="https://chinadigitaltimes.net/chinese/2018/04/%E4%B8%AD%E5%9B%BD%E7%BB%8F%E8%90%A5%E6%8A%A5-%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%86%85%E5%AE%B9%E5%AE%A1%E6%9F%A5%E7%9A%84%EF%BC%9F/" target="_blank" rel="nofollow">names of</a> top People’s Republic of China (PRC) leaders, for example, or <a href="https://www.wsj.com/articles/uighurs-use-videos-to-draw-attention-to-missing-family-members-11566485433" target="_blank" rel="nofollow">videos uploaded</a> by Uighurs to draw attention to their missing family members are quickly removed. The company also censored content it considered critical of the PRC government on its news aggregator app <a href="https://www.reuters.com/article/us-usa-tiktok-indonesia-exclusive/exclusive-bytedance-censored-anti-china-content-in-indonesia-until-mid-2020-sources-say-idUSKCN2591ML" target="_blank" rel="nofollow">in Indonesia</a> from 2018 to mid-2020.</p>
+        <p>Through Douyin, ByteDance <a href="https://www.aspi.org.au/report/mapping-more-chinas-tech-giants" target="_blank" rel="nofollow">worked closely</a> with the PRC police to disseminate state propaganda whitewashing Beijing’s abuses in Xinjiang. ByteDance also <a href="https://www.washingtonpost.com/world/tiktoks-owner-is-helping-chinas-campaign-of-repression-in-xinjiang-report-finds/2019/11/28/98e8d9e4-119f-11ea-bf62-eadd5d11f559_story.html" target="_blank" rel="nofollow">signed an agreement</a> with the Ministry of Public Security to promote “the influence and credibility” of police departments nationwide.</p>
+        <p>Similarly, WeChat <a href="https://citizenlab.ca/2019/07/cant-picture-this-2-an-analysis-of-wechats-realtime-image-filtering-in-chats/" target="_blank" rel="nofollow">censors</a> and <a href="https://www.amnesty.org/en/latest/campaigns/2016/10/which-messaging-apps-best-protect-your-privacy/?ntvDuo=true" target="_blank" rel="nofollow">surveils</a> users on the PRC government’s behalf and hands over user data to authorities when “sensitive” information is discovered. There have been numerous reports about people getting harassed, detained, or imprisoned for their private messages on WeChat. A man in Shandong province was <a href="https://www.rfa.org/english/news/china/monitor-08182020091653.html" target="_blank" rel="nofollow">sentenced</a> to 10 months in prison for sending a single video clip referencing an anti-government campaign to a U.S.-based friend. <a href="https://www.icij.org/investigations/china-cables/how-china-targets-uighurs-one-by-one-for-using-a-mobile-app/" target="_blank" rel="nofollow">Uighurs</a> and <a href="https://www.rfa.org/english/news/tibet/detained-11072019164013.html" target="_blank" rel="nofollow">Tibetans</a> have been imprisoned for using WeChat to share religious materials. A <a href="https://citizenlab.ca/2020/05/we-chat-they-watch/" target="_blank" rel="nofollow">study</a> by Citizen Lab in Canada showed that WeChat also surveils its users outside the PRC to build up the database it uses to censor PRC-registered accounts.</p>
+        <p>ByteDance and Tencent may have enriched many people’s lives by facilitating expression, but their very success became possible at least in part because they actively assist the PRC government’s suppression of speech.</p>
+        <p>Last year, the U.S. government <a href="https://www.nytimes.com/2019/10/07/us/politics/us-to-blacklist-28-chinese-entities-over-abuses-in-xinjiang.html" target="_blank" rel="nofollow">sanctioned</a> dozens of Chinese tech companies for their role in human rights violations in China. All governments grappling with Beijing’s increasingly global tech-enabled censorship and surveillance need to develop legitimate, necessary, and transparent responses that take into account how the human rights of all users—not just their own citizens—are impacted.</p>
+        <p>Ensuring that Chinese tech companies are held accountable for facilitating human rights violations while not creating a race to the bottom and not endangering the future of an open, interoperable global Internet is a delicate matter. But there are solutions with fewer potential negative effects: The U.S. and other governments should provide alternate channels of communication and invest in open-source technologies that enable people in the PRC to more easily circumvent censorship so that they do not get trapped in the black hole of Chinese companies’ censorship and surveillance. Domestically, those governments need to strengthen their own data protection laws so the privacy of users can be protected from the abusive practices of all companies, Chinese or others.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8856" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/Graham-Webster"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/webster.graham.headshot.jpeg?itok=PW6p15Tf" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="graham-webster"><a href="https://www.chinafile.com/contributors/Graham-Webster" title="Graham Webster">Graham Webster</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The Trump administration’s efforts to ban or expropriate TikTok and WeChat are simply not about user privacy, and they are not about a national security emergency. They are a distraction, and the realities around two primary justifications for the bans—privacy and national security—are far from enough to justify unilateral Executive Branch bans on parts of the Internet.</p>
+        <p>First, while there are indeed huge privacy concerns with both TikTok and WeChat, it is clear that is not a primary driver behind the bans. The proof that the administration’s policy actions are not about defending privacy is that they have proposed nothing to rein in the huge privacy harms of the unregulated mass collection, collation, and trade in U.S. user data that drives revenue for U.S. tech companies while exposing our lives to bidders high and low. Nor would cutting off TikTok and WeChat keep oceans of U.S. user data away from the Chinese government, which can buy or hack into the wealth of databases that marketers fuel with our digital lives. The potential benefits of cutting off these apps would accrue mostly to People’s Republic of China (PRC) citizens, or those with relatives in the PRC, who might be surveilled and targeted by the PRC government over political dissent. (This is a real, if narrow, potential upside if Trump’s threats are actualized, but it’s not the U.S. government’s justification.)</p>
+        <p>Second, the alleged national security risks—of collecting and storing mass data for later exploitation in intelligence or disinformation, or of manipulating an algorithm to achieve marginal changes in public opinion—are real, but they are small, at least for now. Intelligence agencies of course collect and store away data about potential adversaries, to the degree they can. Banning these apps might or might not significantly slow down Chinese intelligence when it comes to mass collection, but those people they target specifically would still be highly vulnerable. Meanwhile, the idea that <a href="https://www.deccanherald.com/international/world-news-politics/why-tiktok-s-algorithm-can-t-be-trusted-891238.html" target="_blank" rel="nofollow">one app’s algorithm</a> (when the company is already under intense scrutiny) is a national security emergency is frankly ridiculous amidst the actually unfolding crisis facing the U.S. political system. This domestic crisis has been born of an aspiring authoritarian president and the primarily U.S.-owned (if sometimes Russian-manipulated) social media infrastructure we have.</p>
+        <p>The United States <a href="https://www.technologyreview.com/2020/09/21/1008620/wechat-tiktok-ban-china-us-security-policy-opinion/" target="_blank" rel="nofollow">desperately needs</a> rational and universally-applied data governance. TikTok and WeChat would not pass muster under a solid regime today, but nor would Facebook or Google. If they or any other company—from the Weather Channel to addictive games of unknown origin—can’t meet high standards, U.S. citizens should be protected from them.</p>
+        <p>But don’t fall for the Trump administration’s distraction campaign and their effort to cement more conflict between the United States and China than actually exists. Trump has crowed for years about how tough he is on China, but his immensely costly trade war has yielded only a “<a href="https://www.reuters.com/article/us-usa-trade-china-analysis/lemon-or-not-trump-stuck-with-phase-1-china-trade-deal-for-now-idUSKBN238219" target="_blank" rel="nofollow">Phase 1</a>” announcement that is barely worthy of the term “deal.” The administration faces a tough election and knows its chaotic bravado has not solved widely-held U.S. problems with China, from unfair market behavior to the terrifying mass internment of ethnic minority citizens. Banning TikTok and WeChat will solve none of this, nor will it defend U.S. privacy or national security. But it does make a hell of a lot of noise.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-10-08</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-08/How-Did-China-Beat-Its-COVID-Crisis/">
+          How Did China Beat Its COVID Crisis?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-07</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-07/International-NGOs-Increasingly-Working-with-Chine/">
+          International NGOs Increasingly Working with Chinese Partners . . . outside China
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-09-18</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-18/Europe-and-China-s-Virtual-Summit/">
+          Europe and China’s ‘Virtual Summit’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-09-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-17/Europe-and-China-s-Virtual-Summit/">
+          Europe and China’s ‘Virtual Summit’
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-09-25/Technical-Difficulties/">
+            前一篇：Technical Difficulties
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-09-27/%E7%94%B7%E5%A5%B3%E9%83%BD%E4%B8%80%E6%A0%B7-%E9%87%8C%E7%9A%84%E9%99%B7%E9%98%B1-%E4%BB%8E%E6%9D%A8%E7%AC%A0%E8%84%B1%E5%8F%A3%E7%A7%80%E8%AF%B4%E8%B5%B7/">
+            後一篇：“男女都一样”里的陷阱：从杨笠脱口秀说起
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-09-25/Technical-Difficulties/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-09-27/%E7%94%B7%E5%A5%B3%E9%83%BD%E4%B8%80%E6%A0%B7-%E9%87%8C%E7%9A%84%E9%99%B7%E9%98%B1-%E4%BB%8E%E6%9D%A8%E7%AC%A0%E8%84%B1%E5%8F%A3%E7%A7%80%E8%AF%B4%E8%B5%B7/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-10-07/International-NGOs-Increasingly-Working-with-Chine/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-09-18/Europe-and-China-s-Virtual-Summit/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-09-25/Technical-Difficulties/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-09-27/%E7%94%B7%E5%A5%B3%E9%83%BD%E4%B8%80%E6%A0%B7-%E9%87%8C%E7%9A%84%E9%99%B7%E9%98%B1-%E4%BB%8E%E6%9D%A8%E7%AC%A0%E8%84%B1%E5%8F%A3%E7%A7%80%E8%AF%B4%E8%B5%B7/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-10-07/International-NGOs-Increasingly-Working-with-Chine/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-09-18/Europe-and-China-s-Virtual-Summit/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

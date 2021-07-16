@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】
+——
+" />
+    <meta property="og:description" content="
+【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】" />
+    <meta property="twitter:title" content="【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40islander%2F%25E5%258D%2581%25E7%25AF%2587%25E5%25A0%25B1%25E5%25B0%258E%25E5%2591%258A%25E8%25A8%25B4%25E4%25BD%25A0-%25E7%2582%25BA%25E4%25BB%2580%25E9%25BA%25BC%25E8%25A8%2582%25E9%2596%25B1%25E7%25AB%25AF%25E5%2582%25B3%25E5%25AA%2592-%25E5%25B0%25B1%25E6%2598%25AF%25E6%2594%25AF%25E6%258C%2581%25E6%2588%2591%25E7%259A%2584%25E5%25AF%25AB%25E4%25BD%259C-bafyreidx7vylto5rt5nndlkxnhhxuxatk7zrnk2cg5iooyjyz2e3ioqpnu" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@islander/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C-bafyreidx7vylto5rt5nndlkxnhhxuxatk7zrnk2cg5iooyjyz2e3ioqpnu" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@islander/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C-bafyreidx7vylto5rt5nndlkxnhhxuxatk7zrnk2cg5iooyjyz2e3ioqpnu&text=【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@islander/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C-bafyreidx7vylto5rt5nndlkxnhhxuxatk7zrnk2cg5iooyjyz2e3ioqpnu&title=【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@islander/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C-bafyreidx7vylto5rt5nndlkxnhhxuxatk7zrnk2cg5iooyjyz2e3ioqpnu&title=【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】&body=
+【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@islander/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C-bafyreidx7vylto5rt5nndlkxnhhxuxatk7zrnk2cg5iooyjyz2e3ioqpnu" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@islander/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C-bafyreidx7vylto5rt5nndlkxnhhxuxatk7zrnk2cg5iooyjyz2e3ioqpnu&title=【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】&caption=
+【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】&url=https://matters.news/@islander/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C-bafyreidx7vylto5rt5nndlkxnhhxuxatk7zrnk2cg5iooyjyz2e3ioqpnu" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-30
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 島民</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@islander/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C-bafyreidx7vylto5rt5nndlkxnhhxuxatk7zrnk2cg5iooyjyz2e3ioqpnu" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1625068551000-->
+<p><a href="https://matters.news/@islander/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C-bafyreidx7vylto5rt5nndlkxnhhxuxatk7zrnk2cg5iooyjyz2e3ioqpnu">【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】</a>
+——</p>
+
+<div>
+  <p>七一是各種意義上的大日子，風頭火勢，我們都看到。卻又聽說我的前公司「端傳媒」也面臨差一點點才能自負盈虧的「歷險時刻」。這家媒體養大我，我非常希望它能活下去，尤其是在今日的中文世界。推薦各位臉書好友來訂閱，從我這裡的 link 點進去，購買會員有折扣喔！</p>
+  <p>點擊加入端傳媒會員，立享85折起優惠！邀請你一起聚焦深度、掌握時政脈絡，用你選擇的媒體，決定你看見的世界。<a href="https://theinitium.com/subscription/offers/......" target="_blank">https://theinitium.com/subscription/offers/......</a></p>
+  <p>為什麼我希望它活下去呢？前幾天端會員組的朋友請我給他們寫一段話，講講我和端合作的經驗。他們說只要100字，但我一不小心就放了真心進去，寫了這麼多：</p>
+  <p>//我是見證端傳媒在香港鰂魚涌誕生的初代員工，那年剛畢業，23歲。6年來，我們見證了彼此的成長，我在端傳媒刊登的文章超過了20篇。</p>
+  <p>成為自由撰稿人之後，我與端台灣組、中國組、香港組、評論組、文化組的編輯都有過合作，大家性格各異，有的很阿沙力，有的很敏感細膩，但每一個都堅持新聞專業，用初心在工作。當編輯們看到好題目時，就像好獵人看到獵物一樣閃亮了眼睛，我就在他們的聲援下趕赴獵場，尋求真實。</p>
+  <p>合作多年，我明白這家媒體在新聞自由動蕩的年代，仍有承擔、有勇氣去做對的事，而且會給作者提供最好的支持，給讀者最好的內容。大時代下有許多無奈，當我們可以選擇的事越來越少，每一次消費都可以成為表態。</p>
+  <p>你看到什麼，你就是什麼。你訂閱什麼，你就是什麼。請繼續支持端傳媒，這樣它才能繼續給更多好作者發稿費，艱難時刻，一起活下去。//</p>
+  <p>既然超過了20篇，也是剛好可以趁此機會來整理一下，在端的支持下，我過去寫了些什麼東西，以下是10篇中港台精選報導，來自我本人。請端傳媒持續給我發稿費。</p>
+  <p>【 1、疫情相關報導，台北萬華】</p>
+  <p>20210527 台灣《萬華十日記：疫情重災區，一場對抗病毒的游擊戰》</p>
+  <p><a href="https://theinitium.com/....../20210527-taiwan-wanhua....../" target="_blank">https://theinitium.com/....../20210527-taiwan-wanhua....../</a></p>
+  <p>這是一篇把目光放在民間，放在公民社會的動員力，而期待十日之後政府正規軍能接過重擔的報導。現在兩個月過去了，台北市的正規軍，嗯，一言難盡。然而公民社會的力量，早已經成長得比我寫的這個階段更加強大（請追蹤林立青臉書，順便訂購蔴油李的夭壽好吃的冷凍調理包）。</p>
+  <p>這篇報導帶來幾個意想不到的回應，一是我已經講過好多次的公民教育。高雄、花蓮和各地的公民老師一起把這篇報導放進課程，做了線上問答，讓高中生瞭解什麼是社區安全網，為什麼會有街友，生而為人的基本權利是什麼。因為一直有需求，端還為了老師們推出了教育方案。二是， 台灣香港協會的朋友剛好那幾天問我，香港人想幫點忙，回饋台灣社會，有沒有什麼萬華的需求可以接洽。我只是給了他們幾個電話，介紹了幾個在地組織給他們而已，現在兩個月過去了，他們已經給開救護車的消防員和社區實踐協會的弱勢家庭送去了近千個便當。三是，幾個從未謀面的臉書好友在看到報導後紛紛來訊，說謝謝我，原來他們都是萬華人。還有一位老師，我前陣子才讀完她的書，在論文中引用，沒想到她也說，她是萬華人，請我從記者的角度，幫台大的一個週報寫一篇講萬華。</p>
+  <p>我只是寫了一篇稿而已，但收到來自四面八方的力量，無窮無盡。</p>
+  <p>【2、疫情相關報導，中國】</p>
+  <p>20200807 中國 《靠近醫院，雙腿就止不住顫抖：中國醫護疫情後心理受創調查》</p>
+  <p><a href="https://theinitium.com/....../20200807-mainland....../" target="_blank">https://theinitium.com/....../20200807-mainland....../</a></p>
+  <p>//一篇發表於早期的針對醫護心理狀態的論文指出：54.2%的醫護感到焦慮，58%感到抑鬱，而高水平焦慮的比例達到55.1%，高過SARS的39.3%。另一份始於1月29日的調查觸及到來自34間醫院的1256名醫護人員，其中20間醫院在武漢。結果顯示，除了焦慮與抑鬱之外，還有71.5%的醫護捲入悲痛之中，34%的人無法入睡。</p>
+  <p>武漢市精神衛生中心主任醫師童俊認為，這些焦慮、抑鬱、悲痛與防護物資的缺乏有重大關聯。</p>
+  <p>……</p>
+  <p>第一起可確認的由疫情後的心理創傷造成的醫護自殺事件，發生在風暴眼之外，甚至不在湖北省。上述那位不願透露姓名的中科院教授對端傳媒透露了這個消息。那是一名年輕醫生，援鄂結束後回到本省，一個多月後自殺。</p>
+  <p>教授拒絕透露自殺醫生的姓名及省份，因為「這件事在當地是個敏感話題，我也不能問得過多」。他只知道，這名醫生自殺後，「後來在醫院做了一些處理」，搶救了過來。教授發現，這個醫療隊有多名醫護都因沒有及時處理心理創傷，而導致各種PTSD表現，這起自殺未遂則是其中最嚴重的。//</p>
+  <p>前陣子我意外在中國最大的podcast平台「喜馬拉雅APP」上發現，有一位江蘇的心理醫師把我的這篇報導分成四集，全文朗讀。她讀得非常深情，甚至哭了出來，因為她知道那有多痛，卻又多麼不被允許訴說。</p>
+  <p>前幾天，鏡周刊有個關於台灣醫護心理創傷的報導，做得很好，媒體可以直接做問卷跟醫護收集數據，這真是在中國想都不敢想的事。我訪問的中國心理學者中，有成功搜集到數據的，全都是靠私底下個人網絡的傳播。只有兩個規模較大的，是中科院和北京一間大醫院，那兩個教授是國家級資助，體制內有人罩著，在英文學術期刊發文章，受壓較少。其他人就很難了。那位江蘇的心理醫師在podcast中說，自己也曾在第一時間收集前線同事心理創傷的症狀、數據，但很快就被領導踢出了群組，因為這些內容太負面，太敏感了。到半年後，PTSD高發的時候，她又想做PTSD研究，領導卻說，都過去那麼久了，大家早就沒事了。（創傷剛發生的前兩個月PTS，還比較可控，到半年就會發展到PTSD，相當麻煩，所以台灣的心理介入還來得及，要快啊）</p>
+  <p>【3、原住民相關報導】</p>
+  <p>20271214 台灣《靈魂的事：從學者到祭師，巴奈·母路為什麼「不得不上路」？》</p>
+  <p><a href="https://theinitium.com/....../20171214-taiwan-panay....../" target="_blank">https://theinitium.com/....../20171214-taiwan-panay....../</a></p>
+  <p>//就算是郊遊，祭師們也隨身攜帶米酒和杯子，如果感應到這段路上有認識的靈群，就會下車祭祀。阿美族的米酒，禮敬無形的靈者，山裏的、海裏的、大自然的、隨處的……她從來沒有發現自己的民族這樣美麗。</p>
+  <p>「從來沒有人可以這樣，用靈魂的方式去活。」她覺得自己看到了一個民族很細緻的、不為人知的部分，然後也慢慢地，開始看到自己。</p>
+  <p>……</p>
+  <p>過幾日她就要去海邊做最後的儀式。20多年前，還叫林桂枝的她也是這樣穿過里漏部落去海邊，可是全然不知靈魂的事。她笑當年的自己，也笑他人：「何其美好的靈，讓你知道什麼叫永恆，人活著卻把這個都擺在一邊。」</p>
+  <p>……</p>
+  <p>那什麼才美麗、可愛、永恆？她眼睛很亮，說：「靈。沒有靈魂的人看不懂一朵花。你有了以後，你就覺得你永遠不寂寞。」//</p>
+  <p>前陣子有個朋友說，他記得我幾年前寫過一篇稿，最後一句是「沒有靈魂的人看不懂一朵花」，於是他讀完，就真的出去看了一朵花。我曾經寫過這樣美麗的事啊，謝謝巴奈，那天的醉，我永遠記得。</p>
+  <p>【4、移工議題相關報導，台灣】</p>
+  <p>20191015 台灣《台灣斷橋下，6名罹難者和他們身後的印、菲漁工社群》</p>
+  <p><a href="https://theinitium.com/....../20191015-taiwan....../" target="_blank">https://theinitium.com/....../20191015-taiwan....../</a></p>
+  <p>//我們在事發後走訪南方澳，拜訪印尼漁工聚會的清真寺、印尼餐廳，以及為亡者舉辦的七日祈禱會，也走進菲律賓漁工們在岸上的小據點。這個人數接近兩千的跨國社群，怎樣用屬於自己的方式，面對和處理事件帶來的傷痛和震盪？我們也試圖回答社會的疑問：外籍漁工是否被規定必須住在船上、不可上岸？這是否為六名漁工的死因之一？南方澳船東與仲介有否苛待漁工？</p>
+  <p>漁工被捲入複雜的利益網絡中，既要保住工作，又運用宗教、同鄉會、工會的力量，嘗試為社群發出一點點聲音，也渴望被台灣人聽到。記者就此訪問漁工及不同團體意見，試圖還原多方角力下的複雜真相。</p>
+  <p>……</p>
+  <p>10月3日晚上7點半，在南方澳港口旁，一間印尼餐廳裡坐滿了身穿穆斯林服飾的漁工，人數達近兩百人，店裡坐不下，外圍的人一直坐到碼頭上去。帶禱告的 Hono 是印尼漁工在當地清真寺的教長，本身也是一名漁工。他手拿一個本子，上面寫著罹難者和傷者的名字，一一念出，然後開始唱誦古蘭經。為亡者連續禱告7晚，是他們的傳統。</p>
+  <p>「Wartono，來自西爪哇省的井裡汶（Cirebon）。Domiri，來自中爪哇省的八馬蘭（Pemalang）。Ersona，來自西爪哇省的南安由（indrawayu）。今天是第三晚，讓我們為他們祈禱。」//</p>
+  <p>有的人死了，卻被遺忘。後來那個仲介還揚言要告我，呵。是編輯部幫我頂住了壓力，我愛何欣潔。</p>
+  <p>【5、中國古建築炒賣調查報導】（唯一做過跟商業有點關係的報導……饒了我吧）</p>
+  <p>20180618 中國 《明清老宅的「飛屋環遊記」：在中國，古建築都能批發》</p>
+  <p><a href="https://theinitium.com/....../20180618-mainland....../" target="_blank">https://theinitium.com/....../20180618-mainland....../</a></p>
+  <p>//古建收藏界有一些行話，比如價格，「一百」就是一百萬的意思，轉賣也不叫轉賣，叫「調劑」，意思是，大家都是收這個的，只不過是從我的手上調劑到了你的手上。</p>
+  <p>學國畫出身的商人柯海廷，就「調劑」過一些古建築。他是浙江寧波人，2005年，一位收藏石雕的朋友突然拿出一百多張古建築的照片，問他要不要，全都是浙江、福建、江西和安徽的明清古建築。那時候只要幾萬塊錢就可以買下一棟，後來慢慢漲價到幾十萬、幾百萬。至今，他手上流通進出，還有四十多棟，很可能會再賣掉一些。其中有民居、祠堂、官邸，在江西景德鎮、浙江東陽、上海寶山都有倉庫。其中的二十棟，他要拿來在杭州靈山的大嶺村，做一個園林茶室和民宿，再留一間做自己私人度假的會所。</p>
+  <p>……</p>
+  <p>「建築是人類一切造形創造中最龐大、最複雜、也最耐久的一類。」這是梁思成在1953年的《古建序論》中說的話。</p>
+  <p>……阮儀三的觀點，古建築根本就不應該成為商品，不應該被買賣，應該和博物館、學校、醫院這些公共建設一樣，依靠政府的出資來進行全面保護。</p>
+  <p>不過，政府推出的新法例，似乎並不能如阮儀三的願。//</p>
+  <p>至今還記得在西湖對岸的豪華大樓，整排的落地窗和書畫收藏。在樓頂的私人會所裡，跟一群收藏古建築的富人們一起吃了頓飯，聽到好多料。水很深，很難潛。他們都以為我是文匯報的，對我敬重有加，雖然我已經說了好多次，香港，端傳媒。</p>
+  <p>【6、寫過最喜歡的人訪之一】</p>
+  <p>20171110 中國 《異鄉人 — — 三浦研一：在中國演了十八年「日本鬼子」的日本人》</p>
+  <p><a href="https://theinitium.com/....../20171110-strangers....../" target="_blank">https://theinitium.com/....../20171110-strangers....../</a></p>
+  <p>//三浦研一是最早進入中國大陸的日本演員之一。20年前，他到中國社科院讀國際關係博士的時候，在中國大陸發展的日本演員還不到五個。那是1997年，日本的GDP總量超過4萬億美元，而中國只有9千億美元。他卻覺得中國有活力。「雖然那時候老百姓穿得破破爛爛的，」他用帶日文腔調的北京話對端傳媒記者說，「但我特別喜歡那個時候，大家沒有裝逼。」</p>
+  <p>……</p>
+  <p>說到愛看和感動，他馬上想起票房破56億的《戰狼2》。他不屑，「我不看，沒意思。」</p>
+  <p>為什麼沒意思？他語調一轉，口氣沉沉地說，「現在的中國人，還沒有長大，還像孩子一樣。」這個「沒長大」，是他說的「不理性」、「只是仇恨別人」、「把過去不好的事情總記著」，還有對《戰狼2》式超級英雄的崇拜。……</p>
+  <p>他記得在中日關係落入冰點的2012到2014年，自己有一段时间盡量白天不出門。「因為我住的隔壁有些房地產廣告，或是咖啡廳門口，羊肉串兒店門口，都寫著『日本人和狗不得進入』。」</p>
+  <p>……採訪結束，三浦研一和記者確認，中國大陸的讀者需要翻牆才能看到端傳媒，笑說「那更好」，「這樣有些話他們看不到，比較好」。</p>
+  <p>天色暗了，他走出咖啡店去，T恤背後寫著兩個大字：「過客」。記者追上去問，他是不是過客？三浦研一笑笑，沒回答。//</p>
+  <p>我很喜歡跟三浦聊天，所以他坐在我對面抽了五根煙，我都願意忍下來，換了別人我是會吐的。這樣的人，很有意思。</p>
+  <p>【7、香港，中環有個菲律賓】</p>
+  <p>20170925 香港 《中環折疊：環球大廈藏着一個菲律賓》</p>
+  <p><a href="https://theinitium.com/....../20170926-hongkong-world....../" target="_blank">https://theinitium.com/....../20170926-hongkong-world....../</a></p>
+  <p>//這是一個藏在中環的菲律賓。</p>
+  <p>中環天橋四通八達，從環球商場出發，1分鐘可達 JP Morgan 亞太區總部，3分鐘可達 Louis Vuitton 全球四大旗艦店之一，但環球商場至今做的是3元一瓶水、10元一筆匯款手續費、30元一個午餐盒、160元寄一個紙皮箱的菲律賓生意。</p>
+  <p>商場所在的環球大廈，樓高27層，四樓以上，是屢創地價新高的寫字樓，每逢週末陷入休眠；三樓及以下，才是屬於菲律賓人的世界，工作日蕭條平靜，到了週末人頭洶湧，來此消費的人，九成是菲傭。</p>
+  <p>很有可能，他們的僱主就在環球大廈工作，卻幾乎從不會在中環相遇。Leeh Ann說，唯一的交集可能是，星期一早上，僱主的孩子在她的書包裏又一次發現了可口的菲律賓小零食，嚷着要吃一口。哪裏買的？環球大廈。</p>
+  <p>對目前18萬的在港菲傭而言，這裏是他們獨一無二的小社群，意義超越了一座商場。「我喜歡大家用母語聊天，哪家店有人生日了都會和大家分享食物，用菲律賓語說，生日快樂！」Helen Chavez 對記者說，她曾做過菲傭，後來在環球大廈的貨運店工作長達20年：「這是我們的第二個家。」//</p>
+  <p>文中訪問的 Leeh Ann，當年還只是一個喜歡拿著相機拍同鄉的普通菲律賓女孩，幾年過去，她已經是一個越來越有成就的兼職攝影師</p>
+  <p>了。希望她實現她的夢想。</p>
+  <p>【8、致失去的，沒有地鐵的九龍城】</p>
+  <p>20180618 香港 《非主流香港：九龍城、泰國城》</p>
+  <p><a href="https://theinitium.com/....../20180618-hongkong-kiki....../" target="_blank">https://theinitium.com/....../20180618-hongkong-kiki....../</a></p>
+  <p>//2800萬。這是香港舊啟德機場一年的載客量，這個1925年誕生，位於九龍城區、維多利亞港畔，只有一條跑道的起降高難度機場，國際客運量一度達到世界第三。</p>
+  <p>和各種移民家族史的開端一樣，這裏是絕大多數泰國人到達香港的第一站。Vita 還記得，小時候自己最喜歡去啟德機場接泰國來的親戚。從媽媽在九龍城開的「三姐妹雜貨鋪」一路向東走，穿過啟德道和機場隧道，迎面就是一條斜坡路。從飛機上下來的泰國親戚們吹着大風拖行着李，從斜斜的路上走下來，讓那時讀小學的 Vita 覺得，「就像是走T台一樣，好有型啊！」</p>
+  <p>……</p>
+  <p>這舊啟德機場隧道外連接的三條狹長街道，在今日幾乎抬眼全是泰國商鋪，往北，則是昔日被稱為「黑暗之城」的九龍寨城。90年代，曾是世界上人口密度最高地區的寨城清拆，啟德機場關閉，加上九七移民潮，太多人霎時從九龍城離去。而在龍城暗淡之時，接手這些被放棄的店鋪、街道和住宅的人，許多都和Vita的家族一樣，來自泰國。Vita說，他們的泰國社群，就在那時徹底成型了。//</p>
+  <p>你會想念香港的什麼？那個我們曾經擁有過的，每一條街道都爛熟於心的九龍城。</p>
+  <p>【9、新界東北，一切開始的地方】</p>
+  <p>20160512 香港 《馬屎埔，在迫遷的命運裏種一座村莊》</p>
+  <p><a href="https://theinitium.com/article/20160512-hongkong-mashipo/" target="_blank">https://theinitium.com/article/20160512-hongkong-mashipo/</a></p>
+  <p>//香港新界東北的馬屎埔村，在2016年4月28日突然長出了一座木頭做的「瞭望塔」。</p>
+  <p>它立在七零八落的鐵絲網中間，腳踩着一塊田，正對面是幾棵匆匆種下的香蕉樹。一旁與它對峙的，是一架推土機。推土機上掛滿了各式標語：守田！中止原址換地！保衛東北！反對迫遷！</p>
+  <p>……</p>
+  <p>仍然留在馬屎埔的村民，已經日漸看不到退路。「你沒有辦法離開這裏，因為去到哪裏都會是這樣。」區晞旻說，「當沒有政策保護農地的時候，如果你想繼續在村裏生活，想做農夫，那你就會一世都面對迫遷，根本不會有穩定的土地去做生產。」她臉上現出百思不得其解的表情，肩膀顫抖着問：「如果這裏真的被拆，如果我們搬去其他村子，那個地方最後也會面臨發展、迫遷，為什麼要這樣呢？」</p>
+  <p>「在香港要做農夫，就好像遊牧民族一樣。」她垂下頭說。</p>
+  <p>進入5月，馬屎埔村的「瞭望塔」加固得更高。「塔」上面還多了一塊巨大的綠色木頭面具。它面朝村外，兩旁是一雙巨大的綠色手掌，以「say no」的抵抗姿勢護住身後的農地和村民。塔身刻畫的詩句來自三毛：「如果有來生，要做一棵樹。」下方刻畫的歌詞則來自台灣的交工樂隊：「一行一行把自己種回來，一畝一畝把自己兜齊全。」</p>
+  <p>而恆基的堆土機就在前面。//</p>
+  <p>前陣子才看到馬屎埔又被迫遷的新聞。佳佳還記得我，她在沉重中仍然認真生活，做艱難的事，也做麵包。謝謝那年梁啟智老師帶我們去馬屎埔 field trip，我這個學生，雖然 reading 從未讀完，但還在寫，今天也還沒倒下。</p>
+  <p>【10、端傳媒成立一週年時，我對同事說的話】</p>
+  <p>20160803 @香港島，東區，鰂魚涌 《一年以前，我們從這裏出發》</p>
+  <p><a href="https://theinitium.com/article/20160803-initiumstory-start/" target="_blank">https://theinitium.com/article/20160803-initiumstory-start/</a></p>
+  <p>//負責每天的daily新聞，她說喜歡「端」的理由是因為「這裏有很多正常人」。她界定的「正常人」是指「有自由意志的人」。對「端」最大的期望就是不要做香港的「澎湃新聞」。上線當天上午，她的工作是撰寫「維基解密」的稿子。//</p>
+  <p>不知道自己當時為什麼會跟澎湃新聞做比較……也忘了那篇維基解密的 daily 寫什麼。但是「有自由意志的人」可貴，到今天更加如是。</p>
+  <p>註：照片的意思是快給我罐罐的錢。</p>
+  <p><a href="https://www.facebook.com/hashtag/%E7%AB%AF%E5%82%B3%E5%AA%92?__eep__=6&amp;__cft__[0]=AZU-OpGxG-RfTUfiKWrpsOZ4DYtvts0qusPKsMdDq9qTZopB31mJy8A6jY9m8RbXXs3Xkullp9GIQjFPLY3Xc6W6SDoYkVxFaA7m12uixwz1iQ&amp;__tn__=*NK-R" target="_blank">#端傳媒</a></p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+    
+      <li>
+        <time>2021-07-03</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">
+          食農與鄉愁 她們不一樣的台港連結
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-02-26</time>
+        <a href="https://nodebe4.github.io/oped2/2021-02-26/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-3.0-%E7%89%88-%E7%B0%A1%E4%BB%8B%E5%8F%8A%E7%9B%AE%E9%8C%84/">
+          《數字極權時代生存手記》 3.0 版 簡介及目錄
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-01-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-17/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%AD%E5%9C%8B%E6%9B%BE%E5%B0%8D%E6%97%A5%E6%9C%AC-%E9%9F%93%E5%9C%8B%E5%92%8C%E8%B6%8A%E5%8D%97%E7%9A%84%E5%8F%A4%E7%89%A9%E6%89%93%E9%81%8E%E4%B8%BB%E6%84%8F%E5%97%8E/">
+          [外交雜聞]中國曾對日本、韓國和越南的古物打過主意嗎？
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-30/IYP%E4%BC%98%E7%A7%80%E4%B9%A6%E7%B1%8D%E6%B1%87%E6%80%BB2021-05-06-%E6%9C%88%E7%89%88-%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD-iYouPort/">
+            前一篇：IYP优秀书籍汇总2021（05～06 月版） - 完全免费下载 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-30/%E5%A4%96%E8%A1%A8%E6%98%AF%E9%AA%97%E4%BA%BA%E7%9A%84-iYouPort/">
+            後一篇：外表是骗人的 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-30/IYP%E4%BC%98%E7%A7%80%E4%B9%A6%E7%B1%8D%E6%B1%87%E6%80%BB2021-05-06-%E6%9C%88%E7%89%88-%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-30/%E5%A4%96%E8%A1%A8%E6%98%AF%E9%AA%97%E4%BA%BA%E7%9A%84-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-02-26/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-3.0-%E7%89%88-%E7%B0%A1%E4%BB%8B%E5%8F%8A%E7%9B%AE%E9%8C%84/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-30/IYP%E4%BC%98%E7%A7%80%E4%B9%A6%E7%B1%8D%E6%B1%87%E6%80%BB2021-05-06-%E6%9C%88%E7%89%88-%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-30/%E5%A4%96%E8%A1%A8%E6%98%AF%E9%AA%97%E4%BA%BA%E7%9A%84-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-02-26/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-3.0-%E7%89%88-%E7%B0%A1%E4%BB%8B%E5%8F%8A%E7%9B%AE%E9%8C%84/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

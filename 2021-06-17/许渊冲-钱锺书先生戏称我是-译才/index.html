@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>许渊冲：钱锺书先生戏称我是“译才” – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+许渊冲：钱锺书先生戏称我是“译才”
+——
+" />
+    <meta property="og:description" content="
+许渊冲：钱锺书先生戏称我是“译才”
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="许渊冲：钱锺书先生戏称我是“译才”" />
+    <meta property="twitter:title" content="许渊冲：钱锺书先生戏称我是“译才”" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60cb5f65c3415e6b26dbffbc" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60cb5f65c3415e6b26dbffbc" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60cb5f65c3415e6b26dbffbc&text=许渊冲：钱锺书先生戏称我是“译才”&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60cb5f65c3415e6b26dbffbc&title=许渊冲：钱锺书先生戏称我是“译才”" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60cb5f65c3415e6b26dbffbc&title=许渊冲：钱锺书先生戏称我是“译才”" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=许渊冲：钱锺书先生戏称我是“译才”&body=
+许渊冲：钱锺书先生戏称我是“译才”
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60cb5f65c3415e6b26dbffbc" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60cb5f65c3415e6b26dbffbc&title=许渊冲：钱锺书先生戏称我是“译才”&caption=
+许渊冲：钱锺书先生戏称我是“译才”
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=许渊冲：钱锺书先生戏称我是“译才”&url=https://www.allnow.com/post/60cb5f65c3415e6b26dbffbc" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>许渊冲：钱锺书先生戏称我是“译才”</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-17
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60cb5f65c3415e6b26dbffbc" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60cb5f65c3415e6b26dbffbc">许渊冲：钱锺书先生戏称我是“译才”</a>
+——</p>
+
+<div>
+  <p>6月17日，许渊冲在北京逝世，享年100岁。作为一生都献给翻译事业的著名翻译家，他累计出版了中、英、法三种语言的译作100余部，在中西文学之间搭建起一座宏伟的桥梁；即使是生命的最后阶段，仍孜孜不倦地翻译着莎士比亚和亨利·詹姆斯的作品。许渊冲的成就是业界公认的：2010年，虚龄90岁的他拿到中国翻译文化终身成就奖；2014年，他又荣获了国际翻译界最高奖项“北极光”奖，成为该奖项自1999年设立以来首位获此殊荣的亚洲翻译家。</p>
+  <p>在许多可见的文字和影像中，许渊冲是一个可爱而又“自负”的老人。如果说可爱更多的源自年长而依旧率真的反差萌，“自负”则恐怕是骨子里与生俱来的傲气。他自诩“书销中外百余本，诗译英法唯一人”，也从不掩饰对译文和译者的不屑一顾，即使谈起巫宁坤、杨振宁等友好而卓越的同辈时，也不忘在称赞之后找出一二处不及自己的短板。</p>
+  <p>不过，有一个人是让这位“狂生”由衷钦佩的。那就是钱锺书。早在西南联大求学期间，许渊冲就被钱师的妙语连珠所吸引。只可惜钱锺书只在联大待了一年，相处太过短暂。1950年代，师生二人在北京重逢，也由此保持了几十年书信往来。他们以飞鸿交流与翻译有关的种种，钱锺书称赞这位学生是“译才”，许渊冲则深深感激老师给予的指点、鼓舞与鞭策。而且许渊冲觉得，联大的历史即是人才的竞起，而不少人才恰恰因为受过钱先生的教诲，是钱先生在茫茫大地上留下的。</p>
+  <p>两个月前，许渊冲刚刚在百岁诞辰之际推出了自己的自述。在这本回顾一生经历和心得的文字中，他以重章长篇写下了与钱锺书书信往来的点点滴滴，让我们在了解两位名家的私交往事之余，也一睹了二者的过人才情。更有意思的是，在向恩师的求教和探讨过程中，许渊冲的“狂”还是会时不时冒出来，颇有一丝“本性难移”的味道。</p>
+  <p>先生远去之时，《燕京书评》经华文出版社授权，谨将《许渊冲百岁自述》中的《与钱锺书话翻译》一节摘选出来，以表纪念。因原文篇幅较长，编辑时略有删节。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-17/60cb5fa54cd55d54dd5db2dd+L.png" data-id="60cb5fa62114416715c3d51c" alt="《许渊冲百岁自述》，许渊冲 著，华文出版社2021年4月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《许渊冲百岁自述》，许渊冲 著，华文出版社2021年4月版
+    </figcaption>
+  </figure>
+  <p>曾有记者问我：“钱锺书先生在离开联大之后，您和他还有联系吗？”我回答说，钱先生到蓝田师范学院的事，我当时只是听说，后来读了《围城》，才明白一点详细的情形。我非常喜欢妙语如珠的《围城》，曾打算把它翻译成英文。但一开始就在序言中碰到了一句：“人是两腿无毛的动物。”“无毛”的英文是“hairless”（没有头发的），怎么能说人是秃头的呢？于是我去查了一下伏尔泰的原文，才知道“毛”是指羽毛，就译成“featherless”了。第二个问题是：方鸿渐写信给他的父亲说：“怀抱剧有秋气。”“气”字一般译成“air”，但在这里，钱先生会用什么英文词汇呢？我想起了雪莱《西风颂》第一句中有“breath of Autumn's being”（秋天的呼吸），这里用“breath”不是正好吗？我想写信去征求他的意见，但不知道他的地址，所以就作罢了。</p>
+  <p>钱先生到上海后，在震旦女子文理学院任教，教过杨必和孙探微。孙探微后来和香港《大公报》记者朱启平结了婚。朱启平是在第二次世界大战中跟随美军采访并在美国密苏里军舰上亲眼目睹日本投降仪式的唯一中国记者，后来在洛阳外国语学院和我同事。他说钱先生和孙探微的师生关系很好，到过北京后海他们家中，和他们作过中外古今谈。钱先生在上海暨南大学任教时，教过一个华侨学生刘新粦。刘也和我在洛阳外国语学院同事。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-17/60cb60ae9c232e01c17d1c73+L.jpg" data-id="60cb60bb2114416715c3d51d" alt="1950年，钱锺书一家在清华大学新林院家中" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1950年，钱锺书一家在清华大学新林院家中
+    </figcaption>
+  </figure>
+  <p>记者又问：“您再见到钱先生是什么时候？”我说：“是1951年在清华大学外文系主任吴达元先生家里。那时钱先生负责清华研究生的工作，同夫人杨绛到吴先生家来。”我发现钱先生胖了。他们谈到邻居林徽因家的猫叫春，吵得他们一夜没有睡着，钱先生就爬起来拿根竹竿去打猫，讲得津津有味。我觉得钱、杨二位这么高雅的人，怎么会对这种俗气的事感到兴趣？可见我对钱先生只是敬佩，并不了解。其实，钱先生早在1933年写的《论俗气》一文中就说了：“俗”本与“雅”对立，但求雅过分，也会转为俗，而俗人附庸风雅就更俗。如果俗人俗得有勇气，“有胆量抬出俗气来跟风雅对抗，仿佛魔鬼的反对上帝”，那倒反而是“雅”。而钱先生打猫就是转俗为雅了。</p>
+  <p>1952年，高等院校调整，钱先生调北京大学，后调社会科学院文学研究所，又被借调到《毛泽东选集》翻译委员会，同时被借调的有金岳霖、王佐良、熊德威、王仲英等人。熊德威是我的表弟，从小在英国读书，在牛津大学毕业，据他告诉我，钱先生非常谦虚，不耻下问。王仲英是联大外文系1946年毕业生，曾任人民文学出版社英文组组长，后来在洛阳外国语学院和我同事。据他告诉我，金岳霖翻译《毛选》时，碰到一句成语“吃一堑，长一智”。他不知如何翻译，只好问钱锺书，不料钱锺书脱口答道：</p>
+  <blockquote>
+    <p>A fall into the pit，</p>
+    <p>A gain in your wit.</p>
+  </blockquote>
+  <p>形音义三美具备，令人叫绝。金岳霖自愧不如，大家无不佩服。还有一句成语：“三个臭皮匠，顶个诸葛亮。”钱锺书译成：</p>
+  <blockquote>
+    <p>Three cobblers with their wits combined,</p>
+    <p>Equal Zhuge Liang the master mind.</p>
+  </blockquote>
+  <p>于是传诵一时，钱锺书无可争议地登上了中国译坛的顶峰。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-17/60cb61039c232e01c17d1c74+L.jpg" data-id="60cb610b904b8c02a16a3173" alt="许渊冲（后排左三）在洛阳外国语学院时，与同事游少林寺" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+许渊冲（后排左三）在洛阳外国语学院时，与同事游少林寺
+    </figcaption>
+  </figure>
+  <p>我在洛阳外国语学院时，王仲英和刘新粦常去北京，去看了钱先生之后，回洛阳总要谈谈钱先生的情况。朱启平因为孙探微在北京外文出版社工作，每年寒暑假都要回家，所以我总听得到钱先生的消息。1976年年初，报上发表了毛泽东词《井冈山》和《鸟儿问答》，还有外文出版社的英译文。朱启平告诉我：“这两首词是钱先生翻译的。”我看译文远不如“吃一堑，长一智”翻得好，就写信去问钱先生。我先谈到联大的事，说是非常喜欢读他写的《冷屋随笔》（后来改名《写在人生边上》），还曾回昆明旧地重游去寻访他的冷屋旧居（在文化巷11号）和他给我们讲课的昆华农校大楼；但农校已毁于“文化大革命”中，早已面目全非，无处寻找当年笳吹弦诵的旧踪影了。最后我才问到两首词的事，并且寄去我的韵体译文，请他斧正。2月26日得到他龙飞凤舞的亲笔回信，全文如下：</p>
+  <blockquote>
+    <p>渊冲同志：</p>
+    <p>惠书奉悉，尊译敬读甚佩，已转有关当局。我年来衰病不常出门，承命参与定稿，并非草创之人。来书云云，想风闻之误耳。草复即致</p>
+    <p>敬礼！</p>
+    <p>钱锺书 廿六日</p>
+  </blockquote>
+  <p>我得到钱先生的回信后，告诉了王仲英。他说：“‘敬读甚佩’是客气话，不可当真。”钱先生为了省事，总说几句好话，免得人家麻烦。就像威克斐牧师一样，借点东西给人，人家不肯归还，从此不再上门，牧师也就乐得清静。水晶在《两晤钱锺书先生》中说：“我连忙问：‘你觉得於梨华（女作家）怎么样？’钱用英文答：‘她很聪明。’我追问：‘她仅限于聪明吗？不能比聪明多一点点吗？’钱答：‘她是女士。秉诸西洋中古时代的骑士精神，你要我说什么好呢？’我无言了。于是我又问：‘那么你觉得张爱玲怎么样？’‘她非常非常好。’我又紧追盯人地问下去：‘她仅止于聪明吗？还是，她比聪明犹多一筹呢？’钱答：‘她比聪明犹多一筹。’”由此可见，钱先生对於梨华是说客气话，对张爱玲就不是。我是他的学生，有无客气的必要呢？那时洛阳外国语学院级别最高的教授是索天章，他在大学时比钱先生低三级，比我却高六级。他看了我英译的《毛泽东诗词》后说：“这是小学生的译文。”他一句话就定了调，于是我的英法译文在洛阳并不受重视。钱先生即使是说客气话，打个一折八扣，也比索天章的评价高呀。所以我又把索天章看过的英译《毛诗》寄给钱先生看，要听听他的意见，得到他3月29日的英文回信。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-17/60cb61994cd55d54dd5db2e4+L.jpg" data-id="60cb61a49b2d825085c25d9a" alt="1976年3月29日，钱锺书给许渊冲的英文信" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1976年3月29日，钱锺书给许渊冲的英文信
+    </figcaption>
+  </figure>
+  <p>钱先生这封英文信用词巧妙，比喻生动，引经据典，博古通今，显示了他的风格。他称我为“许君”，内容大意是说：</p>
+  <blockquote>
+    <p>谢谢你给我看你成就很高的译文，我刚读完。你带着音韵和节奏的镣铐跳舞，灵活自如，令人惊奇。我的健康欠佳，时间几乎完全抵押出去了，所以无法答应你婉转提出的要求，希望我对你的译文提出具体的意见。但我会把你的文稿转交给毛选英译委员会的一两个同事看看。你对译诗的看法很中肯，但你当然知道罗伯特·弗罗斯特不容分说地给诗下的定义：“诗是在翻译中失掉的东西。”我倒倾向于同意他的看法，无色玻璃般的翻译会得罪诗，而有色玻璃般的翻译又会得罪译。我进退两难，承认失败，只好把这看作是一个两害相权择其轻的问题。根据我随意阅读五六种文字的经验，翻译出来的诗很可能不是歪诗就是坏诗。但这并不是否认译诗本身很好，正如本特利老兄说的：“薄柏先生译的荷马很美，但不能说这是荷马的诗。”你也许听说吴达元教授去世的消息，老同学又少一个！请向王、刘二位问好。</p>
+  </blockquote>
+  <p>钱先生这封信说出了他对译诗的精辟见解。首先，他说我的译文“成就很高”。这可能是客气话，也可能是对学生的嘉勉，就像对於梨华和张爱玲的评价一样。其次，他把译诗押韵比作带着镣铐跳舞，形象生动。闻一多先生也说过：带着镣铐跳舞能跳得好才是真好。看来闻先生把镣铐当作道具，没有褒贬。钱先生却当成束缚，带有贬义，但他加上“灵活自如”字样，又带有褒义了。一褒一贬，说明译诗是个问题（问号），还没得出结论（句点）。在第二段，钱先生说我对译诗的看法“ 中肯”。这是欲擒先纵，因为他接着就引用美国诗人的话说翻译会失掉诗。他还进一步用了两个法文形象，把直译比作无色玻璃，把意译比作有色玻璃，说明译者所处的两难境地。他又再进一步，说他宁可得罪诗，而不愿得罪翻译，因为翻译的诗不是坏诗，就是歪诗。“坏”和“歪”两个字的原文和译文都押了韵，都很巧妙，可见翻译并不是有失无得的。不过这说的是散文，至于诗呢？钱先生笔锋一转，引经据典，谈到薄柏译荷马史诗的事。薄柏得罪了翻译，却没有得罪诗；结果他翻译出了好诗，但不能算是荷马的诗，不能算是好的译文。在我看来，钱先生认为翻译的诗最好既是好诗，又是好译；不得已而求其次，要求是好译而不是坏诗，或者不是好译而是好诗；最下等的是翻译得不好的歪诗。最后，钱先生谈到吴先生的去世，言简情深，并问候他的学生王仲英和刘新粦。</p>
+  <p>钱先生的信对我是一个鼓舞，也是一个鞭策。鼓舞的是，他说我译的诗灵活自如；鞭策则是，不要得罪翻译又得罪诗。钱先生引用了弗罗斯特的话和薄柏的译例，我只赞成英国诗人的译法，却不同意美国诗人的说法。我认为译诗不是有失无得，而是有得有失的。如果能像薄柏那样以创补失，那不但不能说得不偿失，反而是得多失少了。例如荷马史诗中的一个名句有两种译文：</p>
+  <blockquote>
+    <p>For war shall men provide and I in chief of all men that dwell in Ilios.（Leaf）</p>
+    <p>（人们要准备打仗，而我是伊利奥人的首领）</p>
+    <p>Where heroes war， the foremost place I claim</p>
+    <p>The first in danger as the first in fame. （Pope）</p>
+    <p>（冲锋陷阵我带头，论功行赏不落后）</p>
+  </blockquote>
+  <p>第一种是无色玻璃般的译文，没有得罪翻译，但是对不起诗；第二种是薄柏的有色玻璃般的译文，可以算是好诗，但似乎对不起翻译。《阿诺德评荷马史诗的翻译》一文中谈到，薄柏的译文“押韵加强了对偶，自然也就加强了分隔，而这也正是薄柏的译法。薄柏的失败，也正是在于他没有译出荷马明白清晰、直截了当的风格和措辞的特点，过分运用了自己喜欢修饰雕琢的风格。”比较一下两种译文，都是有得有失的，但哪种译文得不偿失呢？第一种译出了“荷马明白清晰、直截了当的风格”，这是有所得；但是淡而无味，只能使人知之，不能使人好之，这是有所失。是得多还是失多呢？第二种运用了“修饰雕琢的风格”，但也不能说不“明白清晰、直截了当”呀。这能算是有所失吗？即使算是有所失，但是译文能使读者知之、好之，甚至乐之，这不是得多于失吗？《英国浪漫派散文精华》上说：“人们发现薄柏较之荷马有着更多闪光的比喻和动情的描写，总体上也显得更加内容丰富、文采飞扬、细腻深入和绚丽多彩。这样，薄柏的译文反倒比希腊文的原著更受人欢迎了。”</p>
+  <p>关于这个问题，钱先生在《林纾的翻译》一文中也说过：“最近，偶尔翻开一本林译小说，出于意外，它居然还没有丧失吸引力。我不但把它看完，并且接二连三，重温了大部分的林译，发现许多都值得重读，尽管漏译误译随处都是。我试找同一作品的后出的—无疑也是比较‘忠实’的—译本来读，……就觉得宁可读原文。这是一个颇耐玩味的事实。”我认为这说明了钱先生的矛盾：理智上要直译，情感上爱意译。其实，在译诗问题上，诗是本体，是第一位的；译是方法，是第二位的。诗要求美，译要求真；把美的诗译得不美，不能算是存真。我记得朱光潜先生在《诗论》中说过：“‘从心所欲，不逾矩’是一切艺术的成熟境界。”我觉得这也是译诗的成熟境界。“不逾矩”是消极的，说是不能违反客观规律，求的是真；“从心所欲”是积极的，说要发挥主观能动性，求的是美。结合起来就是说，在不违反求真的条件下，尽量求美。贝多芬甚至说过：为了更美，没有什么规律是不可以打破的。</p>
+  <p>钱先生在信中提到的吴达元教授是我的法文老师。他用英文讲解法文，要求严格，一年之内讲完了法文文法。后来我步钱先生的后尘，去了英国、法国，出版了古诗词的英法译本。回想起来，不能不感谢钱、吴二位先生给我打下的英法文基础。</p>
+  <p>1977年年初，我读到两首据说是毛泽东悼念周恩来的词，就译成了英文，但不知道是否是毛泽东的作品。我写信去问钱先生，得到他2月16日的信如下：</p>
+  <blockquote>
+    <p>渊冲同志：</p>
+    <p>我已迁居国务院新宿舍，来书昨夜方转到（通讯处仍为文学所，每周有人转送）。所示两篇，恐非真笔；平仄不合词律（如拉丁诗之“false quantity”），即可知必出于生手学作。尊译远胜原著；Pater 阅Poe'sTales，不读原文，而读Baudelaire 译文，足相连类。匆复即致</p>
+    <p>敬礼！</p>
+    <p>钱锺书上 十六日晨</p>
+    <p>张朱两位前烦代致候不一一。</p>
+  </blockquote>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-17/60cb63ca4cd55d54dd5db2ea+L.jpg" data-id="60cb63ce9b2d825085c25d9e" alt="1981年，钱锺书和杨绛在三里河六号楼家中的合影。从1977年迁入后，两人直到过世都未再搬离。" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1981年，钱锺书和杨绛在三里河六号楼家中的合影。从1977年迁入后，两人直到过世都未再搬离。
+    </figcaption>
+  </figure>
+  <p>信中提到的国务院宿舍，就是三里河六号楼。提到的两首词，一首是《卜算子》，一首是《忆秦娥》。钱先生认为不是毛泽东的作品，又说我的译文“远胜原著”，就像法国诗人波德莱尔翻译的美国作家爱伦·坡的短篇小说胜过原文，使英国作家佩特宁可读法译文一样。这话使我受宠若惊，说明钱先生上次说的“成就很高”不是客气话。可惜两首词的原文已经失落，只好根据我的英译把《忆秦娥》的上半首还原为：“山河咽，拭泪无语心已裂。心已裂，国失栋梁，天丧人杰。”英译文是：</p>
+  <blockquote>
+    <p>The land sobs, mountains, streams and all.</p>
+    <p>Wiping my eyes, silent, I'm broken-hearted.</p>
+    <p>I'm broken-hearted.</p>
+    <p>To see the pillar fall,</p>
+    <p>A man of men departed.</p>
+  </blockquote>
+  <p>钱先生说英译胜过原作，是说译文更合英诗格律；但原作并不是真品，所以胜过不足为奇。这倒说明了钱先生认为译文可以胜过原文，就像薄柏可以胜过荷马一样。</p>
+  <p>信中提到的张、朱两位，指的是张培基和朱启平，两人都在洛阳外国语学院和我同事。张培基和钱先生同时在中国共产党第八次全国代表大会上做过翻译工作。</p>
+  <p>1978年年底，洛阳外国语学院出版了我翻译的《毛泽东诗词四十二首》英法文本，我寄了一本给钱先生。后来刘新粦又调去广州的暨南大学。我就写信给钱先生，问问有无可能调去北京，得到他1980年1月23日的回信如下：</p>
+  <blockquote>
+    <p>渊冲同志：</p>
+    <p>屡承惠寄大作，极感，未复为歉。我赴欧赴美，皆非为讲学；亦因无学可讲，故Princeton 等二三大学来函邀我今年去走江湖卖膏药，亦一律坚辞矣。新等他去，足下更如擎天之玉柱，校方决不放行；他校商调，亦恐如与虎谋皮！我衰朽日增，一月前牙齿尽拔，杜门谢事。《围城》英译本去秋在美出版，俄文本译者去冬来函亦云已竣事，辱问以闻。专复即颂</p>
+    <p>教安</p>
+    <p>钱锺书 二十三日</p>
+  </blockquote>
+  <p>钱先生信中谈到赴欧美的事，是指1978年去意大利出席第26届欧洲汉学会议，发表《古典文学研究在现代中国》一文，及1979年参加中国社会科学院代表团去美国各大学的访问。信中谈到的《围城》英译本，是指珍妮·凯利（Jeanne Kelly）和茅国权合译的《围城》（Fortress Besieged ），据说原书很多妙语没有翻译出来。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-17/60cb62789c232e01c17d1c78+L.jpg" data-id="60cb627b9b2d825085c25d9c" alt="1979年，钱锺书在哥伦比亚大学与夏志清合影" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1979年，钱锺书在哥伦比亚大学与夏志清合影
+    </figcaption>
+  </figure>
+  <p>1980年，香港商务印书馆约我翻译《苏东坡诗词选》。我阅读了钱先生的《宋诗选注》，发现钱先生说熙宁五年是1072年，而陈迩东注的《苏东坡诗词选》却说是1071年，不知何所适从。又读到钱先生说：“苏轼的《百步洪》第一首里写水波冲泻的一段：‘有如兔走鹰隼落，骏马下注千丈坡。断弦离柱箭脱手，飞电过隙珠翻荷’，四句里七种形象，错综利落……”我译成英文时，却觉得这七种形象不是写水波而是写“轻舟”的。于是就写信去问钱先生，得到他6月14日的回信：</p>
+  <blockquote>
+    <p>渊冲同志：</p>
+    <p>惠函奉悉。苏诗英译，壮举盛事，不胜忻佩。垂询数则，我家无藏书，东坡集亦不例外，未能检答，至愧。诗篇编年，可借冯应榴《苏诗合注》一查。陈迩东似亦据此。七二，七一或系排印之误，当时未检出者。《百步洪》四句乃写“轻舟”，而主要在衬出水波之急泻，因“轻舟”亦可如《赤壁赋》所谓“纵一苇之所如，凌万顷之茫然”，“放一叶之扁舟”（手头无书，记忆或有误），境象迥别。匆此即致</p>
+    <p>敬礼！</p>
+    <p>钱锺书 六月十四日</p>
+    <p>我感冒发烧，恐耽误尊事，急作复，草草请原谅。又及。</p>
+  </blockquote>
+  <p>那时“文化大革命”结束不久，大家对“破四旧”还心有余悸，把古典文学都看成封建主义的作品。王仲英见我翻译苏东坡的诗就说：“你还翻译老古董呀！”使我不免有点犹豫。得到钱先生的信，说是“壮举盛事”，这就给了我有力的支持。钱先生感冒发烧还赶快给我回信，更使我又感又愧，觉得如不翻好苏诗，也对不起钱先生了。</p>
+  <p>钱先生同意七种形象是写轻舟，这是求真；但他认为“主要在衬出水波之急泻”，我觉得这又是求美，并且是“主要的”。因此，我看钱先生不但是在实践上，就是在理论上也不反对译诗要求既真且美，“从心所欲，不逾矩”。</p>
+  <p>于是译苏诗时，我就还是把求真（不逾矩）作为消极要求，而把求美（从心所欲）作为积极标准。</p>
+  <p>香港商务印书馆得到苏诗译稿后，又约我翻译《宋词一百首》。我译到李清照的《小重山》，发现有几句不好懂：“春到长门春草青，江梅些子破，未开匀。碧云笼碾玉成尘，留晓梦，惊破一瓯春。”注解中说“碧云”指茶叶，我只记得李清照《金石录后序》中说：“余性偶强记，每饭罢，坐归来堂，烹茶，指堆积书史，言某事在某书、某卷、第几页、第几行，以中否角胜负，为饮茶先后。中即举杯大笑，至茶倾覆怀中，反不得饮而起。”不知道是不是指这事，问过劳陇（许景渊）也没有把握，只好又写信去问钱先生，得到他11月25日的回信如下：</p>
+  <blockquote>
+    <p>渊冲同志：</p>
+    <p>我昨夜自东京归，于案头积函中见尊书，急抢先作复，以免误译书期限。李清照词乃倒装句，“惊破”指“晓梦”言，非茶倾也。谓晨尚倦卧有余梦，而婢已以“碾成”之新茶烹进“一瓯”，遂惊破残睡矣。鄙见如此，供参考。劳陇君是我已故堂妹的丈夫，英文甚好，能作旧诗词及画，与我无师弟关系。</p>
+    <p>匆此即致</p>
+    <p>敬礼！</p>
+    <p>钱锺书 廿五日</p>
+  </blockquote>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-17/60cb62e64cd55d54dd5db2e7+L.jpg" data-id="60cb62f02114416715c3d51f" alt="1977年2月16日，钱锺书给许渊冲的信" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1977年2月16日，钱锺书给许渊冲的信
+    </figcaption>
+  </figure>
+  <p>钱先生信中说“自东京归”，指他1980年11月访问日本，在早稻田大学讲《诗可以怨》的事。关于《小重山》的问题，后来读到《李清照词赏析》中说：词人把碧色的茶团碾碎后放入茶壶中去煮，同时回味拂晓时的春梦，等到茶滚开了才惊醒过来。又读到《李清照诗词评注》中说：“饮过一杯春茶，滞留于晓梦中的意识，才被惊醒过来。”都说得通。于是我就采取各家之长，译成“一杯碧云似的春茶使词人从晓梦中惊醒过来了”。所以译文不能译字求真，而要译意，才能既求真又求美。</p>
+  <p>1981年，香港商务印书馆出版了我英译的《动地诗—中国现代革命家诗词选》，1982年又出版了《苏东坡诗词新译》，我各寄了一本给钱先生，没有得到他的回信。7月28日，我就写了一封信去，可能谈到译诗求真是低标准，求美是高标准的问题，并且举了刘禹锡的《竹枝词》为例。原词为：“杨柳青青江水平，闻郎江上唱歌声。东边日出西边雨，道是无晴（情）却有晴（情）。”我的英译文如后：</p>
+  <blockquote>
+    <p>Between the willows green the river flows along;</p>
+    <p>My gallant in a boat is heard to sing a song.</p>
+    <p>The west is veiled in rain, the east basks in sunshine;</p>
+    <p>My gallant is as deep in love as the day is fine.</p>
+  </blockquote>
+  <p>最后两句还原是说：西边笼罩在阴雨中，而东边沐浴在阳光下。情郎对我的情意就像天的晴意一样——你说天晴吧，西边在下雨；你说天雨吧，东边又天晴。情郎对我也是半心半意，就像天气是半晴半雨一样。我请教钱先生关于双关语的译法，得到他8月11日的回信如下：</p>
+  <blockquote>
+    <p>渊冲教授：</p>
+    <p>我因客多信多，干扰工作，七月初“避地”，前日偶尔还家，得所内转至七月廿八日来函，迟复为歉。大译二种皆曾奉到，事冗未谢，罪过！我对这些理论问题早已不甚究心，成为东德理论家所斥庸俗的实用主义（praktizismus）者，只知The proof of the pudding lies ineating。然而你如此仔细讨论，当然是大有好处的。《新华文摘》四月号采收我在香港刊物上发表的一篇文章，中有论及译诗语，引了德美两位诗人的话，都很flippant，但一般人都不知道，也许稍有一新耳目之小作用。请检阅供一笑。“veiled”，“basks”似乎把原句太fleshout；“as...as”似乎未达原句的paradox。但原句确乎无法译，只好belle infidele 而已。匆复即颂</p>
+    <p>暑安</p>
+    <p>钱锺书上 八月十一日夜</p>
+  </blockquote>
+  <p>钱先生在信中随手拈来英、法、德三种文字：德文如praktizismus（实用主义），英文如“The proof”句（布丁要吃了才知味）、flippant（能说会道）、fleshout（有血有肉，形象生动）、veiled（戴面纱，笼罩在）、basks（晒太阳，后改enjoys）、paradox（似非而是，奇谈怪论），法文如belle infidele ——是说美丽的妻子不忠实，忠实的妻子不美丽，指出我译的诗就是一个不忠实的美人。外文用得非常巧妙。</p>
+  <p>1982年，陕西人民出版社计划出版我译的《汉英对照唐诗一百五十首》，要我请钱先生题签。我就去信请他为《唐诗》和《唐宋词》两书题写书名，得到他加盖了“钱锺书默存印”的题签和下面的回信，我高兴得不得了。</p>
+  <blockquote>
+    <p>渊冲同志：</p>
+    <p>去冬得函，适以避地了文债，遂羁奉复，歉甚。属题两签，写就附上，如不合用，弃掷可也。献岁发春，敬祝撰译弘多，声名康泰。草此即致</p>
+    <p>敬礼</p>
+    <p>钱锺书上 杨绛同候 二十二日</p>
+  </blockquote>
+  <p>得到钱先生的题签，我立刻把《唐诗》那一张寄去西安，出版社回信说：还要补写“许渊冲译”四字。我不好意思再麻烦钱先生，就把信封上的名字加上信中剪下的“译”字寄去。信封丢了，不知道信中的“去冬”是指1981年还是1982年，也不记得月份，只好放在1982年信的后面。至于《唐宋词》那一张，我寄去了上海。后来得到出版社回信，说是征订数字不够，不能出版，题签也弄丢了，真对不起钱先生，但是书却改由香港出版。</p>
+  <p>钱先生在1982年8月11日信中提到的《新华文摘》的文章，我在《国外文学》1982年第一期中找到了。文中引用了美国诗人罗伯特·弗罗斯特给诗下的定义：“诗就是‘在翻译中丧失掉的东西’（what gets lost in translation）。”我读后不同意，认为译诗是有得有失，可以以创补失的，就写了一篇《文学翻译等于创作》。文中举了林纾的译文为例，说“钟声丁丁时，正吾开口作呱呱之声”一句中，“丁丁”和“呱呱”就是以创补失。因为原文并没有这几个字，加字后使人如闻其声，更加生动，而这就是创作。钱先生在此信中说：戴面纱、晒太阳，用字太形象化。又说：“情郎唱歌有情还是无情，就像天晴又在下雨一样”，没有传达原文似非而是的口气。说得都非常对。可见他把传真看得重于求美，认为翻译不是创作，这和我的意见不同。我把文章写完，就寄到上海《外国语》去了。</p>
+  <p>1983年8月，我来北京大学西语系任客座教授，为研究生讲“唐宋诗词英译”课。那时钱先生任中国社会科学院副院长，我就问他能否调我去社科院。他回信要我找外国文学研究所卞之琳先生。我把信转给卞先生，没有留复印件，信的全文就不记得了。《外国语》发表我的文章后，我又写信给钱先生，得到他1983年12月3日的回信：</p>
+  <blockquote>
+    <p>渊冲同志：</p>
+    <p>来信敬悉。上海《外国语》每期赠阅，故大作已于星期一拜读；抉剔佳处，既精细亦公允。至于译诗一事，则各尊所闻，不必强同；我今年中美双边比较文学会议开幕词所谓：“The participants need not be in unison and are reasonably content with something like concordia discors. Unison, after all, may very well be not only a synonym of, but also a euphemism for, monotony.”诗不能译，其论发于但丁，我文中注脚已拈出，而Frost与Morgenstern两人语quotable，中国人少知者，故特标举之，并不奉为金科玉律也。（三人皆大诗人，Morgenstern之名似国内尚无道者！）内人下周自欧洲归，家中杂事颇忙。大驾于星期五下午三时惠过，作一小时晤谈何如？余容面罄，即致</p>
+    <p>敬礼！</p>
+    <p>钱锺书上 三日（星期六午）</p>
+  </blockquote>
+  <p>钱先生外文开幕词中说：“与会者用不着意见一致，同中存异是理所当然的。说到底，‘一致’不但是‘单调’的同义语，而且是‘单调’的婉转说法。”这话又是惊人妙语，也代表了他的学术思想和态度：他一方面说诗不可译，另一方面又不把这话当作金科玉律，因此他主张“各尊所闻，不必强同”。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-17/60cb63ac4cd55d54dd5db2e9+L.jpg" data-id="60cb63b62114416715c3d520" alt="1959年，许渊冲与夫人照君的新婚合影" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1959年，许渊冲与夫人照君的新婚合影
+    </figcaption>
+  </figure>
+  <p>1984年3月9日下午3时，我同内子照君去三里河拜访钱先生。他一见照君，可能是想起了五十年前我上他的课时，喜欢坐在漂亮的女同学周颜玉旁边，就开玩笑似的问我：“你这个漂亮的夫人是哪里找到的？”我告诉他，照君原是外国语学院的学生，1948年参了军，她的名字还是毛泽东改的呢。我见钱先生不像七十多岁的老人，头发也没有白。他就笑着用法文说：“La tête d'un fou ne blanchit pas．”（傻瓜的头是不会白的。）我赶快说：“那么，天下就没有聪明人了。”接着，他告诉我，他在社科院只是个挂名的副院长，一不上班，二不开会，三不签阅文件，所以头也不白；但是对我调动的事他无能为力。我就谈到北京大学的情况。钱先生说：“现在有一个value（价值）和price（价格）不平衡的问题。价格高的人见到价值高的人就要退避三舍。”我们也讨论了译诗传真和求美的矛盾，钱先生说：“这个问题我说服不了你，你也说服不了我，还是各自保留意见吧。”可见他的学者风度。</p>
+  <p>说来也巧，那时北京大学新成立了一个国际文化系，正找不到教授，于是我就转去教“中西文化比较”和“中英互译”课。1984年，陕西人民出版社出版了我英译的《汉英对照唐诗一百五十首》，中国翻译公司又出版了我的《翻译的艺术》论文集。我各寄了一本给钱先生，得到他1985年4月16日的来信：</p>
+  <blockquote>
+    <p>渊冲先生教席：</p>
+    <p>奉到惠赐尊译唐诗及大著论译两册，感刻感刻。二书如羽翼之相辅，星月之交辉。足征非知者不能行，非行者不能知；空谈理论与盲目实践，皆当废然自失矣。拙字甚劣，佛头着秽，罪过罪过。专此复谢，即颂</p>
+    <p>俪祉</p>
+    <p>钱锺书敬上 十六日夜</p>
+  </blockquote>
+  <p>钱先生信中说到的星月，自然是客气话。但是谈到知行关系，却是真知灼见，切中时弊。20世纪中国的翻译理论界，大多是从西方语言学派摘取片言只字，用于中文，并无多少实践经验，更无杰出成果；有些人却妄自尊大，说要指导别人的翻译实践。结果使翻译腔横行了一个世纪，流毒无穷。他们不知道西方语言学派只能解决西方文字之间的矛盾，不能解决西方拼音与东方象形文字之间的问题。据我所知，有史以来，似乎没有一个西方学者出版过一本中西互译的文学作品，“非行者不能知”，他们如何提得出中西文字互译的理论呢？假如根据他们“对等”的理论来指导中国的文学翻译实践，那不是要把得到国内外好评的译本改坏，颠倒是非了吗？自从“文化大革命”以来，中国的外文水平和翻译水平都下降了，不少译者、评者、编者都到了好坏不分的地步。因此，钱先生说的“非知者不能行，非行者不能知”，就显得特别重要了。</p>
+  <p>1986年，北京大学举行首届学术研究成果评奖，钱先生题签的《汉英对照唐诗一百五十首》得到了著作一等奖。我写信告诉他，并且感谢他在一片批评声中对我的支持鼓励。得到他7月17日的回信：</p>
+  <blockquote>
+    <p>渊冲我兄文几：</p>
+    <p>奉函悉尊译获奖，实至名归，当仁不让，弟无与也。贱躯自去冬即苦血压偏高，服药数月，升落不恒，殊欠平稳。院方及医师皆嘱节力省事，谢客辞邀。台命不克负荷，歉甚。幸谅宥之。草复即颂</p>
+    <p>俪安</p>
+    <p>钱锺书敬上 十七日</p>
+  </blockquote>
+  <p>信中提到的“实至名归”，在我看来，“实”指价值，“名”指价格，“实至名归”就是价值与价格统一。这话似乎理所当然，但在生活中却不尽然，常有价格高于价值的现象。如果价格高而价值低的人当了权，那就一定会压制价值高于他而价格低于他的人，于是劣币就驱逐良币了，所以“实至”并不一定“名归”。</p>
+  <p>1987年，四川人民出版社出版了我英译的《李白诗选一百首》，我寄了一本给钱先生，得到他1988年8月11日的来信：</p>
+  <blockquote>
+    <p>渊冲教授大鉴：</p>
+    <p>顷奉惠寄尊译青莲诗选，甚感。太白能通夷语，明人小说中敷陈其“草写吓蛮书”，惜其尚未及解红毛鬼子语文，不然，与君苟并世，必莫逆于心耳。专此致谢，即颂</p>
+    <p>暑安</p>
+    <p>钱锺书上 杨绛同候 十一日</p>
+  </blockquote>
+  <p>钱先生信中提到明朝人的小说《今古奇观》中有一篇《李白醉写吓蛮书》的故事，说唐朝有一个蛮夷之邦，用夷文写了一封信给唐天子，说是如果堂堂天朝没有人懂夷文，他们就不再进贡了。满朝文武大惊失色，不知如何是好。幸亏李白生于西域，能通夷语，要天子送上酒来，喝得大醉之后，立刻用夷文写了一封回信，蛮夷才肯俯首称臣。钱先生和我开玩笑，说可惜李白不懂英文，假如活到今天，那一定会和我成为无话不谈的好朋友。</p>
+  <p>1987年，外文出版社出版了我译成法文的《唐宋词选一百首》，我寄了一本给钱先生，得到他1988年10月23日的回信：</p>
+  <blockquote>
+    <p>渊冲译才我兄大鉴：</p>
+    <p>奉到惠赐唐宋词法译本，感谢之至。足下译著兼诗词两体制，英法两语种，如十八般武艺之有双枪将，左右开弓手矣！钦佩钦佩！专复即颂</p>
+    <p>俪安</p>
+    <p>钱锺书上 杨绛同候 二十三日</p>
+  </blockquote>
+  <p>钱先生戏称我为“译才”。他在《林纾的翻译》中说过：“我记得见过康有为‘译才并世称严林（严复、林纾）’那首诗，……严复一向瞧不起林纾，看见那首诗，就说康有为胡闹，天下哪有一个外国字也不认识的‘译才’，自己真羞与为伍。”钱先生又说：“文人好名争名，历来是个笑话；只要不发展成为无情无耻的倾轧和陷害，它终还算得‘人间喜剧’里一个情景轻松的场面……”严复还只羞与林纾为伍，到了我们这一代，就发展到价格高的人压制价值高的人了。钱先生还戏称我为“双枪将”，那是指《水浒》中的董平。《水浒》中的五虎上将是：大刀关胜，豹子头林冲，霹雳火秦明，双鞭呼延灼，双枪将董平。董平是第五位，假如上升到第一位，会不会受到大刀关胜的排挤呢？！</p>
+  <p>1987年，香港商务印书馆出版了我主编的《唐诗三百首》韵译本。约稿时，商务要我邀请全国名家共襄盛举，我第一个想到的是钱先生。他1986年7月17日信中说的“台命不克负荷”，可能是指这件事。于是我又请他的学生——联大1939年毕业的“五虎上将”参与。按年龄顺序，他们是：许国璋、杨周翰、王佐良、周珏良、李赋宁。许国璋出版英语教材出了名，他翻译诗不肯受押韵的限制。杨周翰是中国比较文学会会长，他选译了五首最短的绝句。王佐良是英语教学研究会会长，他说这是百家争鸣，译得不好拿不出去。周珏良说他只能英译中，不能中译英。李赋宁是北京大学西语系主任，他和许国璋相反，不怕押韵的限制，韵脚用得比原诗还更多。书出版后，1988年由中国翻译公司重印。我送了一本给钱先生，得到他1989年4月7日来信：</p>
+  <blockquote>
+    <p>渊冲我兄大鉴：</p>
+    <p>承惠尊编唐诗译集，感感！读题记不觉哑然。报章杂志之言何可全信？观新咏想见逸兴遄飞，衰病老翁羡煞矣！草此复谢，即叩</p>
+    <p>近安</p>
+    <p>钱锺书上 杨绛同候 七日</p>
+  </blockquote>
+  <p>信中说的“题记”，是我看到杂志上登了钱、杨二位的合影，并说钱老手不释卷，令人敬佩，我就写在题记中了。没想到会引起先生的反感，可见我对他所说的“不三不四之闲人，不痛不痒之废话”体会不深。至于“新咏”，是我写在扉页上的诗：</p>
+  <blockquote>
+    <p>湖畔杨柳先得春，枝头黄鹂三两声。</p>
+    <p>欲假诗词双飞翼，吹绿万里纽约城。</p>
+    <p>The lakeside willows are the first to drink in spring;</p>
+    <p>On leafy branches some ancient orioles sing.</p>
+    <p>With dewdrops dripping from their warbling songs of yore,</p>
+    <p>I' d fly ten thousand miles to green the western shore.</p>
+  </blockquote>
+  <p>1990年，北京新世界出版社和英国企鹅图书公司要出版我英译的《中国古诗词六百首》，想请钱先生题签书名。我只好又写信去麻烦他，并告诉他我为《钱锺书研究》写文章的事，不料他拇指不方便，不能写毛笔字，只在8月8日用钢笔回了我一封信：</p>
+  <blockquote>
+    <p>渊冲吾兄文几：</p>
+    <p>奉书知又有新译问世，忻慰之至。弟三年前大病以来，诸患缠身。日与药饵为缘，半载前右拇指忽痉挛，不能作字，多方治疗，近始可以钢笔涂鸦，而用毛笔，则如苍蝇摇石柱。大约天罚我东涂西抹，敬请免其献丑，感恩不尽。拙著何足挂齿，乃承借作题目，发为鸿文，惭惶何极！草复即颂</p>
+    <p>暑安</p>
+    <p>钱锺书上 杨绛并候 八日午</p>
+  </blockquote>
+  <p>1990年年底，钱先生八十大寿，我送上北京大学新出版的《唐宋词一百五十首》一本，并且写上“恭贺八十华诞”字样，得到他12月16日用钢笔写的回信：</p>
+  <blockquote>
+    <p>渊冲学兄译席：</p>
+    <p>奉到惠赐新译，贱辰何足道，乃蒙以大作相馈，老夫真如欺骗财物矣！谢谢。《××× 研究》本期有尊著一篇，多溢美失实之词，读之愧汗。拙函示众，尤出意外；国内写稿人于此等处尚不甚讲究，倘在资本主义国家，便引起口舌矣。一笑。专复即叩</p>
+    <p>冬安</p>
+    <p>钱锺书上 十六日</p>
+  </blockquote>
+  <p>钱先生每次收到赠书，都来信道谢。这次八十寿辰献礼，他反说是“真如欺骗财物”，可见他多么不喜欢过生日祝寿这些俗套，也可见我多么不理解他对“不明不白的冤钱”的厌恶心情。信中提到的《×××研究》指的是《钱锺书研究》，我在书中写了一篇《钱锺书先生及译诗》。文中引用了他1976年3月29日谈到“有色玻璃”的那封信，不料他回信说我是把他的信“示众”。自从20世纪50年代我回国后，见文章引用别人信中的话（只要不是歪曲）已是常事，所以我奇怪他怎么还在乎资本主义国家的隐私权。其实在内心深处，我认为“无色玻璃”和“有色玻璃”的翻译已经是20世纪中国翻译界争论的一个大问题，并不是他和我之间的私事，不能算是“示众”。但是为了尊重老师的意见，当《钱锺书研究》的编者来信约稿，要发表钱先生的墨宝时，我就写信去征求他的同意，告诉他《古诗词六百首》英译的事，并问他李商隐的“春蚕到死丝方尽”如何译成法文，才能保存双关意义，得到他1991年7月12日的回信：</p>
+  <blockquote>
+    <p>渊冲学弟文几：</p>
+    <p>来函奉悉。大译陆续问世，可喜可贺。“Song of the Immortals”书名不甚惬鄙意。“Immortals”等字皆Asiatic or Babu English气味甚浓，而“Song”，单数尤不可理解，岂大合唱一歌耶？Captious carping。聊供参考。衰老病痛，只求不增剧，已为大幸，复元乃痴想奢望。右拇仍不便，天之罚我多为人题签也。</p>
+    <p>所言该刊物闻内部分裂，不知写信向弟索稿者代表何部分。我于第二期出版前，通知该刊凡发表我“未刊”稿，须先得我同意；该刊负责人来信允诺。现在出版法已公布，此事更非等闲。我与弟除寻常通信外，并无所谓“墨宝”，通信如此之类……皆不值得“发表”。“No can do”，to use the pidgin English formula。</p>
+    <p>李商隐句着眼在“到”与“方”，其意译成散文为“Le ver ne cesse d'effiler la soie qu'à la mort”，韵文有节律，须弟大笔自推敲耳。草复即颂</p>
+    <p>暑安</p>
+    <p>钱锺书上 七月十二日</p>
+  </blockquote>
+  <p>信中提到的“Song of the Immortals”（不朽之歌），是美国女专家给《古诗词六百首》取的英文名字，我写信去问她，她说：《圣经》中的“Song of Songs or Song of Solomon”也是单数，并不是大合唱；“不朽”更不能算是亚洲英语或印度英语，英国大诗人雪莱就在悼念济慈的《阿多尼》（Adonais ）一诗中用了“the Sire of an immortal strain”，正是“不朽诗歌之父”的意思。但是英国企鹅图书公司出版我的《古诗词三百首》时，却把Song改成复数Songs，可见这是见仁见智的问题，钱先生也不算 captious carping（吹毛求疵）。信中提到的“该刊物”就是《钱锺书研究》，我后来把钱先生这封信的复印件寄给该刊编者去了。信中还用了一句洋泾浜英语“不能做”，可见他是雅俗并用的。雅句如李商隐的“春蚕到死丝方尽”，他的法译文是“无色玻璃”般的，我认为是“1+1=2”式的翻译；关于节律，他要我自行推敲，我就用“有色玻璃”的译法改成：</p>
+  <blockquote>
+    <p>Le ver meurt de soif d'amour, sa soie épuisée.</p>
+  </blockquote>
+  <p>原文“丝”又暗指“相思”，我把丝字译成soie，再把相思译成soifd'amour（渴望爱情），而soie和soif声音一样，这真是巧合了！译后喜不自胜，以为这是“1+1&gt;2”的译法，简直可以说是巧夺天工。但钱先生说我们的通信是寻常书信，不值得发表。果真如此，那20世纪就没有人翻得出这样的妙译了，岂不遗恨千古！记得钱先生说过：有人利用他是借钟馗打鬼。可能我也包括在内。他是少年得志，功成名就，不知道受压一生的人多么需要钟馗！没有他的嘉勉，我怎能把鬼打倒在地！</p>
+  <p>我的联大同学何兆武来信说：“钱锺书先生眼高手高，于并世学人甚少称许，独于足下称道不已，诚可谓可以不朽矣。”他不知道钱先生对我是既有嘉勉，又有鞭策的。至于是否不朽，要看个人的德言功业了。毛泽东说得好：外因通过内因起作用嘛！</p>
+  <p>总而言之，钱先生对我们这代人的影响很大，指引了我们前进的道路。他在联大只有一年，外文系四年级的王佐良学他，去英国牛津攻读英国文学研究生，译过《彭斯诗选》《雷雨》等；杨周翰学了比较文学，成了国际比较文学学会副会长；李赋宁听了他的文学理论，主编了《英国文学史》；许国璋学他写文章，讲究用词，出版了畅销全国的英语读本；三年级的周珏良做过外交部翻译室主任，参加过《毛泽东诗词》的英译工作；查良铮（穆旦）出版了《穆旦诗选》，翻译了普希金、拜伦、雪莱、济慈等的诗集；二年级的吴讷孙（鹿桥）在美国华盛顿大学任教，出版了回忆联大的《未央歌》；一年级的我出版了唐诗宋词的英法译本。钱先生考试时要我们写作文，论“世界的历史是模式的竞赛”。我看联大的历史也可说是人才的竞起，不少人才受过钱先生的教诲，是他在茫茫大地上留下的。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-17/60cb64c39c232e01c17d1c7a+L.png" data-id="60cb64cb904b8c02a16a3179" alt ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture"></figcaption>
+  </figure>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-19</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-19/%E7%8F%8D%E5%A6%AE%E7%89%B9-%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A7%86%E5%8E%BB%E4%B8%96-%E4%B8%80%E4%BD%8D%E6%93%85%E9%95%BF%E5%BF%8D%E8%80%90%E6%97%A0%E8%81%8A%E7%9A%84%E9%9D%9E%E8%99%9A%E6%9E%84%E4%BD%9C%E5%AE%B6/">
+          珍妮特·马尔科姆去世：一位擅长忍耐无聊的非虚构作家
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-18</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-18/%E8%92%8B%E6%96%B9%E8%88%9F-%E5%9C%A8%E6%BC%A9%E6%B6%A1%E4%B8%AD%E8%B7%8B%E6%B6%89%E7%9A%84%E7%90%BC-%E7%8B%84%E8%BF%AA%E6%81%A9/">
+          蒋方舟：在漩涡中跋涉的琼·狄迪恩
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E8%A5%BF%E5%8D%97%E8%81%94%E5%A4%A7%E7%9A%84%E9%82%A3%E4%BA%9B%E6%95%99%E6%8E%88%E5%92%8C%E5%90%8C%E5%AD%A6/">
+          许渊冲：西南联大的那些教授和同学
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-17/%E5%8D%95%E8%BA%AB%E6%97%B6%E4%BB%A3-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B9%B4%E8%BD%BB%E4%BA%BA%E4%B8%8D%E5%86%8D%E6%86%A7%E6%86%AC%E5%A9%9A%E5%A7%BB/">
+          单身时代：为什么年轻人不再憧憬婚姻？
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E8%A5%BF%E5%8D%97%E8%81%94%E5%A4%A7%E7%9A%84%E9%82%A3%E4%BA%9B%E6%95%99%E6%8E%88%E5%92%8C%E5%90%8C%E5%AD%A6/">
+            前一篇：许渊冲：西南联大的那些教授和同学
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-18/%E8%92%8B%E6%96%B9%E8%88%9F-%E5%9C%A8%E6%BC%A9%E6%B6%A1%E4%B8%AD%E8%B7%8B%E6%B6%89%E7%9A%84%E7%90%BC-%E7%8B%84%E8%BF%AA%E6%81%A9/">
+            後一篇：蒋方舟：在漩涡中跋涉的琼·狄迪恩
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E8%A5%BF%E5%8D%97%E8%81%94%E5%A4%A7%E7%9A%84%E9%82%A3%E4%BA%9B%E6%95%99%E6%8E%88%E5%92%8C%E5%90%8C%E5%AD%A6/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-18/%E8%92%8B%E6%96%B9%E8%88%9F-%E5%9C%A8%E6%BC%A9%E6%B6%A1%E4%B8%AD%E8%B7%8B%E6%B6%89%E7%9A%84%E7%90%BC-%E7%8B%84%E8%BF%AA%E6%81%A9/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-18/%E8%92%8B%E6%96%B9%E8%88%9F-%E5%9C%A8%E6%BC%A9%E6%B6%A1%E4%B8%AD%E8%B7%8B%E6%B6%89%E7%9A%84%E7%90%BC-%E7%8B%84%E8%BF%AA%E6%81%A9/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E8%A5%BF%E5%8D%97%E8%81%94%E5%A4%A7%E7%9A%84%E9%82%A3%E4%BA%9B%E6%95%99%E6%8E%88%E5%92%8C%E5%90%8C%E5%AD%A6/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E8%A5%BF%E5%8D%97%E8%81%94%E5%A4%A7%E7%9A%84%E9%82%A3%E4%BA%9B%E6%95%99%E6%8E%88%E5%92%8C%E5%90%8C%E5%AD%A6/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-18/%E8%92%8B%E6%96%B9%E8%88%9F-%E5%9C%A8%E6%BC%A9%E6%B6%A1%E4%B8%AD%E8%B7%8B%E6%B6%89%E7%9A%84%E7%90%BC-%E7%8B%84%E8%BF%AA%E6%81%A9/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-18/%E8%92%8B%E6%96%B9%E8%88%9F-%E5%9C%A8%E6%BC%A9%E6%B6%A1%E4%B8%AD%E8%B7%8B%E6%B6%89%E7%9A%84%E7%90%BC-%E7%8B%84%E8%BF%AA%E6%81%A9/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E8%A5%BF%E5%8D%97%E8%81%94%E5%A4%A7%E7%9A%84%E9%82%A3%E4%BA%9B%E6%95%99%E6%8E%88%E5%92%8C%E5%90%8C%E5%AD%A6/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

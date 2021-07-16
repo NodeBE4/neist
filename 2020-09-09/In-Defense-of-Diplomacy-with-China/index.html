@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>In Defense of Diplomacy with China – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+In Defense of Diplomacy with China
+——
+" />
+    <meta property="og:description" content="
+In Defense of Diplomacy with China
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="In Defense of Diplomacy with China" />
+    <meta property="twitter:title" content="In Defense of Diplomacy with China" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fdefense-of-diplomacy-china" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/defense-of-diplomacy-china" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/defense-of-diplomacy-china&text=In Defense of Diplomacy with China&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/defense-of-diplomacy-china&title=In Defense of Diplomacy with China" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/defense-of-diplomacy-china&title=In Defense of Diplomacy with China" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=In Defense of Diplomacy with China&body=
+In Defense of Diplomacy with China
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/defense-of-diplomacy-china" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/defense-of-diplomacy-china&title=In Defense of Diplomacy with China&caption=
+In Defense of Diplomacy with China
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=In Defense of Diplomacy with China&url=https://www.chinafile.com/reporting-opinion/viewpoint/defense-of-diplomacy-china" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>In Defense of Diplomacy with China</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-09-09
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: James Green</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/defense-of-diplomacy-china" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1599702360000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/defense-of-diplomacy-china">In Defense of Diplomacy with China</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-059d38ad7968ca6194cc236b3b8b3392">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-518439498.jpg" title="In Defense of Diplomacy with China" class="colorbox" data-colorbox-gallery="gallery-node-52526-xYL23AlITD8" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-518439498.jpg?itok=5FPVcHxd" width="1200" height="713" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Dennis Brack—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>President Barack Obama (left) holds a bilateral meeting with President Xi Jinping (right) at the Nuclear Security Summit in Washington, D.C., March 31, 2016.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">Washington has become frothy with <a href="https://foreignpolicy.com/2020/07/31/is-this-the-beginning-of-a-new-cold-war-with-china/" target="_blank" rel="nofollow">talk</a> of a new cold war with China as competition intensifies between the two countries’ ideological systems: liberal democracy vs. authoritarian statism. As evidence of this new reality, commentators and political leaders point to Beijing’s increased aggressiveness at home and abroad—recently over the coronavirus outbreak, government backing of telecom giant Huawei, new national security legislation for Hong Kong, and repression of Uighurs. Specific repugnant actions and confrontational policies, so the logic goes, underscore the true nature of the Chinese regime. As Secretary of State Mike Pompeo <a href="https://www.state.gov/communist-china-and-the-free-worlds-future/'" target="_blank" rel="nofollow">pronounced</a> at the Nixon Library earlier in the summer, “If we don’t act now, ultimately the CCP [Chinese Communist Party] will erode our freedoms and subvert the rules-based order that our societies have worked so hard to build. If we bend the knee now, our children’s children may be at the mercy of the Chinese Communist Party.” Secretary Pompeo is not alone: administration policy <a href="https://www.whitehouse.gov/wp-content/uploads/2020/05/U.S.-Strategic-Approach-to-The-Peoples-Republic-of-China-Report-5.20.20.pdf" target="_blank" rel="nofollow">documents</a>, other <a href="https://www.justice.gov/opa/speech/transcript-attorney-general-barr-s-remarks-china-policy-gerald-r-ford-presidential-museum" target="_blank" rel="nofollow">cabinet</a> secretary <a href="https://www.whitehouse.gov/briefings-statements/chinese-communist-partys-ideology-global-ambitions/" target="_blank" rel="nofollow">speeches</a>, members of <a href="https://www.csis.org/analysis/morning-keynote-implications-chinas-growing-power-us" target="_blank" rel="nofollow">Congress</a>, former <a href="https://www.foreignaffairs.com/articles/china/2018-02-13/china-reckoning" target="_blank" rel="nofollow">officials</a>, and <a href="https://foreignpolicy.com/2019/01/07/a-new-cold-war-has-begun/" target="_blank" rel="nofollow">commentators</a> have all <a href="https://www.tandfonline.com/doi/full/10.1080/00396338.2018.1470755" target="_blank" rel="nofollow">proclaimed</a> that the United States is entering a protracted time of tension, competition, and conflict with the People’s Republic of China. Indeed, Chinese leadership goals, aspirations, and capabilities shifted in the years around 2008-2012. They began to focus on strengthening the Party at home and abroad by increasingly relying on surveillance technology, and on moving away from market economics and social liberalization. While Beijing’s own choices have largely driven a need for a coordinated global response, the move to a more confrontational U.S. approach often rests in part on a critique of the past four decades of U.S. policy towards the People’s Republic of China (PRC), a criticism broken down into three intertwined elements. First, the previous policy of bringing China into international institutions through diplomacy has failed, and the act of “engagement” has somehow ceded U.S. leverage. Second, U.S. leaders and policymakers were ignorant of, or naive about, the true nature of the repressive Chinese Communist Party (CCP). Third, that misunderstanding led to policies that endangered U.S. security, prosperity, and open society—threats which could have been mitigated or avoided with different policies.</p>
+      <p>This is simply historical revisionism.</p>
+      <p>How would I know? For two decades, I served inside the U.S. Government, over in the meeting rooms at the Diaoyutai State Guest House, preparing outcomes documents for release to the press, and arranging presidential and ministerial meetings on both sides of the Pacific. From the mid-1990s until 2018, I worked in number of different parts of the U.S. Government, including the White House National Security Council, the Office of the United States Trade Representative, the State Department, and the U.S. Embassy in Beijing. In these positions, I worked on everything from China’s disruptive foreign aid policies to Asia-Pacific regional architecture, from the Missile Technology Control Regime to discriminatory investment policies. From the mechanics of President Jiang Zemin’s state visit in 1997 to top strategic planning with the Secretary of State’s Policy Planning Staff in the Bush and Obama administrations to the brass tacks job of informing counterparts at the Ministry of Commerce that, indeed, the Trump administration would be <a href="https://ustr.gov/about-us/policy-offices/press-office/fact-sheets/2018/june/section-301-investigation-fact-sheet" target="_blank" rel="nofollow">placing tariffs</a> on Chinese exports after a Section 301 investigation of forced technology transfers. But you don’t have to believe me. Over the last two years, I have interviewed two dozen former U.S. officials about how they handled a rising China, how they assessed U.S. interests, and what they saw as lessons for future generations of officials, soldiers, and negotiators for an <a href="https://uschinadialogue.georgetown.edu/series/u-s-china-dialogue-podcast" target="_blank" rel="nofollow">oral history podcast</a> aimed at guiding the United States’ approach to dealing with China going forward.</p>
+      <h3 id="false-narratives">False Narratives</h3>
+      <p class="dropcap">Critics of the last four decades of China policy have <a href="https://foreignpolicy.com/2020/07/31/is-this-the-beginning-of-a-new-cold-war-with-china/" target="_blank" rel="nofollow">incorrectly</a> and <a href="https://www.tandfonline.com/doi/full/10.1080/00396338.2018.1470755" target="_blank" rel="nofollow">simplistically</a> labeled diplomacy a failure because the People’s Republic did not become a liberal democracy. That was never the goal or an achievable objective of U.S. policy. The goal was to shape Chinese policy to align more with U.S. objectives: a <em>more</em> open society, <em>reduced</em> overseas disruptive behavior, <em>increasingly</em> transparent business operations.</p>
+      <p>One of the most common <a href="https://sinocism.com/p/interview-with-james-mann" target="_blank" rel="nofollow">tropes</a> of recent critiques is the claim that President Bill Clinton promised a future Chinese democracy while advocating for the country’s entry into the World Trade Organization (WTO). Here’s what he <a href="https://books.google.com/books?id=MZCCDwAAQBAJ&amp;pg" target="_blank" rel="nofollow">actually said</a> at the Johns Hopkins School of Advanced International Studies in March 2000:</p>
+      <blockquote>
+        <p>By joining the WTO, China is not simply agreeing to import more of our products; it is agreeing to import one of democracy’s most cherished values: economic freedom. The more China liberalizes its economy, the more fully it will liberate the potential of its people—their initiative, their imagination, their remarkable spirit of enterprise. And when individuals have the power, not just to dream but to realize their dreams, they will demand a greater say.</p>
+      </blockquote>
+      <p>That wealth creation did occur, and Chinese citizens are now able to control more parts of their lives than they were throughout most of the 20th century: Per capita GDP jumped from U.S.$1,000 in 2000 to almost $10,000 by <a href="https://www.google.com/publicdata/explore?ds=d5bncppjof8f9_&amp;met_y=ny_gdp_pcap_cd&amp;idim=country:CHN:IND:BRA&amp;hl=en&amp;dl=en" target="_blank" rel="nofollow">2019</a>, 90% of Chinese citizens now own their own <a href="https://tradingeconomics.com/china/home-ownership-rate#:~:text=Home%20Ownership%20Rate%20in%20China%20averaged%2089.89%20percent%20from%202013,of%2089.68%20percent%20in%202018." target="_blank" rel="nofollow">homes</a>, and since WTO accession Chinese outbound overseas trips jumped from <a href="https://www.hvs.com/Content/3109.pdf" rel="nofollow">10 million</a> to over 150 million <a href="https://www.travelchinaguide.com/tourism/2019statistics/" target="_blank" rel="nofollow">visits</a> last year. The comfort, personal freedoms, and even dietary choices for hundreds of millions of Chinese citizens today have grown to levels unimaginable to their parents or grandparents. The lifting out of poverty did not lead to a more pluralistic political system, although Chinese citizens over the last two decades have been more active in civic life on everything from <a href="https://www.harvard-yenching.org/sites/harvard-yenching.org/files/WU%20Fengshi_Environmental%20Civil%20Society%20in%20China2.pdf" target="_blank" rel="nofollow">environmental</a> stewardship to <a href="https://www.jstor.org/stable/25790563?seq=1" target="_blank" rel="nofollow">disaster relief</a>. Through projects large and small, Chinese citizen groups are cleaning up rivers, bringing aid to their neighbors, advocating for LGBTQ rights, supporting animal welfare, and educating the poor. China is not North Korea. It is a modern society grappling with issues around family expectations, spirituality, sexuality, personal choice—topics and issues off-limits to previous generations of Chinese individuals. Yes, Xi Jinping’s more recent drive to reinsert the Communist Party into daily life represents a pernicious trend, but that political tightening was neither foreordained nor proscribed by WTO entry.</p>
+      <p>Critics also wrongly condemn the <em>process</em> for an outcome that was less than desired, as though somehow having U.S. officials meet with Chinese counterparts gave away U.S. leverage or bestowed some <a href="https://www.americanprogress.org/issues/security/reports/2019/04/03/468136/limit-leverage-compete-new-strategy-china/" target="_blank" rel="nofollow">advantage to Beijing</a>. On more than one occasion, I heard senior Trump administration officials lambast previous economic and trade dialogues as a cynical Chinese ploy to distract the U.S. government while Beijing went on to methodically build national wealth and power. Some have even <a href="https://www.axios.com/interview-james-mann-us-china-engagement-trade-8477691b-e353-41cd-8c8b-30ff9e48bd88.html" target="_blank" rel="nofollow">labeled</a> the process of diplomatic negotiations and engagement a <a href="https://www.axios.com/interview-james-mann-us-china-engagement-trade-8477691b-e353-41cd-8c8b-30ff9e48bd88.html" target="_blank" rel="nofollow">failure</a>, positing that the endgame was a democratic China. The mere act of talking to Chinese officials—diplomacy—has not failed. As <a href="https://uschinadialogue.georgetown.edu/podcasts/winston-lord" target="_blank" rel="nofollow">Winston Lord</a>, aide to National Security Advisor Henry Kissinger, Assistant Secretary of State for East Asia, Ambassador to China, and President of the Council on Foreign Relations, told me: “Engagement is a tactic, not a strategy.” Unfortunately, the term engagement has now lost any true meaning, an epithet hurled by critics to paint any diplomatic exchange or discussion as appeasement.</p>
+      <p>For decades, U.S. leaders and policymakers realized the importance of building a working relationship with the People’s Liberation Army (PLA) to advance U.S. security interests in Asia. In the 1980s, those military ties were for specific anti-Soviet <a href="https://fas.org/nuke/guide/usa/airdef/searching_the_skies.htm" target="_blank" rel="nofollow">projects</a>, including assistance to the <a href="https://www.nytimes.com/1988/04/18/world/arming-afghan-guerrillas-a-huge-effort-led-by-us.html" target="_blank" rel="nofollow">mujahideen</a> in Afghanistan and Soviet-oriented listening posts in western China. Then in the 1990s and 2000s, military-to-military contact was designed to reduce suspicion and underscore the seriousness of U.S. commitment to the region. Retired U.S. Army Lieutenant Colonel Roy Kamphausen <a href="https://uschinadialogue.georgetown.edu/podcasts/roy-kamphausen" target="_blank" rel="nofollow">described</a> it this way, echoing comments of retired Pacific Commander and Ambassador Joseph Prueher:</p>
+      <blockquote>
+        <p>. . . by and large, every senior person I’ve ever interacted with says, ‘You hold your friends close, and you hold your adversaries closer.’ And if you lose contact, things will happen that you wish you’d known about. And you have less time to be able to react. And so, senior uniform types tend to support engagement, not because they have some kumbaya sense that we can just all be friends. But rather, it’s how you stay in contact with your potential adversary. And you will gain insights from that, that will make you better prepared for whatever may come.</p>
+      </blockquote>
+      <p>Suspending military-to-military ties, as <a href="https://www.rand.org/content/dam/rand/pubs/monographs/2004/RAND_MG143.pdf;%20Chapter%204" target="_blank" rel="nofollow">some</a> have <a href="https://insidedefense.com/share/40923" target="_blank" rel="nofollow">proposed</a>, undervalues the importance of the basics of communication and overemphasizes the ability of the United States to change national aspirations China has had since the late Qing dynasty. As points of comparison, the U.S.’s alliance with Turkey and longstanding military ties to Egypt and Saudi Arabia have not let Washington dictate how those governments procure arms and address foreign and domestic threats. Countries invest in their militaries to prepare for or to confront domestic and foreign threats. The U.S. track record in moving a country away from a specific military program is mixed at best. The most celebrated cases, like <a href="https://www.nti.org/learn/countries/south-korea/" target="_blank" rel="nofollow">South Korea’s</a> and <a href="https://www.nti.org/learn/countries/south-africa/" target="_blank" rel="nofollow">South Africa’s</a> abandonment of nuclear weapons programs or Japan’s pacifist constitution, owed to a special historical circumstance, a close alliance relationship, or a global coalition, none of which were present with China.</p>
+      <p>One of the most vexing parts of the failed China strategy narrative is that critics cannot point to another course of action that would have led to a better outcome. In a piece lauding the Trump administration’s China policy, Ambassador Robert Blackwill <a href="https://www.cfr.org/sites/default/files/report_pdf/CSR%2084_Blackwill_Trump.pdf" target="_blank" rel="nofollow">speculates</a> that instituting tougher U.S. policy earlier would have tamed Beijing, but the details and time sequence of such an approach are left to the imagination. Unexplored are the actual building blocks of legislation, regulation, presidential summitry, and coalition building, along with U.S. foreign policy objectives that would have needed to be abandoned in order to achieve a more compliant China. Even in the face of today’s more assertive Chinese foreign and economic policies, few U.S. friends and allies are ready to sign up to an embargo or neo-containment policy against China. No country would have joined a China containment effort in the 1990s or 2000s, and without allies such an approach would have been doomed to failure.</p>
+      <h3 id="the-china-we-have-not-the-china-we-want">The China We Have, Not the China We Want</h3>
+      <p class="dropcap">American officials who worked on China policy in the decades up to and after normalization in 1979 were acutely aware of the brutish methods of the CCP: the cult of personality surrounding Mao Zedong, the instability of leadership purges, the wanton destruction of life and society during the Cultural Revolution, the loyalty of the PLA to the CCP and not to the Chinese state evident on the streets around Tiananmen Square in June 1989. Establishing official embassies, having government negotiations, and bringing China into the international system did not mean endorsement of the regime’s behaviors. The world can be a rough place, and the U.S. does not have the luxury of only dealing with liberal democratic treaty allies. China was, and remains, an important player on a range of regional and global challenges, and having a framework to advance U.S. policies is in the interests of the United States. These diplomatic efforts provided habits and routines to push U.S. objectives at senior levels of the PRC government.</p>
+      <p>The prelude to U.S.-China rapprochement in the 1970s was suspicion, confrontation, and conflict. In the 1950s, U.S. troops and Chinese PLA “volunteers” fought each other on the battlefields of Korea shortly after the establishment of the People’s Republic of China in 1949. In the 1960s, Beijing assisted Communist forces and organizations in Southeast Asia looking to upend regimes and societies. So when a Congressional delegation visited Beijing in April 1976, it was not entirely surprising that their meeting with the Chinese leadership was a blustering clash of ideology. Zhang Chunqiao, one of the notorious Gang of Four, held forth in the Stalinist-style Great Hall of the People on Tiananmen Square, telling his American Congressional visitors about the glories of the Cultural Revolution with sycophantic references to Chairman Mao’s leadership. As former Ambassador Stapleton Roy <a href="https://uschinadialogue.georgetown.edu/podcasts/stapleton-roy" target="_blank" rel="nofollow">remembered</a> that meeting, “It was quite clear that if a government with <em>that</em> ideological way of looking at the world remained in power in China that we were not going to have an easy time working out our bilateral relationship.” A few months after that meeting, Zhang was arrested and years later sentenced to death for his crimes (later commuted). The very public purge was a stark reminder to American officials of the capriciousness and ideological dangers of the CCP.</p>
+      <p>There was no inevitability about China joining international institutions given the track-record of the first three decades of Communist rule. The safe money probably would have been against Beijing’s adopting more pragmatic, non-ideological policies. That change did happen in foreign and domestic policy under Deng Xiaoping as China rebuilt its diplomatic relations with neighbors and former enemies. As a result, U.S. policy in the 1970s was proactive in establishing diplomatic ties with Beijing, which was based on a change in Chinese strategic thinking, seeing a need to move away from class struggle and towards economic development.</p>
+      <p>An important part of this normalization of Chinese foreign policy was the decision to patch up relations with the Soviet Union. The most visible event around that shift was General Secretary Mikhail Gorbachev’s 1989 visit to Beijing, ending two decades of hostilities between Communist giants. Perhaps most notably for an American audience, the visit brought live international television coverage of then-growing protests in Tiananmen Square. For American officials on the ground in Beijing, the massive protests in Beijing and dozens of other cities provided a window on how violently the CCP would handle dissent. Ambassador David Shear was a young political officer at the U.S. Embassy in Beijing at that time and would later become a senior official in both the State and Defense Departments. He <a href="https://uschinadialogue.georgetown.edu/podcasts/david-shear" target="_blank" rel="nofollow">explained</a> it this way: “Those of us who worked on China in the 1980s, particularly those of us who worked in connection with the Tiananmen massacre, never, ever lost our wariness about how to deal with China and never ever lost sight of what American interests were with regard to China.” For American officials who were serving either in Beijing or Washington during the spring of 1989, the lesson they took away was that the Chinese Communist Party judged itself for mishandling the demonstrations due to a split in the top leadership—and that regime survivability at all costs would remain the Party’s North Star. CCP ruthlessness was not a mystery to experienced American officials. Rather, it was understood as an inherent reality to be managed. Robert Suettinger was an Army combat engineer who fought in Vietnam, then joined the CIA in 1975 to analyze China. He <a href="https://uschinadialogue.georgetown.edu/podcasts/robert-suettinger" target="_blank" rel="nofollow">told</a> me about the ability to work the Chinese Communist Party:</p>
+      <blockquote>
+        <p>I think you have to work with them. There’s no option on that. China has always been a reality. We ignored them for a long time. It didn’t work out all that well. Can we trust them? No. That system . . . Their power considerations, their internal management of all issues, the politicization of everything. And the degree to which the maintenance of control and . . . authoritarian[ism] is not quite strong enough to talk about what’s going on there. It’s moving right now in what I consider to be an unhealthy direction, both for their internal stability and for relations with the rest of the world.</p>
+      </blockquote>
+      <p>There was a time, not all that long ago, when values and human dignity drove parts of U.S. policy with China. Previous administrations attempted to integrate American values into diplomacy with Beijing. CIA veteran and Special Assistant to the President Dennis Wilder <a href="https://uschinadialogue.georgetown.edu/podcasts/dennis-wilder" target="_blank" rel="nofollow">explained</a> how President George W. Bush expressed support for the exiled Tibetan spiritual leader during this exchange with General Secretary Hu Jintao in 2007:</p>
+      <blockquote>
+        <p>“The Congress has decided to give the Dalai Lama the Congressional Gold Medal. This is a great honor. It is a big event and as President of the United States, I must be there.” And Hu Jintao started to protest and the President said, “Now, wait a minute, I told you, you were not going to like this news, but I have better news for you. I have decided I’m going to the Beijing Olympics, and I decided this because of the American athletes, I want to support them, but also because of my respect for the Chinese people and my respect for you.” What was amazing is that Hu Jintao accepted that bargain.</p>
+      </blockquote>
+      <p>President Clinton used the state visit of President Jiang Zemin in 1997 to forthrightly <a href="http://www.cnn.com/ALLPOLITICS/1997/10/29/china.summit/transcript4.html" target="_blank" rel="nofollow">proclaim</a> that China was on the “wrong side of history” for the Tiananmen massacre—right <a href="https://www.c-span.org/video/?93938-1/us-china-joint-news-conference" target="_blank" rel="nofollow">in front of</a> his Chinese counterpart at a live press conference. Of course, those exchanges did not change the CCP’s view of the Dalai Lama or its official history of the Tiananmen crackdown, but raising the issues publicly and privately at the highest levels helped ensure that the global spotlight would remain on those CCP behaviors that conflicted with American values. These examples of U.S. presidents’ raising some of the Party’s darkest episodes undercut the assertion that U.S. officials were unaware, ignorant, or disinterested in the repressive nature of the CCP.</p>
+      <p>In the final assessment of administration after administration, the U.S. global agenda since the 1970s—prevailing in the Cold War, increasing prosperity at home and among friends and allies, reducing threats to the American people—argued for working with the Chinese government. That did not imply an ignorance of the regime’s domestic behavior. Rather, it reflected a calculation that having Beijing inside the U.S.-led global order would help meet broader U.S. objectives. U.S. treaty alliances and partnerships with dozens of authoritarian regional powers over the last four decades confirm that this approach was hardly unique to relations with Beijing.</p>
+      <h3 id="pragmatism-and-reality">Pragmatism and Reality</h3>
+      <p class="dropcap">One of the results of the policy of working with the Chinese government and leadership on a broader goal of integration was to get Beijing to endorse, or at least not oppose, U.S. goals across the globe. Having frameworks for senior policy discussions and for presidents to meet were not just for talk’s sake, but regularly provided the mechanisms to advance U.S. policies. For example, in the run-up to the Iraq war in 2003, I was serving on the State Department’s China desk when a senior PRC official essentially told his U.S. counterpart: “Saddam is no friend of ours. You do what you need to do; we won’t stand in your way.” This was in stark contrast to France, an American treaty ally, which took the lead in <a href="https://www.nytimes.com/2003/03/11/world/threats-and-responses-discord-france-to-veto-resolution-on-iraq-war-chirac-says.html" target="_blank" rel="nofollow">trying to halt</a> a U.S. military campaign. Imagine a nuclear-armed Beijing actively invoking the United Nations Charter and resuming weapons sales to Baghdad as part of a broader effort to stall a U.S. invasion. This is not to reopen the debate about the wisdom of the Iraq campaign, rather it serves as a reminder that a containment-like policy in the 2000s would likely have led to significant obstacles to U.S. foreign and defense priorities for that decade.</p>
+      <p>At a more operational level, building that leader-level relationship has directly benefitted U.S. military forces. Dennis Wilder <a href="https://uschinadialogue.georgetown.edu/podcasts/dennis-wilder" target="_blank" rel="nofollow">described</a> a life-or-death request based on extremely sensitive information that President George W. Bush asked of President Hu Jintao during a visit to the White House in 2006: “We had become concerned that the Taliban and others were gaining access to Chinese weapons via the Iranians. And so one of the asks of the visit of Hu Jintao was to cease and desist: figure out what’s going on and stop this because there were American casualties that were coming from weapons that we knew were NORINCO [China North Industries Corporation] -made weapons . . . That was in, I think, both [Iran and Afghanistan]. We were finding these weapons [in Iran/Afghanistan] and that [Chinese agreement to stop providing weapons] was a success of the visit. We didn’t publicize it because that wasn’t a subject that we needed to in any way talk publicly about.”</p>
+      <p>Much more lethal than Chinese small arms finding their way into the Middle East in the 2000s were Chinese policies in the 1980s and 1990s that either encouraged or did not stem the flow of nuclear, chemical, and missile-related technology to U.S. adversaries or unstable regions. One of the most troublesome foreign policies Beijing embraced coming out of the Mao era was a nonchalance towards global nonproliferation treaties, rules, and norms. In many ways, the leadership and Foreign Ministry were stuck in a Non-Aligned Movement ethos: democratizing weapons of mass destruction (WMD) would bring justice to the global order. In the early 1990s, U.S. concerns about Chinese missile or nuclear technology sales to the Middle East often prompted the retort from PRC diplomats that the U.S. sells F-16s to Taiwan, so China should be able to sell what it want to Syria, Iran, and Libya. Chinese officials nicknamed Assistant Secretary of State Bob Einhorn “The Dentist” for his relentless pursuit of WMD technology proliferators; Einhorn spent a decade in the diplomatic trenches pushing to curb specific transactions and for changes in overall policy. That effort was backed by President Clinton, making the process a critical part of his two meetings with President Jiang Zemin in 1997 and 1998. The result: In the 1990s, China joined the major nonproliferation treaties and regimes to control the spread of WMD technology, with a particular <a href="https://www.uscc.gov/sites/default/files/Research/China-Iran--A%20Limited%20Partnership.pdf" target="_blank" rel="nofollow">emphasis</a> on cutting ties with Iran including cancelling a number of nuclear contracts. While overall global implementation has not been perfect, U.S. forces and allies are today safer with China inside the nonproliferation tent than if the workshop of the world had been left outside.</p>
+      <p>On another vexing nonproliferation challenge, North Korea, the fact is that China needs to be part of any serious denuclearization and peace-building process. As former CIA officer and Special Envoy for North Korea Joseph DeTrani <a href="https://uschinadialogue.georgetown.edu/podcasts/joseph-detrani" target="_blank" rel="nofollow">told me</a>: “. . . going back to the Korean War and what we know, there needs to be peace on the Korean Peninsula. And when we eventually look at reunification, a peaceful reunification is obviously in everyone’s interest. China has a lot in this negotiation. China was ready to take the lead. It’s their region.” While Beijing’s overall implementation of nonproliferation rules has not been <a href="https://www.cfr.org/report/chinese-perceptions-nuclear-weapons-arms-control-and-nonproliferation" target="_blank" rel="nofollow">perfect</a>, U.S. forces and allies are today safer with China inside the tent than if the workshop of the world had been left outside.</p>
+      <p>Before the coronavirus outbreak and events in Hong Kong grabbed the headlines over the last few months, the Trump administration spent the better part of three years decrying China’s “unfair” and “not reciprocal” trade practices. President Trump has repeatedly and incorrectly <a href="https://www.whitehouse.gov/briefings-statements/president-donald-j-trump-confronting-chinas-unfair-trade-policies/" target="_blank" rel="nofollow">used</a> the U.S. bilateral trade deficit with China as evidence of this unfairness. In one high-profile 2018 <a href="https://ustr.gov/sites/default/files/files/Press/Reports/China%202017%20WTO%20Report.pdf" target="_blank" rel="nofollow">report</a>, the office of the United States Trade Representative (USTR) judged that the United States had “erred” in letting China join the WTO in December 2001. The WTO, the report contended, was ill-equipped to deal with China’s state capitalism and assertive economic policies. But using the Chinese economy of 2020 to judge the WTO accession protocol from two decades prior is another bit of historical revisionism. As the United States Trade Representative at the time, Robert Zoellick, told me, to say the United States made such an error is “just flat wrong.” Nominal Chinese GDP was U.S.$1.3 trillion in 2001, compared to $14.1 trillion in 2019. At the time, Chinese leaders Jiang Zemin and Zhu Rongji had made hard political choices in the interest of bringing international discipline to the domestic economy, and they would continue to do so by laying off over 40 million state workers (roughly a third of the total), opening up import and distribution rights, significantly lowering tariffs, and subjecting Chinese trade practices to WTO members’ scrutiny. The Chinese WTO accession protocol was the most detailed of any member up to that point, and it made the Chinese economy more open to foreign participation than many existing GATT/WTO members, such as India and Japan. As former Unites States Trade Representative Charlene Barshefsky, who oversaw the bilateral agreement inked in 1999, <a href="https://uschinadialogue.georgetown.edu/podcasts/charlene-barshefsky" target="_blank" rel="nofollow">told me</a>: “It’s the only trade deal I can think of in my many years in this field where someone in Congress didn’t say, ‘Go back, get more.’ No one asked us to go back to get more because people were astonished at what China was willing to do.” To summarize: all of the tariff and market access concessions were on the Chinese side, none on the side of the United States. It was a completely one-sided deal.</p>
+      <p>In 1992, before China joined the WTO, the average weighted tariff for imports from the U.S. was 22.6%, which dropped to 6.3% by <a href="https://www.mercatus.org/publications/trade-and-immigration/six-tariff-trade-facts#:~:text=In%201992%20Chinese%20tariffs%20on,States%20levied%20on%20Chinese%20products." target="_blank" rel="nofollow">2017</a>. U.S. exports to China are up <a href="https://www.census.gov/foreign-trade/balance/c5700.html" target="_blank" rel="nofollow">over 500%</a> from 2001, before WTO accession. Benefits also accrued to U.S. manufacturers and consumers: One <a href="https://voxeu.org/article/china-s-wto-entry-benefits-us-consumers" target="_blank" rel="nofollow">study</a> shows that China’s WTO entry brought down the aggregate U.S. manufacturing price index by 7.6% between 2000 and 2006. Highlighting very real U.S. job losses and a drop in manufacturing employment in the 1990s and 2000s, many critics of China’s WTO entry have conflated broader automation trends with a rise in imports. U.S. steel production, for instance, is today roughly where it was in 1990 (about 90 million metric tons per year) while <a href="https://www.factcheck.org/2019/08/trumps-steel-industry-claims/" target="_blank" rel="nofollow">employment</a> in the sector has dropped from 187,000 workers to half that number today; mills can now produce the same amount of steel with <a href="https://www.aei.org/carpe-diem/the-main-reason-for-the-loss-of-us-steel-jobs-is-productivity-and-technology-not-imports-and-theyre-not-coming-back/" target="_blank" rel="nofollow">85%</a> fewer man-hours. The WTO limited the Chinese government’s freedom of action and bound the country towards a set of agreed upon rules about how to treat foreign companies and imports. Post-WTO <a href="https://ustr.gov/archive/Document_Library/Press_Releases/2001/June/USTR_Releases_Details_on_US-China_Consensus_on_China's_WTO_Accession.html" target="_blank" rel="nofollow">accession</a>, all trade-related regulations had to be offered for public comment and then openly published, giving the U.S. government a chance to beat back discriminatory rules and limiting Chinese officials from capriciously invoking vague laws against U.S. companies. For the first time, non-Chinese companies located in China were granted the right to trade internationally and distribute those goods domestically within China, eliminating a previous requirement to use Chinese state-owned monopolies to conduct much of their operations. As the U.S. General Accounting Office <a href="https://www.gao.gov/new.items/d034.pdf" target="_blank" rel="nofollow">summarized</a> the situation in 2002: “We identified nearly 700 individual commitments on how China’s trade regime will adhere to the organization’s agreements, principles, and rules. Other commitments grant market access to other members’ goods and services.” China’s accession package was based on early-1990s trade rules, and the global economy has evolved significantly since then. This requires the updating of rules to tackle areas of digital trade and state financing. But that should not lead to the conclusion that throwing out the rulebook is the best path forward.</p>
+      <p>But didn’t the WTO pave the way for the Communist Party to enrich the country and itself, thereby <a href="https://world101.cfr.org/global-era-issues/trade/what-happened-when-china-joined-wto" target="_blank" rel="nofollow">preserving</a> its monopoly of political power? In short, no. What has driven the Chinese <a href="https://hbr.org/2013/11/chinas-economy-in-six-charts#:~:text=Since%20the%20country%20opened%20its,million%20people%20have%20escaped%20poverty." target="_blank" rel="nofollow">economy</a> for the last four decades, since roughly 20 years before WTO entry, has been the <a href="https://fas.org/sgp/crs/row/RL33534.pdf" target="_blank" rel="nofollow">liberalization</a> of many sectors that introduced competition, efficiency, and a return on investment as well as a stable monetary environment. Yes, state policies, particularly since the 2008 financial crisis, have <a href="https://www.piie.com/publications/chapters_preview/6260/01iie6260.pdf" target="_blank" rel="nofollow">distorted</a> the macro economy and discriminated against foreign companies. And, yes, the growth of the macro economy and tax revenues allowed the Communist Party to implement a range of policies, some in line with U.S. goals, others at odds with them. But the United States was not in a legal, moral, or policy position to condemn China to poverty in 2001 to prevent the potential rebirth of the Communist Party. What was the alternative policy? Why was Russia’s entering in the WTO in 2012 under a Putin-led oligarchy <a href="https://www.npr.org/templates/story/story.php?storyId=127981016" target="_blank" rel="nofollow">acceptable</a>, and China’s entry in 2001 led by no-nonsense Premier Zhu Rongji not? Blocking WTO entry would not have stopped Beijing in the 1990s from continuing down the path of economic liberalization. We should be cautious about imbuing too much authority or agency into a multilateral organization run by the member states. The WTO is not in a position to dictate how members distribute the benefits of income internally within a member country. After all, U.S. wealth and income <a href="https://www.pewsocialtrends.org/2020/01/09/trends-in-income-and-wealth-inequality/" target="_blank" rel="nofollow">inequality</a> grew significantly from 1983 to 2016, with one group, not the Communist Party but the wealthiest U.S. households, benefiting most. This disparity is rightly not addressed in the halls of the WTO secretariat on Lake Geneva.</p>
+      <h3 id="a-way-forward">A Way Forward</h3>
+      <p class="dropcap">For all of these examples, observers may argue that China would have adopted seemingly hard-won nonproliferation and economic liberalization policies without U.S. diplomacy, because they were in the self-interest of China’s leaders. True, countries rarely, if ever, embrace policies that are against their own interests, but the corollary is not necessarily true. By cajoling and building pathways for PRC policies, U.S. officials over the last four decades were able to shape how Chinese leaders identified and pursued their interests and showed why aligning Chinese policies with those of the United States would be beneficial. Zoellick described to me how frank, discreet discussions on Afghanistan, North Korea, and Sudan/Darfur with State Counselor Dai Bingguo in the mid-2000s moved the Chinese leadership closer to U.S. positions on critical issues of regional security. Zoellick explained one visit to Beijing with a mini-breakthrough on China’s Middle East policy:</p>
+      <blockquote>
+        <p>I remember one Chinese official as I get in the car he said, “Look, we get the message. We’ll try to help in Iran.” He said, “ . . . but you have to understand three things. One, we’ve had a long relationship, so we have to figure out to deal with that, you know? Second, we can’t do exactly what you do. And third, the Iranians are a little crazy, we don’t know what they’ll do.” Okay, but that’s where you may not always agree—you want to [use such a discussion to] understand what the other person is thinking about.</p>
+      </blockquote>
+      <p>So, purposeful diplomatic engagement with the Chinese government has, in fact, brought benefits to the peace, security, and prosperity of the United States.</p>
+      <p>Critics of this narrative will complain that I’ve focused here on tactical, small issues—military-to-military communication, nonproliferation, battlefield issues, trade tariffs—as China prepared systematically to upend the global order. The reality is that building security and prosperity for the American people through our foreign policy is done brick by brick, policy by policy, presidential summit by presidential summit. Of course ideology, strategy, and goals drive policy choices, but they are dependent on the world as it is, not on how we wish it to be. Policy is not made in a vacuum; there are trade-offs and priorities, decisions shaped by the probable, the possible, and the potential for success.</p>
+      <p>The hard truth is that despite our legions of diplomats, trade negotiators, and military officers, not to mention pundits and corporate leaders, the United States has a limited ability to compel other countries to do its bidding. The challenge now facing us is to draw on that well of expertise to craft a sustainable policy to address an increasingly assertive Chinese behavior across a range of domains.</p>
+      <p>China is now presenting itself as an alternative model to liberal democracy in the areas of economic management, political governance, media manipulation, and technology control. The United States must respond with all elements of national power. The onus is largely on Beijing for this significant change in policy and attitude. Chinese political winds shifted from economic liberalization and global integration in the 1990s and 2000s to the Belt and Road hub-and-spoke system and bombastic “Wolf Warrior” public diplomacy of today. Many of the former U.S. officials I interviewed point to 2006-2010 as the years during which the Chinese leadership grew increasingly dismissive of the United States and confident in using Communist Party and central government tools to extend power and influence at home and abroad. That turbulent period brought a global financial crisis that discredited Wall Street, a U.S. military bogged down in Iraq and Afghanistan, an increasing reliance on the state for economic intervention, more assertive activities in the South China Sea, and a triumphal 2008 Beijing Olympics. Former Commerce Department Deputy Assistant Secretary Ira Kasoff, who received a Ph.D. from Princeton in Song dynasty intellectual history before joining the U.S. Government in the 1980s, <a href="https://uschinadialogue.georgetown.edu/podcasts/ira-kasoff" target="_blank" rel="nofollow">described</a> the final U.S.-China Strategic Economic Dialogue in December 2008 in Beijing to me this way:</p>
+      <blockquote>
+        <p>. . . basically, we had to sit there and listen to Wang Qishan, who was the vice premier now, lecture us for the entire meeting about how you Americans have been telling us for all this time about how we have to open up our capital markets and do all these things, and look what you’ve done. You’ve basically destroyed the world economy, and you were once our teachers, and on and on and on. [Treasury Secretary Hank] Paulson and the rest of us had to just sort of sit there and take it, because . . . You know, what could you say?</p>
+      </blockquote>
+      <p>Similarly, then-State Department Deputy Assistant Secretary for China David Shear explained why on the diplomatic and military side, the U.S. was formulating a tougher response during this timeframe:</p>
+      <blockquote>
+        <p>One of the events that led us to consider what the Secretary [of State Hillary Clinton] would say in Hanoi [at a regional summit] was the Chinese harassment an American military vessel in the South China Sea in March of 2009. I think that event, plus other assertive Chinese behavior in the South China Sea, signaled to us that the Chinese were taking a different approach, a more assertive approach in the region, and that we needed to start thinking of ways of responding to that.</p>
+      </blockquote>
+      <p>The neo-authoritarian system appears attractive to many leaders and citizens across the globe at a time when liberal democracies and post-World War II institutions simply do not seem to be delivering people’s basic health, security, and prosperity needs. The coronavirus pandemic, the taming of the Internet for constant surveillance, the crashing of the global economy, persistent social injustices, the rise of online hate speech, and the lack of international leadership across a range of institutions all give succor to illiberal leaders with their siren song of strength.</p>
+      <h3 id="what-is-to-be-done">What Is to Be Done?</h3>
+      <p class="dropcap">But we should not despair. Drawing on the experiences of the two dozen former officials I interviewed, and on my own review of the history of U.S.-China relations since Nixon’s 1972 visit, here are the potential building blocks of a U.S. strategy towards China for the coming decades.</p>
+      <p>U.S. security and prosperity is enhanced with strong military alliances and trade partnerships, none more so than in the Asia-Pacific. And by bolstering global institutions, the U.S. can amplify—not diminish—its power and authority. Like the old adage instructs us: When you find yourself in a hole, the first thing to do is to stop digging. Although Beijing under Xi Jinping has become more assertive, concerted action can and will alter China’s behavior. The Trump administration’s <a href="https://foreignpolicy.com/2020/05/28/trade-deal-wto-trump/" target="_blank" rel="nofollow">attack</a> on the World Health Assembly in May, for example, missed an opportunity to rally friends and allies to push for an investigation of the outbreak of the coronavirus; instead, General Secretary Xi <a href="https://www.npr.org/sections/coronavirus-live-updates/2020/05/18/857868374/xi-defends-chinas-covid-19-actions-backs-impartial-review-of-pandemic-response" target="_blank" rel="nofollow">drove</a> the questionable narrative that China had acted responsibly in handling the disease. From dealing with North Korea to freedom of navigation operations in the South China Sea, coordinating with friends and allies will be critical to protecting shared interests. On trade, restarting full-scale negotiations with the European Union and exploring options for joining the rebranded Trans-Pacific Partnership will put Beijing on notice that its current mercantilist policies are the outlier, not the norm.</p>
+      <p>Some global and regional challenges such as financial stability, trade rules, disaster relief, and conflict mediation will require Chinese participation or acquiescence. The U.S. needs to prioritize our strategic goals, where there are overlapping interests with Beijing, and work towards coordination in both private and public messaging. The Obama administration’s ability to bring global consensus on climate change, even under strongman Xi Jinping, demonstrates what is possible. As chief climate negotiator Todd Stern <a href="https://uschinadialogue.georgetown.edu/podcasts/todd-stern" target="_blank" rel="nofollow">told</a> me, the administration identified early in its tenure the goal of addressing climate change and that China, as the world’s largest greenhouse gas emitter, would have to be brought in for a global agreement to work. At the presidential and the negotiator level, and every level in between, the U.S. pushed for Chinese action on climate both for a change in domestic policy to slow emissions and to break away from a long-held Non-Aligned <a href="https://www.c2es.org/document/chinas-strategic-priorities-in-international-climate-change-negotiations/" target="_blank" rel="nofollow">stance</a> (that is, that rich countries are to blame and should fix climate change). And the Paris Agreement, signed in 2016, reflects a Chinese policy in line with U.S. goals. Put aside the politics over climate change in the United States in evaluating this effort with China. In the end, what mostly brought Beijing to the <a href="https://journals.openedition.org/chinaperspectives/6924?file=10" target="_blank" rel="nofollow">table</a> was the toxic air choking major Chinese cities, which U.S. officials used to outline a clear U.S. policy goal (significant Chinese decreases in carbon emissions) combined with a bilateral and global diplomatic strategy (deploying the president, White House advisors, and senior diplomats) to bend Chinese policies to more align with the United States. That alignment then brought in much of the rest of the United Nations membership.</p>
+      <p>At home, the U.S. needs to continue to enact policies to protect U.S. innovation and defense technology leadership. That means careful implementation of existing legislation on national security investment screening and export controls to ensure Chinese financing stays out of projects that are central to national security and that U.S. technologies critical to the defense-industrial base do not end up in China. <a href="https://www.whitehouse.gov/presidential-actions/executive-order-securing-information-communications-technology-services-supply-chain/" target="_blank" rel="nofollow">Telecommunications</a> and <a href="https://www.whitehouse.gov/sites/whitehouse.gov/files/images/NSCI%20Strategic%20Plan_20160721.pdf.pdf" target="_blank" rel="nofollow">semiconductors</a> are two sectors rightly receiving special U.S. Government scrutiny given the reliance of military systems on those networks and technologies. But given the widespread civilian use of these technologies to power America’s greatest innovation, sensible policies will need to be flexible enough to maintain U.S. leadership without choking off the global ecosystem. The executive branch should work with Congress for additional authorities beyond existing executive orders. Beijing’s ham-fisted influence operations should be handled by targeted counter-intelligence efforts, restrictions on state-funded educational and media organizations, and criminal enforcement of violations of the Foreign Agents Registration Act. Ramped up criminal prosecutions and civil cases against theft of intellectual property will remain an important deterrent, but guardrails need to be in place to avoid stripping Chinese-Americans of their Constitutional rights or stigmatizing an entire race of people.</p>
+      <p>Protecting the rights of Chinese-Americans highlights another pillar of a winning China strategy: living our values. Writing at a time of a global pandemic, economic fragility, and social unrest here in the United States, our democratic experiment is being called into question across the globe. To enhance our standing and authority abroad, the country needs to begin to address gross income inequities, press freedoms, technology regulation, and persistent shortcomings of social justice highlighted by the Black Lives Matter movement. These are generation-long projects and need to be tackled on their own merits, but the more America can be seen as just and humble at home the more moral authority our leaders will have in undermining the CCP narrative of the decline of liberal democracies and the attraction of the China model. The more America lives its values, the more our words and policies towards Hong Kong and Xinjiang will carry true weight. The search for social justice at home could, and should, underpin our efforts around the globe to promote dignity for the underrepresented and oppressed. Chinese government efforts at mass incarceration, targeted arrests for normal religious activities or press reporting, and an international campaign to cover up those repugnant policies need to see the light of day. The U.S. Government should build the right coalition of countries to spotlight these practices and work within international bodies to ensure consistent pressure. Targeted financial sanctions on individual officials and institutions can be an effective tool if the intelligence record is clear on culpability.</p>
+      <p>And speaking out on these issues will remain important as part of a broader, completely revamped public diplomacy policy. American technology platforms are finally <a href="https://www.politico.com/news/2020/06/04/facebook-labels-state-controlled-media-trump-posts-300957" target="_blank" rel="nofollow">waking up</a> to regulating state-sponsored speech. To undercut false authoritarian narratives, the U.S. Government needs the right mix of regulating online commercial activities to protect consumers’ rights and working with platforms to promote a healthy global debate.</p>
+      <p>Finally, the U.S. will have to remain flexible on areas where international rules and norms remain under development. Currently, these issues include artificial intelligence, industrial subsidies, cybersecurity, state-sponsored media, digital trade, and data flows. The U.S. should find like-minded powers and institutions to advance shared interests. At times, that will include Beijing; other times, not. In each case, the way to determine if U.S. and Chinese objectives and goals align is to roll up our sleeves and sit down at the negotiation table, using diplomacy and presidential summits to preserve U.S. leadership, agenda-setting, and rule-writing.</p>
+      <p>The ultimate measure of U.S. strategy is not whether America can convert China into a likeness of itself, which it cannot, but rather whether persistent U.S. efforts increase safety, prosperity, and dignity for Americans and our close friends and allies. In conversations with two-dozen former officials, they have explained that even in periods of confrontation and differing ideology, the U.S. can advance its interests through patient preparation and diplomacy. Ambassador Jeffrey Bader, with a career in the State Department working on China, a stint handling China’s WTO accession at USTR, and two tours in the White House handling Asia, <a href="https://uschinadialogue.georgetown.edu/podcasts/jeffrey-bader-part-two" target="_blank" rel="nofollow">put it</a> this way:</p>
+      <blockquote>
+        <p>I think the first thing that we need to do is the U.S. needs to commit itself to the international system and to multilateral decision-making. If the U.S. does not, as [the Trump] administration does not, we’re leaving the door open for China to be a Rule Maker with a capital R and a capital M. If we’re at the table, and we’re involved, and we’re putting forward serious proposals, then they are naturally going to get traction with others. If we’ve just taken a hike and either withdrawn from the organization completely or made clear our disdain for the organization, then countries in that organization all look to others for guidance about the future.</p>
+      </blockquote>
+      <p>On issues from armed conflict to cybersecurity, from climate change to market access, working in conjunction with allies to challenge, engage, and shape Beijing’s choices can lead to better outcomes for Americans and the world. Many around the globe are looking to U.S. leadership in this endeavor; would that we are wise enough to accept the challenge.</p>
+      <p>Since Nixon’s breakthrough trip to Beijing in 1972, the world has changed. China has changed. The United States has changed. But as long as the CCP leadership sits in Zhongnanhai, the U.S. should harness those decades of experience to assemble the right set of policies to advance American and global interests. In the end, that will prove more fruitful than decisions made to make ourselves feel good—or even righteous—but that actually diminish our ability to rally allies and limit CCP assertiveness.<span class="cube"></span></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-09-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-17/Europe-and-China-s-Virtual-Summit/">
+          Europe and China’s ‘Virtual Summit’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-09-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-17/Could-Same-Sex-Marriage-Advocacy-in-China-Be-Poise/">
+          Could Same-Sex Marriage Advocacy in China Be Poised for a Breakthrough?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/">
+          The Future of China Studies in the U.S.
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/">
+          The Future of China Studies in the U.S.
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-09-09/%E6%82%A8%E5%9C%A8%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E9%9C%80%E8%A6%81%E5%81%87%E5%90%8D-%E5%8C%BF%E5%90%8D%E5%92%8C%E5%85%AC%E5%BC%80%E5%9C%A8%E7%BA%BF%E8%BA%AB%E4%BB%BD-%E5%9C%A8%E7%BA%BF%E5%88%9B%E5%BB%BA%E5%92%8C%E7%AE%A1%E7%90%86%E8%BA%AB%E4%BB%BD%E7%9A%84%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F-iYouPort/">
+            前一篇：您在什么时候需要假名、匿名和公开在线身份？- 在线创建和管理身份的思考方式 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-09-10/%E5%9F%8E%E5%B8%82%E9%87%8C%E6%89%BE%E6%95%85%E4%B9%A1-%E4%BD%9C%E5%AE%B6%E6%9E%97%E5%9F%B9%E6%BA%90%E5%9C%A8%E6%83%B3%E8%B1%A1%E4%B8%AD%E5%BA%A6%E8%BF%87%E4%BA%86%E8%AE%B8%E5%A4%9A%E5%B9%B4/">
+            後一篇：城市里找故乡，作家林培源在想象中度过了许多年
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-09-09/%E6%82%A8%E5%9C%A8%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E9%9C%80%E8%A6%81%E5%81%87%E5%90%8D-%E5%8C%BF%E5%90%8D%E5%92%8C%E5%85%AC%E5%BC%80%E5%9C%A8%E7%BA%BF%E8%BA%AB%E4%BB%BD-%E5%9C%A8%E7%BA%BF%E5%88%9B%E5%BB%BA%E5%92%8C%E7%AE%A1%E7%90%86%E8%BA%AB%E4%BB%BD%E7%9A%84%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-09-10/%E5%9F%8E%E5%B8%82%E9%87%8C%E6%89%BE%E6%95%85%E4%B9%A1-%E4%BD%9C%E5%AE%B6%E6%9E%97%E5%9F%B9%E6%BA%90%E5%9C%A8%E6%83%B3%E8%B1%A1%E4%B8%AD%E5%BA%A6%E8%BF%87%E4%BA%86%E8%AE%B8%E5%A4%9A%E5%B9%B4/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-09-17/Could-Same-Sex-Marriage-Advocacy-in-China-Be-Poise/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-09-09/%E6%82%A8%E5%9C%A8%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E9%9C%80%E8%A6%81%E5%81%87%E5%90%8D-%E5%8C%BF%E5%90%8D%E5%92%8C%E5%85%AC%E5%BC%80%E5%9C%A8%E7%BA%BF%E8%BA%AB%E4%BB%BD-%E5%9C%A8%E7%BA%BF%E5%88%9B%E5%BB%BA%E5%92%8C%E7%AE%A1%E7%90%86%E8%BA%AB%E4%BB%BD%E7%9A%84%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-09-10/%E5%9F%8E%E5%B8%82%E9%87%8C%E6%89%BE%E6%95%85%E4%B9%A1-%E4%BD%9C%E5%AE%B6%E6%9E%97%E5%9F%B9%E6%BA%90%E5%9C%A8%E6%83%B3%E8%B1%A1%E4%B8%AD%E5%BA%A6%E8%BF%87%E4%BA%86%E8%AE%B8%E5%A4%9A%E5%B9%B4/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-09-17/Could-Same-Sex-Marriage-Advocacy-in-China-Be-Poise/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-08-27/The-Future-of-China-Studies-in-the-U.S/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

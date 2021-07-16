@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序
+——
+" />
+    <meta property="og:description" content="
+看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序" />
+    <meta property="twitter:title" content="看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40az%2F%2525E7%25259C%25258B%2525E8%2525A6%25258B%2525E9%2525A6%252599%2525E6%2525B8%2525AF-%2525E6%2525B2%252592%2525E6%25259C%252589%2525E4%2525BB%252580%2525E9%2525BA%2525BC%2525E6%252598%2525AF%2525E7%252590%252586%2525E6%252589%252580%2525E6%252587%252589%2525E7%252595%2525B6%2525E7%25259A%252584-%2525E7%2525B5%2525A6-%2525E9%2525A6%252599%2525E6%2525B8%2525AF%2525E7%2525AC%2525AC%2525E4%2525B8%252580%2525E8%2525AA%2525B2-%2525E7%25259A%252584%2525E5%252587%2525BA%2525E7%252589%252588%2525E5%2525BA%25258F-zdpuAmK7Rr8Gs5vBk8Go3U3MDCVJEZTxNiBLgVu5cmFAQAoRY" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@az/%25E7%259C%258B%25E8%25A6%258B%25E9%25A6%2599%25E6%25B8%25AF-%25E6%25B2%2592%25E6%259C%2589%25E4%25BB%2580%25E9%25BA%25BC%25E6%2598%25AF%25E7%2590%2586%25E6%2589%2580%25E6%2587%2589%25E7%2595%25B6%25E7%259A%2584-%25E7%25B5%25A6-%25E9%25A6%2599%25E6%25B8%25AF%25E7%25AC%25AC%25E4%25B8%2580%25E8%25AA%25B2-%25E7%259A%2584%25E5%2587%25BA%25E7%2589%2588%25E5%25BA%258F-zdpuAmK7Rr8Gs5vBk8Go3U3MDCVJEZTxNiBLgVu5cmFAQAoRY" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@az/%25E7%259C%258B%25E8%25A6%258B%25E9%25A6%2599%25E6%25B8%25AF-%25E6%25B2%2592%25E6%259C%2589%25E4%25BB%2580%25E9%25BA%25BC%25E6%2598%25AF%25E7%2590%2586%25E6%2589%2580%25E6%2587%2589%25E7%2595%25B6%25E7%259A%2584-%25E7%25B5%25A6-%25E9%25A6%2599%25E6%25B8%25AF%25E7%25AC%25AC%25E4%25B8%2580%25E8%25AA%25B2-%25E7%259A%2584%25E5%2587%25BA%25E7%2589%2588%25E5%25BA%258F-zdpuAmK7Rr8Gs5vBk8Go3U3MDCVJEZTxNiBLgVu5cmFAQAoRY&text=看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@az/%25E7%259C%258B%25E8%25A6%258B%25E9%25A6%2599%25E6%25B8%25AF-%25E6%25B2%2592%25E6%259C%2589%25E4%25BB%2580%25E9%25BA%25BC%25E6%2598%25AF%25E7%2590%2586%25E6%2589%2580%25E6%2587%2589%25E7%2595%25B6%25E7%259A%2584-%25E7%25B5%25A6-%25E9%25A6%2599%25E6%25B8%25AF%25E7%25AC%25AC%25E4%25B8%2580%25E8%25AA%25B2-%25E7%259A%2584%25E5%2587%25BA%25E7%2589%2588%25E5%25BA%258F-zdpuAmK7Rr8Gs5vBk8Go3U3MDCVJEZTxNiBLgVu5cmFAQAoRY&title=看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@az/%25E7%259C%258B%25E8%25A6%258B%25E9%25A6%2599%25E6%25B8%25AF-%25E6%25B2%2592%25E6%259C%2589%25E4%25BB%2580%25E9%25BA%25BC%25E6%2598%25AF%25E7%2590%2586%25E6%2589%2580%25E6%2587%2589%25E7%2595%25B6%25E7%259A%2584-%25E7%25B5%25A6-%25E9%25A6%2599%25E6%25B8%25AF%25E7%25AC%25AC%25E4%25B8%2580%25E8%25AA%25B2-%25E7%259A%2584%25E5%2587%25BA%25E7%2589%2588%25E5%25BA%258F-zdpuAmK7Rr8Gs5vBk8Go3U3MDCVJEZTxNiBLgVu5cmFAQAoRY&title=看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序&body=
+看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@az/%25E7%259C%258B%25E8%25A6%258B%25E9%25A6%2599%25E6%25B8%25AF-%25E6%25B2%2592%25E6%259C%2589%25E4%25BB%2580%25E9%25BA%25BC%25E6%2598%25AF%25E7%2590%2586%25E6%2589%2580%25E6%2587%2589%25E7%2595%25B6%25E7%259A%2584-%25E7%25B5%25A6-%25E9%25A6%2599%25E6%25B8%25AF%25E7%25AC%25AC%25E4%25B8%2580%25E8%25AA%25B2-%25E7%259A%2584%25E5%2587%25BA%25E7%2589%2588%25E5%25BA%258F-zdpuAmK7Rr8Gs5vBk8Go3U3MDCVJEZTxNiBLgVu5cmFAQAoRY" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@az/%25E7%259C%258B%25E8%25A6%258B%25E9%25A6%2599%25E6%25B8%25AF-%25E6%25B2%2592%25E6%259C%2589%25E4%25BB%2580%25E9%25BA%25BC%25E6%2598%25AF%25E7%2590%2586%25E6%2589%2580%25E6%2587%2589%25E7%2595%25B6%25E7%259A%2584-%25E7%25B5%25A6-%25E9%25A6%2599%25E6%25B8%25AF%25E7%25AC%25AC%25E4%25B8%2580%25E8%25AA%25B2-%25E7%259A%2584%25E5%2587%25BA%25E7%2589%2588%25E5%25BA%258F-zdpuAmK7Rr8Gs5vBk8Go3U3MDCVJEZTxNiBLgVu5cmFAQAoRY&title=看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序&caption=
+看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序&url=https://matters.news/@az/%25E7%259C%258B%25E8%25A6%258B%25E9%25A6%2599%25E6%25B8%25AF-%25E6%25B2%2592%25E6%259C%2589%25E4%25BB%2580%25E9%25BA%25BC%25E6%2598%25AF%25E7%2590%2586%25E6%2589%2580%25E6%2587%2589%25E7%2595%25B6%25E7%259A%2584-%25E7%25B5%25A6-%25E9%25A6%2599%25E6%25B8%25AF%25E7%25AC%25AC%25E4%25B8%2580%25E8%25AA%25B2-%25E7%259A%2584%25E5%2587%25BA%25E7%2589%2588%25E5%25BA%258F-zdpuAmK7Rr8Gs5vBk8Go3U3MDCVJEZTxNiBLgVu5cmFAQAoRY" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-01-02
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 張潔平</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@az/%25E7%259C%258B%25E8%25A6%258B%25E9%25A6%2599%25E6%25B8%25AF-%25E6%25B2%2592%25E6%259C%2589%25E4%25BB%2580%25E9%25BA%25BC%25E6%2598%25AF%25E7%2590%2586%25E6%2589%2580%25E6%2587%2589%25E7%2595%25B6%25E7%259A%2584-%25E7%25B5%25A6-%25E9%25A6%2599%25E6%25B8%25AF%25E7%25AC%25AC%25E4%25B8%2580%25E8%25AA%25B2-%25E7%259A%2584%25E5%2587%25BA%25E7%2589%2588%25E5%25BA%258F-zdpuAmK7Rr8Gs5vBk8Go3U3MDCVJEZTxNiBLgVu5cmFAQAoRY" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1577961278000-->
+<p><a href="https://matters.news/@az/%25E7%259C%258B%25E8%25A6%258B%25E9%25A6%2599%25E6%25B8%25AF-%25E6%25B2%2592%25E6%259C%2589%25E4%25BB%2580%25E9%25BA%25BC%25E6%2598%25AF%25E7%2590%2586%25E6%2589%2580%25E6%2587%2589%25E7%2595%25B6%25E7%259A%2584-%25E7%25B5%25A6-%25E9%25A6%2599%25E6%25B8%25AF%25E7%25AC%25AC%25E4%25B8%2580%25E8%25AA%25B2-%25E7%259A%2584%25E5%2587%25BA%25E7%2589%2588%25E5%25BA%258F-zdpuAmK7Rr8Gs5vBk8Go3U3MDCVJEZTxNiBLgVu5cmFAQAoRY">看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序</a>
+——</p>
+
+<div>
+  <p>【寫在前面：2019年5月，Matters剛剛上線正式版本，開放封測，這時登陸的是好久沒來的梁啟智，帶著他過去八年在香港中文大學給內地生講香港通識課的課堂筆記，總共有15萬字。這系列筆記，致力於讓陌生人從零認識香港，啟智說，Matters上好像有許多大陸和台灣的寫作者，也許適合在這裡連載試試看。我說，當然好啊！我們的IPFS節點還可以傳到墻那邊去blabla（此處略去2000字自我宣傳）……認識啟智好像有超過十年了，一直以來，知道他在中港之間溝通的努力，知道他明白，無論從哪一邊的立場出發，兩地日積月累的相互理解，是避免極端悲劇發生的重要承托。歷史在發生，他的努力也一直孜孜不倦，屢敗屢戰。他5月開始在Matters連載《香港第一課》，幾乎是每天一篇的速度，整整發了三十多篇，並真的透過各種分佈式節點，以難以想象的龐大數量，傳到大陸的簡體字讀者。在Matters潛水的春山出版社總編輯莊瑞琳，在香港事態愈發激烈之時，決定將這系列文字出版成書，感謝她，讓《香港第一課》從網絡平台走進實體世界。這一篇，是應出版社之邀給《香港第一課》寫的推薦序。關注 Matters 的朋友應該知道，梁啟智的書問題意識和結構都很清楚，可能也看過了他的連載，這一篇，是寫給還不知道的朋友，謝謝你的時間。】</p>
+  <p>書2020年1月7日上市，封面選了攝影師林亦非的照片，這裡是<a href="https://www.books.com.tw/products/0010844637?loc=P_0005_002&amp;fbclid=IwAR00fN55mIoo4LNy2OldF9sAlsjGjr5nsrnOYEFkQJZbgVmrZ-szDn9jv2w" target="_blank">購買鏈接</a>。</p>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/cd5a0ebe-951f-428b-91f7-4a803c2b8ab7.webp" onerror="this.srcset='https://assets.matters.news/embed/cd5a0ebe-951f-428b-91f7-4a803c2b8ab7.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/cd5a0ebe-951f-428b-91f7-4a803c2b8ab7.jpeg" onerror="this.srcset='https://assets.matters.news/embed/cd5a0ebe-951f-428b-91f7-4a803c2b8ab7.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/cd5a0ebe-951f-428b-91f7-4a803c2b8ab7.webp" /> <img src="https://assets.matters.news/embed/cd5a0ebe-951f-428b-91f7-4a803c2b8ab7.jpeg" srcset="https://assets.matters.news/processed/540w/embed/cd5a0ebe-951f-428b-91f7-4a803c2b8ab7.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>香港第一課，曾連載於Matters平台，梁啟智著，2020年1月7日由春山出版社出版面世</span>
+    </figcaption>
+  </figure>
+  <p>《看見香港，沒有什麼是理所應當的》</p>
+  <p>香港故事不易講。這些年，遇到每一個香港的書寫者、研究者，大約都會聽到這樣的說法。當然，每片土地都有自己複雜糾纏的歷史，講清楚都不容易。而香港的困難之處，更在於，將它視為他者，爭先恐後根據自己的需要，對它進行理所應當論斷的人，太多了，故事版本也太多了。</p>
+  <p>如作家也斯在1995年出版的文集《香港文化》中所說：「每個人都在說，說一個不同的故事。到頭來，我們唯一可以肯定的，是那些不同的故事，不一定告訴我們關於香港的事，而是告訴了我們那個說故事的人，告訴了我們他站在什麼位置說話。」</p>
+  <p>這些不同位置，產生了許多不同版本的香港。</p>
+  <p>「荒島漁村──華人難民社會──亞洲四小龍經濟起飛──國際大都會」，這是最早來自英國人的經典版本香港故事，也最為世人熟知和接受。故事的重點是，相比起中國大陸經歷的戰爭、文革等種種政治動盪，強調香港在英國管治下繁榮穩定。</p>
+  <p>「勤勞勇敢的香港同胞，在百年歷史中反英抗殖，戰亂中承載華夏文化火種，八十年代背靠祖國改革開放，華麗轉身經濟發展，血濃於水歡慶回歸，二十一世紀盡享中國崛起紅利。」這是中國版本的香港故事，也是絕大多數中國人所模糊認知的香港——直到2019年，這個印象被以更深的誤讀所打破。</p>
+  <p>英國殖民者想以香港來合理化殖民統治，中華民族主義者則要以香港終結自身的百年屈辱史。兩個故事的交鋒，貫穿了八十年代中英談判至一九九七香港回歸。而後，英國版本的敘事以集體回憶、文化懷舊的方式繼續流傳，中國版本則深入回歸後的建制工程，成為各類推動中港融合項目的敘事基礎。</p>
+  <p>在這兩者之外，香港自身主體性經歷主權移交而甦醒，由「高度自治」的承諾而伸展，隨著這種伸展，新的敘事線，也在年輕世代中慢慢發展出來——一個更從本土出發的香港故事。當香港人的主體性，在陰晴不定、警惕保守的大國身邊無處安放，並在日常經驗中頻頻收到被粗暴壓制的感受時；香港故事的本土版本，也與在主流建制話語裡主導的中國版本，發生愈發激烈的衝突。</p>
+  <p>甚至可以說，這一個在九七之後逐漸長出的香港本土敘事，從一開始，就蘊含著與英國版本和中國版本的對抗，並在對抗中，分裂成為不同的方向，衍生出各種不同的香港本土故事版本。這種對抗的動力，另一方面，也逼迫人們往前追尋，所謂「自古以來」的香港，到底是什麼樣？所謂「獅子山精神」的刻板印象，到底遮掩了什麼樣真實的歷史脈絡？如果要建立一個從香港人視角出發的香港故事，怎樣持平地審視這一百年香港在全球化、冷戰與中國故事中的角色？</p>
+  <p>在中學歷史科幾乎不教本地歷史的香港，要在與強勢官方主流敘事的對抗中，重新審視自我，本就困難。如社會學者呂大樂說，九七之前，香港故事不易講，九七之後，千頭萬緒，不知從何說起。文學的隱喻比歷史好用。而在現實裡，香港失語，或是講不出自己故事的焦慮，一直都在。</p>
+  <p>更不必說，2014年之後，香港的民主運動愈演愈烈，到了2019年，在普選無望、新聞自由與司法獨立又均受到北京威脅的情況下，香港再爆發抗爭：由反對修訂逃犯條例開始的百萬人遊行，激化為蔓延全城的不合作運動，持續半年，超過五千人被捕，無數人受傷，至今未有停止。另一邊，北京則動員了全國的輿論宣傳機器，持續、強力推動對香港正在發生的事件、以及背後深層原因的歪曲、抹黑與誤導，也成功地令這樣一場在香港歷史中影響深遠的運動，以極為片面、扭曲、激化矛盾，甚至是引發仇恨的方式，被大陸民眾接收。至此，在香港故事的中國版本與本土版本之間，已經勢同水火，而真實的香港，在資訊戰的炮火中，變得越來越破碎，難以辨識。</p>
+  <p>我很喜歡一個美國作家 Parker Palmer 說：“The human soul doesn’t want to be advised or fixed or saved. It simply wants to be witnessed, exactly as it is.” 人類的靈魂不想被建議、修補或是拯救，他們只希望能以現在的模樣被見證。這裡的 “human” 換成 “city” “community” 也一樣。</p>
+  <p>曾處在社會邊緣、經歷壓迫與痛苦的人，知道看見的力量。被平等的看見，被看見者才能得自由。一個群體也是一樣，香港所真實經歷的，需要被看見。而被看見的基礎，是找到自我述說的基礎、方法與能量。</p>
+  <p>這是為什麼，這一本《香港第一課》如此重要。</p>
+  <p>這本書的作者梁啟智在香港中文大學任教，他花了八年時間，開一門認識香港的通識課，專門講給從大陸到香港唸書的陸生聽。這本書，就是他八年在課堂上，與初來乍到的大陸學生的分享、對話中，積累、迭代出的十五萬字課堂筆記。課的問題意識很清晰：如果你對香港一無所知，甚至，還帶著一些偏見，我該從哪裡開始跟你慢慢講，並讓你能明白，香港人的香港故事？</p>
+  <p>跟梁啟智一樣，我也在大學兼職教碩士班，我的班上絕大多數的同學，也是剛來香港不過月餘的大陸學生。跟梁啟智不同的是，我自己也來自中國大陸，大致知道中港兩地的溝通落差，知道那些落差多年積累的成因，和在各自社會的語境是如何發酵成厚厚的偏見。在我的課上，我也盡可能透過一個一個具體的事例，想讓他們穿過心裡的敵意與偏見，首先長出對香港的好奇心。看見一個人，一座城，在同理心之前，首先是好奇心，在好奇心之前，首先是盡可能破除已有的偏見，明白一切不是理所當然，承認自己其實茫然無知。</p>
+  <p>因為嘗試過這樣的溝通，所以明白，梁啟智的課堂筆記有效性正是在此：它不是一個需要你耐心進入的歷史論述，也不是一個以情動人的感人故事，而一個曉之以理、逐層破冰的溝通過程。梁啟智並沒有從鴉片戰爭一直寫到反送中運動，這樣去寫香港，而是首先從觀者心中會有的偏見入手，從36個直中要害、常常被問的問題入手，在回答中，慢慢展開香港歷史與社會政治的脈絡。</p>
+  <p>2019年5月開始，他在創作平台 matters.news 上開始連載自己的課程筆記，起了《香港第一課》這個名字。很快便引起了平台上大陸與台灣讀者的興趣，幾個月下來，積累了百萬以上的點閱與傳播量。更有熱心讀者，把他的連載轉成簡體，搬運到微博，作為對經典問題的回應：</p>
+  <p>「為什麼九七後的香港人更抗拒中國大陸？」「為什麼香港人在九七後才忽然熱衷爭取民主？」「為什麼香港人不集中力量發展經濟，而在認同問題上糾纏？」「為什麼外國政府常常對香港問題說三道四？」「為什麼行政長官選舉會被批評為假選舉？」「為什麼行政長官和特區政府總是民望低落？」「英國人留下來的制度為何九七後就行不通？」「為什麼香港一天到晚都有示威遊行？」「為什麼香港警察近年屢受批評？」「為什麼香港的抗爭近年越來越暴力激進？」「普選可以解決香港所有問題嗎？」「一國兩制還有將來嗎？」……</p>
+  <p>很多問題，沒有絕對的答案。回答完這些問題，也無法立刻建立一個完整的香港故事。但在2019年，巨大的抗爭風暴正在改寫歷史的當下，或者我們可以先放下對激烈畫面的期待，放下對這座城市固有的想象、判斷，放下很多我們以為的理所當然，回到最基本的問題，去嘗試看見香港。</p>
+  <p>謝謝春山出版社與梁啟智，這系列筆記的成書出版，就站在看見的起點。</p>
+  <p>張潔平（Matters 創作平台發起人）</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-01-21</time>
+        <a href="https://nodebe4.github.io/oped2/2020-01-21/2003%E5%B9%B4%E9%A6%99%E6%B8%AFSARS%E5%A4%A7%E4%BA%8B%E8%A8%98/">
+          2003年香港SARS大事記
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-01-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-01-03/%E7%9B%AE%E5%85%89%E7%9A%84%E6%96%B9%E5%AF%B8%E4%B9%8B%E9%96%93-%E5%A5%B9%E5%80%91%E7%9A%84%E6%84%9B-%E5%B9%B3%E7%AD%89%E8%88%87%E8%87%AA%E7%94%B1/">
+          目光的方寸之間，她們的愛、平等與自由
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-12-31</time>
+        <a href="https://nodebe4.github.io/oped2/2019-12-31/%E4%B8%8D%E6%95%A2%E5%9B%9E%E7%AD%94%E7%9A%84%E5%95%8F%E5%8D%B7-2019%E5%B9%B4%E6%84%8F%E5%91%B3%E8%91%97%E4%BB%80%E9%BA%BC/">
+          不敢回答的問卷：2019年意味著什麼？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-11-18</time>
+        <a href="https://nodebe4.github.io/oped2/2019-11-18/%E6%A5%B5%E9%99%90%E6%99%82%E5%88%BB-%E9%A6%99%E6%B8%AF%E8%AE%8A%E5%B1%80%E9%80%B2%E5%85%A5%E6%9C%80%E9%97%9C%E9%8D%B5%E4%B8%80%E5%91%A8/">
+          極限時刻：香港變局進入最關鍵一周
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2019-12-31/%E5%85%A8%E5%9B%BD-2019-%E5%B9%B4%E5%8D%96%E5%9C%B0%E6%94%B6%E5%85%A5%E5%88%B7%E6%96%B0%E5%8E%86%E5%8F%B2%E7%BA%AA%E5%BD%95/">
+            前一篇：全国 2019 年卖地收入刷新历史纪录
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-01-02/%E9%83%AD%E7%BE%8E%E7%BE%8E-%E5%AF%B9%E4%B8%8D%E8%B5%B7-%E8%BF%99%E5%8F%A5%E8%AF%9D%E6%AC%A0%E5%A4%A7%E5%AE%B6%E5%BE%88%E5%A4%9A%E5%B9%B4%E4%BA%86/">
+            後一篇：郭美美：「对不起！这句话欠大家很多年了」
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2019-12-31/%E5%85%A8%E5%9B%BD-2019-%E5%B9%B4%E5%8D%96%E5%9C%B0%E6%94%B6%E5%85%A5%E5%88%B7%E6%96%B0%E5%8E%86%E5%8F%B2%E7%BA%AA%E5%BD%95/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-01-02/%E9%83%AD%E7%BE%8E%E7%BE%8E-%E5%AF%B9%E4%B8%8D%E8%B5%B7-%E8%BF%99%E5%8F%A5%E8%AF%9D%E6%AC%A0%E5%A4%A7%E5%AE%B6%E5%BE%88%E5%A4%9A%E5%B9%B4%E4%BA%86/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-01-03/%E7%9B%AE%E5%85%89%E7%9A%84%E6%96%B9%E5%AF%B8%E4%B9%8B%E9%96%93-%E5%A5%B9%E5%80%91%E7%9A%84%E6%84%9B-%E5%B9%B3%E7%AD%89%E8%88%87%E8%87%AA%E7%94%B1/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2019-12-31/%E4%B8%8D%E6%95%A2%E5%9B%9E%E7%AD%94%E7%9A%84%E5%95%8F%E5%8D%B7-2019%E5%B9%B4%E6%84%8F%E5%91%B3%E8%91%97%E4%BB%80%E9%BA%BC/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2019-12-31/%E5%85%A8%E5%9B%BD-2019-%E5%B9%B4%E5%8D%96%E5%9C%B0%E6%94%B6%E5%85%A5%E5%88%B7%E6%96%B0%E5%8E%86%E5%8F%B2%E7%BA%AA%E5%BD%95/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-01-02/%E9%83%AD%E7%BE%8E%E7%BE%8E-%E5%AF%B9%E4%B8%8D%E8%B5%B7-%E8%BF%99%E5%8F%A5%E8%AF%9D%E6%AC%A0%E5%A4%A7%E5%AE%B6%E5%BE%88%E5%A4%9A%E5%B9%B4%E4%BA%86/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-01-03/%E7%9B%AE%E5%85%89%E7%9A%84%E6%96%B9%E5%AF%B8%E4%B9%8B%E9%96%93-%E5%A5%B9%E5%80%91%E7%9A%84%E6%84%9B-%E5%B9%B3%E7%AD%89%E8%88%87%E8%87%AA%E7%94%B1/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2019-12-31/%E4%B8%8D%E6%95%A2%E5%9B%9E%E7%AD%94%E7%9A%84%E5%95%8F%E5%8D%B7-2019%E5%B9%B4%E6%84%8F%E5%91%B3%E8%91%97%E4%BB%80%E9%BA%BC/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

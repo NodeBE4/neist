@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>下沉年代：后冷战时代的“美国梦”是如何走向破碎的？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+下沉年代：后冷战时代的“美国梦”是如何走向破碎的？
+——
+" />
+    <meta property="og:description" content="
+下沉年代：后冷战时代的“美国梦”是如何走向破碎的？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="下沉年代：后冷战时代的“美国梦”是如何走向破碎的？" />
+    <meta property="twitter:title" content="下沉年代：后冷战时代的“美国梦”是如何走向破碎的？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60bc45f49264dc39f289ee88" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60bc45f49264dc39f289ee88" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60bc45f49264dc39f289ee88&text=下沉年代：后冷战时代的“美国梦”是如何走向破碎的？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60bc45f49264dc39f289ee88&title=下沉年代：后冷战时代的“美国梦”是如何走向破碎的？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60bc45f49264dc39f289ee88&title=下沉年代：后冷战时代的“美国梦”是如何走向破碎的？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=下沉年代：后冷战时代的“美国梦”是如何走向破碎的？&body=
+下沉年代：后冷战时代的“美国梦”是如何走向破碎的？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60bc45f49264dc39f289ee88" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60bc45f49264dc39f289ee88&title=下沉年代：后冷战时代的“美国梦”是如何走向破碎的？&caption=
+下沉年代：后冷战时代的“美国梦”是如何走向破碎的？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=下沉年代：后冷战时代的“美国梦”是如何走向破碎的？&url=https://www.allnow.com/post/60bc45f49264dc39f289ee88" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>下沉年代：后冷战时代的“美国梦”是如何走向破碎的？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-06
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 任其然</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60bc45f49264dc39f289ee88" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60bc45f49264dc39f289ee88">下沉年代：后冷战时代的“美国梦”是如何走向破碎的？</a>
+——</p>
+
+<div>
+  <p>在1994年上映的好莱坞经典《阿甘正传》里，阿拉巴马小镇出身的阿甘经历了战后美国的一系列重大历史时刻：肯尼迪遇刺、越战、民权运动、水门事件、中美建交……遇到困境时，阿甘多次回到阿拉巴马的老宅。南方乡下生活，给他温暖和安全。在剧情最后，阿甘目送着自己的孩子登上去学校的巴士，开巴士的居然还是当年阿甘上学时的司机。</p>
+  <p>某种程度上，《阿甘正传》折射的是二十世纪美国乃至全球的梦——一切都变了，从总统到政党到世界都变了，可家乡的一切，乃至校车司机，都没变。人们总是期待着家乡是可以随时回归的。在那里，生活没有一波三折的变化，人与人之间没有那么多复杂的情感与愿望，这个家稳定而舒适地予人慰藉。</p>
+  <p>之所以说这是一个梦境，是因为这样的故乡早已在席卷一切的巨大变化面前七零八落。像是经历了一场无声的战争，一切天翻地覆。这个天地翻覆的过程，却一度悄然无声。所幸，曾供职于《纽约客》，长期报道中东战地的美国记者乔治·帕克 （George Packer），把这场巨变记录在他书写美国社会的非虚构作品《下沉年代》里。</p>
+  <p><strong>时代的潜流：十年前对美国社会的预见</strong></p>
+  <p>《下沉年代》，诞生在2010年代初。彼时，唐纳德·特朗普还只是一个被人们嘲讽的真人秀红人。第一位黑人总统奥巴马刚刚赢下第二个任期，最高法院的判决扩大着性少数群体的权益。经历了2008年金融危机的大震荡，那时奥巴马与民主党人发现，正在崛起的激进右派“茶党”已经开始取代共和党建制派成为一股强大的力量。但在那个年代，人们还远未如今日般悲观，也少有记者去书写许多社会边缘人的生活——美国锈带、南方农村和大城市贫民——后来，他们被当做特朗普横空出世的必要背景，在特朗普当选之后填充起了书架。但2013年《下沉年代》出版时，畅销书榜单上还流行着二战史、心理学与名人传记。这更显得帕克预先嗅到了时代的气息——尽管，这本书的中文版有些姗姗来迟了。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-06/60bc46669c232e01c17d1855+L.jpg" data-id="60bc466bab4ffd0cef1c4a7b" alt="《下沉年代》，[美]乔治·帕克著，刘冉译，新经典丨文汇出版社2021年1月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《下沉年代》，[美]乔治·帕克著，刘冉译，新经典丨文汇出版社2021年1月版
+    </figcaption>
+  </figure>
+  <p>作为一名国际新闻与战地记者，帕克长年置身海外，采访美国在中东的战事。后来帕克对媒体回忆说，是2003年的伊拉克战争，让他体会到了美国这个国度中正在蔓延的“unwinding”趋势。“unwinding”这个词可以翻译成“解绑”。在《下沉年代》里，它更多是描述这样一种感觉——曾经的连接、框架、坚固之物，都慢慢化开、散解，进而不复存在。</p>
+  <p>《下沉年代》里，帕克花了许多篇幅写一位黑人母亲。这位叫做塔米·托马斯的女性，出生于俄亥俄州的重工业城市扬斯顿。在上世纪五六十年代，这个煤矿和钢铁工业发达的城市有着庞大的产业工人社群。工人几乎是终身雇佣的，只要在厂里的年限够久，他们就可以期待稳定的家庭生活与不差的退休待遇。“工厂闷热而肮脏，会压垮你的身体和精神，但它的工资和养老金代表美国经济生活的黄金时代。”塔米的长辈为企业家家庭做佣工，期待着自己的后代能够读完书进入工厂，获得稳定生计。但等到塔米一代，工厂开始把产业迁出美国。1980年之后，工厂关门的大潮到来了。塔米目睹了城市街区一个接一个地空置，变为帮派枪战和火拼的舞台。人口从高峰期的16万人降到7万以下，维持稳定生活成为了一种奢望。在向塔米求婚的当天，她的未婚夫因为一场口角在街角被人枪杀。</p>
+  <p>在塔米出生的时刻，扬斯顿是最典型的美国战后生活写照。延续着罗斯福的“新政”模式，就业稳定，出口旺盛。美国是世界上最大的出口国，马歇尔计划将重建中的欧洲大陆变为美国汽车、农副产品和工业品的大市场。在美国国内，白人中产向城郊移动。典范的生活是男人外出工作，女人在家做家庭主妇。地产商修建千篇一律的城郊带花园住宅。而在城市中央，工人阶级和非白人都能得到质量尚可的公立教育。事实上，这种生活非常乏味，以至于“在路上”成为1950年代后期青年人趋之若鹜的文学浪潮。但这样的生活，又充满确定感——不光是稳定的工作和稳定的生活，战后的总体和平和冷战下科技的飞速发展，也让人心甘情愿地相信未来总比当下更好。整整一代美国人，曾经都认为生活仿若永恒。就算是到了1990年代，《阿甘正传》仍然回味着那个时代。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-06/60bc46839c232e01c17d1856+L.jpg" data-id="60bc46888717253efd7e2d94" alt="《阿甘正传》海报" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《阿甘正传》海报
+    </figcaption>
+  </figure>
+  <p><strong>冷战后的美利坚生活：冒险的黑暗丛林</strong></p>
+  <p>无独有偶又多少有些讽刺的是，从冷战之后的世界回望：美国和苏联，尽管一个是冷战的胜者，一个是冷战的输家，却在一件事情上殊途同归了——曾经被相信是永恒的生活方式都瓦解了。俄罗斯人类学家阿列克谢·尤尔察克（Alexei Yurchak）曾用一句话描述苏联人冷战后的心态——“一切都是永恒，直到什么都没了。”曾几何时，人们都认为一种现代的生活模式可以代代相传，他们以这种心态安排未来，抚养子女，然而看似坚固的日常却比人的血肉更快倒下、解体、崩盘。</p>
+  <p>就在冷战结束的当夜，1991年12月25日，时任美国总统老布什发表了一段如今已经被遗忘的讲话。他宣告美国的胜利。正如那时候许多苏联人期待联盟解体之后的未来，老布什也向美国人形容了一幅冷战之后的美好画面：“这是我们道德力量和价值的胜利。每个美国人都应该为之自豪”，“今晚我们站在一个对我们的孩子而言充满希望和可能性的新世界面前。”</p>
+  <p>但历史开了个玩笑。苏联解体终结了“苏维埃人”，美国人却也并不是胜利者。同样在冷战结束后寿终正寝的，也包括了战后一代美国人的生活。也许，我们可以把这种生活模式称之为“美利坚人”。从1970年代开始，“美利坚人”的生活彻底沦陷了。帕克写《下沉时代》的野心之一，就是用一个又一个个体人物的历史，去叙述“美利坚人”的衰落和失败。</p>
+  <p>这其中最有代表性的人物，莫过于硅谷巨头之一的彼得·蒂尔（Peter Andreas Thiel）。蒂尔是在线支付平台PayPal的创始人之一，1967年出生在一个中产阶级家庭。帕克笔下的蒂尔，其童年浸润在“美利坚人”的稳定生活里：在公立学校接受教育，周围是浓郁的中产阶级氛围，一路考上名校。放到今天，完全可以说他是一个“鸡娃”。上大学之后，蒂尔和很多白人男性一样看不惯高涨的民权浪潮，开始投身自由意志主义新右翼运动。帕克描述到，蒂尔和他的圈子中的许多人一样，痴迷于自由意志主义，反对国家和政府监管，主张在未来互联网会瓦解主权和福利国家。对他们来说，未来像是一座值得冒险的黑暗丛林，谁占据了先机，谁就占据了一切。互联网的发展果然带来了更多的“解绑”——不仅仅是彻底改变了经济样态；社交媒体也催生了新形态的政治，把特朗普主义推上了权力巅峰。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-06/60bc46c44cd55d54dd5daede+L.png" data-id="60bc46d4ab4ffd0cef1c4a7d" alt="彼得·蒂尔与特朗普" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+彼得·蒂尔与特朗普
+    </figcaption>
+  </figure>
+  <p>帕克敏锐地看到，以蒂尔为代表的这些新一代的富人，只用很短的时间，就在1980年代和1990年代的氛围中完成了社会财富的快速积累。和纽约为代表的旧富不同，湾区的新富热衷牛仔裤、T恤衫。他们的文化仍然是中产阶级的，身家却更加富庶。“70年代我不认识任何百万富翁。百万富翁意味着非常富有，不同寻常。在1980年代末的斯坦福大学，有一些人更富有一些，但要是有两千万到三千万身家，那简直富可敌国了”，到了21世纪，亿万富翁在硅谷也不是什么新鲜的事情了。</p>
+  <p>从特朗普支持者到政治经济学家，人人都会说是制造业的转移、全球产业链的变化、里根政府上台后对富人减税，以及对银行业解绑监管等种种因素加在一起，导致了美国社会中原有的蓝领阶层的衰落。但作为记者，帕克更进一步，他试图去勾勒这种衰落背后的精神和文化氛围。</p>
+  <p>这其中的一个关键词是“自由”，沉迷安·兰德式自由意志主义作品的蒂尔和他的同行们一样，相信自由、个人努力和财富是紧密关联在一起的。他们渴望爆炸性的技术，相信技术能够改变一切。这些人毫不留恋蓝领梦想里那种一成不变的社会生活。而如果把互联网大亨们投回1950年代，他们很可能被社会界定为不正常的人物，从而边缘化。但是，从里根时代开始，政府管控日渐解绑，工会解体，工人阶级萎缩，取而代之的是灵活就业与蓬勃的金融业。这成为他们生长的绝佳舞台。</p>
+  <p>与此同时崛起的，还有另一种对自由的理解：厌倦了战后时代的稳定感和保守的生活，人们开始追求更平等的权利和更自由的选择。黑人权力运动、女权主义运动和性别运动，成为新的政治浪潮。在经济上，更多元多彩的消费欲望扩张。</p>
+  <p>讽刺的是，硅谷精英们的自由意志主义和新左派运动对自由概念的扩展，在时间上形成了某种巧合。如史家埃里克·方纳所指出的，里根时代以商业自由瓦解了新政年代的政府对经济的干预；但里根的保守主义却没能阻挡“权利革命”的脚步，美国的进步主义者在个人权利上继续挑战着社区与家庭的保守价值。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-06/60bc46f89c232e01c17d1857+L.jpeg" data-id="60bc46fe8717253efd7e2d96" alt="硅谷" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+硅谷
+    </figcaption>
+  </figure>
+  <p><strong>后冷战时代的美国：政治与经济日渐极化</strong></p>
+  <p>新崛起的保守主义运动，也并不外在于这个过程。2008年之后，“茶党”运动席卷美国。他们强烈要求维护保守价值。但文化上，他们依旧是1970年代的孩子。他们不再能想象新政年代政府对经济的介入和管理力度，也不可能想象个人的自由被各种社会规则和中产教条约束着的时代。更重要的是，就算是最保守的中部与南方乡镇，也并不外在于巨大的变迁。没有故乡能够幸免。</p>
+  <p>帕克笔下的山姆·沃尔特的例子，阐释了这种美国式的矛盾混合体：沃尔玛的美国和纽约新左派的美国截然不同，和湾区新贵的美国也大相径庭。作为一个中部小镇走出来的推销员，山姆·沃尔顿的一切似乎都符合传统的中南部价值：他喜欢节俭，从来不捐钱给城市人喜欢的慈善公益。他的经营模式是极力压低价格，打压工会，压低员工工资。他标榜“美国制造”，尽管到头来他尤其依赖廉价的进口商品。在1970年代，他开发电子记账和中央仓储模式，零售额每两年翻一番。沃尔玛成为了广袤的美国城镇的文化符号，但也正是沃尔玛挤压、消灭了各种小商铺小业主，让他们的小零售业破产。“多年以后，美国变得越来越像沃尔玛。它变得廉价了。价格更便宜，工资也更低……曾让山姆先生看到机会的小城镇变得越来越贫穷。”</p>
+  <p>后冷战时代的美国政治与经济都在日渐极化。帕克看到的是，不仅仅是美国社会溃败了，美国的政治精英也溃败了。贯穿全书的主人公之一是杰夫·康诺顿，一位专业的政治幕僚，华盛顿社会精英中的一员。他常年跟随乔·拜登，后来加入了克林顿政府。在康诺顿的论述中，拜登常年的失败并不是因为他的普通，而是因为他不满意华盛顿日渐交织的金钱和政治之间的纠缠，以及那些造作的政治造势和表演。对今天的读者来说，这是一个难得的，观察拜登这个“建制派人物”侧面的机会。</p>
+  <p>康诺顿先后服务了克林顿和奥巴马两任总统（那时候没人认为拜登能有机会当选）。这两人都带着为普通人服务的姿态，可入主白宫之后，他们都成为了既有体制的驯服仆人。在第二个任期里，克林顿政府通过了放松银行管制的政策，废止了规定投资银行和商业银行的业务要严格分开，避免商业银行卷入证券业的风险的《格拉斯-斯蒂格尔法案》；奥巴马时代里，则是各种利益团体主宰着华盛顿对银行业的整顿过程，他对华盛顿政商关系的调整也仅限于打击游说阶层，这毋宁说是一场公关表演。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-06/60bc47219c232e01c17d1858+L.jpeg" data-id="60bc4726ab4ffd0cef1c4a7f" alt="《下沉年代》英文版封面用图" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《下沉年代》英文版封面用图
+    </figcaption>
+  </figure>
+  <p>帕克写到，相比曾经的美国，华盛顿的政治如今完全碎片化了。富兰克林·罗斯福时代又或是艾森豪威尔时代的“大政府”如今几乎不可能再现了。令读者好奇的是，在杰夫·康诺顿回忆里曾经对着政治献金大骂粗口，被捐款人激怒的拜登，如今把小罗斯福的画像挂在椭圆形办公室高处。但他又怎么可能再复制一场“新政”呢？</p>
+  <p><strong>《下沉年代》：一部美国人的“二手时间”</strong></p>
+  <p>白俄罗斯作家阿列克谢耶维奇，把后苏联时代人们的时间感称为“二手时间”。在联盟解体的前夕，苏联人都渴盼一个崭新的时代。他们渴望变化能够超越曾经的匮乏、腐败和不自由。然而，历史却并没有向前滚动。进入1990年代，这些“苏维埃人”失去了他们曾经的生活，新的世界却变得更糟糕。他们得到的新时代是个“二手货”。“他们无法摆脱伟大的历史，无法和那段历史告别，无法接受另外一种幸福，不能像今天的人们这样，完全潜入和消失于个体生活中，把渺小看成巨大。”</p>
+  <p>美国的境况既类似，又相反。帕克认为战后美国本来存在着一种共识，每个人都有一个位置，这种位置局限了人的自由，但安全感强。如今，人拥有了更多自由，却更加孤独，更加极端。这种感觉，加上之后2008年的大萧条，让帕克开始关注美国自身。《下沉年代》尽管完全没有关注过冷战的那一端，却巧合地成为了一部美国人的“二手时间”。</p>
+  <p>但《下沉年代》仍然是一部美国作品，它也无法外在于它试图描摹的人心。在出版后的一篇访谈中，帕克提到自己在写作中遇到的困惑：他积累了特别多的故事，尤其是小人物的故事，但这些丰富又彼此不同的故事该如何放在一起书写呢？不知是否有意，帕克带着这个问题找到了大萧条时代的《美国三部曲》。“三部曲”的作者是20世纪初美国著名作家兼记者帕索斯（Dos Passos）。帕索斯年轻时是个马克思主义同情者，曾游历苏联，在巴黎的社交圈子和海明威等人结交。对工人阶级的期待、对贫富的愤怒，催生了帕索斯全景式描写美国社会的“三部曲”写作。</p>
+  <p>帕克把帕索斯的作品和菲茨杰拉德对比：他认为前者笔下的人物飘在历史的海洋上，缺乏内在的生命，而后者擅长书写的是自由的个体灵魂。向帕索斯学习的意义，在帕克看来，是更多关照历史的宏大变化。但在帕克身上，美国的矛盾、自由的悖论仍旧鲜明地凸显着。《下沉年代》中的所有人物，无一例外都有鲜明的个性和自我意识。尽管他希望人物展现历史，可他的笔触无疑更关注人物本身。无论是黑人母亲，还是硅谷精英，或是华盛顿的政治掮客，他们都显得极力在时代中凸显自己的价值。到头来，他们依旧是“自由的个体灵魂”。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-06/60bc474d4cd55d54dd5daedf+L.png" data-id="60bc4754afa7517017e4d9f3" alt="约翰·多斯·帕索斯“美国三部曲”" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+约翰·多斯·帕索斯“美国三部曲”
+    </figcaption>
+  </figure>
+  <p>在“美利坚人”的黄金时代里，有一本名噪一时的社会心理学著作《孤独的人群》。作者是社会学家大卫·里斯曼。里斯曼关照战后美国人乏味的心理生活。但他却认为这种乏味有其价值：“在生活中，存在着形形色色的美国人，有的慷慨大方，有的卑鄙自私，还有的愚昧无知。同时，随着嫉妒、害怕出名和顺应性的增强，人们的坦率、容忍和同情等心理倾向也有了不断的增强。”</p>
+  <p>如今，“解绑”（unwinding），是否意味着这样的辩证也让位于了对“自由的个体灵魂”的追求？恐怕是的。到头来，它也是一个关于叙事和述说的问题：是否只有预设人是“自由的个体灵魂”，把“解绑”视作今日的寻常，今天的非虚构写作才能源源不断地找到它的内容和读者？</p>
+  <blockquote>
+    <p>任其然系资深媒体人。</p>
+  </blockquote>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-08</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-08/%E4%BD%9C%E5%AE%B6%E4%B9%8B%E5%A4%96%E7%9A%84%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9-%E7%96%AF%E7%8B%82%E6%8A%95%E8%B5%84%E4%BA%BA-%E5%95%86%E4%B8%9A%E5%B8%9D%E5%9B%BD%E6%A2%A6%E4%B8%8E%E5%B7%A1%E6%BC%94%E8%BA%B2%E5%80%BA%E7%9A%84%E5%B2%81%E6%9C%88/">
+          作家之外的马克·吐温：疯狂投资人、商业帝国梦与巡演躲债的岁月
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-07</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-07/%E5%9C%A8%E6%AF%92%E5%93%81%E5%92%8C%E9%BB%91%E5%B8%AE%E4%B9%8B%E5%A4%96-%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E9%AD%94%E5%B9%BB%E5%8F%B2/">
+          在毒品和黑帮之外，拉丁美洲还有哪些魔幻史？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-05</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/">
+          想象新式亲密关系：男性如何摆脱内心隐藏的厌女情绪？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-04</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-04/%E8%84%B1%E5%8F%A3%E7%A7%80%E8%88%9E%E5%8F%B0%E4%B8%8A%E7%9A%84%E6%AD%A7%E8%A7%86%E4%B8%8E%E5%8F%8D%E6%AD%A7%E8%A7%86-%E6%88%91%E4%BB%AC%E4%BD%8E%E4%BC%B0%E4%BA%86%E7%AC%91%E5%A3%B0%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF%E7%9A%84%E6%95%88%E5%8A%9B/">
+          脱口秀舞台上的歧视与反歧视：我们低估了笑声传递信息的效力
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-05/%E6%9A%AB%E5%88%A5%E5%89%8D%E7%AB%AF-%E9%87%8D%E6%96%B0%E9%96%8B%E5%A7%8B/">
+            前一篇：暫別前端，重新開始
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-07/%E5%9C%A8%E6%AF%92%E5%93%81%E5%92%8C%E9%BB%91%E5%B8%AE%E4%B9%8B%E5%A4%96-%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E9%AD%94%E5%B9%BB%E5%8F%B2/">
+            後一篇：在毒品和黑帮之外，拉丁美洲还有哪些魔幻史？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-05/%E6%9A%AB%E5%88%A5%E5%89%8D%E7%AB%AF-%E9%87%8D%E6%96%B0%E9%96%8B%E5%A7%8B/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-07/%E5%9C%A8%E6%AF%92%E5%93%81%E5%92%8C%E9%BB%91%E5%B8%AE%E4%B9%8B%E5%A4%96-%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E9%AD%94%E5%B9%BB%E5%8F%B2/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-07/%E5%9C%A8%E6%AF%92%E5%93%81%E5%92%8C%E9%BB%91%E5%B8%AE%E4%B9%8B%E5%A4%96-%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E9%AD%94%E5%B9%BB%E5%8F%B2/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-05/%E6%9A%AB%E5%88%A5%E5%89%8D%E7%AB%AF-%E9%87%8D%E6%96%B0%E9%96%8B%E5%A7%8B/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-07/%E5%9C%A8%E6%AF%92%E5%93%81%E5%92%8C%E9%BB%91%E5%B8%AE%E4%B9%8B%E5%A4%96-%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E9%AD%94%E5%B9%BB%E5%8F%B2/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-07/%E5%9C%A8%E6%AF%92%E5%93%81%E5%92%8C%E9%BB%91%E5%B8%AE%E4%B9%8B%E5%A4%96-%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E9%AD%94%E5%B9%BB%E5%8F%B2/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-05/%E6%83%B3%E8%B1%A1%E6%96%B0%E5%BC%8F%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB-%E7%94%B7%E6%80%A7%E5%A6%82%E4%BD%95%E6%91%86%E8%84%B1%E5%86%85%E5%BF%83%E9%9A%90%E8%97%8F%E7%9A%84%E5%8E%8C%E5%A5%B3%E6%83%85%E7%BB%AA/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

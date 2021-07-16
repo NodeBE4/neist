@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>程式導師實驗計畫第四期檢討與心得 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+程式導師實驗計畫第四期檢討與心得
+——
+" />
+    <meta property="og:description" content="
+程式導師實驗計畫第四期檢討與心得
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="程式導師實驗計畫第四期檢討與心得" />
+    <meta property="twitter:title" content="程式導師實驗計畫第四期檢討與心得" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40hulitw%2Fmentor-program-4th-review-f8e8de92eea2%3Fsource%3Drss-f1fb3e40dc37------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@hulitw/mentor-program-4th-review-f8e8de92eea2?source=rss-f1fb3e40dc37------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@hulitw/mentor-program-4th-review-f8e8de92eea2?source=rss-f1fb3e40dc37------2&text=程式導師實驗計畫第四期檢討與心得&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@hulitw/mentor-program-4th-review-f8e8de92eea2?source=rss-f1fb3e40dc37------2&title=程式導師實驗計畫第四期檢討與心得" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@hulitw/mentor-program-4th-review-f8e8de92eea2?source=rss-f1fb3e40dc37------2&title=程式導師實驗計畫第四期檢討與心得" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=程式導師實驗計畫第四期檢討與心得&body=
+程式導師實驗計畫第四期檢討與心得
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@hulitw/mentor-program-4th-review-f8e8de92eea2?source=rss-f1fb3e40dc37------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@hulitw/mentor-program-4th-review-f8e8de92eea2?source=rss-f1fb3e40dc37------2&title=程式導師實驗計畫第四期檢討與心得&caption=
+程式導師實驗計畫第四期檢討與心得
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=程式導師實驗計畫第四期檢討與心得&url=https://medium.com/@hulitw/mentor-program-4th-review-f8e8de92eea2?source=rss-f1fb3e40dc37------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>程式導師實驗計畫第四期檢討與心得</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-02-22
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Huli</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@hulitw/mentor-program-4th-review-f8e8de92eea2?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1613998646000-->
+<p><a href="https://medium.com/@hulitw/mentor-program-4th-review-f8e8de92eea2?source=rss-f1fb3e40dc37------2">程式導師實驗計畫第四期檢討與心得</a>
+——</p>
+
+<div>
+  <p>時間過得好快，上一次更新課程相關的東西是去年十月的這篇：<a href="https://hulitw.medium.com/lidemy-mentor-program-4th-updates-c344302c8a2d">程式導師實驗計畫第四期課程做了哪些改動？</a>，轉眼間就已經過完年，然後整個第四期就這樣結束了。</p>
+  <p>開頭一樣直接破題，先給一些數字。</p>
+  <p>之前在上一篇（十四週尾聲時）有提過：</p>
+  <blockquote>
+<em>課程正式開始後剩下 110 位同學，其中 77 人選擇 A 求職方案，剩餘 33 人選擇 B 買斷方案。</em>  </blockquote>
+  <p>在課程結束（二十六週）之前，有些同學選擇退出，有些選擇轉成 B 方案，至結業時還在 A 求職方案的同學剩下 60 個。而這 60 個同學中，</p>
+  <ul>
+    <li>有 20 個跟完課程（33%）</li>
+    <li>有 11 個跟到最後一部分（React）的課程（18%）</li>
+    <li>其餘 29 個學生進度都在課綱的 20 周之前（49%）</li>
+  </ul>
+  <p>而最後找到工作的人數為 21 人（35%，分母為 60），薪水的部分以中部來說大約是 35k，北部的話範圍大概是 42k~45k，這邊只是給個大概，因為最多人落在這個範圍，但是當然也有低於或是高於這個範圍的同學。</p>
+  <p>求職成功人數（定義：學習半年之後的兩個月內找到工作）跟第三期的比例是差不多的，一樣都是 35% 左右，算是持平。</p>
+  <p>求職成功的基本上都是落在有跟完課程或是快跟完課程的那 31 位同學，也就是說如果有把課程跟完，應該就有六七成的把握可以在結業後的兩個月內找到工作。</p>
+  <p>因此這個計畫要改善的地方很明顯就有兩個：</p>
+  <ol>
+    <li>提升跟完課程的人的求職成功率</li>
+    <li>提升跟完課程的比例</li>
+  </ol>
+  <p>可以量化的數字給完了，接下來講一下我個人心得。</p>
+  <h3 id="section">人數的差別</h3>
+  <p>第三期剛開始時總人數大概 60 幾個，而這一期則是幾乎翻倍，有 110 個人。但其實多出來的人不少都是 B 買斷方案，這跟第三期比較不一樣，第三期求職方案大概有 55 個左右，而第四期 A 方案的人數接近 80 個，約為 1.45 倍。</p>
+  <p>相較於一二期來說，第三期的人數也是翻倍，而第三期的整個氛圍都很不錯，無論是線上的或者是線下的實體空間都是。這讓我在第四期開始的時候也滿期待的，期待會出現同樣是第三期的那種氛圍，至於是哪種氛圍，大概就是有固定幾個人可能很樂於分享，然後算是課程中的領頭羊，可以帶著大家前進。</p>
+  <p>第四期會有助教的原因之一，也是因為第三期有這些人，我才覺得助教是可行的。</p>
+  <p>但第四期結束之後我才意識到一件事，課程中的氛圍跟人數無關，而是跟人本身有關，跟每一個人的個性有關。並不是說人數多就會有那種氛圍，也不是人數少就一定沒有，還是要看每一期計畫中的學生是怎樣的。</p>
+  <p>而第四期跟第三期比起來，我覺得就少了一些這種感覺。當然還是有同學符合我心中所說的那個樣子，只是就比較少一點。這可能是可遇不可求吧，要剛好有這些個性的同學，然後還要剛好在同一期，剛好又覺得個性差不多處得來。</p>
+  <p>我講這些也不是在說第四期跟第三期比起來有比較差或是比較好，真正能比的只有那些可以量化的數字，而「每一期的氛圍如何」，只是一個陳述，它是中性的，「第三期小樹屋比較熱鬧」、「第四期小樹屋人比較多」，這些都沒有好壞之分。</p>
+  <p>而其實我們真正要想的問題應該是，如果這種氛圍只能靠特定的某些個性的人，或甚至是靠「緣分」，那是不是太消極了？是不是這種氣氛應該由我們（我與助教們）試著營造出來，而不是倚靠緣分？</p>
+  <h3 id="section-1">助教制度</h3>
+  <p>如同有同學在心得中寫到的一樣，有了助教之後，我有種退居二線的感覺。作業幾乎都是助教改，同學有問題也跑去問助教，會看到我的場合只有教學影片、直播跟每週的隨意聊時間。</p>
+  <p>而我在之前的文章中也有寫過，我其實是不喜歡這種感覺的。</p>
+  <p>對於有些人來說，可能覺得這樣很棒，會想說：「這樣太好啦，你有助教就可以運作了，你就多找一點助教，就可以招更多學生，就能躺著賺錢啦！」，如果以賺錢為首要目標的話，確實是這樣沒錯。</p>
+  <p>但這不是我想要的。我不想變成補習班招牌上的那個名字，然後偶爾露個臉當吉祥物。在某些人眼中這是可以規模化的象徵，是成功的開始，但在我眼中卻正好相反。</p>
+  <p>我想當的是第一線的老師，是在教學現場教課的那種。而第四期確實讓我有種，我好像漸漸遠離那個現場的感覺。不過助教改作業是必然會發生的，因為學生人數變多了，我一個人沒辦法負荷這麼多作業。而且我改作業其實也不一定會比助教好，因為助教程度其實更貼近學生一點，許多地方會比我做得更好。</p>
+  <p>想要把自己移回教學現場，可以想想看除了改作業以外有沒有什麼其他方法，例如說不定期直播帶 workshop 之類的，或者是多錄一些教學影片？</p>
+  <p>然後在提問的部分，下一期會把同學盡量導向公開的 <a href="https://github.com/Lidemy/forum/discussions">Lidemy 討論區</a>，針對想匿名的同學，我們也還在想要不要提供匿名的機制，最後沒有提供的話，可能會請真的一定要匿名的同學自己額外辦個帳號，反正是公開的，大家都可以來留言。</p>
+  <p>我想鼓勵這種公開討論的風氣，因為這才是對自己也是對整體來說都有利的提問方式。私訊提問的優點就只有一個，那就是不會被其他人知道你有提問而已。但公開提問的好處是：</p>
+  <ol>
+    <li>有更多人可以回答你的問題（對自己有利）</li>
+    <li>以後的人可以透過搜尋找到這個問題（對他人有利）</li>
+  </ol>
+  <p>還有一個好處是強迫你把問題講清楚，沒講清楚的話就會被回錯誤的答案或者是等待答案的時間會變長，把問題講清楚也是極其重要的技能。</p>
+  <p>下一期我會跟大家說明，有問題的話請發在討論區，私訊問助教的話，助教也只會叫你去討論區發文，除非是真的私訊才能解決的問題。</p>
+  <h3 id="section-2">期末專案</h3>
+  <p>第四期大概有三、四組同學有做期末專案，一組大概三到四個人，所以這樣算就是大概有十幾個同學都有專案。第三期的話都是個人專案，而且大概才兩三位同學有做而已。</p>
+  <p>有大家的期末專案其實都有一定的完整度，而且我會要求或建議 GitHub 的 README 寫完整一點，開發時的各種文件也都可以保存起來，底下附上其中幾組的專案連結：</p>
+  <ol>
+    <li><a href="https://github.com/krebikshaw/Give-plus-plus">Give++ 二手交易平台</a></li>
+    <li><a href="https://github.com/yunanpan/final-project">hit the road</a></li>
+    <li><a href="https://github.com/awuuu0716/MTR04-Parlando">Parlando</a></li>
+  </ol>
+  <p>課程中的期末專案一直以來都是可選的，想做就做不想做就不做，因為既然是合作的專案就可能會碰到那些大學分組報告都碰過的問題，要找到合適的組員其實也是一件要有點靠運氣的事情。</p>
+  <p>如果時間許可，那當然是有做專案比較好。但許多人光是把課程跟完就已經沒什麼時間了，在這樣的狀況下，我就會建議先在沒有專案的情況下去求職看看，真的不行再說。</p>
+  <p>講到這個，就要講一下課綱的安排。整個計畫學習是六個月，大概是 26 周左右，而最後兩週是留給大家做 final project 的時間，不過兩週應該是不夠的，大多數可能都花了一個月左右或是更久。而且前面的課程有可能會 delay，所以真正做完 final project 又是更久以後了。</p>
+  <p>或許之後可以把 final project 提前，在 20 周或更早就讓大家做點籌備？這樣好像更不錯一點。</p>
+  <h3 id="section-3">課程系統</h3>
+  <p>這一期也領悟到了一件事：</p>
+  <blockquote>
+<em>該用系統擋掉的就用系統來擋，不要相信自己</em>  </blockquote>
+  <p>例如說我一再跟大家強調每週作業的挑戰題等你一般作業寫完有餘裕再去寫就好，但可能有些人看到有題目就是會手癢想寫，也沒在管進度的先寫再說，然後就拖慢了進度。</p>
+  <p>或者是覺得自己挑戰題沒解完，這週的學習就不 ok 之類的。</p>
+  <p>儘管我一再強調過沒這種事，但效果還是有限。這種其實就應該透過系統來解掉，你作業沒寫完就是看不到挑戰題，或者是進度落後就不讓你解挑戰題之類的，讓你看不到題目。</p>
+  <p>這些應該都可以用系統面來擋掉。</p>
+  <p>有一個自製的學習系統我覺得滿必要的，因為很多需求一定都是客製化產生的，所以沒有現成的可以用。就算有現成的一定也是只打中幾個需求，沒辦法完成涵蓋到所有的。</p>
+  <p>下一期的目標之一就是加強學習系統，補上一下我想加的東西。</p>
+  <h3 id="section-4">學習模式</h3>
+  <p>其實我一直在想一件事，那就是我們到底該不該限制學生的學習模式？</p>
+  <p>例如說有些人可能卡關很嚴重想要跳關，我們是該讓他跳，還是強迫他一定要先做完前面的？</p>
+  <p>或者是有些人就是很想解挑戰題，是該讓它解（儘管會讓進度落後），還是不讓它解？</p>
+  <p>我目前還沒有一個明確的答案。但如果要限制的話，我應該會在課程簡章中註明：「這不是一個讓你自由學習的課程，我們會在某些地方限制你的學習方式，因為我們覺得這種學習方式比較好，請你照著做即可。如果不喜歡這種學習方式，那可能就是不適合這個課程」</p>
+  <p>總覺得怪怪的，但好像又不會。</p>
+  <h3 id="section-5">關於金錢</h3>
+  <p>前面有提過說這個課程的首要目標並不是賺錢，以前也有提過這件事，A 方案的付費模式不是因為「這樣收比較好賺」（事實上也沒有），而是因為「我只想收心甘情願付的學費」。</p>
+  <p>不過我可能也沒有大家所想的這麼佛系，有時候其實還是會在意這個的。舉例來說，A 方案是建立在互信的前提之下，我相信你每週都有付出足夠時間，也有求職意願，才符合找不到工作免學費的機制。</p>
+  <p>在這個前提之下如果看到有些付出時間不符合 A 方案卻還繼續待著的同學，心裡難免會有一點小介意。不過這件事我其實也沒有跟大家說，因為我知道有些同學其實想轉 B 方案但還沒跟我說，或者是可能真的有付出足夠的時間，但我不知道。</p>
+  <p>這部分我自己也還要再調適一下，畢竟可能真的有選了 A 方案但不符合資格又不想付錢的人，但那是少數。如果只為了這少數人而犧牲其他多數人的權益，或者是被少數人影響而導致課程變得不一樣了，那其實是損失更大的一件事。</p>
+  <p>第四期把原本的每週 40 小時調整成 30 小時其實是個錯誤，是我低估了課程的負荷。下一期會調成 45 或是 50 小時，這才是我覺得該有的負荷量，因為課程就真的是這麼重。</p>
+  <h3 id="section-6">關於求職</h3>
+  <p>這期的求職其實有兩個小問題：</p>
+  <ol>
+    <li>大家的求職時間撞在一起</li>
+    <li>碰到過年</li>
+  </ol>
+  <p>第二點我原本就有預期到了，我想說過年前找好工作，讓大家過個好年，然後年後去上班，聽起來十分合理。但今年也有受到疫情影響，職缺變少了一些，而有些公司可能是年後才會開缺。</p>
+  <p>然後第一點我倒是沒有預期，因為上一期大家就自然而然地比較分散，頂多兩三個同學面到同一間。這一期聽說有公司收了十份這邊出來的履歷，這是我當初沒有預料到的。</p>
+  <p>不過想一想，結業時間類似的話會有這種情形好像滿合理的，其他培訓班也都一樣，同時間結業就會這樣，跟其他同學競爭是不可避免的。既然競爭不可避免，那重點就不是「該怎麼不要競爭」，而是「該怎麼提升自我」。</p>
+  <p>如果能夠把自己的實力提升到超越其他求職者，其實就不用擔心競爭的問題，這是我們需要去思考的。</p>
+  <h3 id="section-7">加強實作過程</h3>
+  <p>在以往，我對作業的要求很簡單，就是：</p>
+  <blockquote>
+<em>寫得出來</em>  </blockquote>
+  <p>對於學生實力的強弱，我可能是以作業是否能寫出來來判斷的，寫出來之後再看 code 的品質如何。但第四期我跟助教有幫幾個學生做了面試檢測，我只考一題簡單的實作題，需要 live coding 分享螢幕寫 code，沒想到這成了一個，意料之外的，我覺得很適合檢測的指標。</p>
+  <p>直接講結果，我覺得滿慘的。而且這個慘的程度，讓我一度懷疑自己的課程是不是走錯了哪一步。</p>
+  <p>第四期的同學們如果看到這裡，不用懷疑是自己的問題，因為好多個同學都是這樣，所以我覺得是教學跟課程的問題，而不是個人的問題。</p>
+  <p>那些同學們作業都寫得出來，程式碼品質我覺得也都 ok，在我心中程式實力是 ok 的，可是等到了 live coding 的時候，我跟十億人一樣驚呆了。有可能是太久沒碰原生的語法，也有可能是緊張，也可能是平時就這樣，但總之那個寫 code 的過程，對我來說是不及格的。</p>
+  <p>我在想有一種可能，那就是平時寫作業可能是一樣的模式，平常也沒感覺到什麼不對，只是時間花比較多。透過時間來彌補了「寫 code 能力」這件事情。但是在 live coding 的時候可能只給 30 分鐘，所以才會看起來滿慘的而且寫不出來，但如果是給三個小時，應該就能寫出來。</p>
+  <p>而平常看作業的時候，我跟助教們都是看到寫出來的成品而已，成品是合格的，但我覺得過程不合格。之前只要求寫的出來，但這次的經驗讓我開始思考，只有要求結果是不夠的，還要要求過程。</p>
+  <p>什麼是過程？過程就例如說是：</p>
+  <ol>
+    <li>看到題目以後，你會怎麼思考？</li>
+    <li>你會怎麼查資料？查到資料之後你會怎麼判斷是不是你要的？</li>
+    <li>複製貼上之後你會怎麼修改？</li>
+    <li>你是先做哪個功能？</li>
+    <li>錯誤訊息會怎麼解讀？</li>
+    <li>輸出不如預期時，你會怎麼 debug？</li>
+  </ol>
+  <p>這些寫程式的過程其實都是很重要的一部分，但問題是我們平常根本不會看到。因為我們只會看到結果，看到寫好的作業跟程式碼，但看不到它是怎麼被寫出來的。</p>
+  <p>或許這也有可能是寫作業速度慢的原因，因為這些過程沒有被好好培養，所以就用沒有效率的方式不斷寫著程式碼。而且因為自己也不知道，所以就一直這樣下去。</p>
+  <p>我把這個視為是以前課程都沒有思考到的一個層面，希望能在下一期試圖找到可以改善的方法。</p>
+  <h3 id="section-8">其他可加強項目</h3>
+  <p>這邊簡單列一下順便附個理由或是背景知識，否則未來的自己會看不懂：</p>
+  <h4 id="section-9">#1 有關於範例</h4>
+  <p>在寫範例的時候應該按照自己在 alg101 教的那套，先拆分成 function 然後再填空，以及開始做之前先分析整個結構。直接開始寫 code 加上 debug 雖然可以忠實重現我平常寫程式的情形，但以教學來說不一定有幫助。或可以兩個版本都附，一個是 live coding 版，一個是規劃版。</p>
+  <p>另外記得附上範例程式碼。</p>
+  <h4 id="section-10">#2 有關於部署</h4>
+  <p>部署還是很卡，而且大家部署完還是不知道自己在幹嘛。像是這種的東西，雖然說大家查完資料都可以成功部署，但我不禁想問的是，這樣真的算是有學習到嗎？</p>
+  <p>雖然說本意就是想讓大家查資料自己學習，但有些東西並不是查查資料就能很快學會的。當你沒有任何背景知識的時候，就算把事情做完你也不知道在幹嘛。</p>
+  <p>在這種情況下，其實直接教學會是比較好的選擇。這樣的話第五期的部署我覺得好像可以直接教大家怎麼做，可能會更好一點。或者不要把部屬當做作業，而是「部署後改一些什麼」當做作業，這樣既可以學會部署，也可以透過練習更熟悉這個過程。</p>
+  <h4 id="section-11">#3 有關於課程</h4>
+  <p>考慮再次像第三期那樣把前後端分開變成兩條路，否則以第四期來說，滿多人會在 week17/18 卡關，但那邊其實以前端工程師來說沒有很重要。</p>
+  <p>但我其實還是滿想留的，我覺得長遠來看其實滿重要的。但或許可以一樣變成選修，覺得有興趣或是有要用到再修就好。</p>
+  <h3 id="section-12">總結</h3>
+  <p>以課綱來說，其實我覺得經過這幾期的改動，第四期算是比較穩定的一個版本了，大致上的順序我覺得沒太大問題，只差一些細節要調整。所以第五期的課綱應該會跟第四期長差不多。</p>
+  <p>不過最難的也就是這個細節啦，細節本來就一直有東西要調整，然後系統也是，學習系統也有很多地方可以補強。另外，第五期沒意外的話會是「舊制度」的最後一期，第五期結束之後我想把整個課程的東西砍掉重練，整個變不一樣。</p>
+  <p>這類的規劃之前已經有寫過一點，總之我想做的事情是，把一些基本的部分獨立出來，例如說簡單的 JS、HTML 跟 CSS，我想把課綱中前八週的內容變成免費的，任何人都可以隨時來上的課程。</p>
+  <p>因此之後要報名程式導師實驗計畫的人，一定都要會這三個東西。評斷標準或許是提供一個整合的作業，要先完成那個作業才能報名。改成這樣有兩個好處：</p>
+  <ol>
+    <li>為期六個月的程式導師實驗計畫可以教得東西更多，因為有八周空出來了</li>
+    <li>可以保證來報名的人都有自學能力（或至少是願意花時間學習的）</li>
+  </ol>
+  <p>在其他課綱部分，我也有幾個想法但是還沒有決定一定要這樣做，其中一個想法是把原本的一連串的課綱拆成「可以跑兩次的課綱」，例如說 24 周，前兩週 CSS 加強，三四五週 JS 加強，六複習周，七八週 PHP，第九周到第十二週 React。這樣十二週就是一個循環，然後十三週開始就照原本的順序跑，十三十四 CSS 加強，十五六七 JS 加強，十八複習周，十九二十 PHP，21~24 React。</p>
+  <p>這樣有什麼好處呢？好處是課綱自帶複習的效果，你不用怕前面那些原生的東西忘記，因為你之後還會再學到一遍。而且這樣可以儘早加快知識的互相融合，你在學 React 意識到不足的 JS 基礎，可以再第二次 JS 循環時學到，那時你就會更知道為什麼要學習這些。</p>
+  <p>而且第一遍的循環課程內容可以不用這麼深，把目標放在實作上，讓大家加強實作能力，第二遍的循環才把背後的理論知識補強。</p>
+  <p>自己寫一寫覺得看起來滿不錯的，搞不好日後就會這樣來設計課綱。</p>
+  <p>其實看第四期的同學回饋的意見，評價普遍是滿正面的，不過從一個課程設計者的角度來看，太多東西可以再加強了，因為這篇是檢討所以都只寫我覺得可以改進的地方，做得好的上次好像已經寫過了。</p>
+  <p>一直都有要改的，該如何取捨以及安排順序是值得思考的事。</p>
+  <p>話說有關於第五期，如果命運的齒輪沒有出差錯的話，這禮拜會開放報名，到時候會公告於 <a href="https://www.facebook.com/lidemytw">Lidemy </a>粉專上面，有想要報名的朋友們可以關注一下。</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=f8e8de92eea2" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2021-03-23</time>
+        <a href="https://nodebe4.github.io/oped2/2021-03-23/%E5%80%AB%E6%95%A6%E5%BF%85%E5%90%83%E7%BE%8E%E9%A3%9F/">
+          倫敦必吃美食
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-02-24</time>
+        <a href="https://nodebe4.github.io/oped2/2021-02-24/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E4%BA%94%E6%9C%9F%E9%96%8B%E5%A7%8B%E5%95%A6/">
+          程式導師實驗計畫第五期開始啦！
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-02-12</time>
+        <a href="https://nodebe4.github.io/oped2/2021-02-12/%E5%8F%AA%E6%98%AF%E6%83%B3%E5%AF%AB%E4%B8%80%E4%B8%8B/">
+          只是想寫一下
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-01-26</time>
+        <a href="https://nodebe4.github.io/oped2/2021-01-26/%E6%9C%83%E5%96%94-%E8%A9%B3%E7%B4%B0%E6%99%82%E9%96%93%E5%8F%AF%E4%BB%A5%E5%8F%83%E8%80%83-lidemy-%E7%B2%89%E7%B5%B2%E5%B0%88%E9%A0%81-%E6%9C%80%E6%96%B0%E8%A8%8A%E6%81%AF%E9%83%BD%E6%9C%83%E5%9C%A8%E4%B8%8A%E9%9D%A2%E5%85%AC%E5%91%8A/">
+          會喔，詳細時間可以參考 lidemy 粉絲專頁，最新訊息都會在上面公告
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-02-12/%E5%8F%AA%E6%98%AF%E6%83%B3%E5%AF%AB%E4%B8%80%E4%B8%8B/">
+            前一篇：只是想寫一下
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-02-24/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E4%BA%94%E6%9C%9F%E9%96%8B%E5%A7%8B%E5%95%A6/">
+            後一篇：程式導師實驗計畫第五期開始啦！
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-02-12/%E5%8F%AA%E6%98%AF%E6%83%B3%E5%AF%AB%E4%B8%80%E4%B8%8B/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-02-24/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E4%BA%94%E6%9C%9F%E9%96%8B%E5%A7%8B%E5%95%A6/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-02-24/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E4%BA%94%E6%9C%9F%E9%96%8B%E5%A7%8B%E5%95%A6/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-02-12/%E5%8F%AA%E6%98%AF%E6%83%B3%E5%AF%AB%E4%B8%80%E4%B8%8B/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-02-12/%E5%8F%AA%E6%98%AF%E6%83%B3%E5%AF%AB%E4%B8%80%E4%B8%8B/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-02-24/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E4%BA%94%E6%9C%9F%E9%96%8B%E5%A7%8B%E5%95%A6/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-02-24/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E4%BA%94%E6%9C%9F%E9%96%8B%E5%A7%8B%E5%95%A6/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-02-12/%E5%8F%AA%E6%98%AF%E6%83%B3%E5%AF%AB%E4%B8%80%E4%B8%8B/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

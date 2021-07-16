@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆
+——
+" />
+    <meta property="og:description" content="
+“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆" />
+    <meta property="twitter:title" content="“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fm.allnow.com%2Fpost%2F5f88217a3a3e102778286788" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://m.allnow.com/post/5f88217a3a3e102778286788" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://m.allnow.com/post/5f88217a3a3e102778286788&text=“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://m.allnow.com/post/5f88217a3a3e102778286788&title=“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://m.allnow.com/post/5f88217a3a3e102778286788&title=“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆&body=
+“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://m.allnow.com/post/5f88217a3a3e102778286788" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://m.allnow.com/post/5f88217a3a3e102778286788&title=“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆&caption=
+“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆&url=https://m.allnow.com/post/5f88217a3a3e102778286788" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-10-15
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 萧小壹</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://m.allnow.com/post/5f88217a3a3e102778286788" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1602761151000-->
+<p><a href="https://m.allnow.com/post/5f88217a3a3e102778286788">“小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆</a>
+——</p>
+
+<div>
+  <p>作者丨郭雪妮</p>
+  <p> </p>
+  <p>在世界文学史上，并非任何一座城市都能成为文学家反复描述与表现的样本，历史、地理和政治因素对于文学中的异国形象的塑造，具有不可低估的作用。陈平原曾在《都市想象与文化记忆丛书》序言中说：“漫长的中国史上，曾做过都城的城市很多；但同为都城，持续时间及重要性相差甚远。其中至关重要的，按历史顺序，是西安、洛阳、南京……而‘重中之重’，毫无疑问，前期是西安，后期是北京。这就很容易理解，我们之谈论‘都市想象与文化记忆’，为何首选这两座城市。”</p>
+  <p> </p>
+  <p>长安作为古代东亚世界的中心，对日本、朝鲜、越南等周边国家的都城空间、文化习俗、文学创作等都产生了特别重大的影响。单就日本古代文学而言，其发轫的机缘，无疑与遣唐使在长安的生活学习密切相关。长安作为一种古典都城的典范，以遣唐使为媒介在源头上与日本文学发生了复杂而生动的联系。长安又始终是日本文人最熟悉的异域都城，成为日本早期海外题材文学的重要舞台。长安与日本文学凡此种种的关联，留给我们许多重大且亟须思索的课题。</p>
+  <p> </p>
+  <p>古代日本人对长安的表述，与日本民族“想象共同体”的生成密切相关，同时又无法脱离古代东亚政治变动及华夷思想体系变迁的影响。日本模仿唐朝制度建立中央集权制的民族国家，伴随着民族国家的兴起，其“想象的共同体”开始形成。本尼迪克特·安德森虽然是在近现代意义上讨论民族想象的共同体，但对于古代日本同样适用，即“民族”这个“想象的共同体”，最初而且主要是通过文字阅读来进行的，而且其想象的过程也并不缺乏类似于现代意义上的“公共空间”——古代日本贵族群体通过阅读中国文献典籍，思考日本的国魂、国体，乃至利用汉文编纂日本的国史。</p>
+  <p> </p>
+  <p>可以说，古代日本的自我认识与审视来自对中国的观察和接受，贵族文人们争相学习汉诗以显示学识修养，并大量模仿中国诗歌来歌颂日本都城。这正如中西进通过考察《万叶集》和歌与藤原京、平城京的关系，指出“万叶歌人对于日本自国都城的夸耀，与日本大化革新后上扬的国家意识不可分离”一样，古代东亚各国都城的营造思想中，都蕴含着浓厚的王权思想，文人对国都的自夸并非一种单纯的文学活动，而是出于一种政治的、外交的需要。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-15/5f882220d7f8a70001ef07f5.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>《从长安到日本：都城空间与文学考古》，郭雪妮著，九色鹿丨社会科学文献出版社2020年8月版</p>
+    </figcaption>
+  </figure>
+  <p><strong>“中世长安”：华夷秩序下的焦虑想象</strong></p>
+  <p> </p>
+  <p>从这种意义上看，长安并非一座普通的都城，作为唐的国都，长安城的营造思想与中国人的宇宙观密切结合，蕴含着深厚的王权思想和华夷意识。这种情况下，肩负外交使命的遣唐使对象征唐朝王权的长安的表述，不能不说是相当谨慎的。虽然他们在长安见证了当时东亚中心的国际大都市的繁华，也吸收了长安文人自夸国都的诗歌形式和内容，但他们接受的态度却是将夸耀的对象更换为日本的都城，奈良官僚文人藤原宇合的诗文就是最好的例证。换言之，长安作为遣唐使憧憬、向往的圣地，是大量遣唐使文人居住、学习、交游过的异国都城，却没有成为奈良、平安文人赞颂的对象，首先就在于都城是表现“中华思想”和“华夷秩序”的舞台这一观念为东亚各国所共有。</p>
+  <p> </p>
+  <p>日本民族意识的确立，是在唐朝华夷思想体系之内完成的。早在八世纪初，日本自视为唐的诸蕃国之一这种事唐为大、尊唐为上的事大主义立场，作为一种传统开始出现。日本建立律令制国家不久，从唐归国的遣隋留学生们，归朝报告中如此上奏：“其大唐国者法式备之珍国也，常须达。”正是这一报告奠定了日本对唐外交的基调，这也是日本对唐尊崇、事大态度生成的根基。《日本书纪》中记载隋为“大国”，《隋书·东夷传》倭国条载隋使和大王相见，大王自称“我夷人”、“冀闻大国维新之化”之类体现倭国卑下态度的用语并不少见，而对于唐朝客使，日本至少能体面地维持一种中央政府的态度，但是某种程度上看，那种“事大主义”的心理却并未改观。日本史料所传递的“日本=诸蕃·朝贡国”的观念，以及遣唐使诗文“我是东蕃客，怀恩入圣唐”等，均可见遣唐使对于“东蕃客”身份的自觉。</p>
+  <p> </p>
+  <p>理论上说，日本派遣了十多次遣唐使，每次都有好几百名留学生、留学僧，其中以诗文才能见长的使者更是不胜枚举，如入唐使者粟田真人、山上忆良、藤原宇合、多治比广成、菅原清公、上毛野颖人、朝野鹿取、藤原常嗣、菅原善主等，留学生吉备真备、阿倍仲麻吕、丹福成、橘逸势等，另有留学僧智藏、弁正、道慈、空海、圆仁、圆珍等，遗憾的是，在他们留存下来的微乎其微的诗文中，正面描述长安印象的寥若晨星。究其原因，就在于八、九世纪这一时期遣唐使与长安之间存在着直接的、固定的联系，时间、空间的差异不那么明显，兼之遣唐使对中国文化的熟悉与认同，文化、心理差异也不明显，因而造成文学想象和虚构的缺失，以至于很难为日本提供一个精确的关于长安的公共想象。</p>
+  <p> </p>
+  <p>至九世纪初编纂的“敕撰三集”，日本文人开始以汉长安城作为诗歌背景，用中国诗文特有的修辞习惯，将都城隐入诗歌背后，而拒绝对其进行任何的正面描写。这一情况几乎可以扩大并适用于古代日本想象中国的所有艺术领域——绘卷、屏风、建筑、器物等关于中国的描述，都不同程度地以可视的形象满足了古代日本人关于中国的想象，但这些想象无一不在谨慎地拒绝着中日之间文化等级方面的权力关系——“汉文化中心主义”带来的强大吸引力。这导致了古代日本关于中国的想象中包含着一种焦虑：渴望中国文化的滋养，但又想摆脱中国的影响，迅速形成自己的民族文化，在华夷秩序中获得一种“小中华”的认可。因此，与其说他们是用“长安”典故创作汉诗，毋宁说他们试图在书写中获得一种假想的文化身份，而这一身份的获取，最便捷的方法便是移植长安的物质场景和生活方式，关于这一点，他们通过营造“小长安”——平安京实现了。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-15/5f882288a4188f0001535cf6.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>影视剧中的长安景象</p>
+    </figcaption>
+  </figure>
+  <p>一个指导性的前提是，一个外国人在中国看到了什么样的自然景观和文化景观，取决于是“谁”在看、在描述。这种情况下，留存下来的圆仁日记对长安的个体性体验就具有了绝对的话语权。圆仁《入唐求法巡礼行记》中的长安叙事至“会昌废佛”达到高潮，首先是由圆仁的僧侣身份决定的。一个外国僧侣在长安遭遇废佛事件，在性命岌岌可危的情况下，就不可能成为一位冷静的旁观者和局外人，圆仁以体验者、受害者的视角描述了一座血雨腥风的长安城，并且制造了一个“暴虐皇帝”的形象，其“受迫害”的经验为九世纪的日本提供了一个绝对可靠的、想象长安的范本。</p>
+  <p> </p>
+  <p>九世纪末十世纪初的东亚，随着唐朝、渤海、新罗的依次灭亡，形成一种新的政治格局。这时日本不接受唐朝的册封，试图以平等姿态展开与唐外交的心态开始出现。伴随“日本中心主义”外交意识的上扬，将日本与其之外的国家明确区别开来的自国意识逐步确立，关于异国形象的描述也开始在日本史书中出现。如《三代实录》卷二一贞观十四年正月二十日条：“是日，京邑咳逆病发，死亡者众。人间言，渤海客来，异土毒气之令然焉。是日，大祓于建礼门前。”将京邑流行瘟疫之因，尽归罪于渤海客使。受这种“日本中心主义”外交观的支配，中国不再是优于日本的“大国”，而是与渤海、新罗等“蕃国”同等的“异国”之一。与此同时，日本与中国具有同等地位甚至优越于中国的认识开始盛行，中国人慕日本“德化”之风渡海赴日的记录逐渐增多。</p>
+  <p> </p>
+  <p>日本在确立“日本中心主义”、“东夷小帝国”的自我精神形成时期，作为文化他者的唐都长安在被憧憬、向往的同时，也出现了被排斥、被丑化的问题。《今昔物语集》所收圆仁说话中，虚构了一座阴森恐怖的“绞缬城”，这里专用人血染布，但凡被囚禁者绝无生还的可能。《今昔物语集》以圆仁日记中的长安城为原型，却将长安进一步妖魔化为“鬼城”，加剧了遣唐使在唐都受迫害的想象。这种想象究竟在多大程度上对日本文学施以影响，并如何在广义上充当一种证据或神话？</p>
+  <p> </p>
+  <p>对大江匡房说话集《江谈抄》来说，长安就是这样一种被延续解释的神话，这是读《江谈抄》中收录的吉备真备说话最深刻的直觉之一。遣唐使阿倍仲麻吕被唐人囚禁于长安高楼饿死，变成厉鬼后帮助吉备真备抵抗唐人的迫害，这种同样表现遣唐使在长安遭受迫害的主题，经院政时期后白河院的绘卷制作，以及江户时期默阿弥的能剧实验，几乎成了一个神话。这再次为我们证明了所谓的想象物是一个充满了互文性的场所，尽管它对异国的表现是片面的、主观的、零碎的、抽象的，但因为它可以部分或全部地成为一种象征性交流的工具，成为一种被程序化的文化描述，所以即使如大江匡房这样缺乏实际的长安体验的文人，也可以通过文献及观念史中的描述来构筑他自己对长安城的概念。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-15/5f8822b8a4188f0001535cf7.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>《今昔物语集》</p>
+    </figcaption>
+  </figure>
+  <p><strong>“长安幻象”：古代日本人对长安的地理认识</strong></p>
+  <p> </p>
+  <p>古代日本人对于长安的地理认识究竟如何？或者说，古代日本人通过经验、文献累积的对于长安的知识如何？不可否认，异国空间常常处于一种被神话化的过程中，在一个文学或文化形象里，空间并非连续的、一致的、真实的，但异国空间似乎更加青睐“不平衡性”，它往往集中抬高表现某些景观，又经常孤立、否定甚至谴责某些地点，而透过对其“重视”或“沉默”的空间景观的分析，能够复制出地理空间和心理空间之间的精神联系。一个最典型的特征就是，奈良、平安时代日本文学对长安空间的表现，几乎都集中于城郭之内。更具体地说，唐皇帝所居住及理朝的皇城、宫城，尤其是接待遣唐使的礼仪空间被高度重视，被赋予一种象征的意义，而对王权之外的市井、民间景观则鲜有关注。</p>
+  <p> </p>
+  <p>事实上，圆仁日记也提供了关于长安日常的重要参考，尤其是《入唐求法巡礼行记》中出现的长安坊市、寺院名称极为丰富清晰，另外圆仁对于长安节日风俗的描写也堪为精细，但事实上关于长安空间的这部分描述在《今昔物语集》《宇治拾遗物语》《江谈抄》等文献中都被不同程度忽略，反而将“恐怖的长安城”表述进行最大化表现，这种被单独分割开的空间便具有了象征整体的意义，并在互文性的场域中被普遍化。</p>
+  <p> </p>
+  <p>这种情况到平安末期甚至镰仓初期依然没有多少好转。在《滨松中纳言物语》《松浦宫物语》等遣唐使物语中，作为遣唐使活动舞台的长安，仍然是以皇城和宫城为重要舞台。不同的是，这一时期的长安宫殿不再是模糊的、泛指的、观念的“宫殿”，而是被给予了实在的名称，如“未央宫”、“掖庭”等这些取自中国史书文献的实名，且出现了对中国建筑形态的简单描绘，如“前殿”、“钓殿”等。与之相关，活动于长安舞台上的中国人物，也多为帝王、皇后、贵族、公主、文章博士等皇族或贵族人物，或者是从中国史书上照搬下来的英雄美人，而完全没有普通人的形象，这也从另一个侧面证明了东亚早期叙事文学颠扑不破的真理——专注于表现帝王将相的传奇，而非市井常人的苦乐。</p>
+  <p> </p>
+  <p>这真实地显示了自遣唐使制度废止之后，在中日没有正式外交的情况下，日本充分消化遣唐使传入中国文献的成果。也就是说，与遣唐使时代“谨慎”地描述长安相比，镰仓时期日本与长安在时间、空间上的距离忽然加大，使日本文学中长安幻象的产生具有了基本可能。另外，这些物语中开始出现了对长安周围地理的想象，如“长安是一座被大海包围的城市”，尽管这些描述被现代学者认为极不可靠，但至少说明了那个时代日本人对长安地形、地质的质朴且珍贵的理解。这种理解不过是单纯地依靠文献记载而非实际踏查，但他们能以丰富的汉学修养和敏锐的理解力，在有限的汉文典籍的基础上，虚构出一个长安幻象。不过这些作家即使如藤原定家者，在利用《文选》《白氏文集》中与长安有关的诗句时，因不能有效区分超现实、夸张、铺陈等修辞手法的使用，而是照搬字面、望文生义、断章取义，以至于对长安地理的描述出现诸多偏差，这是首先应该注意的问题。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-15/5f8822f1d7f8a70001ef07f9.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>影视剧中的长安景象</p>
+    </figcaption>
+  </figure>
+  <p>其次，与奈良文学主要接受中国六朝文学的影响不同，平安之后日本主要接受唐朝诗文的影响，长安作为唐朝国都，在唐诗中有集中而又丰富的表现，日本人在接受唐诗影响的同时，一并将长安地名、景观等接受过来，其中又以白居易的影响最为突出。《松浦宫物语》中根据白居易诗歌所理解的长安，是基于日本人已有的观念的认识之上产生，然后有选择地接受的结果。而所谓“日本人已有的观念”，既有来自遣唐使时代口耳相传的说话故事，又有来自庞大的汉籍史料的阅读体验，同时还有一代代日本人所创作的以唐土为题材的汉诗、和歌、物语、绘卷等，这些因素综合形成一种经验，也即集体的无意识，在其支配下的唐土，以一种游仙的、幻境的遥远异国形象出现，而居于这个异国中心的王都长安，犹如茫茫大海彼岸的一座海市蜃楼，繁华而妖艳。正是在这种理解上，《松浦宫物语》才会特别关注白居易诗歌中的“雾”、“梦”、“朝云”、“花”这些意象，从而描述出了一种中世日本人眼中的长安。</p>
+  <p> </p>
+  <p>八世纪至十三世纪初日本遣唐使文学与长安的关系，我们只要看一下这段时期日本人关于长安的描述，就会发现从这些文本中浮现出来的对唐的“事大主义”与“日本中心主义”的纠结与矛盾。这些文本的缔造者主要是占据日本中央政坛的贵族官僚或著名僧侣，无一位出身卑微庶民，因此他们笔下的长安城，绝对不是一个单纯的地理术语，而是蕴含政治色彩的王权之都。自菅原道真一纸谏文日本废除遣唐使制度后，日本人与长安很难再有正式的、大规模的文化交流。但十三世纪之后日本文学与长安的关系依然在绵延。</p>
+  <p> </p>
+  <p>元仁宗皇庆元年（1312），因倭寇滋事，元廷震怒，遂将所有来华日本僧侣悉数逮捕下狱。时在潮州求法的雪村友梅因距事发地较近，被以“间谍罪”判处死刑，后元武帝海山即位，大赦天下，雪村幸免死罪，改判为流放长安，幽禁于翠微寺。昔日唐时繁华都，今朝竟成流放地，雪村友梅幽禁长安时所见所感，莫不带有流放者的哀伤，收入其《岷峨集》中名为《杂体》诗十首中，便有“一身缘纽余，三载长安市”之叹。公元1316年，雪村友梅又被发配成都，离陕入川。十年后，雪村友梅以住持身份再回长安翠微寺时，已是第二次入长安。对雪村友梅来说，长安早已不是遣唐使眼中的繁华之都，而是满眼凄凉的流放之地。据雪村友梅归日本后自撰《行道记》记述，在幽禁翠微寺期间，他曾游历长安附近的王维辋川旧址、唐苑寺、石翁寺、大雁塔等名胜古迹，长安的衰败与雪村友梅的失落暗合，无疑加深了他对长安的“流放地”印象。雪村友梅作为日本五山初期的汉文学巨匠，其波澜壮阔的留学生涯是新鲜思想、文化潮流的源头活水，这又在一定程度上影响了日本文学中的长安表述。</p>
+  <p> </p>
+  <p>雪村友梅被“幽禁长安”的经历与圆仁无意暗合，强化了长安是迫害日本人的“凶险之都”形象。可以说，至江户以前，长安形象一直是日本自国意识觉醒及建构的“他者”，它被丑恶化地用来表现日本的恐惧与排斥，是日本借以自我确认与自我巩固的“意识形态”。这种情况一直持续到江户时期长安作为唐诗的重要意象被日本文学受容。江户时期，当长安渐渐淡出中国文人的视野，在一海相隔的日本，追崇唐文化的热潮却空前高涨。服部南郭校订《唐诗选》和《唐诗选国字解》的出版，掀起了江户时期学唐诗的风潮。教科书中出现了以唐诗为中心的汉诗的编写高峰，各种团体以及公开讲座使唐诗成为江户时期最具有人气的文体，甚至影响了庶民阶层的新兴娱乐“都都逸”歌谣。江户人的唐诗受容，是受明代李攀龙《唐诗选》的影响，李攀龙提倡“诗必盛唐”的主张被服部南郭继承，这就决定了江户人所接受的长安，多为李白、王维等吟唱的玄宗时代的“花之都”长安。尽管江户人并非不知道唐以后的长安已经衰败这一事实，但对江户人来说，长安已是超越时空的“不朽之都”。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-15/5f88231fd7f8a70001ef07fa.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>雪村友梅雕像</p>
+    </figcaption>
+  </figure>
+  <p><strong>“精神故乡”：近现代日本人的长安纪行</strong></p>
+  <p> </p>
+  <p>从近代东洋史学到大众文学明治开国至战后，以日本汉学家对长安的考史纪行和考察为契机，长安作为遣唐使活动的历史舞台，在日本寻求与中国邦交正常化的“后遣唐使”时代，重新以“精神故乡”的形象再次回归日本文学。长安形象也相应地出现彻底的转型，从表现恐惧、排斥的“意识形态”变成缅怀的、伤感的、精神故乡式的乌托邦。</p>
+  <p> </p>
+  <p>明治维新之后，日本开国力度激增，政客、记者、教习、学者、商贾、军人竞相踏入中国，或游山玩水，或调查旅行，或寻找创作灵感，或以“异域之眼”猎奇，总之留下了卷帙浩繁的纪行文字。但是，这些作家的足迹大多留恋于北京、上海、南京等近现代中国的政治、经济、文化中心，去西安的可谓凤毛麟角，只有一些史学家怀着对古都长安的强烈憧憬前往。这一方面当然是因为现代西安偏于中国西北隅，远离政治经济中心，另一方面也与当时去西安的铁路不通、交通极为不便有关。据桑原骘藏《长安之旅》记载，他于1907年9月3日七点发自北京前门车站，直到9月19日才过灞桥到西安府，其间乘火车、雇马车、骑马、坐船、步行历经十六天才到西安，路途无比艰辛，以致病倒。</p>
+  <p> </p>
+  <p>桑原骘藏的考史随笔《长安之旅》，以史学家的眼光记录了二十世纪初西安的建筑宫墙、陵墓碑碣、寺院楼阁、府兵制度等，并旁征博引史料对现实踏查佐证，不仅具有极高的学术价值和文献价值，而且作为游记，《长安之旅》本身就具备极高的文学性。另外，桑原骘藏游历西安时，曾指导当时执教于陕西高等学堂的日本教习足立喜六，自1906年至1910年，足立喜六受清政府邀请，在陕西高等学堂任教。他利用业余时间，完成了对唐长安城遗址的调查，“兼及汉唐旧都长安规模、遗迹之研究”，利用其数学、物理知识，对西安及其附近的历史遗迹进行实地考察、测绘，著有《长安史迹研究》一书，并配有171幅珍贵照片，初版由那波利贞作序，充分肯定了其学术价值。这些都是研究清末民初长安实态的重要史料。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-15/5f882364d7f8a70001ef07fc.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>足立喜六拍摄的咸阳渡口</p>
+    </figcaption>
+  </figure>
+  <p>与桑原骘藏同游西安的宇野哲人，曾将本次旅行见闻以“家信”的方式寄给家人，后结集为《长安纪行》出版。与桑原氏“调查史料真伪，考证史迹变迁”的严谨态度不同，宇野哲人笔下的长安在历史考古之外，更多了一份感情色彩，“离京南下以来，已十有七日，行程千余里，今日得入长安，夙志是酬……然一度脚踏崤函，此身已是汉唐之人，秦岭、泾渭则不待言，小至一草一木，无不在诉说旧史。予于此淹留旬余，庶几可徜徉帝都之大道，缅怀帝都之旧影”。</p>
+  <p> </p>
+  <p>桑原骘藏将对隋唐长安城的研究带入了日本近代东洋史领域。一般认为，日本近代“东洋史”这一复合词源于对外来欧洲语或英文“Oriental History”的翻译，而日本近代独创的“东洋史”概念的最早提出者为那珂通世（1851~1908）已为不刊之论。1896年，那珂通世被任命为东京帝国大学讲师，讲授东洋史。同年，桑原骘藏留校继续攻读学位，受业于那珂通世，专攻东洋史。而长安具备的三种特性，使之在早期的东洋史研究中被凸显出来：一是作为大唐国都，长安与日本平城京、平安京的特殊亲密关系，使研究唐代史的学者无法回避；二是作为丝绸之路的起点，长安与西域各国的关系，以及在二十世纪初兴起的“敦煌学”中的作用，使研究西域史、敦煌学的学者无法回避；三是作为遣唐使的历史舞台，长安在遣唐使研究以及古代中日交流史研究中无法回避。</p>
+  <p> </p>
+  <p>这三个层面上的“无法回避”，奠定了长安在日本早期东洋史研究中的地位。那波利贞是较早关注长安的日本学者之一，他在二十世纪二十年代前后发表的系列论文影响颇大。平冈武夫在唐代基础文献整理上，汇成十二册的《唐代研究指南》，是战后日本长安研究中较有代表性的著作，其中《长安与洛阳》资料卷、索引卷、地图卷为研究唐都长安必备工具书。另外，佐藤武敏《长安》及《长安：古代中国和日本》、妹尾达彦《长安的都市计划》都是世纪之交日本史学界研究长安的重要著作。</p>
+  <p> </p>
+  <p>近代东洋史学者对于长安的关注，带动了近现代日本文学对长安的想象，其中石田干之助的影响不容忽视。与桑原氏所代表的京都学派不同，出自东京文献学派创始人白鸟库吉门下的石田干之助，并未到长安实地勘查，受白鸟库吉影响，石田干之助注重透过语言学考证，善用语言文字考证法来治东洋史，其代表作《长安之春》也主要是从诗歌、语言、文献上推演而来。井上靖在为《长安之春》作序时较准确地阐释了这部著作的特征——“说是研究随想或许有些不合适，但仅称之为随想又过于沉闷，如果称之为综合研究，我想这又违背了石田博士编写这一卷的意图。石田博士最初并没想承载什么主题，而是以无主题的方式书写长安，编缀成一册，呈现给独具慧眼的读者”。《长安之春》卷首引用韦庄《长安春》和白居易《牡丹芳》等诗歌，通过对曲江探花、灞桥折柳、胡姬当垆、贵族宴饮及遣唐使所见的唐廷礼仪的堆砌叙述，使盛唐长安的华丽面影扑面而来。以“长安春”这一意象为内核，膨胀生发出的“华之都”、“花之都”、“春之都”等诸多套语，成为日本现代文学中长安形象塑造的重要范本。《长安之春》收集了《“胡旋舞”小考》《当垆的胡姬》《隋唐时代伊朗文化输入中国》等七篇文章，单从题目上看，便不难发现石田氏关注长安的重点在“长安之外的西域”。受当时欧洲汉学界对中国“周边”的实地勘察和文献探险影响，石田干之助在西域史方面用功颇深。他对长安和西域的捆绑式研究，带动了日本文学塑造出的另一套长安话语——“国际之都”、“丝绸之路起点”、“敦煌的纽带”。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-15/5f8823a8d7f8a70001ef0801.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>井上靖</p>
+    </figcaption>
+  </figure>
+  <p>此外，在日本东洋史学者中，石田干之助与东洋文库、东方学会密切联系在一起，自1951年《东方学》杂志创刊，他便长期执笔“海外汉学动态”，作为日本沟通世界汉学的窗口，石田氏功不可没。石田氏同窗好友芥川龙之介曾说，他创作的以中国为背景的小说《鼻子》《杜子春》《酒虫》等就是受到石田氏关于中国的研究而写出来的。昭和五十四年（1979）讲谈社出版《长安之春》文库版时，井上靖作序与后记称：“我的《天平之甍》、《杨贵妃传》以及其他以唐代长安为背景的小说，曾多次蒙受《长安之春》的恩惠。对我而言，这本书是辞典、参考书，是在书写长安时不可或缺的座右之书。”总之，《长安之春》不仅在史学界、文学界影响非凡，即使“对一般的读者而言，提起石田干之助，首先也会想到他是《长安之春》的作者”。因此石田干之助被称为“鲜活再现长安盛景的日本第一学者”。</p>
+  <p> </p>
+  <p>侵华战争期间，西安并非抗日主战场，但自1935年中央红军“落户”陕北，西安摇身一变成为距离延安最近的国民党统治区，“西安事变”更是让这座古都在中国现代史上“复活”了一回，美国记者斯诺在《西行漫记》“开往西安的慢车”一节，以冒险小说的方式讲述他如何穿越西安地区国民党的封锁统治进入红区延安，这部堪与冒险小说媲美的纪实报道，第一次将延安“红色麦加”形象传达给世界的同时，激起了西方记者蜂拥而至西安。对中国共产党抱有亲密友谊的史沫莱特，甚至称国民党统治的西安“保守、肮脏、落后”，以衬托共产党领导的延安“文明、卫生、现代”，她毫不吝啬地将这种反差放大给美国甚至全世界，不断强化西方尤其是美国人心目中二十世纪三四十年代的西安形象——“反自由的碉堡”和“白色恐怖之城”。资产阶级出身的斯特朗则给西安附加上了“中世纪城堡”这一功能，其目力所及皆是“中世纪”色彩——高耸的城门、成群的乞丐、饥饿的儿童、粗犷的风景以及扮演拯救者的传教士。</p>
+  <p> </p>
+  <p>以斯诺为首的美国记者对日本的影响无疑是巨大的，日本华裔作家陈舜臣说，战争期间他读到斯诺的《西行漫记》，作品中“塑造的崭新中国让我很激动”。战后作家司马辽太郎在随笔集《从长安到北京》中，对斯诺描写的延安地貌颇有微词，他说如果斯诺能从飞机上看，就绝不会有这样的感觉，也不会用这种又恐怖又刺激的语言来形容延安了。司马辽太郎认为“当时红军与得到外国绝对支持的国民党军队抗衡而不得不藏身于这样的地势中，与其说是利用自然地势将敌兵饿死、渴死在途中，不如说是红军为了置之死地而后生”。与对延安野性自然风景的礼赞不同，司马辽太郎始终觉得西安是灰暗的、阴霾的城市。</p>
+  <p> </p>
+  <p>进入二十世纪后期，日本文学中涉及长安的作品数量激增。从题材类别上看，可大致分为大众文学、纪行文学、历史随笔三类，其中以大众文学领域内的创作最为突出。大众文学领域内涉及长安的小说大致又可分为三类，这些作品许多都以遣唐使为主人公。一是仅以长安为背景舞台，主要人物为遣唐使和留学僧，情节均为虚构的推理类小说。如陈舜臣的推理小说《方壶园》《长安日记——贺望东推理故事集》，伴野朗《长安杀人赋》，田中芳树《寒泉亭杀人》《缬城绮谭》，森福都《长安牡丹花异闻》，驹田信二《黄金蝶》等。二是以生活在长安的诗人、美人、帝王、遣唐使、胡姬为主要人物的历史传记类小说。如井上靖《杨贵妃传》《天平之甍》， 伴野朗《长安物语：光与影的皇帝玄宗》，原百代《武则天》，松田铁也《长安之月：未归的仲麻吕》，大原正义《长安之月：阿倍仲麻吕传》，司马辽太郎《空海的风景》，等等。三是偏离史实，仅依据有限的历史文献，以长安为时空代号，纵横六合、天马行空地想象的奇幻、怪奇类小说。如井上佑美子《长安异神传》系列、梦枕谟《沙门空海之大唐鬼宴》系列等。梦枕貘的小说经陈凯歌改编成电影《妖猫传》，于2017年年底先后在中日两国上映，影片中的盛唐长安极尽酣畅风流之美。目睹如此极乐盛景，谁又能说盛唐“长安”已经消失了呢？</p>
+  <p> </p>
+  <p><em>注：本文摘自郭雪妮《从长安到日本：都城空间与文学考古》中的《终章》，由社会科学文献出版社授权刊发。</em></p>
+  <p> </p>
+  <p>————</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2020-10-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-17/%E7%8E%8B%E7%AB%8B%E9%93%AD-%E5%90%83%E8%B4%A7-%E5%9F%BA%E5%9B%A0-%E7%94%9F%E5%91%BD%E5%92%8C%E7%96%BE%E7%97%85%E7%9A%84%E7%A7%91%E6%99%AE-%E7%A7%91%E5%AD%A6%E5%B0%86%E4%BA%BA%E7%B1%BB%E5%B8%A6%E5%90%91%E4%BD%95%E6%96%B9-%E9%9D%92%E5%B9%B4%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E7%B3%BB%E5%88%97/">
+          王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-16</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          导演陈传兴：《掬水月在手》与叶嘉莹的传奇人生丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-14/%E7%89%9F%E9%92%B0-%E4%BB%8E%E6%97%A0%E7%BD%AA%E5%88%B0%E6%9C%89%E7%BD%AA%E7%9A%84%E5%8F%B8%E6%B3%95%E7%8E%B0%E5%AE%9E-%E5%8D%B7%E5%AE%97%E9%9A%90%E8%97%8F%E7%9D%80%E5%93%AA%E4%BA%9B-%E6%B2%89%E9%BB%98%E7%9A%84%E7%9C%9F%E7%9B%B8-%E9%9D%92%E5%B9%B4%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E7%B3%BB%E5%88%97/">
+          牟钰：从无罪到有罪的司法现实，卷宗隐藏着哪些“沉默的真相” | 青年知识分子系列⑤
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-14/%E5%88%81%E4%BA%A6%E7%94%B7-%E4%BB%8E%E7%BC%96%E5%89%A7%E5%88%B0%E5%AF%BC%E6%BC%94-%E8%89%BA%E6%9C%AF%E6%80%A7%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9%E5%95%86%E4%B8%9A%E6%80%A7-%E4%B8%A8%E5%B9%B3%E9%81%A5%E5%BD%B1%E5%B1%95%E7%B3%BB%E5%88%97%E6%8A%A5%E9%81%93/">
+          刁亦男：从编剧到导演，艺术性如何面对商业性？丨平遥影展系列报道
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-14/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%AE%9A%E6%97%B6%E6%8E%A8%E6%96%87-%E9%9A%90%E8%97%8F%E7%9C%9F%E5%AE%9E%E8%BA%AB%E4%BB%BD%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7%E4%B9%8B%E4%B8%80-iYouPort/">
+            前一篇：如何发布定时推文：隐藏真实身份的小技巧之一 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-15/%E5%86%B7%E6%88%B0%E7%89%A9%E8%AA%9E-%E5%A5%BD%E6%9C%8B%E5%8F%8B-%E8%A6%81%E8%B7%9F%E6%88%91%E8%B2%B7%E8%BB%8D%E7%81%AB-%E8%A9%B2%E4%B8%8D%E8%A9%B2%E8%B3%A3%E5%91%A2/">
+            後一篇：[冷戰物語]「好朋友」要跟我買軍火，該不該賣呢？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-10-14/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%AE%9A%E6%97%B6%E6%8E%A8%E6%96%87-%E9%9A%90%E8%97%8F%E7%9C%9F%E5%AE%9E%E8%BA%AB%E4%BB%BD%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7%E4%B9%8B%E4%B8%80-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-10-15/%E5%86%B7%E6%88%B0%E7%89%A9%E8%AA%9E-%E5%A5%BD%E6%9C%8B%E5%8F%8B-%E8%A6%81%E8%B7%9F%E6%88%91%E8%B2%B7%E8%BB%8D%E7%81%AB-%E8%A9%B2%E4%B8%8D%E8%A9%B2%E8%B3%A3%E5%91%A2/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-10-14/%E7%89%9F%E9%92%B0-%E4%BB%8E%E6%97%A0%E7%BD%AA%E5%88%B0%E6%9C%89%E7%BD%AA%E7%9A%84%E5%8F%B8%E6%B3%95%E7%8E%B0%E5%AE%9E-%E5%8D%B7%E5%AE%97%E9%9A%90%E8%97%8F%E7%9D%80%E5%93%AA%E4%BA%9B-%E6%B2%89%E9%BB%98%E7%9A%84%E7%9C%9F%E7%9B%B8-%E9%9D%92%E5%B9%B4%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E7%B3%BB%E5%88%97/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-10-14/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E5%AE%9A%E6%97%B6%E6%8E%A8%E6%96%87-%E9%9A%90%E8%97%8F%E7%9C%9F%E5%AE%9E%E8%BA%AB%E4%BB%BD%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7%E4%B9%8B%E4%B8%80-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-10-15/%E5%86%B7%E6%88%B0%E7%89%A9%E8%AA%9E-%E5%A5%BD%E6%9C%8B%E5%8F%8B-%E8%A6%81%E8%B7%9F%E6%88%91%E8%B2%B7%E8%BB%8D%E7%81%AB-%E8%A9%B2%E4%B8%8D%E8%A9%B2%E8%B3%A3%E5%91%A2/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-10-14/%E7%89%9F%E9%92%B0-%E4%BB%8E%E6%97%A0%E7%BD%AA%E5%88%B0%E6%9C%89%E7%BD%AA%E7%9A%84%E5%8F%B8%E6%B3%95%E7%8E%B0%E5%AE%9E-%E5%8D%B7%E5%AE%97%E9%9A%90%E8%97%8F%E7%9D%80%E5%93%AA%E4%BA%9B-%E6%B2%89%E9%BB%98%E7%9A%84%E7%9C%9F%E7%9B%B8-%E9%9D%92%E5%B9%B4%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E7%B3%BB%E5%88%97/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

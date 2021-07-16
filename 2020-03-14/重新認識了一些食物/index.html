@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>重新認識了一些食物 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+重新認識了一些食物
+——
+" />
+    <meta property="og:description" content="
+重新認識了一些食物
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="重新認識了一些食物" />
+    <meta property="twitter:title" content="重新認識了一些食物" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40islander%2F%25E9%2587%258D%25E6%2596%25B0%25E8%25AA%258D%25E8%25AD%2598%25E4%25BA%2586%25E4%25B8%2580%25E4%25BA%259B%25E9%25A3%259F%25E7%2589%25A9-bafyreiabid7djjpkauwsz73blatkm7oaljzc6yvkt6a4wjjodamncaeuje" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@islander/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9-bafyreiabid7djjpkauwsz73blatkm7oaljzc6yvkt6a4wjjodamncaeuje" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@islander/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9-bafyreiabid7djjpkauwsz73blatkm7oaljzc6yvkt6a4wjjodamncaeuje&text=重新認識了一些食物&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@islander/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9-bafyreiabid7djjpkauwsz73blatkm7oaljzc6yvkt6a4wjjodamncaeuje&title=重新認識了一些食物" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@islander/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9-bafyreiabid7djjpkauwsz73blatkm7oaljzc6yvkt6a4wjjodamncaeuje&title=重新認識了一些食物" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=重新認識了一些食物&body=
+重新認識了一些食物
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@islander/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9-bafyreiabid7djjpkauwsz73blatkm7oaljzc6yvkt6a4wjjodamncaeuje" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@islander/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9-bafyreiabid7djjpkauwsz73blatkm7oaljzc6yvkt6a4wjjodamncaeuje&title=重新認識了一些食物&caption=
+重新認識了一些食物
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=重新認識了一些食物&url=https://matters.news/@islander/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9-bafyreiabid7djjpkauwsz73blatkm7oaljzc6yvkt6a4wjjodamncaeuje" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>重新認識了一些食物</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-03-14
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 島民</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@islander/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9-bafyreiabid7djjpkauwsz73blatkm7oaljzc6yvkt6a4wjjodamncaeuje" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1584182577000-->
+<p><a href="https://matters.news/@islander/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9-bafyreiabid7djjpkauwsz73blatkm7oaljzc6yvkt6a4wjjodamncaeuje">重新認識了一些食物</a>
+——</p>
+
+<div>
+  <p>這段時間重新認識了一些食物。之前一個多月溫州和浙江封閉式管理，購買食物的尋常途徑被切斷，人們需要大量儲存糧食在家中自煮。起初家庭糧食物資的管理是我主導，因為我父母沒有危機意識，連現金都覺得不需要取。在我想著房產證在哪，車裡還剩多少汽油，有多少現金可以帶走，趕緊買醫療保險是不是還來得及，是不是可以趕緊買點美元黃金的時候（那是我每天想著出逃的時期），他們想的是把某個房間的地板重新鋪一次，還要買新牆紙。大家對世界的理解不一樣，自然，他們覺得不需要儲備糧食，就像起初他們覺得不需要購買口罩酒精是一樣的。後來風向變了，中央說話了，市場上開始買不到東西了，我父母才緊張起來，開始翻查家裡有多少米。</p>
+  <p>這些都不是本文的重點。本文的重點是，在我主導家庭糧食物資儲備的這段期間，我對一些食物有了新的認識。</p>
+  <p>首先是蔬菜。葉菜類生長週期長，保鮮期短，運輸起來一大包，體積那麼大，下水一煮卻只有那麼一點，不是什麼牢靠的食物。真空密封有些幫助，但也不能延長太久壽命。古人如何保存蔬菜？除了地窖密封冷藏，還有醃製。溫州人沒有醃製泡菜的習慣，但會用芥菜來曬製成乾，加鹽發酵，成為鹹菜。但這始終不能跟中國東北和韓國醃製泡菜的規模相比，而且製作需時。葉菜類中最可靠的，倒是球菜，台灣叫做高麗菜，不冷藏居然可以存放兩個星期之久，就算外層的菜葉黃了，裡層卻還是鮮甜。這種蔬菜太普通，我想起以前跟朋友吃火鍋，剩了一堆高麗菜，朋友問我為什麼，我說這就高麗菜啊，很普通啊，朋友還生氣了。對不起，小看了高麗菜，我現在知道了。然後是瓜果類，例如番茄、黃瓜、南瓜，倒是可以多放幾日，但也都撐不過一星期。</p>
+  <p>最可靠的是根莖類。白蘿蔔、紅蘿蔔、山藥、芋頭、地瓜（紅薯）、土豆（馬鈴薯）。十度以下的天氣，放在戶外不用冷藏，可以撐兩個星期或以上，吃起來居然不怎麼影響風味。而且根莖類還可以作為主食，澱粉含量高，三餐都可以吃，早餐做主食，午餐做配菜，晚餐做粥。</p>
+  <p>大量食用根莖類的日子，我父親想起了小時候家裡窮，吃不起米，地瓜當主食的日子。他最愛吃的零食是地瓜乾，到現在還是。這是食物在身體中留下的記憶。我則想起蘭嶼，想起海洋民族、南島民族，想起玻里尼西亞、美拉尼西亞、密克羅尼西亞。芋頭在夏威夷有神的名字。根莖類易種植，生長快，又果腹，有澱粉也就罷了，居然還含糖。多麼珍貴的食物。蘭嶼的達悟人說，芋頭田是女人的海，人生而勞動，芋頭多寡決定著女性與家庭的榮耀。我從前是只知其然，不知其所以然。我沒有餓過，沒有缺糧少油過，所以看著芋頭，是異文化，是民族誌。其實芋頭是生命，是我們仰賴的海島眾神之一。我現在懂了。</p>
+  <p>還有一樣讓我改觀的，是小麥與麵粉。江南少麵食，魚米之鄉，尋常人家裡是沒有擀麵杖的。但我父親卻被近年來開在溫州大街小巷的包子鋪徹底改變了早餐習慣。但瘟疫期間誰還做包子，賣包子？包子買不到，麵粉還買得到。雖然我懶得搭理這種刁鑽的挑嘴少爺（年紀上已經該叫老爺了吧），但我母親還是盡力滿足他的要求。她買了麵粉，在網上自學做包子，當然，失敗了。然後我們開始做餅，那要簡單得多。家裡有許多經年的梅菜乾，都拿出來做成了梅菜麥餅。我這才發現麵粉是這麼耐吃的東西，一袋小小的麵粉，居然可以做出我父親半個月的早餐來。如若是大米，簡直是不可能的事，煮個幾頓就沒了。</p>
+  <p>然而我們都知道，種米種稻，都是國家把人固定在土地上以方便課稅和管理的方法。Zomia 的人就從不作長期的固定農耕，不是嗎？吃慣精米的我，是被馴化了。</p>
+  <p>肉類、魚類，因為冰箱的出現，冷凍起來都可以吃好久，沒什麼好說，只是貴。油鹽醬醋，原來不是必須，鹽巴才是最重要的。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-03-30</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-30/%E6%AD%B7%E5%8F%B2%E6%AD%A3%E5%9C%A8%E6%88%91%E5%80%91%E8%BA%AB%E4%B8%8A%E7%99%BC%E7%94%9F-%E7%98%9F%E7%96%AB%E4%B8%AD%E7%9A%84%E5%B9%B3%E6%B0%91%E6%97%A5%E8%A8%98/">
+          歷史正在我們身上發生：瘟疫中的平民日記
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-14/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5/">
+          1月-2月的一些日記片段
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-13/%E4%B8%80%E7%A8%AE%E4%BE%8B%E5%A4%96%E7%9A%84%E7%94%9F%E6%B4%BB/">
+          一種例外的生活
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-12</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-12/%E4%B8%89%E7%AF%87%E8%98%AD%E5%B6%BC%E8%88%8A%E4%BD%9C/">
+          三篇蘭嶼舊作
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-14/%E4%BA%BA%E7%B1%BB%E7%9A%84%E5%8E%86%E5%8F%B2%E5%8D%B3%E5%85%B6%E7%96%BE%E7%97%85%E7%9A%84%E5%8E%86%E5%8F%B2/">
+            前一篇：「人类的历史即其疾病的历史。」
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-14/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5/">
+            後一篇：1月-2月的一些日記片段
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-03-14/%E4%BA%BA%E7%B1%BB%E7%9A%84%E5%8E%86%E5%8F%B2%E5%8D%B3%E5%85%B6%E7%96%BE%E7%97%85%E7%9A%84%E5%8E%86%E5%8F%B2/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-03-14/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-03-14/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-03-13/%E4%B8%80%E7%A8%AE%E4%BE%8B%E5%A4%96%E7%9A%84%E7%94%9F%E6%B4%BB/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-03-14/%E4%BA%BA%E7%B1%BB%E7%9A%84%E5%8E%86%E5%8F%B2%E5%8D%B3%E5%85%B6%E7%96%BE%E7%97%85%E7%9A%84%E5%8E%86%E5%8F%B2/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-03-14/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-03-14/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-03-13/%E4%B8%80%E7%A8%AE%E4%BE%8B%E5%A4%96%E7%9A%84%E7%94%9F%E6%B4%BB/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

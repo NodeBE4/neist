@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>不敢回答的問卷：2019年意味著什麼？ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+不敢回答的問卷：2019年意味著什麼？
+——
+" />
+    <meta property="og:description" content="
+不敢回答的問卷：2019年意味著什麼？
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="不敢回答的問卷：2019年意味著什麼？" />
+    <meta property="twitter:title" content="不敢回答的問卷：2019年意味著什麼？" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40az%2F%2525E4%2525B8%25258D%2525E6%252595%2525A2%2525E5%25259B%25259E%2525E7%2525AD%252594%2525E7%25259A%252584%2525E5%252595%25258F%2525E5%25258D%2525B7-2019%2525E5%2525B9%2525B4%2525E6%252584%25258F%2525E5%252591%2525B3%2525E8%252591%252597%2525E4%2525BB%252580%2525E9%2525BA%2525BC-zdpuAxzgKAWqZf7L3FxRhkPJ7T95wtaXHm12qPNP31CuVj4qi" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@az/%25E4%25B8%258D%25E6%2595%25A2%25E5%259B%259E%25E7%25AD%2594%25E7%259A%2584%25E5%2595%258F%25E5%258D%25B7-2019%25E5%25B9%25B4%25E6%2584%258F%25E5%2591%25B3%25E8%2591%2597%25E4%25BB%2580%25E9%25BA%25BC-zdpuAxzgKAWqZf7L3FxRhkPJ7T95wtaXHm12qPNP31CuVj4qi" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@az/%25E4%25B8%258D%25E6%2595%25A2%25E5%259B%259E%25E7%25AD%2594%25E7%259A%2584%25E5%2595%258F%25E5%258D%25B7-2019%25E5%25B9%25B4%25E6%2584%258F%25E5%2591%25B3%25E8%2591%2597%25E4%25BB%2580%25E9%25BA%25BC-zdpuAxzgKAWqZf7L3FxRhkPJ7T95wtaXHm12qPNP31CuVj4qi&text=不敢回答的問卷：2019年意味著什麼？&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@az/%25E4%25B8%258D%25E6%2595%25A2%25E5%259B%259E%25E7%25AD%2594%25E7%259A%2584%25E5%2595%258F%25E5%258D%25B7-2019%25E5%25B9%25B4%25E6%2584%258F%25E5%2591%25B3%25E8%2591%2597%25E4%25BB%2580%25E9%25BA%25BC-zdpuAxzgKAWqZf7L3FxRhkPJ7T95wtaXHm12qPNP31CuVj4qi&title=不敢回答的問卷：2019年意味著什麼？" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@az/%25E4%25B8%258D%25E6%2595%25A2%25E5%259B%259E%25E7%25AD%2594%25E7%259A%2584%25E5%2595%258F%25E5%258D%25B7-2019%25E5%25B9%25B4%25E6%2584%258F%25E5%2591%25B3%25E8%2591%2597%25E4%25BB%2580%25E9%25BA%25BC-zdpuAxzgKAWqZf7L3FxRhkPJ7T95wtaXHm12qPNP31CuVj4qi&title=不敢回答的問卷：2019年意味著什麼？" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=不敢回答的問卷：2019年意味著什麼？&body=
+不敢回答的問卷：2019年意味著什麼？
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@az/%25E4%25B8%258D%25E6%2595%25A2%25E5%259B%259E%25E7%25AD%2594%25E7%259A%2584%25E5%2595%258F%25E5%258D%25B7-2019%25E5%25B9%25B4%25E6%2584%258F%25E5%2591%25B3%25E8%2591%2597%25E4%25BB%2580%25E9%25BA%25BC-zdpuAxzgKAWqZf7L3FxRhkPJ7T95wtaXHm12qPNP31CuVj4qi" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@az/%25E4%25B8%258D%25E6%2595%25A2%25E5%259B%259E%25E7%25AD%2594%25E7%259A%2584%25E5%2595%258F%25E5%258D%25B7-2019%25E5%25B9%25B4%25E6%2584%258F%25E5%2591%25B3%25E8%2591%2597%25E4%25BB%2580%25E9%25BA%25BC-zdpuAxzgKAWqZf7L3FxRhkPJ7T95wtaXHm12qPNP31CuVj4qi&title=不敢回答的問卷：2019年意味著什麼？&caption=
+不敢回答的問卷：2019年意味著什麼？
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=不敢回答的問卷：2019年意味著什麼？&url=https://matters.news/@az/%25E4%25B8%258D%25E6%2595%25A2%25E5%259B%259E%25E7%25AD%2594%25E7%259A%2584%25E5%2595%258F%25E5%258D%25B7-2019%25E5%25B9%25B4%25E6%2584%258F%25E5%2591%25B3%25E8%2591%2597%25E4%25BB%2580%25E9%25BA%25BC-zdpuAxzgKAWqZf7L3FxRhkPJ7T95wtaXHm12qPNP31CuVj4qi" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>不敢回答的問卷：2019年意味著什麼？</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2019-12-31
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 張潔平</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@az/%25E4%25B8%258D%25E6%2595%25A2%25E5%259B%259E%25E7%25AD%2594%25E7%259A%2584%25E5%2595%258F%25E5%258D%25B7-2019%25E5%25B9%25B4%25E6%2584%258F%25E5%2591%25B3%25E8%2591%2597%25E4%25BB%2580%25E9%25BA%25BC-zdpuAxzgKAWqZf7L3FxRhkPJ7T95wtaXHm12qPNP31CuVj4qi" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1577781044000-->
+<p><a href="https://matters.news/@az/%25E4%25B8%258D%25E6%2595%25A2%25E5%259B%259E%25E7%25AD%2594%25E7%259A%2584%25E5%2595%258F%25E5%258D%25B7-2019%25E5%25B9%25B4%25E6%2584%258F%25E5%2591%25B3%25E8%2591%2597%25E4%25BB%2580%25E9%25BA%25BC-zdpuAxzgKAWqZf7L3FxRhkPJ7T95wtaXHm12qPNP31CuVj4qi">不敢回答的問卷：2019年意味著什麼？</a>
+——</p>
+
+<div>
+  <p>小時候愛寫畢業手冊，愛在同學錄上寫些故作深沉的句子，愛玩真心話大冒險，愛用一些drama的回答博得滿堂驚呼，也愛寫普魯斯特問卷，愛看別人的答案，仿佛文字的魔力可以讓平淡的人生意味深長起來，希望時間啊，流動得快一點，因為滄桑很酷，可以讓人長出一張有故事的臉。</p>
+  <p>現在不那麼愛了。儘管因為工作仍然需要製造金句……但遇到一些直擊靈魂的問題，可能會輕輕避過，顧左右言他。而且這時候我才明白，原來「天涼好個秋」的意思，並不是逃避面對自我，或想選個舒服的姿勢滑過生命裡的難堪，而常常是用情太深，又深知一切表達都是誤解，便惜字如金。</p>
+  <p>但自己挖的坑還是要咬著牙填啊…… Matters的2019年度問卷，看了好些站上朋友們的回答，感慨萬千。作為參與寫問卷的人之一，硬著頭皮回答：</p>
+  <p><strong>2019年只剩下不到十天，分享一件在年初想不到今年會發生的一件事？這件事對你個人生活帶來什麼樣的改變？</strong></p>
+  <p>意想不到的告別太多了，從一個人到一座城到一個時代。作為一個廣義的寫作者，這些年來，因為立足香港，才獲得了一個「位置」，可以看見、觀察、記錄華文世界，甚至可以背靠這大時代的風陵渡口，去努力生出幾個小世界，接住一些在風浪裡可能過於迂腐或者天真的情感、想法和人。我當然知道，這風陵渡口的安定來自二十世紀的時空紅利，並非理所當然，因此享受了紅利的人，要把紅利再讓渡出去，所作所為不辜負，也需要盡力去守護。但的確沒想到，一切可以陷落得這麼快。儘管，你依然看到香港強大的公民社會根基，令她在最暴烈的時刻都守住尊嚴。儘管，價值對抗在政治的刻意忽視中發展殘酷的近身肉搏時，你依然看到這城市從沒有出現過的「相信」，相信人而不是權力，相信人而不是階級，你看到浮城落地之後，人與人的共同體在新生。儘管，儘管……但你知道，風陵渡口的位置，一去不復返了。對香港而言，這未必是壞事。但對20世紀以來分合內亂的「中國」——作為一個歷史過程、而不是某一個政權的「中國」來說——我感到難過極了。它必定讓「看見」更加不可能，讓溝通更加無力，讓弱者與弱者之間彼此仇視，讓和平更加艱難。對個人生活來說，若選擇讓自己置身於這樣的拉扯之間，不上岸，那我也得學著，在我的風陵渡口，我的九又四分之三月台消失之後，怎樣在風浪中站穩一些，創造，不退縮。</p>
+  <p><strong>說一件在2019年讓你覺得最無能為力的事。你有沒有試圖改變它？如果改變不了，你是如何與它相處？</strong></p>
+  <p>挺多的，2019年最大的功課，就是在學習在無法掌控結果的時候，依然全情投入，相信自己，以行動定義自己。不是為了「改變」什麼，而是要確知在每一個小小的「行動」裏，你是自由的，世界是開闊的，不論結局如何，你做了自己能做的。寫作如是，Matters的實驗如是，還有很多事都如是。「不算、不數<em>……</em>滿懷信心地立在春日的暴風雨中，也不擔心後邊沒有夏天來到。」里爾克的詩，以前就喜歡抄，但真的處在「暴風雨中」，而不知道「後面夏天還會不會來」時，要「不算、不數，像樹木似的成熟」真是太難了。</p>
+  <p><strong>在2019年，獲得了什麼讓你最有力量感？</strong></p>
+  <p>在一度覺得自己已步入「不惑」的狀態裡，踩入新的巨大困惑，在困惑中感受到自己過去的無知、不完整、盲目、割裂，並在痛苦中重新聽見成長的聲音，真的很有力量感。</p>
+  <p><strong>描述今年遇到的一個让你想起就感到温暖的人？</strong></p>
+  <p></p>
+  <p>恩，是一個在痛苦中照見彼此的人，謝謝TA，不描述了。</p>
+  <p><strong>有沒有什麼時刻讓你意識到時間消逝，你會不會對此感到慌張？</strong></p>
+  <p></p>
+  <p>我跟時間的關係一向還行，君子之交淡如水。</p>
+  <p><strong>2019又被稱為「割席年」，在这一年，與朋友、親人、愛人保持親密，对你来说，是更容易还是更困难了？</strong></p>
+  <p></p>
+  <p>親密這件事，隨緣就好。我一直信奉要在值得的人和事身上花時間，感謝時代幫我做了篩選。</p>
+  <p><strong>相比一年前，你與身体的關係發生了什麼變化？你有更喜歡現在自己的身體嗎？</strong></p>
+  <p></p>
+  <p>這是2019年的最大收穫之一，我開始覺察、認可並且喜歡自己的身體。（而且我瘦了！）</p>
+  <p><strong>你喜愛你現在所在的城市嗎？你會如何描述你和她的關係？</strong></p>
+  <p></p>
+  <p>我住在香港13年。其實有很多個香港，我跟其中的一個成了靈魂伴侶。</p>
+  <p><strong>過去一年，你能說出一個被他人改變的觀點嗎？</strong></p>
+  <p></p>
+  <p>重新理解「行動」、「組織」、「暴力」，感謝香港和一個人，讓我更懂得壓迫的結構與行動。</p>
+  <p><strong>請填空：2019，＿＿ matte</strong>rs</p>
+  <p></p>
+  <p>2019，courage matters. </p>
+  <p><strong>最後，能否分享你在 2019 年最常聽的一首歌、最愛的一本書、印象最深刻的一部電影或最大的一個腦洞？</strong></p>
+  <p>Portrait of a Lady on Fire &amp; Radical Markets. 都會專門寫文來說。腦洞沒做出來，都不算。</p>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/163167f9-59d9-41f1-8d63-20f60c4408da.webp" onerror="this.srcset='https://assets.matters.news/embed/163167f9-59d9-41f1-8d63-20f60c4408da.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/163167f9-59d9-41f1-8d63-20f60c4408da.jpeg" onerror="this.srcset='https://assets.matters.news/embed/163167f9-59d9-41f1-8d63-20f60c4408da.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/163167f9-59d9-41f1-8d63-20f60c4408da.webp" /> <img src="https://assets.matters.news/embed/163167f9-59d9-41f1-8d63-20f60c4408da.jpeg" srcset="https://assets.matters.news/processed/540w/embed/163167f9-59d9-41f1-8d63-20f60c4408da.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>Portrait of a lady on fire，2019個人年度電影</span>
+    </figcaption>
+  </figure>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/d3d4e14e-7de2-414e-b7a2-cf9a87722d78.webp" onerror="this.srcset='https://assets.matters.news/embed/d3d4e14e-7de2-414e-b7a2-cf9a87722d78.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/d3d4e14e-7de2-414e-b7a2-cf9a87722d78.jpeg" onerror="this.srcset='https://assets.matters.news/embed/d3d4e14e-7de2-414e-b7a2-cf9a87722d78.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/d3d4e14e-7de2-414e-b7a2-cf9a87722d78.webp" /> <img src="https://assets.matters.news/embed/d3d4e14e-7de2-414e-b7a2-cf9a87722d78.jpeg" srcset="https://assets.matters.news/processed/540w/embed/d3d4e14e-7de2-414e-b7a2-cf9a87722d78.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>Kin和大家都寫了很多的Radical Markets</span>
+    </figcaption>
+  </figure>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/f70c45e9-7295-45fc-bf9c-20e8fa16e6d8.webp" onerror="this.srcset='https://assets.matters.news/embed/f70c45e9-7295-45fc-bf9c-20e8fa16e6d8.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/f70c45e9-7295-45fc-bf9c-20e8fa16e6d8.jpeg" onerror="this.srcset='https://assets.matters.news/embed/f70c45e9-7295-45fc-bf9c-20e8fa16e6d8.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/f70c45e9-7295-45fc-bf9c-20e8fa16e6d8.webp" /> <img src="https://assets.matters.news/embed/f70c45e9-7295-45fc-bf9c-20e8fa16e6d8.jpeg" srcset="https://assets.matters.news/processed/540w/embed/f70c45e9-7295-45fc-bf9c-20e8fa16e6d8.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>2020，你好！</span>
+    </figcaption>
+  </figure>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-01-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-01-03/%E7%9B%AE%E5%85%89%E7%9A%84%E6%96%B9%E5%AF%B8%E4%B9%8B%E9%96%93-%E5%A5%B9%E5%80%91%E7%9A%84%E6%84%9B-%E5%B9%B3%E7%AD%89%E8%88%87%E8%87%AA%E7%94%B1/">
+          目光的方寸之間，她們的愛、平等與自由
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-01-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-01-02/%E7%9C%8B%E8%A6%8B%E9%A6%99%E6%B8%AF-%E6%B2%92%E6%9C%89%E4%BB%80%E9%BA%BC%E6%98%AF%E7%90%86%E6%89%80%E6%87%89%E7%95%B6%E7%9A%84-%E7%B5%A6-%E9%A6%99%E6%B8%AF%E7%AC%AC%E4%B8%80%E8%AA%B2-%E7%9A%84%E5%87%BA%E7%89%88%E5%BA%8F/">
+          看見香港，沒有什麼是理所應當的——給《香港第一課》的出版序
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-11-18</time>
+        <a href="https://nodebe4.github.io/oped2/2019-11-18/%E6%A5%B5%E9%99%90%E6%99%82%E5%88%BB-%E9%A6%99%E6%B8%AF%E8%AE%8A%E5%B1%80%E9%80%B2%E5%85%A5%E6%9C%80%E9%97%9C%E9%8D%B5%E4%B8%80%E5%91%A8/">
+          極限時刻：香港變局進入最關鍵一周
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2019-11-10</time>
+        <a href="https://nodebe4.github.io/oped2/2019-11-10/%E9%A6%99%E6%B8%AF-%E4%B8%80%E5%A0%B4%E4%B8%8D%E6%98%8E%E4%B8%8D%E7%99%BD%E7%9A%84%E6%AD%BB%E4%BA%A1/">
+          香港，一場不明不白的死亡
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2019-12-30/%E4%B8%AD%E5%9B%BD%E6%BB%9E%E8%83%80/">
+            前一篇：中国滞胀？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2019-12-31/%E6%8F%AD%E7%A7%98%E4%B8%AD%E5%9B%BD%E9%BB%91%E5%AE%A2-%E4%BA%91%E7%AB%AF%E8%B7%B3%E8%B7%83-%E6%94%BB%E5%87%BB%E5%86%85%E5%B9%95/">
+            後一篇：揭秘中国黑客「云端跳跃」攻击内幕
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2019-12-30/%E4%B8%AD%E5%9B%BD%E6%BB%9E%E8%83%80/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2019-12-31/%E6%8F%AD%E7%A7%98%E4%B8%AD%E5%9B%BD%E9%BB%91%E5%AE%A2-%E4%BA%91%E7%AB%AF%E8%B7%B3%E8%B7%83-%E6%94%BB%E5%87%BB%E5%86%85%E5%B9%95/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-01-02/%E7%9C%8B%E8%A6%8B%E9%A6%99%E6%B8%AF-%E6%B2%92%E6%9C%89%E4%BB%80%E9%BA%BC%E6%98%AF%E7%90%86%E6%89%80%E6%87%89%E7%95%B6%E7%9A%84-%E7%B5%A6-%E9%A6%99%E6%B8%AF%E7%AC%AC%E4%B8%80%E8%AA%B2-%E7%9A%84%E5%87%BA%E7%89%88%E5%BA%8F/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2019-11-18/%E6%A5%B5%E9%99%90%E6%99%82%E5%88%BB-%E9%A6%99%E6%B8%AF%E8%AE%8A%E5%B1%80%E9%80%B2%E5%85%A5%E6%9C%80%E9%97%9C%E9%8D%B5%E4%B8%80%E5%91%A8/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2019-12-30/%E4%B8%AD%E5%9B%BD%E6%BB%9E%E8%83%80/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2019-12-31/%E6%8F%AD%E7%A7%98%E4%B8%AD%E5%9B%BD%E9%BB%91%E5%AE%A2-%E4%BA%91%E7%AB%AF%E8%B7%B3%E8%B7%83-%E6%94%BB%E5%87%BB%E5%86%85%E5%B9%95/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-01-02/%E7%9C%8B%E8%A6%8B%E9%A6%99%E6%B8%AF-%E6%B2%92%E6%9C%89%E4%BB%80%E9%BA%BC%E6%98%AF%E7%90%86%E6%89%80%E6%87%89%E7%95%B6%E7%9A%84-%E7%B5%A6-%E9%A6%99%E6%B8%AF%E7%AC%AC%E4%B8%80%E8%AA%B2-%E7%9A%84%E5%87%BA%E7%89%88%E5%BA%8F/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2019-11-18/%E6%A5%B5%E9%99%90%E6%99%82%E5%88%BB-%E9%A6%99%E6%B8%AF%E8%AE%8A%E5%B1%80%E9%80%B2%E5%85%A5%E6%9C%80%E9%97%9C%E9%8D%B5%E4%B8%80%E5%91%A8/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

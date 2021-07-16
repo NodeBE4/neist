@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>New Data Show Hong Kong’s National Security Arrests Follow a Pattern – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+New Data Show Hong Kong’s National Security Arrests Follow a Pattern
+——
+" />
+    <meta property="og:description" content="
+New Data Show Hong Kong’s National Security Arrests Follow a Pattern
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="New Data Show Hong Kong’s National Security Arrests Follow a Pattern" />
+    <meta property="twitter:title" content="New Data Show Hong Kong’s National Security Arrests Follow a Pattern" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Ffeatures%2Fnew-data-show-hong-kongs-national-security-arrests-follow-pattern" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/features/new-data-show-hong-kongs-national-security-arrests-follow-pattern" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/features/new-data-show-hong-kongs-national-security-arrests-follow-pattern&text=New Data Show Hong Kong’s National Security Arrests Follow a Pattern&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/features/new-data-show-hong-kongs-national-security-arrests-follow-pattern&title=New Data Show Hong Kong’s National Security Arrests Follow a Pattern" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/features/new-data-show-hong-kongs-national-security-arrests-follow-pattern&title=New Data Show Hong Kong’s National Security Arrests Follow a Pattern" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=New Data Show Hong Kong’s National Security Arrests Follow a Pattern&body=
+New Data Show Hong Kong’s National Security Arrests Follow a Pattern
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/features/new-data-show-hong-kongs-national-security-arrests-follow-pattern" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/features/new-data-show-hong-kongs-national-security-arrests-follow-pattern&title=New Data Show Hong Kong’s National Security Arrests Follow a Pattern&caption=
+New Data Show Hong Kong’s National Security Arrests Follow a Pattern
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=New Data Show Hong Kong’s National Security Arrests Follow a Pattern&url=https://www.chinafile.com/reporting-opinion/features/new-data-show-hong-kongs-national-security-arrests-follow-pattern" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>New Data Show Hong Kong’s National Security Arrests Follow a Pattern</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-03
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Lydia Wong &#38; Thomas Kellogg</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/features/new-data-show-hong-kongs-national-security-arrests-follow-pattern" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1620031440000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/features/new-data-show-hong-kongs-national-security-arrests-follow-pattern">New Data Show Hong Kong’s National Security Arrests Follow a Pattern</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-f61deefb00bdca212fd350bb6abaedbf">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1231452575.jpg" title="New Data Show Hong Kong’s National Security Arrests Follow a Pattern" class="colorbox" data-colorbox-gallery="gallery-node-53091-HmtZCrSQgJs" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1231452575.jpg?itok=NjHHyvgJ" width="1200" height="800" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Anthony Kwan—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>Pro-democracy supporters gather outside the West Kowloon court as police officers patrol, in Hong Kong, March 1, 2021.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">When a new National Security Law for Hong Kong went into effect on June 30, 2020, some observers believed it might serve more as a latent threat than an active tool. Many hoped both the Hong Kong government and Beijing might see the enactment of the law itself as a sufficient deterrent, a signal of Beijing’s resolve to turn the page on the widespread public protests in 2019.</p>
+      <p>Any hopes for restraint have, thus far, been dashed. In the nine months since the National Security Law (NSL) was passed, more than 90 people have been arrested under the new legislation. Though they have been charged with various breaches of national security ranging from inciting secession to terrorism, their primary crime appears to be peaceful criticism of the government. If found guilty, they face prison sentences that could stretch on for years, or even, in some cases, <a href="https://www.nytimes.com/2021/02/28/world/asia/hong-kong-security-law-arrests.html" target="_blank">for life</a>. The government has also used the law to reshape Hong Kong’s <a href="https://www.csb.gov.hk/tc_chi/letter/2744.html" target="_blank">civil service</a>, to reform the <a href="https://www.reuters.com/article/us-hongkong-security-education/hong-kong-to-teach-children-as-young-as-six-about-subversion-foreign-interference-idUSKBN2A5093" target="_blank">education</a> sector, and to restrict <a href="https://hk.appledaily.com/local/20210401/TSIPWWI4U5AWZPLAU25F7G4CRA/" target="_blank">press</a> freedom.</p>
+      <p>A closer look at the arrests under the NSL or conducted by the newly-created National Security Department (NSD) of the Hong Kong Police paints a clearer picture of how authorities in Hong Kong have implemented the new law, and what they might hope to achieve. The case data, <a href="https://www.law.georgetown.edu/law-asia/wp-content/uploads/sites/31/2021/02/GT-HK-Report-Accessible.pdf" target="_blank">assembled by the Georgetown Center for Asian Law</a>, draws on an extensive review of media reports and interviews with experts who have been closely following the implementation of the law.</p>
+      <p>Hong Kong’s government has made regular use of the NSL since its first full day as binding law. On July 1, 10 individuals were <a href="https://www.cnn.com/2020/07/01/china/hong-kong-national-security-law-july-1-intl-hnk/index.html" target="_blank">arrested</a> under the NSL. They had been taking part in protests that day marking the 23rd anniversary of Hong Kong’s reversion to Chinese sovereignty. As of May 3, 92 individuals have been arrested for alleged crimes under the NSL, including 19 individuals who have been arrested for a combination of crimes under the NSL and under other laws. The NSD has also arrested 21 individuals for crimes not covered by the NSL, bringing the total number of cases included in this dataset to 113. These last 21 arrests seem to be in violation of the NSD’s already broad statutory mandate. Launched concurrently with the NSL, the newly formed NSD is tasked with implementing the new law, and does not have clear legal authority to investigate non-NSL crimes.</p>
+      <p align="center">        <iframe style="overflow: hidden;" src="https://jessicachinafile.github.io/viz/NSL/arrests_month.html" frameborder="0" width="310" height="450"></iframe>
+        <iframe style="overflow: hidden;" src="https://jessicachinafile.github.io/viz/NSL/charges_month.html" frameborder="0" width="310" height="450"></iframe>
+</p>
+      <p>Can such broad application of the NSL be justified as an appropriately robust response to a legitimate state security threat? The answer seems to be no. We were unable to unearth any information that would justify the radical increase in national security-related arrests and criminal charges since the NSL went into effect. According to publicly-available information on the cases that have emerged thus far, the vast majority of NSL arrests would not be considered national security cases in other rights-respecting jurisdictions.</p>
+      <p>&lt;iframe "overflow: hidden;" align="left" src="https://jessicachinafile.github.io/viz/NSL/arrest_venn.html" frameborder="0" width="300" height="360"&gt;&lt;/iframe&gt;</p>
+      <p>Rather, the arrests thus far suggest the NSL is being used to punish the exercise of basic political rights by the government’s peaceful critics.</p>
+      <p>A closer look at arrests for alleged NSL violations reveals patterns in the government’s use of the new legislation. In general, the law has been used in three key ways: to limit certain forms of political speech; to limit foreign contacts, and in particular to break ties between Hong Kong activists and the international community; and to target opposition politicians and activists, many of whom are longtime pillars of Hong Kong’s political scene.</p>
+      <p>First, free expression: Over the past nine months, the NSL has been used repeatedly as a tool to threaten and suppress political expression, in particular speech that advocates for Hong Kong’s independence from mainland China. A full 24 of the initial 113 people arrested under the NSL or by the NSD, including four of the first five people charged under the NSL, were arrested for actions relating to “seditious” or “secessionist” speech, or possession of such materials. For instance, a teenager was <a href="https://www.thestandnews.com/politics/%E6%9C%80%E5%B0%91-10-%E4%BA%BA%E6%B6%89%E9%81%95-%E5%9C%8B%E5%AE%89%E6%B3%95-%E8%A2%AB%E6%8D%95-%E5%AE%B6%E5%B1%AC-%E5%85%92%E5%AD%90%E5%83%85%E6%89%8B%E6%A9%9F%E8%B2%BC-%E5%85%89%E6%99%82-%E8%B2%BC%E7%B4%99-%E8%A2%8B%E8%97%8F%E6%96%87%E5%AE%A3/" target="_blank">arrested</a> because his cell phone had a sticker on it featuring a protest slogan. Of those 24 cases, 12 only involve seditious or secessionist speech, such as defendants’ alleged chanting or displaying of pro-independence slogans, and no other alleged crimes. The other 12 involve a combination of alleged speech crimes and other offenses.</p>
+      <p>        <iframe style="overflow: hidden;" align="right" src="https://jessicachinafile.github.io/viz/NSL/charges_venn.html" frameborder="0" width="300" height="370"></iframe>
+</p>
+      <p>The government is also using the NSL to break ties between the Hong Kong pro-democracy movement and its supporters in the international community, including Hong Kongers now in exile. We believe that police targeted 17 of the initial 113 individuals arrested because of alleged interactions with foreign or overseas groups, although these individuals may have been charged with unrelated crimes. Only six of these 17 defendants have been directly charged with the specific NSL crime of collusion with foreign forces. Those arrested for collusion include some of the highest-profile individuals yet arrested under the NSL, including both media mogul <a href="https://www.theguardian.com/world/2020/dec/11/jimmy-lai-charged-under-national-security-law-as-hong-kong-crackdown-worsens" target="_blank">Jimmy Lai</a> and prominent pro-democracy activist <a href="https://www.reuters.com/article/hongkong-security-activist-chow/hong-kong-activist-agnes-chow-arrested-says-fellow-activist-idUSS8N2ES019" target="_blank">Agnes Chow</a>.</p>
+      <p>The third group of NSL arrestees is the <a href="https://www.nytimes.com/2021/01/05/world/asia/hong-kong-arrests-national-security-law.html" target="_blank">55 pro-democratic legislators and activists</a> who were arrested for alleged subversion on January 6, 2021. Their arrests have hamstrung Hong Kong’s peaceful political opposition, and could mark the end of formal opposition politics in Hong Kong for years to come. The arrest of these opposition politicians and activists suggests that the SAR government and Beijing are using the NSL to fundamentally reshape Hong Kong’s political scene, with very real implications for who is allowed to run for office and how political parties can organize themselves.</p>
+      <p>Four cases more closely adhere to internationally-accepted standards for national security prosecutions. In those cases, the defendants allegedly planned to take part in acts of politically-motivated violence. Though details on some of these cases remain scarce, it is possible that these four individuals could be charged with a crime in a manner that is consistent with international standards.</p>
+      <p align="center">        <iframe style="overflow: hidden;" src="https://jessicachinafile.github.io/viz/NSL/arrests_charges_pie.html" width="375" height="235" frameborder="0"></iframe>
+        <iframe style="overflow: hidden;" src="https://jessicachinafile.github.io/viz/NSL/arrests_subversion_pie.html" width="375" height="235" frameborder="0"></iframe>
+<br /><br />        <iframe style="overflow: hidden;" src="https://jessicachinafile.github.io/viz/NSL/arrests_speech_pie.html" width="360" height="310" frameborder="0"></iframe>
+        <iframe style="overflow: hidden;" src="https://jessicachinafile.github.io/viz/NSL/arrests_foreign_pie.html" width="390" height="310" frameborder="0"></iframe>
+</p>
+      <p>The NSL isn’t the only legal tool at the government’s disposal: Late last month, a Hong Kong district court <a href="https://hongkongfp.com/2021/04/16/breaking-hong-kong-father-of-democracy-martin-lee-handed-2-year-suspended-jail-sentence-over-peaceful-2019-demo/" target="_blank">convicted</a> longtime pro-democratic stalwarts Martin Lee, Margaret Ng, Lee Cheuk-yan, and four others of unlawful assembly, in connection with a protest march that took place in August 2019. The protest march, though unauthorized, was peaceful and caused minimal disruption.</p>
+      <p>Overall, the initial arrest and charging data under the NSL makes clear that the new law is already a major tool for Hong Kong law enforcement, and that it is being used to prosecute some of the most high-profile critics of Beijing, as well as dozens of other, less well-known activists.</p>
+      <p align="center">        <iframe style="overflow: hidden;" src="https://jessicachinafile.github.io/viz/NSL/NSL_categories_grouped_bar1.html" frameborder="0" width="100%" height="480"></iframe>
+</p>
+      <p align="center">        <iframe style="overflow: hidden;" src="https://jessicachinafile.github.io/viz/NSL/NSL_table_final_plain.html" frameborder="0" width="100%" height="700"></iframe>
+</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-06</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-06/What-Should-China-Do-about-Its-Aging-Population/">
+          What Should China Do about Its Aging Population?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-03</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-03/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+          Visually Understanding the Data on Foreign NGO Representative Offices and Temporary Activities
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-04-27</time>
+        <a href="https://nodebe4.github.io/oped2/2021-04-27/The-Right-Way-to-Bring-Chinese-STEM-Talent-Back-to/">
+          The Right Way to Bring Chinese STEM Talent Back to the U.S.
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-04-23</time>
+        <a href="https://nodebe4.github.io/oped2/2021-04-23/I-Stand-the-Law-s-Good-Servant,-but-the-People-s/">
+          ‘I Stand the Law’s Good Servant, but the People’s First’
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-02/%E4%BA%94%E4%B8%80%E8%8A%82-%E5%8B%87%E6%B0%94%E5%92%8C%E6%8A%B5%E6%8A%97%E7%9A%84%E6%95%85%E4%BA%8B-iYouPort/">
+            前一篇：五一节：勇气和抵抗的故事 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-03/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+            後一篇：Visually Understanding the Data on Foreign NGO Representative Offices and Temporary Activities
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-02/%E4%BA%94%E4%B8%80%E8%8A%82-%E5%8B%87%E6%B0%94%E5%92%8C%E6%8A%B5%E6%8A%97%E7%9A%84%E6%95%85%E4%BA%8B-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-03/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-03/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-04-27/The-Right-Way-to-Bring-Chinese-STEM-Talent-Back-to/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-02/%E4%BA%94%E4%B8%80%E8%8A%82-%E5%8B%87%E6%B0%94%E5%92%8C%E6%8A%B5%E6%8A%97%E7%9A%84%E6%95%85%E4%BA%8B-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-03/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-03/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-04-27/The-Right-Way-to-Bring-Chinese-STEM-Talent-Back-to/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

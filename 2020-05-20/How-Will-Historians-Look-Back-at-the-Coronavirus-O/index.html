@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>How Will Historians Look Back at the Coronavirus Outbreak? – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+How Will Historians Look Back at the Coronavirus Outbreak?
+——
+" />
+    <meta property="og:description" content="
+How Will Historians Look Back at the Coronavirus Outbreak?
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="How Will Historians Look Back at the Coronavirus Outbreak?" />
+    <meta property="twitter:title" content="How Will Historians Look Back at the Coronavirus Outbreak?" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fhow-will-historians-look-back-coronavirus-outbreak" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/how-will-historians-look-back-coronavirus-outbreak" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/how-will-historians-look-back-coronavirus-outbreak&text=How Will Historians Look Back at the Coronavirus Outbreak?&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/how-will-historians-look-back-coronavirus-outbreak&title=How Will Historians Look Back at the Coronavirus Outbreak?" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/how-will-historians-look-back-coronavirus-outbreak&title=How Will Historians Look Back at the Coronavirus Outbreak?" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=How Will Historians Look Back at the Coronavirus Outbreak?&body=
+How Will Historians Look Back at the Coronavirus Outbreak?
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/how-will-historians-look-back-coronavirus-outbreak" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/how-will-historians-look-back-coronavirus-outbreak&title=How Will Historians Look Back at the Coronavirus Outbreak?&caption=
+How Will Historians Look Back at the Coronavirus Outbreak?
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=How Will Historians Look Back at the Coronavirus Outbreak?&url=https://www.chinafile.com/reporting-opinion/viewpoint/how-will-historians-look-back-coronavirus-outbreak" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>How Will Historians Look Back at the Coronavirus Outbreak?</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-05-20
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Sulmaan Khan</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/how-will-historians-look-back-coronavirus-outbreak" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1590031140000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/how-will-historians-look-back-coronavirus-outbreak">How Will Historians Look Back at the Coronavirus Outbreak?</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-c0f7c6c228e58c1a4836f502b9f59fc6">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1213389513.jpg" title="How Will Historians Look Back at the Coronavirus Outbreak?" class="colorbox" data-colorbox-gallery="gallery-node-52286-64Dg5D90Dn0" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1213389513.jpg?itok=9zVk5DY2" width="1200" height="806" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Kevin Frayer—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A boy wearing a face mask rides a streetcar in a tourist and commercial area in Beijing, May 16, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">Imagine, for a moment, that the pandemic is over—or at least that it has abated sufficiently to allow time for reflection. Imagine, now, that a historian decides to reflect on the pandemic, asking quite simply, “How did it come to this?” There would be many ways of telling that story (and there will be many books on COVID-19). But one way would be to chart a series of off-ramps on the road to disaster. Some of these off-ramps can be located in China, at least one in the World Health Organization, and then several in the United States. Some are structural. Some are tied to specific decisions. Had any one of them been navigated differently, the pandemic would have been easier to handle.</p>
+      <p>“Don’t do wild animal markets” was the easiest off-ramp, for it was in wild animals that this virus, like so many others, <a href="https://www.theguardian.com/world/2020/apr/28/how-did-the-coronavirus-start-where-did-it-come-from-how-did-it-spread-humans-was-it-really-bats-pangolins-wuhan-animal-market" target="_blank" rel="nofollow">originated</a>. That case had been <a href="https://chinadialogue.net/article/show/single/en/11839-Coronavirus-outbreak-reignites-bushmeat-debate" target="_blank" rel="nofollow">made</a> since SARS, including by people in China. The heartbreaking aspect here is that many Chinese <a href="https://www.nationalgeographic.com/animals/2020/01/china-bans-wildlife-trade-after-coronavirus-outbreak/" target="_blank" rel="nofollow">didn’t have</a> the money to frequent those markets. They just fell victim to their compatriots’ desire to flaunt wealth and eat pangolins and bats.</p>
+      <p>The next off-ramp would be tougher: Overhaul Chinese governance to eliminate a culture of telling your superiors what they want to hear. Tell the truth. This had dogged everything from the economy to the environment, corruption to drug trafficking. And it hurt China here. It would hurt it even more in whatever recovery came. It would hurt it forever till it was fixed.</p>
+      <p>The virus could still have been contained as it moved beyond China. Taiwan <a href="https://focustaiwan.tw/politics/202004110004" target="_blank" rel="nofollow">warned</a> the WHO that there were patients in isolation in late December, raising the specter of human-to-human transmission. The WHO could have warned the world. Instead, the organization just sat on this information. WHO Director-General Tedros Adhanom Ghebreyesus would later <a href="https://www.bbc.com/news/world-asia-52230833" target="_blank" rel="nofollow">cry race</a> when people blamed him. He did not deserve blame because he was black. He deserved blame and the revocation of his medical license because he had helped perpetrate a cover-up (or, assuming the Taiwanese warning hadn’t percolated up to him, for being incompetent enough to allow the perpetration of a cover-up). In thinking about global spread, this was perhaps the biggest off-ramp missed.</p>
+      <p>Still there were several off-ramps before the virus hit the U.S. hard. American intelligence was <a href="https://abcnews.go.com/Politics/intelligence-report-warned-coronavirus-crisis-early-november-sources/story?id=70031273" target="_blank" rel="nofollow">alert</a> to the threat as early as November and warned the administration as early as January. Peter Navarro fired off a <a href="https://www.nytimes.com/2020/04/06/us/politics/navarro-warning-trump-coronavirus.html" target="_blank" rel="nofollow">memo</a> about a possible pandemic on January 29. Those worries failed to galvanize action—another off-ramp missed. Armed with the knowledge that a storm was coming, and having seen what Taiwan and South Korea had done, the U.S. could have stopped incoming flights from all virulent areas, begun significant testing, and devised a system for large-scale contact-tracing. (Massachusetts would <a href="https://www.wbur.org/commonhealth/2020/04/03/baker-coronavirus-update-latest-numbers" target="_blank" rel="nofollow">proudly announce</a> that it was the first place in the country to perform that last step—in April.) The Trump Administration’s preference for bluster over practical policy dragged the United States past yet another major off-ramp, but the responsibility of those who enabled his negligence—not just in his own administration, but <a href="https://www.newyorker.com/magazine/2020/04/20/how-mitch-mcconnell-became-trumps-enabler-in-chief" target="_blank" rel="nofollow">elsewhere in government</a>—would, in a meticulous history book, be examined thoroughly. Simply put, the governance of the United States had, like that of China, succumbed to a culture of lying to itself. The processes that led to the lying were different, but that wouldn’t be much consolation as another ramp marked “tell the truth” went flying by.</p>
+      <p>Even so, there was time for the oft-invoked “deep state”—the FDA and CDC—to get its act together and have a set of scalable, effective tests. Here was another off-ramp. A future historian would have a field day in their archives, trying to piece together who knew what when. There would be bureaucratic miscommunication and complacency, the <a href="https://apnews.com/ce014d94b64e98b7203b873e56f80e9a" target="_blank" rel="nofollow">dismantlement</a> of the pandemic response unit at the National Security Council and the recurring <a href="https://www.nytimes.com/2020/03/26/us/politics/coronavirus-expertise-trump.html" target="_blank" rel="nofollow">failure to fill</a> vital posts. But there might be one other failing too: a touch of American insularity. Never mind that other countries were <a href="https://www.nytimes.com/2020/03/28/us/testing-coronavirus-pandemic.html" target="_blank" rel="nofollow">testing</a> quite effectively; we would design our own tests, which would, of course, be the best. Those benighted Asians with their masks—how foolish of them to not realize how <a href="https://www.npr.org/sections/goatsandsoda/2020/04/03/826996154/coronavirus-faqs-is-a-homemade-mask-effective-and-whats-the-best-way-to-wear-one" target="_blank" rel="nofollow">futile</a> masks were. Until, all of a sudden, masks were crucial.</p>
+      <p>But there had been, as with China, an earlier, structural off-ramp. Had the United States held that all its citizens deserved to be looked after medically, had a centralized system that tracked and provided for everyone’s well-being been in place, the virus could not have gained the foothold it did. In a pandemic, it didn’t matter if we had the best hospitals and the best doctors. It only mattered that everyone have access to them.</p>
+      <p>Later, the punditocracy would debate whether the great powers (China and the United States, naturally) should <a href="https://china.ucsd.edu/statement/index.html" target="_blank" rel="nofollow">cooperate</a> or <a href="https://www.the-american-interest.com/2020/03/05/we-need-hard-decoupling/" target="_blank" rel="nofollow">decouple</a> and what the crisis <a href="https://www.economist.com/leaders/2020/04/16/is-china-winning" target="_blank" rel="nofollow">would mean</a> for their prospects. The debate missed the virus’ great achievement, which had been to render great power politics and strongman preening irrelevant. The virus didn’t care how many aircraft carriers you had or how many Confucius Institutes you could stick up around the world or what size your economy was. The virus asked simply how your least wealthy people would be treated in times of illness. How effectively you could trace the contacts of those it afflicted. How swiftly your medical system could cope with unexpected demands. It wouldn’t spare you completely, of course, but if you could meet it with a dull, technocratic honesty, it would be easier to survive.</p>
+      <p>Our historian would note all these off-ramps. I suspect it would be with anger and bemusement that none of them were taken. But after the anger and bemusement, there might come hope, knowing that when the next pandemic hit, different choices could lead to different outcomes. The past had not been set in stone and the future would not be either.<span class="cube"></span></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-05-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-27/Coronavirus-and-the-Korean-Peninsula/">
+          Coronavirus and the Korean Peninsula
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-21</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-21/A-New-U.S.-Consensus-on-China-May-Not-Be-as-Soli/">
+          A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-19/U.S.-China-Relations-2020-Coronavirus-and-Electio/">
+          U.S.-China Relations 2020: Coronavirus and Elections
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-19/What-Are-the-Right-and-the-Wrong-Ways-for-the-U.S/">
+          What Are the Right and the Wrong Ways for the U.S. to Support Taiwan?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-20/12%E4%B8%AA%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E8%B5%84%E6%BA%90-%E6%8C%96%E6%8E%98%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E8%83%8C%E5%90%8E%E7%9A%84%E7%A7%98%E5%AF%86-iYouPort/">
+            前一篇：12个开源情报资源：挖掘电子邮件背后的秘密 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-20/%E5%90%8E%E7%96%AB%E6%83%85%E6%97%B6%E4%BB%A3%E7%9A%84%E7%BB%8F%E6%B5%8E-%E4%B8%8D%E5%A4%AA%E4%B8%80%E6%A0%B7/">
+            後一篇：后疫情时代的经济：不太一样
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-05-20/12%E4%B8%AA%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E8%B5%84%E6%BA%90-%E6%8C%96%E6%8E%98%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E8%83%8C%E5%90%8E%E7%9A%84%E7%A7%98%E5%AF%86-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-05-20/%E5%90%8E%E7%96%AB%E6%83%85%E6%97%B6%E4%BB%A3%E7%9A%84%E7%BB%8F%E6%B5%8E-%E4%B8%8D%E5%A4%AA%E4%B8%80%E6%A0%B7/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-05-21/A-New-U.S.-Consensus-on-China-May-Not-Be-as-Soli/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-05-19/U.S.-China-Relations-2020-Coronavirus-and-Electio/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-05-20/12%E4%B8%AA%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E8%B5%84%E6%BA%90-%E6%8C%96%E6%8E%98%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E8%83%8C%E5%90%8E%E7%9A%84%E7%A7%98%E5%AF%86-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-05-20/%E5%90%8E%E7%96%AB%E6%83%85%E6%97%B6%E4%BB%A3%E7%9A%84%E7%BB%8F%E6%B5%8E-%E4%B8%8D%E5%A4%AA%E4%B8%80%E6%A0%B7/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-05-21/A-New-U.S.-Consensus-on-China-May-Not-Be-as-Soli/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-05-19/U.S.-China-Relations-2020-Coronavirus-and-Electio/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

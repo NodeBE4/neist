@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>蒋方舟：在漩涡中跋涉的琼·狄迪恩 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+蒋方舟：在漩涡中跋涉的琼·狄迪恩
+——
+" />
+    <meta property="og:description" content="
+蒋方舟：在漩涡中跋涉的琼·狄迪恩
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="蒋方舟：在漩涡中跋涉的琼·狄迪恩" />
+    <meta property="twitter:title" content="蒋方舟：在漩涡中跋涉的琼·狄迪恩" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60cd5e841c876d16207de565" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60cd5e841c876d16207de565" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60cd5e841c876d16207de565&text=蒋方舟：在漩涡中跋涉的琼·狄迪恩&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60cd5e841c876d16207de565&title=蒋方舟：在漩涡中跋涉的琼·狄迪恩" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60cd5e841c876d16207de565&title=蒋方舟：在漩涡中跋涉的琼·狄迪恩" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=蒋方舟：在漩涡中跋涉的琼·狄迪恩&body=
+蒋方舟：在漩涡中跋涉的琼·狄迪恩
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60cd5e841c876d16207de565" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60cd5e841c876d16207de565&title=蒋方舟：在漩涡中跋涉的琼·狄迪恩&caption=
+蒋方舟：在漩涡中跋涉的琼·狄迪恩
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=蒋方舟：在漩涡中跋涉的琼·狄迪恩&url=https://www.allnow.com/post/60cd5e841c876d16207de565" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>蒋方舟：在漩涡中跋涉的琼·狄迪恩</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-18
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 蒋方舟</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60cd5e841c876d16207de565" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60cd5e841c876d16207de565">蒋方舟：在漩涡中跋涉的琼·狄迪恩</a>
+——</p>
+
+<div>
+  <h2 id="section">1</h2>
+  <p>我第一次知道琼·狄迪恩，是看她的照片。她有很多张著名的照片，在车里抽着烟、在人群中似笑非笑地看着镜头、80岁时戴着墨镜代言Celine。其中让我印象最深刻的，是一张拍摄于1968年的肖像照：照片里的她三十多岁，单手举着香烟，直视镜头。她在镜头里是如此无畏，又如此脆弱，让人无法把视线从她的精灵大眼上移开，她是每一个自认为疏离于这个世界的人心目中完美的样子。</p>
+  <p>据说最好的肖像照，就像是自己的分身在不远处按下快门，琼·狄迪恩的每一张照片都是如此。</p>
+  <p>那时，我除了知道照片里的女人是个作家，对她的一切一无所知，却坚信她是独身主义者，孑然无尘地活在这个世界上。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-19/60cd5ef79c232e01c17d1ce0+L.jpeg" data-id="60cd5efe2114416715c3d57e" alt="琼·狄迪恩代言Celine" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+琼·狄迪恩代言Celine
+    </figcaption>
+  </figure>
+  <p>数年之后，我才看到了这样照片的全貌：照片的中心是琼·狄迪恩在洛杉矶宽敞明亮的家中，照片的边缘是她的丈夫约翰抱着女儿金塔纳坐在一旁的沙发上。</p>
+  <p>琼·狄迪恩七十岁那一年，她的女儿昏迷，住在重症病房，丈夫突发冠心病去世，她把丈夫去世后自己的心理体验写成了畅销书《奇想之年》。书出版两个月之后，她的女儿也去世。</p>
+  <p>那张全家福像从边缘开始燃烧，吞噬了琼·狄迪恩所爱之人，她静静地看着摧毁的过程，等待着蔓延的火势，但火焰以一种残忍的趣味在她身边停下了，照片里又剩下她一人。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-19/60cd5f1d4cd55d54dd5db349+L.jpeg" data-id="60cd5f202114416715c3d57f" alt="琼·狄迪恩和家人" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+琼·狄迪恩和家人
+    </figcaption>
+  </figure>
+  <h2 id="section-1">2</h2>
+  <p>在成为“新新闻运动”的传奇、美国文化标杆性人物、我们这个时代最伟大的英文杂文家、82岁的celine代言人之前，成为那个著名的“琼”之前，她只是一个早熟的少女。</p>
+  <p>琼·狄迪恩的觉醒，从失败开始。大学时期，她差点没有从伯克利毕业，人生第一次，自我怀疑就像是多米诺一样接连坍塌，她不再相信名校文凭拥有图腾一样的力量，不再相信人生会一路绿灯，不再相信外在的荣誉会允诺美满的一生。</p>
+  <p>她写：“我不知所措，充满忧惧地面对自己，正如一个人突遇吸血鬼，手中却没有辟邪的十字架。”</p>
+  <p>“面对自己”是一件实际上要比它看起来可怕得多的事情，那种感觉就像是人常做的噩梦——处于一个重要的场合，却发现自己下身是赤裸的。</p>
+  <p>一切可以装饰你的东西，或消失或丧失意义：学历、好工作、光鲜的外表、成功的伴侣、他人的赞美。这就是所谓的“失败”。失败从来不是一无所有，而是深夜和自己懒惰、软弱、违背的誓言、被浪费的才华挤在同一张床上，辗转反侧，难以入睡。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-19/60cd5f8e9c232e01c17d1ce1+L.jpg" data-id="60cd5f929b2d825085c25de9" alt="琼·狄迪恩" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+琼·狄迪恩
+    </figcaption>
+  </figure>
+  <p>在这种时刻，人有两种选择：一种是心虚地活着，逃入人群中，抓住一切能遮体的布料遮盖自己，这意味着穿着不合体的衣服，扮演自己轻视的角色；另一种是面对自己的赤裸，正视周围已经被堵死的路，看到自己的才华可怜如马上就要熄灭的孱弱火苗，试着燃起它，举起火把，去寻找一条窄路。</p>
+  <p>琼·狄迪恩在一篇名为《我为什么写作》的演讲里，提到：“（大学毕业前后）那些年里我就像是手握明知不牢靠的护照和伪造的文件在旅行：我知道在任何思想世界里都没有我一席之地。我知道我不善思考。那个时候我只知道自己不能做什么，只知道自己不是什么人。我花了好多年才发掘出自己是什么：一个作家。”</p>
+  <p>仅仅是一个作家，不是一个杰出的作家或是一个平庸的作家，单纯是一个把每天最专注和宝贵的时间花在组装词句上的人，一个用文字来弄明白自己看到什么、想到什么、渴望什么、恐惧什么的人。</p>
+  <p>琼·狄迪恩写：“意识到自我的内在价值，就有可能拥有一切：能够辨别是非，敢爱，也敢保持漠然。”</p>
+  <p>漠然。是了，这就是最准确的形容琼·狄迪恩的词。</p>
+  <p>不是潇洒、自信，而是漠然，犹如在千里之外看着玻璃罩的自己与自己所处的时代。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-19/60cd5fa39c232e01c17d1ce2+L.png" data-id="60cd5fa52114416715c3d581" alt="<br />《向伯利恒跋涉》，[美]琼·狄迪恩著，何雨珈译，中信出版集团·北京时代华语2021年6月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+<br />《向伯利恒跋涉》，[美]琼·狄迪恩著，何雨珈译，中信出版集团·北京时代华语2021年6月版
+    </figcaption>
+  </figure>
+  <p>琼·狄迪恩冉冉升起在一个热闹的时代：1968年，琼·狄迪恩出版了成名作——非虚构文集《向伯利恒跋涉》。</p>
+  <p>不必赘述那一年有多么特殊，那是有史以来第一次人们不但为面包还为蔷薇走上街头的一年；是法国的学生把兰波的“要么一切，要么全无！”写在墙壁上的一年；是大洋彼岸的村上春树考上早稻田，他后来回忆“那就像是个转折点。我们觉得如果那时能做好，就会迎来乌托邦一般的盛世”的一年；那是年轻人埋藏已久的集体无意识忽然爆发，撞击世界的一年。<br /><br />而在这本书里，她却冷得惊人。</p>
+  <p>书里我最喜欢的一篇，是她写另一个琼——琼·贝兹。琼·贝兹是六十年代的民谣皇后，少女时期便成名，美得惊人，贝兹的前男友鲍勃·迪伦形容“她的样子让我叹息。她所有的一切，还有她的声音。这声音能驱散厄运，像是直接对着上帝歌唱。她无所不能。”</p>
+  <p>琼·贝兹在六十时代的分量在于她不仅是个歌手，她的音乐是那个时代抵抗运动的背景音乐，是马丁·路德·金的好友，琼·贝兹自己也曾两次因参于反战集会而入狱。她是时代精神最完美的代言人——永远清新、永远疼痛的少女，她是叛逆者们的圣母玛利亚。</p>
+  <p>琼·狄迪恩冷眼观察着这个圣女，看琼·贝兹积极参与政治运动，看琼·贝兹在演唱会上说“我的生命是一滴晶莹的泪珠”，在所有观众都被琼·贝兹所魅住，群众的灵魂被贝兹的眼泪沁得柔软的时候，琼·狄迪恩不为所动，她敏锐地写道：</p>
+  <p>贝兹小姐努力（也许是无意识地）坚持着自己或他人在少年时代那种天真，以及对世界充满好奇的能力，无论这些东西感觉多么虚假，多么浅薄。这样的坦诚开放，这样的脆弱易碎，恰恰就让她能在所有年轻人、孤独之人、不善表达之人、怀疑世界上没有旁人能理解美、伤害、爱与手足情谊之人中广受欢迎。</p>
+  <p>琼·狄迪恩并不是指责贝兹的抗争是表演性的，狄迪恩只是看穿了琼·贝兹与时代——或者说几乎任何文化偶像与时代互动的本质：观众期待一个偶像，偶像按照这种期待去塑造自己，观众崇拜偶像如相信神迹，偶像成为了观众精神一致性守护者。这是一种并不新鲜的把戏：生活和艺术的相互模仿，琼·狄迪恩只是毫无压力地戳穿了它。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-19/60cd5fb99c232e01c17d1ce3+L.jpeg" data-id="60cd5fbc904b8c02a16a31c2" alt="琼·贝兹与鲍勃·迪伦" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+琼·贝兹与鲍勃·迪伦
+    </figcaption>
+  </figure>
+  <p>并不是所有人都能够欣赏琼·狄迪恩的直接，她曾有一篇贴身观察当时的第一夫人南希·里根的文章。她笔下的南希紧张、缺乏安全感、希望讨好一切人，南希·里根看了那篇文章之后非常沮丧，说：“我还以为我和狄迪恩相处得很好，是不是我当时表现得凶一点会更好？”</p>
+  <p>如果你认为琼·狄迪恩仅仅是对著名人物刻薄，那她对旧金山一个嬉皮区的采访会让读者在炎热夏夜也要发冷。</p>
+  <p>她所采访的嬉皮社区，父母人间蒸发，少年四处游荡，孩童懵懂无知，她遇到的所有年轻人都在嗑药，在迷幻中放逐自己。这些青少年认为自己在叛逆社会，其实不过是被困在了空虚当中；这些青少年以为自己在创造一个“新世界”，其实只是手无寸铁到了可悲的程度，孤注一掷地向空中抛出自己的愤怒。</p>
+  <p>在文章的最后，她写到自己遇到了一个五岁的女孩苏珊，她的妈妈让她服用迷幻药已经一年了。</p>
+  <p>几十年后，琼·狄迪恩在纪录片中被问到：“面对一个孩子，嘴上沾着迷幻药的白色粉末时，你在想什么？”</p>
+  <p>琼·狄迪恩挥动着手臂说：“我觉得这是黄金的一刻。作为一个作者，你是为这一刻而生的。”说完，她垂下眼睛。</p>
+  <p>狄迪恩就是这样的人，她是一种我们不熟悉的知识分子。同时代著名的女知识分子苏珊·桑塔格是我们熟悉的样子，桑塔格总是试图把自己和他人的痛苦放在同一个地图上，甚至去被围困时的萨拉热窝生活，随时可能死亡。琼·狄迪恩同样去了内战时的萨尔瓦多，却采取了一种完全不一样的态度：她目睹一切，聆听一切，感知一切，但是什么也不做。</p>
+  <p>——或者说，她对抗混乱世界的方式是以极端的控制力。这种控制力来自于观察，仿佛灵视一般的观察力，把绝望、恐惧、激情一一剥离、分开 ，让这些狂热因为无法聚合产生反应而失去了力量。她的凝视如同缰绳，驯服狂奔的野马。</p>
+  <p>琼·狄迪恩说自己每次写不出来的时候，就会把手稿放进冰箱里。这就像是对她写作绝妙的隐喻，她文章的所有力量都来自于冰冷，她的冷眼，她的冷血，她让人无法抗拒的冰冷的拥抱。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-19/60cd600e9c232e01c17d1ce4+L.png" data-id="60cd60139b2d825085c25dec" alt="琼·狄迪恩与她的《萨尔瓦多》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+琼·狄迪恩与她的《萨尔瓦多》
+    </figcaption>
+  </figure>
+  <h2 id="section-2">3</h2>
+  <p>冰冷的琼·狄迪恩是有爱人的。令人惊讶的是，她在婚姻中甚至显得并不强势。</p>
+  <p>和鲜明的女性主义者不一样，琼·狄迪恩喜欢的男性是雄性气息爆棚的男子汉。她专门写过自己对于西部电影的硬汉演员约翰·韦恩的迷恋：</p>
+  <p>（在约翰·韦恩）的世界，男人做了该做的事情，就能在某个日子，带着自己的女人，策马扬鞭，自由寻找安家的地方。</p>
+  <p>她喜欢的男性是保护者，她自己也嫁给了一个“保护者”。三十岁的时候，琼嫁给了自己的编辑约翰·邓恩。约翰·邓恩同时也是作家，夫妇俩一起写专栏，是彼此文章的第一个读者。琼·狄迪恩娇小、安静，邓恩高大、声音洪亮。约翰在她的生活里像是一个保姆，帮她接打电话，帮她安排工作。</p>
+  <p>但在任何关系里，情感的强弱从来就不是依据个头。在婚姻里，琼·狄迪恩一次次地把自己的丈夫打败。</p>
+  <p>琼打败她的丈夫，因为她更有才华。在《名利场》的一篇报道里，写到约翰开玩笑，说自己在海边散步，遇到了耶稣，耶稣说：“我太喜欢你老婆的文章了。”</p>
+  <p>琼打败她的丈夫，因为她更镇定。还是在《名利场》的报道中，讲到约翰写过一本自传式的小说《拉斯维加斯》，小说讲述了一个作家离开妻女去拉斯维加斯住了几个月（现实里，约翰也做了同样的事）。小说当中有一幕，男主角给妻子打电话，男主角说有人给自己介绍了一个年轻女孩约会，妻子说：“ 你应该约会她，当成田野调查。”</p>
+  <p>在那一瞬间，妻子彻底地击败了丈夫。她没有显示出愤怒或者悲伤，她看似是鼓励，实则是威慑。这是感情里一场胆量游戏，就像是玩俄罗斯转盘，六轮手枪里只有一颗子弹，弹巢转动，妻子面不改色地对着自己的脑袋扣动扳机，她赢了。</p>
+  <p>琼打败她的丈夫，因为她更出离。在一篇专栏文章里，她写全家去夏威夷一个岛上度假，据说飓风海啸要来，夫妇俩被困在房间中，尴尬地面对彼此，填写离婚的文件（后来他们并没有离婚）。</p>
+  <p>她像房间里的记者一样观察情感在崩溃边缘的夫妻，就像当年观察服用迷幻药的儿童。在那篇文章里，她承认自己“毫无感觉，也不知道该如何感知一切。”</p>
+  <p>情感危机就像海面的漩涡，当事人无能为力地任由自己围绕漩涡流动。但琼离开了漩涡，某种意义上，她也离开了生活。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-19/60cd603a4cd55d54dd5db34a+L.jpg" data-id="60cd605d904b8c02a16a31c3" alt="琼·狄迪恩正在创作" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+琼·狄迪恩正在创作
+    </figcaption>
+  </figure>
+  <h2 id="section-3">4</h2>
+  <p>琼·狄迪恩是在什么时候再次进入她的生活？</p>
+  <p>大概是在她的丈夫死的那一年。</p>
+  <p>近距离地目睹亲人的死亡究竟意味着什么？</p>
+  <p>很多人说，经历父母的死亡让自己瞬间成长。为什么？因为父母是挡在死亡面前的那道屏障，是我们与死亡之间的缓冲地带。而当父母死去，死亡逼近了一步，呈现出一种真实的恐怖。</p>
+  <p>对于琼·狄迪恩来说，约翰是她与生活之间的缓冲地带，约翰代替她去应对生活——从处理垃圾邮件到日常对话，当约翰死去，她和生活那道屏障消失了，和死亡那道屏障也消失了。</p>
+  <p>在《奇想之年》里，她写道自己一开始是个“冷静的未亡人”：</p>
+  <p>失去亲人的人们也许会觉得他们像是被包裹在虫茧或是毛毯里；在别人看来，他们的表现像是能够挺得住。实则这是死亡的现实尚未穿透意识，令失去亲人的人们表现得仿佛尚且可以接受亲人的死亡。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-19/60cd60ee4cd55d54dd5db34c+L.jpg" data-id="60cd60f1904b8c02a16a31c4" alt="<br />《奇想之年》， [美]琼·狄迪恩著，泽慧译，新经典丨新星出版社2017年1月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+<br />《奇想之年》， [美]琼·狄迪恩著，泽慧译，新经典丨新星出版社2017年1月版
+    </figcaption>
+  </figure>
+  <p>然而，死亡终将会击穿。</p>
+  <p>死亡击穿你的世界，它改变一切事物，“就像在日食时一切色彩全部消失了（伍尔夫）”。它在生活中处处显出自己的样子，是地铁上面目模糊的老人，是山岗后手拿镰刀的男子，是落地的雨，是袅袅的烟。</p>
+  <p>死亡也击穿你的灵魂，琼·狄迪恩写：“哀恸像海浪，像疾病发作，像突然的忧惧，令我们的膝盖孱弱，令我们的双眼盲目，并将抹消掉生活的日常属性。”</p>
+  <p>曾经冷峻的琼·狄迪恩仿佛失去了控制力，放任河流带着自己在生界和死界之间冲击。但她并未完全丧失控制力——她没有被哀恸击倒，《奇想之年》出版两个月后，她的女儿金塔纳也去世了，她把失去女儿的经历写成了《蓝夜》。</p>
+  <p>蓝夜是在四月底五月初的时候，琼当时居住的纽约会有一个小时左右的时间，天光是蓝色，蓝色不断加深。</p>
+  <p>蓝夜是摆脱不了的忧郁，未亡人忧郁因为他们所拥有的只有记忆。未亡人一遍遍回顾往事，看见预兆，也看见错过的信息，他们翻阅生活得每一个细节，从各种地方读出意义。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-19/60cd61044cd55d54dd5db34d+L.png" data-id="60cd610b904b8c02a16a31c6" alt="《蓝夜》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《蓝夜》
+    </figcaption>
+  </figure>
+  <p>金塔纳是琼·狄迪恩领养的孩子，在纪录片里，琼说：“她希望我照顾好她。但是我失败了。”</p>
+  <p>琼开始回想自己每个失败的部分。她曾经问过年幼的女儿：“你觉得妈妈怎么样？”</p>
+  <p>女儿说：“你挺好的，就是有些冷漠。”</p>
+  <p>在女儿死后，她才开始反复思考这句话。</p>
+  <p>《蓝夜》里，她写女儿金塔纳在五岁的时候，就给当地的精神病院打电话，问医生如果自己疯了该怎么办；同一年，金塔纳还给电影公司打电话，问自己怎么样才能成为明星；九岁的时候，金塔纳就学会了在房间号那一栏写上“秀兰·邓波儿”。</p>
+  <p>金塔纳的深浅明灭，变幻无常，在她死后忽然变得异常清晰。女儿的人生就像是琼·狄迪恩笔下的那些人物、那些明星、那些精神不正常的人、那些时代的宠儿、那些命运的弃子。</p>
+  <p>——这是一种多么可怕的推理：琼凝视反常的人，书写反常的人，然后把身边最亲近的人都变成反常的人。</p>
+  <p>即便琼看清了自己和女儿命运当中的羁绊，也于事无补，因为未亡人拥有的只有记忆。最终，记忆也会消失，就像是天光会缩短，光亮会消逝，蓝夜将尽，夏日已去。</p>
+  <p>琼被问到：“书写丈夫和女儿的死，最难的部分是什么？”</p>
+  <p>她说：“最难的部分是写完的时候，那时候你知道，你必须和他们告别。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-19/60cd611b9c232e01c17d1ce7+L.jpg" data-id="60cd611e9b2d825085c25df0" alt="<br />琼·狄迪恩和家人" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+<br />琼·狄迪恩和家人
+    </figcaption>
+  </figure>
+  <h2 id="section-4">5</h2>
+  <p>琼·狄迪恩擅长告别。她在二十多岁的时候就写过《再见了一切》，讲她告别了纽约，去加州生活，她写：“在纽约的时候，我曾经非常年轻，而在某一刻，那流金岁月的韵律断了，而我也不再有那样的青春韶华。”</p>
+  <p>她擅长告别，是因为她擅长听到事物结束的那声呜咽。1969年，琼所处的好莱坞出了一件大事，导演波兰斯基怀孕八个月的妻子莎伦·塔特及塔特的四个朋友被查理·曼森所杀——昆汀的新片《好莱坞往事》就是讲述这段历史。琼说：“这一瞬间，所有人都觉得六十年代提前结束了。”</p>
+  <p>琼·狄迪恩认识波兰斯基，在凶杀案发生前的三个月，她还在酒会上遇到了他，他不小心把红酒洒在了她的白裙子上。而琼·狄迪恩也认识查理·曼森的一个女信徒，女信徒接受审判的时候，穿的是琼买的裙子。</p>
+  <p>琼擅长听到事物结束的那声呜咽，是因为她总是身处事物的核心。她写过绝望的嬉皮士，绝望的年轻人中最邪恶的幽灵就像是从她的文章中被召唤出来一样，以她为介质，来到她所生活的纸醉金迷的好莱坞。</p>
+  <p>她是对时代的震动最敏感的人，因为时代在她周遭震动。</p>
+  <p>终其一生，琼·狄迪恩都避免成为他人，“他人是地狱”是过于苛刻的说法，但他人至少是漩涡，会吸引你，控制你，吞没你。琼一生所做的最成功的事情，就是从来没有被漩涡吞没。她一直认为自己的控制力是因为她始终在遥远的地方旁观，但还有一种可能性：她就是漩涡本身。</p>
+  <p>琼·狄迪恩是唯一剩下的人。她所爱的人都离开了，她所爱的时代消失了，就像是有人在她的世界里不断地按“删除”键，但到了她的身边，“删除”键失灵了，图像里只剩下她一人，一个永恒孤独的漩涡，静静旋转。</p>
+  <p>———<br />微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。<br /></p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-06-20</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-20/%E4%B8%AD%E6%AC%A7-%E7%9A%84%E9%AD%85%E5%8A%9B-%E6%96%87%E5%AD%A6%E5%85%B1%E5%92%8C%E5%9B%BD-%E9%BB%84%E9%87%91%E6%97%B6%E4%BB%A3%E4%B8%8E%E6%80%80%E6%97%A7%E7%9A%84%E4%B9%8C%E6%89%98%E9%82%A6/">
+          “中欧”的魅力：文学共和国、黄金时代与怀旧的乌托邦
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-19</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-19/%E7%8F%8D%E5%A6%AE%E7%89%B9-%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A7%86%E5%8E%BB%E4%B8%96-%E4%B8%80%E4%BD%8D%E6%93%85%E9%95%BF%E5%BF%8D%E8%80%90%E6%97%A0%E8%81%8A%E7%9A%84%E9%9D%9E%E8%99%9A%E6%9E%84%E4%BD%9C%E5%AE%B6/">
+          珍妮特·马尔科姆去世：一位擅长忍耐无聊的非虚构作家
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E9%92%B1%E9%94%BA%E4%B9%A6%E5%85%88%E7%94%9F%E6%88%8F%E7%A7%B0%E6%88%91%E6%98%AF-%E8%AF%91%E6%89%8D/">
+          许渊冲：钱锺书先生戏称我是“译才”
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E8%A5%BF%E5%8D%97%E8%81%94%E5%A4%A7%E7%9A%84%E9%82%A3%E4%BA%9B%E6%95%99%E6%8E%88%E5%92%8C%E5%90%8C%E5%AD%A6/">
+          许渊冲：西南联大的那些教授和同学
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E9%92%B1%E9%94%BA%E4%B9%A6%E5%85%88%E7%94%9F%E6%88%8F%E7%A7%B0%E6%88%91%E6%98%AF-%E8%AF%91%E6%89%8D/">
+            前一篇：许渊冲：钱锺书先生戏称我是“译才”
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-19/%E7%8F%8D%E5%A6%AE%E7%89%B9-%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A7%86%E5%8E%BB%E4%B8%96-%E4%B8%80%E4%BD%8D%E6%93%85%E9%95%BF%E5%BF%8D%E8%80%90%E6%97%A0%E8%81%8A%E7%9A%84%E9%9D%9E%E8%99%9A%E6%9E%84%E4%BD%9C%E5%AE%B6/">
+            後一篇：珍妮特·马尔科姆去世：一位擅长忍耐无聊的非虚构作家
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E9%92%B1%E9%94%BA%E4%B9%A6%E5%85%88%E7%94%9F%E6%88%8F%E7%A7%B0%E6%88%91%E6%98%AF-%E8%AF%91%E6%89%8D/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-19/%E7%8F%8D%E5%A6%AE%E7%89%B9-%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A7%86%E5%8E%BB%E4%B8%96-%E4%B8%80%E4%BD%8D%E6%93%85%E9%95%BF%E5%BF%8D%E8%80%90%E6%97%A0%E8%81%8A%E7%9A%84%E9%9D%9E%E8%99%9A%E6%9E%84%E4%BD%9C%E5%AE%B6/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-06-19/%E7%8F%8D%E5%A6%AE%E7%89%B9-%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A7%86%E5%8E%BB%E4%B8%96-%E4%B8%80%E4%BD%8D%E6%93%85%E9%95%BF%E5%BF%8D%E8%80%90%E6%97%A0%E8%81%8A%E7%9A%84%E9%9D%9E%E8%99%9A%E6%9E%84%E4%BD%9C%E5%AE%B6/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E9%92%B1%E9%94%BA%E4%B9%A6%E5%85%88%E7%94%9F%E6%88%8F%E7%A7%B0%E6%88%91%E6%98%AF-%E8%AF%91%E6%89%8D/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E9%92%B1%E9%94%BA%E4%B9%A6%E5%85%88%E7%94%9F%E6%88%8F%E7%A7%B0%E6%88%91%E6%98%AF-%E8%AF%91%E6%89%8D/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-19/%E7%8F%8D%E5%A6%AE%E7%89%B9-%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A7%86%E5%8E%BB%E4%B8%96-%E4%B8%80%E4%BD%8D%E6%93%85%E9%95%BF%E5%BF%8D%E8%80%90%E6%97%A0%E8%81%8A%E7%9A%84%E9%9D%9E%E8%99%9A%E6%9E%84%E4%BD%9C%E5%AE%B6/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-06-19/%E7%8F%8D%E5%A6%AE%E7%89%B9-%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A7%86%E5%8E%BB%E4%B8%96-%E4%B8%80%E4%BD%8D%E6%93%85%E9%95%BF%E5%BF%8D%E8%80%90%E6%97%A0%E8%81%8A%E7%9A%84%E9%9D%9E%E8%99%9A%E6%9E%84%E4%BD%9C%E5%AE%B6/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-17/%E8%AE%B8%E6%B8%8A%E5%86%B2-%E9%92%B1%E9%94%BA%E4%B9%A6%E5%85%88%E7%94%9F%E6%88%8F%E7%A7%B0%E6%88%91%E6%98%AF-%E8%AF%91%E6%89%8D/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

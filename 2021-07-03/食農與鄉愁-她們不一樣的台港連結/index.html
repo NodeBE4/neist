@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>食農與鄉愁 她們不一樣的台港連結 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+食農與鄉愁 她們不一樣的台港連結
+——
+" />
+    <meta property="og:description" content="
+食農與鄉愁 她們不一樣的台港連結
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="食農與鄉愁 她們不一樣的台港連結" />
+    <meta property="twitter:title" content="食農與鄉愁 她們不一樣的台港連結" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40islander%2F%25E9%25A3%259F%25E8%25BE%25B2%25E8%2588%2587%25E9%2584%2589%25E6%2584%2581-%25E5%25A5%25B9%25E5%2580%2591%25E4%25B8%258D%25E4%25B8%2580%25E6%25A8%25A3%25E7%259A%2584%25E5%258F%25B0%25E6%25B8%25AF%25E9%2580%25A3%25E7%25B5%2590-bafyreibpkfg6mlif3neuwaklyt4jrytbkpw3hmrwv7dhfnhc2nbtew7t74" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@islander/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90-bafyreibpkfg6mlif3neuwaklyt4jrytbkpw3hmrwv7dhfnhc2nbtew7t74" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@islander/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90-bafyreibpkfg6mlif3neuwaklyt4jrytbkpw3hmrwv7dhfnhc2nbtew7t74&text=食農與鄉愁 她們不一樣的台港連結&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@islander/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90-bafyreibpkfg6mlif3neuwaklyt4jrytbkpw3hmrwv7dhfnhc2nbtew7t74&title=食農與鄉愁 她們不一樣的台港連結" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@islander/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90-bafyreibpkfg6mlif3neuwaklyt4jrytbkpw3hmrwv7dhfnhc2nbtew7t74&title=食農與鄉愁 她們不一樣的台港連結" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=食農與鄉愁 她們不一樣的台港連結&body=
+食農與鄉愁 她們不一樣的台港連結
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@islander/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90-bafyreibpkfg6mlif3neuwaklyt4jrytbkpw3hmrwv7dhfnhc2nbtew7t74" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@islander/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90-bafyreibpkfg6mlif3neuwaklyt4jrytbkpw3hmrwv7dhfnhc2nbtew7t74&title=食農與鄉愁 她們不一樣的台港連結&caption=
+食農與鄉愁 她們不一樣的台港連結
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=食農與鄉愁 她們不一樣的台港連結&url=https://matters.news/@islander/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90-bafyreibpkfg6mlif3neuwaklyt4jrytbkpw3hmrwv7dhfnhc2nbtew7t74" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>食農與鄉愁 她們不一樣的台港連結</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-07-03
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 島民</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@islander/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90-bafyreibpkfg6mlif3neuwaklyt4jrytbkpw3hmrwv7dhfnhc2nbtew7t74" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1625299508000-->
+<p><a href="https://matters.news/@islander/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90-bafyreibpkfg6mlif3neuwaklyt4jrytbkpw3hmrwv7dhfnhc2nbtew7t74">食農與鄉愁 她們不一樣的台港連結</a>
+——</p>
+
+<div>
+  <p>原文刊於鏡週刊：<a href="https://www.mirrormedia.mg/premium/20210622timesquare001" target="_blank">https://www.mirrormedia.mg/premium/20210622timesquare001</a></p>
+  <p>楊寶熙與劉蘊灡和近年許多移民來台的港人不太一樣。她們都被台灣的食農教育，人與土地、生態的連結所吸引，做著一些都市人不太明白，又不太能賺錢的事。她們都離開香港，又掛念香港，但也想把自己種在這片土地，認真生活。</p>
+  <p>這是香港人楊寶熙搬到宜蘭的第4個月。辦手續時她偶然得知，宜蘭市的人口只有9萬多，而她離開的，是超過750萬人口的香港。</p>
+  <p>但她仍然在這裡找到了一點故土的親切。那是她住處附近，早上5、6點就開始的小市集，附近的農夫拿出自家種植或別處採購的蔬菜水果，在路邊擺賣，直到天亮散去。在她過去居住的香港大埔，也有這樣的市集，稱為「天光墟」（編按：廣東話「墟」即「市集」），小販總在天光前開賣，天光後散去。她在宜蘭，常常很早去買菜，「有時走著走著，覺得好像回到大埔。」</p>
+  <p>採訪這天，她剛從一個狹窄的短租套房搬到有完整廚房的新住處，裡面現在只有一張大桌、一塊黑板牆，連招牌都沒有。她打算在這裡販售台灣各地的有機小農產品，推廣共同購買、社區經濟理念，還會舉辦關於食物與農業的電影放映會。我們去買了粉筆，一起幫她在黑板牆上寫下店名「慢慢走自在生活」。</p>
+  <p>在島嶼另一邊，沿著浪漫台三線驅車1個多小時，有一個客家人與賽夏族原住民混居的山谷，叫做南庄。這是香港人劉蘊灡搬到南庄的第3年，她和來自嘉義的丈夫共同經營的「台灣小恬田十三間手作農坊」，每個星期都手炒一鍋台灣本地的咖啡。</p>
+  <p>那是他們走訪阿里山的藍色部落、台東海端、高雄那瑪夏，從原住民小農手裡選購的有機咖啡。這些咖啡天然混有台灣的茶香，讓她想起故鄉香港的「鴛鴦」。港式鴛鴦奶茶，就是一半咖啡一半茶。</p>
+  <p>漂洋過海，塵埃落定。楊寶熙和劉蘊灡好像也成為「一半台灣一半香港」的人，卻和近年許多移民來台的港人不太一樣。在一次台北的社會創新分享會上，初次見面的兩人意外地發現，她們都被台灣的食農教育，人與土地、生態的連結所吸引，做著一些都市人不太明白，又不太能賺錢的事。她們都離開香港，又掛念香港。她們都在台灣找到想做的事，有雄心勃勃想要推廣的農產品，也想把自己種在這片土地，認真生活。</p>
+  <p>這是她們的故事。</p>
+  <h1 id="section">尋找與小農的自在生活</h1>
+  <p><strong>楊寶熙，70歲，現居宜蘭</strong></p>
+  <p>去年，69歲的楊寶熙孤身一人來到台灣。她滿頭銀髮、笑容可親，開口閉口都是她最熱衷的有機農業與社區營造，旁人常看不出她有熱烈的社運參與。她一生經歷70年代香港親中國粹熱潮到2010年後反國教運動、雨傘運動、反送中運動的政治轉變。大學時，她當過香港中文大學第一個女性學生會長、學聯會長。60歲後，她參與反國教絕食、留守雨傘運動金鐘佔領現場被捕、發起銀髮族反送中遊行支持學生。</p>
+  <p>「我是不安於室的人，不搞事不安樂的人。」她說。</p>
+  <p>而從大學到晚年，這中間的漫長歲月，她一度因為社會主義信仰的崩塌，而遠離政治，心灰意冷，退居中學教書。直到2000年，她機緣巧合地加入有65年歷史的香港嘉道理農場，接觸了有機耕種與社區農業，從此醉心於此。她發現農業是如此實在的事情，農夫自己親身投入做生產，產出食物，可以與人、社區和土地建立直接的連結。</p>
+  <p>香港有機農業的歷史不長，楊寶熙是最早的見證者與參與者之一。2000年，她加入嘉道理農場農業部，同年，香港首屆有機農業研討會舉行。嘉道理農場暨植物園成立於1956年，坐落在香港最高峰大帽山的北坡，內有菜園、梯田及各種農林園區。其前身是賀理士嘉道理爵士與兄弟創辦的農業輔助會，本是為幫貧苦農民自力更生，到楊寶熙加入的年份，農場又成為香港有機農業與社區經濟的重要推手。</p>
+  <h1 id="section-1">跨海，學習共同購買</h1>
+  <p>因為這份工作，她開始大量搜尋資料，找到1993年成立的台灣主婦聯盟，發現這群台灣媽媽帶著一百多個家庭進行「共同購買」，直接向小農訂購有機稻米和蔬菜，保護食品安全。再深究下去，她發現這種購買還能維繫消費者與農夫之間平等的合作關係，就算有天災導致食物減產，也是雙方共同承擔風險。深受啟發的她，在2003年參與籌劃了嘉道理農場的台灣參訪之旅，第1個參訪的，就是主婦聯盟，要學習共同購買。</p>
+  <p>除此之外，她還在那幾年接觸了台灣慈心基金會的里仁，到花蓮拜訪慈心的農場，學習有機耕作的經驗。里仁啟發她怎樣做有機耕作的生產，主婦聯盟則啟發她怎樣做友善有機的消費，這兩件事加起來，一個「社區支持農業」（CSA）的雛形就萌芽了。這些台灣的實踐經驗深深影響了她，幾年後，她從嘉道理農場離職，和朋友一起成立「土生合作社」，在香港搞共同購買。合作社結束後，她又和朋友一起成立社會企業「自在生活」，找豆腐廠生產有機豆腐，和兩個兼職員工一起，和社區媽媽們一起推廣本地豆腐的共同購買。豆腐銷量不錯，一些NGO當時鼓勵消費者用勞動來換取「經濟時分券」，也可也拿來換購她生產的豆腐。她又和不同組織合作，販賣在地雞蛋、香蕉、環保衛生紙等。</p>
+  <p>2009年，她到台灣上樸門永續的農業課程，整整14天。回去之後，受澳洲經驗啟發的香港農夫葉子盛找到她，一起成立了香港永續栽培學苑，為有興趣學習有機種植的人提供完整的課程。轉眼，時間到了2012年，「自在生活」經營不善，要關門。她也由當年的媽媽級，邁入了60歲的銀髮級。但她腳步不停，又在南涌，在大埔，在荔枝窩，參與各種各樣的社區農業計畫。</p>
+  <p>多年實踐，終於讓她意識到在香港做社區農業與社區建設的困難。首先，「政策不扶助，政府會妨礙你」。其次，社區經濟要求人把自己的生計綁在社區，可是香港的消費環境實在太難讓農夫僅憑小規模的有機耕種就養活自己。香港人習慣了進口食物的便利，政府與地產商又都對農地虎視眈眈，發展主義的邏輯讓本地農業與社區經濟舉步維艱。因此，她在香港走的這一條路，一直都是小眾中的小眾，空間要靠努力擠出來。</p>
+  <h1 id="section-2">來台，翻山尋找小農</h1>
+  <p>而在楊寶熙眼裡，一海之隔的台灣，不僅有直接進入校園的食農教育，也有對農業、農民相對友善的法律，整體社會都傾向重視農業，農產品價格的漲跌會成為重要新聞。這是她在過去20年中，與眾多台灣農友交流之下，發現的事。不管是有機農業，還是社區支持農業，比起香港，她看到「台灣的整個社會氣氛比較適合做這件事」。</p>
+  <p>對她要來台灣的決定，她的香港朋友們不但支持，更是不斷勸她趕快來台，不要回去。一個重要原因是，她在2019年的反送中運動中，曾發起幾次銀髮族遊行。朋友們都擔心她被政治清算。儘管如此，她仍然自覺「不是很危險的人物」，但也有人說，「慢慢處理完最頭面的人，就會輪到你這種了」。</p>
+  <p>不過，這種擔憂並不是她來台灣的最重要原因。她「不搞事不安樂」的性格，令她決定在大多數人都已經退休的69歲之齡，獨自來到台灣繼續她的「自在生活」社區經濟。她想在這片異鄉的土地上，把曾在香港試過的、受阻的，再做一次，甚至做得更多、更廣。她想要合作的台灣農家是一個長長的清單，環繞全台灣，生產米、醋、雞蛋、茶、咖啡、啤酒及各種本地農業加工品。各地的小農市集她都不願錯過，獨自搭客運翻過重重的山也要去。</p>
+  <p>台灣吸引著她，她在這片土地看到無數的可能性，一切好像才剛剛開始。</p>
+  <h1 id="section-3">從港人變在地上的人</h1>
+  <p><strong>劉蘊灡，40歲，現居苗栗南庄</strong></p>
+  <p>在苗栗南庄，劉蘊灡迎來自己當媽媽的第3年，也終於等來了小店的手寫招牌，上面寫著「鐵鍋咖啡」。她和丈夫的小店在南庄十三間老街，不是觀光客聚集的區域，卻恬靜、閒適。繡球花和熊掌多肉、到手香一起擺放在小店的門前，木門上畫了藍鵲，和她女兒悅悅可愛的小臉。</p>
+  <h1 id="section-4">遊台，遇愛情和生活</h1>
+  <p>3年前，她也和楊寶熙一樣，帶著一切剛剛開始的盼望和衝勁，來到台灣。不過帶她來的，除了對台灣這片土地與在地農業的興趣，還有愛情。2008年，她獨自到台灣環島旅行，路經阿里山奮起湖，認識了一個賣愛玉籽的嘉義男生。他想把她留下，她卻早已買好環島的車票和回香港的機票。7年後，兩人重遇，戀愛了3年，她搬來台灣，在台中的一間有機蔬食餐廳舉行婚禮，送親友的禮物是農友種的芭樂。</p>
+  <p>她記得剛到南庄的時候，女兒才幾個月大，還要抱在手裡。他們租下這間小店，從零開始，把兩張桌子拼一拼當做床，就這樣過了最初的幾夜。現在，他們一家三口就住在小店的樓上，陽台種滿花，早上，他們就下樓開店，先煮早餐餵女兒，再煮一壺從高山帶回來的台灣咖啡，自己喝，也賣給過路的遊客。</p>
+  <p>在香港的時候，她是服務青少年與身障老人的專業社工，每天早上6、7點出門，晚上7點多下班。「累到不想洗澡，不想吃飯，每天下班都累到快暈倒，想直接睡覺。」她很喜歡自己的工作，帶著老人小孩做個案輔導，辦活動，投入很多精神和個案溝通，建立關係。可是日子久了，精神和體力的消耗是巨大的。</p>
+  <p>和許多香港上班族一樣，她的紓壓方式是離開香港，去旅行。「我第一個出走的地方就是台灣。」所謂出走，就是一個人旅行。從台灣開始，她又去了加拿大、澳洲，享受一個人旅行的日子。上司對她很好，即使她工作2年說累了，想出去旅行半年1年再回來，這份工作也還是等著她回來。</p>
+  <p>對她來說，旅行的意義在於：「有些事情你現在不做，以後好像就沒有機會了。」從20多歲開始，她就這樣停停走走十幾年，全世界都去過，最後還是停在台灣。愛情是一個主要的原因，她記得那次阿里山相遇之後，雖然2人多年沒有再見，卻留下聯絡方式。她笑說：「我回香港之後，他就一直纏著我」。除了愛上這個人之外，台灣鄉村的土地與生態，一種與香港都市生活完全不同的生活方式，也是她愛上這裡的原因。</p>
+  <p>「在大自然裡，我覺得人可以有一點沉澱跟思考的空間。去到一個草皮，看著花，就這樣子躺著，或是看一些書。很感覺自己活著。」她在香港的時候，住在高樓密集的將軍澳，每天搭港鐵到九龍東上班，生活的空間就是高樓、馬路和大賣場。有時累了，她就來台灣的鄉下住1個月，去農場打工換宿，剪芭樂枝，生暖爐取暖，和社區的媽媽一起做芋頭糕。她也從最初跟著旅遊書玩台灣的香港人，變成坐下來進入社區，與在地農人和媽媽們共作、共食的人。</p>
+  <p>她在台灣的農場第一次接觸到有機農業，發現有的農夫堅持不用化肥農藥，「保護土地的想法很重」，明明產量又少，成本又高，會被人笑，但這些農夫還是去做。她漸漸發現，這些農夫很淳樸，做的事情也很實在。「因為這是對土地，對人都好的事。」</p>
+  <p>回過頭來，每一次離開台灣回到香港的工作裡，她都問自己，這樣高壓的、擁擠的生活方式，真的是自己想要的嗎？「我人生要追求什麼？為什麼我要活著？」她想追求自己真正喜歡的事情，不只是在工作裡找滿足感，「為做而做」，而是思考過生活的意義，再去做選擇。就在這時，她重新遇到了那個7年前在阿里山相遇的男生，明白了他推廣家鄉農產品的真正意義。嘉義阿里山，產出愛玉籽、咖啡、茶與香菇，他多年來一直與在地農夫合作，生活在鄉下，希望把家鄉的農產品推廣給都市的遊客，也吸引青年返鄉一起做事。她決定辭職，來台灣加入他，一起做這件事。</p>
+  <h1 id="section-5">開店，食物連結台港</h1>
+  <p>如今，他們的小店陳列了滿滿的農產品，有阿里山愛玉籽、天然蜂蜜與蜂蠟、柴燒原味蔗糖、到手香手工香膏、五行茶，當然還有最重要的台灣本地咖啡。店內貼著寫有「自然農法 在地友善」的宣紙，他們的名片寫著：友善農耕 誠食不二。除了賣附近農夫的產品之外，他們也自己種植香草，不僅做成驅蚊消炎的香膏、純露，也把到手香的葉子凍進冰塊，加進自己搓的阿里山愛玉中，是為「冰鑽愛玉」。他們也邀請社區鄰里與觀光客參加小店的工作坊，可以手炒咖啡豆，手搓愛玉，還可以用天然蜂蠟製作手工保鮮布。</p>
+  <p>和宜蘭的楊寶熙相比，劉蘊灡沒有上過專業的有機農業課程，也不曾聽聞「共同購買」、「樸門永續」這些概念。在香港人中，她們都是小眾、「異類」，來到台灣的路徑不同，卻殊途同歸。如今，楊寶熙的店鋪即將開張，兩人在小農市集不時相遇，互贈禮物，台港連結在苗栗和宜蘭之間。</p>
+  <h1 id="section-6">同心，推廣台灣咖啡</h1>
+  <p>「平安順興」，是宜蘭人從小聽到大的祝福語。這4個字源於宜蘭舊城的「震平、兌安、離順、崁興」4座城門，是周圍農人進出城門必經之地。楊寶熙搬到宜蘭不久，就在鄰居的門上看見這4字祝福語，更發現一款名為「平安順興」的宜蘭手工啤酒。</p>
+  <p>這種啤酒加入宜蘭三星小農的火龍果和員山小農的鳳梨，在本地的精釀啤酒廠製作。她想起自己在香港也有幾個做手工啤酒的朋友，一直想把在地元素加入啤酒中，推出香港「真相啤酒」，要人們勿忘香港抗爭運動中許多未解的真相。於是她決定，自己在宜蘭的小店，也要跟「平安順興」的小酒廠合作，加入香港抗爭元素，做出宜蘭與香港連結的「香港抗爭啤酒」。</p>
+  <p>店內大大的桌子，則用來開烹飪班和手作班，她想邀請在台北的廣東菜師傅來宜蘭，教大家煮出正宗港味，如果順利，也想介紹多國美食。她還有一個隨身攜帶的環保袋，用了多年，是一群香港婦女收集了壞掉的雨傘，拆下防水布做成的。最近，她受一個在台港人市集的啟發，也想在宜蘭繼續做這件事，跟社區鄰居們收集壞掉的雨傘，一起做成手工環保袋。她初到宜蘭時，接連下了1個多月的雨。「雨傘一定是宜蘭人最常用到的東西。」</p>
+  <p>她給這個環保袋取名為「不枯不散環保袋」，「象徵雨傘運動留下的精神」。雨傘對香港人有特別的寓意，從2014年的雨傘運動開始，港人舉起雨傘抵擋催淚彈、橡膠子彈乃至實彈的畫面，在國際間傳播甚廣。而「不枯不散」，則是雨傘運動時，林夕作詞的一首《撐起雨傘》中，最後一句歌詞。「散」取「傘」字的諧音，而壞掉的雨傘可以重新利用，就像香港人的抗爭精神，不會枯萎。</p>
+  <p>在苗栗，劉蘊灡則更直接地把台灣與香港的食物結合，做出在地融合港味的料理。一進店門，一排港式奶茶專用的黑白淡奶就擺在眼前。店裡販賣手沖港式奶茶，她買到茶餐廳老師傅用的一模一樣的長嘴茶壺，幾百次拉茶後，長長的濾網從白色變成了「絲襪色」。為什麼要拉茶？「因為茶水互相撞擊，又接觸空氣，衝到壺底再衝上來，茶就越拉越滑。」</p>
+  <p>做奶茶，首先是自己想喝，可是在苗栗卻很難買到港式奶茶。她為自己解鄉愁，也想把香港的飲食文化介紹給鄰居和觀光客。但這款奶茶，卻又和傳統的港式奶茶有些不同。港奶會加太古糖、白砂糖，她加的卻是附近農夫自己生產的台灣蔗糖，粗糲的糖漿不像市售白砂糖一樣精細，卻是她認可的農夫親手製造。</p>
+  <p>她也自己製作港式西多士，還原創了馬告雙蛋加奶醬多士的餐點組合。西多士使用鄰居自己做的窯烤麵包，原料是本地麵粉。滑蛋上則撒了台灣原住民飲食中常用的馬告，是一種天然胡椒。這些結合台灣食材做的非一般港點，在店裡是人氣商品。許多人會點一杯台灣咖啡來搭配，組成奇妙的台港美食組合。</p>
+  <h1 id="section-7">生根，與土地做連結</h1>
+  <p>推廣台灣咖啡，本是她先生的初衷，從嘉義的50棵咖啡樹開始，他曾在全台灣尋找不同風味的咖啡，走過南投國姓、台中新社和平、高雄那瑪夏、屏東文樂、台東海端、花蓮秀林等等地方。妻子移民來台後，兩人帶著3歲的小女兒，一起環島探訪咖啡園，帶一個鐵鍋在身上，看到好的豆子，就停下來架起鐵鍋，手工烘焙、炒咖啡。台灣咖啡種在高山峻嶺，採收的人力要求高，產量低，所以價錢是普通進口咖啡的三倍。他們於是想到，可以直接和咖啡農連結，省去中間的轉運、加工成本，用便宜簡單的方式自己烘豆。兩人也鼓勵熱衷咖啡文化的DIY玩家，可以循著他們介紹的台灣咖啡故事，自己去找農戶買生豆。</p>
+  <p>去年是他們第2次環島炒豆，作為女兒的生日禮物。結合不同產地的氣候人文，他們給這些台灣高山上的咖啡豆都起了名字。例如來自嘉義阿里山的「森野藍鵲」，產地是一片有藍鵲居住的森林；「阿里三代」，則是一個退休校長在阿里山與兒子、孫子三代人一起種植的咖啡豆；來自台東的「金色東方」，則產自一片有溫暖陽光照射的咖啡林。</p>
+  <p>當他們把推廣台灣咖啡的想法寫成計畫書，申請水保局的計畫案時，劉蘊灡發現，自己在香港做社工時寫報告的經驗，幫了很大的忙。去面試時，她本來有些緊張。畢竟一個香港人到台灣來推廣台灣咖啡，要怎麼在短短時間內跟人解釋背後的脈絡呢？哪知面試官開口就是親切的一句：「蘊灡，歡迎你來台灣。」這讓她安穩下來，感到「你認同我」，最終成功拿到計畫案。</p>
+  <p>而楊寶熙的出現，讓她更加明白自己並不孤單，因為從香港跑來台灣推廣本地農產品的人，不只她一個。楊寶熙要推廣的，主要是宜蘭在地的稻米。</p>
+  <p>她在宜蘭有不少農友，許多都是過去工作參訪農場認識，也有永續農業課程的同學、老師。宜蘭平原廣闊，冬季多雨，這些農友大多種米，友善耕種，不瘋狂消費。早在2004年，由她的農夫朋友賴青松發起的宜蘭「穀東俱樂部」模式，就在宜蘭帶起社區支持農業的風潮。消費者先預付認穀，籌集資金給農夫種米，收成後再送到消費者手上，就算有天災，也是共同承擔。10幾年後，越來越多年輕人加入這種模式，在宜蘭發展大大小小的社區支持農業。</p>
+  <p>這些人的生活理念與她相近，早在來台灣之前，她就知道賴青松和他的「穀東俱樂部」，如今更進一步，有自己的店鋪可以幫忙推廣。稻米、米醋、米餅、米漿、米酒，她已經給自己的貨架預留了一排位置，打算向觀光客和港人朋友推廣自己認同的宜蘭米。而店內的放映空間，也會放映與食物和農業相關的電影，第1部就想放映《太陽的孩子》。那是深深感動她的台灣原住民電影，阿美族人在花蓮守護金色的稻浪梯田，守護家園。</p>
+  <h1 id="section-8">融合，如同鴛鴦奶茶</h1>
+  <p>很多人都曾問劉蘊灡，你是哪裡的人？「我就是認真生活的人。」劉蘊灡說。她先生補充：「我們就是『在地人』，在地上的人。」她的國語已經很好，和社區的媽媽們連結緊密，但她仍然掛念香港。</p>
+  <p>5年前，她從沒有想過自己會過這樣的人生。「在香港，你根本不會知道苗栗是什麼地方。」現在，她過著踏實的生活，做著喜歡的事。女兒在鄉下的幼稚園上學，下課就在河邊奔跑，摔倒了會自己爬起來，吃的是鄰居做的麵包，喝的是自己種的香草茶。</p>
+  <p>因為疫情，她已經2年沒有回香港，從親友的口中也得知，香港已經不再是從前的香港。她把港式的飲食帶入小店，教女兒說粵語，牆上也貼著香港親友寄來的明信片和聖誕賀卡。明信片上畫著星空，以及街頭上黑色的人群，聖誕卡片上，戴著聖誕帽的少女正為香港的未來祈禱。</p>
+  <p>在宜蘭，剛落腳不久的楊寶熙，還沒有聽懂社區的鄰居們傍晚散步的閒聊。每次在群組看到香港好友們約吃飯、聚會，她都好想回覆「我也 join」，卻又知道是不可能的。她也不知道普通台灣人會怎麼看待這樣一個滿頭白髮，租下大大店鋪的香港人。他們會不會覺得我只是來退休？他們會不會覺得我只是移民來賺錢？我想要推廣的理念，真的可以實現嗎？一個人手忙腳亂應付開店、搬家的一切，她常常累到想要停下來。可是她又知道，如果第一步停下，就做不到後面的事了。</p>
+  <p>十幾年前，她曾參與香港「和平婦女」行動研究團隊，團隊提出「生計、生態、文化」的生活三部曲。今天回望，她覺得依然適用。「我覺得開店做生意是最讓人頭痛的，因為我沒有商業頭腦，可是這是生計。要做到另外兩件事生態和文化，就必須先解決生計，就是把店開起來。」</p>
+  <p>一個人跑來台灣從零開始的壓力，有時令她哭泣，又覺得自己好任性。一次，在台港人朋友帶她去走新竹的司馬庫斯巨木步道，來回10公里，她是全團年紀最大的團友，走到頭暈、腳抽筋。「可是這是我自己選擇的，我自己選擇要走。」走到最後，她實在走不動，「很想說，可不可以不走了？可不可以停在這裡？但是、但是……」她哽咽著停頓，又繼續說，「我現在遇到的困難，就像那時候一樣。如果我不走這一步，就做不到後面那些我想做的事了。」</p>
+  <p>她想做的事，用一句話概括，就是把理念、想法、貨品散出去，同時把人和思想交流聚集。有一晚她睡不著，輾轉反側，想到一句開店的口號：「貨如輪轉，人才匯聚」。她想建立的連結，不僅是用消費和經濟，把過往認識的台灣農連結起來。她想建立平台，串連港台之間相似理念的人，搭一條路。「好像織蜘蛛網，你不立刻知道織網之後有什麼用，只是隱隱約約覺得：不只是這樣。」</p>
+  <p>雖然很累，但打開冰箱，你就知道她在好好生活。她會拿出一棵菜，告訴你這是在市集認識的壯圍農夫自己種的。「那個農夫很自豪地說，這些是我自己種的！下一步我就會去探訪他的農場。」她也會拿出一包香腸，告訴你，這是她經過一間附近的茶葉店，看到店家在煮蒜頭，「多嘴八卦」問出來的自家產品。「他說自己有做蒜頭香腸，只是沒有公開地賣。以後可能我就跟他合作，賣這個香腸。」</p>
+  <p>不論在東邊的宜蘭，還是西邊的苗栗，兩個香港人正帶著她們對食物與農業的熱情，慢慢紮根下來，在台灣認真生活的同時，又帶來香港的氣味。</p>
+  <p>楊寶熙覺得自己好像已經是台灣人了，但她也是香港人。她們都是「鴛鴦」，是一半一半的。那不是國籍、護照、移民、簽證，那是生活在地上的人，對腳下土地的流連與交託。</p>
+  <p>雨傘運動後1年，她曾寫過一本小書，叫做《走過火紅的傘下銀髮》，梳理自己過去人生經歷的轉折。在書的結尾，她寫道：「我們需要更多這樣的碎碎念，回顧、反思、討論、總結，才能有機會找到出路。或者，其實有些人已經找到出路了，只是有些人不同意，有些人覺得不適合自己，那麼就繼續討論尋找吧！」</p>
+  <p>原文刊於鏡週刊：<a href="https://www.mirrormedia.mg/premium/20210622timesquare001" target="_blank">https://www.mirrormedia.mg/premium/20210622timesquare001</a></p>
+  <p><br /></p>
+  <p><br /></p>
+  <p><br /></p>
+  <p><br /></p>
+  <p><br /></p>
+  <ul>
+    <li><br /></li>
+  </ul>
+  <p><br /></p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+    
+    
+      <li>
+        <time>2021-06-30</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-30/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C/">
+          【 十篇報導告訴你，為什麼訂閱端傳媒，就是支持我的寫作】
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-02-26</time>
+        <a href="https://nodebe4.github.io/oped2/2021-02-26/%E6%95%B8%E5%AD%97%E6%A5%B5%E6%AC%8A%E6%99%82%E4%BB%A3%E7%94%9F%E5%AD%98%E6%89%8B%E8%A8%98-3.0-%E7%89%88-%E7%B0%A1%E4%BB%8B%E5%8F%8A%E7%9B%AE%E9%8C%84/">
+          《數字極權時代生存手記》 3.0 版 簡介及目錄
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/">
+            前一篇：北岛获日本大伴家持文学赏，受奖致辞：写作是我最后的防线
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-04/%E9%87%8D%E8%BF%94%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB%E7%9A%84%E5%8F%98%E9%9D%A9-%E5%A5%B3%E6%80%A7-%E7%94%B7%E6%80%A7%E4%B8%8E%E5%84%BF%E7%AB%A5%E7%9A%84%E6%96%B0%E5%8D%B1%E6%9C%BA/">
+            後一篇：重返日常生活的变革：女性、男性与儿童的新危机
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-07-04/%E9%87%8D%E8%BF%94%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB%E7%9A%84%E5%8F%98%E9%9D%A9-%E5%A5%B3%E6%80%A7-%E7%94%B7%E6%80%A7%E4%B8%8E%E5%84%BF%E7%AB%A5%E7%9A%84%E6%96%B0%E5%8D%B1%E6%9C%BA/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-30/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-07-03/%E5%8C%97%E5%B2%9B%E8%8E%B7%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%B4%E5%AE%B6%E6%8C%81%E6%96%87%E5%AD%A6%E8%B5%8F-%E5%8F%97%E5%A5%96%E8%87%B4%E8%BE%9E-%E5%86%99%E4%BD%9C%E6%98%AF%E6%88%91%E6%9C%80%E5%90%8E%E7%9A%84%E9%98%B2%E7%BA%BF/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-07-04/%E9%87%8D%E8%BF%94%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB%E7%9A%84%E5%8F%98%E9%9D%A9-%E5%A5%B3%E6%80%A7-%E7%94%B7%E6%80%A7%E4%B8%8E%E5%84%BF%E7%AB%A5%E7%9A%84%E6%96%B0%E5%8D%B1%E6%9C%BA/">
+      <i>前</i>
+    </a>
+    
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-30/%E5%8D%81%E7%AF%87%E5%A0%B1%E5%B0%8E%E5%91%8A%E8%A8%B4%E4%BD%A0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A8%82%E9%96%B1%E7%AB%AF%E5%82%B3%E5%AA%92-%E5%B0%B1%E6%98%AF%E6%94%AF%E6%8C%81%E6%88%91%E7%9A%84%E5%AF%AB%E4%BD%9C/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生
+——
+" />
+    <meta property="og:description" content="
+马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生" />
+    <meta property="twitter:title" content="马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60b1deecac95bf78e1cbad0a" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60b1deecac95bf78e1cbad0a" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60b1deecac95bf78e1cbad0a&text=马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60b1deecac95bf78e1cbad0a&title=马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60b1deecac95bf78e1cbad0a&title=马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生&body=
+马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60b1deecac95bf78e1cbad0a" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60b1deecac95bf78e1cbad0a&title=马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生&caption=
+马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生&url=https://www.allnow.com/post/60b1deecac95bf78e1cbad0a" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-29
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 曾于里</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60b1deecac95bf78e1cbad0a" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60b1deecac95bf78e1cbad0a">马拉松悲剧背后的健身时代：身体形塑、中产焦虑与朋克养生</a>
+——</p>
+
+<div>
+  <p>马拉松赛事在最近10年有一个飞速发展。从1981年到2000年的30年间，我国只有7个城市举办马拉松赛事；进入21世纪，尤其是2010年代以来，马拉松赛事数量则逐年攀升。中国田径协会公布的数据显示，全国马拉松及相关路跑赛事从2014年的51场增长到2019年的1828场，5年时间数量增长超过30倍。无论是赛事数量、赛事规模，还是参赛人数，都得到了前所未有的突破。一些热门的马拉松赛事，甚至因为报名人数高达数百万，而出现“抽签摇号”的情形。</p>
+  <p>作为消费社会景观之一种，健身在中国社会的兴起，其实也就这二十年的事情。随着中国经济社会的发展以及中产阶层的勃兴，健身行业发展驶入快车道。艾媒咨询报告显示，自2015年至2020年，中国健身俱乐部的市场价值在不断上升，2020年达到1230亿元。《2020中国健身行业数据报告》显示，国内参与健身的人群由2019年的6812万人增长至7029万人，健身人口渗透率为5.02% ，市场增长潜力巨大。</p>
+  <p>那么，健身究竟是如何热起来的？人们通过自我身材的严格管理，寄托了什么，又试图改变些什么？</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-29/60b1df1f9c232e01c17d15e7+L.jpg" data-id="60b1df2eafa7517017e4d7f6" alt="健身已经成为一种时尚和生活方式" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+健身已经成为一种时尚和生活方式
+    </figcaption>
+  </figure>
+  <h2 id="section">家国的身体与身体的解放</h2>
+  <p>对身体的命名、争夺和管理，有着源远流长的传统。身体，不仅是肉体与心灵的综合，也是一个丰富的能指；在不同的社会语境下，涵义不同，目的不同。</p>
+  <p>漫长的传统社会并未滋生出对身体科学主义式的兴趣，人们对身体的认知“是一种心、气、神、志交通的象征体、隐喻体”。“从中国儒学对于身体的观点看，中国人对身体从来不是‘客观’观察的，因为中国人认为不存在一个纯粹的躯体现象，中国人把身体看作文化象征意义上的‘虚实体’（阴阳结合体）”。古人不在意沉重的肉身，对肉体的锻炼被视为“末学”，以至于近代西方体育传入时，还被嘲笑为“不入流”。同时，身体也不属于个人，家族作为最重要的社会单元，是人伦与世道的起点，个体依附于家庭，当然也包括身体，正所谓“身体发肤，受之父母，不敢毁伤，孝之始也”。</p>
+  <p>从“家的身体”变成“国的身体”，始于近代。彼时的有识之士认为，国家病了是因为国民病了，国人体质的羸弱是导致民族走向衰落的重要因素。俞祖华、怀培安执笔的《优生·强身·尚武：近代身体史视阈下的民族复兴思想》详细论述了近代身体观的变迁。19世纪末外文报刊所刊文章使用了“东方病夫”的说法，被《时务报》译成中文，让“东亚病夫”一词广为流传。康有为指出：“我中国民数四万万，比于欧洲十六国人数倍之，诚大地莫强之国也，然民庶愚弱，故国不能强”，“臣尝深思其故，盖有民而自弱之也”。梁启超则在1903年发表的《新民说·论尚武》中指出：“合四万万人，而不能得一完备之体格，呜呼！其人皆为病夫，其国安得不为病国也”，“我以病夫闻于世界，手足瘫痪，已尽失防护之机能，东西诸国，莫不磨刀霍霍，内向而鱼肉我矣”。1917年4月，毛泽东在《新青年》上发表《体育之研究》一文，指出“体育于吾人实占第一之位置”“欲文明其精神，先自野蛮其体魄。苟野蛮其体魄矣，则文明之精神随之”……身体的疾病叙事，也由此成为了“五四”时期小说创作的一个重要特征，比如鲁迅的《狂人日记》《孤独者》《药》都提到了肺结核，郁达夫的大部分小说涉及到常见性疾病，疾病俨然作为国民性孱弱的隐喻而存在。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-29/60b1dfbc4cd55d54dd5dac6b+L.jpg" data-id="60b1dfc6afa7517017e4d7f8" alt="《历史、身体、国家：近代中国的身体形成（1895-1937）》，黄金麟，三辉图书丨新星出版社2006年8月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《历史、身体、国家：近代中国的身体形成（1895-1937）》，黄金麟，三辉图书丨新星出版社2006年8月版
+    </figcaption>
+  </figure>
+  <p>从晚清到“五四”，知识分子纷纷思考如何通过“优生”“强种”“人种改良”以改变民族“劣败”的命运。身体成为国家的工具，是国家的目标，同时也是国家的结果，对身体的改造成为焦点议题。台湾学者黄金麟的《历史、身体、国家》一书，记录了20世纪初叶长达三十年的国民身体改造运动，其分为三个阶段：1902年至1919年的军国民运动；梁启超的《新民说》（1902-1905）中提倡的“新民”身体改造运动；1915年新文化运动所强调的公民教育，以及后来的“新生活运动”对公民身体的形塑。虽然它们的号召各不相同，实际上却殊途同归，都是以国家富强为目的身体“军事化”过程，以期通过增强国民身体素质来重振中国的国际竞争力。身体是政治化的身体，是可决定国族命运的身体。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-29/60b1e0154cd55d54dd5dac6d+L.jpg" data-id="60b1e01a8717253efd7e2b7e" alt="身体的政治化通过大众体育落实" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+身体的政治化通过大众体育落实
+    </figcaption>
+  </figure>
+  <p>1949年后，这种政治化身体的思路仍然保留，其突出的关键词仍是“改造”。通过对身体和思想的改造，塑造社会主义“新人”，身体是政治工具，也是阶层编码。广大的工农阶层，因为出身的“清白”而具备政治上的优势地位，他们成为国家的主人、进入政治的中心，并通过爱国卫生运动与大众体育方针的推广和落实，获得身体的清洁和健康，以更好地投入到新政权的现代化建设中。与之相对，知识分子阶层因为出身问题需要思想的“改造”，而思想的“改造”是通过身体的“改造”来体现和实现的：一轮又一轮的自我检讨和自我改造运动，始终与劳动紧密相连。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-29/60b1e0294cd55d54dd5dac6e+L.jpg" data-id="60b1e0358717253efd7e2b7f" alt="对知识分子的思想改造，也要通过体力劳动完成" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+对知识分子的思想改造，也要通过体力劳动完成
+    </figcaption>
+  </figure>
+  <p>进入80年代之后，随着政治、经济的改革和科学知识的进一步普及，身体开始朝向个体化、科学化迈进。这一过程并非一蹴而就，比如曾经一场“气功热”就席卷了整个中国，一时间各路大师被顶礼膜拜、相关出版物汗牛充栋、公共场所处处可见闭目冥想的修炼者。融合了中医、阴阳、佛教、道教、武术等理论或修行技巧的气功，带有神秘主义和类宗教性质，恰如学者成庆指出，重新审视当年的气功热，需要从“养生”与“信仰”两个层面去观察。一方面，“改革开放之后经济逐渐恢复正常，公众开始对健康以及寿命越加重视，这种‘世俗性’的幸福认知，使得养生成为非常流行的时尚”。这时，对身体的认知多少从集体主义挣脱，带有个人利己的诉求；另一方面，“文革结束后，政治意识形态上的松动，使得‘政治信仰’主宰社会生活的局面有所改变……个人生命信仰的‘真空’因为政治激情的退潮而突然展现出来，大家开始将注意力集中在‘健康’、‘医疗’等与生命紧密相关的领域。”</p>
+  <p>90年代，随着南巡讲话后改革开放的深化，个人主义进一步崛起，消费主义也使得国人的身体观和健康观开始与世界同步接轨。健美操等新兴的运动方式成为一时潮流，披着科学和时尚外衣的健身正式进入并深入普罗大众的生活空间，也在健康之外同时加入了审美的元素。</p>
+  <h2 id="section-1">健身：掌握身体与自我奴役</h2>
+  <p>毫无疑问，健康是健身的首要目的。</p>
+  <p>英国学者保罗·弗伦奇和马修·格莱博共同撰写过一本浅显但有意思的书——《富态：腰围改变中国》，论证了城市化进程、新兴的消费文化、以办公室为中心的现代工作方式，如何使得人们的可支配收入不断增加而时间却越来越不够用，并导致肥胖问题发生。肥胖通常被认为是富贵病，是西方发达社会才有的病症，但该书却总结出了“中国社会繁荣引致的发胖时间表”：1982年，中国只有7%的人超重；而到了1992年，这一比例便翻了两倍达到15%，相当于十年前的两倍；而到了2005年，中国肥胖人士已经达到了7000万-9000万，并且每年还以600万-1000万的人数激增。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-29/60b1e0599c232e01c17d15eb+L.jpg" data-id="60b1e068afa7517017e4d7fa" alt="《富态：腰围改变中国》，[英]保罗·弗伦奇、马修·格莱博 著，贾蓓妮、关永强 译，浙江大学出版社2012年5月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《富态：腰围改变中国》，[英]保罗·弗伦奇、马修·格莱博 著，贾蓓妮、关永强 译，浙江大学出版社2012年5月版
+    </figcaption>
+  </figure>
+  <p>现在回头看，这个数字并不是危言耸听。国家卫健委发布的《中国居民营养与慢性病状况报告（2020年）》显示，我国6-17岁儿童青少年超重率和肥胖率分别是11.1%和7.9%，加起来是19%，几乎每五个中小学生就有一个“小胖墩”。</p>
+  <p>日益提高的饮食水平、脑体分离的劳动形式、不断发展的生活技术和愈发全面的资本压榨，让现代人变得“一动不动”。诚如英国心理学家詹姆斯·兰姆登在《泰晤士报》上撰文所言：“现代人已经习惯了按需服务、按一下按钮就能操作的技术以及欲望立刻得到满足，这是不健康行为的三个源头。”在“996”“超级大小周”的高压工作模式下，很多白领经常在工位上一坐就是十几小时，工作期间三餐基本靠外卖解决，一部手机解决各种需求……于是，当今都市身体越来越多地暴露出各种亚健康问题，并呈现着年轻化的趋势。正是在这种现实隐忧下，健身首先在这些都市身体上操作起来——毕竟有足够的科学成果都在证明健身之于健康的益处。</p>
+  <p>但或许更重要的是，健身同时也是自我实现的一种渠道。美国社会学家黛布拉·L.吉姆林在《身体的塑造》中写道：“身体能够作为权力控制的领地，但同时也能作为抵抗的手段，也是构建和重构当代自我的一种途径。”对于都市身体而言，肉体健康不仅可以增加精神上的意志力、耐力和自信，走出工位到户外、到健身房的运动，更是对压抑工作的一种逃离，健身的他们不再只是流水线上螺丝钉，而恢复作为一个具体的人的主观能动性，避免被资本夺走身体的全部。并且对于女性而言，在某些情境下，健身还有助于其突破传统男性凝视下“白瘦幼”的审美，通过掌控身体主动权，获得对美的定义的权利。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-29/60b1e0969c232e01c17d15ec+L.jpg" data-id="60b1e09c8717253efd7e2b81" alt="《身体的塑造：美国文化中的美丽和自我想象》，[美] 黛布拉·L.吉姆林 著，黄华、李平 译，广西师范大学出版社2010年10月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《身体的塑造：美国文化中的美丽和自我想象》，[美] 黛布拉·L.吉姆林 著，黄华、李平 译，广西师范大学出版社2010年10月版
+    </figcaption>
+  </figure>
+  <p>不过，吊诡的是，在对身体管理的实际操作中，凝视的目光却从未消失。尤其随着摄影术的发展和普及，当每个人的手机都可以修出精致的高清大图后，健身有时就只是为了赢得他人赞许的目光和朋友圈里的点赞。罗兰·巴特在《明室：摄影札记》说：“人像摄影是个比武场。四种想象出来的事物在那里交汇，在那里冲突，在那里变形。面对镜头，我同时是：我自以为我是的那个人，我希望人家以为我是的那个人，摄影师以为我是的那个人，摄影师要用以展示其艺术才能的那个人。”作为获得自我认同的一种渠道，健身固然可以驱动个体成为更美好的人，但另一方面也可能导致健身者迷失于真实与虚拟之间，把虚幻的自我当作真实的自我，“以自身和自己的身体作为爱的对象”（弗洛伊德定义的“自恋”），以“仿拟的主体”取代“真实的主体”，沉溺其中不可自拔。</p>
+  <p>因此在不少人那里，健身变成一种自我“奴役”。他们健身也许只是为了让微信运动里的步数“好看”，他们参加马拉松为的只是一次自拍，也就出现了替跑、转让号码布、抄近路、偷偷使用交通工具等滑稽的情形。有人虽然自制力很强，每天严格精准控制着饮食的摄入——因为“所有食物都已经失去了其原始的意义。它们不再是让人垂涎欲滴的美味，而是被精确计算成含有多少蛋白质和碳水的营养素”（《新周刊》）——却不再是为了健康，而仅仅是为了一身漂亮的肌肉。女性非但没能突破“白瘦幼”审美，反而背上更多的审美枷锁——天鹅颈、蝴蝶背、马甲线、蜜桃臀、女团腿……健身滋生了新的凝视，也助长着新的身体规训，就像青年学者董牧孜所言：“人以管理物的方式管理自身。它是一种管理学，而不是养生学。它让你感觉好一点，看起来好一点。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-29/60b1e0d34cd55d54dd5dac6f+L.jpg" data-id="60b1e0d9ab4ffd0cef1c4885" alt="健身的APP化与数据化的健身" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+健身的APP化与数据化的健身
+    </figcaption>
+  </figure>
+  <h2 id="section-2">阶层的炫示与自设的幻觉</h2>
+  <p>在当下的健身热中，中产阶层显然是那个无可撼动的主体。</p>
+  <p>艾瑞咨询在一份关于新中产人群的报告中，描摹过新中产的群像：基本为有车有房一族，房产资产总值人均500万以上，汽车平均购买价格25万元以上，超过九成新中产人群有出国游经验，而新中产日常休闲活动的TOP3之一便是健身。《2019跑者调查报告》亦显示，43.8%的跑者在2019年有过旅行参赛的经历，当中12.9%的人全年总支出超过1万元……</p>
+  <p>事实上，早于中国一百多年的西方健身房文化，也是在中产阶层的拥趸下发展起来的。19世纪下半叶，瑞典医生古斯塔夫·詹德从划船、爬山等体力劳动中汲取灵感，设计出现代健身器械的雏形。19世纪末，这些器材流传到美国，当时《纽约时报》记者有些惊异地评价道：“每一件设备占据一间装置精良的大房间，这些房间里机器依次排开，外行人一看还以为是精心设计的刑房，而非医生的办公室或健身房……”当时美国正在向后工业化社会转变，体力劳动为主的工人阶层人数开始减少，白领阶层正在崛起，詹德宣称自己的机器是“对抗静坐式生活和隔绝的办公室两大恶魔的预防措施”，正好迎合了久坐的白领实用需求，大受欢迎。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-29/60b1e0fb4cd55d54dd5dac70+L.jpeg" data-id="60b1e101ab4ffd0cef1c4886" alt="1895年《纽约时报》对詹德健身器材的专版介绍" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+1895年《纽约时报》对詹德健身器材的专版介绍
+    </figcaption>
+  </figure>
+  <p>迎合白领的不仅仅是实用需求，也包括作为阶层的一种标志。法国社会学家布迪厄曾提出“区分”理论，一个阶层在成长过程中，需要通过经济资本、文化资本和社会资本确定自己的身份，并将自己与其他阶层区分开来，至于中产阶层，文化区分是他们的惯用手法。文化资本又分成三种形式：身体形态、客观形态和制度形态。身体形态文化资本表现为个人的审美趣味、学识教养、风度技能等，它是一套培育而成的倾向，通过社会化而加以内化，附着在个人的身体上，可以通过积累而习得，但无法通过馈赠、买卖和交换的方式进行传承。因此，无论是健康的体魄、优雅的举止还是博学的认知，都成了中产着力“积累”的内容。</p>
+  <p>就像伦敦大学学院教授阿兰·拉萨姆写道：“慢跑能让中产阶级成功地把自己同颓废、烟酒不离身的左倾年轻人和大腹便便、乏味老朽的右翼大亨和政客区别开来。”不少中产健身仅仅是为了体现和炫示阶层身份，所以他们热衷的健身运动以脱离普罗大众为要求之一，大家跑步我登山，登山大众化了我就跑马，越是艰难小众的运动，越是中产自我修炼、自我超越的勋章。</p>
+  <p>健身之于中产还意味着更多。2016年，《金融时报》在一篇文章中指出：“跑步已经成中国中产阶级的信仰，让他们在空虚的生活中找到意义。”“空虚”和“焦虑”是中产阶层普遍的精神状态，随着工业社会向后工业社会的转型，以及服务型经济的建立，大多数中产阶层不以出售劳动力为主，而是以知识、技能等人力资本为立身之本。知识成为第一生产力，专业和技术人员的人数不断扩大，中产阶层在职场中确立了优越和体面地位，并以此为傲。可随着技术突飞猛进的革新以及人工智能的普及，脑力劳动者的功能很可能难以跟上技术进步，或者轻易就被机器取代，与市场上的体力劳动者相比，中产阶层愈发成为具备高级知识的廉价劳动力，不少人以“穷忙族”“社畜”自称，工作聊胜于无，又没有逃离的勇气。离开工作场域，他们还不得不面临房价、育儿、养老等压力，疲于奔命、苦不堪言。</p>
+  <p>中产阶层并非上流阶层，他们没有足够的财务自由抵抗一切风险；他们也不是社会底层，其“反脆弱”能力普遍低于底层——毕竟底层已经失无可失。夹在二者之间的中产，上升无望，下跌的惯性却在不断加大，只是他们俨然已经无法想象和适应底层的生活了。如同走钢丝的人，他们必须伴随着焦虑和不安，竭尽全力维持平衡。</p>
+  <p>身体是所剩不多的可以控制的管理选项，并且是成本与收益可预期的正比投资。同时，身体能够给予中产掌控与主导的想象，仿佛身体变好了，人生也会跟着变好。埃里克·霍弗在《狂热分子》颇具洞见地写道：“当我们的生活朝不保夕，完全无力控制我们的生存环境时，就会执着于熟悉的生活方式。我们通过把生活模式固定化去对抗深深的不安全感。借此我们给自己制造了一种幻象：不可预测性已为我们所驯服。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-29/60b1e1459c232e01c17d15ef+L.jpg" data-id="60b1e14c8717253efd7e2b82" alt="《狂热分子: 群众运动圣经》，[美] 埃里克·霍弗 著，梁永安 译，理想国丨广西师范大学出版社2011年6月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《狂热分子: 群众运动圣经》，[美] 埃里克·霍弗 著，梁永安 译，理想国丨广西师范大学出版社2011年6月版
+    </figcaption>
+  </figure>
+  <p>不可预测性真的被驯服了吗？一些人的确通过跑步等健身运动，获得更多幸福；但更多人只是收获了一堆幻觉，就像其健身本身也是一种“幻觉”，借用社交媒体上的流行说法即“假装健身”。《2017年轻人消费趋势数据分析报告》显示：年轻人的人均运动消费1743元，健身卡人均消费1001元，其中运动装备人均花704元左右，但他们每年只去7次健身房。很多中产拥有健身卡，买了如何让财富增值的知识付费的内容，但他们很少走进健身房，就像他们不会真的把付费内容看完。更有人落入“朋克养生”的循环，熬最长的夜，敷最贵的面膜，一边痛饮肥宅快乐水，一边跑步机挥汗如雨，健身和养生早已不是自觉的生活习惯，而成为一种打卡式的自我抚慰。</p>
+  <p>幻觉的形成，不全是因为懒，更可能是因为累。之于“996”的“社畜”而言，每天扣除工作和通勤时间，业余时间实在有限，精疲力尽之后，是否还有精力和动力撸铁，自然需要打一个问号。健身毕竟不等同于追剧刷短视频，它需要持续投入时间和汗水，常常是乏味而痛苦的。“假装健身”，只是折射了他们“渴望变好”的憧憬，虚构出一种掌控自我的感觉。也正是在这个意义上，诸如“跑步教”“健身教”之类的戏称，更显示出几许恰如其分的意味。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-29/60b1e1859c232e01c17d15f2+L.jpg" data-id="60b1e188ab4ffd0cef1c4888" alt="朋克养生的健身" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+朋克养生的健身
+    </figcaption>
+  </figure>
+  <p>嘲笑或者自嘲是容易的，只是在一个无从安定的时代里，己身的肉体已是仅有的依恃，这何尝不是一种卑微又可悲的权利？</p>
+  <blockquote>
+    <p>作者系文化评论人、剧评人。</p>
+  </blockquote>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-31</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-31/%E8%BA%AB%E4%BB%BD%E5%88%B6%E9%80%A0-%E5%B7%B4%E5%8B%92%E6%96%AF%E5%9D%A6%E4%BA%BA%E6%98%AF%E5%A6%82%E4%BD%95%E4%BB%8E%E5%8F%97%E5%AE%B3%E8%80%85%E5%8F%98%E6%88%90%E6%81%90%E6%80%96%E5%88%86%E5%AD%90%E7%9A%84/">
+          身份制造：巴勒斯坦人是如何从受害者变成恐怖分子的？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-30</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/">
+          “乡村维密秀”：土味短视频背后的抵抗性亚文化
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-28</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-28/%E4%B8%96%E4%BA%8B%E6%B4%9E%E6%98%8E%E4%BD%95%E5%85%86%E6%AD%A6-%E9%AB%98%E9%A3%8E%E4%BA%AE%E8%8A%82%E7%AB%A0%E5%BC%80%E6%B2%85/">
+          世事洞明何兆武，高风亮节章开沅
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-28</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-28/%E9%BD%90%E6%B3%BD%E5%85%8B%E4%B8%A8%E5%B7%B4%E9%BB%8E%E5%85%AC%E7%A4%BE150%E5%B9%B4-%E6%B0%91%E7%B2%B9%E4%B8%BB%E4%B9%89-%E5%90%8E%E7%9C%9F%E7%9B%B8%E4%B8%8E-%E6%B8%B8%E7%89%A7%E7%9A%84%E6%97%A0%E4%BA%A7%E9%98%B6%E7%BA%A7/">
+          齐泽克丨巴黎公社150年：民粹主义、后真相与“游牧的无产阶级”
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-28/%E4%B8%96%E4%BA%8B%E6%B4%9E%E6%98%8E%E4%BD%95%E5%85%86%E6%AD%A6-%E9%AB%98%E9%A3%8E%E4%BA%AE%E8%8A%82%E7%AB%A0%E5%BC%80%E6%B2%85/">
+            前一篇：世事洞明何兆武，高风亮节章开沅
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/">
+            後一篇：“乡村维密秀”：土味短视频背后的抵抗性亚文化
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-28/%E4%B8%96%E4%BA%8B%E6%B4%9E%E6%98%8E%E4%BD%95%E5%85%86%E6%AD%A6-%E9%AB%98%E9%A3%8E%E4%BA%AE%E8%8A%82%E7%AB%A0%E5%BC%80%E6%B2%85/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-28/%E4%B8%96%E4%BA%8B%E6%B4%9E%E6%98%8E%E4%BD%95%E5%85%86%E6%AD%A6-%E9%AB%98%E9%A3%8E%E4%BA%AE%E8%8A%82%E7%AB%A0%E5%BC%80%E6%B2%85/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-28/%E4%B8%96%E4%BA%8B%E6%B4%9E%E6%98%8E%E4%BD%95%E5%85%86%E6%AD%A6-%E9%AB%98%E9%A3%8E%E4%BA%AE%E8%8A%82%E7%AB%A0%E5%BC%80%E6%B2%85/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-30/%E4%B9%A1%E6%9D%91%E7%BB%B4%E5%AF%86%E7%A7%80-%E5%9C%9F%E5%91%B3%E7%9F%AD%E8%A7%86%E9%A2%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%8A%B5%E6%8A%97%E6%80%A7%E4%BA%9A%E6%96%87%E5%8C%96/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-28/%E4%B8%96%E4%BA%8B%E6%B4%9E%E6%98%8E%E4%BD%95%E5%85%86%E6%AD%A6-%E9%AB%98%E9%A3%8E%E4%BA%AE%E8%8A%82%E7%AB%A0%E5%BC%80%E6%B2%85/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

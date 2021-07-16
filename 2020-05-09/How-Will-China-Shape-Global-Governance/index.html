@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>How Will China Shape Global Governance? – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+How Will China Shape Global Governance?
+——
+" />
+    <meta property="og:description" content="
+How Will China Shape Global Governance?
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="How Will China Shape Global Governance?" />
+    <meta property="twitter:title" content="How Will China Shape Global Governance?" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Fhow-will-china-shape-global-governance" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/how-will-china-shape-global-governance" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/how-will-china-shape-global-governance&text=How Will China Shape Global Governance?&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/how-will-china-shape-global-governance&title=How Will China Shape Global Governance?" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/how-will-china-shape-global-governance&title=How Will China Shape Global Governance?" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=How Will China Shape Global Governance?&body=
+How Will China Shape Global Governance?
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/how-will-china-shape-global-governance" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/how-will-china-shape-global-governance&title=How Will China Shape Global Governance?&caption=
+How Will China Shape Global Governance?
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=How Will China Shape Global Governance?&url=https://www.chinafile.com/conversation/how-will-china-shape-global-governance" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>How Will China Shape Global Governance?</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-05-09
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Jeremy Youde, Melanie Hart &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/how-will-china-shape-global-governance" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1589002080000-->
+<p><a href="https://www.chinafile.com/conversation/how-will-china-shape-global-governance">How Will China Shape Global Governance?</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-a92aaf2933b688dcd1c2322bf927c753">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-943326504.jpg" title="How Will China Shape Global Governance?" class="colorbox" data-colorbox-gallery="gallery-node-52171-aNAJcmOQxJQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-943326504.jpg?itok=xsU4X2-V" width="1200" height="781" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Madoka Ikegami—Pool/Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>U.N. Secretary-General Antonio Guterres, third from left, attends a meeting with Chinese President Xi Jinping at the Great Hall of the People in Beijing, April 8, 2018.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">The World Health Organization (WHO), the United Nations agency charged with guiding the global response to the coronavirus pandemic, has become a battleground for two sparring superpowers. On April 14, 2020, President Trump <a href="https://www.axios.com/trump-world-health-organization-funding-65de2595-2d5e-4a6c-b7c6-9c18aa4cb905.html" target="_blank" rel="nofollow">announced</a> that he would halt U.S. funding for the organization pending a review into what he <a href="https://www.bbc.com/news/world-us-canada-52289056" target="_blank" rel="nofollow">called</a> the WHO’s “role in severely mismanaging and covering up the spread of the coronavirus.”</p>
+      <p>Within a week, China’s government <a href="https://www.washingtonpost.com/world/asia_pacific/china-pledges-additional-30-million-funding-for-world-health-organization/2020/04/23/24f9b680-8539-11ea-81a3-9690c9881111_story.html" target="_blank" rel="nofollow">offered</a> $30 million as part of what it described as an effort to “[defend] the ideals and principle of multilateralism.” Earlier in April, China had <a href="https://thediplomat.com/2020/04/china-appointed-to-influential-un-human-rights-council-panel/" target="_blank" rel="nofollow">secured</a> a spot on a panel that advises the United Nations Human Rights Council on personnel appointments. (The Trump Administration <a href="https://www.npr.org/2018/06/19/621435225/u-s-announces-its-withdrawal-from-u-n-s-human-rights-council" target="_blank" rel="nofollow">pulled</a> the U.S. out of the Council in 2018.) Nearly a <a href="https://www.washingtonpost.com/politics/2020/03/03/china-already-leads-4-15-un-specialized-agencies-is-aiming-5th/" target="_blank" rel="nofollow">third</a> of the 15 specialized U.N. agencies are now led by Chinese appointees.</p>
+      <p>China has long sought to exert greater influence on global norms and rules across a whole range of issues, from trade, intellectual property, and Internet governance to environmental and labor standards and the definition of human rights, among others. Sometimes China’s officials work within established multilateral organizations and at other times they have created their own alternative China-led entities.</p>
+      <p>How is the Trump administration’s contempt for, and retreat from, multilateral bodies affecting China’s position and weight within them—or indeed its overall strategy for relations with these organizations? Do China’s leaders aspire to supplant the U.S. in steering these organizations? Or do they merely hope to make them more accommodating of the Chinese leadership’s interests and goals? If China does hold more sway in multilateral organizations, what does that portend for global governance more broadly? —<em>The Editors</em></p>
+      <p><em>Correction: An earlier version of this story incorrectly described the panel China’s representative joined, the United Nations Human Rights Council Consultative Group, as setting the Council’s agenda.</em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-8396" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/jeremy-youde"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/youde_jeremy.jpg?itok=wm1iytkO" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="jeremy-youde"><a href="https://www.chinafile.com/contributors/jeremy-youde" title="Jeremy Youde">Jeremy Youde</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">China’s increased involvement in global governance makes sense on a number of levels. First, the current multilateral order largely reflects the <a href="https://www.cfr.org/blog/world-order-dead-long-live-world-order" target="_blank" rel="nofollow">constellation of power</a> in the immediate aftermath of World War II. The power dynamics within the global community have shifted dramatically since that time, but the general structure of our global governance institutions have not kept pace.</p>
+        <p>Second, the growth in China’s political and economic power not only brings a greater interest by the Chinese government to <a href="https://carnegieendowment.org/2019/09/25/three-lessons-china-has-learned-about-global-governance-pub-79929" target="_blank" rel="nofollow">have its voice heard</a>, but also an <a href="https://www.chinadaily.com.cn/world/2017-03/17/content_28591078.htm" target="_blank" rel="nofollow">increasing expectation</a> by the rest of the world that China will shoulder a level of responsibility commensurate with its growing stature.</p>
+        <p>Finally, the current American government has shown a distinct lack of interest in and mistrust of multilateralism writ large. That <a href="https://www.theatlantic.com/ideas/archive/2020/05/time-americans-are-doing-nothing/611056/" target="_blank" rel="nofollow">leaves a power vacuum</a> in many global governance institutions, and China is well-placed to fill that gap. Ironically, the Trump Administration’s withdrawal from international organizations to protest China’s level of influence only creates conditions in which China’s role in global governance <a href="https://www.theguardian.com/world/2020/mar/29/us-awol-from-world-stage-as-china-tries-on-global-leadership-for-size" target="_blank" rel="nofollow">can grow</a>.</p>
+        <p>With this in mind, though, historically, China has demonstrated an <a href="https://www.oxfordscholarship.com/view/10.1093/oso/9780198813057.001.0001/oso-9780198813057-chapter-8" target="_blank" rel="nofollow">ambiguous relationship</a> to global governance structures. It has not shown a proactive willingness to collaborate with the norms and values embedded in many current global governance institutions. It has frequently portrayed itself as a leader among Third World countries, focused on <a href="https://www.brookings.edu/articles/protect-the-party-chinas-growing-influence-in-the-developing-world/" target="_blank" rel="nofollow">developing</a> strong bilateral relations with developing countries, instead of going through existing multilateral structures.</p>
+        <p>Whether or not China’s government has a conscious desire to supplant the United States’ influence and leadership within global governance institutions is almost irrelevant. Instead, the question is how and whether these institutions (and the rest of the international community) will respond. For most organizations, it will likely be better to find ways to <a href="https://www.nytimes.com/2019/11/11/business/dealbook/us-china-relationship-future.html" target="_blank" rel="nofollow">engage</a> China and have it working on the inside rather than having it go off on its own and <a href="https://www.nytimes.com/2015/12/05/business/international/china-creates-an-asian-bank-as-the-us-stands-aloof.html" target="_blank" rel="nofollow">establish</a> potential competitor institutions.</p>
+        <p>Take the World Health Organization’s engagement with China in the early days of the coronavirus pandemic. When it started receiving reports about the number of cases, it could respond in one of two ways. It could <a href="https://www.pri.org/stories/2020-03-31/how-who-nudges-nations-act-solidarity-during-covid-19-pandemic" target="_blank" rel="nofollow">name-and-shame</a> the Chinese government for its failures and shortcomings, chastising it on the international stage. Alternatively, it could <a href="https://www.who.int/dg/speeches/detail/who-director-general-s-statement-on-ihr-emergency-committee-on-novel-coronavirus-(2019-ncov)" target="_blank" rel="nofollow">thank</a> China for its engagement and encourage it to continue doing so. An organization like the WHO, and most other multilateral institutions, has limited leverage over national governments; the global governance system remains one that prioritizes respect for state sovereignty. Given the dynamics of the emerging outbreak and the fact that COVID-19 originated in China, WHO leadership decided that engaging with China was <a href="https://www.cnbc.com/2020/05/01/who-defends-its-coronavirus-response-the-world-had-enough-time-to-intervene.html" target="_blank" rel="nofollow">more likely</a> to get the sort of cooperation it needed. If the United States had been more engaged with the WHO, it could also have tried to work through the organization to encourage greater information sharing from the Chinese government.</p>
+        <p>If the United States or other countries want to limit China’s involvement in these structures, then it is incumbent upon them to take more active leadership roles—politically and financially.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8401" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/melanie-hart"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/hart_headshot_china_file_2020.jpg?itok=af3xYBWj" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="melanie-hart"><a href="https://www.chinafile.com/contributors/melanie-hart" title="Melanie Hart">Melanie Hart</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The current global governance system is a problem for Beijing. It privileges liberal values over authoritarian ones. It recognizes limits to state authority, respects universal rights, and prioritizes broad public interests over the interests of any single political party. That is the opposite of how the Chinese Communist Party operates. In China’s system, the Party is above the law, collective national interests are more important than individual interests, and the Party gets to define China’s national interests and pursue them as it sees fit. Beijing is <a href="https://www.americanprogress.org/issues/security/reports/2019/02/28/466768/mapping-chinas-global-governance-ambitions/" target="_blank" rel="nofollow">working to</a> export elements of that model to the global governance system, and the Trump administration’s multilateral retreat is providing Beijing with unprecedented maneuvering room to do so.</p>
+        <p>When Chinese leaders describe their global governance reform ambitions to an international audience, they often <a href="https://english.cctv.com/2017/01/15/ARTIjfECMGRxn4TrlI0UqAcl170115.shtml" target="_blank" rel="nofollow">use</a> fuzzy terms <a href="https://thediplomat.com/2017/10/the-community-of-common-destiny-in-xi-jinpings-new-era/" target="_blank" rel="nofollow">intended</a> to hide their true agenda. In contrast, internal guidance passed down through Party and government ranks is very clear. For example, in the Internet domain, the Cyberspace Administration of China published <a href="https://www.newamerica.org/cybersecurity-initiative/blog/chinas-strategic-thinking-building-power-cyberspace/" target="_blank" rel="nofollow">an article</a> in <em>Qiushi</em> stating that Xi Jinping has identified cyberspace as “a new field of competition for global governance” and ordered the Party-state apparatus to “push China’s proposition of Internet governance toward becoming an international consensus.” Controlling the Internet at home is no longer enough. Beijing wants the global governance system to adopt the same model because it would give Beijing more maneuvering room to apply that model at home and abroad.</p>
+        <p>Chinese leaders understand something that the Trump administration does not: Multilateral organizations are the playing field on which individual nations interact to shape global rules. Those rules then determine which nations’ interests prevail over others. Beijing does not like the current set of rules, so it is flooding the field with its own players to reshape them. The U.N. system is a <a href="https://www.uscc.gov/sites/default/files/testimonies/March%2013%20Hearing_Melanie%20Hart%20Panel%20II%20Testimony_2020.3.12.pdf" target="_blank" rel="nofollow">particular focus</a> because its work encompasses so many critical issues. Across the U.N. system, Beijing is moving Chinese diplomats up the ranks to occupy key leadership positions—which gives China agenda-setting power—and China is now the U.N.’s <a href="https://undocs.org/en/ST/ADM/SER.B/992" target="_blank" rel="nofollow">second-largest funder</a>. In contrast, the U.S. is leaning back. The result: The rules are shifting in China’s favor. For example, Beijing successfully passed two U.N. Human Rights Council <a href="https://www.brookings.edu/wp-content/uploads/2018/09/FP_20181009_china_human_rights.pdf" target="_blank" rel="nofollow">resolutions</a> that give states more leeway to abuse human rights.</p>
+        <p>From a U.S. perspective, we need the global governance system to keep privileging liberal values over authoritarian ones and hold all nations to the same high standard. We also need the system to be able to respond effectively to rights abuses and global crisis, even if doing so reveals negative information about individual nations or political parties. The only way to maintain that system is to fight for it. That will require the U.S. to put more American diplomats at the helm of multilateral organizations such as the WHO and work in concert with allies to steer them in a positive direction. The Trump administration is doing the opposite, and that is a boon for Beijing.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8406" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/dan-baer"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/baer_sm1.png?itok=yq5HsYrY" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="dan-baer"><a href="https://www.chinafile.com/contributors/dan-baer" title="Dan Baer">Dan Baer</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">While democratic intuitions lead some to embrace the idea of according China a growing voice and representation in the formal mechanisms of global governance that make up the multilateral system, China’s voice is a decidedly non-democratic one. China’s policies do not evidence a commitment to global governance as such, only an effort to advance China’s objectives through multilateral organizations.</p>
+        <p>There are plenty of examples of China’s <a href="https://www.axios.com/facial-recognition-china-un-standards-itu-585838b3-7b24-467b-8097-dbc81bf18117.html" target="_blank" rel="nofollow">successfully advancing</a> its national policies through multilateral organizations, but the more consequential question is whether China’s engagement will change <em>what multilateral governance is</em>: Is it just a reconciliation mechanism for state interests? Or is it a collaborative effort—messy, imperfect, unreliable, but capable of incremental progress—to advance the principles and practice of a fairer and more predictable mode of international politics, one that is not just a nexus of negotiations but also a platform for addressing collective action problems?</p>
+        <p>When one considers the kinds of challenges the world must address successfully in the coming decades—climate change, migration, pandemics—it’s clear multilateral organizations must be more than a clearinghouse for state policies. So the question of what we can expect from China’s growing presence in multilateral organizations is only half a question. Its requisite other half is whether the U.S. and other democratic states reduce their involvement or even withdraw.</p>
+        <p>A stated ambition of U.S. China policy for a generation was to “knit” China into the international system, implicitly to exchange U.S. recognition of China’s growing global role for China’s acceptance of the system’s rules of the road. It’s easy to identify areas where this has not delivered the desired results: China is a member of the Human Rights Council despite, inter alia, its imprisonment of over a million Uighurs in concentration camps; the WTO fails to sufficiently curb China’s unfair trading practices; the U.N. <a href="https://www.un.org/depts/los/convention_agreements/texts/unclos/unclos_e.pdf" target="_blank" rel="nofollow">Convention on the Law of the Sea</a> has not stopped China’s creeping expansion in the South China Sea.</p>
+        <p>Do such failures mean that we should abandon hopes of mediating state behavior through multilateralism and international law and rely on coercive measures and “great power competition”? Or should we invest, including through coercive measures, in bolstering the international system to make it more effective? At least in the near term, the right answer is probably a mixture of both. The U.S. withdrawal from the U.N. Human Rights Council can’t be blamed for China’s presence on it, but U.S. absence certainly creates a more permissive environment for China and other authoritarian regimes to make a mockery of its work. And the U.N. Convention on the Law of the Sea could potentially be more of a constraint on state action if the U.S. were to <a href="https://thediplomat.com/2017/05/u-s-ratification-of-the-law-of-the-sea-convention/" target="_blank" rel="nofollow">ratify</a> it. The point is, if the U.S. and others abandon positions of co-stewardship of the international system, they can hardly expect the system to fulfill its potential as a meaningful constraint on China’s behavior.</p>
+        <p>China, too, faces a paradox of sorts: The more it exerts power and control in multilateral organizations, the less useful those organizations are at legitimating its actions. Many states seek the “blessing” of state objectives by a relevant multilateral organization. While democratic states that participate and lead within the U.N. system and other multilateral forums <em>lend</em> their political legitimacy to those organizations, China—like other authoritarian regimes—<em>borrows</em> legitimacy from multilateral organizations. If China uses the U.N. to advance its own objectives without an eye toward sustainable global governance, eventually the U.N. will have less legitimacy to lend China.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8411" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/courtney-fung"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/courtney_fung.jpg?itok=EnVgF7nv" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="courtney-fung"><a href="https://www.chinafile.com/contributors/courtney-fung" title="Courtney Fung">Courtney Fung</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">China’s demonstrated <a href="http://www.xinhuanet.com/english/2018-06/24/c_137276269.htm" target="_blank" rel="nofollow">interest and ability</a> in taking “an active part in leading the reform of the global governance system” raises questions about the future of a Western-led and -designed “rules-based international order.” China’s growing confidence as a participant in issues ranging from peacekeeping to human rights to 5G standards-setting leads to concerns about China’s outsized influence, in part because of the perception that China promotes its national interests over U.N.-espoused liberal values like accountability, transparency, and universality. In response, the Trump administration <a href="https://www.reuters.com/article/us-usa-un-china/u-s-tasks-official-to-counter-chinas-malign-influence-at-u-n-idUSKBN1ZM2Y3" target="_blank" rel="nofollow">established</a> a <a href="https://foreignpolicy.com/2020/01/22/us-state-department-appoints-envoy-counter-chinese-influence-un-trump/" target="_blank" rel="nofollow">special envoy</a> for multilateral integrity to “[counter] malign influences of the PRC and others in the UN system,” and <a href="https://www.wsj.com/articles/coronavirus-casts-deep-chill-over-u-s-china-relations-11588781420" target="_blank" rel="nofollow">directed</a> U.S. diplomatic posts to monitor China’s bilateral activities so as to develop better counter-strategies. Indeed, the rhetorical frame of “China-centric” multilateral institutions is invoked to justify further U.S. withdrawal, like the recent halt of already belated <a href="https://www.bloomberg.com/news/articles/2020-04-14/trump-says-he-s-halting-payments-to-who-for-data-sharing-failure" target="_blank" rel="nofollow">WHO payments</a>.</p>
+        <p>The vacuum created by the U.S. withdrawal, however, leaves a space for China and other states to fill. Indeed, China’s economic weight, population size, technological capacity, and geographic reach mean that having China idle on the sidelines is increasingly <a href="https://www.tandfonline.com/doi/full/10.1080/01636600903012323" target="_blank" rel="nofollow">infeasible</a> and undesirable for a functioning multilateral system. Its multilateral engagement is also particularly important as China identifies as a member of the Global South, the group of states traditionally underrepresented at the high table of high politics. Due to this <a href="https://global.oup.com/academic/product/china-and-intervention-at-the-un-security-council-9780198842743?q=courtney%2520fung&amp;lang=en&amp;cc=hk" target="_blank" rel="nofollow">status</a>, and given China’s relations with “pariah states,” China has unique diplomatic outreach, which has been successfully harnessed towards multilateral efforts addressing mass atrocities in <a href="https://academic.oup.com/irap/article-abstract/16/3/409/2450239" target="_blank" rel="nofollow">Darfur</a> and <a href="https://www.amazon.com/Chinese-Diplomacy-Security-Council-Politics-ebook/dp/B00AXYUNIW" target="_blank" rel="nofollow">North Korean nuclear proliferation</a>, for example.</p>
+        <p>However, China’s participation within the existing multilateral system is uneven, as is China’s push for multilateral leadership. China selectively targets its <a href="https://www.amazon.com/Chinas-Strategic-Multilateralism-Investing-Governance/dp/1108429505" target="_blank" rel="nofollow">engagement</a>: China remains a relatively modest financial contributor to both the <a href="https://www.institutmontaigne.org/en/blog/fighting-coronavirus-pandemic-chinas-influence-world-health-organization" target="_blank" rel="nofollow">WHO</a> and the <a href="https://www.die-gdi.de/uploads/media/DP_2.2020.pdf" target="_blank" rel="nofollow">U.N. Development System</a>, for example. Even in the midst of the Trump multilateral withdrawal and having overcome the worst of the COVID-19 epidemic domestically, China acted cautiously as the March 2020 president of the U.N. Security Council. China eschewed creative policy leadership to its counterparts like <a href="https://www.france24.com/en/20200323-un-security-council-stalemate-over-virus" target="_blank" rel="nofollow">Estonia</a>, and stuck to its admittedly ambitious pre-planned work agenda, limited interpretations of the pandemic as a “threat to international peace and security,” and rejected U.S. advances to introduce the term “Wuhan virus” in Council output. This defensive approach in part reflects China’s <a href="https://www.nbr.org/publication/chinas-vision-for-a-new-world-order/" target="_blank" rel="nofollow">vague prescriptions</a> for global governance. Concepts like a “<a href="https://tnsr.org/2018/11/xis-vision-for-transforming-global-governance-a-strategic-challenge-for-washington-and-its-allies/" target="_blank" rel="nofollow">community of common destiny</a>” as a “fairer,” “win-win” alternative to international order, or the emerging “<a href="http://jtp.cnki.net/bilingual/detail/html/GJZY201704010?view=3" target="_blank" rel="nofollow">developmental peace</a>” translate Chinese exceptionalism and anti-liberal cynicism over “<a href="https://www.reuters.com/article/us-china-politics-culture/china-minister-warns-against-seduction-of-values-by-western-nations-idUSKBN1DH0AU" target="_blank" rel="nofollow">so-called universal values</a>” into a call for each state to follow its own unique path. Yet, these People’s Republic of China (PRC) concepts speak little to how China prefers to address unavoidable matters of implementing anti-corruption efforts, securing governance, or building positive local participation. At this juncture, to what extent China has a suitable, scalable, and sellable vision for global governance beyond its immediate coterie of friendly states remains to be seen.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8416" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/sophie-richardson"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/sophie-richardson.jpg?itok=-XdKX0YX" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="sophie-richardson"><a href="https://www.chinafile.com/contributors/sophie-richardson" title="Sophie Richardson">Sophie Richardson</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">In the abstract, it is good for the Chinese and other governments to participate in the United Nations human rights system. And it would be truly extraordinary if Beijing were to invest its considerable resources and clout in using that system for positive change.</p>
+        <p>Imagine, for example, if the Chinese government ratified and observed the <a href="https://static1.squarespace.com/static/55d21ffee4b0d22e803fdca1/t/5dbaeab35ce78b6271f232e0/1572530868456/CHINA%E2%80%99S+CHALLENGE+TO+THE+INTERNATIONAL+HUMAN+RIGHTS+REGIME.pdf" target="_blank" rel="nofollow">optional protocols</a> to the human rights treaties that allowed people from China to bring individual complaints against the government to U.N. bodies. Imagine Beijing encouraging independent nongovernmental organizations from China to <a href="https://www.hrw.org/news/2014/03/14/dispatches-death-defender-china" rel="nofollow">participate</a> in U.N. reviews of the government’s human rights record, as many democracies around the world do.</p>
+        <p>Or, in perhaps the ultimate test of a government’s commitment to this multilateral organization, allowing U.N. experts and the U.N. High Commissioner for Human Rights access to Xinjiang to <a href="https://www.hrw.org/news/2020/03/12/un-rights-body-needs-step-xinjiang-abuses" target="_blank" rel="nofollow">investigate</a> the alleged arbitrary detention of one million Turkic Muslims and other serious human rights violations.</p>
+        <p>Unfortunately, the Chinese authorities have <a href="https://www.hrw.org/news/2020/03/25/chinas-weak-excuse-block-investigations-xinjiang" target="_blank" rel="nofollow">demonstrated</a> their agenda for these human rights bodies: to neutralize their ability to challenge China, to foster praise for Beijing, and to use them as a platform for rewriting key international norms.</p>
+        <p>The recent <a href="https://www.hrw.org/news/2020/03/12/human-toll-chinas-coronavirus-control-efforts" target="_blank" rel="nofollow">controversy</a> around whether Chinese authorities reported the outbreak of COVID-19 promptly to another U.N. body, the World Health Organization (WHO), or whether the WHO was sufficiently aggressive in pushing China to share information, is just the latest example of Beijing’s departing from recognized protocols. In 2017, Human Rights Watch published a <a href="https://www.hrw.org/report/2017/09/05/costs-international-advocacy/chinas-interference-united-nations-human-rights" target="_blank" rel="nofollow">report</a> detailing China’s concerted efforts to undermine a variety of U.N. human rights mechanisms, ranging from limiting access to U.N. forums for independent civil society groups—including groups doing no work on China—to Chinese diplomats threatening U.N. human rights experts.</p>
+        <p>These problems have only worsened in recent years as China has become more aggressive in international affairs and strengthened its diplomatic presence across the U.N. human rights system. It sent a letter to U.N. diplomats <a href="https://www.hrw.org/sites/default/files/supporting_resources/hrcletterchina20190329.pdf" target="_blank" rel="nofollow">threatening</a> consequences if they attended an event on rights abuses in Xinjiang, and has <a href="https://www.hrw.org/news/2019/04/01/un-china-responds-rights-review-threats" target="_blank" rel="nofollow">blocked</a> members of the World Uyghur Congress from U.N. events.</p>
+        <p>Its latest priorities include advancing a <a href="https://www.hrw.org/news/2018/03/14/un-rights-body-needs-challenge-powerful-and-abusive-china" target="_blank" rel="nofollow">resolution</a> on what it calls “mutually beneficial cooperation” at the U.N. Human Rights Council. This is actually an effort to erode the Council’s mandate by elevating “cooperation” over holding countries accountable when they commit gross rights violations. Recently, the U.N. announced a partnership agreement with Tencent—a Chinese company that owns social media app WeChat, which is known to <a href="https://www.hrw.org/news/2019/02/20/how-chinas-censorship-machine-crosses-borders-and-western-politics" target="_blank" rel="nofollow">censor</a> posts inside and outside China—only to <a href="https://foreignpolicy.com/2020/04/15/united-nations-backs-down-china-coronavirus-censorship-tencent-seventy-five-anniversary-international-organization/" target="_blank" rel="nofollow">suspend</a> the partnership after governments and rights advocates protested. And on May 1, Chinese authorities <a href="https://news.sky.com/story/coronavirus-who-not-invited-to-join-chinas-covid-19-investigations-11981193" target="_blank" rel="nofollow">rejected</a> WHO participation in investigating the origins of the pandemic.</p>
+        <p>China’s influence at the U.N. and other multilateral institutions will most likely continue to <a href="https://www.hrw.org/world-report/2020/china-global-threat-to-human-rights" target="_blank" rel="nofollow">grow</a>. The challenge is whether sufficient numbers of rights-respecting governments will hold the world’s second-biggest economy and permanent member of the U.N. Security Council accountable for serious human rights violations and strengthen key international institutions. The risks have never been clearer. Governments need to stand up to Beijing, speak out, and resist those efforts to distort the international framework.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8421" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/aaron-halegua"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/photo_-_halegua.jpg?itok=Pr6JtE9c" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="aaron-halegua"><a href="https://www.chinafile.com/contributors/aaron-halegua" title="Aaron Halegua">Aaron Halegua</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">China’s evolving role at the International Labor Organization (ILO) shares many similarities with its expanding influence at other United Nations agencies. While initially hesitant to recognize the legitimacy of the organization, even <a href="https://www.amrc.org.hk/content/china-and-ilo" target="_blank" rel="nofollow">declaring</a> itself a “non-active member” in the 1970s, China has increasingly come to engage with the ILO in ways that promote its own national interests. Generally, this means less focus on enforcing core labor rights, and greater emphasis on training and capacity-building programs, particularly in ways that highlight China’s own accomplishments or promote its Belt and Road Initiative (BRI).</p>
+        <p>China is not exactly a champion of the basic labor rights that the ILO was ostensibly created to protect—or, at least not all of them. The ILO has declared a handful of its hundreds of conventions on labor standards to be “fundamental,” several of which China has <a href="https://www.ilo.org/dyn/normlex/en/f?p=1000:11200:0::NO:11200:P11200_COUNTRY_ID:103404" target="_blank" rel="nofollow">never ratified</a>, including those on freedom of association, the right to collective bargaining, and prohibiting forced labor. In fact, at least <a href="https://www.ilo.org/dyn/normlex/en/f?p=1000:20060::FIND:NO:::" target="_blank" rel="nofollow">seven complaints</a> against China have been filed with the ILO’s Freedom of Association Committee, starting with its <a href="https://www.amrc.org.hk/content/china-and-ilo" target="_blank" rel="nofollow">arrest</a> of worker leaders during the 1989 crackdown and, more recently, concerning China’s <a href="https://www.clb.org.hk/node/14762" target="_blank" rel="nofollow">detention</a> of NGO labor activists in Guangdong in 2015. Unsurprisingly, China has not used its growing influence to support greater enforcement of the ILO’s core labor standards through such quasi-legal mechanisms, but rather <a href="https://www.amrc.org.hk/content/china-and-ilo" target="_blank" rel="nofollow">argued</a> that many ILO standards are “excessive” for the “limited capabilities” of many member countries.</p>
+        <p>This has not stopped China from engaging with the ILO in other ways, however. The focus of these efforts is well-demonstrated by the <a href="https://www.ilo.org/beijing/information-resources/public-information/press-releases/WCMS_695356/lang--en/index.htm" target="_blank" rel="nofollow">multiple MOUs</a> it concluded with the ILO in 2019 in order to “share [its] experience and expertise to the benefit of other developing nations,” as well as through the ILO <a href="https://www.ilo.org/wcmsp5/groups/public/---dgreports/---exrel/documents/publication/wcms_550919.pdf" target="_blank" rel="nofollow">development programs</a> that China has funded. These MOUs and programs all address less-controversial topics, such as workplace safety or skills development, and focus on what China can teach other countries.</p>
+        <p>The MOUs and development assistance funds are also used by China to promote the BRI. The phrase “Belt and Road Initiative” is widely broadcast on <a href="https://www.ilo.org/beijing/information-resources/public-information/press-releases/WCMS_695356/lang--en/index.htm" target="_blank" rel="nofollow">ILO webpages</a> and is in the title of two MOUs (i.e. “<a href="https://www.ilo.org/pardev/donors/china/lang--en/index.htm" target="_blank" rel="nofollow">South-South Cooperation on Work Safety Under the Framework of the Belt and Road Initiative</a>”), although the contents of these documents remain confidential. The beneficiaries of the Chinese-funded development programs are BRI allies such as Laos, Cambodia, and Pakistan.</p>
+        <p>This is not to suggest that China’s participation in the ILO is entirely nefarious or that these capacity-building programs may not bring some real benefits. However, the increased focus on these activities must not result in marginalizing those labor rights that China finds more distasteful, or compromise the ILO’s role as a forum to criticize and evaluate adherence to core labor standards by China—or any country—regardless of its financial contribution to the organization. This will be the challenge in coming years.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8426" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/michael-beckley"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/f835cb_61cec7c539604125955e455974713998.jpeg?itok=E0ox-2v5" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="michael-beckley"><a href="https://www.chinafile.com/contributors/michael-beckley" title="Michael Beckley">Michael Beckley</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The coronavirus pandemic will expose many problems in global governance, but one is already clear: China’s corrupting influence. For decades, China has waged a campaign to shape international institutions in line with its interests, boosting funding for numerous organizations and positioning Chinese officials in key roles at them. In the 1990s and early 2000s, this campaign could plausibly be viewed as part of what Beijing called China’s “peaceful rise,” a gradual integration with the prevailing international order. But those days are gone. Over the past decade, China has become an unbending autocracy guided by an overriding objective: Keep Xi Jinping in power. Strongman rule does not mesh well with transparency and compromise—two vital ingredients for effective global governance—so it is little surprise that Xi’s China has redoubled efforts to push global governance in an illiberal direction.</p>
+        <p>China’s influence over the World Health Organization (WHO) during the coronavirus pandemic shows the extent of these efforts, and it illustrates how they can negatively impact the rest of the world in dramatic and unforeseen ways. Of all international institutions, the WHO should be the least political given its humanitarian mission. Yet when China <a href="https://www.washingtonpost.com/politics/2020/03/10/wuhan-officials-tried-cover-up-covid-19-sent-it-careening-outward/" target="_blank" rel="nofollow">covered up</a> the outbreak of COVID-19, the WHO not only failed to expose the problem, but <a href="https://www.theatlantic.com/politics/archive/2020/04/world-health-organization-blame-pandemic-coronavirus/609820/" target="_blank" rel="nofollow">parroted</a> Chinese misinformation. As a result, the world lost precious weeks of response time and an untold number of lives. Taiwan claims it <a href="https://www.ft.com/content/2a70a02a-644a-11ea-a6cd-df28cc3c6a68" target="_blank" rel="nofollow">queried</a> the WHO on December 31 about the suspected human-to-human transmission of the virus. But the agency, which excludes Taiwan’s membership, <a href="https://www.theatlantic.com/politics/archive/2020/04/world-health-organization-blame-pandemic-coronavirus/609820/" target="_blank" rel="nofollow">endorsed</a> China’s denial of human transmission <a href="https://www.statnews.com/2020/01/21/who-raises-possibility-of-sustained-human-to-human-transmission-of-new-virus-in-china/" target="_blank" rel="nofollow">until</a> January 21. On January 22-23, the WHO <a href="https://www.who.int/news-room/detail/23-01-2020-statement-on-the-meeting-of-the-international-health-regulations-(2005)-emergency-committee-regarding-the-outbreak-of-novel-coronavirus-(2019-ncov)" target="_blank" rel="nofollow">debated</a> whether to declare an international public health emergency. But WHO Director-General Tedros Adhanom Ghebreyesus <a href="https://www.statnews.com/2020/01/23/who-declines-to-declare-china-virus-outbreak-a-global-health-emergency/" target="_blank" rel="nofollow">declined</a> and instead <a href="https://www.who.int/news-room/detail/28-01-2020-who-china-leaders-discuss-next-steps-in-battle-against-coronavirus-outbreak" target="_blank" rel="nofollow">traveled</a> to China. He finally made the <a href="https://www.who.int/docs/default-source/coronaviruse/transcripts/ihr-emergency-committee-for-pneumonia-due-to-the-novel-coronavirus-2019-ncov-press-briefing-transcript-30012020.pdf?sfvrsn=c9463ac1_2" target="_blank" rel="nofollow">declaration</a> on January 30, but began his statement by praising Beijing’s transparency and effective isolation of the virus and calling upon other countries not to limit travel with China.</p>
+        <p>Why has the WHO been so reluctant to pressure China? One reason is money, of course, but that is not the whole story: Only 12 percent of the WHO’s assessed member-state <a href="https://www.who.int/about/finances-accountability/funding/2020-21_AC_Summary.pdf" target="_blank" rel="nofollow">contributions</a> come from China, whereas the United States contributed 22 percent before President Trump <a href="https://www.bloomberg.com/news/articles/2020-04-14/trump-says-he-s-halting-payments-to-who-for-data-sharing-failure" target="_blank" rel="nofollow">suspended</a> that funding in April. A more important reason is that China has an organized <a href="https://www.politico.com/news/magazine/2020/04/15/its-not-just-the-who-how-china-is-moving-on-the-whole-un-189029" target="_blank" rel="nofollow">strategy</a> for shaping WHO policy. Chinese appointees put Chinese interests first, delivering a consistent message, and Beijing has tried to curry favor with top decision-makers, such as by backing Tedros in the WHO’s director-general elections in 2017. China has applied a similar strategy to weaken the U.N. Human Rights Commission’s commitment to civil and political rights, <a href="https://www.ft.com/content/c78be2cf-a1a1-40b1-8ab7-904d7095e0f2" target="_blank" rel="nofollow">promote</a> Huawei in the U.N. International Telecommunication Union, and block efforts to reform the <a href="https://www.wsj.com/articles/how-china-swallowed-the-wto-1509551308" target="_blank" rel="nofollow">WTO</a> in ways that would regulate China’s state capitalist economic model.</p>
+        <p>If other countries do not push back, China will continue to co-opt international institutions and erode their effectiveness. The pandemic has shown what such a world would look like: Countries left in the dark and going their own way, while China pumps out propaganda about its global leadership.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8436" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/maria-adele-carrai"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/ted_16866023_small.jpg?itok=3jgBYiY0" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="maria-adele-carrai-"><a href="https://www.chinafile.com/contributors/maria-adele-carrai" title="Maria Adele Carrai ">Maria Adele Carrai </a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The current global governance system is based on a multilateral architecture that reflects the dominant legacy of Western powers and liberal ideals. In the first two decades after its founding, the People’s Republic of China rejected international law and organizations in the name of proletarian revolution. Since China’s subsequent “reform and opening up” and its rapprochement with the liberal West in the 1970s, it has begun to integrate with these multilateral institutions at a rapid pace while continuing to assert the importance of sovereignty.</p>
+        <p>Western countries which used to view China mostly as a status-quo economic partner believed that such integration was positive, that it would impel China to liberalize its economic and political policies. However, from its Uighur “re-education camps” to its militarization of the South China Sea to its lack of transparency in the initial phase of the COVID-19 pandemic, Xi Jinping’s rulership seems to have stripped away that illusion. China has grown increasingly assertive in <a href="https://carnegieendowment.org/2020/01/08/how-china-is-reshaping-international-development-pub-80703" target="_blank" rel="nofollow">promoting</a> its interests in global governance. It has also become more effective at shaping and creating multilateral institutions (such as the Asia Infrastructure Investments Bank, Shanghai Cooperation Organization, and Belt and Road Initiative) and at promoting its norms (through such constructs as the <a href="https://www.csis.org/analysis/what-us-one-china-policy-and-why-does-it-matter" target="_blank" rel="nofollow">One China Policy</a>, <a href="https://thediplomat.com/2014/05/chinas-westphalian-attachment/" target="_blank" rel="nofollow">Westphalian sovereignty</a>, <a href="https://www.uscc.gov/sites/default/files/Hirson_USCC%20Testimony_FINAL.pdf" target="_blank" rel="nofollow">state-led capitalism</a>, <a href="https://verfassungsblog.de/from-defensive-to-assertive-chinas-white-paper-on-human-rights/" target="_blank" rel="nofollow">development rights</a> over <a href="https://www.hrw.org/report/2017/09/05/costs-international-advocacy/chinas-interference-united-nations-human-rights" target="_blank" rel="nofollow">civil and political rights</a>, and a <a href="https://thediplomat.com/2017/10/the-community-of-common-destiny-in-xi-jinpings-new-era/" target="_blank" rel="nofollow">community of common destiny</a>).</p>
+        <p>Accordingly, scholars and pundits have started to perceive China as a revisionist authoritarian power and to question its participation in multilateral institutions. To limit Chinese authoritarian influence in the international arena, the U.S. began <a href="https://www.belfercenter.org/publication/china-world-orders-rethinking-compliance-and-challenge-beijings-international-relations" target="_blank" rel="nofollow">promoting</a> deterrence, denial, and containment; the EU, for the first time, has defined China as a “<a href="https://ec.europa.eu/commission/sites/beta-political/files/communication-eu-china-a-strategic-outlook.pdf" target="_blank" rel="nofollow">systemic rival</a>.” At the same time, however, China found a void in multilateral institutions. In its <a href="http://theory.people.com.cn/GB/68294/388648/index.html" target="_blank" rel="nofollow">aspiration</a> to be recognized as a great power after a “century of humiliation,” it has eagerly filled this void. The rejection of multilateralism by the current Trump administration, its penchant for <a href="https://www.newyorker.com/news/our-columnists/the-supreme-court-confronts-trumps-challenge-to-the-separation-of-powers" target="_blank" rel="nofollow">populist and near-authoritarian behavior</a> that neither Congress nor the Supreme Court seem able to rein in, alongside the divisions within the EU and its <a href="https://www.belfercenter.org/publication/trump-legacy-and-its-consequences" target="_blank" rel="nofollow">transatlantic relations</a>, have strained the capacity of Western allies to combat Chinese influence in global governance.</p>
+        <p>China, the U.S., and other countries may not agree on every issue across the international agenda and indeed hold different values and interests. However, as this current pandemic demonstrates, they must work together and find common approaches to global issues. Many multilateral institutions are antiquated, ineffective, and unreflective of current geopolitical realities. The pandemic could inspire a new wave of multilateralism, wherein countries like China and the U.S. collaborate to rewrite global rules. But if these leading powers do not spearhead international cooperation, other countries cannot follow. The U.S. and the EU should rethink their own common identity based on shared values and strengthen their alliance to counterbalance China’s augmented influence. They also must be cognizant that global governance remains a hotly contested issue and will continue to evolve, mirroring changes in the international system and accommodating the emergence of rising powers like China and its interests.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8441" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/zha-daojiong"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/zha-daojiong.jpg?itok=4AvwyMhi" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="zha-daojiong"><a href="https://www.chinafile.com/contributors/zha-daojiong" title="Zha Daojiong">Zha Daojiong</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Public health is, in an ironic way, a well-suited topic to start a discussion about Chinese involvement in global governance, despite certain strains in media sentiment in both China and the United States over COVID-19.</p>
+        <p>Personal hygiene, communal sanitation, nutrition, timely care of mild illnesses, among other things, make up the foundation of a person’s underlying health conditions. Come time of a pandemic, the more serious a person’s underlying health problems, the worse his or her chances of surviving the storm.</p>
+        <p>What impact can a health-oriented multilateral institution have in strengthening people’s underlying health? Questions like this are in fact not answerable, as there are so many issues at work. Still, isn’t the end purpose of discussing global health governance to enhance the welfare of individuals in a given country? Indeed, it was a prevailing sense of individual disenfranchisement that motivated the popularity of “global governance” as an agenda in the early 1990s.</p>
+        <p>China was a latecomer to multilateral institutions and the pursuit of global governance due to civil war before and three decades of diplomatic isolation after the end of World War II. By the early 1980s, when Chinese participation became more robust than mere diplomatic representation, multilateral institutions, particularly those under the United Nations system, had accumulated working cultures of their own. Unlike those from other countries, Chinese representatives did not benefit from a reservoir of experience passed on by predecessors. Quite possibly, China did not until recent years feature prominently in international discussions about global governance because, in an aggregate sense, its representatives had been undergoing an apprenticeship. This trajectory is not unique to China, but it is worth reminding ourselves of, since too often discussions about international affairs are too ahistorical to make sensible conversations possible.</p>
+        <p>Now, to what extent is or should Chinese involvement in multilateral institutions be made commensurate with its economic size? Or, perhaps more fittingly to other members/participation in multilateral institutions, to what extent can China’s ambitions be accepted as normal? Debate over such questions cannot easily become conclusive.</p>
+        <p>Let me just offer a couple of observations and hope they can be helpful for moving the debate forward. First, virtually every country, certainly China, has moved from representation to contribution in being part of a multilateral institution. As such, members’ degree of contribution is by nature a process of constant (re)negotiations.</p>
+        <p>Second, a multilateral institution rises and falls along with the measurable benefits it is understood to have brought to the vast majority of its membership.</p>
+        <p>Last but not least, the ongoing pandemic, ideally, should be tackled as another motivating factor for connectivity of technical standards and regulatory regimes to be a goal of global governance. Smooth movement of needed goods and services in times of shocks to supply chains should be a worthy goal for multilateral institutions and governments alike.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-05-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-14/A-Letter-to-My-Friend-under-Quarantine-in-Wuhan/">
+          ‘A Letter to My Friend under Quarantine in Wuhan’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-13/Missing-in-Action-U.S.-China-Cooperation-on-Coron/">
+          Missing in Action: U.S.-China Cooperation on Coronavirus
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-04-28</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-28/Call-to-Chinese-Students-in-the-U.S.-What-Has-You/">
+          Call to Chinese Students in the U.S.: What Has Your Experience Been During COVID-19?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-04-28</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-28/Call-to-Chinese-Students-in-the-U.S.-What-Has-You/">
+          Call to Chinese Students in the U.S.: What Has Your Experience Been During COVID-19?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-08/%E6%9C%80%E6%8E%A5%E8%BF%91%E4%B9%8C%E6%89%98%E9%82%A6%E7%9A%84%E7%A4%BE%E5%8C%BA/">
+            前一篇：最接近乌托邦的社区
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-09/%E5%9C%A8%E5%A4%AE%E8%A7%86%E6%8A%95%E6%94%BE%E5%B9%BF%E5%91%8A%E7%9A%84-B-%E7%AB%99-%E6%98%AF%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E6%AD%A5%E8%B5%B0%E5%88%B0%E4%BB%8A%E5%A4%A9%E7%9A%84/">
+            後一篇：在央视投放广告的 B 站，是如何一步步走到今天的？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-05-08/%E6%9C%80%E6%8E%A5%E8%BF%91%E4%B9%8C%E6%89%98%E9%82%A6%E7%9A%84%E7%A4%BE%E5%8C%BA/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-05-09/%E5%9C%A8%E5%A4%AE%E8%A7%86%E6%8A%95%E6%94%BE%E5%B9%BF%E5%91%8A%E7%9A%84-B-%E7%AB%99-%E6%98%AF%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E6%AD%A5%E8%B5%B0%E5%88%B0%E4%BB%8A%E5%A4%A9%E7%9A%84/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-05-13/Missing-in-Action-U.S.-China-Cooperation-on-Coron/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-04-28/Call-to-Chinese-Students-in-the-U.S.-What-Has-You/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-05-08/%E6%9C%80%E6%8E%A5%E8%BF%91%E4%B9%8C%E6%89%98%E9%82%A6%E7%9A%84%E7%A4%BE%E5%8C%BA/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-05-09/%E5%9C%A8%E5%A4%AE%E8%A7%86%E6%8A%95%E6%94%BE%E5%B9%BF%E5%91%8A%E7%9A%84-B-%E7%AB%99-%E6%98%AF%E5%A6%82%E4%BD%95%E4%B8%80%E6%AD%A5%E6%AD%A5%E8%B5%B0%E5%88%B0%E4%BB%8A%E5%A4%A9%E7%9A%84/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-05-13/Missing-in-Action-U.S.-China-Cooperation-on-Coron/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-04-28/Call-to-Chinese-Students-in-the-U.S.-What-Has-You/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

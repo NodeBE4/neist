@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Has COVID-19 Changed How China’s Leaders Approach National Security? – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Has COVID-19 Changed How China’s Leaders Approach National Security?
+——
+" />
+    <meta property="og:description" content="
+Has COVID-19 Changed How China’s Leaders Approach National Security?
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Has COVID-19 Changed How China’s Leaders Approach National Security?" />
+    <meta property="twitter:title" content="Has COVID-19 Changed How China’s Leaders Approach National Security?" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Fhas-covid-19-changed-how-chinas-leaders-approach-national-security" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/has-covid-19-changed-how-chinas-leaders-approach-national-security" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/has-covid-19-changed-how-chinas-leaders-approach-national-security&text=Has COVID-19 Changed How China’s Leaders Approach National Security?&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/has-covid-19-changed-how-chinas-leaders-approach-national-security&title=Has COVID-19 Changed How China’s Leaders Approach National Security?" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/has-covid-19-changed-how-chinas-leaders-approach-national-security&title=Has COVID-19 Changed How China’s Leaders Approach National Security?" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Has COVID-19 Changed How China’s Leaders Approach National Security?&body=
+Has COVID-19 Changed How China’s Leaders Approach National Security?
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/has-covid-19-changed-how-chinas-leaders-approach-national-security" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/has-covid-19-changed-how-chinas-leaders-approach-national-security&title=Has COVID-19 Changed How China’s Leaders Approach National Security?&caption=
+Has COVID-19 Changed How China’s Leaders Approach National Security?
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Has COVID-19 Changed How China’s Leaders Approach National Security?&url=https://www.chinafile.com/conversation/has-covid-19-changed-how-chinas-leaders-approach-national-security" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Has COVID-19 Changed How China’s Leaders Approach National Security?</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-06-03
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Rorry Daniels, M. Taylor Fravel &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/has-covid-19-changed-how-chinas-leaders-approach-national-security" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1591165920000-->
+<p><a href="https://www.chinafile.com/conversation/has-covid-19-changed-how-chinas-leaders-approach-national-security">Has COVID-19 Changed How China’s Leaders Approach National Security?</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-8038e9bfd9c589ded272dd7a8b0c0d4c">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/52296_sm_0.jpg" title="Has COVID-19 Changed How China’s Leaders Approach National Security?" class="colorbox" data-colorbox-gallery="gallery-node-52296-LrztClCXKVo" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/52296_sm_0.jpg?itok=y675JZ_s" width="1200" height="801" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+(Getty Images)
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>China’s first home-built aircraft carrier sets out for sea trials from a port in Dalian, Liaoning province, May 13, 2018.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">While the world is reeling from the cascading shocks of the COVID-19 pandemic, China has <a href="https://warontherocks.com/2020/04/same-as-it-ever-was-chinas-pandemic-opportunism-on-its-periphery/" target="_blank" rel="nofollow">continued</a> a comparatively aggressive course in its foreign policy and security posture. Not only has it continued <a href="https://asia.nikkei.com/Business/Aerospace-Defense/China-steps-up-maritime-activity-with-eye-on-post-pandemic-order" target="_blank" rel="nofollow">military</a> and <a href="https://amti.csis.org/chinese-survey-ship-escalates-three-way-standoff/" target="_blank" rel="nofollow">paramilitary</a> <a href="https://www.scmp.com/news/china/article/1526701/vietnam-airs-video-chinese-ship-sinking-fishing-boat-south-china-sea" target="_blank" rel="nofollow">activities</a> in the South and East China Sea, including <a href="https://thediplomat.com/2020/04/chinas-worrying-military-exercises-near-taiwan/" target="_blank" rel="nofollow">exercises</a> <a href="https://www.scmp.com/news/china/military/article/3079546/taiwan-scrambles-warships-pla-navy-aircraft-carrier-strike" target="_blank" rel="nofollow">around</a> Taiwan, but actions have <a href="https://foreignpolicy.com/2020/05/14/south-china-sea-dispute-accelerated-by-coronavirus/" target="_blank" rel="nofollow">increased</a>. China’s outreach efforts, including offers of medical supplies and advice, have at times been accompanied not only by <a href="https://www.vice.com/en_us/article/v7ggvy/chinas-unleashing-a-propaganda-wolfpack-on-twitter-even-though-citizens-go-to-jail-for-tweeting" target="_blank" rel="nofollow">vitriolic</a> statements and <a href="https://thediplomat.com/2020/03/chinese-foreign-ministry-spokesperson-implies-us-military-brought-coronavirus-to-wuhan/" target="_blank" rel="nofollow">dubious</a> <a href="https://twitter.com/globaltimesnews/status/1241559268190343168" target="_blank" rel="nofollow">alternative</a> pandemic origin stories from its Foreign Ministry officials and state media, but also by the leveraging of trade relations with the EU to <a href="https://www.nytimes.com/2020/04/24/world/europe/disinformation-china-eu-coronavirus.html" target="_blank" rel="nofollow">censor</a> criticism of these statements, as well as trade actions—official and unofficial—against Australian beef and barley imports in response to Canberra’s push for more transparency on China’s initial handling of the outbreak.</p>
+      <p>Even as China specialists have cautioned that Chinese Communist Party diplomats, under Xi Jinping, are abandoning Deng Xiaoping’s long-held formula of “hiding strength and biding time,” the uptick of confrontational activities in this politically, economically, and socially turbulent period has drawn fierce pushback from the U.S.; officials and foreign policy experts <a href="https://www.vox.com/2020/4/28/21234598/coronavirus-china-xi-jinping-foreign-policy" target="_blank" rel="nofollow">accuse</a> China of <a href="https://www.theguardian.com/world/2020/apr/26/hong-kong-arrests-and-taiwan-flybys-chinas-advances-its-interests-during-covid-19-crisis" target="_blank" rel="nofollow">taking</a> <a href="https://www.washingtonpost.com/opinions/2020/03/16/how-china-is-planning-use-coronavirus-crisis-its-advantage/" target="_blank" rel="nofollow">advantage</a> of the pandemic distraction to conduct <a href="https://thediplomat.com/2020/04/the-danger-of-chinas-maritime-aggression-amid-covid-19/" target="_blank" rel="nofollow">provocations</a> and <a href="https://www.latimes.com/opinion/story/2020-05-05/china-mask-diplomacy" target="_blank" rel="nofollow">reshape</a> the global order while the resources and attention of other countries remain focused on managing simultaneous public health and economic crises.</p>
+      <p>China’s leaders have often viewed their ability to achieve internal development goals as dependent on a benign external security environment, describing the lead-up to 2020 as a “period of strategic opportunity” to rise without constraint or distraction. Xi Jinping <a href="https://www.csis.org/analysis/thoughts-chairman-xi-jinping-unveils-his-foreign-policy-vision" target="_blank" rel="nofollow">argued</a> in 2014 that Beijing would need smart diplomacy to build on this opportunity. But while the economic fallout of the COVID-19 outbreak has curtailed Beijing’s domestic policy goals, China’s leaders are not pursuing a more conciliatory approach to the country’s neighbors. China’s recent activities also defy arguments that Beijing actively seeks to improve relations with neighbors in periods of domestic <a href="https://www.scmp.com/comment/insight-opinion/article/2147814/why-china-becoming-friendlier-neighbour-asia" target="_blank" rel="nofollow">crisis</a> or international <a href="https://www.scmp.com/news/china/diplomacy/article/3016221/china-wants-new-security-relationship-japan-us-trade-war" target="_blank" rel="nofollow">pressure</a>—both conditions that are observable today.</p>
+      <p>Has China changed its views on the value of a benign external security environment or on its ability to shape such an environment? How will Beijing link its domestic stability to its international behavior in the future? What does China’s behavior—and U.S. expectations of that behavior—during the COVID-19 crisis signal about the trajectory of Sino-U.S. relations in the coming decades? —<em>Rorry Daniels</em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-8496" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/M-Taylor-Fravel"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/taylorfravel.jpg?itok=8HjrQHnQ" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="m-taylor-fravel"><a href="https://www.chinafile.com/contributors/M-Taylor-Fravel" title="M. Taylor Fravel">M. Taylor Fravel</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">China does not appear (yet) to have altered its view about the importance of maintaining a relatively benign security environment. Instead, Beijing’s assertive turn in spring 2020 should be viewed as a response to domestic politics after the pandemic, amid what Beijing views as challenges in its sovereignty and the accelerated deterioration of U.S.-China relations.</p>
+        <p>Around its periphery, China has adopted an assertive stance. In the <a href="https://www.washingtonpost.com/politics/2020/05/07/does-global-pandemic-open-new-south-china-sea-opportunities-beijing-not-really/" target="_blank" rel="nofollow">South China Sea</a>, China has sunk a Vietnamese fishing vessel and harassed a Malaysian-contracted drilling rig as part of enforcing its claims. Around Taiwan, the People’s Liberation Army has <a href="https://foreignpolicy.com/2020/05/15/chinas-provocations-around-taiwan-arent-a-crisis/" target="_blank" rel="nofollow">increased</a> its presence, with jets crossing the median line and the Liaoning aircraft carrier conducting exercises to the island’s east. On the border with India, Chinese troops have <a href="https://www.bbc.com/news/world-asia-52852509" target="_blank" rel="nofollow">crossed</a> what India views as the “line of actual control” (LAC) in their long-standing territorial dispute. And in Hong Kong, the National People’s Congress will pass a <a href="https://www.bbc.com/news/world-asia-china-52765838" target="_blank" rel="nofollow">national security law</a> for the territory that will weaken the autonomy it has enjoyed since 1997. In sum, Beijing appears on the march. Why?</p>
+        <p>Xi Jinping is under pressure at home. Although China has weathered the coronavirus pandemic relatively well, its occurrence and rapid spread was an unexpected shock to the stability of the Party-state. Internationally, China remains associated with the initial outbreak and serving as ground zero for what is now perhaps an unprecedented pandemic. Moreover, China’s economy—key to the Party’s legitimacy—declined by almost <a href="https://www.wsj.com/articles/china-set-to-report-plunge-in-first-quarter-gdp-11587086697" target="_blank" rel="nofollow">ten percent</a> from the previous quarter. Its recovery will be slowed by recessions in its major export markets around the world. Finally, the downward spiral in U.S.-China relations has quickened pace, especially as Washington focused its diplomacy for several months on efforts to frame the pandemic as the “<a href="https://www.nytimes.com/2020/03/18/us/politics/china-virus.html" target="_blank" rel="nofollow">Chinese virus</a>” and <a href="https://theintercept.com/2020/05/19/coronavirus-pandemic-origin-trump-china/" target="_blank" rel="nofollow">blame</a> the outbreak on a laboratory in Wuhan.</p>
+        <p>In this context of domestic challenges and international criticism, China’s leaders cannot afford to look weak abroad. This is perhaps especially true in issues relating to its sovereignty claims, which Xi Jinping has intertwined with achievement of the China dream. Tsai Ying-wen’s reelection, Malaysia’s claims to <a href="https://thediplomat.com/2019/12/malaysias-new-game-in-the-south-china-sea/" target="_blank" rel="nofollow">a continental shelf</a> around the Spratlys, India’s infrastructure upgrades along the LAC, and the ongoing protests in Hong Kong all likely contribute to Beijing’s sense its sovereignty is under stress, which demands displays of resolve. Otherwise, moderation on these issues might signal weakness at a time when strength is perceived to be needed. Moreover, an historical strategic thought in China links internal upheaval (<em>neiluan</em>) with foreign predation (<em>waihuan</em>), increasing the importance of showing strength lest others believe that China is distracted by its domestic situation.</p>
+        <p>China’s worsening ties with the United States exacerbate these dynamics. On the one hand, the decline in U.S.-China relations means that China is <a href="https://www.washingtonpost.com/world/asia_pacific/china-india-border-clashes-coronavirus/2020/05/27/a51545f6-9f14-11ea-be06-af5514ee0385_story.html" target="_blank" rel="nofollow">no longer constrained</a> by U.S. criticism and complaints about its actions, which it might have previously sought to avoid. On the other hand, precisely because of the decline of relations—especially during a period of internal stress—China may want to signal to Washington, as well as its neighbors, that China will stand firm in the face of pressure at home and abroad.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8501" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/jia-qingguo"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/jia_qingguo_1.jpg?itok=K_miyiNa" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="jia-qingguo"><a href="https://www.chinafile.com/contributors/jia-qingguo" title="Jia Qingguo">Jia Qingguo</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Has China’s diplomacy gone through a fundamental shift in recent years? That is a question that draws much attention in the world. On the surface, it has. It is more proactive in asserting its rights and interests on a whole range of issues: territorial disputes, high-tech development, COVID-19 investigation, Taiwan, and most recently Hong Kong. Moreover, its style of doing so is more combative and, to some, more aggressive—e.g. <a href="https://twitter.com/JoshuaDummer/status/1239453912790425602" target="_blank" rel="nofollow">alleging</a> that the U.S. brought the virus to China and publicly condemning senior U.S. officials. Finally, in the wake of containing the COVID-19 pandemic in China, it <a href="https://www.reuters.com/article/us-health-coronavirus-italy-respirators/china-sends-medical-supplies-experts-to-help-italy-battle-coronavirus-idUSKBN2101IM" target="_blank" rel="nofollow">delivered</a> huge quantities of medical supplies to many countries, an action that many in the West <a href="https://www.atlanticcouncil.org/blogs/new-atlanticist/is-china-winning-the-coronavirus-response-narrative-in-the-eu" target="_blank" rel="nofollow">claim</a> is designed to peddle China’s political system and vie for global leadership.</p>
+        <p>Despite posturing and style, however, China’s diplomacy is consistent with the past. Its leaders’ grand strategy does not entail dominating the world, as some contend. To begin with, China’s diplomacy remains largely reactive to changing circumstances. Confronted with the U.S.-led <a href="https://www.insurancejournal.com/news/national/2020/02/03/557106.htm" target="_blank" rel="nofollow">banning</a> of travel from China in the wake of the sudden outbreak of the COVID-19 crisis, China tried to persuade other countries to moderate their restrictions for fear of the impact on China’s economy. When the outbreak hit other countries, China’s supplying medical equipment was intended in part to honor its humanitarian obligations and in part to make sure the pandemic would not jeopardize China’s economic chances. It was only in response to the Western smear campaign that Chinese diplomats went out of their way to hit back.</p>
+        <p>China’s diplomatic goals remain unchanged: defending its maritime territorial rights and interests in the South China Sea, maintaining its one-China principle on Taiwan, upholding the principle of non-intervention in domestic affairs, promoting China’s economic development, and securing a peaceful and friendly international environment. Even when facing increasing attacks from the U.S., China continued its shipment of medical supplies and reiterated its <a href="https://www.fmprc.gov.cn/ce/cemy/eng/fyrth/t1767488.htm" target="_blank" rel="nofollow">desire</a> for a stable and cooperative relationship with the U.S.</p>
+        <p>Finally, China’s diplomatic initiatives are largely driven by domestic interests. Its Belt and Road Initiative is designed to make its own economic development more sustainable. Its call for multilateral cooperation reflects its leaders’ belief that they can better protect China’s interests through existing international mechanisms and institutions. Their insistence on the principle of non-intervention in domestic affairs derives from concerns over domestic political stability.</p>
+        <p>In sum, China’s diplomacy has not changed in substance despite changes in rhetoric and style. It is American perception of it that has changed. Previously, many Americans had hoped that China would become more liberal, and even democratic, as the country developed economically and became more integrated with the outside world. They are disappointed and feel betrayed because their expectation has not been fulfilled. As a result, they have begun to examine China’s behavior in the worst possible light and to believe whatever China does is wrong, the result of evil intentions. Maybe it’s time to take a balanced view and adopt a realistic and pragmatic policy so that the two countries can peacefully coexist and cooperate when needed.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8506" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/susan-thornton"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/thornton_sm.png?itok=Z-72h2-K" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="susan-thornton"><a href="https://www.chinafile.com/contributors/susan-thornton" title="Susan Thornton">Susan Thornton</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">It is no secret that the U.S. and China are currently locked in an escalatory cycle of tit-for-tat retaliation that is propelling a mutual narrative of bilateral enmity. Officials on <a href="https://news.cgtn.com/news/2020-05-21/China-urges-U-S-politicians-to-end-blame-games-focus-on-virus-QFWcWvUYh2/index.html" target="_blank" rel="nofollow">both</a> sides are <a href="https://fsi.stanford.edu/news/china-covid19-origin-narrative" target="_blank" rel="nofollow">telling stories</a> about who is responsible and how we got here, and, as is almost always the case, the reality lies somewhere in the middle. The COVID-19 crisis has almost nothing to do with it, except that it should have been met with urgently prioritized international cooperation to save lives and head off economic disaster, which would have relegated frictions on other more parochial matters temporarily to the background. That has not happened, and both the U.S. and China are racing ahead with ill-considered and damaging proposals and actions that have nothing to do with fighting a pandemic disease that will likely kill millions. They are both diminished in the eyes of the world for it.</p>
+        <p>China’s leaders have never believed that the country enjoyed a benign external security environment, but assigning a lower priority to external security concerns allowed for a focus on more pressing resource needs, such as social and economic modernization. Clearly, we are now in a period when China is not willing, or feels it is unable, to sacrifice those external concerns (maritime claims in the South and East China Seas, Taiwan, Hong Kong, Xinjiang, Tibet, border disputes) to the expedient of modernization. This is a strategic mistake. Asserting that China was pushed by the actions of others to defend its interests, as in the recent case of Hong Kong <a href="https://www.theguardian.com/world/2020/may/28/china-vote-npc-national-security-laws-hong-kong-us-protest" target="_blank" rel="nofollow">security legislation</a>, will certainly draw fire from ideological partisans in America, whereas stating that China has adopted an unacceptably aggressive foreign and security policy since the late 2000s will meet objection in Beijing. But both are true.</p>
+        <p>There is still time to move back to a more constructive path, which would be better for China, the U.S., and the world. Whether China will return to a less assertive, more collaborative approach in the future will depend on the actions of others and on whether the leadership in Beijing views such actions as imposing acceptable constraints on its freedom of action (e.g. effective <a href="https://foreignpolicy.com/2019/10/16/china-intellectual-property-theft-progress/" target="_blank" rel="nofollow">intellectual property rights</a> protection, concessions on <a href="https://www.csis.org/analysis/trade-trilateral-targets-chinas-industrial-subsidies" target="_blank" rel="nofollow">industrial subsidies</a>, a <a href="https://amti.csis.org/blueprint-for-south-china-sea-code-of-conduct/" target="_blank" rel="nofollow">code of conduct</a> in the South China Sea) or as intended to unacceptably undermine China’s interests (e.g. by <a href="https://www.reuters.com/article/us-health-coronavirus-usa-china/trump-administration-pushing-to-rip-global-supply-chains-from-china-officials-idUSKBN22G0BZ" target="_blank" rel="nofollow">attacking</a> leading Chinese industries). It will also depend on leaders in both China and the United States appreciating that history would judge a 21st century conflict between these two countries as the height of human folly.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8516" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/oriana-skylar-mastro"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/orianasmastrao.jpg?itok=1y9DF9i5" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="oriana-skylar-mastro"><a href="https://www.chinafile.com/contributors/oriana-skylar-mastro" title="Oriana Skylar Mastro">Oriana Skylar Mastro</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The Chinese leadership’s preference for a benign external security environment during the country’s rise has not changed, but views about how to achieve this end state may be evolving. For most of the post-reform era, China’s leaders have attempted to ensure global conditions conducive to their interests by <a href="https://www.cia.gov/library/abbottabad-compound/61/61056C72483AE646E1A9830DAC4CEAA3_FULLTEXT.PDF" target="_blank" rel="nofollow">reassuring</a> other countries that China’s rise would be <a href="https://www.brookings.edu/wp-content/uploads/2012/04/20050616bijianlunch.pdf" target="_blank" rel="nofollow">peaceful</a>. Even as China has become even more <a href="https://b3d6b9f7-6d91-4878-ad32-fe19fef42a11.filesusr.com/ugd/d769ce_bb76d0d382854d9aab371555defa1340.pdf" target="_blank" rel="nofollow">assertive</a> in its maritime claims, vis-à-vis <a href="https://www.latimes.com/opinion/story/2020-01-11/taiwan-president-tsai-ingwen-election-china" target="_blank" rel="nofollow">Taiwan</a>, and most recently along the line of actual control (LAC) with <a href="https://foreignpolicy.com/2020/05/23/india-china-border-skirmishes/" target="_blank" rel="nofollow">India</a>, rhetoric from Beijing has tended to emphasize China’s inherently peaceful nature. As recently as the spring of 2019, at the 18th Shangri-La Dialogue, China’s defense minister, General Wei Fenghe, <a href="http://www.globaltimes.cn/content/1152730.shtml" target="_blank" rel="nofollow">contended</a> that China has “never provoked a war or conflict, nor has it ever invaded another country or taken an inch of land from others,” and assured that it never will. In short, the strategic focus has largely been on reassurance.</p>
+        <p>But there is another parallel thread within Chinese historical and contemporary behavior: a <a href="https://www.jstor.org/stable/10.7249/mr1121af" target="_blank" rel="nofollow">deep fear</a> that foreign powers will exploit times of internal difficulty to their benefit, and China’s detriment. This interpretation of history, which admittedly is highlighted and propagated by the Chinese Communist Party (CCP) for its own ends, can cause the CCP to deviate from assurance to focus on deterrence as a means to create a benign security environment. The recent spike in Chinese <a href="https://asia.nikkei.com/Business/Aerospace-Defense/China-steps-up-maritime-activity-with-eye-on-post-pandemic-order" target="_blank" rel="nofollow">military</a> and <a href="https://amti.csis.org/chinese-survey-ship-escalates-three-way-standoff/" target="_blank" rel="nofollow">paramilitary</a> <a href="https://www.scmp.com/news/china/article/1526701/vietnam-airs-video-chinese-ship-sinking-fishing-boat-south-china-sea" target="_blank" rel="nofollow">activities</a> in the South and East China Sea and <a href="https://thediplomat.com/2020/04/chinas-worrying-military-exercises-near-taiwan/" target="_blank" rel="nofollow">exercises</a> <a href="https://www.scmp.com/news/china/military/article/3079546/taiwan-scrambles-warships-pla-navy-aircraft-carrier-strike" target="_blank" rel="nofollow">around</a> and incursions along the LAC with India may be designed to warn those actors that COVID-19 has not made China soft.</p>
+        <p>In this vein, China often sees its assertiveness as a response to a <a href="https://taylorfravel.com/documents/research/fravel.2012.CNAS.maritime.security.SCS.pdf" target="_blank" rel="nofollow">transgression by the other side</a>, a tendency Andrew Scobell of RAND calls its “<a href="https://www.cambridge.org/core/books/chinas-use-of-military-force/78C123B9E5CB38B948DFEA80ADFC4194" target="_blank" rel="nofollow">cult of defense</a>.” Chinese media has accused <a href="http://feng.ifeng.com/c/7vqGqQQWu9S" target="_blank" rel="nofollow">Vietnam</a> of making trouble in the South China Sea during the pandemic and <a href="https://cn.chinadaily.com.cn/a/202003/20/WS5e74925da3107bb6b57a7e38.html" target="_blank" rel="nofollow">Taiwan</a> of taking advantage of COVID to expand its international space with its “<a href="https://foreignpolicy.com/2020/04/13/taiwan-coronavirus-pandemic-mask-soft-power-diplomacy/" target="_blank" rel="nofollow">mask diplomacy</a>.” In short, the CCP may believe its aggressive actions will ensure a benign external environment during the uncertainty of COVID by deterring other actors from taking actions detrimental to Beijing.</p>
+        <p>Lastly, there has always been an opportunistic strain in the behavior of the CCP’s leadership, especially under Xi Jinping. As its relative power gap grows, China may be more confident in pushing its agenda. According to this logic, Beijing may still care about the security environment and yet doubt other countries can do much to undermine its rise.</p>
+        <p>So, which is it? I would be surprised if the Chinese leadership were so confident at this level of its power, especially given the U.S. focus on strategic competition and America’s military might. I think an emphasis on deterrence to ensure a benign security environment is the more likely explanation for recent Chinese assertiveness. But if China comes out on top post-COVID, motivations for its aggression may shift to opportunism. Regardless, it seems that provocative and aggressive behavior, especially against its neighbors, is here to stay.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8531" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/da-wei"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/da_wei_sm_0.jpg?itok=6m5OK2XK" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="da-wei"><a href="https://www.chinafile.com/contributors/da-wei" title="Da Wei">Da Wei</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">It’s true that China’s external environment has deteriorated since the outbreak of the COVID-19 pandemic. Having said that, the role of the pandemic in the change in China’s strategic calculus should not be exaggerated.</p>
+        <p>In 2018, almost two years before the coronavirus outbreak, the Chinese government began to use a new phrase to describe its external environment when Xi Jinping claimed that the world was experiencing “<a href="http://www.xinhuanet.com/politics/2018-06/23/c_1123025806.htm" target="_blank" rel="nofollow">profound changes unseen in a century</a>.” From the Chinese government’s point of view, the world order has undergone dramatic changes in the last decade. New powers and players are emerging, and—particularly under the Trump administration—the U.S. is withdrawing from its leadership in the liberal world order. The existing world order which China has tried to integrate into and which it has benefited from has begun to disintegrate. As for China-U.S. relations, the Trump administration <a href="https://www.whitehouse.gov/wp-content/uploads/2020/05/U.S.-Strategic-Approach-to-The-Peoples-Republic-of-China-Report-5.20.20.pdf" target="_blank" rel="nofollow">abandoned</a> the long-term “engagement” strategy towards China and defined China as a “<a href="https://www.whitehouse.gov/wp-content/uploads/2017/12/NSS-Final-12-18-2017-0905.pdf" target="_blank" rel="nofollow">strategic competitor</a>” in December 2017. The two countries waded into a trade war in 2018. The same year, the U.S. began its efforts to strangle Chinese hi-tech companies like ZTE and Huawei. These changes have brought huge uncertainties to, if not purely negative impacts on, China’s further development. COVID-19 has been an accelerant to changes in the Chinese government’s strategic calculus that were already long underway.</p>
+        <p>The Chinese government does not have an incentive to maintain its internal stability by showing toughness externally. A <a href="https://blackbox.com.sg/everyone/2020/05/06/most-countries-covid-19-responses-rated-poorly-by-own-citizens-in-first-of-its-kind-global-survey" target="_blank" rel="nofollow">survey</a> conducted by Singapore-based independent pollster Blackbox Research found that out of people polled in 23 countries and regions, Chinese respondents were the most satisfied with their government’s COVID response. It’s completely wrong to think that the Chinese government is in a difficult position due to COVID-19. To link China’s international behavior to its domestic stability could be misleading.</p>
+        <p>The distrust between China and the U.S. has heightened in recent years. When we have a strong view towards the other side, it is always very easy to “link the dots” from the other side’s behavior to support our biased belief. It is not hard for the China-bashers in the West to find those “dots,” but it’s also easy for the Chinese to do the same thing. In January and February 2020, when China was the only epicenter of the crisis, Commerce Secretary Wilbur Ross predicted that the epidemic could <a href="https://www.nytimes.com/2020/01/30/business/economy/wilbur-ross-coronavirus-jobs.html" target="_blank" rel="nofollow">help return</a> jobs to the U.S. U.S. <a href="https://www.washingtontimes.com/news/2020/jan/26/coronavirus-link-to-china-biowarfare-program-possi/" target="_blank" rel="nofollow">media</a> and <a href="https://www.nytimes.com/2020/02/17/business/media/coronavirus-tom-cotton-china.html" target="_blank" rel="nofollow">Senator Tom Cotton</a> began to engage in baseless speculation that COVID-19 is a man-made virus from a lab in Wuhan. Those “dots” were widely read in Chinese social media and many Chinese people naturally had the <a href="https://baijiahao.baidu.com/s?id=1668463603502024235&amp;wfr=spider&amp;for=pc" target="_blank" rel="nofollow">impression</a> the U.S. was trying to exploit the crisis to weaken, stigmatize, and isolate China. When observers use the term “wolf warrior diplomacy” to describe China’s foreign policy during the crisis, my impression is that the majority of Chinese believe that China is in a defensive posture and their diplomats’ <a href="https://twitter.com/zlj517/status/1238111898828066823?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1238111898828066823&amp;ref_url=https%3A%2F%2Fwww.cnn.com%2F2020%2F03%2F13%2Fasia%2Fchina-coronavirus-us-lijian-zhao-intl-hnk%2Findex.html" target="_blank" rel="nofollow">harsh comments</a> against the U.S. are a legitimate attempt at self-defense. So again, it is completely wrong to think that China is using the difficult situation foreign countries are in because of the pandemic to expand its own strategic influence or gain strategic advantages.</p>
+        <p>China of course wants a benign external environment. The challenge is that the environment itself is changing, and China cannot determine its trajectory. It takes two to tango. The next U.S. administration, no matter whether it is Republican or Democratic, will face a critical choice: whether it should pursue a healthy competition strategy or a zero-sum suppression strategy with China.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8536" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/rorry-daniels"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/rorry_daniels_sm_0.jpg?itok=2tjX6Tt-" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="rorry-daniels"><a href="https://www.chinafile.com/contributors/rorry-daniels" title="Rorry Daniels">Rorry Daniels</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">China’s strategic calculus on the value of a benign external security environment is changing due to changes in U.S. behavior. This shift was underway before the pandemic as China dealt with Washington’s new strategic calculus that China should be <a href="https://www.whitehouse.gov/wp-content/uploads/2017/12/NSS-Final-12-18-2017-0905.pdf" target="_blank" rel="nofollow">labeled</a> and treated as a competitor and adversary, rather than as a partner. But the pandemic has accelerated China’s pursuit of an aggressive defense of its sovereignty because the costs of doing so are blunted by a convergence of American and Chinese behavior that precludes U.S. stewardship of a balancing coalition.</p>
+        <p>The Chinese Communist Party and the Trump administration, at the highest levels, both seem to view the purpose of accumulating state power to be the removal of behavioral constraints—in other words, exempting those with the most power from the consequences of breaking commonly accepted rules. Criticisms of Chinese behavior in the international system—such as coercion in <a href="https://www.cnas.org/publications/reports/chinas-use-of-coercive-economic-measures" target="_blank" rel="nofollow">trade</a>, <a href="https://www.businessinsider.com/nba-china-feud-timeline-daryl-morey-tweet-hong-kong-protests-2019-10" target="_blank" rel="nofollow">social</a>, and <a href="https://www.belfercenter.org/publication/chinese-coercion-south-china-sea-resolve-and-costs-0" target="_blank" rel="nofollow">territorial</a> disputes—are now clearly observable in U.S. behavior as well, as American officials leverage threats to <a href="https://www.nytimes.com/2020/05/21/us/politics/trump-open-skies-treaty-arms-control.html" target="_blank" rel="nofollow">leave</a> international treaties and <a href="https://www.politico.com/news/2020/04/14/trump-world-health-organization-funding-186786" target="_blank" rel="nofollow">defund</a> multilateral organizations, break <a href="https://www.theatlantic.com/international/archive/2018/07/trump-nato-allies/564881/" target="_blank" rel="nofollow">alliances</a> and <a href="https://www.businessinsider.com/donald-trump-mike-pompeo-abandons-threat-uk-huawei-5g-deal-2020-1" target="_blank" rel="nofollow">intelligence</a>-sharing partnerships, and <a href="https://www.vox.com/2018/12/4/18123809/usmca-trump-nafta-withdrawal-congress" target="_blank" rel="nofollow">renegotiate</a> existing trade deals.</p>
+        <p>While neither country’s leaders openly claim to be upending a rules-based status quo, both seek what can be characterized as a “return” to rightful hierarchies to aggressively further their interests. Whether the slogan is “Make America Great Again” or the “rejuvenation of the Chinese nation,” both leaderships seek to redress the international community’s <a href="https://globalnews.ca/news/6986293/meng-wanzhou-china-warning-canada/" target="_blank" rel="nofollow">constraints</a> on <a href="https://www.whitehouse.gov/briefings-statements/statement-president-trump-paris-climate-accord/" target="_blank" rel="nofollow">behavior</a> by using coercive economic and political power to assert dominance. Thus, the problem the international community faces arises not from a dichotomy between the U.S. and China but rather from battle between those who believe they benefit from a power-based order versus those who believe they benefit from a rules-based order.</p>
+        <p>For middle or smaller powers confronting an aggressive defense of interests from either the U.S. or China, the choice of aligning with one against the other is becoming indistinguishable. This gives China room to double down on coercive behavior. Meanwhile, both China and the U.S. have a greater ability to absorb the costs of coercive approaches in a period of domestic distraction, as disruptions to labor and <a href="https://www.forbes.com/sites/walterloeb/2019/09/12/tariffs-are-starting-to-hurt-sellers-on-amazon/#4dcdc4a37b31" target="_blank" rel="nofollow">consumption patterns</a> caused by coercive approaches simply do not register within the context of the greater <a href="https://www.wsj.com/articles/personal-income-household-spending-coronavirus-march-2020-11588197997" target="_blank" rel="nofollow">disruptions</a> of the pandemic. Additionally, both can probably bank on leverage accruing to larger economies in the eventual period of global recovery. Smaller economies have no clear alternative to the efficiencies offered by China’s <a href="https://www.cnbc.com/2020/05/25/china-one-of-many-manufacturing-hubs-in-a-post-coronavirus-world.html" target="_blank" rel="nofollow">manufacturing</a> juggernaut or America’s <a href="https://www.cnbc.com/2020/02/24/as-coronavirus-fuels-market-panic-some-experts-say-the-dollar-is-the-only-safe-currency.html" target="_blank" rel="nofollow">financial</a> system, and it is uncertain if smaller economies can use the pandemic period to reduce these dependencies at an acceptable cost.</p>
+        <p>The U.S. and Chinese leadership should consider the costs of “winning” this competition by destroying their partnerships and international credibility. The resulting international order would be more, not less, chaotic, and the pursuit of national interest more, not less, difficult. The only hope to avoid this dystopian hegemony is for middle powers to create a balancing coalition, not with the U.S. against China or with China against the U.S., but together against both.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-06-09</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-09/For-Me,-the-Breakdown-in-U.S.-China-Relations-Is-P/">
+          For Me, the Breakdown in U.S.-China Relations Is Personal
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-05</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-05/Scallion-Dutch-Baby/">
+          Scallion Dutch Baby
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-01</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-01/No-Foreign-NGO-Representative-Offices-Registered-i/">
+          No Foreign NGO Representative Offices Registered in May
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-27/Coronavirus-and-the-Korean-Peninsula/">
+          Coronavirus and the Korean Peninsula
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-02/%E5%A6%82%E4%BD%95%E5%B0%86%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%8F%98%E6%88%90%E9%BB%91%E5%AE%A2%E8%AE%BE%E5%A4%87-%E6%97%A0%E9%9C%80-Root-iYouPort/">
+            前一篇：如何将安卓手机变成黑客设备 - 无需 Root - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-03/%E4%B8%AD%E5%9B%BD%E6%82%A3%E7%97%85%E7%8E%87%E4%B8%8D%E5%B9%B3%E7%AD%89-%E7%A4%BE%E4%BC%9A%E7%BB%8F%E6%B5%8E%E5%9B%A0%E7%B4%A0%E7%A0%94%E7%A9%B6/">
+            後一篇：中国患病率不平等：社会经济因素研究
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-06-02/%E5%A6%82%E4%BD%95%E5%B0%86%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%8F%98%E6%88%90%E9%BB%91%E5%AE%A2%E8%AE%BE%E5%A4%87-%E6%97%A0%E9%9C%80-Root-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-06-03/%E4%B8%AD%E5%9B%BD%E6%82%A3%E7%97%85%E7%8E%87%E4%B8%8D%E5%B9%B3%E7%AD%89-%E7%A4%BE%E4%BC%9A%E7%BB%8F%E6%B5%8E%E5%9B%A0%E7%B4%A0%E7%A0%94%E7%A9%B6/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-06-05/Scallion-Dutch-Baby/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-06-01/No-Foreign-NGO-Representative-Offices-Registered-i/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-06-02/%E5%A6%82%E4%BD%95%E5%B0%86%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%8F%98%E6%88%90%E9%BB%91%E5%AE%A2%E8%AE%BE%E5%A4%87-%E6%97%A0%E9%9C%80-Root-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-06-03/%E4%B8%AD%E5%9B%BD%E6%82%A3%E7%97%85%E7%8E%87%E4%B8%8D%E5%B9%B3%E7%AD%89-%E7%A4%BE%E4%BC%9A%E7%BB%8F%E6%B5%8E%E5%9B%A0%E7%B4%A0%E7%A0%94%E7%A9%B6/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-06-05/Scallion-Dutch-Baby/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-06-01/No-Foreign-NGO-Representative-Offices-Registered-i/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Will Protests against China Push Beijing to Intervene in Myanmar? – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Will Protests against China Push Beijing to Intervene in Myanmar?
+——
+" />
+    <meta property="og:description" content="
+Will Protests against China Push Beijing to Intervene in Myanmar?
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Will Protests against China Push Beijing to Intervene in Myanmar?" />
+    <meta property="twitter:title" content="Will Protests against China Push Beijing to Intervene in Myanmar?" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fwill-protests-against-china-push-beijing-intervene-myanmar" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/will-protests-against-china-push-beijing-intervene-myanmar" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/will-protests-against-china-push-beijing-intervene-myanmar&text=Will Protests against China Push Beijing to Intervene in Myanmar?&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/will-protests-against-china-push-beijing-intervene-myanmar&title=Will Protests against China Push Beijing to Intervene in Myanmar?" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/will-protests-against-china-push-beijing-intervene-myanmar&title=Will Protests against China Push Beijing to Intervene in Myanmar?" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Will Protests against China Push Beijing to Intervene in Myanmar?&body=
+Will Protests against China Push Beijing to Intervene in Myanmar?
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/will-protests-against-china-push-beijing-intervene-myanmar" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/will-protests-against-china-push-beijing-intervene-myanmar&title=Will Protests against China Push Beijing to Intervene in Myanmar?&caption=
+Will Protests against China Push Beijing to Intervene in Myanmar?
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Will Protests against China Push Beijing to Intervene in Myanmar?&url=https://www.chinafile.com/reporting-opinion/viewpoint/will-protests-against-china-push-beijing-intervene-myanmar" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Will Protests against China Push Beijing to Intervene in Myanmar?</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-04-01
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Abby Seiff</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/will-protests-against-china-push-beijing-intervene-myanmar" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1617291000000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/will-protests-against-china-push-beijing-intervene-myanmar">Will Protests against China Push Beijing to Intervene in Myanmar?</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-9e086b79c41300de0958ba71fbeaf9b5">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1301591110.jpeg" title="Will Protests against China Push Beijing to Intervene in Myanmar?" class="colorbox" data-colorbox-gallery="gallery-node-53086-bTMc1AQqMIM" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1301591110.jpeg?itok=XC03Cv8E" width="1200" height="801" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Hkun Lat—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>Protesters deface a national flag of the People’s Republic of China, in front of the United Nations Development Program office in Yangon, Myanmar, February 11, 2021.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">Among the earliest images to go viral at the start of Myanmar’s anti-coup protests was a photo of an airplane unloading cargo. Source unknown, the picture was <a href="https://mobile.twitter.com/Yoon53522249/status/1359857404297551874" target="_blank" rel="nofollow">often paired</a> with a second showing workers moving long army-green boxes from what appeared to be the inside of a plane. Netizens <a href="https://mobile.twitter.com/itsmymainthings/status/1361649724013559812" target="_blank" rel="nofollow">found</a> evidence of nightly flights between the southwestern Chinese city of Kunming and Myanmar’s former capital Yangon and <a href="https://mobile.twitter.com/search?q=flights%20kunming&amp;src=typed_query&amp;f=image" target="_blank" rel="nofollow">insisted</a> the photos, therefore, had to be <a href="https://mobile.twitter.com/TheinHa52389195/status/1359569503194071040" target="_blank" rel="nofollow">proof</a> that Beijing was supplying Myanmar’s military, or Tatmadaw, with arms and ammunition. When the Chinese Chamber of Commerce in Myanmar released a <a href="https://mobile.twitter.com/mrattkthu/status/1359698275062882307" target="_blank" rel="nofollow">statement</a> saying the planes were delivering seafood, it was met with widespread <a href="https://mobile.twitter.com/nantigks/status/1359706327770013700" target="_blank" rel="nofollow">mockery</a>.</p>
+      <p>Angry with the results of the November election, which saw a landslide win for the ruling National League for Democracy (NLD) party, Myanmar’s military claimed electoral fraud. On February 1, they <a href="https://www.reuters.com/article/myanmar-politics-int/myanmar-military-seizes-power-detains-elected-leader-aung-san-suu-kyi-idUSKBN2A11W6" target="_blank" rel="nofollow">seized</a> power from the civilian government, rounding up longtime NLD leader Aung San Suu Kyi and the rest of the country’s civilian leadership and unleashing an increasingly violent force against the public. Hundreds of thousands have since taken to the streets, and the military has arrested thousands and <a href="https://www.dw.com/en/myanmar-over-100-killed-in-deadliest-day-since-military-coup/a-57022363" target="_blank" rel="nofollow">killed</a> more than <a href="https://www.reuters.com/article/us-myanmar-politics/thousands-take-to-the-streets-in-myanmar-as-five-more-protesters-killed-idUSKBN2BL0C2" target="_blank" rel="nofollow">500</a>.</p>
+      <p>Almost from the start, protests against the coup have targeted not just the Tatmadaw, but neighboring China.</p>
+      <p>“China will work with whoever is in power, but the protestors believe that China should not have the liberty or the right to work with [an] illegitimate junta. If China does, it is perceived as China’s support of the junta,” China-Myanmar expert Yun Sun, Senior Fellow and Co-Director of the East Asia Program and Director of the China Program at the Stimson Center, wrote in an email.</p>
+      <p>Unlike many Western nations, China’s government has been loath to criticize the military takeover. In the early days, Beijing termed the coup a “cabinet reshuffle” and it initially <a href="https://www.bbc.com/news/world-asia-55913947" target="_blank" rel="nofollow">held up</a> efforts at the U.N. Security Council to issue a resolution condemning the coup. China did, however, &lt;a href="https://asia.nikkei.com/Spotlight/Myanmar-Coup/UN-Security-Council-calls-for-release-of-Myanmar-s-Suu-Kyi" target=""_blank" rel="nofollow"&gt;sign on&lt;/a&gt; to a call for Suu Kyi’s release, and later <a href="https://apnews.com/article/aung-san-suu-kyi-asia-pacific-myanmar-united-nations-4d0b4e78b8b740784c7ed5adb0aec3b4" target="_blank" rel="nofollow">signed</a> a Security Council presidential statement urging the military to hand power back to the government. China is hardly the only country to downplay or ignore the Tatmadaw’s actions. Russia, too, <a href="https://www.businessinsider.com/china-russia-block-un-security-council-condemn-myanmar-coup-2021-2" target="_blank" rel="nofollow">shielded</a> the Tatmadaw by refusing to sign on to the Security Council resolution and has <a href="https://www.bangkokpost.com/opinion/opinion/2091791/russias-gamble-in-post-coup-myanmar" target="_blank" rel="nofollow">publicly supported</a> the junta; India was <a href="https://apnews.com/article/aung-san-suu-kyi-asia-pacific-myanmar-united-nations-4d0b4e78b8b740784c7ed5adb0aec3b4" target="_blank" rel="nofollow">among those</a> that pushed for the watered down version of the statement the Security Council eventually released; and some Myanmar netizens believe the green boxes pictured in the viral photo were holding missiles from <a href="https://twitter.com/drzarni/status/1359577131341250562" target="_blank" rel="nofollow">Belarus</a>. But China is the strongest among these detractors and has long had a heavy, and unpopular, footprint in neighboring Myanmar.</p>
+      <p>“China is the second biggest exporter of arms to Myanmar, behind Russia. Many ethnic armed organizations especially in the northern region have close ties with China. Though the general public might not know about these statistical facts, they have everyday rather unfortunate encounters with China. For example, garment workers of Chinese factories from . . . Hlaingthaya experience wage cuts, restrictions on their movement and behaviors during work hours at the factories, violations of rights, etc., and these grievances are pervasive,” Tharaphi Than, an Associate Professor in the Department of World Languages and Cultures at Northern Illinois University who studies dissent in Myanmar, wrote in an email.</p>
+      <p>In its role as Myanmar’s wealthy northern neighbor, China has long contended with Burmese ire. In recent years, thousands have protested Chinese-backed projects, including the <a href="https://www.scmp.com/news/asia/southeast-asia/article/3007230/thousands-protest-china-backed-myitsone-mega-dam-myanmar" target="_blank" rel="nofollow">controversial</a> Myitsone mega-dam; a <a href="https://www.reuters.com/article/us-china-silkroad-myanmar-sez/chinas-10-billion-strategic-project-in-myanmar-sparks-local-ire-idUSKBN18Z327" target="_blank" rel="nofollow">U.S.$10 billion</a> deep sea port and special economic zone in Kyaukphyu that plays an integral role in the Belt and Road Initiative; and <a href="https://www.bbc.com/news/magazine-21028931" target="_blank" rel="nofollow">various</a> smaller <a href="https://chinadialogue.net/en/business/6969-anti-chinese-sentiment-on-rise-in-myanmar/" target="_blank" rel="nofollow">enterprises</a>. That dissent has gathered into a powerful force.</p>
+      <p>On February 11, just days into the protest movement, hundreds gathered outside the Chinese embassy in Yangon, <a href="https://twitter.com/Tharzawlay/status/1359881370496073728/photo/3" target="_blank" rel="nofollow">calling on</a> China to “stop helping the military coup.” A <a href="https://twitter.com/search?q=%23BoycottChina%20myanmar&amp;src=typed_query&amp;f=live" target="_blank" rel="nofollow">#BoycottChina</a> hashtag appears in many anti-coup social media posts now, with protest leaders <a href="https://twitter.com/EithinzarMM/status/1372933403792732161" target="_blank" rel="nofollow">urging</a> boycotts of Chinese products. (These social media campaigns have been <a href="https://www.reuters.com/article/us-myanmar-protests-asia/milk-tea-alliance-activists-across-asia-hold-rallies-against-myanmar-coup-idUSKCN2AS0HP" target="_blank" rel="nofollow">aided</a> by the pan-Asian Milk Tea Alliance, which is composed of pro-democracy forces in Hong Kong, Thailand, Taiwan, and now Myanmar.) On social media, there are <a href="https://www.rfa.org/english/news/myanmar/chinese-goods-boycott-03102021183500.html" target="_blank" rel="nofollow">calls for</a> an attack on the oil and gas pipelines that run from the Kyaukphyu port to Yunnan province. “It’s an open secret that sooner or later somebody will blow up their twin gas pipelines just to send a message to China,” an activist, who asked to remain anonymous for security concerns, told me.</p>
+      <p>Anger toward China has been steadily escalating. On March 14, a number of Chinese factories in Hlaingthaya <a href="https://www.reuters.com/article/us-myanmar-politics/at-least-39-reported-killed-in-myanmar-as-chinese-factories-burn-idUSKBN2B602C" target="_blank" rel="nofollow">were torched</a> during a day of violence that saw as many as <a href="https://www.facebook.com/theNDBurma/photos/pcb.4587408157940932/4587399564608458/" target="_blank" rel="nofollow">70 protesters</a> nationwide killed by the military. The Tatmadaw blamed the demonstrators, while the demonstrators <a href="https://twitter.com/MayZyn1/status/1371675429564727302" target="_blank" rel="nofollow">insisted</a> soldiers set the fires themselves. Whatever the truth, the Chinese embassy <a href="https://apnews.com/article/beijing-china-yangon-myanmar-28fb917e46d609dde6da395f85a065b5" target="_blank" rel="nofollow">released</a> a <a href="https://www.facebook.com/paukphawfriendship/posts/3770592539683438?__tn__=-R" target="_blank" rel="nofollow">statement</a> demanding protection for its factories and expressing concern for trapped and injured Chinese workers. On Facebook, the statement drew tens of thousands of <a href="https://www.facebook.com/paukphawfriendship/posts/3770592539683438?__tn__=-R" target="_blank" rel="nofollow">angry comments</a> urging China to leave the country. Many were enraged it failed to make any mention of the dozens of unarmed Burmese killed on that day alone.</p>
+      <p>“The statement, I think, is like a death sentence to the people in Hlaingthaya. They will kill more people to set an example as well as to please China,” the activist told me the day the statement was issued.</p>
+      <p><em>Is</em> Beijing playing a role in the coup? To some, it looks that way. In an <a href="https://www.aspistrategist.org.au/whats-on-the-clandestine-nightly-flights-between-myanmar-and-china/" target="_blank" rel="nofollow">article</a> published by the Australian Strategic Policy Institute, security analyst Susan Hutchinson explored the possible truth behind the nightly flights between Kunming and Yangon. Noting that the planes’ transponders had been turned off, Hutchinson wrote: “Whoever has arranged these flights is going to great lengths to hide them.”</p>
+      <p>She goes on to write, “The situation in Myanmar suggests two possibilities for what the planes are carrying. One is that they’re bringing in Chinese troops and cyber specialists to help the Tatmadaw control access to information and the internet. The other is that they’re increasing the Tatmadaw’s weapons stores.”</p>
+      <p>Since the start of the coup, the Tatmadaw has rolled out and expanded a telecommunications block. According to <a href="https://twitter.com/netblocks" target="_blank" rel="nofollow">NetBlocks</a>, nightly Internet shutdowns have taken place on 47 consecutive days, while mobile data has been blocked for more than two weeks. As early as mid-February, Hong Kong activist Nathan Law <a href="https://mobile.twitter.com/nathanlawkc/status/1361405200267964428" target="_blank" rel="nofollow">reported</a> that “Credible sources revealed that the Myanmar military government is receiving ‘technical support’ from the CCP to build similar internet firewalls to block access to Twitter, NYT, FB etc.” VOA carried <a href="https://www.voanews.com/east-asia-pacific/burmese-expert-china-helping-military-establish-cyber-firewall" target="_blank" rel="nofollow">similar reports</a> from a Burmese cybersecurity expert.</p>
+      <p>While these arguments have generated no small amount of attention, they are scarcely less speculative than the protesters’ claims. Would China stand to benefit from this level of meddling?</p>
+      <p>“With China, it’s always easy to read into anything that China does and see a nefarious motive,” said Sebastian Strangio, author of <em><a href="https://yalebooks.yale.edu/book/9780300234039/dragons-shadow" target="_blank" rel="nofollow">In the Dragon’s Shadow: Southeast Asia in the Chinese Century</a></em>.</p>
+      <blockquote>
+        <p>My view is that the Chinese are not particularly happy about what’s going on. The Chinese had reason to look forward to a fruitful second five-year term for the NLD. They invested a lot of resources into their relationship with the NLD. The country was allowing China to move forward with its infrastructure projects. In general, there was movement in that relationship and the military is probably the most anti-China or suspicious of China in the country. The return of this institution to power—even before the protests erupted and the country ground to a halt, I don’t think they would have been particularly happy about that.</p>
+      </blockquote>
+      <p>Stability, above all, is what China needs in Myanmar if it is to move ahead with its significant economic investments. It is hard to imagine a less stable environment. Should the military continue to hold power, either protests will continue, or they will be stopped in a horrifying manner. The E.U., U.S., and U.N. could then choose to recognize Myanmar’s <a href="https://thehill.com/policy/international/asia-pacific/543070-exiled-leader-of-myanmars-civilian-government-vows" target="_blank" rel="nofollow">government in exile</a>, the Committee for Representing Pyidaungsu Hluttaw, rather than the junta. If that happens, sanctions are likely to reach not just Myanmar’s generals but anyone doing business with them. For China, that could prove a colossal headache.</p>
+      <p>For the protesters, “inaction is a form of action and noninterference is a form of interference,” said Strangio. “On those grounds you could say, yes, China supported the coup. But I think by Chinese standards, they’ve been fairly critical and standoffish.”</p>
+      <p>Could Beijing be pushed to raise a stronger voice? Demonstrators are certainly urging that. The blanket condemnations of China in many cases come with calls for its government to cut any form of support to Myanmar’s military and to pressure the junta to reinstate democratic rule.</p>
+      <p>Yun, of the Stimson Center, said she doubted that would happen. “I don’t think China sees it as China’s job or responsibility to push back against the coup since this is the internal affairs of Myanmar. The most China could and would do is to push for the military and the civilian side to engage in talks and negotiations. I think China has advocated for it, but has not put heavy pressure on the military for it to happen.”</p>
+      <p>But if its interests continue to be threatened, China may well have little choice, said Strangio.</p>
+      <blockquote>
+        <p>I often draw a parallel to the U.S. claiming it advances principles of democracies. It does when it’s convenient, but it’s also the case that when core national interests are under threat it's easy to come up with rationalizations for diverging. I think China is similar. [Despite its policy] it’s not really beyond interfering. China’s got relations with ethnic armed groups across Myanmar … it has pushed these groups to take part or requested them not to take part in peace negotiations. They've been involved in Myanmar politics for a long time in different ways. But I think if we start to see pipelines threatened more seriously, we may see more involvement of China, especially in the borderlands which are unstable regions. If things continue to deteriorate in the country, we could see outside powers move to secure their various interests. China has a lot of interests and is right next door, so whatever happens in Myanmar has an outsized effect on them.</p>
+      </blockquote>
+      <p><span class="cube"></span></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2021-04-27</time>
+        <a href="https://nodebe4.github.io/oped2/2021-04-27/The-Right-Way-to-Bring-Chinese-STEM-Talent-Back-to/">
+          The Right Way to Bring Chinese STEM Talent Back to the U.S.
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-04-23</time>
+        <a href="https://nodebe4.github.io/oped2/2021-04-23/I-Stand-the-Law-s-Good-Servant,-but-the-People-s/">
+          ‘I Stand the Law’s Good Servant, but the People’s First’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-04-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-04-01/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+          Visually Understanding the Data on Foreign NGO Representative Offices and Temporary Activities
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-03-30</time>
+        <a href="https://nodebe4.github.io/oped2/2021-03-30/Shielding-Corporate-Interests,-Europe-Leaves-NGOs/">
+          Shielding Corporate Interests, Europe Leaves NGOs Working in China by the Wayside
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-04-01/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+            前一篇：Visually Understanding the Data on Foreign NGO Representative Offices and Temporary Activities
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-04-02/%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%BA%9D%E9%80%9A/">
+            後一篇：非同步溝通
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-04-01/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-04-02/%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%BA%9D%E9%80%9A/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-04-23/I-Stand-the-Law-s-Good-Servant,-but-the-People-s/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-04-01/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-04-01/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-04-02/%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%BA%9D%E9%80%9A/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-04-23/I-Stand-the-Law-s-Good-Servant,-but-the-People-s/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-04-01/Visually-Understanding-the-Data-on-Foreign-NGO-Rep/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

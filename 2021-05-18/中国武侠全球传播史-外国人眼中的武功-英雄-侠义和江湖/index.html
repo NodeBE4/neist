@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖
+——
+" />
+    <meta property="og:description" content="
+中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖" />
+    <meta property="twitter:title" content="中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60a37860f32c8269a3c52c16" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60a37860f32c8269a3c52c16" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60a37860f32c8269a3c52c16&text=中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60a37860f32c8269a3c52c16&title=中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60a37860f32c8269a3c52c16&title=中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖&body=
+中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60a37860f32c8269a3c52c16" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60a37860f32c8269a3c52c16&title=中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖&caption=
+中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖&url=https://www.allnow.com/post/60a37860f32c8269a3c52c16" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-18
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 林遥</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60a37860f32c8269a3c52c16" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60a37860f32c8269a3c52c16">中国武侠全球传播史：外国人眼中的武功、英雄、侠义和江湖</a>
+——</p>
+
+<div>
+  <p>犹记得第一次知道武侠小说还有其他语种的译本，是在金庸自己写的“后记”里：“《雪山飞狐》有英文译本，曾在纽约出版之《Bridge》双月刊上连载。”当时即想，金庸小说能够翻译吗？且不说外国人能否理解金庸笔下那些奇功绝艺和具有东方美感的人名和地名，光是中国的一些哲学感念，恐怕都解释未明。</p>
+  <p> </p>
+  <p>2021年3月25日，《射雕英雄传》最后一册英译本《A Heart Divided》（《心灵困境》）正式面世；至此，金庸的代表作《射雕英雄传》已全部译为英文。英译本共分四卷，前三卷分别为《A Hero Born》（《英雄诞生》，2018）、《A Bond Undone》（《未竟盟约，2019）和《A Snake Lies Waiting》（《蛰伏之蛇》，2020）。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a378ffb9c34444a4624c10" src="https://img.allhistory.com/now/2021-05-18/60a378fd9c232e04ae3f195e+L.png" alt="《射雕英雄传》英译本" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《射雕英雄传》英译本
+    </figcaption>
+  </figure>
+  <p>诞生于1957年的《射雕英雄传》，甫一刊出便“洛阳纸贵”，“开谈不讲《射雕传》，纵读诗书也枉然”成为彼时香港读书界一股浪潮。作为奠定金庸“武林盟主”地位的作品，英文版的《射雕英雄传》从版权输出到整套书翻译完成并出版，历时近十年。</p>
+  <p> </p>
+  <p>金庸小说是中国武侠小说的代表，不仅在全世界华人圈内广为流传，除英文译本，还有日文、法文、马来文、印度尼西亚文、泰文、韩文、越南文等翻译文字。其翻译的时间，可与金庸的创作时间同步。</p>
+  <p> </p>
+  <p>金庸小说之外，古龙、梁羽生、卧龙生等武侠小说名家的作品，亦有其他语种译本。虽然与金庸小说相较，不免相形见绌，未可等量齐观，却拓展出了中国武侠小说多语种传播的广阔版图。</p>
+  <p> </p>
+  <p><strong>把金庸武侠译成英文，真正的难点在哪？</strong></p>
+  <p> </p>
+  <p>2012年，从事中文图书版权代理及文学翻译工作多年的郝玉青（Anna Holmwood）决定翻译《射雕英雄传》。郝玉青父亲是英国人，母亲是瑞典人，丈夫是中国台湾人，自己曾在牛津大学和台湾师范大学学习中文，之后长期从事英语、瑞典语和中文的翻译工作。这一译，就历时6年。英文版卷一于2018年3月由英国麦克莱霍斯出版社（MacLehose Press）面向全球出版发行。2014年开始，郝玉青邀请中国香港的张菁参与卷二和卷四的翻译，自己则继续翻译卷三。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37932b9c34444a4624c11" src="https://img.allhistory.com/now/2021-05-18/60a379319c232e04ae3f1960+L.png" alt="译者张菁" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+译者张菁
+    </figcaption>
+  </figure>
+  <p>2019年10月末，我在苏州大学举办的“东吴论剑：杰出校友金庸国际学术研讨会”上结识张菁，闲聊中方知，原来武功场面、人名、地名，并不是最令译者犯难的事。</p>
+  <p> </p>
+  <p>张菁说：“书中许多武功概念源自中国传统思想，所以在附录里介绍了中国武术与哲学的关系，武功虽然虚构，描述方式却来自现实。人名和武功名的翻译，不硬性以音译或意译去呈现，而是从阅读的流畅性，以及名字对读者或角色的意义等多方面考虑。”</p>
+  <p> </p>
+  <p>她举了一些例子：包惜弱和穆念慈的名字，反映了角色性格，借“弱”和“慈”的字义发挥，包惜弱译为Charity Bao，穆念慈为Mercy Mu；而郭靖和杨康的名字，代表 “靖康之耻”，靖康是年号，单独翻译“靖”或“康”意义不大，所以使用音译的方法，在尾注中添加“靖康之耻”的简介；“黄蓉”的“Rong”读来不顺，因为外国人念不出来，便译作“Lotus （莲花）Huang”；黄药师的五位徒弟，都有“风”字，是到桃花岛拜师后改的名，梅超风和陈玄风是卷一的大坏人，给他们取了杀伤力强的名字，前者是Cyclone（旋风）Mei， 后者是Hurricane（飓风）Chen；卷二中其他师兄弟粉墨登场，于是继续以风命名，Tempest（暴风雨）Qu是曲灵风，Zephyr（清风）Lu是陆乘风，跟中文名较贴切。</p>
+  <p> </p>
+  <p>这种翻译再译回中文，曾招来过网友乃至其他专家的吐槽，“黄蓉成了黄莲花”一时流传于网络。</p>
+  <p> </p>
+  <p>但其实从翻译者角度视之，这些并非最重要的问题，在以英语为母语的读者看来，译过来的英文就是英文，不会去想“译回中文后”会是什么意思，关键还在于整体的文学叙事。</p>
+  <p> </p>
+  <p>文学叙事是对人类的精神发展的永恒关怀。法国大革命以后，现代性意味着确定、永久和整体性的消失，人的存在陷入环境的转瞬即逝和历史记忆的不断解离的困境中。金庸小说产生的文学语境，是源于环境的体验，再投射到小说叙事中，如何让西方读者顺畅阅读，并接受这种文学叙事，才是郝玉青与张菁重点的思考。</p>
+  <p> </p>
+  <p>在英译《射雕英雄传》过程中，张菁直言，不怕翻译对白，但最怕连接性的叙述，喝酒吃饭之余掉书袋，说些与主线情节没有关系的事情。这是中国传统小说“书外书”的写法，但英语阅读没有这个习惯。英文小说颇似好莱坞电影，爱情片就是爱情片，不会中间插入搞笑，再来个武打，这样落差太大，不知怎样调动读者阅读的兴趣。</p>
+  <p> </p>
+  <p>在情节的时间线上，《射雕英雄传》原著存在问题。郭靖进关后，在中都遇到“比武招亲”“王府夜战”“长春服输”等事件，书中写丘处机与彭连虎等人约斗，讲得明白：“半年之后，八月中秋，咱们一边赏月，一边讲究武功，彭寨主你瞧怎样？”此时应是二月十五，之后“洪七公收徒”，书里写的时间约有两月，接下来“大闹归云庄”“被困桃花岛”“学习《九阴真经》”“流落荒岛”等故事，等回到临安，大闹皇宫，靖蓉二人密室疗伤，黄蓉猛然间想起：“今日七月初二，靖哥哥要到初七方得痊可。丐帮七月十五大会冬岳州城，事情可急得很了。”</p>
+  <p> </p>
+  <p>张菁说，自己哭笑不得，怎么算时间都不对，“中文的读者注重故事情节的阅读，是看过程，不太在意这种时间逻辑，可是英文的读者不一样，他们看结果，看大脉络，时间进程也是他们阅读的一部分。《西游记》里三藏永远都被救，看点是怎么救，不是救不救，这可以说是东西方故事的区别。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37962ee4d864c459d5bec" src="https://img.allhistory.com/now/2021-05-18/60a379604cd55d1f8948d5fb+L.png" alt="《射雕英雄传》英译本卷一在亚马逊上有超过71%的读者打4星" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《射雕英雄传》英译本卷一在亚马逊上有超过71%的读者打4星
+    </figcaption>
+  </figure>
+  <p>《射雕英雄传》英译本自推出以来，受到了读者广泛好评。通常而言，外国读者会在两大网站撰写评论：一是销售图书的亚马逊，另一家则是专业图书评论网站Goodreads。Goodreads是一家大型英文图书评论网站，特别近似于中国的“豆瓣”，刊登图书介绍、读者评论，并评选年度图书，能够集中反映书籍的接受情况。</p>
+  <p> </p>
+  <p>收集2018年2月到2020年1月份的读者评论，会发现读者近73%的读者都对英文版《射雕英雄传》打了4星及以上，27%左右的读者评价为3星及以下。但是，这不意味着4星及以上评分读者撰写均为积极评价，3星及以下评分读者撰写的均为中性或者消极评价。例如名为Sasha的读者就写道：“我欣赏作者的写作风格，从一开始就以内容吸引读者，并且我对其爱不释手。我向任何想读好书的读者推荐这本书。”（2018）可以看出评价非常积极，但该读者的评分仅为３星。</p>
+  <p> </p>
+  <p>这些评价中，除了介绍故事之外，也有部分读者基于自己的阅读体验来评论， 主要提出自己不理解的内容。这些评论对于考察武侠小说在英语世界的接受程度，倒是颇具参考价值。比如署名Bans hee的读者就说：“我总是不明白荣誉为何如此重要，即使有时候你需要为此付出生命代价。”（2019）</p>
+  <p> </p>
+  <p>英译《射雕英雄传》自卷一出版至今已三年，从英语世界读者的1000余条评论来看，读者总体评价较高，但翻译策略仍有改进空间，如果能够辅以多样化的传播渠道，恐怕中国武侠小说的推广还能再进一步。</p>
+  <p> </p>
+  <p><strong>金庸小说在欧洲的翻译历史及现状</strong></p>
+  <p> </p>
+  <p>在《射雕英雄传》英译前，金庸小说只有《雪山飞狐》《鹿鼎记》和《书剑恩仇录》三部被译为英文公开发表或出版。其中《雪山飞狐》有两个译本，其他两部都只有一个译本。</p>
+  <p> </p>
+  <p>在这四个译本中，《雪山飞狐》最初是美籍华人吴罗宾（Robin Wu）以连载形式刊登在期刊杂志上，也就是金庸在“后记”中提到的版本。由于金庸1976年才开始重新修订《雪山飞狐》，吴罗宾的翻译底本是连载本的《雪山飞狐》，属于节译，译文的前三期覆盖了原文前五章内容，最后一期，一次性覆盖了剩余五章的所有内容。由此推断，译者在后期改变了翻译计划，留下了一个结构失衡的译本。</p>
+  <p> </p>
+  <p>另外三部译本，均以图书的形式出版。</p>
+  <p> </p>
+  <p>1993 年，香港中文大学出版社出版了莫锦屏（Olivia Wai Han Mok）翻译的《雪山飞狐》（Fox Volant of the Snowy Mountain），金庸特别在《雪山飞狐》新世纪修订版“后记”中加了一句“后来香港中文大学出版了莫若娴小姐（Olivia Mok）的译本”。这个版本尽可能翻译原文细节，包括书中的地图、中国武术中武器插画、穴位、故事引言和角色介绍，但基于翻译策略的原因，在翻译时对金庸原文进行了大量改编。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a379a8b9c34444a4624c12" src="https://img.allhistory.com/now/2021-05-18/60a379a74cd55d1f8948d5fc+L.png" alt="莫锦屏（Olivia Wai Han Mok）翻译的《雪山飞狐》（Fox Volant of the Snowy Mountain）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+莫锦屏（Olivia Wai Han Mok）翻译的《雪山飞狐》（Fox Volant of the Snowy Mountain）
+    </figcaption>
+  </figure>
+  <p>1994 年，为配合金庸赴澳洲参加作家节，英国汉学家、学者、翻译家闵福德（Prof.John Minford）翻译了《鹿鼎记》（The Deer and the Cauldron）两个章节。此后，在他任教于香港理工大学期间，完成了全部翻译，于1997 年陆续出版。英译本的《鹿鼎记》，只有三卷本，原著共五卷，也只是原著的五分之三。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a379d1b9c34444a4624c13" src="https://img.allhistory.com/now/2021-05-18/60a379ce4cd55d1f8948d5fd+L.png" alt="闵福德（Prof.John Minford）翻译的三卷本《鹿鼎记》（The Deer and the Cauldron）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+闵福德（Prof.John Minford）翻译的三卷本《鹿鼎记》（The Deer and the Cauldron）
+    </figcaption>
+  </figure>
+  <p>《鹿鼎记》英译本出世，与澳洲学者柳存仁的极力促成密不可分。金庸曾在《鹿鼎记》英译本序言中写道：“此书译本之能成为事矣，由于柳存仁教授热心提议并给予极大鼓励，作者以感激之心，谨与闵福德教授共同将此译本献给我们敬爱的柳教授，庆祝他的八十华诞。”柳存仁是著名汉学家，研究道教史、明清小说及中国古籍，著有《和风堂文集》等，2009年于澳洲逝世，享年92 岁。</p>
+  <p> </p>
+  <p>闵福德原计划还要陆续翻译《连城诀》《侠客行》及《射雕英雄传》，后来却戛然而止。对此，闵福德曾表示，因为与原作者的翻译意向不一致。</p>
+  <p> </p>
+  <p>闵福德翻译时，将《鹿鼎记》诠释为一个“捣蛋鬼”的历险故事，贴合了西方文学中“流浪汉小说”的情节，但对于一直将《鹿鼎记》自视为“历史小说”的金庸而言，实难认同。</p>
+  <p> </p>
+  <p>这里还有个细节需要提到，金庸本人英文极佳。金庸大学毕业后在上海《东南日报》社供职，担任的工作就是记者兼英文翻译，从目前发现的资料来看，第一篇署名本名“查良镛”字样见报的文章，就是1946年12月5日发表在《东南日报》第三版上的《英国最近的外交政策——艾德礼表示支持联合国》，是翻译伦敦《泰晤士报》记者斯蒂特的一篇稿子，署名为“查良镛译”。</p>
+  <p> </p>
+  <p>在香港《大公报》时期，金庸也有大量译稿，并且翻译出版了大仲马的小说《蒙梭罗夫人》。这本书，金庸从英译本译出，译名为《情侠血仇记》。</p>
+  <p> </p>
+  <p>以此观之，金庸对自己小说的英译本，足可以顺畅阅读，并发表意见。</p>
+  <p> </p>
+  <p>1995年，在上海工作的记者晏格文（Graham Earnshaw）翻译的《书剑恩仇录》（The Book &amp; The Sword）在互联网上发表，尽管此书没达到金庸小说的标准篇幅，但长度已四倍于两个《雪山飞狐》译本，更是远超过普通的英文小说。出于英文读者阅读习惯考虑，晏氏对原著进行了节译，原文的20章分成了9个“部分”，除第6部分覆盖了原文4章，其余8个部分基本囊括了原作2章的情节，但晏氏删去了涉及文史典故、人物详情、心理活动和打斗场面等主题的细节性。晏氏费时十年，最后由闵福德夫妇加以修订。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37a0ab9c34444a4624c14" src="https://img.allhistory.com/now/2021-05-18/60a37a084cd55d1f8948d5ff+L.png" alt="晏格文（Graham Earnshaw）翻译的《书剑恩仇录》（The Book &amp; The Sword）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+晏格文（Graham Earnshaw）翻译的《书剑恩仇录》（The Book &amp; The Sword）
+    </figcaption>
+  </figure>
+  <p>追溯这四个译本，其实不难发现，译者初衷大半是用于教学和研究，且由大学出版社出版，并不具有市场性。换言之，在《射雕英雄传》英译本之前，还没有金庸作品的英文全译本。兹此而言，英国麦克洛霍斯出版社的四卷全译本，是西方商业出版社首次推出的中国武侠小说全译本，具有划时代的意义。</p>
+  <p> </p>
+  <p>英语之外，从2004 年至今，共有《射雕英雄传》《神雕侠侣》《天龙八部》《侠客行》四部金庸小说被译为法文陆续出版，出版社均为巴黎的友丰书店（Éditions You Feng Libraire &amp; Éditeur）。友丰书店创立于1976 年，主要以中国文化文学为出版方向，经营者潘立辉祖籍潮州，是出生于柬埔寨的法籍华侨，曾就读于巴黎索邦大学。据《明报月刊》总编辑潘耀明记述，潘立辉最初是因为不满意金庸小说的柬埔寨译本，特意去香港向金庸先生表达将其作品译为法文的意愿，并得到了金庸的支持。</p>
+  <p> </p>
+  <p>金庸小说首部法文译本也是《射雕英雄传》，译者王健育。王健育二十多岁已开始读金庸的武侠小说，是金庸的忠实读者。翻译时，采取逐章翻译，然后请法国朋友阅读，听取意见，如他们觉得难理解或累赘，就进行删节，前后删了大约有十分之一。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37a26ee4d864c459d5bed" src="https://img.allhistory.com/now/2021-05-18/60a37a244cd55d1f8948d601+L.png" alt="金庸手中所持即王健育翻译的法文版《射雕英雄传》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+金庸手中所持即王健育翻译的法文版《射雕英雄传》
+    </figcaption>
+  </figure>
+  <p><strong>金庸小说在韩、日、越南的流行</strong></p>
+  <p> </p>
+  <p>相对于西方世界，金庸自己也在《书剑恩仇录》日译本的《给日本读者序》中说：“我的小说虽有英文版、法文版等，却很难引起西洋人的共鸣。而以朝语、印度尼西亚语、泰语、越南语等东方语言来翻译却能博得好评，这是因为文化背景相似吧。”</p>
+  <p> </p>
+  <p>的确，金庸小说最早的翻译，起步于东南亚等国家的传播。</p>
+  <p> </p>
+  <p>金庸在《笑傲江湖》后记中说：“《笑傲江湖》在《明报》连载之时，西贡的中文报、越文报和法文报有二十一家同时连载。南越国会中辩论之时，常有议员指责对方是‘岳不群’（伪君子）或‘左冷禅’（企图建立霸权者）。”</p>
+  <p> </p>
+  <p>大约1960年，越南徐庆丰翻译金庸《碧血剑》在《同奈日报》上连载。随后，《民越日报》也连载了肥徒的译作《射雕英雄传》（越译《射雕英雄》）、《新报日报》登载了武才陆与海鸥子合译的《神雕侠侣》（越译《神雕大侠》）。</p>
+  <p> </p>
+  <p>1963年，西贡的一家出版社出版了共两集的《白马啸西风》（越译《独霸群雄》），译者三魁。同一年，三魁还翻译了《飞狐外传》（越译《小英雄胡斐》），1964年又推出《雪山飞狐》的越语版。1964年，光明之路出版社出版《倚天屠龙记》（越译《屠龙女侠》）。</p>
+  <p> </p>
+  <p>这些翻译者均出身于书香世家，译作到位，再加上作品本身的魅力，深受读者欢迎。当时，南越读者只要提到武侠小说，第一时间想到的一定是金庸武侠。因此，当时有一种很普遍的说法，就是武侠小说“非金庸莫属也”。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37a4eb9c34444a4624c15" src="https://img.allhistory.com/now/2021-05-18/60a37a4c4cd55d1f8948d602+L.png" alt="部分越南版金庸作品的封面" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+部分越南版金庸作品的封面
+    </figcaption>
+  </figure>
+  <p>金庸小说越南文的最重要译者为寒江燕，原为中学教授，汉语知识深厚，从殖民地时期开始从事翻译工作，专门为法国殖民政府教育部翻译书籍。他从1965年起开始翻译金庸作品，1967年，香港《明报》连载《笑傲江湖》时，寒江燕联系金庸，并得到授权。于是，越南与香港几乎是在同一时间推出《笑傲江湖》。在此期间，西贡共有44家报社，其中就有12家订购了寒江燕的金庸作品译作。每到新一期出版之时，金庸手稿往往会从香港连夜空运到西贡。</p>
+  <p> </p>
+  <p>当时南越民间流传着“无金庸，不卖报”的说法，整个西贡的报社几乎全靠金庸小说以及寒江燕的译著来维持销量。每逢台风，飞往西贡的香港航班均被取消，既没有了金庸的原稿，也没有了寒江燕的译稿，报社只好暂停连载，连载一停，销量就暴跌。</p>
+  <p> </p>
+  <p>金庸小说的韩译始于1972年的《飞狐外传》（韩译《武剑道》）、《笑傲江湖》（韩译《恶风剑》），由汉阳出版社和大兴出版社联合出版发行，原著者被标记为“卧龙生”。在韩国，金庸武侠小说知名度最高、影响力最大的是《英雄门》，这部书其实是“射雕三部曲”韩译后的整合版。在韩国，人们认为“射雕三部曲”所涉历史背景与人物形象存在关联性，通常将其合并阅读。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37a73b9c34444a4624c16" src="https://img.allhistory.com/now/2021-05-18/60a37a719c232e04ae3f1966+L.png" alt="“射雕三部曲”韩译整合版《英雄门》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+“射雕三部曲”韩译整合版《英雄门》
+    </figcaption>
+  </figure>
+  <p>《英雄门》在韩国曾掀起了1980年代的中国武侠小说阅读狂潮，据首尔钟路书店统计，1986年销量最多的翻译小说就是《英雄门》。由于当时版权体系不够完善，再加上译者署名多为笔名，同一作品几经翻译后又被冠以不同书名发售，因此，译本的总体销量较难有准确的统计数字。不过，《英雄门》发行5个月的销量就达到了20余万册，至今已再版20次以上，可见其受欢迎程度之深。</p>
+  <p> </p>
+  <p>基于《英雄门》的效应，金庸其他武侠小说陆续大量翻译为韩文，1986-1989年短短三年间，金庸所有作品均被翻译出版，且都有两个或两个以上的译本。尤其是1994年出版的金庸译作，达19种之多。如此短的时间内，一位外国作家的作品全部译介，可说是韩国文学翻译史上的史无前例。</p>
+  <p> </p>
+  <p>在韩国，金庸被媒体称为“中国的莎士比亚”。2018年，金庸仙逝后，韩国媒体直言“江湖陨落一代豪侠，两国共忆一世英雄”，众多韩国网友纷纷表达悲痛和伤感。为缅怀金庸，金庸去世后第二天，韩国CHING电视台紧急调整节目排单，临时安排播放金庸小说改编的电视剧《射雕英雄传》和《神雕侠侣》。</p>
+  <p> </p>
+  <p>至于金庸小说的日译本，则要迟至20世纪90年代中期。1996年，日本德间书店买下金庸小说全部的日文翻译版权。1996年4月，金庸亲赴日本，与德间书店出版社签订翻译版权协议。德间书店取得版权后，决定由早稻田大学教授冈崎由美担任金庸小说日译本的总负责人。</p>
+  <p> </p>
+  <p>1996年4月，冈崎由美正式接手该项工作，10月《书剑恩仇录》卷一最先翻译完毕，该书在发行时这样说：“由一群剑术与侠义而聚在一起的好汉上演的能撼动黄尘大地的大活剧”。该书出版后很快销售一空，好评如潮，这给了德间书店很大的鼓舞，至1997年1月，短短8个月期间，完成全部四册的翻译出版。随后，德间书店按照计划，出版了全部金庸小说的单行本，同时又出版了携带便利的文库本。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37a92b9c34444a4624c17" src="https://img.allhistory.com/now/2021-05-18/60a37a919c232e04ae3f1968+L.png" alt="冈崎由美翻译的日文版《书剑恩仇录》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+冈崎由美翻译的日文版《书剑恩仇录》
+    </figcaption>
+  </figure>
+  <p>德间书店对金庸小说的出版，不仅注重推介，在版本制作方面也颇下了番功夫。在书中，对主要人物和基本用语加以说明，并附有大量插图，对一些难懂的地名、人名，也按照日本读者的习惯进行翻译，如香香公主翻译为"ウイグル族の美少女"；掌门人被翻译为“总帅”，而“狗杂种”则采取直译加注的方法，文中直接用“狗杂种”、注释中用“のらいぬ”（野狗）来加以说明。</p>
+  <p> </p>
+  <p>为了让日本读者仅看书名就能产生阅读兴趣，各册也没有按照中文卷数来划分，而是按照译者的理解，划分为不同卷，为每卷取了日式名字，比如《射雕英雄传》日译为五卷，分别为：第一卷“沙漠霸者成吉思汗”，第二卷“江南有情”，第三卷“桃花岛的决斗”，第四卷“云南大理帝王”，第五卷“撒马尔罕攻防”。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37aaeb9c34444a4624c18" src="https://img.allhistory.com/now/2021-05-18/60a37aab9c232e04ae3f1969+L.png" alt="日文版《射雕英雄传》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+日文版《射雕英雄传》
+    </figcaption>
+  </figure>
+  <p>早稻田大学法国文学研究者秋山骏曾经对《笑傲江湖》这样评价：“金庸因其武侠小说，被称为汉字圈第一畅销作家。我读完他的第一部作品，就非常佩服。作为大众文学，几乎堪称完美。”日本的科幻作家田中芳树也对金庸小说赞不绝口：“金庸的作品，并非是为了学习‘历史’而读，然而读下去的话，就会自然地接触到中国的历史和人物，被其作品的魅力甚至可以称之为魔力的东西所吸引。”</p>
+  <p> </p>
+  <p>金庸的武侠小说描写乱世，却没有止步于乱世；在“江湖危机”的下面，隐藏着作者对民族生存境遇，以及文化问题的深思。寄托在小说中的呼声或许微弱，却不期然间为天涯散落的“失群者”系上了一根记忆的纽带。</p>
+  <p> </p>
+  <p>根据日本亚马逊网站上读者的评价，在日本最受欢迎的金庸小说前三名为《鹿鼎记》《碧血剑》《天龙八部》，第四至六名为：《射雕英雄传》《飞狐外传》《书剑恩仇录》。最不受欢迎的是《连城诀》《越女剑——杰作武侠中篇集》。</p>
+  <p> </p>
+  <p>这个排名与中文读者的喜好程度不同，尤其是《碧血剑》，在中文读者中很难排到前列。</p>
+  <p> </p>
+  <p>《鹿鼎記〈1〉少年康煕帝》，有读者评价留言：“故事的大体框架与丰臣秀吉比较相似。主人公因为一个机缘巧合，成为清朝皇帝的朋友兼臣下，他克服重重困难，终于取得成功。”</p>
+  <p> </p>
+  <p>这位读者将韦小宝比做丰臣秀吉，颇为有趣。</p>
+  <p> </p>
+  <p>而对《碧血剑》的评价，有读者留言：“我是个时代小说、剑侠小说迷，在读这部作品前对中国武侠小说一无所知。读后才知道，还有这么有意思的小说……读起来觉都舍不得睡。读完后决定把金庸的作品全部找来看看。故事情节很好，登场人物也很有魅力。我喜欢接地气的英雄形象，所以主人公金蛇郎君、青青、何铁手等都是我喜欢的人物。特别是青青，嫉妒心强且任性，但正是这点让人感到可爱。”还有读者留言：“主人公高强的武功令人倾倒。不仅武功高强，而且在任何争斗中都不会伤害对手的那种同情怜悯之心令人感动。平日绝不显示自己高强、非常低调。这正是我理想中的英雄。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37ad0ee4d864c459d5bee" src="https://img.allhistory.com/now/2021-05-18/60a37ace4cd55d1f8948d605+L.png" alt="日文版《碧血剑》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+日文版《碧血剑》
+    </figcaption>
+  </figure>
+  <p>《射雕英雄传〈4〉云南大理帝王》的读者留言：“‘射雕’就是能将鷲射下的男子冒险小说。金庸的作品，多为悲剧小说，但这部小说的主人公诚实阳光，可以成为焦虑的现代人的疗伤剂。黄蓉是主人公的恋人，才色兼备，武艺高超，虽然有残忍的一面，但精灵可爱。特别是这两个人的对话，颇似相声，非常有趣。”</p>
+  <p> </p>
+  <p>从这些留言可以看出，日本读者喜欢金庸小说的理由在于其娱乐性与文学性，故事情节清晰、简练，场面宏大、充满人情、义理，虽然很多虚构的历史场面和人物，但巧妙的故事安排，阅读时仍然颇吸引人。这样的武侠世界，是吸引日本读者的根本原因所在。</p>
+  <p> </p>
+  <p>这种阅读体验，恰是东西方读者的不同之处。</p>
+  <p> </p>
+  <p><strong>其他武侠名家的海外传播</strong></p>
+  <p> </p>
+  <p>东南亚地区，武侠小说成批量被翻译出版的国家，首推印度尼西亚和越南。</p>
+  <p> </p>
+  <p>据苏尔梦教授《中国传统小说在亚洲》一书中介绍，20世纪30年代，就有中国武侠小说在印尼报纸如《新报》、《镜报》上发表， 有些则以小型多卷本形式出版：“全部刊载武侠小说的第一种杂志出现于1930 年，是著名翻译家陈德和在万隆创办的，初名《小说宝库》， 四年后（1933）改名《武侠小说》， 编者的意图是昭然若揭的。1931年，另一位翻译家何乃全在打横创办了一份杂志……汉文刊名为《剑侠小说月刊》……1936年至1940年期间出了不下四种专门刊载武侠小说译文的杂志：《武侠》，打横出版（1936-1942），《武侠与神怪小说》， 巴达维亚出版（1936-1937）；《义侠》，打横出版（1937-1942）和《武侠精神》，绒纲出版（1938-1940）。”</p>
+  <p> </p>
+  <p>这些被翻译的中国武侠小说在专门报刊上连载，小说原作者大约有四十余人，包括了民国时期旧派武侠作家白羽、还珠楼主、平江不肖生、顾明道、陆士谔等人。</p>
+  <p> </p>
+  <p>到1942年，日占荷属东印度群岛，中国武侠小说在印度尼西亚的风行时期才暂告结束。</p>
+  <p> </p>
+  <p>二战结束后，印尼独立，政府以法律形式规定印尼语为“国语”，出版物均要以印尼语为规范。是以在20世纪50年代，港台新派武侠小说兴起后，先是梁羽生的小说进入印尼，1958年《新报》连载梁羽生的《塞外奇侠传》（印译《草原英雄》），翻译者颜国梁；《竟报》则连载金庸小说《书剑恩仇录》（印译《一个皇帝的秘密》），翻译者黄金长；同年，黄金长翻译《碧血剑》（印译《金蛇剑》）在《竟报》属下的印尼文《明星周刊》连载。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37b204e878e0826621f9f" src="https://img.allhistory.com/now/2021-05-18/60a37b1f4cd55d1f8948d606+L.png" alt="印尼版《塞外奇侠传》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+印尼版《塞外奇侠传》
+    </figcaption>
+  </figure>
+  <p>此后，出版商也加入中国武侠小说出版行列，先后出版了梁羽生的《萍踪侠影录》《白发魔女传》《七剑下天山》等作品，金庸的《倚天屠龙记》《神雕侠侣》《天龙八部》《射雕英雄传》和《雪山飞狐》等作品，都曾被翻印。</p>
+  <p> </p>
+  <p>印尼另一位翻译家曾荧球，在20世纪60年代后期加入武侠小说翻译队伍，至今已翻译了大约70 部作品，其中大部分是古龙、秦红、独孤红和陈青云等武侠小说作家的作品。曾荧球的名字同古龙的小说联系在一起，因而蜚声印尼文坛。</p>
+  <p> </p>
+  <p>版权法在印尼当时不受重视，武侠小说的翻译，都没有附上原作者名字，只署译者名。20世纪50至70年代，中国武侠小说大量发表时，读者并不知金庸、古龙、梁羽生；直到80年代，版权法受到重视，这些作品重版时，原作者的名字才在书上出现。</p>
+  <p> </p>
+  <p>20世纪60年代，金庸小说在越南大受追捧，古龙小说也被引进到了西贡。但与金庸相比，古龙小说在越南的传播并不是很顺利，其因有二：一是，这一时期古龙刚出道，其作品影响力不能与金庸相比；二是，金庸小说的翻译队伍实力雄厚，远胜古龙小说的翻译者。</p>
+  <p> </p>
+  <p>20世纪70年代开始，颜国梁开始翻译古龙的作品《绝代双骄》，达58册，受到评论界高度评价。随后，古龙《楚留香》第一部以及《风云第一刀》（越译《龙虎风云》）也受到读者欢迎。</p>
+  <p> </p>
+  <p>梁羽生在梁、金、古三人中出道最早、出名最早，小说却进入越南最晚，不过他的小说《白发魔女》《七剑下天山》《萍踪侠影》多次再版，仍然畅销。</p>
+  <p> </p>
+  <p>同一时期，中国港台其他作者的武侠小说也被大量译介为越南文。据阮友哲在《一本如此珍贵的书》书中统计，当时有六家出版社出版了卧龙生的五部作品，起码有六家出版社出版诸葛青云的十部作品。</p>
+  <p> </p>
+  <p>1975 年，越南统一，文艺政策收紧，迨至1990年后，胡志明市的一些私人出版社开始筹划再版1975年以前出版的文学作品，其中不少是武侠小说。目前，金庸、古龙作品几乎已全部被译成越南语并多次再版。此外，卧龙生、陈青云、温瑞安、黄易以及中国“大陆新武侠”作家小椴、萧鼎、凤歌、步非烟、苍月的作品也也陆续译介到越南，并掀起了一次次武侠热。</p>
+  <p> </p>
+  <p>东亚地区，古龙小说直到冈崎由美继1998年的金庸小说翻译后，才陆续主持翻译了古龙的《楚留香之蝙蝠传奇》（日译《楚留香 蝙蝠伝奇》）、《欢乐英雄》（日译《歓楽英雄》）、《绝代双骄》（日译《マーベラス·ツインズ》）、《多情剑客无情剑》（日译《小李飛刀シリーズ多情剣客無情剣》）、《边城浪子》（日译《辺城浪子》）、《白玉老虎》（日译《聖白虎伝》）、《陆小凤传奇》（日译《金鵬王朝 陸小鳳伝奇シリーズ1》）、《绣花大盗》（日译《繍花大盗 陸小鳳伝奇シリーズ2》）、《决战前后》（日译《決戦前後 陸小鳳伝奇シリーズ3》）九部，但销量并不能与金庸相比。目前在日本网络上仅能找到寥寥数条评价，其中一位读者这样认为：“金庸对女性角色的命名很重视，而古龙对男性角色的命名更在意，两位都很好地以经典为书籍来命名。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37b414e878e0826621fa0" src="https://img.allhistory.com/now/2021-05-18/60a37b404cd55d1f8948d607+L.png" alt="日文版《陆小凤传奇》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+日文版《陆小凤传奇》
+    </figcaption>
+  </figure>
+  <p>造成古龙小说日译推广不如金庸小说的原因，冈崎由美在采访中曾言，古龙小说的版权归属不清，至少三家以上出版社分别在谈授权合同，无法制定系列的出版计划。如果楚留香和陆小凤，不能集中在一家出版社出现，读者的反应也会不一样。</p>
+  <p> </p>
+  <p>与日本一水之隔的韩国，武侠小说流行的情况大不相同。韩国与中国大陆尚未建交前，与台湾的关系较为密切。据李致洙《中国武侠小说在韩国的翻译介绍与影响》一文所述，第一部被译为韩文的武侠小说是台湾武侠作家尉迟文的《剑海孤鸿》（韩译《情侠志》），由金光洲翻译，发表在1961年6月15日至1963年11月24日的《京乡新闻》，后来集结成书。1966年，金一平翻译卧龙生的《玉钗盟》（韩译《群侠志》），由此掀起了韩国的“卧龙生热”，卧龙生的武侠小说开始在韩国大为流行，翻译者甚众，甚至一书有好几本不同译作，如《无名箫》就分别有康湖、金刚、金修国等人的译本，彼时“卧龙生”这三个字对喜好武侠小说的韩国读者来说，几乎成为“中国武侠小说”的代名词。</p>
+  <p> </p>
+  <p>卧龙生的声名远播，据台湾师范大学林保淳教授回忆，1970年代他所接触的韩国留台学生，几乎每一个人都知道有卧龙生，反而对金庸未必知晓，可见其风靡程度，这也解释了金庸小说最初登陆韩国，署名为“卧龙生”的原因。</p>
+  <p> </p>
+  <p>武侠小说中眼花缭乱的武功招式和纷繁复杂的文史典故，让西方译者普遍畏难，但韩文译者却能相对容易地进行语言转换，也能够相对轻松地被韩国读者解读和接受。因为汉字作为中华文化的象征，自传入朝鲜半岛之后，一直为其所用；直至今天，汉字仍然是韩国书写体系中不可或缺的重要辅助性文字。韩国人大多具有较强的汉文解读能力，比如武侠小说中的“六脉神剑”“五虎断门刀”“无量剑法”“罗汉刀法”“降龙十八掌”“一阳指”等术语以及“越女采莲”“八阵图困陆逊”“烽火戏诸侯”等文史典故，在韩文翻译过程中，均辅以繁体汉字标注，韩国读者通过汉字就能较为准确地进行解读，减少了相关“文化信息”的流失。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37b644e878e0826621fa1" src="https://img.allhistory.com/now/2021-05-18/60a37b624cd55d1f8948d609+L.png" alt="古龙《小李飞刀》的韩文版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+古龙《小李飞刀》的韩文版
+    </figcaption>
+  </figure>
+  <p><strong>中国武侠催生出的各国武侠创作</strong></p>
+  <p> </p>
+  <p>纵观中国武侠小说在东亚地区的翻译传播，还有一个现象不能不提，即：中国武侠小说催生了该国家使用本国语言创作武侠小说。</p>
+  <p> </p>
+  <p>印度尼西亚翻译中国武侠小说的同时，出现一批以印尼为背景的武侠小说作家。最著名的作家有S·哈地、明达佐、许平和等人。许平和的印尼语武侠小说有《白龙宝剑》《红蛇剑》《白鹤的故事》《一条神龙》《快刀柔情》等100多部。</p>
+  <p> </p>
+  <p>这些作品中常把中国背景改为印尼，人物形象既有华人也有非华人，成为有别于中国武侠小说的“印尼武侠小说”。但是，这些“印尼武侠小说”是在中国武侠小说影响下产生的，其中的背景、人物形象，乃至语言，无不打上了中国武侠小说的烙印。20世纪80年代就有论者指出，在印尼，武侠小说“印尼化”是公认的；不过，不管如何创新、如何虚构、如何“印尼化”，与中国武侠小说的渊源仍显而易见，“往往可以看来金庸、梁羽生、倪匡以及古龙的影子”。 </p>
+  <p> </p>
+  <p>由于中国武侠小说不可撼动的地位，越南作家也是以模仿为主要创作手段。20世纪70年代，当时越南武侠小说翻译家梦平山，就把自己创作的故事写成类似原著的续书，其代表作《古剑奇书》《叶家剑》《黑骑草寇》《红旗飞扬》，流行一时，后世学者称为“越南武侠野史小说开创者”。</p>
+  <p> </p>
+  <p>越南还有李佛山的武侠小说也特别受读者欢迎。李佛山亦是中国武侠小说的翻译家，最初负责《前线日报》武侠小说点评专栏，后来亲自执笔开始创作。他的早期武侠小说，在很多方面明显借鉴金庸小说中的元素和桥段，比如其《龙虎争雄》中的德州，因奇遇修成“十力指禅”，此指法能发出剑气。而德州的剑气与《天龙八部》中段誉的六脉神剑一样时灵时不灵。再者，李佛山越南武侠世界中也存在着丐帮，尽管与中国武侠小说的丐帮相比，帮会条规等并不一样，组织形式却趋同。伴随着创作深入，李佛山后期的武侠小说，结构清晰、语言朴素、流畅生动，以禅学及佛学为思想支撑，把武侠与历史结合在一起，巧妙引入越南真实历史人物，使武侠形象更为本土化。</p>
+  <p> </p>
+  <p>韩国武侠小说走的也是从翻译、改写到模仿创作的路子。1961年5月，《京乡新闻》登载金光洲翻译的武侠小说《情侠志》，原作是台湾武侠作家尉迟文的《剑海孤鸿》。经比较就会发现，尉迟文的《剑海孤鸿》只有不到50页的厚度，而经过金光洲翻译后，居然变成连载810回的长篇武侠小说。因此可以看出，金光洲在原作基础上所做的“改写”远远大于“翻译”。</p>
+  <p> </p>
+  <p>在此基础上，金光洲继续改译中国的武侠小说。他此后翻译了沈绮云的《天阙碑》（韩译《飞虎》）、左大藏的《古剑吟》（韩译《黑龙传》）、伴霞楼主的《独步武林》（韩译《狮子吼》）。</p>
+  <p> </p>
+  <p>金光洲没有原创作品，皆为中国武侠小说原作故事内容的基础上进行大幅度的修正和扩写，但是通过他的改写、扩写，加入了很多体现韩国传统文化、符合韩国人审美心理的情节，以及符合韩国读者阅读口味的内容。这些武侠小说获得了极高的人气，受到热烈追捧。由此，金光洲被看作创作韩国武侠小说的先驱。</p>
+  <p> </p>
+  <p>到20世纪70年代，已经出现韩国作家原创的武侠小说，比如1969年初出版的成杰的《雷剑》、1970年出版的赵丰衍的《少年剑客马亿》、1971年出版的李文轩的《豪杰黑龙》等。由于对武侠人物的热爱，韩国民间历史上的假想侠义人物林巨正被人们热炒，赵永岩、金勇在、许文宁等人对林巨正的故事进行小说化的重写。宋志英、赵行日、刘炫宗、崔仁旭、高友英、方学萁等人，以这个人物为原型创作小说。</p>
+  <p> </p>
+  <p>金庸小说进入韩国后，韩国武侠小说质量又有了明显提高，不再围绕着林巨正这样的假想侠义人物做文章，开始讲述虚构江湖世界中的武林英雄故事，代表作品有金炳淙的《刀和露》《大剑子》、金刚的《渤海之魂》、剑弓人的《中原日志》、庾河的《武林日记》、金英夏的《武侠学生运动》、司马达的《大道无门》《武林经营》、李仁石的《侠客记》等。</p>
+  <p> </p>
+  <p>进入21世纪以来，与中国“大陆新武侠”发展相似，韩国武侠小说也与网络创作相结合，如龙大云、左柏等人的作品，最初在网上连载，继而进入出版市场，又陆续改编为网络游戏，取得巨大成功。</p>
+  <p> </p>
+  <p>韩国学者李晋源（韩国综合艺术学校传统艺术院助理教授）所写的《韩国武侠小说史》（2008）中，就认为韩国武侠小说史几乎就可以视为中国武侠小说史的一种延伸。</p>
+  <p> </p>
+  <p><strong>中国武侠的成功输出，需要提炼全人类的共同价值</strong></p>
+  <p> </p>
+  <p>伴随着互联网的兴起，2014年，位于北美网络文学翻译网站“武侠世界”建立，热心的网民开始将中国的网络小说翻译介绍到国外，这其中包含金庸、古龙的武侠小说，更多的是修仙和玄幻，不同于“学院派”的翻译，网站上的翻译，更重故事情节的推进，是人工翻译和智能翻译的结合。“武侠世界”网站的读者地域分布为北美第一，占据24%，菲律宾、印尼分别占比8%和6%，全球100多个国家和地区的读者来这里寻找他们喜欢的中国网络小说，读者总量3000万左右，平均月浏览量约1亿次，日活跃用户约30万人次。</p>
+  <p> </p>
+  <p>一部文学作品的生命可以短暂，亦可长久，它或许刊登在报纸的某个角落，迅速被人遗忘，亦或在世人的关注中，从流行走向经典。</p>
+  <p> </p>
+  <p>就《射雕英雄传》而言，英译本在英国出版后，吸引了不少欧洲的出版社关注。张菁说，现已在芬兰、匈牙利和葡萄牙，在英文版的基础上，以本地语言出版，未来几年还会在德国、意大利、西班牙、罗马尼亚、波兰、巴西以本地语言出版。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img data-id="60a37ba24e878e0826621fa2" src="https://img.allhistory.com/now/2021-05-18/60a37bb94cd55d1f8948d60c+L.png" alt="《射雕英雄传》英译本内页" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《射雕英雄传》英译本内页
+    </figcaption>
+  </figure>
+  <p>完成《射雕英雄传》后，郝玉青和张菁已经进入《神雕侠侣》的翻译，张菁目前头疼的是《神雕侠侣》复杂的男女关系问题，“《射雕》这一点上没啥问题，而《神雕》和《倚天》的问题就比较大，谁爱谁其实没关系，问题在于一男多女，现在流行女性自主的角色，都喜欢谈独立性，不能以男主光环解释所有。当所有女角都喜欢男主角，这个故事的世界观就出现问题。五六十年代，甚至更近代的流行小说，所有超级英雄都有一大堆女粉，但今天的读者不会包容。你没法知道人家会不会就抓住这点不放，推翻作者所有成就。”</p>
+  <p> </p>
+  <p>在张菁看来，推动金庸小说翻译，并非一桩独立事件，不仅是因为金庸在所有中国人心目中的重要地位，也因为此前有许许多多前辈们的努力，从文学翻译到影视作品、武术教学等，都勾起了西方读者和观众的兴趣，为翻译作品打下了扎实的基础。</p>
+  <p> </p>
+  <p>根据书目数据商鲍克公司统计，美国出版市场上，翻译图书只有区区3%，其中文学作品就更少。西方文化的主导，限制了发展中国家翻译作品的对外传播。中国武侠小说要想成功输出，还必须提炼出人类文化的主题，以此应对中西文化不平等的现实状况。</p>
+  <p> </p>
+  <p>侠义精神是中国武侠小说的永恒主题，虽然代表的是中国传统道德，但这种正义感、责任感和荣誉感却是人性中的真善美，是超越国界的全人类共同的追求。因此，武侠小说多语种翻译，不仅应该复制悬念迭出的故事，传递中国的武术传奇，更应凸显中国武侠小说的核心——侠义精神，也许这才是武侠小说跨越语言和国界，走入国际文学视域的出发点、立足点和归宿点。</p>
+  <p> </p>
+  <p>作为大众化的读物，武侠小说是虚构的，但人物思想、心理、感情是中国故事固有的基础，当异域读者接受了这个基础，进而也就接受了关于武功、侠义精神、历史语境的设定，对中国文化才有了进一步的亲近感。武侠小说已走出国门，向更多不同地域、不同语言的人讲述着古老的东方梦幻，它曾饱受非议，却在质疑声中收获一代又一代读者。</p>
+  <p> </p>
+  <ul>
+    <li>（感谢山东师范大学李光贞教授、苏州大学汤哲声教授、台湾师范大学林保淳教授、越南阮竹荃先生为本文提供的资料和相关文章。）</li>
+  </ul>
+  <p> </p>
+  <blockquote>
+    <p>林遥系作家、编剧、非遗项目“京味评书”传人，著有学术专著《中国武侠小说史话》、长篇小说《京城侠谭》、数字电影剧本《八卦掌之潜龙勿用》等。</p>
+  </blockquote>
+  <p> </p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-19</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-19/%E5%8E%86%E5%8F%B2%E5%AD%A6%E5%AE%B6%E7%BA%A6%E7%BF%B0-%E8%BE%BE%E5%B0%94%E6%96%87-%E8%84%86%E5%BC%B1%E7%9A%84%E4%B8%96%E7%95%8C%E4%BD%93%E7%B3%BB%E8%83%8C%E5%90%8E-%E6%98%AF%E5%BC%BA%E6%9D%83%E4%B9%8B%E9%97%B4%E7%9A%84%E6%9A%82%E6%97%B6%E5%A6%A5%E5%8D%8F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          历史学家约翰·达尔文：脆弱的世界体系背后，是强权之间的暂时妥协丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-18</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-18/%E6%88%98%E7%81%AB%E4%B8%AD%E6%9C%B1%E5%88%A9%E5%AE%89-%E5%B7%B4%E6%81%A9%E6%96%AF%E8%8E%B7%E9%A2%81%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7%E6%96%87%E5%AD%A6%E5%A5%96-%E7%A7%B0%E5%B8%8C%E6%9C%9B%E6%98%8E%E5%B9%B4%E8%83%BD%E4%BA%B2%E8%B5%B4%E9%A2%86%E5%A5%96/">
+          战火中朱利安·巴恩斯获颁耶路撒冷文学奖，称希望明年能亲赴领奖
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-17/%E7%88%B1-%E6%AD%BB%E4%BA%A1%E5%92%8C%E6%9C%BA%E5%99%A8%E4%BA%BA-%E5%A4%AA%E9%98%B3%E7%85%A7%E4%B8%8D%E5%88%B0%E7%9A%84%E5%9C%B0%E6%96%B9-%E4%BD%A0%E7%9B%B8%E4%BF%A1%E6%9C%89-%E4%BA%BA%E5%BF%83-%E8%BF%99%E5%9B%9E%E4%BA%8B%E5%90%97/">
+          爱，死亡和机器人：太阳照不到的地方，你相信有“人心”这回事吗？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-17</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-17/%E9%A9%AC%E5%85%8B-%E5%90%90%E6%B8%A9%E5%9C%A8%E7%BE%8E%E5%9B%BD%E8%AF%BE%E5%A0%82-%E5%9B%A0%E6%9C%97%E8%AF%BB%E6%97%B6%E5%87%BA%E7%8E%B0%E6%AD%A7%E8%A7%86%E6%80%A7%E8%AF%8D%E6%B1%87-%E6%95%99%E6%8E%88%E8%A2%AB%E4%B8%BE%E6%8A%A5%E8%A7%A3%E9%9B%87/">
+          马克·吐温在美国课堂：因朗读时出现歧视性词汇，教授被举报解雇
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-17/%E4%BB%8E%E9%9B%A8%E4%BC%9E%E5%88%B0%E6%BF%80%E5%85%89-%E6%B0%94%E7%90%83%E5%88%B0%E7%94%B5%E5%8A%A8%E5%B7%A5%E5%85%B7-%E7%A4%BA%E5%A8%81%E5%8F%82%E4%B8%8E%E8%80%85%E6%8C%87%E5%8D%97-5-%E6%88%98%E6%9C%AF%E5%99%A8%E5%85%B7%E6%B1%87%E6%80%BB-iYouPort/">
+            前一篇：从雨伞到激光、气球到电动工具：示威参与者指南（5）；战术器具汇总 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-18/A-Letter-to-My-Editors-and-to-China-s-Censors/">
+            後一篇：A Letter to My Editors and to China’s Censors
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-17/%E4%BB%8E%E9%9B%A8%E4%BC%9E%E5%88%B0%E6%BF%80%E5%85%89-%E6%B0%94%E7%90%83%E5%88%B0%E7%94%B5%E5%8A%A8%E5%B7%A5%E5%85%B7-%E7%A4%BA%E5%A8%81%E5%8F%82%E4%B8%8E%E8%80%85%E6%8C%87%E5%8D%97-5-%E6%88%98%E6%9C%AF%E5%99%A8%E5%85%B7%E6%B1%87%E6%80%BB-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-18/A-Letter-to-My-Editors-and-to-China-s-Censors/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-18/%E6%88%98%E7%81%AB%E4%B8%AD%E6%9C%B1%E5%88%A9%E5%AE%89-%E5%B7%B4%E6%81%A9%E6%96%AF%E8%8E%B7%E9%A2%81%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7%E6%96%87%E5%AD%A6%E5%A5%96-%E7%A7%B0%E5%B8%8C%E6%9C%9B%E6%98%8E%E5%B9%B4%E8%83%BD%E4%BA%B2%E8%B5%B4%E9%A2%86%E5%A5%96/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-17/%E7%88%B1-%E6%AD%BB%E4%BA%A1%E5%92%8C%E6%9C%BA%E5%99%A8%E4%BA%BA-%E5%A4%AA%E9%98%B3%E7%85%A7%E4%B8%8D%E5%88%B0%E7%9A%84%E5%9C%B0%E6%96%B9-%E4%BD%A0%E7%9B%B8%E4%BF%A1%E6%9C%89-%E4%BA%BA%E5%BF%83-%E8%BF%99%E5%9B%9E%E4%BA%8B%E5%90%97/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-17/%E4%BB%8E%E9%9B%A8%E4%BC%9E%E5%88%B0%E6%BF%80%E5%85%89-%E6%B0%94%E7%90%83%E5%88%B0%E7%94%B5%E5%8A%A8%E5%B7%A5%E5%85%B7-%E7%A4%BA%E5%A8%81%E5%8F%82%E4%B8%8E%E8%80%85%E6%8C%87%E5%8D%97-5-%E6%88%98%E6%9C%AF%E5%99%A8%E5%85%B7%E6%B1%87%E6%80%BB-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-18/A-Letter-to-My-Editors-and-to-China-s-Censors/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-18/%E6%88%98%E7%81%AB%E4%B8%AD%E6%9C%B1%E5%88%A9%E5%AE%89-%E5%B7%B4%E6%81%A9%E6%96%AF%E8%8E%B7%E9%A2%81%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7%E6%96%87%E5%AD%A6%E5%A5%96-%E7%A7%B0%E5%B8%8C%E6%9C%9B%E6%98%8E%E5%B9%B4%E8%83%BD%E4%BA%B2%E8%B5%B4%E9%A2%86%E5%A5%96/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-17/%E7%88%B1-%E6%AD%BB%E4%BA%A1%E5%92%8C%E6%9C%BA%E5%99%A8%E4%BA%BA-%E5%A4%AA%E9%98%B3%E7%85%A7%E4%B8%8D%E5%88%B0%E7%9A%84%E5%9C%B0%E6%96%B9-%E4%BD%A0%E7%9B%B8%E4%BF%A1%E6%9C%89-%E4%BA%BA%E5%BF%83-%E8%BF%99%E5%9B%9E%E4%BA%8B%E5%90%97/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

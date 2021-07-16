@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>妻妾成群的道士与和尚：元代宗教史的另一个侧面 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+妻妾成群的道士与和尚：元代宗教史的另一个侧面
+——
+" />
+    <meta property="og:description" content="
+妻妾成群的道士与和尚：元代宗教史的另一个侧面
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="妻妾成群的道士与和尚：元代宗教史的另一个侧面" />
+    <meta property="twitter:title" content="妻妾成群的道士与和尚：元代宗教史的另一个侧面" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60efe5f8b050952faa79b3d3" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60efe5f8b050952faa79b3d3" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60efe5f8b050952faa79b3d3&text=妻妾成群的道士与和尚：元代宗教史的另一个侧面&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60efe5f8b050952faa79b3d3&title=妻妾成群的道士与和尚：元代宗教史的另一个侧面" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60efe5f8b050952faa79b3d3&title=妻妾成群的道士与和尚：元代宗教史的另一个侧面" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=妻妾成群的道士与和尚：元代宗教史的另一个侧面&body=
+妻妾成群的道士与和尚：元代宗教史的另一个侧面
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60efe5f8b050952faa79b3d3" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60efe5f8b050952faa79b3d3&title=妻妾成群的道士与和尚：元代宗教史的另一个侧面&caption=
+妻妾成群的道士与和尚：元代宗教史的另一个侧面
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=妻妾成群的道士与和尚：元代宗教史的另一个侧面&url=https://www.allnow.com/post/60efe5f8b050952faa79b3d3" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>妻妾成群的道士与和尚：元代宗教史的另一个侧面</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-07-15
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 陈高华</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60efe5f8b050952faa79b3d3" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60efe5f8b050952faa79b3d3">妻妾成群的道士与和尚：元代宗教史的另一个侧面</a>
+——</p>
+
+<div>
+  <p><strong>江南豪霸：纵情姬爱的龙虎山张天师</strong></p>
+  <p>元代和尚、道士有专门的户籍，称为僧户、道户。和尚、道士是出家人，一般不能娶妻。但事实正好相反，元代和尚、道士娶妻是很普遍的现象，有的还有妾。例如，忽必烈时代江南释教总统杨琏真伽便娶妻生子，他的儿子杨完普还在朝廷中担任要职。道教正一派领袖龙虎山张天师不但有妻（这是正一派许可的），而且“纵情姬爱，广置田庄，……乃江南一大豪霸也”。 “高昌僧恃丞相威，违法娶妇南城”， “高昌”指畏兀儿，当时畏兀儿人信仰佛教；“丞相”即铁木迭儿；“南城”指大都南城。这条记载是说畏兀儿僧人依仗丞相铁木迭儿的势力，公然在大都南城娶妇。</p>
+  <p>元末湖广行省“胡僧持官府柄，横甚”，其妻妾有十有八人之多。 “胡僧”应指来自吐蕃（今藏族居住地区）的僧人。嘉兴路（路治今浙江嘉兴）玄妙观住持提点杨立之“畜妻养子，及典雇张十四娘等三名，通房使唤”。当时“典雇”婚在江南盛行，即男方出钱雇佣女性为妻、妾或婢，有一定的期限。“通房”意为与主人有性关系。道士杨立之有妻，还要典雇三名女子为自己提供性服务。元末陶宗仪的笔记《南村辍耕录》中有一条记载说：“嘉兴白县尹得代，过姚庄访僧胜福林，间游市井间，见妇人女子皆浓妆艳饰，因问从行者。或答云： 风俗使然。少艾者僧之宠，下此则皆道人所有。”此处“道人”指寺院中工人。可知，寺院中从上到下娶妻成风。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-15/60efe60b4cd55d54dd5dbc3c+L.png" data-id="60efe61c904b8c02a16a39cf" alt="《南村辍耕录》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《南村辍耕录》
+    </figcaption>
+  </figure>
+  <p>需要说明的是，元代僧道拥有妻妾有两种情况： 一种是出家后通过各种方式娶女性妻妾；另一种是原来已有家庭，因逃避赋税差役的负担，便出家为僧、道，实际上“则它房子里与媳妇孩儿每一处住的也有”。</p>
+  <p>内地如此，河西民族杂居地区此风更盛。河西即原西夏政权辖地，相当于今宁夏和甘肃大部。元代河西居民以党项（原西夏的主体民族）为主，兼有吐蕃、畏兀儿等。延佑元年（1314）十二月，朝廷中对河西僧人是否应当差发发生争议。出身藏传佛教的帝师要求免除河西僧人赋税差役，中书省则认为，“那里百姓稀少，又兼那和尚每多半有妻子，与其余和尚每不厮似有”，也就是说不能免除。结果皇帝裁定，“有妻室的每”要承担赋税差役，“无妻室的和尚每休教当者”。 “多半有妻子”，可知其普遍。上述杨琏真伽、杨完普父子便是河西僧人。名诗人马祖常有一首《河西歌效长吉体》：“贺兰山下河西地，女郎十八梳高髻。茜根染衣光如霞，却召瞿昙作夫婿。” “瞿昙”即僧人。马祖常的诗是写实的。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-15/60efe63e9c232e01c17d2649+L.png" data-id="60efe63f904b8c02a16a39d1" alt="《元代佛教史论》，陈高华著，上海古籍出版社2021年2月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《元代佛教史论》，陈高华著，上海古籍出版社2021年2月版
+    </figcaption>
+  </figure>
+  <p>元代统治者崇尚佛教、道教，僧、道享有免当赋役的特权，又不守清规，娶妻生子，很自然地为社会各方面非议。有元一代，不断有人向朝廷建议，要求对有妻僧道加以取缔。比较著名的如：</p>
+  <p>成宗大德二年（1298），郑介夫向朝廷上《太平策》，其中谈到僧、道势力过盛，涉及僧、道娶妻妾问题：“学释老者，离嗜欲，去贪嗔，异乎尘俗可也。可艳妻秾妾，污秽不羞，夺利争名，奔竞无已，虽俗人所不屑为，甚非僧、道之宜然也。僧、道之盛，莫盛今日，而僧、道之弊，亦莫盛今日。朝廷若不稍加裁抑，适所以重其他日之烈祸也。”可知，此时僧、道娶妻妾业已成风。</p>
+  <p>元武宗至大三年（庚戌，1310），监察御史张养浩上《时政书》，列举当时十大弊端：“九曰： 异端太横。”他说：“臣见方今释、老二氏之徒，蓄妻育子，饮醇啖腴，萃逋逃游惰之民，为暖衣饱食之计，使吾民日羸月瘠，曾不得糠秕蓝缕以实腹盖体焉。”“昔世祖皇帝尝欲沙汰天下僧、道，有室者籍而民之，后夺于众多之口，寻复中止，至今识者深惜焉。古人谓十农夫之耕，十蚕妇之织，不能衣食一僧，盖言其蠹财害民之甚也。……伏望自今谕旨省臣，凡天下有夫有室僧尼道士女冠之流，移文括会，并勒为民，以竟世祖皇帝欲行未及之睿意，岂不可为旷代未闻之盛典也哉！”</p>
+  <p>仁宗皇庆元年（1312）江浙行省上报中书省的一件文书中说：“各处住持耆旧僧人，将常住金谷掩为己有，起盖退居，私立宅舍，开张解库，饮酒茹晕，畜养妻妾，与俗无异。”泰定元年（1324），中书平章政事张珪等人上疏“极论当世得失”，其中两处涉及僧、道娶妻问题。一处说僧徒作醮祠佛事：“凡所供物，悉为己有，布施等钞，复出其外，生民脂膏，纵其所欲，取以自利，蓄养妻子，彼既行不修洁，适足亵慢天神，何以要福！”另一处说：“僧、道出家，屏絶妻孥，盖欲超出世表，是以国家优视，无所徭役，且处之宫寺。宜清净絶俗为心，诵经祝寿。比年僧、道往往蓄妻子，无异常人，如蔡道泰、班讲主之徒，伤人逞欲、坏教干刑者，何可胜数。俾奉祠典，岂不亵天渎神。臣等议： 僧、道之畜妻子者，宜罪以旧制，罢遣为民。”</p>
+  <p>至正七年（1347），左丞相“太平请僧、道有妻子者勒为民以减蠹耗”。由以上奏疏和文书，可以看出有元一代僧、道娶妻成风，在社会上影响极坏，一直是人们关注并在朝廷中反复讨论的问题。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-15/60efe65f4cd55d54dd5dbc3e+L.jpg" data-id="60efe6639b2d825085c2663f" alt="元代道教壁画《永乐宫壁画》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+元代道教壁画《永乐宫壁画》
+    </figcaption>
+  </figure>
+  <p><strong>元朝统治者对僧道娶妻的整治</strong></p>
+  <p>元朝历代统治者都有意对僧、道娶妻现象加以整治。世祖至元七年（1270）九月：“敕僧、道、也里可温有家室不持戒律者，占籍为民。”这是现在所知元朝政府有意清理有妻僧、道的最早记载，其处理办法是勒令还俗。至元十九年（1282），管理佛教的机构诸路释教都总统所的一件文书中说：“各路僧人，往往求娶妻室，败坏教门。”为此，中书省礼部规定：“除至元七年籍定有妻室，亡殁不得再娶。违者量决六十七下，听离，仍追元财没官。”这是以至元七年为限，七年登记有妻室者不再追究，但“亡殁不得再娶”，七年以后娶妻者要“决六十七下”，并勒令离婚，没收聘财。至元二十八年（1291）十月：“宣政院官奏奉圣旨节该，有媳妇的和尚有呵，宣政院官人分拣者。”这是忽必烈下令，要求主管佛教事务的宣政院清查“有媳妇的和尚”，但未言如何处理。至元三十年（1293）五月，由于佛、道寺院占有土地日增，朝廷财政收入减少，忽必烈颁发圣旨：“无媳妇的和尚、先生每的属寺院里常住田土有呵，依着大圣旨体例里休纳者。”也就是说，没有妻妾的和尚、道士所在寺院的原有田土可以照旧免除赋役，有妻妾的就不在免除之列。十月，“僧官总统以下有妻者罢之”。</p>
+  <p>忽必烈对此事三令五申，说明僧、道特别是僧人娶妻情况已很严重，而且屡禁不止。但五月和十月的圣旨都没有要求对有妻室僧、道判刑和勒令还俗，实际上是不很认真的。联系上面张养浩说：“夺于众多之口，寻复中止。”可知忽必烈并没有真正下决心要加以整顿。忽必烈崇信佛教，特别是藏传佛教。张养浩所说“众多之口”，主要应是佛教上层人物的反对。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-15/60efe67f9c232e01c17d264a+L.png" data-id="60efe684904b8c02a16a39d2" alt="元世祖忽必烈拜藏传佛教首领八思巴为大元帝师" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+元世祖忽必烈拜藏传佛教首领八思巴为大元帝师
+    </figcaption>
+  </figure>
+  <p>成宗大德元年（1297）十二月，中书省臣等奏：“且僧、道作商贾有妻子与编氓无异，请汰为民。”成宗说：“汰僧、道之制，卿等议拟以闻。”但未见下文。大德七年（1303）元朝有意对佛、道两教进行整顿。七月下令：“僧尼、道士、女冠有犯奸盗，俱合一体断罪还俗。” “犯奸盗”应包括娶妻在内。九月，朝廷又一次下令：“罢僧官有妻者。”大德八年（1304）十一月初七日，宣政院上奏说：“御史台官人每与将文书来，‘庐州有的和尚每告，那里的僧录沙剌藏卜有妻室呵，与僧官每一处问了招也。他罪过，奏了依体例要的’么道。说将来有。俺商量来，前者‘委付来的僧官每根底，要了甘结。有妻室呵，当六十七下罪过，更勾当里不行’。有文书来。如今依着那体例，沙刺藏卜根底，教打六十七下，更罢了他勾当呵，怎生？又去年俺曾奏：‘今后僧官每有罪过呵，受圣旨的闻奏，那以下的要了明白招伏，就教断呵，怎生？’么道，遍行了文书来。虽是那般呵，似这有妻室的每，问得明白了，一件件奏呵，频繁耳热的一般有。今后但有妻室的明白了呵，依体例教断六十七下，再勾当里不委付呵，怎生？”奏呵，奉圣旨：“那般者。”</p>
+  <p>宣政院上奏有两个内容：一是说根据御史台的文书，对有妻僧官沙刺藏卜加以处理。按照过去的规定，杖六十七下，免去僧官职务；二是说去年曾上奏，僧官有罪，凡皇帝任命的要奏请处理，其余则随时判决。皇帝同意后下发各处。现在看来，有妻僧官案件查明后如一一上奏，太麻烦。今后都按杖六十七下、免职（“勾当里不委付”）处理，不再上奏。皇帝此两事都表示同意。文书中“去年俺曾奏”的内容，应即大德七年九月“罢僧官有妻者”。文书中说，如果娶妻僧官案件一件件上报的话，“频繁耳热的一般”，可知其数量多到何种程度。也说明以前种种禁令，都未奏效，实际都是走过场。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-15/60efe6c19c232e01c17d264b+L.png" data-id="60efe6c1904b8c02a16a39d3" alt="元代道教壁画永乐宫《朝元图》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+元代道教壁画永乐宫《朝元图》
+    </figcaption>
+  </figure>
+  <p>大德七、八年的诏令似主要针对僧官（道官应同）而发，普通僧、道娶妻如何处理，末曾涉及。而且，此次诏令有多大效果是可疑的，皇庆二年（1313），御史台的文书中说：“如今罢了的僧官，更有罪过的、有媳妇孩儿每和尚，投托着宣政院官人每奏了，教他每各处寺院里做住持有。”显然有妻的僧人在宣政院（元朝管理佛教事务的最高机构）包庇纵容下当住持的仍不在少数，所以御史台会作为问题提出来。此后，朝廷继续发布清理有妻僧、道的诏令。泰定三年（1326）八月：“诏：‘道士有妻者，悉给徭役。’”四年七月：“籍僧、道有妻者为民。”文宗天历元年十月：“敕：‘天下僧、道有妻者，皆令为民。’”顺帝后至元元年（1335）：“凡有妻室之僧，令还俗为民。既而复听为僧。”既令还俗，又复听为僧，出尔反尔，说明朝廷对此并不认真。</p>
+  <p>至正六年（1346）元朝颁布经过反复修订的法典《至正条格》，作为各级政府审判的依据。在此书的《断例》卷八“户婚”中，列有“僧道娶妻”一目，内收两个案例。一个是前引大德八年“宣政院奏”，关系僧官娶妻的处罚。另一个是至大四年刑部对“洞宵宫道士胡仁方”娶妻生子的处罚，“拟决六十七下，罪遇原免，合令为民”，其妻高二娘“虽称出家，合令还俗归宗”。此书的结构和案例，都有针对性。列入“僧道娶妻”，说明直到元朝末年，这种现象仍然普遍，也说明元朝政府虽然反复重申，实际效果是有限的。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-15/60efe6ef4cd55d54dd5dbc42+L.jpeg" data-id="60efe6f4904b8c02a16a39d4" alt="《至正条格》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《至正条格》
+    </figcaption>
+  </figure>
+  <p><strong>霸占妇女的道士与和尚：“好和尚哪肯做僧官！”</strong></p>
+  <p>僧、道娶妻以上层人物即僧官、道官居多，他们主要依仗政治上、经济上的特权，为所欲为。一般僧、道娶妻妾者亦有不少。女性嫁给僧、道，原因多种多样，其中有不少是羡慕虚荣、追求享受造成的。元末诗人朱德润在一首题为《外宅妇》的诗中写道：</p>
+  <blockquote>
+    <p>外宅妇，十人见者九人慕。</p>
+    <p>绿鬓轻盈珠翠妆，金钏红裳肌体素。</p>
+    <p>贫人偷眼不敢看，问是谁家好宅眷。</p>
+    <p>聘来不识拜姑嫜，逐日绮宴歌宛转。</p>
+    <p>人云本是小家儿，前年嫁作僧人妻。</p>
+    <p>僧人田多差役少，十年积蓄多财资。</p>
+    <p>寺旁买地作外宅，别有旁门通巷陌。</p>
+    <p>朱楼四面管弦声，黄金剩买娇姝色。</p>
+    <p>邻人借问小家主，缘何嫁女为僧妇？</p>
+    <p>小家主云听我语： 老子平生有三女。</p>
+    <p>一女嫁与张家郎，自从嫁去减容光。</p>
+    <p>产业既微差役重，官差日日守空床。</p>
+    <p>一女嫁与县小吏，小吏得钱供日费。</p>
+    <p>上司前日有公差，事力单微无所恃。</p>
+    <p>小女嫁僧今两秋，金珠翠玉堆满头。</p>
+    <p>又有肥膻充口腹，我家破屋改作楼。</p>
+    <p>外宅妇，莫嗔妬，廉官儿女冬衣布。</p>
+  </blockquote>
+  <p>一家三个女儿，一嫁地主，苦于差役繁重，一嫁县府小吏，苦于公差。只有嫁给僧人的不但生活优裕，养尊处优，而且娘家亦得到照顾。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-07-15/60efe71c4cd55d54dd5dbc43+L.png" data-id="60efe7262114416715c3dd70" alt="古代道士" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+古代道士
+    </figcaption>
+  </figure>
+  <p>朱德润的诗篇并非虚语，确是元代现实的反映。但亦有不少女性成为僧、道妻妾是受胁迫所致。温州（今浙江温州）曾发生一起灭门大案，江心寺主持祖杰“累任僧录，挟赀豪恣”。他长期霸占依附于寺院的良家妇女。后来妇女全家逃走，祖杰便遣党徒追踪，将女方全家杀死。此事在当地引起极大反响，有人以此为题材“撰为戏文”，广泛传布。地方官府以“众言难掩，遂毙之于狱”。</p>
+  <p>元朝国师胆八感叹道：“好和尚那里肯做僧官！”类似祖杰霸占妇女的情况一定不在少数，有名的江南僧统杨琏真伽，“受人献美女、宝物无算”，这些美女当然就成了他和党羽们的妻妾和婢女。</p>
+  <p>还有一种是僧、道上层利用通行的“典雇婚”方式，用钱雇佣女性为妻或妾、婢，满足自己的欲望，如上引嘉兴玄妙观道士杨立之。</p>
+  <p>无论那一种方式，都是因为僧、道上层富有资产，享有特权所致。僧、道妻妾是元代女性中一个特殊的群体，在其他朝代也存在，但如此普遍似不多见。</p>
+  <blockquote>
+    <p>陈高华，曾任中国科学院历史研究所所长、中国元史研究会会长、中亚文化协会副会长、中外关系史学会副会长等。主要专著有《元大都》《元史研究论稿》《元史研究新论》。合著有《宋元时期的海外贸易》、《中国政治制度通史·元代卷》、《中国海外交通史》等。本文选自陈高华《元代佛教史论》，由上海古籍出版社授权刊发。小标题为编辑添加。</p>
+  </blockquote>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+    
+    
+      <li>
+        <time>2021-07-14</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-14/%E6%9E%81%E5%8C%96%E4%B8%8E%E6%92%95%E9%80%BC-%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%91%E4%BB%AC-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B6%8A%E6%9D%A5%E8%B6%8A%E6%97%A0%E6%B3%95%E6%8E%A5%E5%8F%97%E4%B8%8D%E5%90%8C%E7%9A%84%E8%A7%82%E7%82%B9/">
+          极化与撕逼：社交媒体时代的我们，为什么越来越无法接受不同的观点？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-13</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-13/%E6%9C%B1%E6%B5%B7%E5%B0%B1-%E5%AF%B9%E5%88%B6%E5%BA%A6%E7%9A%84%E6%AD%A3%E7%A1%AE%E8%AE%A4%E8%AF%86-%E6%89%8D%E6%98%AF%E9%80%9A%E5%BE%80%E6%96%87%E6%98%8E%E4%B9%8B%E8%B7%AF%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          朱海就：对制度的正确认识，才是通往文明之路丨燕京访谈
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-14/%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%98%AF%E5%A4%B1%E8%B4%A5%E8%80%85-iYouPort/">
+            前一篇：如果你是失败者 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-07-15/%E4%B8%AD%E5%9B%BD%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%8F%91%E5%B0%84%E5%AD%90%E5%BC%B9%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B-%E8%B5%A2%E5%BE%97-%E4%B8%AD%E4%B8%9C-iYouPort/">
+            後一篇：中国如何在不发射子弹的情况下 赢得 中东 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-07-14/%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%98%AF%E5%A4%B1%E8%B4%A5%E8%80%85-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-07-15/%E4%B8%AD%E5%9B%BD%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%8F%91%E5%B0%84%E5%AD%90%E5%BC%B9%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B-%E8%B5%A2%E5%BE%97-%E4%B8%AD%E4%B8%9C-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-07-14/%E6%9E%81%E5%8C%96%E4%B8%8E%E6%92%95%E9%80%BC-%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%91%E4%BB%AC-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B6%8A%E6%9D%A5%E8%B6%8A%E6%97%A0%E6%B3%95%E6%8E%A5%E5%8F%97%E4%B8%8D%E5%90%8C%E7%9A%84%E8%A7%82%E7%82%B9/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-07-14/%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%98%AF%E5%A4%B1%E8%B4%A5%E8%80%85-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-07-15/%E4%B8%AD%E5%9B%BD%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%8D%E5%8F%91%E5%B0%84%E5%AD%90%E5%BC%B9%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B-%E8%B5%A2%E5%BE%97-%E4%B8%AD%E4%B8%9C-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-07-14/%E6%9E%81%E5%8C%96%E4%B8%8E%E6%92%95%E9%80%BC-%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E6%97%B6%E4%BB%A3%E7%9A%84%E6%88%91%E4%BB%AC-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B6%8A%E6%9D%A5%E8%B6%8A%E6%97%A0%E6%B3%95%E6%8E%A5%E5%8F%97%E4%B8%8D%E5%90%8C%E7%9A%84%E8%A7%82%E7%82%B9/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

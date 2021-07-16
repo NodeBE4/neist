@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Medium 移民指南－中文作者集 2.0 (飛步編) – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Medium 移民指南－中文作者集 2.0 (飛步編)
+——
+" />
+    <meta property="og:description" content="
+Medium 移民指南－中文作者集 2.0 (飛步編)
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Medium 移民指南－中文作者集 2.0 (飛步編)" />
+    <meta property="twitter:title" content="Medium 移民指南－中文作者集 2.0 (飛步編)" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fverbalflystep.com%2Ffacebook-explore-feed-medium-%25E4%25B8%25AD%25E6%2596%2587-%25E8%258F%25AF%25E6%2596%2587-db0b836ff4cb%3Fsource%3Drss-7e0de79fece------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://verbalflystep.com/facebook-explore-feed-medium-%E4%B8%AD%E6%96%87-%E8%8F%AF%E6%96%87-db0b836ff4cb?source=rss-7e0de79fece------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://verbalflystep.com/facebook-explore-feed-medium-%E4%B8%AD%E6%96%87-%E8%8F%AF%E6%96%87-db0b836ff4cb?source=rss-7e0de79fece------2&text=Medium 移民指南－中文作者集 2.0 (飛步編)&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://verbalflystep.com/facebook-explore-feed-medium-%E4%B8%AD%E6%96%87-%E8%8F%AF%E6%96%87-db0b836ff4cb?source=rss-7e0de79fece------2&title=Medium 移民指南－中文作者集 2.0 (飛步編)" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://verbalflystep.com/facebook-explore-feed-medium-%E4%B8%AD%E6%96%87-%E8%8F%AF%E6%96%87-db0b836ff4cb?source=rss-7e0de79fece------2&title=Medium 移民指南－中文作者集 2.0 (飛步編)" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Medium 移民指南－中文作者集 2.0 (飛步編)&body=
+Medium 移民指南－中文作者集 2.0 (飛步編)
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://verbalflystep.com/facebook-explore-feed-medium-%E4%B8%AD%E6%96%87-%E8%8F%AF%E6%96%87-db0b836ff4cb?source=rss-7e0de79fece------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://verbalflystep.com/facebook-explore-feed-medium-%E4%B8%AD%E6%96%87-%E8%8F%AF%E6%96%87-db0b836ff4cb?source=rss-7e0de79fece------2&title=Medium 移民指南－中文作者集 2.0 (飛步編)&caption=
+Medium 移民指南－中文作者集 2.0 (飛步編)
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Medium 移民指南－中文作者集 2.0 (飛步編)&url=https://verbalflystep.com/facebook-explore-feed-medium-%E4%B8%AD%E6%96%87-%E8%8F%AF%E6%96%87-db0b836ff4cb?source=rss-7e0de79fece------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Medium 移民指南－中文作者集 2.0 (飛步編)</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2017-10-24
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 李飛步</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://verbalflystep.com/facebook-explore-feed-medium-%E4%B8%AD%E6%96%87-%E8%8F%AF%E6%96%87-db0b836ff4cb?source=rss-7e0de79fece------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1508891461000-->
+<p><a href="https://verbalflystep.com/facebook-explore-feed-medium-%E4%B8%AD%E6%96%87-%E8%8F%AF%E6%96%87-db0b836ff4cb?source=rss-7e0de79fece------2">Medium 移民指南－中文作者集 2.0 (飛步編)</a>
+——</p>
+
+<div>
+  <h3 id="medium--20"><a href="https://medium.com/u/504c7870fdb6"><strong>Medium</strong></a><strong> 華</strong>文作者集 2.0 (飛步編)</h3>
+  <h4 id="section">來構建一個小社區吧！</h4>
+  <p>大家好，我叫<a href="https://medium.com/u/7e0de79fece"><strong>李飛步</strong></a><strong>。</strong></p>
+  <p>不少人忍夠社交媒體的生態<strong>，而移居 </strong><a href="https://medium.com/u/504c7870fdb6"><strong>Medium</strong></a>，但平台上的華文用戶卻像海外華人一樣，難以聚首一堂，不少新來者初到貴境，因找不到心儀內容而無奈棄用。有見及此，幾個月前開始，我以人手編出這份名單，供各位使用。與此同時，希望大家攜手建立 <a href="https://medium.com/u/504c7870fdb6"><strong>Medium</strong></a><strong> </strong>華語社區，方法見下一部份。</p>
+  <p>如有問題，請電郵致 verbalflystep @ gmail dot com</p>
+  <iframe src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fverbalflystep.typeform.com%2Fto%2FMrQ3Kf%3Ftypeform-embed%3Dembedly-full&amp;url=https%3A%2F%2Fverbalflystep.typeform.com%2Fto%2FMrQ3Kf&amp;image=https%3A%2F%2Fimages.typeform.com%2Fimages%2FwJ53z6J2FM2a&amp;key=a19fcc184b9711e1b4764040d3dc5c07&amp;type=text%2Fhtml&amp;schema=typeform" width="300" height="500" frameborder="0" scrolling="no">
+<a href="https://medium.com/media/895c7543e9d993322f9e576c9a59bf9f/href">https://medium.com/media/895c7543e9d993322f9e576c9a59bf9f/href</a>
+  </iframe>
+  <blockquote>
+使用指南 [<a href="#cda6">按此</a>] ｜申請<a href="https://medium.com/u/f7e8780535d3"><strong>史兄</strong></a>的會費回贈計劃 [<a href="http://bit.ly/medium-membership">按此</a>]  </blockquote>
+  <p><a href="https://verbalflystep.com/medium-list-v2-0-f21f5a4ec7fd">版本更新／Medium 中文作者集 2.0</a></p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*ryNt2jbbDwgddX4hhYcB8g.jpeg" />
+  </figure>
+  <h4 id="section-1">建立華語社區的方法</h4>
+  <ol>
+    <li>如果你是新用戶，我希望你閱讀並分享下文<br />▍<a href="https://medium.com/u/8edf6b777cc9">黃哲斌</a> ：《<a href="https://goo.gl/GFjrNt">為何我從臉書移民到Medium？</a>》<br /> [<a href="https://goo.gl/AU3bzP">一鍵分享到 Facebook</a> ]</li>
+    <li>如果你想離開 <a href="https://medium.com/u/504c7870fdb6">Medium</a> 的舊用戶回歸，可以利用 @ 功能標示他們，系統會發一封電郵通知他</li>
+    <li>在刊登文章前，在 Tag 欄加上「中文」一字</li>
+    <li>在刊登文章前， 以中文填寫 Tag 欄 (宜參照下方使用指南)</li>
+    <li>邀請優秀的作者加 <a href="https://medium.com/u/504c7870fdb6">Medium</a>，並參與分紅計劃<a href="http://bit.ly/medium-partner-program">[按此]</a></li>
+    <li>加入 Facebook 群組「<a href="http://bit.ly/medium-group">Medium中文寫作者聯誼會</a>」</li>
+  </ol>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*ryNt2jbbDwgddX4hhYcB8g.jpeg" />
+  </figure>
+  <h4 id="section-2"><strong>使用指南</strong></h4>
+  <p>電腦版：按 CMD / CTRL +F，然後輸入下方關鍵字<br />手機版：使用瀏覽器的「在網頁中尋找」功能，然後輸入下方關鍵字</p>
+  <blockquote>
+手機版教學 [<a href="http://bit.ly/ios-medium-guide">iOS</a>] / [<a href="http://bit.ly/android-medium-guide">Android</a>]  </blockquote>
+  <h4 id="section-3">知識類</h4>
+  <p>媒體｜新聞｜內容｜新媒體敘事學｜數據新聞｜資訊視覺化｜地圖學｜專題｜人物專訪｜採訪後記｜製作手記｜傳媒公關｜VR｜寫作｜行銷｜廣告｜社交媒體｜策略｜品牌｜金融｜財經｜銀行｜股票｜美股｜投資理財｜經濟｜職場｜區塊鏈｜電子支付｜比特幣｜FinTech｜政治｜時事｜社會｜社會觀察｜社區參與｜Citizen Science｜發展研究｜網站｜網絡｜網絡政策｜網絡觀察｜產品設計｜產品開發｜出版｜書籍設計｜紙本雜誌｜電子書｜設計｜設計思維｜字體｜UI｜UX｜增長｜增長駭客｜初創｜創業｜演算法｜編程｜軟件開發｜敏捷開發｜國際｜國際新聞｜國際關係｜科學｜科技｜軍事｜歷史｜教育｜法律｜語言學｜數學｜文化｜流行文化｜時尚產業｜宗教｜閱讀｜書評｜學習方法｜讀報｜運動｜運動科學｜物理治療｜醫學研究筆記｜性</p>
+  <h4 id="section-4">休閒類</h4>
+  <p>電影｜電視娛樂｜影視｜音樂｜攝影｜戲劇｜動漫｜科幻｜遊戲｜藝術｜插畫｜繪本｜文具｜文學｜詩｜小說｜短篇小說｜故事｜旅遊｜登山｜露營｜生活方式｜生活見聞｜趣聞｜留學趣聞｜義工｜個人成長｜錶｜射藝｜威士忌｜嘻哈｜Freelance｜穿搭</p>
+  <h4 id="section-5">地方類</h4>
+  <p>日本｜德國｜法國｜宜蘭｜菲律賓</p>
+  <blockquote>
+<strong>你亦可在此 </strong><a href="https://goo.gl/MzmmmA"><strong>Google Doc</strong></a><strong> 報到</strong>  </blockquote>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*ryNt2jbbDwgddX4hhYcB8g.jpeg" />
+  </figure>
+  <blockquote>
+<strong>名單將以下列表展示：</strong>  </blockquote>
+  <p>▍作者名稱<br />｜{文章主題}<br />/ {推介文章及精華}</p>
+  <blockquote>
+<strong>文章本身才是重點，所以未有列出作者背景</strong>  </blockquote>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*ryNt2jbbDwgddX4hhYcB8g.jpeg" />
+  </figure>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*RXMnczp1QK1xNqinWPWGsg.png" />    <figcaption>
+Medium 中文作者集 2.0
+    </figcaption>
+  </figure>
+  <h4 id="section-6">作者名單</h4>
+  <p><strong>▍</strong><a href="https://medium.com/u/7e0de79fece"><strong>李飛步</strong></a><strong><br />｜媒體、內容、社交媒體、行銷、嘻哈<br />/ </strong><a href="http://bit.ly/2sAvdkD">圖文與影片之爭 扶手電梯與升降機之戰</a><br />「眾所周知，扶手電梯的速度不及升降機，但我們仍會選擇它，是因為我們自以為能控制速度，選擇站立、慢行或急行。相反，升降機不允許這樣，即使是電梯小姐也不能駕駛它，人類只能乖乖困在籠裏。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/8edf6b777cc9"><strong>黃哲斌</strong></a><br /><strong>｜媒體、新聞</strong><br />／<a href="http://bit.ly/2GABIaj">新聞記者的五道陰影，以及不方便的真相</a><br />「不過必須提醒，現階段的獨立媒體創業者，像是『帶著一把瑞士刀，隻身在荒島求生』，你必須靈活、充滿創意、有吃苦的準備、有寂寞的決心、即使失敗也無所怨悔。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p>▍<a href="https://medium.com/u/b36246f7a37c"><strong>Fred Jame</strong></a><strong> </strong><br /><strong>｜媒體、科技(尤其蘋果)、出版、軍事、寫作</strong><br />／<a href="http://bit.ly/2GzTLxx">讓好雜誌「不好看」的兩個原因</a><br />「網路時代，很難預測文章會出現在什麼樣的閱讀載具上；可能是不同尺寸的紙本、電腦螢幕、平板、手機上，而且周遭可能還圍著一堆色塊、按鈕、廣告之類無關內容的分心工具。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/11162699a102"><strong>施典志 Tenz Shih</strong></a><strong> </strong><br /><strong>｜宜蘭、行銷、出版、媒體</strong><br />／<a href="http://bit.ly/2GxWfMI">為什麼你的內容行銷沒有效果？</a><br />「要暫時忘記自己身為行銷人員的角色，把自己「reset」成一個一般的消費者；從消費者的角度，來檢視分享的內容，是否真能打動人心。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a614e58aeb7a"><strong>Bobby Tung</strong></a><br /><strong>｜電子書、出版、科技、字體、新聞</strong><br />／<a href="http://bit.ly/2Gyc3iB">Amazon Kindle也十週年了，繁體中文電子書怎麼看來才剛開始？</a><br />「臺灣很長一段時間，維持著美國90年代初期的作法 — — 也就是一本書授權給某一家電子書店，由該電子書店製作。這不是一件符合時代的作法。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/84d299d0ca5b"><strong>黃硯琳 Yan-Lin Huang</strong></a><br /><strong>｜新媒體敘事學</strong><br />／<a href="http://bit.ly/2GxWirS">紐約時報憑什麼成為全球媒體數位化的先驅者？</a><br />「以報導者的深度報導舉例，有一篇很棒的深度調查報導我印象很深刻，就是<a href="https://www.twreporter.org/a/2015-brand-life">舉牌人朝不保夕的勞動真相</a>。寫得真好，文學性夠，調查也有內容，可是整篇網頁足足有16041字。我 真 的 看 不 完。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/82ec98fb7996"><strong>許組長</strong></a><strong> </strong><br /><strong>｜紙本雜誌、日本</strong><br />／<a href="http://bit.ly/2Gzd61U">酒鬼兼影痴的雜誌《映画横丁》</a><br />「《映画横丁》是月永理絵編輯長所發行的個人媒體，每一本大約28頁，一期由一位電影明星搭配一種和他有關的酒，做封面主題。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/1397ffdc14a6"><strong>Mr.Sophie</strong></a><br /><strong>｜學習方法<br /></strong>/ <a href="http://bit.ly/2GyVBOY">Elon Musk 知識軍火庫中最強殺傷力的武器 : 「第一性原理」</a><br />「Elon Musk 開發新電池時，率先屏棄現時市場所有生產電池組的已有技術，把電池組的構成物質全部分解，還原成最基礎的材料，這種還原使他了解到重新構成了製造電池的『<strong>基本事實』</strong>是什麼 。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/1bb8356bf79e"><strong>Jimmy Su</strong></a><br /><strong>｜科技、露營、生活見聞</strong><br />／<a href="http://bit.ly/2Gx0ZCh">懶人露營餐廚</a><br />「回想四月去花蓮新城露營，就是亞泥太魯閣礦場下面附近，也開車在新城鎮上繞了一圈。這裡完全看不到反亞泥的任何跡象，倒是好幾處牆上掛了紅布條，大致就是支持亞泥，反污名化，拼經濟要工作之類的。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/c709bddfd15a"><strong>rudileung</strong></a><strong><br />｜廣告、品牌、行銷、音樂</strong><br />／<a href="http://bit.ly/2GAC4h9">《品牌的技術和藝術》讀後感</a><br />「還記得我有一次人在北京，參加奧美中國的培訓，阿桂老師給了我們上了《如何在這行業快樂又成功》這一課，那個時候沒有PPT，那份講稿，紙張都已經發黃，但我仍珍而重之地保留著。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/d31d520c15a8"><strong>Gary Lin</strong></a><strong><br /> ｜增長駭客</strong><br /> ／<a href="http://bit.ly/2GwWcAZ">從生活小事到IKEA效應 — 如何讓生活更有厚度，知識更加廣闊</a><br /> 「宜家效應(The Ikea Effect)，意思是：消費者對於自己投入勞動、情感而創造的物品價值產生高估的價值判斷偏差現象。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/27a93ff8b931"><strong>kin ko</strong></a><strong><br />｜初創、區塊鏈、科技<br />/ </strong><a href="http://bit.ly/2Guud4F">Medium如何演繹medium</a><br />「有關電子支付，我一直以來「說」香港很落後，從未「嘲」香港很落後。就像真球迷支持一隊波，無論球隊多弱，但球迷依然衷心支持。責之切，指出隊波弱，分析其他強隊可學習的地方，何錯之有。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/2379745cffbe"><strong>Hsin-chan Chien</strong></a><strong> <br />｜新媒體敘事學、數據新聞、UI、UX</strong><br />／<a href="http://bit.ly/2Gx2QqG">從「外籍白領勞工」專題看使用者習慣</a><br />「以閱讀深度來看，選擇（或維持）完整版的讀者，在看完現況分析，進入人物專訪時，還有超過三成的讀者會繼續往下閱讀，但是選擇懶人包的讀者卻只剩二成五左右的讀者會看專訪以下的區塊。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/c44ad5011fc"><strong>Chris Wang</strong></a><strong><br />｜政治、運動、音樂、媒體</strong><br />／<a href="http://bit.ly/2Gzoc6H">請回答1992：四分之一世紀前那五個被叫作Fab Five的大學生</a><br />「Fisher不是個很受媒體矚目的教練，Fab Five時期，球員實在太優秀，執教功力大概也會被打折扣，所以籃球圈嚴格來說並未給他該有的評價。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/5a8f0f2ba159"><strong>陳順孝</strong></a><strong><br />｜新媒體敍事、媒體、網站</strong><br /><strong>/ </strong><a href="http://bit.ly/2GwWnMF">數位敘事 2017 教學大綱</a><br />「引導同學認識敘事力量、故事原型、話語結構，並且借鏡人文社會科學知識來發掘議題、萃取故事，進而善用數位工具超文本、多媒材、高互動、易混搭特性，量身設計文體、生動闡釋故事。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a8651210e5fd"><strong>Yuming Cheung</strong></a><br /><strong>｜UI、UX、設計思維、網站</strong><br />／<a href="http://bit.ly/2Gx2YXc">設計無法規模化（譯文）</a><br />「試用勾選清單代替。內容是：品質代表是否遵循原則與準則，還有是否支援核心指標。當你必須偏移原則與準則時，你必須負起責任，更新任何受到影響的團隊或架構。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/e8e79336afba"><strong>Cho Chih-Yuan</strong></a><br /><strong>｜設計思維</strong><br />／<a href="http://bit.ly/2GAW2bO">設計思考怎麼改變世界？</a><br />「消費者只告訴你他要更快的馬，要看出來他的認知交通方式只有馬，和他的需求是快，所以目標可以是「讓消費者容易認知的快速交通工具」，於是亨利福特做出了汽車，而告訴消費者這是沒有馬的馬車。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/908ebff81875"><strong>Mimi Chen</strong></a><strong><br />｜新媒體敍事、製作手記、媒體<br />/ </strong><a href="http://bit.ly/2Guuuod">2016紐約時報視覺化工作坊心得分享</a><br />「一旦決定要互動，就要千千萬萬記得，要讓作品在各種平台上呈現，代價是非常昂貴的，尤其各瀏覽器的呈現都會是要解決的問題。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/6debe724f920"><strong>Zhengyan Yu</strong></a><strong><br />｜新媒體敍事、資訊視覺化<br />/ </strong><a href="http://bit.ly/2GyWya0">信息圖表是如何煉成的（一）：圓形與線條 | 海外學習筆記</a><br />「<strong>老師給的評語：修改掉中間的放射條！</strong>他認為這些線條會妨礙到後面圓形數據的解讀。<strong>圓形數據與條狀圖並非是同一維度的數據，兩者交疊在一起會讓人困惑。」</strong></p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/37ea7441b075"><strong>soundfury</strong></a><strong><br />｜媒體、音樂<br />/ </strong><a href="http://bit.ly/2GyWMxS">一份另類報紙如何改變美國的文化與媒體</a><br />「《村聲》創辦人梅勒在專訪中說，本來的「村聲」只是個平凡的報紙。是等到他不寫了，原本經常批評他的讀者開始來信說懷念他，村聲才意識到需要有強烈個人風格的作者。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/49909d1857ea"><strong>uxeastmeetswest</strong></a><strong><br />｜UX<br />/ </strong><a href="http://bit.ly/2Gx0RCP">提升易讀性 — 如何有效運用空白 White Space</a><br />「留白是兩個不同元素之間的空間，不論是頁面上不同區塊的空間、或是文字的行距，都是留白的運用。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/c0bc57c4c51b"><strong>Keith Li</strong></a><strong><br /></strong>｜初創<strong><br />/ </strong><a href="http://bit.ly/2GzUsXF">離家出走的17歲少女Programmer</a><br />「大學現今的角色，應該要回到初衷，做回學術機構的本份：培訓學者和鼓勵學術研究。如果年輕人想學習某種技術，靠網上資源和個人努力已經很足夠，根本無必要修讀那麼多學科。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/34b1c50390b7"><strong>AmberBeCool</strong></a><strong><br />｜讀報<br />/ </strong><a href="http://bit.ly/2GvSk2S">潛艇謎案</a><br />「少年時期參加過幾個太空旅行愛好者俱樂部，但因為他脾氣暴躁又沒耐性而遭到排擠。這些年來，在雪恥的動力下，他努力要向那些排擠過他的人證明自己比他們強。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a295940fa17e"><strong>Peter Chang</strong></a><strong><br />｜演算法、科技、編程<br />/ </strong><a href="http://bit.ly/2GzK55Q">3步獲取 Facebook 粉絲頁的 Post 數據</a><br />「這個 Example 我會使用我最愛的 Facebook page, LadBible<strong>, </strong>作為示範。使用 GraphAPI 獲取的最近20筆 Feed 資料，和每筆資料的使用者反應數據。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/981a856dab13"><strong>馮宏遠(Thomas)</strong></a><strong><br />｜金融、股票<br />/ </strong><a href="http://bit.ly/2GzlONu">AI取代交易員談何容易?</a><br />「電腦比起人類，強項是反應快又不會疲累，因此用AI短炒股票，應該是很有優勢？這位交易員朋友說，如果要即日交易，AI能夠應用到港股市場的地方，可能僅有期指『即日鮮』。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/c10ca64e8bbf"><strong>Pakkin Leung</strong></a><strong><br />｜生活見聞<br />/ </strong><a href="http://bit.ly/2GzUwGT">我的漫畫書單</a><br />「我的漫畫口味，是從1980年代起受《漫畫周刊》培養的；從名單可見，我對兒童向、可愛路線、少女漫畫、港漫、重口味等興趣不太大。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/d55a98e49f85"><strong>黃湯姆</strong></a><strong><br />｜地圖學、出版<br />/ </strong><a href="http://bit.ly/2GyX6g4">在大崩跌的時代，重建台灣出版的地基</a><br /><strong>「</strong>我書都已經夠難賣了，有折扣不見得能賣，但沒折扣萬萬不能。而折扣戰或者說通路權力獨大，在以下幾個層面，我認為使得市場更惡化。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/e59f96defb83"><strong>William Z. Liu | 劉仲敬</strong></a><strong><br />｜歷史<br />/ </strong><a href="http://bit.ly/2GzUAq7">科學民族發明學實驗手冊</a><br />「誰的民族發明更早更成功，漢薩同盟的但澤自古以來就屬於波蘭的格但斯克。誰發明民族更晚更失敗，亞美尼亞的阿拉拉特山就只能留在國旗上。誰拒絕發明民族，就會像普魯士一樣滅亡。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/f7e0739d672f"><strong>Lok Ng</strong></a><strong><br />｜閱讀<br />/ </strong><a href="http://bit.ly/2Gv4Z6i">畀啲掙扎！</a><br />「看書最有價值的，不只是獲取資訊，而是透過閱讀，由對一件事物的很粗疏的認識，用自己的力量去思考和理解，用力推進到有深刻的體會。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/ec4fc7e4e758"><strong>Xiaotong Xu</strong></a><strong><br />｜增長駭客、媒體、製作手記<br />/ </strong><a href="http://bit.ly/2Gx1yMp">大佬，玩數據就不要玻璃心，尊重一下這場遊戲的基本邏輯</a><br />「人家大老闆 Jeff Bezos 出面說明數據和善用數據的重要性，而且，《華盛頓郵報》推出的 CMS 管理系統 Arc Publishing，內嵌數據分析工具，再次說明《華》在數據分析上的革新。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/138066689b0e"><strong>Kenneth Kwok</strong></a><strong><br />｜生活見聞<br />/ </strong><a href="http://bit.ly/2Gv51eq">談介面</a><br />「用戶介面係一個媒體，透過使用者同介面嘅互動去達成某啲目的。就算產品有幾強大，無介面連接使用者，就似一把刀未開封，無咗原有用途。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/5092ee7ea361"><strong>Stella Hsiao</strong></a><strong><br />｜新聞、設計思考<br />/ </strong><a href="http://bit.ly/2Gx1HiV">訪談大小事：如何辨別「偽」受訪者以及怎麼處理</a><br />「UCLA 心理學教授R. Edward Geiselman 曾說<a href="http://newsroom.ucla.edu/releases/how-to-tell-when-someone-s-lying-202644">「 說真話的人不會戲劇性的地改變他的語速」</a>。一般而言，人一緊張語速就會變快，而急於辯駁或是捍衛挽回些什麼的時候會更快，而且更破碎一點。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/77408c115995"><strong>侯智薰（Raymond CH Hou）</strong></a><strong><br />｜生活見聞、學習方法<br />/ </strong><a href="http://bit.ly/2Gy8Orh">用行動去學習的方法 — 費曼技巧</a><br />「費曼技巧讓我們的大腦由被動接受，變成主動創造。我個人不太相信，有人只看書、看著別人的言論與觀點等，就能累積出自己的一套方法。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/cb2f006ad1a2"><strong>張約翰</strong></a><strong><br />｜媒體、新聞<br />/ </strong><a href="http://bit.ly/2GyXifi">記者快抄解放記者</a><br />「分析、詮釋和批判，這些無法以科技取代的能力，才是記者的本份，至於資訊呈現，丟給AI實習記者就可。記者從此可以和抄PTT的壓力說拜拜。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/4f5715fb5d52"><strong>房慧真</strong></a><strong><br />｜生活見聞、新聞<br />/ </strong><a href="http://bit.ly/2GxXT0Q">幾種看見</a><strong><br />「</strong>能夠從上往下看，除了齊柏林《看見台灣》上帝的、雲朵的、鳥目的視角，其實還有另一種站在礦場上的「往下看」，那是更為糾結纏繞的共生結構，日久的確固結成無法消解的水泥一塊。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/ed1d0303b9bc"><strong>T.H. Schee</strong></a><strong><br />｜網絡政策、閱讀<br />/ </strong><a href="http://bit.ly/2GxGnde">資料在地化：身為一個企業經營者的初步問題</a><br /><strong>「</strong>一間單純的企業所保有的『資料』，除了必須因應國家勞動和稅務政策部分而必須透過系統電傳系統處理之外，已經是「資料」型態的資訊，通常在企業內部並非重要資產，實則還不足以引發資料在地化的內部討論。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/b909769294ad"><strong>Lucas Hsieh</strong></a><strong><br />｜產品開發<br />/ </strong><a href="http://bit.ly/2GxGo0M">A/B testing 你真的做對了嗎？產品開發團隊必懂的五大方法論</a><br />「結果實驗結果大出我們意料之外，呈現反向顯著（控制組顯著地比實驗組好）。後續成員們在探討原因認為是使用者在手機上想要一次能瀏覽多間民宿，而大圖版反而造成瀏覽困難。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/d974fb84cffb"><strong>Trantor Liu</strong></a><strong><br />｜UX<br />/ </strong><a href="http://bit.ly/2GwXFat">如何透過優化使用體驗（UX）提升轉換率</a><br />「最好的測試方式是 A/B testing，但老實說，不容易 — — 只是測試按鈕顏色或標題文字很簡單，但要讓兩項不同的程式邏輯，同時在一個網站上運行，並加以追蹤，就會複雜。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/ab44de911a6d"><strong>許明恩 Astro Hsu</strong></a><strong><br />｜區塊鏈、比特幣<br /></strong>/ <a href="http://bit.ly/2Gzha22">解讀中本聰的比特幣論文：什麼是比特幣？</a><br />「這篇論文到現在已經被引用 1700 多次，是曠世巨作級論文，值得一讀。我會按照自己認為比較好懂的方式切入，而不會按照論文的章節順序。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/15e53ffe7cef"><strong>Andy Lin</strong></a><strong><br />｜新媒體敍事<br />/ </strong><a href="http://bit.ly/2GzUZZF">操作衛星影像的方便工具：Google Earth Engine</a><br />「處理衛星影像的時候，傳統作法是從NASA、ESA等衛星遙測資料提供方，下載所需衛星資料，再載入GIS軟體，進行疊圖、頻譜計算等分析，最後將結果輸出成文字報告、圖檔等格式。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/4431ad1c69f6"><strong>利世民</strong></a><strong><br />｜政治、經濟<br />/ </strong><a href="http://bit.ly/2GzVvXB">咩行為經濟學呀？</a><br />「理性最基本的定義是「人的行為，是為某些目的而作出，可以被解釋的選擇。行為經濟學，雖沒有完全割斷『行為』和『目的』的關係，但分析時，仍加入其他心理因素對行為的影響。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/dfc40162f32e"><strong>劉致昕</strong></a><strong> <br />｜採訪後記<br />/ </strong><a href="http://bit.ly/2Gx3zrU">街頭帳篷裡的年輕人，把新民主送進西班牙全國</a><br />「g0v.news 走入西班牙首都馬德里市政府，專訪當年街頭運動的 3 位核心成員，現今已成為官員的他們，道出這 6 年來，從組黨到創造民主參與，這場顛覆西班牙政治的實驗歷程。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/1b975adfce6e"><strong>YingChu Chen</strong></a><strong><br />｜網絡<br /></strong>/ <a href="http://bit.ly/2Gze66a">關於台灣與其他國家所談的數位政府</a><br />「如果沒有安全的資訊環境，消費者就無法安心的在網路上進行經濟活動，也就無法帶動期待的『亮點』。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/9b2712eeac62"><strong>Siren F.Y. Chen</strong></a><strong><br />｜媒體<br />/ </strong><a href="http://bit.ly/2GxGyVW">媒體轉型的AB雙軌策略（上）</a><br />「三年間，數位部門「德賽萊特數位」設立一群網站，營收成長為三倍。來自破壞式事業的營收，如今占母公司旗下廣播電台、電視台等傳統媒體營收四分之一。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/fd7f2573f9bd"><strong>Sik Hon</strong></a><strong><br />｜運動科學、物理治療<br />/ </strong><a href="http://bit.ly/2Gzmoe8">狀態-狀與態之別</a><strong><br />「『</strong>狀』就是身心的實際結構，用英文來說是 Form and Structure，是不斷受內外因素影響而成的模樣。在同一邏輯上，只要訓練趨向不變，我們可以推斷出選手的進步軌跡 (trajectory)。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/e54b7fa62ad5"><strong>Lin Simon</strong></a><strong><br />｜UX、UI、產品設計<br />/ </strong><a href="http://bit.ly/2Gv1aOB">UX/UI設計師海外面試心得記錄-2017</a><br />「常常有些社會新鮮人或是剛結束第一份工作要轉職的朋友，準備作品集時喜歡把所有曾經做過的作品專案放進去，製造一種很「豐富」的感覺，但這時候往往會出現幾個問題。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/8cb87c05a66e"><strong>Tang Ching Kin 鄧正健</strong></a><strong><br />｜文學、閱讀、電影、政治<br />/ </strong><a href="http://bit.ly/2Gysiwf">絕對的觀看</a><br />「假若我們不用這些，幾乎在每篇影評中都會寫到的詞句來描述電影，而是直接坐在戲院裡看兩小時，最後我們會因無法言語而必須沉默地離開，這種感覺，正是『絕對的觀看方式』。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/b06b4b607e35"><strong>Ken Chow 恒一</strong></a><strong><br />｜電影、UX、UI<br />/ </strong><a href="http://bit.ly/2GAD5FZ">吃一頓「大快活」，學習UX優化如何做</a><br />「大部份食店也接受了大家這個習慣，不介意給你多一杯熱水。如用上文的公園建設作類比，大家就是採用了『將錯就錯，默許遊人如此走路』的方式回應用戶行為。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/ae6ad3698860"><strong>李薇婷</strong></a><strong><br />｜閱讀、文學、生活見聞<br />/ </strong><a href="http://bit.ly/2Gx4YPl">網遊的一代</a><br /><strong>「</strong>那是個沒有「自動導航」的時代，要學習記錄坐標、認識不同地圖的分佈，也必須要學習打字（並練成飛快的鍵速），因為在網遊的世界你不可能是獨立一人的。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/ffe250048868"><strong>作者</strong></a><strong><br />｜電影、小說<br />/ </strong><a href="http://bit.ly/2GxYmjC">作者的定位：談所不談</a><br />「海德格的預言成真，人類淪為『多知者』，而做不到『存在的牧人』。我們都是迷途孤燕，無家可歸，皆因大部分作者都不再談論呼召，只講一些得意有趣引人注目的把戲。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/8494ac775295"><strong>zonble</strong></a><strong><br />｜編程、初創<br />/ </strong><a href="http://bit.ly/2GyYijy">庸才式管理</a><br />「你會擴散成一個有機體當中最多、最大的那一種細胞，雖然，怎麼看都很像是癌細胞。但，那又怎樣？誰說癌細胞就不應該生存？誰說癌細胞就不應該擴散？」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a22889b6a46c"><strong>Denny Ku</strong></a><strong><br />｜編程<br />/ </strong><a href="http://bit.ly/2GxGLII">為什麼你可能不需要「寫程式」補習班？</a><br />「思考才是寫程式的本質，但盲目的鼓勵從事這一行顯然不是鼓勵思考的行為。有人會覺得<strong>自己至少學到一門專業技能</strong>；但也就是因為這樣，低估了去參加這些特訓班所付出的機會成本。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍ </strong><a href="https://medium.com/u/a0e60a50f847"><strong>Wenyi Ji</strong></a><strong><br />｜網絡觀察<br /></strong>/ <a href="http://bit.ly/2GCOlSr">Netflix 的發跡與困境，兼談廣告對在線視頻業的影響</a><br />「很多人把體育視為傳統電視的最後一根支柱。需求上，新聞、電視劇、電影都能被點播、回看服務取代，但體育節目所需要臨場感卻是 Netflix 難以提供的。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/1acc01950c36"><strong>Alex Cheng</strong></a><strong><br />｜創業、初創<br />/ </strong><a href="http://bit.ly/2Gx1NHl">Elevator Pitch 生成器</a><br />「投資者一般嚟講年紀比較大，聽得多startup pitch好快會眼瞓同精神唔集中，但錢喺佢度，你都冇佢計。所以想約佢開會，一定要有一個易明又juicy嘅elevator pitch。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/e65e7dd68533"><strong>Karl ＠創業趣聞</strong></a><strong> <br />｜創業、初創、增長<br />/ </strong><a href="http://bit.ly/2GzmJgU">Startup 質詢萬能Key：港台市場太細，你打算點樣expand到海外？</a><br />「你如何回都沒有辦法回得好的，只有track record （事實）才勝於雄辯，它令人對你的說話有信心，你想一下：難道 GoGoVan Steven Lam 頭半年知道如何在新加坡／台灣帶公司落地嗎？」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/2160b958b15c"><strong>Laura Lin</strong></a><strong><br />｜</strong>UI<br /><strong>/ </strong><a href="http://bit.ly/2GydUUB">UI 設計筆記心得篇：常見錯誤與盲點</a><br />「不照規範走是對其他共同協作的人造成困擾，並且，不照規矩走當初幹嘛花時間訂規矩呢？但有可能是訂規範的人讓易用性太低使得大家不知道怎麼用，這又是另一回事了。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/b3fa70e2cf58"><strong>Emil Chan 陳家豪</strong></a><strong> <br />｜FinTech、電子支付<br />/ </strong><a href="http://bit.ly/2Gx1Zq3">空談鬆綁 FinTech變大白象工程</a><strong><br />「</strong>FinTech並不是什麼洪水猛獸，也不是很多財金官員口中只以銀行為主體，打造銀行資訊化、效率化那麼簡單。令人擔心的是政府空談鬆綁，卻沒有營造誘因讓下游公務員做好工作。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/466a0dda7e11"><strong>amonchan</strong></a><strong> <br />｜生活見聞<br />/ </strong><a href="http://bit.ly/2GzWiI3">只會被 Netflix 糟蹋的神劇</a><br />「問題是，一炮過的做法令到所有節目都是預設的、完整的、封閉的，無法因應觀眾每周評價而決定剪接加減，也無法做到與輿論互動的真人騷。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/6b5f57ffd4f0"><strong>Natalie Ng</strong></a><strong> <br />｜編程<br />/ </strong><a href="http://bit.ly/2GAwfAu">Swift筆記：Global and Local Variables</a><br />「記憶小撇步：Angela在<a href="https://www.udemy.com/ios-11-app-development-bootcamp/learn/v4/overview">她的課程</a>中把Global and Local Variables比喻成種在外面的蘋果樹和種在自家花園的蘋果樹。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/f1fb3e40dc37"><strong>Huli</strong></a><strong> <br />｜編程、生活見聞<br />/ </strong><a href="http://bit.ly/2Gy9KvN">我與 Stripe ：一段愛與夢想的故事</a><br />「我一直覺得一間公司如果沒有把招聘流程做好，是一件很可惜的事情。每間公司都知道要營造形象、要建立品牌。文案很會寫，公司介紹寫得很誘人，但往往在面試時就破了功。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a46ac9e9235"><strong>Era Yeh 葉姿婷</strong></a><strong> <br />｜國際新聞<br />/ </strong><a href="http://bit.ly/2GxHppC">索馬利亞恐攻｜沒人關心的300條人命</a><br />「當你知道越多世界的真實模樣後，你會越來越無力，也會感覺自己有多渺小多沒用。期望我們在被世界的現實傷的體無完膚後，依舊能堅持自己的理想，做自己覺得對的事情，而不是漠視。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/62017ac27ad9"><strong>Grace Chang</strong></a><strong> <br />｜時尚產業<br />/ </strong><a href="http://bit.ly/2GvU9ge">文章閱讀- Coach集團為何改名？</a><br />「少了歐洲重量級精品豐厚的歷史孕育，在電商爆發的時代，輕奢品牌勢必找出另一條出路。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/b3667cc75616"><strong>Amos Hsieh</strong></a><strong> <br />｜</strong>網路、產品<strong><br /></strong>／<a href="http://bit.ly/2GAIzAK">網易嚴選與身為一個ODM電商的灰色地帶</a><br />「在「甄選家」專區裡網易會直接向會員蒐集回饋，小至烤麵包機的顏色偏好到氣泡水機該如何定價都在網站上廣徵會員的意見。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/2b40509d2aac"><strong>奕言堂</strong></a><strong> <br />｜</strong>閱讀、創業、生活見聞<strong><br /></strong>／<a href="http://bit.ly/2GxbLbT">讓IBM谷底翻身的創新模式</a><br />「企業組織的關鍵活動不應再是『管理員工每小時幫公司賺多少錢？』，而將會是「經營共識社群與開放網絡系統之品質。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/199197ae9524"><strong>游知澔</strong></a><strong><br />｜社會<br />/ </strong><a href="http://bit.ly/2GvhezT">加泰隆尼亞用行星檔案系統繞過西班牙政府封鎖</a><strong><br /></strong>「網站被快速的關閉、郵件遞送不可能，加泰隆尼亞政府要如何通知人民，去哪裡投票？加泰隆尼亞用<a href="https://ipfs.io">行星檔案系統</a>、加密和創意找到答案。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/16d3a8d731c1"><strong>Jacky</strong></a><strong><br />｜</strong>閱讀、網絡、科技、動漫、電影、科幻、生活見聞<br />/ <a href="http://bit.ly/2GzZ7Zk">攻殼後香港</a><br />「《攻殼》給我們上的一課是：認識自己，保持開放，採取主動，勇於嘗試，新的東西才能生出來。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a06b9f60d808"><strong>Evonne Tsai</strong></a><strong><br />｜行銷、策略、科技<br />/ </strong><a href="http://bit.ly/2GxhoXn">為什麼我不參與Medium付費牆寫作計畫</a><br />「付費讀者不一定是我想影響的人，付費只能確定是『積極的閱讀者』，如果我想發揮影響力，藉由讓文章擴散，增加我的「目標讀者訂閱」數量，才是發展對我更有價值的受眾的方式。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p>▍<a href="https://medium.com/u/988305609024"><strong>Aries</strong></a><strong> <br />｜藝術、嘻哈、閱讀</strong><br />/ <a href="http://bit.ly/2GxSbMA">這幅畫叫做 《握著橄欖枝的天使》</a><br />「在他那個時代的天使，有著中世紀的僵直構圖與聖潔的臉龐，像一碗純粹工整的容器，是一筆筆大寫的天國御用符號，但梅姆林的天使，好似真正獲得了肉體的質感。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p>▍<a href="https://medium.com/u/4e03a50fc0dc"><strong>Manson</strong></a><strong> <br />｜國際、科技、社交媒體</strong><br />/ <a href="http://bit.ly/2GxSze0">緬甸人道危機：「昂山無權論」能否為她的冷漠開脫？</a><br />「顯然，昂山素姬一直小心奕奕地避免在羅興亞事件上觸怒軍方，但忽略了問題的根本，所謂的援助也只是杯水車薪，國際社會也難以苟同她有盡力及有誠意解決問題。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/c808e932d47f"><strong>程思傳</strong></a><strong> <br />｜電影 、閱讀 、寫作 、出版<br />/ </strong><a href="http://bit.ly/2GzDtVi">《伴生》告訴我，何時放手，如何平衡</a><br />「子女這一種努力不被看見，更多的視這為子女應有的責任，這自然是子女的責任，但是社會並沒有肯定這種努力，也沒有給予一個理想的環境──護老院的配套，長工時的問題，無一不影響。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/d1ff380478f6"><strong>Kwan Yue 鈞裕</strong></a><strong><br />｜政治、經濟、發展研究、國際新聞<br />/ </strong><a href="http://bit.ly/2GzvkQS">政府與市場：生產棒球還是高爾夫球有分別嗎？</a><strong><br />「</strong>同樣是波，棒球的縫線工序到今天仍未機械化，得在哥斯達黎加等地的工廠靠人手一針一針縫上；高爾夫球卻已發展成高科技產品，安坐美國等富裕國家裡機械化生產，可謂同波不同命。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/8a9247ac3f7"><strong>CY L.</strong></a><strong><br />｜射藝、科技、軟件開發</strong><br />/ <a href="http://bit.ly/2GzvlUW">如何繪畫別人看得懂的軟件架構圖？──Simon Brown 的C4 Model</a><br />「Simon 認為毋須拘泥於一套行業通用規範，個別團隊只要有一套共識的規範即可。就像各式各樣的地形圖、街道圖、觀光圖，呈現方式不統一，但只要附上圖例說明，一般人都看得懂。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/ffd7d7577dab"><strong>Marcus Peck</strong></a><strong><br />｜宗教、文化</strong><br />/ <a href="http://bit.ly/2GxjrdY">合一的尋索：談合一與劃一</a><br />「合一經常被挪用作為磨平差異的工具，例如教會團契內，大家用同一本靈修讀物，這三個月大家不能用其他的材料。可是，這最嚴重的錯誤，把『合一』當成『劃一』或『統一』。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/8594a5bf2dfe"><strong>文化九公</strong></a><br />｜音樂、專題、媒體 <br />/ <a href="http://bit.ly/2Gw6QHU">Live Music 2.0</a><br /> 「如今線上與線下的現場 LIVE M USIC 體驗已經糾纏不清，串流直播突破聽 LIVE M USIC 的界限，由單向現場音樂體驗變成可以透過社交媒體與全世界互動音樂體驗。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/62c83ff42cf7"><strong>Lizzy Chiang</strong></a><strong><br />｜電影<br />/ </strong><a href="http://bit.ly/2GxgeLx">《神力女超人》：滿足每個人心中的想像力</a><br />「無論選擇為何，父權亦可能一直都在，但女性能用自己的方式存活，做出每一個決定，要愛也好，不愛也好，為愛犧牲也好，為愛戰鬥也好，都沒人能左右她們，擺脫父權的束縛。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/5a07ec8713a4"><strong>Bruce Lai 賴勇衡</strong></a><strong><br />｜</strong>電影、戲劇、閱讀<br />/<a href="http://bit.ly/2GyGSUv">《完美的獨裁》：最後一步靠你了</a><br />「Ringen 稱之為『效果強硬，執行柔軟』的『管控專制』(Controlocracy)，在直接的技術手段以外，更倚賴間接的意識形態操作，由人民的默許、自我審查和贊同來完成。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/3b28367cb44e"><strong>PoHua</strong></a><strong><br />｜</strong>閱讀、生活見聞<br />/ <a href="http://bit.ly/2Gxmx1J">失控的同理心｜別讓同理心佔據所有思緒</a><br />「聚光燈照亮的範圍有限，當光亮聚焦在某處，就有地方是籠罩在昏暗之中。換言之，同理心使特定團體得到幫助，在有限資源的前提下，一定有其他『沒有被看見』的團體或個人被忽視。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/9c3ee9049a3f"><strong>Wade Jin</strong></a><strong><br />｜</strong>閱讀、學習方法<strong><br /></strong>/ <a href="http://bit.ly/2Gzo8Uw">Information Snacking 的利與弊</a><br />「Information Snacking 指得是對接收到的資訊只大致了解，而沒有深入了解。過度的 Information Snacking 易使人誤以為學到很多，但其實都不深入嚴謹、且有諸多理解錯誤。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/9b40789035bf"><strong>Tang Siu Wa</strong></a><strong><br />｜文學<br />/ </strong><a href="http://bit.ly/2GxUxuU">愛的廢棄物</a><br />「拒絕描述與歸類，也就無法「認識」。如果用本雅明的標準，這不是不抱希望的愛。所以有人說，羅蘭巴特只愛自己。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/668c210e23e0"><strong>Ronald Yick</strong></a><strong><br />｜閱讀<br />/ </strong><a href="http://bit.ly/2GxmEdF">《不漏洞拉 — — 越南船民的故事》之時代意義</a><br />「港府在 88 年實施甄別政策，區分難民類別，強行遣反經濟難民，不可移居外地。這就是電台播放『<a href="https://www.youtube.com/watch?v=lSgkqCJpnjI">不漏洞拉</a>』聲帶的原因。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/3ef969d8b398"><strong>阿果</strong></a><strong><br />｜文化、流行文化<br />/ </strong><a href="http://bit.ly/2Gvnh7s">港式臥底何處去？當合拍劇成為新潮流</a><br /><strong>「 </strong>未取得廣電部門頒發許可證的劇集，一律不得在網上播放。當日一眾合拍片因應內地送檢制度妥協，恐怕很快會在香港電視劇身上發生，觀眾宜金睛火眼，靜觀其變。因此我才百感交集。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/d470d211146e"><strong>游大東</strong></a><strong><br />｜電視娛樂、電影<br />/ </strong><a href="http://bit.ly/2GxZ7cl">《綠豆》食桌聯想 ── 吃東西醉翁之意</a><br />「查實，第一集瑪嘉烈與大衛吃飯是開心的，往後的對話都是沉悶的、幾近無言以對的，顯示關係轉差；有次大衛開車載瑪嘉烈到西貢吃車仔麵，然而瑪嘉烈只顧對着手機跟趙子龍調情。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/71094848e741"><strong>置地記者</strong></a><strong> {粵文}</strong><br /><strong>｜職場、金融、社會</strong><br />/ <a href="http://bit.ly/2GysJXf">夠絕情。我都趕我自己出去</a><br />「結果，往往未必夠過程重要。 Go through 咗一個 Thinking Process 而做錯決定，最多都係揼春，但至少有 Lesson Learnt ；闔埋眼賭大細買啱咗，今次賺粒糖，下次可以輸間廠。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/f7e8780535d3"><strong>史兄</strong></a><strong> {粵文}<br />｜生活見聞<br />/ </strong><a href="http://bit.ly/2GAacKf">仆街磁石</a><br />「前度玲玲語帶無奈咁講：：有一種女人，不斷遇到仆街男人，一個接一個、一浪接一浪，瘋狂咁吸引班仆街嚟傷害佢。佢好似一舊強力攝石咁，唔係，簡直係一舊『仆街磁石』。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/9e1b21fcd743"><strong>Katarina Prestor (方麗娜)</strong></a><strong> {粵文}<br />｜小說、文學、電影、遊戲、生活見聞</strong><br />/<a href="http://bit.ly/2GuL4nX"> 即使世界如童話，不等於我要接受一隻青蛙</a><br />「青蛙說得很清楚，他說很喜歡公主，希望公主可以成為他的女朋友。公主也許有些感動，但是她在生理上無法接受和一隻青蛙在一起。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/d609b01e72bd"><strong>阿擇 （Chaaak）</strong></a><strong>{粵文}<br />｜語言學<br />/ </strong><a href="http://bit.ly/2GzAf4a">迷失方向嘅粵語研究</a><strong><br />「</strong>保護粵語，或者其他地球上一切語言，並不在於選優逐劣。更甚者優劣論正正就係消滅語言嘅利器，所有語言死亡正正係呢種「擇優而用」嘅功利語言心態造成。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a32dbe5c7d80"><strong>講故佬</strong></a><strong> {粵文}<br />｜故事<br />/ </strong><a href="http://bit.ly/2GyHbP9">仿生保姆</a><br />「網路地圖顯示，明輝工業用品就在這條巷子。貝爾沒想過陽光明媚的城市中會有如此闇暗的小道，就像活在附近高樓大廈的陰影之中。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/cad8149f8c7"><strong>Econ記者</strong></a><strong> {粵文}<br />｜國際新聞、經濟<br />/ </strong><a href="http://bit.ly/2GxjXIW">甚麼是Prospect Theory？</a><br />「 在 Bernoulli 的構想中，其中一個重要假設是現代經濟學指的Diminishing Marginal Value of Wealth概念，即財富愈多，額外得到的Utility愈少。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/85307064eb48"><strong>好青年荼毒室 — 哲學部</strong></a><strong><br /></strong>｜哲學<br />／<a href="http://bit.ly/2GA0vLw">從電影看哲學系列：大話西遊說命途</a><br />「喂，你有沒有看到那個人？那個人的樣子很怪，他好像條狗啊。」這句對白是在說悟空。悟空雖然法力無邊，隨手就可以拿起能夠頂天立地的金剛棒，可是在命運面前，他卻跟一條狗沒有分別，被它牽着走。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/384b62df508f"><strong>HOCC何韻詩</strong></a><strong><br /></strong>｜音樂、個人成長、科技<br />／<a href="http://bit.ly/2GxUPC0">如何在工作上贏得別人的尊重？一名四十歲歌女的轉型筆記</a><br />「從幕前轉移到幕後，環境及context相同，但要處理的事情完全是180度改變，以往只需輕鬆吩咐別人處理的，現在要全部自己親自解決；製作過程中的每個細節，包括各個單位的費用與限制、歌手的期望等等。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/59f1c0b76625"><strong>B SIDE：何兆彬</strong></a><strong><br /></strong>｜電影<br />／<a href="http://bit.ly/2Gw7XHA">《追捕》 吳宇森的占士邦式作品</a><br />「難關是年屆七十一的吳宇森，在合拍片的環境下，要拍一部集中日韓巨星雲集的動作電影，怎樣將四十多年前的小說改編而不過時，將電影拍得充滿商業元素，滿足老闆需要(賺錢)，又保有自己風格。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/47dceea4b71"><strong>Gillian 金其琪</strong></a><strong><br /></strong>｜專題、人物專訪<br />／<a href="http://bit.ly/2GyHjhB">環球大廈經濟學：如何在寸金尺土的中環活36年？</a><br />「有新產品興起，就有舊產品衰落。曾讓丁建釗月入5000萬的電話儲值卡生意，隨著社交媒體的興起和網絡在菲律賓的普及，逐漸式微。Leeh Ann 就說，她已經很少給家人打長途電話，現在大家都用Facebook Messenger。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/8971a0b791db"><strong>SparkTake</strong></a><strong><br /></strong>｜閱讀、學習方法<br />／<a href="http://bit.ly/2GypEGv">如何提升閱讀速度？</a><br />「先說明，現在的我已經少了很多用速讀法去閱讀，因為最近我看的書都以思考為主。 思考類的書並不適合用速度法去閱讀，因為你會錯過一些深度的東西。 速讀法我會較常用在一些網上文章或一些工具書上。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a04001b08c85"><strong>Ellan Ou</strong></a><strong> {粵文}<br /></strong>｜生活見聞<br />／<a href="http://bit.ly/2Gxk7Qy">單憑搭升降機，已經將人性表露無遺</a><br />「零成本做衰野點解唔做？按閂門掣的話，其實係唔會有任何反效果。一，出面果個人根本唔識；二，其實佢根本係出面判斷唔到你有無按到閂門掣；三，就算你做乜都好，你都可以輕易將自己解說成：我見唔到出面有人。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/c10a713391ee"><strong>千頌C</strong></a><strong> {粵文}<br /></strong>｜財經、股票<br />／<a href="http://bit.ly/2GzB3Ge">十年過去，Facebook好似癡咗線</a><br />「親愛的Facebook：在下已入藉FB，大大話話都有10年。由當時2007年，叫大家由Xanga轉場去玩FB但俾人白眼嘅年代，去到今時今日，自己鬥咗個總算有人睇嘅FB Page出嚟。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/7aca0af2f25e"><strong>廣告狂人 Madman Monologue</strong></a><strong> {粵文}<br /></strong>｜廣告<br />／<a href="http://bit.ly/2GzIMDZ">漫畫廣告狂人：天道酬勤</a><br />「『將重心放在內容、放棄了畫功』，獲得出書嘅機會，係咪就等如開拓咗一個取之不竭、充滿商機嘅藍海呢？定係憑獨特畫功同說故事技巧，創作出鮮明嘅IP，令到好多人都趨之若鶩尋求合作，先至算開拓到藍海呢？」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/8df7ebe560d5"><strong>Herr Fung</strong></a><strong> {粵文}<br /></strong>｜生活見聞、寫作、Freelance<br />／<a href="http://bit.ly/2GAK3uO">寫字（八）</a><br />「等乜？等運到。何謂運到？每日美國東岸時間10點，佢哋嘅飼養員就會透過email出嚟放飼料。飼養員即係coordinator，一群職位唔高，但係對豬仔們擁有生殺大權嘅『上等人』。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/1a8b38832b35"><strong>Edward Ho</strong></a><strong><br /></strong>｜科學<br />／<a href="http://bit.ly/2GxhChd">顏色概念是與生俱來嗎？我們的 Blue 藍色，彼岸的 Kpe</a><br />「 Tsimane’ 是隱居於南美亞馬遜森林之中的原始部落，對現代文明一竅不通。正因為他們對現代文明毫無認知，科學家可以由此分辨人類對顏色概念認知是全人類一樣，還是受語言、文化和教育因素等影響。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/ece9d6be92e7"><strong>白日夢小姐</strong></a><strong><br /></strong>｜生活見聞<br />／<a href="http://bit.ly/2GBeUra">In Front Of You直接面對｜薛保瑕 Ava Hsueh抽象畫展覽筆記</a><br />「後來也有參觀過老師在高美館策劃的《心樹 · 新靈》原住民藝術家安力 · 給怒的個展，同樣也是將策展學結合史學的宏觀，讓旁觀者對於藝術家主觀的創作，得以勾勒出更清晰的輪廓與架構。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/6e252774a8e2"><strong>Tseng Chung Ping</strong></a><strong><br /></strong>｜產品設計<br />／<a href="http://bit.ly/2GzFpgw">我的產品和服務都很好啊！為什麼要區隔市場？為什麼不能什麼都抓？</a><br />「許多人常常會把『年齡』和『世代』兩個區隔變數搞混，兩者最主要的差異在於前者是『生理上的差異』，後者則是『時代背景的差異』。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a46eaeb49eeb"><strong>蝕鈴│小說作者生存記事</strong></a><strong><br /></strong>｜寫作<strong><br /></strong>／<a href="http://bit.ly/2GyHHN5">斷絕懶癌大作戰！拖稿風格診斷與解決方案</a><br />「規律寫作這件事說難不難，說簡單也不簡單。我想你一定試過各種上天下海飛天遁地的種種方案，既然你還想看這篇，表示懶癌仍然對你造成了某種程度的困擾。然而治病最重要的就是對症下藥。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/9fd773cc9c26"><strong>Lam Ching Yin</strong></a><strong><br /></strong>｜寫作、時裝、留學趣聞<br />／<a href="http://bit.ly/2GvnYh4">貪靚貪到去倫敦</a><br />「我望着奪命亡魂長樓梯，再看一看我的32吋皮篋，仆你個街。我搬了兩級樓梯，已經想死。有個6呎型男徑自搬我的皮篋，我腦海飄過「歐洲好多人打劫」的說法，定過神來，他已經搬完了。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/fdfb1a77ce9"><strong>Ying Ying Tan</strong></a><strong><br /></strong>｜閱讀<br />／<a href="http://bit.ly/2GytwaF">《南中國海 下一個世紀的亞洲是誰的？》第二章導讀稿</a><br />「教你如何學習中國，將南海煉成自己的。首先，也是所有步驟中的重中之重，寫一大堆南海是我的歷史，讓中國擁有不可被質疑的南海主權。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/2566da947b84"><strong>博比</strong></a><strong><br /></strong>｜電影<br />／<a href="http://bit.ly/2Gw98qu">揭開 David Lynch 電影噩夢之源 — 《Eraserhead 擦紙膠頭》</a><br />「要探討David Lynch的電影世界，先要從聲/音開始，因其對環境聲效或選曲的重視，以至他親身創作並配搭。David Lynch在同一場景中對於聲音的呈現從不是單一，而是多變又夾雜，可見《擦紙膠頭》一例。</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/f2d1aaa0c9c5"><strong>林廷璋 Ryan Lin</strong></a><strong><br /></strong>｜閱讀、寫作<br />／<a href="http://bit.ly/2GyHSrJ">下一個世代的閱讀想像：體感系閱讀</a><br />「 活耀於歐洲的設計公司「Super Terrain」預計將在明年線上出版銷售這本，以感熱性的特殊墨水覆蓋整本內頁，在室溫下完全看不到文字的全黑頁面，需要使用打火機燃燒紙本才能閱讀的《華氏451度》。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/33d8986ecaf2"><strong>迴轉木馬的終端</strong></a><strong><br /></strong>｜出版<br />／<a href="http://bit.ly/2Gyui7z">台灣出版業的下一種可能？（1）</a><br />「另一方面，自己很殘酷地看到幾位年紀不同的編輯，對於臉書的概念大不相同導致「行銷」的效果天差地別。即使有充分的做書、編輯功力，卻因為時代變遷導致把書傳達給讀者的引介失去許多可能，我覺得好可惜啊！」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/6d63d83fe6ec"><strong>Wen-Yee Lee 李玟儀</strong></a><strong><br /></strong>｜媒體<strong><br /></strong>／<a href="http://bit.ly/2GzxMXA">經驗分享｜與AJ+合作影音報導</a><br />「他們所有的影片都由內部編輯負責剪輯，VJ在採訪、拍攝完成之後，會直接透過 Slack 把影片回傳給AJ+編輯台，採訪的當下同時有兩、三個編輯在slack channel和我保持聯繫 。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/b306e51a638f"><strong>Bonnie Tang</strong></a><strong> <br /></strong>｜生活見聞<strong><br /></strong>／<a href="http://bit.ly/2GzJGAn">低消費生活：在香港旅遊</a><br />「最近喜歡看端的《文青小帳簿》系列，算算文青一個月花多少錢。今天不計剪髮與交通費，飲飲食食加看了兩場電影，盛惠180港元，不知道算不算得上低消費。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/59314110cd3f"><strong>陳裕匡 Nickleby Chan Yu Hong</strong></a><strong><br /></strong>｜影視、生活見聞<br />／<a href="http://bit.ly/2GBgzgo">我是一個只會製造萬字夾的人工智能，卻不小心毀滅了世界</a><br />「2003年，瑞典哲學家Nick Bostrom首次提出『<a href="https://wiki.lesswrong.com/wiki/Paperclip_maximizer">萬字夾製造機</a>』的思想實驗。這實驗主角是一套擁有簡單函數的人工智能，它的生存只為了一個目標：盡量製作萬字夾。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/aea99935c3a1"><strong>楊子涵 Tzuhan Yang</strong></a><strong><br /></strong>｜醫學研究筆記<br />／<a href="http://bit.ly/2GzGjcU">醫學研究002 文獻整理</a><br />「對於研究產生的龐大文獻量，您是如何整理與管理呢?對於文獻整理，我有三點要求：有全文、方便管理、寫系統性筆記。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a415bcb3f325"><strong>kayue</strong></a><strong><br /></strong>｜科學、數學<br />／<a href="http://bit.ly/2Gzy5Se">偽亂數與 P vs. NP</a><br />「偽亂數產生器其中一個重要用途，就是加密訊息。美國國家安全局（NSA）曾經力推一個稱為「Dual_EC_DRBG」的偽亂數產生器，以致美國國家標準技術研究所（NIST）亦納入其標準。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/4bcc562a9bb9"><strong>黃冠融</strong></a><br />｜個人成長、編程<br />／<a href="http://bit.ly/2GAUBdd">你的待辦清單有多深入！？</a><br />「我真的用看板法以及敏捷思維的模式，交到女朋友，跟上面的策略完全一樣，唯有參加的活動、社團、名單等因個資問題，還有個人強烈的羞恥心，還有被追殺的可能，無法分享給大家。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/21e750ffb77c"><strong>Jimmy Wei</strong></a><strong><br /></strong>｜內容、閱讀<br />／<a href="http://bit.ly/2Gxepyl">內容為王？ 醒醒吧！根本沒人想看你的內容（上）</a><br />「許多新聞工作者往往認為：平台、宣傳、廣告、行銷、公關、通路什麼的都不重要，一廂情願的覺得只要內容夠好，不怕沒有讀者。但是往往卻忽略了，沒有通路、沒有能見度，你要讀者怎麼看到你所謂的好內容』？」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/6b9fdb88ffef"><strong>Ma Tak Ki</strong></a><strong><br />｜電影<br /></strong>／<a href="http://bit.ly/2rXAHpG">空手道：格鬥只是包裝</a><br />「離場時我聯想到北野武，睇完佢本《馬鹿野郎》，北野武電影經常出現一些主題，都係佢世界關注的東西：冷硬暴力、無能又低存在感的父親、警匪、兒童、棟篤笑。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/3ef5fee97c42"><strong>TV Drama Queen</strong></a><strong><br /></strong>｜電視娛樂、時裝<br />／<a href="http://bit.ly/2GyhP3G">往事希望不只能回味《The Story of The Face》</a><br />「《The Face》有多傳奇，我們這班老「潮童」都好清楚。1980年5月1日，由前《NME》編輯Nick Logan創立，至2004年停刊，歷經24載，集音樂、電影、文化藝術、時裝、設計於一身。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/7087f14a73fb"><strong>❤覺羅</strong></a><strong><br /></strong>｜產品發開、歷史<strong><br /></strong>／<a href="http://bit.ly/2Gy0kAp">襄樊之戰 — 造就人類史上最富強帝王</a><br />「南宋水師無法抵抗蒙古方面的水陸夾擊，船隊接連被火勢圍繞，許多船隻便向漢水下游脫離戰場。南宋此次的進攻失利，幾近全軍覆沒，也決定了往後的命運。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/fcccb82d681a"><strong>查映嵐</strong></a><strong><br /></strong>｜藝術、文學、電影、文化、閱讀<br />／<a href="http://bit.ly/2GxezFX">老房子的回返：談瀨戶內空屋再生與場域特定性</a><br />「藝術祭內的空屋再生作品套路大多相似，奉地方特色為圭臬，與旅遊業地方行銷的邏輯類同，其人文關懷屬溫和無害的品種，尖銳、具批判性、深挖受爭議的地方歷史、正面審視傷痕的作品，即使存在也是罕見的孤例。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/2c79ad80bdad"><strong>仍影</strong></a><strong><br />｜詩、寫作、攝影<br /></strong>／<strong> </strong><a href="http://bit.ly/2GAcIAb">逝去</a><br />「因為我確實是知道<br />怎麼哭也無法淹沒<br />這個城市」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/7319a620f19b"><strong>言逸</strong></a><strong><br />｜</strong>短篇小說<br />／<a href="http://bit.ly/2GyITA3">茶樓伙記</a><br />「茶餐廳伙記用兩隻手指夾著盛滿熱茶的透明膠水杯，用熟練的手法將水杯放到桌上。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/54a43ae63358"><strong>煮雪的人 Zhuxue Deren</strong></a><strong><br /></strong>｜文學、詩、故事<br />／ <a href="http://bit.ly/2GyJgKX">沒有海的世界</a><br />「我所來自的世界充滿悲傷<br />因此當我墜落之後<br />必能化作一片海洋」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/83918066099"><strong>鄭子聰</strong></a><strong><br /></strong>｜寫作、電影、文學、閱讀、社會、文化<br />／<a href="http://bit.ly/2Gyi0fm">《意亂情迷》：如果菲林能代表感情距離</a><br />「他刻意在男女主角的感情距離最接近時瞬間地，將彼此拉開而不失其癡情浪漫，但其實這並非導演楊凡的刻意，他只是將大家最想看到的愛情浪漫還有最不情願看見的戀人失去，把這愛情的寫實呈現在電影螢幕而已。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/697282281348"><strong>黎歌</strong></a><strong><br />｜</strong>影視、旅遊、小說、生活<strong><br /></strong>／<a href="http://bit.ly/2Gvluzn">細節處理用心 難得優雅的港劇 《短暫的婚姻》</a><br />「我只想指出莊梅岩提出了一種生活的思考，也用心處理如何去表達這種思考。因為有許多細節上的用心處理，《短暫的婚姻》在簡潔的畫面上，有着港劇罕見 decent, classy, sophisticated 的特質。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/804d9ff60ad7"><strong>清君</strong></a><strong><br />｜</strong>時事、生活、文學<br />／<a href="http://bit.ly/2GzGTaA">Facebook逃亡潮？於Medium重新出發</a><br />「由細味到速食，由你只專注一樣物事變成你需要諸體兼擅：寫文、改圖、製圖、拍片、剪片……一應俱全，樣樣你都要識，將專科生變成周身刀無張利的通才，這是一個大危機。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/9181c0c4a689"><strong>Jeromy-Yu von 寰雨膠事錄</strong></a><strong><br /></strong>｜國際、媒體、新聞、旅遊、文化、趣聞<br />／<a href="http://bit.ly/2GxpEqr">加泰「獨立」後的「大選」最惡劣情況可以到甚麼情況？</a><br />「加泰獨立危機突然進入撲索迷離的階段，一度出現兩個政府，甚至出現加泰政府主席裴道民『流亡到』比利時首都比蘇士，局勢更加不明朗。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/62bf680cf83d"><strong>Jackin Wong</strong></a><strong> {粵文}<br />｜</strong>廣告、品牌、行銷、傳媒、公關<br />／<a href="http://bit.ly/2GzHGs4">為什麽廣告人總有那麽多的題材可寫？</a><br />「不管態度是什麽，圍繞這些價值觀 (Brand Value) 可以分享的小故事、大人物 ，以及我們為了配合它所做的每件小事，都可以拿出來分享，並激發提升相似消費群及目標受眾的認知 (Recognition) 和好感。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/15d6cf67d61a"><strong>stephen wang, 王贊元</strong></a><strong><br /></strong>｜行銷、初創<br />／<a href="http://bit.ly/2Gxqh3h">小坪數「無人商店」挑戰便利商店</a><br />「雖然便利商店早有增加銷售坪效的電商入口及app，商品數量擴充到與超市比擬，然而價量的CP值、選擇多樣化，依舊是大賣場、超級市場較具有優勢，這也是便利商店企圖攻入家庭市場，卻力不從心的地方。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/df50fd53db07"><strong>Chui Siuchun</strong></a><strong><br />｜教育<br /></strong>／<a href="http://bit.ly/2GAMddU">從荷蘭教室的椅子說起</a><br />「在到荷蘭觀摩創新教育的印象中，其中最深刻的一點，就是如同椅子一樣，富於人性。當地教育的一個重要原則，就是以學生為本，以人為本。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/b2e115af9498"><strong>Kong Lui — S (港女S)</strong></a><strong><br />｜</strong>科技、生活見聞、電視娛樂、VR<br />／<a href="http://bit.ly/2Gyx2ln">神話與現實</a><br />「中關村一帶至西北旺，當中不少地方仍是開發中，吃喝玩樂地方極少，大陸同事甚至形容為 “鳥不生蛋 狗不拉屎”。有些小區看到的只有幾家小型超市，找間快餐店或咖啡店都沒有。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/c08912864ba5"><strong>Anu</strong></a><strong><br />｜</strong>設計、字體、學習方法、UI、UX<br />／<a href="http://bit.ly/2GxlHSE">非設計本科的人，也能當設計師嗎？</a><br />「簡單介紹一下我自己：高中讀自然組、新聞系畢業、沒有去巨匠或任何地方上過設計軟體的課，甚至剛開始只會用 Windows 電腦工作（而且我到現在還沒拿過哀鳳 QQ）聽起來超不像設計師的吧。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a6dde3407194"><strong>Etta Chan</strong></a><br />｜寫作、故事、藝術、生活見聞<br />／<a href="http://bit.ly/2GxfO85">跨過．再沿著康河走(四) — 到埗的第一個後半天</a><br />「『那個Sophia就是你常說很無知的葡萄牙人？』『對，就是她。』我當下沒有來得及反應，門鈴就響起來。B去應門，門開，見一個戴頭箍，個子不高的女子，她很年輕才二十歲出頭，頗熱情的和我打招呼。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/ed1dfd53dcac"><strong>林勉一 Lam Min Yat</strong></a><strong><br /></strong>｜社會觀察、網絡觀察<br />／<a href="http://bit.ly/2GxghqR">將來站在被告欄上的，是你們</a><br />「威權統治下的香港，選舉會有政府奧步剝奪選舉資格、推翻選舉結果；民間抗爭會被政府用最嚴苛的法律來進行司法迫害，那種迫害，可能是要告到你最高刑期，也可能是令你因為打官司而破產，總之是要令你難以翻身。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/d3490071aed3"><strong>Patrick Wong</strong></a><br />｜社會、文化、威士忌、文學<br />／<a href="http://bit.ly/2Gy1kVb">What happens in Festivals stays in Festivals</a><br />「這種社會關係的吸引力之一，是它需在特定的時空下發生；換言之，它不會對你的日常生活構成壓力。節日中建立的關係有始有終，不像朋友、家人、戀人、同事，迴環往復在你的日常閃現。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/7eecaab507e9"><strong>hkdom 亞當</strong></a><strong> <br />｜內容行銷<br />/</strong><a href="http://bit.ly/2GxqUtF"><strong> </strong>一句話說明什麼是 Content Marketing</a><br />「對！搞 Content Marketing 最好是自建網站！不過，其實你也可以搞電視台，電台，報紙或者雜誌…（笑)」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/fd6de8d39955"><strong>Jansen Lu</strong></a><strong><br />｜閱讀<br />/ </strong><a href="http://bit.ly/2Gxm7Z7">一流的人，在工作中想睡覺會怎麼辦？</a><br />「這36課的心理課當中，每課都提出一條問題或一個場景，然後就有三個選擇，問你面對該場景時會怎樣做。這些場景日常面對的情況，所以我會認真去想自己身處該情況下，到底會怎樣做。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/80959fed952f"><strong>Jeremy CF Lin</strong></a><strong><br />｜新媒體敘事<br />/ </strong><a href="http://bit.ly/2Gystr5">如何製作突發新聞空照地圖</a><br />「如何利用Google Earth Pro、Adobe Photoshop和Adobe Illustrator來做出突發新聞空照地圖（如突發恐怖攻擊、槍擊案、遊行抗議等），讓讀者了解事件發生地點與經過。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/1655aea2f511"><strong>Stephanie Kuo</strong></a><strong><br />｜UX、UI<br />/ </strong><a href="http://bit.ly/2GwaXnk">腦力激盪有三寶：使用旅程、假設、脈絡調查</a><br />「比方說，如果今天要解決的是找工作的問題，那我們就會依據人物誌把找工作當中每一個步驟都列出來：準備履歷、找職缺、投履歷、等回覆、準備面試、電話面試、等待回覆、當面面試、等待回覆、收到錄取通知。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/7e76be22ec61"><strong>Wei-Yu Lin（林威宇）</strong></a><strong><br />｜增長駭客、創業<br /></strong>/ <a href="http://bit.ly/2GzJzFa">Facebook 成長團隊談產品成長 (Growth Marketing)</a><br />「為了讓大家更容易找到下廣告的地方，他們做了兩件事，一個是廣告可以打廣告，另一個是在登入的地方顯示下廣告的連結。這樣就讓他們使用者獲取率成長了一倍。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/ab0a86e1cfa3"><strong>Renatus Wu</strong></a><strong><br />｜書籍設計<br /></strong>/ <a href="http://bit.ly/2GzJQba">生命總是如此短暫而美麗 — <em>Beyond The Clouds</em></a><strong><em><br /></em>「</strong>常以為書籍設計師就只是為了將書設計得更美而生，但其實真正好的書籍設計師，更會著眼於書的本質，藉著視覺的重新編輯，節奏安排和以重量、觸感等物質性的技巧喚醒我們的記憶。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/d2880a359d31"><strong>Mika HsunPei Wang</strong></a><strong><br />｜新媒體敘事、製作手記<br />/ </strong><a href="http://bit.ly/2GzKiGo">我們如何製作「蔡英文勞動政策追蹤平台」？</a><br />「由於進度牽涉到分類的過程，不同屬性的族群觀看分類的時候常會有分歧的意見，例如勞動部與勞團所認知到政策的進度類別可能就會完全不同。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/1601f450abbd"><strong>Jamie Chen</strong></a><strong><br />｜錶<br />/ </strong><a href="http://bit.ly/2Gxo0VE">這款看起來很普通的陀飛輪，如何標出天價？</a><br />「因為，這款手錶的機芯，是完全「遵循古法」以純手工製作的，沒有採用任何電腦控制的CNC機器。齒車是自己削的；游絲、發條是自己捲的；夾板是自己切的。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/1c379b912e16"><strong>毛明</strong></a><strong><br />｜音樂<br />/ </strong><a href="http://bit.ly/2GzzyIe">A Chicken’s Worth：Kendrick Lamar《DAMN.》</a><br />「由Sounwave操刀的幾首歌〈Yah〉、〈Element〉及〈Feel〉，都有Drake在<a href="https://open.spotify.com/album/2bfWH730j0HtAJrNcg1LuP">《If You’re Reading This It’s Too Late》</a>時期的簡潔，聽著Kendrick Lamar那份由歌詞走到選曲都向Drake步步進逼的姿態。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/7f75e696bddf"><strong>Tim K T Chan</strong></a><strong> <br />｜傳媒公關<br />/ </strong><a href="http://bit.ly/2GAf4iv">您不可不知的傳媒公關（一） 甚麼是公關？</a><br />「在如今媒體主導的文化下，公關是營銷策略的重要組成部分。由於傳媒在社會中影響巨大，因此無論您的企業是做什麼的，想要獲得成功，就必須要影響媒體，這樣才能贏得人們的信任。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/b2ec2eefaa19"><strong>關間聞</strong></a><strong><br />｜閱讀、電腦、歷史</strong><br /> / <a href="http://bit.ly/2rSxxmX">讀萬卷書 — 開放原始碼 — Linux — 與自由軟體運動對抗軟體巨人的故事</a><br />「Microsoft 控制原始碼版權及流通，外人不得染指，Microsoft 就可以一直透過壟斷，掌控軟體知識，透過「持續不斷」地更新版本，在電腦時代獲取更大權力與利潤。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/9b3f5fee11c0"><strong>Naniba</strong></a><strong><br />｜小說 、故事、影評</strong><br />/ <a href="http://bit.ly/2GA4J6a">浮士德咖啡館</a><br />「店內灰色<a href="https://www.facebook.com/leifeibou/inbox/?selected_item_id=100005178135076#">星期五</a>的黑膠唱片在唱盤機上轉動著。迷惑人心的嗓音攪和著寒冷空氣奔竄在城市各處角落，它灰怏怏的觸手鑽過狹窄的門縫、鑿開透風的窗戶，沁入人們酣眠的夢境及因熬夜而精神耗弱的耳鼻。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/589baa201947"><strong>Kang YuChi</strong></a><strong><br />｜行銷、廣告、網站、社交媒體</strong><br />/ <a href="http://bit.ly/2GuznxL">[Google AdWords] 關鍵字廣告基礎教學，中小企業&amp;創業主自操必看</a><br />「消費者在搜尋時展現了強烈的購買意圖，身為中小企業主、自行創業家，如果能在這個時候花點小錢，投資關鍵字廣告，抓住他們的目光，必定能讓自己的生意提升到下個檔次！」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/416624e003b5"><strong>Vince Huang</strong></a><br /><strong>｜敏捷開發</strong><br />/ <a href="http://bit.ly/2rWOlJG">【文思不藏私】千萬不要『結對編程』</a><br />「裡頭說的全都是不要使用『結對編程』的原因及時機。千萬不要期待聽到『結對編程』的好處，因為這條路不可行。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/4464dee82ec"><strong>筆言</strong></a><br /><strong>｜小說、寫作、筆記</strong><br />/ <a href="http://bit.ly/2GA8poj">《你做好了生涯規劃嗎？》 — 自殺卻成了年青人的出路之一</a><br />「到底這個社會在發生什麼事？生命的價值到底是被誰所抹殺了？是什麼將香港人逼上末路？在這個故事，我是蔡若蓮之長子，我希望我的死，能夠為你帶來<a href="https://www.facebook.com/leifeibou/inbox/?selected_item_id=100003134683009#">一點</a>啟示。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/b306e56cab4d"><strong>杜礎圻 Tony</strong></a><strong><br />｜軍事、國際關係、歷史</strong><br />／<a href="http://bit.ly/2GA8Uib">台灣的下一代航空發動機</a><br />「F110及F100發動機是重型發動機，兩者都有用於F15及F16兩款美軍的主力戰機，兩款發動機可以互相取代。美國當初研發這兩款發動機是因爲要避免來源單一。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/f1cbd32c22aa"><strong>Mags Huang</strong></a><br /><strong>｜文化、旅行</strong><br /> / <a href="http://bit.ly/2Gvs0G6">寫在後面-尼泊爾ebc健行</a><br /> 「當我把自己丟到喜馬拉雅山脈，隔絕一切文明世界的紛擾，我只能靜下來和自己的身體相處，並和自然對話，面對不同的路況坡度，我學會要怎麼調整呼吸以及調整步伐，讓身體以最省力舒服的方式完成前面的那段路。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/71a477730527"><strong>明晞</strong></a><strong><br />｜小說、短篇小說、文學</strong><br />/ <a href="http://bit.ly/2GxzBnG">關於我所傾慕的女子</a><br />「草叢裏有一朵白杜鵑，雪白的花瓣有如她的皮膚，看見此花純潔無暇，欣然綻放，我又想起她嫣然一笑的樣子。<br />我想，我是喜歡了她。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/5aa58c6c4053"><strong>Alex Chang</strong></a><strong><br />｜Salesforce、數位金融、閱讀<br /></strong>/ <a href="http://bit.ly/2GwEmxV">如何運用Salesforce發現「商機」</a><br />「商機(Leads) 是針對人，不論他是老客戶、新客戶，還是目前不是屬於你企業的客戶，只要曾經有接觸或使用你所屬企業服務的人。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/acf89ac16649"><strong>由Grad Trip開始</strong></a><strong> {粵文}<br />｜遊記</strong><br />/ <a href="http://bit.ly/2GxmOl3">旅行的開始</a><br />「 呢個TRIP由YEAR1開始構思 (其實只係9UP話畢業去歐洲)，到YEAR3有一日講講下就買左機票，一秒間既決定就成為左我一世既回憶。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/d3e9c24b19ea"><strong>雅豊斯 Aris</strong></a><strong><br />｜文化、小說、電影、法律 、德國</strong><br />/ <a href="http://bit.ly/2GuGu9r">律政女王｜「沒文化」的香港？</a><br />「對我這代人來說，香港曾經是繁榮、進步、法治與國際化的代名詞，也是流行與時尚的指標。在KTV裡完整唱完幾首粵語歌，曾是我的少女時代裡最了不起的成就之一。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/5bc91c512072"><strong>好好削蘋果</strong></a><br /><strong>｜生活方式、生活觀察、寫作、攝影</strong><br />/ <a href="http://bit.ly/2rTp8zJ">關於關心的本質</a><br />「早在這之前我也因看到自殺的新聞，而深刻體會到「關心」的重要性，<br />在網路上大家都想呈現自己最好的一面，因此透過網路實在難以了解一個人真實的生活日常、心情狀態。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/229300e8f75e"><strong>夏水</strong></a><br /><strong>｜媒體、政治、日本、文化</strong><br />/ <a href="http://bit.ly/2rXxyWU">蔦屋書店賣的不是書，是生活提案</a><br />「「蔦屋書店」及其相關銷售企劃，既展現了當下這種綜合消費的重要，也反映了書店在網絡時代中，仍具有獨特而重要的銷售價值：臨場現實地呈現、延申並販售與書本相關的知識、品味與生活。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/22fb1bb82169"><strong>Deines Chiu</strong></a><strong><br />｜生活觀察、文化、教育、法國</strong><br />/ <a href="http://bit.ly/2rThUM3">是新聞還是八卦？傻傻分不清楚！</a><br />「這一點和法國非常不同，法國人非常注重個人隱私，私生活和公領域是完全分開的，多半的法國人不會把自己的個人情緒和問題帶到公眾場合，只要不犯法，他的私人領域就是他家的事，別人管不著也和大家無關。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><a href="https://medium.com/u/6dace06bb7a7"><strong>Gary Ho</strong></a><br /><strong>｜文化、生活</strong><br />/ <a href="http://bit.ly/2rTHYXA">作為消遣的邏輯謎題#1</a><br />「《The Logic Labyrinths》書中有很多有趣的謎題。故事背景設定是：島上只有兩種居民，分別為君子和小人，君子只說真話，小人只講大話。讀者必須根據題目的資料，推論誰是君子，誰是小人。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/8b75bd591d02"><strong>華田 Watin</strong></a><br /><strong>｜銀行、金融</strong><br />/ <a href="http://bit.ly/2rRwaVH">銀行小知識 (1) — 貸款前必要搞懂的「78 法則」</a><br />「當客人在供款 9 個月後，拿著 $300 (最右則 3 條藍色棒的總和) 想提前還款的時候，分行職員便會告訴客戶根據 「78 分則」尚餘本金其實不止 $300，然後客人便火了。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/643ca28693f"><strong>Cinyee Chiu</strong></a><strong><br />｜插畫、藝術</strong><br />/ <a href="http://bit.ly/2rSxjMy">Violeta Hernandez — 完美的創作結合</a><br />「對你來說，什麼是插畫？插畫對我來說，是能溝通傳達想法或文字的圖像，文字想法有時候來自其他人，有時候來自我自己。有時候我會寫作，然後依此畫圖。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/161864de188b"><strong>Windhiker — 風靈</strong></a><br /><strong>｜登山、旅遊</strong><br />/ <a href="http://bit.ly/2rSxs2y">麥理浩徑第一段</a><br />「路線簡介：麥徑第一段由北潭涌起步，基本上都是繞著萬宜水庫南面走，全段都是柏油路。除了偶然會有些小斜坡外，路況平坦。西壩的景色已經相當不錯。再繞一段路後，便會到達著名的東壩。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/44552e2a9fdb"><strong>Sheng Pan</strong></a><strong><br />｜設計</strong><br />/ <a href="http://bit.ly/2Gy1Wuj">走出實驗室，了解實測的重要性</a><br />「當我們拿代駕 app 的 Prototype 給使用者把玩時，使用者可以就他使用的情形分享他對於使用流程的看法，然而忽略掉中的部份其實在於 app 的『真實』使用情境，為什麼會強調真實，因為實驗室缺少使用情境。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/1c84fdf2fa93"><strong>炸雞避難所</strong></a><strong><br />｜媒體</strong><br />/ <a href="http://bit.ly/2GAbLYC">為樂齡族群而生的社群媒體，除了品味人生還可以做些什麼？</a><br />「《銀時尚》由年輕團隊設計的銀髮族群刊物讓我很驚豔，也不禁想，已正式進入高齡化的臺灣社會，對於老年人其實仍存在很多僵化的印象。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/cb0364cdbb3e"><strong>六角書櫥</strong></a><br /><strong>｜電影、音樂、閱讀</strong><br />/ <a href="http://bit.ly/2rSxG9U">Dolores O’Riordan之死：End of the Dreams</a><br />「第一次認識The cranberries，跟許多人一樣是從《Dreams》。後來才知道，歌后王菲承襲了不少桃樂絲的氣質、歌唱方式和名曲，如我上個月才看的經典電影《重慶森林》主題曲《夢中人》。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/cbc106f644e6"><strong>公園仔</strong></a><br /><strong>｜生活、電影、旅遊</strong><br />/ <a href="http://bit.ly/2rUHHDC">女子戰隊與秋刀魚之味</a><br />「《秋刀魚之味》真的有很多值得咀嚼和想像的地方，例如在打仗的日子這班日本精英在做甚麼。小津對於戰爭是曖昧的，笠智衆飾演的平山在老師的拉麵店重遇戰時部下坂本，被對方拉去酒吧聚舊，緬懷在軍中的歲月。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/951d046c587b"><strong>龍子維</strong></a><strong><br />｜閱讀、Citizen Science、政治、城市、哲學、文化</strong><br />/ <a href="http://bit.ly/2rUDlfQ">智慧城市 由開放數據開始</a><br />「身為民間研究者，我最有興趣使用的功能，是如何利用地理空間數據，在不同的時間中，呈現某種變項所產生的變化。舉個例，運輸署在全港安裝了183個閉路電視，可以讓市民看到最新的交通情況。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/446d3e8bbbea"><strong>Vista </strong></a><strong><br />｜內容行銷、閱讀</strong><br />/ <a href="http://bit.ly/2rX6wPe">行動呼籲該怎麼設計？以Medium平臺的拍手機制為例</a><br />「從以上兩個例子，各位應該可以看出：行動呼籲未必需要大聲疾呼，只要經過一些合理的設計，加上表達出誠懇的心態，自然就可以獲得大眾的認同，進而達成轉換的目的。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/430f8f7bdb87"><strong>黃祺浩</strong></a><strong><br />｜設計<br />/ </strong><a href="http://bit.ly/2rUIep6">運用單色配色與對比，輕鬆強調簡報中複雜圖表的重點訊息！</a><br />「利用簡報中的圖片遮罩技巧，可以將非重點區域的色彩飽合度降到0，只留下重點區域的色彩，這樣一來就可以讓觀眾一眼聚焦在你想說明的區域，觀眾也不會被圖表中的其他訊息干擾。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/c08912864ba5"><strong>曼努 manzoo</strong></a><strong><br />｜媒體、字體、設計、UI、UX、閱讀</strong><br />/ <a href="http://bit.ly/2GxlHSE">非設計本科的人，也能當設計師嗎？</a><br />「簡單介紹一下我自己：高中讀自然組、新聞系畢業、沒有去巨匠或任何地方上過設計軟體的課，甚至剛開始只會用 Windows 電腦工作（而且我到現在還沒拿過哀鳳 QQ）聽起來超不像設計師的吧。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/7b5f9e98a8d9"><strong>Miula Hung</strong></a><strong><br />｜行銷<br /></strong>/ <a href="http://bit.ly/2rTLAZE">從大師柯特勒的行銷 4.0，來談學習行銷的三種不同層次</a><br />「所謂的行銷 4.0，其實就是科特勒將他之前所談的行銷 3.0，加上了更多網路的要素。如果各要用一句話來形容從行銷 1.0 到行銷 4.0 的話，那行銷 1.0 大概是所謂的產品中心的時代，關鍵是把產品做好。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a0a5f95ceae6"><strong>Mario Yang</strong></a><strong><br />｜媒體</strong><br />/ <a href="http://bit.ly/2rXais5">Podcast新手入門：為什麼要聽、用什麼聽，以及有哪些好節目</a><br />「大家可能會認為現在網路上內容這麼多，文章、圖片、影音等等，多有趣啊，加上我自己又那麼愛看書，有時間為什麼不用『看』的就好？但其實有很多情境我們是無法一直看著手機。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/48e62deaec04"><strong>廣告一瘋堂</strong></a><strong><br />｜廣告</strong><br />/ <a href="http://bit.ly/2GuHjiq">甚麼人才適合做廣告？</a><br />「一般人眼中，認為外向的、擅於表達的人，比較適合廣告行業，但事實上，我從事廣告期間，見過一言不發但語出驚人的好廣告人，工作起來，一交貨必然是上佳作品，而他就是多年來一直與愚下合作美術主任。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/de7e859ff8da"><strong>Jocelyn Lee</strong></a><strong><br />｜媒體</strong><br />/ <a href="http://bit.ly/2Gz1uvt">後浪推前浪，有線電視因應 OTT 只能死在沙灘上？</a><br />「近期內最新的影視內容，無論歐美、韓、中、日、台劇，最先播放的平台都在網路上，有線電視縱在內容「量」上取勝 OTT TV，但在「質」──這也是現今訂閱制最大原動力──部分則慘敗。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/a3bd02088512"><strong>洪子璇</strong></a><strong> </strong><br /><strong>｜行銷</strong><br />/ <a href="http://bit.ly/2rSYkiV">成為 Pinkoist 的那 8 個月－ Pinkoi 行銷部實習回顧</a><br />「透過記錄和分析每一則 PN 的 A/B test 結果，逐步找出消費者的偏好，諸如發送時間、敘述語氣、Emoji 的使用、商品類型等等，各個細節都影響著成效。這段時間的訓練也為我日後的選品邏輯和文案風格立下了基礎。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/87887052b400"><strong>Kuowei Cheng 鄭國威</strong></a><strong><br />｜生活、網絡觀察</strong><br />/ <a href="http://bit.ly/2rTRZUv">問題在於有些父母就是想聽見「只是醫師誤診，你的孩子沒事的。」</a><br />「即使有人拿著可信證據打錯誤訊息提供者或信仰者的臉，被打臉的人反而會質疑打臉者的動機、批判其身份、背景、挑惕其論證上的疏漏（而不是自我檢討），以此來維護自己原先的信念。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/6d1ffcf32bbb">佬訊</a><br />｜穿搭、生活方式<br />/ <a href="http://bit.ly/2EuOLft">名言可畏－Mark Zuckerberg</a><br />「先搞清楚一個重要的概念，一個佬著得好，其實不只為了自己，也是為了整體市容。若全香港男人由明天起，都只穿athleisure wear，相信生產力會立即下降，旅客會大減，恐怕連恒生指數也會急瀉50%。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/23295c101b4f"><strong>奶爸老喬的矽谷觀察 Silicon Valley Old Joe</strong></a><strong><br /></strong>｜個人成長、生活見聞、財經、股票<br />／<a href="http://bit.ly/2Hj1fow">先大膽探索人生，再謹慎做取捨 — 矽谷LKK寫給台灣28歲的你</a><br />「在你的一生當中，選擇做哪些事，遠比怎麼做這些事具有更長遠的影響。人生其實沒有好壞，只有不停地取捨。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/2ff406063bbc"><strong>Tom Wan</strong></a><strong> {粵文}<br /></strong>｜政治、經濟、國際關係<br />／<a href="http://bit.ly/2HiXkIk">關於加泰隆尼亞獨立</a><br />「民主政制裏，法治是底綫，溝通是常態，尊重人權是原則；拉霍爾擁抱了底綫抛掉了原則，加泰獨派則無視底綫，强調並且試圖以原則代替民意 — — 唯一的共同點在於雙方都拒絕溝通。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/34ca4d041190">HY</a><br />｜網路工具、旅遊<br />／<a href="http://bit.ly/2JiyYPz">具香港特色的各式網美打卡點 — 大樓建築篇</a><br />「這幾次去香港前，觀摩了很多網美 Instagram 看到了很多有趣的拍攝點，這些景點都有個很具香港特色的共同點 — 都是在密集的高樓，這是很難在台灣有這種體驗的。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/92ef89fc0065"><strong>德尼思化</strong></a><strong> {粵文}<br /></strong>｜文學、評論、閱讀、文化、寫作<br />／<a href="http://bit.ly/2Hont8o">由神怪之奇到世俗之美 兼談陶淵明〈讀山海經十三首其二〉 (EP . 10)</a><br />「通常中國神話人物的起始，都非俊男美女，反是符合原始圖騰的野性，半人半獸是非常普遍的形象。但隨住社會審美觀轉變，神話的野性最終會被文明所馴化。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/54a04a72a93d"><strong>毛言地</strong></a><strong> {粵文}<br /></strong>｜生活見聞、故事、個人成長<br />／台灣真係比香港可愛得多<br />「如果你問我台北係咪真係咁多嘢玩？其實都唔係，不過佢真係有種吸引力，我可以每年去一次，甚至兩三次都唔悶。係台灣太好定香港太差？我唔知。不過喺台北，我先再一次覺得人真係可信嘅。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/2501b48f9ad7"><strong>陸子瀧</strong></a><strong> {粵文}<br /></strong>｜影評、遊記、愛情散文、小說<br />／<a href="http://bit.ly/2Jg5fXl">北韓遊記：那天清晨，我去了參加金仔搞的平壤馬拉松</a><br />「我們常在恥笑平壤人思想受到監控改造，但是他們確實是打從心底裏尊敬自己的總統，至少某部份人的快樂指數真的比我們這班港燦還要高。我亦不禁反思。其實香港人何嘗不是被洗腦。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/eb41f2deb0d3"><strong>Wendy Chang 張雅鈞</strong></a><strong><br /></strong>｜媒體、傳媒公關、教育<br />／<a href="http://bit.ly/2Hla5lE">我是20世代，我看電視新聞報導</a><br />「當我們對於新聞專題的支持愈來愈多，就能慢慢改變整點新聞；若要在黃金時間收看新聞，那就支持公視，若時間較彈性，那就支持電視新聞專題吧！做個積極的閱聽人，而非被動的閱聽人。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/1d2104aa9cda"><strong>Iris Chen</strong></a><strong><br /></strong>｜產品經理PM、增長駭客、產品開發、UX、網站、媒體<br />／<a href="http://bit.ly/2JbD3VB">產品經理PM第2講：從頁面拆解練習IA資訊架構</a><br />「對於新手產品經理，使用者是個相對模糊的詞，而且在思維mindset上要有非常大的轉變。因此在訓練新手PM時，會建議他們從最簡單的IA架構著手：去拆解市面上知名的網站APP，從中學習。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/68096c75e833"><strong>錫洋</strong></a><strong> {粵文}<br /></strong>｜電影、影視、攝影、藝術<br />／<a href="http://bit.ly/2JfiDes">放大王家衛：「電影與攝影」藝術之異</a><br />「『使用鏡頭放大事物』是攝影的技術，「處理時間的併貼和放大」即是電影的技術。片長98分鐘的《花樣年華》，頭半個小時把落街食麵的戲份，用「慢鏡、正常、慢鏡」共拍了三次……」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/5244e4bcd423"><strong>Andy Lu</strong></a><br />｜軟件開發、編程、科技、閱讀<br />／<a href="http://bit.ly/2Je60jM">低成本簡單架網站</a><br />「一個網站能夠上架，軟硬體都要設置好。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/5fff07643442"><strong>王柏文</strong></a><strong><br /></strong>｜人物專訪、行銷、教育、學習方法、廣告<br />／<a href="http://bit.ly/2JhMz9V">從生活出發，然後前進澳門 ─ 崑山科大視傳系黃嘉宏專訪</a><br />「國中時期喜歡收集唱片的他，總在唱片行被精美的包裝吸引，而背後一行行列出的幕後設計者更是令他好奇，隨後黃嘉宏一腳踏入設計的世界，高職就讀廣告設計科時就接下不少專案學習經驗，進入崑山視傳系。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/9635f4087499"><strong>柯頌竹</strong></a><strong><br /></strong>｜德國、旅遊、留學趣聞<br />／<a href="http://bit.ly/2Hlik14">申請圖賓根大學(Universität Tübingen)德文暑期課程</a><br />「有些人會想趁暑假出國留學，往往因價格而卻步了，但如果是自己去申請當地大學所開設的課程的話，就不會那麼貴囉！」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/baf56c889972"><strong>leafwind</strong></a><strong><br /></strong>｜科技、社會觀察、初創、網絡觀察<br />／<a href="http://bit.ly/2Jh3rgZ">先有軟體與數據文化，才有AI</a><br />「我們到處看得到這類荒謬的想法：因為我們錯過軟體、大數據，所以現在趕快追上 AI；因為我們不擅長軟體，所以用硬體優勢追上 AI；彷彿 AI 跟這些東西毫不相關似的。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/75f98d6306af"><strong>Cloudy Calvin</strong></a><strong><br /></strong>｜比特幣<br />／<a href="http://bit.ly/2Jd7nPJ">NSA用猴子火箭追蹤比特幣用戶? [Crypto 新聞分析]</a><br />「長遠來說，很多人期望通過比特幣實現去中心化的社會，但在達成目標此之前先要得到更多用戶的信任及使用，受政府規管及認可是推動普及化的重要一步。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/caf5e0087bc7"><strong>孫婕/ FM Obligacion</strong></a><strong><br /></strong>｜生活、菲律賓、社會觀察、文化、職場<br />／<a href="http://bit.ly/2Hoic0A">愛因斯坦、達利與時間的幻覺</a><br />「在這裡對時間的感覺跟以前很不同，時快時慢，令人疑惑。又比如，看Stephen Colbert的《The Late Show》1小時，感覺像3分鐘。不小心轉到川普的電視演說…」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/d7d29dc31e51"><strong>謝一了</strong></a><strong> {粵文}<br /></strong>｜語言學、音樂、詩、人類學<br />／<a href="http://bit.ly/2JgRtnw">粵語文學雜評</a><br />「（廣義）中文解毒事小，中文解「獨」事大。「獨」就係指預設咗是非對錯嘅「正統」、「正字」信仰。至少唔係現階段應該着緊嘅事。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/83745422a502"><strong>羅欣亞 LUO, Hsin-Ya</strong></a><strong><br /></strong>｜閱讀、藝術、繪本、書店、寫作<br />／<a href="http://bit.ly/2Hkp6UI">（雷！）最難解的問題，是懸而未決的愛情 │《嫌疑犯X的獻身》</a><br />「在「愛情」這項千古謎團面前，以推理當大框架，數學問題延伸出的邏輯辯證作為骨幹，最終用極為單純，但常人想像不到也絕不會選擇的方法，將真相一口氣複雜化。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/c7a0d8ae69fd"><strong>默泉</strong></a><strong><br /></strong>｜文學、閱讀、日本、出版<br />／春愁不閒<br />「永遠記得，多年前在新疆天山旅行的情景：晚上離開帳幕去小解，山路沒燈光，周遭漆黑不見五指，我偶一抬頭，只見繁星密布，填滿整個天空！那一刻，我就像被宇宙緊緊包圍的一粒塵。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/8e2730d05f75"><strong>Jinyu Chang</strong></a><strong><br /></strong>｜閱讀、生活、思考、影視<br />／<a href="http://bit.ly/2HoiKDG">學會如何學</a><br />「事實上，我們的思考方式除了注重理性與分析的『專注模式』，還有突然靈光乍現的「發散模式」，這兩種思考模式對於學習新事物都相當重要。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/911297e11fd7"><strong>Janus Tiu 刁思正 (呀刁)</strong></a><strong> {粵文}<br /></strong>｜性/性別、文化、旅遊<br />／<a href="http://bit.ly/2qRp9Ba">我今晚想食咗你 — 「飲食」和「性」的奧妙關係</a><br />「其實有性慾是很正常的事，我只是覺得做人不應該太虛偽。不過我能理解他的擔憂，畢竟在香港，性還是只敢在黑暗中滋長。」</p>
+  <p><strong>▍</strong><a href="https://medium.com/u/b12932759052"><strong>Morven Hsu</strong></a><strong><br /></strong>｜書評、經濟、科學、歷史、閱讀<br />／【書評】Denying to the Grave《拒絕真相的人》<br />「為什麼陰謀論這麼吸引人呢？因為人的天性就是找出事物的因果與關聯，而陰謀論通常將複雜的事物給予簡單的解釋，最後就是可讓人找到歸責的對象，讓自己的困境有個具體的譴責對象。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/27e26fa74686"><strong>點兩下開始編輯</strong></a><strong><br /></strong>｜出版、媒體、歷史<br />／<a href="http://bit.ly/2Jh4BZI">書籍誤譯怎麼辦？淺談近期歷史書籍翻譯爭議（懶人包整理）</a><br />「兼具專業素養的好譯者、嚴謹把關內容的編輯與出版社，仍是提升出版品質的關鍵角色──而這些「專業」有無得到應有的報酬與尊重，又是另一個議題了。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/4af1712c13b"><strong>Cathy Tsai</strong></a><strong><br /></strong>｜旅遊、歷史、寫作、生活<br />／<a href="http://bit.ly/2HjjU3j">那些旅行史教我的事</a><br />「當日旅成為一種憧憬或需求，也是旅遊市場的一部份，身處其中的每個人，會願意以「愛國」之名，來放棄自己旅行的喜好，或是擋自己的財路嗎？畢竟每個人都想過更好的生活。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/44cd9f3bab06"><strong>鏡奔流</strong></a><strong> {粵文}<br /></strong>｜小說、故事<br />／<a href="http://bit.ly/2JelGn0">小說：無限商場</a><br />「墮入異世界後歸來的主角，發現故鄉變得面目全非，生活的空間被無限膨漲的商場所吞噬，人類喪失居住權，過著比貓狗還不如的生活，在探索的過程中，他將要做出一個決擇⋯⋯」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/43e504b962a3"><strong>Seal Tseng</strong></a><strong> </strong><br /><strong>｜</strong>UI、UX、設計、攝影、生活見聞<br />／<a href="http://bit.ly/2JieEOh">用「完形心理學」，增加介面設計有感度</a><br />「完形心理學概念普遍的存在與應用於各種設計中，也因為這樣的認知模式存在於每個人的腦中，所以有助設計師解釋直觀設計，或依稀感受卻無法言喻的感性抽象，並以與他人共通並能理解的角度具體地闡述出來。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/adcc91f1bc9e"><strong>Robert Hsu</strong></a><strong><br /></strong> ｜日本、設計、行銷<br />／<a href="http://bit.ly/2HCpKgv">9個在東京必訪的設計主題藝廊整理【上篇-銀座篇】</a><br />「在東京除了去看21–21,森美術館,國立新美術館和各種知名博物館與美術館之外，這幾個不算小的特色藝廊，也是喜歡設計與當代藝術的你在東京逛展時，必須要去一探究竟的好去處。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/147a74a55082"><strong>黃琛為</strong></a><strong><br /></strong>｜投資理財、美股、生活觀察<br />／<a href="http://bit.ly/2HGEuLy">一份超詳細的理財入門指南</a><br />「學理財更多的是思維層面的收獲。一直覺得，30歲以前最重要的是“成長”而非“財富積累”，我現在所做的工作也好、理財也好、寫作也好，都是探尋自我的一個過程，是為了讓自己日臻成熟。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+  <p><strong>▍</strong><a href="https://medium.com/u/4c150f28bd51"><strong>陳淑怡 a.k.a. 黎謐</strong></a><strong><br /></strong>｜生活見聞、寫作<br />／<a href="http://bit.ly/2HC68sJ">吃魚</a><br />「首要任務得解決魚的土味，好巧不巧被我看見一小訣竅，只是稍嫌麻煩，除了將處理過的魚再仔細清洗魚腮裡的血塊，若有充足時間可將魚泡在淡鹽水裡兩小時，如此再執行後續，按法炮製兩三次，果然有效。」</p>
+  <blockquote>
+[<a href="#cda6">跳返使用指南</a>]  </blockquote>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=db0b836ff4cb" width="1" height="1" alt="" />  <hr />
+  <p><a href="https://verbalflystep.com/facebook-explore-feed-medium-%E4%B8%AD%E6%96%87-%E8%8F%AF%E6%96%87-db0b836ff4cb">Medium 移民指南－中文作者集 2.0 (飛步編)</a> was originally published in <a href="https://verbalflystep.com">飛步出品</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2017-11-25</time>
+        <a href="https://nodebe4.github.io/oped2/2017-11-25/%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-Medium-%E8%8F%AF%E6%96%87%E4%BD%9C%E8%80%85%E9%9B%86-1.2/">
+          版本更新－Medium 華文作者集 1.2
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2017-10-29</time>
+        <a href="https://nodebe4.github.io/oped2/2017-10-29/%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-Medium-%E8%8F%AF%E6%96%87%E4%BD%9C%E8%80%85%E9%9B%86-1.1/">
+          版本更新－Medium 華文作者集 1.1
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2017-10-01</time>
+        <a href="https://nodebe4.github.io/oped2/2017-10-01/%E5%89%8D-Paypal-%E5%82%B3%E5%A5%87%E5%AF%A6%E7%BF%92%E7%94%9F-Paul-Martin-%E7%9A%84%E5%B0%8F%E6%95%85%E4%BA%8B/">
+          前 Paypal 傳奇實習生 Paul Martin 的小故事
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%9C%80%E5%90%8E%E7%9A%84%E6%8A%A5%E7%BA%B8/">
+          最后的报纸
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2017-10-21/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E4%BB%80%E4%B9%88%E9%83%BD%E7%9F%A5%E9%81%93/">
+            前一篇：中国人什么都知道
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2017-10-28/%E4%BD%A0%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8%E7%BD%91%E4%B8%8A%E5%86%99%E9%95%BF%E6%96%87%E5%BE%88%E5%90%83%E4%BA%8F%E5%90%97/">
+            後一篇：你知道为什么在网上写长文很吃亏吗？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2017-10-21/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E4%BB%80%E4%B9%88%E9%83%BD%E7%9F%A5%E9%81%93/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2017-10-28/%E4%BD%A0%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8%E7%BD%91%E4%B8%8A%E5%86%99%E9%95%BF%E6%96%87%E5%BE%88%E5%90%83%E4%BA%8F%E5%90%97/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2017-10-29/%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-Medium-%E8%8F%AF%E6%96%87%E4%BD%9C%E8%80%85%E9%9B%86-1.1/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2017-10-01/%E5%89%8D-Paypal-%E5%82%B3%E5%A5%87%E5%AF%A6%E7%BF%92%E7%94%9F-Paul-Martin-%E7%9A%84%E5%B0%8F%E6%95%85%E4%BA%8B/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2017-10-21/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E4%BB%80%E4%B9%88%E9%83%BD%E7%9F%A5%E9%81%93/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2017-10-28/%E4%BD%A0%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8%E7%BD%91%E4%B8%8A%E5%86%99%E9%95%BF%E6%96%87%E5%BE%88%E5%90%83%E4%BA%8F%E5%90%97/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2017-10-29/%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-Medium-%E8%8F%AF%E6%96%87%E4%BD%9C%E8%80%85%E9%9B%86-1.1/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2017-10-01/%E5%89%8D-Paypal-%E5%82%B3%E5%A5%87%E5%AF%A6%E7%BF%92%E7%94%9F-Paul-Martin-%E7%9A%84%E5%B0%8F%E6%95%85%E4%BA%8B/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊
+——
+" />
+    <meta property="og:description" content="
+“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊" />
+    <meta property="twitter:title" content="“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60acc38085f8c37e7adcb9bc" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60acc38085f8c37e7adcb9bc" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60acc38085f8c37e7adcb9bc&text=“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60acc38085f8c37e7adcb9bc&title=“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60acc38085f8c37e7adcb9bc&title=“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊&body=
+“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60acc38085f8c37e7adcb9bc" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60acc38085f8c37e7adcb9bc&title=“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊&caption=
+“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊&url=https://www.allnow.com/post/60acc38085f8c37e7adcb9bc" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-05-25
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 燕京书评编辑部</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60acc38085f8c37e7adcb9bc" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60acc38085f8c37e7adcb9bc">“孤独的接骨木”：陪着无家可归的月亮，唱着不合时宜的歌曲丨燕京书坊</a>
+——</p>
+
+<div>
+  <p><strong>在喧嚣的时代，做一个文明的孩子</strong></p>
+  <p>近期，许渊冲接受《书生说》的访谈在社交媒体成为热门话语。当询问被“您俄语成绩也这么好，为什么后来不用俄语进行翻译工作呢？”许渊冲的回答成为了网络狂欢的戏谑段子：“俄文有一个毛病，吃饱饭你要看你这书太累了，所以后来不念俄文了……你简直不想看，写那么长干什么，我想，算了。”在很多人眼中，俄国文学著作难以啃读，或许并非在于它有多长，而在于人物名字真的太长，恨不能用阅读之前把所有人名直接通换成张三李四王麻子之后再来阅读。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-25/60acc3a84cd55d1f8948db59+L.png" data-id="60acc3b0ab4ffd0cef1c477d" alt="许渊冲谈自己为何没有用俄语做翻译" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+许渊冲谈自己为何没有用俄语做翻译
+    </figcaption>
+  </figure>
+  <p>尽管难啃，但俄罗斯文学对于国朝心灵的影响，仍是不可估量。倘若侧身旧书摊前，常见上世纪各大出版社译介出版的俄罗斯大部头。著名经济学家王亚南的孙子王昭阳，为了缓解体内灵魂的撞击冲突，用了大半生行走在世界各地寻找心灵的应许之地。身份认同与情感归属，成为他笔下这辈子无法言说的暧昧、纠结和自相矛盾。尽管在异国他乡归化入籍，但他依然自认文化遗民：“两代中国知识分子，受到来自遥远北方宗教情怀的激励，播下幼稚的精神种子，而收获面目全非的果实，并为之付出最惨烈的集体代价。其间种种曲折悲苦，西方人又怎能懂得。借着远去的悲歌与苏维埃残韵，我寻找到和我的单薄母语，还有中国知识分子惨痛宿命的最终和解。”在他看来，上世纪的动荡难安让中国古典传统产生了巨大的断裂，而俄国经典文学里所包含的壮阔与纯净，在高超译者的心血浇灌下，已经成为了现代汉语最华美的韵律之一，中国知识分子如文化后裔一般把魂丢在了那里。</p>
+  <p>正如刘文飞在近著《白银时代的星空》中所写的那样：“长期以来，俄语文学被十月革命这一重大的政治事件分割为俄国文学和苏维埃俄罗斯文学这两大块。”卡在俄国文学与苏维埃文学之间的白银时代，由于意识形态等方面的原因，在十月革命之后不仅未能得到持续发展，反而受到了有意的冷漠与遗忘；而当年捧读的苏联文学，又在苏联解体之后迅速贬值。站在世纪末的时代拐点之际，世纪初的“白银时代”文化遗产由此得到了抚慰与共鸣。不过，不得不承认的是，阅读的境遇往往会左右着文本的理解，更会激发阅读者内心的现实想象。尤其在一个下沉的年代里，再度回望上世纪初“白银时代”作家们逆流而上的坚韧精神，尤让人为之动容，多少能够起到内心坐标的安放之效。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-25/60acc3c79c232e04ae3f1ea2+L.jpg" data-id="60acc3ceab4ffd0cef1c477e" alt="《白银时代的星空》，刘文飞著，北京出版社2021年3月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《白银时代的星空》，刘文飞著，北京出版社2021年3月版
+    </figcaption>
+  </figure>
+  <p>在代序中，刘文飞也谈及了“白银时代”的断代问题：在俄国批判现实主义文学之后与苏维埃文化之前的世纪之交。但在国朝出版方面，经常出现扩大化倾向，使之失去了内在规定性而面临外延泛化之风险。此外，由于白银时代的作家们大多不接受十月革命而流亡国外，又导致大家将白银时代作家群体等同于境外流亡文学或持不同政见者文学，添加了过重的意识形态色彩。在刘文飞看来，白银时代俄国知识分子敢于以世界文化的捍卫者自居，在相对偏僻的北疆对人类的生存状态和历史命运进行温暖的思考。他们如同布罗茨基所言的“文明的孩子”，刘文飞将这种在动荡混乱年代所体现的赤子情怀概述为：“在兵荒马乱的岁月，他们居然能专注地端坐在书房里，潜心写作；在欲望膨胀、价值重估的年代，他们始终保持着对艺术价值和自身价值的坚定信念；在充满彷徨和疑虑的世纪之交，他们在匆忙而又认真地整理着过去世纪的文化遗产，并同时为新世纪文化的走向确定了一个基本的框架。 ”</p>
+  <p>在革命与战争此起彼伏的短短二十年内，白银时代为世界贡献了象征派、阿克梅派、未来派等诗歌派别，也贡献了一批诸如古米廖夫、安德烈·别雷、曼德尔施塔姆、马雅可夫斯基、茨维塔耶娃、阿赫玛托娃等诗人，还有诸如索洛维约夫、阿尔嘉耶夫、阿尔志跋绥夫、普里什文等哲学家和思想家，还有帕斯捷尔纳克、扎米亚京和巴别尔等著名文学家。在浓烈的世纪末情绪和动荡的下沉年代里，他们的迷惘心态反而在寻找命运药方时锻造成了一股倔强的天真与真诚。在面对暴风骤雨的侵袭之前，他们敢于将自己的内心高亢地呐喊出来：“但当你们要对信仰和自由下手时，我们会立即离开你们的旗帜。”甚至，他们敢于用自身的反叛性与自尊心与新政权分庭抗礼，“甚至要与新政权平起平坐，说布尔什维克是无产阶级在政治领域的代表，而他们则是无产阶级在艺术领域的代言人。”尽管，在暴风骤雨席卷一切之时，“电车像黑暗的风暴在极驶，但它在时代的深渊里迷了途”，诗人们声嘶力竭地呼喊“快把这电车停住”，而迷途中的他们早已不知“我在哪里”……</p>
+  <p>除去暗夜高呼之外，或许曼德尔施塔姆在《时代的喧嚣》中写下的文字，更能够体现时代赋予这段历史的意志：“我想做的不是谈论自己，而是跟踪世纪，跟踪时代的喧嚣和成长。我的记忆是与所有个人的东西相敌对的。如果由着我，那么在忆起过去时，我也只会做个鬼脸……在我和世纪之间，是一道被喧嚣的时代所充斥的鸿沟，是一块用于家庭和家庭纪事的地盘……我和许多同时代人都背负着天生口齿不清的重负。我们学的不是张口说话，而是讷讷低语，因此，仅仅是在倾听了越来越高的世纪的喧嚣、在被世纪浪峰的泡沫染白了之后，我们才获得了语言。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-25/60acc3e84cd55d1f8948db5b+L.png" data-id="60acc3f38717253efd7e2a26" alt="曼德尔施塔姆档案" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+曼德尔施塔姆档案
+    </figcaption>
+  </figure>
+  <p>意大利哲学家吉奥乔·阿甘本在《何谓同时代人？ 》中，特别借助曼德尔施塔姆的诗歌《世纪》来谈论“同时代意味着什么”。在阿甘本看来，“时代与生物脊骨并列”和“时代与年代脊骨并置”是这首诗歌的两大核心，而曼德尔施塔姆想要做的是“世纪脊骨的碎裂与弥合”：“我的世纪，我的野兽，谁能设法/注视你的双眸/用他自身的鲜血，粘合/两个世纪的椎骨？……为世纪挣脱束缚/以开启全新世界/必须用长笛连接/所有多节之日的节点。 ”正如布罗茨基所阐释的那样，曼德尔施塔姆是对世纪文化抱持深刻眷念的“文明的孩子”，他既是文明的受惠者，又是文明的创造者；而他悲剧性的身世遭遇，也让他成为了文明的受害者：“他的生和他的死，均是这一文明的结果。”</p>
+  <p>悲剧性的根源，恰恰是因为曼德尔施塔姆身为同时代人的身份，就像他在诗中所揭示的“诗人及其同时代之间的关系”那样：真正同时代的人，真正属于其时代的人，也是那些既不与时代完全一致，也不让自己适应时代要求的人；但他们既不可改变时代，也无法逃离时代；既依附于时代，同时又与它保持距离。正是通过这种断裂与时代错位，他们比其他人更能够感知和把握他们自己的时代，比在他们自己的城市和年代更能感受到的一种乡愁。但是他也明白，他属于这个时代，这是不可改变的，同时他也无法逃离自己的时代。过于契合时代的人，在所有方面与时代完全联系在一起的人，并非同时代人，因为他们无法审视时代。所以，必须以生命换取自己的同时代性的诗人，也必须坚定地凝视世纪野兽的双眼，必须以自己的鲜血来粘合破碎的时代脊骨。（吉奥乔·阿甘本《何谓同时代人？ 》）</p>
+  <p>上世纪初的人们，“就像滚滚的玻璃灯罩下夏日的昆虫，整整一代人都在文学节日的火焰中被烫伤了，烤焦了，戴着隐喻的玫瑰花环。”他们对时代的要求，仅剩一句“我想工作”，因为“工作的中断……使治疗失去了所有的意义。”就像茨维塔耶娃在尝试了民族事务人民委员会的失败工作经历之后，在生命的最后几天里，给早已疏散到鞑靼共和国的作协机构写下了人生最后的时代请求：“我请求担任即将开设的文学基金会食堂洗碗工工作。”两天后，她选择了自缢而亡，据说在那个年代，伟大的诗人连做个洗碗工都不配。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-25/60acc42a9c232e04ae3f1ea4+L.jpeg" data-id="60acc4338717253efd7e2a28" alt="《玛丽娜·茨维塔耶娃：生活与创作》，[俄]安娜·萨基扬茨著，谷羽译，文学纪念碑丨广西师范大学出版社2011年6月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《玛丽娜·茨维塔耶娃：生活与创作》，[俄]安娜·萨基扬茨著，谷羽译，文学纪念碑丨广西师范大学出版社2011年6月版
+    </figcaption>
+  </figure>
+  <p>当然，在疾风骤雨来临时的彷徨之际，还有诸如阿尔志跋绥夫采取“挑逗与亵渎”的态度对时代发出笑声，绝望的现实境遇与真诚的内心拷问，让他用玩世不恭的嬉皮笑脸绘制着“感伤主义的时代漫画”。随后，他的著作毫无疑问地消失在北疆大地半个多世纪，被俄国批评家们认为他想用“伏特加和美女”的口号去取代“全世界无产者联合起来”的口号。或者，如茨维塔耶娃那般，面对强大的彼得堡诗歌传统，孤军重塑莫斯科诗歌传统；用充满细节性和戏剧性的独白式抒情语言，将内心激情的涌动和生存状态的刺激锻造成“一丛孤独的接骨木”，思考着苦难以及人类面对苦难的态度，探索着诗人以及诗人的身份认同。当然，还有诸如索洛维约夫面对西方哲学的危机，意欲在东西方文化传统之外开辟新的俄国思想道路；或者如别尔嘉耶夫对俄国历史命运的重负所进行的种种折中性或矛盾性探索……</p>
+  <p>在白银时代的星空下，当“灾难正骑着高头大马驰骋”时，那些命运多舛的同时代人们，就像是“无家可归的月亮在城里徘徊。我陪着它走，借以温暖我心中难以实现的理想和不合时宜的歌曲”。在用步兵与骑兵给时代犁田耕地的年代里，“我们在梦境里才有安宁”。那些与世纪同行的同时代人，如曼德尔施塔姆等，借助世界文化的深刻眷恋，对文化储备进行提炼精加工，探索生存的本质，用语词做材料，借诗歌为工具，在世纪的转折点上，“文明的孩子”修筑着“时间的隧道”。在一个凶猛下沉的时代里，不管是时代的同路人，还是社会的异端者，这群人努力地扛起黑暗的闸门，抵挡严寒酷冷的世纪飓风，在北土寒疆的飓风来临之时埋头做着焊接世纪的历史工程。他们借助“偷来的空气”，说着“口齿不清”的话语，讲述着“时代的喧嚣”，“粘合两个世纪的椎骨”……<strong>【萧轶撰】</strong></p>
+  <p><strong>乐黛云的沉浮岁月和人生坦途</strong></p>
+  <p>乐黛云教授的人生经历颇为丰富，其《九十年沧桑》一书大致可分两段：前半段为1931-1978年可谓沉浮岁月，对应本书前四章；后半段为1979年至今可谓坦途，对应本书第五章到第九章。</p>
+  <p>本书并非一本严格意义上的自传和回忆录，而是由多篇回忆散文构成，后半部有一些半专业的学术研究介绍。对作者来说，后半生才真正开始学术生涯，无论是比较文学研究，还是跨文化研究、东西方文化交流等等，这部分内容大致属于学术史范畴。对读者而言，作者前半部的叙述更引人思考，而时代的进程也尽在其中。</p>
+  <p>按照书中所述，乐黛云的父亲20世纪20年代在北大英文系做了四年旁听生，1927年回到贵阳后，娶了年轻10岁的女子师范学院艺术系校花。1931年乐黛云出生，她在花溪念完初中。考上了贵州唯一的国立中学第十四中。抗战胜利后第十四中迁回南京，复原为中央大学附属中学，乐黛云转入贵州中学。高三时，她一个人搭便车到重庆，20天参加了三所大学的入学开始，不久后收到了北京大学、中央大学、中央政治大学的录取通知书。</p>
+  <p>1948年，乐黛云不顾父亲反对，北上进入北京大学，一心一意要参加革命。“其实，我并不知革命为何物，我只是痛恨那些官府衙门。”同年，她加入了中国共产党的外围组织——民主青年同盟，并于1949年加入中国共产党。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-25/60acc45b9c232e04ae3f1ea5+L.jpeg" data-id="60acc460ab4ffd0cef1c4781" alt="《九十年沧桑》，乐黛云著，中国大百科全书出版社2021年1月" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《九十年沧桑》，乐黛云著，中国大百科全书出版社2021年1月
+    </figcaption>
+  </figure>
+  <p>乐黛云自称：“我喜欢念书，但更惦记革命。”在北大期间，她积极参与了革命活动。1949年1月29日，解放军进入北京城。当时，北大文法学院位于国会街四院，院址就是曹锟的官邸。共产党进城后，决定要北大让出四院，学生全部迁入校本部（沙滩）。一小部分学生认为，四院是北大校产，政府不能任意征用学校的财产和土地。这部分人四处呼吁、贴墙报、开辩论会，并且威胁要组织游行。于是，共产党“加强领导”，通过自己的地下组织予以回击，说他们挑衅闹事，反对新政府，并在墙报上揭露他们平常生活中各种不检点的事，这些人一下就“臭”了：“于是我们大获全胜，浩浩荡荡进入了校本部所在地——沙滩。而四院则成了新华社的大本营，一直到今天。”</p>
+  <p>按照李慎之先生的回忆，抗战胜利之后，各个大学的学生组织基本都被共产党控制。其时，左翼思想在大学成为主流。因为乐黛云表现积极，1950年暑假期间成为参加第二届世界学生代表大会中国学生代表团成员，访问了苏联和捷克。回国后，她参加了江西吉安地区的土改，其领导是北大统战部长程贤策。19岁的乐黛云为一个七十多岁的老裁缝申辩，结果被斥责为“小资产阶级知识分子的劣根性、人道主义、人性论”。当地一个副县长亲自出马，就地枪决了包括老裁缝在内的八个恶霸地主。因为这个老裁缝并无劣迹而被枪杀，乐黛云和废名教授相对垂泪。在庆功会上，程贤策开导她要严格反省自己身上的资产阶级人道主义、人性论。在他的开导下，乐黛云这样做了。</p>
+  <p>1966年“文革”发生后，作为北大中文系党总支书记的程贤策被揪上“斗鬼台”，指为“深藏党内的历史反革命”，被批斗和游街。当天被放回家后，程贤策换了一身干净衣服，在小卖部买了一瓶名牌烈酒。次日，他一手拿着烈酒，一手拿着一瓶敌敌畏，边走边喝，走向了香山的密林深处，尸体两天后被人发现、对此，北大校园的喇叭却高声叫嚷“大叛徒、大特务程贤策自绝于党，自绝于人民，罪该万死，死有余辜”。</p>
+  <p>程贤策的个案，在革命者中间并非少见。一旦革命的风云变幻过快，投身其中的人就难以自保。而他们被扣上的帽子，又足以让其理想幻灭。最后，选择肉体上的自我择灭，是超脱思想冲突的最终出路。以周扬为例，当他以武器的批判颐指气使之时，断不会想到落难者的悲屈；当他自己也成为落难者之后，这才思考“异化”和人道主义问题。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-25/60acc4759c232e04ae3f1ea6+L.jpg" data-id="60acc4798717253efd7e2a29" alt="汤一介（左）、乐黛云青年合影" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+汤一介（左）、乐黛云青年合影
+    </figcaption>
+  </figure>
+  <p>在乐黛云身上，也有类似的经历。乐黛云自称自己极左，1952年毕业后留校工作，9月份和汤用彤先生的儿子汤一介结婚，在汤家四合院举办了一个简单的“反传统”婚礼——只准备了喜糖、花生、瓜子和茶水，连向父母行礼也免了，没有请父母和领导讲话。乐黛云在讲话中说，自己并不是进入一个无产阶级家庭，因此还要注意划清同资产阶级的界限。次日，汤用彤夫妇在东单的森隆大饭店宴请至亲好友，但乐黛云要抵制这种旧风俗习惯，和汤一介商量后都没去。后来她才想到，“这种行为现在看来确实很过分，一定很伤了两个老人的心。”</p>
+  <p>在1957年年初“百花齐放，百家争鸣”的气氛下，乐黛云和几位同仁决定在中文系办一个学术刊物，并开了两次会，商定了两期刊物准备用的文章。5月初，乐黛云的导师王瑶看出风向不对，警告她立即停办。但为时已晚，参加办刊的8个人全部成为“右派”，乐黛云更是成了“极右”，被开除党籍，每月16元生活费，下放到门头沟监督劳动。直到1962年底才返回北大，恢复公职。其后，她经历了“四清”、“文革”，1969年到江西鲤鱼洲劳动，1972年才返回北大。</p>
+  <p>改革开放之后，乐黛云开始了比较文学研究，并于1981年8月到哈佛做了为期一年的访问学者，次年夏天又到加州伯克利大学做了两年的客座研究员。这时，她的儿子和女儿都已到美国求学，汤一介也在美国访问。1984年秋天回国之后，乐黛云参与创办了中国比较文学学会。此后，她的学术研究和人生道路基本顺利，学术成果丰硕。</p>
+  <p>乐黛云和朱正、钟叔河、邵燕祥是同龄人，他们的经历也很类似——早年热衷革命，1957年被打为右派，“文革”饱经沧桑，改革开放后事业有成。而他们都撰写了自己的自传或留下了回忆录。一定程度上，这是以血泪和苦难凝聚的个人史，其中的历史教训既惨痛，又深刻。但是，《九十年沧桑》多少给读者留下了一些遗憾，这主要因为前半部最具历史价值，但写得并不连贯，很多人和事并没有述及。但即便如此，本书也足以警醒今天的读者。若“后人哀之而不鉴之”就只能“亦使后人而复哀后人也。” <strong>【张弘撰】</strong></p>
+  <p><strong>在民主与中立的幻象伪装下</strong></p>
+  <p>当中东的战火再一次点燃，巴以之间的恩恩怨怨又重新被打捞出来以作为理解局势的入口。然而我们或许只需稍加用心地多留意几篇，便不难发现即使是看似历史钩沉的文字，也隐隐约约地呈现着不尽相似的面向，更不用说那些针对冲突现实的即时报道，显而易见地体现出立场各异的表达。</p>
+  <p>1988年时，诺姆·乔姆斯基便在加拿大广播公司电台的演讲中，揭露过这种微妙的叙述技巧与隐秘在其背后的意识形态操控。从巴以冲突、越战到中美洲政党斗争、印尼骚乱再到美国及其附庸国在联合国的各种投票情况，美国大型媒体一次次地在民主与中立的幻象伪装下，施用双标、创制“新语”、操纵言论议程等种种手段大肆宣扬着与事实不符的观点和诡辩。</p>
+  <p>看似有宪法保护新闻自由的媒介传播，事实上只是在政商利益所划定的范围内讲话，至多踏足一些表面的纷争而已，以确保任何针对现有特权和权力的挑战在形成和壮大之前就已转向。他们不仅成为政府宣传的帮手，更是保障“民主制度”警觉的保卫者——泛滥的民主只会带来民主危机，“如果民主要得以生存，普通大众就必须受到压制，回到传统的麻木、顺从状态。”</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-25/60acc4c99c232e04ae3f1ea8+L.jpg" data-id="60acc4cf8717253efd7e2a2c" alt="《必要的幻觉：民主社会中的思想控制》，[美]诺姆·乔姆斯基 著，王燕译，南京大学出版社2021年1月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《必要的幻觉：民主社会中的思想控制》，[美]诺姆·乔姆斯基 著，王燕译，南京大学出版社2021年1月版
+    </figcaption>
+  </figure>
+  <p>也正是在这种信念之下，新闻研究机构和知识分子群体在制造“必要的幻觉”的过程中也扮演了重要的角色，他们并不一定是在有意识的欺骗，而是相信自己在为共公共事业的需要而服务、在为进一步健全具备自我调整能力的制度而做着贡献。而这，大抵尤其值得警醒和担忧。</p>
+  <p>也许对于我们而言，乔老爷的这番痛心疾首和正义直言，丝毫没有多么石破天惊或者振聋发聩。但其实，意识形态性的批判并不等同于深入肌理的思想剖析，更重要的是乔姆斯基的批判建立在一个完全不同的价值基础之上、也指向着一个完全不同的理想标的。同时，在世界性的民粹情绪高涨、反智主义抬头的当下，乔姆斯基的思考不仅有可能无法被正确理解，反而可能被当成另一种武器。<strong>【徐鹏远撰】</strong></p>
+  <p><strong>在历史的浪涛中翻卷</strong></p>
+  <p>这是一本阅读起来甚至有惊悚感的“非虚构作品”，早已经过上中产生活的娜塔莎·沃丁已经在湖边有一套自己的别墅，在夏日她往往会选择去那里写作。早已经和现实和解、享受安稳的现代生活的作者，却依旧不能放下被隐秘地安置在心底的秘密：自己的身世和母亲，她想知道自己是从哪里来的。</p>
+  <p>“在俄罗斯互联网的搜索引擎上输入母亲的名字，不过是一场无意义的消遣。”《她来自马里乌波尔》从这里开始：打开互联网页面，敲上几个字，鼠标点一下，这对现代人来说是再熟悉不过的动作了，尤其对于一个文字工作者来说，每天都要重复这样的动作无数次。沃丁在做出这一举动之前，她对自己出生前的母亲一无所知：她仅仅知道自己的母亲是被历史隐蔽掉的“强制劳工”中的一员，战后留在了西德的一座小城市，居住在专供她们居住的“难民楼”。1956年10月的一天，她一言不发地离开家。</p>
+  <p>在《她来自马里乌波尔》甫一开始的两页，这些内容已经被介绍完毕了，简单地出乎意料。但乍看上去，却又一头雾水：“强制劳工”是什么？为此母亲要一言不发地离开家？为什么除此之外一无所知？一直到最后的一部分，所有的谜底才被解开。作者带着每一个读者进行了一次属于她的历史书写过程，她开始搜集史料，她奔走在不同的田野点上，但这一切的场所都变成了互联网。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-25/60acc4e54cd55d1f8948db5e+L.jpg" data-id="60acc4e98717253efd7e2a2d" alt="《她来自马里乌波尔》，[德]娜塔莎·沃丁著，[德]祁沁雯译，新星出版社2021年3月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《她来自马里乌波尔》，[德]娜塔莎·沃丁著，[德]祁沁雯译，新星出版社2021年3月版
+    </figcaption>
+  </figure>
+  <p>当沃丁把母亲的名字打在搜索引擎后，一切都进展地意外顺利：她发现跟随在自己母亲名字后面的是一个她听说过但又非常陌生的地名：马里乌波尔，甚至像一朵腐烂的蘑菇。这是一个地处亚述海边的乌克兰小城，在不断的检索中她知道马里乌波尔和希腊有着万千联系的历史，她找到了一个叫“亚述的希腊人”的网站，她注册后发布了一条寻人帖子，把她知道的所有信息都附上，不过是她母亲的名字和出生地。</p>
+  <p>借助这个网站，一位希腊姓氏叫康斯坦丁的人帮助沃丁帮她拼凑了母亲的碎片，甚至她找到了表弟、表妹，知道她的舅舅、外祖母、外公的大部分故事。最终，她收到了一本来自自己母亲姐姐的日记。历史对于沃丁而言，终于不再是冰冷到她分分钟想逃避的大事件，而是可感的、带有温度的亲人故事。</p>
+  <p>“我并非深处人类历史之外，而是在历史之中，和其他人一样。”《她来自马力乌波尔》是一本真正现代的作品，它近乎用标准的“后现代视角”呈现了二战乃至更早的欧洲历史，用最小的切片去呈现一个带有巨大伤痕和不快的家庭，如何在历史的浪涛中翻卷，最终四散。而对于生活在当下的沃丁来说，这一切都是天然而无意识的，又是带有原始冲动的：对于一个活生生地被历史切断的她而言，寻找自己的来路是一种近乎原始的本能。</p>
+  <p>《她来自马力乌波尔》是一个作为个体如何介入甚至干预历史的典范，而对于我们来说，在洪水般宏大的历史叙事中，如何找到自己，同时去论述它，并不遥远，甚至也是摆在我们面前的时代命题。而从这个意义上说，这也是最为理想的且最有生命力的非虚构写作。<strong>【张笑晨撰】</strong></p>
+  <p><strong>波伏瓦的贡献被有意无意地忽视了</strong></p>
+  <p>从生前到身后，西蒙娜·德·波伏瓦的形象被包围在爱情故事女主角、女权主义偶像与坏女人的想象与议论中。</p>
+  <p>她曾说过，“对于我来说，最重要的就是我的思想”；然而，人们最为津津乐道的却是她与萨特的关系，时而认为她的做法标志着女性的自由独立，时而认为她是一段不对等的爱情关系中的受害者。作为第二波女权浪潮代表作《第二性》的作者，她或许是公众认知中最为知名的女性主义思想家，启发了无数人看待自己与身边世界的方式，在当时却曾遭到许多思想家与评论者的贬低；而在如今的后女权时代，她又作为偶像符号的化身难逃被消费的命运。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-05-25/60acc5024cd55d1f8948db5f+L.jpg" data-id="60acc507ab4ffd0cef1c4782" alt="《成为波伏瓦》，凯特·柯克帕特里克著，刘海平译，无界丨中信出版集团2021年3月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《成为波伏瓦》，凯特·柯克帕特里克著，刘海平译，无界丨中信出版集团2021年3月版
+    </figcaption>
+  </figure>
+  <p>在波伏瓦的最新传记《成为波伏瓦》一书中，作者凯特·柯克帕特里克（Kate Kirkpatrick，伦敦大学国王学院宗教、哲学与文化讲师）拆解了围绕波伏瓦的层层迷思。过去，人们常常把波伏瓦视作萨特的追随者与影子，无论是私人生活中，还是哲学思想上。人们看待她的方式，竟如此贴合她在著作中的洞见，生动展现了女性在我们的文化中如何被塑造为“第二性”的存在。</p>
+  <p>然而，波伏瓦哲学思想上的贡献不止于《第二性》这部开创性的著作。科特帕特里克书写的这部传记，通过挖掘一些过去被研究者，尤其是英语世界的研究者所忽视的材料，指出萨特《存在与虚无》中的哲学未必完全是他自己的思想成果，其中一些很可能来自于波伏瓦，她的贡献和原创性却被有意无意地忽视了。</p>
+  <p>相较于中文界更为通行的译法“波伏娃”，本书译者选择了看起来不带性别标记意味的“波伏瓦”。这些细节上的分别，似乎隐然透露着女性主义脉络的分野。译者刘海平本身是有着性别研究和翻译研究背景的学者，在翻译的斟酌上，仿佛可以看到译者对细节的考量与对女性主义理论的解读。<strong>【元十雨撰】</strong></p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-05-27</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-27/%E7%A7%A6%E6%99%96-%E5%BC%A0%E5%B8%86-%E9%83%91%E5%B0%8F%E6%82%A0-%E4%B9%9D%E5%AD%90%E5%A4%BA%E5%AB%A1%E5%92%8C%E5%8F%A4%E4%BB%A3%E7%9A%84%E7%9A%87%E4%BD%8D%E7%BB%A7%E6%89%BF%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%B2%E7%A8%BF/">
+          秦晖×张帆×郑小悠：九子夺嫡和古代的皇位继承丨燕京讲稿
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-26</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-26/%E5%BC%A0%E7%AC%91%E5%AE%87-%E6%8A%80%E6%9C%AF%E8%83%BD%E5%90%A6%E6%94%B9%E5%8F%98%E6%94%BF%E6%B2%BB%E7%9A%84%E5%8F%91%E7%94%9F%E5%AD%A6%E6%9C%BA%E5%88%B6%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          张笑宇：技术能否改变政治的发生学机制丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-24</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-24/%E7%AB%A5%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%A7%8D%E6%97%8F%E4%B8%BB%E4%B9%89%E5%80%92%E5%BD%B1-%E6%AE%96%E6%B0%91%E5%8E%86%E5%8F%B2%E7%9A%84%E9%81%97%E8%BF%B9-%E5%B9%B6%E4%B8%8D%E7%BA%AF%E7%9C%9F%E7%9A%84%E7%AB%A5%E5%B9%B4/">
+          童书中的种族主义倒影：殖民历史的遗迹，并不纯真的童年
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-05-23</time>
+        <a href="https://nodebe4.github.io/oped2/2021-05-23/%E4%BA%8E%E5%9D%9A-%E7%98%9F%E7%96%AB%E4%BB%8E%E6%9D%A5%E6%B2%A1%E6%9C%89%E5%83%8F%E4%BB%8A%E5%A4%A9%E8%BF%99%E6%A0%B7-%E4%BB%A4%E4%BA%BA%E8%99%9A%E6%97%A0-%E6%A3%95%E7%9A%AE%E6%89%8B%E8%AE%B0/">
+          于坚：瘟疫从来没有像今天这样，令人虚无 | 棕皮手记
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-24/%E5%85%85%E5%88%86%E5%88%A9%E7%94%A8%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%80%AE%E6%8D%95-%E7%A4%BA%E5%A8%81%E5%8F%82%E4%B8%8E%E8%80%85%E6%8C%87%E5%8D%97-7-iYouPort/">
+            前一篇：充分利用大规模逮捕：示威参与者指南（7） - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-05-25/%E4%B8%AD%E5%9B%BD%E6%8B%A5%E6%9C%89%E5%8F%AF%E7%96%91%E7%9A%84%E6%83%85%E6%84%9F%E8%AF%86%E5%88%AB%E6%8A%80%E6%9C%AF%E4%B8%8D%E6%96%AD%E5%A2%9E%E9%95%BF%E7%9A%84%E5%B8%82%E5%9C%BA-iYouPort/">
+            後一篇：中国拥有可疑的情感识别技术不断增长的市场 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-05-24/%E5%85%85%E5%88%86%E5%88%A9%E7%94%A8%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%80%AE%E6%8D%95-%E7%A4%BA%E5%A8%81%E5%8F%82%E4%B8%8E%E8%80%85%E6%8C%87%E5%8D%97-7-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-05-25/%E4%B8%AD%E5%9B%BD%E6%8B%A5%E6%9C%89%E5%8F%AF%E7%96%91%E7%9A%84%E6%83%85%E6%84%9F%E8%AF%86%E5%88%AB%E6%8A%80%E6%9C%AF%E4%B8%8D%E6%96%AD%E5%A2%9E%E9%95%BF%E7%9A%84%E5%B8%82%E5%9C%BA-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-05-26/%E5%BC%A0%E7%AC%91%E5%AE%87-%E6%8A%80%E6%9C%AF%E8%83%BD%E5%90%A6%E6%94%B9%E5%8F%98%E6%94%BF%E6%B2%BB%E7%9A%84%E5%8F%91%E7%94%9F%E5%AD%A6%E6%9C%BA%E5%88%B6%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-05-24/%E7%AB%A5%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%A7%8D%E6%97%8F%E4%B8%BB%E4%B9%89%E5%80%92%E5%BD%B1-%E6%AE%96%E6%B0%91%E5%8E%86%E5%8F%B2%E7%9A%84%E9%81%97%E8%BF%B9-%E5%B9%B6%E4%B8%8D%E7%BA%AF%E7%9C%9F%E7%9A%84%E7%AB%A5%E5%B9%B4/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-05-24/%E5%85%85%E5%88%86%E5%88%A9%E7%94%A8%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%80%AE%E6%8D%95-%E7%A4%BA%E5%A8%81%E5%8F%82%E4%B8%8E%E8%80%85%E6%8C%87%E5%8D%97-7-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-05-25/%E4%B8%AD%E5%9B%BD%E6%8B%A5%E6%9C%89%E5%8F%AF%E7%96%91%E7%9A%84%E6%83%85%E6%84%9F%E8%AF%86%E5%88%AB%E6%8A%80%E6%9C%AF%E4%B8%8D%E6%96%AD%E5%A2%9E%E9%95%BF%E7%9A%84%E5%B8%82%E5%9C%BA-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-05-26/%E5%BC%A0%E7%AC%91%E5%AE%87-%E6%8A%80%E6%9C%AF%E8%83%BD%E5%90%A6%E6%94%B9%E5%8F%98%E6%94%BF%E6%B2%BB%E7%9A%84%E5%8F%91%E7%94%9F%E5%AD%A6%E6%9C%BA%E5%88%B6%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-05-24/%E7%AB%A5%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%A7%8D%E6%97%8F%E4%B8%BB%E4%B9%89%E5%80%92%E5%BD%B1-%E6%AE%96%E6%B0%91%E5%8E%86%E5%8F%B2%E7%9A%84%E9%81%97%E8%BF%B9-%E5%B9%B6%E4%B8%8D%E7%BA%AF%E7%9C%9F%E7%9A%84%E7%AB%A5%E5%B9%B4/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

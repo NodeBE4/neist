@@ -1,0 +1,11152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 - iYouPort – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+  
+     广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 
+  
+  
+  McCaffrey     Knowledge Node  ,  OSINT  ,  给行动者的护身符和武器             2020年3月18日 
+          2019年11月2日 
+   1 Minute 
+  
+  
+    
+       
+      
+       就像读书一样，想要学到东西，您需要带着问题去读书 — 带着您的目的 — 在开源调查中，目的是指导全程的根本
+      
+      
+    
+           
+  
+      
+
+    正如我们一直强调的那样，对于使用开源信息进行调查的任何人来说，您必须能在功能强大的工具和隐私控制之间取得平衡。
+    Buscador是一台虚拟机，里面装有诸多好用的开源情报调查工具，并且经过简化后可以有效地协助在线研究。
+    可以轻松地在 VirtualBox 中设置该程序，完成后，我们将带您逐步了解其中包含的一些最有用的工具。
+    现在就开始。
+      
+     开源情报调查
+      
+    我们以前介绍过  TheHarvester  和  Maltego  等类似的高端调查工具（在下面看到部分回顾），人们对这些工具的态度从惊讶到对其合法性的怀疑，几乎什么都有。是的 ，依旧有很多人对可以从开源渠道中获取的庞大信息量和种类有类似的反应。
+    
+      《  社交工程工具用于开源情报调查：0基础初学者指南  》
+      《  20个最好用的在线侦查工具和数据收集工具  》
+      一个对大众很有价值的用例《  社交媒体情报和反情报基本工具手册：自我人肉（2）  》
+    
+    但正如我们一直坚持的那样， 
+    这些技术可以用在任何动机上，所以我们必须能将它民主化，才能与
+     
+     当权者的邪恶动机
+      
+    相抗衡
+    。
+    开源情报调查研究工具允许访问全球社会产生的大量数据，这些数据通常用作解决犯罪问题的取证线索、或用作侦察手段以允许各种黑客和社交工程攻击计划的顺利推进。
+    充分利用数字世界中所有可用的数据，研究人员几乎不会担心信息找不到；他们担心的是， 
+    现有的数据量太大了，难以分类，但是正确的数据几乎总是存在其中的
+    。
+    因此，寻找最有效的途径获得正确的数据，是研究人员将面临的核心挑战之一。这意味着要使用比 Google 搜索更复杂的工具来寻找与目标有关的一切线索。
+    开源情报调查领域的可用工具非常多，我们介绍过其中大部分，但是它们中的一些在安装和配置方面可能有点麻烦。
+    在看到很多人在进行开源情报研究时存在 
+    明显的操作安全漏洞
+    之后，该领域专家 Mike Bazzell 和 David Westcott 着手创建了专门的VM，并将亲测最有效的开源情报工具和自定义脚本结合在一起。
+    该VM的另一个重点是 
+    安全性、隐身性、以及能够轻松保存在调查期间发现的数字证据的能力
+    。
+    
+      关于数字取证，我们上传过一本书您可以在这里下载：  https://t.me/iyouport/6313 
+      以及一个文档，为取证工具，针对的是：WhatsApp、Telegram Messenger、Facebook Messenger、Viber、Signal Messenger、Skype 和微信。在这里下载：  https://t.me/iyouport/6315 
+    
+          
+ 
+      
+
+      
+     面向黑客、社交工程师、公民记者、NGO、和各类调查人员的虚拟机
+      
+    黑客可以将 Buscador OSINT 虚拟机想像成基于开源情报的 Kali Linux 版本。
+    Buscador 基于 Ubuntu 而非 Debian，不包含Kali拥有的强大的网络武器，而是将一组最有用的 
+    开源情报、隐私、和数据捕获工具
+    手工收集到一个隐蔽的包中。
+    由于免追踪是所有调查人员的基本目标，因此 Buscador 预先安装了Tor，并拥有其他有用的隐私工具。
+    Buscador VM 还可以从任何可用于计算机上的USB拇指驱动器启动，也可以加载到硬盘上并直接启动。
+    这样， 
+    无论您是否随身携带个人设备，都可以灵活地在任何可以访问计算机的地方使用它
+    。该 VM 3.5 GB，结构紧凑，易于放在8 GB或更大的闪存驱动器中随身携带。
+    Buscador 鼓励良好的研究习惯，并赋予研究人员更多的研究线索。预先安装了一些您很熟悉的工具，例如  Maltego  、  Recon-ng  、  Creepy  、  Spiderfoot  、  TheHarvester  、  Sublist3r  ，都是瑞士军刀级的利器，还有我们曾经介绍过的其他工具。（以上内嵌链接是一些用例）
+      
+     你需要些什么
+      
+    试用 Buscador 很容易。您需要从 IntelTechniques 网站  下载最新版本的 Buscador  。
+    接下来，您需要  下载 VirtualBox  以及  VirtualBox Extension Pack  才能运行该虚拟机。 
+    确保完全安装这两者
+    ，因为在不使用扩展包的情况下运行 Buscador 会很麻烦，因为它要求您按一个转义序列以从VM中释放鼠标。
+    一旦安装了 VirtualBox 和 VirtualBox Extension Pack，就可以对 Buscador 进行设置了，也就是第一步。
+     
+     第一步：导入和配置
+     
+    首先需要导入并调整一些设置。打开 VirtualBox，然后在下拉菜单中单击“文件”，然后单击 “Import Appliance” 选择您先前下载的 Buscador .OVA 文件。然后，选择“继续”。
+           
+  
+      
+
+    继续并单击“导入”以加载虚拟机。
+           
+  
+      
+
+    接下来单击“设置”，然后在“常规”选项卡中，将 Buscador VM 
+    重命名
+    为您容易记住的名字。
+    在“高级”下，将“共享剪贴板”更改为“ 
+    双向
+    ”，以允许在来宾系统和您的主机之间进行复制和粘贴。
+    单击“系统”选项卡，然后在“主板”下，将大约 
+    一半
+    的总系统 RAM 添加到虚拟机。
+    接下来单击 “Displa”，然后单击 “Screen” 以将显存增加到 
+    至少128 MB
+    ，以允许视频和其他数字证据正确显示。
+           
+  
+      
+
+    完成后，单击“保存”，然后单击左下角的加号图标，选择“添加光驱”，然后选择 “Leave Empty”选项。
+    最后，单击“共享文件夹”选项卡，然后选择右侧的加号图标。现在，您可以创建或选择要用于将证据从 Buscador 保存到计算机上的 
+    文件夹
+    。
+    选择此选项后，确保将文件夹设置为“ 
+    自动挂载
+    ”。
+           
+  
+      
+
+    完成此操作后，您就可以开始首次运行 Buscador了。
+    单击“确定”以保存设置，然后从 VirtualBox 的VM列表中选择 Buscador VM，并单击绿色的“开始”按钮。
+     
+     第二步：首次运行 Buscador
+     
+    在 Buscador 启动之后，您应该在登录菜单上找到一个怪异的OSINT动画人作为墙纸。
+    默认的用户名密码都是 osint。
+           
+  
+      
+
+    登录并启动桌面后，单击 VirtualBox 菜单顶部的“设备”选项卡，然后选择 “Insert Guest Additions CD Image” 以在 Buscador 中显示CD。
+    如果无法自动运行，请选择桌面上的CD，然后单击“运行软件” 以运行 Guest Additions 安装程序。安装完成后，重新启动虚拟机。
+           
+  
+      
+
+    再次登录并加载桌面后，打开一个终端窗口。我们需要将“ osint”用户添加到“vboxsf”用户组中，为此，将键入以下内容，然后按 Return / Enter 键：
+    sudo adduser osint vboxsf    
+    提供密码（osint），然后在完成该过程后再次重启VM。
+           
+  
+      
+
+    现在这些步骤已完成，您的 Buscador 已经设置好并可以使用了！
+     
+     第三步：利用浏览器扩展
+     
+    Buscador 提供了许多预配置的最有用的插件和扩展程序，供研究人员使用。该精选列表着重于捕获您找到的线索以供进一步检查和分析，这里将首先介绍 Firefox 附带的一些最有用的工具。
+    Firefox 浏览器附加组件 ——
+    这里有八个浏览器插件。您会看到图标藏在浏览器的右上角。
+    前两个  
+     Nimbus Capture
+      和  
+     FireShot
+      用于拍摄感兴趣页面的详细屏幕截图，使您可以对其进行存档、在其中做笔记、甚至制作网站的PDF副本。
+           
+  
+      
+
+    接下来的两个浏览器扩展程序用于收集在线发布的视频和音频。允许您分别使用  
+     Video DownloadHelper
+      和  
+     Bulk Media Downloader
+      单独或批量保存任何视频文件。
+    对于任何 
+    不想被跟踪
+    或不想在其内容中看到广告的人来说，  Ublock Origin  应该是一个熟悉的东西了，但是对于许多研究人员而言，  
+     User-Agent Switcher
+      可能是一个有趣的新玩具。
+    
+    User-Agent Switcher 可更改浏览器在每次发出请求时发送的操作系统和浏览器类型
+    ，从而使您可以假装成所需的任何类型的设备。
+    
+      不要错过《  如何使用位置欺骗扩展追踪约会网站上的目标私密信息  ？》
+      关于浏览器指纹《  Opsec 操作安全：在反侦察的过程中您应该注意哪些陷阱？  》
+    
+    最后两个附加组件是 Google Translate（用于快速翻译其他语言的页面）和超级有用的 Resurrect Pages，它们可以 
+    查找已被更改或删除的旧版本的网页，使您可以查看调查目标试图隐藏什么
+    。
+    
+      不要错过《  无法挖到已经被删除的内容  》
+    
+    Chrome浏览器扩展程序 ——
+    默认情况下，以隐身模式打开的 Google Chrome 也包含在 Buscador 中。它拥有比Firefox更多的扩展，包括 Ublock Origin、Fireshot和其他15个扩展。
+           
+  
+      
+
+     
+     Lightshot
+      屏幕捕获扩展程序用 360social 和  Prophet  添加了用于在社交网站上搜索目标人的更多信息（例如电子邮件地址等）的工具，从而取代了Chrome中的 Nimbus。
+    为了 
+    分析网站
+    ，Chrome提供了一个  User-Agent Switcher  和  Wappalyzer  ，它们会分解并告诉您任何网站所基于的基础技术。
+    Shodan 也非常有用，可以帮您发现有关您所访问的特定网站的信息。
+    诸如  HTTPS Everywhere  和  WebRTC Leak Prevent  这样的 
+    隐私工具
+    旨在使调查人员免受恶意网站或可能的检测的伤害。
+    这些浏览器工具可以巧妙地结合使用，以发起攻击，例如跟踪用户的Tinder个人资料等等。
+     
+     第4步：使用包含的有用工具
+     
+    除了 Maltego Community Edition 之外，Buscador 中还包含很多开源调查领域流行的工具，您应该检查一下，以便对 Buscador 提供的产品有所了解。
+           
+  
+      
+
+    对于电子邮件抓取，Buscador 随附了 
+    TheHarvester
+    ，可让您搜索感兴趣的域上的所有电子邮件地址。
+    还有强大的跨平台开源情报工具 
+    Spiderfoot
+    。 Spiderfoot 会自动收集有关目标的信息，并将结果转换为易于理解的报告。在下面看到使用方法：
+    
+      《  如何自动执行情报搜集？蜘蛛脚入门指南  》
+    
+    
+    Recon-ng
+    基于 Metasploit，是 Tim Tomes 开发的用于侦察的完整Python模块，在黑客和调查人员中很受欢迎。
+    有许多有用的自定义脚本可用于从目标社交媒体帐户以及其他人们共享自身信息的地方下载视频和图像。这些工具使您只需单击几下就可以获取、处理和分析大量数据。
+    我们将在未来逐步介绍这些工具。如果您想了解有关 Mike Bazzell 的开源情报技术的更多信息，可以查看他的书。（我们已经上传到 telegram 频道，您可以在这里下载）
+      
+     Buscador 是非常强大的
+      
+    设置 Buscador 之后，建议您查看本网“  开源调查  ”栏目中演示和介绍的诸多指南，以开始进行首次调查。
+    
+    最重要的是练习使用这些工具回答问题，而不仅仅是寻求搜集信息。
+   
+    否则，您很可能迷失在工具可以返回的信息海洋中。
+    就像读书一样，想要学到东西，您需要带着问题去读书 —— 带着您的目的 —— 在开源调查中，目的是指导全程的根本。
+    如果不能清楚地回答指导研究者对情况的理解的目标问题，那么所有这些数据几乎没有任何价值。
+    正因此，这个专门的VM的目标正是将研究人员需要的所有工具和数据整合在一起，以决定他们要提出哪些问题来为其提供支持。
+    如果您需要一个功能强大且方便的系统来进行Google搜索范围之外的专业级调查，Buscador 就是您所需的答案。
+    希望本指南对您有所帮助。⚪️
+    
+    在这里回顾此前提供的教程
+    ：《  构建你的自定义开源情报机器（第一部分）  》“  第二部分  ”、“  第三部分  ”、“  第四部分  ”，“  第五部分  ”。
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       Buscador 
+       Investigation 
+       OSINT 
+       technique 
+       Technology 
+       tools 
+    
+  
+  
+    
+
+    Published
+           2020年3月18日 
+       2019年11月2日 
+    
+  
+
+" />
+    <meta property="og:description" content="
+  
+     广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 
+  
+  
+  McCaffrey     Knowledge Node  ,  OSINT  ,  给行动者的护身符和武器             2020年3月18日 
+          2019年11月2日 
+   1 Minute 
+  
+  
+    
+       
+      
+       就像读书一样，想要学到东西，您需要带着问题去读书 — 带着您的目的 — 在开源调查中，目的是指导全程的根本
+      
+      
+    
+           
+  
+      
+
+    正如我们一直强调的那样，对于使用开源信息进行调查的任何人来说，您必须能在功能强大的工具和隐私控制之间取得平衡。
+    Buscador是一台虚拟机，里面装有诸多好用的开源情报调查工具，并且经过简化后可以有效地协助在线研究。
+    可以轻松地在 VirtualBox 中设置该程序，完成后，我们将带您逐步了解其中包含的一些最有用的工具。
+    现在就开始。
+      
+     开源情报调查
+      
+    我们以前介绍过  TheHarvester  和  Maltego  等类似的高端调查工具（在下面看到部分回顾），人们对这些工具的态度从惊讶到对其合法性的怀疑，几乎什么都有。是的 ，依旧有很多人对可以从开源渠道中获取的庞大信息量和种类有类似的反应。
+    
+      《  社交工程工具用于开源情报调查：0基础初学者指南  》
+      《  20个最好用的在线侦查工具和数据收集工具  》
+      一个对大众很有价值的用例《  社交媒体情报和反情报基本工具手册：自我人肉（2）  》
+    
+    但正如我们一直坚持的那样， 
+    这些技术可以用在任何动机上，所以我们必须能将它民主化，才能与
+     
+     当权者的邪恶动机
+      
+    相抗衡
+    。
+    开源情报调查研究工具允许访问全球社会产生的大量数据，这些数据通常用作解决犯罪问题的取证线索、或用作侦察手段以允许各种黑客和社交工程攻击计划的顺利推进。
+    充分利用数字世界中所有可用的数据，研究人员几乎不会担心信息找不到；他们担心的是， 
+    现有的数据量太大了，难以分类，但是正确的数据几乎总是存在其中的
+    。
+    因此，寻找最有效的途径获得正确的数据，是研究人员将面临的核心挑战之一。这意味着要使用比 Google 搜索更复杂的工具来寻找与目标有关的一切线索。
+    开源情报调查领域的可用工具非常多，我们介绍过其中大部分，但是它们中的一些在安装和配置方面可能有点麻烦。
+    在看到很多人在进行开源情报研究时存在 
+    明显的操作安全漏洞
+    之后，该领域专家 Mike Bazzell 和 David Westcott 着手创建了专门的VM，并将亲测最有效的开源情报工具和自定义脚本结合在一起。
+    该VM的另一个重点是 
+    安全性、隐身性、以及能够轻松保存在调查期间发现的数字证据的能力
+    。
+    
+      关于数字取证，我们上传过一本书您可以在这里下载：  https://t.me/iyouport/6313 
+      以及一个文档，为取证工具，针对的是：WhatsApp、Telegram Messenger、Facebook Messenger、Viber、Signal Messenger、Skype 和微信。在这里下载：  https://t.me/iyouport/6315 
+    
+          
+ 
+      
+
+      
+     面向黑客、社交工程师、公民记者、NGO、和各类调查人员的虚拟机
+      
+    黑客可以将 Buscador OSINT 虚拟机想像成基于开源情报的 Kali Linux 版本。
+    Buscador 基于 Ubuntu 而非 Debian，不包含Kali拥有的强大的网络武器，而是将一组最有用的 
+    开源情报、隐私、和数据捕获工具
+    手工收集到一个隐蔽的包中。
+    由于免追踪是所有调查人员的基本目标，因此 Buscador 预先安装了Tor，并拥有其他有用的隐私工具。
+    Buscador VM 还可以从任何可用于计算机上的USB拇指驱动器启动，也可以加载到硬盘上并直接启动。
+    这样， 
+    无论您是否随身携带个人设备，都可以灵活地在任何可以访问计算机的地方使用它
+    。该 VM 3.5 GB，结构紧凑，易于放在8 GB或更大的闪存驱动器中随身携带。
+    Buscador 鼓励良好的研究习惯，并赋予研究人员更多的研究线索。预先安装了一些您很熟悉的工具，例如  Maltego  、  Recon-ng  、  Creepy  、  Spiderfoot  、  TheHarvester  、  Sublist3r  ，都是瑞士军刀级的利器，还有我们曾经介绍过的其他工具。（以上内嵌链接是一些用例）
+      
+     你需要些什么
+      
+    试用 Buscador 很容易。您需要从 IntelTechniques 网站  下载最新版本的 Buscador  。
+    接下来，您需要  下载 VirtualBox  以及  VirtualBox Extension Pack  才能运行该虚拟机。 
+    确保完全安装这两者
+    ，因为在不使用扩展包的情况下运行 Buscador 会很麻烦，因为它要求您按一个转义序列以从VM中释放鼠标。
+    一旦安装了 VirtualBox 和 VirtualBox Extension Pack，就可以对 Buscador 进行设置了，也就是第一步。
+     
+     第一步：导入和配置
+     
+    首先需要导入并调整一些设置。打开 VirtualBox，然后在下拉菜单中单击“文件”，然后单击 “Import Appliance” 选择您先前下载的 Buscador .OVA 文件。然后，选择“继续”。
+           
+  
+      
+
+    继续并单击“导入”以加载虚拟机。
+           
+  
+      
+
+    接下来单击“设置”，然后在“常规”选项卡中，将 Buscador VM 
+    重命名
+    为您容易记住的名字。
+    在“高级”下，将“共享剪贴板”更改为“ 
+    双向
+    ”，以允许在来宾系统和您的主机之间进行复制和粘贴。
+    单击“系统”选项卡，然后在“主板”下，将大约 
+    一半
+    的总系统 RAM 添加到虚拟机。
+    接下来单击 “Displa”，然后单击 “Screen” 以将显存增加到 
+    至少128 MB
+    ，以允许视频和其他数字证据正确显示。
+           
+  
+      
+
+    完成后，单击“保存”，然后单击左下角的加号图标，选择“添加光驱”，然后选择 “Leave Empty”选项。
+    最后，单击“共享文件夹”选项卡，然后选择右侧的加号图标。现在，您可以创建或选择要用于将证据从 Buscador 保存到计算机上的 
+    文件夹
+    。
+    选择此选项后，确保将文件夹设置为“ 
+    自动挂载
+    ”。
+           
+  
+      
+
+    完成此操作后，您就可以开始首次运行 Buscador了。
+    单击“确定”以保存设置，然后从 VirtualBox 的VM列表中选择 Buscador VM，并单击绿色的“开始”按钮。
+     
+     第二步：首次运行 Buscador
+     
+    在 Buscador 启动之后，您应该在登录菜单上找到一个怪异的OSINT动画人作为墙纸。
+    默认的用户名密码都是 osint。
+           
+  
+      
+
+    登录并启动桌面后，单击 VirtualBox 菜单顶部的“设备”选项卡，然后选择 “Insert Guest Additions CD Image” 以在 Buscador 中显示CD。
+    如果无法自动运行，请选择桌面上的CD，然后单击“运行软件” 以运行 Guest Additions 安装程序。安装完成后，重新启动虚拟机。
+           
+  
+      
+
+    再次登录并加载桌面后，打开一个终端窗口。我们需要将“ osint”用户添加到“vboxsf”用户组中，为此，将键入以下内容，然后按 Return / Enter 键：
+    sudo adduser osint vboxsf    
+    提供密码（osint），然后在完成该过程后再次重启VM。
+           
+  
+      
+
+    现在这些步骤已完成，您的 Buscador 已经设置好并可以使用了！
+     
+     第三步：利用浏览器扩展
+     
+    Buscador 提供了许多预配置的最有用的插件和扩展程序，供研究人员使用。该精选列表着重于捕获您找到的线索以供进一步检查和分析，这里将首先介绍 Firefox 附带的一些最有用的工具。
+    Firefox 浏览器附加组件 ——
+    这里有八个浏览器插件。您会看到图标藏在浏览器的右上角。
+    前两个  
+     Nimbus Capture
+      和  
+     FireShot
+      用于拍摄感兴趣页面的详细屏幕截图，使您可以对其进行存档、在其中做笔记、甚至制作网站的PDF副本。
+           
+  
+      
+
+    接下来的两个浏览器扩展程序用于收集在线发布的视频和音频。允许您分别使用  
+     Video DownloadHelper
+      和  
+     Bulk Media Downloader
+      单独或批量保存任何视频文件。
+    对于任何 
+    不想被跟踪
+    或不想在其内容中看到广告的人来说，  Ublock Origin  应该是一个熟悉的东西了，但是对于许多研究人员而言，  
+     User-Agent Switcher
+      可能是一个有趣的新玩具。
+    
+    User-Agent Switcher 可更改浏览器在每次发出请求时发送的操作系统和浏览器类型
+    ，从而使您可以假装成所需的任何类型的设备。
+    
+      不要错过《  如何使用位置欺骗扩展追踪约会网站上的目标私密信息  ？》
+      关于浏览器指纹《  Opsec 操作安全：在反侦察的过程中您应该注意哪些陷阱？  》
+    
+    最后两个附加组件是 Google Translate（用于快速翻译其他语言的页面）和超级有用的 Resurrect Pages，它们可以 
+    查找已被更改或删除的旧版本的网页，使您可以查看调查目标试图隐藏什么
+    。
+    
+      不要错过《  无法挖到已经被删除的内容  》
+    
+    Chrome浏览器扩展程序 ——
+    默认情况下，以隐身模式打开的 Google Chrome 也包含在 Buscador 中。它拥有比Firefox更多的扩展，包括 Ublock Origin、Fireshot和其他15个扩展。
+           
+  
+      
+
+     
+     Lightshot
+      屏幕捕获扩展程序用 360social 和  Prophet  添加了用于在社交网站上搜索目标人的更多信息（例如电子邮件地址等）的工具，从而取代了Chrome中的 Nimbus。
+    为了 
+    分析网站
+    ，Chrome提供了一个  User-Agent Switcher  和  Wappalyzer  ，它们会分解并告诉您任何网站所基于的基础技术。
+    Shodan 也非常有用，可以帮您发现有关您所访问的特定网站的信息。
+    诸如  HTTPS Everywhere  和  WebRTC Leak Prevent  这样的 
+    隐私工具
+    旨在使调查人员免受恶意网站或可能的检测的伤害。
+    这些浏览器工具可以巧妙地结合使用，以发起攻击，例如跟踪用户的Tinder个人资料等等。
+     
+     第4步：使用包含的有用工具
+     
+    除了 Maltego Community Edition 之外，Buscador 中还包含很多开源调查领域流行的工具，您应该检查一下，以便对 Buscador 提供的产品有所了解。
+           
+  
+      
+
+    对于电子邮件抓取，Buscador 随附了 
+    TheHarvester
+    ，可让您搜索感兴趣的域上的所有电子邮件地址。
+    还有强大的跨平台开源情报工具 
+    Spiderfoot
+    。 Spiderfoot 会自动收集有关目标的信息，并将结果转换为易于理解的报告。在下面看到使用方法：
+    
+      《  如何自动执行情报搜集？蜘蛛脚入门指南  》
+    
+    
+    Recon-ng
+    基于 Metasploit，是 Tim Tomes 开发的用于侦察的完整Python模块，在黑客和调查人员中很受欢迎。
+    有许多有用的自定义脚本可用于从目标社交媒体帐户以及其他人们共享自身信息的地方下载视频和图像。这些工具使您只需单击几下就可以获取、处理和分析大量数据。
+    我们将在未来逐步介绍这些工具。如果您想了解有关 Mike Bazzell 的开源情报技术的更多信息，可以查看他的书。（我们已经上传到 telegram 频道，您可以在这里下载）
+      
+     Buscador 是非常强大的
+      
+    设置 Buscador 之后，建议您查看本网“  开源调查  ”栏目中演示和介绍的诸多指南，以开始进行首次调查。
+    
+    最重要的是练习使用这些工具回答问题，而不仅仅是寻求搜集信息。
+   
+    否则，您很可能迷失在工具可以返回的信息海洋中。
+    就像读书一样，想要学到东西，您需要带着问题去读书 —— 带着您的目的 —— 在开源调查中，目的是指导全程的根本。
+    如果不能清楚地回答指导研究者对情况的理解的目标问题，那么所有这些数据几乎没有任何价值。
+    正因此，这个专门的VM的目标正是将研究人员需要的所有工具和数据整合在一起，以决定他们要提出哪些问题来为其提供支持。
+    如果您需要一个功能强大且方便的系统来进行Google搜索范围之外的专业级调查，Buscador 就是您所需的答案。
+    希望本指南对您有所帮助。⚪️
+    
+    在这里回顾此前提供的教程
+    ：《  构建你的自定义开源情报机器（第一部分）  》“  第二部分  ”、“  第三部分  ”、“  第四部分  ”，“  第五部分  ”。
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       Buscador 
+       Investigation 
+       OSINT 
+       technique 
+       Technology 
+       tools 
+    
+  
+  
+    
+
+    Published
+           2020年3月18日 
+       2019年11月2日 
+    
+  
+
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 - iYouPort" />
+    <meta property="twitter:title" content="广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 - iYouPort" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.iyouport.org%2F%25e5%25b9%25bf%25e6%25b3%259b%25e7%259a%2584%25e6%2595%25b0%25e6%258d%25ae%25e6%2594%25b6%25e9%259b%2586%25e4%25b8%258d%25e6%2598%25af%25e7%259b%25ae%25e7%259a%2584%25ef%25bc%258c%25e8%2583%25bd%25e5%259b%259e%25e7%25ad%2594%25e9%2597%25ae%25e9%25a2%2598%25e6%2589%258d%25e6%2598%25af%25ef%25bc%259a%25e4%25b8%2580%25e4%25b8%25aa%2F" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.iyouport.org/%e5%b9%bf%e6%b3%9b%e7%9a%84%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e4%b8%8d%e6%98%af%e7%9b%ae%e7%9a%84%ef%bc%8c%e8%83%bd%e5%9b%9e%e7%ad%94%e9%97%ae%e9%a2%98%e6%89%8d%e6%98%af%ef%bc%9a%e4%b8%80%e4%b8%aa/" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.iyouport.org/%e5%b9%bf%e6%b3%9b%e7%9a%84%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e4%b8%8d%e6%98%af%e7%9b%ae%e7%9a%84%ef%bc%8c%e8%83%bd%e5%9b%9e%e7%ad%94%e9%97%ae%e9%a2%98%e6%89%8d%e6%98%af%ef%bc%9a%e4%b8%80%e4%b8%aa/&text=广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 - iYouPort&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.iyouport.org/%e5%b9%bf%e6%b3%9b%e7%9a%84%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e4%b8%8d%e6%98%af%e7%9b%ae%e7%9a%84%ef%bc%8c%e8%83%bd%e5%9b%9e%e7%ad%94%e9%97%ae%e9%a2%98%e6%89%8d%e6%98%af%ef%bc%9a%e4%b8%80%e4%b8%aa/&title=广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 - iYouPort" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.iyouport.org/%e5%b9%bf%e6%b3%9b%e7%9a%84%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e4%b8%8d%e6%98%af%e7%9b%ae%e7%9a%84%ef%bc%8c%e8%83%bd%e5%9b%9e%e7%ad%94%e9%97%ae%e9%a2%98%e6%89%8d%e6%98%af%ef%bc%9a%e4%b8%80%e4%b8%aa/&title=广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 - iYouPort" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 - iYouPort&body=
+  
+     广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 
+  
+  
+  McCaffrey     Knowledge Node  ,  OSINT  ,  给行动者的护身符和武器             2020年3月18日 
+          2019年11月2日 
+   1 Minute 
+  
+  
+    
+       
+      
+       就像读书一样，想要学到东西，您需要带着问题去读书 — 带着您的目的 — 在开源调查中，目的是指导全程的根本
+      
+      
+    
+           
+  
+      
+
+    正如我们一直强调的那样，对于使用开源信息进行调查的任何人来说，您必须能在功能强大的工具和隐私控制之间取得平衡。
+    Buscador是一台虚拟机，里面装有诸多好用的开源情报调查工具，并且经过简化后可以有效地协助在线研究。
+    可以轻松地在 VirtualBox 中设置该程序，完成后，我们将带您逐步了解其中包含的一些最有用的工具。
+    现在就开始。
+      
+     开源情报调查
+      
+    我们以前介绍过  TheHarvester  和  Maltego  等类似的高端调查工具（在下面看到部分回顾），人们对这些工具的态度从惊讶到对其合法性的怀疑，几乎什么都有。是的 ，依旧有很多人对可以从开源渠道中获取的庞大信息量和种类有类似的反应。
+    
+      《  社交工程工具用于开源情报调查：0基础初学者指南  》
+      《  20个最好用的在线侦查工具和数据收集工具  》
+      一个对大众很有价值的用例《  社交媒体情报和反情报基本工具手册：自我人肉（2）  》
+    
+    但正如我们一直坚持的那样， 
+    这些技术可以用在任何动机上，所以我们必须能将它民主化，才能与
+     
+     当权者的邪恶动机
+      
+    相抗衡
+    。
+    开源情报调查研究工具允许访问全球社会产生的大量数据，这些数据通常用作解决犯罪问题的取证线索、或用作侦察手段以允许各种黑客和社交工程攻击计划的顺利推进。
+    充分利用数字世界中所有可用的数据，研究人员几乎不会担心信息找不到；他们担心的是， 
+    现有的数据量太大了，难以分类，但是正确的数据几乎总是存在其中的
+    。
+    因此，寻找最有效的途径获得正确的数据，是研究人员将面临的核心挑战之一。这意味着要使用比 Google 搜索更复杂的工具来寻找与目标有关的一切线索。
+    开源情报调查领域的可用工具非常多，我们介绍过其中大部分，但是它们中的一些在安装和配置方面可能有点麻烦。
+    在看到很多人在进行开源情报研究时存在 
+    明显的操作安全漏洞
+    之后，该领域专家 Mike Bazzell 和 David Westcott 着手创建了专门的VM，并将亲测最有效的开源情报工具和自定义脚本结合在一起。
+    该VM的另一个重点是 
+    安全性、隐身性、以及能够轻松保存在调查期间发现的数字证据的能力
+    。
+    
+      关于数字取证，我们上传过一本书您可以在这里下载：  https://t.me/iyouport/6313 
+      以及一个文档，为取证工具，针对的是：WhatsApp、Telegram Messenger、Facebook Messenger、Viber、Signal Messenger、Skype 和微信。在这里下载：  https://t.me/iyouport/6315 
+    
+          
+ 
+      
+
+      
+     面向黑客、社交工程师、公民记者、NGO、和各类调查人员的虚拟机
+      
+    黑客可以将 Buscador OSINT 虚拟机想像成基于开源情报的 Kali Linux 版本。
+    Buscador 基于 Ubuntu 而非 Debian，不包含Kali拥有的强大的网络武器，而是将一组最有用的 
+    开源情报、隐私、和数据捕获工具
+    手工收集到一个隐蔽的包中。
+    由于免追踪是所有调查人员的基本目标，因此 Buscador 预先安装了Tor，并拥有其他有用的隐私工具。
+    Buscador VM 还可以从任何可用于计算机上的USB拇指驱动器启动，也可以加载到硬盘上并直接启动。
+    这样， 
+    无论您是否随身携带个人设备，都可以灵活地在任何可以访问计算机的地方使用它
+    。该 VM 3.5 GB，结构紧凑，易于放在8 GB或更大的闪存驱动器中随身携带。
+    Buscador 鼓励良好的研究习惯，并赋予研究人员更多的研究线索。预先安装了一些您很熟悉的工具，例如  Maltego  、  Recon-ng  、  Creepy  、  Spiderfoot  、  TheHarvester  、  Sublist3r  ，都是瑞士军刀级的利器，还有我们曾经介绍过的其他工具。（以上内嵌链接是一些用例）
+      
+     你需要些什么
+      
+    试用 Buscador 很容易。您需要从 IntelTechniques 网站  下载最新版本的 Buscador  。
+    接下来，您需要  下载 VirtualBox  以及  VirtualBox Extension Pack  才能运行该虚拟机。 
+    确保完全安装这两者
+    ，因为在不使用扩展包的情况下运行 Buscador 会很麻烦，因为它要求您按一个转义序列以从VM中释放鼠标。
+    一旦安装了 VirtualBox 和 VirtualBox Extension Pack，就可以对 Buscador 进行设置了，也就是第一步。
+     
+     第一步：导入和配置
+     
+    首先需要导入并调整一些设置。打开 VirtualBox，然后在下拉菜单中单击“文件”，然后单击 “Import Appliance” 选择您先前下载的 Buscador .OVA 文件。然后，选择“继续”。
+           
+  
+      
+
+    继续并单击“导入”以加载虚拟机。
+           
+  
+      
+
+    接下来单击“设置”，然后在“常规”选项卡中，将 Buscador VM 
+    重命名
+    为您容易记住的名字。
+    在“高级”下，将“共享剪贴板”更改为“ 
+    双向
+    ”，以允许在来宾系统和您的主机之间进行复制和粘贴。
+    单击“系统”选项卡，然后在“主板”下，将大约 
+    一半
+    的总系统 RAM 添加到虚拟机。
+    接下来单击 “Displa”，然后单击 “Screen” 以将显存增加到 
+    至少128 MB
+    ，以允许视频和其他数字证据正确显示。
+           
+  
+      
+
+    完成后，单击“保存”，然后单击左下角的加号图标，选择“添加光驱”，然后选择 “Leave Empty”选项。
+    最后，单击“共享文件夹”选项卡，然后选择右侧的加号图标。现在，您可以创建或选择要用于将证据从 Buscador 保存到计算机上的 
+    文件夹
+    。
+    选择此选项后，确保将文件夹设置为“ 
+    自动挂载
+    ”。
+           
+  
+      
+
+    完成此操作后，您就可以开始首次运行 Buscador了。
+    单击“确定”以保存设置，然后从 VirtualBox 的VM列表中选择 Buscador VM，并单击绿色的“开始”按钮。
+     
+     第二步：首次运行 Buscador
+     
+    在 Buscador 启动之后，您应该在登录菜单上找到一个怪异的OSINT动画人作为墙纸。
+    默认的用户名密码都是 osint。
+           
+  
+      
+
+    登录并启动桌面后，单击 VirtualBox 菜单顶部的“设备”选项卡，然后选择 “Insert Guest Additions CD Image” 以在 Buscador 中显示CD。
+    如果无法自动运行，请选择桌面上的CD，然后单击“运行软件” 以运行 Guest Additions 安装程序。安装完成后，重新启动虚拟机。
+           
+  
+      
+
+    再次登录并加载桌面后，打开一个终端窗口。我们需要将“ osint”用户添加到“vboxsf”用户组中，为此，将键入以下内容，然后按 Return / Enter 键：
+    sudo adduser osint vboxsf    
+    提供密码（osint），然后在完成该过程后再次重启VM。
+           
+  
+      
+
+    现在这些步骤已完成，您的 Buscador 已经设置好并可以使用了！
+     
+     第三步：利用浏览器扩展
+     
+    Buscador 提供了许多预配置的最有用的插件和扩展程序，供研究人员使用。该精选列表着重于捕获您找到的线索以供进一步检查和分析，这里将首先介绍 Firefox 附带的一些最有用的工具。
+    Firefox 浏览器附加组件 ——
+    这里有八个浏览器插件。您会看到图标藏在浏览器的右上角。
+    前两个  
+     Nimbus Capture
+      和  
+     FireShot
+      用于拍摄感兴趣页面的详细屏幕截图，使您可以对其进行存档、在其中做笔记、甚至制作网站的PDF副本。
+           
+  
+      
+
+    接下来的两个浏览器扩展程序用于收集在线发布的视频和音频。允许您分别使用  
+     Video DownloadHelper
+      和  
+     Bulk Media Downloader
+      单独或批量保存任何视频文件。
+    对于任何 
+    不想被跟踪
+    或不想在其内容中看到广告的人来说，  Ublock Origin  应该是一个熟悉的东西了，但是对于许多研究人员而言，  
+     User-Agent Switcher
+      可能是一个有趣的新玩具。
+    
+    User-Agent Switcher 可更改浏览器在每次发出请求时发送的操作系统和浏览器类型
+    ，从而使您可以假装成所需的任何类型的设备。
+    
+      不要错过《  如何使用位置欺骗扩展追踪约会网站上的目标私密信息  ？》
+      关于浏览器指纹《  Opsec 操作安全：在反侦察的过程中您应该注意哪些陷阱？  》
+    
+    最后两个附加组件是 Google Translate（用于快速翻译其他语言的页面）和超级有用的 Resurrect Pages，它们可以 
+    查找已被更改或删除的旧版本的网页，使您可以查看调查目标试图隐藏什么
+    。
+    
+      不要错过《  无法挖到已经被删除的内容  》
+    
+    Chrome浏览器扩展程序 ——
+    默认情况下，以隐身模式打开的 Google Chrome 也包含在 Buscador 中。它拥有比Firefox更多的扩展，包括 Ublock Origin、Fireshot和其他15个扩展。
+           
+  
+      
+
+     
+     Lightshot
+      屏幕捕获扩展程序用 360social 和  Prophet  添加了用于在社交网站上搜索目标人的更多信息（例如电子邮件地址等）的工具，从而取代了Chrome中的 Nimbus。
+    为了 
+    分析网站
+    ，Chrome提供了一个  User-Agent Switcher  和  Wappalyzer  ，它们会分解并告诉您任何网站所基于的基础技术。
+    Shodan 也非常有用，可以帮您发现有关您所访问的特定网站的信息。
+    诸如  HTTPS Everywhere  和  WebRTC Leak Prevent  这样的 
+    隐私工具
+    旨在使调查人员免受恶意网站或可能的检测的伤害。
+    这些浏览器工具可以巧妙地结合使用，以发起攻击，例如跟踪用户的Tinder个人资料等等。
+     
+     第4步：使用包含的有用工具
+     
+    除了 Maltego Community Edition 之外，Buscador 中还包含很多开源调查领域流行的工具，您应该检查一下，以便对 Buscador 提供的产品有所了解。
+           
+  
+      
+
+    对于电子邮件抓取，Buscador 随附了 
+    TheHarvester
+    ，可让您搜索感兴趣的域上的所有电子邮件地址。
+    还有强大的跨平台开源情报工具 
+    Spiderfoot
+    。 Spiderfoot 会自动收集有关目标的信息，并将结果转换为易于理解的报告。在下面看到使用方法：
+    
+      《  如何自动执行情报搜集？蜘蛛脚入门指南  》
+    
+    
+    Recon-ng
+    基于 Metasploit，是 Tim Tomes 开发的用于侦察的完整Python模块，在黑客和调查人员中很受欢迎。
+    有许多有用的自定义脚本可用于从目标社交媒体帐户以及其他人们共享自身信息的地方下载视频和图像。这些工具使您只需单击几下就可以获取、处理和分析大量数据。
+    我们将在未来逐步介绍这些工具。如果您想了解有关 Mike Bazzell 的开源情报技术的更多信息，可以查看他的书。（我们已经上传到 telegram 频道，您可以在这里下载）
+      
+     Buscador 是非常强大的
+      
+    设置 Buscador 之后，建议您查看本网“  开源调查  ”栏目中演示和介绍的诸多指南，以开始进行首次调查。
+    
+    最重要的是练习使用这些工具回答问题，而不仅仅是寻求搜集信息。
+   
+    否则，您很可能迷失在工具可以返回的信息海洋中。
+    就像读书一样，想要学到东西，您需要带着问题去读书 —— 带着您的目的 —— 在开源调查中，目的是指导全程的根本。
+    如果不能清楚地回答指导研究者对情况的理解的目标问题，那么所有这些数据几乎没有任何价值。
+    正因此，这个专门的VM的目标正是将研究人员需要的所有工具和数据整合在一起，以决定他们要提出哪些问题来为其提供支持。
+    如果您需要一个功能强大且方便的系统来进行Google搜索范围之外的专业级调查，Buscador 就是您所需的答案。
+    希望本指南对您有所帮助。⚪️
+    
+    在这里回顾此前提供的教程
+    ：《  构建你的自定义开源情报机器（第一部分）  》“  第二部分  ”、“  第三部分  ”、“  第四部分  ”，“  第五部分  ”。
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       Buscador 
+       Investigation 
+       OSINT 
+       technique 
+       Technology 
+       tools 
+    
+  
+  
+    
+
+    Published
+           2020年3月18日 
+       2019年11月2日 
+    
+  
+
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.iyouport.org/%e5%b9%bf%e6%b3%9b%e7%9a%84%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e4%b8%8d%e6%98%af%e7%9b%ae%e7%9a%84%ef%bc%8c%e8%83%bd%e5%9b%9e%e7%ad%94%e9%97%ae%e9%a2%98%e6%89%8d%e6%98%af%ef%bc%9a%e4%b8%80%e4%b8%aa/" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.iyouport.org/%e5%b9%bf%e6%b3%9b%e7%9a%84%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e4%b8%8d%e6%98%af%e7%9b%ae%e7%9a%84%ef%bc%8c%e8%83%bd%e5%9b%9e%e7%ad%94%e9%97%ae%e9%a2%98%e6%89%8d%e6%98%af%ef%bc%9a%e4%b8%80%e4%b8%aa/&title=广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 - iYouPort&caption=
+  
+     广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 
+  
+  
+  McCaffrey     Knowledge Node  ,  OSINT  ,  给行动者的护身符和武器             2020年3月18日 
+          2019年11月2日 
+   1 Minute 
+  
+  
+    
+       
+      
+       就像读书一样，想要学到东西，您需要带着问题去读书 — 带着您的目的 — 在开源调查中，目的是指导全程的根本
+      
+      
+    
+           
+  
+      
+
+    正如我们一直强调的那样，对于使用开源信息进行调查的任何人来说，您必须能在功能强大的工具和隐私控制之间取得平衡。
+    Buscador是一台虚拟机，里面装有诸多好用的开源情报调查工具，并且经过简化后可以有效地协助在线研究。
+    可以轻松地在 VirtualBox 中设置该程序，完成后，我们将带您逐步了解其中包含的一些最有用的工具。
+    现在就开始。
+      
+     开源情报调查
+      
+    我们以前介绍过  TheHarvester  和  Maltego  等类似的高端调查工具（在下面看到部分回顾），人们对这些工具的态度从惊讶到对其合法性的怀疑，几乎什么都有。是的 ，依旧有很多人对可以从开源渠道中获取的庞大信息量和种类有类似的反应。
+    
+      《  社交工程工具用于开源情报调查：0基础初学者指南  》
+      《  20个最好用的在线侦查工具和数据收集工具  》
+      一个对大众很有价值的用例《  社交媒体情报和反情报基本工具手册：自我人肉（2）  》
+    
+    但正如我们一直坚持的那样， 
+    这些技术可以用在任何动机上，所以我们必须能将它民主化，才能与
+     
+     当权者的邪恶动机
+      
+    相抗衡
+    。
+    开源情报调查研究工具允许访问全球社会产生的大量数据，这些数据通常用作解决犯罪问题的取证线索、或用作侦察手段以允许各种黑客和社交工程攻击计划的顺利推进。
+    充分利用数字世界中所有可用的数据，研究人员几乎不会担心信息找不到；他们担心的是， 
+    现有的数据量太大了，难以分类，但是正确的数据几乎总是存在其中的
+    。
+    因此，寻找最有效的途径获得正确的数据，是研究人员将面临的核心挑战之一。这意味着要使用比 Google 搜索更复杂的工具来寻找与目标有关的一切线索。
+    开源情报调查领域的可用工具非常多，我们介绍过其中大部分，但是它们中的一些在安装和配置方面可能有点麻烦。
+    在看到很多人在进行开源情报研究时存在 
+    明显的操作安全漏洞
+    之后，该领域专家 Mike Bazzell 和 David Westcott 着手创建了专门的VM，并将亲测最有效的开源情报工具和自定义脚本结合在一起。
+    该VM的另一个重点是 
+    安全性、隐身性、以及能够轻松保存在调查期间发现的数字证据的能力
+    。
+    
+      关于数字取证，我们上传过一本书您可以在这里下载：  https://t.me/iyouport/6313 
+      以及一个文档，为取证工具，针对的是：WhatsApp、Telegram Messenger、Facebook Messenger、Viber、Signal Messenger、Skype 和微信。在这里下载：  https://t.me/iyouport/6315 
+    
+          
+ 
+      
+
+      
+     面向黑客、社交工程师、公民记者、NGO、和各类调查人员的虚拟机
+      
+    黑客可以将 Buscador OSINT 虚拟机想像成基于开源情报的 Kali Linux 版本。
+    Buscador 基于 Ubuntu 而非 Debian，不包含Kali拥有的强大的网络武器，而是将一组最有用的 
+    开源情报、隐私、和数据捕获工具
+    手工收集到一个隐蔽的包中。
+    由于免追踪是所有调查人员的基本目标，因此 Buscador 预先安装了Tor，并拥有其他有用的隐私工具。
+    Buscador VM 还可以从任何可用于计算机上的USB拇指驱动器启动，也可以加载到硬盘上并直接启动。
+    这样， 
+    无论您是否随身携带个人设备，都可以灵活地在任何可以访问计算机的地方使用它
+    。该 VM 3.5 GB，结构紧凑，易于放在8 GB或更大的闪存驱动器中随身携带。
+    Buscador 鼓励良好的研究习惯，并赋予研究人员更多的研究线索。预先安装了一些您很熟悉的工具，例如  Maltego  、  Recon-ng  、  Creepy  、  Spiderfoot  、  TheHarvester  、  Sublist3r  ，都是瑞士军刀级的利器，还有我们曾经介绍过的其他工具。（以上内嵌链接是一些用例）
+      
+     你需要些什么
+      
+    试用 Buscador 很容易。您需要从 IntelTechniques 网站  下载最新版本的 Buscador  。
+    接下来，您需要  下载 VirtualBox  以及  VirtualBox Extension Pack  才能运行该虚拟机。 
+    确保完全安装这两者
+    ，因为在不使用扩展包的情况下运行 Buscador 会很麻烦，因为它要求您按一个转义序列以从VM中释放鼠标。
+    一旦安装了 VirtualBox 和 VirtualBox Extension Pack，就可以对 Buscador 进行设置了，也就是第一步。
+     
+     第一步：导入和配置
+     
+    首先需要导入并调整一些设置。打开 VirtualBox，然后在下拉菜单中单击“文件”，然后单击 “Import Appliance” 选择您先前下载的 Buscador .OVA 文件。然后，选择“继续”。
+           
+  
+      
+
+    继续并单击“导入”以加载虚拟机。
+           
+  
+      
+
+    接下来单击“设置”，然后在“常规”选项卡中，将 Buscador VM 
+    重命名
+    为您容易记住的名字。
+    在“高级”下，将“共享剪贴板”更改为“ 
+    双向
+    ”，以允许在来宾系统和您的主机之间进行复制和粘贴。
+    单击“系统”选项卡，然后在“主板”下，将大约 
+    一半
+    的总系统 RAM 添加到虚拟机。
+    接下来单击 “Displa”，然后单击 “Screen” 以将显存增加到 
+    至少128 MB
+    ，以允许视频和其他数字证据正确显示。
+           
+  
+      
+
+    完成后，单击“保存”，然后单击左下角的加号图标，选择“添加光驱”，然后选择 “Leave Empty”选项。
+    最后，单击“共享文件夹”选项卡，然后选择右侧的加号图标。现在，您可以创建或选择要用于将证据从 Buscador 保存到计算机上的 
+    文件夹
+    。
+    选择此选项后，确保将文件夹设置为“ 
+    自动挂载
+    ”。
+           
+  
+      
+
+    完成此操作后，您就可以开始首次运行 Buscador了。
+    单击“确定”以保存设置，然后从 VirtualBox 的VM列表中选择 Buscador VM，并单击绿色的“开始”按钮。
+     
+     第二步：首次运行 Buscador
+     
+    在 Buscador 启动之后，您应该在登录菜单上找到一个怪异的OSINT动画人作为墙纸。
+    默认的用户名密码都是 osint。
+           
+  
+      
+
+    登录并启动桌面后，单击 VirtualBox 菜单顶部的“设备”选项卡，然后选择 “Insert Guest Additions CD Image” 以在 Buscador 中显示CD。
+    如果无法自动运行，请选择桌面上的CD，然后单击“运行软件” 以运行 Guest Additions 安装程序。安装完成后，重新启动虚拟机。
+           
+  
+      
+
+    再次登录并加载桌面后，打开一个终端窗口。我们需要将“ osint”用户添加到“vboxsf”用户组中，为此，将键入以下内容，然后按 Return / Enter 键：
+    sudo adduser osint vboxsf    
+    提供密码（osint），然后在完成该过程后再次重启VM。
+           
+  
+      
+
+    现在这些步骤已完成，您的 Buscador 已经设置好并可以使用了！
+     
+     第三步：利用浏览器扩展
+     
+    Buscador 提供了许多预配置的最有用的插件和扩展程序，供研究人员使用。该精选列表着重于捕获您找到的线索以供进一步检查和分析，这里将首先介绍 Firefox 附带的一些最有用的工具。
+    Firefox 浏览器附加组件 ——
+    这里有八个浏览器插件。您会看到图标藏在浏览器的右上角。
+    前两个  
+     Nimbus Capture
+      和  
+     FireShot
+      用于拍摄感兴趣页面的详细屏幕截图，使您可以对其进行存档、在其中做笔记、甚至制作网站的PDF副本。
+           
+  
+      
+
+    接下来的两个浏览器扩展程序用于收集在线发布的视频和音频。允许您分别使用  
+     Video DownloadHelper
+      和  
+     Bulk Media Downloader
+      单独或批量保存任何视频文件。
+    对于任何 
+    不想被跟踪
+    或不想在其内容中看到广告的人来说，  Ublock Origin  应该是一个熟悉的东西了，但是对于许多研究人员而言，  
+     User-Agent Switcher
+      可能是一个有趣的新玩具。
+    
+    User-Agent Switcher 可更改浏览器在每次发出请求时发送的操作系统和浏览器类型
+    ，从而使您可以假装成所需的任何类型的设备。
+    
+      不要错过《  如何使用位置欺骗扩展追踪约会网站上的目标私密信息  ？》
+      关于浏览器指纹《  Opsec 操作安全：在反侦察的过程中您应该注意哪些陷阱？  》
+    
+    最后两个附加组件是 Google Translate（用于快速翻译其他语言的页面）和超级有用的 Resurrect Pages，它们可以 
+    查找已被更改或删除的旧版本的网页，使您可以查看调查目标试图隐藏什么
+    。
+    
+      不要错过《  无法挖到已经被删除的内容  》
+    
+    Chrome浏览器扩展程序 ——
+    默认情况下，以隐身模式打开的 Google Chrome 也包含在 Buscador 中。它拥有比Firefox更多的扩展，包括 Ublock Origin、Fireshot和其他15个扩展。
+           
+  
+      
+
+     
+     Lightshot
+      屏幕捕获扩展程序用 360social 和  Prophet  添加了用于在社交网站上搜索目标人的更多信息（例如电子邮件地址等）的工具，从而取代了Chrome中的 Nimbus。
+    为了 
+    分析网站
+    ，Chrome提供了一个  User-Agent Switcher  和  Wappalyzer  ，它们会分解并告诉您任何网站所基于的基础技术。
+    Shodan 也非常有用，可以帮您发现有关您所访问的特定网站的信息。
+    诸如  HTTPS Everywhere  和  WebRTC Leak Prevent  这样的 
+    隐私工具
+    旨在使调查人员免受恶意网站或可能的检测的伤害。
+    这些浏览器工具可以巧妙地结合使用，以发起攻击，例如跟踪用户的Tinder个人资料等等。
+     
+     第4步：使用包含的有用工具
+     
+    除了 Maltego Community Edition 之外，Buscador 中还包含很多开源调查领域流行的工具，您应该检查一下，以便对 Buscador 提供的产品有所了解。
+           
+  
+      
+
+    对于电子邮件抓取，Buscador 随附了 
+    TheHarvester
+    ，可让您搜索感兴趣的域上的所有电子邮件地址。
+    还有强大的跨平台开源情报工具 
+    Spiderfoot
+    。 Spiderfoot 会自动收集有关目标的信息，并将结果转换为易于理解的报告。在下面看到使用方法：
+    
+      《  如何自动执行情报搜集？蜘蛛脚入门指南  》
+    
+    
+    Recon-ng
+    基于 Metasploit，是 Tim Tomes 开发的用于侦察的完整Python模块，在黑客和调查人员中很受欢迎。
+    有许多有用的自定义脚本可用于从目标社交媒体帐户以及其他人们共享自身信息的地方下载视频和图像。这些工具使您只需单击几下就可以获取、处理和分析大量数据。
+    我们将在未来逐步介绍这些工具。如果您想了解有关 Mike Bazzell 的开源情报技术的更多信息，可以查看他的书。（我们已经上传到 telegram 频道，您可以在这里下载）
+      
+     Buscador 是非常强大的
+      
+    设置 Buscador 之后，建议您查看本网“  开源调查  ”栏目中演示和介绍的诸多指南，以开始进行首次调查。
+    
+    最重要的是练习使用这些工具回答问题，而不仅仅是寻求搜集信息。
+   
+    否则，您很可能迷失在工具可以返回的信息海洋中。
+    就像读书一样，想要学到东西，您需要带着问题去读书 —— 带着您的目的 —— 在开源调查中，目的是指导全程的根本。
+    如果不能清楚地回答指导研究者对情况的理解的目标问题，那么所有这些数据几乎没有任何价值。
+    正因此，这个专门的VM的目标正是将研究人员需要的所有工具和数据整合在一起，以决定他们要提出哪些问题来为其提供支持。
+    如果您需要一个功能强大且方便的系统来进行Google搜索范围之外的专业级调查，Buscador 就是您所需的答案。
+    希望本指南对您有所帮助。⚪️
+    
+    在这里回顾此前提供的教程
+    ：《  构建你的自定义开源情报机器（第一部分）  》“  第二部分  ”、“  第三部分  ”、“  第四部分  ”，“  第五部分  ”。
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       Buscador 
+       Investigation 
+       OSINT 
+       technique 
+       Technology 
+       tools 
+    
+  
+  
+    
+
+    Published
+           2020年3月18日 
+       2019年11月2日 
+    
+  
+
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 - iYouPort&url=https://www.iyouport.org/%e5%b9%bf%e6%b3%9b%e7%9a%84%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e4%b8%8d%e6%98%af%e7%9b%ae%e7%9a%84%ef%bc%8c%e8%83%bd%e5%9b%9e%e7%ad%94%e9%97%ae%e9%a2%98%e6%89%8d%e6%98%af%ef%bc%9a%e4%b8%80%e4%b8%aa/" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 - iYouPort</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-03-17
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#iYouPort">
+          iYouPort
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.iyouport.org/%e5%b9%bf%e6%b3%9b%e7%9a%84%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e4%b8%8d%e6%98%af%e7%9b%ae%e7%9a%84%ef%bc%8c%e8%83%bd%e5%9b%9e%e7%ad%94%e9%97%ae%e9%a2%98%e6%89%8d%e6%98%af%ef%bc%9a%e4%b8%80%e4%b8%aa/" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="iYouPort的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#iYouPort 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <article class="post-10260 post type-post status-publish format-standard has-post-thumbnail hentry category-knowledge-node category-osint category-67 tag-buscador tag-investigation tag-osint tag-technique tag-technology tag-tools" id="post-10260">
+  <header class="entry-header">
+    <h1 class="entry-title" id="section"> 广泛的数据收集不是目的，能回答问题才是：一个可随身携带的强大工具协助深入调查 </h1>
+  </header>
+  <div class="entry-meta">
+<span class="byline"> <a href="https://www.iyouport.org/author/don-evans/" rel="author" title="由McCaffrey发布"> McCaffrey </a> </span> <span class="cat-links"> <a href="https://www.iyouport.org/category/knowledge-node/" rel="category tag"> Knowledge Node </a> , <a href="https://www.iyouport.org/category/osint/" rel="category tag"> OSINT </a> , <a href="https://www.iyouport.org/category/%e7%bb%99%e8%a1%8c%e5%8a%a8%e8%80%85%e7%9a%84%e6%8a%a4%e8%ba%ab%e7%ac%a6%e5%92%8c%e6%ad%a6%e5%99%a8/" rel="category tag"> 给行动者的护身符和武器 </a> </span> <span class="published-on">         <time class="entry-date published" datetime="2020-03-18T00:03:47+08:00"> 2020年3月18日 </time>
+         <time class="updated" datetime="2019-11-02T19:15:53+08:00"> 2019年11月2日 </time>
+ </span> <span class="word-count"> 1 Minute </span>
+  </div>
+  <div class="entry-content">
+    <ul>
+      <li class="graf graf--p"><span style="color: #00ccff;"> <em>
+      <strong>
+       就像读书一样，想要学到东西，您需要带着问题去读书 — 带着您的目的 — 在开源调查中，目的是指导全程的根本
+      </strong>
+     </em> </span></li>
+    </ul>
+    <p><img alt="" class="aligncenter size-full wp-image-10261 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?resize=1100%2C627&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?w=1280&amp;ssl=1 1280w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?resize=300%2C171&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?resize=768%2C438&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?resize=1024%2C584&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?resize=1100%2C627&amp;ssl=1 1100w" data-recalc-dims="1" height="627" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?resize=1100%2C627&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10261" data-recalc-dims="1" height="627" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?resize=1100%2C627&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?w=1280&amp;ssl=1 1280w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?resize=300%2C171&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?resize=768%2C438&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?resize=1024%2C584&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/侦查.jpg?resize=1100%2C627&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">正如我们一直强调的那样，对于使用开源信息进行调查的任何人来说，您必须能在功能强大的工具和隐私控制之间取得平衡。</p>
+    <p class="graf graf--p">Buscador是一台虚拟机，里面装有诸多好用的开源情报调查工具，并且经过简化后可以有效地协助在线研究。</p>
+    <p class="graf graf--p">可以轻松地在 VirtualBox 中设置该程序，完成后，我们将带您逐步了解其中包含的一些最有用的工具。</p>
+    <p class="graf graf--p">现在就开始。</p>
+    <h3 class="graf graf--p" id="section-1"> <span style="color: #ff6600;"> <strong class="markup--strong markup--p-strong">
+     开源情报调查
+    </strong> </span> </h3>
+    <p class="graf graf--p">我们以前介绍过 <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e6%96%b0%e7%94%9f%e6%83%85%e6%8a%a5%e5%b7%a5%e5%85%b7%ef%bc%882%ef%bc%89%ef%bc%9a%e5%88%ae%e5%88%80%e3%80%81%e6%89%93%e7%a0%b4%e6%8e%a8%e7%89%b9%e9%99%90%e5%88%b6%e3%80%81%e6%83%85%e6%8a%a5%e8%b5%84/" href="https://www.iyouport.org/%e6%96%b0%e7%94%9f%e6%83%85%e6%8a%a5%e5%b7%a5%e5%85%b7%ef%bc%882%ef%bc%89%ef%bc%9a%e5%88%ae%e5%88%80%e3%80%81%e6%89%93%e7%a0%b4%e6%8e%a8%e7%89%b9%e9%99%90%e5%88%b6%e3%80%81%e6%83%85%e6%8a%a5%e8%b5%84/" rel="noopener noreferrer" target="_blank"> TheHarvester </a> 和 <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%b7%a5%e7%a8%8b%e5%b7%a5%e5%85%b7%e7%94%a8%e4%ba%8e%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e8%b0%83%e6%9f%a5%ef%bc%9a0%e5%9f%ba%e7%a1%80%e5%88%9d%e5%ad%a6%e8%80%85%e6%8c%87%e5%8d%97/" href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%b7%a5%e7%a8%8b%e5%b7%a5%e5%85%b7%e7%94%a8%e4%ba%8e%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e8%b0%83%e6%9f%a5%ef%bc%9a0%e5%9f%ba%e7%a1%80%e5%88%9d%e5%ad%a6%e8%80%85%e6%8c%87%e5%8d%97/" rel="noopener noreferrer" target="_blank"> Maltego </a> 等类似的高端调查工具（在下面看到部分回顾），人们对这些工具的态度从惊讶到对其合法性的怀疑，几乎什么都有。是的 ，依旧有很多人对可以从开源渠道中获取的庞大信息量和种类有类似的反应。</p>
+    <ul class="postList">
+      <li class="graf graf--li">《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%b7%a5%e7%a8%8b%e5%b7%a5%e5%85%b7%e7%94%a8%e4%ba%8e%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e8%b0%83%e6%9f%a5%ef%bc%9a0%e5%9f%ba%e7%a1%80%e5%88%9d%e5%ad%a6%e8%80%85%e6%8c%87%e5%8d%97/" href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%b7%a5%e7%a8%8b%e5%b7%a5%e5%85%b7%e7%94%a8%e4%ba%8e%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e8%b0%83%e6%9f%a5%ef%bc%9a0%e5%9f%ba%e7%a1%80%e5%88%9d%e5%ad%a6%e8%80%85%e6%8c%87%e5%8d%97/" rel="noopener noreferrer" target="_blank"> 社交工程工具用于开源情报调查：0基础初学者指南 </a> 》</li>
+      <li class="graf graf--li">《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/20%e4%b8%aa%e6%9c%80%e5%a5%bd%e7%94%a8%e7%9a%84%e5%9c%a8%e7%ba%bf%e4%be%a6%e6%9f%a5%e5%b7%a5%e5%85%b7%e5%92%8c%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e5%b7%a5%e5%85%b7/" href="https://www.iyouport.org/20%e4%b8%aa%e6%9c%80%e5%a5%bd%e7%94%a8%e7%9a%84%e5%9c%a8%e7%ba%bf%e4%be%a6%e6%9f%a5%e5%b7%a5%e5%85%b7%e5%92%8c%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e5%b7%a5%e5%85%b7/" rel="noopener noreferrer" target="_blank"> 20个最好用的在线侦查工具和数据收集工具 </a> 》</li>
+      <li class="graf graf--li">一个对大众很有价值的用例《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%aa%92%e4%bd%93%e6%83%85%e6%8a%a5%e5%92%8c%e5%8f%8d%e6%83%85%e6%8a%a5%e5%9f%ba%e6%9c%ac%e5%b7%a5%e5%85%b7%e6%89%8b%e5%86%8c%ef%bc%9a%e8%87%aa%e6%88%91%e4%ba%ba%e8%82%89%ef%bc%882/" href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%aa%92%e4%bd%93%e6%83%85%e6%8a%a5%e5%92%8c%e5%8f%8d%e6%83%85%e6%8a%a5%e5%9f%ba%e6%9c%ac%e5%b7%a5%e5%85%b7%e6%89%8b%e5%86%8c%ef%bc%9a%e8%87%aa%e6%88%91%e4%ba%ba%e8%82%89%ef%bc%882/" rel="noopener noreferrer" target="_blank"> 社交媒体情报和反情报基本工具手册：自我人肉（2） </a> 》</li>
+    </ul>
+    <p class="graf graf--p">但正如我们一直坚持的那样， <strong class="markup--strong markup--p-strong">
+    这些技术可以用在任何动机上，所以我们必须能将它民主化，才能与
+   </strong> <a class="markup--anchor markup--p-anchor" data-href="https://twitter.com/DonEvansWm/status/1174606337730154496" href="https://twitter.com/DonEvansWm/status/1174606337730154496" rel="noopener noreferrer" target="_blank"> <strong class="markup--strong markup--p-strong">
+     当权者的邪恶动机
+    </strong> </a> <strong class="markup--strong markup--p-strong">
+    相抗衡
+   </strong> 。</p>
+    <p class="graf graf--p">开源情报调查研究工具允许访问全球社会产生的大量数据，这些数据通常用作解决犯罪问题的取证线索、或用作侦察手段以允许各种黑客和社交工程攻击计划的顺利推进。</p>
+    <p class="graf graf--p">充分利用数字世界中所有可用的数据，研究人员几乎不会担心信息找不到；他们担心的是， <strong class="markup--strong markup--p-strong">
+    现有的数据量太大了，难以分类，但是正确的数据几乎总是存在其中的
+   </strong> 。</p>
+    <p class="graf graf--p">因此，寻找最有效的途径获得正确的数据，是研究人员将面临的核心挑战之一。这意味着要使用比 Google 搜索更复杂的工具来寻找与目标有关的一切线索。</p>
+    <p class="graf graf--p">开源情报调查领域的可用工具非常多，我们介绍过其中大部分，但是它们中的一些在安装和配置方面可能有点麻烦。</p>
+    <p class="graf graf--p">在看到很多人在进行开源情报研究时存在 <strong class="markup--strong markup--p-strong">
+    明显的操作安全漏洞
+   </strong> 之后，该领域专家 Mike Bazzell 和 David Westcott 着手创建了专门的VM，并将亲测最有效的开源情报工具和自定义脚本结合在一起。</p>
+    <p class="graf graf--p">该VM的另一个重点是 <strong class="markup--strong markup--p-strong">
+    安全性、隐身性、以及能够轻松保存在调查期间发现的数字证据的能力
+   </strong> 。</p>
+    <ul class="postList">
+      <li class="graf graf--li">关于数字取证，我们上传过一本书您可以在这里下载： <a class="markup--anchor markup--li-anchor" data-href="https://t.me/iyouport/6313" href="https://t.me/iyouport/6313" rel="nofollow noopener noreferrer" target="_blank"> https://t.me/iyouport/6313 </a></li>
+      <li class="graf graf--li">以及一个文档，为取证工具，针对的是：WhatsApp、Telegram Messenger、Facebook Messenger、Viber、Signal Messenger、Skype 和微信。在这里下载： <a class="markup--anchor markup--li-anchor" data-href="https://t.me/iyouport/6315" href="https://t.me/iyouport/6315" rel="nofollow noopener noreferrer" target="_blank"> https://t.me/iyouport/6315 </a></li>
+    </ul>
+    <p class="graf graf--p">      <iframe allowfullscreen="allowfullscreen" height="421" src="//www.youtube.com/embed/TQJ4vVLm5wM" width="750">
+ 
+      </iframe>
+</p>
+    <h3 class="graf graf--p" id="ngo"> <span style="color: #ff6600;"> <strong class="markup--strong markup--p-strong">
+     面向黑客、社交工程师、公民记者、NGO、和各类调查人员的虚拟机
+    </strong> </span> </h3>
+    <p class="graf graf--p">黑客可以将 Buscador OSINT 虚拟机想像成基于开源情报的 Kali Linux 版本。</p>
+    <p class="graf graf--p">Buscador 基于 Ubuntu 而非 Debian，不包含Kali拥有的强大的网络武器，而是将一组最有用的 <strong class="markup--strong markup--p-strong">
+    开源情报、隐私、和数据捕获工具
+   </strong> 手工收集到一个隐蔽的包中。</p>
+    <p class="graf graf--p">由于免追踪是所有调查人员的基本目标，因此 Buscador 预先安装了Tor，并拥有其他有用的隐私工具。</p>
+    <p class="graf graf--p">Buscador VM 还可以从任何可用于计算机上的USB拇指驱动器启动，也可以加载到硬盘上并直接启动。</p>
+    <p class="graf graf--p">这样， <strong class="markup--strong markup--p-strong">
+    无论您是否随身携带个人设备，都可以灵活地在任何可以访问计算机的地方使用它
+   </strong> 。该 VM 3.5 GB，结构紧凑，易于放在8 GB或更大的闪存驱动器中随身携带。</p>
+    <p class="graf graf--p">Buscador 鼓励良好的研究习惯，并赋予研究人员更多的研究线索。预先安装了一些您很熟悉的工具，例如 <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%b7%a5%e7%a8%8b%e5%b7%a5%e5%85%b7%e7%94%a8%e4%ba%8e%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e8%b0%83%e6%9f%a5%ef%bc%9a0%e5%9f%ba%e7%a1%80%e5%88%9d%e5%ad%a6%e8%80%85%e6%8c%87%e5%8d%97/" href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%b7%a5%e7%a8%8b%e5%b7%a5%e5%85%b7%e7%94%a8%e4%ba%8e%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e8%b0%83%e6%9f%a5%ef%bc%9a0%e5%9f%ba%e7%a1%80%e5%88%9d%e5%ad%a6%e8%80%85%e6%8c%87%e5%8d%97/" rel="noopener noreferrer" target="_blank"> Maltego </a> 、 <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e6%97%a0%e9%9c%80%e6%89%93%e5%85%a5%e5%86%85%e9%83%a8%e4%b9%9f%e8%83%bd%e6%8c%96%e6%8e%98%e4%bf%a1%e6%81%af%ef%bc%9aosint-%e6%96%b9%e6%b3%95%e6%8e%a8%e4%bb%8b%e2%80%8a-%e6%8a%80%e6%9c%af/" href="https://www.iyouport.org/%e6%97%a0%e9%9c%80%e6%89%93%e5%85%a5%e5%86%85%e9%83%a8%e4%b9%9f%e8%83%bd%e6%8c%96%e6%8e%98%e4%bf%a1%e6%81%af%ef%bc%9aosint-%e6%96%b9%e6%b3%95%e6%8e%a8%e4%bb%8b%e2%80%8a-%e6%8a%80%e6%9c%af/" rel="noopener noreferrer" target="_blank"> Recon-ng </a> 、 <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%aa%92%e4%bd%93%e6%83%85%e6%8a%a5%e5%92%8c%e5%8f%8d%e6%83%85%e6%8a%a5%e5%9f%ba%e6%9c%ac%e5%b7%a5%e5%85%b7%e6%89%8b%e5%86%8c%ef%bc%9a%e8%87%aa%e6%88%91%e4%ba%ba%e8%82%89%ef%bc%882/" href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%aa%92%e4%bd%93%e6%83%85%e6%8a%a5%e5%92%8c%e5%8f%8d%e6%83%85%e6%8a%a5%e5%9f%ba%e6%9c%ac%e5%b7%a5%e5%85%b7%e6%89%8b%e5%86%8c%ef%bc%9a%e8%87%aa%e6%88%91%e4%ba%ba%e8%82%89%ef%bc%882/" rel="noopener noreferrer" target="_blank"> Creepy </a> 、 <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e8%87%aa%e5%8a%a8%e6%89%a7%e8%a1%8c%e6%83%85%e6%8a%a5%e6%90%9c%e9%9b%86%ef%bc%9f%e8%9c%98%e8%9b%9b%e8%84%9a%e5%85%a5%e9%97%a8%e6%8c%87%e5%8d%97/" href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e8%87%aa%e5%8a%a8%e6%89%a7%e8%a1%8c%e6%83%85%e6%8a%a5%e6%90%9c%e9%9b%86%ef%bc%9f%e8%9c%98%e8%9b%9b%e8%84%9a%e5%85%a5%e9%97%a8%e6%8c%87%e5%8d%97/" rel="noopener noreferrer" target="_blank"> Spiderfoot </a> 、 <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%aa%92%e4%bd%93%e6%83%85%e6%8a%a5%e5%92%8c%e5%8f%8d%e6%83%85%e6%8a%a5%e5%9f%ba%e6%9c%ac%e5%b7%a5%e5%85%b7%e6%89%8b%e5%86%8c%ef%bc%9a%e8%87%aa%e6%88%91%e4%ba%ba%e8%82%89%ef%bc%882/" href="https://www.iyouport.org/%e7%a4%be%e4%ba%a4%e5%aa%92%e4%bd%93%e6%83%85%e6%8a%a5%e5%92%8c%e5%8f%8d%e6%83%85%e6%8a%a5%e5%9f%ba%e6%9c%ac%e5%b7%a5%e5%85%b7%e6%89%8b%e5%86%8c%ef%bc%9a%e8%87%aa%e6%88%91%e4%ba%ba%e8%82%89%ef%bc%882/" rel="noopener noreferrer" target="_blank"> TheHarvester </a> 、 <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e6%97%a0%e9%9c%80%e6%89%93%e5%85%a5%e5%86%85%e9%83%a8%e4%b9%9f%e8%83%bd%e6%8c%96%e6%8e%98%e4%bf%a1%e6%81%af%ef%bc%9aosint-%e6%96%b9%e6%b3%95%e6%8e%a8%e4%bb%8b%e2%80%8a-%e6%8a%80%e6%9c%af/" href="https://www.iyouport.org/%e6%97%a0%e9%9c%80%e6%89%93%e5%85%a5%e5%86%85%e9%83%a8%e4%b9%9f%e8%83%bd%e6%8c%96%e6%8e%98%e4%bf%a1%e6%81%af%ef%bc%9aosint-%e6%96%b9%e6%b3%95%e6%8e%a8%e4%bb%8b%e2%80%8a-%e6%8a%80%e6%9c%af/" rel="noopener noreferrer" target="_blank"> Sublist3r </a> ，都是瑞士军刀级的利器，还有我们曾经介绍过的其他工具。（以上内嵌链接是一些用例）</p>
+    <h3 class="graf graf--p" id="section-2"> <span style="color: #ff6600;"> <strong class="markup--strong markup--p-strong">
+     你需要些什么
+    </strong> </span> </h3>
+    <p class="graf graf--p">试用 Buscador 很容易。您需要从 IntelTechniques 网站 <a class="markup--anchor markup--p-anchor" data-href="https://inteltechniques.com/buscador/" href="https://inteltechniques.com/buscador/" rel="noopener noreferrer" target="_blank"> 下载最新版本的 Buscador </a> 。</p>
+    <p class="graf graf--p">接下来，您需要 <a class="markup--anchor markup--p-anchor" data-href="https://www.virtualbox.org/wiki/Downloads" href="https://www.virtualbox.org/wiki/Downloads" rel="noopener noreferrer" target="_blank"> 下载 VirtualBox </a> 以及 <a class="markup--anchor markup--p-anchor" data-href="https://www.virtualbox.org/wiki/Downloads" href="https://www.virtualbox.org/wiki/Downloads" rel="noopener noreferrer" target="_blank"> VirtualBox Extension Pack </a> 才能运行该虚拟机。 <strong class="markup--strong markup--p-strong">
+    确保完全安装这两者
+   </strong> ，因为在不使用扩展包的情况下运行 Buscador 会很麻烦，因为它要求您按一个转义序列以从VM中释放鼠标。</p>
+    <p class="graf graf--p">一旦安装了 VirtualBox 和 VirtualBox Extension Pack，就可以对 Buscador 进行设置了，也就是第一步。</p>
+    <p class="graf graf--p"><span style="color: #00ccff;"> <strong class="markup--strong markup--p-strong">
+     第一步：导入和配置
+    </strong> </span></p>
+    <p class="graf graf--p">首先需要导入并调整一些设置。打开 VirtualBox，然后在下拉菜单中单击“文件”，然后单击 “Import Appliance” 选择您先前下载的 Buscador .OVA 文件。然后，选择“继续”。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10262 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?resize=1100%2C755&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?resize=300%2C206&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?resize=768%2C527&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?resize=1024%2C703&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?resize=1100%2C755&amp;ssl=1 1100w" data-recalc-dims="1" height="755" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?resize=1100%2C755&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10262" data-recalc-dims="1" height="755" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?resize=1100%2C755&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?resize=300%2C206&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?resize=768%2C527&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?resize=1024%2C703&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-1.jpg?resize=1100%2C755&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">继续并单击“导入”以加载虚拟机。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10263 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?resize=1100%2C609&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?resize=300%2C166&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?resize=768%2C425&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?resize=1024%2C567&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?resize=1100%2C609&amp;ssl=1 1100w" data-recalc-dims="1" height="609" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?resize=1100%2C609&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10263" data-recalc-dims="1" height="609" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?resize=1100%2C609&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?resize=300%2C166&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?resize=768%2C425&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?resize=1024%2C567&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-2.jpg?resize=1100%2C609&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">接下来单击“设置”，然后在“常规”选项卡中，将 Buscador VM <strong class="markup--strong markup--p-strong">
+    重命名
+   </strong> 为您容易记住的名字。</p>
+    <p class="graf graf--p">在“高级”下，将“共享剪贴板”更改为“ <strong class="markup--strong markup--p-strong">
+    双向
+   </strong> ”，以允许在来宾系统和您的主机之间进行复制和粘贴。</p>
+    <p class="graf graf--p">单击“系统”选项卡，然后在“主板”下，将大约 <strong class="markup--strong markup--p-strong">
+    一半
+   </strong> 的总系统 RAM 添加到虚拟机。</p>
+    <p class="graf graf--p">接下来单击 “Displa”，然后单击 “Screen” 以将显存增加到 <strong class="markup--strong markup--p-strong">
+    至少128 MB
+   </strong> ，以允许视频和其他数字证据正确显示。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10264 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?resize=1100%2C830&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?resize=300%2C226&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?resize=768%2C579&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?resize=1024%2C772&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?resize=1100%2C830&amp;ssl=1 1100w" data-recalc-dims="1" height="830" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?resize=1100%2C830&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10264" data-recalc-dims="1" height="830" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?resize=1100%2C830&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?resize=300%2C226&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?resize=768%2C579&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?resize=1024%2C772&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3.jpg?resize=1100%2C830&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">完成后，单击“保存”，然后单击左下角的加号图标，选择“添加光驱”，然后选择 “Leave Empty”选项。</p>
+    <p class="graf graf--p">最后，单击“共享文件夹”选项卡，然后选择右侧的加号图标。现在，您可以创建或选择要用于将证据从 Buscador 保存到计算机上的 <strong class="markup--strong markup--p-strong">
+    文件夹
+   </strong> 。</p>
+    <p class="graf graf--p">选择此选项后，确保将文件夹设置为“ <strong class="markup--strong markup--p-strong">
+    自动挂载
+   </strong> ”。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10265 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?resize=1100%2C573&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?resize=300%2C156&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?resize=768%2C400&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?resize=1024%2C534&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?resize=1100%2C573&amp;ssl=1 1100w" data-recalc-dims="1" height="573" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?resize=1100%2C573&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10265" data-recalc-dims="1" height="573" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?resize=1100%2C573&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?resize=300%2C156&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?resize=768%2C400&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?resize=1024%2C534&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-1.jpg?resize=1100%2C573&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">完成此操作后，您就可以开始首次运行 Buscador了。</p>
+    <p class="graf graf--p">单击“确定”以保存设置，然后从 VirtualBox 的VM列表中选择 Buscador VM，并单击绿色的“开始”按钮。</p>
+    <p class="graf graf--p"><span style="color: #00ccff;"> <strong class="markup--strong markup--p-strong">
+     第二步：首次运行 Buscador
+    </strong> </span></p>
+    <p class="graf graf--p">在 Buscador 启动之后，您应该在登录菜单上找到一个怪异的OSINT动画人作为墙纸。</p>
+    <p class="graf graf--p">默认的用户名密码都是 osint。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10266 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?resize=1100%2C644&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?w=1456&amp;ssl=1 1456w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?resize=300%2C176&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?resize=768%2C450&amp;ssl=1 768w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?resize=1024%2C600&amp;ssl=1 1024w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?resize=1100%2C644&amp;ssl=1 1100w" data-recalc-dims="1" height="644" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?resize=1100%2C644&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10266" data-recalc-dims="1" height="644" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?resize=1100%2C644&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?w=1456&amp;ssl=1 1456w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?resize=300%2C176&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?resize=768%2C450&amp;ssl=1 768w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?resize=1024%2C600&amp;ssl=1 1024w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-1.jpg?resize=1100%2C644&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">登录并启动桌面后，单击 VirtualBox 菜单顶部的“设备”选项卡，然后选择 “Insert Guest Additions CD Image” 以在 Buscador 中显示CD。</p>
+    <p class="graf graf--p">如果无法自动运行，请选择桌面上的CD，然后单击“运行软件” 以运行 Guest Additions 安装程序。安装完成后，重新启动虚拟机。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10267 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?resize=1100%2C558&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?w=1456&amp;ssl=1 1456w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?resize=300%2C152&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?resize=768%2C390&amp;ssl=1 768w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?resize=1024%2C520&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?resize=1100%2C558&amp;ssl=1 1100w" data-recalc-dims="1" height="558" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?resize=1100%2C558&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10267" data-recalc-dims="1" height="558" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?resize=1100%2C558&amp;ssl=1" srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?w=1456&amp;ssl=1 1456w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?resize=300%2C152&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?resize=768%2C390&amp;ssl=1 768w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?resize=1024%2C520&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6.jpg?resize=1100%2C558&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">再次登录并加载桌面后，打开一个终端窗口。我们需要将“ osint”用户添加到“vboxsf”用户组中，为此，将键入以下内容，然后按 Return / Enter 键：</p>
+    <div class="language-plaintext graf graf--pre highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo adduser osint vboxsf</code></pre></div>    </div>
+    <p class="graf graf--p">提供密码（osint），然后在完成该过程后再次重启VM。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10268 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?resize=1100%2C704&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?resize=300%2C192&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?resize=768%2C492&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?resize=1024%2C655&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?resize=1100%2C704&amp;ssl=1 1100w" data-recalc-dims="1" height="704" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?resize=1100%2C704&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10268" data-recalc-dims="1" height="704" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?resize=1100%2C704&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?resize=300%2C192&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?resize=768%2C492&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?resize=1024%2C655&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7.jpg?resize=1100%2C704&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">现在这些步骤已完成，您的 Buscador 已经设置好并可以使用了！</p>
+    <p class="graf graf--p"><span style="color: #00ccff;"> <strong class="markup--strong markup--p-strong">
+     第三步：利用浏览器扩展
+    </strong> </span></p>
+    <p class="graf graf--p">Buscador 提供了许多预配置的最有用的插件和扩展程序，供研究人员使用。该精选列表着重于捕获您找到的线索以供进一步检查和分析，这里将首先介绍 Firefox 附带的一些最有用的工具。</p>
+    <p class="graf graf--p">Firefox 浏览器附加组件 ——</p>
+    <p class="graf graf--p">这里有八个浏览器插件。您会看到图标藏在浏览器的右上角。</p>
+    <p class="graf graf--p">前两个 <a class="markup--anchor markup--p-anchor" data-href="https://nimbusweb.me/screenshot.php" href="https://nimbusweb.me/screenshot.php" rel="noopener noreferrer" target="_blank"> <strong class="markup--strong markup--p-strong">
+     Nimbus Capture
+    </strong> </a> 和 <a class="markup--anchor markup--p-anchor" data-href="https://addons.mozilla.org/en-US/firefox/addon/fireshot/" href="https://addons.mozilla.org/en-US/firefox/addon/fireshot/" rel="noopener noreferrer" target="_blank"> <strong class="markup--strong markup--p-strong">
+     FireShot
+    </strong> </a> 用于拍摄感兴趣页面的详细屏幕截图，使您可以对其进行存档、在其中做笔记、甚至制作网站的PDF副本。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10269 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?resize=1100%2C555&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?resize=300%2C151&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?resize=768%2C387&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?resize=1024%2C516&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?resize=1100%2C555&amp;ssl=1 1100w" data-recalc-dims="1" height="555" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?resize=1100%2C555&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10269" data-recalc-dims="1" height="555" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?resize=1100%2C555&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?resize=300%2C151&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?resize=768%2C387&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?resize=1024%2C516&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8.jpg?resize=1100%2C555&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">接下来的两个浏览器扩展程序用于收集在线发布的视频和音频。允许您分别使用 <a class="markup--anchor markup--p-anchor" data-href="https://addons.mozilla.org/en-US/firefox/addon/video-downloadhelper/" href="https://addons.mozilla.org/en-US/firefox/addon/video-downloadhelper/" rel="noopener noreferrer" target="_blank"> <strong class="markup--strong markup--p-strong">
+     Video DownloadHelper
+    </strong> </a> 和 <a class="markup--anchor markup--p-anchor" data-href="https://addons.mozilla.org/en-US/firefox/addon/bulk-media-downloader/?src=search" href="https://addons.mozilla.org/en-US/firefox/addon/bulk-media-downloader/?src=search" rel="noopener noreferrer" target="_blank"> <strong class="markup--strong markup--p-strong">
+     Bulk Media Downloader
+    </strong> </a> 单独或批量保存任何视频文件。</p>
+    <p class="graf graf--p">对于任何 <strong class="markup--strong markup--p-strong">
+    不想被跟踪
+   </strong> 或不想在其内容中看到广告的人来说， <a class="markup--anchor markup--p-anchor" data-href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/?src=search" href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/?src=search" rel="noopener noreferrer" target="_blank"> Ublock Origin </a> 应该是一个熟悉的东西了，但是对于许多研究人员而言， <a class="markup--anchor markup--p-anchor" data-href="https://addons.mozilla.org/en-US/firefox/addon/uaswitcher/?src=search" href="https://addons.mozilla.org/en-US/firefox/addon/uaswitcher/?src=search" rel="nofollow noopener noreferrer" target="_blank"> <strong class="markup--strong markup--p-strong">
+     User-Agent Switcher
+    </strong> </a> 可能是一个有趣的新玩具。</p>
+    <p class="graf graf--p"><strong class="markup--strong markup--p-strong">
+    User-Agent Switcher 可更改浏览器在每次发出请求时发送的操作系统和浏览器类型
+   </strong> ，从而使您可以假装成所需的任何类型的设备。</p>
+    <ul class="postList">
+      <li class="graf graf--li">不要错过《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8%e4%bd%8d%e7%bd%ae%e6%ac%ba%e9%aa%97%e6%89%a9%e5%b1%95%e8%bf%bd%e8%b8%aa%e7%ba%a6%e4%bc%9a%e7%bd%91%e7%ab%99%e4%b8%8a%e7%9a%84%e7%9b%ae%e6%a0%87%e7%a7%81%e5%af%86/" href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8%e4%bd%8d%e7%bd%ae%e6%ac%ba%e9%aa%97%e6%89%a9%e5%b1%95%e8%bf%bd%e8%b8%aa%e7%ba%a6%e4%bc%9a%e7%bd%91%e7%ab%99%e4%b8%8a%e7%9a%84%e7%9b%ae%e6%a0%87%e7%a7%81%e5%af%86/" rel="noopener noreferrer" target="_blank"> 如何使用位置欺骗扩展追踪约会网站上的目标私密信息 </a> ？》</li>
+      <li class="graf graf--li">关于浏览器指纹《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/opsec-%e6%93%8d%e4%bd%9c%e5%ae%89%e5%85%a8%ef%bc%9a%e5%9c%a8%e5%8f%8d%e4%be%a6%e5%af%9f%e7%9a%84%e8%bf%87%e7%a8%8b%e4%b8%ad%e6%82%a8%e5%ba%94%e8%af%a5%e6%b3%a8%e6%84%8f%e5%93%aa%e4%ba%9b%e9%99%b7/" href="https://www.iyouport.org/opsec-%e6%93%8d%e4%bd%9c%e5%ae%89%e5%85%a8%ef%bc%9a%e5%9c%a8%e5%8f%8d%e4%be%a6%e5%af%9f%e7%9a%84%e8%bf%87%e7%a8%8b%e4%b8%ad%e6%82%a8%e5%ba%94%e8%af%a5%e6%b3%a8%e6%84%8f%e5%93%aa%e4%ba%9b%e9%99%b7/" rel="noopener noreferrer" target="_blank"> Opsec 操作安全：在反侦察的过程中您应该注意哪些陷阱？ </a> 》</li>
+    </ul>
+    <p class="graf graf--p">最后两个附加组件是 Google Translate（用于快速翻译其他语言的页面）和超级有用的 Resurrect Pages，它们可以 <strong class="markup--strong markup--p-strong">
+    查找已被更改或删除的旧版本的网页，使您可以查看调查目标试图隐藏什么
+   </strong> 。</p>
+    <ul class="postList">
+      <li class="graf graf--li">不要错过《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/%e7%9b%97%e5%a2%93osint/" href="https://www.iyouport.org/%e7%9b%97%e5%a2%93osint/" rel="noopener noreferrer" target="_blank"> 无法挖到已经被删除的内容 </a> 》</li>
+    </ul>
+    <p class="graf graf--p">Chrome浏览器扩展程序 ——</p>
+    <p class="graf graf--p">默认情况下，以隐身模式打开的 Google Chrome 也包含在 Buscador 中。它拥有比Firefox更多的扩展，包括 Ublock Origin、Fireshot和其他15个扩展。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10270 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?resize=1100%2C559&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?w=1456&amp;ssl=1 1456w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?resize=300%2C152&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?resize=768%2C390&amp;ssl=1 768w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?resize=1024%2C520&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?resize=1100%2C559&amp;ssl=1 1100w" data-recalc-dims="1" height="559" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?resize=1100%2C559&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10270" data-recalc-dims="1" height="559" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?resize=1100%2C559&amp;ssl=1" srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?w=1456&amp;ssl=1 1456w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?resize=300%2C152&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?resize=768%2C390&amp;ssl=1 768w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?resize=1024%2C520&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9.jpg?resize=1100%2C559&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p"><a class="markup--anchor markup--p-anchor" data-href="https://chrome.google.com/webstore/detail/lightshot-screenshot-tool/mbniclmhobmnbdlbpiphghaielnnpgdp" href="https://chrome.google.com/webstore/detail/lightshot-screenshot-tool/mbniclmhobmnbdlbpiphghaielnnpgdp" rel="noopener noreferrer" target="_blank"> <strong class="markup--strong markup--p-strong">
+     Lightshot
+    </strong> </a> 屏幕捕获扩展程序用 360social 和 <a class="markup--anchor markup--p-anchor" data-href="https://chrome.google.com/webstore/detail/prophet/" href="https://chrome.google.com/webstore/detail/prophet/" rel="noopener noreferrer" target="_blank"> Prophet </a> 添加了用于在社交网站上搜索目标人的更多信息（例如电子邮件地址等）的工具，从而取代了Chrome中的 Nimbus。</p>
+    <p class="graf graf--p">为了 <strong class="markup--strong markup--p-strong">
+    分析网站
+   </strong> ，Chrome提供了一个 <a class="markup--anchor markup--p-anchor" data-href="https://chrome.google.com/webstore/detail/user-agent-switcher/" href="https://chrome.google.com/webstore/detail/user-agent-switcher/" rel="nofollow noopener noreferrer" target="_blank"> User-Agent Switcher </a> 和 <a class="markup--anchor markup--p-anchor" data-href="https://chrome.google.com/webstore/detail/wappalyzer/" href="https://chrome.google.com/webstore/detail/wappalyzer/" rel="noopener noreferrer" target="_blank"> Wappalyzer </a> ，它们会分解并告诉您任何网站所基于的基础技术。</p>
+    <p class="graf graf--p">Shodan 也非常有用，可以帮您发现有关您所访问的特定网站的信息。</p>
+    <p class="graf graf--p">诸如 <a class="markup--anchor markup--p-anchor" data-href="https://chrome.google.com/webstore/detail/https-everywhere/" href="https://chrome.google.com/webstore/detail/https-everywhere/" rel="noopener noreferrer" target="_blank"> HTTPS Everywhere </a> 和 <a class="markup--anchor markup--p-anchor" data-href="https://chrome.google.com/webstore/detail/webrtc-leak-prevent/" href="https://chrome.google.com/webstore/detail/webrtc-leak-prevent/" rel="noopener noreferrer" target="_blank"> WebRTC Leak Prevent </a> 这样的 <strong class="markup--strong markup--p-strong">
+    隐私工具
+   </strong> 旨在使调查人员免受恶意网站或可能的检测的伤害。</p>
+    <p class="graf graf--p">这些浏览器工具可以巧妙地结合使用，以发起攻击，例如跟踪用户的Tinder个人资料等等。</p>
+    <p class="graf graf--p"><span style="color: #00ccff;"> <strong class="markup--strong markup--p-strong">
+     第4步：使用包含的有用工具
+    </strong> </span></p>
+    <p class="graf graf--p">除了 Maltego Community Edition 之外，Buscador 中还包含很多开源调查领域流行的工具，您应该检查一下，以便对 Buscador 提供的产品有所了解。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10271 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?resize=1100%2C644&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?resize=300%2C176&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?resize=768%2C450&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?resize=1024%2C600&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?resize=1100%2C644&amp;ssl=1 1100w" data-recalc-dims="1" height="644" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?resize=1100%2C644&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10271" data-recalc-dims="1" height="644" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?resize=1100%2C644&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?w=1456&amp;ssl=1 1456w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?resize=300%2C176&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?resize=768%2C450&amp;ssl=1 768w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?resize=1024%2C600&amp;ssl=1 1024w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10.jpg?resize=1100%2C644&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">对于电子邮件抓取，Buscador 随附了 <strong class="markup--strong markup--p-strong">
+    TheHarvester
+   </strong> ，可让您搜索感兴趣的域上的所有电子邮件地址。</p>
+    <p class="graf graf--p">还有强大的跨平台开源情报工具 <strong class="markup--strong markup--p-strong">
+    Spiderfoot
+   </strong> 。 Spiderfoot 会自动收集有关目标的信息，并将结果转换为易于理解的报告。在下面看到使用方法：</p>
+    <ul class="postList">
+      <li class="graf graf--li">《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e8%87%aa%e5%8a%a8%e6%89%a7%e8%a1%8c%e6%83%85%e6%8a%a5%e6%90%9c%e9%9b%86%ef%bc%9f%e8%9c%98%e8%9b%9b%e8%84%9a%e5%85%a5%e9%97%a8%e6%8c%87%e5%8d%97/" href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e8%87%aa%e5%8a%a8%e6%89%a7%e8%a1%8c%e6%83%85%e6%8a%a5%e6%90%9c%e9%9b%86%ef%bc%9f%e8%9c%98%e8%9b%9b%e8%84%9a%e5%85%a5%e9%97%a8%e6%8c%87%e5%8d%97/" rel="noopener noreferrer" target="_blank"> 如何自动执行情报搜集？蜘蛛脚入门指南 </a> 》</li>
+    </ul>
+    <p class="graf graf--p"><strong class="markup--strong markup--p-strong">
+    Recon-ng
+   </strong> 基于 Metasploit，是 Tim Tomes 开发的用于侦察的完整Python模块，在黑客和调查人员中很受欢迎。</p>
+    <p class="graf graf--p">有许多有用的自定义脚本可用于从目标社交媒体帐户以及其他人们共享自身信息的地方下载视频和图像。这些工具使您只需单击几下就可以获取、处理和分析大量数据。</p>
+    <p class="graf graf--p">我们将在未来逐步介绍这些工具。如果您想了解有关 Mike Bazzell 的开源情报技术的更多信息，可以查看他的书。（我们已经上传到 telegram 频道，您可以在这里下载）</p>
+    <h3 class="graf graf--p" id="buscador-"> <span style="color: #ff6600;"> <strong class="markup--strong markup--p-strong">
+     Buscador 是非常强大的
+    </strong> </span> </h3>
+    <p class="graf graf--p">设置 Buscador 之后，建议您查看本网“ <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/category/osint/" href="https://www.iyouport.org/category/osint/" rel="noopener noreferrer" target="_blank"> 开源调查 </a> ”栏目中演示和介绍的诸多指南，以开始进行首次调查。</p>
+    <p class="graf graf--p"><strong class="markup--strong markup--p-strong">
+    最重要的是练习使用这些工具回答问题，而不仅仅是寻求搜集信息。
+   </strong></p>
+    <p class="graf graf--p">否则，您很可能迷失在工具可以返回的信息海洋中。</p>
+    <p class="graf graf--p">就像读书一样，想要学到东西，您需要带着问题去读书 —— 带着您的目的 —— 在开源调查中，目的是指导全程的根本。</p>
+    <p class="graf graf--p">如果不能清楚地回答指导研究者对情况的理解的目标问题，那么所有这些数据几乎没有任何价值。</p>
+    <p class="graf graf--p">正因此，这个专门的VM的目标正是将研究人员需要的所有工具和数据整合在一起，以决定他们要提出哪些问题来为其提供支持。</p>
+    <p class="graf graf--p">如果您需要一个功能强大且方便的系统来进行Google搜索范围之外的专业级调查，Buscador 就是您所需的答案。</p>
+    <p class="graf graf--p">希望本指南对您有所帮助。⚪️</p>
+    <p class="graf graf--p"><strong class="markup--strong markup--p-strong">
+    在这里回顾此前提供的教程
+   </strong> ：《 <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e6%9e%84%e5%bb%ba%e4%bd%a0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89osint%e6%9c%ba%e5%99%a8%ef%bc%88%e7%ac%ac%e4%b8%80%e9%83%a8%e5%88%86%ef%bc%89/" href="https://www.iyouport.org/%e6%9e%84%e5%bb%ba%e4%bd%a0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89osint%e6%9c%ba%e5%99%a8%ef%bc%88%e7%ac%ac%e4%b8%80%e9%83%a8%e5%88%86%ef%bc%89/" rel="noopener noreferrer" target="_blank"> 构建你的自定义开源情报机器（第一部分） </a> 》“ <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e6%9e%84%e5%bb%ba%e4%bd%a0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89osint%e6%9c%ba%e5%99%a8%ef%bc%88%e7%ac%ac%e4%ba%8c%e9%83%a8%e5%88%86%ef%bc%89/" href="https://www.iyouport.org/%e6%9e%84%e5%bb%ba%e4%bd%a0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89osint%e6%9c%ba%e5%99%a8%ef%bc%88%e7%ac%ac%e4%ba%8c%e9%83%a8%e5%88%86%ef%bc%89/" rel="noopener noreferrer" target="_blank"> 第二部分 </a> ”、“ <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e6%9e%84%e5%bb%ba%e4%bd%a0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89osint%e6%9c%ba%e5%99%a8%ef%bc%88%e7%ac%ac%e4%b8%89%e9%83%a8%e5%88%86%ef%bc%89/" href="https://www.iyouport.org/%e6%9e%84%e5%bb%ba%e4%bd%a0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89osint%e6%9c%ba%e5%99%a8%ef%bc%88%e7%ac%ac%e4%b8%89%e9%83%a8%e5%88%86%ef%bc%89/" rel="noopener noreferrer" target="_blank"> 第三部分 </a> ”、“ <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e6%9e%84%e5%bb%ba%e4%bd%a0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89osint%e6%9c%ba%e5%99%a8%ef%bc%88%e7%ac%ac%e5%9b%9b%e9%83%a8%e5%88%86%ef%bc%89/" href="https://www.iyouport.org/%e6%9e%84%e5%bb%ba%e4%bd%a0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89osint%e6%9c%ba%e5%99%a8%ef%bc%88%e7%ac%ac%e5%9b%9b%e9%83%a8%e5%88%86%ef%bc%89/" rel="noopener noreferrer" target="_blank"> 第四部分 </a> ”，“ <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e6%9e%84%e5%bb%ba%e4%bd%a0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89osint%e6%9c%ba%e5%99%a8%ef%bc%88%e7%ac%ac%e4%ba%94%e9%83%a8%e5%88%86%ef%bc%89/" href="https://www.iyouport.org/%e6%9e%84%e5%bb%ba%e4%bd%a0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89osint%e6%9c%ba%e5%99%a8%ef%bc%88%e7%ac%ac%e4%ba%94%e9%83%a8%e5%88%86%ef%bc%89/" rel="noopener noreferrer" target="_blank"> 第五部分 </a> ”。</p>
+    <div id="atatags-1611829871-5f41bf21cb475"></div>
+    <div class="sharedaddy sd-sharing-enabled">
+      <div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+        <h3 class="sd-title" id="section-3"> 共享此文章： </h3>
+        <div class="sd-content">
+          <ul>
+            <li class="share-twitter"><a class="share-twitter sd-button share-icon no-text" data-shared="sharing-twitter-10260" href="https://www.iyouport.org/%e5%b9%bf%e6%b3%9b%e7%9a%84%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e4%b8%8d%e6%98%af%e7%9b%ae%e7%9a%84%ef%bc%8c%e8%83%bd%e5%9b%9e%e7%ad%94%e9%97%ae%e9%a2%98%e6%89%8d%e6%98%af%ef%bc%9a%e4%b8%80%e4%b8%aa/?share=twitter" rel="nofollow noopener noreferrer" target="_blank" title="点击以在 Twitter 上共享"> <span> </span> <span class="sharing-screen-reader-text"> 点击以在 Twitter 上共享（在新窗口中打开） </span> </a></li>
+            <li class="share-facebook"><a class="share-facebook sd-button share-icon no-text" data-shared="sharing-facebook-10260" href="https://www.iyouport.org/%e5%b9%bf%e6%b3%9b%e7%9a%84%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86%e4%b8%8d%e6%98%af%e7%9b%ae%e7%9a%84%ef%bc%8c%e8%83%bd%e5%9b%9e%e7%ad%94%e9%97%ae%e9%a2%98%e6%89%8d%e6%98%af%ef%bc%9a%e4%b8%80%e4%b8%aa/?share=facebook" rel="nofollow noopener noreferrer" target="_blank" title="点击以在 Facebook 上共享"> <span> </span> <span class="sharing-screen-reader-text"> 点击以在 Facebook 上共享（在新窗口中打开） </span> </a></li>
+            <li class="share-end"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-161182987-10260-5f41bf21cbe25" data-src="https://widgets.wp.com/likes/#blog_id=161182987&amp;post_id=10260&amp;origin=www.iyouport.org&amp;obj_id=161182987-10260-5f41bf21cbe25" id="like-post-wrapper-161182987-10260-5f41bf21cbe25">
+      <h3 class="sd-title" id="section-4"> 赞过： </h3>
+      <div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;">
+<span class="button"> <span> 赞 </span> </span> <span class="loading"> 正在加载…… </span>
+      </div>
+ <span class="sd-text-color"> </span> <a class="sd-link-color">
+   </a>
+    </div>
+    <div class="jp-relatedposts" id="jp-relatedposts">
+      <h3 class="jp-relatedposts-headline" id="section-5"> <em>
+     相关
+    </em> </h3>
+    </div>
+  </div>
+  <div class="entry-footer">
+    <ul class="post-tags light-text">
+      <li>Tagged</li>
+      <li><a href="https://www.iyouport.org/tag/buscador/" rel="tag"> Buscador </a></li>
+      <li><a href="https://www.iyouport.org/tag/investigation/" rel="tag"> Investigation </a></li>
+      <li><a href="https://www.iyouport.org/tag/osint/" rel="tag"> OSINT </a></li>
+      <li><a href="https://www.iyouport.org/tag/technique/" rel="tag"> technique </a></li>
+      <li><a href="https://www.iyouport.org/tag/technology/" rel="tag"> Technology </a></li>
+      <li><a href="https://www.iyouport.org/tag/tools/" rel="tag"> tools </a></li>
+    </ul>
+  </div>
+  <div class="entry-author-wrapper">
+    <div class="site-posted-on">
+<strong>
+    Published
+   </strong>       <time class="entry-date published" datetime="2020-03-18T00:03:47+08:00"> 2020年3月18日 </time>
+      <time class="updated" datetime="2019-11-02T19:15:53+08:00"> 2019年11月2日 </time>
+    </div>
+  </div>
+</article>
+
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#iYouPort 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%BD%93%E6%B0%91%E4%B8%BB%E5%A4%B1%E8%B4%A5-%E5%B7%AB%E6%9C%AF%E8%93%AC%E5%8B%83%E5%8F%91%E5%B1%95-%E6%81%B6%E9%AD%94%E5%9B%B0%E6%89%B0%E7%9A%84%E5%9C%9F%E5%9C%B0-iYouPort/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-10-11/%E7%BD%91%E7%BB%9C-%E6%B0%B4%E5%86%9B-%E7%9A%84%E5%B8%83%E5%B1%80-iYouPort/">最早</a>--</span>
+    
+      <li>
+        <time>2020-03-18</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-18/%E5%9C%A8%E6%B2%A1%E6%9C%89%E6%89%8B%E6%9C%BA%E7%9A%84%E5%B0%8F%E4%B8%96%E7%95%8C%E9%87%8C%E4%BA%AB%E5%8F%97%E5%AE%81%E9%9D%99-%E8%BF%99%E4%BA%9B%E4%BA%BA%E5%A6%82%E4%BD%95%E9%80%83%E9%81%BF%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E7%9A%84%E4%BE%B5%E6%89%B0-iYouPort/">
+          在没有手机的小世界里享受宁静：这些人如何逃避移动设备的侵扰？ - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-17/%E6%9E%84%E5%BB%BA%E9%98%B2%E5%BE%A1%E7%9B%B4%E8%A7%89%E6%98%AF%E7%94%9F%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F-%E5%8F%98%E5%BE%97%E9%9A%BE%E4%BB%A5%E8%A2%AB%E8%BF%BD%E8%B8%AA%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95-2-iYouPort/">
+          构建防御直觉是生存的基本功：变得难以被追踪的简单方法（2） - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-17/%E4%BB%8E%E5%81%9A%E6%96%B0%E9%97%BB%E5%88%B0%E4%BD%9C%E6%96%B0%E9%97%BB-%E7%BB%B4%E7%A8%B3%E6%9C%BA%E6%9E%84%E5%A6%82%E4%BD%95%E6%88%90%E5%8A%9F%E5%BA%9F%E6%8E%89%E8%AF%B4%E7%9C%9F%E8%AF%9D%E7%9A%84%E5%AA%92%E4%BD%93-iYouPort/">
+          从做新闻到作新闻：维稳机构如何成功废掉说真话的媒体？ - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-17/%E4%BA%BA%E5%8F%A3%E9%97%AE%E9%A2%98%E5%8F%AF%E8%83%BD%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%9C%80%E5%A4%A7%E6%8C%91%E6%88%98-iYouPort/">
+          人口问题可能是中国经济面临的最大挑战 - iYouPort
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-17/%E4%BB%8E%E5%81%9A%E6%96%B0%E9%97%BB%E5%88%B0%E4%BD%9C%E6%96%B0%E9%97%BB-%E7%BB%B4%E7%A8%B3%E6%9C%BA%E6%9E%84%E5%A6%82%E4%BD%95%E6%88%90%E5%8A%9F%E5%BA%9F%E6%8E%89%E8%AF%B4%E7%9C%9F%E8%AF%9D%E7%9A%84%E5%AA%92%E4%BD%93-iYouPort/">
+            前一篇：从做新闻到作新闻：维稳机构如何成功废掉说真话的媒体？ - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-17/%E6%9E%84%E5%BB%BA%E9%98%B2%E5%BE%A1%E7%9B%B4%E8%A7%89%E6%98%AF%E7%94%9F%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F-%E5%8F%98%E5%BE%97%E9%9A%BE%E4%BB%A5%E8%A2%AB%E8%BF%BD%E8%B8%AA%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95-2-iYouPort/">
+            後一篇：构建防御直觉是生存的基本功：变得难以被追踪的简单方法（2） - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-03-17/%E4%BB%8E%E5%81%9A%E6%96%B0%E9%97%BB%E5%88%B0%E4%BD%9C%E6%96%B0%E9%97%BB-%E7%BB%B4%E7%A8%B3%E6%9C%BA%E6%9E%84%E5%A6%82%E4%BD%95%E6%88%90%E5%8A%9F%E5%BA%9F%E6%8E%89%E8%AF%B4%E7%9C%9F%E8%AF%9D%E7%9A%84%E5%AA%92%E4%BD%93-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-03-17/%E6%9E%84%E5%BB%BA%E9%98%B2%E5%BE%A1%E7%9B%B4%E8%A7%89%E6%98%AF%E7%94%9F%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F-%E5%8F%98%E5%BE%97%E9%9A%BE%E4%BB%A5%E8%A2%AB%E8%BF%BD%E8%B8%AA%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95-2-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-03-17/%E6%9E%84%E5%BB%BA%E9%98%B2%E5%BE%A1%E7%9B%B4%E8%A7%89%E6%98%AF%E7%94%9F%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F-%E5%8F%98%E5%BE%97%E9%9A%BE%E4%BB%A5%E8%A2%AB%E8%BF%BD%E8%B8%AA%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95-2-iYouPort/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-03-17/%E4%BB%8E%E5%81%9A%E6%96%B0%E9%97%BB%E5%88%B0%E4%BD%9C%E6%96%B0%E9%97%BB-%E7%BB%B4%E7%A8%B3%E6%9C%BA%E6%9E%84%E5%A6%82%E4%BD%95%E6%88%90%E5%8A%9F%E5%BA%9F%E6%8E%89%E8%AF%B4%E7%9C%9F%E8%AF%9D%E7%9A%84%E5%AA%92%E4%BD%93-iYouPort/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-03-17/%E4%BB%8E%E5%81%9A%E6%96%B0%E9%97%BB%E5%88%B0%E4%BD%9C%E6%96%B0%E9%97%BB-%E7%BB%B4%E7%A8%B3%E6%9C%BA%E6%9E%84%E5%A6%82%E4%BD%95%E6%88%90%E5%8A%9F%E5%BA%9F%E6%8E%89%E8%AF%B4%E7%9C%9F%E8%AF%9D%E7%9A%84%E5%AA%92%E4%BD%93-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-03-17/%E6%9E%84%E5%BB%BA%E9%98%B2%E5%BE%A1%E7%9B%B4%E8%A7%89%E6%98%AF%E7%94%9F%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F-%E5%8F%98%E5%BE%97%E9%9A%BE%E4%BB%A5%E8%A2%AB%E8%BF%BD%E8%B8%AA%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95-2-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<iYouPort>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-03-17/%E6%9E%84%E5%BB%BA%E9%98%B2%E5%BE%A1%E7%9B%B4%E8%A7%89%E6%98%AF%E7%94%9F%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F-%E5%8F%98%E5%BE%97%E9%9A%BE%E4%BB%A5%E8%A2%AB%E8%BF%BD%E8%B8%AA%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95-2-iYouPort/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<iYouPort>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-03-17/%E4%BB%8E%E5%81%9A%E6%96%B0%E9%97%BB%E5%88%B0%E4%BD%9C%E6%96%B0%E9%97%BB-%E7%BB%B4%E7%A8%B3%E6%9C%BA%E6%9E%84%E5%A6%82%E4%BD%95%E6%88%90%E5%8A%9F%E5%BA%9F%E6%8E%89%E8%AF%B4%E7%9C%9F%E8%AF%9D%E7%9A%84%E5%AA%92%E4%BD%93-iYouPort/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

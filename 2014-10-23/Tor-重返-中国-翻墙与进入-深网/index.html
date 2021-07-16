@@ -1,0 +1,4527 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Tor“重返”中国：翻墙与进入“深网” – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+  
+    
+      
+        
+              
+  Vergil  在 星期四, 10/23/2014 - 11:34 提交 
+          
+          
+            
+              
+                
+                  
+                      3783942045_ce641c6793_z.jpg  
+                    
+                       
+                        
+                          
+ 用Tor来上网 图/Samuel Huron 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   Tor“重返”中国：翻墙与进入“深网” 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  在美剧  《纸牌屋》  第二季第二集里，当新闻报主编  Lucas Goodwin  苦于寻找一个黑客，企图黑入美国电信服务器窃取副总统和已故女友的通话记录时，同事告诉他，网络世界中还存在着一个类似于但丁  《神曲》  所里描述的混沌狱（   LIMBO   ）一般的，游离于普通互联网之外的“  深网  ”（  Deep Web  ），在那里，能够获取几乎一切的需求。
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+                         
+                          
+                            
+ 美剧《纸牌屋》中关于“深网”中的情节 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                   深网 
+                  用户通过特殊的技术手段隐匿用户信息（如IP地址等）登陆“深网”以后，就能完全脱离世间法律或   NSA   （美国国家安全局）等政府管制力量的钳制和监管，在那里，你可以通过网站肆意的购买枪支弹药，可以发布悬赏杀人的告示，可以购买冰毒和可卡因，可以随意浏览儿童色情网站，也可以办理各种假证伪造身份。仅有4%的网络数据是可以通过搜索引擎找到的，其他的都深藏在“深网”中。
+                  
+                    
+                      
+                         
+                          
+                            
+ 96%的网络数据都是无法用使用搜索引擎查找的 
+                            
+                          
+                        
+                      
+                    
+                  
+                   但这些网站的服务器实体可能分布在互联网管制薄弱的东欧国家，背后由深谙网络安全技术的黑客维护，多以  .onion  作为域名，采用特殊的加密机制，不能通过搜索引擎查找，即使知道域名也无法采用传统的HTTP方式直接访问，必须采用特殊手段才能接入，就好像只有游吟诗人  维吉尔  的引领，  但丁  才可以窥见  Limbo  里的曲径通幽处。   而今天我们所要介绍的这个引路人就是—   Tor   （  The Onion Router  ），直译过来为“  洋葱路由  ”。
+                   
+           
+            Tor：匿名上网
+           
+           
+                  
+                    
+                      
+                         
+                          
+                            
+ Tor 加密传输示意图 
+                            
+                          
+                        
+                      
+                    
+                  
+                   说起Tor，就不得不介绍一下他的来历，就好像  本拉登  等基地组织是美国军方一手训练出来的一样，这个目前让美国国家安全局和美国联邦调查局头疼不已的玩意也是美国军方一手炮制的。1995年，美国海军研究试验室（   United States Naval Research Laboratory   ）和国防部高级研究项目署（   DARPA   ）资助研究一种匿名的互联网通讯工具，可以避免人们的行迹在Internet上被追踪到。他们把这个技术叫做“  洋葱路由  ”（Tor）。（PS：大名鼎鼎的美国海军研究实验室是因大发明家  爱迪生  的倡导而设立的，实验室大门还塑有爱迪生半身铜像。）   “洋葱路由”利用P2P网络， 把网络流量随机的通过P2P的节点进行转发， 这样可以掩盖源地址与目标地址的路径。 使得在Internet上难以确定使用者的身份和地址这就好像你送一封匿名信， 不是自己送或者通过邮差送， 而是大街上随便找一个不认识的人让他帮你送，然后这个不认识的人再找一个不认识的人帮忙送信，这个转送的过程总共进行三次，此时的收信人几乎不可能知晓原始的发件人是谁。
+                  
+                    Tor之所以被称为洋葱，就是因为它的这种转发机制跟洋葱的结构一样，其数据核心被一层层的加密措施包围，上图所示，客户电脑接入 Tor 之后会选择  三个节点  层层转发并加密，最后才到达目标服务器。
+                    
+                      
+                        
+                           
+                            
+                              
+ 斯诺登的笔记本电脑右上角贴有 Tor 的标记 
+                              
+                            
+                          
+                        
+                      
+                    
+                     最初这个项目仅仅是用来保护军方情报人员通过互联网匿名通信不被第三方监听和侦破，到2004年美国海军将此项目转为民用并将其开源，成为  电子前哨基金会（    Electronic Frontier Foundation   ）旗下的一个项目。   “  棱镜门  ”的主角   爱德华斯诺登   身为前NSA的设备分析师，也正是通过 TOR 来掩盖自己在互联网上的行踪，甚至在出事前，他还在檀香山领导这一个名为“  Crypto Party  ”的组织来向周边的居民推广如何Tor匿名使用互联网。
+                  
+                   
+           用Tor
+           接入深网 
+                  Tor的早期产品需要复杂的设定才能通过浏览器连接，这对于普通用户来说是一个较高的门槛，但现在TorProject已经推出了以   Firefox ESR   的专属浏览器：       Tor Browser Bundle   （简称TBB），将Tor和     Firefox   浏览器进行捆绑，使用者只需要通过网站   下载   最新的4.0 版本到本地，解压缩安装以后就可以直接上网浏览，省去了其中复杂繁琐的过程。   TBB 对linxu、Mac和Windows各平台都有良好的支持，整个安装过程也十分简单，不在复述，下面介绍一下具体的接入方法：   安装完毕以后，首先应该点击会进入第一个网络设置界面：
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+   是询问你当前使用的互联网接入是否受限，是否需要通过代理才能接入 Internet 网，中国大陆的网民都在GFW的墙内，因此选择第二项“需要代理或者桥接”。                   
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  接下来会询问你是否需要代理才能接入 Internet，一般情况下无论是家庭还是公司网络都是不需要的，点击进入下一步
+                  
+                  
+                    
+                        1.jpg  
+                      
+
+                      
+                    
+                  
+                  接下来会问ISP（移动电信之类）是否屏蔽了互联网接入，因为有 GFW 的存在，我们要选择“yes”。
+                  
+                  
+                    
+                        2.jpg  
+                      
+
+                      
+                    
+                  
+                  下面到了最关键的一步，TBB 4.0 最大的更新就是采用了  meek  插件的混淆机制（如果想了解更多关于 meek 的细节请点击   这里   ）因为GFW把Tor绝大部分的节点都屏蔽掉了，因此在以前的版本中，Tor要么需要费力的设置网桥，要么就必须要搭配其他的翻墙工具进行双重代理才可以使用。   而这一次 TBB 利用微软的   Azure   和Amazon的VPS或ETC2搭建了代理平台，并对流量进行了混淆加密使得GFW无法识别。   因此选择第一项“需要桥接”，然后选择“  meek-amazon  ”或者“  meek-azure  ”即可（google服务器已经在今年年中被GFW墙掉，而微软和亚马逊的服务器暂时还不会被屏蔽，否则对国内影响太大）
+                  
+                  
+                    
+                        3.jpg  
+                      
+
+                      
+                    
+                  
+                  点击“Connect“，系统开始连接，第一次连接需要的时间稍长一些，最后弹出如下图中的浏览器的界面就表示成功了。
+                  
+                  
+                    
+                        4.jpg  
+                      
+
+                      
+                    
+                  
+                    深网深几许  
+                  既然已经通过 Tor 打开了“深网”的大门，那么让我们就将其一窥究竟，因为广大的深网网站都无法被搜索引擎收录，所以我们必须要找到一个收录各类深网网站的索引站点，“  Hidden Wiki  ”就是其中较为出名的一个，它收录了各类深网网站地址。   将下面的链接地址复制到 Tor 浏览器当中：     http://zqktlwi4fecvo6ri.onion/wiki/     如果这个网站无法访问，还可以浏览它的镜像网站：
+                    http://torlinkbgs6aabns.onion/      http://wikitjerrta4qgz4.onion/      http://jh32yv5zgayyyts3.onion/     Hiddeen Wiki收录了各类网站，我们打开两个网站为例（ 
+           以下网站都需要用 Tor 打开
+           ）：譬如，  这个网站  售卖枪支弹药，一只  沙漠之鹰  手枪公开叫卖1.836BTC，因为  比特币  （BTC）有着无法查询交易记录的优势，因此深海网站多用它作为交易工具，按照最近的BTC对美元的汇率，应该在700美元左右，而网站上标准的市场价格在1500美元左右，看来网销渠道的优势在黑市上继续得到发扬。除了武器以外，通过深海网站贩卖毒品和违禁药物也得到广泛运用，号称有“  毒品亚马逊  “之称的  Silk Road  （丝绸之路）在查禁前每年的销售额已经突破3亿美元，通过深海网站订货，然后使用快递发货已经成为了美国毒品贩卖的新渠道。而  这个网站  站上明目张胆的公开售卖各类高纯度可卡因，冰毒和致幻药物。通过wiki还可以找到办理假证的，雇佣杀手的，销赃的（主要是Iphone手机），兑换比特币的（BTC），还有各种成人色情网站，就不在这里一一列举了。   同时还发现，深网网站开始向大陆渗透，其中就发现了一个  中文深网站点  号称是中国深网第一站，上面架设了一个论坛，不过还没有发布任何有效信息，有兴趣的朋友可以访问。   最后要声明的是，以上内容是让各位认识“深网”和 Tor 技术，本人是坚决反对以上非法网站存在的，也请各位读者谨慎使用，不要将 Tor 技术用于非法途径。
+                   
+           
+            用Tor翻墙
+           
+           
+                  其实，作为通过 TBB 我们不仅能够访问冰下下隐藏的“深网”，我们也轻松的跨越了GFW，但是由于 TBB 4.0 需要通过Amazon或Azure的服务器翻墙再通过 Tor的三个中继节点层层加密，导致的一个结果就是访问速度巨慢无比，严重影响使用体验。   而且 meek 这个新推出的流量混淆插件，是不是也会像它的前任 Obfs3 一样，最后也被 GFW 屏蔽掉都不得而知。所以先利用 Tor 三重加密隐匿身份，而与其他快速翻墙工具搭配形成双重代理无疑是更好的选择，可以更流畅的访问“深网”，同时安全性能更高，具体方法如下：   在上一个章节中的第二个设置界面，当系统询问“主机是否需要代理才能访问Internet？”时，选择“Yes”
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  接着就在下面界面填写设置代理的转发端口，例如，我们可以用 Goagent作为前端代理，Goagent的介绍可以参见《   翻墙七种武器之长生剑   》。打开客户端后，我们只需要将代理类型设置为“HTTP/HTTPS”，将地址设置为“127.0.0.1”，端口号设置为“8087”，同理我们还可以设置其他 Socks 类代理等等。
+                  
+                  
+                    
+                        1.jpg  
+                      
+
+                      
+                    
+                  
+                  另外也可以用 VPN 作为前端代理，例如使用免费的 VPNgate ，具体可以参见   翻墙七种武器之离别钩:VPN Gate   ，也可以使用其他付费的翻墙工具获得更好的使用体验。   总之，TBB 4.0 的发布为广大网友又增加了一条翻墙的途径，meek 流量混淆插件的使用使得这个老牌的翻墙工具重新焕发青春，也为GFW墙后的网友安全使用网络提升了保障，在后续的文章里我们还将陆续介绍 Tor 的网络安全应用。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                翻墙七种武器之长生剑                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                致某字幕网站的倒下： 原来，我们和上一代人并没有什么不同                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                文艺界的“一国两制”                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                结束毫无意义的口水和拉锯战，这里是你应该知道的事——为自由而战（四）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期五, 05/31/2019 - 10:54 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Billig Per Nachnahme KelIdeodo  
+                
+                    
+                    
+                      
+                        Comprare Cialis O Viagra &lt;a href=  http://cialicheap.com&gt;cialis  prices&lt;/a&gt; Pharmacie En Ligne Levitra Cialis Contrassegno Amoxicillin With Aspirin Buy
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+            
+
+                      
+                
+                  
+                      Anonymous (未验证)  
+                     星期五, 05/31/2019 - 12:06 
+                     永久连接 
+                  
+                
+                
+                  
+                    冒个泡吧！ | 泡泡  
+                  
+                        
+                      
+                        
+                          I have read so many articles regarding the blogger lovers however this post is genuinely a pleasant article, keep it up.
+                          Feel free to visit my weblog gamefly free trial -  http://tinyurl.com/y4j9ggho 
+                        
+                      
+                    
+                  
+                  
+                  
+                     回复 
+                  
+                
+                
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期一, 06/03/2019 - 12:16 
+                   永久连接 
+                
+              
+              
+                
+                  Where Can You Buy Levitra The Cheapest LesTreS  
+                
+                    
+                    
+                      
+                        Viagra Postlagernd Bestellen Acheter Le Levitra &lt;a href=  http://bmpha.com&gt;forum  levitra en belgique&lt;/a&gt; Severe Penicillin Allergy Touching Amoxicillin
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期三, 06/05/2019 - 00:47 
+                   永久连接 
+                
+              
+              
+                
+                  Buy Clomid Safely Online Uk Paypal KelIdeodo  
+                
+                    
+                    
+                      
+                        Buy Levothyroxine 100mg Cialis Es Para Mujeres Viagra Y El Embarazo &lt;a href=  http://tadalaf20mg.com&gt;generic  cialis canada&lt;/a&gt; Que Significa Propecia
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    <meta property="og:description" content="
+  
+    
+      
+        
+              
+  Vergil  在 星期四, 10/23/2014 - 11:34 提交 
+          
+          
+            
+              
+                
+                  
+                      3783942045_ce641c6793_z.jpg  
+                    
+                       
+                        
+                          
+ 用Tor来上网 图/Samuel Huron 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   Tor“重返”中国：翻墙与进入“深网” 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  在美剧  《纸牌屋》  第二季第二集里，当新闻报主编  Lucas Goodwin  苦于寻找一个黑客，企图黑入美国电信服务器窃取副总统和已故女友的通话记录时，同事告诉他，网络世界中还存在着一个类似于但丁  《神曲》  所里描述的混沌狱（   LIMBO   ）一般的，游离于普通互联网之外的“  深网  ”（  Deep Web  ），在那里，能够获取几乎一切的需求。
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+                         
+                          
+                            
+ 美剧《纸牌屋》中关于“深网”中的情节 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                   深网 
+                  用户通过特殊的技术手段隐匿用户信息（如IP地址等）登陆“深网”以后，就能完全脱离世间法律或   NSA   （美国国家安全局）等政府管制力量的钳制和监管，在那里，你可以通过网站肆意的购买枪支弹药，可以发布悬赏杀人的告示，可以购买冰毒和可卡因，可以随意浏览儿童色情网站，也可以办理各种假证伪造身份。仅有4%的网络数据是可以通过搜索引擎找到的，其他的都深藏在“深网”中。
+                  
+                    
+                      
+                         
+                          
+                            
+ 96%的网络数据都是无法用使用搜索引擎查找的 
+                            
+                          
+                        
+                      
+                    
+                  
+                   但这些网站的服务器实体可能分布在互联网管制薄弱的东欧国家，背后由深谙网络安全技术的黑客维护，多以  .onion  作为域名，采用特殊的加密机制，不能通过搜索引擎查找，即使知道域名也无法采用传统的HTTP方式直接访问，必须采用特殊手段才能接入，就好像只有游吟诗人  维吉尔  的引领，  但丁  才可以窥见  Limbo  里的曲径通幽处。   而今天我们所要介绍的这个引路人就是—   Tor   （  The Onion Router  ），直译过来为“  洋葱路由  ”。
+                   
+           
+            Tor：匿名上网
+           
+           
+                  
+                    
+                      
+                         
+                          
+                            
+ Tor 加密传输示意图 
+                            
+                          
+                        
+                      
+                    
+                  
+                   说起Tor，就不得不介绍一下他的来历，就好像  本拉登  等基地组织是美国军方一手训练出来的一样，这个目前让美国国家安全局和美国联邦调查局头疼不已的玩意也是美国军方一手炮制的。1995年，美国海军研究试验室（   United States Naval Research Laboratory   ）和国防部高级研究项目署（   DARPA   ）资助研究一种匿名的互联网通讯工具，可以避免人们的行迹在Internet上被追踪到。他们把这个技术叫做“  洋葱路由  ”（Tor）。（PS：大名鼎鼎的美国海军研究实验室是因大发明家  爱迪生  的倡导而设立的，实验室大门还塑有爱迪生半身铜像。）   “洋葱路由”利用P2P网络， 把网络流量随机的通过P2P的节点进行转发， 这样可以掩盖源地址与目标地址的路径。 使得在Internet上难以确定使用者的身份和地址这就好像你送一封匿名信， 不是自己送或者通过邮差送， 而是大街上随便找一个不认识的人让他帮你送，然后这个不认识的人再找一个不认识的人帮忙送信，这个转送的过程总共进行三次，此时的收信人几乎不可能知晓原始的发件人是谁。
+                  
+                    Tor之所以被称为洋葱，就是因为它的这种转发机制跟洋葱的结构一样，其数据核心被一层层的加密措施包围，上图所示，客户电脑接入 Tor 之后会选择  三个节点  层层转发并加密，最后才到达目标服务器。
+                    
+                      
+                        
+                           
+                            
+                              
+ 斯诺登的笔记本电脑右上角贴有 Tor 的标记 
+                              
+                            
+                          
+                        
+                      
+                    
+                     最初这个项目仅仅是用来保护军方情报人员通过互联网匿名通信不被第三方监听和侦破，到2004年美国海军将此项目转为民用并将其开源，成为  电子前哨基金会（    Electronic Frontier Foundation   ）旗下的一个项目。   “  棱镜门  ”的主角   爱德华斯诺登   身为前NSA的设备分析师，也正是通过 TOR 来掩盖自己在互联网上的行踪，甚至在出事前，他还在檀香山领导这一个名为“  Crypto Party  ”的组织来向周边的居民推广如何Tor匿名使用互联网。
+                  
+                   
+           用Tor
+           接入深网 
+                  Tor的早期产品需要复杂的设定才能通过浏览器连接，这对于普通用户来说是一个较高的门槛，但现在TorProject已经推出了以   Firefox ESR   的专属浏览器：       Tor Browser Bundle   （简称TBB），将Tor和     Firefox   浏览器进行捆绑，使用者只需要通过网站   下载   最新的4.0 版本到本地，解压缩安装以后就可以直接上网浏览，省去了其中复杂繁琐的过程。   TBB 对linxu、Mac和Windows各平台都有良好的支持，整个安装过程也十分简单，不在复述，下面介绍一下具体的接入方法：   安装完毕以后，首先应该点击会进入第一个网络设置界面：
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+   是询问你当前使用的互联网接入是否受限，是否需要通过代理才能接入 Internet 网，中国大陆的网民都在GFW的墙内，因此选择第二项“需要代理或者桥接”。                   
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  接下来会询问你是否需要代理才能接入 Internet，一般情况下无论是家庭还是公司网络都是不需要的，点击进入下一步
+                  
+                  
+                    
+                        1.jpg  
+                      
+
+                      
+                    
+                  
+                  接下来会问ISP（移动电信之类）是否屏蔽了互联网接入，因为有 GFW 的存在，我们要选择“yes”。
+                  
+                  
+                    
+                        2.jpg  
+                      
+
+                      
+                    
+                  
+                  下面到了最关键的一步，TBB 4.0 最大的更新就是采用了  meek  插件的混淆机制（如果想了解更多关于 meek 的细节请点击   这里   ）因为GFW把Tor绝大部分的节点都屏蔽掉了，因此在以前的版本中，Tor要么需要费力的设置网桥，要么就必须要搭配其他的翻墙工具进行双重代理才可以使用。   而这一次 TBB 利用微软的   Azure   和Amazon的VPS或ETC2搭建了代理平台，并对流量进行了混淆加密使得GFW无法识别。   因此选择第一项“需要桥接”，然后选择“  meek-amazon  ”或者“  meek-azure  ”即可（google服务器已经在今年年中被GFW墙掉，而微软和亚马逊的服务器暂时还不会被屏蔽，否则对国内影响太大）
+                  
+                  
+                    
+                        3.jpg  
+                      
+
+                      
+                    
+                  
+                  点击“Connect“，系统开始连接，第一次连接需要的时间稍长一些，最后弹出如下图中的浏览器的界面就表示成功了。
+                  
+                  
+                    
+                        4.jpg  
+                      
+
+                      
+                    
+                  
+                    深网深几许  
+                  既然已经通过 Tor 打开了“深网”的大门，那么让我们就将其一窥究竟，因为广大的深网网站都无法被搜索引擎收录，所以我们必须要找到一个收录各类深网网站的索引站点，“  Hidden Wiki  ”就是其中较为出名的一个，它收录了各类深网网站地址。   将下面的链接地址复制到 Tor 浏览器当中：     http://zqktlwi4fecvo6ri.onion/wiki/     如果这个网站无法访问，还可以浏览它的镜像网站：
+                    http://torlinkbgs6aabns.onion/      http://wikitjerrta4qgz4.onion/      http://jh32yv5zgayyyts3.onion/     Hiddeen Wiki收录了各类网站，我们打开两个网站为例（ 
+           以下网站都需要用 Tor 打开
+           ）：譬如，  这个网站  售卖枪支弹药，一只  沙漠之鹰  手枪公开叫卖1.836BTC，因为  比特币  （BTC）有着无法查询交易记录的优势，因此深海网站多用它作为交易工具，按照最近的BTC对美元的汇率，应该在700美元左右，而网站上标准的市场价格在1500美元左右，看来网销渠道的优势在黑市上继续得到发扬。除了武器以外，通过深海网站贩卖毒品和违禁药物也得到广泛运用，号称有“  毒品亚马逊  “之称的  Silk Road  （丝绸之路）在查禁前每年的销售额已经突破3亿美元，通过深海网站订货，然后使用快递发货已经成为了美国毒品贩卖的新渠道。而  这个网站  站上明目张胆的公开售卖各类高纯度可卡因，冰毒和致幻药物。通过wiki还可以找到办理假证的，雇佣杀手的，销赃的（主要是Iphone手机），兑换比特币的（BTC），还有各种成人色情网站，就不在这里一一列举了。   同时还发现，深网网站开始向大陆渗透，其中就发现了一个  中文深网站点  号称是中国深网第一站，上面架设了一个论坛，不过还没有发布任何有效信息，有兴趣的朋友可以访问。   最后要声明的是，以上内容是让各位认识“深网”和 Tor 技术，本人是坚决反对以上非法网站存在的，也请各位读者谨慎使用，不要将 Tor 技术用于非法途径。
+                   
+           
+            用Tor翻墙
+           
+           
+                  其实，作为通过 TBB 我们不仅能够访问冰下下隐藏的“深网”，我们也轻松的跨越了GFW，但是由于 TBB 4.0 需要通过Amazon或Azure的服务器翻墙再通过 Tor的三个中继节点层层加密，导致的一个结果就是访问速度巨慢无比，严重影响使用体验。   而且 meek 这个新推出的流量混淆插件，是不是也会像它的前任 Obfs3 一样，最后也被 GFW 屏蔽掉都不得而知。所以先利用 Tor 三重加密隐匿身份，而与其他快速翻墙工具搭配形成双重代理无疑是更好的选择，可以更流畅的访问“深网”，同时安全性能更高，具体方法如下：   在上一个章节中的第二个设置界面，当系统询问“主机是否需要代理才能访问Internet？”时，选择“Yes”
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  接着就在下面界面填写设置代理的转发端口，例如，我们可以用 Goagent作为前端代理，Goagent的介绍可以参见《   翻墙七种武器之长生剑   》。打开客户端后，我们只需要将代理类型设置为“HTTP/HTTPS”，将地址设置为“127.0.0.1”，端口号设置为“8087”，同理我们还可以设置其他 Socks 类代理等等。
+                  
+                  
+                    
+                        1.jpg  
+                      
+
+                      
+                    
+                  
+                  另外也可以用 VPN 作为前端代理，例如使用免费的 VPNgate ，具体可以参见   翻墙七种武器之离别钩:VPN Gate   ，也可以使用其他付费的翻墙工具获得更好的使用体验。   总之，TBB 4.0 的发布为广大网友又增加了一条翻墙的途径，meek 流量混淆插件的使用使得这个老牌的翻墙工具重新焕发青春，也为GFW墙后的网友安全使用网络提升了保障，在后续的文章里我们还将陆续介绍 Tor 的网络安全应用。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                翻墙七种武器之长生剑                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                致某字幕网站的倒下： 原来，我们和上一代人并没有什么不同                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                文艺界的“一国两制”                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                结束毫无意义的口水和拉锯战，这里是你应该知道的事——为自由而战（四）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期五, 05/31/2019 - 10:54 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Billig Per Nachnahme KelIdeodo  
+                
+                    
+                    
+                      
+                        Comprare Cialis O Viagra &lt;a href=  http://cialicheap.com&gt;cialis  prices&lt;/a&gt; Pharmacie En Ligne Levitra Cialis Contrassegno Amoxicillin With Aspirin Buy
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+            
+
+                      
+                
+                  
+                      Anonymous (未验证)  
+                     星期五, 05/31/2019 - 12:06 
+                     永久连接 
+                  
+                
+                
+                  
+                    冒个泡吧！ | 泡泡  
+                  
+                        
+                      
+                        
+                          I have read so many articles regarding the blogger lovers however this post is genuinely a pleasant article, keep it up.
+                          Feel free to visit my weblog gamefly free trial -  http://tinyurl.com/y4j9ggho 
+                        
+                      
+                    
+                  
+                  
+                  
+                     回复 
+                  
+                
+                
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期一, 06/03/2019 - 12:16 
+                   永久连接 
+                
+              
+              
+                
+                  Where Can You Buy Levitra The Cheapest LesTreS  
+                
+                    
+                    
+                      
+                        Viagra Postlagernd Bestellen Acheter Le Levitra &lt;a href=  http://bmpha.com&gt;forum  levitra en belgique&lt;/a&gt; Severe Penicillin Allergy Touching Amoxicillin
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期三, 06/05/2019 - 00:47 
+                   永久连接 
+                
+              
+              
+                
+                  Buy Clomid Safely Online Uk Paypal KelIdeodo  
+                
+                    
+                    
+                      
+                        Buy Levothyroxine 100mg Cialis Es Para Mujeres Viagra Y El Embarazo &lt;a href=  http://tadalaf20mg.com&gt;generic  cialis canada&lt;/a&gt; Que Significa Propecia
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Tor“重返”中国：翻墙与进入“深网”" />
+    <meta property="twitter:title" content="Tor“重返”中国：翻墙与进入“深网”" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fpao-pao.net%2Farticle%2F230" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://pao-pao.net/article/230" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://pao-pao.net/article/230&text=Tor“重返”中国：翻墙与进入“深网”&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://pao-pao.net/article/230&title=Tor“重返”中国：翻墙与进入“深网”" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://pao-pao.net/article/230&title=Tor“重返”中国：翻墙与进入“深网”" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Tor“重返”中国：翻墙与进入“深网”&body=
+  
+    
+      
+        
+              
+  Vergil  在 星期四, 10/23/2014 - 11:34 提交 
+          
+          
+            
+              
+                
+                  
+                      3783942045_ce641c6793_z.jpg  
+                    
+                       
+                        
+                          
+ 用Tor来上网 图/Samuel Huron 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   Tor“重返”中国：翻墙与进入“深网” 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  在美剧  《纸牌屋》  第二季第二集里，当新闻报主编  Lucas Goodwin  苦于寻找一个黑客，企图黑入美国电信服务器窃取副总统和已故女友的通话记录时，同事告诉他，网络世界中还存在着一个类似于但丁  《神曲》  所里描述的混沌狱（   LIMBO   ）一般的，游离于普通互联网之外的“  深网  ”（  Deep Web  ），在那里，能够获取几乎一切的需求。
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+                         
+                          
+                            
+ 美剧《纸牌屋》中关于“深网”中的情节 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                   深网 
+                  用户通过特殊的技术手段隐匿用户信息（如IP地址等）登陆“深网”以后，就能完全脱离世间法律或   NSA   （美国国家安全局）等政府管制力量的钳制和监管，在那里，你可以通过网站肆意的购买枪支弹药，可以发布悬赏杀人的告示，可以购买冰毒和可卡因，可以随意浏览儿童色情网站，也可以办理各种假证伪造身份。仅有4%的网络数据是可以通过搜索引擎找到的，其他的都深藏在“深网”中。
+                  
+                    
+                      
+                         
+                          
+                            
+ 96%的网络数据都是无法用使用搜索引擎查找的 
+                            
+                          
+                        
+                      
+                    
+                  
+                   但这些网站的服务器实体可能分布在互联网管制薄弱的东欧国家，背后由深谙网络安全技术的黑客维护，多以  .onion  作为域名，采用特殊的加密机制，不能通过搜索引擎查找，即使知道域名也无法采用传统的HTTP方式直接访问，必须采用特殊手段才能接入，就好像只有游吟诗人  维吉尔  的引领，  但丁  才可以窥见  Limbo  里的曲径通幽处。   而今天我们所要介绍的这个引路人就是—   Tor   （  The Onion Router  ），直译过来为“  洋葱路由  ”。
+                   
+           
+            Tor：匿名上网
+           
+           
+                  
+                    
+                      
+                         
+                          
+                            
+ Tor 加密传输示意图 
+                            
+                          
+                        
+                      
+                    
+                  
+                   说起Tor，就不得不介绍一下他的来历，就好像  本拉登  等基地组织是美国军方一手训练出来的一样，这个目前让美国国家安全局和美国联邦调查局头疼不已的玩意也是美国军方一手炮制的。1995年，美国海军研究试验室（   United States Naval Research Laboratory   ）和国防部高级研究项目署（   DARPA   ）资助研究一种匿名的互联网通讯工具，可以避免人们的行迹在Internet上被追踪到。他们把这个技术叫做“  洋葱路由  ”（Tor）。（PS：大名鼎鼎的美国海军研究实验室是因大发明家  爱迪生  的倡导而设立的，实验室大门还塑有爱迪生半身铜像。）   “洋葱路由”利用P2P网络， 把网络流量随机的通过P2P的节点进行转发， 这样可以掩盖源地址与目标地址的路径。 使得在Internet上难以确定使用者的身份和地址这就好像你送一封匿名信， 不是自己送或者通过邮差送， 而是大街上随便找一个不认识的人让他帮你送，然后这个不认识的人再找一个不认识的人帮忙送信，这个转送的过程总共进行三次，此时的收信人几乎不可能知晓原始的发件人是谁。
+                  
+                    Tor之所以被称为洋葱，就是因为它的这种转发机制跟洋葱的结构一样，其数据核心被一层层的加密措施包围，上图所示，客户电脑接入 Tor 之后会选择  三个节点  层层转发并加密，最后才到达目标服务器。
+                    
+                      
+                        
+                           
+                            
+                              
+ 斯诺登的笔记本电脑右上角贴有 Tor 的标记 
+                              
+                            
+                          
+                        
+                      
+                    
+                     最初这个项目仅仅是用来保护军方情报人员通过互联网匿名通信不被第三方监听和侦破，到2004年美国海军将此项目转为民用并将其开源，成为  电子前哨基金会（    Electronic Frontier Foundation   ）旗下的一个项目。   “  棱镜门  ”的主角   爱德华斯诺登   身为前NSA的设备分析师，也正是通过 TOR 来掩盖自己在互联网上的行踪，甚至在出事前，他还在檀香山领导这一个名为“  Crypto Party  ”的组织来向周边的居民推广如何Tor匿名使用互联网。
+                  
+                   
+           用Tor
+           接入深网 
+                  Tor的早期产品需要复杂的设定才能通过浏览器连接，这对于普通用户来说是一个较高的门槛，但现在TorProject已经推出了以   Firefox ESR   的专属浏览器：       Tor Browser Bundle   （简称TBB），将Tor和     Firefox   浏览器进行捆绑，使用者只需要通过网站   下载   最新的4.0 版本到本地，解压缩安装以后就可以直接上网浏览，省去了其中复杂繁琐的过程。   TBB 对linxu、Mac和Windows各平台都有良好的支持，整个安装过程也十分简单，不在复述，下面介绍一下具体的接入方法：   安装完毕以后，首先应该点击会进入第一个网络设置界面：
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+   是询问你当前使用的互联网接入是否受限，是否需要通过代理才能接入 Internet 网，中国大陆的网民都在GFW的墙内，因此选择第二项“需要代理或者桥接”。                   
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  接下来会询问你是否需要代理才能接入 Internet，一般情况下无论是家庭还是公司网络都是不需要的，点击进入下一步
+                  
+                  
+                    
+                        1.jpg  
+                      
+
+                      
+                    
+                  
+                  接下来会问ISP（移动电信之类）是否屏蔽了互联网接入，因为有 GFW 的存在，我们要选择“yes”。
+                  
+                  
+                    
+                        2.jpg  
+                      
+
+                      
+                    
+                  
+                  下面到了最关键的一步，TBB 4.0 最大的更新就是采用了  meek  插件的混淆机制（如果想了解更多关于 meek 的细节请点击   这里   ）因为GFW把Tor绝大部分的节点都屏蔽掉了，因此在以前的版本中，Tor要么需要费力的设置网桥，要么就必须要搭配其他的翻墙工具进行双重代理才可以使用。   而这一次 TBB 利用微软的   Azure   和Amazon的VPS或ETC2搭建了代理平台，并对流量进行了混淆加密使得GFW无法识别。   因此选择第一项“需要桥接”，然后选择“  meek-amazon  ”或者“  meek-azure  ”即可（google服务器已经在今年年中被GFW墙掉，而微软和亚马逊的服务器暂时还不会被屏蔽，否则对国内影响太大）
+                  
+                  
+                    
+                        3.jpg  
+                      
+
+                      
+                    
+                  
+                  点击“Connect“，系统开始连接，第一次连接需要的时间稍长一些，最后弹出如下图中的浏览器的界面就表示成功了。
+                  
+                  
+                    
+                        4.jpg  
+                      
+
+                      
+                    
+                  
+                    深网深几许  
+                  既然已经通过 Tor 打开了“深网”的大门，那么让我们就将其一窥究竟，因为广大的深网网站都无法被搜索引擎收录，所以我们必须要找到一个收录各类深网网站的索引站点，“  Hidden Wiki  ”就是其中较为出名的一个，它收录了各类深网网站地址。   将下面的链接地址复制到 Tor 浏览器当中：     http://zqktlwi4fecvo6ri.onion/wiki/     如果这个网站无法访问，还可以浏览它的镜像网站：
+                    http://torlinkbgs6aabns.onion/      http://wikitjerrta4qgz4.onion/      http://jh32yv5zgayyyts3.onion/     Hiddeen Wiki收录了各类网站，我们打开两个网站为例（ 
+           以下网站都需要用 Tor 打开
+           ）：譬如，  这个网站  售卖枪支弹药，一只  沙漠之鹰  手枪公开叫卖1.836BTC，因为  比特币  （BTC）有着无法查询交易记录的优势，因此深海网站多用它作为交易工具，按照最近的BTC对美元的汇率，应该在700美元左右，而网站上标准的市场价格在1500美元左右，看来网销渠道的优势在黑市上继续得到发扬。除了武器以外，通过深海网站贩卖毒品和违禁药物也得到广泛运用，号称有“  毒品亚马逊  “之称的  Silk Road  （丝绸之路）在查禁前每年的销售额已经突破3亿美元，通过深海网站订货，然后使用快递发货已经成为了美国毒品贩卖的新渠道。而  这个网站  站上明目张胆的公开售卖各类高纯度可卡因，冰毒和致幻药物。通过wiki还可以找到办理假证的，雇佣杀手的，销赃的（主要是Iphone手机），兑换比特币的（BTC），还有各种成人色情网站，就不在这里一一列举了。   同时还发现，深网网站开始向大陆渗透，其中就发现了一个  中文深网站点  号称是中国深网第一站，上面架设了一个论坛，不过还没有发布任何有效信息，有兴趣的朋友可以访问。   最后要声明的是，以上内容是让各位认识“深网”和 Tor 技术，本人是坚决反对以上非法网站存在的，也请各位读者谨慎使用，不要将 Tor 技术用于非法途径。
+                   
+           
+            用Tor翻墙
+           
+           
+                  其实，作为通过 TBB 我们不仅能够访问冰下下隐藏的“深网”，我们也轻松的跨越了GFW，但是由于 TBB 4.0 需要通过Amazon或Azure的服务器翻墙再通过 Tor的三个中继节点层层加密，导致的一个结果就是访问速度巨慢无比，严重影响使用体验。   而且 meek 这个新推出的流量混淆插件，是不是也会像它的前任 Obfs3 一样，最后也被 GFW 屏蔽掉都不得而知。所以先利用 Tor 三重加密隐匿身份，而与其他快速翻墙工具搭配形成双重代理无疑是更好的选择，可以更流畅的访问“深网”，同时安全性能更高，具体方法如下：   在上一个章节中的第二个设置界面，当系统询问“主机是否需要代理才能访问Internet？”时，选择“Yes”
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  接着就在下面界面填写设置代理的转发端口，例如，我们可以用 Goagent作为前端代理，Goagent的介绍可以参见《   翻墙七种武器之长生剑   》。打开客户端后，我们只需要将代理类型设置为“HTTP/HTTPS”，将地址设置为“127.0.0.1”，端口号设置为“8087”，同理我们还可以设置其他 Socks 类代理等等。
+                  
+                  
+                    
+                        1.jpg  
+                      
+
+                      
+                    
+                  
+                  另外也可以用 VPN 作为前端代理，例如使用免费的 VPNgate ，具体可以参见   翻墙七种武器之离别钩:VPN Gate   ，也可以使用其他付费的翻墙工具获得更好的使用体验。   总之，TBB 4.0 的发布为广大网友又增加了一条翻墙的途径，meek 流量混淆插件的使用使得这个老牌的翻墙工具重新焕发青春，也为GFW墙后的网友安全使用网络提升了保障，在后续的文章里我们还将陆续介绍 Tor 的网络安全应用。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                翻墙七种武器之长生剑                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                致某字幕网站的倒下： 原来，我们和上一代人并没有什么不同                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                文艺界的“一国两制”                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                结束毫无意义的口水和拉锯战，这里是你应该知道的事——为自由而战（四）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期五, 05/31/2019 - 10:54 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Billig Per Nachnahme KelIdeodo  
+                
+                    
+                    
+                      
+                        Comprare Cialis O Viagra &lt;a href=  http://cialicheap.com&gt;cialis  prices&lt;/a&gt; Pharmacie En Ligne Levitra Cialis Contrassegno Amoxicillin With Aspirin Buy
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+            
+
+                      
+                
+                  
+                      Anonymous (未验证)  
+                     星期五, 05/31/2019 - 12:06 
+                     永久连接 
+                  
+                
+                
+                  
+                    冒个泡吧！ | 泡泡  
+                  
+                        
+                      
+                        
+                          I have read so many articles regarding the blogger lovers however this post is genuinely a pleasant article, keep it up.
+                          Feel free to visit my weblog gamefly free trial -  http://tinyurl.com/y4j9ggho 
+                        
+                      
+                    
+                  
+                  
+                  
+                     回复 
+                  
+                
+                
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期一, 06/03/2019 - 12:16 
+                   永久连接 
+                
+              
+              
+                
+                  Where Can You Buy Levitra The Cheapest LesTreS  
+                
+                    
+                    
+                      
+                        Viagra Postlagernd Bestellen Acheter Le Levitra &lt;a href=  http://bmpha.com&gt;forum  levitra en belgique&lt;/a&gt; Severe Penicillin Allergy Touching Amoxicillin
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期三, 06/05/2019 - 00:47 
+                   永久连接 
+                
+              
+              
+                
+                  Buy Clomid Safely Online Uk Paypal KelIdeodo  
+                
+                    
+                    
+                      
+                        Buy Levothyroxine 100mg Cialis Es Para Mujeres Viagra Y El Embarazo &lt;a href=  http://tadalaf20mg.com&gt;generic  cialis canada&lt;/a&gt; Que Significa Propecia
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://pao-pao.net/article/230" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://pao-pao.net/article/230&title=Tor“重返”中国：翻墙与进入“深网”&caption=
+  
+    
+      
+        
+              
+  Vergil  在 星期四, 10/23/2014 - 11:34 提交 
+          
+          
+            
+              
+                
+                  
+                      3783942045_ce641c6793_z.jpg  
+                    
+                       
+                        
+                          
+ 用Tor来上网 图/Samuel Huron 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   Tor“重返”中国：翻墙与进入“深网” 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  在美剧  《纸牌屋》  第二季第二集里，当新闻报主编  Lucas Goodwin  苦于寻找一个黑客，企图黑入美国电信服务器窃取副总统和已故女友的通话记录时，同事告诉他，网络世界中还存在着一个类似于但丁  《神曲》  所里描述的混沌狱（   LIMBO   ）一般的，游离于普通互联网之外的“  深网  ”（  Deep Web  ），在那里，能够获取几乎一切的需求。
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+                         
+                          
+                            
+ 美剧《纸牌屋》中关于“深网”中的情节 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                   深网 
+                  用户通过特殊的技术手段隐匿用户信息（如IP地址等）登陆“深网”以后，就能完全脱离世间法律或   NSA   （美国国家安全局）等政府管制力量的钳制和监管，在那里，你可以通过网站肆意的购买枪支弹药，可以发布悬赏杀人的告示，可以购买冰毒和可卡因，可以随意浏览儿童色情网站，也可以办理各种假证伪造身份。仅有4%的网络数据是可以通过搜索引擎找到的，其他的都深藏在“深网”中。
+                  
+                    
+                      
+                         
+                          
+                            
+ 96%的网络数据都是无法用使用搜索引擎查找的 
+                            
+                          
+                        
+                      
+                    
+                  
+                   但这些网站的服务器实体可能分布在互联网管制薄弱的东欧国家，背后由深谙网络安全技术的黑客维护，多以  .onion  作为域名，采用特殊的加密机制，不能通过搜索引擎查找，即使知道域名也无法采用传统的HTTP方式直接访问，必须采用特殊手段才能接入，就好像只有游吟诗人  维吉尔  的引领，  但丁  才可以窥见  Limbo  里的曲径通幽处。   而今天我们所要介绍的这个引路人就是—   Tor   （  The Onion Router  ），直译过来为“  洋葱路由  ”。
+                   
+           
+            Tor：匿名上网
+           
+           
+                  
+                    
+                      
+                         
+                          
+                            
+ Tor 加密传输示意图 
+                            
+                          
+                        
+                      
+                    
+                  
+                   说起Tor，就不得不介绍一下他的来历，就好像  本拉登  等基地组织是美国军方一手训练出来的一样，这个目前让美国国家安全局和美国联邦调查局头疼不已的玩意也是美国军方一手炮制的。1995年，美国海军研究试验室（   United States Naval Research Laboratory   ）和国防部高级研究项目署（   DARPA   ）资助研究一种匿名的互联网通讯工具，可以避免人们的行迹在Internet上被追踪到。他们把这个技术叫做“  洋葱路由  ”（Tor）。（PS：大名鼎鼎的美国海军研究实验室是因大发明家  爱迪生  的倡导而设立的，实验室大门还塑有爱迪生半身铜像。）   “洋葱路由”利用P2P网络， 把网络流量随机的通过P2P的节点进行转发， 这样可以掩盖源地址与目标地址的路径。 使得在Internet上难以确定使用者的身份和地址这就好像你送一封匿名信， 不是自己送或者通过邮差送， 而是大街上随便找一个不认识的人让他帮你送，然后这个不认识的人再找一个不认识的人帮忙送信，这个转送的过程总共进行三次，此时的收信人几乎不可能知晓原始的发件人是谁。
+                  
+                    Tor之所以被称为洋葱，就是因为它的这种转发机制跟洋葱的结构一样，其数据核心被一层层的加密措施包围，上图所示，客户电脑接入 Tor 之后会选择  三个节点  层层转发并加密，最后才到达目标服务器。
+                    
+                      
+                        
+                           
+                            
+                              
+ 斯诺登的笔记本电脑右上角贴有 Tor 的标记 
+                              
+                            
+                          
+                        
+                      
+                    
+                     最初这个项目仅仅是用来保护军方情报人员通过互联网匿名通信不被第三方监听和侦破，到2004年美国海军将此项目转为民用并将其开源，成为  电子前哨基金会（    Electronic Frontier Foundation   ）旗下的一个项目。   “  棱镜门  ”的主角   爱德华斯诺登   身为前NSA的设备分析师，也正是通过 TOR 来掩盖自己在互联网上的行踪，甚至在出事前，他还在檀香山领导这一个名为“  Crypto Party  ”的组织来向周边的居民推广如何Tor匿名使用互联网。
+                  
+                   
+           用Tor
+           接入深网 
+                  Tor的早期产品需要复杂的设定才能通过浏览器连接，这对于普通用户来说是一个较高的门槛，但现在TorProject已经推出了以   Firefox ESR   的专属浏览器：       Tor Browser Bundle   （简称TBB），将Tor和     Firefox   浏览器进行捆绑，使用者只需要通过网站   下载   最新的4.0 版本到本地，解压缩安装以后就可以直接上网浏览，省去了其中复杂繁琐的过程。   TBB 对linxu、Mac和Windows各平台都有良好的支持，整个安装过程也十分简单，不在复述，下面介绍一下具体的接入方法：   安装完毕以后，首先应该点击会进入第一个网络设置界面：
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+   是询问你当前使用的互联网接入是否受限，是否需要通过代理才能接入 Internet 网，中国大陆的网民都在GFW的墙内，因此选择第二项“需要代理或者桥接”。                   
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  接下来会询问你是否需要代理才能接入 Internet，一般情况下无论是家庭还是公司网络都是不需要的，点击进入下一步
+                  
+                  
+                    
+                        1.jpg  
+                      
+
+                      
+                    
+                  
+                  接下来会问ISP（移动电信之类）是否屏蔽了互联网接入，因为有 GFW 的存在，我们要选择“yes”。
+                  
+                  
+                    
+                        2.jpg  
+                      
+
+                      
+                    
+                  
+                  下面到了最关键的一步，TBB 4.0 最大的更新就是采用了  meek  插件的混淆机制（如果想了解更多关于 meek 的细节请点击   这里   ）因为GFW把Tor绝大部分的节点都屏蔽掉了，因此在以前的版本中，Tor要么需要费力的设置网桥，要么就必须要搭配其他的翻墙工具进行双重代理才可以使用。   而这一次 TBB 利用微软的   Azure   和Amazon的VPS或ETC2搭建了代理平台，并对流量进行了混淆加密使得GFW无法识别。   因此选择第一项“需要桥接”，然后选择“  meek-amazon  ”或者“  meek-azure  ”即可（google服务器已经在今年年中被GFW墙掉，而微软和亚马逊的服务器暂时还不会被屏蔽，否则对国内影响太大）
+                  
+                  
+                    
+                        3.jpg  
+                      
+
+                      
+                    
+                  
+                  点击“Connect“，系统开始连接，第一次连接需要的时间稍长一些，最后弹出如下图中的浏览器的界面就表示成功了。
+                  
+                  
+                    
+                        4.jpg  
+                      
+
+                      
+                    
+                  
+                    深网深几许  
+                  既然已经通过 Tor 打开了“深网”的大门，那么让我们就将其一窥究竟，因为广大的深网网站都无法被搜索引擎收录，所以我们必须要找到一个收录各类深网网站的索引站点，“  Hidden Wiki  ”就是其中较为出名的一个，它收录了各类深网网站地址。   将下面的链接地址复制到 Tor 浏览器当中：     http://zqktlwi4fecvo6ri.onion/wiki/     如果这个网站无法访问，还可以浏览它的镜像网站：
+                    http://torlinkbgs6aabns.onion/      http://wikitjerrta4qgz4.onion/      http://jh32yv5zgayyyts3.onion/     Hiddeen Wiki收录了各类网站，我们打开两个网站为例（ 
+           以下网站都需要用 Tor 打开
+           ）：譬如，  这个网站  售卖枪支弹药，一只  沙漠之鹰  手枪公开叫卖1.836BTC，因为  比特币  （BTC）有着无法查询交易记录的优势，因此深海网站多用它作为交易工具，按照最近的BTC对美元的汇率，应该在700美元左右，而网站上标准的市场价格在1500美元左右，看来网销渠道的优势在黑市上继续得到发扬。除了武器以外，通过深海网站贩卖毒品和违禁药物也得到广泛运用，号称有“  毒品亚马逊  “之称的  Silk Road  （丝绸之路）在查禁前每年的销售额已经突破3亿美元，通过深海网站订货，然后使用快递发货已经成为了美国毒品贩卖的新渠道。而  这个网站  站上明目张胆的公开售卖各类高纯度可卡因，冰毒和致幻药物。通过wiki还可以找到办理假证的，雇佣杀手的，销赃的（主要是Iphone手机），兑换比特币的（BTC），还有各种成人色情网站，就不在这里一一列举了。   同时还发现，深网网站开始向大陆渗透，其中就发现了一个  中文深网站点  号称是中国深网第一站，上面架设了一个论坛，不过还没有发布任何有效信息，有兴趣的朋友可以访问。   最后要声明的是，以上内容是让各位认识“深网”和 Tor 技术，本人是坚决反对以上非法网站存在的，也请各位读者谨慎使用，不要将 Tor 技术用于非法途径。
+                   
+           
+            用Tor翻墙
+           
+           
+                  其实，作为通过 TBB 我们不仅能够访问冰下下隐藏的“深网”，我们也轻松的跨越了GFW，但是由于 TBB 4.0 需要通过Amazon或Azure的服务器翻墙再通过 Tor的三个中继节点层层加密，导致的一个结果就是访问速度巨慢无比，严重影响使用体验。   而且 meek 这个新推出的流量混淆插件，是不是也会像它的前任 Obfs3 一样，最后也被 GFW 屏蔽掉都不得而知。所以先利用 Tor 三重加密隐匿身份，而与其他快速翻墙工具搭配形成双重代理无疑是更好的选择，可以更流畅的访问“深网”，同时安全性能更高，具体方法如下：   在上一个章节中的第二个设置界面，当系统询问“主机是否需要代理才能访问Internet？”时，选择“Yes”
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  接着就在下面界面填写设置代理的转发端口，例如，我们可以用 Goagent作为前端代理，Goagent的介绍可以参见《   翻墙七种武器之长生剑   》。打开客户端后，我们只需要将代理类型设置为“HTTP/HTTPS”，将地址设置为“127.0.0.1”，端口号设置为“8087”，同理我们还可以设置其他 Socks 类代理等等。
+                  
+                  
+                    
+                        1.jpg  
+                      
+
+                      
+                    
+                  
+                  另外也可以用 VPN 作为前端代理，例如使用免费的 VPNgate ，具体可以参见   翻墙七种武器之离别钩:VPN Gate   ，也可以使用其他付费的翻墙工具获得更好的使用体验。   总之，TBB 4.0 的发布为广大网友又增加了一条翻墙的途径，meek 流量混淆插件的使用使得这个老牌的翻墙工具重新焕发青春，也为GFW墙后的网友安全使用网络提升了保障，在后续的文章里我们还将陆续介绍 Tor 的网络安全应用。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                翻墙七种武器之长生剑                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                致某字幕网站的倒下： 原来，我们和上一代人并没有什么不同                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                文艺界的“一国两制”                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                结束毫无意义的口水和拉锯战，这里是你应该知道的事——为自由而战（四）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期五, 05/31/2019 - 10:54 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Billig Per Nachnahme KelIdeodo  
+                
+                    
+                    
+                      
+                        Comprare Cialis O Viagra &lt;a href=  http://cialicheap.com&gt;cialis  prices&lt;/a&gt; Pharmacie En Ligne Levitra Cialis Contrassegno Amoxicillin With Aspirin Buy
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+            
+
+                      
+                
+                  
+                      Anonymous (未验证)  
+                     星期五, 05/31/2019 - 12:06 
+                     永久连接 
+                  
+                
+                
+                  
+                    冒个泡吧！ | 泡泡  
+                  
+                        
+                      
+                        
+                          I have read so many articles regarding the blogger lovers however this post is genuinely a pleasant article, keep it up.
+                          Feel free to visit my weblog gamefly free trial -  http://tinyurl.com/y4j9ggho 
+                        
+                      
+                    
+                  
+                  
+                  
+                     回复 
+                  
+                
+                
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期一, 06/03/2019 - 12:16 
+                   永久连接 
+                
+              
+              
+                
+                  Where Can You Buy Levitra The Cheapest LesTreS  
+                
+                    
+                    
+                      
+                        Viagra Postlagernd Bestellen Acheter Le Levitra &lt;a href=  http://bmpha.com&gt;forum  levitra en belgique&lt;/a&gt; Severe Penicillin Allergy Touching Amoxicillin
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期三, 06/05/2019 - 00:47 
+                   永久连接 
+                
+              
+              
+                
+                  Buy Clomid Safely Online Uk Paypal KelIdeodo  
+                
+                    
+                    
+                      
+                        Buy Levothyroxine 100mg Cialis Es Para Mujeres Viagra Y El Embarazo &lt;a href=  http://tadalaf20mg.com&gt;generic  cialis canada&lt;/a&gt; Que Significa Propecia
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Tor“重返”中国：翻墙与进入“深网”&url=https://pao-pao.net/article/230" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Tor“重返”中国：翻墙与进入“深网”</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2014-10-23
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Vergil</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#泡泡">
+          泡泡
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://pao-pao.net/article/230" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="泡泡的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#泡泡 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <section class="clearfix" id="content" role="main">
+  <div class="region region-content">
+    <div class="block block-system" id="block-system-main">
+      <div class="content">
+        <div about="/article/230" class="node node-pao-pao-article node-promoted node-full view-mode-full clearfix" id="node-230" typeof="sioc:Item foaf:Document">
+<span class="rdf-meta element-hidden" content="Tor“重返”中国：翻墙与进入“深网”" property="dc:title"> </span> <span class="rdf-meta element-hidden" content="4" datatype="xsd:integer" property="sioc:num_replies"> </span>           <div class="submitted">
+<span content="2014-10-23T11:34:06+02:00" datatype="xsd:dateTime" property="dc:date dc:created" rel="sioc:has_creator"> <a about="/author/30" class="username" datatype="" href="/author/30" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> Vergil </a> 在 星期四, 10/23/2014 - 11:34 提交 </span>
+          </div>
+          <div class="content">
+            <div class="field field-name-field-image field-type-image field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="file file-image file-image-jpeg" id="file-592--2">
+                    <h2 class="element-invisible" id="ce641c6793zjpg--"> <a href="/file/592"> 3783942045_ce641c6793_z.jpg </a> </h2>
+                    <div class="content">
+<img alt="" height="164" src="https://pao-pao.net/sites/pao-pao.net/files/styles/article_detail/public/3783942045_ce641c6793_z.jpg?itok=ofGqTJme" title="" typeof="foaf:Image" width="290" />                       <div class="field field-name-field-image-source field-type-link-field field-label-hidden">
+                        <div class="field-items">
+                          <div class="field-item even">
+<a href="https://www.flickr.com/photos/samuel-huron/3783942045"> 用Tor来上网 图/Samuel Huron </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-title field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="dc:title">
+                  <h1 class="page-title" id="tor-"> Tor“重返”中国：翻墙与进入“深网” </h1>
+                </div>
+              </div>
+            </div>
+            <div class="field-name-author">
+              <div class="label-inline">
+文/
+              </div>
+ <a about="/author/30" class="username" datatype="" href="/author/30" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> Vergil </a>
+            </div>
+            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="content:encoded">
+                  <p>在美剧 <span> 《纸牌屋》 </span> 第二季第二集里，当新闻报主编 <span> Lucas Goodwin </span> 苦于寻找一个黑客，企图黑入美国电信服务器窃取副总统和已故女友的通话记录时，同事告诉他，网络世界中还存在着一个类似于但丁 <span> 《神曲》 </span> 所里描述的混沌狱（ <a href="https://webmail.rnw.nl/owa/redir.aspx?C=DAKh5pdatkWbkB2izdzkVsBI3zA7wtEIVOavRDxjyWlKowDicaYjzCGWdbf9rhBjXumKXOr12Wg.&amp;URL=http%3a%2f%2fen.wikipedia.org%2fwiki%2fLimbo" rel="nofollow" target="_blank"> <span> LIMBO </span> </a> ）一般的，游离于普通互联网之外的“ <a href="https://zh.wikipedia.org/wiki/%E6%9A%97%E7%BD%91" rel="nofollow"> 深网 </a> ”（ <span> Deep Web </span> ），在那里，能够获取几乎一切的需求。</p>
+                  <p></p>
+                  <div class="media media-element-container media-original_image">
+                    <div class="file file-image file-image-jpeg" id="file-578">
+                      <h2 class="element-invisible" id="evowajpg--"> <a href="/file/578"> ev.owa_.jpg </a> </h2>
+                      <div class="content">
+<img alt="" class="adaptive-image" height="282" src="https://pao-pao.net/sites/pao-pao.net/files/styles/adaptive_image/adaptive-image/public/ev.owa__2.jpg?itok=ihaV2e1_" title="" typeof="foaf:Image" width="564" />                         <div class="field field-name-field-image-source field-type-link-field field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="https://pao-pao.net"> 美剧《纸牌屋》中关于“深网”中的情节 </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p></p>
+                  <h2 id="section"> 深网 </h2>
+                  <p>用户通过特殊的技术手段隐匿用户信息（如IP地址等）登陆“深网”以后，就能完全脱离世间法律或 <a href="https://webmail.rnw.nl/owa/redir.aspx?C=DAKh5pdatkWbkB2izdzkVsBI3zA7wtEIVOavRDxjyWlKowDicaYjzCGWdbf9rhBjXumKXOr12Wg.&amp;URL=https%3a%2f%2fwww.nsa.gov%2f" rel="nofollow" target="_blank"> <span> NSA </span> </a> （美国国家安全局）等政府管制力量的钳制和监管，在那里，你可以通过网站肆意的购买枪支弹药，可以发布悬赏杀人的告示，可以购买冰毒和可卡因，可以随意浏览儿童色情网站，也可以办理各种假证伪造身份。仅有4%的网络数据是可以通过搜索引擎找到的，其他的都深藏在“深网”中。</p>
+                  <div class="half-right">
+                    <div class="media media-element-container media-full">
+                      <div class="ds-1col file file-image file-image-jpeg view-mode-full clearfix">
+<img alt="" class="media-element file-full" height="326" src="https://pao-pao.net/sites/pao-pao.net/files/styles/large/public/ev.owa__3.jpg?itok=AWJZPAXI" title="" typeof="foaf:Image" width="480" />                         <div class="field field-name-field-image-source field-type-link-field field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="https://pao-pao.net"> 96%的网络数据都是无法用使用搜索引擎查找的 </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p><br /> 但这些网站的服务器实体可能分布在互联网管制薄弱的东欧国家，背后由深谙网络安全技术的黑客维护，多以 <span> .onion </span> 作为域名，采用特殊的加密机制，不能通过搜索引擎查找，即使知道域名也无法采用传统的HTTP方式直接访问，必须采用特殊手段才能接入，就好像只有游吟诗人 <span> 维吉尔 </span> 的引领， <span> 但丁 </span> 才可以窥见 <span> Limbo </span> 里的曲径通幽处。 <br /> <br /> 而今天我们所要介绍的这个引路人就是— <a href="https://www.torproject.org/" rel="nofollow"> <span> Tor </span> </a> （ <span> The Onion Router </span> ），直译过来为“ <span> 洋葱路由 </span> ”。</p>
+                  <h2 id="tor"> <strong>
+           <span>
+            Tor：匿名上网
+           </span>
+          </strong> </h2>
+                  <div class="half-right">
+                    <div class="media media-element-container media-full">
+                      <div class="ds-1col file file-image file-image-jpeg view-mode-full clearfix">
+<img alt="" class="media-element file-full" height="307" src="https://pao-pao.net/sites/pao-pao.net/files/styles/large/public/ev.owa__5.jpg?itok=Pr50zTb5" title="" typeof="foaf:Image" width="480" />                         <div class="field field-name-field-image-source field-type-link-field field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="https://pao-pao.net"> Tor 加密传输示意图 </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p><br /> 说起Tor，就不得不介绍一下他的来历，就好像 <span> 本拉登 </span> 等基地组织是美国军方一手训练出来的一样，这个目前让美国国家安全局和美国联邦调查局头疼不已的玩意也是美国军方一手炮制的。1995年，美国海军研究试验室（ <a href="http://www.nrl.navy.mil/" rel="nofollow"> <span> United States Naval Research Laboratory </span> </a> ）和国防部高级研究项目署（ <a href="http://www.darpa.mil/default.aspx" rel="nofollow"> <span> DARPA </span> </a> ）资助研究一种匿名的互联网通讯工具，可以避免人们的行迹在Internet上被追踪到。他们把这个技术叫做“ <span> 洋葱路由 </span> ”（Tor）。（PS：大名鼎鼎的美国海军研究实验室是因大发明家 <span> 爱迪生 </span> 的倡导而设立的，实验室大门还塑有爱迪生半身铜像。） <br /> <br /> “洋葱路由”利用P2P网络， 把网络流量随机的通过P2P的节点进行转发， 这样可以掩盖源地址与目标地址的路径。 使得在Internet上难以确定使用者的身份和地址这就好像你送一封匿名信， 不是自己送或者通过邮差送， 而是大街上随便找一个不认识的人让他帮你送，然后这个不认识的人再找一个不认识的人帮忙送信，这个转送的过程总共进行三次，此时的收信人几乎不可能知晓原始的发件人是谁。</p>
+                  <div>
+                    <p>Tor之所以被称为洋葱，就是因为它的这种转发机制跟洋葱的结构一样，其数据核心被一层层的加密措施包围，上图所示，客户电脑接入 Tor 之后会选择 <span> 三个节点 </span> 层层转发并加密，最后才到达目标服务器。</p>
+                    <div class="half-left">
+                      <div class="media media-element-container media-full">
+                        <div class="ds-1col file file-image file-image-jpeg view-mode-full clearfix">
+<img alt="" class="media-element file-full" height="240" src="https://pao-pao.net/sites/pao-pao.net/files/styles/large/public/ev.owa__6.jpg?itok=UODEBDYJ" title="" typeof="foaf:Image" width="480" />                           <div class="field field-name-field-image-source field-type-link-field field-label-hidden">
+                            <div class="field-items">
+                              <div class="field-item even">
+<a href="https://pao-pao.net"> 斯诺登的笔记本电脑右上角贴有 Tor 的标记 </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p><br /> 最初这个项目仅仅是用来保护军方情报人员通过互联网匿名通信不被第三方监听和侦破，到2004年美国海军将此项目转为民用并将其开源，成为 <a href="https://www.eff.org/" rel="nofollow"> 电子前哨基金会（ </a> <a href="https://www.eff.org/" rel="nofollow"> <span> Electronic Frontier Foundation </span> </a> ）旗下的一个项目。 <br /> <br /> “ <span> 棱镜门 </span> ”的主角 <a href="https://pao-pao.net/article/171" rel="nofollow"> <span> 爱德华斯诺登 </span> </a> 身为前NSA的设备分析师，也正是通过 TOR 来掩盖自己在互联网上的行踪，甚至在出事前，他还在檀香山领导这一个名为“ <span> Crypto Party </span> ”的组织来向周边的居民推广如何Tor匿名使用互联网。</p>
+                  </div>
+                  <h2 id="tor-1"> <strong>
+           用Tor
+          </strong> 接入深网 </h2>
+                  <p>Tor的早期产品需要复杂的设定才能通过浏览器连接，这对于普通用户来说是一个较高的门槛，但现在TorProject已经推出了以 <a href="https://www.mozilla.org/en-US/firefox/organizations/faq/" rel="nofollow"> <span> Firefox ESR </span> </a> 的专属浏览器： <a href="https://www.torproject.org/projects/torbrowser.html.en" rel="nofollow"> </a> <a href="https://webmail.rnw.nl/owa/redir.aspx?C=DAKh5pdatkWbkB2izdzkVsBI3zA7wtEIVOavRDxjyWlKowDicaYjzCGWdbf9rhBjXumKXOr12Wg.&amp;URL=https%3a%2f%2fwww.torproject.org%2fprojects%2ftorbrowser.html.en" rel="nofollow" target="_blank"> </a> <a href="https://www.torproject.org/projects/torbrowser.html.en" rel="nofollow"> <span> Tor Browser Bundle </span> </a> （简称TBB），将Tor和 <a href="https://webmail.rnw.nl/owa/redir.aspx?C=DAKh5pdatkWbkB2izdzkVsBI3zA7wtEIVOavRDxjyWlKowDicaYjzCGWdbf9rhBjXumKXOr12Wg.&amp;URL=https%3a%2f%2fwww.mozilla.org%2fen-US%2ffirefox%2fnew%2f" rel="nofollow" target="_blank"> </a> <a href="https://www.mozilla.org/en-US/firefox/new/" rel="nofollow"> <span> Firefox </span> </a> 浏览器进行捆绑，使用者只需要通过网站 <a href="https://www.torproject.org/projects/torbrowser.html.en#downloads" rel="nofollow"> <span> 下载 </span> </a> 最新的4.0 版本到本地，解压缩安装以后就可以直接上网浏览，省去了其中复杂繁琐的过程。 <br /> <br /> TBB 对linxu、Mac和Windows各平台都有良好的支持，整个安装过程也十分简单，不在复述，下面介绍一下具体的接入方法： <br /> <br /> 安装完毕以后，首先应该点击会进入第一个网络设置界面：</p>
+                  <p></p>
+                  <div class="media media-element-container media-original_image">
+                    <div class="file file-image file-image-jpeg" id="file-583">
+                      <h2 class="element-invisible" id="evowajpg---1"> <a href="/file/583"> ev.owa_.jpg </a> </h2>
+                      <div class="content">
+<img alt="" class="adaptive-image" height="266" src="https://pao-pao.net/sites/pao-pao.net/files/styles/adaptive_image/adaptive-image/public/ev.owa__7.jpg?itok=JCL923np" title="" typeof="foaf:Image" width="416" />
+                      </div>
+                    </div>
+                  </div>
+ <br /> <br /> 是询问你当前使用的互联网接入是否受限，是否需要通过代理才能接入 Internet 网，中国大陆的网民都在GFW的墙内，因此选择第二项“需要代理或者桥接”。                   <p></p>
+                  <div class="media media-element-container media-original_image">
+                    <div class="file file-image file-image-jpeg" id="file-584">
+                      <h2 class="element-invisible" id="evowajpg---2"> <a href="/file/584"> ev.owa_.jpg </a> </h2>
+                      <div class="content">
+<img alt="" class="adaptive-image" height="399" src="https://pao-pao.net/sites/pao-pao.net/files/styles/adaptive_image/adaptive-image/public/ev.owa__8.jpg?itok=e6ciZ3w0" title="" typeof="foaf:Image" width="443" />
+                      </div>
+                    </div>
+                  </div>
+                  <p>接下来会询问你是否需要代理才能接入 Internet，一般情况下无论是家庭还是公司网络都是不需要的，点击进入下一步</p>
+                  <p></p>
+                  <div class="media media-element-container media-original_image">
+                    <div class="file file-image file-image-jpeg" id="file-585">
+                      <h2 class="element-invisible" id="jpg--"> <a href="/file/585"> 1.jpg </a> </h2>
+                      <div class="content">
+<img alt="" class="adaptive-image" height="400" src="https://pao-pao.net/sites/pao-pao.net/files/styles/adaptive_image/adaptive-image/public/1_2.jpg?itok=N6b68gxL" title="" typeof="foaf:Image" width="443" />
+                      </div>
+                    </div>
+                  </div>
+                  <p>接下来会问ISP（移动电信之类）是否屏蔽了互联网接入，因为有 GFW 的存在，我们要选择“yes”。</p>
+                  <p></p>
+                  <div class="media media-element-container media-original_image">
+                    <div class="file file-image file-image-jpeg" id="file-586">
+                      <h2 class="element-invisible" id="jpg---1"> <a href="/file/586"> 2.jpg </a> </h2>
+                      <div class="content">
+<img alt="" class="adaptive-image" height="404" src="https://pao-pao.net/sites/pao-pao.net/files/styles/adaptive_image/adaptive-image/public/2_2.jpg?itok=50MG97ZB" title="" typeof="foaf:Image" width="449" />
+                      </div>
+                    </div>
+                  </div>
+                  <p>下面到了最关键的一步，TBB 4.0 最大的更新就是采用了 <span> meek </span> 插件的混淆机制（如果想了解更多关于 meek 的细节请点击 <a href="https://trac.torproject.org/projects/tor/wiki/doc/meek" rel="nofollow"> <span> 这里 </span> </a> ）因为GFW把Tor绝大部分的节点都屏蔽掉了，因此在以前的版本中，Tor要么需要费力的设置网桥，要么就必须要搭配其他的翻墙工具进行双重代理才可以使用。 <br /> <br /> 而这一次 TBB 利用微软的 <a href="https://webmail.rnw.nl/owa/redir.aspx?C=DAKh5pdatkWbkB2izdzkVsBI3zA7wtEIVOavRDxjyWlKowDicaYjzCGWdbf9rhBjXumKXOr12Wg.&amp;URL=http%3a%2f%2fazure.microsoft.com%2f" rel="nofollow" target="_blank"> <span> Azure </span> </a> 和Amazon的VPS或ETC2搭建了代理平台，并对流量进行了混淆加密使得GFW无法识别。 <br /> <br /> 因此选择第一项“需要桥接”，然后选择“ <span> meek-amazon </span> ”或者“ <span> meek-azure </span> ”即可（google服务器已经在今年年中被GFW墙掉，而微软和亚马逊的服务器暂时还不会被屏蔽，否则对国内影响太大）</p>
+                  <p></p>
+                  <div class="media media-element-container media-original_image">
+                    <div class="file file-image file-image-jpeg" id="file-587">
+                      <h2 class="element-invisible" id="jpg---2"> <a href="/file/587"> 3.jpg </a> </h2>
+                      <div class="content">
+<img alt="" class="adaptive-image" height="428" src="https://pao-pao.net/sites/pao-pao.net/files/styles/adaptive_image/adaptive-image/public/3_1.jpg?itok=kYl6HYbr" title="" typeof="foaf:Image" width="474" />
+                      </div>
+                    </div>
+                  </div>
+                  <p>点击“Connect“，系统开始连接，第一次连接需要的时间稍长一些，最后弹出如下图中的浏览器的界面就表示成功了。</p>
+                  <p></p>
+                  <div class="media media-element-container media-original_image">
+                    <div class="file file-image file-image-jpeg" id="file-588">
+                      <h2 class="element-invisible" id="jpg---3"> <a href="/file/588"> 4.jpg </a> </h2>
+                      <div class="content">
+<img alt="" class="adaptive-image" height="343" src="https://pao-pao.net/sites/pao-pao.net/files/styles/adaptive_image/adaptive-image/public/4.jpg?itok=qZItiQnq" title="" typeof="foaf:Image" width="550" />
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="section-1"> <span> 深网深几许 </span> </h2>
+                  <p>既然已经通过 Tor 打开了“深网”的大门，那么让我们就将其一窥究竟，因为广大的深网网站都无法被搜索引擎收录，所以我们必须要找到一个收录各类深网网站的索引站点，“ <span> Hidden Wiki </span> ”就是其中较为出名的一个，它收录了各类深网网站地址。 <br /> <br /> 将下面的链接地址复制到 Tor 浏览器当中： <br /> <br /> <a href="http://zqktlwi4fecvo6ri.onion/wiki/" rel="nofollow"> <span> http://zqktlwi4fecvo6ri.onion/wiki/ </span> </a> <br /> <br /> 如果这个网站无法访问，还可以浏览它的镜像网站：</p>
+                  <p><a href="http://torlinkbgs6aabns.onion/" rel="nofollow"> <span> http://torlinkbgs6aabns.onion/ </span> </a> <br /> <a href="http://wikitjerrta4qgz4.onion/" rel="nofollow"> <span> http://wikitjerrta4qgz4.onion/ </span> </a> <br /> <a href="http://jh32yv5zgayyyts3.onion/" rel="nofollow"> <span> http://jh32yv5zgayyyts3.onion/ </span> </a> <br /> <br /> Hiddeen Wiki收录了各类网站，我们打开两个网站为例（ <strong>
+           以下网站都需要用 Tor 打开
+          </strong> ）：譬如， <a href="http://tormartfhkpdzaq6.onion/" rel="nofollow"> 这个网站 </a> 售卖枪支弹药，一只 <span> 沙漠之鹰 </span> 手枪公开叫卖1.836BTC，因为 <span> 比特币 </span> （BTC）有着无法查询交易记录的优势，因此深海网站多用它作为交易工具，按照最近的BTC对美元的汇率，应该在700美元左右，而网站上标准的市场价格在1500美元左右，看来网销渠道的优势在黑市上继续得到发扬。除了武器以外，通过深海网站贩卖毒品和违禁药物也得到广泛运用，号称有“ <span> 毒品亚马逊 </span> “之称的 <span> Silk Road </span> （丝绸之路）在查禁前每年的销售额已经突破3亿美元，通过深海网站订货，然后使用快递发货已经成为了美国毒品贩卖的新渠道。而 <a href="http://drugs6atkjvtk64f.onion/" rel="nofollow"> 这个网站 </a> 站上明目张胆的公开售卖各类高纯度可卡因，冰毒和致幻药物。通过wiki还可以找到办理假证的，雇佣杀手的，销赃的（主要是Iphone手机），兑换比特币的（BTC），还有各种成人色情网站，就不在这里一一列举了。 <br /> <br /> 同时还发现，深网网站开始向大陆渗透，其中就发现了一个 <a href="http://22u75kqyl666joi2.onion/forum.php" rel="nofollow"> 中文深网站点 </a> 号称是中国深网第一站，上面架设了一个论坛，不过还没有发布任何有效信息，有兴趣的朋友可以访问。 <br /> <br /> 最后要声明的是，以上内容是让各位认识“深网”和 Tor 技术，本人是坚决反对以上非法网站存在的，也请各位读者谨慎使用，不要将 Tor 技术用于非法途径。</p>
+                  <h2 id="tor-2"> <strong>
+           <span>
+            用Tor翻墙
+           </span>
+          </strong> </h2>
+                  <p>其实，作为通过 TBB 我们不仅能够访问冰下下隐藏的“深网”，我们也轻松的跨越了GFW，但是由于 TBB 4.0 需要通过Amazon或Azure的服务器翻墙再通过 Tor的三个中继节点层层加密，导致的一个结果就是访问速度巨慢无比，严重影响使用体验。 <br /> <br /> 而且 meek 这个新推出的流量混淆插件，是不是也会像它的前任 Obfs3 一样，最后也被 GFW 屏蔽掉都不得而知。所以先利用 Tor 三重加密隐匿身份，而与其他快速翻墙工具搭配形成双重代理无疑是更好的选择，可以更流畅的访问“深网”，同时安全性能更高，具体方法如下： <br /> <br /> 在上一个章节中的第二个设置界面，当系统询问“主机是否需要代理才能访问Internet？”时，选择“Yes”</p>
+                  <p></p>
+                  <div class="media media-element-container media-original_image">
+                    <div class="file file-image file-image-jpeg" id="file-590">
+                      <h2 class="element-invisible" id="evowajpg---3"> <a href="/file/590"> ev.owa_.jpg </a> </h2>
+                      <div class="content">
+<img alt="" class="adaptive-image" height="465" src="https://pao-pao.net/sites/pao-pao.net/files/styles/adaptive_image/adaptive-image/public/ev.owa__9.jpg?itok=CgP5ZO5v" title="" typeof="foaf:Image" width="515" />
+                      </div>
+                    </div>
+                  </div>
+                  <p>接着就在下面界面填写设置代理的转发端口，例如，我们可以用 Goagent作为前端代理，Goagent的介绍可以参见《 <a href="https://pao-pao.net/article/111" rel="nofollow"> <span> 翻墙七种武器之长生剑 </span> </a> 》。打开客户端后，我们只需要将代理类型设置为“HTTP/HTTPS”，将地址设置为“127.0.0.1”，端口号设置为“8087”，同理我们还可以设置其他 Socks 类代理等等。</p>
+                  <p></p>
+                  <div class="media media-element-container media-original_image">
+                    <div class="file file-image file-image-jpeg" id="file-591">
+                      <h2 class="element-invisible" id="jpg---4"> <a href="/file/591"> 1.jpg </a> </h2>
+                      <div class="content">
+<img alt="" class="adaptive-image" height="476" src="https://pao-pao.net/sites/pao-pao.net/files/styles/adaptive_image/adaptive-image/public/1_4.jpg?itok=k9F_m3mV" title="" typeof="foaf:Image" width="529" />
+                      </div>
+                    </div>
+                  </div>
+                  <p>另外也可以用 VPN 作为前端代理，例如使用免费的 VPNgate ，具体可以参见 <a href="https://pao-pao.net/article/75" rel="nofollow"> <span> 翻墙七种武器之离别钩:VPN Gate </span> </a> ，也可以使用其他付费的翻墙工具获得更好的使用体验。 <br /> <br /> 总之，TBB 4.0 的发布为广大网友又增加了一条翻墙的途径，meek 流量混淆插件的使用使得这个老牌的翻墙工具重新焕发青春，也为GFW墙后的网友安全使用网络提升了保障，在后续的文章里我们还将陆续介绍 Tor 的网络安全应用。</p>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-service-links-displays-group field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="service-links">
+<a class="service-links-twitter" href="https://twitter.com/share?url=https%3A//pao-pao.net/article/230&amp;text=Tor%E2%80%9C%E9%87%8D%E8%BF%94%E2%80%9D%E4%B8%AD%E5%9B%BD%EF%BC%9A%E7%BF%BB%E5%A2%99%E4%B8%8E%E8%BF%9B%E5%85%A5%E2%80%9C%E6%B7%B1%E7%BD%91%E2%80%9D" rel="nofollow" title="Share this on Twitter"> <img alt="Twitter logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/twitter.png" typeof="foaf:Image" /> </a> <a class="service-links-facebook" href="https://www.facebook.com/sharer.php?u=https%3A//pao-pao.net/article/230&amp;t=Tor%E2%80%9C%E9%87%8D%E8%BF%94%E2%80%9D%E4%B8%AD%E5%9B%BD%EF%BC%9A%E7%BF%BB%E5%A2%99%E4%B8%8E%E8%BF%9B%E5%85%A5%E2%80%9C%E6%B7%B1%E7%BD%91%E2%80%9D" rel="nofollow" title="Share on Facebook"> <img alt="Facebook logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/facebook.png" typeof="foaf:Image" /> </a> <a class="service-links-google" href="https://www.google.com/bookmarks/mark?op=add&amp;bkmk=https%3A//pao-pao.net/article/230&amp;title=Tor%E2%80%9C%E9%87%8D%E8%BF%94%E2%80%9D%E4%B8%AD%E5%9B%BD%EF%BC%9A%E7%BF%BB%E5%A2%99%E4%B8%8E%E8%BF%9B%E5%85%A5%E2%80%9C%E6%B7%B1%E7%BD%91%E2%80%9D" rel="nofollow" title="Bookmark this post on Google"> <img alt="谷歌 logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/google.png" typeof="foaf:Image" /> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block block-views related" id="block-views-articles-related-block-1">
+            <h2 id="section-2"> 您可能感兴趣的文章 </h2>
+            <div class="content">
+              <div class="view view-articles-related view-id-articles_related view-display-id-block_1 related promoted view-dom-id-2e8a7ce1dca15efa86746da82c6f43f4">
+                <div class="view-content">
+                  <div class="views-row views-row-1 views-row-odd views-row-first">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/111"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/jian.jpg?itok=d7PVPwoT" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-3"> <a href="/article/111"> 翻墙七种武器之长生剑 </a>                                 <h2 id="section-4"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-2 views-row-even">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/277"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/2772087916_feeda3cee8_z.jpg?itok=wtO5uuSA" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-5"> <a href="/article/277"> 致某字幕网站的倒下： 原来，我们和上一代人并没有什么不同 </a>                                 <h2 id="section-6"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-3 views-row-odd">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/218"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/wen_tou_tu_lai_zi_wei_ji_bai_ke_.jpg?itok=dfObEan_" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-7"> <a href="/article/218"> 文艺界的“一国两制” </a>                                 <h2 id="section-8"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-4 views-row-even views-row-last">
+                    <div class="ds-2col node node-pao-pao-article node-promoted node-sticky view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/1012"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/wechatimg1424_0.jpeg?itok=oaO5NU8f" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-9"> <a href="/article/1012"> 结束毫无意义的口水和拉锯战，这里是你应该知道的事——为自由而战（四） </a>                                 <h2 id="section-10"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.block -->
+          <ul class="links inline">
+            <li class="comment-add first last active"><a class="active" href="/article/230#comment-form" title="分享您有关本文的看法与观点。"> 冒个泡吧！ </a></li>
+          </ul>
+          <div class="comment-wrapper" id="comments">
+            <h2 class="title" id="section-11"> 评论 </h2>
+ <a id="comment-13729">
+      </a>             <div about="/comment/13729#comment-13729" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> RebVoks (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-05-31T10:54:53+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期五, 05/31/2019 - 10:54 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/13729#comment-13729" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="viagra-billig-per-nachnahme-kelideodo--"> <a class="permalink" href="/comment/13729#comment-13729" rel="bookmark"> Viagra Billig Per Nachnahme KelIdeodo </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/230"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Comprare Cialis O Viagra &lt;a href= <a href="http://cialicheap.com&gt;cialis"> http://cialicheap.com&gt;cialis </a> prices&lt;/a&gt; Pharmacie En Ligne Levitra Cialis Contrassegno Amoxicillin With Aspirin Buy</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/230/13729"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+            <div class="indented">
+<a id="comment-13849">
+       </a>               <div about="/comment/13849#comment-13849" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+                <div class="attribution">
+                  <div class="comment-submitted">
+                    <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Anonymous (未验证) </span> </span></p>
+                    <p class="comment-time"><span content="2019-05-31T12:06:13+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期五, 05/31/2019 - 12:06 </span></p>
+                    <p class="comment-permalink"><a class="permalink" href="/comment/13849#comment-13849" rel="bookmark"> 永久连接 </a></p>
+                  </div>
+                </div>
+                <div class="comment-text">
+                  <div class="comment-arrow"></div>
+                  <h3 datatype="" property="dc:title" id="section-12"> <a class="permalink" href="/comment/13849#comment-13849" rel="bookmark"> 冒个泡吧！ | 泡泡 </a> </h3>
+                  <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/230"> </span> <span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/comment/13729#comment-13729"> </span>                     <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                      <div class="field-items">
+                        <div class="field-item even" property="content:encoded">
+                          <p>I have read so many articles regarding the blogger lovers however this post is genuinely a pleasant article, keep it up.</p>
+                          <p>Feel free to visit my weblog gamefly free trial - <a href="https://tinyurl.com/y4j9ggho"> http://tinyurl.com/y4j9ggho </a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.content -->
+                  <ul class="links inline">
+                    <li class="comment-reply first last"><a href="/comment/reply/230/13849"> 回复 </a></li>
+                  </ul>
+                </div>
+                <!-- /.comment-text -->
+              </div>
+            </div>
+ <a id="comment-21427">
+      </a>             <div about="/comment/21427#comment-21427" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Randveifs (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-03T12:16:21+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期一, 06/03/2019 - 12:16 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/21427#comment-21427" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="where-can-you-buy-levitra-the-cheapest-lestres--"> <a class="permalink" href="/comment/21427#comment-21427" rel="bookmark"> Where Can You Buy Levitra The Cheapest LesTreS </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/230"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Viagra Postlagernd Bestellen Acheter Le Levitra &lt;a href= <a href="http://bmpha.com&gt;forum"> http://bmpha.com&gt;forum </a> levitra en belgique&lt;/a&gt; Severe Penicillin Allergy Touching Amoxicillin</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/230/21427"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-25192">
+      </a>             <div about="/comment/25192#comment-25192" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> RebVoks (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-05T00:47:40+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期三, 06/05/2019 - 00:47 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/25192#comment-25192" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="buy-clomid-safely-online-uk-paypal-kelideodo--"> <a class="permalink" href="/comment/25192#comment-25192" rel="bookmark"> Buy Clomid Safely Online Uk Paypal KelIdeodo </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/230"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Buy Levothyroxine 100mg Cialis Es Para Mujeres Viagra Y El Embarazo &lt;a href= <a href="http://tadalaf20mg.com&gt;generic"> http://tadalaf20mg.com&gt;generic </a> cialis canada&lt;/a&gt; Que Significa Propecia</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/230/25192"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+            <h2 class="title comment-form" id="section-13"> 冒个泡吧！ </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.block -->
+  </div>
+  <!-- /.region -->
+</section>
+
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#泡泡 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2018-05-30/%E4%BA%92%E8%81%94%E7%BD%91%E8%B6%8B%E5%8A%BF%E6%8A%A5%E5%91%8A2018-%E4%BE%9D%E6%97%A7%E5%91%88%E7%8E%B0%E4%B8%8D%E8%89%AF%E8%B6%8B%E5%8A%BF-%E8%BF%99%E9%87%8C%E6%98%AF%E5%85%B7%E4%BD%93%E5%88%86%E6%9E%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-02-04/%E6%B0%91%E6%97%8F%E7%9F%9B%E7%9B%BE%E5%BA%94%E7%94%B1%E5%81%9C%E6%AD%A2%E4%BF%A1%E6%81%AF%E9%9A%94%E7%A6%BB%E5%BC%80%E5%A7%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2014-10-24</time>
+        <a href="https://nodebe4.github.io/oped2/2014-10-24/%E6%9F%A5%E7%A6%81%E7%9B%AE%E5%BD%95-%E5%BE%81%E9%9B%862015%E5%B9%B4%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E5%A5%96%E6%8F%90%E5%90%8D/">
+          “查禁目录”征集2015年言论自由奖提名
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-10-24</time>
+        <a href="https://nodebe4.github.io/oped2/2014-10-24/Facebook%E5%92%8C%E4%B8%AD%E5%9B%BD%E4%BA%B2%E5%AF%86%E6%8E%A5%E8%A7%A6/">
+          Facebook和中国亲密接触
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-10-22</time>
+        <a href="https://nodebe4.github.io/oped2/2014-10-22/%E6%96%B9%E8%88%9F%E5%AD%90%E9%A9%B3%E5%91%A8%E5%B0%8F%E5%B9%B3%E9%81%AD%E5%85%A8%E7%BD%91%E5%B0%81%E6%9D%80-%E5%BE%AE%E4%BF%A1%E7%BE%A4%E8%81%8A%E7%8E%B0%E7%9B%91%E6%8E%A7/">
+          方舟子驳周小平遭全网封杀 微信群聊现监控
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-10-22</time>
+        <a href="https://nodebe4.github.io/oped2/2014-10-22/%E6%94%BF%E5%BA%9C%E5%B7%B2%E6%88%90%E4%B8%AD%E5%9B%BD%E7%A7%91%E6%8A%80%E4%BC%81%E4%B8%9A%E8%B5%B0%E5%90%91%E6%B5%B7%E5%8C%96%E7%9A%84%E9%98%BB%E5%8A%9B/">
+          政府已成中国科技企业走向海化的阻力
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2014-10-22/%E6%96%B9%E8%88%9F%E5%AD%90%E9%A9%B3%E5%91%A8%E5%B0%8F%E5%B9%B3%E9%81%AD%E5%85%A8%E7%BD%91%E5%B0%81%E6%9D%80-%E5%BE%AE%E4%BF%A1%E7%BE%A4%E8%81%8A%E7%8E%B0%E7%9B%91%E6%8E%A7/">
+            前一篇：方舟子驳周小平遭全网封杀 微信群聊现监控
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2014-10-24/Facebook%E5%92%8C%E4%B8%AD%E5%9B%BD%E4%BA%B2%E5%AF%86%E6%8E%A5%E8%A7%A6/">
+            後一篇：Facebook和中国亲密接触
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2014-10-22/%E6%96%B9%E8%88%9F%E5%AD%90%E9%A9%B3%E5%91%A8%E5%B0%8F%E5%B9%B3%E9%81%AD%E5%85%A8%E7%BD%91%E5%B0%81%E6%9D%80-%E5%BE%AE%E4%BF%A1%E7%BE%A4%E8%81%8A%E7%8E%B0%E7%9B%91%E6%8E%A7/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2014-10-24/Facebook%E5%92%8C%E4%B8%AD%E5%9B%BD%E4%BA%B2%E5%AF%86%E6%8E%A5%E8%A7%A6/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2014-10-24/Facebook%E5%92%8C%E4%B8%AD%E5%9B%BD%E4%BA%B2%E5%AF%86%E6%8E%A5%E8%A7%A6/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2014-10-22/%E6%96%B9%E8%88%9F%E5%AD%90%E9%A9%B3%E5%91%A8%E5%B0%8F%E5%B9%B3%E9%81%AD%E5%85%A8%E7%BD%91%E5%B0%81%E6%9D%80-%E5%BE%AE%E4%BF%A1%E7%BE%A4%E8%81%8A%E7%8E%B0%E7%9B%91%E6%8E%A7/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2014-10-22/%E6%96%B9%E8%88%9F%E5%AD%90%E9%A9%B3%E5%91%A8%E5%B0%8F%E5%B9%B3%E9%81%AD%E5%85%A8%E7%BD%91%E5%B0%81%E6%9D%80-%E5%BE%AE%E4%BF%A1%E7%BE%A4%E8%81%8A%E7%8E%B0%E7%9B%91%E6%8E%A7/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2014-10-24/Facebook%E5%92%8C%E4%B8%AD%E5%9B%BD%E4%BA%B2%E5%AF%86%E6%8E%A5%E8%A7%A6/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<泡泡>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2014-10-24/Facebook%E5%92%8C%E4%B8%AD%E5%9B%BD%E4%BA%B2%E5%AF%86%E6%8E%A5%E8%A7%A6/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<泡泡>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2014-10-22/%E6%96%B9%E8%88%9F%E5%AD%90%E9%A9%B3%E5%91%A8%E5%B0%8F%E5%B9%B3%E9%81%AD%E5%85%A8%E7%BD%91%E5%B0%81%E6%9D%80-%E5%BE%AE%E4%BF%A1%E7%BE%A4%E8%81%8A%E7%8E%B0%E7%9B%91%E6%8E%A7/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

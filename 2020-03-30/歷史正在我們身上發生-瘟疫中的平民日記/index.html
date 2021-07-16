@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>歷史正在我們身上發生：瘟疫中的平民日記 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+歷史正在我們身上發生：瘟疫中的平民日記
+——
+" />
+    <meta property="og:description" content="
+歷史正在我們身上發生：瘟疫中的平民日記
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="歷史正在我們身上發生：瘟疫中的平民日記" />
+    <meta property="twitter:title" content="歷史正在我們身上發生：瘟疫中的平民日記" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40az%2F%2525E6%2525AD%2525B7%2525E5%25258F%2525B2%2525E6%2525AD%2525A3%2525E5%25259C%2525A8%2525E6%252588%252591%2525E5%252580%252591%2525E8%2525BA%2525AB%2525E4%2525B8%25258A%2525E7%252599%2525BC%2525E7%252594%25259F-%2525E7%252598%25259F%2525E7%252596%2525AB%2525E4%2525B8%2525AD%2525E7%25259A%252584%2525E5%2525B9%2525B3%2525E6%2525B0%252591%2525E6%252597%2525A5%2525E8%2525A8%252598-bafyreiaxesdt45qrxmn5qainq7ib2kmarutdpgyuht6mjjk75hf5j3zqka" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@az/%25E6%25AD%25B7%25E5%258F%25B2%25E6%25AD%25A3%25E5%259C%25A8%25E6%2588%2591%25E5%2580%2591%25E8%25BA%25AB%25E4%25B8%258A%25E7%2599%25BC%25E7%2594%259F-%25E7%2598%259F%25E7%2596%25AB%25E4%25B8%25AD%25E7%259A%2584%25E5%25B9%25B3%25E6%25B0%2591%25E6%2597%25A5%25E8%25A8%2598-bafyreiaxesdt45qrxmn5qainq7ib2kmarutdpgyuht6mjjk75hf5j3zqka" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@az/%25E6%25AD%25B7%25E5%258F%25B2%25E6%25AD%25A3%25E5%259C%25A8%25E6%2588%2591%25E5%2580%2591%25E8%25BA%25AB%25E4%25B8%258A%25E7%2599%25BC%25E7%2594%259F-%25E7%2598%259F%25E7%2596%25AB%25E4%25B8%25AD%25E7%259A%2584%25E5%25B9%25B3%25E6%25B0%2591%25E6%2597%25A5%25E8%25A8%2598-bafyreiaxesdt45qrxmn5qainq7ib2kmarutdpgyuht6mjjk75hf5j3zqka&text=歷史正在我們身上發生：瘟疫中的平民日記&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@az/%25E6%25AD%25B7%25E5%258F%25B2%25E6%25AD%25A3%25E5%259C%25A8%25E6%2588%2591%25E5%2580%2591%25E8%25BA%25AB%25E4%25B8%258A%25E7%2599%25BC%25E7%2594%259F-%25E7%2598%259F%25E7%2596%25AB%25E4%25B8%25AD%25E7%259A%2584%25E5%25B9%25B3%25E6%25B0%2591%25E6%2597%25A5%25E8%25A8%2598-bafyreiaxesdt45qrxmn5qainq7ib2kmarutdpgyuht6mjjk75hf5j3zqka&title=歷史正在我們身上發生：瘟疫中的平民日記" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@az/%25E6%25AD%25B7%25E5%258F%25B2%25E6%25AD%25A3%25E5%259C%25A8%25E6%2588%2591%25E5%2580%2591%25E8%25BA%25AB%25E4%25B8%258A%25E7%2599%25BC%25E7%2594%259F-%25E7%2598%259F%25E7%2596%25AB%25E4%25B8%25AD%25E7%259A%2584%25E5%25B9%25B3%25E6%25B0%2591%25E6%2597%25A5%25E8%25A8%2598-bafyreiaxesdt45qrxmn5qainq7ib2kmarutdpgyuht6mjjk75hf5j3zqka&title=歷史正在我們身上發生：瘟疫中的平民日記" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=歷史正在我們身上發生：瘟疫中的平民日記&body=
+歷史正在我們身上發生：瘟疫中的平民日記
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@az/%25E6%25AD%25B7%25E5%258F%25B2%25E6%25AD%25A3%25E5%259C%25A8%25E6%2588%2591%25E5%2580%2591%25E8%25BA%25AB%25E4%25B8%258A%25E7%2599%25BC%25E7%2594%259F-%25E7%2598%259F%25E7%2596%25AB%25E4%25B8%25AD%25E7%259A%2584%25E5%25B9%25B3%25E6%25B0%2591%25E6%2597%25A5%25E8%25A8%2598-bafyreiaxesdt45qrxmn5qainq7ib2kmarutdpgyuht6mjjk75hf5j3zqka" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@az/%25E6%25AD%25B7%25E5%258F%25B2%25E6%25AD%25A3%25E5%259C%25A8%25E6%2588%2591%25E5%2580%2591%25E8%25BA%25AB%25E4%25B8%258A%25E7%2599%25BC%25E7%2594%259F-%25E7%2598%259F%25E7%2596%25AB%25E4%25B8%25AD%25E7%259A%2584%25E5%25B9%25B3%25E6%25B0%2591%25E6%2597%25A5%25E8%25A8%2598-bafyreiaxesdt45qrxmn5qainq7ib2kmarutdpgyuht6mjjk75hf5j3zqka&title=歷史正在我們身上發生：瘟疫中的平民日記&caption=
+歷史正在我們身上發生：瘟疫中的平民日記
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=歷史正在我們身上發生：瘟疫中的平民日記&url=https://matters.news/@az/%25E6%25AD%25B7%25E5%258F%25B2%25E6%25AD%25A3%25E5%259C%25A8%25E6%2588%2591%25E5%2580%2591%25E8%25BA%25AB%25E4%25B8%258A%25E7%2599%25BC%25E7%2594%259F-%25E7%2598%259F%25E7%2596%25AB%25E4%25B8%25AD%25E7%259A%2584%25E5%25B9%25B3%25E6%25B0%2591%25E6%2597%25A5%25E8%25A8%2598-bafyreiaxesdt45qrxmn5qainq7ib2kmarutdpgyuht6mjjk75hf5j3zqka" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>歷史正在我們身上發生：瘟疫中的平民日記</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-03-30
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 張潔平</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@az/%25E6%25AD%25B7%25E5%258F%25B2%25E6%25AD%25A3%25E5%259C%25A8%25E6%2588%2591%25E5%2580%2591%25E8%25BA%25AB%25E4%25B8%258A%25E7%2599%25BC%25E7%2594%259F-%25E7%2598%259F%25E7%2596%25AB%25E4%25B8%25AD%25E7%259A%2584%25E5%25B9%25B3%25E6%25B0%2591%25E6%2597%25A5%25E8%25A8%2598-bafyreiaxesdt45qrxmn5qainq7ib2kmarutdpgyuht6mjjk75hf5j3zqka" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1585553071000-->
+<p><a href="https://matters.news/@az/%25E6%25AD%25B7%25E5%258F%25B2%25E6%25AD%25A3%25E5%259C%25A8%25E6%2588%2591%25E5%2580%2591%25E8%25BA%25AB%25E4%25B8%258A%25E7%2599%25BC%25E7%2594%259F-%25E7%2598%259F%25E7%2596%25AB%25E4%25B8%25AD%25E7%259A%2584%25E5%25B9%25B3%25E6%25B0%2591%25E6%2597%25A5%25E8%25A8%2598-bafyreiaxesdt45qrxmn5qainq7ib2kmarutdpgyuht6mjjk75hf5j3zqka">歷史正在我們身上發生：瘟疫中的平民日記</a>
+——</p>
+
+<div>
+  <h1 id="section"><br /></h1>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/09ec31c5-feb8-45e6-9860-42882299021e.webp" onerror="this.srcset='https://assets.matters.news/embed/09ec31c5-feb8-45e6-9860-42882299021e.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/09ec31c5-feb8-45e6-9860-42882299021e.jpeg" onerror="this.srcset='https://assets.matters.news/embed/09ec31c5-feb8-45e6-9860-42882299021e.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/09ec31c5-feb8-45e6-9860-42882299021e.webp" /> <img src="https://assets.matters.news/embed/09ec31c5-feb8-45e6-9860-42882299021e.jpeg" srcset="https://assets.matters.news/processed/540w/embed/09ec31c5-feb8-45e6-9860-42882299021e.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>紐約時報攝影作品《The Great Empty》</span>
+    </figcaption>
+  </figure>
+  <p>現在我們知道了，疫病並不是災難的全部，只是災難的引擎。COVID-19病毒在全球烈性蔓延，正在推倒全球化時代最璀璨、也最長的一副多米諾骨牌。</p>
+  <p>這副骨牌，原本是經歷了兩次世界大戰之後，人類在難得和平的20世紀後半葉交出的成績單——推動全球化的基礎設施：高效率的國際化大都市、24小時不停歇的交通、商貿與資本流動網絡、二戰後建立起的諸多國際組織、世界主義的理念與教育體系⋯⋯而這一基礎設施，並沒有辦法阻擋病毒從制度的最薄弱環節失控爆發，反而在失控之後，令它以空前的速度在全球蔓延，威脅數以百萬計的生命，逼迫生活、生產、經貿接連停擺。</p>
+  <p>這一鏈條連番倒下的終點在哪裡，誰也不知道。但倒塌過程中的人道悲劇、集體恐慌、經濟衰退、仇恨與集權的抬頭，每個人都正在經驗，也都正在述說。</p>
+  <p>這也是人類歷史上第一次社群網路時代的全球性瘟疫。</p>
+  <p>現實越令人孤獨、隔絕，令人感到生活破碎失去控制，在網路的時空裡，人們彼此分享與連結的願望就越強，透過隻言片語的表達找回掌控感的願望也越強。</p>
+  <p>隨著全球感染、死亡的數字進入可怕的指數級增長，許多人一生也未曾遭遇過的場景在短時間內同時發生：街道死寂、城市停擺、物資匱乏、社交隔離、醫院如戰場、殯儀館與墓地不夠用。它們好像末日電影般失真，但又如此真實。就像突然降臨的死亡。因為咳嗽送院的人，想不到他們的離世倉促到無法跟任何人說再見。在隔離病房故去，見不到與家人的最後一面，也來不及有哀悼的儀式。當哀悼無法發生，死亡本身變得非常失真。於是，人們在網絡上，記下親友曾存在於這世界的痕跡。有些是生前的求救，有些是死後的追悼，有些則變成了巨大的公共事件，比如年輕的武漢醫生李文亮。</p>
+  <p>疫情中，我讀了許多分析與報導文章，它們從病毒的科學介紹、全球公共衛生體系的總結、不同國家的制度特徵與應對策略分析、還有醫院這樣的前線報導等各個角度幫助我們理解眼前正在發生的歷史。但讀的最多的，還是普通人的日記。</p>
+  <p>有些是普通人在危機時刻的樸素記錄：今天自己或家人感染了，症狀是什麼，檢測過程怎麼樣，去哪裡求救，如何入院，經歷了哪些困難，醫院的景象如何，病情如何發展，能否得到救治，什麼樣的救治。有些是被迫隔離期間的日記見聞：每天怎麼照料自己和家人的生活，做哪些事來維持日常，如何學習或者恢復了做自己的一日三餐，每天看到的新聞，隔離中朋友們的消息，怎麼去消化這些信息，理解自己的情緒和思考。有些是對自己所在地區的「抗疫」戰事的觀察，政府又出了什麼樣的新政策，生活中對這些政策的實際體驗如何。</p>
+  <p>常常在想，為什麼這些記錄特別給人力量。許多「資訊」我已經知道，「道理」也似乎懂得，但仍然著迷地在人們的日記中再讀一遍，讀它們變成活的「生活」的樣子，讀人們怎樣活出這些真實的樣子，更重要的是，讀人們在生活的艱困之外，仍然冷靜審視自己所經驗的樣子。在社群網路上，那些雪片一樣的記錄，有些靈光一現，記錄下渺小生命的關鍵章節；有些堅持不懈，以記錄作為一種自覺，去給自己正在經歷的一切，賦予意義。</p>
+  <p>獨居在武漢的女孩郭晶，在封城開始之後，經歷了物資搶購、死亡陰影，決定寫日記，給停頓下來的時間和空間一個自己的秩序。她幾乎每天都寫，她說身在其中，「沒法用一種統一的心情來寫日記。世界如此荒誕，我只能一一記錄下這些荒誕。」她說，「封鎖讓人們的生活進入原子化的狀態，失去和他人的聯繫。我要在這座孤城中重新尋找我的位置。」她說希望自己以寫作為行動，成為一個聯結者。於是在短暫的可以出門的時間，她盡力去找清潔工人聊天，記下這城市停頓之後，維持它最基本運作的底層工作者，都經歷了什麼。她在微博和<a href="https://matters.news/@GuoJing" target="_blank">Matters連載</a>，日積跬步，成了厚厚一本《武漢封城日記》，即將在聯經出版。</p>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/4d1c1a48-2dc0-4729-a23d-97ae893c1a2a.webp" onerror="this.srcset='https://assets.matters.news/embed/4d1c1a48-2dc0-4729-a23d-97ae893c1a2a.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/4d1c1a48-2dc0-4729-a23d-97ae893c1a2a.jpeg" onerror="this.srcset='https://assets.matters.news/embed/4d1c1a48-2dc0-4729-a23d-97ae893c1a2a.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/4d1c1a48-2dc0-4729-a23d-97ae893c1a2a.webp" /> <img src="https://assets.matters.news/embed/4d1c1a48-2dc0-4729-a23d-97ae893c1a2a.jpeg" srcset="https://assets.matters.news/processed/540w/embed/4d1c1a48-2dc0-4729-a23d-97ae893c1a2a.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>來自郭晶日記，在武漢理髮的人</span>
+    </figcaption>
+  </figure>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/a2230711-52c1-476c-bd29-bdc3dab599a8.webp" onerror="this.srcset='https://assets.matters.news/embed/a2230711-52c1-476c-bd29-bdc3dab599a8.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/a2230711-52c1-476c-bd29-bdc3dab599a8.jpeg" onerror="this.srcset='https://assets.matters.news/embed/a2230711-52c1-476c-bd29-bdc3dab599a8.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/a2230711-52c1-476c-bd29-bdc3dab599a8.webp" /> <img src="https://assets.matters.news/embed/a2230711-52c1-476c-bd29-bdc3dab599a8.jpeg" srcset="https://assets.matters.news/processed/540w/embed/a2230711-52c1-476c-bd29-bdc3dab599a8.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>聯經出版的《武漢封城日記》</span>
+    </figcaption>
+  </figure>
+  <p>與德國籍的太太和年幼的孩子一起生活在武漢的曉宇，記錄下一個跨國家庭，在跨國病毒衝擊之下的荒誕與日常（微信公號世風，id：world-views）。一開始，他們商定讓妻子帶著孩子，跟隨撤僑的飛機離開中國，而曉宇本人留在武漢，與父母相伴。漫長的家庭分離與等待之後，武漢的疫情得到控制，終於將要解封時，病毒卻已經在全世界蔓延，包括他曾希望妻子與孩子得到保護的歐洲。他寫：「走出武漢，要面對世界的荒蕪。⋯⋯這一場始於武漢的危機，擴散到了世界，又有多少個武漢出現了。」在德國，「她面對新一輪的居家隔離，給巴伐利亞帶去『武漢經驗』，熟練地開始備貨。但也不是所有的經驗都能移花接木。」在中國，「越是到了盡頭，人們的情緒越是急不可耐，多一秒也沒法等下去。疫情演變成一場清算。我們在此清算，長久以來的權力，盛行已久的觀念。清算家庭關係，距離和溫情，過往和餘生。」</p>
+  <p>在疫情中目睹城市冰封、親人病逝的艾曉明，以網絡上那些呼喊的碎片入詩，寫下<a href="https://matters.news/@tianguowawa/%E8%89%BE%E6%9B%89%E6%98%8E%E6%AD%A6%E6%BC%A2%E6%97%A5%E8%A8%986-%E8%B5%B0%E4%BA%86-bafyreib2hsqbystmtgp4ywjmkg2sxys7e4oybawswqgbs5ue2uy72q5poq" target="_blank">普通人的告別</a>，也寫下自己的堅持：「就算我們所居之城已經是一艘泰坦尼克號，然而在那艘船上，也曾有樂隊堅守， 有互助禮讓，有地老天荒的愛與永別。而我寫下的，不過是一個家庭主婦的零星瑣碎， 既擋不住病毒也不能成為瘟疫時期的喪事典範。我想做的，只是在這段乍暖還寒的日子裏，保守住自己的人性。方生方死，生死哪裏有明確的界限，親情又豈能被死亡阻隔。人活一天，也要將理性和善良延續一天。 平安的安，也是安之若素。」</p>
+  <p>世界各地的留學生、華人移民，在遠距目睹武漢的慘劇，進而親身在地體驗到恐慌來襲時，也寫下了他們在台灣、美國、英國、加拿大、義大利、德國、新加坡等地觀察和親歷的一切。在美國Google工作的工程師記錄下他看著疫情跨越大洋逼近的感受：「我從未如此真切地感受到『地球村』、『世界命運共同體』的意義。這些通常用來描述全球化美好願景的概念，今天遵循着一條無情的指數曲線向我逼來。在過去的一個多月裏，我能感清晰地受到疫情的步伐，那種涌動在社交媒體的悲痛、感動、憤懣突然跨越重洋，變成切實的擔憂和恐慌。」等待著從中國回到台灣的網友寫：「以前，唐山過台灣，跨過了黑水溝便是到了。如今，肉體跨過海峽不再成為難事，然而我卻總是有種懸在海峽之中的感覺：『不知是否離開了中國，不知是否抵達了台灣，不知這條海峽有多寬闊。』」</p>
+  <p>還有許多人，把自己在疫情中經歷的小小變故、或者悲歡喜樂，記在特殊的空間：</p>
+  <p>「吹哨人」李文亮，在感染病毒去世之後，<a href="https://www.weibo.com/xiaolwl" target="_blank">他的微博</a>已經有累計超過130萬粉絲。他2月1日發的一條微博，是記錄那個確診的時刻：「今天核酸檢測結果陽性，塵埃落定，終於確診了。」這條微博，在他去世之後，並沒有停止更新。陌生人來這裡留言，至今已經有超過70萬條。</p>
+  <p>那是什麼樣的評論呢？</p>
+  <p>2月7日：「似乎等不到你回來的消息，一路走好！還有，謝謝你！」</p>
+  <p>2月8日：「你喜歡的我都買來了，德克士跑了三家沒有一家開門，所以只能買到這樣的手槍腿了，車釐子多吃點！感謝你的發聲！謝謝！」</p>
+  <p>2月10日：「今天我十八歲生日，願望是您的家人一生平安幸福，孩子健康成長。」</p>
+  <p>2月18日：「李醫生，已經不能轉發你的這條微博了。被屏蔽了。真tm噁心。」</p>
+  <p>2月22日：「李醫生，我母親因為肺功能衰竭去世，如果您在天堂能看見她，一定要幫我囑咐她注意身體，一定要健健康康的。」</p>
+  <p>3月1日：「我在寫英語作文，我把你寫進去了。」</p>
+  <p>3月10日：「李醫生，今天ai·芬醫生的文章不斷被刪除，我感到難受。」</p>
+  <p>3月11日：「今天人物發了一篇文章，很快被刪了，但是很多人都在盡力去轉，去接力下去，雖然轉完還是會被刪，但直到現在這場接力也還沒有停下來。我們會記住的，說真話的勇氣，謊言和逃避的代價，以及這場永遠也不想再發生的悲劇。」</p>
+  <p>3月19日：「網絡一大波的攻勢又開始了，看著惡性，已經懶得評論了。嚴重的話更不敢說，我怕消失。只能來你這裡，輕輕的對你說，不管怎樣，你總算是得以平反了，希望你在天之靈能夠安息。活著的人無力改變，只能寄希望你在來世能幸福，祝福你。」</p>
+  <p>人們形容，李文亮的微博，已經成了中國人的「哭牆」。在世界的各個角落，還會有很多個這樣的「哭牆」，承載著無數普通人在這次世紀瘟疫中的悲歡離合。</p>
+  <p>這些在地球不同角落的悲喜可以互通嗎？這樣慘痛的人類經驗可以傳承嗎？歷史從沒有給過我們確定的答案。但正是這些從瘟疫中不斷湧現的個人記錄，第一次讓我意識到，歷史的草稿，真的放在了每一個人手中。但並不只是因為人們能寫能說，而是因為，人們有了某種歷史意識的自覺，去寫，去說，去探詢真實。</p>
+  <p>這條路並不容易。所謂「寫作是最小單位的自由」，半年前為Matters提出這句口號時，我還沒有像此刻這樣，明白「自由」的含義——當生活的瑣碎、沉重與苦痛映照在書寫的鏡子裡，它們才獲得超越事件自身的意義，真正成為人的經歷的一部分。而當你以見證者的自覺，主動承擔起發生在自己身上的歷史，歷史也才真的會在你身上發生。</p>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/ec72a9ef-3708-434a-825c-195ebd7f3c44.webp" onerror="this.srcset='https://assets.matters.news/embed/ec72a9ef-3708-434a-825c-195ebd7f3c44.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/ec72a9ef-3708-434a-825c-195ebd7f3c44.jpeg" onerror="this.srcset='https://assets.matters.news/embed/ec72a9ef-3708-434a-825c-195ebd7f3c44.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/ec72a9ef-3708-434a-825c-195ebd7f3c44.webp" /> <img src="https://assets.matters.news/embed/ec72a9ef-3708-434a-825c-195ebd7f3c44.jpeg" srcset="https://assets.matters.news/processed/540w/embed/ec72a9ef-3708-434a-825c-195ebd7f3c44.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>Moonpuff作品</span>
+    </figcaption>
+  </figure>
+  <p>不完全附錄：</p>
+  <p>#艾曉明的日記：<a href="https://matters.news/@tianguowawa" target="_blank">https://matters.news/@tianguowawa</a></p>
+  <p>#郭晶的日記：<a href="https://matters.news/@GuoJing" target="_blank">https://matters.news/@GuoJing</a></p>
+  <p>#我在美國經歷疫情：<a href="https://matters.news/tags/VGFnOjExMzA0" target="_blank">https://matters.news/tags/VGFnOjExMzA0</a></p>
+  <p>#我在法國經歷疫情：<a href="https://matters.news/tags/VGFnOjEyMjk5" target="_blank">https://matters.news/tags/VGFnOjEyMjk5</a></p>
+  <p>#紐約藍藍的日記：<a href="http://lanlan.blog.caixin.com/" target="_blank">http://lanlan.blog.caixin.com/</a></p>
+  <p>#作家方方的日記：<a href="http://fangfang.blog.caixin.com/" target="_blank">http://fangfang.blog.caixin.com/</a></p>
+  <p>#曉宇的日記：微信公號世風，ID：world-views</p>
+  <p>#香港作家韓麗珠的日記：Facebook ID：韓麗珠</p>
+  <p>#<a href="https://matters.news/@islander/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5-bafyreid2dmq3e6uz5idm7it4ktu7yo7s2ssiyap3yo3ruaxt5qfjosh5zm" target="_blank">島民日記</a></p>
+  <p>世界各地，正在困境中的人們，我們一起，讓這附錄繼續增加吧。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-05-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-02/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/">
+          非主流香港：九龍城 泰國城
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-02/%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E5%B0%88%E9%A1%8C-%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E7%B6%93%E6%BF%9F%E5%AD%B8-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%AF%B8%E9%87%91%E5%B0%BA%E5%9C%9F%E7%9A%84%E4%B8%AD%E7%92%B0%E6%B4%BB36%E5%B9%B4/">
+          [環球大廈專題]環球大廈經濟學：如何在寸金尺土的中環活36年？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-14/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5/">
+          1月-2月的一些日記片段
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-14/%E9%87%8D%E6%96%B0%E8%AA%8D%E8%AD%98%E4%BA%86%E4%B8%80%E4%BA%9B%E9%A3%9F%E7%89%A9/">
+          重新認識了一些食物
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-29/%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA%E6%9D%A5%E4%BA%86%E5%90%97/">
+            前一篇：金融危机来了吗？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-30/%E4%B8%AD%E5%9B%BD%E7%96%BE%E6%8E%A7%E4%BA%BA%E5%91%98%E5%8F%A3%E8%BF%B0-90-%E7%9A%84%E4%BA%BA%E9%97%B2%E7%9D%80-10-%E7%9A%84%E4%BA%BA%E5%B9%B2%E6%B4%BB-%E8%BF%98%E4%B8%8D%E7%9F%A5%E9%81%93%E8%A6%81%E5%B9%B2%E5%95%A5/">
+            後一篇：中国疾控人员口述：90% 的人闲着，10% 的人干活，还不知道要干啥
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-03-29/%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA%E6%9D%A5%E4%BA%86%E5%90%97/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-03-30/%E4%B8%AD%E5%9B%BD%E7%96%BE%E6%8E%A7%E4%BA%BA%E5%91%98%E5%8F%A3%E8%BF%B0-90-%E7%9A%84%E4%BA%BA%E9%97%B2%E7%9D%80-10-%E7%9A%84%E4%BA%BA%E5%B9%B2%E6%B4%BB-%E8%BF%98%E4%B8%8D%E7%9F%A5%E9%81%93%E8%A6%81%E5%B9%B2%E5%95%A5/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-05-02/%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E5%B0%88%E9%A1%8C-%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E7%B6%93%E6%BF%9F%E5%AD%B8-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%AF%B8%E9%87%91%E5%B0%BA%E5%9C%9F%E7%9A%84%E4%B8%AD%E7%92%B0%E6%B4%BB36%E5%B9%B4/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-03-14/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-03-29/%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA%E6%9D%A5%E4%BA%86%E5%90%97/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-03-30/%E4%B8%AD%E5%9B%BD%E7%96%BE%E6%8E%A7%E4%BA%BA%E5%91%98%E5%8F%A3%E8%BF%B0-90-%E7%9A%84%E4%BA%BA%E9%97%B2%E7%9D%80-10-%E7%9A%84%E4%BA%BA%E5%B9%B2%E6%B4%BB-%E8%BF%98%E4%B8%8D%E7%9F%A5%E9%81%93%E8%A6%81%E5%B9%B2%E5%95%A5/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-05-02/%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E5%B0%88%E9%A1%8C-%E7%92%B0%E7%90%83%E5%A4%A7%E5%BB%88%E7%B6%93%E6%BF%9F%E5%AD%B8-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%AF%B8%E9%87%91%E5%B0%BA%E5%9C%9F%E7%9A%84%E4%B8%AD%E7%92%B0%E6%B4%BB36%E5%B9%B4/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-03-14/1%E6%9C%88-2%E6%9C%88%E7%9A%84%E4%B8%80%E4%BA%9B%E6%97%A5%E8%A8%98%E7%89%87%E6%AE%B5/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

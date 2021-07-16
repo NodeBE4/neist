@@ -1,0 +1,2255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="高頻版 git.io/JUJZT">
+    <meta property="og:description" content="高頻版 git.io/JUJZT" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fnodebe4.github.io%2Foped2%2Fpage100%2F" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://nodebe4.github.io/oped2/page100/" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://nodebe4.github.io/oped2/page100/&text=觀點2-高頻版 git.io/JUJZT&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://nodebe4.github.io/oped2/page100/&title=觀點2-高頻版 git.io/JUJZT" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://nodebe4.github.io/oped2/page100/&title=觀點2-高頻版 git.io/JUJZT" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=觀點2-高頻版 git.io/JUJZT&body=" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://nodebe4.github.io/oped2/page100/" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://nodebe4.github.io/oped2/page100/&title=觀點2-高頻版 git.io/JUJZT&caption=&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=觀點2-高頻版 git.io/JUJZT&url=https://nodebe4.github.io/oped2/page100/" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+<ul class="archive">
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-02-13/GFW%E7%9A%84%E5%8F%8D%E8%BD%AC/">
+      
+        GFW的反转
+      </a>
+      <time>2015-02-13</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/364" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-02-12/GFW%E7%9A%84%E5%8F%8D%E8%BD%AC-iYouPort/">
+      
+        GFW的反转 - iYouPort
+      </a>
+      <time>2015-02-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/gfw%e7%9a%84%e5%8f%8d%e8%bd%ac/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-02-12/%E5%A4%A7%E9%99%86%E5%BE%AE%E5%8D%9A%E5%B7%B2%E7%BB%8F%E6%88%90%E4%B8%BA-%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81%E5%AA%92%E4%BD%93/">
+      
+        大陆微博已经成为“意识形态媒体”
+      </a>
+      <time>2015-02-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 邱震</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/362" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-02-11/%E4%B8%80%E5%B0%81%E6%B2%A1%E6%9C%89%E5%90%91%E9%A9%AC%E4%BA%91%E5%AF%84%E5%87%BA%E7%9A%84%E5%85%AC%E5%BC%80%E4%BF%A1-%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%A6%82%E4%BD%95%E6%8A%84%E8%A2%AD%E9%A6%99%E6%B8%AF%E5%90%AF%E5%8A%A8%E7%9A%84%E5%88%9B%E6%84%8F/">
+      
+        一封没有向马云寄出的公开信：阿里巴巴如何抄袭香港启动的创意
+      </a>
+      <time>2015-02-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Keith Li</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/363" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-02-10/%E6%B0%B8%E4%B9%85%E8%A2%AB%E5%B0%81%E7%9A%84T%E6%81%A4%E7%BD%91%E5%BA%97-%E5%90%B4%E5%90%9E%E4%B8%93%E8%AE%BF/">
+      
+        永久被封的T恤网店：吴吞专访
+      </a>
+      <time>2015-02-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 伊阙唐</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/361" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-02-09/%E5%86%99%E5%9C%A8Astrill-VPN%E8%A2%AB%E5%B1%8F%E8%94%BD%E4%B9%8B%E5%90%8E-%E6%B2%A1%E9%82%A3%E4%B9%88%E6%82%B2%E8%A7%82/">
+      
+        写在Astrill VPN被屏蔽之后：没那么悲观
+      </a>
+      <time>2015-02-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Vergil</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/360" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-02-05/%E8%AF%BB%E8%80%85%E6%9D%A5%E7%A8%BF-%E7%AB%8B%E6%B3%95%E8%80%85%E7%9A%84%E8%83%8C%E5%8F%9B/">
+      
+        读者来稿：立法者的背叛
+      </a>
+      <time>2015-02-05</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 火枪手</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/358" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-02-04/%E6%B5%8B%E8%AF%95-%E5%BE%AE%E4%BF%A1%E5%A6%82%E4%BD%95%E5%AE%A1%E6%9F%A5%E5%86%85%E5%AE%B9/">
+      
+        测试：微信如何审查内容
+      </a>
+      <time>2015-02-04</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/357" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-02-03/%E6%8A%84%E8%A2%AD%E6%9D%A5%E7%9A%84%E5%9B%BD%E5%AE%B6%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6%E4%B8%80%E7%AD%89%E5%A5%96/">
+      
+        抄袭来的国家自然科学一等奖？
+      </a>
+      <time>2015-02-03</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/356" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-02-02/%E5%87%A0%E6%8B%9B%E8%AE%A9%E4%BD%A0-%E9%9A%90%E8%BA%AB-%E4%B8%8A%E7%BD%91/">
+      
+        几招让你“隐身”上网
+      </a>
+      <time>2015-02-02</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: William Long</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/355" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+      <h2>2015年01月</h2>
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-30/%E4%BA%94%E6%AF%9B-%E5%A4%96%E5%AE%A3-%E4%BE%B5%E5%8D%A0%E5%A4%96%E7%BD%91%E8%88%86%E8%AE%BA%E7%A9%BA%E9%97%B4/">
+      
+        五毛“外宣”侵占外网舆论空间
+      </a>
+      <time>2015-01-30</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/354" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-29/%E5%A4%96%E5%AA%92%E8%AE%B0%E8%80%85%E5%9C%A8%E4%B8%AD%E5%9B%BD-%E4%B8%8D%E4%B8%80%E8%88%AC%E7%9A%84%E8%89%B0%E9%99%A9/">
+      
+        外媒记者在中国：不一般的艰险
+      </a>
+      <time>2015-01-29</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/353" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-28/%E8%A7%82%E7%82%B9-%E9%9A%90%E7%A7%81%E6%92%91%E4%B8%8D%E8%B5%B7-%E8%A2%AB%E9%81%97%E5%BF%98%E6%9D%83/">
+      
+        观点：隐私撑不起“被遗忘权”
+      </a>
+      <time>2015-01-28</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 闲民</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/351" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-27/%E8%A7%82%E7%82%B9-%E4%BA%91%E6%9E%81%E6%9D%83%E5%92%8C%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%B4%E7%A8%B3/">
+      
+        观点：云极权和大数据维稳
+      </a>
+      <time>2015-01-27</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/350" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-26/%E9%A6%99%E6%B8%AF%E6%88%96%E5%BC%95%E5%85%A5-%E5%9B%BD%E5%AE%B6%E5%AE%89%E5%85%A8%E6%B3%95/">
+      
+        香港或引入《国家安全法》
+      </a>
+      <time>2015-01-26</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/348" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-22/%E7%BD%91%E5%AE%89%E5%AE%A1%E6%9F%A5%E6%B3%95%E5%8A%A9%E6%8E%A8GFW%E6%9B%B4%E4%B8%8A%E5%B1%82%E6%A5%BC/">
+      
+        网安审查法助推GFW更上层楼
+      </a>
+      <time>2015-01-22</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 王怀川</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/346" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-21/2015%E5%87%80%E7%BD%91%E8%BF%90%E5%8A%A8%E5%90%AF%E5%8A%A8-%E7%BD%91%E7%BB%9C%E7%AE%A1%E5%88%B6%E8%A2%AB%E6%AD%A3%E5%BD%93%E5%8C%96/">
+      
+        2015净网运动启动 网络管制被正当化
+      </a>
+      <time>2015-01-21</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/345" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-20/Outlook%E5%9C%A8%E4%B8%AD%E5%9B%BD%E9%81%AD%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB/">
+      
+        Outlook在中国遭中间人攻击
+      </a>
+      <time>2015-01-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: GreatFire</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/344" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-20/%E6%A0%A1%E5%9B%AD%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81%E7%AE%A1%E6%8E%A7%E5%8A%A0%E5%89%A7-%E9%99%86%E6%B8%AF%E5%90%8C%E6%AD%A5%E8%A1%8C%E5%8A%A8/">
+      
+        校园意识形态管控加剧：陆港同步行动
+      </a>
+      <time>2015-01-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/343" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-16/%E8%89%BE%E6%9C%AA%E6%9C%AA%E6%B4%BB%E5%9C%A8%E6%88%91%E4%BB%AC%E7%9A%84%E6%9C%AA%E6%9D%A5/">
+      
+        艾未未活在我们的未来
+      </a>
+      <time>2015-01-16</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Hans de Zwart</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/338" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-15/%E5%85%AC%E6%B0%91%E5%AE%9E%E9%AA%8C%E5%AE%A4-%E6%99%AE%E9%80%9A%E5%85%AC%E6%B0%91%E7%9A%84-%E4%B8%AD%E6%83%85%E5%B1%80/">
+      
+        公民实验室：普通公民的“中情局”
+      </a>
+      <time>2015-01-15</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 鲍帆</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/342" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-14/%E4%B8%AD%E5%9B%BD%E5%AE%A3%E5%B8%832015%E5%87%80%E7%BD%91%E8%AE%A1%E5%88%92-%E8%BF%98%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88/">
+      
+        中国宣布2015净网计划：还会发生什么？
+      </a>
+      <time>2015-01-14</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/341" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-13/%E7%BF%BB%E5%A2%99%E9%9A%BE%E9%A2%98/">
+      
+        翻墙难题
+      </a>
+      <time>2015-01-13</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/337" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-12/%E6%AF%9B%E6%B4%BE-%E5%B4%9B%E8%B5%B7-%E7%9A%84%E5%8F%AA%E6%98%AF%E8%AF%9D%E8%AF%AD%E6%B3%A1%E6%B2%AB/">
+      
+        毛派“崛起”的只是话语泡沫
+      </a>
+      <time>2015-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 何青</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/336" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-10/%E6%B4%97%E8%84%91%E5%92%8C%E5%8F%8D%E6%B4%97%E8%84%91%E6%8A%97%E4%BA%89/">
+      
+        洗脑和反洗脑抗争
+      </a>
+      <time>2015-01-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/335" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-09/GFW%E5%8D%87%E7%BA%A7%E5%AF%BC%E8%87%B4%E7%94%A8%E6%88%B7%E8%A2%AB-%E5%A2%99-%E5%88%B0%E8%89%B2%E6%83%85%E7%BD%91%E7%AB%99/">
+      
+        GFW升级导致用户被“墙”到色情网站
+      </a>
+      <time>2015-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: GreatFire</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/333" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-08/%E4%B8%AD%E5%9B%BD%E5%BC%8F%E7%AA%83%E5%90%AC%E9%A3%8E%E6%9A%B4/">
+      
+        中国式窃听风暴
+      </a>
+      <time>2015-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/332" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-07/%E5%90%91%E4%B8%AD%E5%9B%BD%E8%BD%AF%E4%BB%B6%E8%AF%B4-NO/">
+      
+        向中国软件说”NO”
+      </a>
+      <time>2015-01-07</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 电脑帮帮团</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/330" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-06/%E5%8F%B0%E6%B9%BE-%E5%AA%92%E4%BD%93%E9%87%87%E8%AE%BF%E5%8C%BA%E6%98%AF%E4%BF%9D%E6%8A%A4%E8%AE%B0%E8%80%85%E8%BF%98%E6%98%AF%E8%92%99%E4%B8%8A%E8%AE%B0%E8%80%85%E7%9B%91%E7%9D%A3%E4%B9%8B%E7%9C%BC/">
+      
+        台湾：媒体采访区是保护记者还是蒙上记者监督之眼？
+      </a>
+      <time>2015-01-06</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 管中祥</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/328" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-05/%E5%A4%A7%E5%A4%96%E5%AE%A3%E6%88%98%E7%95%A5-%E5%AE%A1%E6%9F%A5%E5%92%8C%E8%87%AA%E6%88%91%E5%AE%A1%E6%9F%A5-iYouPort/">
+      
+        大外宣战略、审查和自我审查 - iYouPort
+      </a>
+      <time>2015-01-05</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%a4%a7%e5%a4%96%e5%ae%a3%e6%88%98%e7%95%a5%e3%80%81%e5%ae%a1%e6%9f%a5%e5%92%8c%e8%87%aa%e6%88%91%e5%ae%a1%e6%9f%a5/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-05/%E5%A4%A7%E5%A4%96%E5%AE%A3%E6%88%98%E7%95%A5-%E5%AE%A1%E6%9F%A5%E5%92%8C%E8%87%AA%E6%88%91%E5%AE%A1%E6%9F%A5/">
+      
+        大外宣战略、审查和自我审查
+      </a>
+      <time>2015-01-05</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 贝带劲</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/327" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2015-01-01/2014%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E8%8B%B1%E9%9B%84-%E7%BC%96%E7%A8%8B%E9%9A%8F%E6%83%B3-%E5%8D%9A%E5%AE%A2/">
+      
+        2014中国互联网的英雄：“编程随想”博客
+      </a>
+      <time>2015-01-01</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 萧强</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/323" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+      <h2>2014年12月</h2>
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-31/2014%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E8%8B%B1%E9%9B%84-%E9%AB%98%E7%91%9C-%E5%8B%87%E6%95%A2%E5%9C%B0%E6%8E%80%E5%BC%80%E9%BB%91%E5%B9%95/">
+      
+        2014中国互联网的英雄： 高瑜——勇敢地掀开黑幕
+      </a>
+      <time>2014-12-31</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 长平</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/322" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-30/2014%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E6%95%8C%E4%BA%BA-%E5%B9%BF%E7%94%B5%E6%80%BB%E5%B1%802014%E5%B9%B4-%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+      
+        2014中国互联网的敌人：广电总局2014年“工作总结”
+      </a>
+      <time>2014-12-30</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Vergil</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/320" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-29/Gmail%E5%9C%A8%E4%B8%AD%E5%9B%BD%E5%BD%BB%E5%BA%95%E8%A2%AB%E5%B0%81-%E5%9B%BD%E5%AE%B6%E5%B1%80%E5%9F%9F%E7%BD%91-%E8%BF%98%E6%9C%89%E5%A4%9A%E8%BF%9C/">
+      
+        Gmail在中国彻底被封：“国家局域网”还有多远？
+      </a>
+      <time>2014-12-29</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/321" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-29/2014%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E8%8B%B1%E9%9B%84-%E7%82%BC%E7%8B%B1%E5%9C%A82014%E7%9A%84%E6%B5%A6%E5%BF%97%E5%BC%BA/">
+      
+        2014中国互联网的英雄：炼狱在2014的浦志强
+      </a>
+      <time>2014-12-29</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 严光</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/313" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-27/Facebook%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%81%90%E6%85%8C/">
+      
+        Facebook带来的恐慌
+      </a>
+      <time>2014-12-27</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 贝带劲</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/319" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-26/2014%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E6%95%8C%E4%BA%BA-%E7%B3%96%E8%A1%A3%E6%AF%92%E8%8D%AF-%E7%BD%91%E7%BB%9C%E8%88%86%E6%83%85%E7%9B%91%E6%B5%8B/">
+      
+        2014中国互联网的敌人：糖衣毒药 网络舆情监测
+      </a>
+      <time>2014-12-26</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 闲民</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/310" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-25/2014%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E8%8B%B1%E9%9B%84-%E7%BF%BB%E5%A2%99%E5%88%A9%E5%99%A8Fqrouter/">
+      
+        2014中国互联网的英雄：翻墙利器Fqrouter
+      </a>
+      <time>2014-12-25</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/318" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-24/2014%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E6%95%8C%E4%BA%BA-%E6%96%B9%E6%BB%A8%E5%85%B4%E5%92%8C%E4%BB%96%E7%9A%84GFW/">
+      
+        2014中国互联网的敌人：方滨兴和他的GFW
+      </a>
+      <time>2014-12-24</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 卿子衿</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/314" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-23/2014%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E8%8B%B1%E9%9B%84-%E4%B8%BA%E5%B0%8A%E4%B8%A5%E5%86%99%E4%BD%9C-%E8%A2%AB%E5%B0%81%E5%8D%9A%E5%AE%A2%E6%9D%8E%E6%89%BF%E9%B9%8F/">
+      
+        2014中国互联网的英雄：为尊严写作──被封博客李承鹏
+      </a>
+      <time>2014-12-23</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 闲民</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/312" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-22/%E7%BF%BB%E5%A2%99%E6%96%B0%E5%88%A9%E5%99%A8-%E8%90%A4%E7%81%AB%E8%99%AB%E4%BB%A3%E7%90%86/">
+      
+        翻墙新利器：萤火虫代理
+      </a>
+      <time>2014-12-22</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Vergil</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/309" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-20/%E9%A6%99%E6%B8%AF-%E4%BB%8E%E8%AD%A6%E6%96%B9%E6%8B%98%E6%8D%95%E5%8D%A0%E4%B8%AD%E7%BD%91%E4%B8%8A%E5%8F%91%E8%A8%80%E8%80%85%E7%9C%8B%E8%A8%80%E8%AE%BA%E8%87%AA%E7%94%B1%E5%8F%8A%E4%BA%92%E8%81%94%E7%BD%91%E7%A7%81%E9%9A%90/">
+      
+        香港：从警方拘捕占中网上发言者看言论自由及互联网私隐
+      </a>
+      <time>2014-12-20</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Anonymous</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/308" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-18/%E6%9C%80%E5%90%8E%E7%9A%84%E6%8A%A5%E7%BA%B8/">
+      
+        最后的报纸
+      </a>
+      <time>2014-12-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Yeeyan</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@yeeyan/-19242e810ee1?source=rss-216c8ba84893------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-18/%E6%83%B3%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87-%E5%B0%B1%E5%88%AB%E5%86%8D%E5%81%9A%E8%BF%997%E4%BB%B6%E4%BA%8B%E4%BA%86/">
+      
+        想提高效率，就别再做这7件事了
+      </a>
+      <time>2014-12-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Yeeyan</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@yeeyan/7-a085df3514e7?source=rss-216c8ba84893------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/">
+      
+        我为什么不做一个 TED 讲者
+      </a>
+      <time>2014-12-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Yeeyan</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@yeeyan/ted-808e0b535dda?source=rss-216c8ba84893------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-18/%E5%A6%82%E4%BD%95%E4%B8%93%E5%BF%83%E7%9D%A1%E7%9C%A0/">
+      
+        如何专心睡眠
+      </a>
+      <time>2014-12-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Yeeyan</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@yeeyan/-94b530d16d8d?source=rss-216c8ba84893------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-18/%E6%9D%83%E5%8A%9B%E7%9A%84%E6%B8%B8%E6%88%8F-%E9%98%85%E8%AF%BB%E6%8C%87%E5%8D%97/">
+      
+        《权力的游戏》阅读指南
+      </a>
+      <time>2014-12-18</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: Yeeyan</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@yeeyan/-5d0c7d67326b?source=rss-216c8ba84893------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-17/%E7%BD%91%E7%BB%9C%E6%96%B0%E9%97%BB%E7%AE%A1%E5%88%B6%E4%B8%8B%E7%9A%84-%E4%B8%B4%E6%97%B6-%E5%AA%92%E4%BD%93%E4%BA%BA/">
+      
+        网络新闻管制下的“临时”媒体人
+      </a>
+      <time>2014-12-17</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 贝带劲</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/306" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2014-12-16/%E7%BD%91%E7%BB%9C%E5%AE%A1%E6%9F%A5%E7%9B%91%E6%8E%A7%E7%9A%84%E9%80%94%E5%BE%84%E5%92%8C%E8%87%AA%E6%88%91%E4%BF%9D%E6%8A%A4%E6%96%B9%E6%B3%95/">
+      
+        网络审查监控的途径和自我保护方法
+      </a>
+      <time>2014-12-16</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 贝带劲</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#泡泡" class="tag">
+        泡泡
+      </a>
+      
+
+      
+      <a href="https://pao-pao.net/article/304" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+
+</ul>
+
+<div class="pagination">
+  
+    <span class="prev">
+      <a href="/oped2/page99/" class="prev">
+        上一页
+      </a>
+    </span>
+  
+  
+    <span class="next">
+      <a href="/oped2/page101/" class="next">
+        下一页
+      </a>
+    </span>
+  
+
+  <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    <a class="fab-action fab-action-1" title="上一页(热键 &#8594;)" href="/oped2/page99/">
+      <i>上</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一页(热键 &#8592;)" href="/oped2/page101/">
+      <i>下</i>
+    </a>
+    
+    
+    
+    
+    
+  </div>
+</div>
+
+
+  <script>
+  /* post pagination keyboard shortcuts */
+  document.body.onkeyup = function(e){
+    if (e.keyCode == '37') { window.location = '/oped2/page99/'; } // left arrow key
+    if (e.keyCode == '39') { window.location = '/oped2/page101/'; } // right arrow key
+  };
+  </script>
+
+</div>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

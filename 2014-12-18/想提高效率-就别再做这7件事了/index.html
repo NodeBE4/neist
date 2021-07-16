@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>想提高效率，就别再做这7件事了 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+想提高效率，就别再做这7件事了
+——
+" />
+    <meta property="og:description" content="
+想提高效率，就别再做这7件事了
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="想提高效率，就别再做这7件事了" />
+    <meta property="twitter:title" content="想提高效率，就别再做这7件事了" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40yeeyan%2F7-a085df3514e7%3Fsource%3Drss-216c8ba84893------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@yeeyan/7-a085df3514e7?source=rss-216c8ba84893------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@yeeyan/7-a085df3514e7?source=rss-216c8ba84893------2&text=想提高效率，就别再做这7件事了&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@yeeyan/7-a085df3514e7?source=rss-216c8ba84893------2&title=想提高效率，就别再做这7件事了" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@yeeyan/7-a085df3514e7?source=rss-216c8ba84893------2&title=想提高效率，就别再做这7件事了" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=想提高效率，就别再做这7件事了&body=
+想提高效率，就别再做这7件事了
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@yeeyan/7-a085df3514e7?source=rss-216c8ba84893------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@yeeyan/7-a085df3514e7?source=rss-216c8ba84893------2&title=想提高效率，就别再做这7件事了&caption=
+想提高效率，就别再做这7件事了
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=想提高效率，就别再做这7件事了&url=https://medium.com/@yeeyan/7-a085df3514e7?source=rss-216c8ba84893------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>想提高效率，就别再做这7件事了</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2014-12-18
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Yeeyan</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@yeeyan/7-a085df3514e7?source=rss-216c8ba84893------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1418901443000-->
+<p><a href="https://medium.com/@yeeyan/7-a085df3514e7?source=rss-216c8ba84893------2">想提高效率，就别再做这7件事了</a>
+——</p>
+
+<div>
+  <h4 id="section">努力工作，更要灵活工作</h4>
+  <p>当我17岁时，常常一天工作学习20小时左右。我利用课间完成作业，晚上则去管理一个公益组织。那时付出的努力给了我无数参加全国性活动的机会，可以与最好的组织合作，收获成功的事业。随着年龄的增长，我开始有了不同的想法。我意识到，加倍努力并不总是通向成功的正确途径。<strong>有时候少做一点，会有更好的结果。</strong></p>
+  <p>比如说，一个企业一直工作不休息，就算如此，也无法保证它从成千上万的竞争者中脱颖而出。<strong>时间是一种有限资源。</strong>一位企业家可以一天工作24小时，一周工作7天（任何人所能工作的最大时长）。竞争对手总能在同样的项目上投入更多的时间、资金，组建更大的团队。那么，为什么有些小型创业公司却完成了许多大企业未能做到的事呢？Facebook花费10亿美元收购图片分享应用Instagram, 而这家公司只有13名员工！Snapchat，一个拥有30名员工的年轻创业公司，拒绝了科技巨头Facebook和Google的收购。当然，他们的成功一部分是依靠运气 — — 其余则源自效率。</p>
+  <h4 id="section-1">成功的关键不在于勤奋与否，而在灵活与否。</h4>
+  <p>忙碌和高效有着天壤之别。忙碌并不代表高效率。高效更多在于你如何管理自己的精力，而非如何管理自己的时间。它是一生的功课。我们要学会如何用最少的精力获取最大的效益。我很庆幸自己能在Filemobile这样优秀的团队工作。在这里，大家会向我示范高效做事的方法，也会帮助我整理事情的优先顺序。我学会将我的工作时间由每周80小时缩减为40小时，并且在此过程中能够完成更多的工作。换言之，少即是多。</p>
+  <h4 id="section-2">我通过停止做这7件事，来提高我的效率。</h4>
+  <p><strong>1. 不再加班。</strong></p>
+  <p>你是否曾想过每周40小时的工作时间是从哪来的呢？在1926年，美国实业家、福特汽车公司的创始人亨利·福特（Henry Ford）进行了一系列实验，实验结果很有趣：当你把你的每日工作时长由10小时减少为8小时，把每周工作时间由6天缩短至5天时，你的生产力会有所提高。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*GpjHHf2xnzagHqG2.jpg" />
+  </figure>
+  <p><strong>来源</strong>：利用已发布的图表（《事实还是谎言？》）来计算由于加班而损失的生产力</p>
+  <p>无论从长期还是短期来看，工作时间越长，工作效率和效益就越低。1980年，商业圆桌会议（The Business Roundtable）发布一篇名为《制定好的加班时间对建设项目的影响》（Scheduled Overtime Effect on Construction Projects）的报告。</p>
+  <p>如果队伍成员持续2个多月，每周工作60小时或更长时间，那么生产力会不断下降，从而无法按时完工，其需要的时间会超过由相同规模但一周工作40小时的队伍所需的时间。</p>
+  <p>在AlterNet网站的一篇文章里，编辑萨拉·罗宾逊（Sara Robinson）引用了美国军队所进行的一项研究，该研究表明：<strong>“每晚失去一小时的睡眠时间会导致认知水平下降的程度，相当于0.10的血液酒精浓度（blood alcohol level）所引起的认知水平下降程度”</strong>。你或许会因醉酒上班而被解雇，但提拔一个熬夜加班的人却被认为是可以接受的。</p>
+  <p>先不说你昨晚通宵后要怎么继续你的一天，你已经不大可能仍对这个世界感到特别的愉快和欢乐。由过度疲惫所导致的低落情绪会让你比平时更消极。比消极情绪更糟糕的是，这种心态常常伴随着积极思考和行动的意愿的降低、控制冲动能力的下降、自信度降低、同情心的减少、以及情商的降低。（<a href="http://www.amazon.ca/The-Secret-World-Sleep-Surprising/dp/0230107591">来源：《睡眠的神秘世界：休息中的大脑的惊人科学事实》</a>）</p>
+  <p>想保持高水平的战斗力，别当加班狂魔了，去睡个好觉吧。下次你也别纠结为什么工作效率不高了，<a href="http://experiencelife.com/article/the-healing-power-of-sleep/">原因很简单，因为你就是那70%的睡眠不足人群中的一员。</a></p>
+  <h3 id="section-3">你知道吗？</h3>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/570/0*SKBCJXlV5MABVAfX.jpg" />
+  </figure>
+  <p>列奥纳多•达•芬奇白天打盹儿很多次，晚上睡得较少。</p>
+  <p>法国国王拿破仑爱打盹儿，天天都眯一会儿，还不害臊。</p>
+  <p>尽管托马斯•爱迪生为自己的小睡习惯感到尴尬，他还是每日例行他的惯例。</p>
+  <p>富兰克林•D•罗斯福总统的妻子过去常常在演讲前小睡一会，养精蓄锐。</p>
+  <p>“唱歌牛仔”吉恩•奥特里（Gene Autry）在表演前总会在他的化妆间睡一小会儿。</p>
+  <p>约翰•f•肯尼迪总统在床上吃午饭，然后小睡一会儿 — — 每天都是！</p>
+  <p>石油实业家、慈善家约翰•戴维森•洛克菲勒（John D. Rockefeller）每天下午在办公室小憩。</p>
+  <p>温斯顿•丘吉尔的午后小憩是雷打不动的。他认为小憩能让他每天完成两倍的事情。</p>
+  <p>总统林顿•约翰逊每天下午三点半会小睡来将他的一天分为2段。</p>
+  <p>尽管备受指责，总统罗纳德•里根也是以小睡闻名哒。</p>
+  <p>— — <a href="http://michaelhyatt.com/why-you-should-take-a-nap-every-day.html">来源：《你应该每天小憩的5个原因》 — — 迈克尔•海特（Michael Hyatt）</a></p>
+  <p>自从我开始每天至少睡7到8小时，我就在我的私人笔记里留意到一个变化：我变得更有有效率了，比起之前一天工作16小时的成果，我现在能完成更多的工作。谁又能料到睡眠对市场营销者来说是如此之好的工具呢？</p>
+  <p><strong>2. 不要太常说“Yes”</strong></p>
+  <p>根据帕累托原理（Pareto Principle），80<strong>％的成果来自于你20％的付出；而20％的成果会消耗80%的付出。与其更努力工作，我们不如就把注意力首先放在产生80%成果的那部分努力上，放弃剩余的部分好了</strong>。这样我们将会有更多时间去关注更重要的事。我们不应该对那些很少产生成果或者几乎没有成果的任务说“yes”了。</p>
+  <p>“The difference between successful people and very successful people is that very successful people say “no” to almost everything.” — Warren Buffet.</p>
+  <p>“成功的人与非常成功的人的区别在于，非常成功的人几乎对所有事情都说‘不’。” — — 沃伦·巴菲特</p>
+  <p>这就引出了一个问题：你应该对什么说“是”，又应该对什么说“不”呢？如果你无法推测某件事是否值得你去花时间，那么考虑进行一个简单的分离测试（split test）。追踪你做的每一件事，尽可能优化它。</p>
+  <p>大多数人常说“是”，因为这比说“不”要简单得多。没有人想当坏人呐！</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/500/0*QmLHYLnpCjsqfWzy.jpg" />
+  </figure>
+  <p>2012年《消费者调查》（Consumer Research）杂志上发表的一份研究里，研究人员将120名学生分为2组。一组被训练去用“I can’t”，而另一组则使用“I don’t”。结果很有意思：</p>
+  <p>那些告诉自己“I can’t eat X”的学生，有61%的时间会选择吃巧克力棒。而说“I don’t eat X ”的学生仅36%的时间会吃巧克力糖。措辞上的小小的改变，显著地提高了人们选择健康食物的几率（下次记得少应承，多说“我不想”）</p>
+  <p>另一个避免做那些没有价值的事情的窍门是：20秒规则：在开始这些事情前，拖延20秒。</p>
+  <p>为建立良好习惯，要减少启动拖延；同时为坏习惯设立启动障碍。我们越能降低甚至消除的激活能，就越能提高我们落实积极改变的能力。<a href="http://www.amazon.ca/The-Happiness-Advantage-Principles-Performance/dp/0307591549">来源：《幸福的好处：助职场成功、提高工作表现的7个积极心理学原则》</a></p>
+  <p><strong>3. 别事必躬亲，找人帮帮忙</strong></p>
+  <p>在我事业的某个阶段，我管理着一家大型社团，力不从心。我试图让自己做所有的事情。我疲惫不堪，可最后社区自行运营得也很好。令人惊讶的是，成员们工作比我以往做的更加出色。我领会到集体的力量，也理解了品牌需要用户去生成内容。</p>
+  <p>消费者比市场营销人员更了解他们想要什么，如何得到。不知大家是否了解到，据<a href="http://www.reelseo.com/earned-media-rankings-youtube-octoly/">Octoly</a>统计，在YouTube上，用户制作的视频比品牌制作的视频点击量高10倍。当搜索一个特定品牌的信息时，<a href="http://resources.bazaarvoice.com/rs/bazaarvoice/images/201202_Millennials_whitepaper.pdf">超过一半</a>（51%）的美国人更信任用户生成的内容，而非品牌网站（16%）、或者报道品牌的媒体（14%）。对市场营销人来说，敞开心扉向社区寻求帮助十分重要。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/606/0*O2IQuwmmNIy-3U2Y.jpg" />
+  </figure>
+  <p><a href="http://www.reelseo.com/earned-media-rankings-youtube-octoly/">来源：《在YouTube上免费媒体排名》 — — Octoly</a></p>
+  <p><strong>做一个优秀的内容营销人员不在于能否制造最好的产品</strong>，而在于能否组建一个能够生产高质量产品的团队。</p>
+  <p>意识到我们可以寻求帮助，这点非常重要。我们不可能独自做完所有事情。最好的办法是让更能胜任此事的人去分担你的一部分任务。这会使你拥有更多时间关注最重要的任务。与其浪费时间靠自己琢磨，不如找个专家帮帮你。</p>
+  <p>很多时候，就算你的朋友帮不了你，但有他们在身边你会更有效率。</p>
+  <p>仅仅需要有朋友在身边，就可以让你提高生产力。“注意力缺陷多动症（ADHD）的治疗里有一个概念叫‘替补’（body double），”来自马萨诸塞州伍斯特大学的临床神经心理学家、哲学博士大卫·诺埃尔（David Nowell）说，“当有其他人在旁边时，即使并没有得到他人指导或是协助，难于自控的人们仍可以完成更多东西。”如果你要完成一个无聊或是有难度的任务，比如清理衣橱或者整理纳税时需要的收据，那就找一个朋友来做你的“替补”吧！<a href="http://www.amazon.ca/Friendfluence-Surprising-Ways-Friends-Make/dp/0385535430">（来源：《朋友的影响：朋友造就我们的惊人方式》）</a></p>
+  <p><strong>4. 别再做完美主义者</strong></p>
+  <p>“我们发现完美主义使专家在研究中效率低下。越力求完美，他就越低效，”达尔豪斯大学心理学教授博士西门·雪莉（Simon Sherry）在进行了一项关于完美主义和生产力的<a href="http://www.universityaffairs.ca/perfectionist-professors-have-lower-research-productivity.aspx">研究</a>后，这样告知《大学事务》（University Affairs）杂志。博士雪莉发现完美主义程度和效率之间呈稳定的负相关。</p>
+  <p>与完美主义者相关的一些问题如下：</p>
+  <p>他们花费比实际需要更多的时间来完成任务。</p>
+  <p>他们拖延并等待最佳时机。但在商业中，当这个时刻到来时，就已经太晚了。</p>
+  <p>因为他们太专注于细节，就错过了对全局的构想。</p>
+  <p>市场营销员常常等待完美时机。这样做，他们终将错失时机。</p>
+  <p>完美时机就是现在。</p>
+  <p><strong>5. 别再做重复的工作，让它自动化。</strong></p>
+  <p>根据<a href="http://www.tethyssolutions.com/automation-tools-business-productivity.pdf">Tethys Solutions的一份调查研</a>究，一个5人的团队，经过2个月生产力的提高之后，5个成员将他们在重复的工作上花费的3%、20%、25%、30%和70% 的时间分别减少到3%、10%、15%、15%和10%。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/640/0*ypWm_OH-79msKUTb.jpg" />
+  </figure>
+  <p><strong>来源</strong>：《使用自动化软件提高商业生产力和竞争力》 — — Tethys Solutions</p>
+  <p>一周前，我用15分钟写了一个基本的Python程序。想法是在Ruby bot获取的Twitter应用界面的数据中生成出内容，然后用Hootsuite来成批整合。这曾需要我花一整天的时间来完成，现在我仅需要不到5分钟。如今，每当我需要做一些反复（多于5次）的工作时，我会问自己能否找到一个程序帮我完成它。</p>
+  <p>你无须成为一个程序员来自动化你的重复任务。有技能或者资源固然是好事，但不是必须的。如果你自己做不了，那就花钱买吧。</p>
+  <p>人们常常忘记时间就是金钱。人们自己动手做事，因为这样方便又无需调研。在Instagram上很轻易就能处理掉30张用户自定义图像。但若你要管理5个不同平台上的3000张照片和视频，你就需要一个好的数字资源管理软件了。在Filemobile上，我们帮主人们解决这个问题，生成更多的用户生成内容。就像管理富媒体一样，你可以上网买一个软件来解决几乎所有问题。</p>
+  <p>如果你仍找不到解决办法，那你可以聘请一个专家来帮你。记住，花钱是为了赚钱，时间是你最有价值的商品。</p>
+  <p><strong>给市场营销者的贴士</strong>：查找<a href="https://github.com/">GitHub</a>或<a href="https://developers.google.com/apps-script/guide_libraries">Google app scripte library</a> 。往往很多时候，你会找到几乎无需任何编程知识的免费即用型开源代码。</p>
+  <p><strong>6. 别再瞎猜了，开始用数据支撑你的决策吧</strong></p>
+  <p>如果你可以优化搜索引擎网站，你就可以优化你的生活，发现并发挥你最大的潜能。</p>
+  <p>网上存在许多研究结果，可以提供各个领域的答案。例如，你知道大多数人最容易在下午4点精力分散吗？这个随机统计数据来自宾夕法尼亚州立大学的心理学副教授罗伯特•马丘克（Robert Matchock）的最近一项调查研究。就算找不到你需要的数据，做一次分离测试也不会占你太多时间。</p>
+  <p>比如，上周我们做了一些测试去寻找优化<a href="http://blog.filemobile.com/twitter-image-preview/">Twitter in-stream preview</a> 的最佳方法。</p>
+  <p>不停问自己要如何衡量和优化你所做的所有事情。</p>
+  <p><strong>7. 停下工作，留时间放空</strong></p>
+  <p>很多人没有意识到当我们对某事过于专注时，本质上是将自己禁锢在了一个盒子里。偶尔放下你的工作，拥有一点独处的时间其实很重要。《波士顿环球报》（The Boston Globe）上的《独处的力量》（The power of lonely）一文说，独处时间对大脑和精神都有益。</p>
+  <p>一个持续的哈佛课题研究表明，如果人们相信他们在独自经历某件事，他们会形成更持久更准确的记忆。另一项研究表明，一定量的独处可以使一个人更能理解他人。尽管没有人会反驳生命早年过多的独处是不健康的，但一定量的独处确实能够帮助青少年调节情绪并在学校中获得好成绩。<a href="http://www.boston.com/bostonglobe/ideas/articles/2011/03/06/the_power_of_lonely/">（来源：《独处的力量》）</a></p>
+  <p>抽时间自我反省对我们很重要。我们常常会在不专注事时找到解决问题的办法。</p>
+  <p>我们不会一夜之间就拥有高效率，和生活中的其他事情一样，是需要付出努力的。但如果你只是坐等它发生，你不会有任何改变。为了活得更好，我们需要更多地了解我们的身体，并想办法优化我们的能量。</p>
+  <p><strong>本文最初发表于 </strong><a href="http://blog.filemobile.com/productive/"><strong>Filemobile 博客</strong></a><strong>。</strong></p>
+  <p>Translated by <a href="http://www.yeeyan.org/">Yeeyan</a></p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=a085df3514e7" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2017-10-01</time>
+        <a href="https://nodebe4.github.io/oped2/2017-10-01/%E5%89%8D-Paypal-%E5%82%B3%E5%A5%87%E5%AF%A6%E7%BF%92%E7%94%9F-Paul-Martin-%E7%9A%84%E5%B0%8F%E6%95%85%E4%BA%8B/">
+          前 Paypal 傳奇實習生 Paul Martin 的小故事
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%9C%80%E5%90%8E%E7%9A%84%E6%8A%A5%E7%BA%B8/">
+          最后的报纸
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/">
+          我为什么不做一个 TED 讲者
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E5%A6%82%E4%BD%95%E4%B8%93%E5%BF%83%E7%9D%A1%E7%9C%A0/">
+          如何专心睡眠
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/">
+            前一篇：我为什么不做一个 TED 讲者
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%9C%80%E5%90%8E%E7%9A%84%E6%8A%A5%E7%BA%B8/">
+            後一篇：最后的报纸
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E6%9C%80%E5%90%8E%E7%9A%84%E6%8A%A5%E7%BA%B8/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E6%9C%80%E5%90%8E%E7%9A%84%E6%8A%A5%E7%BA%B8/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2014-12-18/%E6%9C%80%E5%90%8E%E7%9A%84%E6%8A%A5%E7%BA%B8/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2014-12-18/%E6%9C%80%E5%90%8E%E7%9A%84%E6%8A%A5%E7%BA%B8/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2014-12-18/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%81%9A%E4%B8%80%E4%B8%AA-TED-%E8%AE%B2%E8%80%85/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

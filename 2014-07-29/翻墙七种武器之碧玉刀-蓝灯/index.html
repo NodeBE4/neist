@@ -1,0 +1,3717 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>翻墙七种武器之碧玉刀：蓝灯 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+  
+    
+      
+        
+              
+  Vergil  在 星期二, 07/29/2014 - 16:47 提交 
+          
+          
+            
+              
+                
+                  
+                      4442013055_12a5eb51df_z.jpg  
+                    
+                       
+                        
+                          
+ 图片来源： JD Hancock 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   翻墙七种武器之碧玉刀：蓝灯 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  
+如果评论2013年最火的免费翻墙软件，那么  Lantern  一定会占据一席之地，这个在13年下半年推出的翻墙软件以其独特的翻墙机制瞬间风靡大陆，为众多网友所追捧。   Lantern英文原意为“提灯”，官方的中文名为“蓝灯”，不过一些中国网友也给其取了一个本土化的名字“灯笼”，颇为形象贴切，寓意在网络管制的黑暗之中，为无知和愚昧的大众点燃希望的明灯，照亮前进的道路。   
+           点对点翻墙
+            以往的  翻墙工具  如VPN, SSH 等都需要借助于一个网络管制外的服务器作为媒介数据中转，再依托加密技术骗过墙的封锁，这种原理的翻墙方法最大的弊端就是单一的服务器（一般是外租的VPS），端口或 IP 地址遭到 GFW 的封锁后就导致整个链条坍塌。据说  Goagent  之所以一直能苟活到现在，正是因为 Google 的IP地址和服务器众多且常变换，所以 GFW 无法通过屏蔽指定 IP 地址的手段来封锁。   而Lantern 最大的优势就是，让每一台在墙外安装了Lantern 程序的电脑都能成为一台提供翻墙服务的服务器端（P2P 机制），为墙内的电脑提供点对点的数据分享，达到翻墙的效果，理论上存在无数个翻墙服务器。而当没有其他用户可以提供访问时，还可以使用官方提供的Lantern 云服务器。随着Lantern 网络的发展，用户群将会足够强大，这种服务器理论上会越来越少。   最早的时候，Lantern 采取的是邀请制度：通过其他翻墙工具访问其  官方网站  ，使用 Gmail 邮箱注册等待官方邀请，或者从其他已注册用户处获取邀请，是两条可行的方法。   需要了解更多关于 Lantern 的信息或教程使用方法可以通过如下网站：
+                  
+                  
+                    
+                      
+Lantern官方论坛：  https://lanternforum.greatfire.org/ 
+                      
+                    
+                    
+                      
+Lantern G+中文圈：  https://plus.google.com/communities/110961311457216179607 
+                      
+                    
+                    
+                      
+Lantern Google Groups：  https://groups.google.com/forum/#!forum/lantern-users-zh 
+                      
+                    
+                  
+                  
+ 
+           脆弱的点对点
+            因为依靠 P2P 的点对点传输机制保障了相对流畅的访问速度，但其缺点也是比较明显的，这直接导致其在13年底遭到 GFW 全面封杀，一度销声匿迹，2014年初，Lantern技术团队也曾发布更新版本试图解决 GFW 的屏蔽问题，但通过1.3.1版本在 Windows平台的试用情况来看，问题依旧，分析问题原因为如下几点：
+                  
+                  
+                    
+                      安装包体积较大，需要浏览器和Java虚拟机支持。Lantern 安装程序下载后，还需要链接服务器下载整个安装包，其中下载过程还必须挂载 VPN 才能完成（应该是下载服务器也被屏蔽），运行前还必须安装 Chrome浏览器和Java 虚拟机，体积过于庞大，不适于传播也妨碍使用。
+                    
+                    
+                      加密机制较弱。有网友研究过 Lantern的运行方式，发现其网络设计似乎过于简单，在后台发现有几十条向固定服务器443端口连接的请求，估计是提交数据和同步网络状态，同时侦听6109端口，通过此端口进行共享数据，这种固定端口的传输模式极易受到 GFW 的判定后遭到封杀。
+                    
+                  
+                  同时，Lantern客户端在运行时还会公布出连接服务器的具体IP地址，这一做法会直接招致GFW的封杀和屏蔽，众多网友对Lantern这种自杀式的设计也困惑不已。
+                  
+                    
+                      好友模式过于脆弱。既然采取P2P模式共享数据，就必须具备一个有效的点对点的分享管理机制，但Lantern将其建立在脆弱的Gtalk服务上，而Gtalk在天朝本就收到干扰极不稳定，我在试用最新的1.3.1版本时就卡在与 Google Talk 服务器通信的界面上动弹不得，即使挂载VPN也无法通过，与官方客服邮件联系亦无下文。
+                    
+                  
+                  
+                  
+                    
+
+                    
+                  
+   
+          信任与安全问题
+           古龙小说《七种武器》中唯一一个没有被使用的兵器是碧玉刀，它只是作为主人公段玉用来娶媳妇的聘礼而存在的，更多的是一件珍贵的装饰品而非一柄利器，甚至在小说中被两次遗失。恰恰和目前Lantern 的窘境颇为相似。   Lantern官方论坛曾经发过这样一个警告贴，内容为：“请大家格外注意，Lantern的P2P结构抵抗审查是建立在用户信任链基础上的。请只邀请你熟识和信任的朋友。请保证这些被你邀请的朋友也只邀请他们信任的朋友。如果你邀请的朋友不小心邀请了GFW工作人员，你的代理节点也被封锁。 而其他小心谨慎的用户还是可以使用他们的节点的。”   如果你随意邀请用户，比如直接在论坛上使用Email等发放，信任链断裂会导致审查人员也能获得你的所有节点，导致你无法使用Lantern。如果每个用户都这么做的话，会导致Lantern被全部封锁。   我相信绝大部分使用Lantern的用户都是在墙内的，认识一个值得信任的海外朋友可以24小时开着Lantern提供翻墙服务还是极少的，而Lantern官方要求为保证安全不能随意添加陌生的海外好友，这就直接违背了P2P倡导的“越多越快”的运行基本原则，而Lantern提供的官方服务器又在短时间内无法满足需求，或者上线后立即遭到 GFW 的封杀，因此导致整个链条的瘫痪。处理好P2P分享原则和安全信任之间的矛盾，将是Lantern今后发展需要解决的当务之急。   
+          新版本仍不稳定
+           7月12日，Lantern团队终于千呼万唤始出来，公布了最新版本的客户端1.4，新版中取消了让人诟病的邀请制度，安装后即可使用，并放出了项目捐款的链接，号召用户的支持来解决服务器的成本问题，募捐地址请点击  这里  。   但本人试用了之后发现还是卡在和 Google talk 服务器通信的页面无法登陆，即使挂着全局的VPN也无法解决，只能放弃，同时还得知其它用户也存在着类似的情况，小部分能够成功连接并能翻墙的用户也反馈，速度偏慢以及连接尚不稳定等问题，显然 Lantern 团队此次放出的版本依然尚不成熟，希望能迅速在后续版本中得以解决。   而且，Lantern停止邀请制度、并开始大范围的募捐从而解决服务器租赁费用，是否也意味着放弃了P2P通信的模式而开始回归到依靠服务器为中心的传统方式，假使果然如此，那么 Lantern和其他翻墙工具并无差异，当初的特色和优势将荡然无存，当然这一切都是猜测，我们将时刻关注后续版本的更新和发展。                     
+                    
+
+                    
+                  
+                  这是网上找到的一张据说是 Lantern 开发团队的截图，可见一个地处美国和墨西哥接壤的服务器正在为诸多网络受限用户提供翻墙服务。   另外Lantern团队还做了一个 Goolge Idea赞助的项目  uProxy  。他与Lantern有类似的地方，但也有重要区别。首先，Lantern是独立的应用，在后台运行，而uProxy是浏览器插件，需要请一个朋友作为你的代理，而Lantern可以有很多直接间接的朋友当代理。   不过无论是Lantern还是uProxy，它们都基于一个相互信任相互诚实的网络连接应用之上，正如小说《七种武器之碧玉刀》结尾时所述：   “所以我说的这第三种武器，并不是碧玉七星刀，而是诚实。 只有 
+           诚实
+           的人，才会有这样的运气！”。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                国家黑客“整治"港人                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                热捧大陆互联网经济当谨慎                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                中国军方黑客案：中美网络安全的外交之争                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                假新闻产业触目惊心 互联网人真的如此好骗？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    AustAbids (未验证)  
+                   星期三, 04/24/2019 - 22:03 
+                   永久连接 
+                
+              
+              
+                
+                  Vardenafil India Bay JeaEmbaks  
+                
+                    
+                    
+                      
+                        Cytotec Pour Methergin Acheter Airomir &lt;a href=  http://cialisong.com&gt;canadian  pharmacy cialis 20mg&lt;/a&gt; Que Es El Cialis Levothyroxine Without A Script Propecia Marca
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期五, 05/31/2019 - 14:40 
+                   永久连接 
+                
+              
+              
+                
+                  Acheter Vrai Cialis KelIdeodo  
+                
+                    
+                    
+                      
+                        Cialis Se Puede Comprar Buy Diflucan No Prescription Order Albendazole Online &lt;a href=  http://cialonlinecs.com&gt;cialis  generic&lt;/a&gt; Cialis Tutta La Vita 5mg Cialis Mail Order Secure Worldwide Progesterone Crinone Over Night
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    <meta property="og:description" content="
+  
+    
+      
+        
+              
+  Vergil  在 星期二, 07/29/2014 - 16:47 提交 
+          
+          
+            
+              
+                
+                  
+                      4442013055_12a5eb51df_z.jpg  
+                    
+                       
+                        
+                          
+ 图片来源： JD Hancock 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   翻墙七种武器之碧玉刀：蓝灯 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  
+如果评论2013年最火的免费翻墙软件，那么  Lantern  一定会占据一席之地，这个在13年下半年推出的翻墙软件以其独特的翻墙机制瞬间风靡大陆，为众多网友所追捧。   Lantern英文原意为“提灯”，官方的中文名为“蓝灯”，不过一些中国网友也给其取了一个本土化的名字“灯笼”，颇为形象贴切，寓意在网络管制的黑暗之中，为无知和愚昧的大众点燃希望的明灯，照亮前进的道路。   
+           点对点翻墙
+            以往的  翻墙工具  如VPN, SSH 等都需要借助于一个网络管制外的服务器作为媒介数据中转，再依托加密技术骗过墙的封锁，这种原理的翻墙方法最大的弊端就是单一的服务器（一般是外租的VPS），端口或 IP 地址遭到 GFW 的封锁后就导致整个链条坍塌。据说  Goagent  之所以一直能苟活到现在，正是因为 Google 的IP地址和服务器众多且常变换，所以 GFW 无法通过屏蔽指定 IP 地址的手段来封锁。   而Lantern 最大的优势就是，让每一台在墙外安装了Lantern 程序的电脑都能成为一台提供翻墙服务的服务器端（P2P 机制），为墙内的电脑提供点对点的数据分享，达到翻墙的效果，理论上存在无数个翻墙服务器。而当没有其他用户可以提供访问时，还可以使用官方提供的Lantern 云服务器。随着Lantern 网络的发展，用户群将会足够强大，这种服务器理论上会越来越少。   最早的时候，Lantern 采取的是邀请制度：通过其他翻墙工具访问其  官方网站  ，使用 Gmail 邮箱注册等待官方邀请，或者从其他已注册用户处获取邀请，是两条可行的方法。   需要了解更多关于 Lantern 的信息或教程使用方法可以通过如下网站：
+                  
+                  
+                    
+                      
+Lantern官方论坛：  https://lanternforum.greatfire.org/ 
+                      
+                    
+                    
+                      
+Lantern G+中文圈：  https://plus.google.com/communities/110961311457216179607 
+                      
+                    
+                    
+                      
+Lantern Google Groups：  https://groups.google.com/forum/#!forum/lantern-users-zh 
+                      
+                    
+                  
+                  
+ 
+           脆弱的点对点
+            因为依靠 P2P 的点对点传输机制保障了相对流畅的访问速度，但其缺点也是比较明显的，这直接导致其在13年底遭到 GFW 全面封杀，一度销声匿迹，2014年初，Lantern技术团队也曾发布更新版本试图解决 GFW 的屏蔽问题，但通过1.3.1版本在 Windows平台的试用情况来看，问题依旧，分析问题原因为如下几点：
+                  
+                  
+                    
+                      安装包体积较大，需要浏览器和Java虚拟机支持。Lantern 安装程序下载后，还需要链接服务器下载整个安装包，其中下载过程还必须挂载 VPN 才能完成（应该是下载服务器也被屏蔽），运行前还必须安装 Chrome浏览器和Java 虚拟机，体积过于庞大，不适于传播也妨碍使用。
+                    
+                    
+                      加密机制较弱。有网友研究过 Lantern的运行方式，发现其网络设计似乎过于简单，在后台发现有几十条向固定服务器443端口连接的请求，估计是提交数据和同步网络状态，同时侦听6109端口，通过此端口进行共享数据，这种固定端口的传输模式极易受到 GFW 的判定后遭到封杀。
+                    
+                  
+                  同时，Lantern客户端在运行时还会公布出连接服务器的具体IP地址，这一做法会直接招致GFW的封杀和屏蔽，众多网友对Lantern这种自杀式的设计也困惑不已。
+                  
+                    
+                      好友模式过于脆弱。既然采取P2P模式共享数据，就必须具备一个有效的点对点的分享管理机制，但Lantern将其建立在脆弱的Gtalk服务上，而Gtalk在天朝本就收到干扰极不稳定，我在试用最新的1.3.1版本时就卡在与 Google Talk 服务器通信的界面上动弹不得，即使挂载VPN也无法通过，与官方客服邮件联系亦无下文。
+                    
+                  
+                  
+                  
+                    
+
+                    
+                  
+   
+          信任与安全问题
+           古龙小说《七种武器》中唯一一个没有被使用的兵器是碧玉刀，它只是作为主人公段玉用来娶媳妇的聘礼而存在的，更多的是一件珍贵的装饰品而非一柄利器，甚至在小说中被两次遗失。恰恰和目前Lantern 的窘境颇为相似。   Lantern官方论坛曾经发过这样一个警告贴，内容为：“请大家格外注意，Lantern的P2P结构抵抗审查是建立在用户信任链基础上的。请只邀请你熟识和信任的朋友。请保证这些被你邀请的朋友也只邀请他们信任的朋友。如果你邀请的朋友不小心邀请了GFW工作人员，你的代理节点也被封锁。 而其他小心谨慎的用户还是可以使用他们的节点的。”   如果你随意邀请用户，比如直接在论坛上使用Email等发放，信任链断裂会导致审查人员也能获得你的所有节点，导致你无法使用Lantern。如果每个用户都这么做的话，会导致Lantern被全部封锁。   我相信绝大部分使用Lantern的用户都是在墙内的，认识一个值得信任的海外朋友可以24小时开着Lantern提供翻墙服务还是极少的，而Lantern官方要求为保证安全不能随意添加陌生的海外好友，这就直接违背了P2P倡导的“越多越快”的运行基本原则，而Lantern提供的官方服务器又在短时间内无法满足需求，或者上线后立即遭到 GFW 的封杀，因此导致整个链条的瘫痪。处理好P2P分享原则和安全信任之间的矛盾，将是Lantern今后发展需要解决的当务之急。   
+          新版本仍不稳定
+           7月12日，Lantern团队终于千呼万唤始出来，公布了最新版本的客户端1.4，新版中取消了让人诟病的邀请制度，安装后即可使用，并放出了项目捐款的链接，号召用户的支持来解决服务器的成本问题，募捐地址请点击  这里  。   但本人试用了之后发现还是卡在和 Google talk 服务器通信的页面无法登陆，即使挂着全局的VPN也无法解决，只能放弃，同时还得知其它用户也存在着类似的情况，小部分能够成功连接并能翻墙的用户也反馈，速度偏慢以及连接尚不稳定等问题，显然 Lantern 团队此次放出的版本依然尚不成熟，希望能迅速在后续版本中得以解决。   而且，Lantern停止邀请制度、并开始大范围的募捐从而解决服务器租赁费用，是否也意味着放弃了P2P通信的模式而开始回归到依靠服务器为中心的传统方式，假使果然如此，那么 Lantern和其他翻墙工具并无差异，当初的特色和优势将荡然无存，当然这一切都是猜测，我们将时刻关注后续版本的更新和发展。                     
+                    
+
+                    
+                  
+                  这是网上找到的一张据说是 Lantern 开发团队的截图，可见一个地处美国和墨西哥接壤的服务器正在为诸多网络受限用户提供翻墙服务。   另外Lantern团队还做了一个 Goolge Idea赞助的项目  uProxy  。他与Lantern有类似的地方，但也有重要区别。首先，Lantern是独立的应用，在后台运行，而uProxy是浏览器插件，需要请一个朋友作为你的代理，而Lantern可以有很多直接间接的朋友当代理。   不过无论是Lantern还是uProxy，它们都基于一个相互信任相互诚实的网络连接应用之上，正如小说《七种武器之碧玉刀》结尾时所述：   “所以我说的这第三种武器，并不是碧玉七星刀，而是诚实。 只有 
+           诚实
+           的人，才会有这样的运气！”。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                国家黑客“整治"港人                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                热捧大陆互联网经济当谨慎                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                中国军方黑客案：中美网络安全的外交之争                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                假新闻产业触目惊心 互联网人真的如此好骗？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    AustAbids (未验证)  
+                   星期三, 04/24/2019 - 22:03 
+                   永久连接 
+                
+              
+              
+                
+                  Vardenafil India Bay JeaEmbaks  
+                
+                    
+                    
+                      
+                        Cytotec Pour Methergin Acheter Airomir &lt;a href=  http://cialisong.com&gt;canadian  pharmacy cialis 20mg&lt;/a&gt; Que Es El Cialis Levothyroxine Without A Script Propecia Marca
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期五, 05/31/2019 - 14:40 
+                   永久连接 
+                
+              
+              
+                
+                  Acheter Vrai Cialis KelIdeodo  
+                
+                    
+                    
+                      
+                        Cialis Se Puede Comprar Buy Diflucan No Prescription Order Albendazole Online &lt;a href=  http://cialonlinecs.com&gt;cialis  generic&lt;/a&gt; Cialis Tutta La Vita 5mg Cialis Mail Order Secure Worldwide Progesterone Crinone Over Night
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="翻墙七种武器之碧玉刀：蓝灯" />
+    <meta property="twitter:title" content="翻墙七种武器之碧玉刀：蓝灯" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fpao-pao.net%2Farticle%2F140" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://pao-pao.net/article/140" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://pao-pao.net/article/140&text=翻墙七种武器之碧玉刀：蓝灯&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://pao-pao.net/article/140&title=翻墙七种武器之碧玉刀：蓝灯" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://pao-pao.net/article/140&title=翻墙七种武器之碧玉刀：蓝灯" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=翻墙七种武器之碧玉刀：蓝灯&body=
+  
+    
+      
+        
+              
+  Vergil  在 星期二, 07/29/2014 - 16:47 提交 
+          
+          
+            
+              
+                
+                  
+                      4442013055_12a5eb51df_z.jpg  
+                    
+                       
+                        
+                          
+ 图片来源： JD Hancock 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   翻墙七种武器之碧玉刀：蓝灯 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  
+如果评论2013年最火的免费翻墙软件，那么  Lantern  一定会占据一席之地，这个在13年下半年推出的翻墙软件以其独特的翻墙机制瞬间风靡大陆，为众多网友所追捧。   Lantern英文原意为“提灯”，官方的中文名为“蓝灯”，不过一些中国网友也给其取了一个本土化的名字“灯笼”，颇为形象贴切，寓意在网络管制的黑暗之中，为无知和愚昧的大众点燃希望的明灯，照亮前进的道路。   
+           点对点翻墙
+            以往的  翻墙工具  如VPN, SSH 等都需要借助于一个网络管制外的服务器作为媒介数据中转，再依托加密技术骗过墙的封锁，这种原理的翻墙方法最大的弊端就是单一的服务器（一般是外租的VPS），端口或 IP 地址遭到 GFW 的封锁后就导致整个链条坍塌。据说  Goagent  之所以一直能苟活到现在，正是因为 Google 的IP地址和服务器众多且常变换，所以 GFW 无法通过屏蔽指定 IP 地址的手段来封锁。   而Lantern 最大的优势就是，让每一台在墙外安装了Lantern 程序的电脑都能成为一台提供翻墙服务的服务器端（P2P 机制），为墙内的电脑提供点对点的数据分享，达到翻墙的效果，理论上存在无数个翻墙服务器。而当没有其他用户可以提供访问时，还可以使用官方提供的Lantern 云服务器。随着Lantern 网络的发展，用户群将会足够强大，这种服务器理论上会越来越少。   最早的时候，Lantern 采取的是邀请制度：通过其他翻墙工具访问其  官方网站  ，使用 Gmail 邮箱注册等待官方邀请，或者从其他已注册用户处获取邀请，是两条可行的方法。   需要了解更多关于 Lantern 的信息或教程使用方法可以通过如下网站：
+                  
+                  
+                    
+                      
+Lantern官方论坛：  https://lanternforum.greatfire.org/ 
+                      
+                    
+                    
+                      
+Lantern G+中文圈：  https://plus.google.com/communities/110961311457216179607 
+                      
+                    
+                    
+                      
+Lantern Google Groups：  https://groups.google.com/forum/#!forum/lantern-users-zh 
+                      
+                    
+                  
+                  
+ 
+           脆弱的点对点
+            因为依靠 P2P 的点对点传输机制保障了相对流畅的访问速度，但其缺点也是比较明显的，这直接导致其在13年底遭到 GFW 全面封杀，一度销声匿迹，2014年初，Lantern技术团队也曾发布更新版本试图解决 GFW 的屏蔽问题，但通过1.3.1版本在 Windows平台的试用情况来看，问题依旧，分析问题原因为如下几点：
+                  
+                  
+                    
+                      安装包体积较大，需要浏览器和Java虚拟机支持。Lantern 安装程序下载后，还需要链接服务器下载整个安装包，其中下载过程还必须挂载 VPN 才能完成（应该是下载服务器也被屏蔽），运行前还必须安装 Chrome浏览器和Java 虚拟机，体积过于庞大，不适于传播也妨碍使用。
+                    
+                    
+                      加密机制较弱。有网友研究过 Lantern的运行方式，发现其网络设计似乎过于简单，在后台发现有几十条向固定服务器443端口连接的请求，估计是提交数据和同步网络状态，同时侦听6109端口，通过此端口进行共享数据，这种固定端口的传输模式极易受到 GFW 的判定后遭到封杀。
+                    
+                  
+                  同时，Lantern客户端在运行时还会公布出连接服务器的具体IP地址，这一做法会直接招致GFW的封杀和屏蔽，众多网友对Lantern这种自杀式的设计也困惑不已。
+                  
+                    
+                      好友模式过于脆弱。既然采取P2P模式共享数据，就必须具备一个有效的点对点的分享管理机制，但Lantern将其建立在脆弱的Gtalk服务上，而Gtalk在天朝本就收到干扰极不稳定，我在试用最新的1.3.1版本时就卡在与 Google Talk 服务器通信的界面上动弹不得，即使挂载VPN也无法通过，与官方客服邮件联系亦无下文。
+                    
+                  
+                  
+                  
+                    
+
+                    
+                  
+   
+          信任与安全问题
+           古龙小说《七种武器》中唯一一个没有被使用的兵器是碧玉刀，它只是作为主人公段玉用来娶媳妇的聘礼而存在的，更多的是一件珍贵的装饰品而非一柄利器，甚至在小说中被两次遗失。恰恰和目前Lantern 的窘境颇为相似。   Lantern官方论坛曾经发过这样一个警告贴，内容为：“请大家格外注意，Lantern的P2P结构抵抗审查是建立在用户信任链基础上的。请只邀请你熟识和信任的朋友。请保证这些被你邀请的朋友也只邀请他们信任的朋友。如果你邀请的朋友不小心邀请了GFW工作人员，你的代理节点也被封锁。 而其他小心谨慎的用户还是可以使用他们的节点的。”   如果你随意邀请用户，比如直接在论坛上使用Email等发放，信任链断裂会导致审查人员也能获得你的所有节点，导致你无法使用Lantern。如果每个用户都这么做的话，会导致Lantern被全部封锁。   我相信绝大部分使用Lantern的用户都是在墙内的，认识一个值得信任的海外朋友可以24小时开着Lantern提供翻墙服务还是极少的，而Lantern官方要求为保证安全不能随意添加陌生的海外好友，这就直接违背了P2P倡导的“越多越快”的运行基本原则，而Lantern提供的官方服务器又在短时间内无法满足需求，或者上线后立即遭到 GFW 的封杀，因此导致整个链条的瘫痪。处理好P2P分享原则和安全信任之间的矛盾，将是Lantern今后发展需要解决的当务之急。   
+          新版本仍不稳定
+           7月12日，Lantern团队终于千呼万唤始出来，公布了最新版本的客户端1.4，新版中取消了让人诟病的邀请制度，安装后即可使用，并放出了项目捐款的链接，号召用户的支持来解决服务器的成本问题，募捐地址请点击  这里  。   但本人试用了之后发现还是卡在和 Google talk 服务器通信的页面无法登陆，即使挂着全局的VPN也无法解决，只能放弃，同时还得知其它用户也存在着类似的情况，小部分能够成功连接并能翻墙的用户也反馈，速度偏慢以及连接尚不稳定等问题，显然 Lantern 团队此次放出的版本依然尚不成熟，希望能迅速在后续版本中得以解决。   而且，Lantern停止邀请制度、并开始大范围的募捐从而解决服务器租赁费用，是否也意味着放弃了P2P通信的模式而开始回归到依靠服务器为中心的传统方式，假使果然如此，那么 Lantern和其他翻墙工具并无差异，当初的特色和优势将荡然无存，当然这一切都是猜测，我们将时刻关注后续版本的更新和发展。                     
+                    
+
+                    
+                  
+                  这是网上找到的一张据说是 Lantern 开发团队的截图，可见一个地处美国和墨西哥接壤的服务器正在为诸多网络受限用户提供翻墙服务。   另外Lantern团队还做了一个 Goolge Idea赞助的项目  uProxy  。他与Lantern有类似的地方，但也有重要区别。首先，Lantern是独立的应用，在后台运行，而uProxy是浏览器插件，需要请一个朋友作为你的代理，而Lantern可以有很多直接间接的朋友当代理。   不过无论是Lantern还是uProxy，它们都基于一个相互信任相互诚实的网络连接应用之上，正如小说《七种武器之碧玉刀》结尾时所述：   “所以我说的这第三种武器，并不是碧玉七星刀，而是诚实。 只有 
+           诚实
+           的人，才会有这样的运气！”。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                国家黑客“整治"港人                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                热捧大陆互联网经济当谨慎                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                中国军方黑客案：中美网络安全的外交之争                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                假新闻产业触目惊心 互联网人真的如此好骗？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    AustAbids (未验证)  
+                   星期三, 04/24/2019 - 22:03 
+                   永久连接 
+                
+              
+              
+                
+                  Vardenafil India Bay JeaEmbaks  
+                
+                    
+                    
+                      
+                        Cytotec Pour Methergin Acheter Airomir &lt;a href=  http://cialisong.com&gt;canadian  pharmacy cialis 20mg&lt;/a&gt; Que Es El Cialis Levothyroxine Without A Script Propecia Marca
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期五, 05/31/2019 - 14:40 
+                   永久连接 
+                
+              
+              
+                
+                  Acheter Vrai Cialis KelIdeodo  
+                
+                    
+                    
+                      
+                        Cialis Se Puede Comprar Buy Diflucan No Prescription Order Albendazole Online &lt;a href=  http://cialonlinecs.com&gt;cialis  generic&lt;/a&gt; Cialis Tutta La Vita 5mg Cialis Mail Order Secure Worldwide Progesterone Crinone Over Night
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://pao-pao.net/article/140" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://pao-pao.net/article/140&title=翻墙七种武器之碧玉刀：蓝灯&caption=
+  
+    
+      
+        
+              
+  Vergil  在 星期二, 07/29/2014 - 16:47 提交 
+          
+          
+            
+              
+                
+                  
+                      4442013055_12a5eb51df_z.jpg  
+                    
+                       
+                        
+                          
+ 图片来源： JD Hancock 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   翻墙七种武器之碧玉刀：蓝灯 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  
+如果评论2013年最火的免费翻墙软件，那么  Lantern  一定会占据一席之地，这个在13年下半年推出的翻墙软件以其独特的翻墙机制瞬间风靡大陆，为众多网友所追捧。   Lantern英文原意为“提灯”，官方的中文名为“蓝灯”，不过一些中国网友也给其取了一个本土化的名字“灯笼”，颇为形象贴切，寓意在网络管制的黑暗之中，为无知和愚昧的大众点燃希望的明灯，照亮前进的道路。   
+           点对点翻墙
+            以往的  翻墙工具  如VPN, SSH 等都需要借助于一个网络管制外的服务器作为媒介数据中转，再依托加密技术骗过墙的封锁，这种原理的翻墙方法最大的弊端就是单一的服务器（一般是外租的VPS），端口或 IP 地址遭到 GFW 的封锁后就导致整个链条坍塌。据说  Goagent  之所以一直能苟活到现在，正是因为 Google 的IP地址和服务器众多且常变换，所以 GFW 无法通过屏蔽指定 IP 地址的手段来封锁。   而Lantern 最大的优势就是，让每一台在墙外安装了Lantern 程序的电脑都能成为一台提供翻墙服务的服务器端（P2P 机制），为墙内的电脑提供点对点的数据分享，达到翻墙的效果，理论上存在无数个翻墙服务器。而当没有其他用户可以提供访问时，还可以使用官方提供的Lantern 云服务器。随着Lantern 网络的发展，用户群将会足够强大，这种服务器理论上会越来越少。   最早的时候，Lantern 采取的是邀请制度：通过其他翻墙工具访问其  官方网站  ，使用 Gmail 邮箱注册等待官方邀请，或者从其他已注册用户处获取邀请，是两条可行的方法。   需要了解更多关于 Lantern 的信息或教程使用方法可以通过如下网站：
+                  
+                  
+                    
+                      
+Lantern官方论坛：  https://lanternforum.greatfire.org/ 
+                      
+                    
+                    
+                      
+Lantern G+中文圈：  https://plus.google.com/communities/110961311457216179607 
+                      
+                    
+                    
+                      
+Lantern Google Groups：  https://groups.google.com/forum/#!forum/lantern-users-zh 
+                      
+                    
+                  
+                  
+ 
+           脆弱的点对点
+            因为依靠 P2P 的点对点传输机制保障了相对流畅的访问速度，但其缺点也是比较明显的，这直接导致其在13年底遭到 GFW 全面封杀，一度销声匿迹，2014年初，Lantern技术团队也曾发布更新版本试图解决 GFW 的屏蔽问题，但通过1.3.1版本在 Windows平台的试用情况来看，问题依旧，分析问题原因为如下几点：
+                  
+                  
+                    
+                      安装包体积较大，需要浏览器和Java虚拟机支持。Lantern 安装程序下载后，还需要链接服务器下载整个安装包，其中下载过程还必须挂载 VPN 才能完成（应该是下载服务器也被屏蔽），运行前还必须安装 Chrome浏览器和Java 虚拟机，体积过于庞大，不适于传播也妨碍使用。
+                    
+                    
+                      加密机制较弱。有网友研究过 Lantern的运行方式，发现其网络设计似乎过于简单，在后台发现有几十条向固定服务器443端口连接的请求，估计是提交数据和同步网络状态，同时侦听6109端口，通过此端口进行共享数据，这种固定端口的传输模式极易受到 GFW 的判定后遭到封杀。
+                    
+                  
+                  同时，Lantern客户端在运行时还会公布出连接服务器的具体IP地址，这一做法会直接招致GFW的封杀和屏蔽，众多网友对Lantern这种自杀式的设计也困惑不已。
+                  
+                    
+                      好友模式过于脆弱。既然采取P2P模式共享数据，就必须具备一个有效的点对点的分享管理机制，但Lantern将其建立在脆弱的Gtalk服务上，而Gtalk在天朝本就收到干扰极不稳定，我在试用最新的1.3.1版本时就卡在与 Google Talk 服务器通信的界面上动弹不得，即使挂载VPN也无法通过，与官方客服邮件联系亦无下文。
+                    
+                  
+                  
+                  
+                    
+
+                    
+                  
+   
+          信任与安全问题
+           古龙小说《七种武器》中唯一一个没有被使用的兵器是碧玉刀，它只是作为主人公段玉用来娶媳妇的聘礼而存在的，更多的是一件珍贵的装饰品而非一柄利器，甚至在小说中被两次遗失。恰恰和目前Lantern 的窘境颇为相似。   Lantern官方论坛曾经发过这样一个警告贴，内容为：“请大家格外注意，Lantern的P2P结构抵抗审查是建立在用户信任链基础上的。请只邀请你熟识和信任的朋友。请保证这些被你邀请的朋友也只邀请他们信任的朋友。如果你邀请的朋友不小心邀请了GFW工作人员，你的代理节点也被封锁。 而其他小心谨慎的用户还是可以使用他们的节点的。”   如果你随意邀请用户，比如直接在论坛上使用Email等发放，信任链断裂会导致审查人员也能获得你的所有节点，导致你无法使用Lantern。如果每个用户都这么做的话，会导致Lantern被全部封锁。   我相信绝大部分使用Lantern的用户都是在墙内的，认识一个值得信任的海外朋友可以24小时开着Lantern提供翻墙服务还是极少的，而Lantern官方要求为保证安全不能随意添加陌生的海外好友，这就直接违背了P2P倡导的“越多越快”的运行基本原则，而Lantern提供的官方服务器又在短时间内无法满足需求，或者上线后立即遭到 GFW 的封杀，因此导致整个链条的瘫痪。处理好P2P分享原则和安全信任之间的矛盾，将是Lantern今后发展需要解决的当务之急。   
+          新版本仍不稳定
+           7月12日，Lantern团队终于千呼万唤始出来，公布了最新版本的客户端1.4，新版中取消了让人诟病的邀请制度，安装后即可使用，并放出了项目捐款的链接，号召用户的支持来解决服务器的成本问题，募捐地址请点击  这里  。   但本人试用了之后发现还是卡在和 Google talk 服务器通信的页面无法登陆，即使挂着全局的VPN也无法解决，只能放弃，同时还得知其它用户也存在着类似的情况，小部分能够成功连接并能翻墙的用户也反馈，速度偏慢以及连接尚不稳定等问题，显然 Lantern 团队此次放出的版本依然尚不成熟，希望能迅速在后续版本中得以解决。   而且，Lantern停止邀请制度、并开始大范围的募捐从而解决服务器租赁费用，是否也意味着放弃了P2P通信的模式而开始回归到依靠服务器为中心的传统方式，假使果然如此，那么 Lantern和其他翻墙工具并无差异，当初的特色和优势将荡然无存，当然这一切都是猜测，我们将时刻关注后续版本的更新和发展。                     
+                    
+
+                    
+                  
+                  这是网上找到的一张据说是 Lantern 开发团队的截图，可见一个地处美国和墨西哥接壤的服务器正在为诸多网络受限用户提供翻墙服务。   另外Lantern团队还做了一个 Goolge Idea赞助的项目  uProxy  。他与Lantern有类似的地方，但也有重要区别。首先，Lantern是独立的应用，在后台运行，而uProxy是浏览器插件，需要请一个朋友作为你的代理，而Lantern可以有很多直接间接的朋友当代理。   不过无论是Lantern还是uProxy，它们都基于一个相互信任相互诚实的网络连接应用之上，正如小说《七种武器之碧玉刀》结尾时所述：   “所以我说的这第三种武器，并不是碧玉七星刀，而是诚实。 只有 
+           诚实
+           的人，才会有这样的运气！”。
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                国家黑客“整治"港人                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                热捧大陆互联网经济当谨慎                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                中国军方黑客案：中美网络安全的外交之争                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                假新闻产业触目惊心 互联网人真的如此好骗？                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    AustAbids (未验证)  
+                   星期三, 04/24/2019 - 22:03 
+                   永久连接 
+                
+              
+              
+                
+                  Vardenafil India Bay JeaEmbaks  
+                
+                    
+                    
+                      
+                        Cytotec Pour Methergin Acheter Airomir &lt;a href=  http://cialisong.com&gt;canadian  pharmacy cialis 20mg&lt;/a&gt; Que Es El Cialis Levothyroxine Without A Script Propecia Marca
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    RebVoks (未验证)  
+                   星期五, 05/31/2019 - 14:40 
+                   永久连接 
+                
+              
+              
+                
+                  Acheter Vrai Cialis KelIdeodo  
+                
+                    
+                    
+                      
+                        Cialis Se Puede Comprar Buy Diflucan No Prescription Order Albendazole Online &lt;a href=  http://cialonlinecs.com&gt;cialis  generic&lt;/a&gt; Cialis Tutta La Vita 5mg Cialis Mail Order Secure Worldwide Progesterone Crinone Over Night
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=翻墙七种武器之碧玉刀：蓝灯&url=https://pao-pao.net/article/140" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>翻墙七种武器之碧玉刀：蓝灯</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2014-07-29
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Vergil</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#泡泡">
+          泡泡
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://pao-pao.net/article/140" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="泡泡的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#泡泡 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <section class="clearfix" id="content" role="main">
+  <div class="region region-content">
+    <div class="block block-system" id="block-system-main">
+      <div class="content">
+        <div about="/article/140" class="node node-pao-pao-article node-promoted node-full view-mode-full clearfix" id="node-140" typeof="sioc:Item foaf:Document">
+<span class="rdf-meta element-hidden" content="翻墙七种武器之碧玉刀：蓝灯" property="dc:title"> </span> <span class="rdf-meta element-hidden" content="2" datatype="xsd:integer" property="sioc:num_replies"> </span>           <div class="submitted">
+<span content="2014-07-29T16:47:05+02:00" datatype="xsd:dateTime" property="dc:date dc:created" rel="sioc:has_creator"> <a about="/author/30" class="username" datatype="" href="/author/30" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> Vergil </a> 在 星期二, 07/29/2014 - 16:47 提交 </span>
+          </div>
+          <div class="content">
+            <div class="field field-name-field-image field-type-image field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="file file-image file-image-jpeg" id="file-329--2">
+                    <h2 class="element-invisible" id="a5eb51dfzjpg--"> <a href="/file/329"> 4442013055_12a5eb51df_z.jpg </a> </h2>
+                    <div class="content">
+<img alt="" height="164" src="https://pao-pao.net/sites/pao-pao.net/files/styles/article_detail/public/4442013055_12a5eb51df_z.jpg?itok=A57CF-eF" title="" typeof="foaf:Image" width="290" />                       <div class="field field-name-field-image-source field-type-link-field field-label-hidden">
+                        <div class="field-items">
+                          <div class="field-item even">
+<a href="https://www.flickr.com/photos/jdhancock/4442013055"> 图片来源： JD Hancock </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-title field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="dc:title">
+                  <h1 class="page-title" id="section"> 翻墙七种武器之碧玉刀：蓝灯 </h1>
+                </div>
+              </div>
+            </div>
+            <div class="field-name-author">
+              <div class="label-inline">
+文/
+              </div>
+ <a about="/author/30" class="username" datatype="" href="/author/30" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> Vergil </a>
+            </div>
+            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="content:encoded">
+                  <div>
+如果评论2013年最火的免费翻墙软件，那么 <a href="https://getlantern.org/#zh_CN" rel="nofollow"> Lantern </a> 一定会占据一席之地，这个在13年下半年推出的翻墙软件以其独特的翻墙机制瞬间风靡大陆，为众多网友所追捧。 <br /> <br /> Lantern英文原意为“提灯”，官方的中文名为“蓝灯”，不过一些中国网友也给其取了一个本土化的名字“灯笼”，颇为形象贴切，寓意在网络管制的黑暗之中，为无知和愚昧的大众点燃希望的明灯，照亮前进的道路。 <br /> <br /> <strong>
+           点对点翻墙
+          </strong> <br /> 以往的 <a href="https://pao-pao.net/tags/78" rel="nofollow"> 翻墙工具 </a> 如VPN, SSH 等都需要借助于一个网络管制外的服务器作为媒介数据中转，再依托加密技术骗过墙的封锁，这种原理的翻墙方法最大的弊端就是单一的服务器（一般是外租的VPS），端口或 IP 地址遭到 GFW 的封锁后就导致整个链条坍塌。据说 <a href="https://pao-pao.net/node/111" rel="nofollow"> Goagent </a> 之所以一直能苟活到现在，正是因为 Google 的IP地址和服务器众多且常变换，所以 GFW 无法通过屏蔽指定 IP 地址的手段来封锁。 <br /> <br /> 而Lantern 最大的优势就是，让每一台在墙外安装了Lantern 程序的电脑都能成为一台提供翻墙服务的服务器端（P2P 机制），为墙内的电脑提供点对点的数据分享，达到翻墙的效果，理论上存在无数个翻墙服务器。而当没有其他用户可以提供访问时，还可以使用官方提供的Lantern 云服务器。随着Lantern 网络的发展，用户群将会足够强大，这种服务器理论上会越来越少。 <br /> <br /> 最早的时候，Lantern 采取的是邀请制度：通过其他翻墙工具访问其 <a href="https://getlantern.org/#zh_CN" rel="nofollow"> 官方网站 </a> ，使用 Gmail 邮箱注册等待官方邀请，或者从其他已注册用户处获取邀请，是两条可行的方法。 <br /> <br /> 需要了解更多关于 Lantern 的信息或教程使用方法可以通过如下网站：
+                  </div>
+                  <ol>
+                    <li>
+                      <div>
+Lantern官方论坛： <a href="https://lanternforum.greatfire.org/" rel="nofollow"> https://lanternforum.greatfire.org/ </a>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+Lantern G+中文圈： <a href="https://plus.google.com/communities/110961311457216179607" rel="nofollow"> https://plus.google.com/communities/110961311457216179607 </a>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+Lantern Google Groups： <a href="https://groups.google.com/forum/#!forum/lantern-users-zh" rel="nofollow"> https://groups.google.com/forum/#!forum/lantern-users-zh </a>
+                      </div>
+                    </li>
+                  </ol>
+                  <div>
+<br /> <strong>
+           脆弱的点对点
+          </strong> <br /> 因为依靠 P2P 的点对点传输机制保障了相对流畅的访问速度，但其缺点也是比较明显的，这直接导致其在13年底遭到 GFW 全面封杀，一度销声匿迹，2014年初，Lantern技术团队也曾发布更新版本试图解决 GFW 的屏蔽问题，但通过1.3.1版本在 Windows平台的试用情况来看，问题依旧，分析问题原因为如下几点：
+                  </div>
+                  <ol>
+                    <li>
+                      <p>安装包体积较大，需要浏览器和Java虚拟机支持。Lantern 安装程序下载后，还需要链接服务器下载整个安装包，其中下载过程还必须挂载 VPN 才能完成（应该是下载服务器也被屏蔽），运行前还必须安装 Chrome浏览器和Java 虚拟机，体积过于庞大，不适于传播也妨碍使用。</p>
+                    </li>
+                    <li>
+                      <p>加密机制较弱。有网友研究过 Lantern的运行方式，发现其网络设计似乎过于简单，在后台发现有几十条向固定服务器443端口连接的请求，估计是提交数据和同步网络状态，同时侦听6109端口，通过此端口进行共享数据，这种固定端口的传输模式极易受到 GFW 的判定后遭到封杀。</p>
+                    </li>
+                  </ol>
+                  <p>同时，Lantern客户端在运行时还会公布出连接服务器的具体IP地址，这一做法会直接招致GFW的封杀和屏蔽，众多网友对Lantern这种自杀式的设计也困惑不已。</p>
+                  <ol>
+                    <li>
+                      <p>好友模式过于脆弱。既然采取P2P模式共享数据，就必须具备一个有效的点对点的分享管理机制，但Lantern将其建立在脆弱的Gtalk服务上，而Gtalk在天朝本就收到干扰极不稳定，我在试用最新的1.3.1版本时就卡在与 Google Talk 服务器通信的界面上动弹不得，即使挂载VPN也无法通过，与官方客服邮件联系亦无下文。</p>
+                    </li>
+                  </ol>
+                  <p></p>
+                  <div class="media media-element-container media-full">
+                    <div class="ds-1col file file-image file-image-jpeg view-mode-full clearfix">
+<img alt="" class="media-element file-full" height="312" src="https://files.pao-pao.net/sites/pao-pao.net/files/styles/large/public/lantern.jpg?itok=MNKoaqSO" title="" typeof="foaf:Image" width="480" />
+                    </div>
+                  </div>
+ <br /> <br /> <strong>
+          信任与安全问题
+         </strong> <br /> 古龙小说《七种武器》中唯一一个没有被使用的兵器是碧玉刀，它只是作为主人公段玉用来娶媳妇的聘礼而存在的，更多的是一件珍贵的装饰品而非一柄利器，甚至在小说中被两次遗失。恰恰和目前Lantern 的窘境颇为相似。 <br /> <br /> Lantern官方论坛曾经发过这样一个警告贴，内容为：“请大家格外注意，Lantern的P2P结构抵抗审查是建立在用户信任链基础上的。请只邀请你熟识和信任的朋友。请保证这些被你邀请的朋友也只邀请他们信任的朋友。如果你邀请的朋友不小心邀请了GFW工作人员，你的代理节点也被封锁。 而其他小心谨慎的用户还是可以使用他们的节点的。” <br /> <br /> 如果你随意邀请用户，比如直接在论坛上使用Email等发放，信任链断裂会导致审查人员也能获得你的所有节点，导致你无法使用Lantern。如果每个用户都这么做的话，会导致Lantern被全部封锁。 <br /> <br /> 我相信绝大部分使用Lantern的用户都是在墙内的，认识一个值得信任的海外朋友可以24小时开着Lantern提供翻墙服务还是极少的，而Lantern官方要求为保证安全不能随意添加陌生的海外好友，这就直接违背了P2P倡导的“越多越快”的运行基本原则，而Lantern提供的官方服务器又在短时间内无法满足需求，或者上线后立即遭到 GFW 的封杀，因此导致整个链条的瘫痪。处理好P2P分享原则和安全信任之间的矛盾，将是Lantern今后发展需要解决的当务之急。 <br /> <br /> <strong>
+          新版本仍不稳定
+         </strong> <br /> 7月12日，Lantern团队终于千呼万唤始出来，公布了最新版本的客户端1.4，新版中取消了让人诟病的邀请制度，安装后即可使用，并放出了项目捐款的链接，号召用户的支持来解决服务器的成本问题，募捐地址请点击 <a href="https://www.indiegogo.com/projects/fund-internet-freedom-with-lantern" rel="nofollow"> 这里 </a> 。 <br /> <br /> 但本人试用了之后发现还是卡在和 Google talk 服务器通信的页面无法登陆，即使挂着全局的VPN也无法解决，只能放弃，同时还得知其它用户也存在着类似的情况，小部分能够成功连接并能翻墙的用户也反馈，速度偏慢以及连接尚不稳定等问题，显然 Lantern 团队此次放出的版本依然尚不成熟，希望能迅速在后续版本中得以解决。 <br /> <br /> 而且，Lantern停止邀请制度、并开始大范围的募捐从而解决服务器租赁费用，是否也意味着放弃了P2P通信的模式而开始回归到依靠服务器为中心的传统方式，假使果然如此，那么 Lantern和其他翻墙工具并无差异，当初的特色和优势将荡然无存，当然这一切都是猜测，我们将时刻关注后续版本的更新和发展。 <br /> <br />                   <div class="media media-element-container media-full">
+                    <div class="ds-1col file file-image file-image-png view-mode-full clearfix">
+<img alt="" class="media-element file-full" height="274" src="https://files.pao-pao.net/sites/pao-pao.net/files/styles/large/public/lantern2.png?itok=M6w_sPxg" title="" typeof="foaf:Image" width="480" />
+                    </div>
+                  </div>
+                  <p>这是网上找到的一张据说是 Lantern 开发团队的截图，可见一个地处美国和墨西哥接壤的服务器正在为诸多网络受限用户提供翻墙服务。 <br /> <br /> 另外Lantern团队还做了一个 Goolge Idea赞助的项目 <a href="https://www.uproxy.org/" rel="nofollow"> uProxy </a> 。他与Lantern有类似的地方，但也有重要区别。首先，Lantern是独立的应用，在后台运行，而uProxy是浏览器插件，需要请一个朋友作为你的代理，而Lantern可以有很多直接间接的朋友当代理。 <br /> <br /> 不过无论是Lantern还是uProxy，它们都基于一个相互信任相互诚实的网络连接应用之上，正如小说《七种武器之碧玉刀》结尾时所述： <br /> <br /> “所以我说的这第三种武器，并不是碧玉七星刀，而是诚实。 只有 <strong>
+           诚实
+          </strong> 的人，才会有这样的运气！”。</p>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-service-links-displays-group field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="service-links">
+<a class="service-links-twitter" href="https://twitter.com/share?url=https%3A//pao-pao.net/article/140&amp;text=%E7%BF%BB%E5%A2%99%E4%B8%83%E7%A7%8D%E6%AD%A6%E5%99%A8%E4%B9%8B%E7%A2%A7%E7%8E%89%E5%88%80%EF%BC%9A%E8%93%9D%E7%81%AF" rel="nofollow" title="Share this on Twitter"> <img alt="Twitter logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/twitter.png" typeof="foaf:Image" /> </a> <a class="service-links-facebook" href="https://www.facebook.com/sharer.php?u=https%3A//pao-pao.net/article/140&amp;t=%E7%BF%BB%E5%A2%99%E4%B8%83%E7%A7%8D%E6%AD%A6%E5%99%A8%E4%B9%8B%E7%A2%A7%E7%8E%89%E5%88%80%EF%BC%9A%E8%93%9D%E7%81%AF" rel="nofollow" title="Share on Facebook"> <img alt="Facebook logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/facebook.png" typeof="foaf:Image" /> </a> <a class="service-links-google" href="https://www.google.com/bookmarks/mark?op=add&amp;bkmk=https%3A//pao-pao.net/article/140&amp;title=%E7%BF%BB%E5%A2%99%E4%B8%83%E7%A7%8D%E6%AD%A6%E5%99%A8%E4%B9%8B%E7%A2%A7%E7%8E%89%E5%88%80%EF%BC%9A%E8%93%9D%E7%81%AF" rel="nofollow" title="Bookmark this post on Google"> <img alt="谷歌 logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/google.png" typeof="foaf:Image" /> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block block-views related" id="block-views-articles-related-block-1">
+            <h2 id="section-1"> 您可能感兴趣的文章 </h2>
+            <div class="content">
+              <div class="view view-articles-related view-id-articles_related view-display-id-block_1 related promoted view-dom-id-2b1bf52af41e18125b423b7b77d56391">
+                <div class="view-content">
+                  <div class="views-row views-row-1 views-row-odd views-row-first">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/177"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/15315931391_5d9a39dc0a_z.jpg?itok=Hs1wgohd" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-2"> <a href="/article/177"> 国家黑客“整治"港人 </a>                                 <h2 id="section-3"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-2 views-row-even">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/269"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/anp-30061182.jpg?itok=29sEII14" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-4"> <a href="/article/269"> 热捧大陆互联网经济当谨慎 </a>                                 <h2 id="section-5"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-3 views-row-odd">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/99"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/chinahackers.jpg?itok=s66rQLUl" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-6"> <a href="/article/99"> 中国军方黑客案：中美网络安全的外交之争 </a>                                 <h2 id="section-7"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-4 views-row-even views-row-last">
+                    <div class="ds-2col node node-pao-pao-article node-promoted node-sticky view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/782"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/tou_1.jpg?itok=NoIK2cTz" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-8"> <a href="/article/782"> 假新闻产业触目惊心 互联网人真的如此好骗？ </a>                                 <h2 id="section-9"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.block -->
+          <ul class="links inline">
+            <li class="comment-add first last active"><a class="active" href="/article/140#comment-form" title="分享您有关本文的看法与观点。"> 冒个泡吧！ </a></li>
+          </ul>
+          <div class="comment-wrapper" id="comments">
+            <h2 class="title" id="section-10"> 评论 </h2>
+ <a id="comment-10420">
+      </a>             <div about="/comment/10420#comment-10420" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> AustAbids (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-04-24T22:03:35+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期三, 04/24/2019 - 22:03 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/10420#comment-10420" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="vardenafil-india-bay-jeaembaks--"> <a class="permalink" href="/comment/10420#comment-10420" rel="bookmark"> Vardenafil India Bay JeaEmbaks </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/140"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Cytotec Pour Methergin Acheter Airomir &lt;a href= <a href="http://cialisong.com&gt;canadian"> http://cialisong.com&gt;canadian </a> pharmacy cialis 20mg&lt;/a&gt; Que Es El Cialis Levothyroxine Without A Script Propecia Marca</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/140/10420"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-14087">
+      </a>             <div about="/comment/14087#comment-14087" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> RebVoks (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-05-31T14:40:59+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期五, 05/31/2019 - 14:40 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/14087#comment-14087" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="acheter-vrai-cialis-kelideodo--"> <a class="permalink" href="/comment/14087#comment-14087" rel="bookmark"> Acheter Vrai Cialis KelIdeodo </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/140"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Cialis Se Puede Comprar Buy Diflucan No Prescription Order Albendazole Online &lt;a href= <a href="http://cialonlinecs.com&gt;cialis"> http://cialonlinecs.com&gt;cialis </a> generic&lt;/a&gt; Cialis Tutta La Vita 5mg Cialis Mail Order Secure Worldwide Progesterone Crinone Over Night</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/140/14087"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+            <h2 class="title comment-form" id="section-11"> 冒个泡吧！ </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.block -->
+  </div>
+  <!-- /.region -->
+</section>
+
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#泡泡 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2018-05-30/%E4%BA%92%E8%81%94%E7%BD%91%E8%B6%8B%E5%8A%BF%E6%8A%A5%E5%91%8A2018-%E4%BE%9D%E6%97%A7%E5%91%88%E7%8E%B0%E4%B8%8D%E8%89%AF%E8%B6%8B%E5%8A%BF-%E8%BF%99%E9%87%8C%E6%98%AF%E5%85%B7%E4%BD%93%E5%88%86%E6%9E%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-02-04/%E6%B0%91%E6%97%8F%E7%9F%9B%E7%9B%BE%E5%BA%94%E7%94%B1%E5%81%9C%E6%AD%A2%E4%BF%A1%E6%81%AF%E9%9A%94%E7%A6%BB%E5%BC%80%E5%A7%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2014-08-01</time>
+        <a href="https://nodebe4.github.io/oped2/2014-08-01/%E7%BD%91%E7%BB%9C%E5%AA%92%E4%BD%93%E5%9B%BD%E5%AE%B6%E9%98%9F%E7%9A%84-%E6%BE%8E%E6%B9%83-%E4%B9%8B%E8%B7%AF/">
+          网络媒体国家队的“澎湃”之路
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-07-31</time>
+        <a href="https://nodebe4.github.io/oped2/2014-07-31/%E4%B8%8D%E5%90%8C%E7%9A%84%E5%9B%BD%E5%BA%A6-%E7%9B%B8%E5%90%8C%E7%9A%84%E6%96%87%E5%AD%97%E7%8B%B1-%E9%87%8A%E6%94%BE%E5%9F%83%E5%A1%9E%E4%BF%84%E6%AF%94%E4%BA%9A%E5%8D%9A%E5%AE%A2-%E7%BD%91%E5%8A%A8-%E5%85%A8%E7%90%83/">
+          不同的国度，相同的文字狱：释放埃塞俄比亚博客“网动”全球
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-07-28</time>
+        <a href="https://nodebe4.github.io/oped2/2014-07-28/%E4%B8%BB%E5%9C%BA%E6%B2%A6%E9%99%B7-%E5%AA%92%E4%BD%93%E8%AF%A5%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9%E6%81%90%E6%83%A7/">
+          主场沦陷：媒体该如何面对恐惧？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-07-25</time>
+        <a href="https://nodebe4.github.io/oped2/2014-07-25/%E6%BE%8E%E6%B9%83-%E5%AE%98%E5%AE%B6%E7%89%B9%E8%AE%B8%E7%BB%8F%E8%90%A5%E7%9A%84%E8%87%AA%E7%94%B1/">
+          澎湃：官家特许经营的自由
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2014-07-28/%E4%B8%BB%E5%9C%BA%E6%B2%A6%E9%99%B7-%E5%AA%92%E4%BD%93%E8%AF%A5%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9%E6%81%90%E6%83%A7/">
+            前一篇：主场沦陷：媒体该如何面对恐惧？
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2014-07-31/%E4%B8%8D%E5%90%8C%E7%9A%84%E5%9B%BD%E5%BA%A6-%E7%9B%B8%E5%90%8C%E7%9A%84%E6%96%87%E5%AD%97%E7%8B%B1-%E9%87%8A%E6%94%BE%E5%9F%83%E5%A1%9E%E4%BF%84%E6%AF%94%E4%BA%9A%E5%8D%9A%E5%AE%A2-%E7%BD%91%E5%8A%A8-%E5%85%A8%E7%90%83/">
+            後一篇：不同的国度，相同的文字狱：释放埃塞俄比亚博客“网动”全球
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2014-07-28/%E4%B8%BB%E5%9C%BA%E6%B2%A6%E9%99%B7-%E5%AA%92%E4%BD%93%E8%AF%A5%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9%E6%81%90%E6%83%A7/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2014-07-31/%E4%B8%8D%E5%90%8C%E7%9A%84%E5%9B%BD%E5%BA%A6-%E7%9B%B8%E5%90%8C%E7%9A%84%E6%96%87%E5%AD%97%E7%8B%B1-%E9%87%8A%E6%94%BE%E5%9F%83%E5%A1%9E%E4%BF%84%E6%AF%94%E4%BA%9A%E5%8D%9A%E5%AE%A2-%E7%BD%91%E5%8A%A8-%E5%85%A8%E7%90%83/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2014-07-31/%E4%B8%8D%E5%90%8C%E7%9A%84%E5%9B%BD%E5%BA%A6-%E7%9B%B8%E5%90%8C%E7%9A%84%E6%96%87%E5%AD%97%E7%8B%B1-%E9%87%8A%E6%94%BE%E5%9F%83%E5%A1%9E%E4%BF%84%E6%AF%94%E4%BA%9A%E5%8D%9A%E5%AE%A2-%E7%BD%91%E5%8A%A8-%E5%85%A8%E7%90%83/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2014-07-28/%E4%B8%BB%E5%9C%BA%E6%B2%A6%E9%99%B7-%E5%AA%92%E4%BD%93%E8%AF%A5%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9%E6%81%90%E6%83%A7/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2014-07-28/%E4%B8%BB%E5%9C%BA%E6%B2%A6%E9%99%B7-%E5%AA%92%E4%BD%93%E8%AF%A5%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9%E6%81%90%E6%83%A7/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2014-07-31/%E4%B8%8D%E5%90%8C%E7%9A%84%E5%9B%BD%E5%BA%A6-%E7%9B%B8%E5%90%8C%E7%9A%84%E6%96%87%E5%AD%97%E7%8B%B1-%E9%87%8A%E6%94%BE%E5%9F%83%E5%A1%9E%E4%BF%84%E6%AF%94%E4%BA%9A%E5%8D%9A%E5%AE%A2-%E7%BD%91%E5%8A%A8-%E5%85%A8%E7%90%83/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<泡泡>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2014-07-31/%E4%B8%8D%E5%90%8C%E7%9A%84%E5%9B%BD%E5%BA%A6-%E7%9B%B8%E5%90%8C%E7%9A%84%E6%96%87%E5%AD%97%E7%8B%B1-%E9%87%8A%E6%94%BE%E5%9F%83%E5%A1%9E%E4%BF%84%E6%AF%94%E4%BA%9A%E5%8D%9A%E5%AE%A2-%E7%BD%91%E5%8A%A8-%E5%85%A8%E7%90%83/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<泡泡>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2014-07-28/%E4%B8%BB%E5%9C%BA%E6%B2%A6%E9%99%B7-%E5%AA%92%E4%BD%93%E8%AF%A5%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9%E6%81%90%E6%83%A7/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

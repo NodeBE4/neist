@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>给我前任主人的一封信 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+给我前任主人的一封信
+——
+" />
+    <meta property="og:description" content="
+给我前任主人的一封信
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="给我前任主人的一封信" />
+    <meta property="twitter:title" content="给我前任主人的一封信" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40yeeyan%2F-b67020a744%3Fsource%3Drss-216c8ba84893------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@yeeyan/-b67020a744?source=rss-216c8ba84893------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@yeeyan/-b67020a744?source=rss-216c8ba84893------2&text=给我前任主人的一封信&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@yeeyan/-b67020a744?source=rss-216c8ba84893------2&title=给我前任主人的一封信" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@yeeyan/-b67020a744?source=rss-216c8ba84893------2&title=给我前任主人的一封信" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=给我前任主人的一封信&body=
+给我前任主人的一封信
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@yeeyan/-b67020a744?source=rss-216c8ba84893------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@yeeyan/-b67020a744?source=rss-216c8ba84893------2&title=给我前任主人的一封信&caption=
+给我前任主人的一封信
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=给我前任主人的一封信&url=https://medium.com/@yeeyan/-b67020a744?source=rss-216c8ba84893------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>给我前任主人的一封信</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2014-08-27
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Yeeyan</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#medium">
+          medium
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@yeeyan/-b67020a744?source=rss-216c8ba84893------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="medium的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#medium 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1409128000000-->
+<p><a href="https://medium.com/@yeeyan/-b67020a744?source=rss-216c8ba84893------2">给我前任主人的一封信</a>
+——</p>
+
+<div>
+  <h3 id="section">我只是来报个平安</h3>
+  <p>我永远不会忘记我们分离的那一天。或许是因为我一向讨厌坐车，而那天你还把我留在了动物收容所。我本以为你是带我去看可怕的兽医的 — — 虽然我三年没见他了，但他仍在我心里阴魂不散 — — 但是，不，那天的旅程更加糟糕。那天，你把我带去了动物收容所。</p>
+  <p>你甚至无法凝视我的双眼，也没有回复我在后座发出的呼唤。当你带我去看兽医，我在后座的宠物笼里呼喊时，你总会说：“嘘~亲爱的。”但那天，你什么也没说。我们在沉默中穿过城镇，你甚至都没有把收音机打开。我不明白我做了什么，不明白为什么你连话都不想跟我说。我一直都是个乖女孩。我上厕所都是在自己的砂盆里，我试着不爬我不应该爬的桌子，不把桌上的东西打翻在地，我甚至还克制自己不去刮伤你的沙发。但如果你能给我买一个猫抓板，我就不必去刮你的沙发了，这不就万事大吉了吗？</p>
+  <p>你把我的笼子拿到车外。在你推开收容所的大门前我就意识到，这地方不妙。非常、非常不妙。当你带着我朝收容所刚走几步时，我发达的嗅觉就向我通风报信了。但我知道你应该也闻到了，因为我发誓有那么一瞬间你停下了脚步，差点就掉头了。我想你可能拐错弯来错地方了，因为我是你的忠实伙伴，你肯定不会把我留在这种地方。你会转身，把我放回车内，开车载我回家，然后晚点我们会就你本来要带我去宠物店挑玩具，结果却开车去了收容所这件事好好笑笑。</p>
+  <p>我的人类，我知道对你来说这听这起来很诡异，但是在我们进入那间收容所之前，我就能感受到每一只死在那里的动物的痛苦和孤独。那里的猫宝宝和狗宝宝从未体验过主人的爱，而且 — — 更糟的是 — — 它们也从未体验过那些被主人抛弃了的猫咪和狗狗的渴望。那些动物本来明白家庭的喜悦，明白与挚爱的人类共享生命的喜悦，但是最终，因为种种原因，它们被送到了这间可怖的、可怖的建筑里。我愿意相信，你也感受到了那种痛苦，相信正是那种痛苦让你在开门之前停下了脚步。但是因为种种原因，你还是打开了门。</p>
+  <p>“这不可能。”当你和另一个人类讨论“文件”（管它是什么），而我被放在大厅，安静地坐在自己的笼子里时，我对自己这样说道。我想你跟他们说你要搬家了。或者你对我过敏（即使我们都共枕五年了你还从没因此打过喷嚏）。又或者你交了新男友但他不喜欢我。我真的不记得了，我当时正忙着闭眼，让自己从这个噩梦中醒来。</p>
+  <p>在大厅里，我旁边的那只猫正疯狂地挠着他笼子的门闩试着逃走，而我心想，也许，只是也许，如果我向你展示我是多么的乖巧，你就会改变主意带我回家。所以我一声没吭。我把我的前爪盘在身子底下，试着把自己藏起来，心想如果他们看不见我，他们就会认为你是个疯子。当你跟他们说“我要你们收下我的猫”时，他们就会笑话你，因为显然你提来的笼子里面并没有猫。</p>
+  <p>在这个寒冷坚硬的笼子里，我换了个蹲坐的姿势 — — 都要离别了你甚至没有为我铺一层毛巾。我记得，从我还是一只小猫开始，这个笼子就是我的休息之处。当你出门工作我便在家等你，那等待就像永恒一样漫长，我就会在笼子里打个小盹。</p>
+  <p>然后他们带走了我。你甚至没有跟我道别。我看向你的脸，希望能找到一丝证据证明你不得不这样做，证明不论出于何种理由，你认为这是正确的选择，但是把我留在这个一进门就有一股死亡的味道扑面而来的地方你也很伤心。然而你背过身去，然后你离我而去</p>
+  <p>这才是最糟糕的。</p>
+  <p>让我来给你讲讲这个收容所吧，人类。这儿有好人，这儿也有坏人。这里的噪音很大。啊，噪音啊。当你熬夜看电视或者在厨房里叮叮当当，而我正很努力地想要打个盹时，我总会不爽。但是收容所的噪音简直是惊天地泣鬼神。再一次，我紧闭双眼，想要从这一噩梦中醒来，希望一睁眼我就身处你的沙发上，而你正爱抚着我的脑袋说：“嘘~好了好了，你只是做了个噩梦而已。”但是，你再也没出现，我也无法从这一噩梦中醒来。</p>
+  <p>所有的动物都知道，这不是个好地方。那些狗狗从不停歇，它们日以继夜地咆哮着、尖叫着、呐喊着。这里的工作人员和志愿者们试着带它们出去散步，和它们玩耍，它们便安静点儿了。但是这里的狗狗太多，人类太少，最后那些狗狗非常恼火，绝大部分时间里都在发出各种噪音。</p>
+  <p>猫咪，也是这样。它们叫喊着。它们咆哮着。我从没听过其它的猫发出这样的声音，而我一直自认为自己是很有音乐天赋的。它们发出的声音非比寻常。我们都很害怕，一些猫咪只是一个劲儿地叫喊着、叫喊着，希望有人会把我们从笼子里放出来，带我们回家。</p>
+  <p>但是，在大多数时间里，我仍是安安静静地坐在我的金属笼子里，心想如果我能做个乖女孩，或许你会回来把我接回去。</p>
+  <p>有时候，会有人类偷偷地给我们带好吃的，他们就是那些自愿在空闲时陪伴我们的志愿者。我们的数量太过庞大，即使是最好的志愿者也无法陪伴我们所有，但是他们确实努力这么做。他们真的很温柔，即使是面对那些在收容所里受惊过度的猫咪也是如此。我们之中，大多数都是受惊过度的。</p>
+  <p>这里还有一些好心的医生，一些工作人员也很和善。但是大多数时间里，我感觉有许多带着手套的人类朝我们这里戳戳那里戳戳，然后在写字板上写下我们的信息。</p>
+  <p>每到深夜，当收容所里只有清洁人员、可能还有一个无事的兽医在徘徊走动时，我会和我周围笼子里的猫咪们聊天。它们会告诉我它们的人类，它们的家，它们从哪来以及为什么会来到这里。我也告诉了它们我的故事，我说，我只是不知道为什么我的人类要把我留在这里，但我希望我知道我错在哪里，因为我从没想要惹我的人类生气。</p>
+  <p>有些猫咪以前也在这里呆过。有些在来这之前一生都在街上流浪。有些根本不喜欢人类，那些通常都是先走的猫咪。它们去了收容所后部的那个“房间”。一旦你走入了那里，你就再也回不来了。</p>
+  <p>在这家收容所，人类会先把狗狗带进那个房间。他们会把一堆关在笼子里的狗狗堆到一个手推车里，然后就来我们猫咪的房间一只一只地挑。他们会试着安慰你，不让你害怕，那温柔的话语会让你觉得你是要出去游山玩水，但是我们都清楚。一旦你走入了那里，你就再也出不来了。</p>
+  <p>我的邻居是一只年老的猫咪，他跟我讲述了那间房间里的事情。</p>
+  <p>曾经，当他和我一样年轻时，他也在收容所里。人类把他带进了那间房间。现在回想起来，感觉恍若隔世。那时，他们把他放进推车上的笼子里，推着他走过一道长长的走廊。</p>
+  <p>然后你便会闻到那个味道。死亡的味道。那间房间就是死亡。就连那些推你进去的人类都不喜欢它。成千上万的动物的灵魂漂荡在那里，尖叫着，日日夜夜，只是尖叫着。但是没有人抓得到它们，因为它们已经死了。它们无法安息，只能在那条长长的走廊上徘徊，寻找着它们的人类。</p>
+  <p>那只老猫咪说，人类把他带进那个房间，在他的“文件”（我仍然不明白那到底是什么）上潦草地写了些什么，然后他被按下，另一个人类朝他挥舞着一只大针。就在这时，另一些人类走了进来，把他带了出去。</p>
+  <p>他说，一个动物救助者听说他要被送去那件房间，便想把他救下。收容所的人类把他装进一个盒子里，将他送去了一个美妙的地方。在那里，他享受着人类家庭的关爱，直到几年之后他又被送回了这里。像我一样，他不明白为什么。但他清楚的是，如果他再进那间“房间”，没有人会去拯救他。</p>
+  <p>“无论做什么，千万别进那间房间。”他这样对我说。</p>
+  <p>所以我千辛万苦地想给自己再找一个人类。其他的猫咪告诉我，这就是我必须做的，否则我会被送去那间骇人的房间。</p>
+  <p>每当有陌生人靠近我的笼子，我都会呜呜地打呼噜，甜美地微笑，用我的下巴蹭他们的手，希望他们能带我回家。</p>
+  <p>我特别喜欢那些志愿者。他们会向其他人类大大地夸奖我，说我多么可爱，多么伶俐，多么温柔。我希望他们之中有人会把我带回家，但是我也明白，他们家中已经有太多的猫咪了。</p>
+  <p>日复一日，我一直努力讨好人类，但是没人带我回家。日复一日，我身边的朋友们不是回家了就是 — — 更糟 — — 去了那间房间，再也没有回来。</p>
+  <p>有新的猫咪被送来时，我们这些前辈就会告诉他们我们的前辈告诉我们的故事，希望不论我们多么害怕，如果我们能惺惺相惜并且有所憧憬，我们或许都不会有事。</p>
+  <p>然后，我害怕的事情还是发生了：我生病了,非常难受；我的眼睛像火烧一样灼痛，我的鼻子被堵得根被吸不来气，一打喷嚏就有绿色有毒的鼻涕溅上我笼子的四壁。</p>
+  <p>很久之前，我的那位老猫咪朋友就开始打喷嚏。他被送去了那间房间，再也没有回来。我知道我会是下一只。</p>
+  <p>你知道吗，我的人类？我仍然对你心存希望，希望你会回来接我。或许，当你听说我病了，你会很伤心，然后就改变主意接我回家。</p>
+  <p>但是你没有。</p>
+  <p>那天早晨，从收容所的兽医看我的表情我就明白了，轮到我进那间房间了。他眯着眼睛，在一张纸上飞快地写下一大串东西，而且几乎不碰我。</p>
+  <p>那时我感觉糟透了，糟得都令我释怀了。好吧，来吧，把我送去吧，与其这样苟延残喘地过一辈子，不如死个痛快。</p>
+  <p>那晚，其他的猫咪 — — 甚至那些我唤为朋友的猫咪 — — 几乎都没和我说话。就好像如果它们跟我说话，它们也可能进那间房间一样。</p>
+  <p>那晚，收容所安静得出奇。我几乎听不见聒噪的狗狗和伤心的猫咪的声音。</p>
+  <p>我的眼皮特别沉重，于是我睡了过去，等待收容所的人类来将我带进那个房间。</p>
+  <p>然后，不可思议的事情发生了。时至今日我都不知道那是怎么发生的。就在我认为一切即将结束，认为至少我再也不用在一个小笼子里委屈地过活，通过讨好别人来给自己找一个家时，一个人类把我带走了。</p>
+  <p>那不是你，我的人类。那是一个我从未见过的人类，但我知道接下来收容所的人类把我装进了盒子，送去了她的家。</p>
+  <p>她打开了盒子，俯视着我 — — 天啊，我的眼睛被“某种分泌物”粘得睁不开，鼻子下还挂了一串鼻涕，我看起来一定丑爆了 — — 然后她用最最温柔的声音对我说：“没事了，亲爱的，你现在安全了。”</p>
+  <p>她抚摸着我的脑袋，仿佛我是她见过最美最可爱的事物一样，即使我还滴着绿色的鼻涕，感觉自己已经丑得无药可救了。我的感觉糟糕到我都无法抬头看她。我也不需要看她，因为我能感受到她，她将她温柔的手伸了过来，将我带出了这个地狱，虽然我仍没有从这个地狱的噩梦中醒来。</p>
+  <p>尽管我不知道她是谁，尽管我曾经的人类背叛了我，尽管在过去的几个星期里，一只又一只的猫咪被带进了那间房间，但是我有感觉，当这个人类对我说我安全了时，我能信任她。</p>
+  <p>我花了好几周的时间才从感冒中好起来，不过我的新人类特别擅长给我喂药（噗，那太恶心了），而且因为我的鼻塞太严重不愿吃猫粮，她还给我吃了炸鸡。</p>
+  <p>我现在住在一家救助之家，这里还有许多其他的猫咪，它们中大多数都有自己的收容所故事。当我第一次见到它们时，我还有点不愿意和它们做朋友，但是它们真的很热情地欢迎我，告诉我如何耍些小诡计让我们的人类给我们零食吃（有时她真的很傻很天真，哈！）。</p>
+  <p>这个人类并不会永远照顾我 — — 她被称为“收养者”，负责给像我一样的动物们提供一个好的住处，让我们有充足的时间寻找永久的家 — — 这样也好。我非常喜欢这个人类，但是说真的，有这么多的猫咪跑来跑去，有时我们的房子会变得有点让人抓狂。找到一个只属于我的家会更不错，最好不要有这么多猫咪。别误会，我喜欢猫咪，但是这实在疯狂了点，就像总会有猫咪在你面前走来走去。</p>
+  <p>我很遗憾，我们之间的问题仍没解决，我的人类。我仍然不知道我到底做了什么让你决定把我送去那个可怕的地方，但是我并不生气。</p>
+  <p>这里好极了。我们有许多好玩的玩具、猫爬架、猫抓板，这里的食物也相当不错，不会像你以前借口没时间去宠物店时给我吃的那些食物那样让我的胃翻江倒海。</p>
+  <p>当我想玩时，我可以和这里的兄弟姐妹们玩。但是大多数情况下，我更喜欢爬上人类挂在窗户上的吊床，趴在那里看外面的小鸟。</p>
+  <p>我承认，有时当我看向窗外时，我会想你在做什么，我的人类。</p>
+  <p>不论你在做什么，我希望你快乐。我希望你不要担心我。我希望你不要再养猫咪，除非你确定这一次你愿意永远照顾它，因为我不希望几年之后你再把另一只猫送去收容所，就像当你决定我与你的生活格格不入时，你对我做的那样。</p>
+  <p>谨以此信纪念我的那些被送进了那间房间，并再也没有回来的收容所的朋友们。</p>
+  <p>救助我的人类代表我，以及我们家其他那些明明什么错也没有却和我一样被送去了收容所的猫咪们，写了这封信。</p>
+  <p>Translated by <a href="http://www.yeeyan.org/">Yeeyan</a></p>
+  <p><em>Adrienne is Managing Editor of </em><a href="http://goingconcern.com/"><em>Going Concern</em></a><em>, founding editor of </em><a href="http://www.jrdeputyaccountant.com/"><em>Jr Deputy Accountant</em></a><em> and keeper of the red dot. Opinions are like assholes, everyone has one — in this case, as with anything she says, Adrienne’s opinion is her own. ‘MURICA!</em></p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=b67020a744" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#medium 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-09/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC%E6%99%82%E5%8F%AA%E8%83%BD%E9%87%8D%E8%A8%AD-%E4%B8%8D%E6%8A%8A%E8%88%8A%E5%AF%86%E7%A2%BC%E5%91%8A%E8%A8%B4%E6%88%91/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">最早</a>--</span>
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E5%A6%82%E4%BD%95%E4%B8%93%E5%BF%83%E7%9D%A1%E7%9C%A0/">
+          如何专心睡眠
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-12-18</time>
+        <a href="https://nodebe4.github.io/oped2/2014-12-18/%E6%9D%83%E5%8A%9B%E7%9A%84%E6%B8%B8%E6%88%8F-%E9%98%85%E8%AF%BB%E6%8C%87%E5%8D%97/">
+          《权力的游戏》阅读指南
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">
+          A Letter to My Former Family From a Shelter Cat
+        </a>
+      </li>
+    
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">
+            前一篇：A Letter to My Former Family From a Shelter Cat
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2014-08-28/%E5%AA%92%E4%BD%93%E8%B6%8A%E8%87%AA%E7%94%B1-%E5%B9%B4%E8%BD%BB%E4%BA%BA%E8%B6%8A%E5%B0%91%E7%94%A8%E6%89%8B%E6%9C%BA%E7%9C%8B%E6%96%B0%E9%97%BB/">
+            後一篇：媒体越自由，年轻人越少用手机看新闻？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2014-08-28/%E5%AA%92%E4%BD%93%E8%B6%8A%E8%87%AA%E7%94%B1-%E5%B9%B4%E8%BD%BB%E4%BA%BA%E8%B6%8A%E5%B0%91%E7%94%A8%E6%89%8B%E6%9C%BA%E7%9C%8B%E6%96%B0%E9%97%BB/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2014-12-18/%E6%9D%83%E5%8A%9B%E7%9A%84%E6%B8%B8%E6%88%8F-%E9%98%85%E8%AF%BB%E6%8C%87%E5%8D%97/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2014-08-28/%E5%AA%92%E4%BD%93%E8%B6%8A%E8%87%AA%E7%94%B1-%E5%B9%B4%E8%BD%BB%E4%BA%BA%E8%B6%8A%E5%B0%91%E7%94%A8%E6%89%8B%E6%9C%BA%E7%9C%8B%E6%96%B0%E9%97%BB/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<medium>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2014-12-18/%E6%9D%83%E5%8A%9B%E7%9A%84%E6%B8%B8%E6%88%8F-%E9%98%85%E8%AF%BB%E6%8C%87%E5%8D%97/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<medium>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2014-08-27/A-Letter-to-My-Former-Family-From-a-Shelter-Cat/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

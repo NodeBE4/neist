@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>台北私房圖書館探密（下）—公部門館舍 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+台北私房圖書館探密（下）—公部門館舍
+——
+" />
+    <meta property="og:description" content="
+台北私房圖書館探密（下）—公部門館舍
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="台北私房圖書館探密（下）—公部門館舍" />
+    <meta property="twitter:title" content="台北私房圖書館探密（下）—公部門館舍" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmatters.news%2F%40joycew719%2F%2525E5%25258F%2525B0%2525E5%25258C%252597%2525E7%2525A7%252581%2525E6%252588%2525BF%2525E5%25259C%252596%2525E6%25259B%2525B8%2525E9%2525A4%2525A8%2525E6%25258E%2525A2%2525E5%2525AF%252586-%2525E4%2525B8%25258B-%2525E5%252585%2525AC%2525E9%252583%2525A8%2525E9%252596%252580%2525E9%2525A4%2525A8%2525E8%252588%25258D-bafyreibkzlkavivvflrfgeomi7tlfihpsidwme2wpdhcbihw56ymxlv4xa" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://matters.news/@joycew719/%25E5%258F%25B0%25E5%258C%2597%25E7%25A7%2581%25E6%2588%25BF%25E5%259C%2596%25E6%259B%25B8%25E9%25A4%25A8%25E6%258E%25A2%25E5%25AF%2586-%25E4%25B8%258B-%25E5%2585%25AC%25E9%2583%25A8%25E9%2596%2580%25E9%25A4%25A8%25E8%2588%258D-bafyreibkzlkavivvflrfgeomi7tlfihpsidwme2wpdhcbihw56ymxlv4xa" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://matters.news/@joycew719/%25E5%258F%25B0%25E5%258C%2597%25E7%25A7%2581%25E6%2588%25BF%25E5%259C%2596%25E6%259B%25B8%25E9%25A4%25A8%25E6%258E%25A2%25E5%25AF%2586-%25E4%25B8%258B-%25E5%2585%25AC%25E9%2583%25A8%25E9%2596%2580%25E9%25A4%25A8%25E8%2588%258D-bafyreibkzlkavivvflrfgeomi7tlfihpsidwme2wpdhcbihw56ymxlv4xa&text=台北私房圖書館探密（下）—公部門館舍&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://matters.news/@joycew719/%25E5%258F%25B0%25E5%258C%2597%25E7%25A7%2581%25E6%2588%25BF%25E5%259C%2596%25E6%259B%25B8%25E9%25A4%25A8%25E6%258E%25A2%25E5%25AF%2586-%25E4%25B8%258B-%25E5%2585%25AC%25E9%2583%25A8%25E9%2596%2580%25E9%25A4%25A8%25E8%2588%258D-bafyreibkzlkavivvflrfgeomi7tlfihpsidwme2wpdhcbihw56ymxlv4xa&title=台北私房圖書館探密（下）—公部門館舍" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://matters.news/@joycew719/%25E5%258F%25B0%25E5%258C%2597%25E7%25A7%2581%25E6%2588%25BF%25E5%259C%2596%25E6%259B%25B8%25E9%25A4%25A8%25E6%258E%25A2%25E5%25AF%2586-%25E4%25B8%258B-%25E5%2585%25AC%25E9%2583%25A8%25E9%2596%2580%25E9%25A4%25A8%25E8%2588%258D-bafyreibkzlkavivvflrfgeomi7tlfihpsidwme2wpdhcbihw56ymxlv4xa&title=台北私房圖書館探密（下）—公部門館舍" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=台北私房圖書館探密（下）—公部門館舍&body=
+台北私房圖書館探密（下）—公部門館舍
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://matters.news/@joycew719/%25E5%258F%25B0%25E5%258C%2597%25E7%25A7%2581%25E6%2588%25BF%25E5%259C%2596%25E6%259B%25B8%25E9%25A4%25A8%25E6%258E%25A2%25E5%25AF%2586-%25E4%25B8%258B-%25E5%2585%25AC%25E9%2583%25A8%25E9%2596%2580%25E9%25A4%25A8%25E8%2588%258D-bafyreibkzlkavivvflrfgeomi7tlfihpsidwme2wpdhcbihw56ymxlv4xa" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://matters.news/@joycew719/%25E5%258F%25B0%25E5%258C%2597%25E7%25A7%2581%25E6%2588%25BF%25E5%259C%2596%25E6%259B%25B8%25E9%25A4%25A8%25E6%258E%25A2%25E5%25AF%2586-%25E4%25B8%258B-%25E5%2585%25AC%25E9%2583%25A8%25E9%2596%2580%25E9%25A4%25A8%25E8%2588%258D-bafyreibkzlkavivvflrfgeomi7tlfihpsidwme2wpdhcbihw56ymxlv4xa&title=台北私房圖書館探密（下）—公部門館舍&caption=
+台北私房圖書館探密（下）—公部門館舍
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=台北私房圖書館探密（下）—公部門館舍&url=https://matters.news/@joycew719/%25E5%258F%25B0%25E5%258C%2597%25E7%25A7%2581%25E6%2588%25BF%25E5%259C%2596%25E6%259B%25B8%25E9%25A4%25A8%25E6%258E%25A2%25E5%25AF%2586-%25E4%25B8%258B-%25E5%2585%25AC%25E9%2583%25A8%25E9%2596%2580%25E9%25A4%25A8%25E8%2588%258D-bafyreibkzlkavivvflrfgeomi7tlfihpsidwme2wpdhcbihw56ymxlv4xa" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>台北私房圖書館探密（下）—公部門館舍</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-12-14
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 風翔萬里</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Matters">
+          Matters
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://matters.news/@joycew719/%25E5%258F%25B0%25E5%258C%2597%25E7%25A7%2581%25E6%2588%25BF%25E5%259C%2596%25E6%259B%25B8%25E9%25A4%25A8%25E6%258E%25A2%25E5%25AF%2586-%25E4%25B8%258B-%25E5%2585%25AC%25E9%2583%25A8%25E9%2596%2580%25E9%25A4%25A8%25E8%2588%258D-bafyreibkzlkavivvflrfgeomi7tlfihpsidwme2wpdhcbihw56ymxlv4xa" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Matters的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Matters 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1607962991000-->
+<p><a href="https://matters.news/@joycew719/%25E5%258F%25B0%25E5%258C%2597%25E7%25A7%2581%25E6%2588%25BF%25E5%259C%2596%25E6%259B%25B8%25E9%25A4%25A8%25E6%258E%25A2%25E5%25AF%2586-%25E4%25B8%258B-%25E5%2585%25AC%25E9%2583%25A8%25E9%2596%2580%25E9%25A4%25A8%25E8%2588%258D-bafyreibkzlkavivvflrfgeomi7tlfihpsidwme2wpdhcbihw56ymxlv4xa">台北私房圖書館探密（下）—公部門館舍</a>
+——</p>
+
+<div>
+  <h2 id="section">前言</h2>
+  <p>本文是台北私房圖書館探密下篇的冷門公家圖書館舍介紹，本人去過實際現場的館舍佔比大概只有三之分二，畢竟現在線上查調各種數位文檔太方便，除非是沒有數位化的文獻資料，才非得跑一趟進行實體紙本資料借閱。</p>
+  <p>這些隱身在公家單位裡的寶庫大多都是冷衙門，雖然在洽公時間都對一般大眾開放使用，然而知道運用其資源的人們極其有限（<a href="https://www.cna.com.tw/news/acul/202006200036.aspx" target="_blank">連最多知道的兩廳院表藝圖書館單日運用平均人次竟然才３位</a>），不管是寫論文、從事創作、田野調查等等，舉凡文獻、報刊、影像、錄音、表演現場、新聞影音皆有，都可以從中撈取到許多有價值的參考資料，望大家多多認識和充份活用這些公家積累的文化資產，別讓它們在庫房中淒涼的等待。</p>
+  <p><strong>註：本文僅整理並列出位於大台北地區、且對民眾開放的冷門公家圖書館舍，照片均取自各館舍網站</strong></p>
+  <h2 id="section-1">國家電影及視聽文化中心—<strong>影視聽圖書館</strong></h2>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/61df7927-483b-41a0-b2fa-1a90f25d9514.webp" onerror="this.srcset='https://assets.matters.news/embed/61df7927-483b-41a0-b2fa-1a90f25d9514.webp'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/61df7927-483b-41a0-b2fa-1a90f25d9514.webp" onerror="this.srcset='https://assets.matters.news/embed/61df7927-483b-41a0-b2fa-1a90f25d9514.webp'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/61df7927-483b-41a0-b2fa-1a90f25d9514.webp" /> <img src="https://assets.matters.news/embed/61df7927-483b-41a0-b2fa-1a90f25d9514.webp" srcset="https://assets.matters.news/processed/540w/embed/61df7927-483b-41a0-b2fa-1a90f25d9514.webp" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>2021即將完工的國家電影中心新莊館舍</span>
+    </figcaption>
+  </figure>
+  <p><a href="https://www.tfi.org.tw/" target="_blank">國家電影中心</a>影視聽圖書館以典藏台灣電影資產、推廣電影文化及促進電影產業發展為宗旨。為了服務影視聽文化愛好者、教育者、學生及影視聽研究學者，設有書庫、圖書期刊閱覽區與影音觀賞區。</p>
+  <p>樹林工業區則有典藏中心，13座片庫典藏數量可觀的影像史料，包括國內外影片二萬餘部、外語影片三千餘部、國內外影碟及錄影帶七萬兩千餘片/卷，圖書約一萬四千八百餘冊、國內外海報二十萬餘幀、劇照四萬五千餘張、電影器材四百餘件。</p>
+  <p>國影中心為提升台灣電影保存與典藏業務、數位修復技術，目前已數位修復十餘部台灣與華語經典影片，包括《龍門客棧》、《戀愛與義務》、《揚子江風雲》與《俠女》等。</p>
+  <p>館方經常辦理電影特映、講座、影展、論壇、動畫工作坊、膠捲修復等活動，並與其他博物館或文化單位進行串連活動，讓經典老電影可以再次進入新世代的生命軌跡。</p>
+  <p>目前國家電影中心新館舍已在新北市新莊建置，預定2021年2月完工啟用，屆時國家電影中心將可結合電影院、展覽館及圖書館，二期將再建置影視博物館、專業典藏片庫，打造台灣首座國家級電影視聽文化中心。</p>
+  <p>地址：台北市中正區青島東路7號4樓</p>
+  <h2 id="section-2">台灣戲曲中心—台灣音樂資料館</h2>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/1c42f621-d96a-466b-bde9-c8f7052f7faa.webp" onerror="this.srcset='https://assets.matters.news/embed/1c42f621-d96a-466b-bde9-c8f7052f7faa.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/1c42f621-d96a-466b-bde9-c8f7052f7faa.jpeg" onerror="this.srcset='https://assets.matters.news/embed/1c42f621-d96a-466b-bde9-c8f7052f7faa.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/1c42f621-d96a-466b-bde9-c8f7052f7faa.webp" /> <img src="https://assets.matters.news/embed/1c42f621-d96a-466b-bde9-c8f7052f7faa.jpeg" srcset="https://assets.matters.news/processed/540w/embed/1c42f621-d96a-466b-bde9-c8f7052f7faa.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>台灣戲曲中心—台灣音樂資料館</span>
+    </figcaption>
+  </figure>
+  <p><a href="http://virtualtmi.ncfta.gov.tw/" target="_blank">台灣音樂資料館</a>在「資料收集」、「典藏研究」、「資訊服務」等基礎功能上，透過保存研究、鼓勵原創、人才培育與資源共享，延續臺灣音樂的脈動、展現臺灣音樂之美。</p>
+  <p>台音資料館收集台灣各地各族群閩、客、原、南北管、唸歌、祭祀歌謠....等各種不同類別的本土音樂素材，館方並經常辦理台灣各類音樂戲曲歌謠器樂等相關講座活動，線上提供豐富多元的音樂電子資料庫資源以及相關資源網站連結，深度探索臺灣在地音樂文化。</p>
+  <p>地址：台北市士林區文林路751號</p>
+  <h2 id="section-3">經濟部中央地質調查研究所—地質圖書館</h2>
+  <p><a href="https://www.moeacgs.gov.tw/" target="_blank">中央地調所</a>地質圖書館是專門蒐藏地質資料的圖書館，從日治台灣總督府的地質圖書、地圖，到數位化媒體的地質資料都是典藏範圍，並且與國內外各相關單位交換數百種叢書期刊，地質資料館藏量擁有全國地球科學領域豐富藏書，蔚為國內各圖書館之首。</p>
+  <p><a href="http://cgsweb.moeacgs.gov.tw/Result/Lib/Index.asp" target="_blank">地質圖書館</a>致力將艱澀難懂的地質知識推向平民化，館方努力下建置的「<a href="https://twgeoref.moeacgs.gov.tw/GipOpenWeb/wSite/mp?mp=6" target="_blank">台灣地質知識服務網</a>」，將深奧的地質學術研究推向人人都能理解且應用的普及知識，落實圖書館資源共享的服務精神。</p>
+  <p>中央地調所的台灣地質普查工作十分透徹，台灣民眾在地調所網站即可查詢到自家周圍是否有特殊地質、斷層、順向坡等，再加上「台灣地質知識服務網」的解惑及知識普及，翻轉專門圖書館僅能滿足特定讀者的既有生態。</p>
+  <p>地址：新北市中和區華新街109巷2號</p>
+  <h2 id="section-4"><strong>台北市立文獻館—文獻資料室</strong></h2>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/376390a5-c7f2-482f-9f53-959876ba410d.webp" onerror="this.srcset='https://assets.matters.news/embed/376390a5-c7f2-482f-9f53-959876ba410d.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/376390a5-c7f2-482f-9f53-959876ba410d.jpeg" onerror="this.srcset='https://assets.matters.news/embed/376390a5-c7f2-482f-9f53-959876ba410d.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/376390a5-c7f2-482f-9f53-959876ba410d.webp" /> <img src="https://assets.matters.news/embed/376390a5-c7f2-482f-9f53-959876ba410d.jpeg" srcset="https://assets.matters.news/processed/540w/embed/376390a5-c7f2-482f-9f53-959876ba410d.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>台北市立文獻館文獻資料室</span>
+    </figcaption>
+  </figure>
+  <p><a href="https://www.chr.gov.taipei/" target="_blank">台北市立文獻館</a>位於西門町，日治時期的西本願寺台灣別院廣場，其主要業務為收集、整理台北市相關的歷史文獻與文物及影像。文獻資料室典藏極豐富的台北市文獻史料，舉凡地方志書、文獻資料、名勝古蹟、姓氏族譜及相關市政建設資料等，採開架式供民眾閱覽。</p>
+  <p>此外文獻資料室收藏了不少台灣歷史書籍刊物，其中不乏寫真帖、風物誌甚至官方政宣圖書等大量使用影像的出版品。如果喜歡老照片，文獻資料室的館藏查詢系統中，能夠取得許多數位化保存的老照片檔案，可以回顧台北的歷史風華，也是很棒的影像資源寶庫。</p>
+  <p>地址：台北市萬華區中華路1段174之1號（西本願寺廣場本堂基座內）</p>
+  <h2 id="section-5">國家表演藝術中心—兩廳院表演藝術圖書館</h2>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/7bac6b75-47b1-4ddd-8ef6-1e817ab5cae4.webp" onerror="this.srcset='https://assets.matters.news/embed/7bac6b75-47b1-4ddd-8ef6-1e817ab5cae4.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/7bac6b75-47b1-4ddd-8ef6-1e817ab5cae4.jpeg" onerror="this.srcset='https://assets.matters.news/embed/7bac6b75-47b1-4ddd-8ef6-1e817ab5cae4.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/7bac6b75-47b1-4ddd-8ef6-1e817ab5cae4.webp" /> <img src="https://assets.matters.news/embed/7bac6b75-47b1-4ddd-8ef6-1e817ab5cae4.jpeg" srcset="https://assets.matters.news/processed/540w/embed/7bac6b75-47b1-4ddd-8ef6-1e817ab5cae4.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>兩廳院表演藝術圖書館</span>
+    </figcaption>
+  </figure>
+  <p><a href="http://web.lib.npac-ntch.org/ntch/index.php" target="_blank">國家兩廳院表演藝術圖書館</a>面積約220坪，包括閱報區、視聽區、檢索區、期刊區、參考書區、特藏區、微卷區、密集書庫區、資料複印區、沙發休閒區、團體放映室及特殊視聽資料典藏室。席位規畫有閱覽座位26席、個人視聽座位12席、雙人視聽座位4席，團體閱聽室約可容納3至5人使用。典藏室視聽座位有CD聆聽區7席，黑膠聆聽區2席。</p>
+  <p>特色典藏為兩廳院的主辦音樂、戲劇、舞蹈、舞台、劇院管理等主題資料如：海報、節目單、錄影帶及數位演出錄影光碟是核心館藏，至今累積館藏19萬件。未來將收藏包括台中國家歌劇院以及衛武營國家藝術文化中心的演出相關影音資料。</p>
+  <p>「特殊視聽資料典藏室」是樂評家曹永坤遺贈給表圖7萬餘件絕版或經典黑膠及CD唱片，足以讓表圖穩坐台灣最重要表演藝術圖書館地位。館方也為這些珍貴黑膠進行特殊展示，有沙發、有高級音響設備，就像在自家客廳一樣，使用者可自己選出喜歡的黑膠，由現場服務人員操作播放（CD可自行播放），舒服自在地欣賞流淌出的每個動人音符。</p>
+  <p>表演藝術圖書館有點可惜的是位在戲劇院的地下層，入口較隱密，2020年7月至年底進行內部裝修，進行設備及空間改善，也將配合數位典藏優化，打造更符合使用者需求的館藏空間。預定在2021年1月再次啟用開放，令人期待它的轉型和改造。</p>
+  <p>地址：台北市中正區中山南路21-1號（國家戲劇院B1）</p>
+  <h2 id="section-6">臺北當代工藝設計分館—工藝設計圖書室</h2>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/7646d811-9cbb-432b-8500-313190dde379.webp" onerror="this.srcset='https://assets.matters.news/embed/7646d811-9cbb-432b-8500-313190dde379.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/7646d811-9cbb-432b-8500-313190dde379.jpeg" onerror="this.srcset='https://assets.matters.news/embed/7646d811-9cbb-432b-8500-313190dde379.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/7646d811-9cbb-432b-8500-313190dde379.webp" /> <img src="https://assets.matters.news/embed/7646d811-9cbb-432b-8500-313190dde379.jpeg" srcset="https://assets.matters.news/processed/540w/embed/7646d811-9cbb-432b-8500-313190dde379.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>臺北當代工藝設計分館—工藝設計圖書室</span>
+    </figcaption>
+  </figure>
+  <p>臺北當代工藝設計分館位於南海學園，是原先的科學教育館遷移後再活化使用的空間，工藝設計圖書室藏書以工藝設計類為主，除台灣工藝中心自有出版品外，更有市面少見之絕版書，亦有多種中外文工藝相關期刊，提供一般民眾與工藝創作者更多國內外工藝資訊，致力成為台灣工藝設計資訊匯集中心，使其成為台灣工藝、創意與設計的重要基地。</p>
+  <p>台北分館的圖書室藏書量雖然沒有台灣工藝中心圖書館草屯總館多，但也有2000本左右的工藝主題書籍與近40種雜誌可以於館內閱讀。如需借閱南投總館的書籍也可以申請文獻傳遞服務進行借閱。</p>
+  <p>地址：台北市中正區南海路41號（南海學園內）</p>
+  <h2 id="section-7">台灣原住民族圖書資訊中心</h2>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/77b3a598-f246-49e8-84ce-abf6668ddd47.webp" onerror="this.srcset='https://assets.matters.news/embed/77b3a598-f246-49e8-84ce-abf6668ddd47.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/77b3a598-f246-49e8-84ce-abf6668ddd47.jpeg" onerror="this.srcset='https://assets.matters.news/embed/77b3a598-f246-49e8-84ce-abf6668ddd47.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/77b3a598-f246-49e8-84ce-abf6668ddd47.webp" /> <img src="https://assets.matters.news/embed/77b3a598-f246-49e8-84ce-abf6668ddd47.jpeg" srcset="https://assets.matters.news/processed/540w/embed/77b3a598-f246-49e8-84ce-abf6668ddd47.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>台灣原住民族圖書資訊中心</span>
+    </figcaption>
+  </figure>
+  <p><a href="https://www.facebook.com/tiprc/?ref=page_internal" target="_blank">台灣原住民族圖書資訊中心</a>廣泛蒐集臺灣原住民族相關圖書資訊資源典藏，提供讀者閱覽使用，館藏包括一般中西文出版品、期刊、灰色文獻以及多媒體影音資料。原民圖書資訊中心保存書籍、期刊、多媒體等實體資料，並以科學的方法彙集、組織、整理原住民族相關之各類資料，保存原住民族的知識記錄。</p>
+  <p>原圖中心蒐集世界各地原住民族相關資訊資源，將分散的原住民族相關資料及數位資源，進行有系統整合與管理，提供原住民族相關資源的單一管道，成為各主題原住民資源的知識彙集處，期許成為專業的研究典藏機構，支援學術研究，成為蒐集、使用台灣原住民族資訊的重鎮，進而拓展與國際原住民之間的交流互動。</p>
+  <p>原圖中心經常辦理原民主題講座、電影欣賞、主題書展等活動，接待團體參訪等，期許經由這些活動使族群之間的文化能更多的彼此認識與交流。</p>
+  <p>地址：台北市大安區羅斯福路四段1號（台灣大學圖書館北側廣場地面層）</p>
+  <h2 id="section-8">國史館—圖書室</h2>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/ac9c4238-f169-40e3-b9ae-3034887a91ad.webp" onerror="this.srcset='https://assets.matters.news/embed/ac9c4238-f169-40e3-b9ae-3034887a91ad.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/ac9c4238-f169-40e3-b9ae-3034887a91ad.jpeg" onerror="this.srcset='https://assets.matters.news/embed/ac9c4238-f169-40e3-b9ae-3034887a91ad.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/ac9c4238-f169-40e3-b9ae-3034887a91ad.webp" /> <img src="https://assets.matters.news/embed/ac9c4238-f169-40e3-b9ae-3034887a91ad.jpeg" srcset="https://assets.matters.news/processed/540w/embed/ac9c4238-f169-40e3-b9ae-3034887a91ad.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>國史館台北閱覽室_中時電子報</span>
+    </figcaption>
+  </figure>
+  <p><a href="https://www.drnh.gov.tw/" target="_blank">國史館</a>圖書室館藏書刊於台北及新店閱覽室提供服務，僅提供館內閱覽。國史館館藏許多與重要史料，如國父孫文手繪民生主義手稿、中華民國訓政時期約法、日本國向同盟國投降書、民國36年（1947年）公告的中華民國憲法、．．．等原件，除了借閱供民眾閱覽、抄錄、翻拍，也提供館藏數位檔案史料複製服務。</p>
+  <ul>
+    <li><strong>臺北閱覽室</strong><br />採開架服務，主要收藏數位檔案史料應用服務及開架書刊閱覽服務。民眾可自行瀏覽取閱約25,000冊近現代史研究相關圖書、期刊，另設專區陳列國史館歷年出版品，及資料庫檢索區供民眾使用電子資料庫。</li>
+    <li><strong>新店閱覽室</strong><br />採閉架服務，典藏無數位檔之原件檔案史料應用服務及閉架書庫調閱服務，罕用圖書、過期期刊及複本書等，民眾從本館館藏圖書查詢系統查得所需書刊，填寫圖書調閱單後，由服務人員入庫取書提供閱覽。</li>
+  </ul>
+  <p>地址：臺北市中正區長沙街一段2號（台北）／新北市新店區北宜路二段406號（新店）</p>
+  <h2 id="section-9">國家發展會檔案管理局—國家檔案閱覽中心</h2>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/3dcc176f-5a98-4192-8557-12ae87b19f01.webp" onerror="this.srcset='https://assets.matters.news/embed/3dcc176f-5a98-4192-8557-12ae87b19f01.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/3dcc176f-5a98-4192-8557-12ae87b19f01.jpeg" onerror="this.srcset='https://assets.matters.news/embed/3dcc176f-5a98-4192-8557-12ae87b19f01.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/3dcc176f-5a98-4192-8557-12ae87b19f01.webp" /> <img src="https://assets.matters.news/embed/3dcc176f-5a98-4192-8557-12ae87b19f01.jpeg" srcset="https://assets.matters.news/processed/540w/embed/3dcc176f-5a98-4192-8557-12ae87b19f01.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>檔案管理局—國家檔案閱覽中心</span>
+    </figcaption>
+  </figure>
+  <p>國家檔案是指具有永久保存價值，而移歸檔管局管理之檔案，檔案來源主要為各政府機關。檔案主要內容包括：民國38年以前檔案、臺灣光復檔案、臺灣民主化檔案、憲政檔案、921震災檔案、莫拉克風災檔案、國營事業檔案等重要主題，許多皆具有時代及歷史價值。其中年代最久遠者，為清朝時期古地契。</p>
+  <p><a href="https://www.archives.gov.tw/Default.aspx" target="_blank">檔案管理局</a>以府院事務、國家安全、公共資源管理、財經事務、教育文化、社會發展及地方事務等7大方向，分階段徵集國家發展重要政策與制度、歷史文化及社會環境發展歷程檔案。檔管局也接受私人或團體持有珍貴文書捐贈、受託保管或收購，豐富多元國家檔案樣態，完整保存國家重要紀錄。</p>
+  <p>國家檔案閱覽中心提供與檔案管理、檔案研究等相關書刊資料之閱覽、抄錄及複製，及查詢書刊或資料庫等服務。檔管局也應用歷史檔案做了許多有趣的<a href="https://www.archives.gov.tw/Publish.aspx?cnid=100956#a" target="_blank">文創商品</a>，也在空間以檔案進行各種<a href="https://atc.archives.gov.tw/" target="_blank">有趣策展</a>，讓檔案不只是過去的官方歷史資料，而是民眾共同擁有的生命記憶。</p>
+  <p>地址：新北市新莊區中平路439號(北棟)1樓</p>
+  <h2 id="section-10">國圖分館</h2>
+  <ul>
+    <li><strong>藝術暨視聽資料中心</strong></li>
+  </ul>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/7fde4926-4494-4139-b1e8-4bb95e2d41aa.webp" onerror="this.srcset='https://assets.matters.news/embed/7fde4926-4494-4139-b1e8-4bb95e2d41aa.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/7fde4926-4494-4139-b1e8-4bb95e2d41aa.jpeg" onerror="this.srcset='https://assets.matters.news/embed/7fde4926-4494-4139-b1e8-4bb95e2d41aa.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/7fde4926-4494-4139-b1e8-4bb95e2d41aa.webp" /> <img src="https://assets.matters.news/embed/7fde4926-4494-4139-b1e8-4bb95e2d41aa.jpeg" srcset="https://assets.matters.news/processed/540w/embed/7fde4926-4494-4139-b1e8-4bb95e2d41aa.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>國圖藝術與視聽資料中心漫畫區</span>
+    </figcaption>
+  </figure>
+  <p>國圖「<a href="http://aac.ncl.edu.tw/artav/" target="_blank">藝術暨視聽資料中心</a>」館藏特色是藝術類圖書期刊、漫畫與多媒體視聽資料；提供藝術圖書與視聽資料閱覽、參考諮詢、資料複印等讀者服務；館內設閱覽席次、電腦檢索席次與播放機席次，也提供資訊檢索、可供查詢各種書目、全文及數位資源，且可連線共享國圖總館的自動化系統，及各種電子資料庫與隨選視訊系統。</p>
+  <p>「藝術暨視聽資料中心」期望成為國內在藝術及視聽資料的典藏中心與資訊重鎮，也提供藝術界更多創作空間及展演場所，舉辦不同類型發表會與展覽，成為藝術展演角落。</p>
+  <p>地址：台北市中正區延平南路156號</p>
+  <ul>
+    <li><strong>資訊圖書館</strong></li>
+  </ul>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/c7a4c852-2917-49d5-815b-859ca60d63d5.webp" onerror="this.srcset='https://assets.matters.news/embed/c7a4c852-2917-49d5-815b-859ca60d63d5.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/c7a4c852-2917-49d5-815b-859ca60d63d5.jpeg" onerror="this.srcset='https://assets.matters.news/embed/c7a4c852-2917-49d5-815b-859ca60d63d5.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/c7a4c852-2917-49d5-815b-859ca60d63d5.webp" /> <img src="https://assets.matters.news/embed/c7a4c852-2917-49d5-815b-859ca60d63d5.jpeg" srcset="https://assets.matters.news/processed/540w/embed/c7a4c852-2917-49d5-815b-859ca60d63d5.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>國圖資訊圖書館</span>
+    </figcaption>
+  </figure>
+  <p>國圖「<a href="https://www.ncl.edu.tw/content_285.html" target="_blank">資訊圖書館</a>」屬於研究性專門圖書館，以國家圖書館收藏的資訊科技，電腦及資訊工業等相關圖書資料為基礎，擴大蒐集其資料類型及內容，提供新穎完善資訊服務。</p>
+  <p>藏書主題範圍以資訊科學技術、資訊服務、電腦軟硬體、電腦應用以及相關電子、傳輸等資料為主。資料類型包括中、外文圖書、期刊報紙、碩士學位論文、電子形式資料等。</p>
+  <p>地址：台北市大安區和平東路二段106號13樓（科技大樓）</p>
+  <h2 id="section-11">國家教育研究院</h2>
+  <ul>
+    <li><strong>國教院圖書館</strong></li>
+  </ul>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/d8761a90-e753-47c5-bdf4-722d442713fa.webp" onerror="this.srcset='https://assets.matters.news/embed/d8761a90-e753-47c5-bdf4-722d442713fa.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/d8761a90-e753-47c5-bdf4-722d442713fa.jpeg" onerror="this.srcset='https://assets.matters.news/embed/d8761a90-e753-47c5-bdf4-722d442713fa.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/d8761a90-e753-47c5-bdf4-722d442713fa.webp" /> <img src="https://assets.matters.news/embed/d8761a90-e753-47c5-bdf4-722d442713fa.jpeg" srcset="https://assets.matters.news/processed/540w/embed/d8761a90-e753-47c5-bdf4-722d442713fa.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>國家教育研究院圖書館</span>
+    </figcaption>
+  </figure>
+  <p> 「<a href="http://library.naer.edu.tw/" target="_blank">國家教育研究院圖書館</a>」為教育專門圖書館，為整合國教院所有圖書館資源，協助教育研究工作。主要特色館藏是教育專業圖書資源、台灣省政府教育廳《中華兒童叢書》全套981本及教育歷程應用媒材器物。</p>
+  <p>「國家教育研究院圖書館」主要以促進國家教育永續發展，典藏教育專業資料，另設教學媒體特展室、多功能會議室及豐富的線上館藏資源，滿足教育專業研究需求。</p>
+  <p>地址：新北市三峽區三樹路2號（國家教育研究院三峽院區）<br /></p>
+  <ul>
+    <li><strong>教科書圖書館</strong></li>
+  </ul>
+  <figure class="image">
+    <picture> <source type="image/webp" media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/36414a70-d82f-4bd8-8c46-674d9aa6aea8.webp" onerror="this.srcset='https://assets.matters.news/embed/36414a70-d82f-4bd8-8c46-674d9aa6aea8.jpeg'" /> <source media="(min-width: 768px)" srcset="https://assets.matters.news/processed/1080w/embed/36414a70-d82f-4bd8-8c46-674d9aa6aea8.jpeg" onerror="this.srcset='https://assets.matters.news/embed/36414a70-d82f-4bd8-8c46-674d9aa6aea8.jpeg'" /> <source type="image/webp" srcset="https://assets.matters.news/processed/540w/embed/36414a70-d82f-4bd8-8c46-674d9aa6aea8.webp" /> <img src="https://assets.matters.news/embed/36414a70-d82f-4bd8-8c46-674d9aa6aea8.jpeg" srcset="https://assets.matters.news/processed/540w/embed/36414a70-d82f-4bd8-8c46-674d9aa6aea8.jpeg" loading="lazy" referrerpolicy="no-referrer" /> </picture>
+    <figcaption>
+<span>國家教育研究院—教科書圖書館</span>
+    </figcaption>
+  </figure>
+  <p>國教院「<a href="https://www.facebook.com/taiwantaipeitextbooklibrary/" target="_blank">教科書圖書館</a>」典藏中小學學生課本、習作及教師用書，並收錄教科書研究領域之專業圖書及期刊資源供讀者閱覽查詢。</p>
+  <p>目前除了台灣之外，已收錄日本、美國、中國大陸、芬蘭、德國、新加坡及香港等地部分教育階段及出版業者教科書，其主要特色館藏是中小學教科書課程標準及綱要、教科書數位文庫與教科書研究期刊。</p>
+  <p>來此走訪的讀者除了專業的教育學者、教科書撰作、教師等專業人士以外，也有一批是特別來尋訪過去版本教科書的懷舊者，是很有意思的兩個群體反差。</p>
+  <p>地址：台北市大安區和平東路一段 179 號 4 樓（國家教育研究院台北院區）<br /></p>
+  <h2 id="section-12">中央研究院</h2>
+  <p><a href="https://www.sinica.edu.tw/ch" target="_blank">中央研究院</a>是國家最高幕僚與研究單位，院內各單位皆因研究需求而有自己的專業圖書館，大部份只對院內研究人員開放，但有部份研究所的館舍也對一般民眾開放。館藏皆精良專業且豐富，中研院近年也致力將研究成果化，透過平易近人的普及知識和社群媒體推廣，讓民眾對於理論知識不再感覺艱澀遙遠，得以簡單的親近學術機構與研究成果。</p>
+  <ul>
+    <li><strong>台灣史研究所檔案館</strong></li>
+  </ul>
+  <p>中研院<a href="https://www.ith.sinica.edu.tw/" target="_blank">台灣史研究所</a>所設<a href="https://archives.ith.sinica.edu.tw/" target="_blank">檔案館</a>，專注蒐藏臺灣民間史料，從事系統性檔案徵集、整編、數位典藏與開放應用等工作。其館藏累積歷年研究人員田野採集、私人捐贈、價購徵集，及合作典藏等成果，以多樣性的民間文書典藏、日治時期機構檔案，及圖書館舊籍文獻數位典藏著稱，是國內外典藏台灣珍貴檔案資源重鎮。</p>
+  <p>個人文書集藏典藏，包含楊雲萍文書、費邁克集藏、陳植棋畫作與文書等；家族與民間文書，包含岸裡社潘家文書、臺中龍井林家文書、鹿港郊商許志湖家族文書、長崎泰益號文書等；機構團體檔案，則有臺灣總督府公文類纂與專賣局檔案，以及臺拓與勸業銀行檔案等。</p>
+  <p>地址：台北市南港區研究院路二段128號 (人文社會科學館北棟8樓)</p>
+  <ul>
+    <li><strong>近代史所圖書館／檔案館</strong></li>
+  </ul>
+  <p><a href="http://www.mh.sinica.edu.tw/index.aspx" target="_blank">近代史研究所</a>轄下<a href="http://lib.mh.sinica.edu.tw/wSite/ct?xItem=4150&amp;ctNode=236&amp;mp=HistM&amp;idPath=103_109_236" target="_blank">圖書館</a>，為一研究型專業圖書館，以清代以來近代中國史為館藏範圍，館藏以近代中國史專書、期刊、微縮資料為主；大陸出版品（含1949年前、後出版者）亦是一收藏重點，多年來已奠下專業圖書資源基礎，專業館藏質量兼具，是中國近代史研究藏書重鎮，也是兩岸學術資源交流的重要後盾。</p>
+  <p>近史所<a href="https://archives.sinica.edu.tw/" target="_blank">檔案館</a>，典藏史料重心為清末以來外交及經濟部門檔案，為史學界所熟知且公認為研究清末民國時期外交、財經方面最具權威的重要史料，數量龐大。檔案館藏內容分為外交、經濟、地圖、民間資料四大部分。</p>
+  <p>近年數位化技術提升，圖書館逐步建置各項電子資料庫、電子書及推動各項數位化作業。檔案館讀者亦可透過檢索系統於線上閱覽部分館藏之外交、經濟、機關團體檔案及地圖，便捷運用所需檔案。</p>
+  <p>地址：台北市南港區研究院路二段128號</p>
+  <ul>
+    <li><strong>歷史語言研究所傅斯年圖書館</strong></li>
+  </ul>
+  <p><a href="https://www2.ihp.sinica.edu.tw/" target="_blank">歷史語言研究所</a>的<a href="http://lib.ihp.sinica.edu.tw/index.php" target="_blank">傅斯年圖書館</a>為國際重要的漢學圖書機構，館內最為珍貴且具特色之典藏，首推中文善本書三千八百餘部，這四萬餘冊的善本書，以罕見的秘籍居多，複本較少。主要為宋、元、明及清初刊本、稿本，以及名人之批校本、手鈔本、繪寫本等，是國內外研究者所重視的典籍。</p>
+  <p>金石拓片收藏極豐，為該館館藏特色之二：收藏石刻拓片25,000餘通，33,800餘卷，上自先秦，下迄民國，這些拓片數量龐大，內容珍貴，為國內學者重視。</p>
+  <p>俗曲資料收藏之富，為該館館藏特色之三：該館藏有10,000餘件極具特色之俗曲文學資料，就資料可溯自明萬曆年間；就地域而言則遍及全中國，為研究近代中國曲俗文學之重要文獻。</p>
+  <p>地址：台北市南港區研究院路二段130號</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Matters 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-03/%E9%A3%9F%E8%BE%B2%E8%88%87%E9%84%89%E6%84%81-%E5%A5%B9%E5%80%91%E4%B8%8D%E4%B8%80%E6%A8%A3%E7%9A%84%E5%8F%B0%E6%B8%AF%E9%80%A3%E7%B5%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2019-07-21/%E4%B8%80%E9%BD%A3%E7%BD%AA%E6%83%A1%E5%8A%87%E6%9C%AC%E8%83%8C%E5%BE%8C-%E6%98%AF%E5%9B%9E%E4%B8%8D%E4%BA%86%E9%A0%AD%E7%9A%84%E5%A2%AE%E8%90%BD/">最早</a>--</span>
+    
+      <li>
+        <time>2020-12-15</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-15/%E8%87%BA%E6%97%A5%E9%97%9C%E4%BF%82-%E6%88%91%E5%80%91%E6%84%9F%E6%83%85%E9%82%A3%E9%BA%BC%E5%A5%BD-%E4%BD%A0%E9%82%84%E6%83%B3%E8%A6%81%E8%B7%9F%E4%BB%96%E5%9C%A8%E4%B8%80%E8%B5%B7%E5%97%8E-%E5%92%AC%E6%89%8B%E5%B8%95/">
+          [臺日關係]我們感情那麼好，你還想要跟他在一起嗎？（咬手帕）
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-12-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-14/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%BD%A0%E5%90%84%E4%BD%8D%E7%82%BA%E4%BB%80%E9%BA%BC%E6%9C%83%E6%83%B3%E8%A6%81%E5%BE%9E%E8%BB%8D%E5%95%8A-%E8%8A%B1%E9%BB%91%E5%99%B4/">
+          [外交雜聞]你各位為什麼會想要從軍啊，花黑噴？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-12-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-13/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E8%87%BA%E5%8C%97%E9%87%8D%E8%A6%81%E7%9A%84%E5%95%86%E5%B1%95%E6%9C%83%E5%A0%B4-%E4%B8%96%E8%B2%BF%E4%B8%AD%E5%BF%83-%E6%9C%89%E8%91%97%E6%94%BF%E5%BA%9C%E6%B7%B1%E5%88%87%E7%9A%84%E6%9C%9F%E6%9C%9B/">
+          [經濟與外交]臺北重要的商展會場「世貿中心」，有著政府深切的期望
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-12-10</time>
+        <a href="https://nodebe4.github.io/oped2/2020-12-10/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%BD%A0%E7%9F%A5%E9%81%93%E5%97%8E-%E9%80%83%E5%87%BA-%E8%A5%BF%E5%AE%89%E7%9A%84%E8%94%A3%E4%B8%AD%E6%AD%A3-%E6%90%AD%E7%9A%84%E6%98%AF%E5%A4%96%E5%9C%8B%E9%A7%95%E9%A7%9B%E9%96%8B%E7%9A%84%E9%A3%9B%E6%A9%9F%E5%93%A6/">
+          [外交雜聞]你知道嗎，「逃出」西安的蔣中正，搭的是外國駕駛開的飛機哦
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-12-13/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E8%87%BA%E5%8C%97%E9%87%8D%E8%A6%81%E7%9A%84%E5%95%86%E5%B1%95%E6%9C%83%E5%A0%B4-%E4%B8%96%E8%B2%BF%E4%B8%AD%E5%BF%83-%E6%9C%89%E8%91%97%E6%94%BF%E5%BA%9C%E6%B7%B1%E5%88%87%E7%9A%84%E6%9C%9F%E6%9C%9B/">
+            前一篇：[經濟與外交]臺北重要的商展會場「世貿中心」，有著政府深切的期望
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-12-14/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%BD%A0%E5%90%84%E4%BD%8D%E7%82%BA%E4%BB%80%E9%BA%BC%E6%9C%83%E6%83%B3%E8%A6%81%E5%BE%9E%E8%BB%8D%E5%95%8A-%E8%8A%B1%E9%BB%91%E5%99%B4/">
+            後一篇：[外交雜聞]你各位為什麼會想要從軍啊，花黑噴？
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-12-13/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E8%87%BA%E5%8C%97%E9%87%8D%E8%A6%81%E7%9A%84%E5%95%86%E5%B1%95%E6%9C%83%E5%A0%B4-%E4%B8%96%E8%B2%BF%E4%B8%AD%E5%BF%83-%E6%9C%89%E8%91%97%E6%94%BF%E5%BA%9C%E6%B7%B1%E5%88%87%E7%9A%84%E6%9C%9F%E6%9C%9B/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-12-14/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%BD%A0%E5%90%84%E4%BD%8D%E7%82%BA%E4%BB%80%E9%BA%BC%E6%9C%83%E6%83%B3%E8%A6%81%E5%BE%9E%E8%BB%8D%E5%95%8A-%E8%8A%B1%E9%BB%91%E5%99%B4/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-12-14/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%BD%A0%E5%90%84%E4%BD%8D%E7%82%BA%E4%BB%80%E9%BA%BC%E6%9C%83%E6%83%B3%E8%A6%81%E5%BE%9E%E8%BB%8D%E5%95%8A-%E8%8A%B1%E9%BB%91%E5%99%B4/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-12-13/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E8%87%BA%E5%8C%97%E9%87%8D%E8%A6%81%E7%9A%84%E5%95%86%E5%B1%95%E6%9C%83%E5%A0%B4-%E4%B8%96%E8%B2%BF%E4%B8%AD%E5%BF%83-%E6%9C%89%E8%91%97%E6%94%BF%E5%BA%9C%E6%B7%B1%E5%88%87%E7%9A%84%E6%9C%9F%E6%9C%9B/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-12-13/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E8%87%BA%E5%8C%97%E9%87%8D%E8%A6%81%E7%9A%84%E5%95%86%E5%B1%95%E6%9C%83%E5%A0%B4-%E4%B8%96%E8%B2%BF%E4%B8%AD%E5%BF%83-%E6%9C%89%E8%91%97%E6%94%BF%E5%BA%9C%E6%B7%B1%E5%88%87%E7%9A%84%E6%9C%9F%E6%9C%9B/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-12-14/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%BD%A0%E5%90%84%E4%BD%8D%E7%82%BA%E4%BB%80%E9%BA%BC%E6%9C%83%E6%83%B3%E8%A6%81%E5%BE%9E%E8%BB%8D%E5%95%8A-%E8%8A%B1%E9%BB%91%E5%99%B4/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Matters>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-12-14/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%BD%A0%E5%90%84%E4%BD%8D%E7%82%BA%E4%BB%80%E9%BA%BC%E6%9C%83%E6%83%B3%E8%A6%81%E5%BE%9E%E8%BB%8D%E5%95%8A-%E8%8A%B1%E9%BB%91%E5%99%B4/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<Matters>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-12-13/%E7%B6%93%E6%BF%9F%E8%88%87%E5%A4%96%E4%BA%A4-%E8%87%BA%E5%8C%97%E9%87%8D%E8%A6%81%E7%9A%84%E5%95%86%E5%B1%95%E6%9C%83%E5%A0%B4-%E4%B8%96%E8%B2%BF%E4%B8%AD%E5%BF%83-%E6%9C%89%E8%91%97%E6%94%BF%E5%BA%9C%E6%B7%B1%E5%88%87%E7%9A%84%E6%9C%9F%E6%9C%9B/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

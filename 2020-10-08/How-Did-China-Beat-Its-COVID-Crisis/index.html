@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>How Did China Beat Its COVID Crisis? – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+How Did China Beat Its COVID Crisis?
+——
+" />
+    <meta property="og:description" content="
+How Did China Beat Its COVID Crisis?
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="How Did China Beat Its COVID Crisis?" />
+    <meta property="twitter:title" content="How Did China Beat Its COVID Crisis?" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Flibrary%2Fnyrb-china-archive%2Fhow-did-china-beat-its-covid-crisis" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis&text=How Did China Beat Its COVID Crisis?&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis&title=How Did China Beat Its COVID Crisis?" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis&title=How Did China Beat Its COVID Crisis?" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=How Did China Beat Its COVID Crisis?&body=
+How Did China Beat Its COVID Crisis?
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis&title=How Did China Beat Its COVID Crisis?&caption=
+How Did China Beat Its COVID Crisis?
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=How Did China Beat Its COVID Crisis?&url=https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>How Did China Beat Its COVID Crisis?</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-10-08
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Ian Johnson</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1602144000000-->
+<p><a href="https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis">How Did China Beat Its COVID Crisis?</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-4b92ecb45e4fc20318388478e4a07fa0">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1195418012.jpg" title="How Did China Beat Its COVID Crisis?" class="colorbox" data-colorbox-gallery="gallery-node-52976-Cy3oHdQUsv0" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1195418012.jpg?itok=fuRpZKOi" width="1200" height="826" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Kevin Frayer—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A police officer wears a protective mask as passengers, many also wearing masks, arrive to board trains before the annual Spring Festival at a railway station in Beijing, January 23, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">On January 31, I received a knock at the door of my Beijing apartment. It was the manager of lease renewals clutching a stack of flyers.</p>
+      <p>“Mr. Zhang, you’re feeling well?” she asked, using my Chinese surname.</p>
+      <p>“No fever yet.”</p>
+      <p>She laughed—foreigners and their comments.</p>
+      <p>“I know you don’t have the illness, but we want everyone to be safe. Here.” She handed me two copies of the flyer, one in Chinese and the other in English.</p>
+      <p>They were written by the Beijing municipal government and offered practical tips on how to protect oneself from the coronavirus. It had been eight days since the city of Wuhan had gone into full lockdown and seven since Beijing and other cities across China had declared a public health emergency. The flyers advised which government websites and social media accounts had the latest, most authoritative information and how to take basic precautions (wear a face mask, stay at home if possible), and they listed more than one hundred hospitals in greater Beijing that were designated to handle fevers. In case anything was unclear, the authorities had set up a new hotline with information in eight foreign languages. Unlike Wuhan, Beijing wasn’t locked down, but they were making sure that everyone was well informed.</p>
+      <p>The manager was diligent. She checked with me about my neighbors, confirming her information that they had left town for the Chinese New Year holiday, and asked me if I had a mask. After a few minutes she cheerfully left to carry on with her rounds.</p>
+      <p>At the time, this incident didn’t strike me as all that important. If anything it was annoying: yet another pointless, paternalistic measure by Chinese authorities for what probably wasn’t going to be a big deal. Couldn’t they ever be relaxed about anything? Always this angst, followed by the inevitable knee-jerk mobilization. How ridiculous.</p>
+      <p>But since then I’ve come to see that small incident differently. The coronavirus was a big deal; it was something that I (and many other smug foreigners) misjudged but that the Chinese authorities accurately saw as a public health crisis. The thought and effort that went into the flyer were especially impressive in hindsight: organizing the hospitals and the hotline, the quick consensus on measures like face masks that many other countries, such as the United States, grudgingly adopted only much later. Rather than viewing the Chinese government’s reaction as a sign of its love of a lockdown, I now think of it as emblematic of the bureaucratic élan that underlies much of China’s rise over the past few decades, from the largely successful economic policies that went counter to the shock treatment advocated by many Western experts to its rolling out a national highway and high-speed rail network—public engineering feats that Western countries used to accomplish quickly but that now drag on for years or decades.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">Still, the lessons are ambiguous. Some will claim that China’s successes, especially in combating the virus, are due to its authoritarianism. And some of its responses to the pandemic were troubling: separated families unable to reunite for weeks on end because provinces set up travel restrictions, villages barricaded like medieval fortresses, and housing compounds run as if under martial law. The crucial public health measures, however—the focused lockdown at the pandemic’s epicenter, the clear government directives, the masks and social distancing—were effective and became standard procedure around the world.</p>
+      <p>Even when other countries knew what measures to take—an advantage China didn’t have at first—their leaders often failed to take them. The worst among them, especially Jair Bolsonaro in Brazil, Boris Johnson in the U.K., and Donald Trump in the U.S., feared the measures would hurt them politically.</p>
+      <p>Critics will argue that Chinese leaders didn’t face that risk. But lockdowns are unpopular everywhere, even in China. Nonetheless, the leadership under Xi Jinping listened to experts and decided that one was necessary—probably drawing on their experiences with the 2003 SARS pandemic and calculating that they would gain political capital if they successfully protected citizens from a deadly new disease. That turned out to be smart politics, especially after the leadership tapped the veteran public health official Zhong Nanshan to be the public face of the government’s strict policy. Like Anthony Fauci in the U.S., Zhong is a credible figure, because he was prominently involved in combating the SARS outbreak. Unlike Fauci, Zhong received political backing, and few doubted his advice about COVID-19.</p>
+      <p>That led to another phenomenon unappreciated by outside observers: Compliance in China was overwhelmingly voluntary. Beijing’s streets were empty not because people were forced to stay home (as was the case in Italy and Spain) but because they mostly accepted the leadership’s message.<sup id="fnr1"><a href="https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis#fn1" rel="nofollow">1</a></sup> The flyer I got in January was part of a strategy that worked, not because of censorship but because Chinese people were given a convincing message that corresponded to what they saw unfolding around them. For every social media post bemoaning the inconvenience—and many did complain, as was often reported in the foreign media—many more praised the strong, clear response.</p>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_3 visual-box view-dom-id-2a40a89e2d2fd6d830ab6c6975724f3e grid-4 photo-object">
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/gettyimages-1195388859.jpg" title="Wuhan Residents Told Not to Leave as Coronavirus Spreads" class="colorbox" data-colorbox-gallery="gallery-node-52991-Cy3oHdQUsv0" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/medium/public/assets/images/photo/system/gettyimages-1195388859.jpg?itok=GIyNeS6f" width="620" height="413" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>A security guard sprays disinfect in an outdoor community space in Wuhan, January 23, 2020.</p>
+          </div>
+        </div>
+      </div>
+      <p>The result is that China, the pandemic’s epicenter, a country of 1.4 billion people, has had 4,634 deaths—a seventh of Spain’s, an eighth of Italy’s, a ninth of Britain’s, and less than a fortieth of the U.S.’s. That success has allowed China to boast that it has a superior political and administrative system, one that others might want to emulate, or at least stop criticizing. With the U.S. embroiled in yet another highly partisan election and Europe weakened by Brexit and its own halfhearted response to the virus, China’s leaders appear to be presented with a historic opportunity. What many of them probably thought would take another decade or two of economic growth and steady military buildup now seems imminent: The West is imploding, and China’s rise is unstoppable. That worldview helps explain why it believes it can now take unapologetically tough positions on Hong Kong, border clashes with India, and Western criticism of its economic success stories, such as that new 5G data networks built by the tech giant Huawei will compromise their national security.</p>
+      <p>The question is how long this favorable confluence will last. As we head into the third decade of this increasingly turbulent century, has China really found a sustainable model, one that doesn’t just keep the Chinese Communist Party in power longer than most people thought possible but raises the country to the rank of a true superpower? Or is the Communist Party on yet another dead-end course like its adventures in Maoism in the last century, dizzy with success and prone to overreach at home and abroad?</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">Soon after the pandemic struck, nuns at the Temple of Eternal Creation on the outskirts of Nanjing began getting phone calls from regular worshipers with one question: How could they help Wuhan? The nuns set up prayer services for the beleaguered city and began collecting donations. A few weeks later, they wired a check for 200,000 yuan—nearly U.S.$30,000—to charities there. In less than a month, Taoist temples in China had contributed nearly $2 million to the relief effort, with other religious groups contributing another $28 million.<sup id="fnr2"><a href="https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis#fn2" rel="nofollow">2</a></sup></p>
+      <p>To many, this might be a classic example of civil society—groups outside government control rallying to help fellow citizens. For decades, political scientists have searched assiduously for signs in China of civil society, which many observers—from Alexis de Tocqueville to Robert D. Putnam—have argued can help build democratic structures. At the very least, civil society is usually seen as being in opposition to the state because it is not under government control and allows people to make their own decisions.</p>
+      <p>But in <em>The Art of Political Control in China</em>, the Yale political scientist Daniel C. Mattingly argues provocatively and persuasively that while civil society in China can occasionally organize opposition to the state, more often it does the opposite. As counterintuitive as it sounds, civil society groups like the Taoist nuns help solidify one-party control. By organizing citizens, civil society groups help make them more “legible” to the state, a concept that Mattingly borrows from one of his colleagues in Yale’s political science department, James C. Scott, who developed the idea in his book <em>Seeing Like a State</em> (1998). Civil society makes clearer the desires, motivations, and interests of amorphous masses of citizens, which can help the state devise strategies to support its policies instead of spawning resistance.</p>
+      <p>In the case of the pandemic, many Chinese lack trust in big state-run charities because they have been plagued by scandals. If they provided the only way to help out, many people might not bother to contribute, figuring the government should fix the problem itself. By contrast, the nuns—and I know this from having done fieldwork at the temple since the mid-1990s—are widely trusted as upright and frugal. If they collect money, people trust that it will get to the needy. The result is that people not only give but are excited to do so: It makes them feel part of a national effort.</p>
+      <p>But aren’t groups like the nuns supposed to turn into centers of opposition to the state? In Communist Poland, the Catholic Church helped shelter government opponents, as did the Protestant churches in East Germany and writers’ circles in Czechoslovakia.</p>
+      <p>Mattingly writes that this can happen in China, citing the much-reported example of Wukan, a small town in southern China where citizens in 2011 used the structures of local religious life to replace corrupt Communist Party control over the town. They turned to lineage societies—people of the same surname who worship their common ancestors in a private temple. The heads of each lineage society formed a council of elders that ran the town during the period when the Party was essentially driven out.</p>
+      <p>Most of the time, however, civil society groups help Chinese officials implement government policy. In analyzing three major state objectives over the past decades—expropriating rural land, family planning, and limiting protest—Mattingly shows how the state can cultivate, co-opt, or infiltrate these groups, using their standing in society to achieve its goals without the usual tools of repression.</p>
+      <p>Again the Taoist nuns are a good example. For nearly three decades, local officials have supported their efforts to rebuild their temple, which was destroyed by Japanese troops during World War II. The nuns are apolitical and support state priorities, such as installing a flagpole in front of the temple and holding a flag-raising ceremony on national holidays. In exchange, the state has helped the temple expand, by, for instance, sending a retired geologist to analyze a nearby mountain that the nuns want to adorn with a pagoda (the conclusion was that the soil is very sandy and they should sink deep pylons for support, something they hadn’t considered). The state also sent an academic to help the nuns write the temple’s history, as well as a video team to produce short films for social media, which they used for fund-raising.</p>
+      <p>Across China, the state is engaged in tens of thousands of similar efforts. All are part of its highly capable bureaucracy, the same one that drew up the pandemic flyers and organized their distribution through thousands of apartment management companies. Not all of these projects are successful, but overall they enhance state capacity in ways that often surprise outsiders. During the pandemic, outside reports on religious involvement focused on two underground churches that the state prevented from sending aid to Wuhan—a hard-line policy that undoubtedly alienated many hundreds of worshipers—but missed the tens of thousands of worshipers who were able to donate through official religious groups like the nuns, helping to build shared pride in being part of an epic national struggle.</p>
+      <p>This adept co-opting of civil society highlights another insight in Mattingly’s book: the state’s reliance on interpersonal rather than high-tech surveillance. While the latter gets extensive attention, it is only being implemented slowly. Instead, what explains the power of the Chinese state is its well-organized bureaucracy:</p>
+      <blockquote>
+        <p>For the time being, China still mostly relies on human, not digital, tactics of authoritarian repression and control. Even in an era of heightened control under Xi Jinping, infiltration and co-optation remain key tools in the state’s arsenal.</p>
+      </blockquote>
+      <p>Much more is at stake here than controlling a pandemic. In the 21st century, nations will have to deal with the consequences of the earth’s environmental degradation—rising sea levels, wildfires, and other ravages caused by climate change, as well as pandemics. These will require a competent state that can also harness civil society.</p>
+      <p>China’s strengths may give it a decisive advantage in responding to such challenges. If dikes need to be built to protect the coastline, a state that rolled out a national high-speed rail network in a decade can probably do it, aided not only by engineers but also a population willing to make sacrifices. If floods and fires ravage its hinterlands, China will be able not only to mobilize firefighters but also to resettle people away from vulnerable areas, something that Western countries have had a hard time doing—think of how the U.S. has failed to discourage people from living in fire-prone areas of California or on coastlines susceptible to hurricanes. And when a virus spreads, the Chinese state can launch a public health blitzkrieg, drawing not only on its own resources but also on inspired citizens.</p>
+      <p>Competency, however, has a shelf life. Once a project is completed, people tend to take it for granted. That raises the question of how to maintain legitimacy over the long term. Like a bicycle rider, does the Chinese state have to keep moving forward to avoid falling?</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">On December 31 of last year, the Wuhan writer Wang Fang—who goes by the pen name Fang Fang—opened her family chat group on the social media app WeChat to find a message from one of her brothers. He was forwarding an essay called “Suspected Case of Virus of Unknown Origin in Wuhan (SARS&lt;).” Fang Fang’s brother is a professor at a science and technology university in the city and usually well informed, so she paid attention. He followed up a few hours later, saying that specialists from the National Health Commission had already arrived to investigate. Soon after, other friends began forwarding videos of the Huanan Seafood Market, which was rumored to be the center of the outbreak. In a series of social media posts, which have now been published as <em>Wuhan Diary: Dispatches from a Quarantined City</em>, Fang Fang wrote that as they were discussing this on January 1, her brother was unfazed:</p>
+      <blockquote>
+        <p>He didn’t think it would turn out to be anything to be too concerned about. He also didn’t think that the government would block information about what was happening; that would be a true blow to the people. My thoughts on the matter were pretty close to my brother’s. I figured that there was no way the government would censor news about something so important. How could they possibly stop the public from learning the truth about what was happening?</p>
+      </blockquote>
+      <p>The next three and a half weeks were decisive for billions of people around the world. In the end, the government did exactly what Fang Fang and her brother thought impossible: It blocked official channels of information, allowing rumors to cause panic among residents of the central Chinese metropolis. More importantly, the virus jumped from Wuhan to cities around the world. If officials had been more forthright, it might never have spread beyond Wuhan. Countless lives could have been saved.</p>
+      <p>But is this assessment realistic? Critics say yes, pointing to whistleblowers such as the doctors Ai Feng and Li Wenliang, whom local officials silenced. But a counterargument is that these concerns were initially vague. Taking concrete action required reliable knowledge about a new virus. It took experts time to figure out that it could be transmitted from person to person and did not simply spread from animals sold at the seafood market. If Chinese officials dithered, they were no different from elected leaders in Italy, Spain, the U.K., and the U.S., who had weeks of advance notice and still did next to nothing. Holding China to an idealized standard of action is appealing but unfair.</p>
+      <p>These conflicting lines of thought run through Fang Fang’s diary. At 65, she is a writer who has found a way to coexist with the regime. She recently wrote a brutal novel called <em>Soft Burial</em>, banned in China, that explores the aftereffects of the Communist Party’s violent land reform movement of the 1940s and 1950s. She is not a Party member but joined the government-run writers’ union. Although some of her work is censored, she enjoys the perks of being inside the system—she writes in her diary of people bringing her New Year’s gifts and of television stations coming to her for acceptable quotes about the lockdown. Her criticisms are not strident; she reflects none of the panic in January, when doctors in Wuhan were screaming on social media for equipment. Like a typically pampered Chinese intellectual, she doesn’t sully herself with fieldwork—there are no dispatches from hospitals, morgues, or even a walk through the ghostly city center.</p>
+      <p>Yet this moderate tone makes <em>Wuhan Diary</em> an honest take on the pandemic in China. Foreign editors and publishers often want “authentic” Chinese voices but end up preferring foreign-based Chinese writers because they conform to expectations, writing, for example, much more explicitly about Communist Party control. Fang Fang’s diary is nuanced, careful, and soft. It is the work of someone not trying to challenge the system but simply trying to express in real time what she felt. Translated by the veteran sinologist Michael Berry in a matter of weeks, it is too long, not quite sharp enough, and lacking in the deeper analysis that comes with distance. But because of all that it is a genuine voice from the whirlwind, a book that will be referred to in the future when people want to understand how many Chinese felt about the pandemic.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">At first celebrated on social media when she began to publish online on January 25, Fang Fang ended up being denounced there as inadequately patriotic. That arc says much about how authorities manipulate public opinion. Many of her critics were probably government trolls, but the feeling I got in China was that after initial panic most people accepted the government’s efforts, especially as reports of the pandemic came in from abroad, where the bungling was many times worse. By March, Fang Fang’s critique of government censorship seemed passé.</p>
+      <p>That opinion turned on Fang Fang shows the artificial nature of China’s consensus. Not all public opinion is manipulated, but it’s often warped in a way that makes the culture wars of the United States appear mild. In open societies, conflicts come up like pus in a wound, whereas in China they fester below the surface. Over the past few weeks, my social media feed has been filled with completely delusional views of how the pandemic has progressed in the West, with many (I would say most) Chinese believing that it has been an unadulterated debacle in rich countries, while the Chinese state has kept its people safe. Differing opinions are pilloried, and obtaining basic facts is hard. Not for the first time, I’ve felt that my Chinese friends are living in a parallel universe where certain basic assumptions about the world are turned on their head.</p>
+      <p>This is mirrored in so many facets of daily life that it is hard to list them all. Talk to most Chinese about minority areas in the country, such as Tibet and Xinjiang, and they will have almost no understanding of international concepts such as self-determination. Bring up Hong Kong and most people will angrily denounce pro-democracy protesters there as dupes and traitors. The disconnect is sometimes so strong that it’s easy to lose heart. Many people in the West have done so, leading to a sense that engagement with China has been a failure, and that confrontation is now the only alternative.</p>
+      <p>But people like Fang Fang still exist and show that China isn’t a monolith. I would argue that collectively they present a real challenge to the government—not in the classic civil society sense of people who are likely to organize opposition; the Party, as Mattingly argues, is too savvy to allow such opposition to form, and officials are much better at stifling dissent than they were a couple of decades ago. Instead, Fang Fang represents a significant group of people in China who see clearly the flawed nature of their state and who are willing to express these reservations in the most direct way they know.</p>
+      <p>Consider her analysis of how local officials hid the pandemic early on. While the Party-led media blamed a few local officials for not responding quickly enough to the virus, Fang Fang saw Wuhan’s problems as systemic. Without competition that might result from elections or some sort of participatory political system, China’s system</p>
+      <blockquote>
+        <p>leads to disaster; empty talk about political correctness without seeking truth from facts also leads to disaster; prohibiting people from speaking the truth and the media from reporting the truth leads to disaster; and now we are tasting the fruits of these disasters, one by one.</p>
+      </blockquote>
+      <p>This sort of analysis is not shared by most Chinese people. For them, the Party’s message is still dominant and they largely believe that it did a good job, especially compared to the mess in supposedly advanced countries. But many others do understand the Party’s highly flawed nature. Their views, their books, their underground documentary movies, and their artwork—all of this is producing an unofficial history of China, a counterhistory written at the grassroots.</p>
+      <p>As the century progresses, this alternative history will stay alive, like a virus biding its time. And when the conditions are right, when Chinese people wonder why China pursued a development-at-all-costs strategy that made it vulnerable to climate change in the first place, or why local officials bungle so many crises, their suppressed views will emerge.<span class="cube"></span></p>
+      <hr />
+      <ol id="footnotes">
+        <li id="fn1">See my entry for the <em>NYR Daily</em>’s “<a href="https://www.nybooks.com/daily/2020/04/05/pandemic-journal-march-30-april-5/#johnson" target="_blank" rel="nofollow">Pandemic Journal</a>,” March 31, 2020.<a title="Jump back to footnote 1 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis#fnr1" rel="nofollow">↩</a></li>
+        <li id="fn2">See my “<a href="https://www.nytimes.com/2020/02/23/world/asia/china-religion-coronavirus-donations.html" target="_blank" rel="nofollow">Religious Groups in China Step into the Coronavirus Crisis</a>,” <em>The New York Times</em>, February 23, 2020.<a title="Jump back to footnote 2 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/how-did-china-beat-its-covid-crisis#fnr2" rel="nofollow">↩</a></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-10-16</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-16/A-New-Normal-for-U.S.-China-Policy/">
+          A New Normal for U.S. China Policy?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-16</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-16/A-New-Normal-for-U.S.-China-Policy/">
+          A New Normal for U.S. China Policy?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-07</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-07/International-NGOs-Increasingly-Working-with-Chine/">
+          International NGOs Increasingly Working with Chinese Partners . . . outside China
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-09-25</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-25/Technical-Difficulties/">
+          Technical Difficulties
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-08/%E9%BA%A6%E5%85%8B%E9%98%BF%E7%91%9F%E5%A4%A9%E6%89%8D%E5%A5%96%E5%92%8C%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E5%9B%BE%E4%B9%A6%E5%A5%96%E5%85%AC%E5%B8%83%E5%90%8D%E5%8D%95-%E5%8D%8E%E8%A3%94%E7%8E%8B%E7%94%B7%E6%A0%BF%E5%92%8C%E6%B8%B8%E6%9C%9D%E5%87%AF%E5%88%86%E5%88%AB%E5%85%A5%E9%80%89/">
+            前一篇：麦克阿瑟天才奖和美国国家图书奖公布名单，华裔王男栿和游朝凯分别入选
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-08/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%96%E7%95%8C%E5%8F%8D%E5%85%B1%E8%81%AF%E7%9B%9F-%E7%9A%84%E8%80%81%E5%A4%A7-%E8%A2%AB%E8%88%89%E8%BE%A6%E8%81%AF%E7%9B%9F%E5%B9%B4%E6%9C%83%E7%9A%84%E5%9C%8B%E5%AE%B6%E6%8B%92%E7%B5%95%E5%85%A5%E5%A2%83-%E7%9C%9F%E9%9B%A3%E5%A0%AA%E5%95%8A/">
+            後一篇：[外交雜聞]「世界反共聯盟」的老大，被舉辦聯盟年會的國家拒絕入境，真難堪啊
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-10-08/%E9%BA%A6%E5%85%8B%E9%98%BF%E7%91%9F%E5%A4%A9%E6%89%8D%E5%A5%96%E5%92%8C%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E5%9B%BE%E4%B9%A6%E5%A5%96%E5%85%AC%E5%B8%83%E5%90%8D%E5%8D%95-%E5%8D%8E%E8%A3%94%E7%8E%8B%E7%94%B7%E6%A0%BF%E5%92%8C%E6%B8%B8%E6%9C%9D%E5%87%AF%E5%88%86%E5%88%AB%E5%85%A5%E9%80%89/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-10-08/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%96%E7%95%8C%E5%8F%8D%E5%85%B1%E8%81%AF%E7%9B%9F-%E7%9A%84%E8%80%81%E5%A4%A7-%E8%A2%AB%E8%88%89%E8%BE%A6%E8%81%AF%E7%9B%9F%E5%B9%B4%E6%9C%83%E7%9A%84%E5%9C%8B%E5%AE%B6%E6%8B%92%E7%B5%95%E5%85%A5%E5%A2%83-%E7%9C%9F%E9%9B%A3%E5%A0%AA%E5%95%8A/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-10-16/A-New-Normal-for-U.S.-China-Policy/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-10-07/International-NGOs-Increasingly-Working-with-Chine/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-10-08/%E9%BA%A6%E5%85%8B%E9%98%BF%E7%91%9F%E5%A4%A9%E6%89%8D%E5%A5%96%E5%92%8C%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E5%9B%BE%E4%B9%A6%E5%A5%96%E5%85%AC%E5%B8%83%E5%90%8D%E5%8D%95-%E5%8D%8E%E8%A3%94%E7%8E%8B%E7%94%B7%E6%A0%BF%E5%92%8C%E6%B8%B8%E6%9C%9D%E5%87%AF%E5%88%86%E5%88%AB%E5%85%A5%E9%80%89/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-10-08/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E4%B8%96%E7%95%8C%E5%8F%8D%E5%85%B1%E8%81%AF%E7%9B%9F-%E7%9A%84%E8%80%81%E5%A4%A7-%E8%A2%AB%E8%88%89%E8%BE%A6%E8%81%AF%E7%9B%9F%E5%B9%B4%E6%9C%83%E7%9A%84%E5%9C%8B%E5%AE%B6%E6%8B%92%E7%B5%95%E5%85%A5%E5%A2%83-%E7%9C%9F%E9%9B%A3%E5%A0%AA%E5%95%8A/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-10-16/A-New-Normal-for-U.S.-China-Policy/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-10-07/International-NGOs-Increasingly-Working-with-Chine/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

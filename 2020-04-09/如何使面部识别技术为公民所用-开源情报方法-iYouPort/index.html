@@ -1,0 +1,11557 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>如何使面部识别技术为公民所用？- 开源情报方法 - iYouPort – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+  
+     如何使面部识别技术为公民所用？- 开源情报方法 
+  
+  
+  McCaffrey     Knowledge Node  ,  OSINT  ,  生物识别及对抗方法  ,  生物识别和如何对抗  ,  给行动者的护身符和武器             2020年4月10日 
+          2019年11月16日 
+   1 Minute 
+  
+  
+    
+       
+      
+       将看起来可怕的技术用于公民事业是有可能的
+      
+      
+    
+           
+  
+      
+
+    分析照片和社交关系是社交工程攻击中的重要组成部分。（在这里看到 “  社交工程  ” 专栏）。
+    了解一个人是谁、以及他们认识谁，至关重要 —— 可以使用此信息来执行精心设计的社交工程攻击。
+    开源情报是一个术语，用于指代对一切公开来源数据进行的收集、评估和应用。
+    引用中央情报局的话那就是：“ 
+    信息不一定必须机密才有价值
+    。无论是在浏览的博客中、在观看的广播中、还是在阅读的专业期刊中，都有无穷无尽的信息可以帮助我们了解世界……”。
+    听着有点吓人吗？ 
+    你的一举一动都是情报
+    ？是的，它就是如此 —— 在有目的的人眼中。这就是为什么说你应该小心，要非常小心。
+    在互联网上找到此类信息的最常见形式之一并不是纯文本，而是以照片形式存储的。
+    传统上，这些图像必须由观看者手动过滤以确定和评估其内容，但是由于有了面部识别软件，整个过程可以完全自动化。
+    面部识别已经引起了许多有关生物识别技术伦理问题的新闻和讨论，以及该技术对数据收集和隐私的影响。（参见 “  生物识别及对抗方法  ” 栏目）
+    尽管该技术经常在 Facebook 等平台上使用，并在全球范围内的执法中得到广泛使用，但是， 
+    允许人们根据自己的目的使用面部识别的后端技术现在已经很容易获得，并可以在开源自由软件项目中实现
+    。
+    这是一种民主化均权的方法。
+    将看起来可怕的技术用于公民事业是有可能的，还记得我们介绍过的使用AI作为调查记者工作的辅助吗？在这里《  如何迎接更多的“巴拿马文件”？  》
+    在本教程中，我们将使用 Face Recognition  Python 库  基于其中的图像来分析和发现目标人。
+    并且将研究如何搜寻和发现成批的图像，以及如何生成有关目标人或网站的统计信息和结论。
+    
+      不要错过《  人脸识别可以自制，你知道吗？而且非常简单  》
+    
+    马上开始。
+      
+     第一步：安装
+      
+    这里将使用的 Python 库  Face Recognition  可通过 Linux 和 macOS 上的 Pip 包管理器直接获得。
+    虽然 Windows 上没有正式支持这个包，但可以提供  安装指南  以及  预配置的虚拟机映像  。
+    在开始安装之前，请确保您的操作系统是最新的。
+    在基于 Debian 的 Linux 发行版（如 Ubuntu 和 Kali）上，可以通过运行以下命令来更新存储库并安装新软件。
+    sudo apt-get update &amp;&amp; apt-get upgrade    
+    虽然在某些发行版中默认包含了 Pip，但也可以通过运行以下命令来安装它。此命令将获取软件包的最新版本并进行安装。
+    sudo apt-get install python-pip    
+           
+  
+      
+
+    安装Pip后，可以通过运行以下命令使用它来安装 Face Recognition 库：
+    sudo pip install face_recognition    
+           
+  
+      
+
+    一旦 Pip 安装完成，该库就可以使用了！
+      
+     第二步：组织数据进行分析
+      
+    用 Python 实现的用于面部识别的库意味着可以相对轻松地将其实现到其他应用程序中。
+    也就是说 
+    可以更简单地将面部识别功能添加到网络监视摄像头实时流、网络爬虫、或其他以数字方式显示包含面部的图像或视频的格式
+    。
+    但是，这需要编写额外的原始代码。
+    相反，本教程将使用随附的命令行工具，并将其与其他系统实用程序结合起来，以执行类似的任务，而无需编写新的脚本。
+    随附的命令行工具旨在处理两批文件。一个文件夹包含一组可识别的面孔，另一文件夹包含用户希望进行识别的一组图像。
+    要创建一组图像以过滤出特定的个人面孔，可以使用Wget递归下载一个网站，例如下面的网站。当然，研究人员可以尝试下载尽可能多的潜在相关图像。
+           
+  
+      
+
+    Wget 可以从命令行进行操作，并且可以用于下载任何内容，从单个页面或图像到整个网站。如下所示的命令将跟随给定域中的每个链接，并下载该页面上所有可用的内容。
+    可以随时按 Ctrl + C 退出此命令，否则它将一直运行到给定请求完成为止。
+    wget -p -r -E -e robots=off — convert-links -U mozilla — level 1 whitehouse.gov    
+           
+  
+      
+
+    
+      
+     -p
+     指定该工具还将下载其他内容，例如图像、样式表和脚本。
+      
+     -E
+     要求每个下载的文件都以其完整文件扩展保存，这将使您更容易过滤图像。
+      
+     -r
+     用于递归，因此也可以下载链接和其他目录。
+      在字符串的后面，递归级别指定为 
+     -level1
+     。这可以确保索引页面中的链接被跟踪一次。1可以改为其他想要的数字，也可以删除该标志以尝试无限递归。
+      如果希望确保不从其他网站下载任何文件，则可以使用 
+     -domain
+     ，后接该命令应限制到的域。
+      递归请求可能会被阻止或在某些服务器上引起问题，因此您可能需要通过使用 
+     -w
+     在请求之间创建延迟来限制递归或限制请求速度。
+      使用 
+     -e robots=off
+     可以避免将请求作为不受欢迎的Web爬网程序而被拒绝或阻止。
+      出于相同的原因， 
+     -U mozilla
+     用于指定应使用 Mozilla用户代理，以便该工具看起来像是Web浏览器。
+      
+     -convert-links
+     为了重新格式化链接，以便可以更轻松地离线使用该页面。虽然这对于筛选从站点下载的图像来说不是必需的，但它可以更便于追溯以确定图像在网页上的位置。
+    
+    一旦让程序运行了所需的时间，就可以在新目录中复制所有图像文件，以便更轻松地使用它们。首先，通过运行以下命令创建一个新目录。
+    mkdir unknown_faces    
+    接下来，通过运行以下两个命令将所有从 Wget 请求中检索到的图像文件复制到此新目录中，第一个用于JPG文件，第二个用于PNG文件。 
+    urlfolder
+    应替换为Wget创建的文件夹的名称，通常对应于初始命令中使用的URL或域。
+    cp urlfolder**/*.jpg unknown_faces/
+cp urlfolder**/*.png unknown_faces/    
+    
+    cp
+    命令将复制所有匹配的文件，后跟目录参数，在本例中为 whitehouse.gov。此目录后的**（双星号）指定递归，对于任何JPG或PNG图像，后跟一个*（通配符）。最后一个参数指定应将文件复制到 
+    unknown_faces
+    目录。
+           
+  
+      
+
+    这些图像移到新目录后，可以使用 
+    ls
+    来查看此文件夹中的文件。下面的命令将列出 
+    unknown_faces
+    文件夹的内容。
+    ls unknown_faces/    
+           
+  
+      
+
+    还可以使用|重定向运算符来转发此命令的输出，为了统计发现了多少个图像文件；稍后在识别一组图像中给定面部的频率时会很有用。
+    可以通过运行以下命令来完成：
+    ls unknown_faces/ | wc -l    
+           
+  
+      
+
+    此命令的输出显示 Wget 保存了178个图像文件。一旦准备好使用这些图像，就可以为要在该数据集中找到的面孔创建一个肯定的识别列表。
+      
+     第三步：准备识别列表
+      
+    要开始准备已知身份和面孔的列表，请在要解析的图像目录之外创建一个新文件夹。
+    在Wget创建的目录中，可以通过运行 
+    cd ../
+    向上移动一个目录，通过运行 
+    mkdir known_faces
+    创建一个名为 
+    known_faces
+    的新目录，最后通过运行 
+    cd known_faces
+    进入该目录。
+           
+  
+      
+
+    创建此目录后，可以将希望用作肯定鉴定列表的所有文件保存到此文件夹。
+    
+    任何人的清晰照片都是面部识别的理想选择，例如经常用作“联系人”页面上的个人资料照片。确保在任何已知的脸部照片中只看到一张脸
+    。
+    可能还需要为文件命名一个与照片中的人相对应的名称，因为这样就可以在做出任何肯定的标识时返回照片的文件名。
+           
+  
+      
+
+    准备好这些目录后，即可运行 
+    face_recognition
+    命令行实用程序。
+      
+     第四步：使用面部识别来识别个人
+      
+    Python Face Recognition 库附带的命令行实用程序相对简单，只需两个参数即可运行。第一个是已知面孔的目录，第二个是尝试识别的面孔的目录。
+    这些文件夹按照前面的步骤命名，下面的命令将运行该工具。
+    face_recognition known_faces/ unknown_faces/    
+           
+  
+      
+
+    程序运行时，它将返回文件名，后跟一个特定人的肯定标识，一个未知人的否定标识，或者如果图像中没有面孔，则标记为找不到任何人。
+    为了使这些结果对自动数据处理更加有用，可以运行相同的命令后跟 
+    &gt;
+    重定向器，将程序的输出发送到文本文件，例如下面的示例。
+    face_recognition known_faces/ unknown_faces/ &gt; results.txt    
+    可以使用此文本文件作为参考，以分析和利用面部识别的匹配结果。
+      
+     第五步：分析面部识别匹配
+      
+    从面部识别工具了解数据结果的一种可能方法是查找与特定识别的面部匹配的所有文件。
+    可以使用 
+    grep
+    和 
+    results.txt
+    文本文件来查看使用给定面孔进行的每次匹配。下面的命令将返回文本文件中用 Donald Trump 标识的每一行。
+    grep “Donald Trump” results.txt    
+           
+  
+      
+
+    还可以结合使用其他系统实用程序，通过运行以下命令来确定程序每个结果的频率。
+    cat results.txt | sed ‘s/.*,//’ | sort | uniq -c    
+    首先，运行 
+    cat results.txt
+    会将 results.txt 的内容作为标准输入读取。这被发送到 
+    sed
+    ，在此删除每行之前（包括逗号）的所有内容。然后结果列表发送到 
+    sort
+    。最后它用作 
+    uniq
+    的输入， 
+    -c
+    参数的结果是计算每行的出现次数。
+           
+  
+      
+
+    这将产生一个列表，其中每个结果均以其相应的频率列出，从而允许 
+    对较大的数据集进行简单分析
+    。
+    如果希望查看由面部识别工具识别的特定图像，则可以使用类似的技术。可以使用下面的命令来生成一个新的文本文件，是文件名的列表，由程序用给定的结果标记并保存在先前的输出文件中。
+    grep “Donald Trump” results.txt | sed ‘s/,.*$//’ &gt; identified.txt    
+    在这种情况下，将使用 result.txt 文本文件中的 
+    grep
+    搜索所有标识为 Donald Trump 的图像。 这些结果作为标准输入发送到 
+    sed
+    ，在其中包括逗号在内的所有内容均从每一行中删除。最后，重定向运算符 
+    &gt;
+    将输出发送到名为 
+    Identification.txt
+    的文本文件。
+    如果运行诸如 
+    head Identification.txt
+    之类的命令，将看到该文件仅包含文件名。可以将此文件名列表用作简短脚本的输入，以将这些文件中的每个文件复制到新文件夹中。
+    可以通过运行以下命令来使用 Nano 创建一个新的脚本文件。
+           
+  
+      
+
+    #!/bin/bash
+mkdir identified
+while read line; do
+filename=$(echo $line | sed ‘s/.*\///’)
+cp $line identified/$filename
+done &lt; identified.txt    
+           
+  
+      
+
+    
+      
+     #!/bin/bash
+     声明该脚本用于Bash。
+      第二行创建一个新目录，命名为 
+     identified
+     ，所有肯定标识的图像都将移至该目录。
+      第三行与最后一行结合使用，读取文本文件 
+     identified.txt
+     作为输入，以便在 while 语句中单独修改文件的每一行。
+      第四行创建一个名为 
+     filename
+     的变量。将此变量分配给不带目录位置的文件的文件名，使用 
+     sed
+     删除每行中斜杠之前的所有字符。
+      最后一行使用此变量，将 identified.txt 文本文件中的每个文件复制到 
+     identified
+     目录并分配其原始文件名。
+    
+    通过按 Ctrl + O 进行保存，然后就可以使用 Ctrl + X 退出程序。将脚本另存为 
+    identified.sh
+    后，可以通过运行以下命令来向文件添加执行特权。
+    chmod +x identified.sh    
+    现在，只需输入 
+    ./identified.sh
+    并按 Enter / return 键即可运行脚本本身。
+           
+  
+      
+
+    脚本运行完成后，您可以导航到 “ identified” 目录，并查看发现的所有与您的特定查询相匹配的图像！
+    这种自动过滤的过程可以解决传统上耗时的问题 —— 需要大量的人工干预才能识别和分类图像的那种工作量。
+           
+  
+      
+
+      
+     防止面部识别
+      
+    不幸的是，防止面部识别的唯一真正保护措施就是限制您的脸部的曝光 —— 
+    不论是在线还是现实
+    。
+    这可能意味着对帐户使用更严格的隐私设置，选择不使用社交媒体，甚至尝试在公共场合隐藏自己的脸。显然这些预防措施中的许多都非常不方便。
+    通常， 
+    面部识别的危险更多是与附加到在线个人资料或照片的给定实例上的数据有关，而不是照片本身
+    。
+    比如，如果没有任何数据库中存在 Trump 的名字和简介，那么他的照片即便被读取也会显示为 “没有匹配”。但是，不幸的是，政府掌握的数据库中包含我们每个人的详细资料，而且我们无权对其进行删改。
+    
+      《  这些间谍如何把你的照片变成了监视工具？  》
+      《  数百万照片数据库秘密聚集在美欧以开发面部识别：中国享用了多少？  》
+      《  你曾经在社交网络上发布过自己的照片？你危险了！  》
+    
+    ⚠️请记住，无论何时选择在线保存任何图片或信息，你都无法完全确定这些信息最终会落在谁手里 —— 我们中没人能控制这点。
+    所以，切切谨慎！
+    关于 
+    如何抵制现实中的人脸识别监控
+    ：
+    
+      《  让面部识别失效的思考方式  》
+      《  在你的日常生活中应用隐蔽野战技术：简单方式抵御敌对监视  》
+    
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       biometrics 
+       Facial recognition 
+       Investigation 
+       OSINT 
+       selfcare 
+       technique 
+       Technology 
+       tools 
+    
+  
+  
+    
+
+    Published
+           2020年4月10日 
+       2019年11月16日 
+    
+  
+
+" />
+    <meta property="og:description" content="
+  
+     如何使面部识别技术为公民所用？- 开源情报方法 
+  
+  
+  McCaffrey     Knowledge Node  ,  OSINT  ,  生物识别及对抗方法  ,  生物识别和如何对抗  ,  给行动者的护身符和武器             2020年4月10日 
+          2019年11月16日 
+   1 Minute 
+  
+  
+    
+       
+      
+       将看起来可怕的技术用于公民事业是有可能的
+      
+      
+    
+           
+  
+      
+
+    分析照片和社交关系是社交工程攻击中的重要组成部分。（在这里看到 “  社交工程  ” 专栏）。
+    了解一个人是谁、以及他们认识谁，至关重要 —— 可以使用此信息来执行精心设计的社交工程攻击。
+    开源情报是一个术语，用于指代对一切公开来源数据进行的收集、评估和应用。
+    引用中央情报局的话那就是：“ 
+    信息不一定必须机密才有价值
+    。无论是在浏览的博客中、在观看的广播中、还是在阅读的专业期刊中，都有无穷无尽的信息可以帮助我们了解世界……”。
+    听着有点吓人吗？ 
+    你的一举一动都是情报
+    ？是的，它就是如此 —— 在有目的的人眼中。这就是为什么说你应该小心，要非常小心。
+    在互联网上找到此类信息的最常见形式之一并不是纯文本，而是以照片形式存储的。
+    传统上，这些图像必须由观看者手动过滤以确定和评估其内容，但是由于有了面部识别软件，整个过程可以完全自动化。
+    面部识别已经引起了许多有关生物识别技术伦理问题的新闻和讨论，以及该技术对数据收集和隐私的影响。（参见 “  生物识别及对抗方法  ” 栏目）
+    尽管该技术经常在 Facebook 等平台上使用，并在全球范围内的执法中得到广泛使用，但是， 
+    允许人们根据自己的目的使用面部识别的后端技术现在已经很容易获得，并可以在开源自由软件项目中实现
+    。
+    这是一种民主化均权的方法。
+    将看起来可怕的技术用于公民事业是有可能的，还记得我们介绍过的使用AI作为调查记者工作的辅助吗？在这里《  如何迎接更多的“巴拿马文件”？  》
+    在本教程中，我们将使用 Face Recognition  Python 库  基于其中的图像来分析和发现目标人。
+    并且将研究如何搜寻和发现成批的图像，以及如何生成有关目标人或网站的统计信息和结论。
+    
+      不要错过《  人脸识别可以自制，你知道吗？而且非常简单  》
+    
+    马上开始。
+      
+     第一步：安装
+      
+    这里将使用的 Python 库  Face Recognition  可通过 Linux 和 macOS 上的 Pip 包管理器直接获得。
+    虽然 Windows 上没有正式支持这个包，但可以提供  安装指南  以及  预配置的虚拟机映像  。
+    在开始安装之前，请确保您的操作系统是最新的。
+    在基于 Debian 的 Linux 发行版（如 Ubuntu 和 Kali）上，可以通过运行以下命令来更新存储库并安装新软件。
+    sudo apt-get update &amp;&amp; apt-get upgrade    
+    虽然在某些发行版中默认包含了 Pip，但也可以通过运行以下命令来安装它。此命令将获取软件包的最新版本并进行安装。
+    sudo apt-get install python-pip    
+           
+  
+      
+
+    安装Pip后，可以通过运行以下命令使用它来安装 Face Recognition 库：
+    sudo pip install face_recognition    
+           
+  
+      
+
+    一旦 Pip 安装完成，该库就可以使用了！
+      
+     第二步：组织数据进行分析
+      
+    用 Python 实现的用于面部识别的库意味着可以相对轻松地将其实现到其他应用程序中。
+    也就是说 
+    可以更简单地将面部识别功能添加到网络监视摄像头实时流、网络爬虫、或其他以数字方式显示包含面部的图像或视频的格式
+    。
+    但是，这需要编写额外的原始代码。
+    相反，本教程将使用随附的命令行工具，并将其与其他系统实用程序结合起来，以执行类似的任务，而无需编写新的脚本。
+    随附的命令行工具旨在处理两批文件。一个文件夹包含一组可识别的面孔，另一文件夹包含用户希望进行识别的一组图像。
+    要创建一组图像以过滤出特定的个人面孔，可以使用Wget递归下载一个网站，例如下面的网站。当然，研究人员可以尝试下载尽可能多的潜在相关图像。
+           
+  
+      
+
+    Wget 可以从命令行进行操作，并且可以用于下载任何内容，从单个页面或图像到整个网站。如下所示的命令将跟随给定域中的每个链接，并下载该页面上所有可用的内容。
+    可以随时按 Ctrl + C 退出此命令，否则它将一直运行到给定请求完成为止。
+    wget -p -r -E -e robots=off — convert-links -U mozilla — level 1 whitehouse.gov    
+           
+  
+      
+
+    
+      
+     -p
+     指定该工具还将下载其他内容，例如图像、样式表和脚本。
+      
+     -E
+     要求每个下载的文件都以其完整文件扩展保存，这将使您更容易过滤图像。
+      
+     -r
+     用于递归，因此也可以下载链接和其他目录。
+      在字符串的后面，递归级别指定为 
+     -level1
+     。这可以确保索引页面中的链接被跟踪一次。1可以改为其他想要的数字，也可以删除该标志以尝试无限递归。
+      如果希望确保不从其他网站下载任何文件，则可以使用 
+     -domain
+     ，后接该命令应限制到的域。
+      递归请求可能会被阻止或在某些服务器上引起问题，因此您可能需要通过使用 
+     -w
+     在请求之间创建延迟来限制递归或限制请求速度。
+      使用 
+     -e robots=off
+     可以避免将请求作为不受欢迎的Web爬网程序而被拒绝或阻止。
+      出于相同的原因， 
+     -U mozilla
+     用于指定应使用 Mozilla用户代理，以便该工具看起来像是Web浏览器。
+      
+     -convert-links
+     为了重新格式化链接，以便可以更轻松地离线使用该页面。虽然这对于筛选从站点下载的图像来说不是必需的，但它可以更便于追溯以确定图像在网页上的位置。
+    
+    一旦让程序运行了所需的时间，就可以在新目录中复制所有图像文件，以便更轻松地使用它们。首先，通过运行以下命令创建一个新目录。
+    mkdir unknown_faces    
+    接下来，通过运行以下两个命令将所有从 Wget 请求中检索到的图像文件复制到此新目录中，第一个用于JPG文件，第二个用于PNG文件。 
+    urlfolder
+    应替换为Wget创建的文件夹的名称，通常对应于初始命令中使用的URL或域。
+    cp urlfolder**/*.jpg unknown_faces/
+cp urlfolder**/*.png unknown_faces/    
+    
+    cp
+    命令将复制所有匹配的文件，后跟目录参数，在本例中为 whitehouse.gov。此目录后的**（双星号）指定递归，对于任何JPG或PNG图像，后跟一个*（通配符）。最后一个参数指定应将文件复制到 
+    unknown_faces
+    目录。
+           
+  
+      
+
+    这些图像移到新目录后，可以使用 
+    ls
+    来查看此文件夹中的文件。下面的命令将列出 
+    unknown_faces
+    文件夹的内容。
+    ls unknown_faces/    
+           
+  
+      
+
+    还可以使用|重定向运算符来转发此命令的输出，为了统计发现了多少个图像文件；稍后在识别一组图像中给定面部的频率时会很有用。
+    可以通过运行以下命令来完成：
+    ls unknown_faces/ | wc -l    
+           
+  
+      
+
+    此命令的输出显示 Wget 保存了178个图像文件。一旦准备好使用这些图像，就可以为要在该数据集中找到的面孔创建一个肯定的识别列表。
+      
+     第三步：准备识别列表
+      
+    要开始准备已知身份和面孔的列表，请在要解析的图像目录之外创建一个新文件夹。
+    在Wget创建的目录中，可以通过运行 
+    cd ../
+    向上移动一个目录，通过运行 
+    mkdir known_faces
+    创建一个名为 
+    known_faces
+    的新目录，最后通过运行 
+    cd known_faces
+    进入该目录。
+           
+  
+      
+
+    创建此目录后，可以将希望用作肯定鉴定列表的所有文件保存到此文件夹。
+    
+    任何人的清晰照片都是面部识别的理想选择，例如经常用作“联系人”页面上的个人资料照片。确保在任何已知的脸部照片中只看到一张脸
+    。
+    可能还需要为文件命名一个与照片中的人相对应的名称，因为这样就可以在做出任何肯定的标识时返回照片的文件名。
+           
+  
+      
+
+    准备好这些目录后，即可运行 
+    face_recognition
+    命令行实用程序。
+      
+     第四步：使用面部识别来识别个人
+      
+    Python Face Recognition 库附带的命令行实用程序相对简单，只需两个参数即可运行。第一个是已知面孔的目录，第二个是尝试识别的面孔的目录。
+    这些文件夹按照前面的步骤命名，下面的命令将运行该工具。
+    face_recognition known_faces/ unknown_faces/    
+           
+  
+      
+
+    程序运行时，它将返回文件名，后跟一个特定人的肯定标识，一个未知人的否定标识，或者如果图像中没有面孔，则标记为找不到任何人。
+    为了使这些结果对自动数据处理更加有用，可以运行相同的命令后跟 
+    &gt;
+    重定向器，将程序的输出发送到文本文件，例如下面的示例。
+    face_recognition known_faces/ unknown_faces/ &gt; results.txt    
+    可以使用此文本文件作为参考，以分析和利用面部识别的匹配结果。
+      
+     第五步：分析面部识别匹配
+      
+    从面部识别工具了解数据结果的一种可能方法是查找与特定识别的面部匹配的所有文件。
+    可以使用 
+    grep
+    和 
+    results.txt
+    文本文件来查看使用给定面孔进行的每次匹配。下面的命令将返回文本文件中用 Donald Trump 标识的每一行。
+    grep “Donald Trump” results.txt    
+           
+  
+      
+
+    还可以结合使用其他系统实用程序，通过运行以下命令来确定程序每个结果的频率。
+    cat results.txt | sed ‘s/.*,//’ | sort | uniq -c    
+    首先，运行 
+    cat results.txt
+    会将 results.txt 的内容作为标准输入读取。这被发送到 
+    sed
+    ，在此删除每行之前（包括逗号）的所有内容。然后结果列表发送到 
+    sort
+    。最后它用作 
+    uniq
+    的输入， 
+    -c
+    参数的结果是计算每行的出现次数。
+           
+  
+      
+
+    这将产生一个列表，其中每个结果均以其相应的频率列出，从而允许 
+    对较大的数据集进行简单分析
+    。
+    如果希望查看由面部识别工具识别的特定图像，则可以使用类似的技术。可以使用下面的命令来生成一个新的文本文件，是文件名的列表，由程序用给定的结果标记并保存在先前的输出文件中。
+    grep “Donald Trump” results.txt | sed ‘s/,.*$//’ &gt; identified.txt    
+    在这种情况下，将使用 result.txt 文本文件中的 
+    grep
+    搜索所有标识为 Donald Trump 的图像。 这些结果作为标准输入发送到 
+    sed
+    ，在其中包括逗号在内的所有内容均从每一行中删除。最后，重定向运算符 
+    &gt;
+    将输出发送到名为 
+    Identification.txt
+    的文本文件。
+    如果运行诸如 
+    head Identification.txt
+    之类的命令，将看到该文件仅包含文件名。可以将此文件名列表用作简短脚本的输入，以将这些文件中的每个文件复制到新文件夹中。
+    可以通过运行以下命令来使用 Nano 创建一个新的脚本文件。
+           
+  
+      
+
+    #!/bin/bash
+mkdir identified
+while read line; do
+filename=$(echo $line | sed ‘s/.*\///’)
+cp $line identified/$filename
+done &lt; identified.txt    
+           
+  
+      
+
+    
+      
+     #!/bin/bash
+     声明该脚本用于Bash。
+      第二行创建一个新目录，命名为 
+     identified
+     ，所有肯定标识的图像都将移至该目录。
+      第三行与最后一行结合使用，读取文本文件 
+     identified.txt
+     作为输入，以便在 while 语句中单独修改文件的每一行。
+      第四行创建一个名为 
+     filename
+     的变量。将此变量分配给不带目录位置的文件的文件名，使用 
+     sed
+     删除每行中斜杠之前的所有字符。
+      最后一行使用此变量，将 identified.txt 文本文件中的每个文件复制到 
+     identified
+     目录并分配其原始文件名。
+    
+    通过按 Ctrl + O 进行保存，然后就可以使用 Ctrl + X 退出程序。将脚本另存为 
+    identified.sh
+    后，可以通过运行以下命令来向文件添加执行特权。
+    chmod +x identified.sh    
+    现在，只需输入 
+    ./identified.sh
+    并按 Enter / return 键即可运行脚本本身。
+           
+  
+      
+
+    脚本运行完成后，您可以导航到 “ identified” 目录，并查看发现的所有与您的特定查询相匹配的图像！
+    这种自动过滤的过程可以解决传统上耗时的问题 —— 需要大量的人工干预才能识别和分类图像的那种工作量。
+           
+  
+      
+
+      
+     防止面部识别
+      
+    不幸的是，防止面部识别的唯一真正保护措施就是限制您的脸部的曝光 —— 
+    不论是在线还是现实
+    。
+    这可能意味着对帐户使用更严格的隐私设置，选择不使用社交媒体，甚至尝试在公共场合隐藏自己的脸。显然这些预防措施中的许多都非常不方便。
+    通常， 
+    面部识别的危险更多是与附加到在线个人资料或照片的给定实例上的数据有关，而不是照片本身
+    。
+    比如，如果没有任何数据库中存在 Trump 的名字和简介，那么他的照片即便被读取也会显示为 “没有匹配”。但是，不幸的是，政府掌握的数据库中包含我们每个人的详细资料，而且我们无权对其进行删改。
+    
+      《  这些间谍如何把你的照片变成了监视工具？  》
+      《  数百万照片数据库秘密聚集在美欧以开发面部识别：中国享用了多少？  》
+      《  你曾经在社交网络上发布过自己的照片？你危险了！  》
+    
+    ⚠️请记住，无论何时选择在线保存任何图片或信息，你都无法完全确定这些信息最终会落在谁手里 —— 我们中没人能控制这点。
+    所以，切切谨慎！
+    关于 
+    如何抵制现实中的人脸识别监控
+    ：
+    
+      《  让面部识别失效的思考方式  》
+      《  在你的日常生活中应用隐蔽野战技术：简单方式抵御敌对监视  》
+    
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       biometrics 
+       Facial recognition 
+       Investigation 
+       OSINT 
+       selfcare 
+       technique 
+       Technology 
+       tools 
+    
+  
+  
+    
+
+    Published
+           2020年4月10日 
+       2019年11月16日 
+    
+  
+
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="如何使面部识别技术为公民所用？- 开源情报方法 - iYouPort" />
+    <meta property="twitter:title" content="如何使面部识别技术为公民所用？- 开源情报方法 - iYouPort" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.iyouport.org%2F%25e5%25a6%2582%25e4%25bd%2595%25e4%25bd%25bf%25e9%259d%25a2%25e9%2583%25a8%25e8%25af%2586%25e5%2588%25ab%25e6%258a%2580%25e6%259c%25af%25e4%25b8%25ba%25e5%2585%25ac%25e6%25b0%2591%25e6%2589%2580%25e7%2594%25a8%25ef%25bc%259f-%25e5%25bc%2580%25e6%25ba%2590%25e6%2583%2585%25e6%258a%25a5%25e6%2596%25b9%25e6%25b3%2595%2F" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e6%8a%80%e6%9c%af%e4%b8%ba%e5%85%ac%e6%b0%91%e6%89%80%e7%94%a8%ef%bc%9f-%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e6%96%b9%e6%b3%95/" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e6%8a%80%e6%9c%af%e4%b8%ba%e5%85%ac%e6%b0%91%e6%89%80%e7%94%a8%ef%bc%9f-%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e6%96%b9%e6%b3%95/&text=如何使面部识别技术为公民所用？- 开源情报方法 - iYouPort&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e6%8a%80%e6%9c%af%e4%b8%ba%e5%85%ac%e6%b0%91%e6%89%80%e7%94%a8%ef%bc%9f-%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e6%96%b9%e6%b3%95/&title=如何使面部识别技术为公民所用？- 开源情报方法 - iYouPort" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e6%8a%80%e6%9c%af%e4%b8%ba%e5%85%ac%e6%b0%91%e6%89%80%e7%94%a8%ef%bc%9f-%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e6%96%b9%e6%b3%95/&title=如何使面部识别技术为公民所用？- 开源情报方法 - iYouPort" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=如何使面部识别技术为公民所用？- 开源情报方法 - iYouPort&body=
+  
+     如何使面部识别技术为公民所用？- 开源情报方法 
+  
+  
+  McCaffrey     Knowledge Node  ,  OSINT  ,  生物识别及对抗方法  ,  生物识别和如何对抗  ,  给行动者的护身符和武器             2020年4月10日 
+          2019年11月16日 
+   1 Minute 
+  
+  
+    
+       
+      
+       将看起来可怕的技术用于公民事业是有可能的
+      
+      
+    
+           
+  
+      
+
+    分析照片和社交关系是社交工程攻击中的重要组成部分。（在这里看到 “  社交工程  ” 专栏）。
+    了解一个人是谁、以及他们认识谁，至关重要 —— 可以使用此信息来执行精心设计的社交工程攻击。
+    开源情报是一个术语，用于指代对一切公开来源数据进行的收集、评估和应用。
+    引用中央情报局的话那就是：“ 
+    信息不一定必须机密才有价值
+    。无论是在浏览的博客中、在观看的广播中、还是在阅读的专业期刊中，都有无穷无尽的信息可以帮助我们了解世界……”。
+    听着有点吓人吗？ 
+    你的一举一动都是情报
+    ？是的，它就是如此 —— 在有目的的人眼中。这就是为什么说你应该小心，要非常小心。
+    在互联网上找到此类信息的最常见形式之一并不是纯文本，而是以照片形式存储的。
+    传统上，这些图像必须由观看者手动过滤以确定和评估其内容，但是由于有了面部识别软件，整个过程可以完全自动化。
+    面部识别已经引起了许多有关生物识别技术伦理问题的新闻和讨论，以及该技术对数据收集和隐私的影响。（参见 “  生物识别及对抗方法  ” 栏目）
+    尽管该技术经常在 Facebook 等平台上使用，并在全球范围内的执法中得到广泛使用，但是， 
+    允许人们根据自己的目的使用面部识别的后端技术现在已经很容易获得，并可以在开源自由软件项目中实现
+    。
+    这是一种民主化均权的方法。
+    将看起来可怕的技术用于公民事业是有可能的，还记得我们介绍过的使用AI作为调查记者工作的辅助吗？在这里《  如何迎接更多的“巴拿马文件”？  》
+    在本教程中，我们将使用 Face Recognition  Python 库  基于其中的图像来分析和发现目标人。
+    并且将研究如何搜寻和发现成批的图像，以及如何生成有关目标人或网站的统计信息和结论。
+    
+      不要错过《  人脸识别可以自制，你知道吗？而且非常简单  》
+    
+    马上开始。
+      
+     第一步：安装
+      
+    这里将使用的 Python 库  Face Recognition  可通过 Linux 和 macOS 上的 Pip 包管理器直接获得。
+    虽然 Windows 上没有正式支持这个包，但可以提供  安装指南  以及  预配置的虚拟机映像  。
+    在开始安装之前，请确保您的操作系统是最新的。
+    在基于 Debian 的 Linux 发行版（如 Ubuntu 和 Kali）上，可以通过运行以下命令来更新存储库并安装新软件。
+    sudo apt-get update &amp;&amp; apt-get upgrade    
+    虽然在某些发行版中默认包含了 Pip，但也可以通过运行以下命令来安装它。此命令将获取软件包的最新版本并进行安装。
+    sudo apt-get install python-pip    
+           
+  
+      
+
+    安装Pip后，可以通过运行以下命令使用它来安装 Face Recognition 库：
+    sudo pip install face_recognition    
+           
+  
+      
+
+    一旦 Pip 安装完成，该库就可以使用了！
+      
+     第二步：组织数据进行分析
+      
+    用 Python 实现的用于面部识别的库意味着可以相对轻松地将其实现到其他应用程序中。
+    也就是说 
+    可以更简单地将面部识别功能添加到网络监视摄像头实时流、网络爬虫、或其他以数字方式显示包含面部的图像或视频的格式
+    。
+    但是，这需要编写额外的原始代码。
+    相反，本教程将使用随附的命令行工具，并将其与其他系统实用程序结合起来，以执行类似的任务，而无需编写新的脚本。
+    随附的命令行工具旨在处理两批文件。一个文件夹包含一组可识别的面孔，另一文件夹包含用户希望进行识别的一组图像。
+    要创建一组图像以过滤出特定的个人面孔，可以使用Wget递归下载一个网站，例如下面的网站。当然，研究人员可以尝试下载尽可能多的潜在相关图像。
+           
+  
+      
+
+    Wget 可以从命令行进行操作，并且可以用于下载任何内容，从单个页面或图像到整个网站。如下所示的命令将跟随给定域中的每个链接，并下载该页面上所有可用的内容。
+    可以随时按 Ctrl + C 退出此命令，否则它将一直运行到给定请求完成为止。
+    wget -p -r -E -e robots=off — convert-links -U mozilla — level 1 whitehouse.gov    
+           
+  
+      
+
+    
+      
+     -p
+     指定该工具还将下载其他内容，例如图像、样式表和脚本。
+      
+     -E
+     要求每个下载的文件都以其完整文件扩展保存，这将使您更容易过滤图像。
+      
+     -r
+     用于递归，因此也可以下载链接和其他目录。
+      在字符串的后面，递归级别指定为 
+     -level1
+     。这可以确保索引页面中的链接被跟踪一次。1可以改为其他想要的数字，也可以删除该标志以尝试无限递归。
+      如果希望确保不从其他网站下载任何文件，则可以使用 
+     -domain
+     ，后接该命令应限制到的域。
+      递归请求可能会被阻止或在某些服务器上引起问题，因此您可能需要通过使用 
+     -w
+     在请求之间创建延迟来限制递归或限制请求速度。
+      使用 
+     -e robots=off
+     可以避免将请求作为不受欢迎的Web爬网程序而被拒绝或阻止。
+      出于相同的原因， 
+     -U mozilla
+     用于指定应使用 Mozilla用户代理，以便该工具看起来像是Web浏览器。
+      
+     -convert-links
+     为了重新格式化链接，以便可以更轻松地离线使用该页面。虽然这对于筛选从站点下载的图像来说不是必需的，但它可以更便于追溯以确定图像在网页上的位置。
+    
+    一旦让程序运行了所需的时间，就可以在新目录中复制所有图像文件，以便更轻松地使用它们。首先，通过运行以下命令创建一个新目录。
+    mkdir unknown_faces    
+    接下来，通过运行以下两个命令将所有从 Wget 请求中检索到的图像文件复制到此新目录中，第一个用于JPG文件，第二个用于PNG文件。 
+    urlfolder
+    应替换为Wget创建的文件夹的名称，通常对应于初始命令中使用的URL或域。
+    cp urlfolder**/*.jpg unknown_faces/
+cp urlfolder**/*.png unknown_faces/    
+    
+    cp
+    命令将复制所有匹配的文件，后跟目录参数，在本例中为 whitehouse.gov。此目录后的**（双星号）指定递归，对于任何JPG或PNG图像，后跟一个*（通配符）。最后一个参数指定应将文件复制到 
+    unknown_faces
+    目录。
+           
+  
+      
+
+    这些图像移到新目录后，可以使用 
+    ls
+    来查看此文件夹中的文件。下面的命令将列出 
+    unknown_faces
+    文件夹的内容。
+    ls unknown_faces/    
+           
+  
+      
+
+    还可以使用|重定向运算符来转发此命令的输出，为了统计发现了多少个图像文件；稍后在识别一组图像中给定面部的频率时会很有用。
+    可以通过运行以下命令来完成：
+    ls unknown_faces/ | wc -l    
+           
+  
+      
+
+    此命令的输出显示 Wget 保存了178个图像文件。一旦准备好使用这些图像，就可以为要在该数据集中找到的面孔创建一个肯定的识别列表。
+      
+     第三步：准备识别列表
+      
+    要开始准备已知身份和面孔的列表，请在要解析的图像目录之外创建一个新文件夹。
+    在Wget创建的目录中，可以通过运行 
+    cd ../
+    向上移动一个目录，通过运行 
+    mkdir known_faces
+    创建一个名为 
+    known_faces
+    的新目录，最后通过运行 
+    cd known_faces
+    进入该目录。
+           
+  
+      
+
+    创建此目录后，可以将希望用作肯定鉴定列表的所有文件保存到此文件夹。
+    
+    任何人的清晰照片都是面部识别的理想选择，例如经常用作“联系人”页面上的个人资料照片。确保在任何已知的脸部照片中只看到一张脸
+    。
+    可能还需要为文件命名一个与照片中的人相对应的名称，因为这样就可以在做出任何肯定的标识时返回照片的文件名。
+           
+  
+      
+
+    准备好这些目录后，即可运行 
+    face_recognition
+    命令行实用程序。
+      
+     第四步：使用面部识别来识别个人
+      
+    Python Face Recognition 库附带的命令行实用程序相对简单，只需两个参数即可运行。第一个是已知面孔的目录，第二个是尝试识别的面孔的目录。
+    这些文件夹按照前面的步骤命名，下面的命令将运行该工具。
+    face_recognition known_faces/ unknown_faces/    
+           
+  
+      
+
+    程序运行时，它将返回文件名，后跟一个特定人的肯定标识，一个未知人的否定标识，或者如果图像中没有面孔，则标记为找不到任何人。
+    为了使这些结果对自动数据处理更加有用，可以运行相同的命令后跟 
+    &gt;
+    重定向器，将程序的输出发送到文本文件，例如下面的示例。
+    face_recognition known_faces/ unknown_faces/ &gt; results.txt    
+    可以使用此文本文件作为参考，以分析和利用面部识别的匹配结果。
+      
+     第五步：分析面部识别匹配
+      
+    从面部识别工具了解数据结果的一种可能方法是查找与特定识别的面部匹配的所有文件。
+    可以使用 
+    grep
+    和 
+    results.txt
+    文本文件来查看使用给定面孔进行的每次匹配。下面的命令将返回文本文件中用 Donald Trump 标识的每一行。
+    grep “Donald Trump” results.txt    
+           
+  
+      
+
+    还可以结合使用其他系统实用程序，通过运行以下命令来确定程序每个结果的频率。
+    cat results.txt | sed ‘s/.*,//’ | sort | uniq -c    
+    首先，运行 
+    cat results.txt
+    会将 results.txt 的内容作为标准输入读取。这被发送到 
+    sed
+    ，在此删除每行之前（包括逗号）的所有内容。然后结果列表发送到 
+    sort
+    。最后它用作 
+    uniq
+    的输入， 
+    -c
+    参数的结果是计算每行的出现次数。
+           
+  
+      
+
+    这将产生一个列表，其中每个结果均以其相应的频率列出，从而允许 
+    对较大的数据集进行简单分析
+    。
+    如果希望查看由面部识别工具识别的特定图像，则可以使用类似的技术。可以使用下面的命令来生成一个新的文本文件，是文件名的列表，由程序用给定的结果标记并保存在先前的输出文件中。
+    grep “Donald Trump” results.txt | sed ‘s/,.*$//’ &gt; identified.txt    
+    在这种情况下，将使用 result.txt 文本文件中的 
+    grep
+    搜索所有标识为 Donald Trump 的图像。 这些结果作为标准输入发送到 
+    sed
+    ，在其中包括逗号在内的所有内容均从每一行中删除。最后，重定向运算符 
+    &gt;
+    将输出发送到名为 
+    Identification.txt
+    的文本文件。
+    如果运行诸如 
+    head Identification.txt
+    之类的命令，将看到该文件仅包含文件名。可以将此文件名列表用作简短脚本的输入，以将这些文件中的每个文件复制到新文件夹中。
+    可以通过运行以下命令来使用 Nano 创建一个新的脚本文件。
+           
+  
+      
+
+    #!/bin/bash
+mkdir identified
+while read line; do
+filename=$(echo $line | sed ‘s/.*\///’)
+cp $line identified/$filename
+done &lt; identified.txt    
+           
+  
+      
+
+    
+      
+     #!/bin/bash
+     声明该脚本用于Bash。
+      第二行创建一个新目录，命名为 
+     identified
+     ，所有肯定标识的图像都将移至该目录。
+      第三行与最后一行结合使用，读取文本文件 
+     identified.txt
+     作为输入，以便在 while 语句中单独修改文件的每一行。
+      第四行创建一个名为 
+     filename
+     的变量。将此变量分配给不带目录位置的文件的文件名，使用 
+     sed
+     删除每行中斜杠之前的所有字符。
+      最后一行使用此变量，将 identified.txt 文本文件中的每个文件复制到 
+     identified
+     目录并分配其原始文件名。
+    
+    通过按 Ctrl + O 进行保存，然后就可以使用 Ctrl + X 退出程序。将脚本另存为 
+    identified.sh
+    后，可以通过运行以下命令来向文件添加执行特权。
+    chmod +x identified.sh    
+    现在，只需输入 
+    ./identified.sh
+    并按 Enter / return 键即可运行脚本本身。
+           
+  
+      
+
+    脚本运行完成后，您可以导航到 “ identified” 目录，并查看发现的所有与您的特定查询相匹配的图像！
+    这种自动过滤的过程可以解决传统上耗时的问题 —— 需要大量的人工干预才能识别和分类图像的那种工作量。
+           
+  
+      
+
+      
+     防止面部识别
+      
+    不幸的是，防止面部识别的唯一真正保护措施就是限制您的脸部的曝光 —— 
+    不论是在线还是现实
+    。
+    这可能意味着对帐户使用更严格的隐私设置，选择不使用社交媒体，甚至尝试在公共场合隐藏自己的脸。显然这些预防措施中的许多都非常不方便。
+    通常， 
+    面部识别的危险更多是与附加到在线个人资料或照片的给定实例上的数据有关，而不是照片本身
+    。
+    比如，如果没有任何数据库中存在 Trump 的名字和简介，那么他的照片即便被读取也会显示为 “没有匹配”。但是，不幸的是，政府掌握的数据库中包含我们每个人的详细资料，而且我们无权对其进行删改。
+    
+      《  这些间谍如何把你的照片变成了监视工具？  》
+      《  数百万照片数据库秘密聚集在美欧以开发面部识别：中国享用了多少？  》
+      《  你曾经在社交网络上发布过自己的照片？你危险了！  》
+    
+    ⚠️请记住，无论何时选择在线保存任何图片或信息，你都无法完全确定这些信息最终会落在谁手里 —— 我们中没人能控制这点。
+    所以，切切谨慎！
+    关于 
+    如何抵制现实中的人脸识别监控
+    ：
+    
+      《  让面部识别失效的思考方式  》
+      《  在你的日常生活中应用隐蔽野战技术：简单方式抵御敌对监视  》
+    
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       biometrics 
+       Facial recognition 
+       Investigation 
+       OSINT 
+       selfcare 
+       technique 
+       Technology 
+       tools 
+    
+  
+  
+    
+
+    Published
+           2020年4月10日 
+       2019年11月16日 
+    
+  
+
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e6%8a%80%e6%9c%af%e4%b8%ba%e5%85%ac%e6%b0%91%e6%89%80%e7%94%a8%ef%bc%9f-%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e6%96%b9%e6%b3%95/" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e6%8a%80%e6%9c%af%e4%b8%ba%e5%85%ac%e6%b0%91%e6%89%80%e7%94%a8%ef%bc%9f-%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e6%96%b9%e6%b3%95/&title=如何使面部识别技术为公民所用？- 开源情报方法 - iYouPort&caption=
+  
+     如何使面部识别技术为公民所用？- 开源情报方法 
+  
+  
+  McCaffrey     Knowledge Node  ,  OSINT  ,  生物识别及对抗方法  ,  生物识别和如何对抗  ,  给行动者的护身符和武器             2020年4月10日 
+          2019年11月16日 
+   1 Minute 
+  
+  
+    
+       
+      
+       将看起来可怕的技术用于公民事业是有可能的
+      
+      
+    
+           
+  
+      
+
+    分析照片和社交关系是社交工程攻击中的重要组成部分。（在这里看到 “  社交工程  ” 专栏）。
+    了解一个人是谁、以及他们认识谁，至关重要 —— 可以使用此信息来执行精心设计的社交工程攻击。
+    开源情报是一个术语，用于指代对一切公开来源数据进行的收集、评估和应用。
+    引用中央情报局的话那就是：“ 
+    信息不一定必须机密才有价值
+    。无论是在浏览的博客中、在观看的广播中、还是在阅读的专业期刊中，都有无穷无尽的信息可以帮助我们了解世界……”。
+    听着有点吓人吗？ 
+    你的一举一动都是情报
+    ？是的，它就是如此 —— 在有目的的人眼中。这就是为什么说你应该小心，要非常小心。
+    在互联网上找到此类信息的最常见形式之一并不是纯文本，而是以照片形式存储的。
+    传统上，这些图像必须由观看者手动过滤以确定和评估其内容，但是由于有了面部识别软件，整个过程可以完全自动化。
+    面部识别已经引起了许多有关生物识别技术伦理问题的新闻和讨论，以及该技术对数据收集和隐私的影响。（参见 “  生物识别及对抗方法  ” 栏目）
+    尽管该技术经常在 Facebook 等平台上使用，并在全球范围内的执法中得到广泛使用，但是， 
+    允许人们根据自己的目的使用面部识别的后端技术现在已经很容易获得，并可以在开源自由软件项目中实现
+    。
+    这是一种民主化均权的方法。
+    将看起来可怕的技术用于公民事业是有可能的，还记得我们介绍过的使用AI作为调查记者工作的辅助吗？在这里《  如何迎接更多的“巴拿马文件”？  》
+    在本教程中，我们将使用 Face Recognition  Python 库  基于其中的图像来分析和发现目标人。
+    并且将研究如何搜寻和发现成批的图像，以及如何生成有关目标人或网站的统计信息和结论。
+    
+      不要错过《  人脸识别可以自制，你知道吗？而且非常简单  》
+    
+    马上开始。
+      
+     第一步：安装
+      
+    这里将使用的 Python 库  Face Recognition  可通过 Linux 和 macOS 上的 Pip 包管理器直接获得。
+    虽然 Windows 上没有正式支持这个包，但可以提供  安装指南  以及  预配置的虚拟机映像  。
+    在开始安装之前，请确保您的操作系统是最新的。
+    在基于 Debian 的 Linux 发行版（如 Ubuntu 和 Kali）上，可以通过运行以下命令来更新存储库并安装新软件。
+    sudo apt-get update &amp;&amp; apt-get upgrade    
+    虽然在某些发行版中默认包含了 Pip，但也可以通过运行以下命令来安装它。此命令将获取软件包的最新版本并进行安装。
+    sudo apt-get install python-pip    
+           
+  
+      
+
+    安装Pip后，可以通过运行以下命令使用它来安装 Face Recognition 库：
+    sudo pip install face_recognition    
+           
+  
+      
+
+    一旦 Pip 安装完成，该库就可以使用了！
+      
+     第二步：组织数据进行分析
+      
+    用 Python 实现的用于面部识别的库意味着可以相对轻松地将其实现到其他应用程序中。
+    也就是说 
+    可以更简单地将面部识别功能添加到网络监视摄像头实时流、网络爬虫、或其他以数字方式显示包含面部的图像或视频的格式
+    。
+    但是，这需要编写额外的原始代码。
+    相反，本教程将使用随附的命令行工具，并将其与其他系统实用程序结合起来，以执行类似的任务，而无需编写新的脚本。
+    随附的命令行工具旨在处理两批文件。一个文件夹包含一组可识别的面孔，另一文件夹包含用户希望进行识别的一组图像。
+    要创建一组图像以过滤出特定的个人面孔，可以使用Wget递归下载一个网站，例如下面的网站。当然，研究人员可以尝试下载尽可能多的潜在相关图像。
+           
+  
+      
+
+    Wget 可以从命令行进行操作，并且可以用于下载任何内容，从单个页面或图像到整个网站。如下所示的命令将跟随给定域中的每个链接，并下载该页面上所有可用的内容。
+    可以随时按 Ctrl + C 退出此命令，否则它将一直运行到给定请求完成为止。
+    wget -p -r -E -e robots=off — convert-links -U mozilla — level 1 whitehouse.gov    
+           
+  
+      
+
+    
+      
+     -p
+     指定该工具还将下载其他内容，例如图像、样式表和脚本。
+      
+     -E
+     要求每个下载的文件都以其完整文件扩展保存，这将使您更容易过滤图像。
+      
+     -r
+     用于递归，因此也可以下载链接和其他目录。
+      在字符串的后面，递归级别指定为 
+     -level1
+     。这可以确保索引页面中的链接被跟踪一次。1可以改为其他想要的数字，也可以删除该标志以尝试无限递归。
+      如果希望确保不从其他网站下载任何文件，则可以使用 
+     -domain
+     ，后接该命令应限制到的域。
+      递归请求可能会被阻止或在某些服务器上引起问题，因此您可能需要通过使用 
+     -w
+     在请求之间创建延迟来限制递归或限制请求速度。
+      使用 
+     -e robots=off
+     可以避免将请求作为不受欢迎的Web爬网程序而被拒绝或阻止。
+      出于相同的原因， 
+     -U mozilla
+     用于指定应使用 Mozilla用户代理，以便该工具看起来像是Web浏览器。
+      
+     -convert-links
+     为了重新格式化链接，以便可以更轻松地离线使用该页面。虽然这对于筛选从站点下载的图像来说不是必需的，但它可以更便于追溯以确定图像在网页上的位置。
+    
+    一旦让程序运行了所需的时间，就可以在新目录中复制所有图像文件，以便更轻松地使用它们。首先，通过运行以下命令创建一个新目录。
+    mkdir unknown_faces    
+    接下来，通过运行以下两个命令将所有从 Wget 请求中检索到的图像文件复制到此新目录中，第一个用于JPG文件，第二个用于PNG文件。 
+    urlfolder
+    应替换为Wget创建的文件夹的名称，通常对应于初始命令中使用的URL或域。
+    cp urlfolder**/*.jpg unknown_faces/
+cp urlfolder**/*.png unknown_faces/    
+    
+    cp
+    命令将复制所有匹配的文件，后跟目录参数，在本例中为 whitehouse.gov。此目录后的**（双星号）指定递归，对于任何JPG或PNG图像，后跟一个*（通配符）。最后一个参数指定应将文件复制到 
+    unknown_faces
+    目录。
+           
+  
+      
+
+    这些图像移到新目录后，可以使用 
+    ls
+    来查看此文件夹中的文件。下面的命令将列出 
+    unknown_faces
+    文件夹的内容。
+    ls unknown_faces/    
+           
+  
+      
+
+    还可以使用|重定向运算符来转发此命令的输出，为了统计发现了多少个图像文件；稍后在识别一组图像中给定面部的频率时会很有用。
+    可以通过运行以下命令来完成：
+    ls unknown_faces/ | wc -l    
+           
+  
+      
+
+    此命令的输出显示 Wget 保存了178个图像文件。一旦准备好使用这些图像，就可以为要在该数据集中找到的面孔创建一个肯定的识别列表。
+      
+     第三步：准备识别列表
+      
+    要开始准备已知身份和面孔的列表，请在要解析的图像目录之外创建一个新文件夹。
+    在Wget创建的目录中，可以通过运行 
+    cd ../
+    向上移动一个目录，通过运行 
+    mkdir known_faces
+    创建一个名为 
+    known_faces
+    的新目录，最后通过运行 
+    cd known_faces
+    进入该目录。
+           
+  
+      
+
+    创建此目录后，可以将希望用作肯定鉴定列表的所有文件保存到此文件夹。
+    
+    任何人的清晰照片都是面部识别的理想选择，例如经常用作“联系人”页面上的个人资料照片。确保在任何已知的脸部照片中只看到一张脸
+    。
+    可能还需要为文件命名一个与照片中的人相对应的名称，因为这样就可以在做出任何肯定的标识时返回照片的文件名。
+           
+  
+      
+
+    准备好这些目录后，即可运行 
+    face_recognition
+    命令行实用程序。
+      
+     第四步：使用面部识别来识别个人
+      
+    Python Face Recognition 库附带的命令行实用程序相对简单，只需两个参数即可运行。第一个是已知面孔的目录，第二个是尝试识别的面孔的目录。
+    这些文件夹按照前面的步骤命名，下面的命令将运行该工具。
+    face_recognition known_faces/ unknown_faces/    
+           
+  
+      
+
+    程序运行时，它将返回文件名，后跟一个特定人的肯定标识，一个未知人的否定标识，或者如果图像中没有面孔，则标记为找不到任何人。
+    为了使这些结果对自动数据处理更加有用，可以运行相同的命令后跟 
+    &gt;
+    重定向器，将程序的输出发送到文本文件，例如下面的示例。
+    face_recognition known_faces/ unknown_faces/ &gt; results.txt    
+    可以使用此文本文件作为参考，以分析和利用面部识别的匹配结果。
+      
+     第五步：分析面部识别匹配
+      
+    从面部识别工具了解数据结果的一种可能方法是查找与特定识别的面部匹配的所有文件。
+    可以使用 
+    grep
+    和 
+    results.txt
+    文本文件来查看使用给定面孔进行的每次匹配。下面的命令将返回文本文件中用 Donald Trump 标识的每一行。
+    grep “Donald Trump” results.txt    
+           
+  
+      
+
+    还可以结合使用其他系统实用程序，通过运行以下命令来确定程序每个结果的频率。
+    cat results.txt | sed ‘s/.*,//’ | sort | uniq -c    
+    首先，运行 
+    cat results.txt
+    会将 results.txt 的内容作为标准输入读取。这被发送到 
+    sed
+    ，在此删除每行之前（包括逗号）的所有内容。然后结果列表发送到 
+    sort
+    。最后它用作 
+    uniq
+    的输入， 
+    -c
+    参数的结果是计算每行的出现次数。
+           
+  
+      
+
+    这将产生一个列表，其中每个结果均以其相应的频率列出，从而允许 
+    对较大的数据集进行简单分析
+    。
+    如果希望查看由面部识别工具识别的特定图像，则可以使用类似的技术。可以使用下面的命令来生成一个新的文本文件，是文件名的列表，由程序用给定的结果标记并保存在先前的输出文件中。
+    grep “Donald Trump” results.txt | sed ‘s/,.*$//’ &gt; identified.txt    
+    在这种情况下，将使用 result.txt 文本文件中的 
+    grep
+    搜索所有标识为 Donald Trump 的图像。 这些结果作为标准输入发送到 
+    sed
+    ，在其中包括逗号在内的所有内容均从每一行中删除。最后，重定向运算符 
+    &gt;
+    将输出发送到名为 
+    Identification.txt
+    的文本文件。
+    如果运行诸如 
+    head Identification.txt
+    之类的命令，将看到该文件仅包含文件名。可以将此文件名列表用作简短脚本的输入，以将这些文件中的每个文件复制到新文件夹中。
+    可以通过运行以下命令来使用 Nano 创建一个新的脚本文件。
+           
+  
+      
+
+    #!/bin/bash
+mkdir identified
+while read line; do
+filename=$(echo $line | sed ‘s/.*\///’)
+cp $line identified/$filename
+done &lt; identified.txt    
+           
+  
+      
+
+    
+      
+     #!/bin/bash
+     声明该脚本用于Bash。
+      第二行创建一个新目录，命名为 
+     identified
+     ，所有肯定标识的图像都将移至该目录。
+      第三行与最后一行结合使用，读取文本文件 
+     identified.txt
+     作为输入，以便在 while 语句中单独修改文件的每一行。
+      第四行创建一个名为 
+     filename
+     的变量。将此变量分配给不带目录位置的文件的文件名，使用 
+     sed
+     删除每行中斜杠之前的所有字符。
+      最后一行使用此变量，将 identified.txt 文本文件中的每个文件复制到 
+     identified
+     目录并分配其原始文件名。
+    
+    通过按 Ctrl + O 进行保存，然后就可以使用 Ctrl + X 退出程序。将脚本另存为 
+    identified.sh
+    后，可以通过运行以下命令来向文件添加执行特权。
+    chmod +x identified.sh    
+    现在，只需输入 
+    ./identified.sh
+    并按 Enter / return 键即可运行脚本本身。
+           
+  
+      
+
+    脚本运行完成后，您可以导航到 “ identified” 目录，并查看发现的所有与您的特定查询相匹配的图像！
+    这种自动过滤的过程可以解决传统上耗时的问题 —— 需要大量的人工干预才能识别和分类图像的那种工作量。
+           
+  
+      
+
+      
+     防止面部识别
+      
+    不幸的是，防止面部识别的唯一真正保护措施就是限制您的脸部的曝光 —— 
+    不论是在线还是现实
+    。
+    这可能意味着对帐户使用更严格的隐私设置，选择不使用社交媒体，甚至尝试在公共场合隐藏自己的脸。显然这些预防措施中的许多都非常不方便。
+    通常， 
+    面部识别的危险更多是与附加到在线个人资料或照片的给定实例上的数据有关，而不是照片本身
+    。
+    比如，如果没有任何数据库中存在 Trump 的名字和简介，那么他的照片即便被读取也会显示为 “没有匹配”。但是，不幸的是，政府掌握的数据库中包含我们每个人的详细资料，而且我们无权对其进行删改。
+    
+      《  这些间谍如何把你的照片变成了监视工具？  》
+      《  数百万照片数据库秘密聚集在美欧以开发面部识别：中国享用了多少？  》
+      《  你曾经在社交网络上发布过自己的照片？你危险了！  》
+    
+    ⚠️请记住，无论何时选择在线保存任何图片或信息，你都无法完全确定这些信息最终会落在谁手里 —— 我们中没人能控制这点。
+    所以，切切谨慎！
+    关于 
+    如何抵制现实中的人脸识别监控
+    ：
+    
+      《  让面部识别失效的思考方式  》
+      《  在你的日常生活中应用隐蔽野战技术：简单方式抵御敌对监视  》
+    
+    
+    
+      
+         共享此文章： 
+        
+          
+                点击以在 Twitter 上共享（在新窗口中打开）  
+                点击以在 Facebook 上共享（在新窗口中打开）  
+            
+          
+        
+      
+    
+    
+       赞过： 
+      
+  赞    正在加载…… 
+      
+   
+   
+    
+    
+       
+     相关
+     
+    
+  
+  
+    
+      Tagged
+       biometrics 
+       Facial recognition 
+       Investigation 
+       OSINT 
+       selfcare 
+       technique 
+       Technology 
+       tools 
+    
+  
+  
+    
+
+    Published
+           2020年4月10日 
+       2019年11月16日 
+    
+  
+
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=如何使面部识别技术为公民所用？- 开源情报方法 - iYouPort&url=https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e6%8a%80%e6%9c%af%e4%b8%ba%e5%85%ac%e6%b0%91%e6%89%80%e7%94%a8%ef%bc%9f-%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e6%96%b9%e6%b3%95/" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>如何使面部识别技术为公民所用？- 开源情报方法 - iYouPort</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-04-09
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#iYouPort">
+          iYouPort
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e6%8a%80%e6%9c%af%e4%b8%ba%e5%85%ac%e6%b0%91%e6%89%80%e7%94%a8%ef%bc%9f-%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e6%96%b9%e6%b3%95/" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="iYouPort的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#iYouPort 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <article class="post-10678 post type-post status-publish format-standard has-post-thumbnail hentry category-knowledge-node category-osint category-91 category-92 category-67 tag-biometrics tag-facial-recognition tag-investigation tag-osint tag-selfcare tag-technique tag-technology tag-tools" id="post-10678">
+  <header class="entry-header">
+    <h1 class="entry-title" id="section"> 如何使面部识别技术为公民所用？- 开源情报方法 </h1>
+  </header>
+  <div class="entry-meta">
+<span class="byline"> <a href="https://www.iyouport.org/author/don-evans/" rel="author" title="由McCaffrey发布"> McCaffrey </a> </span> <span class="cat-links"> <a href="https://www.iyouport.org/category/knowledge-node/" rel="category tag"> Knowledge Node </a> , <a href="https://www.iyouport.org/category/osint/" rel="category tag"> OSINT </a> , <a href="https://www.iyouport.org/category/%e7%94%9f%e7%89%a9%e8%af%86%e5%88%ab%e5%8f%8a%e5%af%b9%e6%8a%97%e6%96%b9%e6%b3%95/" rel="category tag"> 生物识别及对抗方法 </a> , <a href="https://www.iyouport.org/category/%e7%94%9f%e7%89%a9%e8%af%86%e5%88%ab/" rel="category tag"> 生物识别和如何对抗 </a> , <a href="https://www.iyouport.org/category/%e7%bb%99%e8%a1%8c%e5%8a%a8%e8%80%85%e7%9a%84%e6%8a%a4%e8%ba%ab%e7%ac%a6%e5%92%8c%e6%ad%a6%e5%99%a8/" rel="category tag"> 给行动者的护身符和武器 </a> </span> <span class="published-on">         <time class="entry-date published" datetime="2020-04-10T00:03:19+08:00"> 2020年4月10日 </time>
+         <time class="updated" datetime="2019-11-16T00:55:32+08:00"> 2019年11月16日 </time>
+ </span> <span class="word-count"> 1 Minute </span>
+  </div>
+  <div class="entry-content">
+    <ul>
+      <li class="graf graf--p"><span style="color: #00ccff;"> <em>
+      <strong>
+       将看起来可怕的技术用于公民事业是有可能的
+      </strong>
+     </em> </span></li>
+    </ul>
+    <p><img alt="" class="aligncenter size-full wp-image-10679 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?resize=1100%2C440&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?w=1280&amp;ssl=1 1280w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?resize=300%2C120&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?resize=1024%2C410&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?resize=768%2C307&amp;ssl=1 768w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?resize=1100%2C440&amp;ssl=1 1100w" data-recalc-dims="1" height="440" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?resize=1100%2C440&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10679" data-recalc-dims="1" height="440" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?resize=1100%2C440&amp;ssl=1" srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?w=1280&amp;ssl=1 1280w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?resize=300%2C120&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?resize=1024%2C410&amp;ssl=1 1024w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?resize=768%2C307&amp;ssl=1 768w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/识别.jpg?resize=1100%2C440&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">分析照片和社交关系是社交工程攻击中的重要组成部分。（在这里看到 “ <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/category/%e5%bf%83%e7%90%86%e5%ad%a6%e5%92%8c%e7%a4%be%e4%ba%a4%e5%b7%a5%e7%a8%8b/" href="https://www.iyouport.org/category/%e5%bf%83%e7%90%86%e5%ad%a6%e5%92%8c%e7%a4%be%e4%ba%a4%e5%b7%a5%e7%a8%8b/" rel="noopener noreferrer" target="_blank"> 社交工程 </a> ” 专栏）。</p>
+    <p class="graf graf--p">了解一个人是谁、以及他们认识谁，至关重要 —— 可以使用此信息来执行精心设计的社交工程攻击。</p>
+    <p class="graf graf--p">开源情报是一个术语，用于指代对一切公开来源数据进行的收集、评估和应用。</p>
+    <p class="graf graf--p">引用中央情报局的话那就是：“ <strong class="markup--strong markup--p-strong">
+    信息不一定必须机密才有价值
+   </strong> 。无论是在浏览的博客中、在观看的广播中、还是在阅读的专业期刊中，都有无穷无尽的信息可以帮助我们了解世界……”。</p>
+    <p class="graf graf--p">听着有点吓人吗？ <strong class="markup--strong markup--p-strong">
+    你的一举一动都是情报
+   </strong> ？是的，它就是如此 —— 在有目的的人眼中。这就是为什么说你应该小心，要非常小心。</p>
+    <p class="graf graf--p">在互联网上找到此类信息的最常见形式之一并不是纯文本，而是以照片形式存储的。</p>
+    <p class="graf graf--p">传统上，这些图像必须由观看者手动过滤以确定和评估其内容，但是由于有了面部识别软件，整个过程可以完全自动化。</p>
+    <p class="graf graf--p">面部识别已经引起了许多有关生物识别技术伦理问题的新闻和讨论，以及该技术对数据收集和隐私的影响。（参见 “ <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/category/%e7%94%9f%e7%89%a9%e8%af%86%e5%88%ab%e5%8f%8a%e5%af%b9%e6%8a%97%e6%96%b9%e6%b3%95/" href="https://www.iyouport.org/category/%e7%94%9f%e7%89%a9%e8%af%86%e5%88%ab%e5%8f%8a%e5%af%b9%e6%8a%97%e6%96%b9%e6%b3%95/" rel="noopener noreferrer" target="_blank"> 生物识别及对抗方法 </a> ” 栏目）</p>
+    <p class="graf graf--p">尽管该技术经常在 Facebook 等平台上使用，并在全球范围内的执法中得到广泛使用，但是， <strong class="markup--strong markup--p-strong">
+    允许人们根据自己的目的使用面部识别的后端技术现在已经很容易获得，并可以在开源自由软件项目中实现
+   </strong> 。</p>
+    <p class="graf graf--p">这是一种民主化均权的方法。</p>
+    <p class="graf graf--p">将看起来可怕的技术用于公民事业是有可能的，还记得我们介绍过的使用AI作为调查记者工作的辅助吗？在这里《 <a class="markup--anchor markup--p-anchor" data-href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e8%bf%8e%e6%8e%a5%e6%9b%b4%e5%a4%9a%e7%9a%84%e5%b7%b4%e6%8b%bf%e9%a9%ac%e6%96%87%e4%bb%b6%ef%bc%9f/" href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e8%bf%8e%e6%8e%a5%e6%9b%b4%e5%a4%9a%e7%9a%84%e5%b7%b4%e6%8b%bf%e9%a9%ac%e6%96%87%e4%bb%b6%ef%bc%9f/" rel="noopener noreferrer" target="_blank"> 如何迎接更多的“巴拿马文件”？ </a> 》</p>
+    <p class="graf graf--p">在本教程中，我们将使用 Face Recognition <a class="markup--anchor markup--p-anchor" data-href="http://In this tutorial, we'll use the Face Recognition Python library to analyze and discover images based on the people within them." href="http://In%20this%20tutorial,%20we%27ll%20use%20the%20Face%20Recognition%20Python%20library%20to%20analyze%20and%20discover%20images%20based%20on%20the%20people%20within%20them." rel="noopener noreferrer" target="_blank"> Python 库 </a> 基于其中的图像来分析和发现目标人。</p>
+    <p class="graf graf--p">并且将研究如何搜寻和发现成批的图像，以及如何生成有关目标人或网站的统计信息和结论。</p>
+    <ul class="postList">
+      <li class="graf graf--li">不要错过《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/%e4%ba%ba%e8%84%b8%e8%af%86%e5%88%ab%e5%8f%af%e4%bb%a5%e8%87%aa%e5%88%b6%ef%bc%8c%e4%bd%a0%e7%9f%a5%e9%81%93%e5%90%97%ef%bc%9f%e8%80%8c%e4%b8%94%e9%9d%9e%e5%b8%b8%e7%ae%80%e5%8d%95/" href="https://www.iyouport.org/%e4%ba%ba%e8%84%b8%e8%af%86%e5%88%ab%e5%8f%af%e4%bb%a5%e8%87%aa%e5%88%b6%ef%bc%8c%e4%bd%a0%e7%9f%a5%e9%81%93%e5%90%97%ef%bc%9f%e8%80%8c%e4%b8%94%e9%9d%9e%e5%b8%b8%e7%ae%80%e5%8d%95/" rel="noopener noreferrer" target="_blank"> 人脸识别可以自制，你知道吗？而且非常简单 </a> 》</li>
+    </ul>
+    <p class="graf graf--p">马上开始。</p>
+    <h3 class="graf graf--p" id="section-1"> <span style="color: #ff6600;"> <strong class="markup--strong markup--p-strong">
+     第一步：安装
+    </strong> </span> </h3>
+    <p class="graf graf--p">这里将使用的 Python 库 <a class="markup--anchor markup--p-anchor" data-href="https://github.com/ageitgey/face_recognition" href="https://github.com/ageitgey/face_recognition" rel="noopener noreferrer" target="_blank"> Face Recognition </a> 可通过 Linux 和 macOS 上的 Pip 包管理器直接获得。</p>
+    <p class="graf graf--p">虽然 Windows 上没有正式支持这个包，但可以提供 <a class="markup--anchor markup--p-anchor" data-href="https://github.com/ageitgey/face_recognition/issues/175#issue-257710508" href="https://github.com/ageitgey/face_recognition/issues/175#issue-257710508" rel="noopener noreferrer" target="_blank"> 安装指南 </a> 以及 <a class="markup--anchor markup--p-anchor" data-href="https://medium.com/@ageitgey/try-deep-learning-in-python-now-with-a-fully-pre-configured-vm-1d97d4c3e9b" href="https://medium.com/@ageitgey/try-deep-learning-in-python-now-with-a-fully-pre-configured-vm-1d97d4c3e9b" rel="noopener noreferrer" target="_blank"> 预配置的虚拟机映像 </a> 。</p>
+    <p class="graf graf--p">在开始安装之前，请确保您的操作系统是最新的。</p>
+    <p class="graf graf--p">在基于 Debian 的 Linux 发行版（如 Ubuntu 和 Kali）上，可以通过运行以下命令来更新存储库并安装新软件。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update &amp;&amp; apt-get upgrade</code></pre></div>    </div>
+    <p class="graf graf--p">虽然在某些发行版中默认包含了 Pip，但也可以通过运行以下命令来安装它。此命令将获取软件包的最新版本并进行安装。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install python-pip</code></pre></div>    </div>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10680 jetpack-lazy-image" data-lazy-sizes="(max-width: 807px) 100vw, 807px" data-lazy-src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-7.jpg?resize=807%2C527&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-7.jpg?w=807&amp;ssl=1 807w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-7.jpg?resize=300%2C196&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-7.jpg?resize=768%2C502&amp;ssl=1 768w" data-recalc-dims="1" height="527" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-7.jpg?resize=807%2C527&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="807" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10680" data-recalc-dims="1" height="527" sizes="(max-width: 807px) 100vw, 807px" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-7.jpg?resize=807%2C527&amp;ssl=1" srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-7.jpg?w=807&amp;ssl=1 807w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-7.jpg?resize=300%2C196&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/1-7.jpg?resize=768%2C502&amp;ssl=1 768w" width="807" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">安装Pip后，可以通过运行以下命令使用它来安装 Face Recognition 库：</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo pip install face_recognition</code></pre></div>    </div>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10681 jetpack-lazy-image" data-lazy-sizes="(max-width: 809px) 100vw, 809px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-9.jpg?resize=809%2C530&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-9.jpg?w=809&amp;ssl=1 809w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-9.jpg?resize=300%2C197&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-9.jpg?resize=768%2C503&amp;ssl=1 768w" data-recalc-dims="1" height="530" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-9.jpg?resize=809%2C530&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="809" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10681" data-recalc-dims="1" height="530" sizes="(max-width: 809px) 100vw, 809px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-9.jpg?resize=809%2C530&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-9.jpg?w=809&amp;ssl=1 809w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-9.jpg?resize=300%2C197&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/2-9.jpg?resize=768%2C503&amp;ssl=1 768w" width="809" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">一旦 Pip 安装完成，该库就可以使用了！</p>
+    <h3 class="graf graf--p" id="section-2"> <span style="color: #ff6600;"> <strong class="markup--strong markup--p-strong">
+     第二步：组织数据进行分析
+    </strong> </span> </h3>
+    <p class="graf graf--p">用 Python 实现的用于面部识别的库意味着可以相对轻松地将其实现到其他应用程序中。</p>
+    <p class="graf graf--p">也就是说 <strong class="markup--strong markup--p-strong">
+    可以更简单地将面部识别功能添加到网络监视摄像头实时流、网络爬虫、或其他以数字方式显示包含面部的图像或视频的格式
+   </strong> 。</p>
+    <p class="graf graf--p">但是，这需要编写额外的原始代码。</p>
+    <p class="graf graf--p">相反，本教程将使用随附的命令行工具，并将其与其他系统实用程序结合起来，以执行类似的任务，而无需编写新的脚本。</p>
+    <p class="graf graf--p">随附的命令行工具旨在处理两批文件。一个文件夹包含一组可识别的面孔，另一文件夹包含用户希望进行识别的一组图像。</p>
+    <p class="graf graf--p">要创建一组图像以过滤出特定的个人面孔，可以使用Wget递归下载一个网站，例如下面的网站。当然，研究人员可以尝试下载尽可能多的潜在相关图像。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10682 jetpack-lazy-image" data-lazy-sizes="(max-width: 912px) 100vw, 912px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3-6.jpg?resize=912%2C780&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3-6.jpg?w=912&amp;ssl=1 912w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3-6.jpg?resize=300%2C257&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3-6.jpg?resize=768%2C657&amp;ssl=1 768w" data-recalc-dims="1" height="780" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3-6.jpg?resize=912%2C780&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="912" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10682" data-recalc-dims="1" height="780" sizes="(max-width: 912px) 100vw, 912px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3-6.jpg?resize=912%2C780&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3-6.jpg?w=912&amp;ssl=1 912w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3-6.jpg?resize=300%2C257&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/3-6.jpg?resize=768%2C657&amp;ssl=1 768w" width="912" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">Wget 可以从命令行进行操作，并且可以用于下载任何内容，从单个页面或图像到整个网站。如下所示的命令将跟随给定域中的每个链接，并下载该页面上所有可用的内容。</p>
+    <p class="graf graf--p">可以随时按 Ctrl + C 退出此命令，否则它将一直运行到给定请求完成为止。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget -p -r -E -e robots=off — convert-links -U mozilla — level 1 whitehouse.gov</code></pre></div>    </div>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10683 jetpack-lazy-image" data-lazy-sizes="(max-width: 1062px) 100vw, 1062px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-7.jpg?resize=1062%2C157&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-7.jpg?w=1062&amp;ssl=1 1062w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-7.jpg?resize=300%2C44&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-7.jpg?resize=1024%2C151&amp;ssl=1 1024w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-7.jpg?resize=768%2C114&amp;ssl=1 768w" data-recalc-dims="1" height="157" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-7.jpg?resize=1062%2C157&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1062" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10683" data-recalc-dims="1" height="157" sizes="(max-width: 1062px) 100vw, 1062px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-7.jpg?resize=1062%2C157&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-7.jpg?w=1062&amp;ssl=1 1062w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-7.jpg?resize=300%2C44&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-7.jpg?resize=1024%2C151&amp;ssl=1 1024w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/4-7.jpg?resize=768%2C114&amp;ssl=1 768w" width="1062" /> 
+      </noscript>
+</p>
+    <ul class="postList">
+      <li class="graf graf--li"><strong class="markup--strong markup--li-strong">
+     -p
+    </strong> 指定该工具还将下载其他内容，例如图像、样式表和脚本。</li>
+      <li class="graf graf--li"><strong class="markup--strong markup--li-strong">
+     -E
+    </strong> 要求每个下载的文件都以其完整文件扩展保存，这将使您更容易过滤图像。</li>
+      <li class="graf graf--li"><strong class="markup--strong markup--li-strong">
+     -r
+    </strong> 用于递归，因此也可以下载链接和其他目录。</li>
+      <li class="graf graf--li">在字符串的后面，递归级别指定为 <strong class="markup--strong markup--li-strong">
+     -level1
+    </strong> 。这可以确保索引页面中的链接被跟踪一次。1可以改为其他想要的数字，也可以删除该标志以尝试无限递归。</li>
+      <li class="graf graf--li">如果希望确保不从其他网站下载任何文件，则可以使用 <strong class="markup--strong markup--li-strong">
+     -domain
+    </strong> ，后接该命令应限制到的域。</li>
+      <li class="graf graf--li">递归请求可能会被阻止或在某些服务器上引起问题，因此您可能需要通过使用 <strong class="markup--strong markup--li-strong">
+     -w
+    </strong> 在请求之间创建延迟来限制递归或限制请求速度。</li>
+      <li class="graf graf--li">使用 <strong class="markup--strong markup--li-strong">
+     -e robots=off
+    </strong> 可以避免将请求作为不受欢迎的Web爬网程序而被拒绝或阻止。</li>
+      <li class="graf graf--li">出于相同的原因， <strong class="markup--strong markup--li-strong">
+     -U mozilla
+    </strong> 用于指定应使用 Mozilla用户代理，以便该工具看起来像是Web浏览器。</li>
+      <li class="graf graf--li"><strong class="markup--strong markup--li-strong">
+     -convert-links
+    </strong> 为了重新格式化链接，以便可以更轻松地离线使用该页面。虽然这对于筛选从站点下载的图像来说不是必需的，但它可以更便于追溯以确定图像在网页上的位置。</li>
+    </ul>
+    <p class="graf graf--p">一旦让程序运行了所需的时间，就可以在新目录中复制所有图像文件，以便更轻松地使用它们。首先，通过运行以下命令创建一个新目录。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir unknown_faces</code></pre></div>    </div>
+    <p class="graf graf--p">接下来，通过运行以下两个命令将所有从 Wget 请求中检索到的图像文件复制到此新目录中，第一个用于JPG文件，第二个用于PNG文件。 <strong class="markup--strong markup--p-strong">
+    urlfolder
+   </strong> 应替换为Wget创建的文件夹的名称，通常对应于初始命令中使用的URL或域。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp urlfolder**/*.jpg unknown_faces/
+cp urlfolder**/*.png unknown_faces/</code></pre></div>    </div>
+    <p class="graf graf--p"><strong class="markup--strong markup--p-strong">
+    cp
+   </strong> 命令将复制所有匹配的文件，后跟目录参数，在本例中为 whitehouse.gov。此目录后的**（双星号）指定递归，对于任何JPG或PNG图像，后跟一个*（通配符）。最后一个参数指定应将文件复制到 <strong class="markup--strong markup--p-strong">
+    unknown_faces
+   </strong> 目录。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10684 jetpack-lazy-image" data-lazy-sizes="(max-width: 740px) 100vw, 740px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-5.jpg?resize=740%2C135&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-5.jpg?w=740&amp;ssl=1 740w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-5.jpg?resize=300%2C55&amp;ssl=1 300w" data-recalc-dims="1" height="135" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-5.jpg?resize=740%2C135&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="740" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10684" data-recalc-dims="1" height="135" sizes="(max-width: 740px) 100vw, 740px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-5.jpg?resize=740%2C135&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-5.jpg?w=740&amp;ssl=1 740w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/5-5.jpg?resize=300%2C55&amp;ssl=1 300w" width="740" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">这些图像移到新目录后，可以使用 <strong class="markup--strong markup--p-strong">
+    ls
+   </strong> 来查看此文件夹中的文件。下面的命令将列出 <strong class="markup--strong markup--p-strong">
+    unknown_faces
+   </strong> 文件夹的内容。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls unknown_faces/</code></pre></div>    </div>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10685 jetpack-lazy-image" data-lazy-sizes="(max-width: 848px) 100vw, 848px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6-2.jpg?resize=848%2C404&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6-2.jpg?w=848&amp;ssl=1 848w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6-2.jpg?resize=300%2C143&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6-2.jpg?resize=768%2C366&amp;ssl=1 768w" data-recalc-dims="1" height="404" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6-2.jpg?resize=848%2C404&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="848" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10685" data-recalc-dims="1" height="404" sizes="(max-width: 848px) 100vw, 848px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6-2.jpg?resize=848%2C404&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6-2.jpg?w=848&amp;ssl=1 848w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6-2.jpg?resize=300%2C143&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/6-2.jpg?resize=768%2C366&amp;ssl=1 768w" width="848" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">还可以使用|重定向运算符来转发此命令的输出，为了统计发现了多少个图像文件；稍后在识别一组图像中给定面部的频率时会很有用。</p>
+    <p class="graf graf--p">可以通过运行以下命令来完成：</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls unknown_faces/ | wc -l</code></pre></div>    </div>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10686 jetpack-lazy-image" data-lazy-sizes="(max-width: 784px) 100vw, 784px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7-2.jpg?resize=784%2C106&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7-2.jpg?w=784&amp;ssl=1 784w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7-2.jpg?resize=300%2C41&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7-2.jpg?resize=768%2C104&amp;ssl=1 768w" data-recalc-dims="1" height="106" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7-2.jpg?resize=784%2C106&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="784" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10686" data-recalc-dims="1" height="106" sizes="(max-width: 784px) 100vw, 784px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7-2.jpg?resize=784%2C106&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7-2.jpg?w=784&amp;ssl=1 784w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7-2.jpg?resize=300%2C41&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/7-2.jpg?resize=768%2C104&amp;ssl=1 768w" width="784" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">此命令的输出显示 Wget 保存了178个图像文件。一旦准备好使用这些图像，就可以为要在该数据集中找到的面孔创建一个肯定的识别列表。</p>
+    <h3 class="graf graf--p" id="section-3"> <span style="color: #ff6600;"> <strong class="markup--strong markup--p-strong">
+     第三步：准备识别列表
+    </strong> </span> </h3>
+    <p class="graf graf--p">要开始准备已知身份和面孔的列表，请在要解析的图像目录之外创建一个新文件夹。</p>
+    <p class="graf graf--p">在Wget创建的目录中，可以通过运行 <strong class="markup--strong markup--p-strong">
+    cd ../
+   </strong> 向上移动一个目录，通过运行 <strong class="markup--strong markup--p-strong">
+    mkdir known_faces
+   </strong> 创建一个名为 <strong class="markup--strong markup--p-strong">
+    known_faces
+   </strong> 的新目录，最后通过运行 <strong class="markup--strong markup--p-strong">
+    cd known_faces
+   </strong> 进入该目录。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10687 jetpack-lazy-image" data-lazy-sizes="(max-width: 601px) 100vw, 601px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8-2.jpg?resize=601%2C111&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8-2.jpg?w=601&amp;ssl=1 601w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8-2.jpg?resize=300%2C55&amp;ssl=1 300w" data-recalc-dims="1" height="111" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8-2.jpg?resize=601%2C111&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="601" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10687" data-recalc-dims="1" height="111" sizes="(max-width: 601px) 100vw, 601px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8-2.jpg?resize=601%2C111&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8-2.jpg?w=601&amp;ssl=1 601w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/8-2.jpg?resize=300%2C55&amp;ssl=1 300w" width="601" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">创建此目录后，可以将希望用作肯定鉴定列表的所有文件保存到此文件夹。</p>
+    <p class="graf graf--p"><strong class="markup--strong markup--p-strong">
+    任何人的清晰照片都是面部识别的理想选择，例如经常用作“联系人”页面上的个人资料照片。确保在任何已知的脸部照片中只看到一张脸
+   </strong> 。</p>
+    <p class="graf graf--p">可能还需要为文件命名一个与照片中的人相对应的名称，因为这样就可以在做出任何肯定的标识时返回照片的文件名。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10688 jetpack-lazy-image" data-lazy-sizes="(max-width: 740px) 100vw, 740px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9-1.jpg?resize=740%2C358&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9-1.jpg?w=740&amp;ssl=1 740w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9-1.jpg?resize=300%2C145&amp;ssl=1 300w" data-recalc-dims="1" height="358" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9-1.jpg?resize=740%2C358&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="740" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10688" data-recalc-dims="1" height="358" sizes="(max-width: 740px) 100vw, 740px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9-1.jpg?resize=740%2C358&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9-1.jpg?w=740&amp;ssl=1 740w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/9-1.jpg?resize=300%2C145&amp;ssl=1 300w" width="740" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">准备好这些目录后，即可运行 <strong class="markup--strong markup--p-strong">
+    face_recognition
+   </strong> 命令行实用程序。</p>
+    <h3 class="graf graf--p" id="section-4"> <span style="color: #ff6600;"> <strong class="markup--strong markup--p-strong">
+     第四步：使用面部识别来识别个人
+    </strong> </span> </h3>
+    <p class="graf graf--p">Python Face Recognition 库附带的命令行实用程序相对简单，只需两个参数即可运行。第一个是已知面孔的目录，第二个是尝试识别的面孔的目录。</p>
+    <p class="graf graf--p">这些文件夹按照前面的步骤命名，下面的命令将运行该工具。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>face_recognition known_faces/ unknown_faces/</code></pre></div>    </div>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10689 jetpack-lazy-image" data-lazy-sizes="(max-width: 903px) 100vw, 903px" data-lazy-src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10-1.jpg?resize=903%2C422&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10-1.jpg?w=903&amp;ssl=1 903w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10-1.jpg?resize=300%2C140&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10-1.jpg?resize=768%2C359&amp;ssl=1 768w" data-recalc-dims="1" height="422" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10-1.jpg?resize=903%2C422&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="903" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10689" data-recalc-dims="1" height="422" sizes="(max-width: 903px) 100vw, 903px" src="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10-1.jpg?resize=903%2C422&amp;ssl=1" srcset="https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10-1.jpg?w=903&amp;ssl=1 903w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10-1.jpg?resize=300%2C140&amp;ssl=1 300w, https://i2.wp.com/www.iyouport.org/wp-content/uploads/2019/11/10-1.jpg?resize=768%2C359&amp;ssl=1 768w" width="903" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">程序运行时，它将返回文件名，后跟一个特定人的肯定标识，一个未知人的否定标识，或者如果图像中没有面孔，则标记为找不到任何人。</p>
+    <p class="graf graf--p">为了使这些结果对自动数据处理更加有用，可以运行相同的命令后跟 <strong class="markup--strong markup--p-strong">
+    &gt;
+   </strong> 重定向器，将程序的输出发送到文本文件，例如下面的示例。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>face_recognition known_faces/ unknown_faces/ &gt; results.txt</code></pre></div>    </div>
+    <p class="graf graf--p">可以使用此文本文件作为参考，以分析和利用面部识别的匹配结果。</p>
+    <h3 class="graf graf--p" id="section-5"> <span style="color: #ff6600;"> <strong class="markup--strong markup--p-strong">
+     第五步：分析面部识别匹配
+    </strong> </span> </h3>
+    <p class="graf graf--p">从面部识别工具了解数据结果的一种可能方法是查找与特定识别的面部匹配的所有文件。</p>
+    <p class="graf graf--p">可以使用 <strong class="markup--strong markup--p-strong">
+    grep
+   </strong> 和 <strong class="markup--strong markup--p-strong">
+    results.txt
+   </strong> 文本文件来查看使用给定面孔进行的每次匹配。下面的命令将返回文本文件中用 Donald Trump 标识的每一行。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep “Donald Trump” results.txt</code></pre></div>    </div>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10690 jetpack-lazy-image" data-lazy-sizes="(max-width: 905px) 100vw, 905px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/11-2.jpg?resize=905%2C427&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/11-2.jpg?w=905&amp;ssl=1 905w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/11-2.jpg?resize=300%2C142&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/11-2.jpg?resize=768%2C362&amp;ssl=1 768w" data-recalc-dims="1" height="427" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/11-2.jpg?resize=905%2C427&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="905" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10690" data-recalc-dims="1" height="427" sizes="(max-width: 905px) 100vw, 905px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/11-2.jpg?resize=905%2C427&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/11-2.jpg?w=905&amp;ssl=1 905w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/11-2.jpg?resize=300%2C142&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/11-2.jpg?resize=768%2C362&amp;ssl=1 768w" width="905" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">还可以结合使用其他系统实用程序，通过运行以下命令来确定程序每个结果的频率。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat results.txt | sed ‘s/.*,//’ | sort | uniq -c</code></pre></div>    </div>
+    <p class="graf graf--p">首先，运行 <strong class="markup--strong markup--p-strong">
+    cat results.txt
+   </strong> 会将 results.txt 的内容作为标准输入读取。这被发送到 <strong class="markup--strong markup--p-strong">
+    sed
+   </strong> ，在此删除每行之前（包括逗号）的所有内容。然后结果列表发送到 <strong class="markup--strong markup--p-strong">
+    sort
+   </strong> 。最后它用作 <strong class="markup--strong markup--p-strong">
+    uniq
+   </strong> 的输入， <strong class="markup--strong markup--p-strong">
+    -c
+   </strong> 参数的结果是计算每行的出现次数。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10691 jetpack-lazy-image" data-lazy-sizes="(max-width: 785px) 100vw, 785px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/12.jpg?resize=785%2C160&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/12.jpg?w=785&amp;ssl=1 785w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/12.jpg?resize=300%2C61&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/12.jpg?resize=768%2C157&amp;ssl=1 768w" data-recalc-dims="1" height="160" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/12.jpg?resize=785%2C160&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="785" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10691" data-recalc-dims="1" height="160" sizes="(max-width: 785px) 100vw, 785px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/12.jpg?resize=785%2C160&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/12.jpg?w=785&amp;ssl=1 785w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/12.jpg?resize=300%2C61&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/12.jpg?resize=768%2C157&amp;ssl=1 768w" width="785" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">这将产生一个列表，其中每个结果均以其相应的频率列出，从而允许 <strong class="markup--strong markup--p-strong">
+    对较大的数据集进行简单分析
+   </strong> 。</p>
+    <p class="graf graf--p">如果希望查看由面部识别工具识别的特定图像，则可以使用类似的技术。可以使用下面的命令来生成一个新的文本文件，是文件名的列表，由程序用给定的结果标记并保存在先前的输出文件中。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep “Donald Trump” results.txt | sed ‘s/,.*$//’ &gt; identified.txt</code></pre></div>    </div>
+    <p class="graf graf--p">在这种情况下，将使用 result.txt 文本文件中的 <strong class="markup--strong markup--p-strong">
+    grep
+   </strong> 搜索所有标识为 Donald Trump 的图像。 这些结果作为标准输入发送到 <strong class="markup--strong markup--p-strong">
+    sed
+   </strong> ，在其中包括逗号在内的所有内容均从每一行中删除。最后，重定向运算符 <strong class="markup--strong markup--p-strong">
+    &gt;
+   </strong> 将输出发送到名为 <strong class="markup--strong markup--p-strong">
+    Identification.txt
+   </strong> 的文本文件。</p>
+    <p class="graf graf--p">如果运行诸如 <strong class="markup--strong markup--p-strong">
+    head Identification.txt
+   </strong> 之类的命令，将看到该文件仅包含文件名。可以将此文件名列表用作简短脚本的输入，以将这些文件中的每个文件复制到新文件夹中。</p>
+    <p class="graf graf--p">可以通过运行以下命令来使用 Nano 创建一个新的脚本文件。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10692 jetpack-lazy-image" data-lazy-sizes="(max-width: 909px) 100vw, 909px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/13.jpg?resize=909%2C210&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/13.jpg?w=909&amp;ssl=1 909w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/13.jpg?resize=300%2C69&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/13.jpg?resize=768%2C177&amp;ssl=1 768w" data-recalc-dims="1" height="210" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/13.jpg?resize=909%2C210&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="909" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10692" data-recalc-dims="1" height="210" sizes="(max-width: 909px) 100vw, 909px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/13.jpg?resize=909%2C210&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/13.jpg?w=909&amp;ssl=1 909w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/13.jpg?resize=300%2C69&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/13.jpg?resize=768%2C177&amp;ssl=1 768w" width="909" /> 
+      </noscript>
+</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+mkdir identified
+while read line; do
+filename=$(echo $line | sed ‘s/.*\///’)
+cp $line identified/$filename
+done &lt; identified.txt</code></pre></div>    </div>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10693 jetpack-lazy-image" data-lazy-sizes="(max-width: 905px) 100vw, 905px" data-lazy-src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/14-1.jpg?resize=905%2C277&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/14-1.jpg?w=905&amp;ssl=1 905w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/14-1.jpg?resize=300%2C92&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/14-1.jpg?resize=768%2C235&amp;ssl=1 768w" data-recalc-dims="1" height="277" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/14-1.jpg?resize=905%2C277&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="905" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10693" data-recalc-dims="1" height="277" sizes="(max-width: 905px) 100vw, 905px" src="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/14-1.jpg?resize=905%2C277&amp;ssl=1" srcset="https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/14-1.jpg?w=905&amp;ssl=1 905w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/14-1.jpg?resize=300%2C92&amp;ssl=1 300w, https://i1.wp.com/www.iyouport.org/wp-content/uploads/2019/11/14-1.jpg?resize=768%2C235&amp;ssl=1 768w" width="905" /> 
+      </noscript>
+</p>
+    <ul class="postList">
+      <li class="graf graf--li"><strong class="markup--strong markup--li-strong">
+     #!/bin/bash
+    </strong> 声明该脚本用于Bash。</li>
+      <li class="graf graf--li">第二行创建一个新目录，命名为 <strong class="markup--strong markup--li-strong">
+     identified
+    </strong> ，所有肯定标识的图像都将移至该目录。</li>
+      <li class="graf graf--li">第三行与最后一行结合使用，读取文本文件 <strong class="markup--strong markup--li-strong">
+     identified.txt
+    </strong> 作为输入，以便在 while 语句中单独修改文件的每一行。</li>
+      <li class="graf graf--li">第四行创建一个名为 <strong class="markup--strong markup--li-strong">
+     filename
+    </strong> 的变量。将此变量分配给不带目录位置的文件的文件名，使用 <strong class="markup--strong markup--li-strong">
+     sed
+    </strong> 删除每行中斜杠之前的所有字符。</li>
+      <li class="graf graf--li">最后一行使用此变量，将 identified.txt 文本文件中的每个文件复制到 <strong class="markup--strong markup--li-strong">
+     identified
+    </strong> 目录并分配其原始文件名。</li>
+    </ul>
+    <p class="graf graf--p">通过按 Ctrl + O 进行保存，然后就可以使用 Ctrl + X 退出程序。将脚本另存为 <strong class="markup--strong markup--p-strong">
+    identified.sh
+   </strong> 后，可以通过运行以下命令来向文件添加执行特权。</p>
+    <div class="language-plaintext graf graf--p highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x identified.sh</code></pre></div>    </div>
+    <p class="graf graf--p">现在，只需输入 <strong class="markup--strong markup--p-strong">
+    ./identified.sh
+   </strong> 并按 Enter / return 键即可运行脚本本身。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10694 jetpack-lazy-image" data-lazy-sizes="(max-width: 666px) 100vw, 666px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/15.jpg?resize=666%2C129&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/15.jpg?w=666&amp;ssl=1 666w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/15.jpg?resize=300%2C58&amp;ssl=1 300w" data-recalc-dims="1" height="129" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/15.jpg?resize=666%2C129&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="666" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10694" data-recalc-dims="1" height="129" sizes="(max-width: 666px) 100vw, 666px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/15.jpg?resize=666%2C129&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/15.jpg?w=666&amp;ssl=1 666w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/15.jpg?resize=300%2C58&amp;ssl=1 300w" width="666" /> 
+      </noscript>
+</p>
+    <p class="graf graf--p">脚本运行完成后，您可以导航到 “ identified” 目录，并查看发现的所有与您的特定查询相匹配的图像！</p>
+    <p class="graf graf--p">这种自动过滤的过程可以解决传统上耗时的问题 —— 需要大量的人工干预才能识别和分类图像的那种工作量。</p>
+    <p class="graf graf--p"><img alt="" class="aligncenter size-full wp-image-10695 jetpack-lazy-image" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?resize=1100%2C538&amp;is-pending-load=1#038;ssl=1" data-lazy-srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?w=1247&amp;ssl=1 1247w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?resize=300%2C147&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?resize=1024%2C501&amp;ssl=1 1024w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?resize=768%2C376&amp;ssl=1 768w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?resize=1100%2C538&amp;ssl=1 1100w" data-recalc-dims="1" height="538" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?resize=1100%2C538&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1100" />       <noscript>
+ <img alt="" class="aligncenter size-full wp-image-10695" data-recalc-dims="1" height="538" sizes="(max-width: 1100px) 100vw, 1100px" src="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?resize=1100%2C538&amp;ssl=1" srcset="https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?w=1247&amp;ssl=1 1247w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?resize=300%2C147&amp;ssl=1 300w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?resize=1024%2C501&amp;ssl=1 1024w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?resize=768%2C376&amp;ssl=1 768w, https://i0.wp.com/www.iyouport.org/wp-content/uploads/2019/11/16.jpg?resize=1100%2C538&amp;ssl=1 1100w" width="1100" /> 
+      </noscript>
+</p>
+    <h3 class="graf graf--p" id="section-6"> <span style="color: #ff6600;"> <strong class="markup--strong markup--p-strong">
+     防止面部识别
+    </strong> </span> </h3>
+    <p class="graf graf--p">不幸的是，防止面部识别的唯一真正保护措施就是限制您的脸部的曝光 —— <strong class="markup--strong markup--p-strong">
+    不论是在线还是现实
+   </strong> 。</p>
+    <p class="graf graf--p">这可能意味着对帐户使用更严格的隐私设置，选择不使用社交媒体，甚至尝试在公共场合隐藏自己的脸。显然这些预防措施中的许多都非常不方便。</p>
+    <p class="graf graf--p">通常， <strong class="markup--strong markup--p-strong">
+    面部识别的危险更多是与附加到在线个人资料或照片的给定实例上的数据有关，而不是照片本身
+   </strong> 。</p>
+    <p class="graf graf--p">比如，如果没有任何数据库中存在 Trump 的名字和简介，那么他的照片即便被读取也会显示为 “没有匹配”。但是，不幸的是，政府掌握的数据库中包含我们每个人的详细资料，而且我们无权对其进行删改。</p>
+    <ul class="postList">
+      <li class="graf graf--li">《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/%e8%bf%99%e4%ba%9b%e9%97%b4%e8%b0%8d%e5%a6%82%e4%bd%95%e6%8a%8a%e4%bd%a0%e7%9a%84%e7%85%a7%e7%89%87%e5%8f%98%e6%88%90%e4%ba%86%e7%9b%91%e8%a7%86%e5%b7%a5%e5%85%b7%ef%bc%9f/" href="https://www.iyouport.org/%e8%bf%99%e4%ba%9b%e9%97%b4%e8%b0%8d%e5%a6%82%e4%bd%95%e6%8a%8a%e4%bd%a0%e7%9a%84%e7%85%a7%e7%89%87%e5%8f%98%e6%88%90%e4%ba%86%e7%9b%91%e8%a7%86%e5%b7%a5%e5%85%b7%ef%bc%9f/" rel="noopener noreferrer" target="_blank"> 这些间谍如何把你的照片变成了监视工具？ </a> 》</li>
+      <li class="graf graf--li">《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/%e6%95%b0%e7%99%be%e4%b8%87%e7%85%a7%e7%89%87%e6%95%b0%e6%8d%ae%e5%ba%93%e7%a7%98%e5%af%86%e8%81%9a%e9%9b%86%e5%9c%a8%e7%be%8e%e6%ac%a7%e4%bb%a5%e5%bc%80%e5%8f%91%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab/" href="https://www.iyouport.org/%e6%95%b0%e7%99%be%e4%b8%87%e7%85%a7%e7%89%87%e6%95%b0%e6%8d%ae%e5%ba%93%e7%a7%98%e5%af%86%e8%81%9a%e9%9b%86%e5%9c%a8%e7%be%8e%e6%ac%a7%e4%bb%a5%e5%bc%80%e5%8f%91%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab/" rel="noopener noreferrer" target="_blank"> 数百万照片数据库秘密聚集在美欧以开发面部识别：中国享用了多少？ </a> 》</li>
+      <li class="graf graf--li">《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/%e4%bd%a0%e6%9b%be%e7%bb%8f%e5%9c%a8%e7%a4%be%e4%ba%a4%e7%bd%91%e7%bb%9c%e4%b8%8a%e5%8f%91%e5%b8%83%e8%bf%87%e8%87%aa%e5%b7%b1%e7%9a%84%e7%85%a7%e7%89%87%ef%bc%9f%e4%bd%a0%e5%8d%b1%e9%99%a9%e4%ba%86/" href="https://www.iyouport.org/%e4%bd%a0%e6%9b%be%e7%bb%8f%e5%9c%a8%e7%a4%be%e4%ba%a4%e7%bd%91%e7%bb%9c%e4%b8%8a%e5%8f%91%e5%b8%83%e8%bf%87%e8%87%aa%e5%b7%b1%e7%9a%84%e7%85%a7%e7%89%87%ef%bc%9f%e4%bd%a0%e5%8d%b1%e9%99%a9%e4%ba%86/" rel="noopener noreferrer" target="_blank"> 你曾经在社交网络上发布过自己的照片？你危险了！ </a> 》</li>
+    </ul>
+    <p class="graf graf--p">⚠️请记住，无论何时选择在线保存任何图片或信息，你都无法完全确定这些信息最终会落在谁手里 —— 我们中没人能控制这点。</p>
+    <p class="graf graf--p">所以，切切谨慎！</p>
+    <p class="graf graf--p">关于 <strong class="markup--strong markup--p-strong">
+    如何抵制现实中的人脸识别监控
+   </strong> ：</p>
+    <ul class="postList">
+      <li class="graf graf--li">《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/%e8%ae%a9%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e5%a4%b1%e6%95%88%e7%9a%84%e6%80%9d%e8%80%83%e6%96%b9%e5%bc%8f/" href="https://www.iyouport.org/%e8%ae%a9%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e5%a4%b1%e6%95%88%e7%9a%84%e6%80%9d%e8%80%83%e6%96%b9%e5%bc%8f/" rel="noopener noreferrer" target="_blank"> 让面部识别失效的思考方式 </a> 》</li>
+      <li class="graf graf--li">《 <a class="markup--anchor markup--li-anchor" data-href="https://www.iyouport.org/%e5%9c%a8%e4%bd%a0%e7%9a%84%e6%97%a5%e5%b8%b8%e7%94%9f%e6%b4%bb%e4%b8%ad%e5%ba%94%e7%94%a8%e9%9a%90%e8%94%bd%e9%87%8e%e6%88%98%e6%8a%80%e6%9c%af/" href="https://www.iyouport.org/%e5%9c%a8%e4%bd%a0%e7%9a%84%e6%97%a5%e5%b8%b8%e7%94%9f%e6%b4%bb%e4%b8%ad%e5%ba%94%e7%94%a8%e9%9a%90%e8%94%bd%e9%87%8e%e6%88%98%e6%8a%80%e6%9c%af/" rel="noopener noreferrer" target="_blank"> 在你的日常生活中应用隐蔽野战技术：简单方式抵御敌对监视 </a> 》</li>
+    </ul>
+    <div id="atatags-1611829871-5f42604b7c307"></div>
+    <div class="sharedaddy sd-sharing-enabled">
+      <div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+        <h3 class="sd-title" id="section-7"> 共享此文章： </h3>
+        <div class="sd-content">
+          <ul>
+            <li class="share-twitter"><a class="share-twitter sd-button share-icon no-text" data-shared="sharing-twitter-10678" href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e6%8a%80%e6%9c%af%e4%b8%ba%e5%85%ac%e6%b0%91%e6%89%80%e7%94%a8%ef%bc%9f-%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e6%96%b9%e6%b3%95/?share=twitter" rel="nofollow noopener noreferrer" target="_blank" title="点击以在 Twitter 上共享"> <span> </span> <span class="sharing-screen-reader-text"> 点击以在 Twitter 上共享（在新窗口中打开） </span> </a></li>
+            <li class="share-facebook"><a class="share-facebook sd-button share-icon no-text" data-shared="sharing-facebook-10678" href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e4%bd%bf%e9%9d%a2%e9%83%a8%e8%af%86%e5%88%ab%e6%8a%80%e6%9c%af%e4%b8%ba%e5%85%ac%e6%b0%91%e6%89%80%e7%94%a8%ef%bc%9f-%e5%bc%80%e6%ba%90%e6%83%85%e6%8a%a5%e6%96%b9%e6%b3%95/?share=facebook" rel="nofollow noopener noreferrer" target="_blank" title="点击以在 Facebook 上共享"> <span> </span> <span class="sharing-screen-reader-text"> 点击以在 Facebook 上共享（在新窗口中打开） </span> </a></li>
+            <li class="share-end"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-161182987-10678-5f42604b7d777" data-src="https://widgets.wp.com/likes/#blog_id=161182987&amp;post_id=10678&amp;origin=www.iyouport.org&amp;obj_id=161182987-10678-5f42604b7d777" id="like-post-wrapper-161182987-10678-5f42604b7d777">
+      <h3 class="sd-title" id="section-8"> 赞过： </h3>
+      <div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;">
+<span class="button"> <span> 赞 </span> </span> <span class="loading"> 正在加载…… </span>
+      </div>
+ <span class="sd-text-color"> </span> <a class="sd-link-color">
+   </a>
+    </div>
+    <div class="jp-relatedposts" id="jp-relatedposts">
+      <h3 class="jp-relatedposts-headline" id="section-9"> <em>
+     相关
+    </em> </h3>
+    </div>
+  </div>
+  <div class="entry-footer">
+    <ul class="post-tags light-text">
+      <li>Tagged</li>
+      <li><a href="https://www.iyouport.org/tag/biometrics/" rel="tag"> biometrics </a></li>
+      <li><a href="https://www.iyouport.org/tag/facial-recognition/" rel="tag"> Facial recognition </a></li>
+      <li><a href="https://www.iyouport.org/tag/investigation/" rel="tag"> Investigation </a></li>
+      <li><a href="https://www.iyouport.org/tag/osint/" rel="tag"> OSINT </a></li>
+      <li><a href="https://www.iyouport.org/tag/selfcare/" rel="tag"> selfcare </a></li>
+      <li><a href="https://www.iyouport.org/tag/technique/" rel="tag"> technique </a></li>
+      <li><a href="https://www.iyouport.org/tag/technology/" rel="tag"> Technology </a></li>
+      <li><a href="https://www.iyouport.org/tag/tools/" rel="tag"> tools </a></li>
+    </ul>
+  </div>
+  <div class="entry-author-wrapper">
+    <div class="site-posted-on">
+<strong>
+    Published
+   </strong>       <time class="entry-date published" datetime="2020-04-10T00:03:19+08:00"> 2020年4月10日 </time>
+      <time class="updated" datetime="2019-11-16T00:55:32+08:00"> 2019年11月16日 </time>
+    </div>
+  </div>
+</article>
+
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#iYouPort 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%BD%93%E6%B0%91%E4%B8%BB%E5%A4%B1%E8%B4%A5-%E5%B7%AB%E6%9C%AF%E8%93%AC%E5%8B%83%E5%8F%91%E5%B1%95-%E6%81%B6%E9%AD%94%E5%9B%B0%E6%89%B0%E7%9A%84%E5%9C%9F%E5%9C%B0-iYouPort/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-10-11/%E7%BD%91%E7%BB%9C-%E6%B0%B4%E5%86%9B-%E7%9A%84%E5%B8%83%E5%B1%80-iYouPort/">最早</a>--</span>
+    
+      <li>
+        <time>2020-04-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-13/%E5%B8%AE%E5%8A%A9%E7%89%B9%E6%9C%97%E6%99%AE%E8%BF%9E%E4%BB%BB%E7%9A%84%E7%9B%91%E8%A7%86%E8%B7%9F%E8%B8%AA%E5%85%AC%E5%8F%B8%E7%8E%B0%E5%9C%A8%E8%A6%81%E5%88%A9%E7%94%A8%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E8%B5%9A%E9%92%B1-iYouPort/">
+          帮助特朗普连任的监视跟踪公司现在要利用冠状病毒赚钱 - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-04-09</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-09/%E6%93%8D%E6%8E%A7%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A1%91%E9%80%A0%E8%B6%85%E5%BC%BA%E8%AE%B0%E5%BF%86%E7%9A%84%E6%96%B9%E6%B3%95-2-iYouPort/">
+          操控注意力的小技巧：塑造超强记忆的方法（2） - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-04-09</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-09/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E8%B4%A6%E6%88%B7%E6%81%A2%E5%A4%8D%E5%8A%9F%E8%83%BD%E8%BF%BD%E8%B8%AA%E7%9B%AE%E6%A0%87%E4%BA%BA-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%90%9C%E9%9B%86%E6%96%B9%E6%B3%95-iYouPort/">
+          如何使用账户恢复功能追踪目标人？- 开源情报搜集方法 - iYouPort
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-04-09</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-09/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%89%BE%E5%88%B0%E4%BB%BB%E4%BD%95%E5%9B%BD%E5%AE%B6%E9%9A%90%E7%A7%98%E7%9A%84%E5%85%B3%E9%94%AE%E8%81%94%E7%BD%91%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD-iYouPort/">
+          如何快速找到任何国家隐秘的关键联网基础设施 - iYouPort
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-04-09/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E8%B4%A6%E6%88%B7%E6%81%A2%E5%A4%8D%E5%8A%9F%E8%83%BD%E8%BF%BD%E8%B8%AA%E7%9B%AE%E6%A0%87%E4%BA%BA-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%90%9C%E9%9B%86%E6%96%B9%E6%B3%95-iYouPort/">
+            前一篇：如何使用账户恢复功能追踪目标人？- 开源情报搜集方法 - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-04-09/%E6%93%8D%E6%8E%A7%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A1%91%E9%80%A0%E8%B6%85%E5%BC%BA%E8%AE%B0%E5%BF%86%E7%9A%84%E6%96%B9%E6%B3%95-2-iYouPort/">
+            後一篇：操控注意力的小技巧：塑造超强记忆的方法（2） - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-04-09/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E8%B4%A6%E6%88%B7%E6%81%A2%E5%A4%8D%E5%8A%9F%E8%83%BD%E8%BF%BD%E8%B8%AA%E7%9B%AE%E6%A0%87%E4%BA%BA-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%90%9C%E9%9B%86%E6%96%B9%E6%B3%95-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-04-09/%E6%93%8D%E6%8E%A7%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A1%91%E9%80%A0%E8%B6%85%E5%BC%BA%E8%AE%B0%E5%BF%86%E7%9A%84%E6%96%B9%E6%B3%95-2-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-04-09/%E6%93%8D%E6%8E%A7%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A1%91%E9%80%A0%E8%B6%85%E5%BC%BA%E8%AE%B0%E5%BF%86%E7%9A%84%E6%96%B9%E6%B3%95-2-iYouPort/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-04-09/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E8%B4%A6%E6%88%B7%E6%81%A2%E5%A4%8D%E5%8A%9F%E8%83%BD%E8%BF%BD%E8%B8%AA%E7%9B%AE%E6%A0%87%E4%BA%BA-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%90%9C%E9%9B%86%E6%96%B9%E6%B3%95-iYouPort/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-04-09/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E8%B4%A6%E6%88%B7%E6%81%A2%E5%A4%8D%E5%8A%9F%E8%83%BD%E8%BF%BD%E8%B8%AA%E7%9B%AE%E6%A0%87%E4%BA%BA-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%90%9C%E9%9B%86%E6%96%B9%E6%B3%95-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-04-09/%E6%93%8D%E6%8E%A7%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A1%91%E9%80%A0%E8%B6%85%E5%BC%BA%E8%AE%B0%E5%BF%86%E7%9A%84%E6%96%B9%E6%B3%95-2-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<iYouPort>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-04-09/%E6%93%8D%E6%8E%A7%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%A1%91%E9%80%A0%E8%B6%85%E5%BC%BA%E8%AE%B0%E5%BF%86%E7%9A%84%E6%96%B9%E6%B3%95-2-iYouPort/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<iYouPort>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-04-09/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E8%B4%A6%E6%88%B7%E6%81%A2%E5%A4%8D%E5%8A%9F%E8%83%BD%E8%BF%BD%E8%B8%AA%E7%9B%AE%E6%A0%87%E4%BA%BA-%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E6%90%9C%E9%9B%86%E6%96%B9%E6%B3%95-iYouPort/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

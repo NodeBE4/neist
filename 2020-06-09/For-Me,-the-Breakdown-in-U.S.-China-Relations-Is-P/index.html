@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>For Me, the Breakdown in U.S.-China Relations Is Personal – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+For Me, the Breakdown in U.S.-China Relations Is Personal
+——
+" />
+    <meta property="og:description" content="
+For Me, the Breakdown in U.S.-China Relations Is Personal
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="For Me, the Breakdown in U.S.-China Relations Is Personal" />
+    <meta property="twitter:title" content="For Me, the Breakdown in U.S.-China Relations Is Personal" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fme-breakdown-us-china-relations-personal" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/me-breakdown-us-china-relations-personal" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/me-breakdown-us-china-relations-personal&text=For Me, the Breakdown in U.S.-China Relations Is Personal&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/me-breakdown-us-china-relations-personal&title=For Me, the Breakdown in U.S.-China Relations Is Personal" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/me-breakdown-us-china-relations-personal&title=For Me, the Breakdown in U.S.-China Relations Is Personal" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=For Me, the Breakdown in U.S.-China Relations Is Personal&body=
+For Me, the Breakdown in U.S.-China Relations Is Personal
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/me-breakdown-us-china-relations-personal" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/me-breakdown-us-china-relations-personal&title=For Me, the Breakdown in U.S.-China Relations Is Personal&caption=
+For Me, the Breakdown in U.S.-China Relations Is Personal
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=For Me, the Breakdown in U.S.-China Relations Is Personal&url=https://www.chinafile.com/reporting-opinion/viewpoint/me-breakdown-us-china-relations-personal" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>For Me, the Breakdown in U.S.-China Relations Is Personal</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-06-09
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Judy Polumbaum</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/me-breakdown-us-china-relations-personal" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1591756680000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/me-breakdown-us-china-relations-personal">For Me, the Breakdown in U.S.-China Relations Is Personal</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-0ba615d94ac71de545b47db9cc380cdc">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/52336_sm_0.jpg" title="For Me, the Breakdown in U.S.-China Relations Is Personal" class="colorbox" data-colorbox-gallery="gallery-node-52336-8lvOdcUjNzA" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/52336_sm_0.jpg?itok=Vwe5-r2k" width="1200" height="800" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Tomohiro Ohsumi—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A couple watches a China Eastern Airlines aircraft flying near Haneda Airport, in Tokyo, Japan, April 21, 2019.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">In my childhood, they were the Red Chinese. In my husband’s upbringing, we were the American imperialists. U.S.-China reconciliation after ping-pong diplomacy enabled us to meet and marry 40 years ago. Those of us with a foot in each world find the renewed hostilities of the Donald Trump-Xi Jinping era especially dispiriting and disruptive.</p>
+      <p>The other day, I sent a group message to 25 friends via WeChat, the popular Chinese social media app, bewailing the current atmosphere of official enmity and asking for their thoughts. A retired Chinese scholar immediately gave the group a name: “Old friends of Judy.” A Chinese editor concurred with my dismay over divisive opinion-mongering, writing, “I think the basic formula of the poison is to divide and rule.” A U.S. teacher whose wife is Chinese condemned the “callous jettisoning of hateful remarks” by flawed leaders in both countries.</p>
+      <p>To me, U.S.-China discord is personal. I’m an American whose entire adult life has been intertwined with China. My in-laws are Chinese. My children are Chinese American hybrids. Much of my career in journalism, education, and scholarship has revolved around China. I’ve worked with countless colleagues, students, and friends to expand U.S.-China understanding through teaching, writing, exchange programs, volunteer projects, conversation, and laughter and love.</p>
+      <p>Now, animosity at the highest levels is despoiling decades of cooperation. Combativeness and rivalry drive policy, infiltrate media discourse, galvanize xenophobes, and pervert the meaning of patriotism in both countries. It’s distressing to watch this assault on the prolonged efforts of so many people of goodwill—Chinese and American alike—precisely when times demand the ultimate in global citizenship.</p>
+      <p>Four decades ago, in the summer of 1979, I left my reporting job at a Vermont newspaper to work in Beijing. I’d been interested in China since reading Edgar Snow’s <em><a href="https://www.foreignaffairs.com/reviews/capsule-review/1997-09-01/red-star-over-china" target="_blank" rel="nofollow">Red Star Over China</a></em> in high school, and begun learning Mandarin in college. For two years, I taught in an English-language journalism program at the Institute of Journalism under the Chinese Academy of Social Sciences, coaching a new generation of Chinese journalists on how to engage with the rest of the world. Year three, I joined the staff of the new English-language <em>China Daily</em>. Over time, the paper would become the predictably stolid mouthpiece it is today. But in the early 1980s, it was a place where veteran journalists who’d been hauled out of retirement, repurposed language teachers, rookie reporters, feisty photographers, and a handful of foreigners pioneered a freewheeling experiment in cross-cultural communication.</p>
+      <p>Nixon’s rapprochement with China had rekindled the intermittent love affair between the two countries. After President Carter’s full normalization of relations in 1979, the U.S. liaison office in Beijing was upgraded to embassy status, and liaison officer <a href="https://www.nytimes.com/2001/01/18/us/leonard-woodcock-89-ex-uaw-chief-who-was-an-ambassador-to-china-is-dead.html" target="_blank" rel="nofollow">Leonard Woodcock</a>, former head of the United Auto Workers, became the first U.S. ambassador since the establishment of the People’s Republic of China in 1949. For the first time in 30 years, a U.S. mission in Beijing threw open its doors for Independence Day.</p>
+      <p>I was there that July 4th, along with hundreds of other celebrants. I’d landed in Beijing (via Paris, since there were no direct flights from the U.S.) just two days before.</p>
+      <p>Woodcock and his new wife—he’d married the embassy nurse—oversaw comings and goings at the gate. The receptionist told me 1,200 invitations had gone out, the librarian said 1,400 people had come, and the press attaché said 1,600. Amidst the red, white, and blue décor, the guests—Americans residing in or passing through the Chinese capitol, members of the diplomatic community, and Chinese citizens—circulated through the halls, mingled on the patio and in the living rooms, and drank beer and orange soda and Coca-Cola from plastic glasses.</p>
+      <p>The scene was emblematic of the times: informal, upbeat, and slightly offbeat, with an undercurrent of excitement. The mood throughout China was heady, uncertain but optimistic. The margins were expanding; within the territory of a classroom or a newsroom, we felt we could try just about anything.</p>
+      <p>As relations warmed, tourism and business and educational opportunities expanded, connections grew and suspicions subsided. When I returned to China in the late 1980s for dissertation research on Chinese journalism, my two toddlers in tow, the country was even more open. People seemed giddy with a sense of possibility, no longer tentative about change.</p>
+      <p>That would end abruptly, of course, with the horrors of June 4, 1989, when the Chinese army cracked down on student demonstrators and a period of suppression ensued. The sort of reckless exhilaration we’d seen would never return. Gradually, however, humor and heart and morale did come back. China’s economy roared into high gear. Sino-U.S. commerce burgeoned, scientific collaborations blossomed, cultural exchanges effervesced.</p>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_3 visual-box view-dom-id-dc2eb29af26ecce762e7054c53562446 grid-4 photo-object">
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/polumbaum_students.jpg" title="The Author’s Students, 1979" class="colorbox" data-colorbox-gallery="gallery-node-52346-8lvOdcUjNzA" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/medium/public/assets/images/photo/system/polumbaum_students.jpg?itok=ivJ2duaV" width="620" height="457" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Image courtesy of Judy Polumbaum
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>Judy Polumbaum’s students in front of the Institute of Journalism under the Chinese Academy of Social Sciences, Beijing, Fall 1979.</p>
+          </div>
+        </div>
+      </div>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_3 visual-box view-dom-id-80c2dcd21dbb5e47f7db20906fb4db87 grid-4 photo-object">
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/polumbaum_beijing.jpg" title="Polumbaum in Beijing, 1981" class="colorbox" data-colorbox-gallery="gallery-node-52351-8lvOdcUjNzA" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/medium/public/assets/images/photo/system/polumbaum_beijing.jpg?itok=VwPizYN1" width="620" height="460" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Image courtesy of Judy Polumbaum
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>Judy Polumbaum in Beijing, 1981.</p>
+          </div>
+        </div>
+      </div>
+      <p> </p>
+      <p class="dropcap">Now this. We’ve seen setbacks in Sino-U.S. relations over the years, but, to me, the overall trajectory seemed positive. Then the events of the three years since Trump took office have shredded what many Americans still viewed as the foundations of a constructive relationship, between not only the two governments but also their citizens. Trade in goods and services has been eclipsed by traffic in accusations, provocations, insults, and injuries, capped by wildly <a href="https://www.vanityfair.com/news/2020/04/donald-trump-china-coronavirus-lab-conspiracy" target="_blank" rel="nofollow">unscientific</a> conspiracy <a href="https://www.nytimes.com/2020/03/13/world/asia/coronavirus-china-conspiracy-theory.html" target="_blank" rel="nofollow">theories</a> about the origins of coronavirus.</p>
+      <p>Before normalization, we talked about the importance of “people-to-people” relationships. With our governments locked into a deep freeze, perhaps individuals could rub two sticks together and get a thaw going. I joined the idealistic acolytes of the <a href="https://www.uscpfa.org/" target="_blank" rel="nofollow">U.S.-China People’s Friendship Association</a> and the editorial collective that produced the magazine <em>New China</em>. The <a href="https://www.cpaffc.org.cn/index/xiehui/xiehui_list/cate/12/lang/2.html" rel="nofollow">Chinese People’s Association for Friendship with Foreign Countries</a> hosted motley groups of starry-eyed visitors.</p>
+      <p>Our dreams of global harmony may have been naïve. Yet events brought some vindication. Not to mention, for me, legions of wonderful Chinese colleagues and students and friends, a Chinese spouse, and our two sons—the elder a jazz musician, the younger an emergency doctor. Growing up in the Midwest, they were not quite identifiable, often checked out as different, sometimes tailed or insulted. Like many kids of mixed marriages, they’ve drawn both lessons and strengths from that. Now, when it comes to U.S.-China relations, they’re wondering where the adults have gone.</p>
+      <p>Some of my WeChat correspondents suggest grass-roots determination can stem the escalating rancor. China’s leaders have long used lofty language of international friendship to promote their interests, but we are genuine in our commitment to ordinary friendship. In our “old friends” group, authenticity struggles with the well-worn rhetoric.</p>
+      <p>A retired Chinese teacher of English who is a longtime feminist activist wrote, “Politicians are politicians. We are people. People to people’s friendship will last forever.” Wrote a former student from China who works in Hong Kong, “Politicians come and go no matter where you live, policies shift with time, yet the most authentic element in a relationship is exactly what you are trying to do at this moment with this group of people.”</p>
+      <p>“Politics won’t change people’s friendship,” said a Chinese friend with a Master’s degree in Public Policy from Harvard. She described how China’s Harvard alumni network used U.S. connections to get funds and masks to Wuhan hospitals when coronavirus emerged there, then raised money for Boston area hospitals when the outbreak moved overseas.</p>
+      <p>Others think the deeper currents of mistrust and acrimony are harder to reverse. A Chinese friend in her first year of a U.S. doctoral program said she was accused of “overreacting” when she expressed worry about schoolmates with possible symptoms of COVID-19; less than a week later, her university shut down. Meanwhile, she added, strong emotions are coursing through social media and “tearing apart” families, alumni groups, business associations, and more. “It’s really fighting there, friends for years [breaking] up and quitting,” she wrote in her idiosyncratic English.</p>
+      <p>Another Chinese journalist bemoaned “the toxic impacts of the official manipulation of public opinion” during the pandemic. Leaders in both countries are “intentionally fanning populist feelings” for their own political agendas, he wrote. “They are damaging the fundamentals of this [U.S.-China] relationship, which I’m afraid won’t recover any time soon.”</p>
+      <p>In China, he said, animosity at the highest levels has emboldened the so-called “<a href="https://thediplomat.com/2020/05/interpreting-chinas-wolf-warrior-diplomacy/" target="_blank" rel="nofollow">wolf warriors</a>,” the most belligerent members of the diplomatic and media establishments. All he can do as a journalist, he said, is refuse to contribute to the official narrative and try to share “antidotes to misinformation.”</p>
+      <p>Passive resistance goes only so far. In both countries, international students and employees and visitors grapple with increasingly confusing regulations, compounded by coronavirus constraints. <a href="https://www.aljazeera.com/news/2020/05/tightens-chinese-journalists-entry-tensions-beijing-200509023520273.html" target="_blank" rel="nofollow">Both</a> countries have <a href="https://www.bbc.com/news/world-asia-51938035" target="_blank" rel="nofollow">ejected</a> journalists. Both have jettisoned notions of mutual hospitality.</p>
+      <p>Repercussions for my own cross-cultural family have been Kafkaesque. My partner is a native of China and a U.S. citizen. We both have 10-year visas—readily issued by Chinese consular officials in the U.S. on the basis of a letter from his elderly mother and a copy of her identity card—enabling us to visit family in China. He planned to spend the Lunar New Year holiday in a provincial city with his mother, who has Parkinson’s and is bedridden. Instead, while visiting our niece and her young daughter on China’s east coast as the coronavirus was unfolding to the south, he got trapped by travel restrictions.</p>
+      <p>He was supposed to fly to the U.S. in February. The flights got cancelled. We rebooked him for April. Those flights got cancelled.</p>
+      <p>His visa allows stays of up to 120 days. China granted all visa holders an automatic 60-day extension. That was about to expire. He went to the local police station for another extension. The police fined him for visiting relatives without reporting to them first, and said they couldn’t extend his stay unless he came up with proof that he was his mother’s son.</p>
+      <p>This will be hard. He was born at home in a rural county town a few years after wartime. No birth certificate or other record of his arrival exists. His family name is the commonplace Gao, akin to Miller or Jones in English. His given name was Jianguo: “build the country.” Countless other post-revolution Chinese parents gave their sons the same New China moniker.</p>
+      <p>As a young man, he changed his name—perfectly legal back then, no formalities required—to the more poetic Gao Yuan, meaning “highland” or “plateau.” (If it sounds familiar, you may have read his memoir of the Cultural Revolution, <em><a href="https://books.google.com/books/about/Born_Red.html?id=OrN_UGo9S0UC" target="_blank" rel="nofollow">Born Red</a></em>, published in 1987.) That’s the name on our marriage certificate from 1980, against the backdrop of a Four Modernizations urban skyskape. He sometimes used the pen name Hai Lan, a near homophone for the English translation of Gao Yuan meaning “blue sea.” When he became a naturalized U.S. citizen, he took the American name Karl Gao.</p>
+      <p>Try to track that all back to April 2, 1952, when he emerged from his mother’s womb!</p>
+      <p>With travel within China <a href="https://www.china-briefing.com/news/chinas-travel-restrictions-due-to-covid-19-an-explainer/" target="_blank" rel="nofollow">reopening</a>, he went to see his mother and brother and again sought an extension of his stay. Now, officials demanded even more documentation: not only proof of maternity, but proof that his Chinese residency permit, or <em>hukou</em>, had been cancelled when he left the country with me 38 years earlier. He has no idea where such evidence lies.</p>
+      <p>I booked him on an early June flight back to the U.S. It got cancelled due to U.S.-China <a href="https://www.cnn.com/2020/05/25/business/us-china-tensions-airlines-intl-hnk/index.html" target="_blank" rel="nofollow">squabbles</a> over airline schedules. We’re now looking at mid-July. He expects to be fined and lectured at the airport for overstaying his visa. We hope he won’t be stuck in an interrogation room when his plane takes off. <em>If</em> it takes off.</p>
+      <p>My spirits momentarily rose when Chinese Foreign Minister Wang Yi <a href="https://www.fmprc.gov.cn/mfa_eng/wjbxw/t1782369.shtml" target="_blank" rel="nofollow">appealed</a> for U.S.-China collaboration to defeat the coronavirus. The overture was hardly noticed. China <a href="https://www.scmp.com/news/hong-kong/politics/article/3086489/two-sessions-2020-national-security-law-hong-kong-step" target="_blank" rel="nofollow">tightened</a> the screws on Hong Kong. Trump unleashed his worst screed yet, the one about China having “<a href="https://www.rev.com/blog/transcripts/donald-trump-press-conference-transcript-on-china-hong-kong-and-the-who" rel="nofollow">ripped off</a>” the U.S. Then another white cop <a href="https://www.lrb.co.uk/the-paper/v42/n12/adam-shatz/america-explodes" target="_blank" rel="nofollow">killed</a> another black man in America. Minneapolis erupted. Trump <a href="https://www.nytimes.com/2020/06/03/business/trump-china-flights-ban.html" target="_blank" rel="nofollow">escalated</a> the warfare over airline landing rights. The entire U.S.A. erupted in outrage against systemic racism. Trump returned to attacking the practice of democracy at home, playing right into the hands of those abroad happy to <a href="https://fortune.com/2020/06/03/george-floyd-protest-us-china-hypocrisy-hong-kong/" target="_blank" rel="nofollow">call out</a> our hypocrisies.</p>
+      <p>As I said, this is personal. Will we look back upon the follies of this benighted era and laugh? I hope so. For now, I am heartbroken.<span class="cube"></span></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-06-16</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-16/China-s-Zoom-Bomb/">
+          China’s Zoom Bomb
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-13/Is-Hong-Kong-about-to-Get-Its-Own-Foreign-NGO-Law/">
+          Is Hong Kong about to Get Its Own Foreign NGO Law in the Name of ‘National Security’?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-05</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-05/Scallion-Dutch-Baby/">
+          Scallion Dutch Baby
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-03/Has-COVID-19-Changed-How-China-s-Leaders-Approach/">
+          Has COVID-19 Changed How China’s Leaders Approach National Security?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-09/%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E5%92%8C%E5%8F%96%E8%AF%81%E5%AD%A6%E5%A6%82%E4%BD%95%E5%AF%B9%E4%BB%98-%E6%B7%B1%E5%BA%A6%E9%80%A0%E5%81%87-%E6%9C%89%E5%BE%88%E5%A4%9A%E8%A7%86%E9%A2%91-iYouPort/">
+            前一篇：开源情报和取证学如何对付 深度造假？（有很多视频） - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-10/%E5%8F%8C%E7%AE%A1%E9%BD%90%E4%B8%8B/">
+            後一篇：双管齐下
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-06-09/%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E5%92%8C%E5%8F%96%E8%AF%81%E5%AD%A6%E5%A6%82%E4%BD%95%E5%AF%B9%E4%BB%98-%E6%B7%B1%E5%BA%A6%E9%80%A0%E5%81%87-%E6%9C%89%E5%BE%88%E5%A4%9A%E8%A7%86%E9%A2%91-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-06-10/%E5%8F%8C%E7%AE%A1%E9%BD%90%E4%B8%8B/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-06-13/Is-Hong-Kong-about-to-Get-Its-Own-Foreign-NGO-Law/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-06-05/Scallion-Dutch-Baby/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-06-09/%E5%BC%80%E6%BA%90%E6%83%85%E6%8A%A5%E5%92%8C%E5%8F%96%E8%AF%81%E5%AD%A6%E5%A6%82%E4%BD%95%E5%AF%B9%E4%BB%98-%E6%B7%B1%E5%BA%A6%E9%80%A0%E5%81%87-%E6%9C%89%E5%BE%88%E5%A4%9A%E8%A7%86%E9%A2%91-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-06-10/%E5%8F%8C%E7%AE%A1%E9%BD%90%E4%B8%8B/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-06-13/Is-Hong-Kong-about-to-Get-Its-Own-Foreign-NGO-Law/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-06-05/Scallion-Dutch-Baby/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

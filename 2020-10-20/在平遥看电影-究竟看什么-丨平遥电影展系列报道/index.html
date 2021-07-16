@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>在平遥看电影，究竟看什么？丨平遥电影展系列报道 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+在平遥看电影，究竟看什么？丨平遥电影展系列报道
+——
+" />
+    <meta property="og:description" content="
+在平遥看电影，究竟看什么？丨平遥电影展系列报道
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="在平遥看电影，究竟看什么？丨平遥电影展系列报道" />
+    <meta property="twitter:title" content="在平遥看电影，究竟看什么？丨平遥电影展系列报道" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fm.allnow.com%2Fpost%2F5f8eb9813a3e1027782870dc" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://m.allnow.com/post/5f8eb9813a3e1027782870dc" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://m.allnow.com/post/5f8eb9813a3e1027782870dc&text=在平遥看电影，究竟看什么？丨平遥电影展系列报道&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://m.allnow.com/post/5f8eb9813a3e1027782870dc&title=在平遥看电影，究竟看什么？丨平遥电影展系列报道" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://m.allnow.com/post/5f8eb9813a3e1027782870dc&title=在平遥看电影，究竟看什么？丨平遥电影展系列报道" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=在平遥看电影，究竟看什么？丨平遥电影展系列报道&body=
+在平遥看电影，究竟看什么？丨平遥电影展系列报道
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://m.allnow.com/post/5f8eb9813a3e1027782870dc" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://m.allnow.com/post/5f8eb9813a3e1027782870dc&title=在平遥看电影，究竟看什么？丨平遥电影展系列报道&caption=
+在平遥看电影，究竟看什么？丨平遥电影展系列报道
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=在平遥看电影，究竟看什么？丨平遥电影展系列报道&url=https://m.allnow.com/post/5f8eb9813a3e1027782870dc" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>在平遥看电影，究竟看什么？丨平遥电影展系列报道</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-10-20
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 余雅琴</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://m.allnow.com/post/5f8eb9813a3e1027782870dc" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1603249646000-->
+<p><a href="https://m.allnow.com/post/5f8eb9813a3e1027782870dc">在平遥看电影，究竟看什么？丨平遥电影展系列报道</a>
+——</p>
+
+<div>
+  <p>第四届平遥国际电影展在遗憾和争议中落下了帷幕，给观众留下了很多回忆和谈资。回望本届电影节，最受争议的是选片部分，竞赛和展映单元都出现了一些网友评价中的“现象级”烂片。与之形成对比的是，观影成为一种狂欢，很多影迷一边抱怨“电影太难看”，一边在转票群里求票观看“烂片”。</p>
+  <p> </p>
+  <p>整个2020年，受疫情影响，全球电影节都面临选片困难的问题；不论是国际A类电影节，还是国内其他影展，都要面对影片质量良莠不齐的问题。受制于院线关闭等问题，不少对票房和奖项更有企图心的电影作品，都可能会故意避开整个2020年的电影节评选。</p>
+  <p> </p>
+  <p>作为一个对标圣丹斯电影节的影展来说，评奖单元是艺术性和商业性并举的，因此设置了更偏重艺术片的“卧虎”单元和以类型片为主的“藏龙”单元。但可能是由于受到疫情的影响，今年在选片设置上做了调整，“卧虎”单元改为外语片竞赛和“藏龙”单元则是国产片竞赛。</p>
+  <p> </p>
+  <p>因此，“藏龙”单元自然成为最受媒体和观众重视的部分，云集了张大磊的《蓝色列车》、魏书钧《野马分鬃》、宋方的《平静》、王晶的《不止不休》等此前备受媒体期待的作品，以及诸如李冬梅《妈妈和七天时间》、韩帅《汉南夏日》、胡杨轶《伊比利亚的派对》等令人惊喜或“惊吓”的新人新作。</p>
+  <p> </p>
+  <p>这些新的电影共同构建出2020年中国电影的一个面貌，尽管在未来的市场表现上它们或许平平，但仔细考察也不难发现，在纷繁的题材和截然不同的评价背后，折射出了当下电影创作所面临的部分相似问题和困境。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-20/5f8eb9ada4188f00015361b3.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>宋方《平静》剧照</p>
+    </figcaption>
+  </figure>
+  <h2 id="section">对电影本质的探索</h2>
+  <p> </p>
+  <p>电影是什么？这本是老生常谈的问题。自电影技术诞生到现在，无数的理论家和艺术家都曾对电影本质进行过探讨和探索。在媒介过于发达的今天，各种新媒体层出不穷，电影本质的问题再次成为电影创作者需要去思考和面对的问题。</p>
+  <p> </p>
+  <p>这类反身性电影（reflexive cinema）——关于电影、关于电影人的电影，也被称为元电影（metacinema）。这类电影用电影去思考电影本体，在凸显电影本身的同时，不断深化对电影艺术本质的思考；不仅是对这项艺术的丰富与补充，更是对电影艺术何以能够成为独立的艺术而展开的探索。</p>
+  <p> </p>
+  <p>随着新技术的发展，我们对电影的理解正在发生巨大的变化：从胶片到数码再到VR，从大银幕到小屏幕，从影院到流媒体，不同的电影人对电影边界的理解正在发生变化。在这个过程中，不少电影也在用电影的方式，去思考和回应这个问题。</p>
+  <p> </p>
+  <p>张大磊《蓝色列车》、魏书钧《野马分鬃》、杨平道《裂流》，都一定程度地表达了电影作者对媒介和电影工作本身的思考、怀旧和戏谑。</p>
+  <p> </p>
+  <p>《蓝色列车》无数次出现电视机屏幕播放着老电影，它们试图召唤出一代人的东欧情结，也将电影中的电影故事和电影中的人物命运进行了一种互文。</p>
+  <p> </p>
+  <p>魏书钧《野马分鬃》入围了今年“戛纳2020”片单，是本届影展最受瞩目的作品。它讲述的故事很简单：学录音专业的男主角正在度过自己荷尔蒙旺盛且充满“无因反叛”的大学最后岁月，他一边混剧组，一边渴望着一场说走就走的旅行，还和女演员发生了一段似有似无的爱情……这部电影，除了是一部青春公路片之外，还是一部关于电影的电影，也是一部彻底的“迷影电影”。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-20/5f8eba89d7f8a70001ef0c88.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p> </p>
+    </figcaption>
+  </figure>
+  <p>在“元电影”叙事的道路上走得最远的，是杨平道的《裂流》。电影的开篇就“致敬”了导演自己的成名作《生命的河流》，电影中的导演杨平道和一群朋友在山洞中放映自己的作品。有学者早就指出，柏拉图提出的“洞穴理论”和电影具有相关性：当代的影院就是一个黑暗的洞穴，它能混淆人对真实的认识，以假乱真。《裂流》的开头，既是对电影本体的致敬，也暗示着人们接下来的剧情走向也是一个“以假乱真”的故事。</p>
+  <p> </p>
+  <p>整部电影以“伪纪录片”的方式展开叙事，讲述了男导演对自己的妻子的怀疑和对女实习生的性欲望，就在观众相信眼前是一个彻头彻尾的“渣男”的时候，他又颠覆了这个故事……</p>
+  <p> </p>
+  <p>这部电影最终获得了平遥国际电影展的“迷影选择荣誉奖”，可谓实至名归。它用两万元的极低成本表达了作者对电影本体的探索，展现了拍电影的终极乐趣之一——操控和调动观众的情绪。</p>
+  <p> </p>
+  <p>无独有偶，今年在FIRST青年电影展上斩获大奖的影片《情诗》也是一部关于导演和自己妻子的故事，表达了作者对创作的焦虑，为了拍出电影，他不得不“利用”妻子的家人来刺激她的反映……与《裂流》一样，《情诗》作为一部“反身性”电影表达了年轻一代人对电影本质的思考。</p>
+  <p> </p>
+  <h2 id="section-1">普遍的男性焦虑</h2>
+  <p> </p>
+  <p>需要指出的是，《裂流》也存在它自身的问题，比如电影流露出的男性对女性的态度是令人不适的。这部电影的拥趸以电影结尾反转来说明作品对“油腻”男性的反思，但观众尤其是女性观众依然可以从这部电影的镜头对女性身体的放大、台词的不加节制中感受到冒犯。这种冒犯是隐形的，甚至不是导演的本意，观众一方面可以感受到杨平道对中年男性生命状态的反思，一方面又可以感受到他对自己能拥有这样反思能力的“炫耀”。某种程度上说，这部电影可以被看做研究当下中国男性普遍性焦虑的研究文本来看待。</p>
+  <p> </p>
+  <p>值得玩味的是，观察这次影展的不少电影，男性的生命焦虑几乎覆盖了大部分男性导演的作品，它们无不直接体现出某种集体性“中年危机”：《蓝色列车》讲述了一个男人寻找自己过去恋人的故事，这个女人因为男人入狱而选择离开；《野马分鬃》中的男主角也有一位相爱的女友，后因男人的不够成熟而选择离去；《裂流》中的女性形象更是集中代表了男性对女性的两种期待：清纯与性感。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-20/5f8eba65d7f8a70001ef0c87.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>《蓝色列车》海报</p>
+    </figcaption>
+  </figure>
+  <p>藏族导演德格才让的《他与罗耶戴尔》，也强烈地反映出年轻男性的生存困境。这是一个在传统和现代的夹缝中迷失的藏区年轻人的故事。男主角本来是一位原生态歌手，渴望去西宁录制专辑。在这个过程里，他得到姐姐嫁妆钱的资助，又在城里得到女友的无私帮助，终于录制完成之际，他才意识到自己失去了很多，而他的女神罗耶戴尔和自己爱慕的姑娘一模一样……电影可以看作是一个寓言，但偏偏设定每一个女性都倾其所有地为男主付出，不得不让人感到一些疑惑。</p>
+  <p> </p>
+  <p>一边是渴望忠贞不二的女性，一边是无法控制情感的溢出；一边是建功立业、远离家乡的欲望，一边又在期待失意之际的不离不弃。这些电影风格不同，分别讲述了少年、中年、老年的男性焦虑，尽管在不同时代不同处境当中，男性的个体生命体验并非相同。这很难说是中国男性的普遍性认知局限，却可能反映出当下青年男导演的集体性潜意识。</p>
+  <p> </p>
+  <p>当然，对于男性焦虑的展现是重要的艺术主题，也是父权制衰落过程中的必然产物，与其说是题材的问题，不如说是创作思路的问题。从公共媒体的舆论环境来看，随着近年来的一系列思潮和社会事件，性别意识的自觉性和性别问题的讨论正在增加，年轻一代不仅拥有强大的消费力，也拥有更好的性别意识。此前，抗疫电视剧《最美逆行者》就因为主创塑造女性角色时完全凭借想象被网友痛批。</p>
+  <p> </p>
+  <h2 id="section-2">女性创作者崛起</h2>
+  <p> </p>
+  <p>相比较而言，从此次影展来看，女导演的表现亮眼，宁元元、韩帅、宋方、李冬梅等各有风格，展现出不同的风格和面貌。在后#me too时代中，女导演不再是一个电影节的配角，而渐渐成为了电影创作的中坚力量。</p>
+  <p> </p>
+  <p>第六代导演张元的22岁的女儿宁元元，拍摄了一部关于早恋的青春成长电影《小事儿》。虽然瑕疵不少，但也有效地传达了年轻一代女性对自我成长的一种关照。而电影学博士韩帅的处女作《汉南夏日》是一段少女成长史：被母亲“抛弃”的女孩在经历了同伴的偶然死亡事件后，不得不面对生活的真相和残酷。这部电影以“初潮”作为隐喻表达了女导演对女性成长过程中的阵痛。与此同时，作为娄烨研究者，韩帅在影像上多少也受到影响，可以在她的电影里看到很成熟的手持摄影，以及小空间里的高难度调度，体现出难得的完整性。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-20/5f8eb9ffd7f8a70001ef0c84.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p> 《汉南夏日》剧照</p>
+    </figcaption>
+  </figure>
+  <p>宋方的《平静》带有很强的导演个人生活色彩，电影讲述了女导演如何度过了自己失恋之后的一段时间。电影以去戏剧化冲突的方式，将一段私人生活以影像的方式表达出来。这部电影将知识女性在家庭、情感和事业中的困境和危机以近乎于寡淡的方式进行了再现，尽管不是一部很好进入的电影，却很容易得到知识女性的共鸣。在面对个人生命中的困境时，宋方选择了内心的痛苦，在华语电影中建立了一套比较独特的女性电影语法。</p>
+  <p> </p>
+  <p>李冬梅的《妈妈和七天的时间》则关于自己的一段童年往事，小咸的母亲即将临盆，她们一起度过了看似波澜不惊的七天，谁也没有想到命运正在看不见的地方左右着生命的走向，母亲难产去世……用法国著名电影杂志《电影手册》杂志主管、著名电影评论家Marcos Uzal（马克斯·乌扎尔）的话来说，这部电影“对纯粹与极简的追求”为表现形式，“满足了对一个电影节最大的期待”。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-20/5f8eba1ca4188f00015361b5.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p> </p>
+    </figcaption>
+  </figure>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-20/5f8eba2ea4188f00015361b6.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>  《妈妈和七天的时间》剧照</p>
+    </figcaption>
+  </figure>
+  <p>对个人命运的理解，这部电影的切入点虽是私人的，却将人类的普遍性命运进行了勾连。尽管对观众提出了一定的挑战，但随着故事的徐徐展开，我们看到母亲的死亡，以及乡村的生生死死的轮回，定会对自己的命运进行重新的审视。</p>
+  <p> </p>
+  <p>在无意间，这三部电影展现了女性不同阶段的生命历程；与男性导演的焦虑不同，女导演反而试图表达更具有超越性的哲学思考。她们不回避自己的性别立场，但勇于超越出来，表现出一种令人惊讶的创作力。</p>
+  <p> </p>
+  <p>创办四年以来，就赵婷的《骑士》、文晏的《嘉年华》、白雪的《过春天》等在平遥电影展亮相的女性电影来看，平遥电影展一直十分注意对女性导演和女性题材的扶持。这些女性导演的作品，不仅涉及到性别议题，还有社会事件、时代剧变等等丰富的题材。</p>
+  <p> </p>
+  <p>遗憾的是，伴随着贾樟柯宣布退出的突发新闻，对比电影中各种各样的魔幻现实，本届平遥电影展在电影内外形成了一种有趣的互文性；在重新审视这些电影时，它们形成了某种向电影节提问的隐喻：在一切都猝不及防的当下，电影是什么，什么才是电影的希望？</p>
+  <p> </p>
+  <p>_______________</p>
+  <p>请微信搜索关注公众号“全现在”，朋友圈的世界也会不一样。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2020-10-22</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-22/%E5%8D%81%E5%B9%B4%E7%A0%8D%E6%9F%B4-%E5%BC%A0%E5%AE%8F%E6%9D%B0%E8%AE%BF%E8%B0%88%E4%B9%8B%E4%BA%8C-%E5%B8%9D%E5%9B%BD%E5%AE%98%E5%9C%BA%E7%94%9F%E6%80%81%E4%B8%8B%E7%9A%84%E6%B8%85%E5%AE%98%E4%B8%8E%E8%B4%AA%E5%AE%98/">
+          十年砍柴、张宏杰访谈之二：帝国官场生态下的清官与贪官
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-21</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-21/%E5%8D%81%E5%B9%B4%E7%A0%8D%E6%9F%B4-%E5%BC%A0%E5%AE%8F%E6%9D%B0-%E5%B8%9D%E5%9B%BD%E5%AE%98%E5%9C%BA%E7%94%9F%E6%80%81%E4%B8%8B%E7%9A%84%E8%85%90%E8%B4%A5%E4%B8%8E%E5%8F%8D%E8%85%90%E8%B4%A5/">
+          十年砍柴、张宏杰：帝国官场生态下的腐败与反腐败
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-19/%E5%B8%83%E5%85%8B%E5%A5%96%E5%88%9B%E5%A7%8B%E4%BA%BA%E6%B1%A4%E5%A7%86-%E9%A9%AC%E6%96%BD%E5%8B%92%E9%80%9D%E4%B8%96-%E5%87%BA%E7%89%88%E4%BA%BA%E6%80%BB%E6%98%AF%E8%BA%AB%E5%A4%84%E5%86%B2%E7%AA%81%E4%B9%8B%E4%B8%AD-%E4%BD%86%E6%88%91%E5%8F%AA%E6%98%AF%E6%83%B3%E5%87%BA%E7%89%88%E5%A5%BD%E4%B9%A6/">
+          布克奖创始人汤姆·马施勒逝世：“出版人总是身处冲突之中，但我只是想出版好书”
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-19/%E6%98%8E%E4%BB%A3%E7%9A%84%E5%A3%AB%E4%BA%BA%E7%94%9F%E6%B4%BB-%E6%96%87%E5%8C%96%E9%A3%8E%E6%99%AF%E4%B8%8E%E5%8E%86%E5%8F%B2%E7%8E%B0%E5%9C%BA%E6%84%9F/">
+          明代的士人生活、文化风景与历史现场感
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-20/%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E7%85%A7%E7%89%87%E4%B9%9F%E8%83%BD%E6%89%BE%E5%88%B0%E5%85%83%E6%95%B0%E6%8D%AE%E7%97%95%E8%BF%B9%E4%BB%A5%E5%AE%9E%E7%8E%B0%E8%BF%BD%E8%B8%AA-%E8%BF%99%E4%BB%B6%E4%BA%8B%E6%80%8E%E4%B9%88%E5%81%9A-iYouPort/">
+            前一篇：社交媒体照片也能找到元数据痕迹以实现追踪，这件事怎么做？ - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-21/%E5%8D%81%E5%B9%B4%E7%A0%8D%E6%9F%B4-%E5%BC%A0%E5%AE%8F%E6%9D%B0-%E5%B8%9D%E5%9B%BD%E5%AE%98%E5%9C%BA%E7%94%9F%E6%80%81%E4%B8%8B%E7%9A%84%E8%85%90%E8%B4%A5%E4%B8%8E%E5%8F%8D%E8%85%90%E8%B4%A5/">
+            後一篇：十年砍柴、张宏杰：帝国官场生态下的腐败与反腐败
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-10-20/%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E7%85%A7%E7%89%87%E4%B9%9F%E8%83%BD%E6%89%BE%E5%88%B0%E5%85%83%E6%95%B0%E6%8D%AE%E7%97%95%E8%BF%B9%E4%BB%A5%E5%AE%9E%E7%8E%B0%E8%BF%BD%E8%B8%AA-%E8%BF%99%E4%BB%B6%E4%BA%8B%E6%80%8E%E4%B9%88%E5%81%9A-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-10-21/%E5%8D%81%E5%B9%B4%E7%A0%8D%E6%9F%B4-%E5%BC%A0%E5%AE%8F%E6%9D%B0-%E5%B8%9D%E5%9B%BD%E5%AE%98%E5%9C%BA%E7%94%9F%E6%80%81%E4%B8%8B%E7%9A%84%E8%85%90%E8%B4%A5%E4%B8%8E%E5%8F%8D%E8%85%90%E8%B4%A5/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-10-21/%E5%8D%81%E5%B9%B4%E7%A0%8D%E6%9F%B4-%E5%BC%A0%E5%AE%8F%E6%9D%B0-%E5%B8%9D%E5%9B%BD%E5%AE%98%E5%9C%BA%E7%94%9F%E6%80%81%E4%B8%8B%E7%9A%84%E8%85%90%E8%B4%A5%E4%B8%8E%E5%8F%8D%E8%85%90%E8%B4%A5/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-10-19/%E5%B8%83%E5%85%8B%E5%A5%96%E5%88%9B%E5%A7%8B%E4%BA%BA%E6%B1%A4%E5%A7%86-%E9%A9%AC%E6%96%BD%E5%8B%92%E9%80%9D%E4%B8%96-%E5%87%BA%E7%89%88%E4%BA%BA%E6%80%BB%E6%98%AF%E8%BA%AB%E5%A4%84%E5%86%B2%E7%AA%81%E4%B9%8B%E4%B8%AD-%E4%BD%86%E6%88%91%E5%8F%AA%E6%98%AF%E6%83%B3%E5%87%BA%E7%89%88%E5%A5%BD%E4%B9%A6/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-10-20/%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E7%85%A7%E7%89%87%E4%B9%9F%E8%83%BD%E6%89%BE%E5%88%B0%E5%85%83%E6%95%B0%E6%8D%AE%E7%97%95%E8%BF%B9%E4%BB%A5%E5%AE%9E%E7%8E%B0%E8%BF%BD%E8%B8%AA-%E8%BF%99%E4%BB%B6%E4%BA%8B%E6%80%8E%E4%B9%88%E5%81%9A-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-10-21/%E5%8D%81%E5%B9%B4%E7%A0%8D%E6%9F%B4-%E5%BC%A0%E5%AE%8F%E6%9D%B0-%E5%B8%9D%E5%9B%BD%E5%AE%98%E5%9C%BA%E7%94%9F%E6%80%81%E4%B8%8B%E7%9A%84%E8%85%90%E8%B4%A5%E4%B8%8E%E5%8F%8D%E8%85%90%E8%B4%A5/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-10-21/%E5%8D%81%E5%B9%B4%E7%A0%8D%E6%9F%B4-%E5%BC%A0%E5%AE%8F%E6%9D%B0-%E5%B8%9D%E5%9B%BD%E5%AE%98%E5%9C%BA%E7%94%9F%E6%80%81%E4%B8%8B%E7%9A%84%E8%85%90%E8%B4%A5%E4%B8%8E%E5%8F%8D%E8%85%90%E8%B4%A5/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-10-19/%E5%B8%83%E5%85%8B%E5%A5%96%E5%88%9B%E5%A7%8B%E4%BA%BA%E6%B1%A4%E5%A7%86-%E9%A9%AC%E6%96%BD%E5%8B%92%E9%80%9D%E4%B8%96-%E5%87%BA%E7%89%88%E4%BA%BA%E6%80%BB%E6%98%AF%E8%BA%AB%E5%A4%84%E5%86%B2%E7%AA%81%E4%B9%8B%E4%B8%AD-%E4%BD%86%E6%88%91%E5%8F%AA%E6%98%AF%E6%83%B3%E5%87%BA%E7%89%88%E5%A5%BD%E4%B9%A6/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

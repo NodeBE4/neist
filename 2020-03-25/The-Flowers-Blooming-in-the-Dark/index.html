@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>The Flowers Blooming in the Dark – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+The Flowers Blooming in the Dark
+——
+" />
+    <meta property="og:description" content="
+The Flowers Blooming in the Dark
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="The Flowers Blooming in the Dark" />
+    <meta property="twitter:title" content="The Flowers Blooming in the Dark" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Flibrary%2Fnyrb-china-archive%2Fflowers-blooming-dark" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark&text=The Flowers Blooming in the Dark&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark&title=The Flowers Blooming in the Dark" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark&title=The Flowers Blooming in the Dark" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=The Flowers Blooming in the Dark&body=
+The Flowers Blooming in the Dark
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark&title=The Flowers Blooming in the Dark&caption=
+The Flowers Blooming in the Dark
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=The Flowers Blooming in the Dark&url=https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>The Flowers Blooming in the Dark</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-03-25
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Ian Johnson</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1585152000000-->
+<p><a href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark">The Flowers Blooming in the Dark</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-9143e989765c22292f3cd85dc8826fb5">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-2516661.jpg" title="The Flowers Blooming in the Dark" class="colorbox" data-colorbox-gallery="gallery-node-52191-F19nxxIGmEs" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-2516661.jpg?itok=g4vlMv8T" width="1200" height="799" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+(Getty Images)
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A visitor reads ‘One Day in 2003,’ a diary story also broadcast over a loudspeaker at The Factory, which housed exhibitions during the first Beijing International Art Biennale, in northern Beijing, September 21, 2003.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">Ever since the founding of the People’s Republic in 1949, Chinese people have sought to give voice to how they would like their country to be run. In 1956, Mao Zedong announced a brief flourishing of free speech called the “Hundred Flowers Campaign,” referring to a vibrant era in antiquity that gave rise to Confucianism, Daoism, Legalism, and other ideas that went on to dominate Chinese thought for thousands of years. Of course, Mao didn’t really want such an atmosphere to take hold; it was a trap, and people who spoke out in favor of political reform or against government abuses were quickly snapped up by the security apparatus. China entered a 20-year period of brutal policies that only ended with Mao’s death and the purging of his allies in the late 1970s.</p>
+      <p>In 1978, Deng Xiaoping began to relax government control over the economy and society, allowing a freewheeling decade of spirited discussion in which the country’s future seemed up for grabs. It ended with the 1989 Tiananmen massacre, setting China on what many people now take to be its inevitable course: that of a development dictatorship, in which economic growth is guided by a repressive state that brooks little opposition.</p>
+      <p>And yet it’s possible to identify another period that might surpass the 1980s as China’s most open: a 10-year stretch beginning around the turn of this century, when a rich debate erupted over what lay ahead. As in the past, many of those speaking out were establishment intellectuals who were careful not to challenge too directly the Communist Party’s right to rule but took advantage of the relatively relaxed social policies championed by Deng’s successors, Jiang Zemin and Hu Jintao, to launch a sophisticated discussion about how China should be run and its place in the world.</p>
+      <p>Even more remarkably, this period brought the rise of grassroots thinkers and dissidents who took advantage of new, harder-to-control forms of expression, such as blogs, independent documentary films, underground art movements, and social media. Taken together, these (often angrily opposed) groups of people created what is arguably the most coherent discussion of China’s future since the founding of the People’s Republic—indeed, perhaps since the epochal May 4th Movement of 1919, when writers and thinkers overturned tradition and set China’s course for the next century.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">The competing academic voices fall into three schools of thought: liberals, leftists, and new Confucians. That’s the framework adopted by Timothy Cheek, David Ownby, and Joshua A. Fogel, three Canada-based academics, in <em>Voices from the Chinese Century: Public Intellectual Debate from Contemporary China</em>. This ambitious effort to bring to an English-reading audience many of China’s most important contemporary scholars builds on work that originally appeared on the website <em>Reading the China Dream</em>, a guide to the intellectual life of early-21st-century China.</p>
+      <p>Almost all of the contributors to the collection are university professors; they are <em>tizhinei</em>, or “inside the system”—not dissidents, artists, bloggers, or social activists. These academics are responding in the long tradition of Confucian scholars who see it as their duty to <em>youguo youmin</em>, or “worry about one’s nation and one’s people,” a practice that continued after the Communist takeover of 1949.<sup id="fnr1"><a href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fn1" rel="nofollow">1</a></sup> The opening essay, “‘Unifying the Three Traditions’ in the New Era,” is by the leftist scholar Gan Yang, who calls on his fellow citizens to go beyond the debates that have riven China since the May 4th Movement: whether to follow some sort of Western model of classical economic and rights-based liberalism (the liberals); to offer a revolutionary alternative, even if this involves embracing an authoritarian state (the leftists); or to return to some form of modernized Confucianism, with its call for moral responsibilities and duties. Of these schools of thought, the liberal voices have by far the hardest time today, because they have been systematically silenced by the government.</p>
+      <p>Rong Jian, for instance, is a former doctoral candidate who dropped out of school after the Tiananmen crackdown. Now a private entrepreneur, he is well known for penetrating essays like “A China Bereft of Thought,” which is included here. Originally published in 2013, the now-banned essay describes “what happens to the production and dissemination of thought under an oppressive state power.”</p>
+      <p>Rong dismisses Confucianism as having lost its relevance a century ago with the collapse of the imperial system that it underpinned, while he sees Marxism as something that was only dimly understood by Communist Party leaders and never really applied. Instead, he says, the Chinese revolution was rooted in the search for power, “not weighed down by moral values and concerns.” He sees it as completely unsurprising that Deng, Mao’s successor, abandoned even the pretense of communism for a pragmatic policy of “crossing the river by feeling the stones”—an ideology that basically means that anything goes as long as the economy develops and the Party stays in power.</p>
+      <p>Likewise, Deng’s successor, Jiang, lacked the principles to follow through on his own cornerstone idea, which was that different forces in society should be represented politically. As for academics, he says that they have become professionals who follow Party directives on what can be researched and published. What China needs is a marketplace of ideas, he writes, but what it gets is an overbearing state: “This is a power structure unlimited in any way by institutional and legal restraints, let alone by moral constraints. Indeed, we would not be able to find an enduring set of ideas, beliefs, meanings, or values within this power structure.”</p>
+      <p>As outspoken as Rong is the Tsinghua sociologist Guo Yuhua, who has spent two decades researching impoverished mountain villagers in Shaanxi province. In “Original Intentions Start with the People,” Guo takes aim at China’s urban redevelopment, which she says is undertaken not for local residents but to reflect the vision of a megalomaniacal state. The collection includes an interview with Guo about her work treating communism as a civilization with its own myths, structures, and lies. For instance, the government’s land reform policy in the 1940s and 1950s is still a foundational myth justifying the Party’s usurpation of power, but she writes that it “was clearly not an objective, but rather a means of mobilizing people during the war, expanding the military, and winning over the people.”</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">Among the views in <em>Voices</em>, these liberal arguments are by far the most interesting, provocative, and relevant, while the arguments from the leftists and new Confucians tend to be unreflective and self-serving. That does not make them unimportant—especially as they represent mainstream thought in today’s China—but they offer few real solutions to the country’s problems.</p>
+      <p>One of these problems is how to deal with the Communist state’s history, but the only leftist here reckoning with the past is Qian Liqun, a retired Peking University literature professor. In “Mao Zedong and His Era,” first published in 2012, he writes that in order for China to move ahead with its socialist project, it must embark on a “thorough critique and assessment of Mao Zedong Thought and culture.” This essay is all the more remarkable because he implicates himself as an enthusiastic follower who bears personal responsibility for his generation’s often blind obedience to Mao and the state. He takes aim at those who acknowledge Mao’s errors but say they were worth the price because Mao restored China’s territorial integrity, industrialized the country, and helped address social problems, such as the status of women and illiteracy—an argument Qian calls “price theory.” “Whenever I hear this price theory,” he writes, “I get all fired up; do they really know what price was paid? The death of millions or even tens of millions. In my view, the death of one person is one too many, let alone tens of millions.”</p>
+      <p>This sort of moral clarity is missing in many other leftist writers who gloss over the past and problems in today’s political system. Typical is the Shanghai Normal University historian Xiao Gongqing, a defender of China’s new authoritarianism. In “From Authoritarian Government to Constitutional Democracy” (2012), he writes that democracy is fine and good, but that China needs to grow into it—unwittingly, perhaps, repeating the ideas of Sun Yat-sen from more than a century ago that Chinese people are not ready for democracy and need “political tutelage.”</p>
+      <p>More depressing is the work of Wang Shaoguang, professor emeritus at the Chinese University of Hong Kong and a professor at Tsinghua University. In “Representative Democracy and Representational Democracy” (2014), he uses largely Western sources to point out Western democracy’s problems (although he seems to conflate the West with the United States). Instead of this flawed representative democracy, Wang lauds China’s “representational” democracy, which he says uses feedback mechanisms—internal polling and reports by Party officials—to channel the people’s wishes up to the leadership.</p>
+      <p>As proof that this works, Wang points to opinion polls that show Chinese people have more trust in their government than Westerners have in theirs, although he never explores the effect of censorship and propaganda in these results. He also writes, almost delusionally, that Mao believed in feedback mechanisms, ignoring his paranoid rejection of even loyal dissent during the Great Famine of 1959 to 1961. The essay is larded with charts, tables, and other accoutrements of modern academia but lacks a true spirit of critical inquiry.</p>
+      <p>Likewise, Sun Ge’s “The Significance of Borders” (2017) uses the modern-sounding vocabulary of postcolonial theory to argue in support of the people of Okinawa and their conflicts with the American military presence on their island. It’s not really clear why this essay was included, because it has nothing to do with China’s future, involves no empirical research in Okinawa (the author says she visited it once and seems to have only interviewed a tour guide), and raises the question of why she wouldn’t, like Guo Yuhua, write about China’s own disadvantaged groups—the answer being, of course, that such work would be unpublishable. (Guo’s main works have never been published in China; her book on peasants and Communist civilization was published in Hong Kong, and authorities censored her essay on urban residents.)</p>
+      <p>As for the new Confucian voices, their premise is sympathetic: namely that China’s century of revolution needs some sort of closure, which can perhaps be found in the country’s great philosophical past. Probably the best of the chapters is a five-way exchange among scholars advocating for the formation of some type of Chinese religion, which is exactly what the government is slowly creating.<sup id="fnr2"><a href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fn2" rel="nofollow">2</a></sup> The debate among them is lively, but the idea that the Communist Party would allow a full return of Confucianism is fanciful. As a revolutionary party that came to power committed to overthrowing the social norms and values that Confucianism epitomized, the Party is at best comfortable with using Confucianism’s hierarchical political structure to justify its rule, but not in engaging with its rich philosophical and ethical traditions.</p>
+      <p>Probably the most disappointing contribution is an interview with the reclusive intellectual Jiang Qing. He has previously advocated political reform in China along Confucian lines, but here argues that Confucianism is the ideology that best protects women’s interests. Answering a series of softball questions, he makes largely sophomoric points, such as that premodern societies were better for women because women could enjoy a clearly defined (and subjugated) role, as opposed to the legal equality offered by modern society.</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">One of the stars of <em>Voices from the Chinese Century</em> is Xu Jilin, a historian at East China Normal University in Shanghai who does not fit neatly into any of the three categories. He appears in the book as a liberal, but as Ownby, his translator, points out, he bridges a certain gap. Xu argues against slavishly following the West and expresses sympathy for China’s Confucian past (although not for most new Confucian intellectuals, whom he sees as lightweights).</p>
+      <p>He writes, in an essay from 2008, on Wang Yuanhua, a Communist Party member who was persecuted in the 1950s for speaking out against Mao’s efforts to control culture. Xu sees Wang as emblematic of how liberalism has been heavily persecuted in China, a worthwhile reflection but only a small slice of Xu’s intellectual range. While many of the authors in the volume, especially among the leftists and new Confucians, have a fairly limited repertoire, Xu is a broad thinker with much to say about China and the world.</p>
+      <p>In his book <em>Rethinking China’s Rise: A Liberal Critique</em>, Xu gives a wide-ranging analysis of China’s recent history. His main point is that China has headed down the dangerous path of historicism—the belief that universal values do not exist and that everything is determined by national history. He argues instead for what he calls “modern civilization,” which he says is made up of two elements: the defense of values and the pursuit of wealth and power.<sup id="fnr3"><a href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fn3" rel="nofollow">3</a></sup> While China has assiduously pursued the latter, it has failed to engage with the former, claiming—like other authoritarian countries around the world—that universal values don’t apply to it:</p>
+      <blockquote>
+        <p>Chinese today are like nineteenth-century Europeans, bursting with ambition, industrious and thrifty, full of greed and desire; they believe that the weak are meat for the strong and that only the apt survive—they are vastly different from traditional Chinese, who prized righteousness over profit and were content with moderation. What kind of victory is this? . .</p>
+        <p>We’re like Japan in the nineteenth century, and what we’re seeing is the report card of a student that copied Western civilization. It’s the report card of a seriously unrounded student.</p>
+      </blockquote>
+      <p>What China hasn’t grasped, Xu writes, is the distinction between civilization and culture. The new world civilization, he argues, embraces common values for all of humanity. Culture, by contrast, is specific, but need not come into conflict with those common values—the concept of rights, for example, can be found in Chinese tradition. Xu holds that China’s behavior resembles that of 19th-century Germany, which believed that its <em>Kultur</em> was superior to Anglo-Saxon <em>Zivilisation</em>, a view that led German elites to justify their country’s slide toward militarism and fascism.</p>
+      <p>Of direct relevance to today’s events—one thinks immediately of Xinjiang’s reeducation camps for religious Uighurs—are Xu’s comments on ethnic (or Han) Chinese. They make up 92 percent of the population of the People’s Republic, and he argues that they have imposed their views on China’s other 55 ethnicities. This is because the Han-dominated state’s vision fails to offer universal values that would appeal to the country’s non-Chinese ethnicities. Xu cautions that pushing “forced assimilation [will] incite a sort of cultural backlash. This means that no religion (including Confucianism, Daoism, Buddhism, Christianity, and Islam) can serve as the national religion supporting a legal-political system.”</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">The 16 writers included in <em>Voices from the Chinese Century</em> represent China’s academic elite, which in a country dominated by ethnic Chinese men means that women’s voices are notably absent: only three of the 16 contributors are women; none are minority writers. The solution is to search outside China’s ivory towers. There one finds much more variety, not only in race and gender but in the kinds of ideas that circulate.</p>
+      <p>It is this vibrant circle of non-elite intellectuals that is the focus of Sebastian Veg’s <em>Minjian: The Rise of China’s Grassroots Intellectuals</em>. The book gives us a glimpse into the hidden, private, more broadly representative <em>yin</em> world of Chinese thought, as opposed to the public, masculine <em>yang</em> world of the country’s Party-dominated academic establishment.</p>
+      <p>Veg has provided us the first fully rounded description of the creation of this new class of thinkers, artists, and filmmakers. The people he includes might have a foot in the official world—perhaps as marginalized academics who still tenuously hold posts—but they are also active outside the Party apparatus. Veg usefully analyzes this development by drawing on Michel Foucault’s description of how Western intellectuals moved from pontificating on universal themes to focusing on specific areas in which they possess specialized knowledge. Using this expertise, they could intervene effectively in public debates, often on behalf of vulnerable groups.</p>
+      <p>In China, the digital revolution supported a similar trend, making it possible to shoot a film with a handheld camera or publish a samizdat journal as a PDF without the help of government-controlled studios or publishing houses. Since the late 1990s, writers and thinkers have produced groundbreaking historical journals, important underground documentary films, and articles in the digital press.</p>
+      <p>Some of these publications are truly remarkable, such as the biweekly historical journal <em>Ji Yi</em> (<em>Remembrance</em>), which continues to be published despite occasional government efforts to silence its editors. It focuses on the history of the early Mao years, and even promoted an effort to encourage the perpetrators of violence to apologize for their actions.<sup id="fnr4"><a href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fn4" rel="nofollow">4</a></sup></p>
+      <p>Other grassroots historians have made some of the most enduring documentaries of the Reform Era, such as the Nanjing-based Hu Jie, whose film <em>Searching for Lin Zhao’s Soul</em> chronicles the life and eventual execution of a Christian activist during the Cultural Revolution.<sup id="fnr5"><a href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fn5" rel="nofollow">5</a></sup> Also notable is the filmmaker Ai Xiaoming for her work on the Jiabiangou labor camp, where thousands of Mao’s victims were worked and starved to death. Journalists have joined this movement, too, including the journalist Jiang Xue, who writes on China’s rights lawyers.<sup id="fnr6"><a href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fn6" rel="nofollow">6</a></sup></p>
+      <p>These are people who, almost exactly following Foucault’s description, intervene in areas where they have gained specific expertise, but they do so with the same intellectual rigor and wide-ranging knowledge as the establishment intellectuals. By working to uncover bits of neglected or lost history, they also reveal new information for others to use. It’s among these grassroots intellectuals that we can easily find female voices, such as Lin, Ai, or Jiang, and minority voices, such as the now-imprisoned Uighur intellectual Ilham Tohti, who argued that Xinjiang should not become independent but must gain true autonomy in order for it to feel itself a part of China.<sup id="fnr7"><a href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fn7" rel="nofollow">7</a></sup></p>
+      <p>The intellectual grandfather of Veg’s group is the writer Wang Xiaobo, who argued in his 1996 essay “The Silent Majority” that the most important voices in China are not the big-name thinkers with their grandiose ideas about China’s future, but an invisible majority: victims of Mao, homosexuals, those with HIV, unemployed workers, rural women, and other disenfranchised people—silenced in a country where the Party dominates discourse<sup id="fnr8"><a href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fn8" rel="nofollow">8</a></sup> Wang died of a heart attack at 44 in 1997, a year Veg marks as the symbolic start of this era of openness. Since then, Wang’s novels and essays have grown in importance, and it’s now no exaggeration to say that “The Silent Majority” is one of the most important documents in the past half-century of Chinese intellectual life.<sup id="fnr9"><a href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fn9" rel="nofollow">9</a></sup></p>
+      <p>At the end of the essay, Wang describes the process behind his decision to speak out. It wasn’t to join the Confucian tradition, with its often-patronizing concern for the nation or the people, but for selfish reasons. “The one I wish to elevate the most is myself,” he writes. “This is contemptible; it is also selfish; it is also true.”</p>
+      <p>He shares this impetus with Veg’s other grassroots intellectuals. They research a specific Maoist campaign, for example, because they suffered through it personally: Yang Jisheng watched his foster father die of starvation during the Great Famine and decided that his life’s work would be documenting it. This response can be seen as narrow or parochial, but it is also how societies often develop: by people trying to understand and change their own lives. What collects these disparate people into a movement is technology. Through the Internet, they share their articles, films, and work. Veg’s underground observers have created a virtual movement of people who are empowered not by their status in society but through the force of their ideas.</p>
+      <p>At times, all three of these books downplay a key question: Is this already a bygone era? Most of the works quoted are from the 2000s or early 2010s; since then, all but the most loyalist efforts have been censored, the documentary films banned, the voices seemingly silenced. This depressing state of affairs calls into question whether the 21st century really will be China’s. Can a country that silences its best minds dominate the world?</p>
+      <p>There are reasons for optimism. Perhaps establishment voices have been silent—they are loath to lose the perks of the “velvet prison”: cheap housing, health care, the freedom to travel, and so on. But these lures of conformity aren’t available to most of Veg’s subjects.</p>
+      <p>And so most of them have kept at it. Not all—the racecar driver and blogger Han Han disappeared from view early in the Xi reign, probably as soon as his sponsorships threatened to dry up; the editor Hu Shuli took quiet retirement; the celebrity artist Ai Weiwei left China and now makes headlines for criticizing liberal democracies like Germany. But the majority of grassroots journalists, documentary filmmakers, and historians carry on. Many remind me of the East German intellectuals I knew in the 1980s who wrote books “for the desk drawer,” because they’d end up there and never be published. But Chinese writers continue to write, and my gut feeling is that one day their work will matter.</p>
+      <p>We can see a similar pattern today with the current coronavirus epidemic. The climate of fear and self-censorship that China’s political system creates made it impossible for whistleblowers to be heard, thus creating a much wider crisis. Now, a new generation of citizen journalists are out in the streets, recording stories and making films. These works may not be featured in China’s state-controlled media, but they will seep into the people’s collective memory and slowly change the country.<span class="cube"></span></p>
+      <hr />
+      <ol id="footnotes">
+        <li id="fn1">See Gloria Davies, <em>Worrying About China: The Language of Chinese Critical Inquiry</em> (Harvard University Press, 2007); or Merle Goldman, <em>China’s Intellectuals: Advise and Dissent</em> (Harvard University Press, 1981), <a href="https://www.chinafile.com/library/nyrb-china-archive/china-how-much-dissent" target="_blank" rel="nofollow">reviewed in these pages</a> by Jonathan D. Spence, August 13, 1981.<a title="Jump back to footnote 1 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fnr1" rel="nofollow">↩</a></li>
+        <li id="fn2">See my “China’s New Civil Religion,” <em>The New York Times</em>, December 21, 2019.<a title="Jump back to footnote 2 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fnr2" rel="nofollow">↩</a></li>
+        <li id="fn3">See Orville Schell and John DeLury, <em>Wealth and Power: China’s Long March to the Twenty-First Century</em> (Random House, 2013), which I <a href="https://www.chinafile.com/library/nyrb-china-archive/dreams-different-china/" target="_blank" rel="nofollow">reviewed in these pages</a>, November 21, 2013.<a title="Jump back to footnote 3 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fnr3" rel="nofollow">↩</a></li>
+        <li id="fn4">See, for example, a two-part article I wrote on <em>Remembrance</em> in these pages, “China’s Brave Underground Journal,” <a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-brave-underground-journal" target="_blank" rel="nofollow">December 4</a> and <a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-brave-underground-journal-ii" target="_blank" rel="nofollow">18, 2014</a>.<a title="Jump back to footnote 4 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fnr4" rel="nofollow">↩</a></li>
+        <li id="fn5">See my interview with Hu, “<a href="https://www.chinafile.com/library/nyrb-china-archive/chinas-invisible-history-interview-filmmaker-and-artist-hu-jie" target="_blank" rel="nofollow">China’s Invisible History</a>,” <em>NYR Daily</em>, May 27, 2015; and <a href="https://www.chinafile.com/library/nyrb-china-archive/breaking-eggs-against-rock" target="_blank" rel="nofollow">my review of a new biography of Lin Zhao</a>, <em>Blood Letters</em> by Lian Xi (Basic Books, 2017), <em>The New York Review</em>, September 27, 2018.<a title="Jump back to footnote 5 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fnr5" rel="nofollow">↩</a></li>
+        <li id="fn6">See my interview with Ai, “<a href="https://www.chinafile.com/nyrb-china-archive/people-retreat/" target="_blank" rel="nofollow">The People in Retreat</a>,” <em>NYR Daily</em>, September 8, 2016; or with Jiang, “<a href="https://www.chinafile.com/library/nyrb-china-archive/its-hopeless-you-persist-interview-jiang-xue" target="_blank" rel="nofollow">‘It’s Hopeless But You Persist,’</a>” <em>NYR Daily</em>, February 19, 2019.<a title="Jump back to footnote 6 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fnr6" rel="nofollow">↩</a></li>
+        <li id="fn7">See my interview with Chinese thinkers about Tohti, “<a href="https://www.chinafile.com/library/nyrb-china-archive/they-dont-want-moderate-uighurs" target="_blank" rel="nofollow">‘They Don’t Want Moderate Uighurs,’</a>” <em>NYR Daily</em>, September 22, 2014.<a title="Jump back to footnote 7 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fnr7" rel="nofollow">↩</a></li>
+        <li id="fn8">See my article in these pages on Wang and his legacy: “<a href="https://www.chinafile.com/library/nyrb-china-archive/sexual-life-modern-china/" target="_blank" rel="nofollow">Sexual Life in Modern China</a>,” October 26, 2017.<a title="Jump back to footnote 8 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fnr8" rel="nofollow">↩</a></li>
+        <li id="fn9">See Eric Abrahamsen’s translation in the online journal <a href="http://paper-republic.org/" target="_blank" rel="nofollow"><em>The Paper Republic</em></a>.<a title="Jump back to footnote 9 in the text" href="https://www.chinafile.com/library/nyrb-china-archive/flowers-blooming-dark#fnr9" rel="nofollow">↩</a></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-04-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-04-02/We-re-Hardly-Heroic/">
+          ‘We’re Hardly Heroic’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-28</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-28/Is-U.S.-China-Cooperation-on-COVID-19-Still-Possib/">
+          Is U.S.-China Cooperation on COVID-19 Still Possible?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-24</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-24/Vernacular-Industrialism-in-China/">
+          Vernacular Industrialism in China
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-03-23</time>
+        <a href="https://nodebe4.github.io/oped2/2020-03-23/Everyone-Is-Isolated-An-Interview-with-Yuan-Lin/">
+          ‘Everyone Is Isolated’: An Interview with Yuan Ling
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-25/%E7%99%BD%E6%8D%A1%E9%92%B1%E9%83%BD%E4%B8%8D%E8%A6%81-%E5%B8%82%E5%9C%BA%E6%98%AF%E7%9C%9F%E6%81%90%E6%85%8C%E4%BA%86/">
+            前一篇：白捡钱都不要？市场是真恐慌了
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-03-25/%E8%BF%99%E4%BA%9B%E9%97%B4%E8%B0%8D%E5%A6%82%E4%BD%95%E6%8A%8A%E4%BD%A0%E7%9A%84%E7%85%A7%E7%89%87%E5%8F%98%E6%88%90%E4%BA%86%E7%9B%91%E8%A7%86%E5%B7%A5%E5%85%B7-iYouPort/">
+            後一篇：这些间谍如何把你的照片变成了监视工具？ - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-03-25/%E7%99%BD%E6%8D%A1%E9%92%B1%E9%83%BD%E4%B8%8D%E8%A6%81-%E5%B8%82%E5%9C%BA%E6%98%AF%E7%9C%9F%E6%81%90%E6%85%8C%E4%BA%86/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-03-25/%E8%BF%99%E4%BA%9B%E9%97%B4%E8%B0%8D%E5%A6%82%E4%BD%95%E6%8A%8A%E4%BD%A0%E7%9A%84%E7%85%A7%E7%89%87%E5%8F%98%E6%88%90%E4%BA%86%E7%9B%91%E8%A7%86%E5%B7%A5%E5%85%B7-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-03-28/Is-U.S.-China-Cooperation-on-COVID-19-Still-Possib/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-03-24/Vernacular-Industrialism-in-China/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-03-25/%E7%99%BD%E6%8D%A1%E9%92%B1%E9%83%BD%E4%B8%8D%E8%A6%81-%E5%B8%82%E5%9C%BA%E6%98%AF%E7%9C%9F%E6%81%90%E6%85%8C%E4%BA%86/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-03-25/%E8%BF%99%E4%BA%9B%E9%97%B4%E8%B0%8D%E5%A6%82%E4%BD%95%E6%8A%8A%E4%BD%A0%E7%9A%84%E7%85%A7%E7%89%87%E5%8F%98%E6%88%90%E4%BA%86%E7%9B%91%E8%A7%86%E5%B7%A5%E5%85%B7-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-03-28/Is-U.S.-China-Cooperation-on-COVID-19-Still-Possib/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-03-24/Vernacular-Industrialism-in-China/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>State of Surveillance – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+State of Surveillance
+——
+" />
+    <meta property="og:description" content="
+State of Surveillance
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="State of Surveillance" />
+    <meta property="twitter:title" content="State of Surveillance" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fstate-surveillance-china" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/state-surveillance-china" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/state-surveillance-china&text=State of Surveillance&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/state-surveillance-china&title=State of Surveillance" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/state-surveillance-china&title=State of Surveillance" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=State of Surveillance&body=
+State of Surveillance
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/state-surveillance-china" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/state-surveillance-china&title=State of Surveillance&caption=
+State of Surveillance
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=State of Surveillance&url=https://www.chinafile.com/state-surveillance-china" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>State of Surveillance</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-10-29
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Jessica Batke &#38; Mareike Ohlberg</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/state-surveillance-china" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1604023380000-->
+<p><a href="https://www.chinafile.com/state-surveillance-china">State of Surveillance</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-891a002bc1ba6fb98e35ade9776ae717">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/surveillance_camera_2010_1200px.jpg" title="State of Surveillance" class="colorbox" data-colorbox-gallery="gallery-node-52611-M7ZQ63VFQV0" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/surveillance_camera_2010_1200px.jpg?itok=HkxTLkc5" width="1200" height="1200" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+(Courtesy of Ai Weiwei Studio)
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>Ai Weiwei, ‘Surveillance Camera,’ 2010.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">High atop Mount Xiqiao, an extinct volcano that soars above the Pearl River Delta, a towering statue of the Buddhist goddess Guanyin gazes down on the concrete sprawl of the city of Foshan. For centuries, the mountain’s scenic caves and waterfalls provided a refuge for scholars and artists. But today, Xiqiao is a far more crowded place. Some <a href="https://m.21jingji.com/article/20180321/db97c854a754bfc3e75471eb78a8642e.html" target="_blank">five million</a> tourists visit each year. And as they wend their way up the mountain through groves of peach and banyan, Guanyin is not the only one keeping watch.</p>
+      <p>In 2019, local officials in Xiqiao, a district of Foshan, devised a plan for the ideal placement of surveillance cameras throughout their jurisdiction. A visitor making an ascent of Mount Xiqiao might first have her face captured by one of the three cameras at the Xiqiao bus station, and again at the bus stop closest to the mountain’s base. If she followed the usual route, a camera could next catch her entering the Qiaoyuan public bathroom, resting a moment to admire the Tingyinhu waterfall, or stopping in for a snack at the Qiaoshan hotel. All together, Xiqiao’s police would have at least nine chances to collect images of this visitor’s face during her journey. And when she reached the summit, a tenth camera, mounted just beside Guanyin’s own serene visage, would snap a final shot.</p>
+      <p>Over the past five years, local Communist Party officials charged with maintaining “social stability” in Xiqiao have planned purchases of surveillance technology to blanket their town with cameras. This would help bring about a “breakthrough in addressing the difficult problem of how to control people,” explained a document outlining Xiqiao’s desired purchases. Government records show that officials made at least six separate surveillance equipment purchases between 2006 and 2019, with the goal of installing at least 1,400 cameras throughout Xiqiao, including 300 facial recognition cameras last year alone.</p>
+      <p>Xiqiao may be just a small district of a fairly ordinary Chinese city (albeit <a href="https://nanhaitoday.com/nhxww/articles/2020/01/03/3bd8d62cc83d4b099339533fdc9b321d.html" target="_blank">one</a> on the <a href="http://www.gdzf.org.cn/ztzl/wwzx/200911/t20091127_71699.htm" target="_blank">leading edge</a> of <a href="https://www.foshannews.net/nh/nhtt/201909/t20190909_268426.html" target="_blank">surveillance practice</a> in China), but the worries and aspirations of its officials are hardly unique. Rather, they reflect a profound unease among China’s leaders about what can happen when the country’s citizens go unwatched. Across China, in its most crowded cities and tiniest hamlets, this has led to an unprecedented surveillance shopping spree by government officials. The coordination of the resulting millions of cameras and other snooping technology spread across the country remains partial at best, its efficacy uncertain. Yet, despite these limitations, officials in China are working to make the system as effective and advanced as possible.</p>
+      <p>These are among the key findings of ChinaFile’s analysis of some 76,000 government procurement notices and corresponding documents related to the purchases of surveillance technology by both central and local governments across China between 2004 and mid-May 2020—the most comprehensive accounting of China’s surveillance build-up to date.</p>
+      <p>In 2015, a <a href="http://web.archive.org/web/20160616221428/https://www.ndrc.gov.cn/zcfb/zcfbtz/201505/t20150513_691578.html" target="_blank">national policy document</a> issued by nine different Party and government bureaucracies called for “public safety video-surveillance construction, networking, and applications” across China. The policy described such surveillance systems as not only a way to combat crime, but also an important mechanism for enhancing “social management” and “safeguarding national security and social stability.” “Given the growing openness of society, the increasing convenience and speed of transportation infrastructure, and the widespread adoption of various emerging communication technologies,” as numerous government documents and media reports put it, using identical language, “people with all kinds of interests can cross jurisdictions to band together, stir up trouble, and assemble illegally. This presents a serious challenge to preventing, perceiving, and predicting vicious crimes and mass incidents.” To combat these dangers, China’s National Development and Reform Commission embarked on a project called “<em>Xueliang Gongcheng</em>,” or “<a href="https://ipvm.com/reports/sharpeyes" target="_blank">Project Sharp Eyes</a>” (evoking Mao Zedong’s <a href="https://www.scmp.com/news/china/politics/article/2170834/chinas-sharp-eyes-surveillance-system-puts-security-focus-public" target="_blank">aphorism</a> that celebrated people who spied on one another). Building on and supplementing Project Skynet, Safe Cities, and other previous <a href="https://chinadigitaltimes.net/2019/09/sharper-eyes-surveilling-the-surveillers-part-1/?__cf_chl_jschl_tk__=715cfb1fb999285fd92a25f55c2ca968062d9c02-1602695720-0-AScnB341SGxEtPm360AA2ObJc4_DTUtWw1QstCk2Db9jg-ip-FIUMjLYWBsZh_1U9S44HNdmKL2Y76Gufbq0Ab_OL_ljz-au76B24HPuinto5dPmcjfP-pM6lRDp5k5bvqdaLaspPrC9-Ph3FCBllM_m1k1CudSg19euKhnRyNf7CgMwrivQXcbHSoC-TjfHFX3QLzgHY347XxnuviK8Ts_EcxK0VGhN4gDMj8pr1GhxMnBEQCmxkd7bLXVSiztlnyqZD11lStIz8h8qOhIeHu1w_gW58wKhZ7LP4jnumQqGvMnxjSJuAIRN32M3-JyDsMtmZoMeyv8OdNW6VK2senFBl0-xuvqCivTwP_yo_era" target="_blank">surveillance campaigns</a>, China’s government <a href="http://web.archive.org/web/20160616221428/https://www.ndrc.gov.cn/zcfb/zcfbtz/201505/t20150513_691578.html" target="_blank">aims</a> to extend video surveillance coverage to 100 percent of China’s “key public spaces” by the end of this year.</p>
+      <p>Unsurprisingly, the enterprise has become a subject for analysis as sweeping and grandiose as its own ambition, analysis that too often mistakes official rhetoric for results. However fervently they might desire it, China’s leaders have not built an all-seeing, all-knowing panopticon capable of tracking anyone in the country, anywhere, at any time.</p>
+      <p>Journalists and advocacy groups have rightly focused much of their surveillance reporting on the Xinjiang Uighur Autonomous Region, where China’s government has <a href="https://www.wsj.com/articles/twelve-days-in-xinjiang-how-chinas-surveillance-state-overwhelms-daily-life-1513700355" target="_blank">constructed</a> a radically invasive system to monitor the region’s ethnic minority Muslims. What has been far harder to see are the details of the surveillance buildup elsewhere in the country. To what degree is Xinjiang a model for the rest of the People’s Republic of China (PRC)? Who, exactly, are local governments elsewhere trying to track? Why do they think such surveillance is necessary? How much does the application of national surveillance plans vary from place to place? How costly is it to local governments? And how well do any of these systems actually work?</p>
+      <p>These were some of the questions ChinaFile sought to answer in its analysis of procurement notices from the <a href="http://www.ccgp.gov.cn/" target="_blank">Chinese Government Procurement Network</a> website, where they are made public to allow companies to bid to fulfil them. In addition to itemizing the devices, software, and maintenance services officials seek to purchase, as well as noting final purchase prices and names of winning companies, many procurement notices include lengthy addenda which reveal how officials shopping for, say, thermal-imaging cameras, WiFi sniffers, or facial recognition software understand the purpose of their investments, how they think about public safety, and how they evaluate their current ability to achieve it.</p>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_3 visual-box view-dom-id-9c6dea5dcf7c071193d4b81b54b2b7d4 grid-4 photo-object">
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/procurement_notice_with_markup.png" title="Annotated Procurement Notice with Link" class="colorbox" data-colorbox-gallery="gallery-node-52746-M7ZQ63VFQV0" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/medium/public/assets/images/photo/system/procurement_notice_with_markup.png?itok=3xiwNC2N" width="620" height="1215" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>An image of a typical procurement notice, annotated by ChinaFile. Click <a href="https://www.chinafile.com/node/52711" target="_blank" rel="nofollow">here</a> to view a larger version of this image.</p>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p>To be sure, what officials propose and even ultimately purchase is far from an infallible predictor of what they install or how effectively they deploy it. The capacity of China’s government, both at the central and local level, has limits. It is provisional, bounded by the mundane realities of bureaucracy and governance: time, money, competing priorities, and human error. While local officials frequently echo the broader goals of their bosses in Beijing, they must also contend with realities on their home turf.</p>
+      <p>That said, though procurement notices can’t perfectly measure surveillance capacity on the ground, they do offer an excellent view of the government’s intent. In their aggregate and in the richness of their individual details, the tens of thousands of notices ChinaFile analyzed sharpen what has been a blurry picture of this highly consequential aspect of Chinese governance. Together, they paint a stark portrait of a leadership craving the ability to penetrate ever deeper into Chinese citizens’ private lives and animated by fear of a population on the move. They also portray the leadership’s utmost confidence—faith even—that if only it possesses sufficient quantities of the right technology, then there exists no threat it cannot detect and eliminate.</p>
+      <p>The onset of the COVID-19 pandemic, with its attendant <a href="https://www.wsj.com/articles/how-china-slowed-coronavirus-lockdowns-surveillance-enforcers-11583868093" target="_blank">lockdowns</a>, <a href="https://www.politico.com/news/2020/06/08/government-privacy-coronavirus-china-308105" target="_blank">contact tracing</a>, and <a href="https://www.nytimes.com/2020/05/26/technology/china-coronavirus-surveillance.html" target="_blank">health assessments</a>, has only intensified this impulse.</p>
+      <p>China is not the only country that surveils its citizens, of course, and not the only place where surveillance technology, such as predictive policing, leads to <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing" target="_blank">human rights abuses</a>. At the same time, says Daragh Murray, an expert in conflict, artificial intelligence, and international human rights law at the University of Essex, unlike their counterparts in the United States and the United Kingdom, authorities in China use such technology “within a much broader repressive infrastructure . . . a system attuned to repression.”</p>
+      <p>Purchases of surveillance technology reached a high-water mark in 2018 and 2019. This included not just cameras, but access to predictive policing software, smartphone forensic systems, and platforms intended to knit together the data they collected. The evidence for this derives from awarded bid notices—that is, announcements of which companies won government contracts. Authorities in at least 998 counties—one third of all counties in China—in nearly every corner of the country purchased surveillance equipment of some type in 2019 alone. Local governments’ purchasing of facial recognition systems is growing more prevalent across China, complementing their ever-increasing procurement of conventional video surveillance systems.</p>
+      <p>The awarded bid notices ChinaFile analyzed also hint at how much money central and local governments are committing to the surveillance push: Notices dated between 2016 and 2020 that referenced Sharp Eyes resulted in expenditures of more than 14 billion renminbi (U.S.$2.1 billion), a figure which doesn’t include spending on other surveillance projects. Local governments’ surveillance spending varied widely, fluctuating over time, sometimes reaching the equivalent of half of total public security expenses in a given year.</p>
+      <p>Not content to leave the monitoring of China’s citizens in the sole hands of law enforcement, Chinese Communist Party (CCP) entities also buy their own equipment, installing surveillance systems that feed into broader local monitoring apparatuses, but that are under the direct purview of the Party.<sup id="fnr1"><a href="https://www.chinafile.com/state-surveillance-china#fn1">1</a></sup> At the same time, however, officials’ shopping for technology to integrate disconnected local systems shows the extent to which surveillance in China is not yet a coherent whole, but remains an unfinished patchwork.</p>
+      <p>To capture both the ambitions and the day-to-day realities of this surveillance project, ChinaFile focused its reporting on three very different locations. The procurement notices from each locality include particularly detailed supplemental materials that illuminate important and distinct aspects of China’s surveillance regime. A scheme for deploying facial recognition infrastructure in the town of Xiqiao reveals aspects of the philosophical underpinnings of the system at large, including what types of people authorities view as dangerous. In Shawan county, in Xinjiang, authorities’ plan for an extensive new surveillance system throws into relief the extent to which the region’s extreme surveillance regime is—and is not—an outlier when compared to the rest of China. A notice seeking software in the northeastern city of Harbin shows officials working to expand their surveillance capacities to predict where their fellow residents will go and what they will do. Though it remains uncertain how effective these technologies are, the intent is clear: to eliminate any public spaces where people might remain unwatched.</p>
+      <p align="center">* * *</p>
+      <h2 id="xiqiao-township-portrait-perception-network">Xiqiao Township: “Portrait Perception Network”</h2>
+      <p class="dropcap">Last year in Xiqiao, a town in Guangdong province of roughly 300,000 people, officials set out to build what they dubbed a “portrait perception network.” The plan called for the purchase of 300 cameras compatible with facial recognition software, along with additional equipment such as lights and poles, and the rental of fiber optic cables.</p>
+      <p>Vigilance was necessary, the designers of the scheme reasoned, because of the inherent dangers posed by everyday human activity. “Society is a collection of individuals, and of the interactions among individuals,” a July 2019 procurement notice from Xiqiao’s Comprehensive Management, Petitioning, and Stability Maintenance Office explained cryptically. “All kinds of phenomena that emerge within societies result from human interaction: violence, robbery, arson, etc.”</p>
+      <p>Thus, the cameras would be arrayed to align with the “four basic needs” of human life: food, clothing, housing, and transportation and five additional “quality-of-life needs”: healthcare; finance; arts, education, and culture; entertainment; and leisure travel. Xiqiao would install its new facial recognition cameras at the entrances and exits of restaurants, grocery stores, shopping malls, bus stations, kindergartens, movie theaters, and even a martial arts gym—where they could detect the faces of passers-by and feed these “portraits” back into a larger monitoring system.</p>
+      <p>Atop this hierarchy of needs, the township’s plans layered another rubric for camera placement, classifying their district’s public places according to the ease with which people could be surveilled while passing through them. “Core” points, such as security checkpoints at airports or subway stations, where people would be likely to line up in a relatively orderly fashion, would provide opportunities for well-placed cameras to get a clear shot of faces one by one. Monitoring of these “core” points would allow authorities to know who was entering or exiting the township in real time. “Key points” were areas in schools, hospitals, hotels, shopping malls, entertainment venues, and other places characterized by wide passages, disordered and unrestricted flow of people, groups passing through, and a certain peak of pedestrian traffic. “Auxiliary areas,” such as sidewalks, crosswalks, or scenic areas which often lacked a single point of entry or exit, would likely be disorderly, complicating efforts to snoop on the people thronging through them. Applying this taxonomy correctly would ensure no one going about their business in town would escape notice.</p>
+      <p>        <iframe style="overflow: hidden;" src="https://jessicachinafile.github.io/viz/surveillance/camera_map/face_rec_mapbox_monochrome-dark_iceblue.html" frameborder="0" width="100%" height="780"></iframe>
+</p>
+      <p>The philosophy behind this camera placement, though expressed with particular clarity in the Xiqiao notice, appears elsewhere in China as well. In Xiqiao’s neighboring district of Shunde, officials sought in 2018 to create a “three-dimensional prevention and control network” centered on “face big data,” with images being collected at hospitals, schools, transit hubs, and places of business. Notably, the Shunde document stated that guidance from national and provincial authorities helped determine the placement of facial recognition cameras.</p>
+      <p>Is this type of surveillance unique to China? As the cost of computing gets cheaper, and data collection becomes more expansive, the “proactive panopticon, which tries to figure out ahead of time who is a danger,” is becoming more common across the world, says Albert Fox Cahn, founder of the Surveillance Technology Oversight Project. At the same time, however, plenty of countries with the resources to invest in this kind of surveillance have not done so due to various legal, political, or social constraints. “The well-justified focus on China in this space can make it appear to be more of an outlier, or more of a singular driver, than it is,” Cahn notes. “The thing that sets China apart is not that it has incentives to monitor. It’s that there’s no countervailing price to doing so openly.”</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">The PRC’s leaders have always excelled at surveilling their countrymen, and this lack of a “countervailing price” has allowed them to do so in varied ways over the past 70 years. During the first few decades of the PRC’s existence, the <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=aQUDNDjilRAC&amp;oi=fnd&amp;pg=PP11&amp;dq=china+danwei+system&amp;ots=TrIBlFMGvl&amp;sig=osIR3N_KB8X7E3XvoeOXUPlGfAE#v=onepage&amp;q&amp;f=false" target="_blank">state-controlled labor system</a> tethered workers and their families to their places of employment; changing jobs, let alone relocating to another part of the country at will, rarely proved possible. The <em>danwei</em>, or work unit, was not only a place of employment, it also distributed housing, social services, and other state benefits. Moreover, <a href="https://books.google.com/books?hl=en&amp;lr=&amp;id=jt3a8T5iqMIC&amp;oi=fnd&amp;pg=PR7&amp;dq=china+social+control+danwei+privacy&amp;ots=dbdzNEt6iA&amp;sig=pJfjxkcN1QnoNvCN6hPHkFKYAg4#v=onepage&amp;q&amp;f=false" target="_blank">work units</a> served as the eyes of the state, maintaining their residents’ dossiers, compiling information about them at work, at mandatory Party meetings, and in their homes—information often supplied by neighbors and coworkers. Reporting on members of one’s own community reached frenzied heights during the Cultural Revolution, when people had to publicly accuse their acquaintances, friends, and even loved ones of real or imagined political transgressions in order to avoid becoming targets themselves.</p>
+      <p>Once Deng Xiaoping set the country on a path to economic reform in the late 1970s, allowing individuals to conduct private business transactions and move somewhat more freely around the country, state monitoring of citizens eased up by necessity. For a few decades, Chinese citizens became accustomed to relatively more robust levels of personal privacy. Now, as China’s government acquires <a href="https://www.reuters.com/article/us-health-coronavirus-china-surveillance/chinas-coronavirus-campaign-offers-glimpse-into-surveillance-system-idUSKBN2320LZ" target="_blank">better tools</a> to help authorities keep watch, it is gradually regaining the ability to monitor large swathes of the population at one time.</p>
+      <p></p>
+      <div class="pullquote">
+“The thing that sets China apart is not that it has incentives to monitor. It’s that there’s no countervailing price to doing so openly.”         <div class="pullquote-share">
+<span class="st_facebook_large" st_title="“The thing that sets China apart is not that it has incentives to monitor. It’s that there’s no countervailing price to doing so openly.”" displaytext="Facebook"></span><span class="st_twitter_large" st_title="“The thing that sets China apart is not that it has incentives to monitor. It’s that there’s no countervailing price to doing so openly.”" st_via="chinafile" displaytext="Tweet"></span><span class="st_email_large" st_title="“The thing that sets China apart is not that it has incentives to monitor. It’s that there’s no countervailing price to doing so openly.”" displaytext="Email"></span>
+        </div>
+      </div>
+      <p></p>
+      <p>Chinese citizens know they are being watched. An <a href="https://www.pewresearch.org/methods/2018/08/06/video-explainer-what-are-nonprobability-surveys/" target="_blank">opt-in</a> online <a href="https://www.ft.com/content/7c32c7a8-172e-11ea-9ee4-11f260415385" target="_blank">survey</a> conducted by the Nandu Personal Information Protection Research Centre in Beijing found in 2019 that respondents had mixed feelings about the use of facial recognition technology in public spaces. Around two-thirds of respondents “somewhat agreed” or “strongly agreed” that facial recognition had made public transit, school campuses, shopping areas, and common areas of housing units safer. At the same time, 80 percent expressed concern about potentially lax data security practices, while 57 percent worried their “personal whereabouts could be tracked.”</p>
+      <p>Even before the advent of facial recognition software, the PRC had begun to implement the tracking and reporting infrastructure known as “grid management.” In some ways, the grid management system furnishes the low-tech foundation upon which the current surveillance structure rests. First <a href="https://chinamediaproject.org/2018/12/07/china-under-the-grid/" target="_blank">piloted</a> in a few <a href="https://jamestown.org/program/chen-quanguo-the-strongman-behind-beijings-securitization-strategy-in-tibet-and-xinjiang/" target="_blank">select cities</a> over a decade ago, grid management takes its cues from earlier Chinese systems of social control, <a href="https://theasiadialogue.com/2018/04/27/grid-management-and-social-control-in-china/" target="_blank">carving up</a> a given locality into smaller, more controllable units such as neighborhoods and apartment compounds. Within these units, government-employed workers monitor local populations, facilities, civil society groups, as well as residents’ concerns and report anything noteworthy to their higher-ups. Speaking to the press on the expansion of grid management in his city in 2016, Guangzhou’s former mayor <a href="https://www.ft.com/content/bf6a67c6-940e-11e5-bd82-c1fb87bef7af" target="_blank">posited that</a>, “if a grid administrator is responsible for 200 families, he can roughly remember who is in his grid in one month’s time and grasp the basic information of each family in about three months’ time. In six months’ time, he can count every member of those families.” China’s media has widely <a href="http://www.xinhuanet.com/legal/2018-12/13/c_1123844709.htm" target="_blank">heralded</a> grid management as a solution to illegal behavior, problems with government service provision, safety issues, and “<a href="http://www.gz.xinhuanet.com/2020-01/02/c_1125416184.htm" target="_blank">petitioning and stability maintenance</a>,” allowing local authorities to quickly determine if an undesirable visitor, such as a <a href="https://chinamediaproject.org/2018/12/07/china-under-the-grid/" target="_blank">journalist reporting on a chemical spill</a>, for example, has entered their jurisdiction. It is in this environment, with the expectation that lower-level officials should have a fairly detailed understanding of their residents’ normal range of activities, that local governments are investing in new surveillance technologies—including software that allows them to automatically identify and track people going about their daily lives. In one particularly evocative description, a feasibility study commissioned by public security officials in Xinjiang described video surveillance as “extending the capacity of the human eyes and the brain’s memory.”</p>
+      <p align="center">* * *</p>
+      <p class="dropcap">Facial recognition cameras are becoming more common across China: Among the awarded bid notices ChinaFile analyzed, only one used the phrase “human face” in 2009, when the technology was much less mature, compared with about 350 such notices in 2018 and 470 in 2019. The cameras work in tandem with massive databases of facial images, employing increasingly sophisticated algorithms to match a newly-captured facial image with one already in the database. Police don’t only want such camera systems to link passers-by to existing dossiers, they also want them to be able to use machine learning to spot disguises. In Guangxi’s Luchuan county, for example, the Public Security Bureau sought a facial recognition algorithm that could detect “disguising behaviors, such as wearing hats, masks, glasses, sunglasses, wigs, and fake moustaches.”</p>
+      <p>Yet, facial recognition capabilities, while rolling out to ever more localities, are not omnipresent. Local governments around China are still purchasing fewer cameras designed specifically for facial recognition than other types of cameras. (In practice, any camera can be used with facial recognition and other such software provided it produces images of sufficiently high resolution.) In Xiqiao, the 300 new facial recognition cameras purchased in 2019 sit atop a larger network of cameras, more than 1,100 of which were commissioned between 2006 and 2018. Often, local governments position comparatively costly facial recognition cameras where they believe they can harvest the most valuable data, or where they fear trouble could arise. For instance, when Chongxin county in Gansu province sought nearly 400 new cameras in 2019, only five were explicitly listed as compatible with facial recognition technology, three of which were designated for the bus station and two for the local temple, which is a tourist draw.</p>
+      <p>Beyond facial recognition, the logic of grid management also shapes what additional capabilities local authorities want their surveillance systems to possess. This means paying special attention to people who are not from the area. Dozens of procurement notices, for example, specifically required camera systems that could automatically detect a car entering a city (or county, or town) for the first time. In Shishan township, about 15 miles north of Xiqiao, the Comprehensive Management, Petitioning, and Stability Maintenance Office in 2019 sought a camera system that could recognize and record non-local license plates, explaining that “in some cases vehicles entering the city for the first time are relatively suspicious” because “suspects flee crimes and use fake license plates, or sets of fake license plates.” Even back in 2016, officials in one district of Shandong province’s Jinan city sought a system that would identify vehicles entering the jurisdiction for the first time and automatically send a “warning text” to public security officers.</p>
+      <p>Similarly, notices from some local governments called for systems that could produce automated risk assessments of the people they caught on camera, based on whether a person made a “first entry” into a particular area, appeared in a “high-risk zone,” or “only entered but did not exit,” among other criteria. Two different counties in Gansu, using identical language, detailed a system that would register such potentially threatening behaviors and calculate daily point scores for every individual it captured.</p>
+      <p>This special attention to outsiders also appears throughout procurement notices for tools to “manage” the “floating population.” This term was formerly used mainly to refer to poorer, rural migrant laborers who move to cities seeking work. Due to the vagaries of China’s restrictive, decades-old household registration system, it’s often now applied to a much more diverse subsection of the population: people who simply don’t live in the place where they were born. Notices from around the country mention the need for surveillance technology to keep tabs on this group of citizens. In 2016, the Floating Population Management Office of Longjiang, yet another township in Foshan, sought mobile ID-card readers and scanning equipment to “strengthen the digitization of floating population management, improve the efficiency of grassroots floating population and rental housing coordination, [and] improve the registration rate of the floating population and the accuracy of information collected.” This equipment would interact with the city’s “Floating Population Management Comprehensive Information System Platform,” a type of database that <a href="http://policy.mofcom.gov.cn/claw/clawContent.shtml?id=35308" target="_blank">exists</a> in localities <a href="http://www.nanjing.gov.cn/zdgk/201605/t20160510_1056897.html" target="_blank">throughout</a> the country <a href="http://www.guoluo.gov.cn/html/74/251800.html" target="_blank">aimed</a> at keeping accurate records of where members of the floating population reside.</p>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-ca63b425cfe205f5dca66624e66e595f grid-8 photo-object">
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/cd_combined.png" title="Illustrations from Xiqiao Procurement Notice" class="colorbox" data-colorbox-gallery="gallery-node-52701-M7ZQ63VFQV0" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/cd_combined.png" width="1453" height="600" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>Illustrations included in a 2019 Xiqiao procurement notice, showing how authorities appraise residents’ array of daily needs, and how cameras should be positioned in residential areas. Translation by ChinaFile. Click <a href="https://www.chinafile.com/node/52636" target="_blank" rel="nofollow">here</a> for more information about these graphics.</p>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p>The focus on outsiders underscores a broader truth about surveillance in China: Local authorities maintain an elastic definition of what constitutes a threat, coupled with a paternalistic need to know about all the goings-on in their neighborhoods. In 2019, Party officials in one city district in Guangxi “focused on the service and management of the following three types of people: 1. Key populations such as those released from prison, those in community corrections, and drug users; 2. Individuals needing special care, such as the elderly, the disabled, veterans and their families, and families receiving welfare; 3. Women of childbearing age.” The same year, the Politics and Law Commission of one Gansu city sought to understand “the current situation of social governance” in part by conducting “multi-dimensional statistical analysis” on “key persons (such as those released from prison, community corrections, people with serious mental disorders caused by accidents and disasters, key youths, drug addicts, key persons who petition, key persons who threaten social stability, special groups of people, etc.).”</p>
+      <p>Who exactly are “key persons” and “key populations”? These phrases refer to “would-be protesters and would-be dissidents” that the regime would “like to round up, or at least monitor,” political surveillance expert Jennifer Pan writes in <em><a href="https://www.amazon.com/Welfare-Autocrats-Social-Assistance-Rulers/dp/0190087439" target="_blank">Welfare for Autocrats: How Social Assistance in China Cares for its Rulers</a></em>. Such people “are suspected of being likely to damage political, social, and economic stability in the future. These individuals are placed under intense surveillance, and all resources available to the regime are brought to bear to control their behavior.”</p>
+      <p>Authorities repeatedly demonstrate a desire to automatically identify and track such individuals: A number of procurement notices seeking facial recognition cameras stipulated that such cameras be able to interact with existing police blacklists in real time. The system sought by police in Luchuan county in Guangxi, for example, would allow for the input of up to five different blacklists, producing different types of alarms for each when it detected a match with a live video feed. Such a setup would enable officials to prioritize and differentiate between targets rather than having to work from a single blacklist. A system that the Politics and Law Commission of the local Communist Party in the Xiaoshan district of the city of Hangzhou purchased in July 2019 allows for up to 999 different blacklists, each with discrete settings. According to the notice, “Each [blacklist] library should be managed separately, and have its own alarm thresholds.”</p>
+      <p>These surveillance systems are not only aimed at people already under government scrutiny. They are also there to stop ordinary citizens from “crossing jurisdictions to band together, stirring up trouble, and assembling illegally,” or to identify individuals previously off the government radar. Why, exactly, might the state’s collection of this information be alarming? “If you’re aware data is being collected and monitored by the government, over time you internalize fear, which will guide your behavior,” says Xiao Qiang, a researcher focused on technology and human rights at the University of California, Berkeley School of Information. “How many Chinese people don’t want to say something on WeChat because they know it will be collected and used against them? They self-censor themselves. . . You know the government can get you at any time. That fear is real in China. Once you have that fear—when there’s cameras all over the place—it instills that fear in you to get you to control your own behavior.”</p>
+      <p align="center">* * *</p>
+      <h2 id="shawan-county-apart-and-parcel">Shawan County: Apart and Parcel</h2>
+      <p class="dropcap">The Xinjiang Uighur Autonomous Region, in northwest China, is the site of some of the most <a href="https://www.wsj.com/articles/twelve-days-in-xinjiang-how-chinas-surveillance-state-overwhelms-daily-life-1513700355" target="_blank">pervasive</a> and <a href="https://www.nytimes.com/2019/05/22/world/asia/china-surveillance-xinjiang.html" target="_blank">invasive</a> surveillance systems in the world, designed to distinguish between ethnic groups and to target the region’s ethnic minority population. While officials in Xiqiao may seem obsessed with residents’ daily activities, their zeal pales in comparison to Xinjiang surveillance officials’ fixation on Uighurs and other ethnic minority Muslim citizens. A person’s <a href="https://foreignpolicy.com/2018/09/13/48-ways-to-get-sent-to-a-chinese-concentration-camp/" target="_blank">facial hair, family size</a>, even a person’s <a href="https://apnews.com/article/df4e5136e86b4bd7a8836da36e8c3d68" target="_blank">name</a>: all are traits local governments in Xinjiang have viewed as signs of danger. In the name of mitigating such “threats,” the government has interned Uighurs on a <a href="https://xjdp.aspi.org.au/explainers/exploring-xinjiangs-detention-facilities/" target="_blank">massive scale</a>, forcibly <a href="https://apnews.com/article/269b3de1af34e17c1941a514f78d764c" target="_blank">cut their birth rates</a>, and pressed them into labor in factories.</p>
+      <p>The sometimes fantastical-sounding surveillance tactics in Xinjiang—<a href="https://www.hrw.org/report/2018/09/09/eradicating-ideological-viruses/chinas-campaign-repression-against-xinjiangs#" target="_blank">QR codes</a> on people’s front doors, which police can scan for information about the household; requiring residents to <a href="https://www.wsj.com/articles/twelve-days-in-xinjiang-how-chinas-surveillance-state-overwhelms-daily-life-1513700355" target="_blank">swipe ID cards</a> to fuel up their cars—can make it seem a place apart, defying comparison to other areas of China. Indeed, the checkpoints that blanket the region don’t currently appear elsewhere in China. And the small monitoring outposts authorities call “<a href="https://www.rfa.org/english/news/special/uyghur-oppression/ChenPolicy1.html" target="_blank">convenience police stations</a>,” as though they are there to benefit local residents, only show up in Xinjiang and Tibet. But while Xinjiang may be the most well-reported, and most extreme, locale for state surveillance in China, it is not sui generis. Procurement notices from Xinjiang frequently make reference to the same nationwide surveillance programs, such as Safe Cities, Smart Cities, and Sharp Eyes, that serve as the basis for surveillance projects elsewhere. Many of the mechanisms and measures the regional government has taken in Xinjiang have direct analogues in other provinces. The crucial difference between Xinjiang and other areas of the PRC is <em>who</em> is being targeted. Instead of focusing solely on a particular group of non-residents, potential dissidents, or possible criminals, authorities target all members of particular ethnic and religious groups. Ethnic minority Muslims, many of them Uighurs, are the primary objects of surveillance in Xinjiang; their relatively high share of the population means that more people are acutely aware they are being watched, and the watching is that much more visible. The means of surveillance, however, are largely the same as elsewhere in China.</p>
+      <p></p>
+      <div class="node node-article cboxes article align-left grid-4 img-yes logo-no">
+        <div class="cboxes-inner">
+          <div class="cb-head">
+<span class="date">10.30.20</span> <span class="type-icon"></span>
+          </div>
+          <div class="cb-link">
+<a href="https://www.chinafile.com/budgeting-surveillance"></a>
+          </div>
+          <div class="cb-img">
+<img src="https://www.chinafile.com/sites/default/files/styles/system/public/assets/images/article/system/2007814_leffacing_space11_nodot_1.png?itok=qzxqKz2V" width="620" height="450" alt="" referrerpolicy="no-referrer" />
+          </div>
+          <div class="cb-cont">
+            <h2 id="budgeting-for-surveillance"><a href="https://www.chinafile.com/budgeting-surveillance" title="Budgeting for Surveillance">Budgeting for Surveillance</a></h2>
+            <div class="inner-content">
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+The work of buying and building out surveillance infrastructure in China largely falls to local governments. Numerous localities and agencies make purchases as they implement a range of centrally-mandated surveillance projects and campaigns. Given...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p>About 150 miles from China’s border with Kazakhstan, as the crow flies, lies Shawan county, which <a href="http://www.xjswx.gov.cn/xxsw.htm" target="_blank">touts itself</a> as the home of the nationally-renowned dish <em>dapanji</em>, or “big-plate chicken.” Shawan (or Savan) county is sparsely populated; it holds <a href="http://www.xjswx.gov.cn/info/1015/31653.htm" target="_blank">a little more than 200,000</a> people, spread over an area somewhat smaller than the state of Connecticut. Nearly two-thirds of residents are ethnic Han, the majority throughout China. 18 percent are ethnic Kazakh. 5 percent are ethnic Uighur. This population breakdown is common in northern Xinjiang, where the proportion of ethnic minorities is far smaller than it is in the south. Yet, even in this majority-Han county, the perceived threat from non-Han residents consumes the attention of local authorities.</p>
+      <p>“An Analysis of Social Issues and Government Objectives,” a 200-page surveillance feasibility study presented as part of a 2017 Shawan government procurement notice, speaks darkly of “Western hostile forces” who have</p>
+      <blockquote>
+intensified their plot to “Westernize” and “split apart” our country, and, with the end of the Cold War, as international pan-Islamism and pan-Turkism activities run wild, the “three forces” [separatism, terrorism, and religious extremism] in Xinjiang and abroad have escalated collusion, spread reactionary propaganda, spared no effort to incite unrest, fomented chaos, seriously affected the overall stability of society and national security, and caused great losses to the lives and property of people of all ethnic groups.      </blockquote>
+      <p>This sort of language is specific to Xinjiang and reflects the government’s view that ethnic minority Muslims are inherently vulnerable to the siren song of international, religiously-fueled terrorism. The government’s own repressive policies in the region do not generally factor into its analysis of interethnic animus. Thus, Shawan officials sought computer systems that would “automatically identify and investigate key persons involved in terrorism and [threatening social] stability.” To make strategic use of the 70 facial recognition cameras recommended in the document, 50 of them would be placed in mosques.</p>
+      <p>At the time of the feasibility study, Shawan possessed a total of 484 cameras, feeding into various separate monitoring and control systems. The study declared this insufficient to meet video surveillance requirements posed by the central government in a May 2015 policy missive. The study also faulted residential compounds, shops, and even other local government agencies for failing to appreciate the importance of video surveillance and for not having installed enough equipment. This had left police with inadequate options, if they wanted to make use of cameras other than their own.</p>
+      <p>To address these deficiencies, the study outlined a more comprehensive surveillance system. On the front end: 4,791 networked HD cameras, 70 of which were to be facial recognition units, would be positioned in crowded places with clear entrances and exits, including mosques, with others to be installed in train stations and bus stations. On the back end: a set of interlocking platforms would span three administrative levels (the village/township level, the county level, and the prefectural level) and three network layers (the public Internet, a private video network, and the Public Security Bureau’s own intranet). Critically, the system would allow for information to flow from private cameras to the police via a “societal resource integration platform” that drew from surveillance in “hotels, Internet cafes, gas stations, schools, hospital monitoring [sic], bicycle rental points, and shops along the street, etc.” Such systems are not unique to Xinjiang. Procurement notices from Shandong, Fujian, Heilongjiang, and Shanxi provinces, as well as Beijing, all mentioned the need for this type of platform in their jurisdictions.</p>
+      <p>Similarly, Shawan authorities’ efforts to formulate an orderly surveillance scheme parallel such endeavors elsewhere. Local governments throughout China seek to dissect physical space and human interaction into controllable units. In Xiqiao, this manifested as a focus on basic human needs, and on a taxonomy of highly-trafficked public areas. In Shawan—as in Fujian, Jiangxi, and Jiangsu—the emphasis was on geography, breaking the county down into geometric components based on natural or man-made features.</p>
+      <p>According to the feasibility study, Shawan would divide its video control system into five units: circles, blocks, grids, lines, and spots. <strong>Circles</strong>, the largest units of control, would include inter-provincial, inter-city, or inter-county checkpoints, depending on their size. All entry and exit points within a circle would need to be controlled: “Through the monitoring of all passages into and out of counties and townships, as well as highway entrances, airports, railway stations, passenger stations, and water transport terminals, a closed, big ‘circle’ is formed.” <strong>Blocks</strong>, the next largest units, were either an existing administrative subdivision or an area of land bordered by rivers, mountains, tunnels, and other such features allowing them to be easily sealed off. These were followed by <strong>grids</strong> (like those in the grid management system), which in turn contained even smaller subdivisions, forming a “net.” <strong>Lines</strong> were national or provincial highways crossing a township, to be equipped with camera checkpoints every 3 kilometers inside “main” urban areas, every 5 kilometers in all other urban areas, and every 15 kilometers elsewhere. Finally, <strong>spots</strong> were semi-enclosed spaces near important buildings (like government offices or military outposts), spaces where people tend to gather, and other areas with “complicated security” or where “incidents” were believed likely to occur.</p>
+      <p>In order to meet the varying demands of each location, public security authorities, in Shawan and elsewhere, procure a wide variety of cameras. Officials might seek to purchase panoramic cameras, high-altitude cameras, traffic cameras, as well as cameras enabled with software allowing them to monitor population density or sound an alarm when they detect “anomalies” or behavior considered suspicious.</p>
+      <p>The sheer volume of government-run cameras in China has no parallel. “You hear people saying London is just like Beijing,” says Charles Rollet, a reporter with IPVM, a website that reports on and tests video surveillance systems. “No, no, no. Compared to China, the number of cameras is much lower.” In addition, some aspects of these systems—such as the societal resource integration platforms, which automatically funnel private video surveillance feeds directly to the government—are under far more direct government control than in other countries. “It is very centralized, very top-down, police-driven, law enforcement-driven,” says Rollet. “In France or the U.S., the number of cameras is lower and they are less coordinated. In the U.S., some [cameras] are hooked up directly to the police, but mostly police rely on private cameras to get surveillance footage after the event.”</p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-a9e285595244b8cd03f2afe0d17ac917 grid-8 photo-object">
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/overall-structure_v3.jpg" title="Diagram of Surveillance Equipment in Shishan" class="colorbox" data-colorbox-gallery="gallery-node-52741-FsN-cIKtYG4" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/overall-structure_v3.jpg" width="1943" height="1386" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>A diagram of camera types and surveillance system networking, from a 2019 procurement notice issued by the Shishan township Comprehensive Management, Petitioning, and Stability Maintenance Office in Guangdong province.</p>
+          </div>
+        </div>
+      </div>
+      <p>No matter how vast the number, all these cameras can only provide visual (and sometimes auditory) information. Shawan authorities hoped to gather even more data through WiFi sniffers, a technology in use elsewhere in China as well. In December 2019, <em>The New York Times</em> <a href="https://www.nytimes.com/2019/12/17/technology/china-surveillance.html" target="_blank">reported</a> that governments in Henan, Guizhou, Zhejiang, and Sichuan provinces used similar technology to obtain phone data from people walking by, and, in some cases, were able to match that data with images supplied by nearby facial recognition cameras. Indeed, this practice appears widespread. Procurement notices from Guangdong, Guangxi, Shaanxi, Gansu, Fujian, Beijing, and elsewhere also sought WiFi sniffers. Authorities often present this type of equipment as part of an integrated surveillance system that can amalgamate data from multiple sources.</p>
+      <p>WiFi sniffers (sometimes installed near or just below surveillance cameras) work by intercepting unique, identifying information about an individual phone. This can be part or all of an individual’s mobile phone number, or other data that can tie the phone to the person who owns it (such as the phone’s media access control (MAC) address, service set identifier (SSID), international mobile equipment identity (IMEI), or international mobile subscriber identity (IMSI)). Depending on the locality, authorities’ surveillance algorithms can then potentially match up this information to camera footage.</p>
+      <p>But it is possible that sniffers can dig even deeper into a person’s online history. Local authorities in Fujian, Guangxi, and Guangdong hoped to use the data intercepted by WiFi sniffers to ascertain an individual’s “virtual identities.” The Fujian procurement notice spells out exactly what this vague wording means: users’ account information on popular websites and social media platforms like QQ, WeChat, and Taobao. This capability may seem far-fetched, but in the China context, where many <a href="https://www.cs.unm.edu/~jeffk/publications/foci2016bat.pdf" target="_blank">web browsers</a> and <a href="https://carnegieendowment.org/2019/05/30/encryption-debate-in-china-pub-79216" target="_blank">apps</a> employ weak or nonexistent encryption, it is technologically feasible, at least on certain types of phones that don’t have robust security protections built in. Similarly, the Guangxi and Guangdong authorities wanted their sniffers to be able to access a users’ browsing history.</p>
+      <p>As elsewhere in China, Shawan’s facial recognition systems are meant to interact with police blacklists. Shawan’s classification of blacklisted people reflects not only the regional focus on terrorism, but also officials’ penchant for applying the terms “terrorism” or “extremism” to a wide range of human behavior. The Shawan feasibility study includes “people with a history of terrorism” as one of the types of “key people” it wants to track, along with people who have a history of drug use, theft, or gambling. It also enumerates other particular targets of surveillance: “high risk people” (“national-level fugitives, individuals with substantial criminal records, and mentally ill troublemakers”) and “sensitive people” (“people from ‘special’ areas, people employed in ‘special’ jobs,” and “the long-term unemployed”).</p>
+      <p></p>
+      <div class="node node-article cboxes article align-left grid-4 img-yes logo-no">
+        <div class="cboxes-inner">
+          <div class="cb-head">
+<span class="date">10.30.20</span> <span class="type-icon"></span>
+          </div>
+          <div class="cb-link">
+<a href="https://www.chinafile.com/cameras-and-software"></a>
+          </div>
+          <div class="cb-img">
+<img src="https://www.chinafile.com/sites/default/files/styles/system/public/assets/images/article/system/2007814_leffacing_space11_nodot.png?itok=_90XCGTT" width="620" height="450" alt="" referrerpolicy="no-referrer" />
+          </div>
+          <div class="cb-cont">
+            <h2 id="cameras-and-software"><a href="https://www.chinafile.com/cameras-and-software" title="Cameras and Software">Cameras and Software</a></h2>
+            <div class="inner-content">
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+To reach their goal of monitoring all of China’s key public spaces, local authorities need to buy a lot of cameras and other technology. The approximately 76,000 surveillance-related procurement notices ChinaFile analyzed offer a glimpse into the...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p>Though Xinjiang officials’ focus on what they describe as religiously-fueled “terrorism” contrasts in important ways from police interests further east, some of these security <a href="https://www.nytimes.com/2019/04/14/technology/china-surveillance-artificial-intelligence-racial-profiling.html" target="_blank">preoccupations</a> exist elsewhere in China. On the other side of the country, in the city of Harbin, public security authorities sought AI algorithms that could ferret out would-be terrorists. Local officials in Gansu and Chongqing and the country’s railway police have sought facial recognition systems to determine a person’s ethnicity. In Guangxi and Beijing, multiple procurement notices requested that such systems be able to tell if a person were Uighur. One county in Fujian province specifically noted it wanted to monitor places where Uighurs lived.</p>
+      <p>A Human Rights Watch <a href="https://www.hrw.org/report/2019/05/02/chinas-algorithms-repression/reverse-engineering-xinjiang-police-mass" target="_blank">report</a> on Xinjiang’s mass surveillance system, the Integrated Joint Operations Platform, notes that the system can alert police when it detects that a driver is not the one to whom a car is registered. This type of matching happens elsewhere in China as well. One county in the Guangxi Zhuang Autonomous Region wanted its traffic camera system to be able to capture and save an image of a driver’s face separately from the image of the car (presumably with a note that the person is linked to the car). In Liaoning province, Beipiao city sought cameras with a “hybrid capture mode,” which allows them to simultaneously track pedestrians, non-motor vehicles, and motor vehicles and “connect human faces with bodies, license plates, and vehicles.”</p>
+      <p>What implications do these capabilities have for average citizens—people who, as far as they know, aren’t under any particular government scrutiny? “Usually the argument in support of some of this technology is, ‘Well, if you’ve done nothing wrong, why are you afraid of that security camera?’” says Berkeley’s Xiao Qiang.</p>
+      <blockquote>
+But because this technology is so pervasive, and everyone is using it in their daily lives, you’re leaving traces that are being collected and computed by artificial intelligence in order to come up with some algorithm that is aimed at everyone. Not just for criminals, terrorists, or whoever that the security apparatus is focusing on. We’re talking about the ability to process this information and monitor everyone. You don’t have to have done anything [wrong].      </blockquote>
+      <p>Adds Xiao, “They are forming a digital model of you that becomes the basis of ‘algorithmic governance’. . . If you behave well according to this data, then the government gives you a reward—you’re in the upper class of citizens. If you perform badly in the government’s eye, then you’re in all kinds of trouble. Your life changes, your fate is defined by your digital persona.”</p>
+      <p>Unlike in other parts of China, surveillance pervades daily life in Xinjiang. Surveillance there is so aggressive that even residents not being targeted feel its pressure. “In other parts of China, surveillance is more seamless and less noticeable because the targeted population is so much smaller,” says Darren Byler, a postdoctoral fellow at the University of Colorado at Boulder researching the dispossession of Uighurs through surveillance. “The people being targeted know about it, for sure. Others either don’t know, or it makes them feel secure. But in Xinjiang, people are really freaked out by the technology, because they’re already really sensitive about saying something wrong—especially ethnic minorities, but also Han.” The pervasive fear among much of the population, and the opacity of the state, heighten residents’ anxiety about what surveillance technology is capable of: “Rumors extend the reach of the surveillance system and make people think it’s better than it really is.” (ChinaFile only collected a small number of notices from Xinjiang. Given the extensive documentation of surveillance in the region, some of which has relied on procurement documents, it’s likely government officials have removed some surveillance-related procurement notices from the Chinese Government Procurement Network website, or did not post notices on the site in the first place.)</p>
+      <p></p>
+      <div class="pullquote">
+Xinjiang’s authorities apply many of the same technologies and conceptual frameworks as are in use throughout the country.         <div class="pullquote-share">
+<span class="st_facebook_large" st_title="Xinjiang’s authorities apply many of the same technologies and conceptual frameworks as are in use throughout the country." displaytext="Facebook"></span><span class="st_twitter_large" st_title="Xinjiang’s authorities apply many of the same technologies and conceptual frameworks as are in use throughout the country." st_via="chinafile" displaytext="Tweet"></span><span class="st_email_large" st_title="Xinjiang’s authorities apply many of the same technologies and conceptual frameworks as are in use throughout the country." displaytext="Email"></span>
+        </div>
+      </div>
+      <p></p>
+      <p>The two other ways in which surveillance in Xinjiang differs most drastically from the rest of China are the omnipresent “convenience police stations” and physical security checkpoints that dot towns, villages, and cities throughout the region. “They don’t exist in any other places in China,” says Byler, “at least not to the same extent.” These checkpoints are constantly providing Xinjiang’s surveillance algorithms with additional photographic fodder. In Shawan, where people have to provide their ID number and have their picture taken in order to enter subways, hotels, Internet cafes, and other such places, authorities hoped to use this information to train an integrated tracking system.</p>
+      <p>Xinjiang may not be a harbinger of surveillance regimes elsewhere in China, simply because, thus far, the government has not deemed other regional populations deserving of such intense scrutiny. Yet, Xinjiang’s authorities apply many of the same technologies and conceptual frameworks as are in use throughout the country. Across China, local officials are rolling out their own circles, blocks, grids, cameras, sniffers, and scanners, ever alert for signs of trouble and doggedly pursuing the surveillance tools that will give them the control they crave.</p>
+      <p align="center">* * *</p>
+      <h2 id="xiangfang-district-testing-the-limits">Xiangfang District: Testing the Limits</h2>
+      <p class="dropcap">Local authorities across China don’t simply stamp out cookie-cutter surveillance infrastructure copied from their neighbors. Some are building systems that push current technological limits, like those offering “predictive policing” software. Though local surveillance initiatives flow from the same central-level plans, their integration remains limited. At this point in time, no single database contains all the country’s surveillance data. Even the most sophisticated tracking systems may go blind as a surveillance target steps across a county line. Local governments construct their systems separately, contracting out one by one to meet centrally-mandated goals. In practice, this offers wide latitude for local officials to decide which technologies, from the commonplace to the futuristic, to install in their hometowns.</p>
+      <p></p>
+      <div class="node node-article cboxes article align-left grid-4 img-yes logo-no">
+        <div class="cboxes-inner">
+          <div class="cb-head">
+<span class="date">10.30.20</span> <span class="type-icon"></span>
+          </div>
+          <div class="cb-link">
+<a href="https://www.chinafile.com/surveillance-bureaucracy"></a>
+          </div>
+          <div class="cb-img">
+<img src="https://www.chinafile.com/sites/default/files/styles/system/public/assets/images/article/system/2007814_leffacing_space11_nodot_0.png?itok=FZJhPllI" width="620" height="450" alt="" referrerpolicy="no-referrer" />
+          </div>
+          <div class="cb-cont">
+            <h2 id="the-surveillance-bureaucracy"><a href="https://www.chinafile.com/surveillance-bureaucracy" title="The Surveillance Bureaucracy">The Surveillance Bureaucracy</a></h2>
+            <div class="inner-content">
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+The Chinese government’s surveillance capabilities, while vast and impressive, do not result from one monolithic project. Rather, various central and local government and Chinese Communist Party (CCP) entities have participated in a series of...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p>In 2017, officials in the northeastern Chinese city of Harbin hoped to buy a system that would peer more deeply into residents’ lives, in line with the directives of the Skynet campaign. A procurement notice posted by the Xiangfang district Public Security Bureau outlined the “modules” it hoped would enable more granular tracking of targeted individuals. The <strong>key person control module</strong> would conduct a “multi-dimensional analysis” using a person’s mobile phone information, railway ticket purchases, and hotel stays, among other information. The <strong>fund analysis module</strong> would look at bank card numbers and transaction data to reconstruct an individual’s international “financial transaction relationship.” The <strong>orbit analysis module</strong> would employ geographic information systems technology to display a target’s daily travels. This would allow “researchers to analyze the key person’s activity patterns from a regional perspective, so as to spot any abnormalities and intervene in advance.” A <strong>multivariate analysis module</strong> would draw connections between and among multiple individuals, multiple vehicles, or multiple cases. People who had stayed at the same hotel, used the same Internet cafe, or taken the same plane could be linked together, feeding back into algorithms searching for patterns between drivers and cars, or case files and names.</p>
+      <p>Finally, a <strong>terrorist and violent person prediction module</strong> would take existing case files involving “terrorism and violence” and use them to train police computers to “classify and make predictions about all people, to identify key persons with the potential to get involved in terrorism, bombings, and so on.”</p>
+      <p>This module, as described, is a version of predictive policing—a concept roundly <a href="https://www.theguardian.com/us-news/2016/aug/31/predictive-policing-civil-rights-coalition-aclu" target="_blank">criticized</a> by human rights and civil liberties advocates in countries that have used it. A 2016 <a href="https://www.aclu.org/other/statement-concern-about-predictive-policing-aclu-and-16-civil-rights-privacy-racial-justice" target="_blank">report</a> by the American Civil Liberties Union described how predictive policing models often rely on data, such as crime reports, that are biased:</p>
+      <blockquote>
+crime reports and other statistics gathered by the police primarily document law enforcement’s response to the reports they receive and situations they encounter, rather than providing a consistent or complete record of all the crimes that occur. Vendors who sell and departments who embrace these new tools are failing to account for these realities, or to evaluate whether the data is so flawed that it cannot be relied upon at all.      </blockquote>
+      <p>As a result, says AI and human rights law expert Daragh Murray, “a lot of predictive policing algorithms produce discriminatory outputs.” They also undercut a fundamental commitment to respecting individual decision-making and “treating people as people. Predictive policing models by their nature conflict with that, because in simplistic terms, they’re based on a stereotype.” Moreover, citizens’ uncertainty about what factors might cause a predictive policing model to target them has a “chilling effect” on their behavior. Uighurs, whose very ethnicity has been deemed a threat in such models, “are a good example of a really chilled population.”</p>
+      <p></p>
+      <div class="pullquote">
+No single database contains all the country’s surveillance data. Even the most sophisticated tracking systems may go blind as a surveillance target steps across a county line.         <div class="pullquote-share">
+<span class="st_facebook_large" st_title="No single database contains all the country’s surveillance data. Even the most sophisticated tracking systems may go blind as a surveillance target steps across a county line." displaytext="Facebook"></span><span class="st_twitter_large" st_title="No single database contains all the country’s surveillance data. Even the most sophisticated tracking systems may go blind as a surveillance target steps across a county line." st_via="chinafile" displaytext="Tweet"></span><span class="st_email_large" st_title="No single database contains all the country’s surveillance data. Even the most sophisticated tracking systems may go blind as a surveillance target steps across a county line." displaytext="Email"></span>
+        </div>
+      </div>
+      <p></p>
+      <p>These ambitious, cutting-edge technologies might call to mind the science fiction thriller <em>Minority Report</em>, where police harness “pre-cognitive” individuals’ psychic abilities to arrest people before they commit crimes. Still, procurement notices reflect local authorities’ wishlists, not necessarily what they actually get. Companies vying for government contracts, says surveillance expert Albert Fox Cahn, likely overstate claims about their products’ “accuracy, predictive capacity, AI, and computer vision.”</p>
+      <p>Moreover, even the most ambitious officials must contend with the realities of governance in China. The surveillance “system,” if it can even be called a “system,” remains highly fragmented. A striking number of different local governments and Party offices (sometimes with overlapping jurisdictions) purchase surveillance equipment: Out of roughly 22,000 awarded bid notices for surveillance-related equipment, more than 8,500 unique state and Party agencies appeared as purchasers, spread across the town, district, county, provincial, and even national levels. The majority of these were local Public Security Bureaus, and about 10 percent were Party organizations, like the office in Xiqiao building the “portrait perception network.”</p>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-59cb72be79b88ab6a77205d9fff6a54d grid-6 photo-object">
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/purchaser_pie_chart_title_scaled.png" title="Surveillance Purchasers, Arranged by Bureaucracy" class="colorbox" data-colorbox-gallery="gallery-node-52706-FsN-cIKtYG4" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/purchaser_pie_chart_title_scaled.png" width="2036" height="1456" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>The bureaucratic groupings here derive from the names of government entities listed as purchasers for awarded bid notices.</p>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p>Each locale contends with a slightly different set of perceived needs and threats. Officials in Xinjiang may be animated by fear of ethnic minority populations; other governments may be responding to outbreaks of crime. Officials in Hebei province’s Raoyang county, according to awarded bid notices, have spent more than 191 million renminbi on surveillance-related purchases in recent years, apparently as part of an effort to <a href="http://www.xinhuanet.com/legal/2017-12/17/c_1122122295.htm" target="_blank">quash</a> a local <a href="http://police.news.sohu.com/20170515/n493082913.shtml" target="_blank">oil- and gas-stealing gang</a>. Localities also must decide how to respond to mandates from above, which often arrive in successive campaign-style rollouts. From Safe Cities, <a href="https://chinadigitaltimes.net/2019/09/sharper-eyes-surveilling-the-surveillers-part-1/?__cf_chl_jschl_tk__=48b4bc3a322fbb4efa4dd4e6edf73cec2e08865e-1602777568-0-Ac9aBq3trzMuXvdw_Ys3mRDJEDl6Myr_nNFTOI9QfhDlZ4ibsVRip7QnjRuFMoXa2KJUFY9an16_xtfc0COzqr7PkbK3gYfxam1I3OFx_M09FcEH9O_hhkUkL2LtV3mzg41C7cz04_aPOGwGa8usQGAogjuw7veiiZPl7xTVkI45jwcSfgqkjw9ms6O3I4_VQU5EEmqjNkyhtRUtfG74l8kcaVl_avQvAViotA82tsYbMcWmBupYul3dPSm5YEi3K1y9A-d_J3kIticmkhyWDi8oOYf0s47UPV_BpdrDSA0ItJzZBBwpsJymiBCq8rMRKk2cje4dnbb3XNvx577L-c_CS353Uvql2sSM9tCJK-N3" target="_blank">launched</a> in 2003, to Skynet in 2005, to <a href="http://www.gov.cn/zwgk/2012-12/05/content_2282674.htm" target="_blank">Smart Cities</a> in 2012, and, finally, through Sharp Eyes, which began in 2015, local governments throughout China have installed or upgraded their surveillance arsenals as these mandates washed across the country. Each of these campaigns has had a slightly different focus and reached different parts of the country at different times.</p>
+      <p>The unevenness and disaggregation of local surveillance systems hasn’t escaped the country’s leaders. The central government’s 2015 <a href="http://web.archive.org/web/20160616221428/https:/www.ndrc.gov.cn/zcfb/zcfbtz/201505/t20150513_691578.html" target="_blank">policy prescription for video surveillance</a> listed “increasingly prominent” problems such as “imperfect laws and regulations, inadequate overall planning, unstandardized networking and sharing, and incomplete management mechanisms,” all of which had “severely restricted the construction and development of a three-dimensional prevention and control system for social order.” Thus, the policy document made an explicit goal of integrating disparate camera networks, calling for “the video surveillance networking rate to reach 100 percent in key public areas,” and for “network interconnection, platform interoperability, and gradually linking up with grassroots comprehensive service management platforms in order to maximize networked sharing of video image resources from public spaces.” Officials around the country have taken up the call: The number of awarded bid notices referencing “video sharing,” “shared platform,” “shared applications,” and similar terms have increased year on year through the end of 2019. Different ministries and localities manage their own databases of citizen information, including both video and non-video data, which are not necessarily linked together. Numerous databases can exist even within one bureaucracy. Under the purview of the Ministry of Public Security and its branches, for example, are the Comprehensive Management Platform, the Integrated Joint Operations Platform, the Safe Borders Platform, the Population Information System, the Fugitive System, and the Floating Population Information System, among others.</p>
+      <p>Integration can occur horizontally (across bureaucracies and geographical regions) or vertically (within the same bureaucracy but up and down the hierarchy); notices expressed interest in improving one or both. Last year in Beijing, authorities sought to complete a city-wide Sharp Eyes Video Sharing and Exchange Platform. The platform would integrate video footage from cameras controlled by different government departments into a single system, allowing users to access more footage and to re-use data for their own purposes. The platform specs called for accommodating footage from some 200,000 cameras, with the possibility to expand up to one million. Footage would need to be stored for a minimum of 30 days, with some stored up to 90 days. As of last year, Foshan’s Shishan township was working to create an interface to give users access to multiple databases through a single log-in. In Gansu, police wanted to ensure that officers at the provincial, city, and county levels could all access the same information.</p>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_3 visual-box view-dom-id-acd860265491f7c336b4663c6704f965 grid-4 photo-object">
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/beijing_camera_table_38-34.png" title="Table of Cameras Controlled by Different Bureaucracies in Beijing" class="colorbox" data-colorbox-gallery="gallery-node-52721-FsN-cIKtYG4" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/medium/public/assets/images/photo/system/beijing_camera_table_38-34.png?itok=H91Vvre9" width="620" height="568" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>A table from a 2019 procurement notice from Beijing, showing the number of cameras in each bureaucracy that would be linked together after the completion of a government video-sharing platform. Translation by ChinaFile.</p>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p>Video surveillance integration efforts echo more general initiatives to link up information streams from various police databases. In 2017, a Human Rights Watch report <a href="https://www.hrw.org/news/2017/11/19/china-police-big-data-systems-violate-privacy-target-dissent" target="_blank">described</a> the “Police Cloud” system, designed to aggregate data about citizens into provincial-level “clouds.” References to “police clouds” also appear in more recent procurement notices. “We documented the purchase of equipment,” says Maya Wang, a senior researcher at Human Rights Watch, “but we have much less knowledge of whether or not the integration has happened. Things are fragmented along regional and provincial lines. At the same time, there is still a kind of general framework and philosophy, and a drive for greater standardization.” This push toward standardization is manifest in references to protocols to be adhered to, for instance in networking video surveillance systems or alarms, that appear in procurement notices from around the country.</p>
+      <p>Gaps in the overall surveillance system—between bureaucracies, between superior and subordinate offices, between projects, and between technologies—mean that the Chinese government does not have a seamless dragnet to ensnare any individual target. But it is working to patch holes that let information slip through. Samantha Hoffman, a senior analyst in the Cyber Centre at the Australian Strategic Policy Institute, cautions against assuming that the current, fragmented system is simply “”all chaos. Yeah, there’s a bit of chaos, but there’s also a lot of standardization.” She adds,</p>
+      <blockquote>
+You’re looking at multi-year, multi-decade projects. It’s all incremental. It’s not going to be perfect from day one, but that doesn’t mean that it can’t be effective. If you talk to tech experts, you find that debates in the China studies field about [these surveillance systems] assume that things are going to be harder than they are, but they’re actually already being done.      </blockquote>
+      <p>Just as important as looking at the government side, she says, is to “look at how tech companies are interacting with each other—you see a lot more cohesion. There are industry alliances to standardize technology development.”</p>
+      <p align="center">* * *</p>
+      <h2 id="a-needle-in-the-sea">A Needle in the Sea</h2>
+      <p class="dropcap">The procurement documents ChinaFile analyzed cannot, in and of themselves, offer a complete account of what is currently happening on the ground in China. But as a statement of surveillance ambition, their message is clear. “Over the long term, that’s what makes it concerning,” says IPVM’s Charles Rollet. Media coverage that portrays China in 2020 as an Orwellian surveillance state “is inaccurate and silly, but it could be reality down the line.”</p>
+      <p>What would such a reality mean for day-to-day life in China? Would there be any semblance of privacy left—the sort of going-about-one’s-business, blend-into-the-crowd privacy that many of us implicitly expect in public spaces—to people living in the PRC? What does it portend for public spaces beyond China’s borders? A number of democracies are already struggling with the implications of these technologies, which often pit a desire for public security against an expectation of privacy and consent. What happens as China normalizes, or sells, these technologies to places where public debate about them is quashed before it can occur? Will PRC surveillance tech strengthen the wave of authoritarian governance that seems to be rolling across the globe?</p>
+      <p>Despite the more visible reminders of state surveillance, many Chinese citizens simply don’t realize the extent to which they can be watched. Certainly, it is hard for passers-by to miss the thickets of surveillance cameras spread across the country, garlanded over roadways and encrusting buildings. Officials might not shy away from reminding people they are being watched, particularly if it keeps them on their best behavior, yet there remains a clear impulse to conceal aspects of the system. A number of procurement notices ChinaFile reviewed specifically sought the ability to collect and preserve information “without disrupting people’s daily life and work,” or to control equipment remotely “to enhance the concealment of use.”</p>
+      <p>Still, the relative inconspicuousness of surveillance in eastern China may now be eroding. As the country emerges from quarantine measures imposed to combat the spread of COVID-19, local governments are imposing digital checkpoints and location-tracking to <a href="https://www.ft.com/content/eee43c3e-8f7c-11ea-9b25-c36e3584cda8" target="_blank">determine</a> where residents are allowed to go. The system does not just passively collect information. It requires people to actively participate, scanning QR codes with their smartphones to ride in taxis or visit restaurants, banks, and other public places. Some people have reported that officials installed cameras outside their apartments, or even <a href="https://www.cnn.com/2020/04/27/asia/cctv-cameras-china-hnk-intl/index.html" target="_blank">inside</a> their homes. COVID-19-related monitoring layers on top of the existing surveillance system, drawing on infrastructure and knowledge acquired during the last five years as the PRC increased its baseline surveillance capabilities.</p>
+      <p>Whether they are assessing residents’ basic needs or trying to predict future behavior, officials engaged in surveillance are pursuing a single goal: to keep China’s citizens under near-constant watch. And, even if the system never reaches the intended apogee, its designers don’t require every available cutting-edge predictive technology for their system to work. The Chinese government already possesses, after all, perhaps the most agile, invasive, and omnipresent surveillance capabilities in the world.</p>
+      <p>In February, authorities tracked down and detained <a href="https://www.chinafile.com/keyword/xu-zhiyong" target="_blank">Xu Zhiyong</a>, a renowned civil rights advocate and lawyer, who had been in hiding for nearly two months and had <a href="https://www.npr.org/2020/02/17/806584471/rights-activist-xu-zhiyong-arrested-in-china-amid-crackdown-on-dissent" target="_blank">refrained from</a> using a cell phone in order to prevent being tracked. He did, however, sometimes go outside to exercise and to have meals. Did facial recognition technology play a role in his capture? According to Human Rights Watch’s Maya Wang, finding definitive evidence that someone was apprehended specifically because of these digital surveillance systems is “like trying to find a needle in the sea.” With the exception of Xinjiang, where omnipresent checkpoints and police stations serve as a constant reminder that the state is observing the population, “it’s not easy to find someone who knows they were victimized by these systems. People don’t know <em>how</em> they’re being watched.”<span class="cube"></span></p>
+      <p><em>Iris Zhang and <a href="https://www.chinafile.com/node/46606" target="_blank">Shen Lu</a> provided research for this article.</em></p>
+      <hr />
+      <p></p>
+      <ol id="footnotes">
+        <li id="fn1">Unless otherwise specified, the “government,” “officials,” and “authorities” that appear in this article can refer either to the Party or state.<a title="Jump back to footnote 1 in the text" href="https://www.chinafile.com/state-surveillance-china#fnr1">↩</a></li>
+      </ol>
+      <p></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-11-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-02/The-Korean-Peninsula-after-the-U.S.-Elections/">
+          The Korean Peninsula after the U.S. Elections
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-11-02</time>
+        <a href="https://nodebe4.github.io/oped2/2020-11-02/The-Korean-Peninsula-after-the-U.S.-Elections/">
+          The Korean Peninsula after the U.S. Elections
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-16</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-16/A-New-Normal-for-U.S.-China-Policy/">
+          A New Normal for U.S. China Policy?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-16</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-16/A-New-Normal-for-U.S.-China-Policy/">
+          A New Normal for U.S. China Policy?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-29/%E5%86%B7%E6%88%B0%E7%89%A9%E8%AA%9E-%E5%81%9A%E5%92%A9%E5%95%AB-%E6%88%91%E6%83%B3play%E6%B3%A2%E5%91%80-%E5%94%90%E7%89%9B%E5%BC%8F%E6%89%AD%E5%8B%95/">
+            前一篇：[冷戰物語]做咩啫，我想play波呀（唐牛式扭動）
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-30/%E5%9E%AE%E6%8E%89%E4%B8%80%E4%BB%A3-%E8%A7%81%E8%AF%81%E8%80%85%E8%BF%AA-%E6%99%AE%E9%87%8C%E7%8E%9B%E9%80%9D%E4%B8%96-%E8%AF%95%E5%9B%BE%E9%80%9A%E8%BF%87%E8%AF%97%E6%AD%8C%E5%AE%9E%E7%8E%B0%E6%96%87%E5%8C%96%E5%8F%98%E9%9D%A9%E5%92%8C%E9%87%8D%E5%A1%91%E5%A5%B3%E6%80%A7%E5%9C%B0%E4%BD%8D/">
+            後一篇：“垮掉一代”见证者迪·普里玛逝世：试图通过诗歌实现文化变革和重塑女性地位
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-10-29/%E5%86%B7%E6%88%B0%E7%89%A9%E8%AA%9E-%E5%81%9A%E5%92%A9%E5%95%AB-%E6%88%91%E6%83%B3play%E6%B3%A2%E5%91%80-%E5%94%90%E7%89%9B%E5%BC%8F%E6%89%AD%E5%8B%95/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-10-30/%E5%9E%AE%E6%8E%89%E4%B8%80%E4%BB%A3-%E8%A7%81%E8%AF%81%E8%80%85%E8%BF%AA-%E6%99%AE%E9%87%8C%E7%8E%9B%E9%80%9D%E4%B8%96-%E8%AF%95%E5%9B%BE%E9%80%9A%E8%BF%87%E8%AF%97%E6%AD%8C%E5%AE%9E%E7%8E%B0%E6%96%87%E5%8C%96%E5%8F%98%E9%9D%A9%E5%92%8C%E9%87%8D%E5%A1%91%E5%A5%B3%E6%80%A7%E5%9C%B0%E4%BD%8D/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-11-02/The-Korean-Peninsula-after-the-U.S.-Elections/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-10-16/A-New-Normal-for-U.S.-China-Policy/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-10-29/%E5%86%B7%E6%88%B0%E7%89%A9%E8%AA%9E-%E5%81%9A%E5%92%A9%E5%95%AB-%E6%88%91%E6%83%B3play%E6%B3%A2%E5%91%80-%E5%94%90%E7%89%9B%E5%BC%8F%E6%89%AD%E5%8B%95/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-10-30/%E5%9E%AE%E6%8E%89%E4%B8%80%E4%BB%A3-%E8%A7%81%E8%AF%81%E8%80%85%E8%BF%AA-%E6%99%AE%E9%87%8C%E7%8E%9B%E9%80%9D%E4%B8%96-%E8%AF%95%E5%9B%BE%E9%80%9A%E8%BF%87%E8%AF%97%E6%AD%8C%E5%AE%9E%E7%8E%B0%E6%96%87%E5%8C%96%E5%8F%98%E9%9D%A9%E5%92%8C%E9%87%8D%E5%A1%91%E5%A5%B3%E6%80%A7%E5%9C%B0%E4%BD%8D/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-11-02/The-Korean-Peninsula-after-the-U.S.-Elections/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-10-16/A-New-Normal-for-U.S.-China-Policy/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

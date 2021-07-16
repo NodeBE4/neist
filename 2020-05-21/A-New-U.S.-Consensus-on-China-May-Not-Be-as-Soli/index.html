@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears
+——
+" />
+    <meta property="og:description" content="
+A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears" />
+    <meta property="twitter:title" content="A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Freporting-opinion%2Fviewpoint%2Fnew-us-consensus-china-may-not-be-solid-it-appears" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears&text=A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears&title=A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears&title=A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears&body=
+A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears&title=A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears&caption=
+A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears&url=https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-05-21
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Ali Wyne</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1590039060000-->
+<p><a href="https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears">A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-ae7af53384c94c1b9a3d6956a5f5b30d">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/52291_sm_1.jpg" title="A New U.S. ‘Consensus’ on China May Not Be as Solid as It Appears" class="colorbox" data-colorbox-gallery="gallery-node-52291-7oY-Vuy-yg0" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/52291_sm_1.jpg?itok=nonBkEJz" width="1200" height="791" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Mark Wilson—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>U.S. President Donald Trump (left) hosts a luncheon for Chinese Vice Premier Liu He (right) and members of his delegation, after signing Phase 1 of a trade deal between the U.S. and China, in the East Room at the White House, in Washington, DC., January 15, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">The COVID-19 pandemic has brought ties between Washington and Beijing to their lowest level since the countries normalized relations in 1979, with many observers warning that they have entered into either “<a href="https://www.businessinsider.com/the-us-china-entering-new-cold-war-amid-coronavirus-2020-5" target="_blank" rel="nofollow">a new Cold War</a>” or at least “<a href="https://www.ft.com/content/fe59abf8-cbb8-4931-b224-56030586fb9a" target="_blank" rel="nofollow">a new type of Cold War</a>.” While the Trump administration was initially circumspect in its criticism of China’s response, it has increasingly taken to blaming Beijing as the coronavirus claims more American lives and inflicts greater damage upon the U.S. economy. Beyond <a href="https://www.cbsnews.com/news/robert-obrien-china-covered-up-coronavirus-costing-world-two-months-national-security-adviser/" target="_blank" rel="nofollow">echoing</a> widespread condemnation of the Chinese Communist Party for its initial targeting of doctors and journalists who tried to sound the alarm, it has <a href="https://www.npr.org/sections/goatsandsoda/2020/04/15/834666123/trump-and-who-how-much-does-the-u-s-give-whats-the-impact-of-a-halt-in-funding" target="_blank" rel="nofollow">temporarily suspended</a> U.S. funding for the World Health Organization, which it charges with being unduly deferential to China; <a href="https://theintercept.com/2020/05/19/coronavirus-pandemic-origin-trump-china/" target="_blank" rel="nofollow">suggested</a> that the virus originated in a lab in Wuhan that studies bat coronaviruses; and <a href="https://www.washingtonpost.com/business/2020/04/30/trump-china-coronavirus-retaliation/" target="_blank" rel="nofollow">floated</a> the idea of seeking reparations from Beijing.</p>
+      <p><em>The Wall Street Journal</em> <a href="https://www.wsj.com/articles/coronavirus-casts-deep-chill-over-u-s-china-relations-11588781420" target="_blank" rel="nofollow">notes</a> that “[a] review of the China policies of the Trump administration’s 23 cabinet and cabinet-level officials reveals that nearly all of them have adopted adversarial policies toward China or curtailed cooperation with the country.” <em>The Los Angeles Times</em> <a href="https://www.latimes.com/politics/story/2020-04-30/congress-looks-at-options-to-punish-china-over-the-corornavirus-outbreak" target="_blank" rel="nofollow">adds</a> that “lawmakers [are] mark[ing] territory on ways to confront China. Sixty-two bills related to China have been introduced in Congress by Republicans and Democrats since Feb. 1, a dramatic increase in what had already been a steady uptick in China-related legislation since 2017.” And the American public is souring on China as well; a <a href="https://www.pewresearch.org/global/2020/04/21/u-s-views-of-china-increasingly-negative-amid-coronavirus-outbreak/" target="_blank" rel="nofollow">survey</a> this March by the Pew Research Center found that 66 percent view China unfavorably, “the most negative rating for the country since the Center began asking the question in 2005, and up nearly 20 percentage points since the start of the Trump administration.” 62 percent of Americans, meanwhile, believe China’s power and influence constitute a “major threat” to the United States, up from 48 percent in Spring 2018.</p>
+      <p>It had been growing more commonplace for observers to <a href="https://www.washingtonpost.com/outlook/2019/07/25/why-new-china-consensus-washington-scares-me/" target="_blank" rel="nofollow">cite</a> a new U.S. “consensus” on China well before the first case of the coronavirus was reported in Wuhan. With Beijing doubling down on authoritarian rule and pursuing a more coercive foreign policy, the argument ran, Washington had to renegotiate the terms of its interdependence and take a harder line on its foremost strategic competitor. As the pandemic wreaks havoc across the United States, that judgment has only grown more entrenched.</p>
+      <p></p>
+      <div class="node node-article cboxes article align-left grid-4 img-yes logo-no">
+        <div class="cboxes-inner">
+          <div class="cb-head">
+            <h3 id="conversation"> <a href="https://www.chinafile.com/conversation">Conversation</a></h3>
+ <span class="date">03.28.20</span> <span class="type-icon"></span>
+          </div>
+          <div class="cb-link">
+<a href="https://www.chinafile.com/conversation/us-china-cooperation-covid-19-still-possible"></a>
+          </div>
+          <div class="cb-img">
+<img src="https://www.chinafile.com/sites/default/files/styles/system/public/assets/images/article/system/gettyimages-1205108073.jpg?itok=-Z5fUm4-" width="620" height="450" alt="" referrerpolicy="no-referrer" />
+          </div>
+          <div class="cb-cont">
+            <h2 id="is-us-china-cooperation-on-covid-19-still-possible"><a href="https://www.chinafile.com/conversation/us-china-cooperation-covid-19-still-possible" title="Is U.S.-China Cooperation on COVID-19 Still Possible?">Is U.S.-China Cooperation on COVID-19 Still Possible?</a></h2>
+ <span class="authors"> <span>Julian B. Gewirtz, Deborah Seligsohn &amp; more</span> </span>             <div class="inner-content">
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+Over the past two weeks, as the outbreak of the virus known has COVID-19 has accelerated its deadly spread around the world, an already collapsing U.S.-China relationship appears to be entering a period of free fall. This is happening at a moment...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>The presumption of a new consensus, though, may be premature: While many U.S. policymakers and analysts are disillusioned by China’s growing repressiveness at home and assertiveness abroad, and accordingly supportive of efforts to “get tougher” on Beijing, they disagree significantly over how to proceed. Concluding that an erstwhile consensus has run its course is a prerequisite for cultivating a different one, but only when that judgment yields a clear policy direction can it be said that a new framework has emerged. The hardening of U.S. sentiment against China has had a paradoxical effect. Far from coinciding with the emergence of greater prescriptive cohesion, it has reinforced how far Washington is from settling upon the strategic objectives it seeks to achieve vis-à-vis Beijing, let alone from articulating a credible path towards their achievement.</p>
+      <p>This disjuncture holds even for the Trump administration, which is supposed to have catalyzed the alleged consensus that now exists. <a href="https://www.whitehouse.gov/wp-content/uploads/2017/12/NSS-Final-12-18-2017-0905.pdf" target="_blank" rel="nofollow">Declaring</a> that the United States was mistaken to assess that “support for China’s rise and for its integration into the post-war international order would liberalize China” and <a href="https://www.whitehouse.gov/briefings-statements/statement-president-regarding-trade-china/" target="_blank" rel="nofollow">contending</a> that China’s trade practices endanger U.S. national security, it has significantly reconfigured Washington’s approach to Beijing. It has imposed steep tariffs on Chinese exports, <a href="https://www.cnbc.com/2020/03/27/us-prepares-crackdown-on-huaweis-global-chip-supply-sources-say.html" target="_blank" rel="nofollow">pursued</a> various efforts to prevent further inroads by telecommunications giant Huawei, and <a href="https://www.theatlantic.com/politics/archive/2020/02/us-china-allies-competition/606637/" target="_blank" rel="nofollow">exhorted</a> its democratic allies around the world to form a united front against China’s resurgence.</p>
+      <p>But the administration’s approach has often been inconsistent. On the issue of trade, for example, Robert Zoellick <a href="https://www.uschina.org/sites/default/files/ambassador_robert_zoellicks_remarks_to_the_uscbc_gala_2019.pdf" target="_blank" rel="nofollow">observes</a> that while some of the president’s chief negotiators have been pressing China to resume market-oriented reforms and make its investment climate more welcoming for U.S. investors, others have been calling for Washington to unspool its web of commercial and technological linkages with Beijing. The Departments of Commerce and Defense are mulling provisions that would restrict the flow of high-end technologies to China, but President Trump himself <a href="https://www.politico.com/news/2020/02/18/trump-pours-cold-water-on-tightening-china-export-restrictions-115780" target="_blank" rel="nofollow">warned</a> in February that the United States would undercut its economic dynamism were it to apply export controls too stringently. And though the administration has worked hard to sever linkages between U.S. companies and Huawei, the Department of Commerce is apparently <a href="https://www.reuters.com/article/us-usa-china-huawei-tech/u-s-drafts-rule-to-allow-huawei-and-u-s-firms-to-work-together-on-5g-standards-sources-idUSKBN22I1ZY" target="_blank" rel="nofollow">preparing</a> to sign off on a new rule that would permit them to interact for the purpose of developing shared 5G standards.</p>
+      <p>The pandemic has <a href="https://www.wsj.com/articles/coronavirus-casts-deep-chill-over-u-s-china-relations-11588781420" target="_blank" rel="nofollow">prompted</a> some members of the administration to press for a more aggressive posture towards China in domains extending well beyond trade and technology. As <em>The New York Times</em>’ Edward Wong and Ana Swanson <a href="https://www.nytimes.com/2020/05/01/us/politics/coronavirus-china-trump.html" target="_blank" rel="nofollow">explain</a>, however, “[t]hose in Washington advocating a more stable relationship with China, including some of Mr. Trump’s top economic advisers, warn that the administration must take care not to overreach.” China is a key source of the medical equipment for which the United States has an urgent need, after all, and America’s economic recovery after the pandemic will depend on China’s own resuscitation. Wong and Swanson also note that “Mr. Trump himself has vacillated in his public statements on China.” In recent weeks, he has <a href="https://abcnews.go.com/Politics/wireStory/trumps-contradictory-views-china-shift-crisis-grows-69930933" target="_blank" rel="nofollow">sounded</a> different tunes on China’s culpability for the outbreak and President Xi Jinping’s management of the crisis.</p>
+      <p>The business community is also conflicted. While the American Chamber of Commerce in China <a href="https://www.reuters.com/article/us-usa-trade-china/u-s-firms-no-longer-positive-anchor-for-beijing-ties-amcham-in-china-idUSKCN1RT0CA" target="_blank" rel="nofollow">lamented</a> last April that U.S. firms “can no longer be relied upon to be a positive anchor” of bilateral ties, those firms are increasingly <a href="https://www.nytimes.com/2020/02/16/business/economy/us-china-technology.html" target="_blank" rel="nofollow">concerned</a> that the administration’s push to reduce Sino-U.S. connective tissue—particularly through its use of export controls—could end up cutting the United States off from the world’s largest consumer market and a growing source of innovation in its own right. And it is unclear that the American public, exhausted after some two decades of “endless wars” in the Middle East, is ready to countenance an indefinite struggle against the engine of global growth. The Brookings Institution’s Richard Bush and Ryan Hass <a href="https://www.brookings.edu/blog/order-from-chaos/2019/03/04/the-china-debate-is-here-to-stay/" target="_blank" rel="nofollow">observed</a> last March that unless Americans are “persuaded of the need to make material sacrifices to blunt China’s rise, they will grow weary of accepting direct economic pain now for the uncertain prospect of long-term gain.” Even vigorous proponents of accelerated trade and technological decoupling <a href="https://www.the-american-interest.com/2020/04/08/the-long-hard-road-to-decoupling-from-china/" target="_blank" rel="nofollow">concede</a> that that process would be costly for American consumers, who, in addition to <a href="https://www.nytimes.com/2020/01/06/business/economy/trade-war-tariffs.html" target="_blank" rel="nofollow">bearing</a> the costs of tariffs on Chinese exports, are suffering enormously as a result of the pandemic; over 36 million Americans have <a href="https://www.cbsnews.com/news/unemployment-claims-3-million-jobless-report-last-week/" target="_blank" rel="nofollow">filed</a> jobless claims in the past two months.</p>
+      <p>On balance, then, the notion of a new consensus on China discounts the gap between distrust, which is strong and increasingly pervasive, and direction, which is sparse and often contradictory.</p>
+      <p>Looking back, in addition to <a href="https://macropolo.org/analysis/china-us-engagement-policy/" target="_blank" rel="nofollow">reexamining</a> what objectives the architects of America’s longstanding policy towards China hoped to achieve, scholars are <a href="https://www.tandfonline.com/doi/abs/10.1080/0163660X.2019.1626688?journalCode=rwaq20" target="_blank" rel="nofollow">debating</a> what metrics should be used to assess the success of that policy. If one believes Washington could have forestalled the emergence of a formidable Chinese competitor and/or molded it into a Western-style democracy, one would be inclined to pronounce America’s erstwhile policy towards China a “failure.” Princeton University’s Aaron Friedberg <a href="https://www.foreignaffairs.com/articles/china/2018-06-14/did-america-get-china-wrong" target="_blank" rel="nofollow">concludes</a> that “events have decisively disproved the predictions of those who claimed that engagement would lead to China’s economic and political liberalization and its transformation into a ‘responsible stakeholder’ in the U.S.-led international order.” The Council on Foreign Relations’ Elizabeth Economy <a href="https://assets.aspeninstitute.org/content/uploads/2020/01/TheStruggleForPower.pdf?_ga=2.256696461.702749852.1588864851-809674205.1588864851" target="_blank" rel="nofollow">argues</a>, however, that “engagement has failed only if we believe a set of mistaken assumptions: that the United States had the power to determine how China would turn out, that China and Chinese society have not been positively affected by the country’s integration into the international community, and that the Xi government is the end of the road for China’s political and economic evolution.”</p>
+      <p>Turning to the present, observers disagree over how to classify the multifaceted Chinese challenge to U.S. national interests. CNN’s Fareed Zakaria <a href="https://www.foreignaffairs.com/articles/china/2019-12-06/new-china-scare" target="_blank" rel="nofollow">concludes</a> that while China “has become a competitor and in some places a rival of the United States,” it “hardly qualifies as a mortal danger” to the post-war order. Many observers believe that while Beijing’s resurgence will erode Washington’s margin of preeminence, it is unlikely to precipitate a power transition. <em>The New Yorker</em>’s Evan Osnos, for example, <a href="https://www.newyorker.com/magazine/2020/01/13/the-future-of-americas-contest-with-china" target="_blank" rel="nofollow">envisions</a> “an uneasy coexistence” between the two, venturing that “the reality of this century will be us-<em>and</em>-them” instead of “us-or-them.” Others, however, strike a more dire tone. Financial consultant David Goldman <a href="https://claremontreviewofbooks.com/the-chinese-challenge/" target="_blank" rel="nofollow">assesses</a> in a new piece that China possesses “an economic and technological vision so vast that American analysts have lacked the intellectual bandwidth to perceive it,” warning that it threatens to relegate the United States to “second-rate status, much like Britain in the 20th century.”</p>
+      <p>In addition, as illustrated by debates over the merits of analogizing contemporary U.S.-China tensions to those <a href="https://thediplomat.com/2014/02/china-is-not-1914-germany/" target="_blank" rel="nofollow">between the United Kingdom and Germany</a> in the run-up to World War I or those <a href="https://www.theatlantic.com/ideas/archive/2019/12/cold-war-china-purely-optional/601969/" target="_blank" rel="nofollow">between Washington and Moscow</a> during the Cold War, observers disagree over the intensity and intentions of what is termed “Chinese revisionism”—that is, Chinese attempts to modify the institutions, processes, and norms that underpin the post-war order. Chinese officials have at times disclaimed the legitimacy of that system. High-ranking diplomat Yang Jiechi <a href="http://en.theorychina.org/xsqy_2477/201712/t20171212_360713.shtml" target="_blank" rel="nofollow">observed</a> in late 2017, for example, that “Western management concepts, systems, and models have become increasingly difficult to adapt to the new international landscape and the trend of the times,” arguing that the international community “urgently calls for a new concept of global governance, a new fairer and more reasonable international system and order, and a better future for mankind.” Discerning the contours of China’s preferred alternative, though, has proven challenging. “Beyond indications of what is loathed, feared, and unwanted,” <a href="https://www.nbr.org/publication/chinas-vision-for-a-new-world-order/" target="_blank" rel="nofollow">concludes</a> the National Bureau of Asian Research’s Nadège Rolland, “there is no explicitly elucidated vision about how world affairs would be managed and organized in the ‘new era,’ according to which norms and values they would be managed and organized, and via which kinds of institutional arrangements they would operate.” The Carnegie Endowment for International Peace’s Evan Feigenbaum <a href="https://carnegieendowment.org/2018/04/27/reluctant-stakeholder-why-china-s-highly-strategic-brand-of-revisionism-is-more-challenging-than-washington-thinks-pub-76213" target="_blank" rel="nofollow">assesses</a> China to be “a stakeholder in existing institutions and rules but a habitually reluctant, seldom satisfied, and frequently ambivalent one, at best,” one whose “strategy is actually one of <em>portfolio diversification</em>, not the replacement of institutions and systems.” National Intelligence University’s Daniel Tobin <a href="https://www.uscc.gov/sites/default/files/testimonies/SFR%20for%20USCC%20TobinD%2020200313.pdf" target="_blank" rel="nofollow">argues</a>, however, that it seeks “a single, integrated global order whose interconnectedness is underpinned by China’s standards and ‘wisdom.’”</p>
+      <p>Observers disagree over a number of other questions. To what extent is China trying to seed its ideology abroad? The International Republican Institute’s David Shullman <a href="https://warontherocks.com/2020/03/how-china-is-exploiting-the-pandemic-to-export-authoritarianism/" target="_blank" rel="nofollow">contends</a> that China is exploiting the pandemic in the service of “exporting its authoritarian approach to information control” and “promoting authoritarian methods to leaders looking to placate or control frustrated publics.” Cornell University’s Jessica Chen Weiss <a href="https://warontherocks.com/2020/02/understanding-and-rolling-back-digital-authoritarianism/" target="_blank" rel="nofollow">concludes</a>, though, that “[w]hile Xi has mooted a China ‘solution’ to the problems facing humankind, this kind of rhetoric has sought to create space for autocracy to survive in a system dominated by liberal democracies—rather than forcibly exporting Chinese-style autocracy.” How sophisticated and forward-looking is its foreign policy? The Naval War College’s Andrew Erickson <a href="http://www.andrewerickson.com/wp-content/uploads/2019/06/Comparative-Grand-Strategy_Oxford-University-Press_2019_China-Chapter-Volume-Info.pdf" target="_blank" rel="nofollow">posits</a> that Xi’s “quest to make China great again represents an all-encompassing thirty-five-year plan that is the most forthright and ambitious of any major power.” Drake University’s David Skidmore, however, <a href="https://thediplomat.com/2019/03/chinas-reputation-for-long-range-planning-is-wildly-exaggerated/" target="_blank" rel="nofollow">cautions</a> against “the erroneous notion that China possesses some uniquely successful capacity for vision and long-range planning.” How likely is its continued resurgence? While many observers warn that the United States needs to prepare for the emergence of a peer Chinese competitor, prominent dissenters argue that it actually needs to prepare for the consequences of a weakening China, one that may resort to increasingly reckless behavior abroad to distract from accelerating internal decay. Tufts University’s Michael Beckley, for example, <a href="https://www.foreignaffairs.com/articles/china/2019-10-28/united-states-should-fear-faltering-china" target="_blank" rel="nofollow">warned</a> this past October that we are now in “a moment of maximum danger, because China is too weak to feel secure or satisfied with its place in the world order but strong enough to destroy it.”</p>
+      <p>Finally, looking forward, it is unclear what long-term objectives the United States should pursue vis-à-vis China. Unlike Japan in the 1930s, Germany in the 1940s, and the Soviet Union for nearly half a century, it is not undertaking a frontal, military-cum-ideological assault on the postwar order. It makes little sense, in addition, to pursue “victory” over or contemplate the “defeat” of a competitor with which one has such wide-ranging interdependencies and must preserve a baseline of cooperation to safeguard many of one’s own vital national interests.</p>
+      <p>Even among proponents of selective decoupling—that is, unwinding certain aspects of interdependence—there is fierce debate: In which domains, to what extent, and at what speed should the United States attempt to disengage from China? That question, in turn, raises a host of vexing dilemmas: how to counter censorship and espionage without imposing sweeping restrictions on the inflow of Chinese talent, how to reduce the security risks of interdependence without triggering a massive rupture in economic ties, and how to ensure that U.S. companies maintain a strong foothold in China without having to abide authoritarian dictates.</p>
+      <p>Perhaps of most pressing concern for the United States is how best to engage in geoeconomic competition with China. Beijing’s share of global exports actually <a href="https://www.economist.com/finance-and-economics/2019/12/12/trade-war-chinas-exporters-have-expanded-their-global-market-share" target="_blank" rel="nofollow">increased</a> slightly last year, despite the Trump administration’s escalating tariff campaign. Huawei <a href="https://www.wsj.com/articles/huaweis-revenue-hits-record-122-billion-in-2019-despite-u-s-campaign-11577754021" target="_blank" rel="nofollow">registered</a> record revenues, despite the administration’s attempts to blacklist it. And the Belt and Road Initiative (BRI) continues to enlist new partner countries, even though administration officials warn that it is effectively an instrument of Chinese neocolonialism.</p>
+      <p></p>
+      <div class="node node-article cboxes article align-left grid-4 img-yes logo-no">
+        <div class="cboxes-inner">
+          <div class="cb-head">
+            <h3 id="china-in-the-world-podcast"> <a href="https://www.chinafile.com/china-world-podcast">China in the World Podcast</a></h3>
+ <span class="date">05.14.20</span> <span class="type-icon"></span>
+          </div>
+          <div class="cb-link">
+<a href="https://www.chinafile.com/library/china-world-podcast/missing-action-us-china-cooperation-coronavirus"></a>
+          </div>
+          <div class="cb-img">
+<img src="https://www.chinafile.com/sites/default/files/styles/system/public/assets/images/article/system/52176_cropped_sm.png?itok=aRIgZUdQ" width="620" height="450" alt="" referrerpolicy="no-referrer" />
+          </div>
+          <div class="cb-cont">
+            <h2 id="missing-in-action-us-china-cooperation-on-coronavirus"><a href="https://www.chinafile.com/library/china-world-podcast/missing-action-us-china-cooperation-coronavirus" title="Missing in Action: U.S.-China Cooperation on Coronavirus">Missing in Action: U.S.-China Cooperation on Coronavirus</a></h2>
+ <span class="authors"> <span>Paul Haenle &amp; Evan A. Feigenbaum</span> </span> <span class="publication">from <em>Carnegie-Tsinghua Center for Global Policy</em></span>             <div class="inner-content">
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+The coronavirus outbreak has highlighted the many issues in the U.S.-China relationship. Why can’t Washington and Beijing better coordinate a response to the pandemic, replicating their cooperative efforts during the 2008 financial crisis and 2014...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>Given the pace of Beijing’s progress, some observers call on Washington to intensify efforts at thwarting its development. Among those who question the feasibility of that approach, some exhort Washington to adopt a degree of state-led industrial planning, while others urge it to enlist the formidable resources of America’s private sector. The pandemic could prove to be a significant obstacle to the BRI’s further expansion, with many participating countries having applied for debt relief, and it has compelled the European Union to warn against Chinese takeovers of vulnerable European companies. Still, the United States is far from having a coherent approach to managing China’s economic expansion and technological inroads.</p>
+      <p>Going forward, while the progression of COVID-19 has intensified U.S. distrust of China, it may not lead to a more unified policy as readily as intuition might suggest. True, it has spurred bipartisan cooperation around reducing America’s reliance on China for essential medicines and personal protective equipment. Senator Marco Rubio (R-FL) introduced legislation to that end on March 19, the <a href="https://www.govtrack.us/congress/bills/116/s3538/text" target="_blank" rel="nofollow">Strengthening America’s Supply Chain and National Security Act</a>, with Senators Kevin Cramer (R-ND), Tim Kaine (D-VA), Chris Murphy (D-CT), and Elizabeth Warren (D-MA) serving as cosponsors.</p>
+      <p>As <em>The Atlantic</em>’s Yasmeen Serhan and Kathy Gilsinan <a href="https://www.theatlantic.com/politics/archive/2020/04/us-britain-dependence-china-trade/610615/" target="_blank" rel="nofollow">explain</a>, however, the pandemic “has made clear just how intertwined [the U.S. and Chinese] economies remain and how difficult it will be to separate them. The same White House vowing to seek accountability has airlifted tons of medical supplies from China.” In addition, COVID-19 has vividly and painfully demonstrated the consequences that can result when strategic distrust precludes even the most self-evidently necessary bilateral cooperation: How many lives might have been saved, and how much economic devastation might have been averted, if the two countries that <a href="https://www.intereconomics.eu/contents/year/2019/number/3/article/the-us-china-trade-war-and-its-implications-for-europe.html" target="_blank" rel="nofollow">collectively account</a> for some two-fifths of global output and possess unrivaled biomedical expertise had collaborated at the outset to identify the origins of the virus and had exhorted the rest of the world to take swift action to prepare for its arrival? A recent <a href="https://asiasociety.org/center-us-china-relations/saving-lives-america-china-and-around-world" target="_blank" rel="nofollow">open letter</a><sup id="fnr1"><a href="https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears#fn1" rel="nofollow">1</a></sup> signed by over 100 distinguished diplomats and scholars, including four former U.S. ambassadors to China, concludes that while “China has much to answer for in its response to the coronavirus” and “the United States and China are increasingly in competition and have serious differences in interests and values,” “[n]o effort against the coronavirus—whether to save American lives at home or combat the disease abroad—will be successful without some degree of cooperation between the United States and China.”</p>
+      <p>An increasingly antagonistic relationship with China ensures not only that it will take much longer for the United States to emerge from this particular health-cum-economic crisis, but also that Washington will be less prepared to mitigate the impacts of future transnational emergencies. In brief, then, the pandemic poses a vexing dilemma for U.S. foreign policy: ensuring that selective economic disengagement with China does not lead to a wholesale diplomatic rupture.</p>
+      <p>A last point demonstrates how difficult it will be to fashion a coherent response to China’s resurgence. Individuals may agree strongly on what form it should take in the abstract but diverge quickly when asked to articulate what expression it should take in practice. The United States Institute of Peace’s Jacob Stokes <a href="https://pacforum.org/publication/pacnet-8-who-cares-if-the-us-is-in-a-new-cold-war-with-china" target="_blank" rel="nofollow">notes</a> that most China analysts converge upon a familiar set of policies: “strengthen US alliances, maintain an effective military deterrent, uphold democratic values, foster domestic renewal, and seek out pragmatic cooperation with China. When it comes to implementing those broad strokes, however, a number of difficult questions arise.”</p>
+      <p>Given that observers disagree over how to evaluate U.S. policy from the Nixon administration through the Obama administration; how to assess China’s character, intentions, and trajectory; and how to enhance America’s strategic competitiveness, the putative new consensus would seem to be an impoverished one. A sustainable framework must do more than vocalize anxiety, after all; it must articulate a vision.<span class="cube"></span></p>
+      <hr />
+      <ol id="footnotes">
+        <li id="fn1">Disclaimer: This letter was co-organized by the Asia Society Center on U.S.-China Relations, which publishes ChinaFile. Neither the author of this essay nor ChinaFile’s editors were involved in the letter’s drafting.<a title="Jump back to footnote 1 in the text" href="https://www.chinafile.com/reporting-opinion/viewpoint/new-us-consensus-china-may-not-be-solid-it-appears#fnr1" rel="nofollow">↩</a></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-06-01</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-01/No-Foreign-NGO-Representative-Offices-Registered-i/">
+          No Foreign NGO Representative Offices Registered in May
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-27/Coronavirus-and-the-Korean-Peninsula/">
+          Coronavirus and the Korean Peninsula
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-20</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-20/How-Will-Historians-Look-Back-at-the-Coronavirus-O/">
+          How Will Historians Look Back at the Coronavirus Outbreak?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-19/U.S.-China-Relations-2020-Coronavirus-and-Electio/">
+          U.S.-China Relations 2020: Coronavirus and Elections
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-20/%E5%87%86%E5%A4%87%E7%99%BB%E9%A1%B6%E7%9A%84%E4%BA%BA-%E7%8F%A0%E5%B3%B0%E5%A4%A7%E6%9C%AC%E8%90%A5%E4%BA%94%E5%A4%A9%E4%BA%94%E5%A4%9C/">
+            前一篇：准备登顶的人：珠峰大本营五天五夜
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-21/%E9%A6%99%E6%B8%AF%E6%96%87%E5%87%AD%E8%AF%95%E5%8E%86%E5%8F%B2%E7%A7%91%E8%AF%95%E9%A2%98%E4%BA%89%E8%AE%AE/">
+            後一篇：香港文凭试历史科试题争议
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-05-20/%E5%87%86%E5%A4%87%E7%99%BB%E9%A1%B6%E7%9A%84%E4%BA%BA-%E7%8F%A0%E5%B3%B0%E5%A4%A7%E6%9C%AC%E8%90%A5%E4%BA%94%E5%A4%A9%E4%BA%94%E5%A4%9C/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-05-21/%E9%A6%99%E6%B8%AF%E6%96%87%E5%87%AD%E8%AF%95%E5%8E%86%E5%8F%B2%E7%A7%91%E8%AF%95%E9%A2%98%E4%BA%89%E8%AE%AE/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-05-27/Coronavirus-and-the-Korean-Peninsula/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-05-20/How-Will-Historians-Look-Back-at-the-Coronavirus-O/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-05-20/%E5%87%86%E5%A4%87%E7%99%BB%E9%A1%B6%E7%9A%84%E4%BA%BA-%E7%8F%A0%E5%B3%B0%E5%A4%A7%E6%9C%AC%E8%90%A5%E4%BA%94%E5%A4%A9%E4%BA%94%E5%A4%9C/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-05-21/%E9%A6%99%E6%B8%AF%E6%96%87%E5%87%AD%E8%AF%95%E5%8E%86%E5%8F%B2%E7%A7%91%E8%AF%95%E9%A2%98%E4%BA%89%E8%AE%AE/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-05-27/Coronavirus-and-the-Korean-Peninsula/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-05-20/How-Will-Historians-Look-Back-at-the-Coronavirus-O/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

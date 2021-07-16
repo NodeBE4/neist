@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>從博物館寄物櫃理解變數儲存模型 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+從博物館寄物櫃理解變數儲存模型
+——
+" />
+    <meta property="og:description" content="
+從博物館寄物櫃理解變數儲存模型
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="從博物館寄物櫃理解變數儲存模型" />
+    <meta property="twitter:title" content="從博物館寄物櫃理解變數儲存模型" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fmedium.com%2F%40hulitw%2Fvariable-and-frontdesk-a53a0440af3c%3Fsource%3Drss-f1fb3e40dc37------2" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://medium.com/@hulitw/variable-and-frontdesk-a53a0440af3c?source=rss-f1fb3e40dc37------2" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://medium.com/@hulitw/variable-and-frontdesk-a53a0440af3c?source=rss-f1fb3e40dc37------2&text=從博物館寄物櫃理解變數儲存模型&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://medium.com/@hulitw/variable-and-frontdesk-a53a0440af3c?source=rss-f1fb3e40dc37------2&title=從博物館寄物櫃理解變數儲存模型" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/@hulitw/variable-and-frontdesk-a53a0440af3c?source=rss-f1fb3e40dc37------2&title=從博物館寄物櫃理解變數儲存模型" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=從博物館寄物櫃理解變數儲存模型&body=
+從博物館寄物櫃理解變數儲存模型
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://medium.com/@hulitw/variable-and-frontdesk-a53a0440af3c?source=rss-f1fb3e40dc37------2" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://medium.com/@hulitw/variable-and-frontdesk-a53a0440af3c?source=rss-f1fb3e40dc37------2&title=從博物館寄物櫃理解變數儲存模型&caption=
+從博物館寄物櫃理解變數儲存模型
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=從博物館寄物櫃理解變數儲存模型&url=https://medium.com/@hulitw/variable-and-frontdesk-a53a0440af3c?source=rss-f1fb3e40dc37------2" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+    
+
+
+
+<article class="post">
+  <h1>從博物館寄物櫃理解變數儲存模型</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-06-24
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#Huli">
+          Huli
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://medium.com/@hulitw/variable-and-frontdesk-a53a0440af3c?source=rss-f1fb3e40dc37------2" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="Huli的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#Huli 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1593049201000-->
+<p><a href="https://medium.com/@hulitw/variable-and-frontdesk-a53a0440af3c?source=rss-f1fb3e40dc37------2">從博物館寄物櫃理解變數儲存模型</a>
+——</p>
+
+<div>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/0*lSnFhHjWE7pLTNvt" />    <figcaption>
+Photo by <a href="https://unsplash.com/@marko36?utm_source=medium&amp;utm_medium=referral">Mar Ko</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a>
+    </figcaption>
+  </figure>
+  <p>變數是絕大多數的人在學程式的時候，第一個或是第二個會碰到的東西。變數本身的概念不難，許多書上都拿「箱子」來比喻，就是個放東西的箱子而已。可是當後續講到什麼 call by reference 還是 call by value，或者是 C 語言的指標的時候，變數這東西的難度就突然成指數型增加。</p>
+  <p>而我認為之所會這樣子，就是因為沒有把「變數的儲存模型」建立起來的關係。所以這個模型至關重要，一旦有了這個模型的概念，在思考相關問題時只要能想到這個模型，問題就大概解開一半了。因此這一篇試著用比較淺顯易懂的角度，來講一下這個變數的儲存模型長什麼樣子。</p>
+  <p>核心概念是：</p>
+  <blockquote>
+我們應該要用什麼角度去理解變數，以及變數儲存的東西？  </blockquote>
+  <p>先聲明一下，每種程式語言的儲存模型可能都不太一樣，而這篇也是經過簡化後的版本，實際上可能會複雜許多。但因為這篇的重點不在於「深入」，所以有許多東西都不會講到（例如說 stack frame、heap、constant pool，這些都不會提），只講我認為剛開始接觸程式時應該知道的東西，至少能把最基本的模型建立起來，日後再繼續擴張這個模型。</p>
+  <p>然後這篇的程式碼會以 JavaScript 為主。</p>
+  <h3 id="section">從博物館寄物櫃開始</h3>
+  <p>不知道大家有沒有去過一些有寄物櫃的地方？</p>
+  <p>我這邊講的不是健身房或是車站會看到的那種置物櫃，不是那種投幣以後讓你把東西放裡面，然後給你一個鑰匙的那種。那是自助式的置物櫃，我要談的不是那種。</p>
+  <p>我講的是有一個櫃檯，有幾個服務人員會站在那邊，你要把東西交給他們，他們會幫你放到身後的櫃子（或是隔壁的小房間），接著會把一個號碼牌給你，的那種寄物櫃。</p>
+  <p>突然想起來我在有些飯店也有看過類似的，不過我上一次看到是我<a href="https://medium.com/@hulitw/travel-part2-818482a90bc9">之前</a>去阿布達比的某個博物館的時候，在進去參觀以前就強迫要把身上比較大型的物件寄在櫃台，沒辦法帶進去。</p>
+  <p>其實這種作法在許多博物館滿常見的，可能是怕你背著包包之類的，一不小心在轉身時可能就會撞到物品吧？因此一定要你把東西寄著，不能帶進去。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*X940JtYurJJKYCHo_pUm2g.png" />    <figcaption>
+寄物櫃示意圖，我是不是應該先去學畫畫再來寫這篇文章？
+    </figcaption>
+  </figure>
+  <p>先讓我們想像有一間神奇的博物館，裡面有種某種魔力，讓進去的人都會短暫失憶，可能會忘記住址、手機，或是自己的名字（你的名字好看，讚）。</p>
+  <p>所以大家在進去博物館以前除了把身上的大型物件寄放在櫃台以外，還可以把這些個人資訊告訴服務人員，然後服務人員會把它寫在一張紙上，一樣放到後面的格子去。由於服務人員四個字有點多，我們之後就簡稱他叫做小博吧。</p>
+  <p>詳細流程是這樣的，要進去的觀光客會先到櫃台把自己的個人資訊告訴小博，這邊先假設是「名字」好了，例如說這個客人叫做「亞圖姆」，那小博就會撕下手邊的便條紙，在上面寫下「亞圖姆」三個字，然後放到某一格置物櫃去。</p>
+  <p>置物櫃都有編號，先假設這個編號是 A（對，用英文字母來排，而不是數字），接著小博就會拿編號 A 的號碼牌給亞圖姆，亞圖姆就開開心心進去博物館體驗魔力，跟著魔力一起轉圈圈了。</p>
+  <p>當亞圖姆出來的時候，就可以拿著這張編號是 A 的號碼牌給小博，小博去編號 A 的格子拿出紙條，然後告訴他說：「你的名字是…亞圖姆」，亞圖姆就可以成功想起自己的名字，開開心心地回家去。</p>
+  <p>除了名字以外，也可以寫自己的手機號碼，假設有一個人的手機號碼是 3345678，而且他特別叮嚀十點過後不要打給他，那小博就會把這個號碼寫在便條紙上，然後一樣放到某個格子去。這邊假設放到的是 B 格子好了，那當這個人逛完回來的時候，只要問小博：「B 格子放的東西是什麼？」，就可以找回自己的手機，如圖所示：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*QPUCWga-sa4DSy8bEl4ABA.png" />    <figcaption>
+把電話號碼的便條紙放在 B 格子裡面
+    </figcaption>
+  </figure>
+  <p>既然姓名跟手機可以放，那生日當然也可以。假設小花是 9/10 生的，告訴小博這個資訊以後，他就會把 9/10 寫下來，放到 C 格子去（他想放哪就放哪，不按照順序也可以），然後把 C 格子的號碼牌拿給小花。</p>
+  <p>可是，那如果碰到同月同日生的人怎麼辦呢？假設今天有個人叫做小草，他也是 9/10 生的，那會發生什麼事情？</p>
+  <p>小博有兩個選擇：</p>
+  <ol>
+    <li>看看格子中有沒有已經存在的生日，有的話就一樣拿同個號碼牌給他</li>
+    <li>把 9/10 再寫一次，然後再找個格子放</li>
+  </ol>
+  <p>如果是你，你會選哪個？</p>
+  <p>我跟小博的選擇是一樣的，就是選項 2，把 9/10 再寫一次，然後找個格子放。原因很簡單，因為我不可能去看現存的格子有沒有東西，這太耗時間了，不如直接寫一個比較快，所以就會變成這樣：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*i45ZQe6Awy_Ml14xxrqGjA.png" />    <figcaption>
+C 跟 D 兩個格子都放了 9/10
+    </figcaption>
+  </figure>
+  <p>所以，小花 9/10 生，資訊被放在 C 格子；小草也是 9/10 生，資訊被放在 D 格子。這時候如果你問小博：</p>
+  <blockquote>
+請問，C 格子跟 D 格子的內容一樣嗎？  </blockquote>
+  <p>小搏的答案跟我又是一樣的了，真是有默契，答案是：「對，啊不然勒，不都是 9/10 嗎？」</p>
+  <p>然後突然有個情況發生了，那就是小草在還沒進去博物館之前突然想起了什麼，匆匆忙忙的跑回來跟小博說：「欸不對，我記錯生日了啦，我的生日其實是 9/20，請幫我更正一下，我的格子是 D 格子」。</p>
+  <p>僅管小博很疑惑為什麼有人連自己的生日也會記錯，但還是幫他改了生日，把 D 格子原本的便條紙拿出去，重新寫了一張 9/20 的放回去。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1016/1*ppxsIZexIY8dBsvp__irKg.png" />    <figcaption>
+生日變不一樣了
+    </figcaption>
+  </figure>
+  <p>就在小草心滿意足，順利踏進博物館以後，原本以為可以偷懶一陣子的小博卻又有事情要處理了。這次來的是小草的青梅竹馬：小梅，除了家裡就住隔壁以外，因為他們兩個生日一樣的關係，從小就特別親近，感情就特別好。</p>
+  <p>小梅這次不直接講自己的生日，而是跟小博說：</p>
+  <blockquote>
+我跟小草，對，就是剛那個 D 格子的同一天生，麻煩你囉！  </blockquote>
+  <p>此時小博一樣有兩個選擇：</p>
+  <ol>
+    <li>直接把 D 格子的號碼牌拿給小梅</li>
+    <li>去 D 格子看小草的生日，再拿一張便條紙出來抄，然後再找個格子放</li>
+  </ol>
+  <p>選項 1 看起來很方便，但會有個問題。那就是，如果小草或是小梅過幾秒又跑回來，說自己記錯生日怎麼辦？那還不是要重新寫一張然後再找一個格子。那不如就維持之前的作法，再找一個格子，這樣每個人一個格子也比較不會搞錯。</p>
+  <p>於是，格子就變成這樣了：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1008/1*t0WLhzIS28lH5ABUEG6n8A.png" />    <figcaption>
+三個人的格子
+    </figcaption>
+  </figure>
+  <p>C 格子是小花的 9/10，D 是小草的 9/20，E 是小梅的 9/20。皆大歡喜，可喜可賀，每個人都有一個專屬於自己的格子，而且不會干擾到別人的。</p>
+  <h3 id="section-1">中場休息時間</h3>
+  <p>小博的做事原則很簡單，就是：</p>
+  <ol>
+    <li>每一項資訊就是一個格子</li>
+    <li>格子之間互不干擾，因為格子不會被共用</li>
+  </ol>
+  <p>所以儘管同一天生，也是兩個格子。</p>
+  <p>而上面這些範例，其實就是在講變數的賦值。例如說：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var A = '亞圖姆'</code></pre></div>  </div>
+  <p>就是一開始的：「把亞圖姆這個名字（字串）放到 A 格子裡面」。</p>
+  <p>之後小花與小草一開始的範例就是：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var C = '9/10'var D = '9/10'</code></pre></div>  </div>
+  <p>此時 C 格子跟 D 格子的內容是不是相等？是，所以 C 跟 D 是相等的，因為格子裡的東西相同。</p>
+  <p>而小草後來更改生日，就只是：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D = '9/20'</code></pre></div>  </div>
+  <p>把 D 格子裡面的東西換掉，完全不會影響到其他格子，所以 C 格子依然是 9/10，而現在 C 格子跟 D 格子就不相等了。</p>
+  <p>最後小梅說的：「我跟小草同一天生」，其實就是：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var E = D</code></pre></div>  </div>
+  <p>讓 E 格子的內容跟 D 格子一樣，所以會把 D 格子的內容重新寫一次，再放到 E 格子去。因此 D 格子跟 E 格子的內容就一樣了，都是 9/20。此時如果把 D 格子的內容改掉，也不會影響到 E 格子，就如同我們前面講過的一樣，格子之間互不干擾。</p>
+  <p>好，講到這邊相信大家應該都 ok，謹記兩個原則就對了：</p>
+  <ol>
+    <li>每一項資訊就是一個格子</li>
+    <li>格子之間互不干擾，因為格子不會被共用</li>
+  </ol>
+  <p>接著，就讓我們來看複雜一點的範例。</p>
+  <h3 id="section-2">背包問題</h3>
+  <p>有些人可能會覺得奇怪，博物館的這種寄物區到底記這些資訊要幹嘛，不是說好要「寄物」嗎？那物品在哪邊？說好的大型物件呢？</p>
+  <p>先別急，這不就來了嗎。</p>
+  <p>今天是個嶄新的一天，而昨天已經來過的小花，今天居然又來造訪一次。這次因為是學校下課以後直接過來博物館，所以身上背著又重又大的書包，是一定要寄放在櫃台的，不然可能會把一堆展覽品撞壞。</p>
+  <p>像是這種大型物件，不會直接放到櫃台後面的櫃子裡面，因為它太大了，所以這種櫃子放不下，而且這種東西通常比較貴重，如果放在外面有機率會被偷走，不能冒這種風險。那要放哪裡呢？</p>
+  <p>還記得前面畫的圖裡面，右邊有一個門嗎？門後面其實就是存放大型物件的空間，比較大的東西都會放在那裡。而那邊的置物區也有編號，我們就用數字來編號好了：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*kwlnjQJ9fUZUqHvH1KK6zA.png" />    <figcaption>
+左邊是一般寄物區，右邊是放大型物件用的，是門裡面的區域
+    </figcaption>
+  </figure>
+  <p>那當遊客有大型物件需要存放的時候，會怎麼運作呢？</p>
+  <p>其實就跟之前要來寄放名字、電話以及生日差不多，只是多了一個流程而已。小博會先把小花的書包拿到小房間裡面，並且找一個空的櫃子放著，例如說是 1 號櫃子好了，他就會在便條紙上面用紅筆寫下：1，然後找一個空的格子放，例如說 A 格子，然後一樣把 A 格子的號碼牌交給小花。</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*KfPioUZHgl4tub9k6W7FDQ.png" />    <figcaption>
+1 號櫃子裡的真的是包包，不是有腳的飯糰或是粽子
+    </figcaption>
+  </figure>
+  <p>為什麼要用紅筆寫呢？因為其他遊客可能也會想要存「1」這個資訊，例如說他小孩 1 歲之類的。如果都用同樣顏色的筆來寫，那小博怎麼知道這個 1 代表的是資訊的 1，還是小房間櫃子的 1？因此要特別區分開來，用紅色來代表「這是櫃子編號，不是一般的資訊」。</p>
+  <p>你可能會想說，那小博幹嘛這麼大費周章，還要把 1 存到 A 格子裡，再把 A 格子的號碼牌交給小花，為什麼不直接把「1 號櫃子的號碼牌」給小花就好。</p>
+  <p>你這問題問得好，答案是：</p>
+  <blockquote>
+因為小房間裡的櫃子沒有號碼牌。  </blockquote>
+  <p>只有外面櫃台後面的格子有相對應的號碼牌可以交給遊客，所以只能用這種比較迂迴的方式來處理，先把東西放到櫃子，再把櫃子編號寫下來，放到空的格子去，然後再把格子的號碼牌交給遊客。</p>
+  <p>當小花逛完博物館出來的時候，就要把手中的 A 格子號碼牌拿給小博，小博就會去看 A 格子的內容，發現是用紅筆寫的字，代表說：「這個東西在小房間櫃子裡」，然後看到字是 1，就走去小房間，把編號是 1 的櫃子裡的東西拿出來（也就是綠色包包），然後交給小花。</p>
+  <p>這個流程對於「增加物品」也是一樣的。</p>
+  <p>例如說小花寄放完包包以後過了兩分鐘，覺得博物館比想像中的熱，於是想要把身上的羽絨外套放進包包裡面，所以就去找小博，跟小博說：「可以把這個外套放進我的包包嗎？我包包放在 A 格子」</p>
+  <p>小博拿了外套以後，就去 A 格子看，看完 A 格子是紅筆寫的 1，於是就跑去小房間，把外套塞進編號 1 的櫃子，走出來跟小花說：「我幫你放進去囉」。</p>
+  <p>這都是一樣的流程，不過有一點特別要注意。</p>
+  <p>那就是，為什麼小花會說「我包包放在 A 格子」，而不是「我包包放在 1 號櫃子」呢？</p>
+  <p>因為，小花就只拿到 A 格子的號碼牌，他自然就以為自己的包包在 A 格子那裡，這很合理吧？對於遊客來說，他根本不清楚博物館的運作，也不太知道小房間裡面有櫃子這件事，更不知道用紅筆寫櫃子編號代表的意義。但是對小博來說，是不一樣的，東西實際上是在小房間，所以他必須走去小房間，才能進行相對應的動作。</p>
+  <p>所以對小花來說是一個步驟：「從 A 格子拿東西」，對小博來說則是兩個：「從 A 格子拿東西，發現 A 格子說東西在小房間櫃子 1，所以去小房間拿」。</p>
+  <p>會有這個差別，就是因為 A 格子「存放的內容」不一樣。原本很單純只存放資訊，例如說生日、電話或是姓名，小博只要看完 A 格子的內容，就可以告訴來詢問的人。但如果是大型物件的話，存放的內容其實只是一個「編號」，或我們其實可以說是一個「指引」，格子裡面的東西指引小博前往另外一個地方，前往物品真正存放的地方。</p>
+  <p>在 JavaScript 裡面，當你要儲存一個陣列或是物件的時候也是一樣的：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var A = [1, 2, 3]</code></pre></div>  </div>
+  <p>對你來說，你以為跟之前存字串沒有差別，可是其實有。你之前存字串的時候，就是直接在 A 格子裡面放 “9/10” 這個字串。而現在存這個大型物件（陣列）的時候，底層的運作其實是先把 [1, 2, 3] 這個東西放到小房間編號是 1 的櫃子裡，然後再在 A 格子裡面放著用紅筆寫下「1」的便條紙。</p>
+  <p>所以你以為 A 格子裡面是你的東西，是 [1, 2, 3]，但不是。A 格子裡面其實只是一個編號，一個指引，你真正存放的東西其實是在隔壁小房間的 1 號櫃子。</p>
+  <p>好，接著讓我們拉回來博物館這邊。</p>
+  <p>除了小花以外，昨天有來過的小草又再來了一次（就是跟小梅是青梅竹馬的那個），而且很巧地，他居然背了一個跟小花一模一樣的綠色包包！想當然耳，這個包包也是一定要寄放在寄物區的。</p>
+  <p>於是小草就把包包拿給小博，而小博照著一樣的流程去跑：</p>
+  <ol>
+    <li>包包是大型物件，要放進小房間，所以先走進小房間</li>
+    <li>找一個空的櫃子放進去，就放 2 號櫃好了</li>
+    <li>用紅筆在便條紙上寫下 2，放進空的格子，就放 B 吧</li>
+    <li>把 B 的號碼牌拿給小草</li>
+  </ol>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*k1aTF7hAS8JaiuL7g7N2Kg.png" />    <figcaption>
+一樣的包包，放在不同櫃子，不同格子
+    </figcaption>
+  </figure>
+  <p>今天你如果問小博：</p>
+  <blockquote>
+A 格子跟 B 格子裡的東西一樣嗎？  </blockquote>
+  <p>答案當然是：No！不一樣！</p>
+  <p>一個裡面放著寫有 1 的便條紙，一個裡面放著寫有 2 的便條紙，怎麼會一樣？如果用程式碼來說明，就是這樣子：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var A = [1, 2, 3]var B = [1, 2, 3]console.log(A == B) // false</code></pre></div>  </div>
+  <p>前面有說過了，A 格子裡面放的是編號 1，真正的 [1, 2, 3] 在小房間櫃子 1，而 B 格子放的是編號 2，真正的 [1, 2, 3] 在小房間櫃子 2。所以 A 格子的內容（編號 1）跟 B 格子的內容（編號 2）一樣嗎？當然不一樣，而 == 與 === 都是去看<strong>格子裡的內容</strong>是否相等，所以會回傳 false。</p>
+  <p>那有沒有什麼內建的方法，不是去檢查「格子的內容」，而是去檢查 A 格子「所代表的東西」與 B 格子「所代表的東西」是否相等？沒有。</p>
+  <p>小博也不會去幹這種事。當有人問他 A 格子跟 B 格子是不是一樣的時候，他只要回頭看一下裡面放的內容，發現編號不一樣就可以跟你說不一樣了。如果要檢查「真正存放的大型物件」是否相等，他還要把編號記住，然後走進小房間裡面去看，還要仔細去檢查這兩個東西是不是真的一模一樣，顏色一樣、款式一樣、大小一樣…這花太多時間太麻煩了，所以他不會做這件事，而你寫的程式語言通常也不會。</p>
+  <h4 id="section-3">青梅竹馬再次登場</h4>
+  <p>在小草把物品放好，正準備離開要去逛博物館的時候，他的青梅竹馬小梅又出現了。小梅認識小草已經好多年了，深知小草的個性以及各種毛病，其中最令人擔心的就是：「容易把東西搞丟」，丟手機、鑰匙那都不算什麼，你想得到的東西，小草都搞丟過；你想不到的東西，小草也搞丟過，例如說朋友的小孩、公司準備要發的年終獎金、老闆的假髮，以及一架鋼琴。</p>
+  <p>所以小梅知道，小草很有可能也會把手中的 B 格子號碼牌搞丟。一搞丟了就很麻煩，因為這取物是認號碼牌不認人的，號碼牌一丟了，就沒辦法證明包包是小草的，於是包包也丟了。</p>
+  <p>小梅心想這樣不行，於是跟小博說：「我們兩個一起來的，你也給我一張 B 格子的號碼牌吧！」</p>
+  <p>還記得一開始的時候也有過類似的情況嗎？小梅跟小博說他跟小草同一天生，而那時小博有兩個選擇：</p>
+  <ol>
+    <li>直接把格子的號碼牌拿給小梅</li>
+    <li>去格子看小草的生日，再拿一張便條紙出來抄，然後再找個格子放</li>
+  </ol>
+  <p>這一次小博也有兩個選擇：</p>
+  <ol>
+    <li>直接把 B 格子的號碼牌拿給小梅</li>
+    <li>去格子看小草的背包放哪裡，再拿一張便條紙出來抄，然後再找個格子放</li>
+  </ol>
+  <p>上次小博選了 2，而這一次小博同樣也選了 2，因為這樣規則就都是同一個，不會變來變去的，好記很多：</p>
+  <ol>
+    <li>每個格子只會有一個號碼牌</li>
+    <li>如果有人說他想共用格子，那就拿一張便條紙把格子內容記下來，然後再找個格子放</li>
+  </ol>
+  <p>上次的同一天生日是這樣，這次的包包也是。</p>
+  <p>所以小博去看了 B 格子的內容，發現是紅筆寫的 2，就再拿了一張便條紙用紅筆寫了 2，然後找了個空的格子 C，把便條紙放進去，然後把 C 的號碼牌交給小梅：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*28C0P6J3KO7lPNPGJa0G6A.png" />    <figcaption>
+B 跟 C 格子裡面現在都是 2 了
+    </figcaption>
+  </figure>
+  <p>所以如果 B 號碼牌被小草搞丟了，沒關係，小梅手上有一個 C 號碼牌，而用 C 號碼牌去取物的時候，一樣可以取到小草的包包，因為這兩個格子裡面存的內容都是「編號 2 的櫃子」。</p>
+  <p>這就跟下面程式碼是一樣的：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var B = [1, 2, 3]var C = Bconsole.log(B == C) // true</code></pre></div>  </div>
+  <p>而且還有一個重點，那就是你更改 C 的話，也會更改到 B：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var B = [1, 2, 3]var C = BC.push(4)console.log(B) // [1, 2, 3, 4]</code></pre></div>  </div>
+  <p>這很合理嘛！因為這就是往包包放東西啊！</p>
+  <p>今天小梅跟小博說：「幫我把這把雨傘放進我包包裡，我包包在 C 格子」，小博就會去看 C 格子，發現寫著編號 2，就進小房間去找編號 2 的櫃子，然後把雨傘放進櫃子裡的包包。</p>
+  <p>啊這個包包就是小草的包包，所以小草的包包裡多了一把雨傘，這個十分合理。無論跟小博說要把東西放進 B 格子還是 C 格子，對小博來說都是一樣的，因為這兩個格子放的都是「前往編號 2 的櫃子的指引」，所以最後找到的都是同一個包包。</p>
+  <p>好，現在最後一個問題來了：</p>
+  <blockquote>
+那如果小梅突然有一個自己的包包想要放呢？  </blockquote>
+  <p>這跟前面提到的一個案例差不多但是有一點出入，前面講生日那邊，有說到小草先說自己是 9/10 生，接著小草又說自己記錯了，其實是 9/20。</p>
+  <p>在這個情況下，當時小博的選擇很簡單，就是<strong>把小草格子的內容改成 9/20</strong>。現在也是一樣的。</p>
+  <p>如果小梅有一個自己的包包想要放，那小博就會先把小梅的包包拿進去小房間，找一個空的櫃子，假設是 3，然後把原本小梅的 C 格子的內容改成 3，也就是這樣：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/1024/1*WUXsgQEdIL4W61SEAWl5xA.png" />    <figcaption>
+多了一個物品，格子的內容也被改變
+    </figcaption>
+  </figure>
+  <p>那為什麼不是直接塞進去原本的櫃子 2 呢？因為櫃子很小，只能放一個物品而已，所以沒辦法放進去。如果要放進去，就只能把原本小草的包包丟出來才做得到。</p>
+  <p>所以小梅的包包就被放進新的櫃子，然後 C 格子裡的編號也換了。如此一來，B 跟 C 格子就是兩個完全不同的格子了，而且也不會互相干涉。</p>
+  <p>所以「放一個全新的包包」跟「往包包裡面塞東西」是不同的兩件事。</p>
+  <p>用程式碼來講就是這樣：</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var B = [1, 2, 3]var C = BC = [4, 5, 6] // 新的包包，而不是往原本的包包塞東西console.log(B) // [1, 2, 3]</code></pre></div>  </div>
+  <p>C 格子的內容變成新的編號，而原本的 B 格子的內容並不會被影響到。現在如果往 B 格子放東西，就會放到小草的包包；如果往 C 格子放東西，就會放到小梅的包包。</p>
+  <p>最後讓我們來總結一下小博做事的 SOP，先從簡單的開始：</p>
+  <ol>
+    <li>如果客人放的不是大型物件，就直接在便條紙用普通的筆寫下資訊</li>
+    <li>把便條紙放進去空的格子，然後把格子的號碼牌交給客人</li>
+    <li>如果有人想放一樣的資訊，就把格子的內容抄起來，然後再放到新的空格子去</li>
+    <li>如果有人想更改資訊，就把格子的內容直接改掉</li>
+  </ol>
+  <p>那如果是大型物件的話，就是：</p>
+  <ol>
+    <li>把東西先放到小房間空的櫃子，並且拿一張便條紙用紅筆寫下編號</li>
+    <li>把便條紙放進去空的格子，然後把格子的號碼牌交給客人</li>
+    <li>如果有人想共用同一個東西，就把格子的內容抄起來，然後再放到新的空格子去</li>
+    <li>如果有人想更改資訊，就把格子的內容直接改掉</li>
+  </ol>
+  <p>看了看你會發現，其實對待一般的東西跟大型物品只有一個差別，那就是一般的東西，格子裡就是真正的資訊，而大型物品只是放一個「指引」，真正的物品其實是在隔壁小房間裡。</p>
+  <h4 id="section-4">回歸到程式</h4>
+  <p>在 JavaScript 裡面也是差不多的，當你想要存一般的資訊（數字、字串等等）的時候，變數裡面存的內容就真的是那個資訊。</p>
+  <p>但如果你想存物件或陣列的時候，變數裡面存的內容其實是「指引」，是前往某個小房子櫃子的指引。只是你在用的時候從外表看不出來，因為你是小草，是小梅，不是小博。</p>
+  <p>只有小博知道格子裡放的是指引，知道你的東西其實是在隔壁小房間，而你只會知道你有格子的號碼牌，而不知道你的東西真正放在哪裡。</p>
+  <p>在這個故事中，格子就代表著不同的變數，變數 A、B、C…而格子的內容就是變數裡面存放的資訊。然後小房間裡的櫃子編號，其實代表著就是記憶體位置。</p>
+  <p>這就是我一直跟學生講的：一般的東西存資訊，物件存記憶體位置。</p>
+  <p>而我前面反覆提到的「指引」兩個字，其實可以直接代換成「指標」，對，就是 C 語言裡面那個指標。一般的變數存資訊，而指標存的是記憶體位置，這是他跟其他變數最大的差異。</p>
+  <h3 id="section-5">總結</h3>
+  <p>再次強調一下，這個模型其實是不精確的，但這篇文章想傳達的最重要的概念，就是那個「指引」的概念。有些物品不是直接放在格子，而是放在其他地方，格子裡面放的只是一個指引，一個指示，或是一個指標。</p>
+  <p>還有另一個想傳達的概念就是：「往包包放東西（C.push(2)）」跟「放一個新的包包（C = [4, 5, 6]）」是兩件完全不同的事，然後 C[0] =3，這也算是「往包包放東西」，而不是放新的包包。</p>
+  <p>如果你想知道比較精確一點的模型，可能會長這樣：</p>
+  <figure>
+<img alt="" src="https://cdn-images-1.medium.com/max/903/1*XOgAsyigkL2Jpqf3pQsNkw.png" />    <figcaption>
+巨大格子
+    </figcaption>
+  </figure>
+  <p>其實沒有分什麼小房間跟格子，全部都是放在一起的，有一個超巨大的格子（就是記憶體啦），然後裡面會放很多東西（不過大型物件像是包包，的確會有自己的一區），而原本的格子名稱 A, B, C 其實只是一張貼紙而已，真正的格子都是用數字來編號的。</p>
+  <p>所以放東西的流程就變成：</p>
+  <ol>
+    <li>小博先找到一個空的格子，在上面貼上標籤 A</li>
+    <li>把資訊寫下來，放到格子裡</li>
+    <li>把號碼牌 A 交給客人</li>
+  </ol>
+  <p>不過其實我想強調的核心概念是一樣的，就是「有些格子存的是記憶體位置，而不是普通的值」，所以比較精確一點的模型就稍微看過就好，我覺得不太影響理解。</p>
+  <p>有些人可能會問說：「不過就是講個變數而已，有需要用那麼多篇幅嗎？」，我一開始也是這樣想，直到我碰到真的有這個需求的人。</p>
+  <p>希望這一篇可以幫助大家更全面地去理解變數以及記憶體相關的概念，就不會再對那些程式碼的結果感到疑惑。</p>
+  <p>也感謝程式導師實驗計畫第四期的學生與助教們，讓我有了這篇文章的靈感。</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=a53a0440af3c" width="1" height="1" alt="" />
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#Huli 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2020-10-04/%E7%A8%8B%E5%BC%8F%E5%B0%8E%E5%B8%AB%E5%AF%A6%E9%A9%97%E8%A8%88%E7%95%AB%E7%AC%AC%E5%9B%9B%E6%9C%9F%E8%AA%B2%E7%A8%8B%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E6%94%B9%E5%8B%95/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-06-24/%E5%BE%9E%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%AF%84%E7%89%A9%E6%AB%83%E7%90%86%E8%A7%A3%E8%AE%8A%E6%95%B8%E5%84%B2%E5%AD%98%E6%A8%A1%E5%9E%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2020-06-28</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-28/%E4%BD%A0%E6%98%AF%E5%B0%8D%E7%9A%84/">
+          你是對的！
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-06-26</time>
+        <a href="https://nodebe4.github.io/oped2/2020-06-26/%E9%82%A3%E7%B3%BB%E5%88%97%E6%88%91%E6%9C%89%E7%A8%8D%E5%BE%AE%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BD%86%E6%B2%92%E4%BB%94%E7%B4%B0%E7%9C%8BXD-%E4%B9%8B%E5%BE%8C%E5%86%8D%E6%89%BE%E5%80%8B%E6%99%82%E9%96%93%E4%BB%94%E7%B4%B0%E9%96%B1%E8%AE%80%E5%A5%BD%E4%BA%86/">
+          那系列我有稍微看一下但沒仔細看XD 之後再找個時間仔細閱讀好了
+        </a>
+      </li>
+    
+    
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-24/%E4%B8%8D%E5%90%90%E4%B8%8D%E5%BF%AB/">
+            前一篇：不吐不快
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-06-25/%E4%B8%80%E5%B9%B4%E5%89%8D-%E4%B8%80%E5%A0%B4%E9%97%9C%E6%96%BC%E9%A6%99%E6%B8%AF%E7%9A%84%E5%B0%8D%E8%AB%87/">
+            後一篇：一年前，一場關於香港的對談
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-06-24/%E4%B8%8D%E5%90%90%E4%B8%8D%E5%BF%AB/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-06-25/%E4%B8%80%E5%B9%B4%E5%89%8D-%E4%B8%80%E5%A0%B4%E9%97%9C%E6%96%BC%E9%A6%99%E6%B8%AF%E7%9A%84%E5%B0%8D%E8%AB%87/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-06-26/%E9%82%A3%E7%B3%BB%E5%88%97%E6%88%91%E6%9C%89%E7%A8%8D%E5%BE%AE%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BD%86%E6%B2%92%E4%BB%94%E7%B4%B0%E7%9C%8BXD-%E4%B9%8B%E5%BE%8C%E5%86%8D%E6%89%BE%E5%80%8B%E6%99%82%E9%96%93%E4%BB%94%E7%B4%B0%E9%96%B1%E8%AE%80%E5%A5%BD%E4%BA%86/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-06-24/%E4%B8%8D%E5%90%90%E4%B8%8D%E5%BF%AB/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-06-25/%E4%B8%80%E5%B9%B4%E5%89%8D-%E4%B8%80%E5%A0%B4%E9%97%9C%E6%96%BC%E9%A6%99%E6%B8%AF%E7%9A%84%E5%B0%8D%E8%AB%87/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<Huli>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-06-26/%E9%82%A3%E7%B3%BB%E5%88%97%E6%88%91%E6%9C%89%E7%A8%8D%E5%BE%AE%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BD%86%E6%B2%92%E4%BB%94%E7%B4%B0%E7%9C%8BXD-%E4%B9%8B%E5%BE%8C%E5%86%8D%E6%89%BE%E5%80%8B%E6%99%82%E9%96%93%E4%BB%94%E7%B4%B0%E9%96%B1%E8%AE%80%E5%A5%BD%E4%BA%86/">
+      <i>左</i>
+    </a>
+    
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

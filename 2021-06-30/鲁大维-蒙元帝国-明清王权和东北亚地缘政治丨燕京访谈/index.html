@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈 – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈
+——
+" />
+    <meta property="og:description" content="
+鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈" />
+    <meta property="twitter:title" content="鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.allnow.com%2Fpost%2F60dbffc9a8589a199f930e07" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.allnow.com/post/60dbffc9a8589a199f930e07" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.allnow.com/post/60dbffc9a8589a199f930e07&text=鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.allnow.com/post/60dbffc9a8589a199f930e07&title=鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.allnow.com/post/60dbffc9a8589a199f930e07&title=鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈&body=
+鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.allnow.com/post/60dbffc9a8589a199f930e07" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.allnow.com/post/60dbffc9a8589a199f930e07&title=鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈&caption=
+鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈&url=https://www.allnow.com/post/60dbffc9a8589a199f930e07" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2021-06-30
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 杨泓渟</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.allnow.com/post/60dbffc9a8589a199f930e07" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--NaN-->
+<p><a href="https://www.allnow.com/post/60dbffc9a8589a199f930e07">鲁大维：蒙元帝国、明清王权和东北亚地缘政治丨燕京访谈</a>
+——</p>
+
+<div>
+  <p>明朝作为汉族建立的以中原地区为主体的朝代，自建立之初就显露出浓厚的华夷之辨、族群革命的色彩，正如朱元璋在《奉天北伐讨元檄文》所揭示的那样：“驱逐胡虏，恢复中华”、“盖我中国之民，天必命我中国之人以安之，夷狄何得而治哉”。清末革命党领袖孙中山，便将“驱逐胡虏，恢复中华”当做反满革命话语进行宣传。此后，随着政治话语与学术研究的数次转向，这些极具华夷之辨、族群革命色彩的声音，在历史中不断被重新解读，并赋予其新的意涵。</p>
+  <p>受这些观念的影响，海内外的明史研究往往立足于汉族中心主义的视角，强调明代初期对胡风异俗的摒弃与剔除、对正统汉文化的建设与维护。例如针对中原地区社会、政治、经济、文化、制度史的探讨，在很长一段时间主导了明史研究的议题。而随着阿尔泰学、内亚学、蒙古学，以及全球史观、比较帝国史的兴起，一些学者开始重新思考元明清朝代的更迭以及明朝的定性。</p>
+  <p>无论是日本学者主张的蒙古帝国开启了世界史（如冈田英弘、杉山正明），亦或欧美学者将元明清宫廷文化与同时期欧亚帝国进行比较研究（如托马斯·爱尔森，Thomas T. Allsen），还是国内学者强调元明清宗教政策与边疆治理的继承性（如沈卫荣），都开始重新审视蒙元帝国对东亚地区，乃至欧亚大陆的深入影响，美国柯盖德大学的鲁大维（David M. Robinson）教授正是他们中的一员。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-30/60dbffd39c232e01c17d20df+L.jpeg" data-id="60dbffd89b2d825085c26167" alt="鲁大维（David M. Robinson），美国柯盖德大学何鸿毅家族基金讲座亚洲研究暨历史教授" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+鲁大维（David M. Robinson），美国柯盖德大学何鸿毅家族基金讲座亚洲研究暨历史教授
+    </figcaption>
+  </figure>
+  <p>从他第一本由博士论文改编而来的专著《盗贼、宦官、与天子：明代中期反乱与暴力经济》<em>（Bandits, Eunuchs, and the Son of Heaven: Rebellion and the Economy of Violence in Mid-Ming China）</em>开始，鲁大维便开始思考明代宫廷与政治史中的蒙古元素。此后，《帝国的暮光：蒙古帝国治下的东北亚》<em>（Empire's Twilight: Northeast Asia under the Mongols）</em>将视角游移至蒙元时代东北亚地区的人口流动、文化交流与错综复杂的政治关系，鲁大维在综合中日韩前人研究的基础上，细致观察了蒙元宫廷对东北亚的灵活经营。《神武军容耀天威：明代皇室的尚武活动》<em>（Martial Spectacles of the Ming Court）</em>系统勾勒了明代宫廷尚武活动的发展脉络，鲁大维指出明初的尚武活动对于皇权的巩固起到了重要作用，然而，随着皇室对外进取心的弱化与文官士大夫的反对，这些尚武活动逐渐退出历史的舞台。鲁大维近几年的新著《蒙古帝国的阴影：明代中国与欧亚大陆》<em>（In the Shadow of the Mongol Empire: Ming China and Eurasia）</em>、《明代中国及其盟友：欧亚大陆的王权统治》<em>（Ming China and its Allies: Imperial Rule in Eurasia）</em>沿着以往的治学旨趣，丰富了其对蒙古帝国遗产的思考。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-30/60dc00244cd55d54dd5db6d5+L.jpg" data-id="60dc00282114416715c3d8c6" alt="《神武军容耀天威》，鲁大维著，杨柳青、康海源译，甲骨文丨社会科学文献出版社2020年10月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《神武军容耀天威》，鲁大维著，杨柳青、康海源译，甲骨文丨社会科学文献出版社2020年10月版
+    </figcaption>
+  </figure>
+  <p>北美中国史学术界，以及中文读者对鲁大维治学路径的评价是极为复杂的。一方面，北美明清史研究长期的断层，导致清史学界常常将明朝视为“汉人的帝国、内向的帝国”，甚至拒绝使用“帝国”一词称呼明朝，鲁大维复原明帝国丰富面向的努力，并未引起北美中国史学界足够的重视。另一方面，部分中文读者认为，鲁大维对明代内亚性的强调，是将“新清史”研究范式的移花接木，以及将“新清史”的企图复制到明史研究领域的举动。当然，熟悉国际明清史研究动态的学者很清楚（如冯立君、胡箫白），鲁大维的研究是对“新清史学者”扁平化处理明代历史的回应。作者通过自身的研究，向读者们展示了明代皇帝、宫廷文化、边疆政策的多元面相，以及蒙古帝国对东亚地区的深刻影响。</p>
+  <p>就鲁大维的学术经历、研究旨趣、引起的争议，以及未来研究计划，《燕京书评》采访了鲁大维。</p>
+  <p><strong>鲁大维的学术经历：尝试反驳“新清史”扁平化叙事</strong></p>
+  <p><strong>燕京书评：可以向中文读者简要介绍一下你的学术经历吗？以及如何开始研究“蒙古时代东北亚、明代宫廷内亚性”等议题的？</strong></p>
+  <p><strong>鲁大维：</strong>第一次去中国是1984年秋天。刚好前一年我母校霍巴特大学（Hobart College）与北京师范学院分院（在白堆子，后来成为首都师范大学的一部分）建立了关系，于是1984年九月我去了北京学中文，也算是和中国，尤其是和北京结了缘。第二年去了台北，主要目的也是学现代汉语和文言文。大四秋天，又去了北京继续学中文。我从小对武术感兴趣，在华留学时，几次拜访中国武术历史的专家，比如林伯原老师，也去参观了“武术之乡”的沧州市和八极拳的发祥地孟村。</p>
+  <p>我本科经历有一些异常，因为前后有一半时间是在中国――这是在当时美国的大学中很少见的。不言而喻，我专修了亚洲研究，以中国历史为主，毕业论文题目是明代白话小说与16世纪社会经济变迁。虽然说霍大又小又没名气，但我总觉得非常幸运，一则校方比较灵活，允许我在中国待两年半，一则遇到了几位非常优秀的教授。譬如，一年级第一个学期我就上了包弼德（Peter Bol）教授的东亚史学史，之后第二、第三学期就继续上他的课，包括他最擅长的宋代思想史这门课。第二年去北京的时候，也是包教授带我们去的。后来他去了哈佛大学，成为鼎鼎大名的汉学大家。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-30/60dc005d9c232e01c17d20e0+L.jpeg" data-id="60dc006b904b8c02a16a34e0" alt="包弼德（Peter K. Bol），哈佛大学东亚语言文明系讲座教授" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+包弼德（Peter K. Bol），哈佛大学东亚语言文明系讲座教授
+    </figcaption>
+  </figure>
+  <p>包教授带学生很严格，但也很照顾，所以离开霍大之后，他还鼓励我继续学中国历史，并且建议我去找他的恩师——普林斯顿大学的毕德生（Willard Peterson）教授谈谈。刚好，毕德生教授在康奈尔大学当访问学者，纽约州伊萨卡离霍大不远，所以我写信给他，问他愿不愿跟我见个面，他立刻答应了。当时我是三年级的大学生，刚刚回国，傻乎乎的，但毕德生教授十分客气，很耐心地听我这个一点都不懂的本科生讲清代武术、华北地区社会以及武举之间的互动关系，并且提出不少问题。凡是跟毕德生教授有来往的人都知道他往往一针见血，不是说来攻击或想要把对方问倒，而是他善于苏格拉底式问答法。我那天下午能跟他交谈一两个小时，真是受益匪浅，印象难忘。</p>
+  <p>包教授离开霍大之后，学校就聘了另一位普林斯顿出身的优秀学者来教中国历史，即艾维四（William Atwell）教授。如果说包教授专攻思想史，特别强调细读史料，注意语言细节，艾教授则注重宏观问题。他的研究重点是明代经济史，尤其是白银问题和气候变迁，所以他一向鼓励我们尽可能从全球史来探讨中国史。他的逻辑很简单，在14-17世纪，中国经济不仅庞大，而且非常发达，当然给周围国家和地区带来很深的影响；同时，到了15世纪末16世纪初，中国经济也深受国外的影响，白银流通就是典型例子。虽然说当时没有深思两位老师治学风格的异同：一个注重微观，一个注重宏观，但他们对我之后学术生涯的影响很大。另外，大四时，非常幸运碰到了另外一位出色的老师，即黄启江教授，他是台大历史系毕业的，后来在美国念博士，国学底子很深，然后在霍大教中文了。等到大学快要毕业的时候，我开始考虑上研究院，三位老师们都很鼓励，最后选去普大，毕德生教授就当了我导师，似乎是命中注定的。</p>
+  <p>我之所以如此细说本科时代经历是想要说明一点，就是早在大学的时候，我已经对明代史和北京史或京畿史感兴趣了，上了研究院之后，很快选择明代京畿地区为研究重点，博士论文题目为“明代中期京畿地区盗贼问题”，主要是分析北京和周围地区盗贼与此地特殊的社会、经济、政治环境的互动关系。在普大修完两年的必修课之后，我便去了日本。也许有一些年轻读者不知道，但战后相当长一段时间，大多专攻中国历史、文学、哲学等领域的美国研究生都在东京或者京都留过学，主要是因为在五十年代到七十年代，美国人没有办法去中国大陆求学，所以不是去台湾就是去日本，不少人包括向包弼德、艾维四、毕德生教授，台湾和日本两地都去了。刚去日本头半年，就在语言学校专门学日语，接着以研修员身份在京都大学东洋史研究室就读，指导老师就是明清史专家夫马进教授。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-30/60dc00854cd55d54dd5db6d7+L.jpeg" data-id="60dc00889b2d825085c26168" alt="京都大学（Kyoto University）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+京都大学（Kyoto University）
+    </figcaption>
+  </figure>
+  <p>刚到时，日语水平很低，上课、作报告等都非常吃力，但老师们和同学们都很热心，很照顾。我在京大只待了一年半，但东洋史研究室的治学风格给我带来很大的启发。夫马进老师上课很认真，阅读和翻译史料的要求很高。另外，他和其他的老师都十分重视发掘新史料。因为各种原因，日本各地图书馆收藏大量的明代地方志、政书、文集等资料。早在五六十年代，日本学者已经在利用这类资料从事社会经济史研究，成果相当可观；到了八九十年代，他们开始提倡所谓区域史，而且为了加深区域史，非常积极寻找未曾发表过的石刻、家谱等第一手资料，不少学者在中国各地进行史料调查。耳濡目染，我也看了不少地方志和文集，想找出别人以前没用过的史料来写博士论文。同样，我也患上了“石刻热”，1993年在河北省的涿州、正定、保定、文安，霸州，河间等地花了一个月的时间寻找关于明代中期盗贼相关问题的石碑、墓志铭和其他文物，都获得当地地方志办公室和文化局同志的积极配合，收获很丰硕。后来以博士论文为基础，就撰写第一本拙著，即《盗贼、宦官、与天子：明代中期反乱与暴力经济》<em>（Bandits, Eunuchs, and the Son of Heaven: Rebellion and the Economy of Violence in Mid-Ming China）</em>。在某种意义上，这算是非常典型的区域史。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-30/60dc00aa4cd55d54dd5db6d8+L.png" data-id="60dc00af904b8c02a16a34e1" alt="David M. Robinson, Bandits, Eunuchs, and the Son of Heaven: Rebellion and the Economy of Violence in Mid-Ming China, University of Hawaii Press, 2001." ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+David M. Robinson, Bandits, Eunuchs, and the Son of Heaven: Rebellion and the Economy of Violence in Mid-Ming China, University of Hawaii Press, 2001.
+    </figcaption>
+  </figure>
+  <p>写这本书的过程当中，很幸运获得好几位中国专家的帮助。比方说我在京都大学时，刚好元史大家陈高华教授受京都大学蒙古帝国专家杉山正明教授的邀请当访问学者。之前陈高华老师曾经发表一篇论文，即《明代中叶刘六杨虎起义的几个问题》，不仅深刻分析谈京畿地区社会和盗贼之间的关系，而且在论文后附上明人谢蕡所编的《后鉴录》中有关刘六刘七起义的供词。当时我正在把供词翻成英文，每次碰到看不懂的地方，我就向高老师请教。他不但解答我的问题，而且非常大方地跟我分享他对所谓“水浒传世界”的想法，受益匪浅。同样，我在普大之时，也多次向中国社会科学明史室的沈定平老师请教明代农民起义和社会经济史的问题，同时向社科院宋史室的王曾瑜老师请教军事史问题。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-30/60dc01809c232e01c17d20e3+L.jpeg" data-id="60dc018e904b8c02a16a34e5" alt="《平番得胜图》（局部）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《平番得胜图》（局部）
+    </figcaption>
+  </figure>
+  <p>或许有读者会问，假如说本科、研究院、甚至于第一部专著都是一条线，也就是比较传统的明代地方史，应该怎理解后来的《帝国的暮光：蒙古帝国治下的东北亚》、《神武军容耀天威：明代皇室的尚武活动》等更加宏观，更注重欧亚大陆全貌的著作？应该说是长期学习积累的成果。在我看来，早期发表的东西和后来写的都息息相关，多半都跟北京（无论是明代京师或者元代大都）有关系，而且每一篇新论文或每一本新书都是建立在之前的研究成果之上，包括前人和自己的研究成果。比方说，在写博士论文时，我碰到了“达官”一词，当时让我很纳闷。等到知道“达官”是指达达的军官，我就很好奇，为什么明代的北京和京畿地区有如此大量的蒙古军人，而且从地方志、《明实录》等记载看来，他们似乎扮演重要军事角色，到底是怎么回事？博士论文中稍微触及到了，然后在1999年和2001年利用文集、地方志、地理书以及北京第一历史档案馆所收藏的武选职簿等资料，写了两篇文章谈明代达官的若干政治、军事活动和他们在明代的各种形象。</p>
+  <p>其实，《帝国的暮光》与博士论文（《明代中期京畿地区盗贼问题》）和《盗贼、宦官、与天子》有密不可分的关系。《盗贼、宦官、与天子》完成之后，我原初打算尝试一种地方比较史的议题，以京畿地区和辽东为对比，探讨两个地方暴力现象的原因、体现以及形象，即知识分子如何理解两地的暴力问题，目的在于进一步了解在当时人眼里，暴力问题是一种普遍问题，还是暴力的产生和解决都不能一概而论；每一个地区域有它的特色，具体对策都因地因时而决定。非常意外，我有幸申请到了研究经费去京大东洋史研究室做一年的研究。问题是我越看明代辽东，尤其是明初中叶资料，越觉得不懂，最终悟到了想了解明初辽东必须先看元代辽东，而且不仅要看元代资料，也要看高丽末年朝鲜初年的史料。可是一接触到元代和高丽史籍，就等于踏上元朝史和高丽史两个新领域，因为光看元代、高丽资料而不懂其具体历史背景，极容易误读史料，同样想要搞清元朝史和高丽史，非了解蒙古帝国基本情况不可。因此，我就开始比较系统地阅读相关研究成果。刚好多了解朝鲜半岛和蒙古帝国的历史，与当时教学上的需求非常吻合。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-30/60dc00e04cd55d54dd5db6d9+L.jpg" data-id="60dc00e5904b8c02a16a34e4" alt="《帝国的暮光：蒙古帝国治下的东北亚》，鲁大维著，李梅花译，甲骨文丨社会科学文献出版社2019年12月版" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《帝国的暮光：蒙古帝国治下的东北亚》，鲁大维著，李梅花译，甲骨文丨社会科学文献出版社2019年12月版
+    </figcaption>
+  </figure>
+  <p>所谓汉学家，在美国学术结构中处于边缘地位。近二十年以来，美国大学更加重视中国经济、政治、社会、文学、历史等，教员人数也随之有所增加，但在教学课程整体中仍然以西方，尤其是美国经济、政治等为中心。虽然说有一部分学生对中国或其他国家十分感兴趣，但美国还是他们最熟悉和最关心的地方。这点原来无可厚非，但绝大多数同学缺乏中国史基本知识，对他们而言，中国古代史或者帝国晚期史尤其陌生。面对这种教学上的挑战，我和同仁都千方百计地让同学感觉到中国史的乐趣和重要性，同时也希望同学将中国文化视为人类历史的不可忽视的组成部分。一种途径是强调中国与他国或其他文化之间的互动关系，例如多讲中国和其他东亚国家之间的关系，或者中国和蒙古帝国的关系，或者到了所谓近代初期，中国与欧洲和新大陆的关系。</p>
+  <p>总之，到了21世纪初，教研需求就逼着我更加注意元明时期中国的历史位置，从共时和历时两个角度去思考。具体表现就是2008年的《明代宫廷与蒙元遗产》一文和2009年的《帝国的暮光：蒙古帝国治下的东北亚》一书。前者是我长期对京畿史，尤其北京史研究兴趣的延伸，彰显明朝宫廷文化和政治与蒙元的关系，后者是以我失败的明代辽东研究计划为出发点，尝试从元末时期东北亚的跨国角度重新理解辽东、高丽和大都之间的复杂多样关系。其实，后来的《神武军容耀天威：明代皇室的尚武活动》、《蒙古帝国的阴影：明代中国与欧亚大陆》 （<em>In the Shadow of the Mongol Empire: Ming China and Eurasia</em>，2019年剑桥出版社）、《明代中国及其盟友：欧亚世界的大明王权》 （<em>Ming China and Its Allies: Imperial Rule in Eurasia</em>，2020年剑桥出版社，中译版即将由中国社会科学文献出版社出版）和《蒙古帝国崩溃与朝鲜：盟友、动荡以及新东亚秩序》（即将由剑桥出版社出版）都是早期研究的延伸。</p>
+  <p>也许是因为有些读者不太了解我过去的研究旨趣，只知道《暮光》和《神武军容耀天威》，所以觉得我一向都彰显明朝的内亚性，甚至于有些读者产生反感，觉得我过度强度所谓“蒙古因素”，盲目模仿了“新清史”，歪曲了明朝历史的真相。我之所以比较详细交代自己走来的学术道路，是因为要简单说明我是如何和为何开始注意到明朝宫廷和蒙古遗产、明朝与北方民族的动态互动以及东北亚史，与我从本科时代以来的“明朝本位”立场都离不开关系。所以，与其说我模仿新清史，也许不如说我这些尝试都是对“新清史”作品中扁平化处理明朝方式的一种反驳吧。</p>
+  <p><strong>全球史视域下的蒙元帝国</strong></p>
+  <p><strong>燕京书评：《帝国的暮光：蒙古帝国治下的东北亚》</strong><em>（Empire's Twilight: Northeast Asia under the Mongols）</em><strong>是你早期的英文著作之一，也是你在中国大陆出版的第一本中文译作。该书既不同于以往断代史视域下元—丽的政治互动史，也区别于杉山正明、托马斯·爱尔森</strong>（Thomas Allsen）<strong>等人基于全球视野对蒙古帝国的考虑。你利用了一个更为广泛的东北亚地区</strong>（包括朝鲜半岛、辽东南部、山东和北京地区）<strong>来平衡研究对象的复杂性，并细致观察了蒙元宫廷对此地灵活的经营。在你看来，蒙元宫廷对东北亚的统治策略，以及对高丽王朝内政的频繁干预是游牧帝国的发明创造吗？与以往汉唐帝国对东北亚经营的异同是什么？</strong></p>
+  <p><strong>鲁大维：</strong>众所周知，蒙古帝国绝非第一个草原大国，匈奴帝国、突厥汗国等统治欧亚大陆草原，为了统合广阔领和众多民族，他们创造了一系列措施，包括意识形态（或宗教或思想）、军事组织、行政体制、外交手段等，譬如“天”所赐给可汗的保护和福气、以十、百、千、万为单位的军队组织、把政权和行政分成左右翼（或手），积极与当地统治阶层建立通婚关系（所谓皇室或王室通婚），等等。因为蒙古帝国规模是前所未有的，它所统和的民族、政权，尤其是草原以外的地区，非常之多，所以它不仅发扬前代的思想、军事、行政、外交资源，而且它被逼得不得不发展出更有效，更为灵活的办法。所以，他们比较系统地利用皇室通婚、宿卫、综合军队等方式以巩固与当地统治阶层的关系。</p>
+  <p>元朝与高丽是一个典型的例子，但更有意义是高丽这个事例只不过是冰山一角，成吉思汗和他的后代都与欧亚大陆各地的统治阶层都建立了非常密切关系。因此，与其说元廷对东北亚的统治策略以及对高丽王朝内政的频繁干预是游牧帝国的发明创造，或许不如说是蒙古帝国的发明创造。汉唐等历代汉族政权，都比不上蒙古帝国领土之大、民族之多，所以没有被逼得做出类似的政策。</p>
+  <p><strong>燕京书评：在《帝国的暮光》</strong>（后简称《暮光》）<strong>绪论部分，你提到历史性视野的失衡是困扰蒙古帝国研究的棘手问题之一，并指出“共时多维”是蒙古时代最重要的特点。谈起“共时多维”容易让人联想到柯娇燕《中国皇权的多维性》</strong><em>（Pamela Kyle Crossley, “Review Article: The Rulerships of China,” American Historical Review, Vol. 97, No. 5（December, 1992.）</em><strong>对清代普世皇权中“同时性”与“共主性”的论述。根据你对蒙元时期文化与族群“大融合”的研究，蒙元的君主是否存在类似的统治策略，通过在不同族群面前扮演不同的形象强化自身的统治基础？</strong></p>
+  <p><strong>鲁大维：</strong>其实，所有的大国统治阶层都面临共同的问题，即如何有效地让其统治下的臣民接受它的统治，甚至于将它视为天经地义、完全正当的政权。为了达到这个目标，每个政权都采用许多手段，除了军事镇压之外，历代政权最常用的方法包括宗教或意识形态，艺术、建筑等有形物体，或通过礼义或军事游行来证明自己的正统性。领土越大，民族、文化、语言、信仰等越多，不言而喻，挑战越严峻。蒙古帝国也好，清朝也好，甚至于明朝也都面对了这个问题。</p>
+  <p><strong>燕京书评：你曾提到，相比于汗牛充栋的蒙古征服时代的学术研究，蒙古衰亡时期的研究作品是乏善可陈的。因此，你在《暮光》中详细地探讨了帝国衰亡时期东北亚政局形势的演变，并呼吁学界深入了解十四世纪的蒙元帝国。能否为读者提供一些对大元兀鲁斯衰亡原因的思考？</strong></p>
+  <p><strong>鲁大维：</strong>至于元朝衰亡原因，既往研究颇多，见仁见智。有人强调元朝始终没能适应当地政治需要，因此多次发生激烈的皇位继承战争，对政治稳定非常不利。有人强调所谓“四等制度”（即蒙古人、色目人、汉人以及南人）激化了民族矛盾和冲突。有人解释元朝解体是制度缺陷所产生的，比如中央权力不够集中，各地诸王拥有过多的政治、经济、军事资源，中央无法有效地对付地方挑战。还有人说多京制度、多语言行政体系等浪费了太多时间、精力和财力，所以蒙古政权遭遇到了紧急情况，无法及时适应。当然，自元末明初以来，一直有人彰显元朝晚期诸位皇帝的个人问题，即没能认真治国，把大部时间和精力花在毫无意义的宗教仪式上或者浪费于暗斗明争。甚至，有一位著名学者说，蒙古帝国之所以崩溃，是因为蒙古统治阶层饮食文化失调，爱吃肉，爱喝酒，弄得不少蒙古帝国晚期汗都寿命不长，政权交替十分频繁，不利于政治稳定。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-30/60dc010b4cd55d54dd5db6da+L.png" data-id="60dc01122114416715c3d8cb" alt="元顺帝孛儿只斤·妥懽帖睦尔（1320-1370年）" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+元顺帝孛儿只斤·妥懽帖睦尔（1320-1370年）
+    </figcaption>
+  </figure>
+  <p><strong>蒙元宫廷的统治策略与宗教信仰</strong></p>
+  <p><strong>燕京书评：蒙元宫廷与高丽王室在东北亚地区的互动是《暮光》一书重点关注的对象，通过爬梳中文、韩文、日文研究成果，对蒙元与高丽的政治关系给予了自己独特的见解。例如在书中揭示的高丽与蒙元在政治与文化上的深度接触，不仅高丽王子有作为质子在大都学习的经历、女性活跃于帝国的宫廷</strong>（如您书中重点论述的奇皇后）<strong>、文人通过科举出仕元廷，而且蒙元的行政管理模式也深入地影响了高丽。在你看来，高丽虽然构成了大元兀鲁斯的一部分，但“元朝从来没有绝对控制过高丽，也从未有此目的”。能否顺着书中的思路对蒙元帝国灵活多元的统治策略进行一些引申？</strong></p>
+  <p><strong>鲁大维：</strong>过奖了。我并不认为我对蒙古与高丽的政治关系有什么独特的见解。我只不过是总结了既往的中文、韩文、日本研究成果，介绍给西方读者。其实，在序文中，我说得很明白，没有中国、韩国，日本以及西方同仁多年以来的研究成果，《暮光》是写不成的。“至于元朝从来没有绝对控制过高丽，也从未有此目的”也符合既往研究成果吧。治国很累，统治帝国更累，在19世纪之前，很少有帝国统治者想要管到每一个地方的每一个人的每一件事，只要被征服的王室和老百姓赋税，提供劳动力（包括军事劳动力），承认统治者的正当性，不闹事，就可以了。因此蒙古帝国多半都很愿意利用当地既有的政治、社会、宗教组织来进行支配，与其耗费掉宝贵资源以建立新的统治体系，蒙古人宁愿通过既有组织来征税、召集劳动力、镇压反抗。找不到又能干又愿意配合的当地盟友，蒙古人才会采取比较直接管制的政治措施。</p>
+  <p><strong>燕京书评：蒙元皇室的藏传佛教信仰，是国内外学界关注的热点，一些学者通过多语文献的对勘，试图拟构出藏传佛教在蒙元时期的东传史，另一些学者聚焦于元以来汉人精英对藏传佛教的污名化想象。在《暮光》中也简要提及了元顺帝及其妻子对藏传佛教事业的资助，这不禁让人想起《庚申外史》披露的一则轶事，顺帝皇太子在对比藏传佛教与儒家教育后提及“李先生</strong>（李好文）<strong>教我读儒书许多年，我不省书中何意。西番僧教我佛经，我一夕便晓。”南开大学的李治安教授指出由印度、汉传佛教，以及苯教传统整合而来的藏传佛教对于萨满信仰的游牧民族更具亲和力。如何看待蒙元时期君主的藏传佛教信仰，以及之后明清两代君主也成为藏传佛教的信徒，并且虔诚地资助藏传佛教的发展？</strong></p>
+  <p><strong>鲁大维：</strong>至于与元明清三朝君主对藏传佛教虔诚的资助，只能说我是门外汉，没什么研究可谈。据我所知，他们多半都同时怀有几个动机：一则是他们多多少少算是信徒，尊敬国师，遵守部分信条和规矩；一则他们也明白藏传佛教具有政治功能，想利用它以达到政治目标，两者绝非二选一，互相排斥，而是个人信仰、家庭传统以及政治考虑各种动机并存，产生复杂互动关系。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-30/60dc012c9c232e01c17d20e2+L.png" data-id="60dc013b2114416715c3d8cc" alt="信奉藏传佛教的蒙古大汗" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+信奉藏传佛教的蒙古大汗
+    </figcaption>
+  </figure>
+  <p><strong>明代的尚武活动与内亚经营</strong></p>
+  <p><strong>燕京书评：《神武军容耀天威：明代皇室的尚武活动》</strong><em>（Martial Spectacles of the Ming Court）</em><strong>延续了你以往的学术旨趣，吸收了托马斯·爱尔森</strong>（Thomas Allsen）<strong>对于欧亚大陆帝国宫廷狩猎文化的研究，并将其视角转入长期被扁平化处理的明帝国中。在你看来，明帝国与欧亚同时期的帝国有着诸多共性，并且深受蒙古宫廷文化与意识形态的影响。你在书中指出，明代早期的君主热衷于狩猎、马球、射柳、阅兵等尚武活动，并将这种尚武展示与对内亚地区的地缘竞争结合在一起。但通过对史料的检索，就会发现不止深受游牧文化影响的鲜卑魏、李唐等政权，就连宋代的宫廷与士人也有田猎、马球、阅兵等尚武活动</strong>（《宋通鉴长编纪事本末》卷二十九仁宗皇帝校猎条）<strong>。如何看待中原政权尚武活动的延续性？明廷的尚武展示是对蒙元帝国宫廷文化的继承吗，亦或是对传统汉人政权田猎风尚的延续？</strong></p>
+  <p><strong>鲁大维：</strong>中原政权，多半既继承前代汉族王朝的制度和做法，又选择性地引进北方政权的若干制度和做法；所以，与其说明朝的尚武展示是蒙元帝国宫廷的继承还是传统汉人畋猎风尚的延续这种二选一方式的提法，或许不如说作为欧亚大陆大国之明朝包含了许多政治、文化成分，是中国历史几千年以来的综合产物吧。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-30/60dc01684cd55d54dd5db6db+L.png" data-id="60dc01739b2d825085c2616c" alt="《元世祖出猎图》" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+《元世祖出猎图》
+    </figcaption>
+  </figure>
+  <p><strong>燕京书评：明洪武帝朱元璋《奉天北伐讨元檄文》中的“驱逐胡虏，恢复中华”，在近代中国发挥了巨大能量，被一些研究者称为近代汉民族主义的重要源头。但根据你在《明朝初期皇室的元朝话语》里的观点，蒙古在撤回草原后，仍然在北方具有很强的实力，为了与北元竞争北方的正统地位，朱元璋通过天命话语的宣传来争取怀念大元的汉人与留在中原的蒙古人，而《谕中原檄》正是此历史语境下的产物。此外，在对蒙古人的谕文中，朱元璋试图利用蒙语的天命观念说服后者，例如你列举的蒙文版《谕阿札失里》中将汉文的“天”与“运”二字分别译为蒙文的tenggiri与ĵayā。能否再讲解下明廷在政权稳固后，为何仍然执著于对天命话语的追求？是因为与北元的竞争吗？</strong></p>
+  <p><strong>鲁大维：</strong>是。主要是因为与北元的竞争。在我们看来，或许可以说，到了洪武年间晚期或者永乐年间中期明廷政权非常巩固，北元政权一落千丈，不能与明朝同日并论。并且，我们都知道，明朝变成了整个东亚的强国，而北元始终没能统一草原。可是“当局者迷，旁观者清”，当时没人能知道明朝将会延续到17世纪中期而北元无法恢复蒙古帝国原有的领土或势力。所以，当时明廷用了各种各样军事、政治、贸易、外交手段以巩固它的政权。它注意到语言和意识形态的重要性也不出乎意料，为了统治国内各种民族，为了与国外政权和民族交流，第一步就是要找出共同语言以促进沟通。我总觉得不应该小看历代王朝的统治本事。</p>
+  <p><strong>燕京书评：在《神武军容耀天威》一书中，你提到与明代君主进取心弱化相伴随的是文官集团崛起后对于皇帝形象的重新书写。但是，遍览明史传记，并不缺乏文武兼备者，例如平定宁王之乱的心学大师王阳明。根据一些学者的研究，明代的武官通过与文官的联合，建立了官场庇佑网络，在一定程度上调节了“以文统武”、“以文制武”的体制。可以这样说，明代的文武对立似乎并不及两宋。在这样的背景下，如何看待明中期以后文武关系，以及尚武精神的衰退？ 能否根据你新近的研究谈谈你的看法？</strong></p>
+  <p><strong>鲁大维：</strong>文武关系极其重要，无论在军事、政治、或者经济方面，都与明朝命运息息相关。今后希望通过一些实例能进一步了解明中期以后的文武关系是如何发展变化的。下面的答复将会触及到这个课题。</p>
+  <p><strong>燕京书评：在新书《明代中国及其盟友：欧亚大陆的王权统治》</strong><em>（Ming China and its Allies: Imperial Rule in Eurasia）</em><strong>中，你提到永乐帝朱棣身上有着丰富的内亚元素，不仅与蒙古下属宴饮、围猎、阅兵，而且执著于通过与北元的军事竞争塑造更具合法性的北地领主的形象。这种极具启发性的观点让人耳目一新，修正了以往学界立足华夷秩序对永乐帝的探讨。不仅如此，永乐帝还大力资助藏传佛教，封授藏传佛教上师法王称号。 如何看待永乐地对非汉资源的执著与追求，这是否与靖难之役前明代的政治文化冲突？</strong></p>
+  <p><strong>鲁大维：</strong>永乐皇帝积极利用各种各样的政治、文化等资源以巩固政权，既包括儒家思想、中原佛教、民间宗教，历代中国行政制度也包含有内亚元素。众所周知，洪武永乐两帝的外交姿态颇有出入，譬如永乐帝占领安南、多次亲征草原以及下西洋与洪武年间的作风形成强烈对比。问题在于，是永乐帝的外交政策取决于所谓内亚元素，还是渊源于他个人元素或国内的政治需要？我之所以彰显永乐帝与蒙古之间的关系，是希望能提供给明史同好者另一个视角，而不是否决前人和同仁宝贵研究成果，同样也不是说内亚元素可以说明明史的一切。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+&lt;img src="https://img.allhistory.com/now/2021-06-30/60dc01ac4cd55d54dd5db6dc+L.png" data-id="60dc01b42114416715c3d8ce" alt="影视剧《大明风华》对永乐帝戎装形象的想象" ; referrerpolicy="no-referrer"&gt;    <figcaption class="dls-image-capture">
+影视剧《大明风华》对永乐帝戎装形象的想象
+    </figcaption>
+  </figure>
+  <p><strong>北美的蒙元史、明史和清史研究</strong></p>
+  <p><strong>燕京书评：部分中文读者质疑了你对明代内亚性的强调，认为你的研究是将新清史研究范式嫁接到明代的做法，并将其称之为“新明史”。内亚性对于明帝国是可有可无的细致末节吗？明帝国对内亚的经营能否与清帝国类比？作为长期耕耘相关课题的研究者，能否回应中文读者的质疑？</strong></p>
+  <p><strong>鲁大维：</strong>我之所以比较详细说明本身学术旨趣的演变原因之一，是想说明我近年注意到明廷的所谓“内亚性”，但并不是将“新清史”研究模式嫁接到明代，而是在常年从事明代北方（尤其北京）研究过程中，逐渐发觉到明廷与草原政治文化或与西域之间的互动关系似乎值得更多注意。虽然说明廷对内亚的经营与清廷有类似之处，但差异也非常明显。譬如明廷并没有系统地、大规模地和蒙古贵族等用皇室通婚政策，也没有像康熙、乾隆皇帝在新疆大规模用兵，而且清朝直接控制的领土远远超过了明朝直接控制的领土。明朝是一个强国，当然会与周围国家和民族都建立了各种形式的关系，注意到明廷的所谓内亚成分，绝不等于否认或轻视明廷的其他成分，包括传统中原成分。</p>
+  <p>我们从事历史目标之一，是给读者提供各种视角，让他们从不同角度来观察理解过去，而且我们从事历史研究都靠同仁全体的努力和贡献，不是说你研究政治史，我就不能做文学史，你注重性别史，我就不能留意环境史、科学史、思想史等。如果说我们想要更进一步发展明史这个领域，则应该鼓励和欢迎新的尝试，百花齐发，都有助于我们更深刻地、更全面地了解明代历史。也许我过于天真或单纯，但我是抱着这种心态从事明代历史研究，希望大家多多包涵原谅。</p>
+  <p><strong>燕京书评：一些熟悉国际明史研究动态的中国学者对你的治学路径非常赞赏，认为你的研究是对新清史扁平化处理明史的响应。在你看来，明帝国并不是一个内向的、纯粹汉人的帝国，无论宫廷文化、意识形态以及对内亚事物的参与，都与清帝国有着诸多共性。你的这种努力在北美的明、清史学界的反响如何？以后的研究是对相关领域的拓展吗？亦或会考虑尝试新的研究方向？</strong></p>
+  <p><strong>鲁大维：</strong>老实说，北美明清史学界的反响不大。当然有例外，但我的感觉是大部分的清史同仁不是十分关注明史研究，一则清朝历史本身已经够长，也足够复杂，他们宁可专心一意从事清史研究而不要分散注意力；一则在不少清史同仁眼里，明廷与清廷本质上就不一样，除了明清之际的政治、社会经济、文化思想诸方面的连续断层问题之外，明廷显得太远太陌生。明廷是传统汉族王朝，而清廷是多民族多语言的强大帝国，这样的二分法观点应该说是主流。</p>
+  <p>明史同仁多半很支持，但我研究旨趣没引起多少人的注意，追根究底恐怕是因为我这些议题偏离北美明史主流。往年文学史、艺术史、思想史、性别史等领域都比较旺盛，近年感情史、环境史等开始兴起，但这些研究议题都与明廷内亚元素还有一段距离，所以反响不太大。</p>
+  <p>反而是韩国史和蒙古帝国史学界反响最为激烈。北美韩国史同仁多半都很支持我的这些以东北亚地区为单位的研究尝试，我很感激；因为多年以来有不少北美韩国史同仁，非常热情帮我解答各种高丽朝鲜史料上和史学史上的问题。韩国学者的反应不一，有的赞赏，有的批评；甚至，有一位韩国高丽史专家写了一篇长达20页的书评详细说明为什么我不懂韩国史！后来，我明白他是借题发挥，主要谈他自己的观点，很少涉及到《暮光》的具体内容。</p>
+  <p>今年初终于完成了《高丽与蒙古帝国崩溃：盟友、动荡以及新东亚秩序》<em>（Korea and the Fall of the Mongol Empire: Alliance, Upheaval, and the Rise of a New East Asian Order，</em>即将由剑桥出版社出版）一书，主要以高丽晚期的恭愍王为中心，探讨元朝衰亡明朝兴起的历史过程；但与既往研究不一样的是，重点不在于元明两大国，而在于小国高丽如何适应大国政权交替。不言而喻，元明之际、丽元关系、丽明关系等议题的相关研究成果非常丰富，贡献极大，我只不过是稍微换了视角，尝试阐述“小国”的历史经验，目的之一是让更多学者和读者注意到高丽在东亚史上所扮演的角色，只能说是抛砖引玉吧。</p>
+  <p>今后几年，打算从事明代军事和外交研究。中国学者很早就开始重视军事史，不仅注意战争史，而且有不少人研究军事制度史，包括军政考选、后勤、屯田、世袭军户、征兵等，因为这些制度与政治、经济、交通、社会、文化、民族诸问题有密不可分的关系。中国同仁都意识到，想了解明史非讲军事史不可，可是到目前为止，我们北美明史学界似乎缺乏这种问题意识，相关研究也比较薄弱。</p>
+  <p>最近尝试另外一种明史，以八代恭顺侯吴氏事迹来阐述明代军事政治问题。顾名思义，恭顺侯是功臣或勋臣，他们祖先是蒙古族，在永乐三年，把都帖木儿归顺明朝，成为朱棣的蒙古顾问和有力将军，赐姓吴允诚，封为恭顺侯，其子孙代代为明朝效忠，一直到明亡为止。希望能通过他们的具体故事，简单谈谈几个核心问题，譬如新移民如何成为明朝的臣民，甚至于成为京师的精英分子；随着时间，勋臣所扮演的军事政治角色是如何演变的，明朝是采取何种具体措施面对新的军事需要；以及，在15、16、17世纪，明朝与东亚地区和全球诸国之间的关系是如何发展的。显然易见，这种论述策略，是为了让不熟悉中国史的一般西方读者了解明朝历史全貌，并且让他们看到明朝大国是如何处理古今中外几乎所有大国都共同面临的棘手问题。</p>
+  <p>———</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2021-07-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-01/%E9%98%BF%E7%91%9F-%E5%85%8B%E6%8B%89%E5%85%8B%E5%A5%96%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%9F%AD%E5%90%8D%E5%8D%95-%E4%B8%AD%E5%9B%BD%E4%BD%9C%E5%AE%B6%E9%83%9D%E6%99%AF%E8%8A%B3-%E6%B5%81%E6%B5%AA%E8%8B%8D%E7%A9%B9-%E5%85%A5%E5%9B%B4/">
+          阿瑟·克拉克奖公布2021年短名单，中国作家郝景芳《流浪苍穹》入围
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-07-01</time>
+        <a href="https://nodebe4.github.io/oped2/2021-07-01/%E5%AD%99%E6%B1%9F-%E5%9C%A8%E6%96%B0%E5%AA%92%E4%BD%93%E6%97%B6%E4%BB%A3-%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E6%96%87%E5%8C%96%E7%9A%84%E9%9B%86%E4%BD%93%E8%AE%B0%E5%BF%86%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%B2%E7%A8%BF/">
+          孙江：在新媒体时代，如何保存文化的集体记忆丨燕京讲稿
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-28</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-28/%E5%9C%A3%E5%9F%83%E5%85%8B%E8%8B%8F%E4%BD%A9%E9%87%8C%E8%AF%9E%E8%BE%B0121%E5%B9%B4-%E5%B0%8F%E7%8E%8B%E5%AD%90-%E6%98%AF%E6%88%90%E4%BA%BA%E7%9A%84%E6%AE%8B%E9%85%B7%E5%AF%93%E8%A8%80%E8%BF%98%E6%98%AF%E7%BA%AF%E7%BE%8E%E7%9A%84%E7%AB%A5%E8%AF%9D/">
+          圣埃克苏佩里诞辰121年：《小王子》是成人的残酷寓言还是纯美的童话?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2021-06-28</time>
+        <a href="https://nodebe4.github.io/oped2/2021-06-28/%E5%B0%8F%E7%8E%8B%E5%AD%90-%E5%9C%A3%E5%9F%83%E5%85%8B%E8%8B%8F%E4%BD%A9%E9%87%8C%E5%92%8C%E4%BB%96%E7%9A%84-%E5%BD%BC%E5%BE%97-%E6%BD%98%E7%BB%BC%E5%90%88%E5%BE%81/">
+          《小王子》、圣埃克苏佩里和他的“彼得·潘综合征”
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-29/%E7%81%BE%E9%9A%BE%E5%8F%AF%E4%BB%A5%E6%98%AF%E9%87%8D%E5%A4%A7%E5%8F%98%E9%9D%A9%E7%9A%84%E6%9C%BA%E9%81%87-%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E5%87%86%E5%A4%87-%E8%A1%8C%E5%8A%A8%E4%B8%BB%E4%B9%89-13-iYouPort/">
+            前一篇：灾难可以是重大变革的机遇，如何做好准备？：行动主义（13） - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2021-06-30/IYP%E4%BC%98%E7%A7%80%E4%B9%A6%E7%B1%8D%E6%B1%87%E6%80%BB2021-05-06-%E6%9C%88%E7%89%88-%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD-iYouPort/">
+            後一篇：IYP优秀书籍汇总2021（05～06 月版） - 完全免费下载 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2021-06-29/%E7%81%BE%E9%9A%BE%E5%8F%AF%E4%BB%A5%E6%98%AF%E9%87%8D%E5%A4%A7%E5%8F%98%E9%9D%A9%E7%9A%84%E6%9C%BA%E9%81%87-%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E5%87%86%E5%A4%87-%E8%A1%8C%E5%8A%A8%E4%B8%BB%E4%B9%89-13-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2021-06-30/IYP%E4%BC%98%E7%A7%80%E4%B9%A6%E7%B1%8D%E6%B1%87%E6%80%BB2021-05-06-%E6%9C%88%E7%89%88-%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2021-07-01/%E5%AD%99%E6%B1%9F-%E5%9C%A8%E6%96%B0%E5%AA%92%E4%BD%93%E6%97%B6%E4%BB%A3-%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E6%96%87%E5%8C%96%E7%9A%84%E9%9B%86%E4%BD%93%E8%AE%B0%E5%BF%86%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%B2%E7%A8%BF/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2021-06-28/%E5%9C%A3%E5%9F%83%E5%85%8B%E8%8B%8F%E4%BD%A9%E9%87%8C%E8%AF%9E%E8%BE%B0121%E5%B9%B4-%E5%B0%8F%E7%8E%8B%E5%AD%90-%E6%98%AF%E6%88%90%E4%BA%BA%E7%9A%84%E6%AE%8B%E9%85%B7%E5%AF%93%E8%A8%80%E8%BF%98%E6%98%AF%E7%BA%AF%E7%BE%8E%E7%9A%84%E7%AB%A5%E8%AF%9D/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2021-06-29/%E7%81%BE%E9%9A%BE%E5%8F%AF%E4%BB%A5%E6%98%AF%E9%87%8D%E5%A4%A7%E5%8F%98%E9%9D%A9%E7%9A%84%E6%9C%BA%E9%81%87-%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E5%87%86%E5%A4%87-%E8%A1%8C%E5%8A%A8%E4%B8%BB%E4%B9%89-13-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2021-06-30/IYP%E4%BC%98%E7%A7%80%E4%B9%A6%E7%B1%8D%E6%B1%87%E6%80%BB2021-05-06-%E6%9C%88%E7%89%88-%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2021-07-01/%E5%AD%99%E6%B1%9F-%E5%9C%A8%E6%96%B0%E5%AA%92%E4%BD%93%E6%97%B6%E4%BB%A3-%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E6%96%87%E5%8C%96%E7%9A%84%E9%9B%86%E4%BD%93%E8%AE%B0%E5%BF%86%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%B2%E7%A8%BF/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2021-06-28/%E5%9C%A3%E5%9F%83%E5%85%8B%E8%8B%8F%E4%BD%A9%E9%87%8C%E8%AF%9E%E8%BE%B0121%E5%B9%B4-%E5%B0%8F%E7%8E%8B%E5%AD%90-%E6%98%AF%E6%88%90%E4%BA%BA%E7%9A%84%E6%AE%8B%E9%85%B7%E5%AF%93%E8%A8%80%E8%BF%98%E6%98%AF%E7%BA%AF%E7%BE%8E%E7%9A%84%E7%AB%A5%E8%AF%9D/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

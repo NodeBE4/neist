@@ -1,0 +1,5632 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Pritunl：简易搭建个人VPN – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+  
+    
+      
+        
+              
+  Vergil  在 星期五, 10/10/2014 - 08:04 提交 
+          
+          
+            
+              
+                
+                  
+                      btakoy8cyaaa2go.png_large.png  
+                    
+                       
+                        
+                          
+ Pritunl 图：推特 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   Pritunl：简易搭建个人VPN 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  一直以来安装 VPN 服务、提供全局加密代理，是租用VPS（虚拟主机）的一个重要用途，无奈各种命令行操作和复杂繁琐的设置过程，让小白们望而却步。特别是当这种技术被广泛运用到翻墙手段中后，国家防火墙 GFW（Great Fire Wall）就通过智能识别判定，加大了对境外 VPN 服务器的限制和干扰：例如搭建最简单但安全性能较之最薄弱 PPTP 方式的 VPN 链接，很早就遭到联通和电信等 ISP 服务商的封杀；前年十八大之后，没有采用混淆技术的 Openvpn 也被干扰很难使用，因此让更多的初级用户转向其他翻墙手段，或者购买商业付费服务。   那么有没有一种简单有效的VPN方式，一方面能有一个相对简单的途径，易于初级用户迅速搭建 VPN 服务；另一方面有能抵御 GFW 的干扰，提供稳定有效的代理服务呢？最近我们找到一款免费开源的 VPN 平台软件—  Pritunl  ，非常符合上述两个要求。   访问它的  官网  ，界面非常美观简洁，它采用 OpenVPN 代理方式，一方面提供了 API 供高级开发者使用，同时还针对不同平台和不同 VPS 供应商（包括  DigitalOcean  和AWS）提供了详尽的安装使用说明，同时我们根据  官网上提供的测试  发现，此款产品竟然具备图形化界面，方便了初级用户的使用，官方称其能在数分钟内完成搭建过程，这大大的降低了使用门槛。同时，它还提供每月2.5美元的高级会员服务，提供更加强大的功能，我们将在后面予以描述。   
+           搬瓦工作虚拟主机
+            上面已经提到，官网教程中已经为 DigitalOcean 等虚拟主机服务商提供了详细的安装方法，但我们认为如果仅仅是搭建一个 VPN 服务器提供代理服务，那么上述主机中价格最低的 DigitalOcean 最低配的主机每月 5美元的租赁费用还是过高，512M的内存也有浪费之嫌。因此这里，我们使用最近非常火热的搬瓦工（  BandwagonHost  ）主机作为本次测试的 VPS。   搬瓦工之所以这么火热，就是因为它低配主机的廉价，非常符合国人搭建代理服务的需求。我们这里选用的是  一款内存64M的单核主机  ，年费才3.99美元，平均每个月的开销才2元人民币，1.5G的硬盘和每月100G的流量也完全满足我们需求。它支持信用卡和 Paypal付款，目前有两个美国机房，一个地处东海岸的 Florida 州，一个地处西海岸的 Arizona 州（推荐）。   价格的便宜不意味着服务的缩水，它带有一个强大的后台管理面板 KiwiVM，可以设置 Two-factor authentication 加强安全性，甚至还可以通过面板直接安装 OpenVPN服务。   系统默认安装的 CentOS系统，又有编译安装过程太蛋疼，首先通过 KiwiVM 面板重新安装我们更加熟悉的 Ubuntu 12.04 32位系统，然后甚至都不需要使用 Putty ，直接使用面板中的 RootShell-Interactive 就可以进入命令行：   配置环境
+                  1. VPS供应商：  Bandwagon Host  ；
+                  2. VPS配置：1.5G硬盘，单核处理器 64M内存，每月100G流量；
+                  3. 服务器系统：Ubuntu 12.04 32位系统；
+                  4. 客户端系统：Windows7 64位系统 
+                  
+                    
+            一、安装 Pritunl
+           
+                  
+                  
+          
+           
+            
+             1
+            
+            
+             2
+            
+            
+             3
+            
+            
+             4
+            
+            
+             5
+            
+            
+             6
+            
+            
+             7
+            
+            
+             8
+            
+            
+             9
+            
+            
+             10
+            
+            
+             11
+            
+           
+           
+            
+             apt-get update #首先更新软件源
+            
+            
+            
+            
+             apt-get install -y python-software-properties #安装add-apt-repository工具包
+            
+            
+            
+            
+             add-apt-repository ppa:pritunl/ppa #添加软件源
+            
+            
+            
+            
+             apt-get update #更新
+            
+            
+            
+            
+             apt-get install -y pritunl #安装 pritunl
+            
+            
+            
+            
+             apt-get upgrade -y #当新版本发布时用此命令进行更新
+            
+           
+          
+         
+                  
+                  
+           二、设置 Pritunl
+          
+                  在浏览器中输入：https://&lt;Server_Address&gt;:9700/,注意用自己 VPS 的IP地址进行替换：   正常情况就应该出现 Pritunl 的登陆界面，默认的用户名和密码都是“Admin”；   进入“Users”选项卡，点击“Add Organization”输入名称后添加组；   点击“Add User”命令输入名称后在组下添加用户；   继续点击“Servers”选项卡，点击“Add Server”输入名称后添加服务器；   然后点击“Attach Oranization”，将刚新建的组添加到服务器中；   最后点击“Start Server”运行服务，结束设置环节。    
+           三、客户端的设置
+          
+                  到 OpenVPN 官网上下载 Windows 平台的  桌面客户端  并安装；   进入 Pritunl 设置界面，点击“Users”选项卡，点击用户名右侧的图标下载 OpenVPN 的 Profile设置文件压缩包，里面包含密钥；   用加压缩软件将其解压，并将 Profile 文件拷贝到 Open configuration file directory目录中；   以管理员身份运行 OpenVPN（如果用一般用户运行可能会出现无法翻墙的情况），使用配置好的情景链接服务器，成功！   
+           四、其它
+          
+                  1. Pritunl 还提供每个月2.5美元的高级服务，主要功能是提供每个用户产生的流量并以图形化界面反应，如果不是商业运用，这个功能应该和个人用户联系不大，效果如下图：
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  2.上述教程是以Ubuntu 12.04作为服务器端系统，以Windows平台作为客户端系统的，其它系统的安装和设置过程请参见  官方教程  ；   3.Pritunl为保证安全性还提供了两步认证（ Two-step authenticatioon）；   4. Pritunl作为VPN服务搭建工具最大的优势就是图形化和简约化，甚至针对目前较为流行的低价主机服务商 DigitalOcean 开发了API接口，能够迅速完成服务器端的搭建和维护。   5. 上面提到过 Pritunl 采用的 OpenVPN 模式在十八大之后遭遇到一段时间的干扰和屏蔽，但以目前的情况来看链接非常稳定速度也很好，但此款应用刚刚推出，不知道在大规模使用后情况会不会出现逆转，但这一点也妨碍原来高高在上的VPN 搭建过程正逐步向简单化，图形化和普及化方向发展的趋势，在这方面，Pritunl给了我们一个很好的启示和榜样，希望日后类似的应用越来越广泛。
+                  
+                  
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                技术小白如何选择软件（内附常见软件选择建议）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                大V这次为何没被打倒                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                长平：“两禁”难禁记者腐败                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                “净网行动”的不列颠经验                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    Jeaacalay (未验证)  
+                   星期三, 04/24/2019 - 19:42 
+                   永久连接 
+                
+              
+              
+                
+                  Dogana Kamagra JeaPriods  
+                
+                    
+                    
+                      
+                        Luvox &lt;a href=  http://cheapcial20mg.com&gt;cialis  20mg for sale&lt;/a&gt; Alcohol Stopping Keflex Levitra Price In Canada Cialis Drogen
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期五, 05/31/2019 - 08:00 
+                   永久连接 
+                
+              
+              
+                
+                  Acquistare Cialis Svizzera LesTreS  
+                
+                    
+                    
+                      
+                        Over Counter Prednisone Cialis Tablets 20mg Cialis Pastiglie &lt;a href=  http://buyviaa.com&gt;viagra  online prescription&lt;/a&gt; Comprar Cialis En Vina Del Mar Cialis Generico Madrid Levitra Sublinguale Prezzo
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Matnetela (未验证)  
+                   星期五, 05/31/2019 - 19:54 
+                   永久连接 
+                
+              
+              
+                
+                  Chewable Kamagra Matnetela  
+                
+                    
+                    
+                      
+                        Levitra Wofur Cialis Ou Viagra Forum &lt;a href=  http://catabs.com&gt;priligy  farmacias chile&lt;/a&gt; Buying Levitra Online Reviews
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    zdorov.bxox.info (未验证)  
+                   星期六, 06/01/2019 - 16:30 
+                   永久连接 
+                
+              
+              
+                
+                  zdorov.bxox.info  
+                
+                    
+                    
+                      
+                        Cream wax Health ist eine dickflussige Masse von goldener Farbe, die an eine Art frischen Honigs erinnert.
+                        Offiziellen Website:  http://zdorov.bxox.info 
+                        кредитная карта --&gt;  http://credit.bxox.info   потребительский кредит--&gt;  http://kredit.bxox.info   кредитный калькулятор --&gt;  http://karta.bxox.info   взять кредит --&gt;  http://kreditov.bxox.info   кредит онлайн --&gt;  http://creditov.bxox.info 
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    StevElug (未验证)  
+                   星期六, 06/01/2019 - 19:17 
+                   永久连接 
+                
+              
+              
+                
+                  Order Neurontine Overnight Stevprople  
+                
+                    
+                    
+                      
+                        Side Effects Keflex Second Day &lt;a href=  http://tadalaf20mg.com&gt;buy  generic cialis online&lt;/a&gt; Buy Finasteride 1mg Propecia Side Effects
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期日, 06/02/2019 - 17:21 
+                   永久连接 
+                
+              
+              
+                
+                  Priligy A New York Ellnoug  
+                
+                    
+                    
+                      
+                        Ordering Viagra From Cananda Cheap Drugs From India Where Can I Buy Onofin Pills &lt;a href=  http://tadalaffbuy.com&gt;cialis  overnight shipping from usa&lt;/a&gt; Priligy Tijuana
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    AustAbids (未验证)  
+                   星期二, 06/04/2019 - 04:55 
+                   永久连接 
+                
+              
+              
+                
+                  Cialis Generico En Espana JeaEmbaks  
+                
+                    
+                    
+                      
+                        Viagra Info Amoxicillin Uses Diarrhea Wie Teuer Ist Viagra &lt;a href=  http://viaapill.com&gt;viagra&lt;/a&gt;  Real Hydrochlorothiazide Internet Overseas Amex Accepted Propecia Schweiz Preis How To Last Longer
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期二, 06/04/2019 - 05:12 
+                   永久连接 
+                
+              
+              
+                
+                  Precio De Cialis En La Farmacia EllCauh  
+                
+                    
+                    
+                      
+                        How To Buy Shipped Ups Generic Progesterone 200mg Website Augmentin 875 Mg Tablet Online &lt;a href=  http://buygenericvia.com&gt;viagra  online pharmacy&lt;/a&gt; Generic Prednisone Without A Script
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Steptwemy (未验证)  
+                   星期二, 06/04/2019 - 13:05 
+                   永久连接 
+                
+              
+              
+                
+                  Erection Remedies EllLEANCY  
+                
+                    
+                    
+                      
+                        Legally Doxycycline Amex Accepted Priligy Modo D'Uso Usa Direct Pharmacy &lt;a href=  http://curerxshop.com&gt;cialis  5mg best price&lt;/a&gt; Levitra Viagra Cialis Test Clarithromycin Omeprazole Amoxil Cialis 5mg Tadalafil Lilly
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期三, 06/05/2019 - 02:50 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Von Bayer EllCauh  
+                
+                    
+                    
+                      
+                        Avoir Clomid Enceinte Homoopathie Levitra Diflucan 100 Mg &lt;a href=  http://cialtadalaff.com&gt;cheapest  cialis 20mg&lt;/a&gt; Amoxicillin Suspension
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期三, 06/05/2019 - 04:00 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Y Presion Alta Matsculky  
+                
+                    
+                    
+                      
+                        Kamagra Jelly 100mg Toulouse Viagra Dal Canada Cheap Wellbutrin &lt;a href=  http://cialisab.com&gt;cialis  5 mg best price usa&lt;/a&gt; Prevacid Buy One Get One Free Rebate
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Matnetela (未验证)  
+                   星期三, 06/05/2019 - 19:59 
+                   永久连接 
+                
+              
+              
+                
+                  Amoxicillin Good For Prosthesis Matnetela  
+                
+                    
+                    
+                      
+                        Canadian Health Shop Propecia Carne &lt;a href=  http://cheapviapill.com&gt;viagra&lt;/a&gt;  Cialis Simili
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期四, 06/06/2019 - 02:10 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra 8 Compresse Matsculky  
+                
+                    
+                    
+                      
+                        Supreme Suppiers Keflex Equivalents &lt;a href=  http://ausgsm.com&gt;&lt;/a&gt;  Bupropion Recreational Use Buy Zoloft On Line
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    KelDees (未验证)  
+                   星期四, 06/06/2019 - 05:47 
+                   永久连接 
+                
+              
+              
+                
+                  Propecia Generique Canada KelDees  
+                
+                    
+                    
+                      
+                        Comprar Levitra Professional &lt;a href=  http://drugslr.com&gt;canadian  cialis&lt;/a&gt; Retin A
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    <meta property="og:description" content="
+  
+    
+      
+        
+              
+  Vergil  在 星期五, 10/10/2014 - 08:04 提交 
+          
+          
+            
+              
+                
+                  
+                      btakoy8cyaaa2go.png_large.png  
+                    
+                       
+                        
+                          
+ Pritunl 图：推特 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   Pritunl：简易搭建个人VPN 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  一直以来安装 VPN 服务、提供全局加密代理，是租用VPS（虚拟主机）的一个重要用途，无奈各种命令行操作和复杂繁琐的设置过程，让小白们望而却步。特别是当这种技术被广泛运用到翻墙手段中后，国家防火墙 GFW（Great Fire Wall）就通过智能识别判定，加大了对境外 VPN 服务器的限制和干扰：例如搭建最简单但安全性能较之最薄弱 PPTP 方式的 VPN 链接，很早就遭到联通和电信等 ISP 服务商的封杀；前年十八大之后，没有采用混淆技术的 Openvpn 也被干扰很难使用，因此让更多的初级用户转向其他翻墙手段，或者购买商业付费服务。   那么有没有一种简单有效的VPN方式，一方面能有一个相对简单的途径，易于初级用户迅速搭建 VPN 服务；另一方面有能抵御 GFW 的干扰，提供稳定有效的代理服务呢？最近我们找到一款免费开源的 VPN 平台软件—  Pritunl  ，非常符合上述两个要求。   访问它的  官网  ，界面非常美观简洁，它采用 OpenVPN 代理方式，一方面提供了 API 供高级开发者使用，同时还针对不同平台和不同 VPS 供应商（包括  DigitalOcean  和AWS）提供了详尽的安装使用说明，同时我们根据  官网上提供的测试  发现，此款产品竟然具备图形化界面，方便了初级用户的使用，官方称其能在数分钟内完成搭建过程，这大大的降低了使用门槛。同时，它还提供每月2.5美元的高级会员服务，提供更加强大的功能，我们将在后面予以描述。   
+           搬瓦工作虚拟主机
+            上面已经提到，官网教程中已经为 DigitalOcean 等虚拟主机服务商提供了详细的安装方法，但我们认为如果仅仅是搭建一个 VPN 服务器提供代理服务，那么上述主机中价格最低的 DigitalOcean 最低配的主机每月 5美元的租赁费用还是过高，512M的内存也有浪费之嫌。因此这里，我们使用最近非常火热的搬瓦工（  BandwagonHost  ）主机作为本次测试的 VPS。   搬瓦工之所以这么火热，就是因为它低配主机的廉价，非常符合国人搭建代理服务的需求。我们这里选用的是  一款内存64M的单核主机  ，年费才3.99美元，平均每个月的开销才2元人民币，1.5G的硬盘和每月100G的流量也完全满足我们需求。它支持信用卡和 Paypal付款，目前有两个美国机房，一个地处东海岸的 Florida 州，一个地处西海岸的 Arizona 州（推荐）。   价格的便宜不意味着服务的缩水，它带有一个强大的后台管理面板 KiwiVM，可以设置 Two-factor authentication 加强安全性，甚至还可以通过面板直接安装 OpenVPN服务。   系统默认安装的 CentOS系统，又有编译安装过程太蛋疼，首先通过 KiwiVM 面板重新安装我们更加熟悉的 Ubuntu 12.04 32位系统，然后甚至都不需要使用 Putty ，直接使用面板中的 RootShell-Interactive 就可以进入命令行：   配置环境
+                  1. VPS供应商：  Bandwagon Host  ；
+                  2. VPS配置：1.5G硬盘，单核处理器 64M内存，每月100G流量；
+                  3. 服务器系统：Ubuntu 12.04 32位系统；
+                  4. 客户端系统：Windows7 64位系统 
+                  
+                    
+            一、安装 Pritunl
+           
+                  
+                  
+          
+           
+            
+             1
+            
+            
+             2
+            
+            
+             3
+            
+            
+             4
+            
+            
+             5
+            
+            
+             6
+            
+            
+             7
+            
+            
+             8
+            
+            
+             9
+            
+            
+             10
+            
+            
+             11
+            
+           
+           
+            
+             apt-get update #首先更新软件源
+            
+            
+            
+            
+             apt-get install -y python-software-properties #安装add-apt-repository工具包
+            
+            
+            
+            
+             add-apt-repository ppa:pritunl/ppa #添加软件源
+            
+            
+            
+            
+             apt-get update #更新
+            
+            
+            
+            
+             apt-get install -y pritunl #安装 pritunl
+            
+            
+            
+            
+             apt-get upgrade -y #当新版本发布时用此命令进行更新
+            
+           
+          
+         
+                  
+                  
+           二、设置 Pritunl
+          
+                  在浏览器中输入：https://&lt;Server_Address&gt;:9700/,注意用自己 VPS 的IP地址进行替换：   正常情况就应该出现 Pritunl 的登陆界面，默认的用户名和密码都是“Admin”；   进入“Users”选项卡，点击“Add Organization”输入名称后添加组；   点击“Add User”命令输入名称后在组下添加用户；   继续点击“Servers”选项卡，点击“Add Server”输入名称后添加服务器；   然后点击“Attach Oranization”，将刚新建的组添加到服务器中；   最后点击“Start Server”运行服务，结束设置环节。    
+           三、客户端的设置
+          
+                  到 OpenVPN 官网上下载 Windows 平台的  桌面客户端  并安装；   进入 Pritunl 设置界面，点击“Users”选项卡，点击用户名右侧的图标下载 OpenVPN 的 Profile设置文件压缩包，里面包含密钥；   用加压缩软件将其解压，并将 Profile 文件拷贝到 Open configuration file directory目录中；   以管理员身份运行 OpenVPN（如果用一般用户运行可能会出现无法翻墙的情况），使用配置好的情景链接服务器，成功！   
+           四、其它
+          
+                  1. Pritunl 还提供每个月2.5美元的高级服务，主要功能是提供每个用户产生的流量并以图形化界面反应，如果不是商业运用，这个功能应该和个人用户联系不大，效果如下图：
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  2.上述教程是以Ubuntu 12.04作为服务器端系统，以Windows平台作为客户端系统的，其它系统的安装和设置过程请参见  官方教程  ；   3.Pritunl为保证安全性还提供了两步认证（ Two-step authenticatioon）；   4. Pritunl作为VPN服务搭建工具最大的优势就是图形化和简约化，甚至针对目前较为流行的低价主机服务商 DigitalOcean 开发了API接口，能够迅速完成服务器端的搭建和维护。   5. 上面提到过 Pritunl 采用的 OpenVPN 模式在十八大之后遭遇到一段时间的干扰和屏蔽，但以目前的情况来看链接非常稳定速度也很好，但此款应用刚刚推出，不知道在大规模使用后情况会不会出现逆转，但这一点也妨碍原来高高在上的VPN 搭建过程正逐步向简单化，图形化和普及化方向发展的趋势，在这方面，Pritunl给了我们一个很好的启示和榜样，希望日后类似的应用越来越广泛。
+                  
+                  
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                技术小白如何选择软件（内附常见软件选择建议）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                大V这次为何没被打倒                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                长平：“两禁”难禁记者腐败                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                “净网行动”的不列颠经验                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    Jeaacalay (未验证)  
+                   星期三, 04/24/2019 - 19:42 
+                   永久连接 
+                
+              
+              
+                
+                  Dogana Kamagra JeaPriods  
+                
+                    
+                    
+                      
+                        Luvox &lt;a href=  http://cheapcial20mg.com&gt;cialis  20mg for sale&lt;/a&gt; Alcohol Stopping Keflex Levitra Price In Canada Cialis Drogen
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期五, 05/31/2019 - 08:00 
+                   永久连接 
+                
+              
+              
+                
+                  Acquistare Cialis Svizzera LesTreS  
+                
+                    
+                    
+                      
+                        Over Counter Prednisone Cialis Tablets 20mg Cialis Pastiglie &lt;a href=  http://buyviaa.com&gt;viagra  online prescription&lt;/a&gt; Comprar Cialis En Vina Del Mar Cialis Generico Madrid Levitra Sublinguale Prezzo
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Matnetela (未验证)  
+                   星期五, 05/31/2019 - 19:54 
+                   永久连接 
+                
+              
+              
+                
+                  Chewable Kamagra Matnetela  
+                
+                    
+                    
+                      
+                        Levitra Wofur Cialis Ou Viagra Forum &lt;a href=  http://catabs.com&gt;priligy  farmacias chile&lt;/a&gt; Buying Levitra Online Reviews
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    zdorov.bxox.info (未验证)  
+                   星期六, 06/01/2019 - 16:30 
+                   永久连接 
+                
+              
+              
+                
+                  zdorov.bxox.info  
+                
+                    
+                    
+                      
+                        Cream wax Health ist eine dickflussige Masse von goldener Farbe, die an eine Art frischen Honigs erinnert.
+                        Offiziellen Website:  http://zdorov.bxox.info 
+                        кредитная карта --&gt;  http://credit.bxox.info   потребительский кредит--&gt;  http://kredit.bxox.info   кредитный калькулятор --&gt;  http://karta.bxox.info   взять кредит --&gt;  http://kreditov.bxox.info   кредит онлайн --&gt;  http://creditov.bxox.info 
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    StevElug (未验证)  
+                   星期六, 06/01/2019 - 19:17 
+                   永久连接 
+                
+              
+              
+                
+                  Order Neurontine Overnight Stevprople  
+                
+                    
+                    
+                      
+                        Side Effects Keflex Second Day &lt;a href=  http://tadalaf20mg.com&gt;buy  generic cialis online&lt;/a&gt; Buy Finasteride 1mg Propecia Side Effects
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期日, 06/02/2019 - 17:21 
+                   永久连接 
+                
+              
+              
+                
+                  Priligy A New York Ellnoug  
+                
+                    
+                    
+                      
+                        Ordering Viagra From Cananda Cheap Drugs From India Where Can I Buy Onofin Pills &lt;a href=  http://tadalaffbuy.com&gt;cialis  overnight shipping from usa&lt;/a&gt; Priligy Tijuana
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    AustAbids (未验证)  
+                   星期二, 06/04/2019 - 04:55 
+                   永久连接 
+                
+              
+              
+                
+                  Cialis Generico En Espana JeaEmbaks  
+                
+                    
+                    
+                      
+                        Viagra Info Amoxicillin Uses Diarrhea Wie Teuer Ist Viagra &lt;a href=  http://viaapill.com&gt;viagra&lt;/a&gt;  Real Hydrochlorothiazide Internet Overseas Amex Accepted Propecia Schweiz Preis How To Last Longer
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期二, 06/04/2019 - 05:12 
+                   永久连接 
+                
+              
+              
+                
+                  Precio De Cialis En La Farmacia EllCauh  
+                
+                    
+                    
+                      
+                        How To Buy Shipped Ups Generic Progesterone 200mg Website Augmentin 875 Mg Tablet Online &lt;a href=  http://buygenericvia.com&gt;viagra  online pharmacy&lt;/a&gt; Generic Prednisone Without A Script
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Steptwemy (未验证)  
+                   星期二, 06/04/2019 - 13:05 
+                   永久连接 
+                
+              
+              
+                
+                  Erection Remedies EllLEANCY  
+                
+                    
+                    
+                      
+                        Legally Doxycycline Amex Accepted Priligy Modo D'Uso Usa Direct Pharmacy &lt;a href=  http://curerxshop.com&gt;cialis  5mg best price&lt;/a&gt; Levitra Viagra Cialis Test Clarithromycin Omeprazole Amoxil Cialis 5mg Tadalafil Lilly
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期三, 06/05/2019 - 02:50 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Von Bayer EllCauh  
+                
+                    
+                    
+                      
+                        Avoir Clomid Enceinte Homoopathie Levitra Diflucan 100 Mg &lt;a href=  http://cialtadalaff.com&gt;cheapest  cialis 20mg&lt;/a&gt; Amoxicillin Suspension
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期三, 06/05/2019 - 04:00 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Y Presion Alta Matsculky  
+                
+                    
+                    
+                      
+                        Kamagra Jelly 100mg Toulouse Viagra Dal Canada Cheap Wellbutrin &lt;a href=  http://cialisab.com&gt;cialis  5 mg best price usa&lt;/a&gt; Prevacid Buy One Get One Free Rebate
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Matnetela (未验证)  
+                   星期三, 06/05/2019 - 19:59 
+                   永久连接 
+                
+              
+              
+                
+                  Amoxicillin Good For Prosthesis Matnetela  
+                
+                    
+                    
+                      
+                        Canadian Health Shop Propecia Carne &lt;a href=  http://cheapviapill.com&gt;viagra&lt;/a&gt;  Cialis Simili
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期四, 06/06/2019 - 02:10 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra 8 Compresse Matsculky  
+                
+                    
+                    
+                      
+                        Supreme Suppiers Keflex Equivalents &lt;a href=  http://ausgsm.com&gt;&lt;/a&gt;  Bupropion Recreational Use Buy Zoloft On Line
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    KelDees (未验证)  
+                   星期四, 06/06/2019 - 05:47 
+                   永久连接 
+                
+              
+              
+                
+                  Propecia Generique Canada KelDees  
+                
+                    
+                    
+                      
+                        Comprar Levitra Professional &lt;a href=  http://drugslr.com&gt;canadian  cialis&lt;/a&gt; Retin A
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Pritunl：简易搭建个人VPN" />
+    <meta property="twitter:title" content="Pritunl：简易搭建个人VPN" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fpao-pao.net%2Farticle%2F213" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://pao-pao.net/article/213" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://pao-pao.net/article/213&text=Pritunl：简易搭建个人VPN&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://pao-pao.net/article/213&title=Pritunl：简易搭建个人VPN" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://pao-pao.net/article/213&title=Pritunl：简易搭建个人VPN" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Pritunl：简易搭建个人VPN&body=
+  
+    
+      
+        
+              
+  Vergil  在 星期五, 10/10/2014 - 08:04 提交 
+          
+          
+            
+              
+                
+                  
+                      btakoy8cyaaa2go.png_large.png  
+                    
+                       
+                        
+                          
+ Pritunl 图：推特 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   Pritunl：简易搭建个人VPN 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  一直以来安装 VPN 服务、提供全局加密代理，是租用VPS（虚拟主机）的一个重要用途，无奈各种命令行操作和复杂繁琐的设置过程，让小白们望而却步。特别是当这种技术被广泛运用到翻墙手段中后，国家防火墙 GFW（Great Fire Wall）就通过智能识别判定，加大了对境外 VPN 服务器的限制和干扰：例如搭建最简单但安全性能较之最薄弱 PPTP 方式的 VPN 链接，很早就遭到联通和电信等 ISP 服务商的封杀；前年十八大之后，没有采用混淆技术的 Openvpn 也被干扰很难使用，因此让更多的初级用户转向其他翻墙手段，或者购买商业付费服务。   那么有没有一种简单有效的VPN方式，一方面能有一个相对简单的途径，易于初级用户迅速搭建 VPN 服务；另一方面有能抵御 GFW 的干扰，提供稳定有效的代理服务呢？最近我们找到一款免费开源的 VPN 平台软件—  Pritunl  ，非常符合上述两个要求。   访问它的  官网  ，界面非常美观简洁，它采用 OpenVPN 代理方式，一方面提供了 API 供高级开发者使用，同时还针对不同平台和不同 VPS 供应商（包括  DigitalOcean  和AWS）提供了详尽的安装使用说明，同时我们根据  官网上提供的测试  发现，此款产品竟然具备图形化界面，方便了初级用户的使用，官方称其能在数分钟内完成搭建过程，这大大的降低了使用门槛。同时，它还提供每月2.5美元的高级会员服务，提供更加强大的功能，我们将在后面予以描述。   
+           搬瓦工作虚拟主机
+            上面已经提到，官网教程中已经为 DigitalOcean 等虚拟主机服务商提供了详细的安装方法，但我们认为如果仅仅是搭建一个 VPN 服务器提供代理服务，那么上述主机中价格最低的 DigitalOcean 最低配的主机每月 5美元的租赁费用还是过高，512M的内存也有浪费之嫌。因此这里，我们使用最近非常火热的搬瓦工（  BandwagonHost  ）主机作为本次测试的 VPS。   搬瓦工之所以这么火热，就是因为它低配主机的廉价，非常符合国人搭建代理服务的需求。我们这里选用的是  一款内存64M的单核主机  ，年费才3.99美元，平均每个月的开销才2元人民币，1.5G的硬盘和每月100G的流量也完全满足我们需求。它支持信用卡和 Paypal付款，目前有两个美国机房，一个地处东海岸的 Florida 州，一个地处西海岸的 Arizona 州（推荐）。   价格的便宜不意味着服务的缩水，它带有一个强大的后台管理面板 KiwiVM，可以设置 Two-factor authentication 加强安全性，甚至还可以通过面板直接安装 OpenVPN服务。   系统默认安装的 CentOS系统，又有编译安装过程太蛋疼，首先通过 KiwiVM 面板重新安装我们更加熟悉的 Ubuntu 12.04 32位系统，然后甚至都不需要使用 Putty ，直接使用面板中的 RootShell-Interactive 就可以进入命令行：   配置环境
+                  1. VPS供应商：  Bandwagon Host  ；
+                  2. VPS配置：1.5G硬盘，单核处理器 64M内存，每月100G流量；
+                  3. 服务器系统：Ubuntu 12.04 32位系统；
+                  4. 客户端系统：Windows7 64位系统 
+                  
+                    
+            一、安装 Pritunl
+           
+                  
+                  
+          
+           
+            
+             1
+            
+            
+             2
+            
+            
+             3
+            
+            
+             4
+            
+            
+             5
+            
+            
+             6
+            
+            
+             7
+            
+            
+             8
+            
+            
+             9
+            
+            
+             10
+            
+            
+             11
+            
+           
+           
+            
+             apt-get update #首先更新软件源
+            
+            
+            
+            
+             apt-get install -y python-software-properties #安装add-apt-repository工具包
+            
+            
+            
+            
+             add-apt-repository ppa:pritunl/ppa #添加软件源
+            
+            
+            
+            
+             apt-get update #更新
+            
+            
+            
+            
+             apt-get install -y pritunl #安装 pritunl
+            
+            
+            
+            
+             apt-get upgrade -y #当新版本发布时用此命令进行更新
+            
+           
+          
+         
+                  
+                  
+           二、设置 Pritunl
+          
+                  在浏览器中输入：https://&lt;Server_Address&gt;:9700/,注意用自己 VPS 的IP地址进行替换：   正常情况就应该出现 Pritunl 的登陆界面，默认的用户名和密码都是“Admin”；   进入“Users”选项卡，点击“Add Organization”输入名称后添加组；   点击“Add User”命令输入名称后在组下添加用户；   继续点击“Servers”选项卡，点击“Add Server”输入名称后添加服务器；   然后点击“Attach Oranization”，将刚新建的组添加到服务器中；   最后点击“Start Server”运行服务，结束设置环节。    
+           三、客户端的设置
+          
+                  到 OpenVPN 官网上下载 Windows 平台的  桌面客户端  并安装；   进入 Pritunl 设置界面，点击“Users”选项卡，点击用户名右侧的图标下载 OpenVPN 的 Profile设置文件压缩包，里面包含密钥；   用加压缩软件将其解压，并将 Profile 文件拷贝到 Open configuration file directory目录中；   以管理员身份运行 OpenVPN（如果用一般用户运行可能会出现无法翻墙的情况），使用配置好的情景链接服务器，成功！   
+           四、其它
+          
+                  1. Pritunl 还提供每个月2.5美元的高级服务，主要功能是提供每个用户产生的流量并以图形化界面反应，如果不是商业运用，这个功能应该和个人用户联系不大，效果如下图：
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  2.上述教程是以Ubuntu 12.04作为服务器端系统，以Windows平台作为客户端系统的，其它系统的安装和设置过程请参见  官方教程  ；   3.Pritunl为保证安全性还提供了两步认证（ Two-step authenticatioon）；   4. Pritunl作为VPN服务搭建工具最大的优势就是图形化和简约化，甚至针对目前较为流行的低价主机服务商 DigitalOcean 开发了API接口，能够迅速完成服务器端的搭建和维护。   5. 上面提到过 Pritunl 采用的 OpenVPN 模式在十八大之后遭遇到一段时间的干扰和屏蔽，但以目前的情况来看链接非常稳定速度也很好，但此款应用刚刚推出，不知道在大规模使用后情况会不会出现逆转，但这一点也妨碍原来高高在上的VPN 搭建过程正逐步向简单化，图形化和普及化方向发展的趋势，在这方面，Pritunl给了我们一个很好的启示和榜样，希望日后类似的应用越来越广泛。
+                  
+                  
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                技术小白如何选择软件（内附常见软件选择建议）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                大V这次为何没被打倒                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                长平：“两禁”难禁记者腐败                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                “净网行动”的不列颠经验                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    Jeaacalay (未验证)  
+                   星期三, 04/24/2019 - 19:42 
+                   永久连接 
+                
+              
+              
+                
+                  Dogana Kamagra JeaPriods  
+                
+                    
+                    
+                      
+                        Luvox &lt;a href=  http://cheapcial20mg.com&gt;cialis  20mg for sale&lt;/a&gt; Alcohol Stopping Keflex Levitra Price In Canada Cialis Drogen
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期五, 05/31/2019 - 08:00 
+                   永久连接 
+                
+              
+              
+                
+                  Acquistare Cialis Svizzera LesTreS  
+                
+                    
+                    
+                      
+                        Over Counter Prednisone Cialis Tablets 20mg Cialis Pastiglie &lt;a href=  http://buyviaa.com&gt;viagra  online prescription&lt;/a&gt; Comprar Cialis En Vina Del Mar Cialis Generico Madrid Levitra Sublinguale Prezzo
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Matnetela (未验证)  
+                   星期五, 05/31/2019 - 19:54 
+                   永久连接 
+                
+              
+              
+                
+                  Chewable Kamagra Matnetela  
+                
+                    
+                    
+                      
+                        Levitra Wofur Cialis Ou Viagra Forum &lt;a href=  http://catabs.com&gt;priligy  farmacias chile&lt;/a&gt; Buying Levitra Online Reviews
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    zdorov.bxox.info (未验证)  
+                   星期六, 06/01/2019 - 16:30 
+                   永久连接 
+                
+              
+              
+                
+                  zdorov.bxox.info  
+                
+                    
+                    
+                      
+                        Cream wax Health ist eine dickflussige Masse von goldener Farbe, die an eine Art frischen Honigs erinnert.
+                        Offiziellen Website:  http://zdorov.bxox.info 
+                        кредитная карта --&gt;  http://credit.bxox.info   потребительский кредит--&gt;  http://kredit.bxox.info   кредитный калькулятор --&gt;  http://karta.bxox.info   взять кредит --&gt;  http://kreditov.bxox.info   кредит онлайн --&gt;  http://creditov.bxox.info 
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    StevElug (未验证)  
+                   星期六, 06/01/2019 - 19:17 
+                   永久连接 
+                
+              
+              
+                
+                  Order Neurontine Overnight Stevprople  
+                
+                    
+                    
+                      
+                        Side Effects Keflex Second Day &lt;a href=  http://tadalaf20mg.com&gt;buy  generic cialis online&lt;/a&gt; Buy Finasteride 1mg Propecia Side Effects
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期日, 06/02/2019 - 17:21 
+                   永久连接 
+                
+              
+              
+                
+                  Priligy A New York Ellnoug  
+                
+                    
+                    
+                      
+                        Ordering Viagra From Cananda Cheap Drugs From India Where Can I Buy Onofin Pills &lt;a href=  http://tadalaffbuy.com&gt;cialis  overnight shipping from usa&lt;/a&gt; Priligy Tijuana
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    AustAbids (未验证)  
+                   星期二, 06/04/2019 - 04:55 
+                   永久连接 
+                
+              
+              
+                
+                  Cialis Generico En Espana JeaEmbaks  
+                
+                    
+                    
+                      
+                        Viagra Info Amoxicillin Uses Diarrhea Wie Teuer Ist Viagra &lt;a href=  http://viaapill.com&gt;viagra&lt;/a&gt;  Real Hydrochlorothiazide Internet Overseas Amex Accepted Propecia Schweiz Preis How To Last Longer
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期二, 06/04/2019 - 05:12 
+                   永久连接 
+                
+              
+              
+                
+                  Precio De Cialis En La Farmacia EllCauh  
+                
+                    
+                    
+                      
+                        How To Buy Shipped Ups Generic Progesterone 200mg Website Augmentin 875 Mg Tablet Online &lt;a href=  http://buygenericvia.com&gt;viagra  online pharmacy&lt;/a&gt; Generic Prednisone Without A Script
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Steptwemy (未验证)  
+                   星期二, 06/04/2019 - 13:05 
+                   永久连接 
+                
+              
+              
+                
+                  Erection Remedies EllLEANCY  
+                
+                    
+                    
+                      
+                        Legally Doxycycline Amex Accepted Priligy Modo D'Uso Usa Direct Pharmacy &lt;a href=  http://curerxshop.com&gt;cialis  5mg best price&lt;/a&gt; Levitra Viagra Cialis Test Clarithromycin Omeprazole Amoxil Cialis 5mg Tadalafil Lilly
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期三, 06/05/2019 - 02:50 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Von Bayer EllCauh  
+                
+                    
+                    
+                      
+                        Avoir Clomid Enceinte Homoopathie Levitra Diflucan 100 Mg &lt;a href=  http://cialtadalaff.com&gt;cheapest  cialis 20mg&lt;/a&gt; Amoxicillin Suspension
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期三, 06/05/2019 - 04:00 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Y Presion Alta Matsculky  
+                
+                    
+                    
+                      
+                        Kamagra Jelly 100mg Toulouse Viagra Dal Canada Cheap Wellbutrin &lt;a href=  http://cialisab.com&gt;cialis  5 mg best price usa&lt;/a&gt; Prevacid Buy One Get One Free Rebate
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Matnetela (未验证)  
+                   星期三, 06/05/2019 - 19:59 
+                   永久连接 
+                
+              
+              
+                
+                  Amoxicillin Good For Prosthesis Matnetela  
+                
+                    
+                    
+                      
+                        Canadian Health Shop Propecia Carne &lt;a href=  http://cheapviapill.com&gt;viagra&lt;/a&gt;  Cialis Simili
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期四, 06/06/2019 - 02:10 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra 8 Compresse Matsculky  
+                
+                    
+                    
+                      
+                        Supreme Suppiers Keflex Equivalents &lt;a href=  http://ausgsm.com&gt;&lt;/a&gt;  Bupropion Recreational Use Buy Zoloft On Line
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    KelDees (未验证)  
+                   星期四, 06/06/2019 - 05:47 
+                   永久连接 
+                
+              
+              
+                
+                  Propecia Generique Canada KelDees  
+                
+                    
+                    
+                      
+                        Comprar Levitra Professional &lt;a href=  http://drugslr.com&gt;canadian  cialis&lt;/a&gt; Retin A
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://pao-pao.net/article/213" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://pao-pao.net/article/213&title=Pritunl：简易搭建个人VPN&caption=
+  
+    
+      
+        
+              
+  Vergil  在 星期五, 10/10/2014 - 08:04 提交 
+          
+          
+            
+              
+                
+                  
+                      btakoy8cyaaa2go.png_large.png  
+                    
+                       
+                        
+                          
+ Pritunl 图：推特 
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+            
+              
+                
+                   Pritunl：简易搭建个人VPN 
+                
+              
+            
+            
+              
+文/
+              
+  Vergil 
+            
+            
+              
+                
+                  一直以来安装 VPN 服务、提供全局加密代理，是租用VPS（虚拟主机）的一个重要用途，无奈各种命令行操作和复杂繁琐的设置过程，让小白们望而却步。特别是当这种技术被广泛运用到翻墙手段中后，国家防火墙 GFW（Great Fire Wall）就通过智能识别判定，加大了对境外 VPN 服务器的限制和干扰：例如搭建最简单但安全性能较之最薄弱 PPTP 方式的 VPN 链接，很早就遭到联通和电信等 ISP 服务商的封杀；前年十八大之后，没有采用混淆技术的 Openvpn 也被干扰很难使用，因此让更多的初级用户转向其他翻墙手段，或者购买商业付费服务。   那么有没有一种简单有效的VPN方式，一方面能有一个相对简单的途径，易于初级用户迅速搭建 VPN 服务；另一方面有能抵御 GFW 的干扰，提供稳定有效的代理服务呢？最近我们找到一款免费开源的 VPN 平台软件—  Pritunl  ，非常符合上述两个要求。   访问它的  官网  ，界面非常美观简洁，它采用 OpenVPN 代理方式，一方面提供了 API 供高级开发者使用，同时还针对不同平台和不同 VPS 供应商（包括  DigitalOcean  和AWS）提供了详尽的安装使用说明，同时我们根据  官网上提供的测试  发现，此款产品竟然具备图形化界面，方便了初级用户的使用，官方称其能在数分钟内完成搭建过程，这大大的降低了使用门槛。同时，它还提供每月2.5美元的高级会员服务，提供更加强大的功能，我们将在后面予以描述。   
+           搬瓦工作虚拟主机
+            上面已经提到，官网教程中已经为 DigitalOcean 等虚拟主机服务商提供了详细的安装方法，但我们认为如果仅仅是搭建一个 VPN 服务器提供代理服务，那么上述主机中价格最低的 DigitalOcean 最低配的主机每月 5美元的租赁费用还是过高，512M的内存也有浪费之嫌。因此这里，我们使用最近非常火热的搬瓦工（  BandwagonHost  ）主机作为本次测试的 VPS。   搬瓦工之所以这么火热，就是因为它低配主机的廉价，非常符合国人搭建代理服务的需求。我们这里选用的是  一款内存64M的单核主机  ，年费才3.99美元，平均每个月的开销才2元人民币，1.5G的硬盘和每月100G的流量也完全满足我们需求。它支持信用卡和 Paypal付款，目前有两个美国机房，一个地处东海岸的 Florida 州，一个地处西海岸的 Arizona 州（推荐）。   价格的便宜不意味着服务的缩水，它带有一个强大的后台管理面板 KiwiVM，可以设置 Two-factor authentication 加强安全性，甚至还可以通过面板直接安装 OpenVPN服务。   系统默认安装的 CentOS系统，又有编译安装过程太蛋疼，首先通过 KiwiVM 面板重新安装我们更加熟悉的 Ubuntu 12.04 32位系统，然后甚至都不需要使用 Putty ，直接使用面板中的 RootShell-Interactive 就可以进入命令行：   配置环境
+                  1. VPS供应商：  Bandwagon Host  ；
+                  2. VPS配置：1.5G硬盘，单核处理器 64M内存，每月100G流量；
+                  3. 服务器系统：Ubuntu 12.04 32位系统；
+                  4. 客户端系统：Windows7 64位系统 
+                  
+                    
+            一、安装 Pritunl
+           
+                  
+                  
+          
+           
+            
+             1
+            
+            
+             2
+            
+            
+             3
+            
+            
+             4
+            
+            
+             5
+            
+            
+             6
+            
+            
+             7
+            
+            
+             8
+            
+            
+             9
+            
+            
+             10
+            
+            
+             11
+            
+           
+           
+            
+             apt-get update #首先更新软件源
+            
+            
+            
+            
+             apt-get install -y python-software-properties #安装add-apt-repository工具包
+            
+            
+            
+            
+             add-apt-repository ppa:pritunl/ppa #添加软件源
+            
+            
+            
+            
+             apt-get update #更新
+            
+            
+            
+            
+             apt-get install -y pritunl #安装 pritunl
+            
+            
+            
+            
+             apt-get upgrade -y #当新版本发布时用此命令进行更新
+            
+           
+          
+         
+                  
+                  
+           二、设置 Pritunl
+          
+                  在浏览器中输入：https://&lt;Server_Address&gt;:9700/,注意用自己 VPS 的IP地址进行替换：   正常情况就应该出现 Pritunl 的登陆界面，默认的用户名和密码都是“Admin”；   进入“Users”选项卡，点击“Add Organization”输入名称后添加组；   点击“Add User”命令输入名称后在组下添加用户；   继续点击“Servers”选项卡，点击“Add Server”输入名称后添加服务器；   然后点击“Attach Oranization”，将刚新建的组添加到服务器中；   最后点击“Start Server”运行服务，结束设置环节。    
+           三、客户端的设置
+          
+                  到 OpenVPN 官网上下载 Windows 平台的  桌面客户端  并安装；   进入 Pritunl 设置界面，点击“Users”选项卡，点击用户名右侧的图标下载 OpenVPN 的 Profile设置文件压缩包，里面包含密钥；   用加压缩软件将其解压，并将 Profile 文件拷贝到 Open configuration file directory目录中；   以管理员身份运行 OpenVPN（如果用一般用户运行可能会出现无法翻墙的情况），使用配置好的情景链接服务器，成功！   
+           四、其它
+          
+                  1. Pritunl 还提供每个月2.5美元的高级服务，主要功能是提供每个用户产生的流量并以图形化界面反应，如果不是商业运用，这个功能应该和个人用户联系不大，效果如下图：
+                  
+                  
+                    
+                        ev.owa_.jpg  
+                      
+
+                      
+                    
+                  
+                  2.上述教程是以Ubuntu 12.04作为服务器端系统，以Windows平台作为客户端系统的，其它系统的安装和设置过程请参见  官方教程  ；   3.Pritunl为保证安全性还提供了两步认证（ Two-step authenticatioon）；   4. Pritunl作为VPN服务搭建工具最大的优势就是图形化和简约化，甚至针对目前较为流行的低价主机服务商 DigitalOcean 开发了API接口，能够迅速完成服务器端的搭建和维护。   5. 上面提到过 Pritunl 采用的 OpenVPN 模式在十八大之后遭遇到一段时间的干扰和屏蔽，但以目前的情况来看链接非常稳定速度也很好，但此款应用刚刚推出，不知道在大规模使用后情况会不会出现逆转，但这一点也妨碍原来高高在上的VPN 搭建过程正逐步向简单化，图形化和普及化方向发展的趋势，在这方面，Pritunl给了我们一个很好的启示和榜样，希望日后类似的应用越来越广泛。
+                  
+                  
+                
+              
+            
+            
+              
+                
+                  
+        
+                  
+                
+              
+            
+          
+          
+             您可能感兴趣的文章 
+            
+              
+                
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                技术小白如何选择软件（内附常见软件选择建议）                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                大V这次为何没被打倒                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                长平：“两禁”难禁记者腐败                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                  
+                    
+                      
+                        
+                          
+                            
+  
+                            
+                          
+                        
+                      
+                      
+                        
+                          
+                            
+                                “净网行动”的不列颠经验                                   
+ 
+                            
+                          
+                        
+                      
+                    
+                  
+                
+              
+            
+          
+          
+          
+             冒个泡吧！ 
+          
+          
+             评论 
+ 
+                   
+              
+                
+                    Jeaacalay (未验证)  
+                   星期三, 04/24/2019 - 19:42 
+                   永久连接 
+                
+              
+              
+                
+                  Dogana Kamagra JeaPriods  
+                
+                    
+                    
+                      
+                        Luvox &lt;a href=  http://cheapcial20mg.com&gt;cialis  20mg for sale&lt;/a&gt; Alcohol Stopping Keflex Levitra Price In Canada Cialis Drogen
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Randveifs (未验证)  
+                   星期五, 05/31/2019 - 08:00 
+                   永久连接 
+                
+              
+              
+                
+                  Acquistare Cialis Svizzera LesTreS  
+                
+                    
+                    
+                      
+                        Over Counter Prednisone Cialis Tablets 20mg Cialis Pastiglie &lt;a href=  http://buyviaa.com&gt;viagra  online prescription&lt;/a&gt; Comprar Cialis En Vina Del Mar Cialis Generico Madrid Levitra Sublinguale Prezzo
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Matnetela (未验证)  
+                   星期五, 05/31/2019 - 19:54 
+                   永久连接 
+                
+              
+              
+                
+                  Chewable Kamagra Matnetela  
+                
+                    
+                    
+                      
+                        Levitra Wofur Cialis Ou Viagra Forum &lt;a href=  http://catabs.com&gt;priligy  farmacias chile&lt;/a&gt; Buying Levitra Online Reviews
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    zdorov.bxox.info (未验证)  
+                   星期六, 06/01/2019 - 16:30 
+                   永久连接 
+                
+              
+              
+                
+                  zdorov.bxox.info  
+                
+                    
+                    
+                      
+                        Cream wax Health ist eine dickflussige Masse von goldener Farbe, die an eine Art frischen Honigs erinnert.
+                        Offiziellen Website:  http://zdorov.bxox.info 
+                        кредитная карта --&gt;  http://credit.bxox.info   потребительский кредит--&gt;  http://kredit.bxox.info   кредитный калькулятор --&gt;  http://karta.bxox.info   взять кредит --&gt;  http://kreditov.bxox.info   кредит онлайн --&gt;  http://creditov.bxox.info 
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    StevElug (未验证)  
+                   星期六, 06/01/2019 - 19:17 
+                   永久连接 
+                
+              
+              
+                
+                  Order Neurontine Overnight Stevprople  
+                
+                    
+                    
+                      
+                        Side Effects Keflex Second Day &lt;a href=  http://tadalaf20mg.com&gt;buy  generic cialis online&lt;/a&gt; Buy Finasteride 1mg Propecia Side Effects
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Ellincuse (未验证)  
+                   星期日, 06/02/2019 - 17:21 
+                   永久连接 
+                
+              
+              
+                
+                  Priligy A New York Ellnoug  
+                
+                    
+                    
+                      
+                        Ordering Viagra From Cananda Cheap Drugs From India Where Can I Buy Onofin Pills &lt;a href=  http://tadalaffbuy.com&gt;cialis  overnight shipping from usa&lt;/a&gt; Priligy Tijuana
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    AustAbids (未验证)  
+                   星期二, 06/04/2019 - 04:55 
+                   永久连接 
+                
+              
+              
+                
+                  Cialis Generico En Espana JeaEmbaks  
+                
+                    
+                    
+                      
+                        Viagra Info Amoxicillin Uses Diarrhea Wie Teuer Ist Viagra &lt;a href=  http://viaapill.com&gt;viagra&lt;/a&gt;  Real Hydrochlorothiazide Internet Overseas Amex Accepted Propecia Schweiz Preis How To Last Longer
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期二, 06/04/2019 - 05:12 
+                   永久连接 
+                
+              
+              
+                
+                  Precio De Cialis En La Farmacia EllCauh  
+                
+                    
+                    
+                      
+                        How To Buy Shipped Ups Generic Progesterone 200mg Website Augmentin 875 Mg Tablet Online &lt;a href=  http://buygenericvia.com&gt;viagra  online pharmacy&lt;/a&gt; Generic Prednisone Without A Script
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Steptwemy (未验证)  
+                   星期二, 06/04/2019 - 13:05 
+                   永久连接 
+                
+              
+              
+                
+                  Erection Remedies EllLEANCY  
+                
+                    
+                    
+                      
+                        Legally Doxycycline Amex Accepted Priligy Modo D'Uso Usa Direct Pharmacy &lt;a href=  http://curerxshop.com&gt;cialis  5mg best price&lt;/a&gt; Levitra Viagra Cialis Test Clarithromycin Omeprazole Amoxil Cialis 5mg Tadalafil Lilly
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Stepthype (未验证)  
+                   星期三, 06/05/2019 - 02:50 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra Von Bayer EllCauh  
+                
+                    
+                    
+                      
+                        Avoir Clomid Enceinte Homoopathie Levitra Diflucan 100 Mg &lt;a href=  http://cialtadalaff.com&gt;cheapest  cialis 20mg&lt;/a&gt; Amoxicillin Suspension
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期三, 06/05/2019 - 04:00 
+                   永久连接 
+                
+              
+              
+                
+                  Viagra Y Presion Alta Matsculky  
+                
+                    
+                    
+                      
+                        Kamagra Jelly 100mg Toulouse Viagra Dal Canada Cheap Wellbutrin &lt;a href=  http://cialisab.com&gt;cialis  5 mg best price usa&lt;/a&gt; Prevacid Buy One Get One Free Rebate
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Matnetela (未验证)  
+                   星期三, 06/05/2019 - 19:59 
+                   永久连接 
+                
+              
+              
+                
+                  Amoxicillin Good For Prosthesis Matnetela  
+                
+                    
+                    
+                      
+                        Canadian Health Shop Propecia Carne &lt;a href=  http://cheapviapill.com&gt;viagra&lt;/a&gt;  Cialis Simili
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    Franexpok (未验证)  
+                   星期四, 06/06/2019 - 02:10 
+                   永久连接 
+                
+              
+              
+                
+                  Levitra 8 Compresse Matsculky  
+                
+                    
+                    
+                      
+                        Supreme Suppiers Keflex Equivalents &lt;a href=  http://ausgsm.com&gt;&lt;/a&gt;  Bupropion Recreational Use Buy Zoloft On Line
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+ 
+                   
+              
+                
+                    KelDees (未验证)  
+                   星期四, 06/06/2019 - 05:47 
+                   永久连接 
+                
+              
+              
+                
+                  Propecia Generique Canada KelDees  
+                
+                    
+                    
+                      
+                        Comprar Levitra Professional &lt;a href=  http://drugslr.com&gt;canadian  cialis&lt;/a&gt; Retin A
+                      
+                    
+                  
+                
+                
+                
+                   回复 
+                
+              
+              
+            
+             冒个泡吧！ 
+          
+        
+      
+    
+    
+  
+  
+
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Pritunl：简易搭建个人VPN&url=https://pao-pao.net/article/213" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Pritunl：简易搭建个人VPN</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2014-10-10
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Vergil</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#泡泡">
+          泡泡
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://pao-pao.net/article/213" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="泡泡的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#泡泡 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <section class="clearfix" id="content" role="main">
+  <div class="region region-content">
+    <div class="block block-system" id="block-system-main">
+      <div class="content">
+        <div about="/article/213" class="node node-pao-pao-article node-promoted node-full view-mode-full clearfix" id="node-213" typeof="sioc:Item foaf:Document">
+<span class="rdf-meta element-hidden" content="Pritunl：简易搭建个人VPN" property="dc:title"> </span> <span class="rdf-meta element-hidden" content="14" datatype="xsd:integer" property="sioc:num_replies"> </span>           <div class="submitted">
+<span content="2014-10-10T08:04:46+02:00" datatype="xsd:dateTime" property="dc:date dc:created" rel="sioc:has_creator"> <a about="/author/30" class="username" datatype="" href="/author/30" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> Vergil </a> 在 星期五, 10/10/2014 - 08:04 提交 </span>
+          </div>
+          <div class="content">
+            <div class="field field-name-field-image field-type-image field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="file file-image file-image-png" id="file-489--2">
+                    <h2 class="element-invisible" id="btakoy8cyaaa2gopnglargepng--"> <a href="/file/489"> btakoy8cyaaa2go.png_large.png </a> </h2>
+                    <div class="content">
+<img alt="" height="164" src="https://pao-pao.net/sites/pao-pao.net/files/styles/article_detail/public/btakoy8cyaaa2go.png_large.png?itok=4RNemeTK" title="" typeof="foaf:Image" width="290" />                       <div class="field field-name-field-image-source field-type-link-field field-label-hidden">
+                        <div class="field-items">
+                          <div class="field-item even">
+<a href="https://pbs.twimg.com/media/BtaKOy8CYAAA2GO.png:large"> Pritunl 图：推特 </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-title field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="dc:title">
+                  <h1 class="page-title" id="pritunlvpn-"> Pritunl：简易搭建个人VPN </h1>
+                </div>
+              </div>
+            </div>
+            <div class="field-name-author">
+              <div class="label-inline">
+文/
+              </div>
+ <a about="/author/30" class="username" datatype="" href="/author/30" property="foaf:name" title="查看用户资料" typeof="sioc:UserAccount" xml:lang=""> Vergil </a>
+            </div>
+            <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even" property="content:encoded">
+                  <p>一直以来安装 VPN 服务、提供全局加密代理，是租用VPS（虚拟主机）的一个重要用途，无奈各种命令行操作和复杂繁琐的设置过程，让小白们望而却步。特别是当这种技术被广泛运用到翻墙手段中后，国家防火墙 GFW（Great Fire Wall）就通过智能识别判定，加大了对境外 VPN 服务器的限制和干扰：例如搭建最简单但安全性能较之最薄弱 PPTP 方式的 VPN 链接，很早就遭到联通和电信等 ISP 服务商的封杀；前年十八大之后，没有采用混淆技术的 Openvpn 也被干扰很难使用，因此让更多的初级用户转向其他翻墙手段，或者购买商业付费服务。 <br /> <br /> 那么有没有一种简单有效的VPN方式，一方面能有一个相对简单的途径，易于初级用户迅速搭建 VPN 服务；另一方面有能抵御 GFW 的干扰，提供稳定有效的代理服务呢？最近我们找到一款免费开源的 VPN 平台软件— <a href="https://pritunl.com/#promo" rel="nofollow"> Pritunl </a> ，非常符合上述两个要求。 <br /> <br /> 访问它的 <a href="https://pritunl.com/#promo" rel="nofollow"> 官网 </a> ，界面非常美观简洁，它采用 OpenVPN 代理方式，一方面提供了 API 供高级开发者使用，同时还针对不同平台和不同 VPS 供应商（包括 <a href="https://www.digitalocean.com/" rel="nofollow"> DigitalOcean </a> 和AWS）提供了详尽的安装使用说明，同时我们根据 <a href="https://pritunl.com/demo/" rel="nofollow"> 官网上提供的测试 </a> 发现，此款产品竟然具备图形化界面，方便了初级用户的使用，官方称其能在数分钟内完成搭建过程，这大大的降低了使用门槛。同时，它还提供每月2.5美元的高级会员服务，提供更加强大的功能，我们将在后面予以描述。 <br /> <br /> <strong>
+           搬瓦工作虚拟主机
+          </strong> <br /> 上面已经提到，官网教程中已经为 DigitalOcean 等虚拟主机服务商提供了详细的安装方法，但我们认为如果仅仅是搭建一个 VPN 服务器提供代理服务，那么上述主机中价格最低的 DigitalOcean 最低配的主机每月 5美元的租赁费用还是过高，512M的内存也有浪费之嫌。因此这里，我们使用最近非常火热的搬瓦工（ <a href="https://bandwagonhost.com/index.php" rel="nofollow"> BandwagonHost </a> ）主机作为本次测试的 VPS。 <br /> <br /> 搬瓦工之所以这么火热，就是因为它低配主机的廉价，非常符合国人搭建代理服务的需求。我们这里选用的是 <a href="https://bandwagonhost.com/cart.php" rel="nofollow"> 一款内存64M的单核主机 </a> ，年费才3.99美元，平均每个月的开销才2元人民币，1.5G的硬盘和每月100G的流量也完全满足我们需求。它支持信用卡和 Paypal付款，目前有两个美国机房，一个地处东海岸的 Florida 州，一个地处西海岸的 Arizona 州（推荐）。 <br /> <br /> 价格的便宜不意味着服务的缩水，它带有一个强大的后台管理面板 KiwiVM，可以设置 Two-factor authentication 加强安全性，甚至还可以通过面板直接安装 OpenVPN服务。 <br /> <br /> 系统默认安装的 CentOS系统，又有编译安装过程太蛋疼，首先通过 KiwiVM 面板重新安装我们更加熟悉的 Ubuntu 12.04 32位系统，然后甚至都不需要使用 Putty ，直接使用面板中的 RootShell-Interactive 就可以进入命令行： <br /> <br /> 配置环境</p>
+                  <p>1. VPS供应商： <a href="https://bandwagonhost.com/index.php" rel="nofollow"> Bandwagon Host </a> ；</p>
+                  <p>2. VPS配置：1.5G硬盘，单核处理器 64M内存，每月100G流量；</p>
+                  <p>3. 服务器系统：Ubuntu 12.04 32位系统；</p>
+                  <p>4. 客户端系统：Windows7 64位系统 <br /></p>
+                  <div>
+                    <p><strong>
+            一、安装 Pritunl
+           </strong></p>
+                  </div>
+                  <table>
+          <tr>
+           <td>
+            <p>
+             1
+            </p>
+            <p>
+             2
+            </p>
+            <p>
+             3
+            </p>
+            <p>
+             4
+            </p>
+            <p>
+             5
+            </p>
+            <p>
+             6
+            </p>
+            <p>
+             7
+            </p>
+            <p>
+             8
+            </p>
+            <p>
+             9
+            </p>
+            <p>
+             10
+            </p>
+            <p>
+             11
+            </p>
+           </td>
+           <td>
+            <p>
+             apt-get update #首先更新软件源
+            </p>
+            <p>
+            </p>
+            <p>
+             apt-get install -y python-software-properties #安装add-apt-repository工具包
+            </p>
+            <p>
+            </p>
+            <p>
+             add-apt-repository ppa:pritunl/ppa #添加软件源
+            </p>
+            <p>
+            </p>
+            <p>
+             apt-get update #更新
+            </p>
+            <p>
+            </p>
+            <p>
+             apt-get install -y pritunl #安装 pritunl
+            </p>
+            <p>
+            </p>
+            <p>
+             apt-get upgrade -y #当新版本发布时用此命令进行更新
+            </p>
+           </td>
+          </tr>
+         </table>
+                  <div></div>
+                  <p><strong>
+           二、设置 Pritunl
+          </strong></p>
+                  <p>在浏览器中输入：https://&lt;Server_Address&gt;:9700/,注意用自己 VPS 的IP地址进行替换： <br /> <br /> 正常情况就应该出现 Pritunl 的登陆界面，默认的用户名和密码都是“Admin”； <br /> <br /> 进入“Users”选项卡，点击“Add Organization”输入名称后添加组； <br /> <br /> 点击“Add User”命令输入名称后在组下添加用户； <br /> <br /> 继续点击“Servers”选项卡，点击“Add Server”输入名称后添加服务器； <br /> <br /> 然后点击“Attach Oranization”，将刚新建的组添加到服务器中； <br /> <br /> 最后点击“Start Server”运行服务，结束设置环节。 <br /> <br /> <br /> <strong>
+           三、客户端的设置
+          </strong></p>
+                  <p>到 OpenVPN 官网上下载 Windows 平台的 <a href="https://openvpn.net/index.php/open-source/downloads.html" rel="nofollow" target="_blank"> 桌面客户端 </a> 并安装； <br /> <br /> 进入 Pritunl 设置界面，点击“Users”选项卡，点击用户名右侧的图标下载 OpenVPN 的 Profile设置文件压缩包，里面包含密钥； <br /> <br /> 用加压缩软件将其解压，并将 Profile 文件拷贝到 Open configuration file directory目录中； <br /> <br /> 以管理员身份运行 OpenVPN（如果用一般用户运行可能会出现无法翻墙的情况），使用配置好的情景链接服务器，成功！ <br /> <br /> <strong>
+           四、其它
+          </strong></p>
+                  <p>1. Pritunl 还提供每个月2.5美元的高级服务，主要功能是提供每个用户产生的流量并以图形化界面反应，如果不是商业运用，这个功能应该和个人用户联系不大，效果如下图：</p>
+                  <p></p>
+                  <div class="media media-element-container media-original_image">
+                    <div class="file file-image file-image-jpeg" id="file-488">
+                      <h2 class="element-invisible" id="evowajpg--"> <a href="/file/488"> ev.owa_.jpg </a> </h2>
+                      <div class="content">
+<img alt="" class="adaptive-image" height="350" src="https://secure.pao-pao.net/sites/pao-pao.net/files/styles/adaptive_image/adaptive-image/public/ev.owa__1.jpg?itok=UgaDFTOn" title="" typeof="foaf:Image" width="599" />
+                      </div>
+                    </div>
+                  </div>
+                  <p>2.上述教程是以Ubuntu 12.04作为服务器端系统，以Windows平台作为客户端系统的，其它系统的安装和设置过程请参见 <a href="https://pritunl.com/tutorial.html" rel="nofollow"> 官方教程 </a> ； <br /> <br /> 3.Pritunl为保证安全性还提供了两步认证（ Two-step authenticatioon）； <br /> <br /> 4. Pritunl作为VPN服务搭建工具最大的优势就是图形化和简约化，甚至针对目前较为流行的低价主机服务商 DigitalOcean 开发了API接口，能够迅速完成服务器端的搭建和维护。 <br /> <br /> 5. 上面提到过 Pritunl 采用的 OpenVPN 模式在十八大之后遭遇到一段时间的干扰和屏蔽，但以目前的情况来看链接非常稳定速度也很好，但此款应用刚刚推出，不知道在大规模使用后情况会不会出现逆转，但这一点也妨碍原来高高在上的VPN 搭建过程正逐步向简单化，图形化和普及化方向发展的趋势，在这方面，Pritunl给了我们一个很好的启示和榜样，希望日后类似的应用越来越广泛。</p>
+                  <p></p>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <div class="field field-name-service-links-displays-group field-type-ds field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  <div class="service-links">
+<a class="service-links-twitter" href="https://twitter.com/share?url=https%3A//pao-pao.net/article/213&amp;text=Pritunl%EF%BC%9A%E7%AE%80%E6%98%93%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN" rel="nofollow" title="Share this on Twitter"> <img alt="Twitter logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/twitter.png" typeof="foaf:Image" /> </a> <a class="service-links-facebook" href="https://www.facebook.com/sharer.php?u=https%3A//pao-pao.net/article/213&amp;t=Pritunl%EF%BC%9A%E7%AE%80%E6%98%93%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN" rel="nofollow" title="Share on Facebook"> <img alt="Facebook logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/facebook.png" typeof="foaf:Image" /> </a> <a class="service-links-google" href="https://www.google.com/bookmarks/mark?op=add&amp;bkmk=https%3A//pao-pao.net/article/213&amp;title=Pritunl%EF%BC%9A%E7%AE%80%E6%98%93%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAVPN" rel="nofollow" title="Bookmark this post on Google"> <img alt="谷歌 logo" src="https://pao-pao.net/sites/pao-pao.net/themes/rnw_paopao/servicelinks/png/google.png" typeof="foaf:Image" /> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block block-views related" id="block-views-articles-related-block-1">
+            <h2 id="section"> 您可能感兴趣的文章 </h2>
+            <div class="content">
+              <div class="view view-articles-related view-id-articles_related view-display-id-block_1 related promoted view-dom-id-06aeb7fcfdeca471ad9c0f345f2ecb49">
+                <div class="view-content">
+                  <div class="views-row views-row-1 views-row-odd views-row-first">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/367"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/xiao_bai_xue_shang_wang_.jpg?itok=4i1B9QRj" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-1"> <a href="/article/367"> 技术小白如何选择软件（内附常见软件选择建议） </a>                                 <h2 id="section-2"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-2 views-row-even">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/366"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/da_v_0.jpg?itok=TajJR5I3" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="v----"> <a href="/article/366"> 大V这次为何没被打倒 </a>                                 <h2 id="section-3"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-3 views-row-odd">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/114"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/anp-8001154.jpg?itok=6tFFGn9F" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-4"> <a href="/article/114"> 长平：“两禁”难禁记者腐败 </a>                                 <h2 id="section-5"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="views-row views-row-4 views-row-even views-row-last">
+                    <div class="ds-2col node node-pao-pao-article node-promoted view-mode-home_promoted_block_ clearfix">
+                      <div class="group-left">
+                        <div class="field field-name-field-image field-type-image field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+<a href="/article/77"> <img height="90" src="https://pao-pao.net/sites/pao-pao.net/files/styles/home_promoted/public/4816984979_e4fc0fef4b_z_0.jpg?itok=vKsUuFNh" typeof="foaf:Image" width="160" /> </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group-right">
+                        <div class="field field-name-field-promotitle field-type-text field-label-hidden">
+                          <div class="field-items">
+                            <div class="field-item even">
+                              <h2 id="section-6"> <a href="/article/77"> “净网行动”的不列颠经验 </a>                                 <h2 id="section-7"> </h2>
+ </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.block -->
+          <ul class="links inline">
+            <li class="comment-add first last active"><a class="active" href="/article/213#comment-form" title="分享您有关本文的看法与观点。"> 冒个泡吧！ </a></li>
+          </ul>
+          <div class="comment-wrapper" id="comments">
+            <h2 class="title" id="section-8"> 评论 </h2>
+ <a id="comment-9933">
+      </a>             <div about="/comment/9933#comment-9933" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Jeaacalay (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-04-24T19:42:58+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期三, 04/24/2019 - 19:42 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/9933#comment-9933" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="dogana-kamagra-jeapriods--"> <a class="permalink" href="/comment/9933#comment-9933" rel="bookmark"> Dogana Kamagra JeaPriods </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Luvox &lt;a href= <a href="http://cheapcial20mg.com&gt;cialis"> http://cheapcial20mg.com&gt;cialis </a> 20mg for sale&lt;/a&gt; Alcohol Stopping Keflex Levitra Price In Canada Cialis Drogen</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/9933"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-13474">
+      </a>             <div about="/comment/13474#comment-13474" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Randveifs (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-05-31T08:00:27+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期五, 05/31/2019 - 08:00 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/13474#comment-13474" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="acquistare-cialis-svizzera-lestres--"> <a class="permalink" href="/comment/13474#comment-13474" rel="bookmark"> Acquistare Cialis Svizzera LesTreS </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Over Counter Prednisone Cialis Tablets 20mg Cialis Pastiglie &lt;a href= <a href="http://buyviaa.com&gt;viagra"> http://buyviaa.com&gt;viagra </a> online prescription&lt;/a&gt; Comprar Cialis En Vina Del Mar Cialis Generico Madrid Levitra Sublinguale Prezzo</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/13474"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-14587">
+      </a>             <div about="/comment/14587#comment-14587" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Matnetela (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-05-31T19:54:54+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期五, 05/31/2019 - 19:54 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/14587#comment-14587" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="chewable-kamagra-matnetela--"> <a class="permalink" href="/comment/14587#comment-14587" rel="bookmark"> Chewable Kamagra Matnetela </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Levitra Wofur Cialis Ou Viagra Forum &lt;a href= <a href="http://catabs.com&gt;priligy"> http://catabs.com&gt;priligy </a> farmacias chile&lt;/a&gt; Buying Levitra Online Reviews</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/14587"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-16595">
+      </a>             <div about="/comment/16595#comment-16595" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> zdorov.bxox.info (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-01T16:30:38+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期六, 06/01/2019 - 16:30 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/16595#comment-16595" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="zdorovbxoxinfo--"> <a class="permalink" href="/comment/16595#comment-16595" rel="bookmark"> zdorov.bxox.info </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Cream wax Health ist eine dickflussige Masse von goldener Farbe, die an eine Art frischen Honigs erinnert.</p>
+                        <p>Offiziellen Website: <a href="http://zdorov.bxox.info"> http://zdorov.bxox.info </a></p>
+                        <p>кредитная карта --&gt; <a href="http://credit.bxox.info"> http://credit.bxox.info </a> <br /> потребительский кредит--&gt; <a href="http://kredit.bxox.info"> http://kredit.bxox.info </a> <br /> кредитный калькулятор --&gt; <a href="http://karta.bxox.info"> http://karta.bxox.info </a> <br /> взять кредит --&gt; <a href="http://kreditov.bxox.info"> http://kreditov.bxox.info </a> <br /> кредит онлайн --&gt; <a href="http://creditov.bxox.info"> http://creditov.bxox.info </a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/16595"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-17297">
+      </a>             <div about="/comment/17297#comment-17297" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> StevElug (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-01T19:17:31+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期六, 06/01/2019 - 19:17 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/17297#comment-17297" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="order-neurontine-overnight-stevprople--"> <a class="permalink" href="/comment/17297#comment-17297" rel="bookmark"> Order Neurontine Overnight Stevprople </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Side Effects Keflex Second Day &lt;a href= <a href="http://tadalaf20mg.com&gt;buy"> http://tadalaf20mg.com&gt;buy </a> generic cialis online&lt;/a&gt; Buy Finasteride 1mg Propecia Side Effects</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/17297"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-19611">
+      </a>             <div about="/comment/19611#comment-19611" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Ellincuse (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-02T17:21:00+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期日, 06/02/2019 - 17:21 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/19611#comment-19611" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="priligy-a-new-york-ellnoug--"> <a class="permalink" href="/comment/19611#comment-19611" rel="bookmark"> Priligy A New York Ellnoug </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Ordering Viagra From Cananda Cheap Drugs From India Where Can I Buy Onofin Pills &lt;a href= <a href="http://tadalaffbuy.com&gt;cialis"> http://tadalaffbuy.com&gt;cialis </a> overnight shipping from usa&lt;/a&gt; Priligy Tijuana</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/19611"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-23037">
+      </a>             <div about="/comment/23037#comment-23037" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> AustAbids (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-04T04:55:05+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期二, 06/04/2019 - 04:55 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/23037#comment-23037" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="cialis-generico-en-espana-jeaembaks--"> <a class="permalink" href="/comment/23037#comment-23037" rel="bookmark"> Cialis Generico En Espana JeaEmbaks </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Viagra Info Amoxicillin Uses Diarrhea Wie Teuer Ist Viagra &lt;a href= <a href="http://viaapill.com&gt;viagra&lt;/a&gt;"> http://viaapill.com&gt;viagra&lt;/a&gt; </a> Real Hydrochlorothiazide Internet Overseas Amex Accepted Propecia Schweiz Preis How To Last Longer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/23037"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-23072">
+      </a>             <div about="/comment/23072#comment-23072" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Stepthype (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-04T05:12:47+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期二, 06/04/2019 - 05:12 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/23072#comment-23072" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="precio-de-cialis-en-la-farmacia-ellcauh--"> <a class="permalink" href="/comment/23072#comment-23072" rel="bookmark"> Precio De Cialis En La Farmacia EllCauh </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>How To Buy Shipped Ups Generic Progesterone 200mg Website Augmentin 875 Mg Tablet Online &lt;a href= <a href="http://buygenericvia.com&gt;viagra"> http://buygenericvia.com&gt;viagra </a> online pharmacy&lt;/a&gt; Generic Prednisone Without A Script</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/23072"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-23911">
+      </a>             <div about="/comment/23911#comment-23911" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Steptwemy (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-04T13:05:33+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期二, 06/04/2019 - 13:05 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/23911#comment-23911" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="erection-remedies-ellleancy--"> <a class="permalink" href="/comment/23911#comment-23911" rel="bookmark"> Erection Remedies EllLEANCY </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Legally Doxycycline Amex Accepted Priligy Modo D'Uso Usa Direct Pharmacy &lt;a href= <a href="http://curerxshop.com&gt;cialis"> http://curerxshop.com&gt;cialis </a> 5mg best price&lt;/a&gt; Levitra Viagra Cialis Test Clarithromycin Omeprazole Amoxil Cialis 5mg Tadalafil Lilly</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/23911"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-25472">
+      </a>             <div about="/comment/25472#comment-25472" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Stepthype (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-05T02:50:51+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期三, 06/05/2019 - 02:50 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/25472#comment-25472" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="levitra-von-bayer-ellcauh--"> <a class="permalink" href="/comment/25472#comment-25472" rel="bookmark"> Levitra Von Bayer EllCauh </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Avoir Clomid Enceinte Homoopathie Levitra Diflucan 100 Mg &lt;a href= <a href="http://cialtadalaff.com&gt;cheapest"> http://cialtadalaff.com&gt;cheapest </a> cialis 20mg&lt;/a&gt; Amoxicillin Suspension</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/25472"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-25640">
+      </a>             <div about="/comment/25640#comment-25640" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Franexpok (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-05T04:00:35+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期三, 06/05/2019 - 04:00 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/25640#comment-25640" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="viagra-y-presion-alta-matsculky--"> <a class="permalink" href="/comment/25640#comment-25640" rel="bookmark"> Viagra Y Presion Alta Matsculky </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Kamagra Jelly 100mg Toulouse Viagra Dal Canada Cheap Wellbutrin &lt;a href= <a href="http://cialisab.com&gt;cialis"> http://cialisab.com&gt;cialis </a> 5 mg best price usa&lt;/a&gt; Prevacid Buy One Get One Free Rebate</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/25640"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-29088">
+      </a>             <div about="/comment/29088#comment-29088" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Matnetela (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-05T19:59:52+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期三, 06/05/2019 - 19:59 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/29088#comment-29088" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="amoxicillin-good-for-prosthesis-matnetela--"> <a class="permalink" href="/comment/29088#comment-29088" rel="bookmark"> Amoxicillin Good For Prosthesis Matnetela </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Canadian Health Shop Propecia Carne &lt;a href= <a href="http://cheapviapill.com&gt;viagra&lt;/a&gt;"> http://cheapviapill.com&gt;viagra&lt;/a&gt; </a> Cialis Simili</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/29088"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-30316">
+      </a>             <div about="/comment/30316#comment-30316" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> Franexpok (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-06T02:10:42+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期四, 06/06/2019 - 02:10 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/30316#comment-30316" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="levitra-8-compresse-matsculky--"> <a class="permalink" href="/comment/30316#comment-30316" rel="bookmark"> Levitra 8 Compresse Matsculky </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Supreme Suppiers Keflex Equivalents &lt;a href= <a href="http://ausgsm.com&gt;&lt;/a&gt;"> http://ausgsm.com&gt;&lt;/a&gt; </a> Bupropion Recreational Use Buy Zoloft On Line</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/30316"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+ <a id="comment-31098">
+      </a>             <div about="/comment/31098#comment-31098" class="comment comment-by-anonymous clearfix" typeof="sioc:Post sioct:Comment">
+              <div class="attribution">
+                <div class="comment-submitted">
+                  <p class="commenter-name"><span rel="sioc:has_creator"> <span class="username" datatype="" property="foaf:name" typeof="sioc:UserAccount" xml:lang=""> KelDees (未验证) </span> </span></p>
+                  <p class="comment-time"><span content="2019-06-06T05:47:25+02:00" datatype="xsd:dateTime" property="dc:date dc:created"> 星期四, 06/06/2019 - 05:47 </span></p>
+                  <p class="comment-permalink"><a class="permalink" href="/comment/31098#comment-31098" rel="bookmark"> 永久连接 </a></p>
+                </div>
+              </div>
+              <div class="comment-text">
+                <div class="comment-arrow"></div>
+                <h3 datatype="" property="dc:title" id="propecia-generique-canada-keldees--"> <a class="permalink" href="/comment/31098#comment-31098" rel="bookmark"> Propecia Generique Canada KelDees </a> </h3>
+                <div class="content">
+<span class="rdf-meta element-hidden" rel="sioc:reply_of" resource="/article/213"> </span>                   <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded">
+                        <p>Comprar Levitra Professional &lt;a href= <a href="http://drugslr.com&gt;canadian"> http://drugslr.com&gt;canadian </a> cialis&lt;/a&gt; Retin A</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.content -->
+                <ul class="links inline">
+                  <li class="comment-reply first last"><a href="/comment/reply/213/31098"> 回复 </a></li>
+                </ul>
+              </div>
+              <!-- /.comment-text -->
+            </div>
+            <h2 class="title comment-form" id="section-9"> 冒个泡吧！ </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.block -->
+  </div>
+  <!-- /.region -->
+</section>
+
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#泡泡 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2018-05-30/%E4%BA%92%E8%81%94%E7%BD%91%E8%B6%8B%E5%8A%BF%E6%8A%A5%E5%91%8A2018-%E4%BE%9D%E6%97%A7%E5%91%88%E7%8E%B0%E4%B8%8D%E8%89%AF%E8%B6%8B%E5%8A%BF-%E8%BF%99%E9%87%8C%E6%98%AF%E5%85%B7%E4%BD%93%E5%88%86%E6%9E%90/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2014-02-04/%E6%B0%91%E6%97%8F%E7%9F%9B%E7%9B%BE%E5%BA%94%E7%94%B1%E5%81%9C%E6%AD%A2%E4%BF%A1%E6%81%AF%E9%9A%94%E7%A6%BB%E5%BC%80%E5%A7%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2014-10-13</time>
+        <a href="https://nodebe4.github.io/oped2/2014-10-13/500%E8%BD%AC%E5%8F%91%E9%85%B5%E8%A8%80%E8%AE%BA%E7%AE%A1%E5%88%B6%E5%86%8D%E5%8D%87%E7%BA%A7/">
+          500转发酵言论管制再升级
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-10-12</time>
+        <a href="https://nodebe4.github.io/oped2/2014-10-12/%E7%BD%91%E7%BB%9C-%E6%B0%B4%E5%86%9B-%E7%9A%84%E5%B8%83%E5%B1%80/">
+          网络“水军”的布局
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-10-09</time>
+        <a href="https://nodebe4.github.io/oped2/2014-10-09/%E6%A2%81%E6%8C%AF%E8%8B%B1%E6%B6%89%E9%BB%91%E9%87%91-%E6%88%96%E6%88%90%E4%B8%AD%E5%A4%AE-%E8%B4%9F%E8%B5%84%E4%BA%A7/">
+          梁振英涉黑金 或成中央“负资产”
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2014-10-08</time>
+        <a href="https://nodebe4.github.io/oped2/2014-10-08/%E5%8D%A0%E7%BD%91%E8%BF%90%E5%8A%A8-%E4%B8%AD%E7%9A%84%E5%B0%81%E9%94%81%E4%B8%8E%E5%8F%8D%E5%B0%81%E9%94%81/">
+          “占网运动”中的封锁与反封锁
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2014-10-09/%E6%A2%81%E6%8C%AF%E8%8B%B1%E6%B6%89%E9%BB%91%E9%87%91-%E6%88%96%E6%88%90%E4%B8%AD%E5%A4%AE-%E8%B4%9F%E8%B5%84%E4%BA%A7/">
+            前一篇：梁振英涉黑金 或成中央“负资产”
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2014-10-11/%E7%BD%91%E7%BB%9C-%E6%B0%B4%E5%86%9B-%E7%9A%84%E5%B8%83%E5%B1%80-iYouPort/">
+            後一篇：网络“水军”的布局 - iYouPort
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2014-10-09/%E6%A2%81%E6%8C%AF%E8%8B%B1%E6%B6%89%E9%BB%91%E9%87%91-%E6%88%96%E6%88%90%E4%B8%AD%E5%A4%AE-%E8%B4%9F%E8%B5%84%E4%BA%A7/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2014-10-11/%E7%BD%91%E7%BB%9C-%E6%B0%B4%E5%86%9B-%E7%9A%84%E5%B8%83%E5%B1%80-iYouPort/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2014-10-12/%E7%BD%91%E7%BB%9C-%E6%B0%B4%E5%86%9B-%E7%9A%84%E5%B8%83%E5%B1%80/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2014-10-09/%E6%A2%81%E6%8C%AF%E8%8B%B1%E6%B6%89%E9%BB%91%E9%87%91-%E6%88%96%E6%88%90%E4%B8%AD%E5%A4%AE-%E8%B4%9F%E8%B5%84%E4%BA%A7/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2014-10-09/%E6%A2%81%E6%8C%AF%E8%8B%B1%E6%B6%89%E9%BB%91%E9%87%91-%E6%88%96%E6%88%90%E4%B8%AD%E5%A4%AE-%E8%B4%9F%E8%B5%84%E4%BA%A7/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2014-10-11/%E7%BD%91%E7%BB%9C-%E6%B0%B4%E5%86%9B-%E7%9A%84%E5%B8%83%E5%B1%80-iYouPort/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<泡泡>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2014-10-12/%E7%BD%91%E7%BB%9C-%E6%B0%B4%E5%86%9B-%E7%9A%84%E5%B8%83%E5%B1%80/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<泡泡>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2014-10-09/%E6%A2%81%E6%8C%AF%E8%8B%B1%E6%B6%89%E9%BB%91%E9%87%91-%E6%88%96%E6%88%90%E4%B8%AD%E5%A4%AE-%E8%B4%9F%E8%B5%84%E4%BA%A7/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥
+——
+" />
+    <meta property="og:description" content="
+王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥" />
+    <meta property="twitter:title" content="王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fm.allnow.com%2Fpost%2F5f8a8f32edebb22f4a5875d6" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://m.allnow.com/post/5f8a8f32edebb22f4a5875d6" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://m.allnow.com/post/5f8a8f32edebb22f4a5875d6&text=王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://m.allnow.com/post/5f8a8f32edebb22f4a5875d6&title=王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://m.allnow.com/post/5f8a8f32edebb22f4a5875d6&title=王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥&body=
+王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://m.allnow.com/post/5f8a8f32edebb22f4a5875d6" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://m.allnow.com/post/5f8a8f32edebb22f4a5875d6&title=王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥&caption=
+王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥&url=https://m.allnow.com/post/5f8a8f32edebb22f4a5875d6" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-10-17
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: 曾梦龙</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#燕京书评">
+          燕京书评
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://m.allnow.com/post/5f8a8f32edebb22f4a5875d6" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="燕京书评的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#燕京书评 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1602932400000-->
+<p><a href="https://m.allnow.com/post/5f8a8f32edebb22f4a5875d6">王立铭： “吃货”、基因、生命和疾病的科普，科学将人类带向何方？| 青年知识分子系列⑥</a>
+——</p>
+
+<div>
+  <p><strong>历史学家许纪霖曾提出“20世纪中国六代知识分子”的概念，他以 1949 年作为中界，分为前三代和后三代，即晚清一代、五四一代、后五四一代和“十七年”一代、“文革”一代、“后文革”一代。</strong></p>
+  <p> </p>
+  <p><strong>姑且不论这样的划分有几分道理，但至少我们能看到知识分子和时代相遇的不同故事。不过，这些故事具有的音量并不相同，由于权力、资本、能力等因素，我们相对来说较少听到青年知识分子的声音。</strong></p>
+  <p> </p>
+  <p><strong>他们年轻，大多是80后，受过比上一代更系统和国际化的学术训练，也更富有激情、雄心，站在学术前沿，在传承和创新之间探寻出路。他们是中国知识界未来的希望，他们的声音值得被更多人听到。</strong></p>
+  <p> </p>
+  <p><strong>我们乐意发掘愿意和公众对话的青年知识分子，倾听他们的声音，扩展公共讨论空间。但是，我们无意鼓吹“后浪”似的青年崇拜，青年知识分子也不是铁板一块，在他们的故事中，同样可以看到差异、局限和困境。</strong></p>
+  <p> </p>
+  <p><strong>这是系列的第六篇，受访人是生物学家王立铭。</strong></p>
+  <p> </p>
+  <p>新冠疫情以来，王立铭“在焦虑中焕发战斗力”，写了近十万字的科普文章，阅读量过亿。</p>
+  <p> </p>
+  <p>比如，从疫情早期质疑中国国家疾控中心隐瞒新冠病毒人传人证据，反思专家意见和公共管理决策之间的错位；到提醒公众对翘首以盼的所谓“特效药”和疫苗不宜操之过急，尊重科学规律；再到强调政府应根据新冠特性调整抗疫措施，放弃零新增等非科学诉求，帮助人们适应与新冠长期共存。</p>
+  <p> </p>
+  <p>华东师范大学教授许纪霖，称赞王立铭是一位令人尊敬的“特殊知识分子”。“特殊知识分子”的说法源于福柯，指能够在某一专业领域洞晓知识与权力之间秘密的人。</p>
+  <p> </p>
+  <p>除了科普文章，王立铭还参加多场直播活动，做了一门有关病毒的科普课程，写了一本《给忙碌者的病毒科学》，帮马云公益基金会看了不少新冠科研项目书……</p>
+  <p> </p>
+  <p>“那段时间真的是进入战斗状态，大年三十的晚上还在写字。回头想想，好像就是有一种无比巨大的力量在推着我：国家有难，你一个平常只会舞文弄墨、做实验的书生，该出来为你的国家做点事情了吧。”王立铭今年5月30日在微博回忆道。</p>
+  <p> </p>
+  <p>5月30日是中国的科技工作者日。这一天，王立铭和夫人沈玥、北京大学教授饶毅及夫人董建瑾、北京大学教授韩启德联合发起科学和医学公共服务“基石奖”，奖励透过公共媒介开展科学和医学知识普及、传播、教育、培训，并对相关领域作出杰出贡献的个人或民间机构。基石奖首期募集资金100万元，分别由饶毅、董建瑾夫妇和王立铭、沈玥夫妇各捐赠50万元。</p>
+  <p> </p>
+  <p>“我是一个科学家，一直对科学的公共传播事业有兴趣，也很希望能够鼓励和支持更多同道者担负责任。恰好疫情期间，公众对科学和医学知识和分析方法的需求到了前所未有的高度，而我的一个关于病毒科学的知识付费项目刚好有一些收入。那我想，也许这是一个契机，用这笔钱做一点促进科学和医学公共传播的工作，也是得偿所愿。”王立铭说。</p>
+  <p> </p>
+  <p>王立铭是浙江大学生命科学研究院教授。他1983年生于河南洛阳，毕业于北京大学（学士）、加州理工学院（博士），曾任加州大学伯克利分校研究员、波士顿咨询公司咨询顾问。他的主要研究领域为能量代谢的神经生物学、脂肪代谢的疾病模型、生物医学光子学，曾获“优秀青年科学基金”、“求是杰出青年学者奖”等。</p>
+  <p> </p>
+  <p>科研之外，他热衷科学传播，著有《生命是什么》《吃货的生物学修养》《上帝的手术刀》等，获得文津图书奖、吴大猷科普著作金奖、菠萝化学奖、全球华语科幻星云奖等荣誉。</p>
+  <p> </p>
+  <p>2019年，他开设专栏“巡山报告”，计划用30年持续观察和分析全球范围内生命科学的最新进展和重大事件，按年度成书。今年1月，这个系列出了第一本《基因编辑婴儿：小丑与历史》。</p>
+  <p> </p>
+  <p>“一方面，我希望这个报告能够起到一点点预测未来的作用，或者至少帮助更多人在更早时间看到未来可能的样子。另外，我觉得也是记录历史，供后人参考和分析。”王立铭说。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-17/5f8a911bd7f8a70001ef09cb.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>《笑到最后》，王立铭 著，上海交通大学出版社＆得到图书2020年6月版</p>
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>今年6月，王立铭出版自己的第六本书《笑到最后：科学防治五大现代疾病》。相比医生讲疾病，作为生物学家的他，试图从科学角度帮助读者了解五大现代疾病（癌症、糖尿病、抑郁症、阿尔茨海默病、超敏反应疾病）为何发生、如何防治、未来图景如何。</p>
+  <p> </p>
+  <p>他认为，五大疾病最终都能归结到两个普适性原理。第一，通过理解疾病的生物学本质，开发出对症下药的预防、治疗和管理手段，如癌症靶向药物、降糖药物、抗抑郁症药物；第二，这些疾病可以归结到生物进化和现代化的错配之上。历经亿万年进化塑造的人体机能，无法适应人类在一万年之内，甚至两三百年之内创造的现代生活方式。</p>
+  <p> </p>
+  <p>回望科普写作，王立铭称，最开始的想法很简单，想写科学故事，觉得“人类社会最激动人心、最充满悬念、最有趣的故事就是科学故事”，“总在不断突破人类想象力”。不过，他在写的过程中意识到，科学故事除了自身美妙和激动人心，也可能对人类社会产生巨大、深刻，但短时间内无法被察觉的影响。</p>
+  <p> </p>
+  <p>“这种影响是什么？它对于我们意味着什么？我们要以什么样的姿态看待？从这个角度，我希望更多普通人能够理解科学世界里发生的故事，能够更早开始想这些故事对于他们和子孙后代，包括人类社会的未来，意味着什么？”</p>
+  <p> </p>
+  <p>今年10月，王立铭在疾驰的高铁上，和我们聊了聊他的科普写作和科学研究，发表对新冠疫情、科学革命、人工智能、基因决定论等话题的看法。所有这些贯穿一个主题，他希望越来越多人学习科学的思维方式，更好应对现代社会复杂精细的外部环境变化。</p>
+  <p> </p>
+  <p>“比如，怎么区分观念和事实？怎么认识一个东西可能存在很多面？当你有一个观点时，用什么方法证明？所有这些，我认为都是科学思维方式的一部分，需要天天讲、月月讲，从小练习，让它成为大脑‘肌肉记忆’的一部分。”王立铭对《燕京书评》说。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-17/5f8a91bad7f8a70001ef09cc.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>王立铭是浙江大学生命科学研究院教授，1983年生于河南洛阳，毕业于北京大学（学士）、加州理工学院（博士），主要研究领域为能量代谢的神经生物学等。科研之外，他热衷科学传播，著有《生命是什么》等。</p>
+      <p>他说：“我希望更多普通人能够理解科学世界里发生的故事，能够更早开始想这些故事对于他们和子孙后代，包括人类社会的未来，意味着什么？”</p>
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p>以下为《燕京书评》和王立铭的访谈节录。</p>
+  <p> </p>
+  <p><strong>燕=燕京书评</strong></p>
+  <p><strong>王=王立铭</strong></p>
+  <p> </p>
+  <h2 id="section">理解疾病的生物学本质，归结生物进化和现代化的错配</h2>
+  <p> </p>
+  <p><strong>燕：你在《笑到最后》中提到，现在人类对癌症早期预警非常困难，要想开发出更多预警方法，需要对癌症生物学有更精确理解。能不能讲讲未来要更精确理解，可能会是哪些方向？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>所谓精确理解，一方面是我们对癌症组织、癌细胞的自身特性需要有更多理解。包括它到底出现什么样的基因突变？这些基因突变怎么积累？因为癌症组织一般都携带成百上千基因突变，这些基因突变的内在逻辑是什么？谁先谁后，谁更重要？这些基因突变怎么重新塑造癌细胞的生存特性？我们得理解癌细胞和正常细胞出现什么不同，这些不同如何导致癌细胞生理学发生异常？</p>
+  <p> </p>
+  <p>另外，癌细胞生活在人体组织之中，它和人体组织的相互关系是什么？它如何逃逸所在人体组织免疫系统的监察和攻击？怎么找到一个适合生长的环境，萃取人体资源和营养来快速生长？怎么在人体中找到新的落脚点，发生扩散和转移？</p>
+  <p> </p>
+  <p>这两个方向是我未来比较期待的。癌细胞为什么和正常细胞有别？癌症组织和其他系统，比如免疫系统、代谢系统，是什么关系？</p>
+  <p> </p>
+  <p><strong>燕：你提到对抗“三高”（高血脂、高血压、高血糖），需要学校、社区、医院、饮食管理、运动管理这些平台和资源调度起来，编织一张网络。能不能再讲讲如何编织这张网络对抗“三高”？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>今天，我们主要把“三高”当成疾病，医生给你诊断，开药治疗。这是目前对抗“三高”的主要策略。但是，“三高”不是孤立的疾病，而是和现代生活方式相关的一类疾病。</p>
+  <p> </p>
+  <p>今天，食物非常丰富，精加工、营养不均衡的食物也非常多，生存环境对体力要求比较低，人们缺乏运动。在这种状态下，自然而然会发生一些和代谢系统相关的疾病。“三高”都是这类疾病，只是影响的器官不同，但原因都和生活方式相关。</p>
+  <p> </p>
+  <p>你可以想象，如果疾病缘由是生活方式的改变，是人类世界系统性的变化，就不可能单靠个人治疗就能把事情彻底解决掉。所以，我们需要把有效避免“三高”的生活方式全面深入各个角落。</p>
+  <p> </p>
+  <p>比如，从幼儿园、小学开始，就应该健康饮食，养成体育锻炼习惯；社区应该有更好配套工具，帮助社区居民能够拥有场所、空间、组织形式，进行适量体育运动；如果有人出现比较危险的“三高”指标，甚至正式确诊，他们的关照不该只是医院，至少还需要饮食、运动共同配合治疗。</p>
+  <p> </p>
+  <p>除了建立系统、渗透社会成员的各个角落之外，还有一个重要特征是个性化。每个人或多或少都不同，“三高”和年龄、性别、疾病史等都有关系。这是技术应该发挥作用的地方，比如未来可通过个性化基因检测、健康图稿等。</p>
+  <p> </p>
+  <p><strong>燕：《笑到最后》讨论的五种疾病最终都归结到两个普适性原理：一是理解疾病的生物学本质，对症下药；二是这些疾病可以归结到生物进化和现代化的错配。除了这些，能不能讲讲还有哪些疾病来源于这种“错配”？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>举两个例子。一个是近视。近视在世界上的发病率越来越高，特别是东亚的近视发病率世界最高，高中阶段百分之八九十以上都是近视。这有东亚人遗传特质原因，但还有一个比较普遍的因素是现代化错配。</p>
+  <p> </p>
+  <p>今天，被广为接受的近视发生理论说，长期缺乏阳光照射导致近视。因为室内光线强度比自然阳光低很多，大概只有百分之几的水平。不少研究证明，比较强烈的阳光对于眼球正常发育非常重要，通过调节体内多巴胺水平影响眼球强度。反过来讲，长期在室内活动，缺乏阳光照射，眼球发育出现异常是自然结果。后来，有大规模人群研究发现，增加户外活动时间，不管干嘛，比如体育运动或者发呆，都能延缓近视发展。所以，从另一个方向证明，户外阳光照射对近视的影响。</p>
+  <p> </p>
+  <p>室内活动是现代化产物。我们有大量时间在室内学习、生活，不太可能花特别长时间在室外。尤其对小孩子来说，大城市室外比较危险和肮脏。从这个角度讲，近视也是“错配”的结果。人类为了更好地生活，把自己关在室内；但实际上，这对眼睛正常发育不利，间接导致近视发生。</p>
+  <p> </p>
+  <p>另一个例子是传染病。传染病是自然现象，疾病病原体侵犯人体，导致传染病。但是，随着人类现代社会这种高密度生活、比较单一的生态环境，包括人类持续不断向自然环境探索，将大量荒地农田化、城市化，增加了陌生病原体侵入人体的机会；进入人体之后，在人群内广泛、快速、大量传播机会。包括全球化，对于疾病流行也有帮助。</p>
+  <p> </p>
+  <p>总而言之，我们现在的生活方式和社会结构，对于大规模传染病流行具有促进作用，可以归入“错配”的类型当中。21世纪以来，我们看到比较严重的新病原体入侵人类社会至少已经有五六次，包括SARS、MERS、新型禽流感、新型冠状病毒等。</p>
+  <p> </p>
+  <p>我说这些，不意味着我们要退回到原始生活；只是意味着，如果这些疾病和人类现代化生活有关，那人类不可能近期消灭它们。我们在拥有现代生活方式的同时，需要用更长远的眼光、更系统的方法对抗疾病的威胁。这是非常重要的世界性问题。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-17/5f8a932ed7f8a70001ef09d0.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>《巡山报告·基因编辑婴儿：小丑与历史》，王立铭 著，湖南科学技术出版社2020年1月版</p>
+    </figcaption>
+  </figure>
+  <h2 id="section-1"> </h2>
+  <h2 id="section-2">自由意志大概率不存在，基因对人类特质的影响像蓝图</h2>
+  <p> </p>
+  <p><strong>燕：你在《生命是什么》中说：“我们可以相信，人类智慧中的自我意识——尽管我们还远不知道它的本质——是一种和我们为人工智能设定的所谓自我意识截然不同的东西。”这两年，科学对于自我意识的研究有什么进展吗？你如何看待现在流行的“人工智能威胁论”？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>自我意识，一直是神经生物学关注的一个非常重要的问题，但一直也没有什么特别好的进展。因为自我意识很难研究，几乎只能在人身上做研究。我们现在认为，存在自我意识的动物很少。除了人之外，可能只有猩猩、大象、乌鸦、喜鹊几种，很难在实验室做研究，也只有人能通过自我表达的方式来聊出他具有自我意识。</p>
+  <p> </p>
+  <p>所以，现在对于自我意识的研究，很大程度上集中在，如果发现一个病人，他因为脑外伤或者遗传等，出现自我意识缺失。这时，我们可以研究他的大脑，哪些部位、哪些神经之间的连结、哪些基因出现缺陷，从而对自我意识的生物学基础有一点点了解。但这远远不够，它在技术上很难开展研究。</p>
+  <p> </p>
+  <p>我对“人工智能威胁论”的态度比较矛盾。一方面，今天的人工智能很“浅”，对人没什么影响，所以讨论人工智能的威胁在很大程度上属于“炒作”；大家幻想的威胁，远没有出现。另一方面，我认为人工智能威胁的确实实在在存在，特别当人工智能演化出自我意识之后，当它知道“我是谁”后，就会产生非常大的跳跃，从人的工具变成和人截然不同的存在。自我意识会认为它和人是两种东西。这时，它如何看待、处理和人之间的关系？这成为巨大不确定因素。从这个角度讲，如果有那一天，也许会对人产生巨大威胁。</p>
+  <p> </p>
+  <p>这涉及我们在开发人工智能技术时，是不是需要有所注意？这也是业界经常讨论的话题。我们是不是真的要开发强的通用型人工智能？把它做成智慧生物，和人一样？还是我们紧盯人工智能的工具属性发挥？比如开车、下围棋、图像识别。这是挺值得讨论的话题，但我不是人工智能专家，不分析利弊。我的感觉是，我们可能要非常小心这一点。</p>
+  <p> </p>
+  <p><strong>燕：虽然目前科学上进展有限，但你对自我意识有什么猜想吗？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>如果非要我猜，我感觉所谓自我意识，可能是人大脑中某一个特别区域或者某种特定神经连结。它有什么功能呢？一方面，感受外部世界，这也是大脑很多区域都有的功能；另一个，感知内部其他区域活动。</p>
+  <p> </p>
+  <p>你可以想象它是长了两只眼睛的大脑区域，一只眼睛朝外，看外部世界；另一只眼睛朝内，看大脑其他区域在干什么。两个合在一起，就会产生主客体之间的比较，就有可能从这个比较中间诞生“自我意识”。“我”是观察者，能够比较主客体差异。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-17/5f8a93d6d7f8a70001ef09d3.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>《生命是什么》，王立铭 著，人民邮电出版社2018年11月版</p>
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p><strong>燕：你曾提到自我意志是人类最重要的幻觉。看能不能再讲讲你如何理解自我意志？这两年，科学对于自我意志的研究有什么进展吗？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>它也没什么进展。说它是幻觉的原因很简单，首先，自由意志是现代人类社会存在的基础。因为我们认为，人要有责任感，要对自己行为负责，特别是法律体系规定，人要为自己错误行为后果接受惩罚。它本身隐含的逻辑就是人有自由意志决定自己的思想和行为。这很重要，我们需要它存在。</p>
+  <p> </p>
+  <p>但是，至少从神经生物学角度看，我们今天没有找到证据说它存在。相反，我们找到很多证据，暗示它可能不存在。比如我在《生命是什么》里论证的案例，看起来自我意志即便存在，也不是我们曾经期待的那个样子。我们真的可以在理性思考中决定自己想什么、做什么，这种形式的自由意志大概率不存在。</p>
+  <p> </p>
+  <p>既然如此，这就比较麻烦。首先，自由意志可能是个幻觉，我们以为我们有，但从生物学看，大概率没有。接下来的问题是，如果没有，考虑到人类社会运行需要这点幻觉，怎么办？我也没有很好的答案。</p>
+  <p> </p>
+  <p>反过来讲，从进化生物学角度，既然自由意志大概率不存在，那我们为什么会产生自由意志存在的感觉？这可能是比较重要的问题。用一个粗暴的进化理论理解，一个东西能够出现且广泛存在，说明它一定有进化上的优势。</p>
+  <p> </p>
+  <p>针对自由意志存在的幻觉，比较重要的地方就是它能保证我们的行为和生活有意义感，让我们以为我们做什么事是出于我们的意志，因此收获责任感和成就感。从这个角度讲，虽然它是幻觉，但仍然非常重要。责任感、意义感哪怕并不真实，但能保证我们做正确的事，一起做公认比较重要的事，形成组织、社会。这个感觉对于人类构建文明挺重要。</p>
+  <p> </p>
+  <p><strong>燕：你是一个“基因决定论者”，相信孩子的大部分情况，在出生的时候就已经决定。这个观点可能引发一些误解，所以看你能不能讲讲为什么觉得自己是个“基因决定论者”？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>“基因决定论”这个词不够严谨，但也没关系。现代生物学，特别是人类遗传学研究，反复证明基因影响很多人类特性。从身高到智商，从情绪到人际交往能力，甚至包括受教育的学业成绩和性取向，很大程度上都受基因影响。</p>
+  <p> </p>
+  <p>当然，没有任何一个人类指标百分百被基因决定，不受环境影响。从这个角度讲，“基因决定论”肯定不太对，说“基因影响”比较合理。但是，我觉得说“基因影响”显得轻描淡写，因为它的影响很深刻。</p>
+  <p> </p>
+  <p>如果类比，我认为基因对人类特质的影响有点像蓝图。如果把人比作一个大厦，那基因就是设计图，环境是根据设计图施工的工程师和施工队。在施工过程中，它会有自己的创意和改变，但不太会根据施工图来进行。从这个角度讲，人类的很多特质，至少它的发展方向，很大程度上被这张蓝图，也就是基因差异所影响。</p>
+  <p> </p>
+  <p>你可以庸俗理解成某种有色眼镜。因为一个人出生的基因没法改变，但这可能更大程度上涉及另一个概念：真正的因材施教。有本书叫《园丁与木匠》，讲儿童教育，说传统上我们把孩子看成一张白纸或者一块没有雕琢的木材，我们想怎么画就怎么画，想怎么雕琢就怎么雕琢。但实际上，孩子因为很多东西受到基因强有力的影响，有点像是一棵已经蕴含自身蓝图的种子，我们没有能力把它雕琢成我们想要的任何样子，只能呵护、养育他，让他长成他自己想要的样子。</p>
+  <p> </p>
+  <p>从这个角度讲，认识到基因的重要决定性因素，反而有助于我们理解每一个人应该成为什么样，帮助他成为他想要成为的样子，做他最开心、最让他有成就感的事情。这也是为什么我会强调基因影响的原因之一。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-17/5f8a9406d7f8a70001ef09d4.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>《上帝的手术刀 : 基因编辑简史》，王立铭 著，浙江人民出版社＆湛庐文化2017年5月版</p>
+    </figcaption>
+  </figure>
+  <h2 id="section-3"> </h2>
+  <h2 id="section-4">科学革命引擎熄火，唯有创造自由、宽松、合作开放的环境</h2>
+  <p> </p>
+  <p><strong>燕：今年8月，马斯克投资的Neuralink发布了一个可植入颅内的无线脑机接口设备，称该技术在治疗抑郁症、失眠、癫痫、中风等神经系统疾病方面具有巨大潜能。你有什么感受？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>简单来说，脑机接口是把人脑神经细胞的活动和计算机相连，甚至可以相互传递信息的技术。我必须得说，这个技术一直到今天，非常初级。目前的脑机接口，只能做一些非常粗糙的事。比如，让一个瘫痪病人能够通过一个机器手来控制，拿一个杯子或苹果等，做不了fancy（精致、复杂）的工作。我们幻想中的脑机接口，既能把我们的记忆上传到电脑，也能把电脑里的东西读取到大脑。这种东西目前是科幻，远没有实现。</p>
+  <p> </p>
+  <p>背后的原因很简单。它有很多技术障碍，但可能更重要的是科学障碍。我们现在还不太理解人脑怎么工作？具体来说，人的情绪、记忆、认知功能、运动控制能力，是以一种什么方式记录在大脑几百亿个神经细胞当中？如果不知道这个，谈不上读取和写入。这是目前最大的科学障碍。如果不解决，脑机接口很难有特别大突破。</p>
+  <p> </p>
+  <p>从这个角度说，马斯克的工作在技术上挺了不起，他把脑机接口的植入和记录变得非常容易，未来很多实验室和公司可以做这样的工作，帮助更多科学家完成脑机接口的科学探索。</p>
+  <p> </p>
+  <p>但是，他没法解决科学上的问题。科学理论瓶颈，只能有更多科学家使用像马斯克提供这样门槛比较低的技术，在更多人、动物身上采集更多数据，做更多科学探索，最终帮我们理解大脑工作原理之后，才能真正有革命性突破。马斯克的工作没有带来这个突破，还很遥远。</p>
+  <p> </p>
+  <p><strong>燕：你认为，到今天，科学革命的引擎已经熄火，红利渐渐被我们吃完。因为科学革命没法被计划和指导，那么，谁能够创造一个比较自由、宽松、合作开放的工作环境，谁就更有可能在科学革命上领先。能不能再具体讲讲？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>过去几百年，科学进步确实是常态，所以大家觉得科学技术应该以比较快的速度进步。科学革命是所有科学进步的最终推动力，但科学革命没法被计划，我们无法预测什么时候到来。</p>
+  <p> </p>
+  <p>我们这几代人享受的技术进步，大部分是20世纪几次科学革命的余音，包括量子力学、相对论、分子生物学。但过了半个多世纪后，几次科学革命的成果已经被我们摘得差不多，比如核聚变、空间技术、脑机接口、人工智能。现在，没看到下一次科学革命的可能在哪儿，可见进步速度太慢。</p>
+  <p> </p>
+  <p>这是我们未来面对的一个问题，我们习以为常的技术进步速度会变慢。想要重新拥有非常快技术进步的速度，需要科学革命，但科学革命没法计划，所以我们唯一能做的就是给它创造好的环境，需要自由、宽松、合作开放的心态和环境。</p>
+  <p> </p>
+  <p>开放有三个层面。第一，人员流动上的开放。我们欢迎全世界的科学家来中国工作，也欢迎中国科学家到世界其他地方工作。第二，思想上的开放。我们允许大家自由探索，各种各样的可能性，甚至失败探索的过程。第三，科学革命是全人类的事情，和人类共同命运相关，所以不能对其他国家的科学研究和科学家有敌对情绪。这方面中国做得还不错，倒是美国可能出了一些问题，生怕其他国家偷了他们什么，威胁他们的地位。这不利于科学革命出现。所以，如果中国想要做新的灯塔，要从根上避免产生类似情绪。</p>
+  <p> </p>
+  <p><strong>燕：你在新冠疫情的不同阶段发表了自己的看法。那站在今天的时间点，回望新冠疫情，你最大的感受是什么？展望未来世界，你觉得疫情会给中国乃至世界可能带来哪些重大变化？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>第一，人类社会、人类文明非常脆弱。我们以为我们非常强大，比如编辑物种基因，改变物种生存特性，治疗很多疾病，显得人类文明高度进化。实际上，它的根基很脆弱。可以想象，地球生物圈内存在多少威胁人类社会文明成果的东西。包括病毒，我们没有发明非常高效预警、防治、消灭病毒的技术手段。今天，我们抵抗病毒还是得靠人体自身免疫系统，非常古老的社会管制措施——隔离。这挺悲哀。</p>
+  <p> </p>
+  <p>第二，国家能力对抗击疫情仍然起到至关重要的作用。它对不同地区、阶层的人群有触达、管理、教育的能力。考虑到人类文明的脆弱性，未来面临非常多的威胁，比如传染病、环境变化、国家竞争、小行星撞击风险，灾难到临时，国家能力是非常重要的因素。</p>
+  <p> </p>
+  <p>展望未来，新冠可能真的是触发很多重大变化的契机。很多变化我们已经看到，包括大国之间的脱钩、去全球化，可能新冠产生强烈退步。因为新冠是一个没法被人类短期消灭，长期和人类共存的疾病。即便未来人类成功研发疫苗，这点也不会改变。既然如此，很多人类活动可能受持久影响，包括全球人员流动、各国经济等。这对原本不太乐观的各国信任和合作，产生非常大的冲击。对这一点，我比较悲观，也不知道有什么好办法，但影响实实在在。</p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-17/5f8a976fd7f8a70001ef09d6.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>王立铭最近看的书《园丁与木匠》，探讨教育理念的变化，强调对每个人天生性格特质地重视，反对整齐划一的群体化教育等。</p>
+      <p>《园丁与木匠》，【美】艾莉森·高普尼克（Alison Gopnik） 著，刘家杰、赵昱鲲 译，浙江人民出版社＆湛庐文化2019年7月版</p>
+    </figcaption>
+  </figure>
+  <h2 id="section-5"> </h2>
+  <h2 id="section-6">关于“吃货”的生物学研究，以及“基因算命”</h2>
+  <p> </p>
+  <p><strong>燕：博士期间，你在实验室最早建立了果蝇争斗性行为的定量模型，并利用该模型系统研究了果蝇争斗性行为受内外因素调节的神经生物学机理。能不能通俗讲讲你的研究与发现？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>逻辑很简单，对于有雄雌区别的动物，对于雄性来说，它面对同类的行为选择，逻辑上可以分成两类：如果发现对方是异性，它可以展开求偶行为，完成交配，传递基因，繁殖后代；如果发现对方是同性，那就是潜在竞争对手，它可以采取一些争斗行为把它赶走、吓跑，防止对手侵犯它的交配权利、领地、食物等。</p>
+  <p> </p>
+  <p>我的研究和这两类有关系：第一，我们关心一个雄性果蝇，它怎么知道面对的对手是同性还是异性？第二，当它发现是同性时，怎么展开争斗性行为？如何调节争斗性行为强度？怎么决定输赢？如果发现对方是异性，如何展开交配行为？</p>
+  <p> </p>
+  <p>当时，我的一系列研究就在证明区分同性和异性主要依靠果蝇身体上携带的一些化学物质，也就是外激素。在决定性别之后，它仍可通过其他一些外激素来帮助果蝇规范争斗性行为和交配行为强度。这些外激素通过不同化学感受系统（如味觉、嗅觉）里特定感觉神经细胞来感知，然后发挥作用。</p>
+  <p> </p>
+  <p>我的工作主要是这个逻辑，相当于我们阐明一个雄性动物个体在自然界遇到一个同类时，它采取行为输出的逻辑是什么？首先，判断性别；其次，在不同性别展开不同强度地争斗或者交配行为。</p>
+  <p> </p>
+  <p><strong>燕：博士毕业后，你就有了自己的实验室，和同事们利用果蝇模型研究中枢神经系统和动物行为如何调控能量代谢，以及神经系统失调与代谢性疾病的潜在联系。类似地，能不能通俗地讲讲你的研究与发现？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>等到我博士毕业之后，我还希望用果蝇来做研究。果蝇是很聪明的小动物，个体很小，很容易饲养，但表现出非常丰富地行为输出。那时，我想做一点和博士期间完全不一样的工作。</p>
+  <p> </p>
+  <p>我很喜欢吃，天生的“吃货”，所以想研究一些和“吃货”相关的问题，主要是神经系统和代谢系统相互作用的问题。简单来说，动物体和人体的代谢调节，比如，需要多少能量摄入、输出，需要储备、输出什么营养物质等。这些问题如何被神经系统，特别是大脑调节。</p>
+  <p> </p>
+  <p>举三个大家在生活中能找到印证的例子。</p>
+  <p> </p>
+  <p>第一，动物为什么会觉得饿？它觉得饿之后，如果周围没有食物，怎么展开觅食行为？如果周围有食物，怎么展开进食行为？怎么判断食物的好坏？</p>
+  <p> </p>
+  <p>第二，动物精巧的觅食和进食行为调控怎么被破坏？比如，我们在日常生活中经常见到，胖子按说应该不饿，但他在一般情况下更容易饿，甚至越胖越饿、越吃越饿，进入危险的反馈循环。我们也在果蝇体内发现类似现象。这到底是什么原因导致的？</p>
+  <p> </p>
+  <p>第三，我们研究各种重要营养物质之间的调节？比如，为什么一段时间不吃肉后，你会觉得很馋？我们也在果蝇体内发现类似现象，搞清楚了它的机制。</p>
+  <p> </p>
+  <p>这些都属于我刚才说的问题范畴，能量和营养物质的代谢过程被神经系统感知和调控。过去五六年，我们一直围绕这些问题做研究，找到果蝇体内很多基因，特定神经细胞和环路，对刚才描述过程的影响，具体不展开。接下来几年，可能还有一些类似研究慢慢完成和发表，包括睡眠、压力和吃东西之间的关系；当动物处在群体当中，饮食习惯会有什么变化等。</p>
+  <p> </p>
+  <figure class="image-box dls-image-block dls-media-image">
+<img src="https://img.allhistory.com/now/2020-10-17/5f8a9a29d7f8a70001ef09d8.png?imageView2/2/w/800" referrerpolicy="no-referrer" />    <figcaption class="dls-image-capture dls-capture">
+      <p>《吃货的生物学修养 : 脂肪、糖和代谢病的科学传奇》，王立铭 著，清华大学出版社2016年9月版</p>
+    </figcaption>
+  </figure>
+  <p> </p>
+  <p><strong>燕：未来将会做什么研究？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>我未来想做的一个重要研究方向，就是刚才聊的基因影响。我开玩笑叫它“基因算命”。它当然算不了命，但至少可以预测一个人可能会是一颗什么样的种子？长成什么样的植物？开出什么样的花？</p>
+  <p> </p>
+  <p>我们不觉得人在基因层面上有高低贵贱，但每个人肯定不一样。我们理解他的不一样在哪儿，比如他更擅长什么，不擅长什么，做什么事情会让他感到更快乐，从而更好地让他成为这样一个人。比如，我希望10年之后，我们能证明，曾经我们认为哪些人类特质完全由环境决定，比如父母、学校养育成什么样基本上就是什么样的特征，但实际上背后也有非常深刻的人类基因差异影响，甚至是塑造。</p>
+  <p> </p>
+  <p><strong>燕：除了学术研究，你关注得比较多的问题有哪些？</strong></p>
+  <p> </p>
+  <p><strong>王：</strong>我关注很多现代性问题。举个例子，在科学技术加持之下，很多传统生活方式正在发生改变，甚至崩塌。比如社区邻里之间的关系，社区组织解体，正在变原子化；婚姻制度正在慢慢地和之前不一样，甚至很多人预测婚姻制度会消失；伴随在线教育、个性化教育理念的普及，传统学校教育方式也在发生变化。</p>
+  <p> </p>
+  <p>特别关注的一个话题是，人类传统组织形式、社会结构发生变化之后，会对每个人的生活产生什么样的影响？这对大家价值观、世界观产生影响后，最终会把人类带向何方？</p>
+  <p> </p>
+  <p>题图为电影《千钧一发》（1997）剧照</p>
+  <p> </p>
+  <p>————</p>
+  <p>微信搜索“<strong>燕京书评</strong>”（Pekingbooks）：重申文化想象，重塑文字力量。</p>
+  <p> </p>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#燕京书评 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-15/%E5%A6%BB%E5%A6%BE%E6%88%90%E7%BE%A4%E7%9A%84%E9%81%93%E5%A3%AB%E4%B8%8E%E5%92%8C%E5%B0%9A-%E5%85%83%E4%BB%A3%E5%AE%97%E6%95%99%E5%8F%B2%E7%9A%84%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BE%A7%E9%9D%A2/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-05-16/%E4%B9%A6%E8%AF%84-%E6%80%9D%E6%83%B3%E5%B8%82%E5%9C%BA-%E9%82%A3%E4%BA%9B%E4%BC%81%E5%9B%BE%E5%BD%B1%E5%93%8D%E4%BD%A0%E7%9A%84%E4%BA%BA%E5%92%8C%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%89%8B/">最早</a>--</span>
+    
+      <li>
+        <time>2020-10-18</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-18/%E8%B4%BE%E6%A8%9F%E6%9F%AF-%E5%B9%B3%E9%81%A5%E5%9B%BD%E9%99%85%E7%94%B5%E5%BD%B1%E5%B1%95%E4%BB%8A%E5%90%8E%E4%BA%A4%E7%BB%99%E6%94%BF%E5%BA%9C%E4%B8%BE%E5%8A%9E-%E5%B0%86%E4%BB%BB%E5%B1%B1%E8%A5%BF%E7%94%B5%E5%BD%B1%E5%AD%A6%E9%99%A2%E9%99%A2%E9%95%BF/">
+          贾樟柯：平遥国际电影展今后交给政府举办，将任山西电影学院院长
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-18</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-18/%E4%B8%96%E7%95%8C%E9%A1%B6%E7%BA%A7%E7%A7%91%E5%AD%A6%E6%9D%82%E5%BF%97%E5%9C%A8%E5%A4%A7%E9%80%89%E5%89%8D%E5%85%AC%E5%BC%80%E7%AB%99%E9%98%9F-%E6%94%BF%E6%B2%BB%E6%89%AD%E6%9B%B2%E4%BA%86%E7%A7%91%E5%AD%A6%E7%9A%84%E4%B8%AD%E7%AB%8B/">
+          世界顶级科学杂志在大选前公开站队，政治扭曲了科学的中立？
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-16</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+          导演陈传兴：《掬水月在手》与叶嘉莹的传奇人生丨燕京访谈
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-10-15</time>
+        <a href="https://nodebe4.github.io/oped2/2020-10-15/%E5%B0%8F%E4%B8%AD%E5%8D%8E-%E7%9A%84-%E9%95%BF%E5%AE%89%E6%A2%A6-%E6%97%A5%E6%9C%AC%E4%BA%BA%E7%9A%84%E7%84%A6%E8%99%91%E6%83%B3%E8%B1%A1%E4%B8%8E%E4%B9%A1%E6%84%81%E8%AE%B0%E5%BF%86/">
+          “小中华”的“长安梦”：日本人的焦虑想象与乡愁记忆
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+            前一篇：导演陈传兴：《掬水月在手》与叶嘉莹的传奇人生丨燕京访谈
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-10-17/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E7%BE%8E%E5%9C%8B%E9%82%80%E8%AB%8B%E8%94%A3%E7%B6%93%E5%9C%8B%E8%A8%AA%E7%BE%8E-%E5%B0%8F%E8%94%A3%E7%95%B6%E6%99%82%E9%82%84%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%98%AF/">
+            後一篇：[外交雜聞]美國邀請蔣經國訪美，小蔣當時還不知道的是……
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-10-17/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E7%BE%8E%E5%9C%8B%E9%82%80%E8%AB%8B%E8%94%A3%E7%B6%93%E5%9C%8B%E8%A8%AA%E7%BE%8E-%E5%B0%8F%E8%94%A3%E7%95%B6%E6%99%82%E9%82%84%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%98%AF/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-10-18/%E4%B8%96%E7%95%8C%E9%A1%B6%E7%BA%A7%E7%A7%91%E5%AD%A6%E6%9D%82%E5%BF%97%E5%9C%A8%E5%A4%A7%E9%80%89%E5%89%8D%E5%85%AC%E5%BC%80%E7%AB%99%E9%98%9F-%E6%94%BF%E6%B2%BB%E6%89%AD%E6%9B%B2%E4%BA%86%E7%A7%91%E5%AD%A6%E7%9A%84%E4%B8%AD%E7%AB%8B/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-10-17/%E5%A4%96%E4%BA%A4%E9%9B%9C%E8%81%9E-%E7%BE%8E%E5%9C%8B%E9%82%80%E8%AB%8B%E8%94%A3%E7%B6%93%E5%9C%8B%E8%A8%AA%E7%BE%8E-%E5%B0%8F%E8%94%A3%E7%95%B6%E6%99%82%E9%82%84%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%98%AF/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<燕京书评>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-10-18/%E4%B8%96%E7%95%8C%E9%A1%B6%E7%BA%A7%E7%A7%91%E5%AD%A6%E6%9D%82%E5%BF%97%E5%9C%A8%E5%A4%A7%E9%80%89%E5%89%8D%E5%85%AC%E5%BC%80%E7%AB%99%E9%98%9F-%E6%94%BF%E6%B2%BB%E6%89%AD%E6%9B%B2%E4%BA%86%E7%A7%91%E5%AD%A6%E7%9A%84%E4%B8%AD%E7%AB%8B/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<燕京书评>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-10-16/%E5%AF%BC%E6%BC%94%E9%99%88%E4%BC%A0%E5%85%B4-%E6%8E%AC%E6%B0%B4%E6%9C%88%E5%9C%A8%E6%89%8B-%E4%B8%8E%E5%8F%B6%E5%98%89%E8%8E%B9%E7%9A%84%E4%BC%A0%E5%A5%87%E4%BA%BA%E7%94%9F%E4%B8%A8%E7%87%95%E4%BA%AC%E8%AE%BF%E8%B0%88/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>What Now? – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+What Now?
+——
+" />
+    <meta property="og:description" content="
+What Now?
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="What Now?" />
+    <meta property="twitter:title" content="What Now?" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Fwhat-now" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/what-now" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/what-now&text=What Now?&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/what-now&title=What Now?" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/what-now&title=What Now?" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=What Now?&body=
+What Now?
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/what-now" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/what-now&title=What Now?&caption=
+What Now?
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=What Now?&url=https://www.chinafile.com/conversation/what-now" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>What Now?</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-08-04
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Jerome A. Cohen, Scott Kennedy &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/what-now" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1596596460000-->
+<p><a href="https://www.chinafile.com/conversation/what-now">What Now?</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-e3efaab300aed4ca4006f81ca1d82fe6">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1200760956-1200.jpg" title="What Now?" class="colorbox" data-colorbox-gallery="gallery-node-52461-UwDfQu3JNA4" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1200760956-1200.jpg?itok=uxs_JJqf" width="1200" height="838" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+Kevin Frayer—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A man wearing a protective facemask stands near the CCTV building in fog and pollution during rush hour in the central business district in Beijing, February 13, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">The past several months have been a particularly volatile period in U.S.-China relations. After last month’s closures of the Chinese consulate in <a href="https://www.bbc.com/news/world-us-canada-53497193" target="_blank" rel="nofollow">Houston</a> and the American consulate in <a href="https://www.nytimes.com/2020/07/24/world/asia/china-us-consulate-chengdu.html" target="_blank" rel="nofollow">Chengdu</a>, we asked contributions to give us their assessments of recent U.S. policy toward China and where they think relations between the two countries are going and ought to go. —<em>The Editors</em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-8696" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/jerome-cohen"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/jac_0.jpg?itok=9OJZY5zo" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="jerome-a-cohen"><a href="https://www.chinafile.com/contributors/jerome-cohen" title="Jerome A. Cohen">Jerome A. Cohen</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The wheel has come full circle. In 1972, President Nixon used China policy to reassure his re-election. In 2020, President Trump is using China policy to reassure his re-election. Sadly, Trump’s campaign aims to end the reconciliation that Nixon began.</p>
+        <p>Many recognize that Sino-American relations are at their lowest point in half a century. Those who recall the grim period that followed June 4, 1989 might quibble. Yet, at that time, despite Deng Xiaoping’s huge provocation that shocked American and world opinion, President George H.W. Bush immediately <a href="https://www.chinafile.com/conversation/other-tiananmen-papers" target="_blank" rel="nofollow">sent</a> Brent Scowcroft on a secret mission to retain the ties that had been assiduously developed over two decades.</p>
+        <p>By contrast, three decades after Bush’s unpopular but wise move, Trump has sent Secretary of State <a href="https://www.state.gov/communist-china-and-the-free-worlds-future/" target="_blank" rel="nofollow">Mike Pompeo</a> and other Cabinet officers on a public mission to destroy those ties. This campaign, by mobilizing a nationalistic “whole country” response to the blatant depredations of what may soon again be called “Red China,” may prove popular because of its titillating patriotic appeal. Yet it is dangerous.</p>
+        <p>Fortunately, Trump’s China folly has begun to stimulate debate. Although details and emphases vary, critics of the new crusade largely agree that what is needed instead is a balanced, nuanced China policy. My own short-hand formulation calls for “The Four C’s: Cooperation, Competition, Criticism, and Containment.” Both Washington and Beijing should adopt this slogan.</p>
+        <p>We cannot abandon the urgently-needed efforts to cooperate in many areas, including climate, pollution, health, economics, poverty, refugees, and arms control. We both need to continue to reap the benefits of competition in activities ranging from international business to soft power. Both sides should practice honest criticism and self-criticism regarding aspects as diverse as foreign policy blunders and human rights violations, and each country must strive to contain not only the other’s “defense” preparations but also its own military goals and posturing.</p>
+        <p>Such a prescription is not as exciting as the drumbeats of war but a lot saner.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8701" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/scott-kennedy"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/scott_kennedy_updated_sm.png?itok=8eBy3IMT" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="scott-kennedy"><a href="https://www.chinafile.com/contributors/scott-kennedy" title="Scott Kennedy">Scott Kennedy</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">As a hurricane moves up the U.S. Eastern Seaboard, I try to persuade myself that the current stormy period in U.S.-China relations will also pass and calmer days will return.</p>
+        <p>To do so, I have developed the following soothing scenario. President Trump is more a showman and negotiator than a genuine China hawk, and he is allowing a slew of firm yet reversible actions and bombastic rhetoric to burnish his credentials as a hardliner. But once election season passes and he has amassed more leverage on China, he will sue for peace. And the true hawks in the administration will go along because they are not aiming for an actual war or overthrow of the Chinese Communist Party (CCP) but merely for re-setting the relationship with the U.S. in a more advantageous position. And Xi Jinping appears to be fine playing this game. Despite going overboard in and around China, he has been restrained in the bilateral context, hitting back with proportionate responses, not escalation. He knows stable ties with the West are critical given his economy’s weak underbelly of debt, demography, and technological dependence.</p>
+        <p>But such optimism is overly rosy. We should pay less attention to the daily weather than to the fundamental change in climate. Both sides seem committed to increased conflict over the longer term.</p>
+        <p>Large segments of the American and Chinese policy communities see the other as an existential threat. Americans view a nationalistic, expansionary China as the greatest risk to the liberal international order, and Beijing sees America as bent on containing China and even removing the CCP from power. Both appear to have abandoned rationales that recognize their respective fears yet allow for any sort of détente or peaceful coexistence. Both see the larger trends moving in their direction. Washington sees a Xi Jinping on the defensive domestically and can point to other countries gaining the wherewithal to challenge China. By contrast, Beijing sees its ongoing recovery as confirmation of its inexorable rise and the pandemic as accelerating America’s decline and the break-up of its alliances. Both sides see the costs of heightened tensions as sufficiently low, and so see little reason to act decisively to end the downward spiral. Washington can point to Beijing’s continued efforts to abide by the Phase One deal and its avoidance of escalatory actions despite verbal bellicosity. And Zhongnanhai may believe it can continue to push the envelope in a number of domains without inciting an American military response or a full rupture of economic ties.</p>
+        <p>Hence, even if there are moments of relative calm, I can see relations continuing their downward spiral until one of three things occurs: there is a major bilateral confrontation that forces both sides into a fundamental reassessment; new leadership arrives in both capitals that begins with an alternative, less Manichean evaluation of the relationship; or Washington is able to gain the upper hand in a drawn-out contest and forces Beijing to back down.</p>
+        <p>The first scenario for change means going through the exact crisis we must avoid. The second depends on political changes that are unlikely to occur, especially in Beijing. And the third depends on America’s addressing its domestic challenges while developing a more effective foreign policy that strengthens its global leadership, a result which is far from guaranteed.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8706" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/rui-zhong"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/profilephoto.jpg?itok=ZVZ-BK-n" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="rui-zhong"><a href="https://www.chinafile.com/contributors/rui-zhong" title="Rui Zhong">Rui Zhong</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">“People-to-people relations.” “Track I” and “Track II.” These are the terms think tankers are expected to use to describe what is breaking down between China and the United States as consulates are closed and study abroad plans unravel. These connections aren’t as cold or sterile as they sound.</p>
+        <p>These abstract phrases, which intend to describe the more human aspects of the U.S.-China relationship, still obscure a lot of humanity. Speaking of them says little about actual lives uprooted by every new policy decision. The words continue to erase the presence of immigration policy when it crosses paths with China policy. With few exceptions, conversations on the specific wellbeing of Uighurs and Hongkongers being targeted by increasingly punitive policy drafted by Beijing are shoved unceremoniously behind talk of getting tougher and tougher on China. The people at the heart of the policy become faceless, mouthless victims, statistics in reports or figures that are pointed to in the middle of a speech. Tiananmen, some 30-odd years later, is simply a date rather than a <a href="https://foreignpolicy.com/2020/06/04/tiananmen-massacre-lessons-george-floyd-protests-china/" target="_blank" rel="nofollow">warning</a> of the possibilities of unchecked law enforcement helmed by governments out to silence dissent.</p>
+        <p>But not everyone at the crux of China, the United States, and their politics is in a grave. Living, breathing humans find themselves there too, and not in ways that D.C.’s policy world tends to care about beyond the umbrella term of “people to people relations.”</p>
+        <p>When you are working as a Chinese American in the China analysis field, there is an underlying pressure not to make things personal. Your identity is supposed to be incidental to the research you conduct on a daily basis. Perhaps your mostly-white and sometimes-Chinese colleagues assume it helps you pronounce Mandarin words more accurately or that you know where to get good soup dumplings in Shanghai or Beijing. These expectations hold firm, even now, when you spend your days worrying with Chinese colleagues about the longevity of their visas, and your nights fielding anxious messages from family, wondering if WeChat will be shut down for good. Meanwhile, people around you continue to see China as a job that can be switched on and off, left on the desk until after lunch.</p>
+        <p>But for you, working on China is a constant state of grief over something that isn’t quite dead. It slows you down. It gets stuck in the recesses of your mind. It gunks up your work ethic, your sense of taste, and your ability to really relish digging into policy work as you did before.</p>
+        <p>In the midst of this tempest of competition, tension, and a possible cold war, the people at the heart of the U.S.-China relationship continue to work, observing the difficult truths and churning out the hard-to-swallow pills. If there is to be a future together for China and the United States, I can only hope that we have better, more humanistic words to define it, and a more humane approach to trying to resolve the relationship’s problems.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8711" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/robert-daly"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/daly_robert.jpg?itok=dp7XBVLP" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="robert-daly"><a href="https://www.chinafile.com/contributors/robert-daly" title="Robert Daly">Robert Daly</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">It’s time for a big move.</p>
+        <p>After three years of mismanaged competition, the closing of consulates in Houston and Chengdu proves that the wheels are off the U.S.-China relationship and it is barreling on its rotors toward a cliff—toward distrust so deep, decoupling so costly, and an arms race so compelling that the competition could end in war.</p>
+        <p>The failure of U.S.-China relations is the greatest medium-term threat to global peace. Navigating between the giants is a concern for every nation on earth, most of which value their trade with China but would rather live under a liberal world order anchored by the United States than swear fealty to Beijing. Loath to choose between hegemons, third countries <a href="https://www.foreignaffairs.com/articles/united-states/2020-08-03/beware-guns-august-asia" target="_blank" rel="nofollow">are waiting</a> passively to see how things play out. Many approach the looming crisis as if they have no agency, as if their fates are solely in the great powers’ hands.</p>
+        <p>But third countries are not spectators to the great power contest; they are the field on which it will be fought. It’s time for them to act in their own defense.</p>
+        <p>When the 75th Session of the U.N. General Assembly convenes in New York in mid-September, it should devote a day to the global threat of U.S.-China enmity. Ambassadors should tell China, the U.S., and the cameras what they have been saying for the past few years under cover of Chatham House Rules. They should state plainly what the superpowers’ economic, technological, and military rivalry portends for their people, and they should shout down American and Chinese representatives if they respond with paeans to <em>sovereignty</em> or <em>communities of common destiny</em>.</p>
+        <p>An U.N. General Assembly (UNGA) session will not resolve tensions rooted in incompatible values and security concepts. Focusing on mismanagement of U.S.-China relations could, however, put brakes back on the runaway car. And it would help inoculate smaller nations against great power schemes that run counter to their interest. There is some safety in numbers and narratives.</p>
+        <p>A special session of the UNGA should make clear that Sino-U.S. antagonism has become a global peril on par with pandemics and global warming. This message should be socialized internationally. The dangers of careless confrontation between Beijing and Washington need to be understood by citizens and voters as well as politicians and diplomats.</p>
+        <p>U.N. attention to the global impact of U.S.-China relations might also protect both nations from their worst impulses. If they encounter sustained skepticism about the wisdom of rivalry, Washington and Beijing might rethink their tactics. Amplification of international critiques would also make it harder for Beijing and Washington to sell simplistic, self-serving narratives to their own people. Internationalizing the issue could dilute Chinese and American nationalism.</p>
+        <p>An UNGA discussion would not be an attack on the People’s Republic of China or the U.S. <em>per se</em>. It <em>would</em> serve notice that poor bilateral management of their differences threatens worldwide disaster and is therefore—profoundly—the world’s business.</p>
+        <p>This is a grandiose proposal. Quixotic. I feel a bit silly suggesting it. But what is the alternative? We know where increasing alienation between the powers is headed if the rest of the world remains mired in cautious silence.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8716" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/sophie-richardson"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/sophie-richardson.jpg?itok=-XdKX0YX" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="sophie-richardson"><a href="https://www.chinafile.com/contributors/sophie-richardson" title="Sophie Richardson">Sophie Richardson</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The past few weeks have been dizzying for those tracking the U.S.-China relationship: dramatic closures of consulates, debates about the South China Sea taking on a <a href="https://www.scmp.com/news/china/military/article/3095817/sharp-increase-us-surveillance-south-china-sea-observed-july" target="_blank" rel="nofollow">new edge</a>, rhetorical wars of words.</p>
+        <p>It’s been no less so on human rights issues. There are some gains: the U.S. administration’s public recognition of the threats posed by the Chinese government to human rights is significant, notwithstanding President Donald Trump’s appalling <a href="https://www.politico.com/news/2020/04/15/trump-china-coronavirus-188736" target="_blank" rel="nofollow">praise</a> of Xi Jinping and his policies, and the administration’s generally egregious human rights foreign policy elsewhere. Human Rights Watch has advocated the use of <a href="https://www.hrw.org/news/2020/07/09/us-takes-key-action-human-rights-china" target="_blank" rel="nofollow">targeted sanctions</a> against Chinese government officials and companies engaged in human rights abuses, and so the imposition of Global Magnitsky sanctions and entity list designations are also positive steps.</p>
+        <p>But to watch the U.S. administration stay silent while the Chinese government exerts greater influence at the United Nations Human Rights Council is not foreign policy that promotes human rights. Nor is high-level U.S. officials’ use of <a href="https://abcnews.go.com/Politics/pompeo-pushes-wuhan-virus-label-counter-chinese-disinformation/story?id=69797101" target="_blank" rel="nofollow">racist anti-Chinese language</a> in describing the pandemic, and the move to <a href="https://abcnews.go.com/Politics/pompeo-pushes-wuhan-virus-label-counter-chinese-disinformation/story?id=69797101" target="_blank" rel="nofollow">suspend</a> the Fulbright program, which has underwritten important research on China (and my own dissertation research on Chinese policy towards Cambodia) and promoted academic ties. Unsurprisingly, these actions also do not appear to be thought-out components of a clearly articulated longer-term strategy. I asked one senior administration official about the Fulbright decision, only to be told that every single aspect of the U.S.-China relationship is up for consideration.</p>
+        <p>A haphazard and inconsistent foreign policy doesn’t just set back efforts to protect and promote human rights in China, it also reinforces the perception that the U.S. has simply decided to dismantle the bilateral relationship without regard to the people and ideas that successive U.S. administrations have claimed to care about. Why hobble the scholars who are trying to understand what is going on inside China, or in the bilateral relationship, when that knowledge is needed now more than ever?</p>
+        <p>To be clear, the Xi Jinping government has given the world a slew of human rights violations to respond to: mass <a href="https://www.hrw.org/report/2018/09/09/eradicating-ideological-viruses/chinas-campaign-repression-against-xinjiangs" target="_blank" rel="nofollow">arbitrary detention</a> of Uighurs, an unprecedented <a href="https://www.hrw.org/report/2019/05/02/chinas-algorithms-repression/reverse-engineering-xinjiang-police-mass" target="_blank" rel="nofollow">surveillance</a> state, <a href="https://www.hrw.org/news/2020/07/29/china-new-hong-kong-law-roadmap-repression" target="_blank" rel="nofollow">repression</a> of Hong Kong’s vibrant democracy in the name of “national security,” and the <a href="https://www.hrw.org/world-report/2020/country-chapters/global" target="_blank" rel="nofollow">silencing</a> of peaceful critics not only in China but around the world. It’s good when those abuses are called out for what they are: a threat to human rights globally.</p>
+        <p>A rights-promoting foreign policy agenda should be premised on a genuine desire to secure human rights gains for an oppressed population, not on a reflex to kick political shins. The Trump administration should pursue human rights policies that are consistent—and consistently applied—toward China. To be effective means addressing human rights issues at home and pursuing human rights concerns in countries led by the president’s autocratic friends. Seeking coordinated policy responses from like-minded governments is critical, as is obtaining strong support from international human rights institutions.</p>
+        <p>Otherwise it’s anyone’s guess what support activists across China can expect from the U.S.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8731" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/yangyang-cheng"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/yangyang_cheng.jpg?itok=5qIEp3Fh" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="yangyang-cheng"><a href="https://www.chinafile.com/contributors/yangyang-cheng" title="Yangyang Cheng">Yangyang Cheng</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Ever since the president took office in 2017, I have lived with a creeping fear that, as a Chinese person in the U.S., I might be sent to an internment camp.</p>
+        <p>My American friends think I’m paranoid. A few try to comfort me. They tell me if this happened, they’d take up arms to rescue me. I appreciate the sentiment. I also know the value of such fantasy lies exclusively in making the speaker feel good.</p>
+        <p>Among those familiar with my writings <a href="https://www.nytimes.com/2020/06/25/opinion/china-coronavirus-traditional-medicine.html" target="_blank" rel="nofollow">outside of physics</a>, several have said that I have nothing to worry about, because my <a href="https://www.chinafile.com/reporting-opinion/viewpoint/birthday-letter-peoples-republic" target="_blank" rel="nofollow">harsh critique</a> of the Chinese government would dispel any suspicion my ethnicity might raise. I understand the appeal in such logic. Last year, when invited to give a seminar at a national laboratory, I had to fill out a form promising that I’m not a participant in any foreign talent recruitment program. The extra step was required because I’m a Chinese citizen. Having published <a href="https://supchina.com/author/yangyangcheng/" target="_blank" rel="nofollow">numerous articles</a> critical of the Chinese government’s aggressive tactics in acquiring foreign technology and foreign-trained talent, I felt this was somewhat ironic. In a fleeting, mischievous moment, I thought about scrawling “Google me” across the page.</p>
+        <p>The point of this story is not that I’m special, that I’ve done enough to prove my innocence in this context, but rather that I should have had to prove anything in the first place. I know what political risks I’ve taken. To be severed from one’s homeland incurs an immense loss, but that loss is personal. It is not meant to be bartered as currency to purchase another government’s trust.</p>
+        <p>When I started writing for the public a few years ago, I was alarmed by the rise of ethno-authoritarianism in my birth country and dismayed by the complacency from the rest of the world. Nowadays, there’s more awareness of Beijing’s oppressive politics, but it’s often portrayed as a uniquely Chinese problem. People who claim their Americanness as a birthright also assume a position of moral superiority, waving the banner of liberal democracy as cover for nationalism.</p>
+        <p>The harsh reality accelerated by COVID-19 is exposing the lies America has been telling itself. The empire in decline has found in China a convenient target to project its fear and insecurities, to divert attention from its own problems. I recognize the atrocities the Chinese government has committed. I live with the guilt every day. But I’m not alone in my complicity. We all make our compromises in order to live. Pretending any country or political system is the source of all evil might offer easy passage through perilous times, but it’s a path that leads only to contradictions and conflict. When a state demands proof of loyalty from a people, the much more important questions are why a proof is necessary and why the loyalty is exclusive. When there’s nowhere to live freely for a Chinese person like myself, it is rather an indictment on the state of the world than a discount of my humanity.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8746" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/tong-yi"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/default_images/chop-dark.png?itok=Xgh4UJzo" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="tong-yi"><a href="https://www.chinafile.com/contributors/tong-yi" title="Tong Yi">Tong Yi</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">As a former dissident in China, I have watched with dismay how Xi Jinping daily tightens his noose on the Chinese people and is ever more aggressive with foreigners. The General Secretary of the Chinese Communist Party (CCP) has become the most powerful person on the planet. He may be no Mao Zedong, in terms of talent, but he sits atop far more wealth and human talent than Mao ever did. How did this happen?</p>
+        <p>In the <a href="https://sv.usembassy.gov/secretary-michael-r-pompeo-remarks-at-the-richard-nixon-presidential-library-and-museum-communist-china-and-the-free-worlds-future/" target="_blank" rel="nofollow">telling</a> of Secretary of State Michael Pompeo, “massive imbalances in [the U.S.-China] relationship that have built up over the decades” are an important reason. When I recently attended Pompeo’s speech at the Nixon Library, he accurately described the CCP as a threat to “our economy, . . . our liberty, and indeed [to] the future of free democracies around the world.”</p>
+        <p>I have long lamented ineffective U.S. policies toward China. Americans have believed that their own goodwill would induce the CCP to answer in kind. “We are very sexy people,” as Zbigniew Brzezinski <a href="https://www.chinafile.com/reporting-opinion/viewpoint/were-very-sexy-people-how-us-miscalculated-its-allure-china" target="_blank" rel="nofollow">put it</a> in 1980. In the 1990s, Americans noticed, and began to mention, theft of intellectual property, but that problem has only grown larger. Many Americans did not see (or want to see?) that the only way for the CCP’s closed society to “catch up” with advanced societies was to purloin its way through. They did not understand why a society that represses free thought and expression prevents the emergence of a Bill Gates or Elon Musk. This was not because Chinese genes are inferior.</p>
+        <p>Meanwhile, the CCP has worked hard to brainwash its people at home and to prettify itself abroad. Its digital tools of monitoring and control lead the world. Its control of information inside China is so pervasive and seamless that too many Chinese people are not even aware their judgments might be different if they had better information. The CCP also seeks to control opinion overseas, through the media and schools. This work lags well behind its domestic work, but its goals are the same.</p>
+        <p>Trump is no China expert, but he did see the imbalances built over the years and took some action, beginning with trade and following up with Huawei and other CCP technology companies that threaten U.S. national security and freedoms. Somehow, his administration found and hired very astute China advisers, like Yu Maochun at the Department of State and Matt Pottinger in the White House, whose clear-eyed perception of the essence of the CCP far exceeds that of their predecessors in both Democratic and Republican administrations. The ferocious <a href="https://www.scmp.com/news/china/diplomacy/article/3095230/us-china-relations-mike-pompeos-china-adviser-has-name" target="_blank" rel="nofollow">personal attacks</a> on Yu Maochun in the CCP media are indirect but powerful evidence of the accuracy of his advice.</p>
+        <p>Recent speeches on China by high-ranking administration officials have laid out a new direction for U.S. policy. Recent measures taken in response to the outrages in Xinjiang and Hong Kong have been good—and have had bi-partisan support. We can hope the new direction will continue no matter who takes the White House next year. The tasks are complex and will require cooperation from many quarters. But seeing the nature of the CCP without rose-tinted glasses is a necessary first step.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8751" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/andrew-j-nathan"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/nathan_0.jpg?itok=zKVF0Tan" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="andrew-j-nathan"><a href="https://www.chinafile.com/contributors/andrew-j-nathan" title="Andrew J. Nathan">Andrew J. Nathan</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The Trump Administration has declared a new Cold War on China with the coordinated series of speeches by Robert O’Brien (<a href="https://www.whitehouse.gov/briefings-statements/chinese-communist-partys-ideology-global-ambitions/" target="_blank" rel="nofollow">June 24</a>), Christopher Wray (<a href="https://www.fbi.gov/news/speeches/the-threat-posed-by-the-chinese-government-and-the-chinese-communist-party-to-the-economic-and-national-security-of-the-united-states" target="_blank" rel="nofollow">July 7</a>), William Barr (<a href="https://www.justice.gov/opa/speech/attorney-general-william-p-barr-delivers-remarks-china-policy-gerald-r-ford-presidential" target="_blank" rel="nofollow">July 16</a>), and Mike Pompeo (<a href="https://www.state.gov/communist-china-and-the-free-worlds-future/" target="_blank" rel="nofollow">July 23</a>), coming on top of the June 2 policy paper called “<a href="https://www.whitehouse.gov/wp-content/uploads/2020/05/U.S.-Strategic-Approach-to-The-Peoples-Republic-of-China-Report-5.20.20.pdf" target="_blank" rel="nofollow">United States Strategic Approach to the People’s Republic of China</a>.”</p>
+        <p>What is its strategy? What are its goals?</p>
+        <p>The dirty little secret is that the administration has no strategy. It is a snake pit of competing policy entrepreneurs, most of whom understand little about China or world affairs. For many, domestic politics is the key consideration.</p>
+        <p>The one policymaker who understands China well and has a strategic purpose is Deputy National Security Adviser Matthew Pottinger. But his goals are essentially defensive. The word “reciprocity,” which keeps appearing in these speeches, looks like his contribution. His priority is to stop China from stealing our technology, sending security agents to our country without permission to chase corruption cases, intimidating Chinese dissidents, expelling U.S. journalists, and intimidating academic critics.</p>
+        <p>Then you have Peter Navarro, who apparently dreams of dividing the world into two economic and technological blocs. Yes, China’s unfair economic behavior must be resisted, but full decoupling is a self-destructive plan even in purely economic terms, not to mention that there is much more at stake in world affairs than economics, including climate change, that requires cooperation with China alongside competition.</p>
+        <p>A third and apparently now dominant faction consists of people like Mike Pompeo, Mike Pence, Steve Bannon (out of the administration but still influential), and Newt Gingrich (also influential), who appear seriously to believe, as Gingrich <a href="https://www.newyorker.com/magazine/2020/01/13/the-future-of-americas-contest-with-china" target="_blank" rel="nofollow">put it</a>, that China poses “the greatest threat to us since the British Empire in the seventeen-seventies, much greater than Nazi Germany or the Soviet Union.” This group has turned the competition into a life-and-death struggle over ultimate values. They seem to believe that China wants to extend its political model to the rest of the world, including America. This is a deep misunderstanding of Chinese strategy, which is assertive, helpful to authoritarians, and in many ways dangerous, but not ideologically ambitious.</p>
+        <p>This group has no actual strategy to deal with China. It seems to imagine that if America talks tough and uses sanctions, Xi Jinping will shrink from pursuing what he sees as China’s core interests. In ignoring the fact that the other side has agency and will respond to protect itself, they commit what the strategist Edward Luttwak <a href="https://www.hup.harvard.edu/catalog.php?isbn=9780674066427" target="_blank" rel="nofollow">labeled</a> “great power autism.” They are not curious about China’s security imperatives, China’s pride, or China’s strengths. Therefore, they don’t imagine worst-case scenarios like a military crisis in the South China Sea or around Taiwan, which carry the possibility of nuclear escalation. Although they don’t want war, and neither do China’s leaders, war can happen when one side lives in a narcissistic dream world in which the other side has no moves.</p>
+        <p>As for Trump himself, and many members of Congress, they think of China only in the context of domestic politics. Any American politician can put points on the political scoreboard at no cost by bashing China. The website of Congressman Ted Yoho—famously <a href="https://www.youtube.com/watch?v=LI4ueUtkRQ0" target="_blank" rel="nofollow">upbraided</a> on the floor of the House by Representative Alexandria Ocasio-Cortez—illustrates this principle. It is <a href="https://yoho.house.gov/media-center/press-releases" target="_blank" rel="nofollow">replete</a> with press releases deploring China’s policies on trade, Hong Kong, Xinjiang, and Taiwan. But there’s no sign of a strategy to deal with China’s actual power and interests.</p>
+        <p>Yoho is a member of the Congressional Taiwan Caucus. Taiwan must be careful not to become a tool of people who have no real understanding of its circumstances.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8756" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/pamela-kyle-crossley"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/pamelacrossley.jpg?itok=Eq6mxNIs" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="pamela-kyle-crossley"><a href="https://www.chinafile.com/contributors/pamela-kyle-crossley" title="Pamela Kyle Crossley">Pamela Kyle Crossley</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">We worry about how well “America” understands “China.” But America is on the cusp of some profound changes, and it is unclear how well China understands that. There is a danger that in 2021 the USA will turn inward, preoccupied by urgent issues of reconstruction of government, economy, and public health. We can hope that responsible individuals in the government will remain mindful of the equal necessity of reconstructing American relationships with the world, with China foremost.</p>
+        <p>If wise, the Democrats will eschew the low-hanging fruit of Chinese irresponsibility in the initial handling of COVID-19, lingering issues of trade behavior, rampant state-corporate crossovers in espionage, and apparent gratuitous provocation in the South China Sea. But it remains a question how well American China policy in 2021 will order its priorities in relation not only to what will actually work, but to what will be meaningful to the American public.</p>
+        <p>We are used to thinking that foreign policy is one of those things that the public has only hazy ideas about. Since we no longer declare wars, conflict as a political risk for the American government depends on whether the public will or will not accept air bombardments or drone attacks in remote venues or the dispatch of volunteer troops to obscure places where their activities and their safety will be sporadically reported. But in 2021, it is likely that American political culture will have reshaped itself to view public demonstrations in pursuit of democracy (novel or restored), and government response to them, as matters of persisting significance to the American public and opinion makers.</p>
+        <p>With respect to China, response to public demonstrations in Hong Kong, and anywhere else in China, is likely to generate political pressure in the U.S. to register in some material way dissatisfaction with the actions of the Chinese government. To Americans in 2021, strict dichotomies between domestic affairs and foreign affairs are likely to be regarded as untenable in struggles for democratic reform.</p>
+        <p>“Chinese” influence will be regarded as anti-democratic, globally. The Belt and Road Initiative may be regarded as a threat to political and economic freedoms. Human rights issues in Xinjiang, in the Chinese prison system, and in China’s disruption of the global Internet will likely also attract far more attention than classically strategic questions of China’s possible military threats to American leverage in the Pacific, in international development, and in space. Reconfiguration of American relations with Taiwan, a successful Chinese democracy, may be revived as a serious issue.</p>
+        <p>The American government in 2021 would do well to clearly distinguish among the Chinese public, the Chinese Communist Party (CCP), and President Xi Jinping. “China” should be seen as a meaningless obfuscation. The U.S. has clear interests to negotiate frankly with Xi Jinping, and American business entities should have clear priorities in efforts to pressure the CCP. But it is likely that developments will foster increasing sympathy between the American public and the Chinese public, which policymakers should respect in word and deed.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8761" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/alex-wang"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/alex_wag_portrait_s.jpeg?itok=bljT1JWJ" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="alex-wang"><a href="https://www.chinafile.com/contributors/alex-wang" title="Alex Wang">Alex Wang</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">China-U.S. environmental cooperation will be a central part of any reconciliation between the two nations. For this to happen, many stars will need to align. Joe Biden would of course have to win the U.S. presidential election, as Trump has shown only opposition to environmental protection. Biden has announced a $2 trillion <a href="https://www.nytimes.com/2020/07/14/us/politics/biden-climate-plan.html" rel="nofollow">climate plan</a> that seeks to achieve a 100% clean energy economy and net-zero carbon emissions by 2050, a level of ambition that comports with IPCC recommendations. A program of this scale would set the stage for the sort of cooperative competition the U.S. and China exhibited in the run up to the 2015 Paris Agreement. </p>
+        <p>Imagine if the U.S. and China made a new joint announcement in advance of COP 26 in 2021—the US pledging net-zero emissions by 2050 and China promising the elimination of unabated coal use by the same year (or something more ambitious). Most people seem to think that such a scenario is pie-in-the-sky. Indeed, in China, we see some worrisome trends. Chinese authorities have approved more <a href="https://www.ft.com/content/cdcd8a02-81b5-48f1-a4a5-60a93a6ffa1e" rel="nofollow">new coal</a> power projects within China in the first half of 2020 than in all of 2018 and 2019 combined.</p>
+        <p>But renewed climate ambition may yet still be possible on both sides of the Pacific. In the U.S., the framing of the Biden plan as one of massive support for the economy is critical. The plan will only succeed if it can generate economic growth that benefits a broad base of the citizenry. It will also be essential to support the parts of society most affected by the plan. Coal communities in West Virginia, Wyoming, Kentucky, Illinois, and Pennsylvania should get real support (not just “job training” that never quite pans out). Experience from countries, like Germany and the UK, that have already set more specific plans to phase out coal can point the way to a successful transition away from fossil fuels in the U.S.   </p>
+        <p>In China, clean energy and electric transport are the spearheads of China’s “economic transformation” away from old-line industrial GDP growth. China now dominates global <a href="https://asia.nikkei.com/Business/Energy/China-storms-past-US-and-Japan-to-take-lead-in-wind-and-solar-power" rel="nofollow">solar and wind</a> energy generation and it is the largest market in the world for <a href="https://finance.yahoo.com/news/china-became-worlds-largest-electric-193843992.html" rel="nofollow">electric vehicles</a>. And, despite some backtracking, Chinese authorities have continued to push forward on environmental protection in a variety of areas – making serious progress on <a href="https://finance.yahoo.com/news/china-became-worlds-largest-electric-193843992.html" target="_blank" rel="nofollow">air pollution</a> in major Chinese urban areas and improving the efficiency of <a href="https://www.vox.com/energy-and-environment/2017/5/15/15634538/china-coal-cleaner" target="_blank" rel="nofollow">power plants</a> and <a href="https://www.oecd.org/greengrowth/Industrial_Upgrading_China_June_2017.pdf" target="_blank" rel="nofollow">industry</a></p>
+        <p>Would the competition from a revitalized U.S. clean energy program spur more Chinese action and cooperation? Maybe. Would Chinese decisionmakers be more persuaded by the expanded economic opportunities that would arise out of such a significant U.S. investment in low carbon? Perhaps. U.S. re-engagement could also alter the political economy dynamics of clean energy in China: strengthening the hand of low carbon “vested interests” against old-line fossil fuel interests or giving Chinese climate change policy advocates more leverage against political opponents.</p>
+        <p>Again, none of this is assured. But we will not solve global climate change without U.S. and Chinese action, so such engagement seems more than worth a try.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-08-27</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-27/When-China-Reporters-Can-t-Report-from-China/">
+          When China Reporters Can’t Report from China
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-19/How-To-Teach-China-This-Fall/">
+          How To Teach China This Fall
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-08-03</time>
+        <a href="https://nodebe4.github.io/oped2/2020-08-03/Reciprocity-in-U.S.-Relations-with-China-Should-Be/">
+          Reciprocity in U.S. Relations with China Should Be a Tool, Not the Whole Strategy
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-07-30</time>
+        <a href="https://nodebe4.github.io/oped2/2020-07-30/For-Wuhan-s-COVID-Mourners,-Little-Has-Been-Laid-t/">
+          For Wuhan’s COVID Mourners, Little Has Been Laid to Rest
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-08-04/%E8%AF%B1%E5%AF%BC%E5%92%8C%E6%93%8D%E7%BA%B5%E4%BB%96%E4%BA%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91-%E8%AE%A9%E4%BD%A0%E5%8F%AA%E6%83%B3%E5%88%B0%E6%88%91%E5%B8%8C%E6%9C%9B%E6%83%B3%E7%9A%84%E4%B8%9C%E8%A5%BF-1-iYouPort/">
+            前一篇：诱导和操纵他人的基本逻辑：让你只想到我希望想的东西（1） - iYouPort
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-08-05/%E5%90%8D%E8%91%97%E6%89%8B%E7%A8%BF%E6%9C%80%E6%96%B0%E7%A0%94%E7%A9%B6-%E6%B5%B7%E6%98%8E%E5%A8%81%E4%BD%9C%E5%93%81%E5%8F%AF%E8%83%BD%E9%83%BD%E8%A2%AB%E7%AF%A1%E6%94%B9%E8%BF%87/">
+            後一篇：名著手稿最新研究：海明威作品可能都被篡改过
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-08-04/%E8%AF%B1%E5%AF%BC%E5%92%8C%E6%93%8D%E7%BA%B5%E4%BB%96%E4%BA%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91-%E8%AE%A9%E4%BD%A0%E5%8F%AA%E6%83%B3%E5%88%B0%E6%88%91%E5%B8%8C%E6%9C%9B%E6%83%B3%E7%9A%84%E4%B8%9C%E8%A5%BF-1-iYouPort/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-08-05/%E5%90%8D%E8%91%97%E6%89%8B%E7%A8%BF%E6%9C%80%E6%96%B0%E7%A0%94%E7%A9%B6-%E6%B5%B7%E6%98%8E%E5%A8%81%E4%BD%9C%E5%93%81%E5%8F%AF%E8%83%BD%E9%83%BD%E8%A2%AB%E7%AF%A1%E6%94%B9%E8%BF%87/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-08-19/How-To-Teach-China-This-Fall/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-08-03/Reciprocity-in-U.S.-Relations-with-China-Should-Be/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-08-04/%E8%AF%B1%E5%AF%BC%E5%92%8C%E6%93%8D%E7%BA%B5%E4%BB%96%E4%BA%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91-%E8%AE%A9%E4%BD%A0%E5%8F%AA%E6%83%B3%E5%88%B0%E6%88%91%E5%B8%8C%E6%9C%9B%E6%83%B3%E7%9A%84%E4%B8%9C%E8%A5%BF-1-iYouPort/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-08-05/%E5%90%8D%E8%91%97%E6%89%8B%E7%A8%BF%E6%9C%80%E6%96%B0%E7%A0%94%E7%A9%B6-%E6%B5%B7%E6%98%8E%E5%A8%81%E4%BD%9C%E5%93%81%E5%8F%AF%E8%83%BD%E9%83%BD%E8%A2%AB%E7%AF%A1%E6%94%B9%E8%BF%87/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-08-19/How-To-Teach-China-This-Fall/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-08-03/Reciprocity-in-U.S.-Relations-with-China-Should-Be/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

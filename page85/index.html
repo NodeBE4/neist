@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="高頻版 git.io/JUJZT">
+    <meta property="og:description" content="高頻版 git.io/JUJZT" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fnodebe4.github.io%2Foped2%2Fpage85%2F" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://nodebe4.github.io/oped2/page85/" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://nodebe4.github.io/oped2/page85/&text=觀點2-高頻版 git.io/JUJZT&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://nodebe4.github.io/oped2/page85/&title=觀點2-高頻版 git.io/JUJZT" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://nodebe4.github.io/oped2/page85/&title=觀點2-高頻版 git.io/JUJZT" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=觀點2-高頻版 git.io/JUJZT&body=" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://nodebe4.github.io/oped2/page85/" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://nodebe4.github.io/oped2/page85/&title=觀點2-高頻版 git.io/JUJZT&caption=&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=觀點2-高頻版 git.io/JUJZT&url=https://nodebe4.github.io/oped2/page85/" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+<ul class="archive">
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-17/%E4%BB%A5%E8%89%B2%E5%88%97%E7%9A%84%E6%96%B0%E6%8A%80%E6%9C%AF%E5%A6%82%E4%BD%95%E5%BD%BB%E5%BA%95%E6%94%B9%E5%8F%98%E7%9B%91%E8%A7%86-iYouPort/">
+      
+        以色列的新技术如何彻底改变监视？ - iYouPort
+      </a>
+      <time>2018-12-17</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%bb%a5%e8%89%b2%e5%88%97%e7%9a%84%e6%96%b0%e6%8a%80%e6%9c%af%e5%a6%82%e4%bd%95%e5%bd%bb%e5%ba%95%e6%94%b9%e5%8f%98%e7%9b%91%e8%a7%86%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-17/%E4%B8%80%E4%B8%AA%E9%9D%9E%E5%B8%B8%E6%83%8A%E4%BA%BA%E7%9A%84%E6%95%85%E4%BA%8B-%E4%B8%BA-CIA-%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%9A%84%E4%BF%84%E7%BD%97%E6%96%AF%E4%BA%BA%E6%AD%A3%E5%9C%A8%E9%81%AD%E9%81%87%E8%BF%AB%E5%AE%B3-%E7%BE%8E%E5%9B%BD%E4%BC%9A%E5%9C%A8%E4%B9%8E%E5%90%97-iYouPort/">
+      
+        一个非常惊人的故事：为 CIA 工作过的俄罗斯人正在遭遇迫害，美国会在乎吗？ - iYouPort
+      </a>
+      <time>2018-12-17</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%b8%80%e4%b8%aa%e9%9d%9e%e5%b8%b8%e6%83%8a%e4%ba%ba%e7%9a%84%e6%95%85%e4%ba%8b%ef%bc%9a%e4%b8%ba-cia-%e5%b7%a5%e4%bd%9c%e8%bf%87%e7%9a%84%e4%bf%84%e7%bd%97%e6%96%af%e4%ba%ba%e6%ad%a3%e5%9c%a8/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-17/%E7%BE%8E%E5%9B%BD%E4%BC%9A%E8%BF%8E%E6%9D%A5%E4%B8%80%E4%BD%8D%E5%8F%B0%E6%B9%BE%E8%A3%94%E7%9A%84%E6%80%BB%E7%BB%9F%E5%90%97-iYouPort/">
+      
+        美国会迎来一位台湾裔的总统吗？ - iYouPort
+      </a>
+      <time>2018-12-17</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e7%be%8e%e5%9b%bd%e4%bc%9a%e8%bf%8e%e6%9d%a5%e4%b8%80%e4%bd%8d%e5%8f%b0%e6%b9%be%e8%a3%94%e7%9a%84%e6%80%bb%e7%bb%9f%e5%90%97%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-17/%E4%B8%80%E7%A7%8D%E6%9B%B4%E9%82%AA%E6%81%B6%E7%9A%84%E5%AE%A1%E6%9F%A5%E5%BF%85%E9%A1%BB%E8%AD%A6%E6%83%95-%E6%AF%94%E4%B8%AD%E5%9B%BD%E7%9A%84GFW%E4%B8%A5%E9%87%8D%E5%A4%AA%E5%A4%9A-iYouPort/">
+      
+        一种更邪恶的审查必须警惕，比中国的GFW严重太多 - iYouPort
+      </a>
+      <time>2018-12-17</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%b8%80%e7%a7%8d%e6%9b%b4%e9%82%aa%e6%81%b6%e7%9a%84%e5%ae%a1%e6%9f%a5%e5%bf%85%e9%a1%bb%e8%ad%a6%e6%83%95%ef%bc%8c%e6%af%94%e4%b8%ad%e5%9b%bd%e7%9a%84gfw%e4%b8%a5%e9%87%8d%e5%a4%aa%e5%a4%9a/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-17/%E8%BF%9D%E5%AE%AA%E7%9A%84%E6%B3%95%E5%BE%8B-iYouPort/">
+      
+        违宪的法律 - iYouPort
+      </a>
+      <time>2018-12-17</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e8%bf%9d%e5%ae%aa%e7%9a%84%e6%b3%95%e5%be%8b/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-17/%E5%A4%A9%E7%A9%BA%E4%B8%AD%E7%9A%84%E7%9C%BC%E7%9D%9B-iYouPort/">
+      
+        天空中的眼睛 - iYouPort
+      </a>
+      <time>2018-12-17</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%a4%a9%e7%a9%ba%e4%b8%ad%e7%9a%84%e7%9c%bc%e7%9d%9b/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-17/%E7%9B%91%E7%9D%A3%E6%9D%83%E5%8A%9B%E7%9A%84%E6%84%8F%E8%AF%86%E9%9C%80%E8%A6%81%E5%9F%B9%E5%85%BB-iYouPort/">
+      
+        监督权力的意识需要培养 - iYouPort
+      </a>
+      <time>2018-12-17</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e7%9b%91%e7%9d%a3%e6%9d%83%e5%8a%9b%e7%9a%84%e6%84%8f%e8%af%86%e9%9c%80%e8%a6%81%e5%9f%b9%e5%85%bb/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-17/%E4%B9%9F%E9%97%A8%E7%9A%84%E5%8F%A6%E4%B8%80%E5%9C%BA%E6%88%98%E4%BA%89-%E6%8E%A7%E5%88%B6%E8%AF%A5%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91-iYouPort/">
+      
+        也门的另一场战争： 控制该国互联网 - iYouPort
+      </a>
+      <time>2018-12-17</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%b9%9f%e9%97%a8%e7%9a%84%e5%8f%a6%e4%b8%80%e5%9c%ba%e6%88%98%e4%ba%89%ef%bc%9a%e2%80%8a%e6%8e%a7%e5%88%b6%e8%af%a5%e5%9b%bd%e4%ba%92%e8%81%94%e7%bd%91/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-16/%E4%B8%8D%E5%8F%AF%E5%AF%AB%E7%9A%84%E8%A1%8C%E9%8A%B7%E6%A1%88%E4%BE%8B-%E5%A4%A9%E9%99%8D%E6%A9%AB%E8%B2%A1%E6%A1%88/">
+      
+        不可寫的行銷案例－天降橫財案
+      </a>
+      <time>2018-12-16</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: 李飛步</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@verbalflystep/%E6%B7%B1%E6%B0%B4%E5%9F%97-%E5%A4%A9%E9%99%8D%E6%A9%AB%E8%B2%A1-%E6%8E%9F%E9%8C%A2-%E7%8F%BE%E9%87%91-%E9%A3%AF%E7%A5%A8-ca0dae9a0c27?source=rss-7e0de79fece------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-16/%E4%B8%AD%E5%9B%BD%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E7%BB%B4%E7%A8%B3%E4%BA%A7%E4%B8%9A-%E8%B0%81%E5%B0%86%E6%88%90%E4%B8%BA%E5%94%AF%E4%B8%80%E7%9A%84%E5%A4%B1%E8%B4%A5%E8%80%85-iYouPort/">
+      
+        中国的互联网维稳产业：谁将成为唯一的失败者？ - iYouPort
+      </a>
+      <time>2018-12-16</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%b8%ad%e5%9b%bd%e7%9a%84%e4%ba%92%e8%81%94%e7%bd%91%e7%bb%b4%e7%a8%b3%e4%ba%a7%e4%b8%9a%ef%bc%9a%e8%b0%81%e5%b0%86%e6%88%90%e4%b8%ba%e5%94%af%e4%b8%80%e7%9a%84%e5%a4%b1%e8%b4%a5%e8%80%85%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-16/%E8%B0%B7%E6%AD%8C%E6%8B%92%E7%BB%9D%E5%9B%9E%E7%AD%94%E6%9C%AA%E6%9D%A5%E6%98%AF%E5%90%A6%E4%BB%8D%E7%BB%A7%E7%BB%AD%E8%9C%BB%E8%9C%93-iYouPort/">
+      
+        谷歌拒绝回答未来是否仍继续蜻蜓 - iYouPort
+      </a>
+      <time>2018-12-16</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e8%b0%b7%e6%ad%8c%e6%8b%92%e7%bb%9d%e5%9b%9e%e7%ad%94%e6%9c%aa%e6%9d%a5%e6%98%af%e5%90%a6%e4%bb%8d%e7%bb%a7%e7%bb%ad%e8%9c%bb%e8%9c%93/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-13/%E8%B1%A1%E8%88%87%E9%A8%8E%E8%B1%A1%E4%BA%BA-%E4%BA%86%E8%A7%A3%E4%BB%80%E9%BA%BC%E5%8F%AB%E5%B9%B8%E7%A6%8F/">
+      
+        象與騎象人：了解什麼叫幸福
+      </a>
+      <time>2018-12-13</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+          <span>
+              <!-- Personal Info. -->
+              <a  style="font-size:14px;">作者: SparkTake</a>
+          </span>
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#medium" class="tag">
+        medium
+      </a>
+      
+
+      
+      <a href="https://medium.com/@sparktake2016/%E8%B1%A1%E8%88%87%E9%A8%8E%E8%B1%A1%E4%BA%BA-%E4%BA%86%E8%A7%A3%E4%BB%80%E9%BA%BC%E5%8F%AB%E5%B9%B8%E7%A6%8F-7e1b6286c34b?source=rss-8971a0b791db------2" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-13/%E5%8F%8D%E5%AE%A1%E6%9F%A5-%E5%87%BB%E9%80%80-%E4%B8%83%E9%AA%91%E5%A3%AB-%E4%B9%8B%E4%B8%80-iYouPort/">
+      
+        反审查：击退“七骑士”之一 - iYouPort
+      </a>
+      <time>2018-12-13</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%8f%8d%e5%ae%a1%e6%9f%a5%ef%bc%9a%e5%87%bb%e9%80%80%e4%b8%83%e9%aa%91%e5%a3%ab%e4%b9%8b%e4%b8%80/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-13/%E8%A2%AB%E6%AE%8B%E5%AE%B3%E7%9A%84%E8%AE%B0%E8%80%85-Khashoggi-%E7%9A%84%E6%B2%99%E7%89%B9%E6%9C%8B%E5%8F%8B%E8%B5%B7%E8%AF%89%E4%BB%A5%E8%89%B2%E5%88%97%E7%9B%91%E8%A7%86%E6%8A%80%E6%9C%AF%E5%85%AC%E5%8F%B8-iYouPort/">
+      
+        被残害的记者 Khashoggi 的沙特朋友起诉以色列监视技术公司 - iYouPort
+      </a>
+      <time>2018-12-13</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e8%a2%ab%e6%ae%8b%e5%ae%b3%e7%9a%84%e8%ae%b0%e8%80%85-khashoggi-%e7%9a%84%e6%b2%99%e7%89%b9%e6%9c%8b%e5%8f%8b%e8%b5%b7%e8%af%89%e4%bb%a5%e8%89%b2%e5%88%97%e7%9b%91%e8%a7%86%e6%8a%80%e6%9c%af%e5%85%ac/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-13/%E9%98%B4%E8%B0%8B%E8%AE%BA%E6%9D%A5%E8%87%AA%E6%97%A0%E7%9F%A5-iYouPort/">
+      
+        阴谋论来自无知 - iYouPort
+      </a>
+      <time>2018-12-13</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e9%98%b4%e8%b0%8b%e8%ae%ba%e6%9d%a5%e8%87%aa%e6%97%a0%e7%9f%a5/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-13/%E6%AE%8B%E9%85%B7%E7%9A%84%E5%9C%A3%E8%AF%9E%E7%8E%A9%E5%85%B7-iYouPort/">
+      
+        残酷的圣诞玩具 - iYouPort
+      </a>
+      <time>2018-12-13</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e6%ae%8b%e9%85%b7%e7%9a%84%e5%9c%a3%e8%af%9e%e7%8e%a9%e5%85%b7/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-13/%E6%96%B0%E7%BA%AA%E5%BD%95%E7%89%87%E6%8F%AD%E7%A4%BA-Facebook-%E5%92%8C%E8%B0%B7%E6%AD%8C%E7%9A%84%E7%9C%9F%E9%9D%A2%E7%9B%AE-iYouPort/">
+      
+        新纪录片揭示 Facebook 和谷歌的真面目 - iYouPort
+      </a>
+      <time>2018-12-13</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e6%96%b0%e7%ba%aa%e5%bd%95%e7%89%87%e6%8f%ad%e7%a4%ba-facebook-%e5%92%8c%e8%b0%b7%e6%ad%8c%e7%9a%84%e7%9c%9f%e9%9d%a2%e7%9b%ae-2/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-12/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%99%9A%E5%81%87%E4%BF%A1%E6%81%AF%E4%BB%A4%E7%8B%AC%E8%A3%81%E6%94%BF%E6%9D%83%E5%8F%98%E5%BE%97%E6%9B%B4%E5%BC%BA%E5%A4%A7-%E4%BB%A4%E6%B0%91%E4%B8%BB%E5%9B%BD%E5%AE%B6%E5%8F%98%E5%BE%97%E6%9B%B4%E8%84%86%E5%BC%B1-iYouPort/">
+      
+        为什么虚假信息令独裁政权变得更强大，令民主国家变得更脆弱？ - iYouPort
+      </a>
+      <time>2018-12-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%b8%ba%e4%bb%80%e4%b9%88%e8%99%9a%e5%81%87%e4%bf%a1%e6%81%af%e4%bb%a4%e7%8b%ac%e8%a3%81%e6%94%bf%e6%9d%83%e5%8f%98%e5%be%97%e6%9b%b4%e5%bc%ba%e5%a4%a7%ef%bc%8c%e4%bb%a4%e6%b0%91%e4%b8%bb%e5%9b%bd-2/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-12/%E5%B9%B3%E8%A1%A1-%E6%89%A7%E6%B3%95%E9%9C%80%E6%B1%82-%E5%92%8C%E4%BA%BA%E6%9D%83%E7%BB%B4%E6%8A%A4%E7%9C%9F%E7%9A%84%E5%8F%AF%E8%83%BD%E5%90%97-iYouPort/">
+      
+        平衡“执法需求”和人权维护真的可能吗？ - iYouPort
+      </a>
+      <time>2018-12-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%b9%b3%e8%a1%a1%e6%89%a7%e6%b3%95%e9%9c%80%e6%b1%82%e5%92%8c%e4%ba%ba%e6%9d%83%e7%bb%b4%e6%8a%a4%e7%9c%9f%e7%9a%84%e5%8f%af%e8%83%bd%e5%90%97%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-12/%E5%8E%84%E7%93%9C%E5%A4%9A%E5%B0%94%E6%B0%91%E4%B8%BB%E7%9A%84%E7%BC%93%E6%85%A2%E6%89%BC%E6%9D%80-iYouPort/">
+      
+        厄瓜多尔民主的缓慢扼杀 - iYouPort
+      </a>
+      <time>2018-12-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%8e%84%e7%93%9c%e5%a4%9a%e5%b0%94%e6%b0%91%e4%b8%bb%e7%9a%84%e7%bc%93%e6%85%a2%e6%89%bc%e6%9d%80/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-12/%E6%96%B0%E7%BA%AA%E5%BD%95%E7%89%87%E6%8F%AD%E7%A4%BA-Facebook-%E5%92%8C%E8%B0%B7%E6%AD%8C%E7%9A%84%E7%9C%9F%E9%9D%A2%E7%9B%AE-iYouPort/">
+      
+        新纪录片揭示 Facebook 和谷歌的真面目 - iYouPort
+      </a>
+      <time>2018-12-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e6%96%b0%e7%ba%aa%e5%bd%95%e7%89%87%e6%8f%ad%e7%a4%ba-facebook-%e5%92%8c%e8%b0%b7%e6%ad%8c%e7%9a%84%e7%9c%9f%e9%9d%a2%e7%9b%ae/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-12/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B0%91%E4%B8%BB%E5%9B%BD%E5%AE%B6%E5%92%8C%E5%A8%81%E6%9D%83%E5%9B%BD%E5%AE%B6%E4%B8%80%E6%A0%B7%E7%83%AD%E8%A1%B7%E4%BA%8E%E6%9A%B4%E5%8A%9B%E9%95%87%E5%8E%8B-iYouPort/">
+      
+        为什么民主国家和威权国家一样热衷于暴力镇压? - iYouPort
+      </a>
+      <time>2018-12-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%b8%ba%e4%bb%80%e4%b9%88%e6%b0%91%e4%b8%bb%e5%9b%bd%e5%ae%b6%e5%92%8c%e5%a8%81%e6%9d%83%e5%9b%bd%e5%ae%b6%e4%b8%80%e6%a0%b7%e7%83%ad%e8%a1%b7%e4%ba%8e%e6%9a%b4%e5%8a%9b%e9%95%87%e5%8e%8b/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-12/%E7%9B%91%E8%A7%86%E8%BF%9B%E5%85%A5%E5%8C%BA%E5%9D%97%E9%93%BE-iYouPort/">
+      
+        监视进入区块链！ - iYouPort
+      </a>
+      <time>2018-12-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e7%9b%91%e8%a7%86%e8%bf%9b%e5%85%a5%e5%8c%ba%e5%9d%97%e9%93%be%ef%bc%81/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-12/%E4%BD%A0%E9%95%BF%E5%BE%97%E5%83%8F%E5%9D%8F%E8%9B%8B%E5%90%97-iYouPort/">
+      
+        你长得像坏蛋吗？ - iYouPort
+      </a>
+      <time>2018-12-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%bd%a0%e9%95%bf%e5%be%97%e5%83%8f%e5%9d%8f%e8%9b%8b%e5%90%97%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-11/%E9%80%8F%E6%98%8E%E5%BA%A6%E9%9D%A9%E5%91%BD%E8%A6%81%E4%BB%8E%E5%86%85%E9%83%A8%E7%88%86%E5%8F%91-iYouPort/">
+      
+        透明度革命要从内部爆发 - iYouPort
+      </a>
+      <time>2018-12-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e9%80%8f%e6%98%8e%e5%ba%a6%e9%9d%a9%e5%91%bd%e8%a6%81%e4%bb%8e%e5%86%85%e9%83%a8%e7%88%86%e5%8f%91/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-11/%E5%BD%93%E6%B3%95%E5%BA%AD%E5%92%8C%E6%94%BF%E5%BA%9C%E7%A9%BF%E4%B8%80%E6%9D%A1%E8%A3%A4%E5%AD%90%E6%97%B6-iYouPort/">
+      
+        当法庭和政府穿一条裤子时… - iYouPort
+      </a>
+      <time>2018-12-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%bd%93%e6%b3%95%e5%ba%ad%e5%92%8c%e6%94%bf%e5%ba%9c%e7%a9%bf%e4%b8%80%e6%9d%a1%e8%a3%a4%e5%ad%90%e6%97%b6/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-11/%E4%B8%AD%E5%9B%BD%E5%AF%B9%E5%8E%84%E7%93%9C%E5%A4%9A%E5%B0%94%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88-iYouPort/">
+      
+        中国对厄瓜多尔做了什么？ - iYouPort
+      </a>
+      <time>2018-12-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%b8%ad%e5%9b%bd%e5%af%b9%e5%8e%84%e7%93%9c%e5%a4%9a%e5%b0%94%e5%81%9a%e4%ba%86%e4%bb%80%e4%b9%88%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-11/%E6%B5%81%E4%BA%A1%E4%B9%9F%E6%B2%A1%E6%9C%89%E5%AE%89%E5%85%A8-iYouPort/">
+      
+        流亡也没有安全 - iYouPort
+      </a>
+      <time>2018-12-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e6%b5%81%e4%ba%a1%e4%b9%9f%e6%b2%a1%e6%9c%89%e5%ae%89%e5%85%a8/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-10/%E9%9D%A2%E5%AF%B9%E6%AD%BB%E4%BA%A1-%E4%B8%8D%E8%83%BD%E5%8F%AA%E6%98%AF%E8%80%B8%E8%80%B8%E8%82%A9-iYouPort/">
+      
+        面对死亡，不能只是耸耸肩 - iYouPort
+      </a>
+      <time>2018-12-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e9%9d%a2%e5%af%b9%e6%ad%bb%e4%ba%a1%ef%bc%8c%e4%b8%8d%e8%83%bd%e5%8f%aa%e6%98%af%e8%80%b8%e8%80%b8%e8%82%a9/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-10/%E8%BE%9E%E8%81%8C%E6%8A%97%E8%AE%AE%E7%9A%84%E9%A1%B6%E7%BA%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%A7%91%E5%AD%A6%E5%AE%B6%E8%AF%A6%E8%BF%B0%E4%BA%86%E8%B0%B7%E6%AD%8C%E7%9A%84%E8%99%9A%E4%BC%AA-iYouPort/">
+      
+        辞职抗议的顶级人工智能科学家详述了谷歌的虚伪 - iYouPort
+      </a>
+      <time>2018-12-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e8%be%9e%e8%81%8c%e6%8a%97%e8%ae%ae%e7%9a%84%e9%a1%b6%e7%ba%a7%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%a7%91%e5%ad%a6%e5%ae%b6%e8%af%a6%e8%bf%b0%e4%ba%86%e8%b0%b7%e6%ad%8c%e7%9a%84%e8%99%9a%e4%bc%aa/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-10/%E8%B0%B7%E6%AD%8C%E6%AD%A3%E5%9C%A8%E5%AF%B9%E4%BD%A0%E7%9A%84%E5%AD%A9%E5%AD%90%E4%B8%8B%E6%89%8B-iYouPort/">
+      
+        谷歌正在对你的孩子下手 - iYouPort
+      </a>
+      <time>2018-12-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e8%b0%b7%e6%ad%8c%e6%ad%a3%e5%9c%a8%e5%af%b9%e4%bd%a0%e7%9a%84%e5%ad%a9%e5%ad%90%e4%b8%8b%e6%89%8b/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-10/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%A0-%E8%BF%9C%E7%A6%BB%E5%B9%BF%E5%91%8A%E7%89%8C!!!-%E8%80%81%E5%A4%A7%E5%93%A5%E6%9D%A5%E4%BA%86-iYouPort/">
+      
+        为什么要你……远离广告牌!!! - 老大哥来了 - iYouPort
+      </a>
+      <time>2018-12-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e4%bd%a0%e8%bf%9c%e7%a6%bb%e5%b9%bf%e5%91%8a%e7%89%8c-%e8%80%81%e5%a4%a7%e5%93%a5%e6%9d%a5%e4%ba%86/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-10/%E8%AD%A6%E6%83%95-%E5%AE%A1%E6%9F%A5%E5%8F%8C%E7%99%BD%E7%BA%BF-iYouPort/">
+      
+        警惕：审查双白线 - iYouPort
+      </a>
+      <time>2018-12-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e8%ad%a6%e6%83%95%ef%bc%9a%e5%ae%a1%e6%9f%a5%e5%8f%8c%e7%99%bd%e7%ba%bf/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-10/%E5%88%AB%E8%AE%A9%E6%9C%89%E9%92%B1%E4%BA%BA%E7%BB%99%E4%BD%A0%E4%BB%A3%E8%A8%80-iYouPort/">
+      
+        别让有钱人给你代言 - iYouPort
+      </a>
+      <time>2018-12-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%88%ab%e8%ae%a9%e6%9c%89%e9%92%b1%e4%ba%ba%e7%bb%99%e4%bd%a0%e4%bb%a3%e8%a8%80/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-10/%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%9A%84%E9%98%B4%E8%B0%8B-%E4%BD%A0%E7%9F%A5%E9%81%93-%E8%B4%BC-%E9%95%BF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%90%97-iYouPort/">
+      
+        亚马逊的阴谋：你知道‘贼’长什么样吗？ - iYouPort
+      </a>
+      <time>2018-12-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%ba%9a%e9%a9%ac%e9%80%8a%e7%9a%84%e9%98%b4%e8%b0%8b%ef%bc%9a%e4%bd%a0%e7%9f%a5%e9%81%93%e8%b4%bc%e9%95%bf%e4%bb%80%e4%b9%88%e6%a0%b7%e5%90%97%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-10/%E8%8B%B1%E5%9B%BD%E9%97%B4%E8%B0%8D%E5%A6%82%E4%BD%95%E5%AF%B9%E7%AB%AF%E5%AF%B9%E7%AB%AF%E7%9A%84%E8%87%B4%E5%91%BD%E5%BC%B1%E7%82%B9%E5%BC%80%E5%88%80-iYouPort/">
+      
+        英国间谍如何对端对端的致命弱点开刀？！ - iYouPort
+      </a>
+      <time>2018-12-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e8%8b%b1%e5%9b%bd%e9%97%b4%e8%b0%8d%e5%a6%82%e4%bd%95%e5%af%b9%e7%ab%af%e5%af%b9%e7%ab%af%e7%9a%84%e8%87%b4%e5%91%bd%e5%bc%b1%e7%82%b9%e5%bc%80%e5%88%80%ef%bc%9f%ef%bc%81/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-10/%E4%B8%AD%E5%9B%BD%E8%80%81%E5%A4%A7%E5%93%A5%E7%9A%84%E7%AC%91%E8%AF%9D%E5%B8%A6%E6%9D%A5%E4%BA%86%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%90%AF%E7%A4%BA-iYouPort/">
+      
+        中国老大哥的笑话带来了什么样的启示？ - iYouPort
+      </a>
+      <time>2018-12-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%b8%ad%e5%9b%bd%e8%80%81%e5%a4%a7%e5%93%a5%e7%9a%84%e7%ac%91%e8%af%9d%e5%b8%a6%e6%9d%a5%e4%ba%86%e4%bb%80%e4%b9%88%e6%a0%b7%e7%9a%84%e5%90%af%e7%a4%ba%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-10/%E5%88%AB%E6%89%93%E4%BA%86-%E8%87%AA%E5%B7%B1%E4%BA%BA-iYouPort/">
+      
+        别打了，自己人！ - iYouPort
+      </a>
+      <time>2018-12-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%88%ab%e6%89%93%e4%ba%86%ef%bc%8c%e8%87%aa%e5%b7%b1%e4%ba%ba%ef%bc%81/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-09/%E6%81%90%E6%80%96%E7%9A%84-0day-%E5%B8%82%E5%9C%BA-iYouPort/">
+      
+        恐怖的 0day 市场 - iYouPort
+      </a>
+      <time>2018-12-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e6%81%90%e6%80%96%e7%9a%84-0day-%e5%b8%82%e5%9c%ba/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-09/%E6%91%A9%E8%90%A8%E5%BE%B7%E7%9A%84-%E5%90%AF%E8%92%99-iYouPort/">
+      
+        摩萨德的‘启蒙’ - iYouPort
+      </a>
+      <time>2018-12-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e6%91%a9%e8%90%a8%e5%be%b7%e7%9a%84%e5%90%af%e8%92%99/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-09/%E4%BD%A0%E7%9F%A5%E9%81%93-%E8%B4%BC-%E9%95%BF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%90%97-iYouPort/">
+      
+        你知道‘贼’长什么样吗？ - iYouPort
+      </a>
+      <time>2018-12-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%bd%a0%e7%9f%a5%e9%81%93%e8%b4%bc%e9%95%bf%e4%bb%80%e4%b9%88%e6%a0%b7%e5%90%97%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-08/%E4%BB%80%E4%B9%88%E6%98%AF%E9%AB%98%E5%B3%B0%E5%86%B7%E6%BC%A0-%E4%BB%8E%E7%99%BD%E5%AE%AB%E5%88%B0%E5%BE%AE%E4%BF%A1-iYouPort/">
+      
+        什么是高峰冷漠？从白宫到微信 - iYouPort
+      </a>
+      <time>2018-12-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%bb%80%e4%b9%88%e6%98%af%e9%ab%98%e5%b3%b0%e5%86%b7%e6%bc%a0%ef%bc%9f%e4%bb%8e%e7%99%bd%e5%ae%ab%e5%88%b0%e5%be%ae%e4%bf%a1/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-07/%E5%A6%82%E4%BD%95%E8%83%BD%E5%A4%9F%E8%BD%BB%E6%9D%BE%E7%BB%95%E5%BC%80%E5%AE%AA%E6%B3%95%E7%9A%84%E5%88%B6%E7%BA%A6-iYouPort/">
+      
+        如何能够轻松绕开宪法的制约 - iYouPort
+      </a>
+      <time>2018-12-07</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e8%83%bd%e5%a4%9f%e8%bd%bb%e6%9d%be%e7%bb%95%e5%bc%80%e5%ae%aa%e6%b3%95%e7%9a%84%e5%88%b6%e7%ba%a6/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-07/%E9%AB%98%E5%A0%A1%E5%A5%87%E4%BA%BA%E6%96%B0%E5%89%A7%E6%83%85%E6%98%AF%E4%BB%80%E4%B9%88-%E5%8C%97%E6%96%97-iYouPort/">
+      
+        高堡奇人新剧情是什么？北斗 - iYouPort
+      </a>
+      <time>2018-12-07</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e9%ab%98%e5%a0%a1%e5%a5%87%e4%ba%ba%e6%96%b0%e5%89%a7%e6%83%85%e6%98%af%e4%bb%80%e4%b9%88%ef%bc%9f%e5%8c%97%e6%96%97/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-07/%E4%BB%A4%E4%BA%BA%E6%AF%9B%E9%AA%A8%E6%82%9A%E7%84%B6%E7%9A%84%E7%94%9F%E7%89%A9%E8%AF%86%E5%88%AB%E7%BB%88%E7%AB%AF-iYouPort/">
+      
+        令人毛骨悚然的生物识别终端 - iYouPort
+      </a>
+      <time>2018-12-07</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%bb%a4%e4%ba%ba%e6%af%9b%e9%aa%a8%e6%82%9a%e7%84%b6%e7%9a%84%e7%94%9f%e7%89%a9%e8%af%86%e5%88%ab%e7%bb%88%e7%ab%af/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-07/Facebook%E6%AD%A3%E5%9C%A8%E7%BB%99Trolls%E5%81%9A%E8%9C%9C%E7%BD%90-iYouPort/">
+      
+        Facebook正在给Trolls做蜜罐 - iYouPort
+      </a>
+      <time>2018-12-07</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/facebook%e6%ad%a3%e5%9c%a8%e7%bb%99trolls%e5%81%9a%e8%9c%9c%e7%bd%90/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-07/%E7%A7%98%E5%AF%86%E8%AF%89%E8%AE%BC%E4%B9%8B%E6%81%B6-%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%A6%82%E4%BD%95%E8%BE%93%E5%9C%A8%E4%BA%86%E8%B5%B7%E8%B7%91%E7%BA%BF%E4%B8%8A-iYouPort/">
+      
+        秘密诉讼之恶：隐私保护如何输在了起跑线上？ - iYouPort
+      </a>
+      <time>2018-12-07</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e7%a7%98%e5%af%86%e8%af%89%e8%ae%bc%e4%b9%8b%e6%81%b6%ef%bc%9a%e9%9a%90%e7%a7%81%e4%bf%9d%e6%8a%a4%e5%a6%82%e4%bd%95%e8%be%93%e5%9c%a8%e4%ba%86%e8%b5%b7%e8%b7%91%e7%ba%bf%e4%b8%8a%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-06/%E4%B8%8D%E8%A6%81%E7%9B%B8%E4%BF%A1%E4%BD%A0%E6%9C%80%E5%85%B3%E5%BF%83%E7%9A%84%E6%B6%88%E6%81%AF!!-iYouPort/">
+      
+        不要相信你最关心的消息!! - iYouPort
+      </a>
+      <time>2018-12-06</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e4%b8%8d%e8%a6%81%e7%9b%b8%e4%bf%a1%e4%bd%a0%e6%9c%80%e5%85%b3%e5%bf%83%e7%9a%84%e6%b6%88%e6%81%af/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-06/%E8%80%81%E5%B8%83%E4%BB%80%E4%B8%8D%E6%98%AF%E4%BD%A0%E8%AE%A4%E8%AF%86%E7%9A%84%E9%82%A3%E4%B8%AA%E4%BA%BA-iYouPort/">
+      
+        老布什不是你认识的那个人 - iYouPort
+      </a>
+      <time>2018-12-06</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e8%80%81%e5%b8%83%e4%bb%80%e4%b8%8d%e6%98%af%e4%bd%a0%e8%ae%a4%e8%af%86%e7%9a%84%e9%82%a3%e4%b8%aa%e4%ba%ba/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2018-12-06/%E5%A6%82%E4%BD%95%E5%8F%8D%E9%A9%B3%E8%80%81%E5%A4%A7%E5%93%A5%E5%86%92%E5%85%85%E6%AD%A3%E4%B9%89%E7%9A%84%E8%AF%A1%E8%BE%A9-iYouPort/">
+      
+        如何反驳老大哥冒充正义的诡辩？ - iYouPort
+      </a>
+      <time>2018-12-06</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#iYouPort" class="tag">
+        iYouPort
+      </a>
+      
+
+      
+      <a href="https://www.iyouport.org/%e5%a6%82%e4%bd%95%e5%8f%8d%e9%a9%b3%e8%80%81%e5%a4%a7%e5%93%a5%e5%86%92%e5%85%85%e6%ad%a3%e4%b9%89%e7%9a%84%e8%af%a1%e8%be%a9%ef%bc%9f/" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+
+</ul>
+
+<div class="pagination">
+  
+    <span class="prev">
+      <a href="/oped2/page84/" class="prev">
+        上一页
+      </a>
+    </span>
+  
+  
+    <span class="next">
+      <a href="/oped2/page86/" class="next">
+        下一页
+      </a>
+    </span>
+  
+
+  <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    <a class="fab-action fab-action-1" title="上一页(热键 &#8594;)" href="/oped2/page84/">
+      <i>上</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一页(热键 &#8592;)" href="/oped2/page86/">
+      <i>下</i>
+    </a>
+    
+    
+    
+    
+    
+  </div>
+</div>
+
+
+  <script>
+  /* post pagination keyboard shortcuts */
+  document.body.onkeyup = function(e){
+    if (e.keyCode == '37') { window.location = '/oped2/page84/'; } // left arrow key
+    if (e.keyCode == '39') { window.location = '/oped2/page86/'; } // right arrow key
+  };
+  </script>
+
+</div>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

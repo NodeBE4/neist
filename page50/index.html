@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="高頻版 git.io/JUJZT">
+    <meta property="og:description" content="高頻版 git.io/JUJZT" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fnodebe4.github.io%2Foped2%2Fpage50%2F" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://nodebe4.github.io/oped2/page50/" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://nodebe4.github.io/oped2/page50/&text=觀點2-高頻版 git.io/JUJZT&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://nodebe4.github.io/oped2/page50/&title=觀點2-高頻版 git.io/JUJZT" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://nodebe4.github.io/oped2/page50/&title=觀點2-高頻版 git.io/JUJZT" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=觀點2-高頻版 git.io/JUJZT&body=" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://nodebe4.github.io/oped2/page50/" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://nodebe4.github.io/oped2/page50/&title=觀點2-高頻版 git.io/JUJZT&caption=&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=觀點2-高頻版 git.io/JUJZT&url=https://nodebe4.github.io/oped2/page50/" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+<ul class="archive">
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/2-%E4%B8%87%E4%BA%BF%E8%81%94%E5%90%88%E8%B4%B7%E6%AC%BE%E6%8C%91%E6%88%98/">
+      
+        2 万亿联合贷款挑战
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw877a" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E7%94%B5%E5%AD%90%E7%83%9F%E4%BD%95%E5%A4%84%E5%8E%BB/">
+      
+        电子烟何处去
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw878a" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E5%85%B1%E4%BA%AB%E7%BB%8F%E6%B5%8E-%E6%BB%91%E9%93%81%E5%8D%A2/">
+      
+        「共享经济」滑铁卢
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw879a" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E7%BD%91%E7%BB%9C%E6%8E%98%E9%87%91%E4%B8%8B%E5%8D%97%E6%B4%8B/">
+      
+        网络掘金下南洋
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw880a" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E5%86%85%E8%92%99%E5%8F%A4%E6%94%BF%E6%B3%95%E7%AA%9D%E6%A1%88%E9%A3%8E%E6%9A%B4/">
+      
+        内蒙古政法窝案风暴
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw881a" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/P2P-%E5%A4%A7%E5%B9%95%E5%B0%86%E8%90%BD/">
+      
+        P2P 大幕将落
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw882f" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/2020-%E5%A6%82%E4%BD%95%E7%A8%B3%E7%BB%8F%E6%B5%8E/">
+      
+        2020 如何稳经济
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw884c" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E5%80%BA%E5%88%B8%E8%BF%9D%E7%BA%A6%E4%B9%8B%E5%90%8E/">
+      
+        债券违约之后
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw886b" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E8%B5%B5%E6%AD%A3%E6%B0%B8%E7%9A%84%E4%B8%A4%E6%89%8B/">
+      
+        赵正永的两手
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw856a" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E5%9C%A3%E8%AF%9E%E5%A5%96%E9%87%91/">
+      
+        圣诞奖金
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/economist/christmas-bonus" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E4%B8%B0%E5%8E%9A%E5%9B%9E%E6%8A%A5/">
+      
+        丰厚回报
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/economist/how-jim-simons-became-the-most-successful-investor-of-all-time" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E5%8F%B0%E6%B9%BE%E6%80%BB%E7%BB%9F%E8%94%A1%E8%8B%B1%E6%96%87%E8%B5%A2%E5%BE%97%E8%BF%9E%E4%BB%BB-%E6%8C%91%E6%88%98%E4%B8%AD%E5%9B%BD%E7%9A%84%E7%AB%8B%E5%9C%BA%E8%8E%B7%E9%80%89%E6%B0%91%E6%94%AF%E6%8C%81/">
+      
+        台湾总统蔡英文赢得连任，挑战中国的立场获选民支持
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/wsj/taiwanese-president-who-challenged-china-claims-re-election-victory" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E8%94%A1%E8%8B%B1%E6%96%87%E9%AB%98%E7%A5%A8%E8%BF%9E%E4%BB%BB-%E5%8F%B0%E6%B9%BE%E9%80%89%E6%B0%91%E5%AF%B9%E5%8C%97%E4%BA%AC%E8%AF%B4%E4%B8%8D/">
+      
+        蔡英文高票连任，台湾选民对北京说不
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/nytimes/taiwan-voters-re-elect-president-in-a-rebuke-to-beijings-authority" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E8%94%A1%E8%8B%B1%E6%96%87%E8%B5%A2%E5%9C%A8%E5%93%AA%E9%87%8C/">
+      
+        蔡英文赢在哪里？
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/initium/opinion-taiwan-election-2020" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E6%B2%A1%E6%9C%89%E4%BA%BA%E6%98%AF%E5%B1%80%E5%A4%96%E4%BA%BA-%E4%B8%80%E4%B8%AA%E9%99%86%E7%94%9F%E7%9C%BC%E4%B8%AD%E7%9A%84%E5%8F%B0%E6%B9%BE%E9%80%89%E4%B8%BE/">
+      
+        没有人是局外人，一个陆生眼中的台湾选举
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/initium/taiwan-election-2020-mainland-observer" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E9%80%9A%E8%83%80%E5%8D%87%E8%87%B3%E5%85%AB%E5%B9%B4%E9%AB%98%E7%82%B9%E4%BB%A4%E4%B8%AD%E5%9B%BD%E9%99%B7%E5%85%A5%E5%86%B3%E7%AD%96%E5%9B%B0%E5%A2%83/">
+      
+        通胀升至八年高点令中国陷入决策困境
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/wsj/chinese-inflation-at-eight-year-high-poses-a-policy-dilemma" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-12/%E8%94%A1%E8%8B%B1%E6%96%87%E5%BD%93%E9%80%89%E8%BF%9E%E4%BB%BB%E5%8F%B0%E6%B9%BE%E5%9C%B0%E5%8C%BA%E9%A2%86%E5%AF%BC%E4%BA%BA-%E9%9F%A9%E5%9B%BD%E7%91%9C%E6%89%BF%E8%AE%A4%E8%B4%A5%E9%80%89/">
+      
+        蔡英文当选连任台湾地区领导人 韩国瑜承认败选
+      </a>
+      <time>2020-01-12</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/639kkcfjpqf30hqlg" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-11/%E8%83%A1%E6%80%80%E9%82%A6%E9%99%B7%E8%90%BD/">
+      
+        胡怀邦陷落
+      </a>
+      <time>2020-01-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw866b" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-11/%E7%A7%A6%E5%85%89%E8%8D%A3%E6%B9%96%E5%8D%97%E5%BE%80%E4%BA%8B/">
+      
+        秦光荣湖南往事
+      </a>
+      <time>2020-01-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw863b" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-11/%E4%B8%96%E8%A1%8C%E4%B8%BA%E4%BD%95%E8%BF%98%E8%A6%81%E8%B4%B7%E6%AC%BE%E7%BB%99%E4%B8%AD%E5%9B%BD/">
+      
+        世行为何还要贷款给中国
+      </a>
+      <time>2020-01-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw888d" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-11/%E5%8F%91%E5%A8%81%E9%A9%AC%E9%BD%90/">
+      
+        发威马齐
+      </a>
+      <time>2020-01-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw888b" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-11/%E5%90%8C%E5%A6%BB-%E4%BB%AC%E7%9A%84%E5%A9%9A%E5%A7%BB%E9%99%B7%E9%98%B1/">
+      
+        「同妻」们的婚姻陷阱
+      </a>
+      <time>2020-01-11</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/7pps8if7tuxve7h" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-10/%E4%B8%AD%E5%9B%BD-2019-%E5%B9%B4%E4%B9%98%E7%94%A8%E8%BD%A6%E9%94%80%E9%87%8F%E5%86%8D%E5%BA%A6%E4%B8%8B%E6%BB%91/">
+      
+        中国 2019 年乘用车销量再度下滑
+      </a>
+      <time>2020-01-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/wsj/chinas-car-sales-slump-extends-into-another-year" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-10/%E7%91%9E%E5%B9%B8%E5%92%96%E5%95%A1%E4%BC%B0%E5%80%BC%E6%B3%A1%E6%B2%AB%E9%97%AE%E9%A2%98%E7%AA%81%E5%87%BA/">
+      
+        瑞幸咖啡估值泡沫问题突出
+      </a>
+      <time>2020-01-10</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/wsj/chinas-answer-to-starbucks-is-too-frothy" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E7%87%83%E7%83%A7%E7%9A%84%E9%BE%99%E5%8D%B7%E9%A3%8E/">
+      
+        燃烧的龙卷风
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/southern/nfzm-1872g" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8D%81%E5%B9%B4-Al-%E4%BC%9A%E6%B7%98%E6%B1%B0%E6%8E%89%E7%9B%AE%E5%89%8D%E4%B8%80%E5%8D%8A%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%90%97/">
+      
+        下一个十年，Al 会淘汰掉目前一半的工作吗？
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/southern/nfzm-1872i" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8D%81%E5%B9%B4-%E7%BA%AF%E7%94%B5%E5%8A%A8%E8%BD%A6%E4%BC%9A%E6%9B%BF%E4%BB%A3%E6%B1%BD%E6%B2%B9%E8%BD%A6%E5%90%97/">
+      
+        下一个十年，纯电动车会替代汽油车吗？
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/southern/nfzm-1872a" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E7%BA%A2%E7%82%B9%E6%B3%9B%E6%BB%A5%E4%B8%AD%E5%9B%BD/">
+      
+        红点泛滥中国
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/southern/nfzm-1872h" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E5%8F%A4%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%9A%84-%E4%BC%9F%E5%93%A5/">
+      
+        古代中国的「伟哥」
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/southern/nfzm-1872f" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E8%94%9A%E6%9D%A5-%E5%9B%9B%E7%99%BE%E4%BA%BF%E9%80%A0%E8%BD%A6%E8%AE%B0/">
+      
+        蔚来：四百亿造车记
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/southern/nfzm-1872e" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E7%89%B9%E6%96%AF%E6%8B%89%E7%9A%84%E7%99%BD%E9%BC%A0%E5%AE%9E%E9%AA%8C/">
+      
+        特斯拉的白鼠实验
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/bloomberg/you-gotta-smasha-fewcars-to-make-an-autonomous-vehicle" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E7%BA%A6%E4%B8%8D%E4%B8%8A%E7%9A%84%E7%96%AB%E8%8B%97-%E8%A2%AB%E4%BD%8E%E4%BC%B0%E7%9A%84%E5%A8%81%E8%83%81/">
+      
+        约不上的疫苗，被低估的威胁
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/southern/nfzm-1872c" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E9%99%88%E5%AF%85%E6%81%AA%E5%AF%B9%E4%BB%8A%E6%97%A5%E5%8E%86%E5%8F%B2%E5%AD%A6%E7%9A%84%E6%84%8F%E4%B9%89/">
+      
+        陈寅恪对今日历史学的意义
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/southern/nfzm-1872b" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E4%B8%9C%E4%BA%AC-%E5%BA%9E%E5%A4%A7%E5%8D%B4%E5%B9%BD%E5%BE%AE-%E5%96%A7%E9%97%B9%E5%8F%88%E5%96%91%E5%93%91/">
+      
+        东京：庞大却幽微 喧闹又喑哑
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/city/tokyo" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E5%BE%B7%E9%BB%91%E5%85%B0-%E6%98%AF%E6%95%85%E4%B9%A1-%E9%9A%BE%E7%A6%BB%E5%BC%83/">
+      
+        德黑兰：是故乡 难离弃
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/city/tehran" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E5%A6%82%E4%BD%95%E5%8C%96%E8%A7%A3%E9%95%87%E6%B1%9F%E5%A4%A9%E9%87%8F%E5%80%BA%E5%8A%A1/">
+      
+        如何化解镇江天量债务
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw847a" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E6%94%BE%E6%9D%BE%E6%89%98%E5%BA%95/">
+      
+        放松托底
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/economist/keeping-caps-out-of-hands" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-09/%E7%BE%8E%E5%9B%BD%E5%92%8C%E4%BC%8A%E6%9C%97%E9%81%BF%E5%85%8D%E5%8F%91%E7%94%9F%E5%85%AC%E5%BC%80%E5%86%B2%E7%AA%81/">
+      
+        美国和伊朗避免发生公开冲突
+      </a>
+      <time>2020-01-09</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/wsj/u-s-and-iran-back-away-from-open-conflict" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/%E7%90%86%E9%A1%BA-%E6%8A%80%E6%9C%AF%E7%A8%8E-%E4%B9%B1%E7%BB%93/">
+      
+        理顺「技术税」乱结
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/economist/the-world-in-2020/working-through-the-tech-tax-tangle" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/TikTok-%E8%A2%AB%E6%9B%9D%E5%AD%98%E5%9C%A8%E4%B8%A5%E9%87%8D%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/">
+      
+        TikTok 被曝存在严重安全漏洞
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/nytimes/security-company-found-tiktok-was-vulnerable-to-hacking" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/%E4%B8%AD%E5%9B%BD%E5%9C%B0%E6%96%B9%E6%94%BF%E5%BA%9C%E5%A4%A7%E9%87%8F%E5%80%BA%E5%8A%A1%E5%8D%B3%E5%B0%86%E5%88%B0%E6%9C%9F/">
+      
+        中国地方政府大量债务即将到期
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/wsj/bills-come-due-for-chinas-local-governments" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/%E9%80%9A%E7%94%A8%E6%B1%BD%E8%BD%A6%E5%9C%A8%E5%8D%8E%E9%94%80%E9%87%8F%E5%87%BA%E7%8E%B0%E6%9C%89%E5%8F%B2%E4%BB%A5%E6%9D%A5%E6%9C%80%E5%A4%A7%E9%99%8D%E5%B9%85/">
+      
+        通用汽车在华销量出现有史以来最大降幅
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/wsj/gm-posts-its-biggest-china-sales-decline" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/%E4%BC%8A%E6%9C%97%E5%90%91%E7%BE%8E%E5%86%9B%E9%A9%BB%E4%BC%8A%E6%8B%89%E5%85%8B%E5%9F%BA%E5%9C%B0%E5%8F%91%E5%B0%84%E5%A4%9A%E6%9E%9A%E5%AF%BC%E5%BC%B9/">
+      
+        伊朗向美军驻伊拉克基地发射多枚导弹
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/wsj/iran-fires-missiles-at-u-s-forces-in-iraq" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E4%BC%9A%E8%B4%AD%E4%B9%B0%E4%BA%BA%E9%80%A0%E8%82%89%E5%90%97/">
+      
+        中国人会购买人造肉吗？
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/nytimes/impossible-dumplings-and-beyond-buns-will-china-buy-fake-meat" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/%E8%8B%8F%E8%8E%B1%E6%9B%BC%E5%B0%BC%E4%B9%8B%E6%AD%BB%E5%AF%B9%E4%BC%8A%E6%9C%97%E4%BA%BA%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%88/">
+      
+        苏莱曼尼之死对伊朗人意味着什么
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/nytimes/the-day-after-war-begins-in-iran" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/%E6%89%8B%E6%9C%BA%E5%8E%82%E5%95%86-%E8%BD%AF%E7%A1%AC%E5%85%BC%E6%96%BD/">
+      
+        手机厂商「软硬兼施」
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw887f" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/%E7%BA%A6%E7%BF%B0%E9%80%8A%E5%A6%82%E4%BD%95%E5%85%91%E7%8E%B0%E9%80%89%E4%B8%BE%E6%89%BF%E8%AF%BA/">
+      
+        约翰逊如何兑现选举承诺
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/bloomberg/boris-johnsons-biggest-problem-what-to-do-next" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/%E8%9E%8D%E8%B5%84%E5%B9%B3%E5%8F%B0%E5%80%BA%E5%8A%A1%E7%BD%AE%E6%8D%A2%E5%8A%A0%E9%80%9F/">
+      
+        融资平台债务置换加速
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/caixin/cw887e" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/%E5%A4%A7%E5%8F%97%E6%AC%A2%E8%BF%8E-%E7%9B%B4%E5%88%B0%E5%85%8D%E8%B4%B9%E8%AF%95%E7%94%A8%E6%9C%9F%E7%BB%93%E6%9D%9F/">
+      
+        大受欢迎，直到免费试用期结束
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/bloomberg/cord-cutters-love-to-watch-until-the-free-trials-expire" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+  
+    
+    
+    
+  
+    <li>
+      
+      <a href="/oped2/2020-01-08/%E4%BB%8E%E5%95%86%E4%B8%9A%E5%B7%A8%E5%A4%B4%E5%88%B0%E5%9B%BD%E9%99%85%E9%80%83%E7%8A%AF/">
+      
+        从商业巨头到国际逃犯
+      </a>
+      <time>2020-01-08</time>
+
+      <!-- Look the author details up from the site config. -->
+      
+
+      
+        
+        
+        
+      
+
+      
+      <a href="https://nodebe4.github.io/oped2/categories/#Nei.st" class="tag">
+        Nei.st
+      </a>
+      
+
+      
+      <a href="https://nei.st/medium/bloomberg/the-hardest-fall-carlos-ghosn" style="font-size:14px;">原文</a>
+      
+
+    </li>
+  
+
+</ul>
+
+<div class="pagination">
+  
+    <span class="prev">
+      <a href="/oped2/page49/" class="prev">
+        上一页
+      </a>
+    </span>
+  
+  
+    <span class="next">
+      <a href="/oped2/page51/" class="next">
+        下一页
+      </a>
+    </span>
+  
+
+  <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    <a class="fab-action fab-action-1" title="上一页(热键 &#8594;)" href="/oped2/page49/">
+      <i>上</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一页(热键 &#8592;)" href="/oped2/page51/">
+      <i>下</i>
+    </a>
+    
+    
+    
+    
+    
+  </div>
+</div>
+
+
+  <script>
+  /* post pagination keyboard shortcuts */
+  document.body.onkeyup = function(e){
+    if (e.keyCode == '37') { window.location = '/oped2/page49/'; } // left arrow key
+    if (e.keyCode == '39') { window.location = '/oped2/page51/'; } // right arrow key
+  };
+  </script>
+
+</div>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

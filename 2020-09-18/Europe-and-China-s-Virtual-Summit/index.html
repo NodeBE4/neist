@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Europe and China’s ‘Virtual Summit’ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+Europe and China’s ‘Virtual Summit’
+——
+" />
+    <meta property="og:description" content="
+Europe and China’s ‘Virtual Summit’
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="Europe and China’s ‘Virtual Summit’" />
+    <meta property="twitter:title" content="Europe and China’s ‘Virtual Summit’" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fconversation%2Feurope-and-chinas-virtual-summit" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/conversation/europe-and-chinas-virtual-summit" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/conversation/europe-and-chinas-virtual-summit&text=Europe and China’s ‘Virtual Summit’&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/conversation/europe-and-chinas-virtual-summit&title=Europe and China’s ‘Virtual Summit’" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/conversation/europe-and-chinas-virtual-summit&title=Europe and China’s ‘Virtual Summit’" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=Europe and China’s ‘Virtual Summit’&body=
+Europe and China’s ‘Virtual Summit’
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/conversation/europe-and-chinas-virtual-summit" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/conversation/europe-and-chinas-virtual-summit&title=Europe and China’s ‘Virtual Summit’&caption=
+Europe and China’s ‘Virtual Summit’
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=Europe and China’s ‘Virtual Summit’&url=https://www.chinafile.com/conversation/europe-and-chinas-virtual-summit" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>Europe and China’s ‘Virtual Summit’</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-09-18
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Noah Barkin, Dan Baer &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/conversation/europe-and-chinas-virtual-summit" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1600405440000-->
+<p><a href="https://www.chinafile.com/conversation/europe-and-chinas-virtual-summit">Europe and China’s ‘Virtual Summit’</a>
+——</p>
+
+<div>
+  <div class="view view-featured-photo view-id-featured_photo view-display-id-panel_pane_1 visual-box view-dom-id-37955de4fcf344e5efe471f80b740901">
+    <div class="content view-content">
+      <div class="views-row views-row-1">
+        <div class="views-field views-field-field-common-featured-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/article/featured/gettyimages-1228510076.jpg" title="Europe and China’s ‘Virtual Summit’" class="colorbox" data-colorbox-gallery="gallery-node-52536-bMvg5_glLxM" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/styles/large/public/assets/images/article/featured/gettyimages-1228510076.jpg?itok=YXwOf8jC" width="1200" height="800" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div>
+          <div class="photo-credit">
+EU Council/Handout/Anadolu Agency—Getty Images
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption">
+            <p>A screen in Brussels, Belgium shows European Commission President Ursula von der Leyen (bottom right), German Chancellor Angela Merkel (bottom left), Chinese President Xi Jinping (top left), and European Council President Charles Michel (top r) during the European Union-China leaders' videoconference meeting, September 14, 2020.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">Meeting via video conference on Monday, China’s leader, Xi Jinping, held a <a href="https://www.consilium.europa.eu/en/meetings/international-summit/2020/09/14/" target="_blank" rel="nofollow">summit</a> with European Council President Charles Michel. Slimmed down in format thanks to the COVID pandemic and strained in spirit as a result of a host of growing frictions, the digital conclave was a far cry from what was envisioned for the meeting just months ago. Instead of the pageantry of 27 European heads of state gathered in Leipzig, the only other European leaders in attendance at the decidedly unceremonious “<a href="https://www.politico.eu/article/merkel-gets-china-video-chat-instead-of-jewel-in-the-crown/" target="_blank" rel="nofollow">quadrilogue</a>” were EU Commission President Ursula von der Leyen and German Chancellor Angela Merkel, attending thanks to Germany’s presidency of the Council of the European Union. What were the meeting’s most significant outcomes and what do they portend for relations between Europe and China going forward? —<em>The Editors</em></p>
+    </div>
+  </div>
+  <div id="comments" class="comment-wrapper">
+    <h2 class="title" id="comments">Comments</h2>
+ <a id="comment-8801" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/noah-barkin"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/noah_barkin_headshot_sm.png?itok=CfaCbyx0" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="noah-barkin"><a href="https://www.chinafile.com/contributors/noah-barkin" title="Noah Barkin">Noah Barkin</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Angela Merkel put on a brave face when asked, following her <a href="https://www.consilium.europa.eu/en/meetings/international-summit/2020/09/14/" target="_blank" rel="nofollow">virtual summit with Xi Jinping</a>, whether she was optimistic the EU could clinch an elusive investment treaty with China by year-end. “I think it can work,” she responded. The political will, she said, was there on both sides. But within days, other senior officials were spinning a different tale. Germany’s ambassador to the EU, Michael Clauss, <a href="https://www.scmp.com/news/china/diplomacy/article/3089924/germany-wont-take-bad-deal-investment-china" target="_blank" rel="nofollow">said</a> very little progress had been made in the video conference with Merkel, Xi, and EU leaders, and that expectations for a deal were “not very high.” Kim Jorgensen, the head of European Commissioner Margrethe Vestager’s cabinet, said China had to show it was ready to make “substantial concessions.” And Jörg Wuttke, head of the European Chamber of Commerce in China, described the outlook as “slightly grim.”</p>
+        <p>At the start of 2020, Merkel had big plans to cement Europe’s relationship with China with the investment treaty, bold new cooperation on climate, and joint development initiatives in Africa all wrapped up in a shiny package at a summit with Xi weeks before the U.S. election. Nine months later, that strategy is in tatters. China’s image has been severely <a href="https://www.ecfr.eu/publications/summary/the_new_china_consensus_how_europe_is_growing_wary_of_beijing" target="_blank" rel="nofollow">damaged</a> by its aggressive behavior during the pandemic, its repression of Uighurs in Xinjiang, and, above all, its security crackdown in Hong Kong. The EU is growing worried Taiwan could be next, and it is preparing to move in a very different direction than Merkel had planned. Clauss made clear that if China was not prepared to level the economic playing field, then Europe would do so by ratcheting up restrictions on China’s access to its own market. “We are preparing for this scenario,” he told a <a href="https://www.youtube.com/watch?v=Eb8ZwFHxXn8" target="_blank" rel="nofollow">conference</a> hosted by the MERICS think tank in Berlin.</p>
+        <p>This is new territory for Europe. The EU did label China a “systemic rival” a year and a half ago. But the expectation in Brussels, Berlin, and other European capitals was that Beijing, under intense pressure from the Trump administration, would do just enough to keep the relationship with Europe on track. Now there are doubts. Beijing is concerned about the emergence of a transatlantic front against it if Joe Biden wins in November. That was the main reason for Foreign Minister Wang Yi’s <a href="https://www.washingtonpost.com/world/asia_pacific/china-europe-relations-us/2020/09/02/63d963e0-ece1-11ea-bd08-1b10132b458f_story.html" target="_blank" rel="nofollow">European tour</a> earlier this month. But it is now dawning on Europe that this does not mean Beijing is ready to change its behavior or adjust its economic model. It will offer Europe crumbs and hope it bites. If Trump wins, that may be enough. For all the talk of strategic autonomy, a second Trump term would throw Europe into hedging mode. The appetite for confrontation with China will fade if a hostile president is still sitting in the White House next year. But Europe will be ready to sit down with a Biden administration and talk about China. It won’t be an easy discussion. Washington sees China in black-and-white terms these days, while Europe—in spite of its hardening line—still leans grey. In the big EU capitals, there is no appetite for U.S.-style decoupling, containment, or the isolation of China. Still, Europe is ready for this conversation. And that’s significant.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8806" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/dan-baer"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/baer_sm1.png?itok=yq5HsYrY" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="dan-baer"><a href="https://www.chinafile.com/contributors/dan-baer" title="Dan Baer">Dan Baer</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Angela Merkel had hoped to use the German presidency of the EU to host an historic EU-China Summit this month in Leipzig, with Xi Jinping and 27 European heads of state in attendance. Thanks to COVID, the virtual meeting that took place this week was a far less grand affair. But given a thorny agenda and the backdrop of Europe’s rapidly <a href="https://www.ecfr.eu/publications/summary/the_new_china_consensus_how_europe_is_growing_wary_of_beijing" target="_blank" rel="nofollow">deteriorating public opinion</a> of China, the less-flashy format perhaps better suited the moment. China’s failure to commit to reforms to move toward fairer conditions for European firms in the Chinese market, China’s actions in Hong Kong, its internment of over one million Uighurs in Xinjiang and human rights violations in Tibet, and its increasing militarization of man-made islands in the South China Sea hardly deserve a fete.</p>
+        <p>EU-China relations continue to be a window into Europe’s efforts to establish itself as a global power. Early in the Trump presidency, Merkel <a href="https://www.reuters.com/article/us-germany-politics-merkel/after-summits-with-trump-merkel-says-europe-must-take-fate-into-own-hands-idUSKBN18O0JK" target="_blank" rel="nofollow">offered</a> a typically matter-of-fact assessment that the days when Europe could count on others were “over to a certain extent,” adding that “we Europeans must really take our fate into our own hands.” While Trump’s damage to the transatlantic relationship has been significant and unnecessary, it’s possible to see Europe’s intensified reflection on its role in global politics as an (unintended) silver lining. As Clement Beaune, French Minister of State for European Affairs, <a href="https://www.atlanticcouncil.org/commentary/feature/europe-after-covid/" target="_blank" rel="nofollow">put it</a> last week, “Europeans know that they must once again speak the language of power, without losing sight of the grammar of cooperation.”</p>
+        <p>This week’s summit focused more on grammar than on language; the main outcome seems to have been <a href="https://www.consilium.europa.eu/en/press/press-releases/2020/09/14/eu-china-leaders-meeting-upholding-eu-values-and-interests-at-the-highest-level-joint-press-release-by-president-michel-president-von-der-leyen-and-chancellor-merkel/" target="_blank" rel="nofollow">agreement to continue to talk</a>. And therein lies the challenge inherent to the European position: Because the Europeans seek changes to China’s bad behavior on trade, climate, human rights, peace, and security, an agreement to continue to talk is a win for the Chinese. For as long as nothing changes, well, nothing changes—and China continues to exploit the unsatisfactory status quo. (The U.S. has also had to respond to this dynamic, and if the transatlantic relationship weren’t so strained, we could perhaps tell our European friends how this movie ends.)</p>
+        <p>Over the past five years, U.S. and European approaches to China have both changed. In the U.S., there was bipartisan agreement that efforts to invite a rising China into the international system—a consistent approach through the previous three presidential administrations—was not producing its desired outcomes on trade, security, and China’s political evolution. The Trump administration broke with the past, but its erratic approach, defined by Trump’s own oscillations, has imposed costs on American farms and manufacturing without producing commensurate benefits (and while abandoning American values).</p>
+        <p>Europe’s approach to China, meanwhile, historically has leaned toward trade and climate, approaching security and human rights issues more episodically. Now, Europe is beginning to make a more holistic—and realistic—assessment of China’s rise. Last year, the EU made waves for acknowledging China as a “systemic competitor.” While Europe’s evolution has been more measured than the Trump administration’s, it remains vulnerable to critique for continuing to privilege managing the Europe-China relationship (there is no mention of Xinjiang in the <a href="https://www.consilium.europa.eu/en/press/press-releases/2020/09/14/eu-china-leaders-meeting-upholding-eu-values-and-interests-at-the-highest-level-joint-press-release-by-president-michel-president-von-der-leyen-and-chancellor-merkel/" target="_blank" rel="nofollow">joint statement</a> from Merkel and the presidents of the EU commission and EU Council after the summit) over leveraging Europe’s advantages to drive outcomes.</p>
+        <p>Perhaps this week’s unremarkable summit indicates Merkel has decided to bide her time, hopeful a new U.S. administration might provide more opportunities for transatlantic cooperation. Looking forward, those on both sides of the Atlantic ought to abandon the separate nature of their approaches to China and fashion joint strategies wherever possible. The U.S. will have to step up on climate (and re-learn the “grammar of cooperation”), and Europe will have to marshal the “language of power” and confront China’s increasingly assertive and destructive approach to a rules-based security and international economic order.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8811" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/ivana-karaskova"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/karaskova_sm.jpg?itok=efM31cTg" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="ivana-karskov"><a href="https://www.chinafile.com/contributors/ivana-karaskova" title="Ivana Karásková">Ivana Karásková</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The EU-China summit was disappointing on many levels. The original German plan of inviting all 27 EU member states <a href="https://www.dw.com/en/coronavirus-makes-germanys-eu-china-summit-go-virtual/a-54907146" target="_blank" rel="nofollow">did not materialize</a> due to the COVID-19 pandemic. The virtual meeting was attended only by Chinese Communist Party Secretary General Xi Jinping, European Commission President Ursula von der Leyen, European Council President Charles Michel, and German Chancellor Angela Merkel. No significant breakthrough in the agenda was achieved.</p>
+        <p>It is particularly sour as this year was meant to witness the conclusion of a long-awaited Comprehensive Agreement on Investment (CAI), continuation of negotiations over climate change, strengthening of cooperation amidst the COVID-19 pandemic, and addressing of human rights violations.</p>
+        <p>Regarding CAI, both China and the EU declared their intention to finish the negotiations by the end of this year. The EU demands progress in clarifying rules for Chinese SOEs, an end to the practice of forced technology transfer, and increased transparency on subsidies to Chinese companies. However, given the lack of progress on the Chinese side, and the frustration, fatigue, and shift in priorities of the European Union amidst the second wave of the pandemic, a deal seems highly unlikely any time soon.</p>
+        <p>On climate change, both sides agreed to establish a High-Level Dialogue on Climate. Yet real progress in pushing China to limit its carbon emissions and stopping it from exporting pollution to the BRI countries by financing new coal power plants was again lacking. On the human rights agenda, ahead of the summit, various political players, ranging from Members of the European Parliament to the EU High Representative Josep Borrell, showed an assertive and firm approach to China. The issue was not omitted from the summit, as Michel commendably raised the new National Security Law in Hong Kong, ethnic minorities’ rights, and detention of foreigners. Xi retorted by inviting the EU to send observers to Xinjiang and agreeing on a meeting for a Human Rights Dialogue later in 2020.</p>
+        <p>The summit did produce some results. However, it is very unlikely that there will be any breakthrough in mutual relations in the foreseeable months. Europe will have to prepare for the fact that China is not and will not be the partner it dreamed of. China continues to be—as the European Commission put it in 2019—a “<a href="https://www.scmp.com/news/china/diplomacy/article/3032096/european-commissions-next-leaders-take-tough-tone-china" target="_blank" rel="nofollow">strategic rival</a>.” A more effective European policy towards China would require faster decision-making and a much more convincing demonstration of unity than the EU has shown so far. This includes the voices and ideas of Central and Eastern European EU members, some of which, as Czech Senate President Miloš Vystrčil’s recent state visit to Taiwan demonstrated, are bolder in their approach to China than their neighbors in Western Europe.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8816" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/thorsten-benner"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/benner_sm.jpg?itok=e8zZ3LPI" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="thorsten-benner"><a href="https://www.chinafile.com/contributors/thorsten-benner" title="Thorsten Benner">Thorsten Benner</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">2020 will likely go down in history as the year in which the EU shed illusions about a “<a href="https://eeas.europa.eu/archives/docs/china/docs/eu-china_2020_strategic_agenda_en.pdf" target="_blank" rel="nofollow">comprehensive strategic partnership</a>” with Beijing. Both Monday’s videoconference and the annual summit in June are key events in the China re-think that is taking place across Europe. In both meetings, Europe sent a clear message to Beijing: 1) that the EU suffers from a serious case of “promise fatigue” because Beijing doesn’t keep previous commitments, and 2) that the EU will stand up for its interests more forcefully and push for a “more balanced” relationship. In a <a href="https://video.consilium.europa.eu/en/webcast/5c0ced1d-f08b-4f41-80cd-dc93cd2e7ef1" target="_blank" rel="nofollow">press conference</a>, EU Council President Charles Michel talked about raising with Xi Europe’s misgivings about Beijing’s actions in Hong Kong and Xinjiang as well as the fate of Swedish citizen <a href="https://www.theguardian.com/world/2020/feb/25/gui-minhai-detained-hong-kong-bookseller-jailed-for-10-years-in-china" target="_blank" rel="nofollow">Gui Minhai</a> and two Canadian citizens <a href="https://www.bbc.com/news/world-asia-china-53104303" target="_blank" rel="nofollow">held by Beijing</a> as part of its coercive “hostage diplomacy.” It was clear that Michel did more than just tick boxes for domestic political consumption. He expressed the EU’s real concern about Beijing’s aggressive posture. But it is Commission President Ursula von der Leyen’s <a href="https://www.scmp.com/news/china/diplomacy/article/3101531/germanys-angela-merkel-says-political-will-exists-wrap-eu" target="_blank" rel="nofollow">statement</a> that “China has to convince us that it is worth having a Comprehensive Agreement on Investment” that best embodies the new EU spirit toward dealing with China. It signals new self-confidence and awareness of the EU’s leverage as China’s largest market. Von der Leyen made it clear there is no “meeting halfway” on investment, outright rejecting Beijing’s preferred formula to justify dragging its feet on market access. Just two years ago, such a statement on the part of the EU would have been unthinkable.</p>
+        <p>It’s striking that at the end of four years of Trump’s presidency, EU-China relations are at a historic low, with many more in Europe now seeing Beijing as a “systemic rival“ (the new term of choice in Brussels and many European capitals) rather than “strategic partner” (the previous term of choice). With Trump’s attacks on everything most European governments hold dear, Beijing had the best possible conditions for deepening its relations with Europe. Instead, Beijing’s aggressive actions and ham-fisted diplomacy have triggered a European re-think. Europe’s fear is to become just an object rather than a player in its own right in growing U.S.-China confrontation. Michel’s defiant <a href="https://www.reuters.com/article/us-eu-china/tear-down-your-barriers-eu-says-after-summit-with-chinas-xi-idUSKBN26513B" target="_blank" rel="nofollow">statement</a> on Monday that “Europe is a player, not a playing field” reflects this. There’s a minimum consensus across Europe now that Europe needs to learn to play geopolitical and geo-economic hardball.</p>
+        <p>A lot of what that means, especially in relation to Washington, remains unclear. There does not yet exist a 100-day plan for what Europe could do with a President Biden on China. There’s even less of a clear sense how Europe can defend itself against a continuation of the dual assault by Trump and Beijing. And Angela Merkel is still Europe’s biggest stumbling block on a tougher and more realistic approach to Beijing. It’s telling that Merkel still talked about a “strategic partnership” with Beijing on Monday. Her approach is too much influenced by the outsized dependence of some large German companies on the Chinese market and fear of retribution.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8826" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/martin-hala"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/martinhala.jpg?itok=vuoPPQAP" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="martin-hla"><a href="https://www.chinafile.com/contributors/martin-hala" title="Martin Hála">Martin Hála</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">The virtual meeting of German and EU leaders with Xi Jinping on Monday had a distinct feel of anticlimax. Originally meant, together with the <a href="https://www.consilium.europa.eu/en/meetings/international-summit/2020/06/22/" target="_blank" rel="nofollow">China-EU Summit in June</a>, to bring about a breakthrough in the relationship to crown the German EU Presidency and chancellor Angela Merkel’s steadfast efforts to cultivate China, it had no such effect.</p>
+        <p>Even in Germany, the one country in Europe with the most substantial economic relationship with the PRC, the “<a href="https://berlinpolicyjournal.com/no-change-through-trade/" rel="nofollow">change through trade</a>” policy seems to be going the way of “engagement” in the U.S. The atmosphere in Europe has changed markedly since Germany planned its presidency a year ago. On top of long-term trade and investment complaints, the crackdown in Xinjiang, the coronavirus crisis with its facemask diplomacy, and, above all, Hong Kong didn’t help much to heal the broken trust.</p>
+        <p>The simmering frustration occasionally boils over in the EU politicians’ statements. Josep Borrell greeted Wang Yi in his recent attempt to mend ties with two articles <a href="https://www.scmp.com/news/china/diplomacy/article/3099456/eu-must-correct-china-economic-ties-its-too-late-josep-borrell" target="_blank" rel="nofollow">describing China</a> as a “new empire.” Old diplomatic taboos are crumbling, as demonstrated by an <a href="https://www.handelsblatt.com/meinung/gastbeitraege/gastbeitrag-europa-muss-seine-china-politik-aendern/26183372.html" target="_blank" rel="nofollow">open call</a> this week by several European heavyweights for the EU to “revisit” its one-China policy. The heretical call came on the heels of an <a href="https://www.theguardian.com/world/2020/sep/01/taiwan-angry-china-vows-corresponding-measures-over-czech-visit" target="_blank" rel="nofollow">official visit</a> to Taiwan by Czech Senate President Miloš Vystrčil, performed despite high-pitched Chinese opposition.</p>
+        <p>Europe being Europe, its growing disenchantment with China is less dramatic then the U.S.’s, but the process is similar. The EU doesn’t “decouple”; it “<a href="https://www.ecfr.eu/article/commentary_the_end_of_europes_chinese_dream" target="_blank" rel="nofollow">diversifies</a>.” It doesn’t do trade wars; it corrects trade imbalances. Despite the nuances, Europe is clearly edging closer to the U.S. in its position on China. Should a candidate more palatable to the European sensitivities come on top in November, this closing of ranks in the jolted transatlantic alliance might accelerate.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+<a id="comment-8836" href="https://www.chinafile.com/conversation/undefined"></a>    <article class="comment comment-by-node-author">
+      <div class="node node-profile cboxes contributor grid-2 img-no logo-no">
+        <div class="inner-content">
+          <div class="field field-name-field-profile-photo field-type-image field-label-hidden">
+<a href="https://www.chinafile.com/contributors/julia-voo"><img src="https://www.chinafile.com/sites/default/files/styles/epsacrop_220x220/public/assets/images/profile/julia_voo.jpg?itok=WOUGr_Je" width="220" height="220" alt="" referrerpolicy="no-referrer" /></a>
+          </div>
+        </div>
+        <h3 id="julia-voo"><a href="https://www.chinafile.com/contributors/julia-voo" title="Julia Voo">Julia Voo</a></h3>
+      </div>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden">
+        <p class="dropcap">Two things stand out: first, that they met at all; and second, that the EU will not be a pawn in this great power game.</p>
+        <p>Despite social distancing and quarantining that have all but brought a halt to diplomacy, Xi Jinping, Angela Merkel (Chancellor of Germany, which currently holds the Council of the European Union Presidency), Ursula von der Leyen (President of the European Commission), and Charles Michel (President of the European Council) dialed in to work through a full agenda of standard issues (e.g. investment, trade, and climate change), discuss a shared COVID-19 response, and start a new <a href="https://ec.europa.eu/commission/presscorner/detail/en/ip_20_1600" target="_blank" rel="nofollow">Digital Dialogue</a>.</p>
+        <p>Secretary Pompeo and Yang Jiechi have met as well, of course. But emergency meetings such as their June <a href="https://uk.reuters.com/article/uk-usa-china-pompeo/top-u-s-china-diplomats-meet-in-hawaii-as-tensions-flare-idUKKBN23O22J" rel="nofollow">rendezvous</a> in Hawaii are not mechanisms through which a deep understanding and shared commitments can be easily brokered. And that’s setting aside that, as others have <a href="https://eu.usatoday.com/story/opinion/2020/08/27/trump-tough-china-but-abandons-soft-power-alliances-immigration-column/3432054001/" target="_blank" rel="nofollow">said</a>, “‘tough on China’ is not a strategy.”</p>
+        <p>As U.S.-China tensions have grown, long-standing high-level bilateral dialogues have <a href="https://thediplomat.com/2018/10/another-us-china-dialogue-bites-the-dust/" target="_blank" rel="nofollow">been dropped</a> from the diplomatic calendar. These recurring political summits enable the machinery of government to consider the full range of bilateral interests. Drawing together national priorities and expert input, they can force plans and strategies to take shape. Regular touch points serve as a shared commitment to move discussions forward, even where views diverge. Monday’s EU-China Summit was the <a href="https://www.consilium.europa.eu/en/press/press-releases/2020/06/22/eu-china-summit-defending-eu-interests-and-values-in-a-complex-and-vital-partnership/" target="_blank" rel="nofollow">second</a> held this year.</p>
+        <p>Where distrust drives U.S. disengagement with China, it is disinterest that leaves the U.S.-EU relationship in the cold. Trump’s thoughtless approach to Europe is exemplified by his failure to appoint a U.S. Ambassador to the EU for two years. Eventually, the Ambassador to Belgium was asked to <a href="https://useu.usmission.gov/our-relationship/our-ambassador/#:~:text=Gidwitz%2C%20Acting%20Representative%20of%20the%20U.S.%20to%20the%20EU,-Home%20%7C%20Our%20Relationship&amp;text=to%20the%20EU-,Ronald%20J.,Trump%20on%20May%201%2C%202020." target="_blank" rel="nofollow">double up</a> as the Representative to the EU. Such is the U.S.’ “<a href="https://www.politico.eu/article/donald-trump-eu-strategy-nothing-g7-summit-angela-merkel/" target="_blank" rel="nofollow">nothing</a>” Europe strategy. That the EU’s and China’s leaders have met and engaged like global leaders shines an excruciating light on the lack of sophisticated U.S. international engagement over the past four years.</p>
+        <p>In the context of current geopolitical tensions, EU leaders <a href="https://video.consilium.europa.eu/en/webcast/5c0ced1d-f08b-4f41-80cd-dc93cd2e7ef1" target="_blank" rel="nofollow">underlined</a> that “Europe needs to be a player, not a playing field” at the EU-China Summit this week. In short, the EU will be neither the U.S. nor China’s pawn. Von der Leyen captured this sentiment in her call earlier this year for “<a href="https://ec.europa.eu/commission/presscorner/detail/en/AC_20_260" target="_blank" rel="nofollow">tech sovereignty</a>,” outlining how Europe must have the capability to make its own choices based on its own values and its own rules. That the EU is not a vassal when it comes to technology governance was demonstrated in 2018 when it wielded its market power to introduce a de facto global privacy standard, the General Data Protection Regulation, creating one of the most impactful forms of digital governance where formal <a href="https://www.ecfr.eu/article/commentary_time_to_fall_forward_on_cyber_governance" target="_blank" rel="nofollow">multilateral</a> efforts to introduce norms had failed.</p>
+        <p>In addition, that the EU pressed China on Hong Kong and its treatment of Uighurs, as well as created new channels to discuss other on-going challenges such as fundamental digital rights, cybersecurity, and disinformation, demonstrates foresight. The U.S. should note that in the absence of multilateral digital governance structures, bilateral agreements between two of the three most important digital markets will have far-reaching effects. Having shunned its own instruments to conduct similar discussions, the U.S. disadvantages itself.</p>
+      </div>
+      <nav class="links">
+        <ul class="links inline">
+          <li class="comment_forbidden first last"></li>
+        </ul>
+      </nav>
+    </article>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-09-25</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-25/Technical-Difficulties/">
+          Technical Difficulties
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-09-25</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-25/Technical-Difficulties/">
+          Technical Difficulties
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-09-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-17/Europe-and-China-s-Virtual-Summit/">
+          Europe and China’s ‘Virtual Summit’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-09-17</time>
+        <a href="https://nodebe4.github.io/oped2/2020-09-17/Could-Same-Sex-Marriage-Advocacy-in-China-Be-Poise/">
+          Could Same-Sex Marriage Advocacy in China Be Poised for a Breakthrough?
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-09-18/%E4%BD%9C%E5%AE%B6%E9%BB%84%E7%81%AF-%E4%BA%8C%E6%9C%AC%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%97%A0%E4%BA%BA%E5%85%B3%E6%B3%A8-%E4%BD%86%E4%BB%96%E4%BB%AC%E6%89%8D%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%9A%84%E4%B8%AD%E5%9D%9A/">
+            前一篇：作家黄灯：二本大学生无人关注，但他们才是中国社会的中坚
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-09-19/%E4%BA%8C%E6%88%98%E5%8F%8A%E5%85%B6%E9%81%97%E4%BA%A7-%E5%9C%A8%E6%B0%91%E4%B8%BB%E8%84%86%E5%BC%B1%E7%9A%84%E5%B9%B4%E4%BB%A3-%E6%8A%B5%E5%BE%A1%E8%AF%B1%E6%83%91%E6%98%BE%E5%BE%97%E5%B0%A4%E4%B8%BA%E9%87%8D%E8%A6%81/">
+            後一篇：二战及其遗产：在民主脆弱的年代，抵御诱惑显得尤为重要
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-09-18/%E4%BD%9C%E5%AE%B6%E9%BB%84%E7%81%AF-%E4%BA%8C%E6%9C%AC%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%97%A0%E4%BA%BA%E5%85%B3%E6%B3%A8-%E4%BD%86%E4%BB%96%E4%BB%AC%E6%89%8D%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%9A%84%E4%B8%AD%E5%9D%9A/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-09-19/%E4%BA%8C%E6%88%98%E5%8F%8A%E5%85%B6%E9%81%97%E4%BA%A7-%E5%9C%A8%E6%B0%91%E4%B8%BB%E8%84%86%E5%BC%B1%E7%9A%84%E5%B9%B4%E4%BB%A3-%E6%8A%B5%E5%BE%A1%E8%AF%B1%E6%83%91%E6%98%BE%E5%BE%97%E5%B0%A4%E4%B8%BA%E9%87%8D%E8%A6%81/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-09-25/Technical-Difficulties/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-09-17/Europe-and-China-s-Virtual-Summit/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-09-18/%E4%BD%9C%E5%AE%B6%E9%BB%84%E7%81%AF-%E4%BA%8C%E6%9C%AC%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%97%A0%E4%BA%BA%E5%85%B3%E6%B3%A8-%E4%BD%86%E4%BB%96%E4%BB%AC%E6%89%8D%E6%98%AF%E4%B8%AD%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%9A%84%E4%B8%AD%E5%9D%9A/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-09-19/%E4%BA%8C%E6%88%98%E5%8F%8A%E5%85%B6%E9%81%97%E4%BA%A7-%E5%9C%A8%E6%B0%91%E4%B8%BB%E8%84%86%E5%BC%B1%E7%9A%84%E5%B9%B4%E4%BB%A3-%E6%8A%B5%E5%BE%A1%E8%AF%B1%E6%83%91%E6%98%BE%E5%BE%97%E5%B0%A4%E4%B8%BA%E9%87%8D%E8%A6%81/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-09-25/Technical-Difficulties/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-09-17/Europe-and-China-s-Virtual-Summit/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>

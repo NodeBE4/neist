@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>‘A Letter to My Friend under Quarantine in Wuhan’ – 觀點2 – 高頻版 git.io/JUJZT</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="
+‘A Letter to My Friend under Quarantine in Wuhan’
+——
+" />
+    <meta property="og:description" content="
+‘A Letter to My Friend under Quarantine in Wuhan’
+——
+" />
+    
+    <meta name="author" content="觀點2" />
+
+    
+    <meta property="og:title" content="‘A Letter to My Friend under Quarantine in Wuhan’" />
+    <meta property="twitter:title" content="‘A Letter to My Friend under Quarantine in Wuhan’" />
+    
+
+  <link rel="stylesheet" type="text/css" href="/oped2/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="觀點2 - 高頻版 git.io/JUJZT" href="/oped2/feed.xml" />
+
+  <!-- Social Share Kit CSS -->
+  <link rel="stylesheet" href="/oped2/assets/css/social-share-kit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="/oped2/assets/js/page.js"></script>
+
+</head>
+
+  <body>
+    <div class="wrapper-masthead">
+  <div class="container">
+    <header class="masthead clearfix">
+      
+
+      <div class="site-info">
+        <h1 class="site-name" style="display: inline-block;"><a href="/oped2/">觀點2</a></h1>
+        <i class="site-description" style="font-size: 12px;">高頻版 git.io/JUJZT</i>
+      </div>
+
+      <nav>
+        <span id="search-container" >
+          <a href="/oped2/tools"><i class="fa fa-bookmark twitter" title="百宝箱"></i></a>
+        <a><i class="fa fa-search" title="限前100結果"></i></a><input type="text" id="search-input" placeholder="標題 作者 來源 日期 (5200)"
+          style="margin: 10px 0px 0px 0px; height: 30px;width: auto" title="本站最正確的打開方式">
+        </span>
+        
+        
+        <a href="/oped2/categories" style="color: Tomato;"><i class="fa fa-tags" title="分类"></i></a>
+        
+        
+        
+        <a href="https://be4.herokuapp.com/" style="color: #003366;"><i class="fa fa-comments" title="论坛"></i></a>
+        
+        
+        
+        <a href="/oped2/about"><i class="fa fa-info-circle" title="关于"></i></a>
+        
+        
+        <a title="电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇，del同来源旧一篇" onclick="toggle_visibility('help')"><i class="fa fa-question-circle"></i></a>
+        <a id="fa-home" href="https://nodebe4.github.io" title="BE4服务列表" onclick="//toggle_visibility('site-list')"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </nav>
+
+    </header>
+    <div id="site-list" class="tags" style="display: block;text-align: right;border-bottom: 1px solid lightGray;"></div>
+    <p id="help" style="font-size: 14px;display: none;text-align: right;"><span style="color:green;">电脑热键：&larr;上一篇(页), &rarr;下一篇(页), ins同来源新一篇, del同来源旧一篇</span>; <span style="color:orange">对应触屏FAB：上下右左</span>; 轉Markdown<a href="https://euangoddard.github.io/clipboard2markdown/"><i class="fa fa-file-text-o"></i></a></p>
+  </div>
+</div>
+
+<script type="text/javascript" >
+  function toggle_visibility(id){
+    var help = document.getElementById(id)
+    if (help.style.display=='none'){
+      help.style.display='block';
+    }else{
+      help.style.display='none';
+    }
+  }
+
+  const url = "https://nodebe4.github.io/sitelist.json"
+
+  document.addEventListener("DOMContentLoaded", function(event){
+    // var homebtn = document.getElementById("fa-home")
+    // homebtn.removeAttribute("href")
+    var content = document.getElementById("site-list");
+    content.innerHTML = ''
+    var ul = document.createElement("ul")
+    ul.classList.add("label")
+    content.appendChild(ul)
+    var cnt = 0
+
+    $.getJSON(url, function(allsites) {
+
+      allsites.map(item =>{
+        var li = document.createElement('li')
+        li.classList.add("tag")
+        li.id = 'site-' + cnt
+        ul.appendChild(li)
+        var a0 = document.createElement('a')
+        li.appendChild(a0)
+        a0.href = item.url[0]
+        var span = document.createElement('span')
+        a0.appendChild(span)
+        span.innerText = item['name']
+        // span.style.backgroundColor = item['background-color']
+        // span.style.color='#E4CBC3'
+        span.style.color = item['background-color']
+        span.style['font-size'] = '14px'
+        cnt += 1
+        // test_alive(li.id, a0.href)
+      })
+    })
+  })
+
+function test_alive(id, url){
+  var divstatus = document.getElementById(id)
+  const base = 'https://textance.herokuapp.com/title/'
+  var fullurl = base + url
+  $.ajax({
+      url: fullurl,
+      complete: function(data) {
+        if (data.responseText.includes('502')){
+          // divstatus.style.color='#FBB7B7'
+          // divstatus.style.color='gray'
+          // divstatus.title = "服务器无响应"
+          divstatus.parentNode.removeChild(divstatus)
+        }else{
+          // divstatus.style.color='#B6FAC8'
+          divstatus.title = data.responseText
+        }
+      }
+  });
+  return divstatus
+}
+</script>
+
+    <!-- Left & centered positioning -->
+
+<div class="ssk-sticky ssk-right ssk-center ssk-sticky-hide-xs ssk-group ssk-round">
+  
+    <a href="https://be4news.pythonanywhere.com/archivenow/ia/https%3A%2F%2Fwww.chinafile.com%2Fmultimedia%2Fdepth-of-field%2Fletter-my-friend-under-quarantine-wuhan" class="ssk ssk-link" title="存到互联网档案馆" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer.php?u=https://www.chinafile.com/multimedia/depth-of-field/letter-my-friend-under-quarantine-wuhan" class="ssk ssk-facebook"></a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.chinafile.com/multimedia/depth-of-field/letter-my-friend-under-quarantine-wuhan&text=‘A Letter to My Friend under Quarantine in Wuhan’&hashtags=觀點2" class="ssk ssk-twitter"></a>
+    <a href="https://reddit.com/submit?url=https://www.chinafile.com/multimedia/depth-of-field/letter-my-friend-under-quarantine-wuhan&title=‘A Letter to My Friend under Quarantine in Wuhan’" class="ssk ssk-reddit"></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.chinafile.com/multimedia/depth-of-field/letter-my-friend-under-quarantine-wuhan&title=‘A Letter to My Friend under Quarantine in Wuhan’" class="ssk ssk-linkedin"></a>
+    <a href="mailto:{email_address}?subject=‘A Letter to My Friend under Quarantine in Wuhan’&body=
+‘A Letter to My Friend under Quarantine in Wuhan’
+——
+" class="ssk ssk-email"></a>
+    <a href="http://pinterest.com/pin/create/link/?url=https://www.chinafile.com/multimedia/depth-of-field/letter-my-friend-under-quarantine-wuhan" class="ssk ssk-pinterest"></a>
+    <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.chinafile.com/multimedia/depth-of-field/letter-my-friend-under-quarantine-wuhan&title=‘A Letter to My Friend under Quarantine in Wuhan’&caption=
+‘A Letter to My Friend under Quarantine in Wuhan’
+——
+&tags=觀點2" class="ssk ssk-tumblr"></a>
+    <a href="https://buffer.com/add?text=‘A Letter to My Friend under Quarantine in Wuhan’&url=https://www.chinafile.com/multimedia/depth-of-field/letter-my-friend-under-quarantine-wuhan" class="ssk ssk-buffer"></a>
+</div>
+
+
+    <div id="main" role="main" class="container">
+      
+  <!-- Html Elements for Search -->
+  <ul id="results-container" class="searched" style="color: #2980B9;"></ul>
+
+  <script src="/oped2/assets/js/simple-jekyll-search.min.js"></script>
+
+  <!-- Configuration -->
+  <script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/oped2/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><time>{date}</time><a class="tag">{category}</a></li>',
+    noResultsText: '没找到',
+    limit: 100,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+
+  </script>
+
+      
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    
+
+
+
+<article class="post">
+  <h1>‘A Letter to My Friend under Quarantine in Wuhan’</h1>
+  <!-- Look the author details up from the site config. -->
+  
+
+  <div>
+    <span class="date">
+      2020-05-15
+    </span>
+
+    <!-- Output author details if some exist. -->
+    
+      
+        <span>
+            <!-- Personal Info. -->
+            <a  style="font-size:14px;">作者: Ye Ming, Yan Cong &#38; more</a>
+        </span>
+      
+    
+
+
+    <ul class="tag">
+      <li>
+        <a href="https://nodebe4.github.io/oped2/categories/#中参馆">
+          中参馆
+        </a>
+      </li>
+    </ul>
+
+    
+        <span>
+            <!-- Personal Info. -->
+            <a href="https://www.chinafile.com/multimedia/depth-of-field/letter-my-friend-under-quarantine-wuhan" style="font-size:14px;">原文</a>
+        </span>
+    
+
+    <span style="float: right;" title="中参馆的其它文章">
+      <a style="font-size: 14px;" rel="nofollow" href="#sametag" class="tags">#中参馆 的其它文章</a>
+    </span>
+
+  </div>
+
+  <div class="entry">
+    
+    
+    
+    <!--1589546520000-->
+<p><a href="https://www.chinafile.com/multimedia/depth-of-field/letter-my-friend-under-quarantine-wuhan">‘A Letter to My Friend under Quarantine in Wuhan’</a>
+——</p>
+
+<div>
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+      <p class="dropcap">In this edition of Depth of Field, we highlight Chinese visual storytellers’ coverage of COVID-19 inside China. Some of these storytellers were on the ground documenting the experience of residents and medical workers in Wuhan, the city where the virus first emerged. Other storytellers were not able to travel to the outbreak’s epicenter because of Wuhan’s lockdown, which lasted from January 23 to April 8. But they found creative ways to cover the news from afar: photographing life under quarantine in other cities, stitching together social media footage, using publicly available information to explain the supply chain of medical masks. Their stories, told from diverse perspectives, depict pain, strength, and sacrifice amid the outbreak, and they leave us with lingering questions about what China—and the world—will look like, when they emerge from the crisis.</p>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-2955133253fe2d9f223c56f02c43e4b9 grid-6 photo-object">
+        <div class="views-field views-field-field-common-subtitle-1">
+          <div class="field-content">
+A Video Letter to My Friend under Quarantine in Wuhan | Arrow Factory
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/1._arrow_factory.jpg" title="A Video Letter to My Friend under Quarantine in Wuhan | Arrow Factory" class="colorbox" data-colorbox-gallery="gallery-node-52221-3m4btNhLuEQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/1._arrow_factory.jpg" width="3951" height="2223" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Guo Rongfei—Arrow Factory
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>Documentary filmmaker Guo Ronghui published what she called a “video letter” to a friend under lockdown in Wuhan. Guo reads aloud from Chinese translations of Giovanni Boccaccio’s <em>Decameron</em>, Albert Camus’ <em>The Plague</em>, and Gabriel García Márquez’s <em>Love in the Time of Cholera</em>, over a montage of footage she collected from the Internet—men ice-swimming in protective masks, neighbors sharing drinks through their windows, as well as less tranquil scenes of street scuffles, temperature checkpoints, and <a href="https://www.businessinsider.com/coronavirus-chinese-officials-lock-people-homes-ban-funerals-weddings-zhejiang-2020-2" target="_blank" rel="nofollow">barricaded</a> doors. The film also lingers on footage of a lone pig running along a highway, apparently in complete solitude and freedom. Widely shared on social media, many of these surreal images have become memes whose origins are hard to track, yet together they constitute a shared memorial of fear and resilience.</p>
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-link-back">
+          <div class="field-content">
+            <div class="item-list">
+              <ul>
+                <li class="first last"><a href="https://www.youtube.com/watch?v=8e5SA_x0Xw8">Watch the video...</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-1ab9ecc8baf3b1c011bcd18e2ebcdc45 grid-8 photo-object">
+        <div class="views-field views-field-field-common-subtitle-1">
+          <div class="field-content">
+Wuhan: January 23-February 23 | The Paper
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/2._wu_wei_wuhan_jan_23-_feb_23.jpg" title="Wuhan: January 23-February 23 | The Paper" class="colorbox" data-colorbox-gallery="gallery-node-52226-3m4btNhLuEQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/2._wu_wei_wuhan_jan_23-_feb_23.jpg" width="3000" height="2000" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Wu Wei—The Paper
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>This gallery offers a glimpse of the transformation of Wuhan, hinting at the city’s irrepressible vitality even under lockdown. The two photographers, Wu Wei and Ke Hao, capture both the changed activities and the moods of a wide swath of the city’s populace: deliverymen unloading boxes of cabbage, masked women exercising outdoors, exhausted medical workers, and even patients in various stages of their encounter with the virus. In the photo above, an elderly woman rests on a stool near Jiqing Street, which bustled with food stalls selling local specialities before the pandemic hit. Her hand clutches a bag containing a CT scan. Around her, plastic sculptures assemble in a cruel reminder of how the city might have looked before the outbreak.</p>
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-link-back">
+          <div class="field-content">
+            <div class="item-list">
+              <ul>
+                <li class="first last"><a href="https://www.thepaper.cn/newsDetail_forward_6131378">View the gallery (recommended to tilt screen horizontally)...</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-bb1de9e2ad8049815a84a6e376089b80 grid-8 photo-object">
+        <div class="views-field views-field-field-common-subtitle-1">
+          <div class="field-content">
+Wuhan Diary 2020 | Weibo/YouTube
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/3._spider_monkey_bread.png" title="Wuhan Diary 2020 | Weibo/YouTube" class="colorbox" data-colorbox-gallery="gallery-node-52231-3m4btNhLuEQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/3._spider_monkey_bread.png" width="1408" height="790" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Vlogger “蜘蛛猴面包” (“Spider Monkey Bread”)
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>During the two months of lockdown in Wuhan, the outside world had limited reliable information about conditions on the ground there, as reporters, especially those from international media, struggled to gain access to the city. Many locally-based videographers and vloggers filled the void with personal video diaries. Among them is the whimsically-named vlogger “Spider Monkey Bread” (“蜘蛛猴面包”), who now has almost 5 million followers on <a href="https://www.weibo.com/jackass" target="_blank" rel="nofollow">Weibo</a> and 23,000 followers on YouTube. His 20 video diaries show him driving around the empty city, telling stories about volunteers, medical workers, and ordinary people, while sometimes delivering medicine, driving people to the hospital, or handing out masks. In <a href="https://www.youtube.com/watch?v=sMw7X1KPJLw" target="_blank" rel="nofollow">one</a> heartbreaking scene, he captures a woman weeping in the street over the death of her father. In <a href="https://www.youtube.com/watch?v=pRe0TxzILmc" target="_blank" rel="nofollow">another</a>, he talks to a group of migrant workers who lost their jobs and workplace dormitories during the shutdown, but were unable to leave the city because of travel restrictions and thus resorted to camping out in an underpass.</p>
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-link-back">
+          <div class="field-content">
+            <div class="item-list">
+              <ul>
+                <li class="first last"><a href="https://www.youtube.com/watch?v=AMZIabOVto8&amp;list=PLhddqgmqzoy-dlLOfuQYFHhziVgAeohbP">Watch the videos...</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-1961a75f84bc8a020afc7692d3e7c139 grid-8 photo-object">
+        <div class="views-field views-field-field-common-subtitle-1">
+          <div class="field-content">
+The Sixth Floor: Wuhan Critical Care Unit | Esquire China
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/4.-ccu.jpg" title="The Sixth Floor: Wuhan Critical Care Unit | Esquire China" class="colorbox" data-colorbox-gallery="gallery-node-52236-3m4btNhLuEQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/4.-ccu.jpg" width="1200" height="649" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Chen Weixi—Esquire China
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>This 33-minute documentary by Chen Weixi for <em>Esquire China</em> presents the perspective of a team of medical workers from Nanjing, a <a href="http://www.xinhuanet.com/2020-02/10/c_1125553377.htm" target="_blank" rel="nofollow">government dispatch</a> to the Guanggu branch of Wuhan’s Tongji Hospital on February 9 to treat COVID-19 patients. 17 medical teams from six provinces set up wards at Guanggu, adding 850 beds to the hospital’s capacity. Nearly as soon as the Nanjing team arrived, desperate patients were pounding on the door of their new ward, begging to be admitted. Over the course of several days, beginning on the day of the team’s arrival, Chen embedded himself in the hospital alongside these medical workers as they treated patients suffering from COVID-19. Despite the chaos and urgency of the situation, Chen shows how medical workers cared for patients beyond their medical needs, spending time comforting a disoriented elderly man with dementia, consoling a patient whose mother had died from the virus, and helping an elderly couple in separate wards see each other, even if only on screen. The video humanizes the patients and caregivers battling a merciless war.</p>
+            <p>(Note: This video is only licensed to be viewed within China.)</p>
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-link-back">
+          <div class="field-content">
+            <div class="item-list">
+              <ul>
+                <li class="first last"><a href="https://v.qq.com/x/cover/mzc00200dotisih/n0941rrh2d0.html">Watch the video...</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-718d99b11b1d82fd1fe08f9e2f608567 grid-8 photo-object">
+        <div class="views-field views-field-field-common-subtitle-1">
+          <div class="field-content">
+A Grandmother Fortifies Herself against COVID-19 | iFeng
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/pang_hai.jpg" title="A Grandmother Fortifies Herself against COVID-19 | iFeng" class="colorbox" data-colorbox-gallery="gallery-node-52246-3m4btNhLuEQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/pang_hai.jpg" width="1200" height="800" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Pang Hai—iFeng
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>Photographer Pang Hai went to visit his grandmother in Beijing before Chinese New Year on January 23 and decided to stay with her for the initial period of the coronavirus outbreak. He witnessed and documented an unusual Chinese New Year; his grandmother had asked the rest of the family to stay away. Visual coverage of COVID-19 has mostly focused on medics and empty streets, but this photo story—its moody images saturated with warm color—shows us what it’s like to take on a personal battle against the virus as an 81-year-old. Pang’s grandmother used a variety of wellness devices to boost her immune system, she stocked up on food and essentials days before other people started hoarding, and she learned how to video-chat with family and debunk misinformation using an iPad.</p>
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-link-back">
+          <div class="field-content">
+            <div class="item-list">
+              <ul>
+                <li class="first last"><a href="http://news.ifeng.com/c/7uA4yX3BnIe#p=1">View the gallery...</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-e9fba9482e8fc195e2d5adc65079a492 grid-8 photo-object">
+        <div class="views-field views-field-field-common-subtitle-1">
+          <div class="field-content">
+Why Can’t You Buy a Mask? | PaperClip
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/5.paperclip-masks.jpg" title="Why Can’t You Buy a Mask? | PaperClip" class="colorbox" data-colorbox-gallery="gallery-node-52241-3m4btNhLuEQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/5.paperclip-masks.jpg" width="1200" height="672" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+PaperClip
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>Shortly after the outbreak of COVID-19 started, China’s supply of medical facemasks quickly began to dry up. In 2019, producing about 10 million per day, Chinese manufacturers accounted for <a href="https://www.voanews.com/science-health/coronavirus-outbreak/world-depends-china-face-masks-can-country-deliver" target="_blank" rel="nofollow">half</a> of the global supply of masks. Yet, there was a national shortage during the initial period of the outbreak in late January and February as demand skyrocketed. Between January 24 and February 11, China imported <a href="http://www.gov.cn/xinwen/2020-02/12/content_5477838.htm" target="_blank" rel="nofollow">730 million</a> masks. Since then, the government has dramatically expanded production capacity, increasing production to 116 million per day by the end of February. This video, released on February 29, explains the production stream of facemasks in China in the weeks following the Lunar New Year holiday, explaining the shortages, price hikes, and ramping up of manufacturing of one of the most sought-after safety devices in this crisis.</p>
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-link-back">
+          <div class="field-content">
+            <div class="item-list">
+              <ul>
+                <li class="first last"><a href="https://www.youtube.com/watch?v=jWGjie3xQZw">Watch the video...</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-d6cbf05526574652d33323e4bc31ccb1 grid-8 photo-object">
+        <div class="views-field views-field-field-common-subtitle-1">
+          <div class="field-content">
+Mask Hunter | Tencent Video
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/8._mask_hunter.jpg" title="Mask Hunter | Tencent Video" class="colorbox" data-colorbox-gallery="gallery-node-52211-3m4btNhLuEQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/8._mask_hunter.jpg" width="1200" height="676" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Wu Dong—Tencent Video
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>In April, the documentary “Mask Hunter” captivated Chinese netizens, attracting millions of views. From March 5 to 18, the filmmaker, Wu Dong (who goes by Hua Zong in the video), followed Lin Dong, a 30-year-old Chinese businessman from Guangdong province, as he went to Turkey to try to procure the raw materials necessary for the production of medical-grade face masks, and commission factories to produce the masks. Wu details Lin’s ostentatious and risky business endeavors. A rotating group of local suppliers flock to the five-star hotel where Lin was staying, all claiming to have the product he wanted: <a href="https://www.cbsnews.com/news/n95-mask-shortage-melt-blown-filters/" target="_blank" rel="nofollow">melt-blown fabric</a>, a critical layer for producing medical-grade masks. Other times, Lin is seen flying on private jets to meet clients, and cutting deals with the help of a Turkish arms dealer who had jumped into mask-trading for its high profit margin (“100-300 percent, more than arms and drugs,” Lin says in the video). The filmmaker frequently confronts Lin about whether he is profiteering from a pandemic, but does not reach a conclusion. After the documentary was released, Lin garnered many fans—some were attracted by his good looks and sharp outfits, while others praised him as a businessman of conscience after seeing him reject low-quality products.</p>
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-link-back">
+          <div class="field-content">
+            <div class="item-list">
+              <ul>
+                <li class="first last"><a href="https://v.qq.com/x/cover/mzc00200lodesst/r0955bqtn3v.html">Watch the video...</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-865e5a4360c701448787df372e9ef2d9 grid-8 photo-object">
+        <div class="views-field views-field-field-common-subtitle-1">
+          <div class="field-content">
+Coming Home to China During the Pandemic | iFeng
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/yan_cong.jpg" title="Coming Home to China During the Pandemic | iFeng" class="colorbox" data-colorbox-gallery="gallery-node-52251-3m4btNhLuEQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/yan_cong.jpg" width="1200" height="800" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Yan Cong––iFeng
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>International travel amid the pandemic is stressful and expensive. And yet since mid-March, <a href="http://www.china.com.cn/zhibo/content_75887039.htm" target="_blank" rel="nofollow">hundreds of thousands</a> of Chinese citizens living abroad have returned to China, braving a dwindling number of international flights, expensive flight tickets, and tighter travel and transit restrictions across the globe. Depth of Field’s Yan Cong made one such journey, flying from New York to her home in Beijing in late March. Her original itinerary included a connecting flight in Hong Kong, but had to be changed after Hong Kong’s government banned transit travelers, 48 hours before her flight. She paid $2,600 for a new flight via Seoul. In this firsthand account, she documents her journey from a hotel room in Queens, through an empty JFK airport, to a COVID-19 test upon her arrival in Dalian, and finally to a quarantine hotel in Beijing.</p>
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-link-back">
+          <div class="field-content">
+            <div class="item-list">
+              <ul>
+                <li class="first last"><a href="https://news.ifeng.com/c/7vReX1y08Su#p=1">View the gallery...</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <div class="view view-photo-embed view-id-photo_embed view-display-id-panel_pane_2 visual-box view-dom-id-f9f73984dc3a943abad071df04d64595 grid-8 photo-object">
+        <div class="views-field views-field-field-common-subtitle-1">
+          <div class="field-content">
+Portraits of Wuhan | The Paper
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-photo">
+          <div class="field-content">
+&lt;a href="https://www.chinafile.com/sites/default/files/assets/images/photo/system/zhong_ruijun.jpg" title="Portraits of Wuhan | The Paper" class="colorbox" data-colorbox-gallery="gallery-node-52256-3m4btNhLuEQ" data-cbox-img-attrs="{"title": "", "alt": ""}"&gt;<img src="https://www.chinafile.com/sites/default/files/assets/images/photo/system/zhong_ruijun.jpg" width="1200" height="900" alt="" title="" referrerpolicy="no-referrer" />&lt;/a&gt;
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-system-credit">
+          <div class="field-content photo-credit img-credit">
+Zhong Ruijun—The Paper
+          </div>
+        </div>
+        <div>
+          <div class="photo-caption img-caption">
+            <p>A man with salt-and-pepper hair in a three-piece suit, a woman in a full-body protective suit wearing a cross-body purse and a big shopping bag on her shoulder, a barber donned with a DIY back-facing breathing tube for work. These are people photographed by Zhong Ruijun in the streets of Wuhan in early April, around the time the city reopened. Zhong has extensive experience photographing celebrities, but he thinks people who are not trained to pose for photos reveal more of themselves in front of his camera. He was intrigued by the eye-catching style and surreal elements in them, but refrained to describe them as fashion; it seemed inappropriate in the time of a crisis, when some choices are aesthetic while others are purely practical. This body of work becomes “Wuhan Faces.” “The masks hide their faces, but cannot hide the light in their eyes. These faces are the portraits of life in Wuhan right now,” Zhong wrote.</p>
+          </div>
+        </div>
+        <div class="views-field views-field-field-common-link-back">
+          <div class="field-content">
+            <div class="item-list">
+              <ul>
+                <li class="first last"><a href="https://www.thepaper.cn/newsDetail_forward_7121689">View the gallery...</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <hr style="border-top:1px solid #28323C;"/>
+
+<font size=2px>
+  文章版权归原作者所有。
+</font>
+
+<div style="text-align:center"><img width="1px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站" style="text-align:center"/></div>
+
+  <div id="sametag">
+    <h4 style="display: inline-block;">#中参馆 的其它文章</h4>
+    <span>--<a href="https://nodebe4.github.io/oped2/2021-07-12/How-Should-the-U.S.-Approach-Climate-Diplomacy-wit/">最新</a>-</span>
+    <span>-<a href="https://nodebe4.github.io/oped2/2020-03-09/Our-Daily-Media-Consumption-Is-Completely-Differe/">最早</a>--</span>
+    
+      <li>
+        <time>2020-05-19</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-19/What-Are-the-Right-and-the-Wrong-Ways-for-the-U.S/">
+          What Are the Right and the Wrong Ways for the U.S. to Support Taiwan?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-18</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-18/What-Are-the-Right-and-the-Wrong-Ways-for-the-U.S/">
+          What Are the Right and the Wrong Ways for the U.S. to Support Taiwan?
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-14</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-14/A-Letter-to-My-Friend-under-Quarantine-in-Wuhan/">
+          ‘A Letter to My Friend under Quarantine in Wuhan’
+        </a>
+      </li>
+    
+    
+      <li>
+        <time>2020-05-13</time>
+        <a href="https://nodebe4.github.io/oped2/2020-05-13/Missing-in-Action-U.S.-China-Cooperation-on-Coron/">
+          Missing in Action: U.S.-China Cooperation on Coronavirus
+        </a>
+      </li>
+    
+  </div>
+
+
+  <hr>
+  <div class="pagination">
+    
+      <span class="prev" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-14/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C/">
+            前一篇：學阿美族語的猶太人：從美國到台灣，傅可恩的人生旅行
+          </a>
+      </span>
+    
+    
+      <span class="next" >
+          <a href="https://nodebe4.github.io/oped2/2020-05-15/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/">
+            後一篇：非主流香港：九龍城 泰國城
+          </a>
+      </span>
+    
+
+    <script>
+    /* post pagination keyboard shortcuts */
+    document.body.onkeyup = function(e){
+      if (e.keyCode == '37') { window.location = 'https://nodebe4.github.io/oped2/2020-05-14/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C/'; } // left arrow key
+      if (e.keyCode == '39') { window.location = 'https://nodebe4.github.io/oped2/2020-05-15/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/'; } // right arrow key
+      if (e.keyCode == '45') { window.location = 'https://nodebe4.github.io/oped2/2020-05-18/What-Are-the-Right-and-the-Wrong-Ways-for-the-U.S/'; } // insert key
+      if (e.keyCode == '46') { window.location = 'https://nodebe4.github.io/oped2/2020-05-14/A-Letter-to-My-Friend-under-Quarantine-in-Wuhan/'; } // delete key
+    };
+    </script>
+    <link rel="stylesheet" type="text/css" href="/oped2/assets/css/fab.css" />
+
+<div class="fab-wrapper">
+  <div class="fab-wheel">
+    
+    
+    
+    <a class="fab-action fab-action-1" title="上一篇(热键 &#8594;)" href="https://nodebe4.github.io/oped2/2020-05-14/%E5%AD%B8%E9%98%BF%E7%BE%8E%E6%97%8F%E8%AA%9E%E7%9A%84%E7%8C%B6%E5%A4%AA%E4%BA%BA-%E5%BE%9E%E7%BE%8E%E5%9C%8B%E5%88%B0%E5%8F%B0%E7%81%A3-%E5%82%85%E5%8F%AF%E6%81%A9%E7%9A%84%E4%BA%BA%E7%94%9F%E6%97%85%E8%A1%8C/">
+      <i>后</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-2" title="下一篇(热键 &#8592;)" href="https://nodebe4.github.io/oped2/2020-05-15/%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%A6%99%E6%B8%AF-%E4%B9%9D%E9%BE%8D%E5%9F%8E-%E6%B3%B0%E5%9C%8B%E5%9F%8E/">
+      <i>前</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-3" title="<中参馆>上一篇(热键 ins)" href="https://nodebe4.github.io/oped2/2020-05-18/What-Are-the-Right-and-the-Wrong-Ways-for-the-U.S/">
+      <i>左</i>
+    </a>
+    
+    
+    <a class="fab-action fab-action-4" title="<中参馆>下一篇(热键 del)" href="https://nodebe4.github.io/oped2/2020-05-14/A-Letter-to-My-Friend-under-Quarantine-in-Wuhan/">
+      <i>右</i>
+    </a>
+    
+  </div>
+</div>
+
+
+  </div>
+
+
+  
+
+</article>
+
+    </div>
+
+    <div style="z-index:2;">
+<script src="/oped2/assets/js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 56,
+  cornerOffset: 20, // px
+  id: 'back-to-top',
+  backgroundColor: '#ddd',
+  textColor: 'red'
+})</script>
+</div>
+
+
+    <div class="wrapper-footer" id="footer">
+      <div class="container">
+        <footer class="footer">
+          <img width="200px" src="https://i.imgur.com/RinUcXm.png" alt="二维码分享本站"/>
+<font size=2px>二维码分享本站</font>
+
+<!-- Refer to https://codepen.io/ruandre/pen/howFi -->
+<ul class="svg-icon">
+
+  
+
+  
+
+  
+  <li><a href="mailto:beauti4@protonmail.com" class="icon-8 email" title="Email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg><!--[if lt IE 9]><em>Email</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+  <li><a href="https://github.com/NodeBE4/oped2" class="icon-13 github" title="GitHub"><svg viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg><!--[if lt IE 9]><em>GitHub</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <li><a href="/oped2/feed.xml" class="icon-21 rss" title="RSS"><svg viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg><!--[if lt IE 9]><em>RSS</em><![endif]--></a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+</ul>
+
+
+
+
+
+<p><span style="color:blue">内容每小时更新一次.</span> Powered by <a href="https://github.com/AWEEKJ/kiko-now">Kiko Now</a> & <a href="https://github.com/gitalk/gitalk">Gitalk</a> & <a href="https://github.com/duty-machine/news">duty-machine</a>, 站务 <a href="https://be4.herokuapp.com">NodeBE4</a>（<span style="color:red">被墙</span>）</p>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+
+
+  </body>
+</html>
